@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RDR2 Cards</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    body { margin: 0; font-family: 'Segoe UI';}
+    h1 { font-size: 14px }
+    p { margin: 0!important; }
+    #bar { width: 100%; height: 40px; background: #282828; position: fixed; z-index: 10000; color: #f0f0f0;  text-align: center; line-height: 35px; }
+    #map { background: #d2b790; width: 100%; height: 100vh; }
+    .input-day { background: #383838; border: none; width: 30px; padding: 5px; color: #f0f0f0; font-family: 'Segoe UI'; font-size: 14px; }
+</style>
+<body onload="init()">
+    <div id="bar"><p>Day <input id="day" class="input-day" type="number" min="1" max="3"> </p></div>
+    <div id="map"></div>
+    <script>
+        var curDate = new Date();
+        var day = (days_between(new Date(Date.UTC(2019, 8, 11)), new Date(Date.UTC(curDate.getFullYear(), curDate.getMonth(), curDate.getDate()))))%3+1;
+        if(day == 0) day = 3;
+        $('#day').val(day);
+
+        var map;
+        var markersLayer = new L.LayerGroup();
+
+        function init()
+        {
+            var minZoom = 1;
+            var maxZoom = 7;
+
+            // create the map
+            map = L.map('map', {
+                minZoom: minZoom,
+                maxZoom: maxZoom,
+                crs: L.CRS.Simple,
+            }).setView([-70, 111.75], 3);
+
+            L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
+                noWrap: true
+            }).addTo(map);
+
+            map.on('click', function(e){
+                var coord = e.latlng;
+                var lat = coord.lat;
+                var lng = coord.lng;
+                console.log('{"day": "3","icon": "card-cups","name": "x of Cups","desc": "","x": "'+lat+'","y": "'+lng+'"},');
+            });
+
+            loadMarkers(map);
+
+        }
+        function loadMarkers(map)
+        {
+            markersLayer.clearLayers();
+
+            var LeafIcon = L.Icon.extend({
+                options: {
+                    iconSize:     [48, 48],
+                    shadowSize:   [48, 48],
+                    iconAnchor:   [24, 48],
+                    shadowAnchor: [24, 48],
+                    popupAnchor:  [0, -48]
+                }
+            });
+            $.getJSON("items.json", {}, function(data)
+            {
+                $.each(data, function (key, value)
+                {
+                    if(value.day == day)
+                    {
+                        markersLayer.addLayer(L.marker([value.x, value.y], {icon: new LeafIcon({iconUrl: 'icon/' + value.icon + '.png'})}).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
+                    }
+                });
+            });
+
+            markersLayer.addTo(map);
+
+
+        }
+        function days_between(date1, date2)
+        {
+            // The number of milliseconds in one day
+            const ONE_DAY = 1000 * 60 * 60 * 24;
+
+            // Calculate the difference in milliseconds
+            const differenceMs = Math.abs(date1 - date2);
+
+            // Convert back to days and return
+            console.log(date1 + ' / ' + date2);
+            return Math.round(differenceMs / ONE_DAY);
+        }
+
+        $("#day").change(function()
+        {
+            day = $('#day').val();
+            loadMarkers(map);
+        });
+    </script>
+</body>
+</html>
