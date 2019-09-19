@@ -68,5 +68,19 @@
 	{"day": "2","icon": "card-swords","name": "Knight of Swords","desc": "","x": "-84.9375","y": "131.9765625"},
 	{"day": "2","icon": "card-swords","name": "Page of Swords","desc": "","x": "-59.03125","y": "140.7578125"},
 	{"day": "2","icon": "card-swords","name": "Queen of Swords","desc": "","x": "-99.921875","y": "89.2265625"},
-	{"day": "2","icon": "card-swords","name": "King of Swords","desc": "","x": "-37.234375","y": "152.2734375"}
+	{"day": "2","icon": "card-swords","name": "King of Swords","desc": "","x": "-37.234375","y": "152.2734375"},
+	{"day": "3","icon": "card-swords","name": "Ace of Swords","desc": "","x": "-92.6953125","y": "140.8046875"},
+	{"day": "3","icon": "card-swords","name": "Two of Swords","desc": "","x": "-75.4140625","y": "146.8125"},
+	{"day": "3","icon": "card-swords","name": "Three of Swords","desc": "","x": "-52.765625","y": "105.890625"},
+	{"day": "3","icon": "card-swords","name": "Four of Swords","desc": "","x": "-55.90625","y": "157.484375"},
+	{"day": "3","icon": "card-swords","name": "Five of Swords","desc": "","x": "-70.40625","y": "83.09375"},
+	{"day": "3","icon": "card-swords","name": "Six of Swords","desc": "","x": "-59.140625","y": "133.8359375"},
+	{"day": "3","icon": "card-swords","name": "Seven of Swords","desc": "","x": "-90.4296875","y": "82.34375"},
+	{"day": "3","icon": "card-swords","name": "Eight of Swords","desc": "","x": "-81.09375","y": "127.59375"},
+	{"day": "3","icon": "card-swords","name": "Nine of Swords","desc": "","x": "-42.1015625","y": "156.078125"},
+	{"day": "3","icon": "card-swords","name": "Ten of Swords","desc": "","x": "-59.015625","y": "149.265625"},
+	{"day": "3","icon": "card-swords","name": "Knight of Swords","desc": "","x": "-82.8203125","y": "157.03125"},
+	{"day": "3","icon": "card-swords","name": "Page of Swords","desc": "","x": "-54.828125","y": "120.578125"},
+	{"day": "3","icon": "card-swords","name": "Queen of Swords","desc": "","x": "-54.546875","y": "140.2734375"},
+	{"day": "3","icon": "card-swords","name": "King of Swords","desc": "","x": "-100.8359375","y": "25.0703125"}
 ]
