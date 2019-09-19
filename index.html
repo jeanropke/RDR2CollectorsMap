@@ -19,9 +19,7 @@
     <div id="bar"><p>Day <input id="day" class="input-day" type="number" min="1" max="3"> </p></div>
     <div id="map"></div>
     <script>
-        var curDate = new Date();
-        var day = (days_between(new Date(Date.UTC(2019, 8, 11)), new Date(Date.UTC(curDate.getFullYear(), curDate.getMonth(), curDate.getDate()))))%3+1;
-        if(day == 0) day = 3;
+        var day = 1;
         $('#day').val(day);
 
         var map;
@@ -29,15 +27,20 @@
 
         function init()
         {
-            var minZoom = 1;
+            var minZoom = 2;
             var maxZoom = 7;
 
             // create the map
             map = L.map('map', {
                 minZoom: minZoom,
                 maxZoom: maxZoom,
+                zoomControl: false,
                 crs: L.CRS.Simple,
             }).setView([-70, 111.75], 3);
+
+            L.control.zoom({
+                position:'bottomright'
+            }).addTo(map);
 
             L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
                 noWrap: true
@@ -47,7 +50,7 @@
                 var coord = e.latlng;
                 var lat = coord.lat;
                 var lng = coord.lng;
-                console.log('{"day": "3","icon": "card-cups","name": "x of Cups","desc": "","x": "'+lat+'","y": "'+lng+'"},');
+                console.log('{"day": "'+day+'","icon": "card-wands","name": " of Wands","desc": "","x": "'+lat+'","y": "'+lng+'"},');
             });
 
             loadMarkers(map);
@@ -81,20 +84,8 @@
 
 
         }
-        function days_between(date1, date2)
-        {
-            // The number of milliseconds in one day
-            const ONE_DAY = 1000 * 60 * 60 * 24;
 
-            // Calculate the difference in milliseconds
-            const differenceMs = Math.abs(date1 - date2);
-
-            // Convert back to days and return
-            console.log(date1 + ' / ' + date2);
-            return Math.round(differenceMs / ONE_DAY);
-        }
-
-        $("#day").change(function()
+        $("#day").on("input", function()
         {
             day = $('#day').val();
             loadMarkers(map);
