@@ -166,5 +166,17 @@
 	{"day": "3","icon": "card-pentacles","name": "Knight of Pentacles","desc": "","x": "-33.3984375","y": "141.3515625"},
 	{"day": "3","icon": "card-pentacles","name": "Page of Pentacles","desc": "","x": "-69.828125","y": "139"},
 	{"day": "3","icon": "card-pentacles","name": "Queen of Pentacles","desc": "","x": "-108.3046875","y": "25.7421875"},
-	{"day": "3","icon": "card-pentacles","name": "King of Pentacles","desc": "","x": "-41.6953125","y": "153.9140625"}
+	{"day": "3","icon": "card-pentacles","name": "King of Pentacles","desc": "","x": "-41.6953125","y": "153.9140625"},
+	
+	{"day": "3","icon": "coin","name": "coin","desc": "not sure","x": "-64.8828125","y": "105.5546875"},
+	{"day": "3","icon": "coin","name": "coin","desc": "not sure","x": "-89.3984375","y": "95.2265625"},
+	{"day": "3","icon": "coin","name": "Silver Coin 1794","desc": "not sure - Inside a cave","x": "-61.625","y": "74.7890625"},
+	
+	{"day": "1","icon": "arrow-head","name": "arrow-head","desc": "","x": "0","y": "0"},
+	{"day": "1","icon": "hair-brush","name": "hair-brush","desc": "","x": "0","y": "5"},
+	{"day": "1","icon": "ear-rings","name": "ear-rings","desc": "","x": "0","y": "10"},
+	{"day": "1","icon": "necklaces","name": "necklaces","desc": "","x": "0","y": "15"},
+	{"day": "1","icon": "plants","name": "plants","desc": "","x": "0","y": "20"},
+	{"day": "1","icon": "coin","name": "coin","desc": "","x": "0","y": "25"}
+
 ]
