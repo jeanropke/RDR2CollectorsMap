@@ -122,7 +122,7 @@
 	{"day": "3","icon": "card-wands","name": "Nine of Wands","desc": "","x": "-71.0703125","y": "75.359375"},
 	{"day": "3","icon": "card-wands","name": "Ten of Wands","desc": "","x": "-83.8515625","y": "149.8671875"},
 	{"day": "3","icon": "card-wands","name": "Knight of Wands","desc": "","x": "-91.5859375","y": "127"},
-	{"day": "3","icon": "card-wands","name": "Page of Wands","desc": "Inside de cave","x": "-41.7265625","y": "147.6796875"},
+	{"day": "3","icon": "card-wands","name": "Page of Wands","desc": "Inside the cave","x": "-41.7265625","y": "147.6796875"},
 	{"day": "3","icon": "card-wands","name": "Queen of Wands","desc": "","x": "-110.296875","y": "51.578125"},
 	{"day": "3","icon": "card-wands","name": "King of Wands","desc": "","x": "-99.359375","y": "90.2421875"},
 	{"day": "1","icon": "card-pentacles","name": "Ace of Pentacles","desc": "","x": "-113.0859375","y": "20.328125"},
@@ -167,19 +167,23 @@
 	{"day": "3","icon": "card-pentacles","name": "Page of Pentacles","desc": "","x": "-69.828125","y": "139"},
 	{"day": "3","icon": "card-pentacles","name": "Queen of Pentacles","desc": "","x": "-108.3046875","y": "25.7421875"},
 	{"day": "3","icon": "card-pentacles","name": "King of Pentacles","desc": "","x": "-41.6953125","y": "153.9140625"},
+
 	
-	{"day": "3","icon": "coin","name": "coin","desc": "not sure","x": "-64.8828125","y": "105.5546875"},
-	{"day": "3","icon": "coin","name": "coin","desc": "not sure","x": "-89.3984375","y": "95.2265625"},
-	{"day": "3","icon": "coin","name": "Silver Coin 1794","desc": "not sure - Inside a cave","x": "-61.625","y": "74.7890625"},
-	{"day": "3","icon": "coin","name": "coin","desc": "not sure","x": "-75.4140625","y": "135.03125"},
-	{"day": "3","icon": "coin","name": "coin","desc": "not sure","x": "-72.359375","y": "137.75"},
+	{"day": "3","icon": "coin","name": "1800 Gold Quarter","desc": "","x": "-109.8515625","y": "70.15625"},
+	{"day": "3","icon": "coin","name": "1798 Draped Bust Silver Dollar","desc": "","x": "-93.8359375","y": "144.0546875"},
+	{"day": "3","icon": "coin","name": "1787 One Cent Token","desc": "","x": "-38.0625","y": "118.0859375"},
+	{"day": "3","icon": "coin","name": "1794 Silver Coin","desc": "Inside the mine","x": "-61.625","y": "74.7890625"},
+	{"day": "3","icon": "coin","name": "1700 New Yorke Token","desc": "","x": "-91.1953125","y": "133.2421875"},
+	{"day": "3","icon": "coin","name": "1800 Five Dollar Bechtler","desc": "","x": "-89.3984375","y": "95.2265625"},
+	{"day": "3","icon": "coin","name": "1792 Quarter","desc": "","x": "-36.4296875","y": "105.1640625"},
+	{"day": "3","icon": "coin","name": "1800 Gold Dollar","desc": "","x": "-113.21875","y": "45.5"},
+	{"day": "3","icon": "coin","name": "1792 Nickel","desc": "","x": "-44.9765625","y": "150.625"},
+	{"day": "3","icon": "coin","name": "1796 Halfpenny","desc": "","x": "-53.2578125","y": "104.9375"},
+	{"day": "3","icon": "coin","name": "1795 Half Eagle","desc": "","x": "-118.2890625","y": "14.4375"},
 	{"day": "3","icon": "coin","name": "1797 Gold Eagle","desc": "","x": "-66.1015625","y": "141.8125"},
-	{"day": "3","icon": "coin","name": "coin","desc": "not sure","x": "-64.515625","y": "136.9921875"},
-	{"day": "3","icon": "coin","name": "1789 Penny","desc": "not sure","x": "-50.6796875","y": "136.7109375"},
-	{"day": "3","icon": "coin","name": "1800 Half Dime","desc": "not sure","x": "-70","y": "114.265625"},
-	{"day": "3","icon": "coin","name": "1795 Half Eagle","desc": "not sure","x": "-64.484375","y": "111.7890625"},
-	{"day": "3","icon": "coin","name": "1796 Halfpenny","desc": "not sure","x": "-53.2578125","y": "104.9375"},
-	{"day": "3","icon": "coin","name": "1787 One Cent Token","desc": "not sure","x": "-60.578125","y": "102.2734375"},
+	{"day": "3","icon": "coin","name": "1792 Liberty Quarter","desc": "","x": "-62.8671875","y": "91.453125"},
+	{"day": "3","icon": "coin","name": "1800 Half Dime","desc": "","x": "-70","y": "114.265625"},
+	{"day": "3","icon": "coin","name": "1789 Penny","desc": "","x": "-50.6796875","y": "136.7109375"},
 
 	{"day": "3","icon": "arrow-head","name": "arrow head","desc": "not sure","x": "-73.8203125","y": "116.5078125"},
 	
@@ -188,6 +192,7 @@
 	{"day": "1","icon": "ear-rings","name": "ear-rings","desc": "","x": "0","y": "10"},
 	{"day": "1","icon": "necklaces","name": "necklaces","desc": "","x": "0","y": "15"},
 	{"day": "1","icon": "plants","name": "plants","desc": "","x": "0","y": "20"},
-	{"day": "1","icon": "coin","name": "coin","desc": "","x": "0","y": "25"}
+	{"day": "1","icon": "coin","name": "coin","desc": "","x": "0","y": "25"},
+	{"day": "2","icon": "coin","name": "coin","desc": "","x": "0","y": "25"}
 
 ]
