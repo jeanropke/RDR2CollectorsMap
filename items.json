@@ -214,14 +214,47 @@
 	{"day": "3","icon": "coin","name": "1800 Half Dime","desc": "","x": "-70","y": "114.265625"},
 	{"day": "3","icon": "coin","name": "1789 Penny","desc": "","x": "-50.6796875","y": "136.7109375"},
 
+
+	{"day": "1","icon": "antique-bottles","name": "Tennesee Whiskey","desc": "","x": "-48.3359375","y": "114.8125"},
+	{"day": "1","icon": "antique-bottles","name": "Irish Whiskey","desc": "","x": "-81.7109375","y": "153.0390625"},
+	{"day": "1","icon": "antique-bottles","name": "Scotch Whisky","desc": "","x": "-79.1796875","y": "137.8203125"},
+	{"day": "1","icon": "antique-bottles","name": "Absinthe","desc": "","x": "-112.9296875","y": "51.796875"},
+	{"day": "1","icon": "antique-bottles","name": "Gran Corazon Madeira","desc": "","x": "-61.4453125","y": "67.1640625"},
+	{"day": "1","icon": "antique-bottles","name": "Old Tom Gin","desc": "","x": "-85.0703125","y": "71.1328125"},
+	{"day": "1","icon": "antique-bottles","name": "Caribbean Rum","desc": "","x": "-25.8125","y": "90.34375"},
+	{"day": "1","icon": "antique-bottles","name": "Cognac","desc": "","x": "-55.3359375","y": "154.4453125"},
+	{"day": "1","icon": "antique-bottles","name": "London Dry Gin","desc": "","x": "-91","y": "126.84375"},
+	
+	{"day": "2","icon": "antique-bottles","name": "Tennesee Whiskey","desc": "","x": "-89.5","y": "80.5546875"},
+	{"day": "2","icon": "antique-bottles","name": "Irish Whiskey","desc": "","x": "-50.5390625","y": "73.109375"},
+	{"day": "2","icon": "antique-bottles","name": "Scotch Whisky","desc": "","x": "-83.46875","y": "117.84375"},
+	{"day": "2","icon": "antique-bottles","name": "Absinthe","desc": "","x": "-80.046875","y": "153.2109375"},
+	{"day": "2","icon": "antique-bottles","name": "Gran Corazon Madeira","desc": "","x": "-63.640625","y": "152.296875"},
+	{"day": "2","icon": "antique-bottles","name": "Old Tom Gin","desc": "","x": "-75.09375","y": "140.4921875"},
+	{"day": "2","icon": "antique-bottles","name": "Caribbean Rum","desc": "","x": "-102.4921875","y": "46.3359375"},
+	{"day": "2","icon": "antique-bottles","name": "Cognac","desc": "","x": "-88.5234375","y": "142.40625"},
+	{"day": "2","icon": "antique-bottles","name": "London Dry Gin","desc": "","x": "-49.78125","y": "117.484375"},
+
+	{"day": "3","icon": "antique-bottles","name": "Tennesee Whiskey","desc": "","x": "-99","y": "131.796875"},
+	{"day": "3","icon": "antique-bottles","name": "Irish Whiskey","desc": "","x": "-76.96875","y": "148.0859375"},
+	{"day": "3","icon": "antique-bottles","name": "Scotch Whisky","desc": "","x": "-114.21875","y": "17.3515625"},
+	{"day": "3","icon": "antique-bottles","name": "Absinthe","desc": "","x": "-93.765625","y": "93.2421875"},
+	{"day": "3","icon": "antique-bottles","name": "Gran Corazon Madeira","desc": "","x": "-33.40625","y": "141.4296875"},
+	{"day": "3","icon": "antique-bottles","name": "Old Tom Gin","desc": "","x": "-65.796875","y": "146"},
+	{"day": "3","icon": "antique-bottles","name": "Caribbean Rum","desc": "","x": "-40.46875","y": "108.859375"},
+	{"day": "3","icon": "antique-bottles","name": "Cognac","desc": "","x": "-66.0390625","y": "105.953125"},
+	{"day": "3","icon": "antique-bottles","name": "London Dry Gin","desc": "","x": "-56.8828125","y": "158.4140625"},
+	
+
 	{"day": "3","icon": "arrow-head","name": "arrow head","desc": "not sure","x": "-73.8203125","y": "116.5078125"},
 	
-	{"day": "1","icon": "arrow-head","name": "arrow-head","desc": "","x": "0","y": "0"},
-	{"day": "1","icon": "hair-brush","name": "hair-brush","desc": "","x": "0","y": "5"},
-	{"day": "1","icon": "ear-rings","name": "ear-rings","desc": "","x": "0","y": "10"},
-	{"day": "1","icon": "necklaces","name": "necklaces","desc": "","x": "0","y": "15"},
-	{"day": "1","icon": "plants","name": "plants","desc": "","x": "0","y": "20"},
-	{"day": "1","icon": "coin","name": "coin","desc": "","x": "0","y": "25"},
-	{"day": "2","icon": "coin","name": "coin","desc": "","x": "0","y": "25"}
+	{"day": "2","icon": "arrow-head","name": "arrow-head","desc": "","x": "0","y": "0"},
+	{"day": "2","icon": "family-heirlooms","name": "family-heirlooms","desc": "","x": "0","y": "5"},
+	{"day": "2","icon": "ear-rings","name": "ear-rings","desc": "","x": "0","y": "10"},
+	{"day": "2","icon": "necklaces","name": "necklaces","desc": "","x": "0","y": "15"},
+	{"day": "2","icon": "plants","name": "plants","desc": "","x": "0","y": "20"},
+	{"day": "2","icon": "coin","name": "coin","desc": "","x": "0","y": "25"},
+	{"day": "2","icon": "bird-eggs","name": "bird-eggs","desc": "","x": "0","y": "30"},
+	{"day": "2","icon": "antique-bottles","name": "bird-eggs","desc": "","x": "0","y": "35"}
 
 ]
