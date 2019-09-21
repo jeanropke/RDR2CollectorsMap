@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RDR2 Cards</title>
+    <title>Red Dead Redemption II Collector Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -17,14 +17,16 @@
     .input-day { background: #383838; border: none; width: 30px; padding: 5px; color: #f0f0f0; font-family: 'Segoe UI'; font-size: 14px; }
 </style>
 <body onload="init()">
-<div id="bar"><p>Day <input id="day" class="input-day" type="number" min="1" max="3"> </p></div>
+<div id="bar"><p>Day <input id="day" class="input-day" type="number" min="1" max="3"> / <input class="input-day" type="text" id="search" style="width: 200px;" placeholder="Search items. Separated by ;" autocomplete="off"> </p></div>
 <div id="map"></div>
 <script>
     var day = 1;
     $('#day').val(day);
 
     var map;
+    var markers = [];
     var markersLayer = new L.LayerGroup();
+    var searchTerms = [];
 
     function init()
     {
@@ -51,13 +53,26 @@
             var coord = e.latlng;
             var lat = coord.lat;
             var lng = coord.lng;
-            console.log('{"day": "'+day+'","icon": "coin","name": "","desc": "","x": "'+lat+'","y": "'+lng+'"},');
+            console.log('{"day": "'+day+'","icon": "arrowhead","name": " Arrowhead","desc": "","x": "'+lat+'","y": "'+lng+'"},');
         });
 
         loadMarkers(map);
 
     }
-    function loadMarkers(map)
+    function loadMarkers()
+    {
+
+        markers = [];
+        $.getJSON("items.json", {}, function(data)
+        {
+            markers = data;
+
+            addMarkers();
+        });
+
+    }
+
+    function addMarkers()
     {
         markersLayer.clearLayers();
 
@@ -70,26 +85,40 @@
                 popupAnchor:  [0, -48]
             }
         });
-        $.getJSON("items.json", {}, function(data)
+
+        $.each(markers, function (key, value)
         {
-            $.each(data, function (key, value)
+            if(value.day == day)
             {
-                if(value.day == day)
+                if(searchTerms.length > 0)
                 {
-                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: new LeafIcon({iconUrl: 'icon/' + value.icon + '.png', shadowUrl: 'icon/day_'+ value.day +'.png'})}).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
+                    $.each(searchTerms, function(id, term) {
+                        if(value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1)
+                        {
+                            markersLayer.addLayer(L.marker([value.x, value.y], {icon: new LeafIcon({iconUrl: 'icon/' + value.icon + '.png', shadowUrl: 'icon/day_' + value.day + '.png'})}).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
+                        }
+                    });
                 }
-            });
+                else {
+                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: new LeafIcon({iconUrl: 'icon/' + value.icon + '.png', shadowUrl: 'icon/day_' + value.day + '.png'})}).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
+                }
+            }
         });
 
         markersLayer.addTo(map);
-
 
     }
 
     $("#day").on("input", function()
     {
         day = $('#day').val();
-        loadMarkers(map);
+        addMarkers();
+    });
+
+    $("#search").on("input", function()
+    {
+        searchTerms = $('#search').val().split(';');
+        addMarkers();
     });
 </script>
 </body>
