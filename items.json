@@ -296,13 +296,5 @@
 	{"day": "3","icon": "arrowhead","name": "Flint Arrowhead","desc": "","x": "-91.015625","y": "78.0078125"},
 	{"day": "3","icon": "arrowhead","name": "Agate Arrowhead","desc": "","x": "-34","y": "114.859375"},
 	
-	{"day": "2","icon": "arrowhead","name": "arrow-head","desc": "","x": "0","y": "0"},
-	{"day": "2","icon": "family-heirlooms","name": "family-heirlooms","desc": "","x": "0","y": "5"},
-	{"day": "2","icon": "ear-rings","name": "ear-rings","desc": "","x": "0","y": "10"},
-	{"day": "2","icon": "necklaces","name": "necklaces","desc": "","x": "0","y": "15"},
-	{"day": "2","icon": "plants","name": "plants","desc": "","x": "0","y": "20"},
-	{"day": "2","icon": "coin","name": "coin","desc": "","x": "0","y": "25"},
-	{"day": "2","icon": "bird-eggs","name": "bird-eggs","desc": "","x": "0","y": "30"},
-	{"day": "2","icon": "antique-bottles","name": "bird-eggs","desc": "","x": "0","y": "35"}
 
 ]
