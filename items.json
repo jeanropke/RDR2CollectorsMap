@@ -41,6 +41,7 @@
 	{"day": "3","icon": "card-cups","name": "Page of Cups","desc":"","x": "-88.625","y": "80.375"},
 	{"day": "3","icon": "card-cups","name": "Queen of Cups","desc":"Inside the mine","x": "-112.640625","y": "18.640625"},
 	{"day": "3","icon": "card-cups","name": "King of Cups","desc":"Inside the cave","x": "-33.9921875","y": "124.2265625"},
+	
 	{"day": "1","icon": "card-swords","name": "Ace of Swords","desc": "","x": "-68.75","y": "106.296875"},
 	{"day": "1","icon": "card-swords","name": "Two of Swords","desc": "","x": "-85.6640625","y": "97.6796875"},
 	{"day": "1","icon": "card-swords","name": "Three of Swords","desc": "","x": "-64.890625","y": "84.484375"},
@@ -83,6 +84,7 @@
 	{"day": "3","icon": "card-swords","name": "Page of Swords","desc": "","x": "-54.828125","y": "120.578125"},
 	{"day": "3","icon": "card-swords","name": "Queen of Swords","desc": "","x": "-54.546875","y": "140.2734375"},
 	{"day": "3","icon": "card-swords","name": "King of Swords","desc": "","x": "-100.8359375","y": "25.0703125"},
+	
 	{"day": "1","icon": "card-wands","name": "Ace of Wands","desc": "","x": "-91.0234375","y": "127.2578125"},
 	{"day": "1","icon": "card-wands","name": "Two of Wands","desc": "","x": "-81.328125","y": "133.4140625"},
 	{"day": "1","icon": "card-wands","name": "Three of Wands","desc": "","x": "-67.4296875","y": "77.3984375"},
@@ -125,6 +127,7 @@
 	{"day": "3","icon": "card-wands","name": "Page of Wands","desc": "Inside the cave","x": "-41.7265625","y": "147.6796875"},
 	{"day": "3","icon": "card-wands","name": "Queen of Wands","desc": "","x": "-110.296875","y": "51.578125"},
 	{"day": "3","icon": "card-wands","name": "King of Wands","desc": "","x": "-99.359375","y": "90.2421875"},
+	
 	{"day": "1","icon": "card-pentacles","name": "Ace of Pentacles","desc": "","x": "-113.0859375","y": "20.328125"},
 	{"day": "1","icon": "card-pentacles","name": "Two of Pentacles","desc": "","x": "-104.125","y": "55.515625"},
 	{"day": "1","icon": "card-pentacles","name": "Three of Pentacles","desc": "","x": "-69.2265625","y": "83.9140625"},
@@ -214,7 +217,20 @@
 	{"day": "3","icon": "coin","name": "1800 Half Dime","desc": "","x": "-70","y": "114.265625"},
 	{"day": "3","icon": "coin","name": "1789 Penny","desc": "","x": "-50.6796875","y": "136.7109375"},
 
-
+	{"day": "1","icon": "bird-eggs","name": "Goose Egg","desc": "","x": "-95.890625","y": "136.9453125"},
+	{"day": "1","icon": "bird-eggs","name": "Heron Egg","desc": "","x": "-79.140625","y": "138.1640625"},
+	{"day": "1","icon": "bird-eggs","name": "Spoonbill Egg","desc": "","x": "-73.7109375","y": "154.9609375"},
+	{"day": "1","icon": "bird-eggs","name": "Egret Egg","desc": "","x": "-67.90625","y": "149.7578125"},
+	{"day": "1","icon": "bird-eggs","name": "Vulture Egg","desc": "","x": "-36.34375","y": "152.609375"},
+	{"day": "1","icon": "bird-eggs","name": "Duck Egg","desc": "","x": "-29.6328125","y": "154.1796875"},
+	{"day": "1","icon": "bird-eggs","name": "Loon Egg","desc": "","x": "-77.6796875","y": "94.234375"},
+	{"day": "1","icon": "bird-eggs","name": "Hawk Egg","desc": "","x": "-38.6015625","y": "108.0234375"},
+	{"day": "1","icon": "bird-eggs","name": "Eagle Egg","desc": "","x": "-68.8671875","y": "87.828125"},
+	
+	{"day": "1","icon": "bird-eggs","name": "Hawk Egg","desc": "This is the second egg spawn","x": "-23.296875","y": "88.171875"},
+	{"day": "1","icon": "bird-eggs","name": "Eagle Egg","desc": "This is the second egg spawn","x": "-29.734375","y": "80.828125"},
+	{"day": "1","icon": "bird-eggs","name": "Goose Egg","desc": "This is the second egg spawn","x": "-68.9375","y": "141.2421875"},
+	
 	{"day": "1","icon": "antique-bottles","name": "Tennesee Whiskey","desc": "","x": "-48.3359375","y": "114.8125"},
 	{"day": "1","icon": "antique-bottles","name": "Irish Whiskey","desc": "","x": "-81.7109375","y": "153.0390625"},
 	{"day": "1","icon": "antique-bottles","name": "Scotch Whisky","desc": "","x": "-79.1796875","y": "137.8203125"},
@@ -223,8 +239,7 @@
 	{"day": "1","icon": "antique-bottles","name": "Old Tom Gin","desc": "","x": "-85.0703125","y": "71.1328125"},
 	{"day": "1","icon": "antique-bottles","name": "Caribbean Rum","desc": "","x": "-25.8125","y": "90.34375"},
 	{"day": "1","icon": "antique-bottles","name": "Cognac","desc": "","x": "-55.3359375","y": "154.4453125"},
-	{"day": "1","icon": "antique-bottles","name": "London Dry Gin","desc": "","x": "-91","y": "126.84375"},
-	
+	{"day": "1","icon": "antique-bottles","name": "London Dry Gin","desc": "","x": "-91","y": "126.84375"},	
 	{"day": "2","icon": "antique-bottles","name": "Tennesee Whiskey","desc": "","x": "-89.5","y": "80.5546875"},
 	{"day": "2","icon": "antique-bottles","name": "Irish Whiskey","desc": "","x": "-50.5390625","y": "73.109375"},
 	{"day": "2","icon": "antique-bottles","name": "Scotch Whisky","desc": "","x": "-83.46875","y": "117.84375"},
@@ -234,7 +249,6 @@
 	{"day": "2","icon": "antique-bottles","name": "Caribbean Rum","desc": "","x": "-102.4921875","y": "46.3359375"},
 	{"day": "2","icon": "antique-bottles","name": "Cognac","desc": "","x": "-88.5234375","y": "142.40625"},
 	{"day": "2","icon": "antique-bottles","name": "London Dry Gin","desc": "","x": "-49.78125","y": "117.484375"},
-
 	{"day": "3","icon": "antique-bottles","name": "Tennesee Whiskey","desc": "","x": "-99","y": "131.796875"},
 	{"day": "3","icon": "antique-bottles","name": "Irish Whiskey","desc": "","x": "-76.96875","y": "148.0859375"},
 	{"day": "3","icon": "antique-bottles","name": "Scotch Whisky","desc": "","x": "-114.21875","y": "17.3515625"},
