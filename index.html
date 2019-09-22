@@ -53,7 +53,7 @@
             var coord = e.latlng;
             var lat = coord.lat;
             var lng = coord.lng;
-            console.log('{"day": "'+day+'","icon": "arrowhead","name": " Arrowhead","desc": "","x": "'+lat+'","y": "'+lng+'"},');
+            console.log(`{"day": "${day}","icon": "lost-ring","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
         });
 
         loadMarkers(map);
@@ -67,7 +67,7 @@
         {
             markers = data;
 
-            addMarkers();
+            //addMarkers();
         });
 
     }
@@ -92,14 +92,16 @@
             {
                 if(searchTerms.length > 0)
                 {
-                    $.each(searchTerms, function(id, term) {
+                    $.each(searchTerms, function(id, term)
+                    {
                         if(value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
                             markersLayer.addLayer(L.marker([value.x, value.y], {icon: new LeafIcon({iconUrl: 'icon/' + value.icon + '.png', shadowUrl: 'icon/day_' + value.day + '.png'})}).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
                         }
                     });
                 }
-                else {
+                else
+                {
                     markersLayer.addLayer(L.marker([value.x, value.y], {icon: new LeafIcon({iconUrl: 'icon/' + value.icon + '.png', shadowUrl: 'icon/day_' + value.day + '.png'})}).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
                 }
             }
@@ -117,7 +119,15 @@
 
     $("#search").on("input", function()
     {
-        searchTerms = $('#search').val().split(';');
+        searchTerms = [];
+        $.each($('#search').val().split(';'), function(key, value)
+        {
+            if($.inArray(value, searchTerms) == -1)
+            {
+                if(value.length > 0)
+                    searchTerms.push(value);
+            }
+        });
         addMarkers();
     });
 </script>
