@@ -306,8 +306,7 @@
 	{"day": "1","icon": "lost-ring","name": "Aubrey Onyx Ring","desc": "","x": "-54.21875","y": "76.5"},
 	{"day": "1","icon": "lost-ring","name": "Bosque Emerald Ring","desc": "","x": "-84.65625","y": "94.203125"},
 	{"day": "1","icon": "lost-ring","name": "Sackville Diamond Ring","desc": "","x": "-50.40625","y": "102.046875"},
-	{"day": "1","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-119.03125","y": "55.625"},
-	
+	{"day": "1","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-119.03125","y": "55.625"},	
 	{"day": "2","icon": "lost-ring","name": "Harland Coral Ring","desc": "","x": "-27.4453125","y": "82.453125"},
 	{"day": "2","icon": "lost-ring","name": "Magnate Turquoise Ring","desc": "","x": "-113.4609375","y": "41.6015625"},
 	{"day": "2","icon": "lost-ring","name": "Pilgrim Moonstone Ring","desc": "","x": "-45.625","y": "130.71875"},
@@ -318,8 +317,7 @@
 	{"day": "2","icon": "lost-ring","name": "Aubrey Onyx Ring","desc": "","x": "-58.9375","y": "105.609375"},
 	{"day": "2","icon": "lost-ring","name": "Bosque Emerald Ring","desc": "","x": "-40.8046875","y": "161.3359375"},
 	{"day": "2","icon": "lost-ring","name": "Sackville Diamond Ring","desc": "","x": "-37.5","y": "129.28125"},
-	{"day": "2","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-93.2890625","y": "91.96875"},
-	
+	{"day": "2","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-93.2890625","y": "91.96875"},	
 	{"day": "3","icon": "lost-ring","name": "Harland Coral Ring","desc": "","x": "-57.4609375","y": "98.125"},
 	{"day": "3","icon": "lost-ring","name": "Magnate Turquoise Ring","desc": "","x": "-43.5","y": "124.796875"},
 	{"day": "3","icon": "lost-ring","name": "Pilgrim Moonstone Ring","desc": "","x": "-31.3828125","y": "146.8984375"},
@@ -330,5 +328,31 @@
 	{"day": "3","icon": "lost-ring","name": "Aubrey Onyx Ring","desc": "","x": "-84.1796875","y": "147.09375"},
 	{"day": "3","icon": "lost-ring","name": "Bosque Emerald Ring","desc": "","x": "-82.171875","y": "140.6953125"},
 	{"day": "3","icon": "lost-ring","name": "Sackville Diamond Ring","desc": "","x": "-55.546875","y": "87.671875"},
-	{"day": "3","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-50.375","y": "123.40625"}
+	{"day": "3","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-50.375","y": "123.40625"},
+	
+	{"day": "1","icon": "lost-bracelet","name": "Greco Sapphire Bracelet","desc": "","x": "-55.4453125","y": "101.78125"},
+	{"day": "1","icon": "lost-bracelet","name": "Abello Ruby Bangle Bracelet","desc": "","x": "-49.8828125","y": "148.28125"},
+	{"day": "1","icon": "lost-bracelet","name": "Ojeda Rose Gold Bangle Bracelet","desc": "","x": "-116.625","y": "19.59375"},
+	{"day": "1","icon": "lost-bracelet","name": "Helena Sapphire Bracelet","desc": "","x": "-92.109375","y": "60.0234375"},
+	{"day": "1","icon": "lost-bracelet","name": "Durant Pearl Bracelet","desc": "","x": "-42.5","y": "109.8046875"},
+	{"day": "1","icon": "lost-bracelet","name": "Infanta Turquoise Bracelet","desc": "","x": "-107.1796875","y": "86.6796875"},
+	{"day": "1","icon": "lost-bracelet","name": "Elliston Carved Bracelet","desc": "","x": "-52.3515625","y": "87.0390625"},
+	{"day": "1","icon": "lost-bracelet","name": "Hajnal Garnet Bangle Bracelet","desc": "","x": "-54.0625","y": "97.9375"},	
+	{"day": "2","icon": "lost-bracelet","name": "Greco Sapphire Bracelet","desc": "","x": "-89.421875","y": "77.484375"},
+	{"day": "2","icon": "lost-bracelet","name": "Abello Ruby Bangle Bracelet","desc": "","x": "-93.453125","y": "94.6640625"},
+	{"day": "2","icon": "lost-bracelet","name": "Ojeda Rose Gold Bangle Bracelet","desc": "","x": "-83.046875","y": "122.0859375"},
+	{"day": "2","icon": "lost-bracelet","name": "Helena Sapphire Bracelet","desc": "","x": "-57.015625","y": "94.9453125"},
+	{"day": "2","icon": "lost-bracelet","name": "Durant Pearl Bracelet","desc": "","x": "-76.8046875","y": "143.3125"},
+	{"day": "2","icon": "lost-bracelet","name": "Infanta Turquoise Bracelet","desc": "","x": "-35.2578125","y": "132.5"},
+	{"day": "2","icon": "lost-bracelet","name": "Elliston Carved Bracelet","desc": "","x": "-61.1640625","y": "143.78125"},
+	{"day": "2","icon": "lost-bracelet","name": "Hajnal Garnet Bangle Bracelet","desc": "","x": "-75.96875","y": "143.1875"},
+	{"day": "3","icon": "lost-bracelet","name": "Greco Sapphire Bracelet","desc": "","x": "-46.7890625","y": "118.53125"},
+	{"day": "3","icon": "lost-bracelet","name": "Abello Ruby Bangle Bracelet","desc": "","x": "-90.984375","y": "83.375"},
+	{"day": "3","icon": "lost-bracelet","name": "Ojeda Rose Gold Bangle Bracelet","desc": "","x": "-58.015625","y": "113.765625"},
+	{"day": "3","icon": "lost-bracelet","name": "Helena Sapphire Bracelet","desc": "","x": "-49.7578125","y": "76.640625"},
+	{"day": "3","icon": "lost-bracelet","name": "Durant Pearl Bracelet","desc": "","x": "-40.4375","y": "136.40625"},
+	{"day": "3","icon": "lost-bracelet","name": "Infanta Turquoise Bracelet","desc": "","x": "-78.90625","y": "133.0703125"},
+	{"day": "3","icon": "lost-bracelet","name": "Elliston Carved Bracelet","desc": "","x": "-107.96875","y": "59.3984375"},
+	{"day": "3","icon": "lost-bracelet","name": "Hajnal Garnet Bangle Bracelet","desc": "","x": "-78.0703125","y": "90.15625"}	
+
 ]
