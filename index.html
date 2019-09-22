@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/assets/js/leaflet.awesome-markers.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/leaflet.awesome-markers.css" />
+
+
 </head>
 <style>
     body { margin: 0; font-family: 'Segoe UI';}
@@ -53,7 +57,7 @@
             var coord = e.latlng;
             var lat = coord.lat;
             var lng = coord.lng;
-            console.log(`{"day": "${day}","icon": "lost-ring","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
+            console.log(`{"day": "${day}","icon": "lost-bracelet","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
         });
 
         loadMarkers(map);
@@ -76,15 +80,6 @@
     {
         markersLayer.clearLayers();
 
-        var LeafIcon = L.Icon.extend({
-            options: {
-                iconSize:     [48, 48],
-                shadowSize:   [48, 48],
-                iconAnchor:   [24, 48],
-                shadowAnchor: [24, 48],
-                popupAnchor:  [0, -48]
-            }
-        });
 
         $.each(markers, function (key, value)
         {
@@ -96,13 +91,13 @@
                     {
                         if(value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
-                            markersLayer.addLayer(L.marker([value.x, value.y], {icon: new LeafIcon({iconUrl: 'icon/' + value.icon + '.png', shadowUrl: 'icon/day_' + value.day + '.png'})}).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
+                            markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_'+value.day}) }).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
                         }
                     });
                 }
                 else
                 {
-                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: new LeafIcon({iconUrl: 'icon/' + value.icon + '.png', shadowUrl: 'icon/day_' + value.day + '.png'})}).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
+                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_'+value.day}) }).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
                 }
             }
         });
