@@ -330,9 +330,5 @@
 	{"day": "3","icon": "lost-ring","name": "Aubrey Onyx Ring","desc": "","x": "-84.1796875","y": "147.09375"},
 	{"day": "3","icon": "lost-ring","name": "Bosque Emerald Ring","desc": "","x": "-82.171875","y": "140.6953125"},
 	{"day": "3","icon": "lost-ring","name": "Sackville Diamond Ring","desc": "","x": "-55.546875","y": "87.671875"},
-	{"day": "3","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-50.375","y": "123.40625"},
-	
-	{"day": "1","icon": "lost-ring","name": "Debug","desc": "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a <img src='https://static-ca.ebgames.ca/images/products/727457/4scrmax1.jpg'>","x": "-80","y": "110"}
-	
-
+	{"day": "3","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-50.375","y": "123.40625"}
 ]
