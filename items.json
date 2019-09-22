@@ -294,7 +294,45 @@
 	{"day": "3","icon": "arrowhead","name": "Obsidian Arrowhead","desc": "","x": "-65.0703125","y": "71.1484375"},
 	{"day": "3","icon": "arrowhead","name": "Quartz Arrowhead","desc": "","x": "-53.7421875","y": "85.703125"},
 	{"day": "3","icon": "arrowhead","name": "Flint Arrowhead","desc": "","x": "-91.015625","y": "78.0078125"},
-	{"day": "3","icon": "arrowhead","name": "Agate Arrowhead","desc": "","x": "-34","y": "114.859375"}
+	{"day": "3","icon": "arrowhead","name": "Agate Arrowhead","desc": "","x": "-34","y": "114.859375"},
+	
+	{"day": "1","icon": "lost-ring","name": "Harland Coral Ring","desc": "","x": "-52.4375","y": "151.1796875"},
+	{"day": "1","icon": "lost-ring","name": "Magnate Turquoise Ring","desc": "","x": "-92.3828125","y": "140.75"},
+	{"day": "1","icon": "lost-ring","name": "Pilgrim Moonstone Ring","desc": "","x": "-32.578125","y": "149.859375"},
+	{"day": "1","icon": "lost-ring","name": "Bonnard Pearl Ring","desc": "","x": "-67.171875","y": "84.0546875"},
+	{"day": "1","icon": "lost-ring","name": "Banais Topaz Ring","desc": "","x": "-35.3359375","y": "122.8046875"},
+	{"day": "1","icon": "lost-ring","name": "Beaulieux Diamond Ring","desc": "","x": "-55.953125","y": "89.8828125"},
+	{"day": "1","icon": "lost-ring","name": "Yates Diamond Ring","desc": "","x": "-52.59375","y": "94.3125"},
+	{"day": "1","icon": "lost-ring","name": "Aubrey Onyx Ring","desc": "","x": "-54.21875","y": "76.5"},
+	{"day": "1","icon": "lost-ring","name": "Bosque Emerald Ring","desc": "","x": "-84.65625","y": "94.203125"},
+	{"day": "1","icon": "lost-ring","name": "Sackville Diamond Ring","desc": "","x": "-50.40625","y": "102.046875"},
+	{"day": "1","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-119.03125","y": "55.625"},
+	
+	{"day": "2","icon": "lost-ring","name": "Harland Coral Ring","desc": "","x": "-27.4453125","y": "82.453125"},
+	{"day": "2","icon": "lost-ring","name": "Magnate Turquoise Ring","desc": "","x": "-113.4609375","y": "41.6015625"},
+	{"day": "2","icon": "lost-ring","name": "Pilgrim Moonstone Ring","desc": "","x": "-45.625","y": "130.71875"},
+	{"day": "2","icon": "lost-ring","name": "Bonnard Pearl Ring","desc": "","x": "-69.7265625","y": "131.6484375"},
+	{"day": "2","icon": "lost-ring","name": "Banais Topaz Ring","desc": "","x": "-94.1015625","y": "138.171875"},
+	{"day": "2","icon": "lost-ring","name": "Beaulieux Diamond Ring","desc": "","x": "-45.6953125","y": "105.8359375"},
+	{"day": "2","icon": "lost-ring","name": "Yates Diamond Ring","desc": "","x": "-52.4140625","y": "77.4765625"},
+	{"day": "2","icon": "lost-ring","name": "Aubrey Onyx Ring","desc": "","x": "-58.9375","y": "105.609375"},
+	{"day": "2","icon": "lost-ring","name": "Bosque Emerald Ring","desc": "","x": "-40.8046875","y": "161.3359375"},
+	{"day": "2","icon": "lost-ring","name": "Sackville Diamond Ring","desc": "","x": "-37.5","y": "129.28125"},
+	{"day": "2","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-93.2890625","y": "91.96875"},
+	
+	{"day": "3","icon": "lost-ring","name": "Harland Coral Ring","desc": "","x": "-57.4609375","y": "98.125"},
+	{"day": "3","icon": "lost-ring","name": "Magnate Turquoise Ring","desc": "","x": "-43.5","y": "124.796875"},
+	{"day": "3","icon": "lost-ring","name": "Pilgrim Moonstone Ring","desc": "","x": "-31.3828125","y": "146.8984375"},
+	{"day": "3","icon": "lost-ring","name": "Bonnard Pearl Ring","desc": "","x": "-27.2265625","y": "156.6640625"},
+	{"day": "3","icon": "lost-ring","name": "Banais Topaz Ring","desc": "","x": "-92.203125","y": "136.1015625"},
+	{"day": "3","icon": "lost-ring","name": "Beaulieux Diamond Ring","desc": "","x": "-92.9375","y": "79.0078125"},
+	{"day": "3","icon": "lost-ring","name": "Yates Diamond Ring","desc": "","x": "-90.359375","y": "137.890625"},
+	{"day": "3","icon": "lost-ring","name": "Aubrey Onyx Ring","desc": "","x": "-84.1796875","y": "147.09375"},
+	{"day": "3","icon": "lost-ring","name": "Bosque Emerald Ring","desc": "","x": "-82.171875","y": "140.6953125"},
+	{"day": "3","icon": "lost-ring","name": "Sackville Diamond Ring","desc": "","x": "-55.546875","y": "87.671875"},
+	{"day": "3","icon": "lost-ring","name": "Thorburn Turquoise Ring","desc": "","x": "-50.375","y": "123.40625"},
+	
+	{"day": "1","icon": "lost-ring","name": "Debug","desc": "a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a <img src='https://static-ca.ebgames.ca/images/products/727457/4scrmax1.jpg'>","x": "-80","y": "110"}
 	
 
 ]
