@@ -47,7 +47,7 @@ Version: 1.0
 }
 
 /* Colors */
-.awesome-marker-icon-red, .awesome-marker-icon-day_2 {
+.awesome-marker-icon-red {
   background-position: 0 0;
 }
 
@@ -59,7 +59,7 @@ Version: 1.0
   background-position: -360px 0;
 }
 
-.awesome-marker-icon-orange, .awesome-marker-icon-day_1 {
+.awesome-marker-icon-orange, .awesome-marker-icon-day_2 {
   background-position: -36px 0;
 }
 
@@ -79,7 +79,7 @@ Version: 1.0
   background-position: -432px 0;
 }
 
-.awesome-marker-icon-blue,.awesome-marker-icon-day_3 {
+.awesome-marker-icon-blue,.awesome-marker-icon-day_1 {
   background-position: -108px 0;
 }
 
@@ -91,7 +91,7 @@ Version: 1.0
   background-position: -468px 0;
 }
 
-.awesome-marker-icon-purple {
+.awesome-marker-icon-purple, .awesome-marker-icon-day_3 {
   background-position: -144px 0;
 }
 
