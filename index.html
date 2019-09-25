@@ -29,6 +29,7 @@
     var markers = [];
     var markersLayer = new L.LayerGroup();
     var searchTerms = [];
+    var marathonData = [];
 
     function init()
     {
@@ -70,6 +71,7 @@
             markers = data;
 
             addMarkers();
+            loadMarathonData();
         });
 
     }
@@ -102,6 +104,28 @@
 
         markersLayer.addTo(map);
 
+    }
+    
+    function drawLines()
+    {
+        var connections = [];
+
+        $.each(marathonData, function (key, value)
+        {
+            connections.push(value);
+        });
+        L.polyline(connections).addTo(map);
+    }
+    
+    function loadMarathonData()
+    {
+        marathonData = [];
+        $.getJSON("marathon.json", {}, function(data)
+        {
+            marathonData = data;
+
+            drawLines();
+        });
     }
 
     $("#day").on("input", function()
