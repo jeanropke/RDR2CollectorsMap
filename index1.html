@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Red Dead Redemption II Collector Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/leaflet.awesome-markers.min.js"></script>
+    <link rel="stylesheet" href="assets/css/leaflet.awesome-markers.css" />
+</head>
+<style>
+    body { margin: 0; font-family: 'Segoe UI';}
+    h1 { font-size: 14px }
+    p { margin: 0!important; }
+    #bar { width: 100%; height: 40px; background: #282828; position: fixed; z-index: 10000; color: #f0f0f0;  text-align: center; line-height: 35px; }
+    #map { background: #d2b790; width: 100%; height: 100vh; }
+    .input-day { background: #383838; border: none; width: 30px; padding: 5px; color: #f0f0f0; font-family: 'Segoe UI'; font-size: 14px; }
+</style>
+<body onload="init()">
+<div id="bar"><p>Day <input id="day" class="input-day" type="number" min="1" max="3"> / <input class="input-day" type="text" id="search" style="width: 200px;" placeholder="Search items. Separated by ;" autocomplete="off"> </p></div>
+<div id="map"></div>
+<script>
+    var day;
+
+    var map;
+    var markers = [];
+    var markersLayer = new L.LayerGroup();
+    var searchTerms = [];
+    var marathonData = [];
+    var polylines;
+
+    function init()
+    {
+        var minZoom = 2;
+        var maxZoom = 7;
+
+        // create the map
+        map = L.map('map', {
+            minZoom: minZoom,
+            maxZoom: maxZoom,
+            zoomControl: false,
+            crs: L.CRS.Simple,
+        }).setView([-70, 111.75], 3);
+
+        L.control.zoom({
+            position:'bottomright'
+        }).addTo(map);
+
+        L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
+            noWrap: true
+        }).addTo(map);
+
+        map.on('click', function(e){
+            var coord = e.latlng;
+            var lat = coord.lat;
+            var lng = coord.lng;
+            //dev.push([lat, lng]);
+            //L.polyline(dev).addTo(map);
+            //console.log(`{"day": "${day}","icon": "american-flowers","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
+        });
+
+
+        setCurrentDayCycle();
+        loadMarkers();
+
+
+    }
+
+    function setCurrentDayCycle()
+    {
+        //day1: 2 4 5
+        //day2: 0 3
+        //day3: 1 6
+        var weekDay = new Date().getUTCDay();
+        switch(weekDay)
+        {
+            case 2: //tuesday
+            case 4: //thursday
+            case 5: //saturday
+                day = 1;
+                break;
+
+            case 0: //sunday
+            case 3: //wednesday
+                day = 2;
+                break;
+
+            case 1: //monday
+            case 6: //friday
+                day = 3;
+                break;
+        }
+
+        $('#day').val(day);
+    }
+
+    function loadRoutesData()
+    {
+        marathonData = [];
+        $.getJSON("routes.json", {}, function(data)
+        {
+            marathonData = data;
+            drawLines();
+        });
+    }
+
+    function drawLines()
+    {
+        var connections = [];
+        $.each(marathonData, function (key, value)
+        {
+            if(value.day == day)
+            {
+                connections.push(value.data);
+            }
+        });
+
+        if (polylines instanceof L.Polyline)
+        {
+            map.removeLayer(polylines);
+        }
+
+        polylines = L.polyline(connections);
+        map.addLayer(polylines);
+
+    }
+
+
+    function loadMarkers()
+    {
+        markers = [];
+        $.getJSON("items.json", {}, function(data)
+        {
+            markers = data;
+
+            addMarkers();
+        });
+
+    }
+
+    function addMarkers()
+    {
+        markersLayer.clearLayers();
+
+
+        $.each(markers, function (key, value)
+        {
+            if(value.day == day)
+            {
+                if(searchTerms.length > 0)
+                {
+                    $.each(searchTerms, function(id, term)
+                    {
+                        if(value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1)
+                        {
+                            markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_'+value.day}) }).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
+                        }
+                    });
+                }
+                else
+                {
+                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_'+value.day}) }).bindPopup(`<h1> ${value.name} - Day ${value.day} (${key}) </h1><p> ${value.desc} </p>`)); //.on('click', onClick)
+                }
+            }
+        });
+        markersLayer.addTo(map);
+        loadRoutesData();
+
+    }
+
+    //tests
+    //var dev = [];
+    //function onClick()
+    //{
+    //    dev.push([this._latlng.lat, this._latlng.lng]);
+    //    L.polyline(dev).addTo(map);
+    //}
+
+    $("#day").on("input", function()
+    {
+        day = $('#day').val();
+        addMarkers();
+    });
+
+    $("#search").on("input", function()
+    {
+        searchTerms = [];
+        $.each($('#search').val().split(';'), function(key, value)
+        {
+            if($.inArray(value, searchTerms) == -1)
+            {
+                if(value.length > 0)
+                    searchTerms.push(value);
+            }
+        });
+        addMarkers();
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-39999584-4');
+</script>
+
+</body>
+</html>
