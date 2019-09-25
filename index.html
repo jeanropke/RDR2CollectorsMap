@@ -22,8 +22,7 @@
 <div id="bar"><p>Day <input id="day" class="input-day" type="number" min="1" max="3"> / <input class="input-day" type="text" id="search" style="width: 200px;" placeholder="Search items. Separated by ;" autocomplete="off"> </p></div>
 <div id="map"></div>
 <script>
-    var day = 2;
-    $('#day').val(day);
+    var day;
 
     var map;
     var markers = [];
@@ -31,7 +30,7 @@
     var searchTerms = [];
     var marathonData = [];
     var polylines;
-    
+
     function init()
     {
         var minZoom = 2;
@@ -57,22 +56,86 @@
             var coord = e.latlng;
             var lat = coord.lat;
             var lng = coord.lng;
-            console.log(`{"day": "${day}","icon": "lost-bracelet","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
+            //dev.push([lat, lng]);
+            //L.polyline(dev).addTo(map);
+            //console.log(`{"day": "${day}","icon": "american-flowers","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
         });
 
-        loadMarkers(map);
+
+        setCurrentDayCycle();
+        loadMarkers();
+
 
     }
+
+    function setCurrentDayCycle()
+    {
+        //day1: 2 4 5
+        //day2: 0 3
+        //day3: 1 6
+        var weekDay = new Date().getUTCDay();
+        switch(weekDay)
+        {
+            case 2: //tuesday
+            case 4: //thursday
+            case 5: //saturday
+                day = 1;
+                break;
+
+            case 0: //sunday
+            case 3: //wednesday
+                day = 2;
+                break;
+
+            case 1: //monday
+            case 6: //friday
+                day = 3;
+                break;
+        }
+
+        $('#day').val(day);
+    }
+
+    function loadRoutesData()
+    {
+        marathonData = [];
+        $.getJSON("routes.json", {}, function(data)
+        {
+            marathonData = data;
+            drawLines();
+        });
+    }
+
+    function drawLines()
+    {
+        var connections = [];
+        $.each(marathonData, function (key, value)
+        {
+            if(value.day == day)
+            {
+                connections.push(value.data);
+            }
+        });
+
+        if (polylines instanceof L.Polyline)
+        {
+            map.removeLayer(polylines);
+        }
+
+        polylines = L.polyline(connections);
+        map.addLayer(polylines);
+
+    }
+
+
     function loadMarkers()
     {
-
         markers = [];
         $.getJSON("items.json", {}, function(data)
         {
             markers = data;
 
             addMarkers();
-            loadRoutesData();
         });
 
     }
@@ -98,46 +161,22 @@
                 }
                 else
                 {
-                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_'+value.day}) }).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
+                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_'+value.day}) }).bindPopup(`<h1> ${value.name} - Day ${value.day} (${key}) </h1><p> ${value.desc} </p>`)); //.on('click', onClick)
                 }
             }
         });
-
         markersLayer.addTo(map);
+        loadRoutesData();
 
     }
 
-    function loadRoutesData()
-    {
-        marathonData = [];
-        $.getJSON("routes.json", {}, function(data)
-        {
-            marathonData = data;
-
-            drawLines();
-        });
-    }
-    
-    function drawLines()
-    {
-        var connections = [];
-        $.each(marathonData, function (key, value)
-        {
-            if(value.day == day)
-            {
-                connections.push(value.data);
-            }
-        });
-
-        if (polylines instanceof L.Polyline)
-        {
-            map.removeLayer(polylines);
-        }
-
-        polylines = L.polyline(connections);
-        map.addLayer(polylines);
-
-    }
+    //tests
+    //var dev = [];
+    //function onClick()
+    //{
+    //    dev.push([this._latlng.lat, this._latlng.lng]);
+    //    L.polyline(dev).addTo(map);
+    //}
 
     $("#day").on("input", function()
     {
@@ -159,14 +198,15 @@
         addMarkers();
     });
 </script>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-39999584-4');
+    gtag('config', 'UA-39999584-4');
 </script>
 
 </body>
