@@ -30,7 +30,8 @@
     var markersLayer = new L.LayerGroup();
     var searchTerms = [];
     var marathonData = [];
-
+    var polylines;
+    
     function init()
     {
         var minZoom = 2;
@@ -71,7 +72,7 @@
             markers = data;
 
             addMarkers();
-            loadMarathonData();
+            loadRoutesData();
         });
 
     }
@@ -105,27 +106,37 @@
         markersLayer.addTo(map);
 
     }
-    
-    function drawLines()
-    {
-        var connections = [];
 
-        $.each(marathonData, function (key, value)
-        {
-            connections.push(value);
-        });
-        L.polyline(connections).addTo(map);
-    }
-    
     function loadMarathonData()
     {
         marathonData = [];
-        $.getJSON("marathon.json", {}, function(data)
+        $.getJSON("routes.json", {}, function(data)
         {
             marathonData = data;
 
             drawLines();
         });
+    }
+    
+    function drawLines()
+    {
+        var connections = [];
+        $.each(marathonData, function (key, value)
+        {
+            if(value.day == day)
+            {
+                connections.push(value.data);
+            }
+        });
+
+        if (polylines instanceof L.Polyline)
+        {
+            map.removeLayer(polylines);
+        }
+
+        polylines = L.polyline(connections);
+        map.addLayer(polylines);
+
     }
 
     $("#day").on("input", function()
