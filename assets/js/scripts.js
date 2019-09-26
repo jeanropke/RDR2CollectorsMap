@@ -60,15 +60,15 @@ function initMenu()
 
 function setCurrentDayCycle()
 {
-    //day1: 2 4 5
+    //day1: 2 4 6
     //day2: 0 3
-    //day3: 1 6
+    //day3: 1 5
     var weekDay = new Date().getUTCDay();
     switch(weekDay)
     {
         case 2: //tuesday
         case 4: //thursday
-        case 5: //saturday
+        case 6: //saturday
             day = 1;
             break;
 
@@ -78,7 +78,7 @@ function setCurrentDayCycle()
             break;
 
         case 1: //monday
-        case 6: //friday
+        case 5: //friday
             day = 3;
             break;
     }
@@ -143,12 +143,12 @@ function addMarkers()
                 if (searchTerms.length > 0) {
                     $.each(searchTerms, function (id, term) {
                         if (value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1) {
-                            markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
+                            markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p>`));
                         }
                     });
                 }
                 else {
-                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day} (${key}) </h1><p> ${value.desc} </p>`).on('click', onClick));
+                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p>`)); //.on('click', onClick)
                 }
             }
         }
@@ -217,15 +217,14 @@ $('.menu-option.clickable').on('click', function ()
 
 $('.menu-toggle').on('click', function()
 {
-    $(this).toggleClass('menu-opened');
+    $('.side-menu').toggleClass('menu-opened');
 
-    if($(this).hasClass('menu-opened'))
+    if($('.side-menu').hasClass('menu-opened'))
     {
         $('.menu-toggle').text('X');
-        $('.side-menu').css('left', '0px');
     }
-    else {
+    else
+    {
         $('.menu-toggle').text('>');
-        $('.side-menu').css('left', '-300px');
     }
 });
