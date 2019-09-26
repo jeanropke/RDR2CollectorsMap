@@ -70,15 +70,15 @@
 
     function setCurrentDayCycle()
     {
-        //day1: 2 4 5
+        //day1: 2 4 6
         //day2: 0 3
-        //day3: 1 6
+        //day3: 1 5
         var weekDay = new Date().getUTCDay();
         switch(weekDay)
         {
             case 2: //tuesday
             case 4: //thursday
-            case 5: //saturday
+            case 6: //saturday
                 day = 1;
                 break;
 
@@ -88,7 +88,7 @@
                 break;
 
             case 1: //monday
-            case 6: //friday
+            case 5: //friday
                 day = 3;
                 break;
         }
