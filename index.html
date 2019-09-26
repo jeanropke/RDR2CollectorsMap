@@ -160,7 +160,7 @@
                 }
                 else
                 {
-                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_'+value.day}) }).bindPopup(`<h1> ${value.name} - Day ${value.day} (${key}) </h1><p> ${value.desc} </p>`)); //.on('click', onClick)
+                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_'+value.day}) }).bindPopup(`<h1> ${value.name} - Day ${value.day} </h1><p> ${value.desc} </p>`)); //.on('click', onClick)
                 }
             }
         });
