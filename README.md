@@ -1,2 +1,2 @@
 # RDR2CollectorsMap
-Credits to [https://www.reddit.com/r/RedDeadOnline](/r/RedDeadOnline), [https://www.youtube.com/user/GTASeriesVideos](GTA Series Videos) and [https://twitter.com/gtaxbarrett](Gtax Barrett)
+Credits to [/r/RedDeadOnline](https://www.reddit.com/r/RedDeadOnline) , [GTA Series Videos](https://www.youtube.com/user/GTASeriesVideos) and [Gtax Barrett](https://twitter.com/gtaxbarrett)
