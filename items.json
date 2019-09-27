@@ -213,7 +213,7 @@
 	{"day": "3","icon": "coin","name": "1796 Halfpenny Coin","desc": "","x": "-53.2578125","y": "104.9375"},
 	{"day": "3","icon": "coin","name": "1795 Half Eagle Coin","desc": "","x": "-118.2890625","y": "14.4375"},
 	{"day": "3","icon": "coin","name": "1797 Gold Eagle Coin","desc": "","x": "-66.1015625","y": "141.8125"},
-	{"day": "3","icon": "coin","name": "1792 Liberty Quarter Coin","desc": "","x": "-62.8671875","y": "91.453125"},
+	{"day": "3","icon": "coin","name": "1792 Liberty Quarter Coin","desc": "","x": "-64.7890625","y": "105.515625"},
 	{"day": "3","icon": "coin","name": "1800 Half Dime Coin","desc": "","x": "-70","y": "114.265625"},
 	{"day": "3","icon": "coin","name": "1789 Penny Coin","desc": "","x": "-50.6796875","y": "136.7109375"},
 
@@ -315,6 +315,7 @@
 	{"day": "3","icon": "arrowhead","name": "Obsidian Arrowhead","desc": "","x": "-65.0703125","y": "71.1484375"},
 	{"day": "3","icon": "arrowhead","name": "Quartz Arrowhead","desc": "","x": "-53.7421875","y": "85.703125"},
 	{"day": "3","icon": "arrowhead","name": "Flint Arrowhead","desc": "","x": "-91.015625","y": "78.0078125"},
+	{"day": "3","icon": "arrowhead","name": "Agate Arrowhead","desc": "","x": "-34","y": "114.8828125"},
 	
 	{"day": "1","icon": "family-heirlooms","name": "Jade Hairpin Heirloom","desc": "","x": "-83.5546875","y": "96.8046875"},
 	{"day": "1","icon": "family-heirlooms","name": "Cherrywood Comb Heirloom","desc": "","x": "-50.453125","y": "123.328125"},
