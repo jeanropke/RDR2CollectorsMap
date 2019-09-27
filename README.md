@@ -1,8 +1,2 @@
 # RDR2CollectorsMap
-Credits to GTA Series Videos
-
-https://www.youtube.com/watch?v=PBpwf3ILgkM 
-
-https://www.youtube.com/watch?v=Hy5MdsmE4xw 
-
-https://www.youtube.com/watch?v=w5uJvlUcal0
+Credits to [https://www.reddit.com/r/RedDeadOnline](/r/RedDeadOnline), [https://www.youtube.com/user/GTASeriesVideos](GTA Series Videos) and [https://twitter.com/gtaxbarrett](Gtax Barrett)
