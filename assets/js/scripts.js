@@ -11,6 +11,7 @@ var enabledTypes = [
 var marathonData = [];
 var polylines;
 var menuOpened = false;
+var toolType = '3'; //All type of tools
 
 function init()
 {
@@ -121,7 +122,7 @@ function drawLines()
 function loadMarkers()
 {
     markers = [];
-    $.getJSON("items.json", {}, function(data)
+    $.getJSON("items.json?nocache=1", {}, function(data)
     {
         markers = data;
 
@@ -137,17 +138,25 @@ function addMarkers()
 
     $.each(markers, function (key, value)
     {
+
+        if(value.tool != toolType && toolType !== "3")
+            return;
         if(enabledTypes.includes(value.icon))
         {
-            if (value.day == day) {
-                if (searchTerms.length > 0) {
-                    $.each(searchTerms, function (id, term) {
-                        if (value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1) {
+            if (value.day == day)
+            {
+                if (searchTerms.length > 0)
+                {
+                    $.each(searchTerms, function (id, term)
+                    {
+                        if (value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1)
+                        {
                             markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p>`));
                         }
                     });
                 }
-                else {
+                else
+                {
                     markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p>`)); //.on('click', onClick)
                 }
             }
@@ -198,6 +207,13 @@ $("#routes").on("change", function()
         drawLines();
     }
 });
+
+$("#tools").on("change", function()
+{
+    toolType = $("#tools").val();
+    addMarkers();
+});
+
 $('.menu-option.clickable').on('click', function ()
 {
     var menu = $(this);
