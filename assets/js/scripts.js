@@ -20,28 +20,40 @@ function init()
     var minZoom = 2;
     var maxZoom = 7;
 
+
+
+
+    //'https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg'
+    var defaultLayer = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true});
+    var detailLayer = L.tileLayer('assets/maps/dark/{z}/{x}_{y}.jpg', { noWrap: true});
+
+
     // create the map
     map = L.map('map', {
         minZoom: minZoom,
         maxZoom: maxZoom,
         zoomControl: false,
         crs: L.CRS.Simple,
+        layers: [defaultLayer, detailLayer]
     }).setView([-70, 111.75], 3);
+
+    var baseMaps = {
+        "Default": defaultLayer,
+        "Detailed": detailLayer
+    };
 
     L.control.zoom({
         position:'bottomright'
     }).addTo(map);
 
-    L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
-        noWrap: true
-    }).addTo(map);
+    L.control.layers(baseMaps).addTo(map);
 
     map.on('click', function(e){
         var coord = e.latlng;
         var lat = coord.lat;
         var lng = coord.lng;
-        //dev.push([lat, lng]);
-        //L.polyline(dev).addTo(map);
+        dev.push([lat, lng]);
+        L.polyline(dev).addTo(map);
         //console.log(`{"day": "${day}","icon": "american-flowers","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
     });
 
