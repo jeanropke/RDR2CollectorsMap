@@ -1,16 +1,42 @@
+@font-face {
+    font-family: Hapna;
+    src: url(../fonts/hapna.woff2) format("woff2"),
+    url(../fonts/hapna.woff) format("woff"),
+    url(../fonts/hapna.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    text-rendering:optimizeLegibility
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: Hapna!important;
+    font-size: 16px;
+    font-family: Hapna, serif;
 }
+
 h1 {
     font-size: 14px
 }
+
 h2 {
-    margin: 0;
+    margin: 0 0 5px;
     text-align: center;
 }
+
 p {
     margin: 0!important;
+}
+
+#map {
+    background: #d2b790;
+    width: 100%;
+    width: 100vw;
+    height: 100%;
+    height: 100vh;
 }
 
 .remove-button {
@@ -21,139 +47,131 @@ p {
     user-select: none;
 }
 
+.hide-show-container {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 10px 0;
+    margin: 15px 0;
+}
+
+.hide-show-container a {
+    color: #eee;
+    text-decoration: none;
+}
+
+.hide-show-container a:hover {
+    text-decoration: underline;
+}
+
+.search-container, .settings-container {
+    padding: 0 10px;
+    margin: 5px 0;
+}
+
+.input-search {
+    background-color: #383838;
+    border: none;
+    padding: 5px;
+    color: #f0f0f0;
+    font-size: 14px;
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.input-day {
+    background: #383838;
+    border: none;
+    padding: 5px 10px;
+    color: #f0f0f0;
+    font-size: 14px;
+}
+
+.issues-container a {
+    display: block;
+    color: #eee;
+    text-align: center;
+}
+
+.menu-toggle {
+    width: 30px;
+    height: 30px;
+    background: #111;
+    border: 1px solid #888;
+    position: fixed;
+    z-index: 1000;
+    left: 5px;
+    top: 5px;
+    color: #eee;
+    text-align: center;
+    line-height: 1.85;
+    user-select: none;
+    cursor: pointer;
+}
+
+.side-menu {
+    width: 100%;
+    background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
+    box-shadow: 1px 0 2px 0 rgba(85, 85, 85, 0.85);
+    position: fixed;
+    top: -1800px;
+    left: 0;
+    overflow: auto;
+    height: 100%;
+    height: 100vh;
+    color: #eee;
+    z-index: 999;
+    padding-top: 10px;
+}
+
+.menu-opened {
+    top: 0;
+}
+
+.side-menu, .menu-toggle {
+    transition: all 200ms ease-out;
+}
+
+.side-menu .menu-option {
+    display: flex;
+    align-items: start;
+    padding: 0 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.side-menu .menu-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.side-menu .menu-option span.disabled {
+    color: #6a6a6a;
+    text-decoration: line-through;
+}
+
+.side-menu .menu-option .icon {
+    width: 35px;
+}
+
 @media (min-width: 1025px) {
-    .menu-toggle {
-        width: 30px;
-        height: 30px;
-        background: #111;
-        border: 1px solid #888;
-        position: fixed;
-        z-index: 10000;
-        left: 5px;
-        top: 5px;
-        color: #eeeeee;
-        text-align: center;
-        line-height: 1.85;
-        user-select: none;
-        cursor: pointer;
-    }
-    .menu-opened {
-        left: 0!important;
-    }
     .side-menu {
         width: 300px;
-        background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
-        box-shadow: 1px 0 2px 0 rgba(85, 85, 85, 0.85);
-        height: 100vh;
-        position: fixed;
         left: -300px;
-        overflow-y: auto;
-        color: #eeeeee;
-        z-index: 9999;
-        padding-top: 10px;
+        top: 0;
     }
-    .side-menu, .menu-toggle {
-        transition: left 200ms ease-out;
-    }
-    .side-menu .menu-option {
-        padding: 0 5px;
-        user-select: none;
-        cursor: pointer;
-    }
-    .side-menu .menu-option:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-    .side-menu .menu-option span {
-        position: relative;
-        top: -6px;
-    }
-    .side-menu .menu-option span.disabled {
-        color: #6a6a6a;
-        text-decoration: line-through;
-    }
-    .side-menu .menu-option .icon {
-        width: 40px;
-        height: 40px;
-        display: inline-flex;
-        zoom: 0.7;
-        position: relative;
-        left: 4px;
-        top: 6px;
-        background-position: 49px -4px;
-    }
-}
 
-@media (max-width: 1024px) {
-    h2 {
-        margin: 0;
-        text-align: center;
-        font-size: 48px;
-    }
-    .menu-toggle {
-        width: 30px;
-        height: 30px;
-        background: #111;
-        border: 1px solid #888;
-        position: fixed;
-        z-index: 10000;
-        left: 5px;
-        top: 5px;
-        color: #eeeeee;
-        text-align: center;
-        line-height: 1.85;
-        user-select: none;
-        cursor: pointer;
-        zoom: 2.5;
-    }
     .menu-opened {
-        top: 0!important;
-    }
-    .side-menu {
-        width: 100%;
-        background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
-        box-shadow: 1px 0 2px 0 rgba(85, 85, 85, 0.85);
-        position: fixed;
-        top: -1800px;
         left: 0;
-        overflow: auto;
-        height: 100vh;
-        color: #eeeeee;
-        z-index: 9999;
-        padding-top: 10px;
     }
-    .side-menu, .menu-toggle {
-        transition: all 200ms ease-out;
-    }
-    .side-menu .menu-option {
-        padding: 0 5px;
-        user-select: none;
-        cursor: pointer;
-        zoom: 2.5;
-    }
-    .side-menu .menu-option:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-    .side-menu .menu-option span {
-        position: relative;
-        top: -6px;
-    }
-    .side-menu .menu-option span.disabled {
-        color: #6a6a6a;
-        text-decoration: line-through;
-    }
-    .side-menu .menu-option .icon {
-        width: 40px;
-        height: 40px;
-        display: inline-flex;
-        zoom: 0.7;
-        position: relative;
-        left: 4px;
-        top: 6px;
-        background-position: 49px -4px;
-    }
-
 }
 
+/* Legacy */
 #bar {
     width: 100%;
     height: 40px;
@@ -163,28 +181,4 @@ p {
     color: #f0f0f0;
     text-align: center;
     line-height: 35px;
-}
-#map {
-    background: #d2b790;
-    width: 100%;
-    height: 100vh;
-}
-.input-day {
-    background: #383838;
-    border: none;
-    width: 30px;
-    padding: 5px;
-    color: #f0f0f0;
-    font-size: 14px;
-}
-
-
-@font-face {
-    font-family: Hapna;
-    src: url(../fonts/hapna.woff2) format("woff2"),
-         url(../fonts/hapna.woff) format("woff"),
-         url(../fonts/hapna.ttf) format("truetype");
-    font-style: normal;
-    font-weight: 400;
-    text-rendering:optimizeLegibility
 }

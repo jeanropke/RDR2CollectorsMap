@@ -3,6 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Red Dead Redemption II Collector Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
@@ -18,97 +20,105 @@
 <body onload="init()">
 <div class="side-menu">
     <h2>Collectables</h2>
-    <div class="menu-option" onclick="hideall()">
-        <div class="icon" style="background-image: url(./icon/hide.png)"></div>
-        <span>Hide all items</span>
+    <div class="hide-show-container">
+        <a href="javascript:void(0);" onclick="hideall()">Hide all</a>
+        <a href="javascript:void(0);" onclick="showall()">Show all</a>
     </div>
-    <div class="menu-option" onclick="showall()">
-        <div class="icon" style="background-image: url(./icon/show.png)"></div>
-        <span>Show all items</span>
-    </div>
-    
+
     <div class="menu-option clickable" data-type="american-flowers">
-        <div class="icon" style="background-image: url(./icon/american-flowers.png)"></div>
+        <img class="icon" src="/icon/american-flowers.png" />
         <span>American Wild Flowers</span>
     </div>
     <div class="menu-option clickable" data-type="antique-bottles">
-        <div class="icon" style="background-image: url(./icon/antique-bottles.png)"></div>
+        <img class="icon" src="/icon/antique-bottles.png" />
         <span>Antique Alcohol Bottles</span>
     </div>
     <div class="menu-option clickable" data-type="arrowhead">
-        <div class="icon" style="background-image: url(./icon/arrowhead.png)"></div>
+        <img class="icon" src="/icon/arrowhead.png" />
         <span>Arrowheads</span>
     </div>
     <div class="menu-option clickable" data-type="bird-eggs">
-        <div class="icon" style="background-image: url(./icon/bird-eggs.png)"></div>
+        <img class="icon" src="/icon/bird-eggs.png" />
         <span>Bird Eggs</span>
     </div>
     <div class="menu-option clickable" data-type="coin">
-        <div class="icon" style="background-image: url(./icon/coin.png)"></div>
+        <img class="icon" src="/icon/coin.png" />
         <span>Coins</span>
     </div>
     <div class="menu-option clickable" data-type="family-heirlooms">
-        <div class="icon" style="background-image: url(./icon/family-heirlooms.png)"></div>
+        <img class="icon" src="/icon/family-heirlooms.png" />
         <span>Family Heirlooms</span>
     </div>
     <div class="menu-option clickable" data-type="lost-bracelet">
-        <div class="icon" style="background-image: url(./icon/lost-bracelet.png)"></div>
+        <img class="icon" src="/icon/lost-bracelet.png" />
         <span>Lost Jewelry - Bracelets</span>
     </div>
     <div class="menu-option clickable" data-type="lost-earrings">
-        <div class="icon" style="background-image: url(./icon/lost-earrings.png)"></div>
+        <img class="icon" src="/icon/lost-earrings.png" />
         <span>Lost Jewelry - Earrings</span>
     </div>
     <div class="menu-option clickable" data-type="lost-necklaces">
-        <div class="icon" style="background-image: url(./icon/lost-necklaces.png)"></div>
+        <img class="icon" src="/icon/lost-necklaces.png" />
         <span>Lost Jewelry - Necklaces</span>
     </div>
     <div class="menu-option clickable" data-type="lost-ring">
-        <div class="icon" style="background-image: url(./icon/lost-ring.png)"></div>
+        <img class="icon" src="/icon/lost-ring.png" />
         <span>Lost Jewelry - Rings</span>
     </div>
     <div class="menu-option clickable" data-type="card-cups">
-        <div class="icon" style="background-image: url(./icon/card-cups.png)"></div>
+        <img class="icon" src="/icon/card-cups.png" />
         <span>Tarot Cards - Cups</span>
     </div>
     <div class="menu-option clickable" data-type="card-pentacles">
-        <div class="icon" style="background-image: url(./icon/card-pentacles.png)"></div>
+        <img class="icon" src="/icon/card-pentacles.png" />
          <span>Tarot Cards - Pentacles</span>
     </div>
     <div class="menu-option clickable" data-type="card-swords">
-        <div class="icon" style="background-image: url(./icon/card-swords.png)"></div>
+        <img class="icon" src="/icon/card-swords.png" />
          <span>Tarot Cards - Swords</span>
     </div>
     <div class="menu-option clickable" data-type="card-wands">
-        <div class="icon" style="background-image: url(./icon/card-wands.png)"></div>
+        <img class="icon" src="/icon/card-wands.png" />
          <span>Tarot Cards - Wands</span>
     </div>
-    <h2>Search</h2>
-    <div class="menu-option">
-        <div class="icon"></div>
-        <span><input class="input-day" type="text" id="search" style="width: 80%;" placeholder="Search items. Separated by ;" autocomplete="off"> </span>
+
+    <div class="search-container">
+        <h2>Search</h2>
+        <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
     </div>
-    <h2>Settings</h2>
-    <div class="menu-option">
-        <div class="icon"></div>
-        <span>Day <input id="day" class="input-day" type="number" min="1" max="3" style="width: 43px; float: right; top: 8px; position: relative;"></span>
+
+    <div class="settings-container">
+        <h2>Settings</h2>
+        <div class="input-container">
+            <label for="day">Day</label>
+            <input id="day" class="input-day" type="number" min="1" max="3">
+        </div>
+
+        <div class="input-container">
+            <label for="routes">Enable route</label>
+            <select class="input-day" id="routes">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="tools">Tool type</label>
+            <select class="input-day" id="tools">
+                <option value="0">No tools</option>
+                <option value="1">Shovel</option>
+                <option value="2">Metal detector</option>
+                <option value="3" selected>All</option>
+            </select>
+        </div>
+<!--        <div onclick="Cookies.remove('removed-items'); addMarkers()">-->
+<!--            <span>Enable all markers</span>-->
+<!--        </div>-->
     </div>
-    <div class="menu-option">
-        <div class="icon"></div>
-        <span>Enable route <select class="input-day" style="width: 52px; float: right; top: 8px; position: relative;" id="routes"><option value="1">Yes</option><option value="0" selected>No</option></select></span>
-    </div>
-    <div class="menu-option">
-        <div class="icon"></div>
-        <span>Tool type <select class="input-day" style="width: 120px; float: right; top: 8px; position: relative;" id="tools"><option value="0">No tools</option><option value="1">Shovel</option><option value="2">Metal detector</option><option value="3" selected>All</option></select></span>
-    </div>
-    <div class="menu-option" onclick="Cookies.remove('removed-items'); addMarkers()">
-        <div class="icon"></div>
-        <span>Enable all markers</span>
-    </div>
-    <h2>Issues</h2>
-    <div class="menu-option" style=" text-align: center">
-        <div class="icon"></div>
-        <span><a style="color: #eee;" href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">Report issues here!</a></span>
+
+
+    <div class="issues-container">
+        <h2>Issues</h2>
+        <a href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">Report issues here!</a>
     </div>
     <br>
 </div>
