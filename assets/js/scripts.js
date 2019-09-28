@@ -62,8 +62,8 @@ function init()
         $('.remove-button').click(function(e)
         {
             var itemId = $(event.target).data("item");
-            map.removeLayer(visibleMarkers[itemId]);
-
+            //map.removeLayer(visibleMarkers[itemId]);
+            $(visibleMarkers[itemId]._icon).css('opacity', '.35');
             Cookies.set('removed-items', Cookies.get('removed-items') + itemId.toString() + ';');
         });
     });
@@ -165,9 +165,6 @@ function addMarkers()
         if(value.tool != toolType && toolType !== "3")
             return;
 
-        if(decodeURIComponent(Cookies.get('removed-items')).split(';').includes(key.toString()))
-            return;
-
         if(enabledTypes.includes(value.icon))
         {
             if (value.day == day)
@@ -194,6 +191,23 @@ function addMarkers()
         }
     });
     markersLayer.addTo(map);
+
+    removeCollectedMarkers();
+}
+
+function removeCollectedMarkers()
+{
+    console.log(decodeURIComponent(Cookies.get('removed-items')));
+
+    $.each(markers, function (key, value)
+    {
+        if (decodeURIComponent(Cookies.get('removed-items')).split(';').includes(key.toString()))
+        {
+            if(visibleMarkers[key] != null) {
+                $(visibleMarkers[key]._icon).css('opacity', '.35');
+            }
+        }
+    });
 }
 
 //tests
