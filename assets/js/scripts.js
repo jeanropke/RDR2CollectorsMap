@@ -4,10 +4,15 @@ var map;
 var markers = [];
 var markersLayer = new L.LayerGroup();
 var searchTerms = [];
-var enabledTypes = [
+
+//var enabledTypes = [
+var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
     'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands'
 ];
+var enabledTypes = categories;
+var categoryButtons = document.getElementsByClassName("menu-option clickable");
+
 var marathonData = [];
 var polylines;
 var menuOpened = false;
@@ -256,3 +261,14 @@ $('.menu-toggle').on('click', function()
         $('.menu-toggle').text('>');
     }
 });
+
+
+//a hide/show all function
+function showall() {for (i of categoryButtons){i.children[1].classList.remove("disabled")} enabledTypes = categories; addMarkers()}
+function hideall() {for (i of categoryButtons){i.children[1].classList.add("disabled")} enabledTypes = []; addMarkers()}
+
+
+
+
+
+
