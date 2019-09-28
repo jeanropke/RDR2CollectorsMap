@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
     <script src="assets/js/leaflet.awesome-markers.min.js"></script>
     <link rel="stylesheet" href="assets/css/leaflet.awesome-markers.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -14,15 +16,17 @@
 </head>
 
 <body onload="init()">
-<!--div id="bar">
-    <p>
-        Day <input id="day" class="input-day" type="number" min="1" max="3"> / <input class="input-day" type="text" id="search" style="width: 200px;" placeholder="Search items. Separated by ;" autocomplete="off"> / Enable route <select class="input-day" style="width: 60px" id="routes"><option value="1">Yes</option><option value="0" selected>No</option></select></p>
-</div-->
 <div class="side-menu">
     <h2>Collectables</h2>
-    
-    <div class="menu-option" onclick="hideall()">Hide all items</div>
-    <div class="menu-option" onclick="showall()">Show all items</div>
+
+    <div class="menu-option" onclick="hideall()">
+        <div class="icon" style="background-image: url(./icon/hide.png)"></div>
+        <span>Hide all items</span>
+    </div>
+    <div class="menu-option" onclick="showall()">
+        <div class="icon" style="background-image: url(./icon/show.png)"></div>
+        <span>Show all items</span>
+    </div>
     
     <div class="menu-option clickable" data-type="american-flowers">
         <div class="icon" style="background-image: url(./icon/american-flowers.png)"></div>
@@ -98,6 +102,10 @@
         <div class="icon"></div>
         <span>Tool type <select class="input-day" style="width: 120px; float: right; top: 8px; position: relative;" id="tools"><option value="0">No tools</option><option value="1">Shovel</option><option value="2">Metal detector</option><option value="3" selected>All</option></select></span>
     </div>
+    <div class="menu-option" onclick="Cookies.remove('removed-items'); addMarkers()">
+        <div class="icon"></div>
+        <span>Enable all markers</span>
+    </div>
     <h2>Issues</h2>
     <div class="menu-option" style=" text-align: center">
         <div class="icon"></div>
@@ -107,7 +115,7 @@
 </div>
 <div class="menu-toggle">></div>
 <div id="map"></div>
-<script src="assets/js/scripts.js?nocache=3"></script>
+<script src="assets/js/scripts.js?nocache=4"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
 <script>

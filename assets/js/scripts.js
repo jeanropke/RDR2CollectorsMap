@@ -4,8 +4,7 @@ var map;
 var markers = [];
 var markersLayer = new L.LayerGroup();
 var searchTerms = [];
-
-//var enabledTypes = [
+var visibleMarkers = [];
 var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
     'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands'
@@ -13,22 +12,19 @@ var categories = [
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
-var marathonData = [];
+var routesData = [];
 var polylines;
-var menuOpened = false;
 var toolType = '3'; //All type of tools
 
 function init()
 {
+    if(typeof Cookies.get('removed-items') === 'undefined')
+        Cookies.set('removed-items', '');
     initMenu();
 
     var minZoom = 2;
     var maxZoom = 7;
 
-
-
-
-    //'https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg'
     var defaultLayer = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true});
     var detailLayer = L.tileLayer('assets/maps/dark/{z}/{x}_{y}.jpg', { noWrap: true});
 
@@ -60,6 +56,16 @@ function init()
         dev.push([lat, lng]);
         L.polyline(dev).addTo(map);
         //console.log(`{"day": "${day}","icon": "american-flowers","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
+    });
+
+    map.on('popupopen', function() {
+        $('.remove-button').click(function(e)
+        {
+            var itemId = $(event.target).data("item");
+            map.removeLayer(visibleMarkers[itemId]);
+
+            Cookies.set('removed-items', Cookies.get('removed-items') + itemId.toString() + ';');
+        });
     });
 
     setCurrentDayCycle();
@@ -106,10 +112,10 @@ function setCurrentDayCycle()
 
 function loadRoutesData()
 {
-    marathonData = [];
+    routesData = [];
     $.getJSON("routes.json", {}, function(data)
     {
-        marathonData = data;
+        routesData = data;
         //drawLines();
     });
 }
@@ -117,7 +123,7 @@ function loadRoutesData()
 function drawLines()
 {
     var connections = [];
-    $.each(marathonData, function (key, value)
+    $.each(routesData, function (key, value)
     {
         if(value.day == day)
         {
@@ -151,13 +157,17 @@ function loadMarkers()
 function addMarkers()
 {
     markersLayer.clearLayers();
-
+    visibleMarkers = [];
 
     $.each(markers, function (key, value)
     {
 
         if(value.tool != toolType && toolType !== "3")
             return;
+
+        if(decodeURIComponent(Cookies.get('removed-items')).split(';').includes(key.toString()))
+            return;
+
         if(enabledTypes.includes(value.icon))
         {
             if (value.day == day)
@@ -168,13 +178,17 @@ function addMarkers()
                     {
                         if (value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
-                            markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p>`));
+                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p><p class="remove-button" data-item="${key}">Remove from map</p>`) ;
+                            visibleMarkers[key] = tempMarker;
+                            markersLayer.addLayer(tempMarker);
                         }
                     });
                 }
                 else
                 {
-                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p>`)); //.on('click', onClick)
+                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p><p class="remove-button" data-item="${key}">Remove from map</p>`) ;
+                    visibleMarkers[key] = tempMarker;
+                    markersLayer.addLayer(tempMarker);
                 }
             }
         }
