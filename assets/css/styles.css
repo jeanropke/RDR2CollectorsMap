@@ -144,6 +144,7 @@ p {
     padding: 0 5px;
     user-select: none;
     cursor: pointer;
+    line-height: 36px;
 }
 
 .side-menu .menu-option:hover {
@@ -157,6 +158,8 @@ p {
 
 .side-menu .menu-option .icon {
     width: 35px;
+    margin-top: 6px;
+    margin-bottom: -3px;
 }
 
 @media (min-width: 1025px) {
