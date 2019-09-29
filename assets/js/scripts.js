@@ -19,7 +19,7 @@ var toolType = '3'; //All type of tools
 function init()
 {
     if(typeof Cookies.get('removed-items') === 'undefined')
-        Cookies.set('removed-items', '');
+        Cookies.set('removed-items', '', { expires: 1 });
     initMenu();
 
     var minZoom = 2;
@@ -64,7 +64,7 @@ function init()
             var itemId = $(event.target).data("item");
             //map.removeLayer(visibleMarkers[itemId]);
             $(visibleMarkers[itemId]._icon).css('opacity', '.35');
-            Cookies.set('removed-items', Cookies.get('removed-items') + itemId.toString() + ';');
+            Cookies.set('removed-items', Cookies.get('removed-items') + itemId.toString() + ';', { expires: 1 });
         });
     });
 
@@ -108,6 +108,21 @@ function setCurrentDayCycle()
     }
 
     $('#day').val(day);
+
+    //Cookie day not exists? create
+    if(typeof Cookies.get('day') === 'undefined')
+    {
+        Cookies.set('day', day, { expires: 1 });
+    }
+    //if exists, check if the current day isnt in cookies, if is, remove markers
+    else
+    {
+        if(Cookies.get('day') != day.toString())
+        {
+            Cookies.set('day', day, { expires: 1 });
+            Cookies.set('removed-items', '', { expires: 1 });
+        }
+    }
 }
 
 function loadRoutesData()
