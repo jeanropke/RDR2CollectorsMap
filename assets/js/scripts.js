@@ -22,8 +22,6 @@ function init()
     if(typeof Cookies.get('removed-items') === 'undefined')
         Cookies.set('removed-items', '', { expires: 1 });
 
-    initMenu();
-
     disableMarkers = Cookies.get('removed-items').split(';');
 
     var minZoom = 2;
@@ -92,15 +90,6 @@ function init()
     setCurrentDayCycle();
     loadMarkers();
     loadRoutesData();
-
-}
-
-function initMenu()
-{
-    $.each(enabledTypes, function(key, value)
-    {
-        $("div").find(`[data-type='${value}']`).children('span').removeClass('disabled');
-    });
 }
 
 function setCurrentDayCycle()
