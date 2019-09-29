@@ -218,8 +218,8 @@
 	{"text": "egg_eagle_1", "day": "1", "tool": "0", "icon": "bird-eggs", "x": "-68.8671875", "y": "87.828125"},
 	{"text": "egg_eagle_2", "day": "1", "tool": "0", "icon": "bird-eggs", "x": "-29.5703125", "y": "80.9140625"},
 	{"text": "egg_vulture", "day": "1", "tool": "0", "icon": "bird-eggs", "x": "-36.34375", "y": "152.609375"},
-	{"text": "egg_hawk", "day": "1", "tool": "0", "icon": "bird-eggs", "x": "-38.640625", "y": "107.921875"},
-	{"text": "egg_hawk", "day": "1", "tool": "0", "icon": "bird-eggs", "x": "-23.296875", "y": "88.09375"},
+	{"text": "egg_hawk_1", "day": "1", "tool": "0", "icon": "bird-eggs", "x": "-38.640625", "y": "107.921875"},
+	{"text": "egg_hawk_2", "day": "1", "tool": "0", "icon": "bird-eggs", "x": "-23.296875", "y": "88.09375"},
 	{"text": "egg_egret", "day": "1", "tool": "0", "icon": "bird-eggs", "x": "-67.90625", "y": "149.7578125"},
 	{"text": "egg_duck", "day": "1", "tool": "0", "icon": "bird-eggs", "x": "-29.6328125", "y": "154.1796875"},
 	{"text": "egg_goose_1", "day": "1", "tool": "0", "icon": "bird-eggs", "x": "-95.890625", "y": "136.9453125"},
@@ -504,4 +504,6 @@
 	{"text": "bracelet_infanta_turquoise", "day": "3", "tool": "2", "icon": "lost-bracelet", "x": "-78.90625", "y": "133.0703125"},
 	{"text": "bracelet_elliston_carved", "day": "3", "tool": "2", "icon": "lost-bracelet", "x": "-107.96875", "y": "59.3984375"},
 	{"text": "bracelet_hajnal_garnet_bangle", "day": "3", "tool": "0", "icon": "lost-bracelet", "x": "-78.0703125", "y": "90.15625"}
+
+
 ]
