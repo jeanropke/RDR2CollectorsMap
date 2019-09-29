@@ -16,6 +16,8 @@ var routesData = [];
 var polylines;
 var toolType = '3'; //All type of tools
 var isDebug = false;
+var lang = 'en-us';//TODO: save on cookies
+var language = [];
 
 function init()
 {
@@ -87,9 +89,23 @@ function init()
         });
     });
 
+    loadLanguage();
     setCurrentDayCycle();
     loadMarkers();
     loadRoutesData();
+}
+
+function loadLanguage()
+{
+    language = [];
+    $.getJSON(`langs/${lang}.json`, {}, function(data)
+    {
+        $.each(data, function(key, value) {
+            language[value.key] = value.value;
+
+        });
+        addMarkers();
+    });
 }
 
 function setCurrentDayCycle()
@@ -169,7 +185,7 @@ function drawLines()
 function loadMarkers()
 {
     markers = [];
-    $.getJSON("items.json?nocache=1", {}, function(data)
+    $.getJSON("items.json?nocache=2", {}, function(data)
     {
         markers = data;
 
@@ -197,9 +213,13 @@ function addMarkers()
                 {
                     $.each(searchTerms, function (id, term)
                     {
-                        if (value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1)
+                        if (language[value.text+'.name'] == null) {
+                            console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
+                        }
+                        if (language[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
-                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`) ;
+                            console.log('hihi');
+                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${language[value.text+'.name']} - Day ${value.day}</h1><p> ${language[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`) ;
                             visibleMarkers[key] = tempMarker;
                             markersLayer.addLayer(tempMarker);
                         }
@@ -207,7 +227,11 @@ function addMarkers()
                 }
                 else
                 {
-                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`) ;
+                    if (language[value.text+'.name'] == null) {
+                        console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
+                    }
+
+                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${language[value.text+'.name']} - Day ${value.day}</h1><p> ${language[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`) ;
                     visibleMarkers[key] = tempMarker;
                     markersLayer.addLayer(tempMarker);
                 }
@@ -287,6 +311,13 @@ $("#tools").on("change", function()
     addMarkers();
 });
 
+$("#language").on("change", function()
+{
+    lang = $("#language").val();
+    loadLanguage();
+    addMarkers();
+});
+
 $('.menu-option.clickable').on('click', function ()
 {
     var menu = $(this);
@@ -320,8 +351,19 @@ $('.menu-toggle').on('click', function()
 
 
 //a hide/show all function
-function showall() {for (i of categoryButtons){i.children[1].classList.remove("disabled")} enabledTypes = categories; addMarkers()}
-function hideall() {for (i of categoryButtons){i.children[1].classList.add("disabled")} enabledTypes = []; addMarkers()}
+function showall() {
+    for (i of categoryButtons){
+        i.children[1].classList.remove("disabled")
+    }
+    enabledTypes = categories;
+    addMarkers();
+}
+function hideall() {
+    for (i of categoryButtons){
+        i.children[1].classList.add("disabled")
+    } enabledTypes = [];
+    addMarkers();
+}
 
 
 
