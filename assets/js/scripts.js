@@ -5,6 +5,7 @@ var markers = [];
 var markersLayer = new L.LayerGroup();
 var searchTerms = [];
 var visibleMarkers = [];
+var disableMarkers = [];
 var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
     'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands'
@@ -20,7 +21,10 @@ function init()
 {
     if(typeof Cookies.get('removed-items') === 'undefined')
         Cookies.set('removed-items', '', { expires: 1 });
+
     initMenu();
+
+    disableMarkers = Cookies.get('removed-items').split(';');
 
     var minZoom = 2;
     var maxZoom = 7;
@@ -58,13 +62,28 @@ function init()
         //console.log(`{"day": "${day}","icon": "american-flowers","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
     });
 
-    map.on('popupopen', function() {
+    map.on('popupopen', function()
+    {
         $('.remove-button').click(function(e)
         {
             var itemId = $(event.target).data("item");
-            //map.removeLayer(visibleMarkers[itemId]);
-            $(visibleMarkers[itemId]._icon).css('opacity', '.35');
-            Cookies.set('removed-items', Cookies.get('removed-items') + itemId.toString() + ';', { expires: 1 });
+            if(disableMarkers.includes(itemId.toString()))
+            {
+                disableMarkers = $.grep(disableMarkers, function(value) {
+                    return value != itemId.toString();
+                });
+                $(visibleMarkers[itemId]._icon).css('opacity', '1');
+            }
+            else
+            {
+                disableMarkers.push(itemId.toString());
+                $(visibleMarkers[itemId]._icon).css('opacity', '0.35');
+            }
+
+            Cookies.set('removed-items', disableMarkers.join(';'), { expires: 1 });
+
+
+
         });
     });
 
@@ -190,7 +209,7 @@ function addMarkers()
                     {
                         if (value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
-                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p><p class="remove-button" data-item="${key}">Remove from map</p>`) ;
+                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`) ;
                             visibleMarkers[key] = tempMarker;
                             markersLayer.addLayer(tempMarker);
                         }
@@ -198,7 +217,7 @@ function addMarkers()
                 }
                 else
                 {
-                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p><p class="remove-button" data-item="${key}">Remove from map</p>`) ;
+                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${value.name} - Day ${value.day}</h1><p> ${value.desc} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`) ;
                     visibleMarkers[key] = tempMarker;
                     markersLayer.addLayer(tempMarker);
                 }
@@ -216,9 +235,10 @@ function removeCollectedMarkers()
 
     $.each(markers, function (key, value)
     {
-        if (decodeURIComponent(Cookies.get('removed-items')).split(';').includes(key.toString()))
+        if (disableMarkers.includes(key.toString()))
         {
-            if(visibleMarkers[key] != null) {
+            if(visibleMarkers[key] != null)
+            {
                 $(visibleMarkers[key]._icon).css('opacity', '.35');
             }
         }
