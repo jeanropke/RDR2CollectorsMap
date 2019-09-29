@@ -218,7 +218,6 @@ function addMarkers()
                         }
                         if (language[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
-                            console.log('hihi');
                             var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${language[value.text+'.name']} - Day ${value.day}</h1><p> ${language[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`) ;
                             visibleMarkers[key] = tempMarker;
                             markersLayer.addLayer(tempMarker);
@@ -245,7 +244,6 @@ function addMarkers()
 
 function removeCollectedMarkers()
 {
-    console.log(decodeURIComponent(Cookies.get('removed-items')));
 
     $.each(markers, function (key, value)
     {
@@ -263,7 +261,6 @@ function removeCollectedMarkers()
 var dev = [];
 function onClick()
 {
-    console.log(isDebug);
     if(isDebug) {
         dev.push([this._latlng.lat, this._latlng.lng]);
         L.polyline(dev, {'color': '#9a3033'}).addTo(map);
