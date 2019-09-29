@@ -1,4 +1,6 @@
-Localisation contributors
+# Localisation contributors
+
+feel free to contribute
 
 english (en-en.json)
   - jeanropke
