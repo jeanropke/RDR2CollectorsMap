@@ -28,7 +28,7 @@ polish (pl.json)
   - no-one yet!
   
 brazilian (pt-br.json)
-  - no-one yet!
+  - jeanropke
   
 russian (ru.json)
   - no-one yet!
