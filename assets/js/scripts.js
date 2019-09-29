@@ -1,5 +1,4 @@
 var day;
-
 var map;
 var markers = [];
 var markersLayer = new L.LayerGroup();
@@ -16,6 +15,7 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 var routesData = [];
 var polylines;
 var toolType = '3'; //All type of tools
+var isDebug = false;
 
 function init()
 {
@@ -53,14 +53,16 @@ function init()
 
     L.control.layers(baseMaps).addTo(map);
 
-    map.on('click', function(e){
-        var coord = e.latlng;
-        var lat = coord.lat;
-        var lng = coord.lng;
-        dev.push([lat, lng]);
-        L.polyline(dev).addTo(map);
-        //console.log(`{"day": "${day}","icon": "american-flowers","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
-    });
+    if(isDebug) {
+        map.on('click', function (e) {
+            var coord = e.latlng;
+            var lat = coord.lat;
+            var lng = coord.lng;
+            dev.push([lat, lng]);
+            L.polyline(dev).addTo(map);
+            //console.log(`{"day": "${day}","icon": "american-flowers","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
+        });
+    }
 
     map.on('popupopen', function()
     {
@@ -133,7 +135,7 @@ function setCurrentDayCycle()
     {
         Cookies.set('day', day, { expires: 1 });
     }
-    //if exists, check if the current day isnt in cookies, if is, remove markers
+    //if exists, remove markers if the days arent the same
     else
     {
         if(Cookies.get('day') != day.toString())
@@ -150,7 +152,6 @@ function loadRoutesData()
     $.getJSON("routes.json", {}, function(data)
     {
         routesData = data;
-        //drawLines();
     });
 }
 
@@ -249,8 +250,11 @@ function removeCollectedMarkers()
 var dev = [];
 function onClick()
 {
-    dev.push([this._latlng.lat, this._latlng.lng]);
-    L.polyline(dev, {'color': '#9a3033'}).addTo(map);
+    console.log(isDebug);
+    if(isDebug) {
+        dev.push([this._latlng.lat, this._latlng.lng]);
+        L.polyline(dev, {'color': '#9a3033'}).addTo(map);
+    }
 }
 
 $("#day").on("input", function()
