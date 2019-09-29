@@ -108,7 +108,7 @@
     function loadMarkers()
     {
         markers = [];
-        $.getJSON("items.json", {}, function(data)
+        $.getJSON("items-legacy.json", {}, function(data)
         {
             markers = data;
             addMarkers();
