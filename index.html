@@ -3,213 +3,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Red Dead Redemption II Collector Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
     <script src="assets/js/leaflet.awesome-markers.min.js"></script>
     <link rel="stylesheet" href="assets/css/leaflet.awesome-markers.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
 </head>
-<style>
-    body { margin: 0; font-family: 'Segoe UI';}
-    h1 { font-size: 14px }
-    p { margin: 0!important; }
-    #bar { width: 100%; height: 40px; background: #282828; position: fixed; z-index: 10000; color: #f0f0f0;  text-align: center; line-height: 35px; }
-    #map { background: #d2b790; width: 100%; height: 100vh; }
-    .input-day { background: #383838; border: none; width: 30px; padding: 5px; color: #f0f0f0; font-family: 'Segoe UI'; font-size: 14px; }
-</style>
+
 <body onload="init()">
-    <div id="bar"><p><a style="color: #eee" href="index-beta.html">New Version <i style="font-size: 10px">(Beta)</i></a> / Day <input id="day" class="input-day" type="number" min="1" max="3"> / <input class="input-day" type="text" id="search" style="width: 200px;" placeholder="Search items. Separated by ;" autocomplete="off"> / Enable route <select class="input-day" style="width: 60px" id="routes"><option value="1">Yes</option><option value="0" selected>No</option></select> </p></div>
+<div class="side-menu">
+    <h2>Collectables</h2>
+    <div class="hide-show-container">
+        <a href="javascript:void(0);" onclick="hideall()">Hide all</a>
+        <a href="javascript:void(0);" onclick="showall()">Show all</a>
+    </div>
+
+    <div class="menu-option clickable" data-type="american-flowers">
+        <img class="icon" src="./icon/american-flowers.png" />
+        <span>American Wild Flowers</span>
+    </div>
+    <div class="menu-option clickable" data-type="antique-bottles">
+        <img class="icon" src="./icon/antique-bottles.png" />
+        <span>Antique Alcohol Bottles</span>
+    </div>
+    <div class="menu-option clickable" data-type="arrowhead">
+        <img class="icon" src="./icon/arrowhead.png" />
+        <span>Arrowheads</span>
+    </div>
+    <div class="menu-option clickable" data-type="bird-eggs">
+        <img class="icon" src="./icon/bird-eggs.png" />
+        <span>Bird Eggs</span>
+    </div>
+    <div class="menu-option clickable" data-type="coin">
+        <img class="icon" src="./icon/coin.png" />
+        <span>Coins</span>
+    </div>
+    <div class="menu-option clickable" data-type="family-heirlooms">
+        <img class="icon" src="./icon/family-heirlooms.png" />
+        <span>Family Heirlooms</span>
+    </div>
+    <div class="menu-option clickable" data-type="lost-bracelet">
+        <img class="icon" src="./icon/lost-bracelet.png" />
+        <span>Lost Jewelry - Bracelets</span>
+    </div>
+    <div class="menu-option clickable" data-type="lost-earrings">
+        <img class="icon" src="./icon/lost-earrings.png" />
+        <span>Lost Jewelry - Earrings</span>
+    </div>
+    <div class="menu-option clickable" data-type="lost-necklaces">
+        <img class="icon" src="./icon/lost-necklaces.png" />
+        <span>Lost Jewelry - Necklaces</span>
+    </div>
+    <div class="menu-option clickable" data-type="lost-ring">
+        <img class="icon" src="./icon/lost-ring.png" />
+        <span>Lost Jewelry - Rings</span>
+    </div>
+    <div class="menu-option clickable" data-type="card-cups">
+        <img class="icon" src="./icon/card-cups.png" />
+        <span>Tarot Cards - Cups</span>
+    </div>
+    <div class="menu-option clickable" data-type="card-pentacles">
+        <img class="icon" src="./icon/card-pentacles.png" />
+        <span>Tarot Cards - Pentacles</span>
+    </div>
+    <div class="menu-option clickable" data-type="card-swords">
+        <img class="icon" src="./icon/card-swords.png" />
+        <span>Tarot Cards - Swords</span>
+    </div>
+    <div class="menu-option clickable" data-type="card-wands">
+        <img class="icon" src="./icon/card-wands.png" />
+        <span>Tarot Cards - Wands</span>
+    </div>
+    <div class="search-container">
+        <h2>Search</h2>
+        <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
+    </div>
+
+    <div class="settings-container">
+        <h2>Settings</h2>
+        <div class="input-container">
+            <label for="day">Day</label>
+            <input id="day" class="input-day" type="number" min="1" max="3">
+        </div>
+        <div class="input-container">
+            <label for="tools">Tool type</label>
+            <select class="input-day" id="tools">
+                <option value="0">No tools</option>
+                <option value="1">Shovel</option>
+                <option value="2">Metal detector</option>
+                <option value="3" selected>All</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="tools">Language</label>
+            <select class="input-day" id="language">
+                <option value="en-us">English</option>
+                <option value="pt-br">Português</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="routes">Enable route</label>
+            <select class="input-day" id="routes">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="routes">Enable custom route</label>
+            <select class="input-day" id="custom-routes">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="issues-container">
+        <h2>Issues</h2>
+        <a href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">Report issues here!</a>
+    </div>
+    <div class="hide-show-container">
+        <a href="./index-legacy.html">Return to legacy version!</a>
+    </div>
+    <br>
+</div>
+<div class="menu-toggle">></div>
 <div id="map"></div>
-<script>
-    var day;
-
-    var map;
-    var markers = [];
-    var markersLayer = new L.LayerGroup();
-    var searchTerms = [];
-    var marathonData = [];
-    var polylines;
-
-    function init()
-    {
-        var minZoom = 2;
-        var maxZoom = 7;
-
-        // create the map
-        map = L.map('map', {
-            minZoom: minZoom,
-            maxZoom: maxZoom,
-            zoomControl: false,
-            crs: L.CRS.Simple,
-        }).setView([-70, 111.75], 3);
-
-        L.control.zoom({
-            position:'bottomright'
-        }).addTo(map);
-
-        L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
-            noWrap: true
-        }).addTo(map);
-
-        map.on('click', function(e){
-            var coord = e.latlng;
-            var lat = coord.lat;
-            var lng = coord.lng;
-            //dev.push([lat, lng]);
-            //L.polyline(dev).addTo(map);
-            //console.log(`{"day": "${day}","icon": "american-flowers","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
-        });
-
-
-        setCurrentDayCycle();
-        loadMarkers();
-
-
-    }
-
-    function setCurrentDayCycle()
-    {
-        //day1: 2 4 6
-        //day2: 0 3
-        //day3: 1 5
-        var weekDay = new Date().getUTCDay();
-        switch(weekDay)
-        {
-            case 2: //tuesday
-            case 4: //thursday
-            case 6: //saturday
-                day = 1;
-                break;
-
-            case 0: //sunday
-            case 3: //wednesday
-                day = 2;
-                break;
-
-            case 1: //monday
-            case 5: //friday
-                day = 3;
-                break;
-        }
-
-        $('#day').val(day);
-    }
-
-    function loadRoutesData()
-    {
-        marathonData = [];
-        $.getJSON("routes.json", {}, function(data)
-        {
-            marathonData = data;
-        });
-    }
-
-    function drawLines()
-    {
-        var connections = [];
-        $.each(marathonData, function (key, value)
-        {
-            if(value.day == day)
-            {
-                connections.push(value.data);
-            }
-        });
-
-        if (polylines instanceof L.Polyline)
-        {
-            map.removeLayer(polylines);
-        }
-
-        polylines = L.polyline(connections);
-        map.addLayer(polylines);
-
-    }
-
-
-    function loadMarkers()
-    {
-        markers = [];
-        $.getJSON("items-legacy.json", {}, function(data)
-        {
-            markers = data;
-
-            addMarkers();
-        });
-
-    }
-
-    function addMarkers()
-    {
-        markersLayer.clearLayers();
-
-
-        $.each(markers, function (key, value)
-        {
-            if(value.day == day)
-            {
-                if(searchTerms.length > 0)
-                {
-                    $.each(searchTerms, function(id, term)
-                    {
-                        if(value.name.toLowerCase().indexOf(term.toLowerCase()) !== -1)
-                        {
-                            markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_'+value.day}) }).bindPopup('<h1>' + value.name + " - Day " + value.day + '</h1><p>' + value.desc + '</p>'));
-                        }
-                    });
-                }
-                else
-                {
-                    markersLayer.addLayer(L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_'+value.day}) }).bindPopup(`<h1> ${value.name} - Day ${value.day} </h1><p> ${value.desc} </p>`)); //.on('click', onClick)
-                }
-            }
-        });
-        markersLayer.addTo(map);
-        loadRoutesData();
-
-    }
-
-    //tests
-    //var dev = [];
-    //function onClick()
-    //{
-    //    dev.push([this._latlng.lat, this._latlng.lng]);
-    //    L.polyline(dev).addTo(map);
-    //}
-
-    $("#day").on("input", function()
-    {
-        day = $('#day').val();
-        addMarkers();
-    });
-
-    $("#search").on("input", function()
-    {
-        searchTerms = [];
-        $.each($('#search').val().split(';'), function(key, value)
-        {
-            if($.inArray(value, searchTerms) == -1)
-            {
-                if(value.length > 0)
-                    searchTerms.push(value);
-            }
-        });
-        addMarkers();
-    });
-    
-    $("#routes").on("change", function()
-    {
-        if($("#routes").val() == 0) {
-            if (polylines instanceof L.Polyline) {
-                map.removeLayer(polylines);
-            }
-        }
-        else {
-            drawLines();
-        }
-    });
-</script>
-
+<script src="assets/js/scripts.js?nocache=8"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
 <script>
