@@ -171,7 +171,7 @@
 	{"text": "coin_draped_bust_silver_dollar", "day": "1", "tool": "2", "icon": "coin", "x": "-54.609375", "y": "149.03125"},
 	{"text": "coin_one_cent_token", "day": "1", "tool": "2", "icon": "coin", "x": "-83.828125", "y": "84.8125"},
 	{"text": "coin_silver_dollar", "day": "1", "tool": "2", "icon": "coin", "x": "-110.328125", "y": "56.2578125"},
-	{"text": "coin_new_yorke_token", "day": "1", "tool": "2", "icon": "coin", "x": "-52.6328125", "y": "68.6796875"},
+	{"text": "coin_new_yorke_token", "day": "1", "tool": "2", "icon": "coin", "x": "-52.46875", "y": "69.1015625"},
 	{"text": "coin_five_dollar_bechtler", "day": "1", "tool": "2", "icon": "coin", "x": "-32.0234375", "y": "129.6640625"},
 	{"text": "coin_quarter", "day": "1", "tool": "2", "icon": "coin", "x": "-59.390625", "y": "125.6484375"},
 	{"text": "coin_gold_dollar_coin", "day": "1", "tool": "2", "icon": "coin", "x": "-84.5390625", "y": "129.7734375"},
