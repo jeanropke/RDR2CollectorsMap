@@ -7,7 +7,7 @@ english (en-en.json)
   - iliggalodin
   
 german (de-de.json)
-  - no-one yet!
+  - flameango
   
 spanish (es-es.json)
   - no-one yet!
