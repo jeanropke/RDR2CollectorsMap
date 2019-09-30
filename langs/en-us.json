@@ -2,7 +2,7 @@
 	{"key": "cups_ace.name", "value": "Ace of Cups"},
 	{"key": "cups_ace_1.desc", "value": ""},
 	{"key": "cups_ace_2.desc", "value": ""},
-	{"key": "cups_ace_3.desc", "value": ""},
+	{"key": "cups_ace_3.desc", "value": "On the nightstand in the right bedroom."},
 
 	{"key": "cups_two.name", "value": "Two of Cups"},
 	{"key": "cups_two_1.desc", "value": ""},
@@ -32,12 +32,12 @@
 	{"key": "cups_seven.name", "value": "Seven of Cups"},
 	{"key": "cups_seven_1.desc", "value": ""},
 	{"key": "cups_seven_2.desc", "value": "Inside the bedroom on the nightstand behind the door."},
-	{"key": "cups_seven_3.desc", "value": ""},
+	{"key": "cups_seven_3.desc", "value": "Inside the house in a open cupboard."},
 
 	{"key": "cups_eight.name", "value": "Eight of Cups"},
 	{"key": "cups_eight_1.desc", "value": ""},
 	{"key": "cups_eight_2.desc", "value": ""},
-	{"key": "cups_eight_3.desc", "value": ""},
+	{"key": "cups_eight_3.desc", "value": "In the outhouse by the river."},
 
 	{"key": "cups_nine.name", "value": "Nine of Cups"},
 	{"key": "cups_nine_1.desc", "value": ""},
@@ -52,7 +52,7 @@
 	{"key": "cups_knight.name", "value": "Knight of Cups"},
 	{"key": "cups_knight_1.desc", "value": "Inside the eastern cabin."},
 	{"key": "cups_knight_2.desc", "value": ""},
-	{"key": "cups_knight_3.desc", "value": ""},
+	{"key": "cups_knight_3.desc", "value": "On a crate under the awnining of the barn."},
 
 	{"key": "cups_page.name", "value": "Page of Cups"},
 	{"key": "cups_page_1.desc", "value": ""},
@@ -62,7 +62,7 @@
 	{"key": "cups_queen.name", "value": "Queen of Cups"},
 	{"key": "cups_queen_1.desc", "value": ""},
 	{"key": "cups_queen_2.desc", "value": "Inside the mine."},
-	{"key": "cups_queen_3.desc", "value": ""},
+	{"key": "cups_queen_3.desc", "value": "Inside the mine on a crate next to a lantern.<br/><img src=\"https://i.imgur.com/ciqlFTG.png\" style=\"width:200px;\">"},
 
 	{"key": "cups_king.name", "value": "King of Cups"},
 	{"key": "cups_king_1.desc", "value": ""},
@@ -77,12 +77,12 @@
 	{"key": "swords_two.name", "value": "Two of Swords"},
 	{"key": "swords_two_1.desc", "value": "On the table on the front porch."},
 	{"key": "swords_two_2.desc", "value": ""},
-	{"key": "swords_two_3.desc", "value": ""},
+	{"key": "swords_two_3.desc", "value": "On crates next to a wagon."},
 
 	{"key": "swords_three.name", "value": "Three of Swords"},
 	{"key": "swords_three_1.desc", "value": ""},
 	{"key": "swords_three_2.desc", "value": ""},
-	{"key": "swords_three_3.desc", "value": ""},
+	{"key": "swords_three_3.desc", "value": "In the theatre tent on a chair in the front row."},
 
 	{"key": "swords_four.name", "value": "Four of Swords"},
 	{"key": "swords_four_1.desc", "value": ""},
@@ -97,7 +97,7 @@
 	{"key": "swords_six.name", "value": "Six of Swords"},
 	{"key": "swords_six_1.desc", "value": ""},
 	{"key": "swords_six_2.desc", "value": ""},
-	{"key": "swords_six_3.desc", "value": ""},
+	{"key": "swords_six_3.desc", "value": "on top of the windmill tower."},
 
 	{"key": "swords_seven.name", "value": "Seven of Swords"},
 	{"key": "swords_seven_1.desc", "value": "Next to a blue barrel on the south west dock."},
@@ -122,7 +122,7 @@
 	{"key": "swords_knight.name", "value": "Knight of Swords"},
 	{"key": "swords_knight_1.desc", "value": ""},
 	{"key": "swords_knight_2.desc", "value": ""},
-	{"key": "swords_knight_3.desc", "value": ""},
+	{"key": "swords_knight_3.desc", "value": "In a boat."},
 
 	{"key": "swords_page.name", "value": "Page of Swords"},
 	{"key": "swords_page_1.desc", "value": "On the windowsil of the outhouse."},
@@ -132,7 +132,7 @@
 	{"key": "swords_queen.name", "value": "Queen of Swords"},
 	{"key": "swords_queen_1.desc", "value": ""},
 	{"key": "swords_queen_2.desc", "value": ""},
-	{"key": "swords_queen_3.desc", "value": ""},
+	{"key": "swords_queen_3.desc", "value": "On the small coffee table."},
 
 	{"key": "swords_king.name", "value": "King of Swords"},
 	{"key": "swords_king_1.desc", "value": "On top of the well cover."},
@@ -167,7 +167,7 @@
 	{"key": "wands_six.name", "value": "Six of Wands"},
 	{"key": "wands_six_1.desc", "value": ""},
 	{"key": "wands_six_2.desc", "value": ""},
-	{"key": "wands_six_3.desc", "value": ""},
+	{"key": "wands_six_3.desc", "value": "On a shelf in the back room."},
 
 	{"key": "wands_seven.name", "value": "Seven of Wands"},
 	{"key": "wands_seven_1.desc", "value": ""},
@@ -192,7 +192,7 @@
 	{"key": "wands_knight.name", "value": "Knight of Wands"},
 	{"key": "wands_knight_1.desc", "value": ""},
 	{"key": "wands_knight_2.desc", "value": ""},
-	{"key": "wands_knight_3.desc", "value": ""},
+	{"key": "wands_knight_3.desc", "value": "On the edge of the water basin."},
 
 	{"key": "wands_page.name", "value": "Page of Wands"},
 	{"key": "wands_page_1.desc", "value": ""},
@@ -206,8 +206,8 @@
 
 	{"key": "wands_king.name", "value": "King of Wands"},
 	{"key": "wands_king_1.desc", "value": ""},
-	{"key": "wands_king_2.desc", "value": ""},
-	{"key": "wands_king_3.desc", "value": "Inside the cave."},
+	{"key": "wands_king_2.desc", "value": "Inside the cave."},
+	{"key": "wands_king_3.desc", "value": "ON the ship near the steering wheel."},
 
 	{"key": "pentacles_ace.name", "value": "Ace of Pentacles"},
 	{"key": "pentacles_ace_1.desc", "value": ""},
@@ -232,7 +232,7 @@
 	{"key": "pentacles_five.name", "value": "Five of Pentacles"},
 	{"key": "pentacles_five_1.desc", "value": ""},
 	{"key": "pentacles_five_2.desc", "value": ""},
-	{"key": "pentacles_five_3.desc", "value": ""},
+	{"key": "pentacles_five_3.desc", "value": "In the windowsil with with barrels infront of it."},
 
 	{"key": "pentacles_six.name", "value": "Six of Pentacles"},
 	{"key": "pentacles_six_1.desc", "value": ""},
@@ -337,7 +337,7 @@
 	{"key": "coin_gold_eagle.name", "value": "1797 Gold Eagle Coin"},
 	{"key": "coin_gold_eagle_1.desc", "value": "🧲 "},
 	{"key": "coin_gold_eagle_2.desc", "value": "🧲 "},
-	{"key": "coin_gold_eagle_3.desc", "value": "🧲 "},
+	{"key": "coin_gold_eagle_3.desc", "value": "🧲 West side of the large rock."},
 
 	{"key": "coin_liberty_quarter.name", "value": "1792 Liberty Quarter Coin"},
 	{"key": "coin_liberty_quarter_1.desc", "value": "🧲 "},
@@ -352,12 +352,12 @@
 	{"key": "coin_penny.name", "value": "1789 Penny Coin"},
 	{"key": "coin_penny_1.desc", "value": "🧲 "},
 	{"key": "coin_penny_2.desc", "value": "🧲 On the right side of the dead tree."},
-	{"key": "coin_penny_3.desc", "value": "🧲 "},
+	{"key": "coin_penny_3.desc", "value": "🧲 Next to a broken down wagon."},
 
 	{"key": "egg_spoonbill.name", "value": "Spoonbill Egg"},
 	{"key": "egg_spoonbill_1.desc", "value": ""},
 	{"key": "egg_spoonbill_2.desc", "value": ""},
-	{"key": "egg_spoonbill_3.desc", "value": ""},
+	{"key": "egg_spoonbill_3.desc", "value": "In a tree. Shoot down with bow or varmin rifle."},
 
 	{"key": "egg_heron.name", "value": "Heron Egg"},
 	{"key": "egg_heron_1.desc", "value": ""},
@@ -422,7 +422,7 @@
 	{"key": "bottle_irish_whiskey.name", "value": "Irish Whiskey Bottle"},
 	{"key": "bottle_irish_whiskey_1.desc", "value": ""},
 	{"key": "bottle_irish_whiskey_2.desc", "value": ""},
-	{"key": "bottle_irish_whiskey_3.desc", "value": ""},
+	{"key": "bottle_irish_whiskey_3.desc", "value": "Inside on the table."},
 
 	{"key": "bottle_scotch_whisky.name", "value": "Scotch Whisky Bottle"},
 	{"key": "bottle_scotch_whisky_1.desc", "value": ""},
@@ -442,7 +442,7 @@
 	{"key": "bottle_old_tom_gin.name", "value": "Old Tom Gin Bottle"},
 	{"key": "bottle_old_tom_gin_1.desc", "value": "West side of the house in the broken porch."},
 	{"key": "bottle_old_tom_gin_2.desc", "value": ""},
-	{"key": "bottle_old_tom_gin_3.desc", "value": ""},
+	{"key": "bottle_old_tom_gin_3.desc", "value": "In the sink cupboard."},
 
 	{"key": "bottle_caribbean_rum.name", "value": "Caribbean Rum Bottle"},
 	{"key": "bottle_caribbean_rum_1.desc", "value": ""},
@@ -456,8 +456,8 @@
 
 	{"key": "bottle_london_dry_gin.name", "value": "London Dry Gin Bottle"},
 	{"key": "bottle_london_dry_gin_1.desc", "value": ""},
-	{"key": "bottle_london_dry_gin_2.desc", "value": ""},
-	{"key": "bottle_london_dry_gin_3.desc", "value": "Inside the tree."},
+	{"key": "bottle_london_dry_gin_2.desc", "value": "Inside the tree."},
+	{"key": "bottle_london_dry_gin_3.desc", "value": "Inside the lighthouse."},
 
 	{"key": "arrowhead_rough.name", "value": "Rough Arrowhead"},
 	{"key": "arrowhead_rough_1.desc", "value": ""},
@@ -552,7 +552,7 @@
 	{"key": "heirlooms_goat_hair_brush.name", "value": "Goat Hair Brush Heirloom"},
 	{"key": "heirlooms_goat_hair_brush_1.desc", "value": ""},
 	{"key": "heirlooms_goat_hair_brush_2.desc", "value": ""},
-	{"key": "heirlooms_goat_hair_brush_3.desc", "value": ""},
+	{"key": "heirlooms_goat_hair_brush_3.desc", "value": "In a chest on the lower deck of the ship."},
 
 	{"key": "heirlooms_ebony_hairpin.name", "value": "Ebony Hairpin Heirloom"},
 	{"key": "heirlooms_ebony_hairpin_1.desc", "value": ""},
@@ -572,7 +572,7 @@
 	{"key": "heirlooms_tortoiseshell_comb.name", "value": "Tortoiseshell Comb Heirloom"},
 	{"key": "heirlooms_tortoiseshell_comb_1.desc", "value": ""},
 	{"key": "heirlooms_tortoiseshell_comb_2.desc", "value": ""},
-	{"key": "heirlooms_tortoiseshell_comb_3.desc", "value": ""},
+	{"key": "heirlooms_tortoiseshell_comb_3.desc", "value": "In the house on the wash table."},
 
 	{"key": "heirlooms_ivory_comb.name", "value": "Ivory Comb Heirloom"},
 	{"key": "heirlooms_ivory_comb_1.desc", "value": ""},
@@ -712,7 +712,7 @@
 	{"key": "necklace_blakely_miniatue.name", "value": "Blakely Miniatue Necklace"},
 	{"key": "necklace_blakely_miniatue_1.desc", "value": "In a chest on a ridge next to a rotting elk."},
 	{"key": "necklace_blakely_miniatue_2.desc", "value": "Inside viking tomb."},
-	{"key": "necklace_blakely_miniatue_3.desc", "value": "🧲 "},
+	{"key": "necklace_blakely_miniatue_3.desc", "value": "🧲 Between a tree and a fallen tree."},
 
 	{"key": "necklace_richelieu_amethyst.name", "value": "Richelieu Amethyst Necklace"},
 	{"key": "necklace_richelieu_amethyst_1.desc", "value": "In a lockbox in the worn down shack."},
@@ -792,7 +792,7 @@
 	{"key": "earring_beauchene_ruby.name", "value": "Beauchene Ruby Earrings"},
 	{"key": "earring_beauchene_ruby_1.desc", "value": "🧲 "},
 	{"key": "earring_beauchene_ruby_2.desc", "value": "🧲 Halfway up the cliffside. Between two trees."},
-	{"key": "earring_beauchene_ruby_3.desc", "value": "🧲 "},
+	{"key": "earring_beauchene_ruby_3.desc", "value": "🧲 On the west side of the island near a bush."},
 
 	{"key": "earring_endicott_diamond.name", "value": "Endicott Diamond Earrings"},
 	{"key": "earring_endicott_diamond_1.desc", "value": "🧲 "},
