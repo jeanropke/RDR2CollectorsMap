@@ -19,6 +19,8 @@ var customRouteEnabled = false;
 var customRoute = [];
 var customRouteConnections = [];
 
+var showCoordinates = false;
+
 var toolType = '3'; //All type of tools
 var lang;
 var languageData = [];
@@ -65,10 +67,10 @@ function init()
 
     L.control.layers(baseMaps).addTo(map);
 
-        map.on('click', function (e)
-        {
-            addCoordsOnMap(e);
-        });
+    map.on('click', function (e)
+    {
+        addCoordsOnMap(e);
+    });
 
     map.on('popupopen', function()
     {
@@ -265,6 +267,33 @@ function removeCollectedMarkers()
 
 function addCoordsOnMap(coords)
 {
+    // Show clicked coordinates (like google maps)
+    if (showCoordinates) {
+        if (document.querySelectorAll('.lat-lng-container').length < 1) {
+            var container = document.createElement('div');
+            var innerContainer = document.createElement('div');
+            var closeButton = document.createElement('button');
+            $(container).addClass('lat-lng-container').append(innerContainer);
+            $(closeButton).attr('id', 'lat-lng-container-close-button').html('&times;');
+            $(innerContainer).html('<p>lat: ' + coords.latlng.lat + '<br> lng: ' + coords.latlng.lng + '</p>').append(closeButton);
+
+            $('body').append(container);
+
+            $('#lat-lng-container-close-button').click(function() {
+                $(container).css({
+                    display: 'none',
+                })
+            })
+        } else {
+            $('.lat-lng-container').css({
+                display: '',
+            });
+            $('.lat-lng-container div p').html('lat: ' + coords.latlng.lat + '<br> lng: ' + coords.latlng.lng);
+        }
+    }
+
+
+    // Add custom routes
     if(customRouteEnabled)
     {
         if(event.ctrlKey)
@@ -274,7 +303,7 @@ function addCoordsOnMap(coords)
 
         if (customRoute instanceof L.Polyline)
         {
-           map.removeLayer(customRoute);
+            map.removeLayer(customRoute);
         }
 
         customRoute = L.polyline(customRouteConnections);
@@ -328,6 +357,10 @@ $("#custom-routes").on("change", function()
     customRouteConnections = [];
     map.removeLayer(customRoute);
     customRouteEnabled = $("#custom-routes").val() == '1';
+});
+
+$('#show-coordinates').on('change', function() {
+    showCoordinates = $('#show-coordinates').val() == '1';
 });
 
 $("#language").on("change", function()
@@ -385,9 +418,3 @@ function hideall() {
     enabledTypes = [];
     addMarkers();
 }
-
-
-
-
-
-

@@ -162,6 +162,41 @@ p {
     margin-bottom: -3px;
 }
 
+.lat-lng-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 900;
+}
+
+.lat-lng-container div {
+    position: relative;
+    background-color: #FFFAF0;
+    padding: 13px 2px;
+    border-radius: 3px;
+    text-align: center;
+    max-width: 200px;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.lat-lng-container #lat-lng-container-close-button {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    font-size: 16px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+/* Fix buttons showing on top of sidebar on mobile menu */
+.leaflet-top, .leaflet-bottom {
+    z-index: 998;
+}
+
 @media (min-width: 1025px) {
     .side-menu {
         width: 300px;
