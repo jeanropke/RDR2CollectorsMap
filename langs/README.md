@@ -34,7 +34,7 @@ russian (ru.json)
   - no-one yet!
   
 chinese simplified (zh-s.json)
-  - no-one yet!
+  - yamazakitouma
   
 chinese traditional (zh-t.json)
   - no-one yet!
