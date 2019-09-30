@@ -22,6 +22,7 @@ var customRouteConnections = [];
 var showCoordinates = false;
 
 var toolType = '3'; //All type of tools
+var avaliableLanguages = ['en-us', 'pt-br', 'pl', 'zh-s'];
 var lang;
 var languageData = [];
 
@@ -32,8 +33,12 @@ function init()
 
     if(typeof Cookies.get('language') === 'undefined')
     {
-        Cookies.set('language', 'en-us');
+        if(avaliableLanguages.includes(navigator.language.toLowerCase()))
+            Cookies.set('language', navigator.language.toLowerCase());
+        else
+            Cookies.set('language', 'en-us');
     }
+
 
     lang = Cookies.get('language');
 
