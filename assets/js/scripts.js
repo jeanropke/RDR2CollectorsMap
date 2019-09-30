@@ -325,10 +325,10 @@ $("#search").on("input", function()
     searchTerms = [];
     $.each($('#search').val().split(';'), function(key, value)
     {
-        if($.inArray(value, searchTerms) == -1)
+        if($.inArray(value.trim(), searchTerms) == -1)
         {
             if(value.length > 0)
-                searchTerms.push(value);
+                searchTerms.push(value.trim());
         }
     });
     addMarkers();
