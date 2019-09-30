@@ -92,14 +92,6 @@
             <label for="day">Day</label>
             <input id="day" class="input-day" type="number" min="1" max="3">
         </div>
-
-        <div class="input-container">
-            <label for="routes">Enable route</label>
-            <select class="input-day" id="routes">
-                <option value="1">Yes</option>
-                <option value="0" selected>No</option>
-            </select>
-        </div>
         <div class="input-container">
             <label for="tools">Tool type</label>
             <select class="input-day" id="tools">
@@ -110,12 +102,26 @@
             </select>
         </div>
         <div class="input-container">
-        <label for="tools">Language</label>
-        <select class="input-day" id="language">
-            <option value="en-us" selected>English</option>
-            <option value="pt-br">Português</option>
-        </select>
-    </div>
+            <label for="tools">Language</label>
+            <select class="input-day" id="language">
+                <option value="en-us">English</option>
+                <option value="pt-br">Português</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="routes">Enable route</label>
+            <select class="input-day" id="routes">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="routes">Enable custom route</label>
+            <select class="input-day" id="custom-routes">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
     </div>
 
 
@@ -127,7 +133,7 @@
 </div>
 <div class="menu-toggle">></div>
 <div id="map"></div>
-<script src="assets/js/scripts.js?nocache=7"></script>
+<script src="assets/js/scripts.js?nocache=8"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
 <script>

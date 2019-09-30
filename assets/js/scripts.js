@@ -14,8 +14,12 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var routesData = [];
 var polylines;
+
+var customRouteEnabled = false;
+var customRoute = [];
+var customRouteConnections = [];
+
 var toolType = '3'; //All type of tools
-var isDebug = true;
 var lang;
 var languageData = [];
 
@@ -61,16 +65,10 @@ function init()
 
     L.control.layers(baseMaps).addTo(map);
 
-    if(isDebug) {
-        map.on('click', function (e) {
-            var coord = e.latlng;
-            var lat = coord.lat;
-            var lng = coord.lng;
-            customRoute.push([lat, lng]);
-            L.polyline(customRoute).addTo(map);
-            //console.log(`{"day": "${day}","icon": "american-flowers","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
+        map.on('click', function (e)
+        {
+            addCoordsOnMap(e);
         });
-    }
 
     map.on('popupopen', function()
     {
@@ -226,7 +224,7 @@ function addMarkers()
                         }
                         if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
-                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', onClick);
+                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
                             visibleMarkers[key] = tempMarker;
                             markersLayer.addLayer(tempMarker);
                         }
@@ -238,7 +236,7 @@ function addMarkers()
                         console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
                     }
 
-                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', onClick);
+                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
                     visibleMarkers[key] = tempMarker;
                     markersLayer.addLayer(tempMarker);
                 }
@@ -265,13 +263,22 @@ function removeCollectedMarkers()
     });
 }
 
-//tests
-var customRoute = [];
-function onClick()
+function addCoordsOnMap(coords)
 {
-    if(isDebug) {
-        customRoute.push([this._latlng.lat, this._latlng.lng]);
-        L.polyline(customRoute).addTo(map);
+    if(customRouteEnabled)
+    {
+        if(event.ctrlKey)
+            customRouteConnections.pop();
+        else
+            customRouteConnections.push(coords.latlng);
+
+        if (customRoute instanceof L.Polyline)
+        {
+           map.removeLayer(customRoute);
+        }
+
+        customRoute = L.polyline(customRouteConnections);
+        map.addLayer(customRoute);
     }
 }
 
@@ -314,6 +321,13 @@ $("#tools").on("change", function()
 {
     toolType = $("#tools").val();
     addMarkers();
+});
+
+$("#custom-routes").on("change", function()
+{
+    customRouteConnections = [];
+    map.removeLayer(customRoute);
+    customRouteEnabled = $("#custom-routes").val() == '1';
 });
 
 $("#language").on("change", function()
@@ -367,7 +381,8 @@ function showall() {
 function hideall() {
     for (i of categoryButtons){
         i.children[1].classList.add("disabled")
-    } enabledTypes = [];
+    }
+    enabledTypes = [];
     addMarkers();
 }
 
