@@ -122,6 +122,12 @@ function init()
     setCurrentDayCycle();
     loadRoutesData();
 
+
+    var pos = [-53.2978125, 68.7596875];
+    var offset = 1.15;
+    L.imageOverlay('overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
+
+
 }
 
 function loadLanguage()
