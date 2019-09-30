@@ -36,8 +36,8 @@
 
 	{"key": "cups_eight.name", "value": "Eight of Cups"},
 	{"key": "cups_eight_1.desc", "value": ""},
-	{"key": "cups_eight_2.desc", "value": ""},
-	{"key": "cups_eight_3.desc", "value": "In the outhouse by the river."},
+	{"key": "cups_eight_2.desc", "value": "In the outhouse by the river."},
+	{"key": "cups_eight_3.desc", "value": "Inside the house in the bookcase."},
 
 	{"key": "cups_nine.name", "value": "Nine of Cups"},
 	{"key": "cups_nine_1.desc", "value": ""},
@@ -187,7 +187,7 @@
 	{"key": "wands_ten.name", "value": "Ten of Wands"},
 	{"key": "wands_ten_1.desc", "value": ""},
 	{"key": "wands_ten_2.desc", "value": ""},
-	{"key": "wands_ten_3.desc", "value": ""},
+	{"key": "wands_ten_3.desc", "value": "On a broken wagon."},
 
 	{"key": "wands_knight.name", "value": "Knight of Wands"},
 	{"key": "wands_knight_1.desc", "value": ""},
@@ -227,7 +227,7 @@
 	{"key": "pentacles_four.name", "value": "Four of Pentacles"},
 	{"key": "pentacles_four_1.desc", "value": "On top of the well cover. Watch out bears!"},
 	{"key": "pentacles_four_2.desc", "value": ""},
-	{"key": "pentacles_four_3.desc", "value": ""},
+	{"key": "pentacles_four_3.desc", "value": "On a stone bench."},
 
 	{"key": "pentacles_five.name", "value": "Five of Pentacles"},
 	{"key": "pentacles_five_1.desc", "value": ""},
@@ -362,7 +362,7 @@
 	{"key": "egg_heron.name", "value": "Heron Egg"},
 	{"key": "egg_heron_1.desc", "value": ""},
 	{"key": "egg_heron_2.desc", "value": ""},
-	{"key": "egg_heron_3.desc", "value": ""},
+	{"key": "egg_heron_3.desc", "value": "In a tree. Shoot down with bow or varmin rifle."},
 
 	{"key": "egg_loon.name", "value": "Loon Eggs"},
 	{"key": "egg_loon_1.desc", "value": ""},
@@ -397,7 +397,7 @@
 	{"key": "egg_egret.name", "value": "Egret Egg"},
 	{"key": "egg_egret_1.desc", "value": ""},
 	{"key": "egg_egret_2.desc", "value": ""},
-	{"key": "egg_egret_3.desc", "value": ""},
+	{"key": "egg_egret_3.desc", "value": "In a tree. Shoot down with bow or varmin rifle."},
 
 	{"key": "egg_duck.name", "value": "Duck Eggs"},
 	{"key": "egg_duck_1.desc", "value": "In a nest on the ground. Don't step on it!"},
@@ -557,7 +557,7 @@
 	{"key": "heirlooms_ebony_hairpin.name", "value": "Ebony Hairpin Heirloom"},
 	{"key": "heirlooms_ebony_hairpin_1.desc", "value": ""},
 	{"key": "heirlooms_ebony_hairpin_2.desc", "value": "Behind the large house."},
-	{"key": "heirlooms_ebony_hairpin_3.desc", "value": ""},
+	{"key": "heirlooms_ebony_hairpin_3.desc", "value": "On a three seater bench."},
 
 	{"key": "heirlooms_ivory_hairpin.name", "value": "Ivory Hairpin Heirloom"},
 	{"key": "heirlooms_ivory_hairpin_1.desc", "value": ""},
@@ -692,12 +692,12 @@
 	{"key": "ring_aubrey_onyx.name", "value": "Aubrey Onyx Ring"},
 	{"key": "ring_aubrey_onyx_1.desc", "value": "🧲 Besides the dead tree."},
 	{"key": "ring_aubrey_onyx_2.desc", "value": "On the side of the cliff near the wallpainting."},
-	{"key": "ring_aubrey_onyx_3.desc", "value": "🧲"},
+	{"key": "ring_aubrey_onyx_3.desc", "value": "🧲 On the landfill."},
 
 	{"key": "ring_bosque_emerald.name", "value": "Bosque Emerald Ring"},
 	{"key": "ring_bosque_emerald_1.desc", "value": "🧲 Between the bushes in a small clearing."},
-	{"key": "ring_bosque_emerald_2.desc", "value": "🧲 next to a rock with a chalk drawing on it."},
-	{"key": "ring_bosque_emerald_3.desc", "value": "🧲"},
+	{"key": "ring_bosque_emerald_2.desc", "value": "🧲 Next to a rock with a chalk drawing on it."},
+	{"key": "ring_bosque_emerald_3.desc", "value": "🧲 Next to trhee trees behind a grave."},
 
 	{"key": "ring_sackville_diamond.name", "value": "Sackville Diamond Ring"},
 	{"key": "ring_sackville_diamond_1.desc", "value": ""},
@@ -802,7 +802,7 @@
 	{"key": "earring_josephine_pearl.name", "value": "Josephine Pearl Earrings"},
 	{"key": "earring_josephine_pearl_1.desc", "value": "Inside the cave. Entrance: above 'A' of Annesburg."},
 	{"key": "earring_josephine_pearl_2.desc", "value": ""},
-	{"key": "earring_josephine_pearl_3.desc", "value": "🧲 "},
+	{"key": "earring_josephine_pearl_3.desc", "value": "🧲 Underneath the bridge."},
 
 	{"key": "earring_emmeline_coral.name", "value": "Emmeline Coral Earrings"},
 	{"key": "earring_emmeline_coral_1.desc", "value": "🧲 "},
