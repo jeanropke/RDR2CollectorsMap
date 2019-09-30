@@ -102,9 +102,9 @@ function init()
         });
     });
 
-    loadLanguage();
-    setCurrentDayCycle();
     loadMarkers();
+
+    setCurrentDayCycle();
     loadRoutesData();
 }
 
@@ -201,8 +201,7 @@ function loadMarkers()
     $.getJSON("items.json?nocache=2", {}, function(data)
     {
         markers = data;
-
-        addMarkers();
+        loadLanguage();
     });
 
 }
