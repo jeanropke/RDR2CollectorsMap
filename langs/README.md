@@ -25,7 +25,7 @@ korean (ko.json)
   - no-one yet!
   
 polish (pl.json)
-  - no-one yet!
+  - githb123
   
 brazilian (pt-br.json)
   - jeanropke
