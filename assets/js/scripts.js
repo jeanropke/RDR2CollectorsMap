@@ -16,13 +16,21 @@ var routesData = [];
 var polylines;
 var toolType = '3'; //All type of tools
 var isDebug = true;
-var lang = 'en-us';//TODO: save on cookies
-var language = [];
+var lang;
+var languageData = [];
 
 function init()
 {
     if(typeof Cookies.get('removed-items') === 'undefined')
         Cookies.set('removed-items', '', { expires: 1 });
+
+    if(typeof Cookies.get('language') === 'undefined')
+    {
+        Cookies.set('language', 'en-us');
+    }
+
+    lang = Cookies.get('language');
+
 
     disableMarkers = Cookies.get('removed-items').split(';');
 
@@ -97,11 +105,11 @@ function init()
 
 function loadLanguage()
 {
-    language = [];
+    languageData = [];
     $.getJSON(`langs/${lang}.json`, {}, function(data)
     {
         $.each(data, function(key, value) {
-            language[value.key] = value.value;
+            languageData[value.key] = value.value;
 
         });
         addMarkers();
@@ -213,12 +221,12 @@ function addMarkers()
                 {
                     $.each(searchTerms, function (id, term)
                     {
-                        if (language[value.text+'.name'] == null) {
+                        if (languageData[value.text+'.name'] == null) {
                             console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
                         }
-                        if (language[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
+                        if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
-                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${language[value.text+'.name']} - Day ${value.day}</h1><p> ${language[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', onClick);
+                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', onClick);
                             visibleMarkers[key] = tempMarker;
                             markersLayer.addLayer(tempMarker);
                         }
@@ -226,11 +234,11 @@ function addMarkers()
                 }
                 else
                 {
-                    if (language[value.text+'.name'] == null) {
+                    if (languageData[value.text+'.name'] == null) {
                         console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
                     }
 
-                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${language[value.text+'.name']} - Day ${value.day}</h1><p> ${language[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', onClick);
+                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', onClick);
                     visibleMarkers[key] = tempMarker;
                     markersLayer.addLayer(tempMarker);
                 }
@@ -311,6 +319,7 @@ $("#tools").on("change", function()
 $("#language").on("change", function()
 {
     lang = $("#language").val();
+    Cookies.set('language', lang);
     loadLanguage();
     addMarkers();
 });
