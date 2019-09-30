@@ -7,7 +7,7 @@ var visibleMarkers = [];
 var disableMarkers = [];
 var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
-    'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands'
+    'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar'
 ];
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
@@ -26,8 +26,26 @@ var avaliableLanguages = ['de-de', 'en-us', 'pt-br', 'pl', 'zh-s'];
 var lang;
 var languageData = [];
 
+
+var nazarLocations = [
+    {"id":"1", "x":"-40.5625","y":"109.078125"},
+    {"id":"2", "x":"-43","y":"132.828125"},
+    {"id":"3", "x":"36.75","y":"153.6875"},
+    {"id":"4", "x":"-56.171875","y":"78.59375"},
+    {"id":"5", "x":"-63.6640625","y":"105.671875"},
+    {"id":"6", "x":"-60.421875","y":"130.640625"},
+    {"id":"7", "x":"-66.046875","y":"151.03125"},
+    {"id":"8", "x":"-84.4375","y":"82.03125"},
+    {"id":"9", "x":"-90.53125","y":"135.65625"},
+    {"id":"10","x":"-100.140625","y":"48.8125"},
+    {"id":"11","x":"-105.0703125","y":"84.9765625"},
+    {"id":"12","x":"-124.03125","y":"34.171875"}
+];
+var currNazar;
+
 function init()
 {
+    loadNazar();
     if(typeof Cookies.get('removed-items') === 'undefined')
         Cookies.set('removed-items', '', { expires: 1 });
 
@@ -422,4 +440,16 @@ function hideall() {
     }
     enabledTypes = [];
     addMarkers();
+}
+
+//loads the current location of Nazar and adds a marker in the correct location
+function loadNazar(){
+ $.getJSON(`https://madam-nazar-location-api.herokuapp.com/current`, {}, function(x)
+    {
+     var json = x;
+    currNazar = nazarLocations[x.data._id - 1];
+
+    });
+    var nazarMarker = L.marker([currNazar.x, currNazar.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar</h1>`).on('click', addCoordsOnMap);
+    markersLayer.addLayer(nazarMarker);
 }
