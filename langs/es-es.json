@@ -730,10 +730,10 @@
 	{"key": "earring_ursula_citrine_2.desc", "value": ""},
 	{"key": "earring_ursula_citrine_3.desc", "value": ""},
 
-	{"key": "earring_royal_victoria_.name", "value": "Royal Victoria Diamond Earrings"},
-	{"key": "earring_royal_victoria__1.desc", "value": ""},
-	{"key": "earring_royal_victoria__2.desc", "value": ""},
-	{"key": "earring_royal_victoria__3.desc", "value": ""},
+	{"key": "earring_royal_victoria.name", "value": "Royal Victoria Diamond Earrings"},
+	{"key": "earring_royal_victoria_1.desc", "value": ""},
+	{"key": "earring_royal_victoria_2.desc", "value": ""},
+	{"key": "earring_royal_victoria_3.desc", "value": ""},
 
 	{"key": "earring_calumet_turquoise.name", "value": "Calumet Turquoise Earrings"},
 	{"key": "earring_calumet_turquoise_1.desc", "value": ""},
