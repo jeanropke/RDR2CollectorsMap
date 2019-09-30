@@ -99,7 +99,7 @@
 	{"text": "wands_king", "day": "1", "tool": "0", "icon": "card-wands", "x": "-63.90625", "y": "116.7890625"},
 	{"text": "wands_ace", "day": "2", "tool": "0", "icon": "card-wands", "x": "-28.1328125", "y": "150.21875"},
 	{"text": "wands_two", "day": "2", "tool": "0", "icon": "card-wands", "x": "-109.296875", "y": "24.03125"},
-	{"text": "wands_three", "day": "2", "tool": "0", "icon": "card-wands", "x": "-50.03125", "y": "107.4609375"},
+	{"text": "wands_three", "day": "2", "tool": "0", "icon": "card-wands", "x": "-50.6875", "y": "107.7890625"}, 
 	{"text": "wands_four", "day": "2", "tool": "0", "icon": "card-wands", "x": "-75.3203125", "y": "146.296875"},
 	{"text": "wands_five", "day": "2", "tool": "0", "icon": "card-wands", "x": "-48.3046875", "y": "114.765625"},
 	{"text": "wands_six", "day": "2", "tool": "0", "icon": "card-wands", "x": "-89.4609375", "y": "80.5078125"},
