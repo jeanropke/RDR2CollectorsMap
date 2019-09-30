@@ -800,9 +800,9 @@
 	{"key": "earring_josephine_pearl_3.desc", "value": ""},
 
 	{"key": "earring_emmeline_coral.name", "value": "Brincos de Coral Emmeline"},
-	{"key": "earring_emmeline_coral._1.desc", "value": ""},
-	{"key": "earring_emmeline_coral._2.desc", "value": ""},
-	{"key": "earring_emmeline_coral._3.desc", "value": ""},
+	{"key": "earring_emmeline_coral_1.desc", "value": ""},
+	{"key": "earring_emmeline_coral_2.desc", "value": ""},
+	{"key": "earring_emmeline_coral_3.desc", "value": ""},
 
 	{"key": "bracelet_greco_sapphire.name", "value": "Bracelete de Safira Greco"},
 	{"key": "bracelet_greco_sapphire_1.desc", "value": ""},
