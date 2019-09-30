@@ -228,7 +228,6 @@ function addMarkers()
                     {
                         if (languageData[value.text+'.name'] == null)
                         {
-                            //TODO: this error is triggered when language is changed
                             console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
                         }
                         if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
@@ -243,7 +242,6 @@ function addMarkers()
                 {
                     if (languageData[value.text+'.name'] == null)
                     {
-                        //TODO: this error is triggered when language is changed
                         console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
                     }
 
@@ -377,7 +375,6 @@ $("#language").on("change", function()
     lang = $("#language").val();
     Cookies.set('language', lang);
     loadLanguage();
-    addMarkers();
 });
 
 $('.menu-option.clickable').on('click', function ()
