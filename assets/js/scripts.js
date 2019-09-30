@@ -15,7 +15,7 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 var routesData = [];
 var polylines;
 var toolType = '3'; //All type of tools
-var isDebug = false;
+var isDebug = true;
 var lang = 'en-us';//TODO: save on cookies
 var language = [];
 
@@ -58,8 +58,8 @@ function init()
             var coord = e.latlng;
             var lat = coord.lat;
             var lng = coord.lng;
-            dev.push([lat, lng]);
-            L.polyline(dev).addTo(map);
+            customRoute.push([lat, lng]);
+            L.polyline(customRoute).addTo(map);
             //console.log(`{"day": "${day}","icon": "american-flowers","name": "","desc": "","x": "${lat}","y": "${lng}"},`);
         });
     }
@@ -218,7 +218,7 @@ function addMarkers()
                         }
                         if (language[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
-                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${language[value.text+'.name']} - Day ${value.day}</h1><p> ${language[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`) ;
+                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${language[value.text+'.name']} - Day ${value.day}</h1><p> ${language[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', onClick);
                             visibleMarkers[key] = tempMarker;
                             markersLayer.addLayer(tempMarker);
                         }
@@ -230,7 +230,7 @@ function addMarkers()
                         console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
                     }
 
-                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${language[value.text+'.name']} - Day ${value.day}</h1><p> ${language[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`) ;
+                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${language[value.text+'.name']} - Day ${value.day}</h1><p> ${language[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', onClick);
                     visibleMarkers[key] = tempMarker;
                     markersLayer.addLayer(tempMarker);
                 }
@@ -258,12 +258,12 @@ function removeCollectedMarkers()
 }
 
 //tests
-var dev = [];
+var customRoute = [];
 function onClick()
 {
     if(isDebug) {
-        dev.push([this._latlng.lat, this._latlng.lng]);
-        L.polyline(dev, {'color': '#9a3033'}).addTo(map);
+        customRoute.push([this._latlng.lat, this._latlng.lng]);
+        L.polyline(customRoute).addTo(map);
     }
 }
 
