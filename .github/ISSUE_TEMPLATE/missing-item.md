@@ -10,3 +10,5 @@ assignees: ''
 * What day cycle it is?
 * Coordinates or a clear image of the location
 * Include the item name
+
+Coordinates can be found by setting the `Show coordinates on click` to `Yes`
