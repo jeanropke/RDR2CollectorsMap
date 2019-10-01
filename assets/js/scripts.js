@@ -491,6 +491,9 @@ function hideall() {
 }
 
 function loadCustomRoute(){
+    if (typeof customRoute != "undefined") {
+        map.removeLayer(customRoute);
+    }
     customRouteConnections = JSON.parse(document.getElementById("importRoute").value);
     customRoute = L.polyline(customRouteConnections);
     map.addLayer(customRoute);
