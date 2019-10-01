@@ -37,5 +37,5 @@ chinese simplified (zh-s.json)
   - yamazakitouma
   
 chinese traditional (zh-t.json)
-  - no-one yet!
+  - yamazakitouma
   
