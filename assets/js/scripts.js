@@ -500,5 +500,5 @@ function loadCustomRoute(){
 };
 
 function saveCustomRoute(){
-    document.getElementById("importRoute").value = customRouteConnections;
+    document.getElementById("importRoute").value = String(customRouteConnections);
 };
