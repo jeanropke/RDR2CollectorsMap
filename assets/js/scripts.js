@@ -332,6 +332,11 @@ function loadNazar(){
 
 }
 
+function customMarker(coords){
+    var nazarMarker = L.marker(coords, {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 1st</h1>`).on('click', addCoordsOnMap);
+    markersLayer.addLayer(nazarMarker);
+}
+
 function addCoordsOnMap(coords)
 {
     // Show clicked coordinates (like google maps)
