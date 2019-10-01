@@ -475,9 +475,9 @@
 	{"key": "arrowhead_crude_3.desc", "value": "In front of the tipi tent."},
 
 	{"key": "arrowhead_chipped.name", "value": "Chipped Arrowhead"},
-	{"key": "arrowhead_chipped._1.desc", "value": ""},
-	{"key": "arrowhead_chipped._2.desc", "value": ""},
-	{"key": "arrowhead_chipped._3.desc", "value": ""},
+	{"key": "arrowhead_chipped_1.desc", "value": ""},
+	{"key": "arrowhead_chipped_2.desc", "value": ""},
+	{"key": "arrowhead_chipped_3.desc", "value": ""},
 
 	{"key": "arrowhead_feldspar.name", "value": "Feldspar Arrowhead"},
 	{"key": "arrowhead_feldspar_1.desc", "value": "In the middle of the \"ring\" of rocks."},
