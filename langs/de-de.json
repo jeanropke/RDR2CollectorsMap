@@ -481,9 +481,9 @@
 	{"key": "arrowhead_crude_3.desc", "value": ""},
 
 	{"key": "arrowhead_chipped.name", "value": "Abgebrochene Pfeilspitze"},
-	{"key": "arrowhead_chipped._1.desc", "value": ""},
-	{"key": "arrowhead_chipped._2.desc", "value": ""},
-	{"key": "arrowhead_chipped._3.desc", "value": ""},
+	{"key": "arrowhead_chipped_1.desc", "value": ""},
+	{"key": "arrowhead_chipped_2.desc", "value": ""},
+	{"key": "arrowhead_chipped_3.desc", "value": ""},
 
 	{"key": "arrowhead_feldspar.name", "value": "Feldspat-Pfeilspitze"},
 	{"key": "arrowhead_feldspar_1.desc", "value": ""},

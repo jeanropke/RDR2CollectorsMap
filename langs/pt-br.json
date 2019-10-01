@@ -475,9 +475,9 @@
 	{"key": "arrowhead_crude_3.desc", "value": ""},
 
 	{"key": "arrowhead_chipped.name", "value": "Ponta de Flecha Lascada"},
-	{"key": "arrowhead_chipped._1.desc", "value": ""},
-	{"key": "arrowhead_chipped._2.desc", "value": ""},
-	{"key": "arrowhead_chipped._3.desc", "value": ""},
+	{"key": "arrowhead_chipped_1.desc", "value": ""},
+	{"key": "arrowhead_chipped_2.desc", "value": ""},
+	{"key": "arrowhead_chipped_3.desc", "value": ""},
 
 	{"key": "arrowhead_feldspar.name", "value": "Ponta de Flecha de Feldspato"},
 	{"key": "arrowhead_feldspar_1.desc", "value": ""},
