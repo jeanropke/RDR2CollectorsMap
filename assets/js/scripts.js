@@ -502,10 +502,11 @@ function loadCustomRoute(){
 function saveCustomRoute(){
     var saveData="";
     for (key in customRouteConnections){
-    saveData += '{"lat":' + customRouteConnections[key].lat + ',"lng":' + customRouteConnections[key].lat + '}';
+    saveData += '{"lat": "' + customRouteConnections[key].lat + '", "lng": "' + customRouteConnections[key].lng + '"}';
         if (key != customRouteConnections.length-1){
             saveData+=","
         }
     }
     document.getElementById("importRoute").value = "["+ saveData + "]";
 };
+
