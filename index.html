@@ -120,6 +120,7 @@
                 <option value="0" selected>No</option>
             </select>
         </div>
+        <h2>Custom Routes</h2>
         <div class="input-container">
             <label for="custom-routes">Enable custom route</label>
             <select class="input-day" id="custom-routes">
@@ -127,6 +128,15 @@
                 <option value="0" selected>No</option>
             </select>
         </div>
+        <div class="input-container">
+            <label for="custom-routes">Enable custom route</label>
+            <input class="input-search" type="text" id="importRoute" placeholder="example: [{"lat": "-100", "lng":"100"},{"lat": "-120", "lng":"120"}]..." autocomplete="off">
+        </div>
+        <div class="hide-show-container">
+            <a href="javascript:void(0);" onclick="loadCustomRoute()">Load Route</a>
+            <a href="javascript:void(0);" onclick="saveCustomRoute()">Save Route</a>
+        </div>
+        
         <div class="input-container">
             <label for="show-coordinates">Show coordinates on click</label>
             <select class="input-day" id="show-coordinates">
