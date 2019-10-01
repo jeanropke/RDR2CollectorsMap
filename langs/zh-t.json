@@ -371,20 +371,30 @@
 	{"key": "egg_loon_2.desc", "value": ""},
 	{"key": "egg_loon_3.desc", "value": ""},
 
-	{"key": "egg_eagle.name", "value": "鷲鷹蛋"},
-	{"key": "egg_eagle_1.desc", "value": ""},
-	{"key": "egg_eagle_2.desc", "value": ""},
-	{"key": "egg_eagle_3.desc", "value": ""},
+	{"key": "egg_eagle_1.name", "value": "鷲鷹蛋"},
+	{"key": "egg_eagle_1_1.desc", "value": ""},
+	{"key": "egg_eagle_1_2.desc", "value": ""},
+	{"key": "egg_eagle_1_3.desc", "value": ""},
+	
+	{"key": "egg_eagle_2.name", "value": "鷲鷹蛋"},
+	{"key": "egg_eagle_2_1.desc", "value": ""},
+	{"key": "egg_eagle_2_2.desc", "value": ""},
+	{"key": "egg_eagle_2_3.desc", "value": ""},
 
 	{"key": "egg_vulture.name", "value": "禿鷹蛋"},
 	{"key": "egg_vulture_1.desc", "value": ""},
 	{"key": "egg_vulture_2.desc", "value": ""},
 	{"key": "egg_vulture_3.desc", "value": ""},
 
-	{"key": "egg_hawk.name", "value": "鷹蛋"},
-	{"key": "egg_hawk_1.desc", "value": ""},
-	{"key": "egg_hawk_2.desc", "value": ""},
-	{"key": "egg_hawk_3.desc", "value": ""},
+	{"key": "egg_hawk_1.name", "value": "鷹蛋"},
+	{"key": "egg_hawk_1_1.desc", "value": ""},
+	{"key": "egg_hawk_1_2.desc", "value": ""},
+	{"key": "egg_hawk_1_3.desc", "value": ""},
+	
+	{"key": "egg_hawk_2.name", "value": "鷹蛋"},
+	{"key": "egg_hawk_2_1.desc", "value": ""},
+	{"key": "egg_hawk_2_2.desc", "value": ""},
+	{"key": "egg_hawk_2_3.desc", "value": ""},
 
 	{"key": "egg_egret.name", "value": "白鷺蛋"},
 	{"key": "egg_egret_1.desc", "value": ""},
@@ -396,11 +406,16 @@
 	{"key": "egg_duck_2.desc", "value": ""},
 	{"key": "egg_duck_3.desc", "value": ""},
 
-	{"key": "egg_goose.name", "value": "野雁蛋"},
-	{"key": "egg_goose_1.desc", "value": ""},
-	{"key": "egg_goose_2.desc", "value": ""},
-	{"key": "egg_goose_3.desc", "value": ""},
+	{"key": "egg_goose_1.name", "value": "野雁蛋"},
+	{"key": "egg_goose_1_1.desc", "value": ""},
+	{"key": "egg_goose_1_2.desc", "value": ""},
+	{"key": "egg_goose_1_3.desc", "value": ""},
 
+	{"key": "egg_goose_2.name", "value": "野雁蛋"},
+	{"key": "egg_goose_2_1.desc", "value": ""},
+	{"key": "egg_goose_2_2.desc", "value": ""},
+	{"key": "egg_goose_2_3.desc", "value": ""},
+	
 	{"key": "bottle_tennesee_whiskey.name", "value": "田納西威士卡"},
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": ""},
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": ""},
@@ -462,9 +477,9 @@
 	{"key": "arrowhead_crude_3.desc", "value": ""},
 
 	{"key": "arrowhead_chipped.name", "value": "受損箭頭"},
-	{"key": "arrowhead_chipped._1.desc", "value": ""},
-	{"key": "arrowhead_chipped._2.desc", "value": ""},
-	{"key": "arrowhead_chipped._3.desc", "value": ""},
+	{"key": "arrowhead_chipped_1.desc", "value": ""},
+	{"key": "arrowhead_chipped_2.desc", "value": ""},
+	{"key": "arrowhead_chipped_3.desc", "value": ""},
 
 	{"key": "arrowhead_feldspar.name", "value": "長石箭頭"},
 	{"key": "arrowhead_feldspar_1.desc", "value": ""},
@@ -586,16 +601,26 @@
 	{"key": "flower_texas_bluebonnet_2.desc", "value": ""},
 	{"key": "flower_texas_bluebonnet_3.desc", "value": ""},
 
-	{"key": "flower_bitterweed.name", "value": "苦素菊"},
-	{"key": "flower_bitterweed_1.desc", "value": ""},
-	{"key": "flower_bitterweed_2.desc", "value": ""},
-	{"key": "flower_bitterweed_3.desc", "value": ""},
+	{"key": "flower_bitterweed_1.name", "value": "苦素菊"},
+	{"key": "flower_bitterweed_1_1.desc", "value": ""},
+	{"key": "flower_bitterweed_1_2.desc", "value": ""},
+	{"key": "flower_bitterweed_1_3.desc", "value": ""},
 
-	{"key": "flower_agarita.name", "value": "十大功勞"},
-	{"key": "flower_agarita_1.desc", "value": ""},
-	{"key": "flower_agarita_2.desc", "value": ""},
-	{"key": "flower_agarita_3.desc", "value": ""},
-
+	{"key": "flower_bitterweed_2.name", "value": "苦素菊"},
+	{"key": "flower_bitterweed_2_1.desc", "value": ""},
+	{"key": "flower_bitterweed_2_2.desc", "value": ""},
+	{"key": "flower_bitterweed_2_3.desc", "value": ""},
+	
+	{"key": "flower_agarita_1.name", "value": "十大功勞"},
+	{"key": "flower_agarita_1_1.desc", "value": ""},
+	{"key": "flower_agarita_1_2.desc", "value": ""},
+	{"key": "flower_agarita_1_3.desc", "value": ""},
+	
+	{"key": "flower_agarita_2.name", "value": "十大功勞"},
+	{"key": "flower_agarita_2_1.desc", "value": ""},
+	{"key": "flower_agarita_2_2.desc", "value": ""},
+	{"key": "flower_agarita_2_3.desc", "value": ""},
+	
 	{"key": "flower_wild_rhubarb.name", "value": "野生大黃"},
 	{"key": "flower_wild_rhubarb_1.desc", "value": ""},
 	{"key": "flower_wild_rhubarb_2.desc", "value": ""},
@@ -611,10 +636,15 @@
 	{"key": "flower_creek_plum_2.desc", "value": ""},
 	{"key": "flower_creek_plum_3.desc", "value": ""},
 
-	{"key": "flower_blood_flower.name", "value": "馬利筋"},
-	{"key": "flower_blood_flower_1.desc", "value": ""},
-	{"key": "flower_blood_flower_2.desc", "value": ""},
-	{"key": "flower_blood_flower_3.desc", "value": ""},
+	{"key": "flower_blood_flower_1.name", "value": "馬利筋"},
+	{"key": "flower_blood_flower_1_1.desc", "value": ""},
+	{"key": "flower_blood_flower_1_2.desc", "value": ""},
+	{"key": "flower_blood_flower_1_3.desc", "value": ""},
+	
+	{"key": "flower_blood_flower_2.name", "value": "馬利筋"},
+	{"key": "flower_blood_flower_2_1.desc", "value": ""},
+	{"key": "flower_blood_flower_2_2.desc", "value": ""},
+	{"key": "flower_blood_flower_2_3.desc", "value": ""},
 
 	{"key": "flower_chocolate_daisy.name", "value": "巧克力雛菊"},
 	{"key": "flower_chocolate_daisy_1.desc", "value": ""},
@@ -731,10 +761,10 @@
 	{"key": "earring_ursula_citrine_2.desc", "value": ""},
 	{"key": "earring_ursula_citrine_3.desc", "value": ""},
 
-	{"key": "earring_royal_victoria_.name", "value": "皇家維多利亞鑽石耳環"},
-	{"key": "earring_royal_victoria__1.desc", "value": ""},
-	{"key": "earring_royal_victoria__2.desc", "value": ""},
-	{"key": "earring_royal_victoria__3.desc", "value": ""},
+	{"key": "earring_royal_victoria.name", "value": "皇家維多利亞鑽石耳環"},
+	{"key": "earring_royal_victoria_1.desc", "value": ""},
+	{"key": "earring_royal_victoria_2.desc", "value": ""},
+	{"key": "earring_royal_victoria_3.desc", "value": ""},
 
 	{"key": "earring_calumet_turquoise.name", "value": "卡魯梅綠松石耳環"},
 	{"key": "earring_calumet_turquoise_1.desc", "value": ""},
@@ -777,9 +807,9 @@
 	{"key": "earring_josephine_pearl_3.desc", "value": ""},
 
 	{"key": "earring_emmeline_coral.name", "value": "艾米琳珊瑚耳環"},
-	{"key": "earring_emmeline_coral._1.desc", "value": ""},
-	{"key": "earring_emmeline_coral._2.desc", "value": ""},
-	{"key": "earring_emmeline_coral._3.desc", "value": ""},
+	{"key": "earring_emmeline_coral_1.desc", "value": ""},
+	{"key": "earring_emmeline_coral_2.desc", "value": ""},
+	{"key": "earring_emmeline_coral_3.desc", "value": ""},
 
 	{"key": "bracelet_greco_sapphire.name", "value": "格雷考藍寶石手環"},
 	{"key": "bracelet_greco_sapphire_1.desc", "value": ""},
