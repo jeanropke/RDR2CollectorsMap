@@ -41,6 +41,8 @@ var nazarLocations = [
     {"id":"12","x":"-124.03125","y":"34.171875"}
 ];
 
+var nazarCurrentLocation = 7;
+
 function init()
 {
     if(typeof Cookies.get('removed-items') === 'undefined')
@@ -54,9 +56,13 @@ function init()
             Cookies.set('language', 'en-us');
     }
 
+    if(!avaliableLanguages.includes(Cookies.get('language')))
+        Cookies.set('language', 'en-us');
+
+
 
     lang = Cookies.get('language');
-
+    $("#language").val(lang);
 
     disableMarkers = Cookies.get('removed-items').split(';');
 
@@ -135,15 +141,22 @@ function init()
     });
 
     loadMarkers();
-
     setCurrentDayCycle();
     loadRoutesData();
-
 
     var pos = [-53.2978125, 68.7596875];
     var offset = 1.15;
     L.imageOverlay('overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
 
+}
+
+function getNazarPosition()
+{
+    $.getJSON(`https://madam-nazar-location-api.herokuapp.com/current`, {}, function(x)
+    {
+        nazarCurrentLocation = x.data._id - 1;
+        addNazarMarker();
+    });
 }
 
 function loadLanguage()
@@ -248,9 +261,8 @@ function addMarkers()
 {
     markersLayer.clearLayers();
 
-    //loadNazar need be here, when user change day or use search, nazar location will be cleared
-    //TODO: get current nazar day, save in a variable, when the user search, use it to set the marker
-    loadNazar();
+    addNazarMarker();
+
 
     visibleMarkers = [];
 
@@ -294,6 +306,7 @@ function addMarkers()
             }
         }
     });
+
     markersLayer.addTo(map);
 
     removeCollectedMarkers();
@@ -315,20 +328,11 @@ function removeCollectedMarkers()
 }
 
 //loads the current location of Nazar and adds a marker in the correct location
-function loadNazar(){
-    /*
-    Disable request to herokuapp
-    $.getJSON(`https://madam-nazar-location-api.herokuapp.com/current`, {}, function(x)
-    {
-        var nazarMarker = L.marker([nazarLocations[x.data._id - 1].x, nazarLocations[x.data._id - 1].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar</h1>`).on('click', addCoordsOnMap);
-        markersLayer.addLayer(nazarMarker);
-    });
-    */
+function addNazarMarker()
+{
 
-    var nazarMarker = L.marker([nazarLocations[7].x, nazarLocations[7].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 1st</h1>`).on('click', addCoordsOnMap);
+    var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 1st</h1>`).on('click', addCoordsOnMap);
     markersLayer.addLayer(nazarMarker);
-
-
 }
 
 function customMarker(coords){
@@ -386,6 +390,7 @@ $("#day").on("input", function()
 {
     day = $('#day').val();
     addMarkers();
+    addNazarMarker();
 
     if($("#routes").val() == 1)
         drawLines();
