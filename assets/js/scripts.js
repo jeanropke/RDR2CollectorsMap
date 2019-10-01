@@ -326,7 +326,7 @@ function loadNazar(){
     });
     */
 
-    var nazarMarker = L.marker([nazarLocations[7].x, nazarLocations[7].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - September 30</h1>`).on('click', addCoordsOnMap);
+    var nazarMarker = L.marker([nazarLocations[7].x, nazarLocations[7].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 1st</h1>`).on('click', addCoordsOnMap);
     markersLayer.addLayer(nazarMarker);
 
 
