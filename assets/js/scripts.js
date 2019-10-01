@@ -144,7 +144,6 @@ function init()
     var offset = 1.15;
     L.imageOverlay('overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
 
-
 }
 
 function loadLanguage()
