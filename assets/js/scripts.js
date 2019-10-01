@@ -64,8 +64,8 @@ function init()
     var maxZoom = 7;
 
     var defaultLayer = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true});
-    var detailLayer = L.tileLayer('assets/maps/dark/{z}/{x}_{y}.jpg', { noWrap: true});
-
+    var detailLayer = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true});
+    var darkLayer = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true});
 
     // create the map
     map = L.map('map', {
@@ -78,7 +78,8 @@ function init()
 
     var baseMaps = {
         "Default": defaultLayer,
-        "Detailed": detailLayer
+        "Detailed": detailLayer,
+        "Dark": darkLayer
     };
 
     L.control.zoom({
@@ -115,6 +116,22 @@ function init()
 
 
         });
+    });
+
+    map.on('baselayerchange', function (e)
+    {
+        switch(e.name) {
+            default:
+            case 'Default':
+            case 'Detailed':
+                $('#map').css('background-color', '#d2b790');
+                break;
+
+            case 'Dark':
+                $('#map').css('background-color', '#3d3d3d');
+                break;
+
+        }
     });
 
     loadMarkers();
