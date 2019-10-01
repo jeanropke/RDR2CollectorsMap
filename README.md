@@ -3,4 +3,6 @@ Credits to [/r/RedDeadOnline](https://www.reddit.com/r/RedDeadOnline) , [GTA Ser
 
 Detailed map by [RDR2Map](https://rdr2map.com/)
 
+Dark map by [TDLCTV](https://github.com/TDLCTV)
+
 Thanks for the people over at [https://nazarfinder.surge.sh/](https://nazarfinder.surge.sh/) for the API 
