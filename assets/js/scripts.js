@@ -500,12 +500,12 @@ function loadCustomRoute(){
 };
 
 function saveCustomRoute(){
-    var saveData;
+    var saveData="";
     for (key in customRouteConnections){
-    savedata += "{lat:" + costomRouteConnections[key].lat + ",lng:" + costomRouteConnections[key].lat +"}";
-        if (key != customRouteConnections.lenght){
+    saveData += '{"lat":' + customRouteConnections[key].lat + ',"lng":' + customRouteConnections[key].lat + '}';
+        if (key != customRouteConnections.length-1){
             saveData+=","
         }
     }
-    document.getElementById("importRoute").value = "["+ saveData + "];";
+    document.getElementById("importRoute").value = "["+ saveData + "]";
 };
