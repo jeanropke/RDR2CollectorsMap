@@ -19,8 +19,6 @@ var customRouteEnabled = false;
 var customRoute = [];
 var customRouteConnections = [];
 
-var importRoute = document.getElementById("importRoute").value;
-
 var showCoordinates = false;
 
 var toolType = '3'; //All type of tools
@@ -493,11 +491,11 @@ function hideall() {
 }
 
 function loadCustomRoute(){
-    customRouteConeections = importRoute;
+    customRouteConnections = document.getElementById("importRoute").value;
     customRoute = L.polyline(customRouteConnections);
     map.addLayer(customRoute);
 };
 
 function saveCustomRoute(){
-    importRoute = customRouteConnections;
+    document.getElementById("importRoute").value = customRouteConnections;
 };
