@@ -19,7 +19,7 @@ var customRouteEnabled = false;
 var customRoute = [];
 var customRouteConnections = [];
 
-var importRoute = document.getElementsById("importRoute").value
+var importRoute = document.getElementsById("importRoute").value;
 
 var showCoordinates = false;
 
