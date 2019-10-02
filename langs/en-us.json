@@ -61,7 +61,7 @@
 
 	{"key": "cups_queen.name", "value": "Queen of Cups"},
 	{"key": "cups_queen_1.desc", "value": ""},
-	{"key": "cups_queen_2.desc", "value": "Inside the mine."},
+	{"key": "cups_queen_2.desc", "value": "On top of barrel right side of dock."},
 	{"key": "cups_queen_3.desc", "value": "Inside the mine on a crate next to a lantern.<br/><img src=\"https://i.imgur.com/ciqlFTG.png\" style=\"width:200px;\">"},
 
 	{"key": "cups_king.name", "value": "King of Cups"},
