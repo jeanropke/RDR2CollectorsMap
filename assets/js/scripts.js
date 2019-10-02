@@ -223,23 +223,21 @@ function setCurrentDayCycle()
 
 function loadRoutesData()
 {
-    Cookies.get('removed-items').split(';');
     routesData = [];
     $.getJSON(`routes/day2.json`, {}, function(data)
     {
+        disableMarkers = Cookies.get('removed-items').split(';');
         routesData = data;
         $.each(markers, function (j, value)
         {
             if (disableMarkers.includes(j.toString()))
             {
-                if(visibleMarkers[j] != null)
-                {
-                    for (i in routesData){
-                        if (markers[j].text == routesData[i].key){
-                            routesData[i].hidden = true;
-                        }
+                for (i in routesData){
+                    if (markers[j].text == routesData[i].key){
+                        routesData[i].hidden = true;
                     }
                 }
+                
             }
         });
     });
