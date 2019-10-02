@@ -331,7 +331,7 @@ function removeCollectedMarkers()
 function addNazarMarker()
 {
 
-    var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 2st</h1>`).on('click', addCoordsOnMap);
+    var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 2nd</h1>`).on('click', addCoordsOnMap);
     markersLayer.addLayer(nazarMarker);
 }
 
