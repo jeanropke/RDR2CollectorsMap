@@ -228,6 +228,21 @@ function loadRoutesData()
     {
         routesData = data;
     });
+
+    $.each(markers, function (j, value)
+    {
+        if (disableMarkers.includes(j.toString()))
+        {
+            if(visibleMarkers[j] != null)
+            {
+                for (i in routesData){
+                    if (markers[j].text == routesData[i].key){
+                        routesData[i].hidden = true;
+                    }
+                }
+            }
+        }
+    });
 }
 
 function drawLines()
@@ -325,18 +340,13 @@ function addMarkers()
 function removeCollectedMarkers()
 {
 
-    $.each(markers, function (j, value)
+    $.each(markers, function (key, value)
     {
         if (disableMarkers.includes(j.toString()))
         {
-            if(visibleMarkers[j] != null)
+            if(visibleMarkers[key] != null)
             {
-                $(visibleMarkers[j]._icon).css('opacity', '.35');
-                for (i in routesData){
-                    if (markers[j].text == routesData[i].key){
-                        routesData[i].hidden = true;
-                    }
-                }
+                $(visibleMarkers[key]._icon).css('opacity', '.35');
             }
         }
     });
