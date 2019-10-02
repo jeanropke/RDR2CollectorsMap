@@ -42,7 +42,7 @@ var nazarLocations = [
     {"id":"12","x":"-124.03125","y":"34.171875"}
 ];
 
-var nazarCurrentLocation = 7;
+var nazarCurrentLocation = 8;
 
 function init()
 {
@@ -335,12 +335,12 @@ function removeCollectedMarkers()
 function addNazarMarker()
 {
 
-    var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 1st</h1>`).on('click', addCoordsOnMap);
+    var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 2nd</h1>`).on('click', addCoordsOnMap);
     markersLayer.addLayer(nazarMarker);
 }
 
 function customMarker(coords){
-    var nazarMarker = L.marker(coords, {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 1st</h1>`).on('click', addCoordsOnMap);
+    var nazarMarker = L.marker(coords, {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>debug</h1>`).on('click', addCoordsOnMap);
     markersLayer.addLayer(nazarMarker);
 }
 
