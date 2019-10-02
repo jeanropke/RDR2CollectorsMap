@@ -4,6 +4,7 @@ var markers = [];
 var markersLayer = new L.LayerGroup();
 var searchTerms = [];
 var visibleMarkers = [];
+var resetMarkersDaily;
 var disableMarkers = [];
 var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
@@ -46,7 +47,7 @@ var nazarCurrentLocation = 7;
 function init()
 {
     if(typeof Cookies.get('removed-items') === 'undefined')
-        Cookies.set('removed-items', '', { expires: 1 });
+        Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
 
     if(typeof Cookies.get('language') === 'undefined')
     {
@@ -58,6 +59,12 @@ function init()
 
     if(!avaliableLanguages.includes(Cookies.get('language')))
         Cookies.set('language', 'en-us');
+
+    if(typeof Cookies.get('removed-markers-daily') === 'undefined')
+        Cookies.set('removed-markers-daily', 'true', 999);
+
+    resetMarkersDaily = Cookies.get('removed-markers-daily') == 'true';
+    $("#reset-markers").val(resetMarkersDaily.toString());
 
 
 
@@ -103,21 +110,21 @@ function init()
     {
         $('.remove-button').click(function(e)
         {
-            var itemId = $(event.target).data("item");
-            if(disableMarkers.includes(itemId.toString()))
+            var itemName = $(event.target).data("item");
+            if(disableMarkers.includes(itemName.toString()))
             {
                 disableMarkers = $.grep(disableMarkers, function(value) {
-                    return value != itemId.toString();
+                    return value != itemName.toString();
                 });
-                $(visibleMarkers[itemId]._icon).css('opacity', '1');
+                $(visibleMarkers[itemName]._icon).css('opacity', '1');
             }
             else
             {
-                disableMarkers.push(itemId.toString());
-                $(visibleMarkers[itemId]._icon).css('opacity', '0.35');
+                disableMarkers.push(itemName.toString());
+                $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
             }
 
-            Cookies.set('removed-items', disableMarkers.join(';'), { expires: 1 });
+            Cookies.set('removed-items', disableMarkers.join(';'), { expires: resetMarkersDaily ? 1 : 999});
 
 
 
@@ -210,7 +217,8 @@ function setCurrentDayCycle()
         if(Cookies.get('day') != day.toString())
         {
             Cookies.set('day', day, { expires: 1 });
-            Cookies.set('removed-items', '', { expires: 1 });
+            if(resetMarkersDaily)
+                Cookies.set('removed-items', '', { expires: 1 });
         }
     }
 }
@@ -276,31 +284,27 @@ function addMarkers()
         {
             if (value.day == day)
             {
+                if (languageData[value.text+'.name'] == null)
+                {
+                    console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
+                }
+
                 if (searchTerms.length > 0)
                 {
                     $.each(searchTerms, function (id, term)
                     {
-                        if (languageData[value.text+'.name'] == null)
-                        {
-                            console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
-                        }
-                        if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
-                        {
-                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
-                            visibleMarkers[key] = tempMarker;
-                            markersLayer.addLayer(tempMarker);
-                        }
+                        var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${value.text}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
+                        visibleMarkers[value.text] = tempMarker;
+                        markersLayer.addLayer(tempMarker);
+
+                        if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) == -1)
+                            $(tempMarker._icon).css({'filter': 'grayscale(1)', 'opacity': '0.5'});
                     });
                 }
                 else
                 {
-                    if (languageData[value.text+'.name'] == null)
-                    {
-                        console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
-                    }
-
-                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
-                    visibleMarkers[key] = tempMarker;
+                    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${value.text}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
+                    visibleMarkers[value.text] = tempMarker;
                     markersLayer.addLayer(tempMarker);
                 }
             }
@@ -317,11 +321,11 @@ function removeCollectedMarkers()
 
     $.each(markers, function (key, value)
     {
-        if (disableMarkers.includes(key.toString()))
+        if (disableMarkers.includes(value.text.toString()))
         {
-            if(visibleMarkers[key] != null)
+            if(visibleMarkers[value.text] != null)
             {
-                $(visibleMarkers[key]._icon).css('opacity', '.35');
+                $(visibleMarkers[value.text]._icon).css('opacity', '.35');
             }
         }
     });
@@ -386,6 +390,14 @@ function addCoordsOnMap(coords)
     }
 }
 
+function changeCursor()
+{
+    if(showCoordinates || customRouteEnabled)
+        $('.leaflet-grab').css('cursor', 'pointer');
+    else
+        $('.leaflet-grab').css('cursor', 'grab');
+}
+
 $("#day").on("input", function()
 {
     day = $('#day').val();
@@ -428,15 +440,44 @@ $("#tools").on("change", function()
     addMarkers();
 });
 
-$("#custom-routes").on("change", function()
+$("#reset-markers").on("change", function()
 {
-    customRouteConnections = [];
-    map.removeLayer(customRoute);
-    customRouteEnabled = $("#custom-routes").val() == '1';
+    var temp = $("#reset-markers").val();
+    if(temp == 'clear')
+    {
+        Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
+    }
+    else
+    {
+        resetMarkersDaily = temp == 'true';
+        Cookies.set('removed-markers-daily', resetMarkersDaily, 999);
+    }
+
+    removeCollectedMarkers();
 });
 
-$('#show-coordinates').on('change', function() {
+$("#custom-routes").on("change", function()
+{
+    var temp = $("#custom-routes").val();
+    customRouteEnabled = temp == '1';
+    if(temp == 'clear')
+    {
+        customRouteConnections = [];
+        map.removeLayer(customRoute);
+        customRouteEnabled = true;
+        $("#custom-routes").val('1');
+    }
+
+    changeCursor();
+
+
+});
+
+$('#show-coordinates').on('change', function()
+{
     showCoordinates = $('#show-coordinates').val() == '1';
+
+    changeCursor();
 });
 
 $("#language").on("change", function()
