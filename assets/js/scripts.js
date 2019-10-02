@@ -43,6 +43,7 @@ var nazarLocations = [
 
 function init()
 {
+    loadRoutesData();
     if(typeof Cookies.get('removed-items') === 'undefined')
         Cookies.set('removed-items', '', { expires: 1 });
 
@@ -104,14 +105,28 @@ function init()
                     return value != itemId.toString();
                 });
                 $(visibleMarkers[itemId]._icon).css('opacity', '1');
+                for (i in routesData){
+                    if (markers[itemId].text == routesData[i].key){
+                        delete routesData[i].hidden;
+                    }
+                }
+                if($("#routes").val() != 0) {
+                    drawLines();
+                }
             }
             else
             {
                 disableMarkers.push(itemId.toString());
 
                 $(visibleMarkers[itemId]._icon).css('opacity', '0.35');
+                
                 for (i in routesData){
-                    console.log(itemId)
+                    if (markers[itemId].text == routesData[i].key){
+                        routesData[i].hidden = true;
+                    }
+                }
+                if($("#routes").val() != 0) {
+                    drawLines();
                 }
             }
             
