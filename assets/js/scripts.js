@@ -333,6 +333,11 @@ function removeCollectedMarkers()
             if(visibleMarkers[key] != null)
             {
                 $(visibleMarkers[key]._icon).css('opacity', '.35');
+                for (i in routesData){
+                    if (markers[itemId].text == routesData[i].key){
+                        routesData[i].hidden = true;
+                    }
+                }
             }
         }
     });
