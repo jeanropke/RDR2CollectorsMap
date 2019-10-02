@@ -98,7 +98,6 @@ function init()
         $('.remove-button').click(function(e)
         {
             var itemId = $(event.target).data("item");
-            console.log($(event.target).data("item"));
             if(disableMarkers.includes(itemId.toString()))
             {
                 disableMarkers = $.grep(disableMarkers, function(value) {
@@ -109,9 +108,15 @@ function init()
             else
             {
                 disableMarkers.push(itemId.toString());
-                $(visibleMarkers[itemId]._icon).css('opacity', '0.35');
-            }
 
+                $(visibleMarkers[itemId]._icon).css('opacity', '0.35');
+                for (i in routesData){
+                    if (markers[itemId].text == routesData[i].key){
+                        routesData[i].hidden = true;
+                    }
+                }
+            }
+            
             Cookies.set('removed-items', disableMarkers.join(';'), { expires: 1 });
 
 
@@ -138,7 +143,7 @@ function init()
     loadMarkers();
 
     setCurrentDayCycle();
-    loadRoutesData();
+    
 
 
     var pos = [-53.2978125, 68.7596875];
@@ -216,11 +221,10 @@ function loadRoutesData()
 function drawLines()
 {
     var connections = [];
-    routesData[1]['hidden'] = "";
     for (i in routesData){
-        if(typeof(routesdata[i].hidden) === "undefined"){
+        if(typeof(routesData[i].hidden) === "undefined"){
             for (j in markers){
-                if(markers[j].text == routesData[i].key && markers[thing].day == day){
+                if(markers[j].text == routesData[i].key && markers[j].day == day){
                     var node = [markers[j].x, markers[j].y];
                     connections.push(node);
                 }
