@@ -321,11 +321,15 @@ function removeCollectedMarkers()
 
     $.each(markers, function (key, value)
     {
-        if (disableMarkers.includes(value.text.toString()))
+        if(visibleMarkers[value.text] != null)
         {
-            if(visibleMarkers[value.text] != null)
+            if (disableMarkers.includes(value.text.toString()))
             {
                 $(visibleMarkers[value.text]._icon).css('opacity', '.35');
+            }
+            else
+            {
+                $(visibleMarkers[value.text]._icon).css('opacity', '1');
             }
         }
     });
@@ -442,16 +446,16 @@ $("#tools").on("change", function()
 
 $("#reset-markers").on("change", function()
 {
-    var temp = $("#reset-markers").val();
-    if(temp == 'clear')
+    if($("#reset-markers").val() == 'clear')
     {
         Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
+        disableMarkers = Cookies.get('removed-items').split(';');
+        $("#reset-markers").val('false');
     }
-    else
-    {
-        resetMarkersDaily = temp == 'true';
-        Cookies.set('removed-markers-daily', resetMarkersDaily, 999);
-    }
+
+    resetMarkersDaily = $("#reset-markers").val() == 'true';
+    Cookies.set('removed-markers-daily', resetMarkersDaily, 999);
+
 
     removeCollectedMarkers();
 });
