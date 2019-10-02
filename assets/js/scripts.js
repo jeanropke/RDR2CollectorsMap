@@ -111,9 +111,7 @@ function init()
 
                 $(visibleMarkers[itemId]._icon).css('opacity', '0.35');
                 for (i in routesData){
-                    if (markers[itemId].text == routesData[i].key){
-                        routesData[i].hidden = true;
-                    }
+                    console.log(itemId)
                 }
             }
             
