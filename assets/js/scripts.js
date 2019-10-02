@@ -217,7 +217,7 @@ function drawLines()
     var connections = [];
     for (i in routesData){
         for (j in markers){
-            if(markers[j].text == routesData[i].key && markers[thing].day == day){
+            if(markers[j].text == routesData[i].key && markers[j].day == day){
                 var node = [markers[j].x, markers[j].y];
                 connections.push(node)
             }
