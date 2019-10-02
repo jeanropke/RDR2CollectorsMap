@@ -41,7 +41,7 @@ var nazarLocations = [
     {"id":"12","x":"-124.03125","y":"34.171875"}
 ];
 
-var nazarCurrentLocation = 7;
+var nazarCurrentLocation = 8;
 
 function init()
 {
