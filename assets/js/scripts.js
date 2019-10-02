@@ -224,7 +224,7 @@ function setCurrentDayCycle()
 function loadRoutesData()
 {
     routesData = [];
-    $.getJSON(`routes/day2.json`, {}, function(data)
+    $.getJSON(`routes/day${day}.json`, {}, function(data)
     {
         routesData = data;
     });
@@ -333,7 +333,7 @@ function removeCollectedMarkers()
             {
                 $(visibleMarkers[key]._icon).css('opacity', '.35');
                 for (i in routesData){
-                    if (markers[itemId].text == routesData[i].key){
+                    if (markers[key].text == routesData[i].key){
                         routesData[i].hidden = true;
                     }
                 }
