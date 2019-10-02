@@ -125,6 +125,7 @@
             <select class="input-day" id="custom-routes">
                 <option value="1">Yes</option>
                 <option value="0" selected>No</option>
+                <option value="clear">Clear</option>
             </select>
         </div>
         <div class="input-container">
@@ -132,6 +133,14 @@
             <select class="input-day" id="show-coordinates">
                 <option value="1">Yes</option>
                 <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="reset-markers">Reset markers daily</label>
+            <select class="input-day" id="reset-markers">
+                <option value="true" selected>Yes</option>
+                <option value="false">No</option>
+                <option value="clear">Reset</option>
             </select>
         </div>
     </div>
@@ -148,7 +157,7 @@
 </div>
 <div class="menu-toggle">></div>
 <div id="map"></div>
-<script src="assets/js/scripts.js?nocache=10"></script>
+<script src="assets/js/scripts.js?nocache=11"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
 <script>
