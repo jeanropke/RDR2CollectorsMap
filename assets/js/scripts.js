@@ -227,9 +227,7 @@ function loadRoutesData()
     $.getJSON(`routes/day2.json`, {}, function(data)
     {
         routesData = data;
-    });
-
-    $.each(markers, function (j, value)
+        $.each(markers, function (j, value)
     {
         if (disableMarkers.includes(j.toString()))
         {
@@ -243,6 +241,9 @@ function loadRoutesData()
             }
         }
     });
+    });
+
+    
 }
 
 function drawLines()
