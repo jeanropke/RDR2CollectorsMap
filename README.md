@@ -5,4 +5,4 @@ Detailed map by [RDR2Map](https://rdr2map.com/)
 
 Dark map by [TDLCTV](https://github.com/TDLCTV)
 
-Thanks for the people over at [https://nazarfinder.surge.sh/](https://nazarfinder.surge.sh/) for the API 
+Thanks for the people over at [https://madamnazar.io/](https://madamnazar.io/) for the API 
