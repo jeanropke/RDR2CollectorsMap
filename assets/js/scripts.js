@@ -43,7 +43,7 @@ var nazarLocations = [
 
 function init()
 {
-    loadRoutesData();
+
     if(typeof Cookies.get('removed-items') === 'undefined')
         Cookies.set('removed-items', '', { expires: 1 });
 
@@ -156,8 +156,7 @@ function init()
     loadMarkers();
 
     setCurrentDayCycle();
-    
-
+    loadRoutesData();
 
     var pos = [-53.2978125, 68.7596875];
     var offset = 1.15;
