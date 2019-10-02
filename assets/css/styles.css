@@ -197,6 +197,20 @@ p {
     z-index: 998;
 }
 
+#custom-route-clear {
+    border: none;
+    background: none;
+    color: #eee;
+    font-size: 14px;
+    padding: 0;
+    margin: 0 0 5px;
+}
+
+#custom-route-clear:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 @media (min-width: 1025px) {
     .side-menu {
         width: 300px;

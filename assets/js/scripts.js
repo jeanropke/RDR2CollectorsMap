@@ -430,9 +430,12 @@ $("#tools").on("change", function()
 
 $("#custom-routes").on("change", function()
 {
+    customRouteEnabled = $("#custom-routes").val() == '1';
+});
+
+$('#custom-route-clear').click(function() {
     customRouteConnections = [];
     map.removeLayer(customRoute);
-    customRouteEnabled = $("#custom-routes").val() == '1';
 });
 
 $('#show-coordinates').on('change', function() {
