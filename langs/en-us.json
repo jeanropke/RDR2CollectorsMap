@@ -301,12 +301,12 @@
 
 	{"key": "coin_new_yorke_token.name", "value": "1700 New Yorke Token Coin"},
 	{"key": "coin_new_yorke_token_1.desc", "value": "🧲 Inside the cave."},
-	{"key": "coin_new_yorke_token_2.desc", "value": "🧲 Next to the two trees."},
+	{"key": "coin_new_yorke_token_2.desc", "value": "🧲 Next to the two trees. <br/> <img width='200' src='https://imgur.com/mBRhNaf.png' />"},
 	{"key": "coin_new_yorke_token_3.desc", "value": "🧲 "},
 
 	{"key": "coin_five_dollar_bechtler.name", "value": "1800 Five Dollar Bechtler Coin"},
 	{"key": "coin_five_dollar_bechtler_1.desc", "value": "🧲 "},
-	{"key": "coin_five_dollar_bechtler_2.desc", "value": "🧲 "},
+	{"key": "coin_five_dollar_bechtler_2.desc", "value": "🧲 Underneath the railroad"},
 	{"key": "coin_five_dollar_bechtler_3.desc", "value": "🧲 Underneath the windmill."},
 
 	{"key": "coin_quarter.name", "value": "1792 Quarter Coin"},
@@ -336,7 +336,7 @@
 
 	{"key": "coin_gold_eagle.name", "value": "1797 Gold Eagle Coin"},
 	{"key": "coin_gold_eagle_1.desc", "value": "🧲 "},
-	{"key": "coin_gold_eagle_2.desc", "value": "🧲 "},
+	{"key": "coin_gold_eagle_2.desc", "value": "🧲 Inside well"},
 	{"key": "coin_gold_eagle_3.desc", "value": "🧲 West side of the large rock."},
 
 	{"key": "coin_liberty_quarter.name", "value": "1792 Liberty Quarter Coin"},
