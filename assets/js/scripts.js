@@ -98,7 +98,7 @@ function init()
         $('.remove-button').click(function(e)
         {
             var itemId = $(event.target).data("item");
-            console.log(data("item"));
+            console.log($(event.target).data);
             if(disableMarkers.includes(itemId.toString()))
             {
                 disableMarkers = $.grep(disableMarkers, function(value) {
