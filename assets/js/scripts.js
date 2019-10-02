@@ -215,14 +215,18 @@ function loadRoutesData()
 function drawLines()
 {
     var connections = [];
+    routesData[1]['hidden'] = "";
     for (i in routesData){
-        for (j in markers){
-            if(markers[j].text == routesData[i].key && markers[j].day == day){
-                var node = [markers[j].x, markers[j].y];
-                connections.push(node)
+        if(typeof(routesdata[i].hidden) === "undefined"){
+            for (j in markers){
+                if(markers[j].text == routesData[i].key && markers[thing].day == day){
+                    var node = [markers[j].x, markers[j].y];
+                    connections.push(node);
+                }
             }
         }
-    }
+    } 
+
 
     if (polylines instanceof L.Polyline)
     {
