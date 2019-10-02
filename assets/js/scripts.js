@@ -325,15 +325,15 @@ function addMarkers()
 function removeCollectedMarkers()
 {
 
-    $.each(markers, function (key, value)
+    $.each(markers, function (j, value)
     {
-        if (disableMarkers.includes(key.toString()))
+        if (disableMarkers.includes(j.toString()))
         {
-            if(visibleMarkers[key] != null)
+            if(visibleMarkers[j] != null)
             {
                 $(visibleMarkers[key]._icon).css('opacity', '.35');
                 for (i in routesData){
-                    if (markers[key].text == routesData[i].key){
+                    if (markers[j].text == routesData[i].key){
                         routesData[i].hidden = true;
                     }
                 }
