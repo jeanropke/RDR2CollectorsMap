@@ -342,7 +342,7 @@ function removeCollectedMarkers()
 
     $.each(markers, function (key, value)
     {
-        if (disableMarkers.includes(j.toString()))
+        if (disableMarkers.includes(key.toString()))
         {
             if(visibleMarkers[key] != null)
             {
