@@ -331,7 +331,7 @@ function removeCollectedMarkers()
         {
             if(visibleMarkers[j] != null)
             {
-                $(visibleMarkers[key]._icon).css('opacity', '.35');
+                $(visibleMarkers[j]._icon).css('opacity', '.35');
                 for (i in routesData){
                     if (markers[j].text == routesData[i].key){
                         routesData[i].hidden = true;
