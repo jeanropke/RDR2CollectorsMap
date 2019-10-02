@@ -224,7 +224,7 @@ function setCurrentDayCycle()
 function loadRoutesData()
 {
     routesData = [];
-    $.getJSON(`routes/day${day}.json`, {}, function(data)
+    $.getJSON(`routes/day2.json`, {}, function(data)
     {
         routesData = data;
     });
