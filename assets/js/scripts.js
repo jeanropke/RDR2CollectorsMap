@@ -206,7 +206,7 @@ function setCurrentDayCycle()
 function loadRoutesData()
 {
     routesData = [];
-    $.getJSON("routes.json", {}, function(data)
+    $.getJSON(`routes/day${day}.json`, {}, function(data)
     {
         routesData = data;
     });
@@ -215,13 +215,14 @@ function loadRoutesData()
 function drawLines()
 {
     var connections = [];
-    $.each(routesData, function (key, value)
-    {
-        if(value.day == day)
-        {
-            connections.push(value.data);
+    for (i in routesData){
+        for (j in markers){
+            if(markers[j].text == routesData[i].key && markers[thing].day == day){
+                var node = [markers[j].x, markers[j].y];
+                connections.push(node)
+            }
         }
-    });
+    }
 
     if (polylines instanceof L.Polyline)
     {
