@@ -127,7 +127,7 @@ function init()
             else
             {   
                 disableMarkers.push(itemName.toString());
-                $.each(routesData, function(b, value){
+                $.each(routesData[day], function(b, value){
                     if (disableMarkers.includes(value.key)){
                         value.hidden = true;
                     }
