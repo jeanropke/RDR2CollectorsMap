@@ -8,7 +8,8 @@ var resetMarkersDaily;
 var disableMarkers = [];
 var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
-    'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar'
+    'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar',
+    'fast-travel'
 ];
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
@@ -43,21 +44,21 @@ var nazarLocations = [
 ];
 
 var fastTravelLocations = [
-    {"text": "Tumbleweed", "x": "-109.3203125","y": "26.859375"},
-    {"text": "Armadillo", "x": "-104.375","y": "53.4140625"},
-    {"text": "MacFarlane's Ranch", "x": "-101.515625","y": "72.4140625"},
-    {"text": "Manzanita Post", "x": "-88.5859375","y": "80.7890625"},
-    {"text": "Blackwater", "x": "-82.9140625","y": "99.765625"},
-    {"text": "Strawberry", "x": "-70.03125","y": "84.296875"},
-    {"text": "Valentine", "x": "-53.578125","y": "108.3828125"},
-    {"text": "Colter", "x": "-25.9296875","y": "91.046875"},
-    {"text": "Emerald Ranch Station", "x": "-56.7734375","y": "134.8203125"},
-    {"text": "Rhodes", "x": "-83.6640625","y": "130.65625"},
-    {"text": "Wapiti Indian Reservation", "x": "-29.7265625","y": "118.7890625"},
-    {"text": "Van Horn Trading Post", "x": "-53.703125","y": "156.3203125"},
-    {"text": "Annesburg", "x": "-43.46875","y": "156.765625"},
-    {"text": "Saint Denis", "x": "-86.328125","y": "152.6796875"},
-    {"text": "Lagras", "x": "-72.59375","y": "143.859375"}
+    {"text": "fasttravel.tumbleweed", "x": "-109.3203125","y": "26.859375"},
+    {"text": "fasttravel.armadillo", "x": "-104.375","y": "53.4140625"},
+    {"text": "fasttravel.macfarlanes", "x": "-101.515625","y": "72.4140625"},
+    {"text": "fasttravel.manzanita", "x": "-88.5859375","y": "80.7890625"},
+    {"text": "fasttravel.blackwater", "x": "-82.9140625","y": "99.765625"},
+    {"text": "fasttravel.strawberry", "x": "-70.03125","y": "84.296875"},
+    {"text": "fasttravel.valentine", "x": "-53.578125","y": "108.3828125"},
+    {"text": "fasttravel.colter", "x": "-25.9296875","y": "91.046875"},
+    {"text": "fasttravel.emerald", "x": "-56.7734375","y": "134.8203125"},
+    {"text": "fasttravel.rhodes", "x": "-83.6640625","y": "130.65625"},
+    {"text": "fasttravel.wapiti", "x": "-29.7265625","y": "118.7890625"},
+    {"text": "fasttravel.van_horn", "x": "-53.703125","y": "156.3203125"},
+    {"text": "fasttravel.annesburg", "x": "-43.46875","y": "156.765625"},
+    {"text": "fasttravel.saint_denis", "x": "-86.328125","y": "152.6796875"},
+    {"text": "fasttravel.lagras", "x": "-72.59375","y": "143.859375"}
 ];
 
 var nazarCurrentLocation = 6;
@@ -179,7 +180,6 @@ function init()
     loadMarkers();
     setCurrentDayCycle();
     loadRoutesData();
-
     var pos = [-53.2978125, 68.7596875];
     var offset = 1.15;
     L.imageOverlay('overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
@@ -313,6 +313,9 @@ function loadMarkers()
     {
         markers = data;
         loadLanguage();
+
+        addNazarMarker();
+        addfastTravelMarker();
     });
 
 }
@@ -320,9 +323,6 @@ function loadMarkers()
 function addMarkers()
 {
     markersLayer.clearLayers();
-
-    addNazarMarker();
-    addfastTravelMarker();
 
     visibleMarkers = [];
 
@@ -334,7 +334,7 @@ function addMarkers()
 
         if(enabledTypes.includes(value.icon))
         {
-            if (value.day == day)
+            if (value.day == day || isNaN(value.day)) //if is not a number, will be nazar or fast travel
             {
                 if (languageData[value.text+'.name'] == null)
                 {
@@ -349,15 +349,7 @@ function addMarkers()
                         {
                             if (visibleMarkers[value.text] == null)
                             {
-                                var tempMarker = L.marker([value.x, value.y], {
-                                    icon: L.AwesomeMarkers.icon({
-                                        iconUrl: 'icon/' + value.icon + '.png',
-                                        markerColor: 'day_' + value.day
-                                    })
-                                }).bindPopup(`<h1> ${languageData[value.text + '.name']} - Day ${value.day}</h1><p> ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
-
-                                visibleMarkers[value.text] = tempMarker;
-                                markersLayer.addLayer(tempMarker);
+                                addMarkerOnMap(value);
 
 
                                 //not working as planned
@@ -370,14 +362,7 @@ function addMarkers()
                     });
                 }
                 else {
-                    var tempMarker = L.marker([value.x, value.y], {
-                        icon: L.AwesomeMarkers.icon({
-                            iconUrl: 'icon/' + value.icon + '.png',
-                            markerColor: 'day_' + value.day
-                        })
-                    }).bindPopup(`<h1> ${languageData[value.text + '.name']} - Day ${value.day}</h1><p> ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
-                    visibleMarkers[value.text] = tempMarker;
-                    markersLayer.addLayer(tempMarker);
+                    addMarkerOnMap(value);
                 }
 
             }
@@ -387,6 +372,26 @@ function addMarkers()
     markersLayer.addTo(map);
 
     removeCollectedMarkers();
+}
+
+function addMarkerOnMap(value){
+    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})});
+
+    switch (value.day) {
+        case 'nazar':
+            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - 3rd October</h1><p>  </p>`);
+            break;
+        case 'fasttravel':
+            tempMarker.bindPopup(`<h1>${languageData[value.text + '.name']}</h1><p>  </p>`);
+            break;
+        default:
+            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - Day ${value.day}</h1><p> ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
+            break;
+    }
+
+
+    visibleMarkers[value.text] = tempMarker;
+    markersLayer.addLayer(tempMarker);
 }
 
 function removeCollectedMarkers()
@@ -411,15 +416,19 @@ function removeCollectedMarkers()
 //loads the current location of Nazar and adds a marker in the correct location
 function addNazarMarker()
 {
-    var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 3rd</h1>`).on('click', addCoordsOnMap);
-    markersLayer.addLayer(nazarMarker);
+    //var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'red'})}).bindPopup(`<h1>Madam Nazar - October 3rd</h1>`).on('click', addCoordsOnMap);
+    //markersLayer.addLayer(nazarMarker);
+
+    markers.push({"text": "madam_nazar", "day": "nazar", "tool": "-1", "icon": "nazar", "x": nazarLocations[nazarCurrentLocation].x, "y": nazarLocations[nazarCurrentLocation].y});
 }
 //adds fasttravel points
 function addfastTravelMarker()
 {   
     $.each(fastTravelLocations, function(b, value){
-        var ftmarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/fast-travel.png', markerColor: 'gray'})}).bindPopup(`<h1>${value.text}</h1>`).on('click', addCoordsOnMap);
-        markersLayer.addLayer(ftmarker);
+        //var ftmarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/fast-travel.png', markerColor: 'gray'})}).bindPopup(`<h1>${value.text}</h1>`).on('click', addCoordsOnMap);
+        //markersLayer.addLayer(ftmarker);
+        markers.push({"text": value.text, "day": "fasttravel", "tool": "-1", "icon": "fast-travel", "x": value.x, "y": value.y});
+
     });
 }
 
@@ -486,7 +495,6 @@ $("#day").on("input", function()
 {
     day = $('#day').val();
     addMarkers();
-    addNazarMarker();
 
     if($("#routes").val() == 1)
         drawLines();
