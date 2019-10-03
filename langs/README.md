@@ -13,7 +13,7 @@ spanish (es-es.json)
   - no-one yet!
   
 french (fr-fr.json)
-  - no-one yet!
+  - Nopitch
   
 italian (it-it.json)
   - no-one yet!
