@@ -27,82 +27,82 @@
 
     <div class="menu-option clickable" data-type="american-flowers">
         <img class="icon" src="./icon/american-flowers.png" />
-        <span>American Wild Flowers</span>
+        <span data-text="menu.american_flowers">American Wild Flowers</span>
     </div>
     <div class="menu-option clickable" data-type="antique-bottles">
         <img class="icon" src="./icon/antique-bottles.png" />
-        <span>Antique Alcohol Bottles</span>
+        <span data-text="menu.antique_bottles">Antique Alcohol Bottles</span>
     </div>
     <div class="menu-option clickable" data-type="arrowhead">
         <img class="icon" src="./icon/arrowhead.png" />
-        <span>Arrowheads</span>
+        <span data-text="menu.arrowhead">Arrowheads</span>
     </div>
     <div class="menu-option clickable" data-type="bird-eggs">
         <img class="icon" src="./icon/bird-eggs.png" />
-        <span>Bird Eggs</span>
+        <span data-text="menu.bird_eggs">Bird Eggs</span>
     </div>
     <div class="menu-option clickable" data-type="coin">
         <img class="icon" src="./icon/coin.png" />
-        <span>Coins</span>
+        <span data-text="menu.coin">Coins</span>
     </div>
     <div class="menu-option clickable" data-type="family-heirlooms">
         <img class="icon" src="./icon/family-heirlooms.png" />
-        <span>Family Heirlooms</span>
+        <span data-text="menu.family_heirlooms">Family Heirlooms</span>
     </div>
     <div class="menu-option clickable" data-type="lost-bracelet">
         <img class="icon" src="./icon/lost-bracelet.png" />
-        <span>Lost Jewelry - Bracelets</span>
+        <span data-text="menu.lost_bracelet">Lost Jewelry - Bracelets</span>
     </div>
     <div class="menu-option clickable" data-type="lost-earrings">
         <img class="icon" src="./icon/lost-earrings.png" />
-        <span>Lost Jewelry - Earrings</span>
+        <span data-text="menu.lost_earrings">Lost Jewelry - Earrings</span>
     </div>
     <div class="menu-option clickable" data-type="lost-necklaces">
         <img class="icon" src="./icon/lost-necklaces.png" />
-        <span>Lost Jewelry - Necklaces</span>
+        <span data-text="menu.lost_necklaces">Lost Jewelry - Necklaces</span>
     </div>
     <div class="menu-option clickable" data-type="lost-ring">
         <img class="icon" src="./icon/lost-ring.png" />
-        <span>Lost Jewelry - Rings</span>
+        <span data-text="menu.lost_ring">Lost Jewelry - Rings</span>
     </div>
     <div class="menu-option clickable" data-type="card-cups">
         <img class="icon" src="./icon/card-cups.png" />
-        <span>Tarot Cards - Cups</span>
+        <span data-text="menu.card_cups">Tarot Cards - Cups</span>
     </div>
     <div class="menu-option clickable" data-type="card-pentacles">
         <img class="icon" src="./icon/card-pentacles.png" />
-        <span>Tarot Cards - Pentacles</span>
+        <span data-text="menu.card_pentacles">Tarot Cards - Pentacles</span>
     </div>
     <div class="menu-option clickable" data-type="card-swords">
         <img class="icon" src="./icon/card-swords.png" />
-        <span>Tarot Cards - Swords</span>
+        <span data-text="menu.card_swords">Tarot Cards - Swords</span>
     </div>
     <div class="menu-option clickable" data-type="card-wands">
         <img class="icon" src="./icon/card-wands.png" />
-        <span>Tarot Cards - Wands</span>
+        <span data-text="menu.card_wands">Tarot Cards - Wands</span>
     </div>
     <div class="search-container">
-        <h2>Search</h2>
+        <h2 data-text="menu.search">Search</h2>
         <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
     </div>
 
     <div class="settings-container">
-        <h2>Settings</h2>
+        <h2 data-text="menu.settings">Settings</h2>
         <div class="input-container">
-            <label for="day">Day</label>
+            <label for="day" data-text="menu.day">Day</label>
             <input id="day" class="input-day" type="number" min="1" max="3">
         </div>
         <div class="input-container">
-            <label for="tools">Tool type</label>
+            <label for="tools" data-text="menu.tool_type">Tool type</label>
             <select class="input-day" id="tools">
-                <option value="0">No tools</option>
-                <option value="1">Shovel</option>
-                <option value="2">Metal detector</option>
-                <option value="3" selected>All</option>
+                <option value="0" data-text="menu.tool_type.no_tools">No tools</option>
+                <option value="1" data-text="menu.tool_type.shovel">Shovel</option>
+                <option value="2" data-text="menu.tool_type.metal_detector">Metal detector</option>
+                <option value="3" data-text="menu.tool_type.all" selected>All</option>
             </select>
         </div>
         <div class="input-container">
-            <label for="tools">Language</label>
+            <label for="tools" data-text="menu.language">Language</label>
             <select class="input-day" id="language">
                 <option value="de-de">Deutsch</option>
                 <option value="fr-fr">Français</option>
@@ -114,44 +114,44 @@
             </select>
         </div>
         <div class="input-container">
-            <label for="routes">Enable route</label>
+            <label for="routes" data-text="menu.enable_route">Enable route</label>
             <select class="input-day" id="routes">
-                <option value="1">Yes</option>
-                <option value="0" selected>No</option>
+                <option value="1" data-text="menu.yes">Yes</option>
+                <option value="0" data-text="menu.no" selected>No</option>
             </select>
         </div>
         <div class="input-container">
-            <label for="custom-routes">Enable custom route</label>
+            <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
             <select class="input-day" id="custom-routes">
-                <option value="1">Yes</option>
-                <option value="0" selected>No</option>
-                <option value="clear">Clear</option>
+                <option value="1" data-text="menu.yes">Yes</option>
+                <option value="0" data-text="menu.no" selected>No</option>
+                <option value="clear" data-text="menu.clear">Clear</option>
             </select>
         </div>
         <div class="input-container">
-            <label for="show-coordinates">Show coordinates on click</label>
+            <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
             <select class="input-day" id="show-coordinates">
-                <option value="1">Yes</option>
-                <option value="0" selected>No</option>
+                <option value="1" data-text="menu.yes">Yes</option>
+                <option value="0" data-text="menu.no" selected>No</option>
             </select>
         </div>
         <div class="input-container">
-            <label for="reset-markers">Reset markers daily</label>
+            <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>
             <select class="input-day" id="reset-markers">
-                <option value="true" selected>Yes</option>
-                <option value="false">No</option>
-                <option value="clear">Reset</option>
+                <option value="true" data-text="menu.yes" selected>Yes</option>
+                <option value="false" data-text="menu.no">No</option>
+                <option value="clear" data-text="menu.reset">Reset</option>
             </select>
         </div>
     </div>
 
 
     <div class="issues-container">
-        <h2>Issues</h2>
-        <a href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">Report issues here!</a>
+        <h2 data-text="menu.issues">Issues</h2>
+        <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">Report issues here!</a>
     </div>
     <div class="hide-show-container">
-        <a href="./index-legacy.html">Return to legacy version!</a>
+        <a href="./index-legacy.html" data-text="menu.return_legacy">Return to legacy version!</a>
     </div>
     <div class="donate-container">
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
