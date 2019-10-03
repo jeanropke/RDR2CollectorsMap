@@ -47,7 +47,7 @@ Version: 1.0
 }
 
 /* Colors */
-.awesome-marker-icon-red {
+.awesome-marker-icon-red,.awesome-marker-icon-day_nazar {
   background-position: 0 0;
 }
 
@@ -111,7 +111,7 @@ Version: 1.0
   background-position: -574px 0;
 }
 
-.awesome-marker-icon-gray {
+.awesome-marker-icon-gray,.awesome-marker-icon-day_fasttravel {
   background-position: -648px 0;
 }
 
