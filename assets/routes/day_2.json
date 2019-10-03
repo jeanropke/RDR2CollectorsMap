@@ -107,7 +107,7 @@
     {"key": "coin_half_dime"},
     {"key": "bracelet_helena_sapphire"},
     {"key": "egg_eagle_2"},
-    {"key": "coin_gold_dollar_coin"},
+    {"key": "coin_gold_dollar.coin"},
     {"key": "ring_harland_coral"},
     {"key": "pentacles_nine"},
     {"key": "earring_josephine_pearl"},
@@ -119,7 +119,7 @@
     {"key": "arrowhead_slate"},
     {"key": "heirlooms_goat_hair_brush"},
     {"key": "wands_king"},
-    {"key": "coin_nickel"},
+    {"key": "coin_nickel_coin"},
     {"key": "flower_bitterweed_1"},
     {"key": "swords_four"},
     {"key": "pentacles_seven"},
@@ -163,5 +163,4 @@
     {"key": "wands_two"},
     {"key": "cups_ace"},
     {"key": "coin_liberty_quarter"}
-    ]
-    
+]
