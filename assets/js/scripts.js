@@ -23,7 +23,7 @@ var customRouteConnections = [];
 var showCoordinates = false;
 
 var toolType = '3'; //All type of tools
-var avaliableLanguages = ['de-de', 'en-us', 'pt-br', 'pl', 'zh-s', 'zh-t'];
+var avaliableLanguages = ['de-de', 'en-us', 'fr-fr', 'pt-br', 'pl', 'zh-s', 'zh-t'];
 var lang;
 var languageData = [];
 
