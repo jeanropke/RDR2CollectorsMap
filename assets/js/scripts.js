@@ -42,6 +42,24 @@ var nazarLocations = [
     {"id":"12","x":"-124.03125","y":"34.171875"}
 ];
 
+var fastTravelLocations = [
+    {"text": "Tumbleweed", "x": "-109.3203125","y": "26.859375"},
+    {"text": "Armadillo", "x": "-104.375","y": "53.4140625"},
+    {"text": "MacFarlane's Ranch", "x": "-101.515625","y": "72.4140625"},
+    {"text": "Manzanita Post", "x": "-88.5859375","y": "80.7890625"},
+    {"text": "Blackwater", "x": "-82.9140625","y": "99.765625"},
+    {"text": "Strawberry", "x": "-70.03125","y": "84.296875"},
+    {"text": "Valentine", "x": "-53.578125","y": "108.3828125"},
+    {"text": "Colter", "x": "-25.9296875","y": "91.046875"},
+    {"text": "Emerald Ranch Station", "x": "-56.7734375","y": "134.8203125"},
+    {"text": "Rhodes", "x": "-83.6640625","y": "130.65625"},
+    {"text": "Wapiti Indian Reservation", "x": "-29.7265625","y": "118.7890625"},
+    {"text": "Van Horn Trading Post", "x": "-53.703125","y": "156.3203125"},
+    {"text": "Annesburg", "x": "-43.46875","y": "156.765625"},
+    {"text": "Saint Denis", "x": "-86.328125","y": "152.6796875"},
+    {"text": "Lagras", "x": "-72.59375","y": "143.859375"}
+];
+
 var nazarCurrentLocation = 6;
 
 function init()
@@ -304,7 +322,7 @@ function addMarkers()
     markersLayer.clearLayers();
 
     addNazarMarker();
-
+    addfastTravelMarker();
 
     visibleMarkers = [];
 
@@ -395,6 +413,14 @@ function addNazarMarker()
 {
     var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 3rd</h1>`).on('click', addCoordsOnMap);
     markersLayer.addLayer(nazarMarker);
+}
+//adds fasttravel points
+function addfastTravelMarker()
+{   
+    $.each(fastTravelLocations, function(b, value){
+        var ftmarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/fast-travel.png', markerColor: 'gray'})}).bindPopup(`<h1>${value.text}</h1>`).on('click', addCoordsOnMap);
+        markersLayer.addLayer(ftmarker);
+    });
 }
 
 function customMarker(coords){
