@@ -248,7 +248,7 @@ function drawLines()
     var connections = [];
     for (var node of routesData){
         for (var marker of markers){
-            if (marker.text == node.key && marker.day ==day && !disableMarkers.includes(node.key)){
+            if (marker.text == node.key && marker.day ==day && !disableMarkers.includes(node.key) && enabledTypes.includes(marker.icon)){
                 var connection = [marker.x, marker.y]
                 connections.push(connection);
             }
@@ -539,6 +539,7 @@ $('.menu-option.clickable').on('click', function ()
         enabledTypes.push(menu.data('type'));
     }
     addMarkers();
+    drawLines();
 });
 
 $('.menu-toggle').on('click', function()
