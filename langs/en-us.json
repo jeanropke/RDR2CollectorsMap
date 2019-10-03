@@ -705,7 +705,7 @@
 	{"key": "ring_sackville_diamond_3.desc", "value": "Inside the chimney."},
 
 	{"key": "ring_thorburn_turquoise.name", "value": "Thorburn Turquoise Ring"},
-	{"key": "ring_thorburn_turquoise_1.desc", "value": ""},
+	{"key": "ring_thorburn_turquoise_1.desc", "value": "🧲 "},
 	{"key": "ring_thorburn_turquoise_2.desc", "value": ""},
 	{"key": "ring_thorburn_turquoise_3.desc", "value": ""},
 
@@ -835,8 +835,8 @@
 	{"key": "bracelet_durant_pearl_3.desc", "value": "On the small island in a large chest."},
 
 	{"key": "bracelet_infanta_turquoise.name", "value": "Infanta Turquoise Bracelet"},
-	{"key": "bracelet_infanta_turquoise_1.desc", "value": "🧲 Near the rock on the left side of the tunnel entrance."},
-	{"key": "bracelet_infanta_turquoise_2.desc", "value": ""},
+	{"key": "bracelet_infanta_turquoise_1.desc", "value": "In a chest, on the big central rock just on top of the waterfall!"},
+	{"key": "bracelet_infanta_turquoise_2.desc", "value": "🧲 Near the rock on the left side of the tunnel entrance."},
 	{"key": "bracelet_infanta_turquoise_3.desc", "value": "🧲 "},
 
 	{"key": "bracelet_elliston_carved.name", "value": "Elliston Carved Bracelet"},
