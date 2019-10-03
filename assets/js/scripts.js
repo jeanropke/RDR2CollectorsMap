@@ -293,12 +293,20 @@ function addMarkers()
                 {
                     $.each(searchTerms, function (id, term)
                     {
-                        var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${value.text}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
-                        visibleMarkers[value.text] = tempMarker;
-                        markersLayer.addLayer(tempMarker);
-
-                        if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) == -1)
+                        if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
+                        {
+                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
+                            visibleMarkers[key] = tempMarker;
+                            markersLayer.addLayer(tempMarker);
+                        }
+                        /*else
+                        {
+                            var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})}).bindPopup(`<h1> ${languageData[value.text+'.name']} - Day ${value.day}</h1><p> ${languageData[value.text+'_'+value.day+'.desc']} </p><p class="remove-button" data-item="${key}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
+                            visibleMarkers[key] = tempMarker;
+                            markersLayer.addLayer(tempMarker);
                             $(tempMarker._icon).css({'filter': 'grayscale(1)', 'opacity': '0.5'});
+
+                        }*/
                     });
                 }
                 else
