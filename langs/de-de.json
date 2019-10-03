@@ -1,4 +1,7 @@
 [
+	{"key": "menu.collectables", "value": "Collectables"},
+	{"key": "menu.hide_all", "value": "Hide all"},
+	{"key": "menu.show_all", "value": "Show all"},
 	{"key": "menu.american_flowers", "value": "American Wild Flowers"},
 	{"key": "menu.antique_bottles", "value": "Antique Alcohol Bottles"},
 	{"key": "menu.arrowhead", "value": "Arrowheads"},

@@ -1,4 +1,7 @@
 [
+	{"key": "menu.collectables", "value": "Colecionáveis"},
+	{"key": "menu.hide_all", "value": "Esconder tudo"},
+	{"key": "menu.show_all", "value": "Mostrar tudo"},
 	{"key": "menu.american_flowers", "value": "Flores Silvestres Americanas"},
 	{"key": "menu.antique_bottles", "value": "Bebidas Antigas"},
 	{"key": "menu.arrowhead", "value": "Pontas de Flecha"},
