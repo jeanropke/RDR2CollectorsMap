@@ -36,8 +36,8 @@
 	{"key": "menu.issues", "value": "Issues"},
 	{"key": "menu.report_issues", "value": "Report issues here!"},
 	{"key": "menu.return_legacy", "value": "Return to legacy version!"},
-	{"key": "menu.utils", "value": "Utils"},
-	{"key": "menu.fast_travel", "value": "Fast travel"},
+	{"key": "menu.utils", "value": "Utilities"},
+	{"key": "menu.fast_travel", "value": "Fast Travel"},
 
 	{"key": "fasttravel.tumbleweed.name", 	"value": "Tumbleweed"},
 	{"key": "fasttravel.armadillo.name", 	"value": "Armadillo"},
