@@ -224,7 +224,7 @@ function setCurrentDayCycle()
 function loadRoutesData()
 {
     routesData = [];
-    $.getJSON(`routes/day2.json`, {}, function(data)
+    $.getJSON(`routes/day1.json`, {}, function(data)
     {
         disableMarkers = Cookies.get('removed-items').split(';');
         routesData = data;
