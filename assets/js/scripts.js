@@ -187,6 +187,20 @@ function loadLanguage()
 
         });
         addMarkers();
+        setMenuLanguage();
+    });
+}
+
+function setMenuLanguage()
+{
+    $.each($('[data-text]'), function (key, value)
+    {
+        var temp = $(value);
+        if(languageData[temp.data('text')] == null) {
+            console.error(`[LANG][${lang}]: Text not found: '${temp.data('text')}'`);
+        }
+
+        $(temp).text(languageData[temp.data('text')]);
     });
 }
 
@@ -547,6 +561,7 @@ $('.menu-option.clickable').on('click', function ()
         enabledTypes.push(menu.data('type'));
     }
     addMarkers();
+    if($("#routes").val() == 1)
     drawLines();
 });
 
