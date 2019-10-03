@@ -99,6 +99,13 @@ p {
     text-align: center;
 }
 
+ .donate-container{
+     display: block;
+     color: #eee;
+     text-align: center;
+ }
+
+
 .menu-toggle {
     width: 30px;
     height: 30px;
