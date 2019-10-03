@@ -3,17 +3,17 @@
 	{"key": "cups_ace.name", "value": "Ass der Kelche"},
 	{"key": "cups_ace_1.desc", "value": ""},
 	{"key": "cups_ace_2.desc", "value": ""},
-	{"key": "cups_ace_3.desc", "value": ""},
+	{"key": "cups_ace_3.desc", "value": "Auf dem Nachttisch im rechten Schlafzimmer."},
 
 	{"key": "cups_two.name", "value": "Zwei der Kelche"},
 	{"key": "cups_two_1.desc", "value": ""},
-	{"key": "cups_two_2.desc", "value": ""},
-	{"key": "cups_two_3.desc", "value": ""},
+	{"key": "cups_two_2.desc", "value": "Auf einer Kiste im unteren Teil der Eisenbahnbrücke."},
+	{"key": "cups_two_3.desc", "value": "Auf dem Nachttisch."},
 
 	{"key": "cups_three.name", "value": "Drei der Kelche"},
 	{"key": "cups_three_1.desc", "value": ""},
 	{"key": "cups_three_2.desc", "value": ""},
-	{"key": "cups_three_3.desc", "value": ""},
+	{"key": "cups_three_3.desc", "value": "Auf einer Sitzbank."},
 
 	{"key": "cups_four.name", "value": "Vier der Kelche"},
 	{"key": "cups_four_1.desc", "value": ""},
@@ -21,24 +21,24 @@
 	{"key": "cups_four_3.desc", "value": ""},
 
 	{"key": "cups_five.name", "value": "Fünf der Kelche"},
-	{"key": "cups_five_1.desc", "value": ""},
+	{"key": "cups_five_1.desc", "value": "Auf einem Tisch neben einer Waage."},
 	{"key": "cups_five_2.desc", "value": ""},
-	{"key": "cups_five_3.desc", "value": ""},
+	{"key": "cups_five_3.desc", "value": "Auf dem Theater."},
 
 	{"key": "cups_six.name", "value": "Sechs der Kelche"},
-	{"key": "cups_six_1.desc", "value": ""},
-	{"key": "cups_six_2.desc", "value": ""},
+	{"key": "cups_six_1.desc", "value": "Drinnen auf der östlichen Fensterbank."},
+	{"key": "cups_six_2.desc", "value": "Hinten auf dem Wagen."},
 	{"key": "cups_six_3.desc", "value": ""},
 
 	{"key": "cups_seven.name", "value": "Sieben der Kelche"},
 	{"key": "cups_seven_1.desc", "value": ""},
-	{"key": "cups_seven_2.desc", "value": ""},
-	{"key": "cups_seven_3.desc", "value": ""},
+	{"key": "cups_seven_2.desc", "value": "In dem Schlafzimmer auf dem Nachttisch hinter der Tür."},
+	{"key": "cups_seven_3.desc", "value": "Im Haus in dem geöffneten Schrank."},
 
 	{"key": "cups_eight.name", "value": "Acht der Kelche"},
 	{"key": "cups_eight_1.desc", "value": ""},
-	{"key": "cups_eight_2.desc", "value": ""},
-	{"key": "cups_eight_3.desc", "value": ""},
+	{"key": "cups_eight_2.desc", "value": "Im Klohäuschen am Fluss."},
+	{"key": "cups_eight_3.desc", "value": "Im Bücherregal im Haus."},
 
 	{"key": "cups_nine.name", "value": "Neun der Kelche"},
 	{"key": "cups_nine_1.desc", "value": ""},
@@ -296,7 +296,7 @@
 	{"key": "coin_one_cent_token_3.desc", "value": ""},	
 
 	{"key": "coin_silver_dollar.name", "value": "Silberdollar von 1794"},
-	{"key": "coin_silver_dollar_1.desc", "value": ""},
+	{"key": "coin_silver_dollar_1.desc", "value": "Hinter dem Haus an der östlichen Seite."},
 	{"key": "coin_silver_dollar_2.desc", "value": ""},
 	{"key": "coin_silver_dollar_3.desc", "value": ""},
 
@@ -321,7 +321,7 @@
 	{"key": "coin_gold_dollar_coin_3.desc", "value": ""},
 
 	{"key": "coin_nickel_coin.name", "value": "Fünf-Cent-Münze von 1792"},
-	{"key": "coin_nickel_coin_1.desc", "value": ""},
+	{"key": "coin_nickel_coin_1.desc", "value": "Hinter dem Grabstein."},
 	{"key": "coin_nickel_coin_2.desc", "value": ""},
 	{"key": "coin_nickel_coin_3.desc", "value": ""},
 
@@ -336,17 +336,17 @@
 	{"key": "coin_half_eagle_3.desc", "value": ""},
 
 	{"key": "coin_gold_eagle.name", "value": "Zehn-Dollar-Münze von 1797"},
-	{"key": "coin_gold_eagle_1.desc", "value": ""},
+	{"key": "coin_gold_eagle_1.desc", "value": "Direkt am Ufer unter einem Baum."},
 	{"key": "coin_gold_eagle_2.desc", "value": ""},
 	{"key": "coin_gold_eagle_3.desc", "value": ""},
 
 	{"key": "coin_liberty_quarter.name", "value": "Liberty-Vierteldollar von 1792"},
-	{"key": "coin_liberty_quarter_1.desc", "value": ""},
+	{"key": "coin_liberty_quarter_1.desc", "value": "Oben an der Klippe bei neben der kaputten Hängebrücke."},
 	{"key": "coin_liberty_quarter_2.desc", "value": ""},
 	{"key": "coin_liberty_quarter_3.desc", "value": ""},
 
 	{"key": "coin_half_dime.name", "value": "Fünf-Cent-Münze von 1800"},
-	{"key": "coin_half_dime_1.desc", "value": ""},
+	{"key": "coin_half_dime_1.desc", "value": "Am Fluss neben einem kleinen Felsen."},
 	{"key": "coin_half_dime_2.desc", "value": ""},
 	{"key": "coin_half_dime_3.desc", "value": ""},
 
@@ -430,7 +430,7 @@
 	{"key": "bottle_irish_whiskey_2.desc", "value": ""},
 	{"key": "bottle_irish_whiskey_3.desc", "value": ""},
 
-	{"key": "bottle_scotch_whisky.name", "value": "Scotch Whisky"},
+	{"key": "bottle_scotch_whisky.name", "value": "Scotch Whiskey"},
 	{"key": "bottle_scotch_whisky_1.desc", "value": ""},
 	{"key": "bottle_scotch_whisky_2.desc", "value": ""},
 	{"key": "bottle_scotch_whisky_3.desc", "value": ""},
@@ -746,12 +746,12 @@
 	{"key": "necklace_rou_pearl_3.desc", "value": ""},
 
 	{"key": "necklace_gosselin_white_gold.name", "value": "Gosselin-Weißgold-Kette"},
-	{"key": "necklace_gosselin_white_gold_1.desc", "value": ""},
+	{"key": "necklace_gosselin_white_gold_1.desc", "value": "Am westlichen Ufer der kleinen Insel."},
 	{"key": "necklace_gosselin_white_gold_2.desc", "value": ""},
 	{"key": "necklace_gosselin_white_gold_3.desc", "value": ""},
 
 	{"key": "necklace_dane_topaz.name", "value": "Topas-Dänenkette"},
-	{"key": "necklace_dane_topaz_1.desc", "value": ""},
+	{"key": "necklace_dane_topaz_1.desc", "value": "Im Kamin im zerstörten Haus"},
 	{"key": "necklace_dane_topaz_2.desc", "value": ""},
 	{"key": "necklace_dane_topaz_3.desc", "value": ""},
 
@@ -766,7 +766,7 @@
 	{"key": "earring_ursula_citrine_3.desc", "value": ""},
 
 	{"key": "earring_royal_victoria.name", "value": "Queen-Victoria-Diamantohrringe"},
-	{"key": "earring_royal_victoria_1.desc", "value": ""},
+	{"key": "earring_royal_victoria_1.desc", "value": "Auf dem Berg neben dem toten Baum."},
 	{"key": "earring_royal_victoria_2.desc", "value": ""},
 	{"key": "earring_royal_victoria_3.desc", "value": ""},
 
@@ -776,7 +776,7 @@
 	{"key": "earring_calumet_turquoise_3.desc", "value": ""},
 
 	{"key": "earring_orchidee_diamond.name", "value": "Orchidee-Diamantohrringe"},
-	{"key": "earring_orchidee_diamond_1.desc", "value": ""},
+	{"key": "earring_orchidee_diamond_1.desc", "value": "Unter der Brücke am Wasser."},
 	{"key": "earring_orchidee_diamond_2.desc", "value": ""},
 	{"key": "earring_orchidee_diamond_3.desc", "value": ""},
 
@@ -811,7 +811,7 @@
 	{"key": "earring_josephine_pearl_3.desc", "value": ""},
 
 	{"key": "earring_emmeline_coral.name", "value": "Emmeline-Korallenohrringe"},
-	{"key": "earring_emmeline_coral_1.desc", "value": ""},
+	{"key": "earring_emmeline_coral_1.desc", "value": "Nördlich von dem großen Felsen."},
 	{"key": "earring_emmeline_coral_2.desc", "value": ""},
 	{"key": "earring_emmeline_coral_3.desc", "value": ""},
 
@@ -826,12 +826,12 @@
 	{"key": "bracelet_abello_ruby_bangle_3.desc", "value": ""},
 
 	{"key": "bracelet_ojeda_rose_gold.name", "value": "Ojeda-Rotgold-Armreif"},
-	{"key": "bracelet_ojeda_rose_gold_1.desc", "value": ""},
+	{"key": "bracelet_ojeda_rose_gold_1.desc", "value": "Auf dem Berg unter einem Felsen befindet sich die Schatulle."},
 	{"key": "bracelet_ojeda_rose_gold_2.desc", "value": ""},
 	{"key": "bracelet_ojeda_rose_gold_3.desc", "value": ""},
 
 	{"key": "bracelet_helena_sapphire.name", "value": "Helena-Saphir-Armband"},
-	{"key": "bracelet_helena_sapphire_1.desc", "value": ""},
+	{"key": "bracelet_helena_sapphire_1.desc", "value": "Am westlichen Ende des Eisenbahntunnels neben der Gleise."},
 	{"key": "bracelet_helena_sapphire_2.desc", "value": ""},
 	{"key": "bracelet_helena_sapphire_3.desc", "value": ""},
 
@@ -846,7 +846,7 @@
 	{"key": "bracelet_infanta_turquoise_3.desc", "value": ""},
 
 	{"key": "bracelet_elliston_carved.name", "value": "Graviertes Elliston-Armband"},
-	{"key": "bracelet_elliston_carved_1.desc", "value": ""},
+	{"key": "bracelet_elliston_carved_1.desc", "value": "Neben dem toten Baum."},
 	{"key": "bracelet_elliston_carved_2.desc", "value": ""},
 	{"key": "bracelet_elliston_carved_3.desc", "value": ""},
 
