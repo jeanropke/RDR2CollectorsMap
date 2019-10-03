@@ -236,17 +236,24 @@ function setCurrentDayCycle()
 
 function loadRoutesData()
 {
-    routesData = [];
-    $.getJSON(`assets/routes/day_${day}.json`, {}, function(data)
-    {
-        routesData = data;
+
+    $.getJSON(`assets/routes/day_1.json`, {}, function (data) {
+        routesData[1] = data;
     });
+    $.getJSON(`assets/routes/day_2.json`, {}, function (data) {
+        routesData[2] = data;
+    });
+    $.getJSON(`assets/routes/day_3.json`, {}, function (data) {
+        routesData[3] = data;
+    });
+
+
 }
 
 function drawLines()
 {
     var connections = [];
-    for (var node of routesData){
+    for (var node of routesData[day]){
         for (var marker of markers){
             if (marker.text == node.key && marker.day ==day && !disableMarkers.includes(node.key) && enabledTypes.includes(marker.icon)){
                 var connection = [marker.x, marker.y]
@@ -443,6 +450,7 @@ $("#day").on("input", function()
 
     if($("#routes").val() == 1)
         drawLines();
+
 });
 
 $("#search").on("input", function()
