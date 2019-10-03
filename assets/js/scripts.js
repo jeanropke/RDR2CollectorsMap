@@ -114,18 +114,29 @@ function init()
             if(disableMarkers.includes(itemName.toString()))
             {
                 disableMarkers = $.grep(disableMarkers, function(value) {
+                    $.each(routesData, function(key, j){
+                        if (disableMarkers.includes(value.key)){
+                            delete value.hidden;
+                        }
+                    });
                     return value != itemName.toString();
+                    
                 });
                 $(visibleMarkers[itemName]._icon).css('opacity', '1');
             }
             else
-            {
+            {   
                 disableMarkers.push(itemName.toString());
+                $.each(routesData, function(b, value){
+                    if (disableMarkers.includes(value.key)){
+                        value.hidden = true;
+                    }
+                });
                 $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
             }
 
             Cookies.set('removed-items', disableMarkers.join(';'), { expires: resetMarkersDaily ? 1 : 999});
-
+            if($("#routes").val() == 1){drawLines()}
 
 
         });
@@ -226,7 +237,7 @@ function setCurrentDayCycle()
 function loadRoutesData()
 {
     routesData = [];
-    $.getJSON("routes.json", {}, function(data)
+    $.getJSON(`assets/routes/day_${day}.json`, {}, function(data)
     {
         routesData = data;
     });
@@ -235,13 +246,15 @@ function loadRoutesData()
 function drawLines()
 {
     var connections = [];
-    $.each(routesData, function (key, value)
-    {
-        if(value.day == day)
-        {
-            connections.push(value.data);
+    for (var node of routesData){
+        for (var marker of markers){
+            if (marker.text == node.key && marker.day ==day && !disableMarkers.includes(node.key)){
+                var connection = [marker.x, marker.y]
+                connections.push(connection);
+            }
         }
-    });
+    }
+    
 
     if (polylines instanceof L.Polyline)
     {
@@ -359,7 +372,6 @@ function removeCollectedMarkers()
 //loads the current location of Nazar and adds a marker in the correct location
 function addNazarMarker()
 {
-
     var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>Madam Nazar - October 3rd</h1>`).on('click', addCoordsOnMap);
     markersLayer.addLayer(nazarMarker);
 }
