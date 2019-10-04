@@ -5,6 +5,7 @@ feel free to contribute
 english (en-en.json)
   - jeanropke
   - iliggalodin
+  - Rakmarok
   
 german (de-de.json)
   - flameango
