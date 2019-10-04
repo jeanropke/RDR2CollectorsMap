@@ -38,7 +38,9 @@
 	{"key": "menu.return_legacy", "value": "Voltar para versão antiga"},
 	{"key": "menu.utils", "value": "Utilidades"},
 	{"key": "menu.fast_travel", "value": "Viagem rápida"},
-
+	{"key": "menu.search_placeholder", "value": "Busque itens. Separe-os com ;"},
+	{"key": "map.remove_add", "value": "Remover/Adicionar ao mapa"},
+	
 	{"key": "fasttravel.tumbleweed.name", 	"value": "Tumbleweed"},
 	{"key": "fasttravel.armadillo.name", 	"value": "Armadillo"},
 	{"key": "fasttravel.macfarlanes.name", 	"value": "MacFarlane's Ranch"},
