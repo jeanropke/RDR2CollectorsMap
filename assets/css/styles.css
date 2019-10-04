@@ -154,11 +154,11 @@ p {
     line-height: 36px;
 }
 
-.side-menu .menu-option:hover {
+.side-menu .menu-option:hover, .side-menu .menu-hidden .collectible:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
-.side-menu .menu-option span.disabled {
+.side-menu .disabled {
     color: #6a6a6a;
     text-decoration: line-through;
 }
@@ -167,6 +167,34 @@ p {
     width: 35px;
     margin-top: 6px;
     margin-bottom: -3px;
+}
+.side-menu .open-submenu {
+    width: 25px;
+    height: 25px;
+    background: url(../images/arrow.png);
+    margin: auto 0 auto auto;
+}
+.side-menu .menu-hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease-out;
+}
+
+.side-menu .menu-hidden.opened {
+    max-height: 800px;
+    transition: max-height 400ms ease-out;
+
+}
+.side-menu .menu-hidden .collection-value {
+    text-align: center;
+    border-top: 1px white solid;
+    border-bottom: 1px white solid;
+    padding: 5px 0;
+}
+.side-menu .menu-hidden .collectible {
+    padding: 5px 25px;
+    cursor: pointer;
+    user-select: none;
 }
 
 .lat-lng-container {
@@ -206,8 +234,8 @@ p {
 
 @media (min-width: 1025px) {
     .side-menu {
-        width: 300px;
-        left: -300px;
+        width: 320px;
+        left: -320px;
         top: 0;
     }
 

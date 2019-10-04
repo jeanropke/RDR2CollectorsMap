@@ -40,6 +40,7 @@
 	{"key": "menu.fast_travel", "value": "Fast Travel"},
 	{"key": "menu.search_placeholder", "value": "Search items. Separated by ;"},
 	{"key": "map.remove_add", "value": "Remove/Add from map"},
+	{"key": "menu.collectables_value", "value": "Value"},
 	
 	{"key": "fasttravel.tumbleweed.name", 	"value": "Tumbleweed"},
 	{"key": "fasttravel.armadillo.name", 	"value": "Armadillo"},
