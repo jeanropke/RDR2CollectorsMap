@@ -25,7 +25,7 @@
 	{"key": "menu.tool_type.metal_detector", "value": "Metal detector"},
 	{"key": "menu.tool_type.all", "value": "All"},
 	{"key": "menu.language", "value": "Language"},
-	{"key": "menu.enable_route", "value": "Enable route"},
+	{"key": "menu.enable_route", "value": "Enable dynamic route"},
 	{"key": "menu.enable_custom_route", "value": "Enable custom route"},
 	{"key": "menu.yes", "value": "Yes"},
 	{"key": "menu.no", "value": "No"},
