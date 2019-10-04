@@ -8,6 +8,7 @@ english (en-en.json)
   
 german (de-de.json)
   - flameango
+  - Rakmarok
   
 spanish (es-es.json)
   - no-one yet!
