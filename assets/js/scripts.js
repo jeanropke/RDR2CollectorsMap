@@ -129,35 +129,7 @@ function init()
     {
         $('.remove-button').click(function(e)
         {
-            var itemName = $(event.target).data("item");
-            if(disableMarkers.includes(itemName.toString()))
-            {
-                disableMarkers = $.grep(disableMarkers, function(value) {
-                    $.each(routesData, function(key, j){
-                        if (disableMarkers.includes(value.key)){
-                            delete value.hidden;
-                        }
-                    });
-                    return value != itemName.toString();
-                    
-                });
-                $(visibleMarkers[itemName]._icon).css('opacity', '1');
-            }
-            else
-            {   
-                disableMarkers.push(itemName.toString());
-                $.each(routesData[day], function(b, value){
-                    if (disableMarkers.includes(value.key)){
-                        value.hidden = true;
-                    }
-                });
-                $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
-            }
-
-            Cookies.set('removed-items', disableMarkers.join(';'), { expires: resetMarkersDaily ? 1 : 999});
-            if($("#routes").val() == 1){drawLines()}
-
-
+            removeItemFromMap($(event.target).data("item"));
         });
     });
 
@@ -186,6 +158,30 @@ function init()
 
 }
 
+function refreshMenu()
+{
+
+    $.each(categories, function (key, value)
+    {
+        $(`.menu-hidden[data-type=${value}]`).children('p.collectible').remove();
+
+        var found = markers.filter(function(item)
+        {
+            if(item.day == 1 && item.icon == value)
+            {
+                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.text}">${languageData[item.text+'.name']}</p>`);
+            }
+        });
+    });
+    $.each(disableMarkers, function (key, value)
+    {
+        if(value.length > 0)
+        {
+            $('[data-type=' + value + ']').addClass('disabled');
+        }
+    });
+}
+
 function getNazarPosition()
 {
     $.getJSON(`https://madam-nazar-location-api.herokuapp.com/current`, {}, function(x)
@@ -206,6 +202,7 @@ function loadLanguage()
         });
         addMarkers();
         setMenuLanguage();
+        refreshMenu();
     });
 }
 
@@ -223,6 +220,41 @@ function setMenuLanguage()
 
     ///Special cases:
     $('#search').attr("placeholder", languageData['menu.search_placeholder']);
+}
+
+function removeItemFromMap(itemName)
+{
+    if(disableMarkers.includes(itemName.toString()))
+    {
+        disableMarkers = $.grep(disableMarkers, function(value) {
+            $.each(routesData, function(key, j){
+                if (disableMarkers.includes(value.key)){
+                    delete value.hidden;
+                }
+            });
+            return value != itemName.toString();
+
+        });
+        $(visibleMarkers[itemName]._icon).css('opacity', '1');
+        $('[data-type=' + itemName + ']').removeClass('disabled');
+    }
+    else
+    {
+        disableMarkers.push(itemName.toString());
+        $.each(routesData[day], function(b, value){
+            if (disableMarkers.includes(value.key)){
+                value.hidden = true;
+            }
+        });
+        $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
+        $('[data-type=' + itemName + ']').addClass('disabled');
+    }
+
+    Cookies.set('removed-items', disableMarkers.join(';'), { expires: resetMarkersDaily ? 1 : 999});
+
+    if($("#routes").val() == 1)
+        drawLines();
+
 }
 
 function setCurrentDayCycle()
@@ -319,6 +351,7 @@ function loadMarkers()
 
         addNazarMarker();
         addfastTravelMarker();
+
     });
 
 }
@@ -594,13 +627,30 @@ $('.menu-option.clickable').on('click', function ()
             return value != menu.data('type');
         });
     }
-    else {
+    else
+    {
         enabledTypes.push(menu.data('type'));
     }
     addMarkers();
     if($("#routes").val() == 1)
-    drawLines();
+        drawLines();
 });
+
+$('.open-submenu').on('click', function(e) {
+    e.stopPropagation();
+    $(this).parent().parent().children('.menu-hidden').toggleClass('opened');
+});
+
+$(document).on('click', '.collectible', function(){
+    var collectible = $(this);
+    collectible.toggleClass('disabled');
+
+    removeItemFromMap(collectible.data('type'));
+
+    if($("#routes").val() == 1)
+        drawLines();
+});
+
 
 $('.menu-toggle').on('click', function()
 {
