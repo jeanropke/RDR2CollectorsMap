@@ -165,7 +165,7 @@ function refreshMenu()
     {
         $(`.menu-hidden[data-type=${value}]`).children('p.collectible').remove();
 
-        var found = markers.filter(function(item)
+        markers.filter(function(item)
         {
             if(item.day == 1 && item.icon == value)
             {
@@ -194,7 +194,7 @@ function getNazarPosition()
 function loadLanguage()
 {
     languageData = [];
-    $.getJSON(`langs/${lang}.json?nocache=2`, {}, function(data)
+    $.getJSON(`langs/${lang}.json?nocache=3`, {}, function(data)
     {
         $.each(data, function(key, value) {
             languageData[value.key] = value.value;
@@ -344,7 +344,7 @@ function drawLines()
 function loadMarkers()
 {
     markers = [];
-    $.getJSON("items.json?nocache=2", {}, function(data)
+    $.getJSON("items.json?nocache=3", {}, function(data)
     {
         markers = data;
         loadLanguage();
