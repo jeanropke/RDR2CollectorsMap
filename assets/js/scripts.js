@@ -198,7 +198,7 @@ function getNazarPosition()
 function loadLanguage()
 {
     languageData = [];
-    $.getJSON(`langs/${lang}.json`, {}, function(data)
+    $.getJSON(`langs/${lang}.json?nocache=2`, {}, function(data)
     {
         $.each(data, function(key, value) {
             languageData[value.key] = value.value;
@@ -220,6 +220,9 @@ function setMenuLanguage()
 
         $(temp).text(languageData[temp.data('text')]);
     });
+
+    ///Special cases:
+    $('#search').attr("placeholder", languageData['menu.search_placeholder']);
 }
 
 function setCurrentDayCycle()
@@ -385,7 +388,7 @@ function addMarkerOnMap(value){
             tempMarker.bindPopup(`<h1>${languageData[value.text + '.name']}</h1><p>  </p>`);
             break;
         default:
-            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - Day ${value.day}</h1><p> ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">Remove/Add from map</p>`).on('click', addCoordsOnMap);
+            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - ${languageData['menu.day']} ${value.day}</h1><p> ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">${languageData['map.remove_add']}</p>`).on('click', addCoordsOnMap);
             break;
     }
 
