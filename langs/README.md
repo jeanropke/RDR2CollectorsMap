@@ -17,6 +17,7 @@ spanish (es-es.json)
   
 french (fr-fr.json)
   - Nopitch
+  - Gromino
   
 italian (it-it.json)
   - no-one yet!
