@@ -737,7 +737,7 @@ function exportCustomRoute()
     document.execCommand('copy');
     document.body.removeChild(el)
 
-    alert('Route exported!');
+    alert('Route copied to clipboard!');
 }
 
 function importCustomRoute() {
