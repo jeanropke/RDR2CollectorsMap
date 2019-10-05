@@ -194,7 +194,7 @@ function getNazarPosition()
 function loadLanguage()
 {
     languageData = [];
-    $.getJSON(`langs/${lang}.json?nocache=3`, {}, function(data)
+    $.getJSON(`langs/${lang}.json?nocache=4`, {}, function(data)
     {
         $.each(data, function(key, value) {
             languageData[value.key] = value.value;
@@ -344,7 +344,7 @@ function drawLines()
 function loadMarkers()
 {
     markers = [];
-    $.getJSON("items.json?nocache=3", {}, function(data)
+    $.getJSON("items.json?nocache=4", {}, function(data)
     {
         markers = data;
         loadLanguage();
@@ -421,13 +421,44 @@ function addMarkerOnMap(value){
             tempMarker.bindPopup(`<h1>${languageData[value.text + '.name']}</h1><p>  </p>`);
             break;
         default:
-            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - ${languageData['menu.day']} ${value.day}</h1><p> ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">${languageData['map.remove_add']}</p>`).on('click', addCoordsOnMap);
+            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - ${languageData['menu.day']} ${value.day}</h1><p> ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">${languageData['map.remove_add']}</p>`).on('click', function() { addMarkerOnCustomRoute(value.text); });
             break;
     }
 
 
     visibleMarkers[value.text] = tempMarker;
     markersLayer.addLayer(tempMarker);
+}
+
+function addMarkerOnCustomRoute(value)
+{
+    if(customRouteEnabled)
+    {
+        if(event.ctrlKey)
+            customRouteConnections.pop();
+        else
+            customRouteConnections.push(value);
+
+
+        var connections = [];
+
+        $.each(customRouteConnections, function (key, item)
+        {
+            connections.push(visibleMarkers[item]._latlng);
+        });
+
+
+        if (polylines instanceof L.Polyline)
+        {
+            map.removeLayer(polylines);
+        }
+
+        polylines = L.polyline(connections, {'color': '#9a3033'});
+        map.addLayer(polylines);
+
+    }
+
+
 }
 
 function removeCollectedMarkers()
@@ -452,24 +483,19 @@ function removeCollectedMarkers()
 //loads the current location of Nazar and adds a marker in the correct location
 function addNazarMarker()
 {
-    //var nazarMarker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'red'})}).bindPopup(`<h1>Madam Nazar - October 3rd</h1>`).on('click', addCoordsOnMap);
-    //markersLayer.addLayer(nazarMarker);
-
     markers.push({"text": "madam_nazar", "day": "nazar", "tool": "-1", "icon": "nazar", "x": nazarLocations[nazarCurrentLocation].x, "y": nazarLocations[nazarCurrentLocation].y});
 }
 //adds fasttravel points
 function addfastTravelMarker()
 {   
     $.each(fastTravelLocations, function(b, value){
-        //var ftmarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/fast-travel.png', markerColor: 'gray'})}).bindPopup(`<h1>${value.text}</h1>`).on('click', addCoordsOnMap);
-        //markersLayer.addLayer(ftmarker);
         markers.push({"text": value.text, "day": "fasttravel", "tool": "-1", "icon": "fast-travel", "x": value.x, "y": value.y});
 
     });
 }
 
 function customMarker(coords){
-    var nazarMarker = L.marker(coords, {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>debug</h1>`).on('click', addCoordsOnMap);
+    var nazarMarker = L.marker(coords, {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>debug</h1>`);
     markersLayer.addLayer(nazarMarker);
 }
 
@@ -501,8 +527,9 @@ function addCoordsOnMap(coords)
     }
 
 
+    //Removed routes when clicking on map
     // Add custom routes
-    if(customRouteEnabled)
+    /*if(customRouteEnabled)
     {
         if(event.ctrlKey)
             customRouteConnections.pop();
@@ -516,7 +543,7 @@ function addCoordsOnMap(coords)
 
         customRoute = L.polyline(customRouteConnections);
         map.addLayer(customRoute);
-    }
+    }*/
 }
 
 function changeCursor()
@@ -664,6 +691,7 @@ $('.menu-toggle').on('click', function()
     {
         $('.menu-toggle').text('>');
     }
+    $('.timer-container').toggleClass('timer-menu-opened');
 });
 
 
@@ -681,4 +709,83 @@ function hideall() {
     }
     enabledTypes = [];
     addMarkers();
+}
+
+setInterval(function()
+{
+    var nextGMTMidnight = new Date();
+    nextGMTMidnight.setUTCHours(24);
+    nextGMTMidnight.setUTCMinutes(0);
+    nextGMTMidnight.setUTCSeconds(0);
+    var countdownDate = nextGMTMidnight - new Date();
+    if(countdownDate <= 0)
+    {
+        $('#countdown').text(`00:00:00`);
+    }
+    else
+    {
+        var hours = Math.floor((countdownDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((countdownDate % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((countdownDate % (1000 * 60)) / 1000);
+
+        $('#countdown').text(`${addZeroToNumber(hours)}:${addZeroToNumber(minutes)}:${addZeroToNumber(seconds)}`);
+    }
+
+
+
+}, 1000);
+
+function addZeroToNumber(number)
+{
+    if(number < 10)
+        number = '0'+number.toString();
+    return number;
+}
+
+function exportCustomRoute()
+{
+
+    const el = document.createElement('textarea');
+    el.value = customRouteConnections.join(',');
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el)
+
+    alert('Route exported!');
+}
+
+function importCustomRoute() {
+    var input = prompt("Enter the route code", "");
+
+    if (input == null || input == "")
+    {
+        alert('Empty route');
+    }
+    else
+    {
+        loadCustomRoute(input);
+    }
+}
+
+function loadCustomRoute(input)
+{
+    try
+    {
+        var connections = [];
+        $.each(input.split(','), function (key, value) {
+            connections.push(visibleMarkers[value]._latlng);
+        });
+
+        if (polylines instanceof L.Polyline) {
+            map.removeLayer(polylines);
+        }
+
+        polylines = L.polyline(connections, {'color': '#9a3033'});
+        map.addLayer(polylines);
+    }
+    catch(e)
+    {
+        alert('Invalid route');
+    }
 }
