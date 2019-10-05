@@ -41,6 +41,9 @@
 	{"key": "menu.search_placeholder", "value": "Busque itens. Separe-os com ;"},
 	{"key": "map.remove_add", "value": "Remover/Adicionar ao mapa"},
 	{"key": "menu.collectables_value", "value": "Valor"},
+	{"key": "menu.custom_routes", "value": "Rotas personalizadas"},
+	{"key": "menu.import_route", "value": "Importar rota"},
+	{"key": "menu.export_route", "value": "Exportar rota"},
 	
 	{"key": "fasttravel.tumbleweed.name", 	"value": "Tumbleweed"},
 	{"key": "fasttravel.armadillo.name", 	"value": "Armadillo"},
@@ -414,7 +417,7 @@
 	{"key": "coin_penny_2.desc", "value": ""},
 	{"key": "coin_penny_3.desc", "value": ""},
 
-	{"key": "egg_spoonbill.name", "value": "Ovo de Colheiro"},
+	{"key": "egg_spoonbill.name", "value": "Ovo de Colhedeiro"},
 	{"key": "egg_spoonbill_1.desc", "value": ""},
 	{"key": "egg_spoonbill_2.desc", "value": ""},
 	{"key": "egg_spoonbill_3.desc", "value": ""},

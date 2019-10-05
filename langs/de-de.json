@@ -40,7 +40,10 @@
 	{"key": "menu.fast_travel", "value": "Schnellreise"},
 	{"key": "menu.search_placeholder", "value": "Gegenstände suchen. Getrennt durch ;"},
 	{"key": "map.remove_add", "value": "Von Karte entfernen/hinzufügen"},
-	{"key": "menu.collectables_value", "value": "Value"},
+	{"key": "menu.collectables_value", "value": "Value"},	
+	{"key": "menu.custom_routes", "value": "Custom routes"},
+	{"key": "menu.import_route", "value": "Import route"},
+	{"key": "menu.export_route", "value": "Export route"},
 	
 	{"key": "fasttravel.tumbleweed.name", 	"value": "Tumbleweed"},
 	{"key": "fasttravel.armadillo.name", 	"value": "Armadillo"},
