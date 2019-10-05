@@ -519,35 +519,16 @@ function addCoordsOnMap(coords)
 
             $('#lat-lng-container-close-button').click(function() {
                 $(container).css({
-                    display: 'none',
+                    display: 'none'
                 })
             })
         } else {
             $('.lat-lng-container').css({
-                display: '',
+                display: ''
             });
             $('.lat-lng-container div p').html('lat: ' + coords.latlng.lat + '<br> lng: ' + coords.latlng.lng);
         }
     }
-
-
-    //Removed routes when clicking on map
-    // Add custom routes
-    /*if(customRouteEnabled)
-    {
-        if(event.ctrlKey)
-            customRouteConnections.pop();
-        else
-            customRouteConnections.push(coords.latlng);
-
-        if (customRoute instanceof L.Polyline)
-        {
-            map.removeLayer(customRoute);
-        }
-
-        customRoute = L.polyline(customRouteConnections);
-        map.addLayer(customRoute);
-    }*/
 }
 
 function changeCursor()
