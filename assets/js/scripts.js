@@ -435,7 +435,11 @@ function addMarkerOnCustomRoute(value)
     if(customRouteEnabled)
     {
         if(event.ctrlKey)
-            customRouteConnections.pop();
+        {
+            customRouteConnections = customRouteConnections.filter(function(item) {
+                return item !== value
+            })
+        }
         else
             customRouteConnections.push(value);
 
