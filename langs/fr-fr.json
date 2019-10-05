@@ -15,7 +15,7 @@
 	{"key": "menu.card_cups", "value": "Cartes de Tarot - Coupe"},
 	{"key": "menu.card_pentacles", "value": "Cartes de Tarot - Denier"},
 	{"key": "menu.card_swords", "value": "Cartes de Tarot - Épée"},
-	{"key": "menu.card_wands", "value": "Tarot Cards - Bâton"},	
+	{"key": "menu.card_wands", "value": "Cartes de Tarot - Bâton"},	
 	{"key": "menu.search", "value": "Recherche"},
 	{"key": "menu.settings", "value": "Paramètres"},
 	{"key": "menu.day", "value": "Jour"},
@@ -487,7 +487,7 @@
 	{"key": "bottle_irish_whiskey_2.desc", "value": ""},
 	{"key": "bottle_irish_whiskey_3.desc", "value": ""},
 
-	{"key": "bottle_scotch_whisky.name", "value": "Whisky d'Écosse"},
+	{"key": "bottle_scotch_whisky.name", "value": "Whisky Écossais"},
 	{"key": "bottle_scotch_whisky_1.desc", "value": ""},
 	{"key": "bottle_scotch_whisky_2.desc", "value": ""},
 	{"key": "bottle_scotch_whisky_3.desc", "value": ""},
@@ -652,7 +652,7 @@
 	{"key": "heirlooms_boar_bristle_brush_2.desc", "value": ""},
 	{"key": "heirlooms_boar_bristle_brush_3.desc", "value": ""},
 
-	{"key": "heirlooms_new_guinea_rosewood.name", "value": "Brosse eb Palissandre de Nouvelle-Guinée"},
+	{"key": "heirlooms_new_guinea_rosewood.name", "value": "Brosse en Palissandre de Nouvelle-Guinée"},
 	{"key": "heirlooms_new_guinea_rosewood_1.desc", "value": ""},
 	{"key": "heirlooms_new_guinea_rosewood_2.desc", "value": ""},
 	{"key": "heirlooms_new_guinea_rosewood_3.desc", "value": ""},
@@ -682,7 +682,7 @@
 	{"key": "flower_agarita_2_2.desc", "value": ""},
 	{"key": "flower_agarita_2_3.desc", "value": ""},
 
-	{"key": "flower_wild_rhubarb.name", "value": "Petite Barbane"},
+	{"key": "flower_wild_rhubarb.name", "value": "Petite Bardane"},
 	{"key": "flower_wild_rhubarb_1.desc", "value": ""},
 	{"key": "flower_wild_rhubarb_2.desc", "value": ""},
 	{"key": "flower_wild_rhubarb_3.desc", "value": ""},
@@ -762,7 +762,7 @@
 	{"key": "ring_bosque_emerald_2.desc", "value": ""},
 	{"key": "ring_bosque_emerald_3.desc", "value": ""},
 
-	{"key": "ring_sackville_diamond.name", "value": "Bague Sertie de Diamand Sackville"},
+	{"key": "ring_sackville_diamond.name", "value": "Bague Sertie de Diamant Sackville"},
 	{"key": "ring_sackville_diamond_1.desc", "value": ""},
 	{"key": "ring_sackville_diamond_2.desc", "value": ""},
 	{"key": "ring_sackville_diamond_3.desc", "value": ""},
@@ -892,7 +892,7 @@
 	{"key": "bracelet_helena_sapphire_2.desc", "value": ""},
 	{"key": "bracelet_helena_sapphire_3.desc", "value": ""},
 
-	{"key": "bracelet_durant_pearl.name", "value": "Bracelet en Perles Durant"},
+	{"key": "bracelet_durant_pearl.name", "value": "Bracelet de Perles Durant"},
 	{"key": "bracelet_durant_pearl_1.desc", "value": ""},
 	{"key": "bracelet_durant_pearl_2.desc", "value": ""},
 	{"key": "bracelet_durant_pearl_3.desc", "value": ""},
