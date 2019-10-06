@@ -269,7 +269,7 @@
 
 	{"key": "wands_king.name", "value": "King of Wands"},
 	{"key": "wands_king_1.desc", "value": ""},
-	{"key": "wands_king_2.desc", "value": "Inside the cave."},
+	{"key": "wands_king_2.desc", "value": ""},
 	{"key": "wands_king_3.desc", "value": "ON the ship near the steering wheel."},
 
 	{"key": "pentacles_ace.name", "value": "Ace of Pentacles"},
