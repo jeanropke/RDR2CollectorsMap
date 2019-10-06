@@ -673,14 +673,14 @@
 	{"key": "flower_bitterweed_2_3.desc", "value": ""},
 
 	{"key": "flower_agarita_1.name", "value": "Agarita Flower"},
-	{"key": "flower_agarita_1_1.desc", "value": "Night only"},
-	{"key": "flower_agarita_1_2.desc", "value": "Night only"},
-	{"key": "flower_agarita_1_3.desc", "value": "Night only"},
+	{"key": "flower_agarita_1_1.desc", "value": "Night only - 10PM to 4AM"},
+	{"key": "flower_agarita_1_2.desc", "value": "Night only - 10PM to 4AM"},
+	{"key": "flower_agarita_1_3.desc", "value": "Night only - 10PM to 4AM"},
 
 	{"key": "flower_agarita_2.name", "value": "Agarita Flower"},
-	{"key": "flower_agarita_2_1.desc", "value": "Night only"},
-	{"key": "flower_agarita_2_2.desc", "value": "Night only"},
-	{"key": "flower_agarita_2_3.desc", "value": "Night only"},
+	{"key": "flower_agarita_2_1.desc", "value": "Night only - 10PM to 4AM"},
+	{"key": "flower_agarita_2_2.desc", "value": "Night only - 10PM to 4AM"},
+	{"key": "flower_agarita_2_3.desc", "value": "Night only - 10PM to 4AM"},
 
 	{"key": "flower_wild_rhubarb.name", "value": "Wild Rhubarb Flower"},
 	{"key": "flower_wild_rhubarb_1.desc", "value": ""},
@@ -698,14 +698,14 @@
 	{"key": "flower_creek_plum_3.desc", "value": ""},
 
 	{"key": "flower_blood_flower_1.name", "value": "Blood Flower"},
-	{"key": "flower_blood_flower_1_1.desc", "value": "Night only"},
-	{"key": "flower_blood_flower_1_2.desc", "value": "Night only"},
-	{"key": "flower_blood_flower_1_3.desc", "value": "Night only"},
+	{"key": "flower_blood_flower_1_1.desc", "value": "Night only - 10PM to 4AM"},
+	{"key": "flower_blood_flower_1_2.desc", "value": "Night only - 10PM to 4AM"},
+	{"key": "flower_blood_flower_1_3.desc", "value": "Night only - 10PM to 4AM"},
 
 	{"key": "flower_blood_flower_2.name", "value": "Blood Flower"},
-	{"key": "flower_blood_flower_2_1.desc", "value": "Night only"},
-	{"key": "flower_blood_flower_2_2.desc", "value": "Night only"},
-	{"key": "flower_blood_flower_2_3.desc", "value": "Night only"},
+	{"key": "flower_blood_flower_2_1.desc", "value": "Night only - 10PM to 4AM"},
+	{"key": "flower_blood_flower_2_2.desc", "value": "Night only - 10PM to 4AM"},
+	{"key": "flower_blood_flower_2_3.desc", "value": "Night only - 10PM to 4AM"},
 
 	{"key": "flower_chocolate_daisy.name", "value": "Chocolate Daisy Flower"},
 	{"key": "flower_chocolate_daisy_1.desc", "value": ""},
