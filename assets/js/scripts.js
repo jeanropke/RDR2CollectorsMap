@@ -61,7 +61,7 @@ var fastTravelLocations = [
     {"text": "fasttravel.lagras", "x": "-72.59375","y": "143.859375"}
 ];
 
-var nazarCurrentLocation = 11;
+var nazarCurrentLocation = 7;
 
 function init()
 {
