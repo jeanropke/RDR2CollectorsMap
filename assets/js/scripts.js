@@ -296,7 +296,10 @@ function setCurrentDayCycle()
         {
             Cookies.set('day', day, { expires: 1 });
             if(resetMarkersDaily)
-                Cookies.set('removed-items', '', { expires: 1 });
+            {
+                Cookies.set('removed-items', '', {expires: 1});
+                addMarkers();
+            }
         }
     }
 }
