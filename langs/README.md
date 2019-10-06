@@ -13,7 +13,7 @@ german (de-de.json)
   - Rakmarok
   
 spanish (es-es.json)
-  - no-one yet!
+  - glaseca
   
 french (fr-fr.json)
   - Nopitch
