@@ -68,6 +68,9 @@ function init()
     if(typeof Cookies.get('removed-items') === 'undefined')
         Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
 
+    if(typeof Cookies.get('map-layer') === 'undefined')
+        Cookies.set('map-layer', 'Detailed', { expires: 999 });
+
     if(typeof Cookies.get('language') === 'undefined')
     {
         if(avaliableLanguages.includes(navigator.language.toLowerCase()))
@@ -95,9 +98,13 @@ function init()
     var minZoom = 2;
     var maxZoom = 7;
 
-    var defaultLayer = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true});
-    var detailLayer = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true});
-    var darkLayer = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true});
+    var mapLayers = [];
+    mapLayers['Default'] = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true});
+    mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true});
+    mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true});
+
+    setMapBackground(Cookies.get('map-layer'));
+
 
     // create the map
     map = L.map('map', {
@@ -105,14 +112,15 @@ function init()
         maxZoom: maxZoom,
         zoomControl: false,
         crs: L.CRS.Simple,
-        layers: [defaultLayer, detailLayer]
+        layers: [mapLayers[Cookies.get('map-layer')]] 
     }).setView([-70, 111.75], 3);
 
     var baseMaps = {
-        "Default": defaultLayer,
-        "Detailed": detailLayer,
-        "Dark": darkLayer
+        "Default": mapLayers['Default'],
+        "Detailed": mapLayers['Detailed'],
+        "Dark": mapLayers['Dark']
     };
+
 
     L.control.zoom({
         position:'bottomright'
@@ -135,18 +143,7 @@ function init()
 
     map.on('baselayerchange', function (e)
     {
-        switch(e.name) {
-            default:
-            case 'Default':
-            case 'Detailed':
-                $('#map').css('background-color', '#d2b790');
-                break;
-
-            case 'Dark':
-                $('#map').css('background-color', '#3d3d3d');
-                break;
-
-        }
+        setMapBackground(e.name);
     });
 
     loadMarkers();
@@ -156,6 +153,25 @@ function init()
     var offset = 1.15;
     L.imageOverlay('overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
 
+}
+
+function setMapBackground(mapName){
+    switch(mapName) {
+        default:
+        case 'Default':
+            $('#map').css('background-color', '#d2b790');
+            break;
+
+        case 'Detailed':
+            $('#map').css('background-color', '#d2b790');
+            break;
+
+        case 'Dark':
+            $('#map').css('background-color', '#3d3d3d');
+            break;
+    }
+
+    Cookies.set('map-layer', mapName, { expires: 999 });
 }
 
 function refreshMenu()
@@ -262,6 +278,9 @@ function setCurrentDayCycle()
     //day1: 2 4 6
     //day2: 0 3
     //day3: 1 5
+
+    // 2 3 1 2 1 3 1
+
     var weekDay = new Date().getUTCDay();
     switch(weekDay)
     {
