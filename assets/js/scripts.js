@@ -112,7 +112,7 @@ function init()
         maxZoom: maxZoom,
         zoomControl: false,
         crs: L.CRS.Simple,
-        layers: [mapLayers[Cookies.get('map-layer')]] 
+        layers: [mapLayers[Cookies.get('map-layer')]]
     }).setView([-70, 111.75], 3);
 
     var baseMaps = {
@@ -317,7 +317,7 @@ function setCurrentDayCycle()
             if(resetMarkersDaily)
             {
                 Cookies.set('removed-items', '', {expires: 1});
-                addMarkers();
+                disableMarkers = [];
             }
         }
     }
