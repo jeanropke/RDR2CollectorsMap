@@ -15,7 +15,7 @@
 	{"key": "menu.card_cups", "value": "圣杯牌组塔罗牌"},
 	{"key": "menu.card_pentacles", "value": "星币牌组塔罗牌"},
 	{"key": "menu.card_swords", "value": "宝剑牌组塔罗牌"},
-	{"key": "menu.card_wands", "value": "令牌牌组塔罗牌"},	
+	{"key": "menu.card_wands", "value": "权杖牌组塔罗牌"},	
 	{"key": "menu.search", "value": "搜索"},
 	{"key": "menu.settings", "value": "设置"},
 	{"key": "menu.day", "value": "天"},
@@ -337,7 +337,7 @@
 	{"key": "pentacles_queen_2.desc", "value": ""},
 	{"key": "pentacles_queen_3.desc", "value": ""},
 
-	{"key": "pentacles_king.name", "value": "金币国王塔罗牌"},
+	{"key": "pentacles_king.name", "value": "星币国王塔罗牌"},
 	{"key": "pentacles_king_1.desc", "value": ""},
 	{"key": "pentacles_king_2.desc", "value": ""},
 	{"key": "pentacles_king_3.desc", "value": ""},
