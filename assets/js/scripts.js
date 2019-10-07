@@ -761,6 +761,7 @@ function loadCustomRoute(input)
     try
     {
         var connections = [];
+        input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '');
         $.each(input.split(','), function (key, value) {
             connections.push(visibleMarkers[value]._latlng);
         });
