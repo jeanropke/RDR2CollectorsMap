@@ -33,6 +33,7 @@ polish (pl.json)
   
 brazilian (pt-br.json)
   - jeanropke
+  - Vitor-Borba72
   
 russian (ru.json)
   - no-one yet!
