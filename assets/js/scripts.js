@@ -61,7 +61,8 @@ var fastTravelLocations = [
     {"text": "fasttravel.lagras", "x": "-72.59375","y": "143.859375"}
 ];
 
-var nazarCurrentLocation = 6;
+var nazarCurrentLocation = 8;
+var nazarCurrentDate = '8th October';
 
 function init()
 {
@@ -437,7 +438,7 @@ function addMarkerOnMap(value){
 
     switch (value.day) {
         case 'nazar':
-            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - 7th October</h1><p>  </p>`);
+            tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - ${nazarCurrentDate}</h1><p>  </p>`);
             break;
         case 'fasttravel':
             tempMarker.bindPopup(`<h1>${languageData[value.text + '.name']}</h1><p>  </p>`);
