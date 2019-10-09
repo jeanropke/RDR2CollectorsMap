@@ -8,6 +8,7 @@ english (en-en.json)
   - Rakmarok
   - rbcunhadesign
   - Tiax
+  - sporb
   
 german (de-de.json)
   - flameango
