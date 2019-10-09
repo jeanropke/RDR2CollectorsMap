@@ -7,6 +7,7 @@ english (en-en.json)
   - iliggalodin
   - Rakmarok
   - rbcunhadesign
+  - Tiax
   
 german (de-de.json)
   - flameango
