@@ -87,7 +87,7 @@
 
 	{"key": "cups_nine.name", "value": "Nine of Cups"},
 	{"key": "cups_nine_1.desc", "value": ""},
-	{"key": "cups_nine_2.desc", "value": ""},
+	{"key": "cups_nine_2.desc", "value": "Inside building, under the bed."},
 	{"key": "cups_nine_3.desc", "value": "On shelf right side of entrance."},
 
 	{"key": "cups_ten.name", "value": "Ten of Cups"},
@@ -127,7 +127,7 @@
 
 	{"key": "swords_three.name", "value": "Three of Swords"},
 	{"key": "swords_three_1.desc", "value": ""},
-	{"key": "swords_three_2.desc", "value": ""},
+	{"key": "swords_three_2.desc", "value": "On top of the tower. Climb the ladders."},
 	{"key": "swords_three_3.desc", "value": "In the theatre tent on a chair in the front row."},
 
 	{"key": "swords_four.name", "value": "Four of Swords"},
@@ -142,7 +142,7 @@
 
 	{"key": "swords_six.name", "value": "Six of Swords"},
 	{"key": "swords_six_1.desc", "value": ""},
-	{"key": "swords_six_2.desc", "value": ""},
+	{"key": "swords_six_2.desc", "value": "On middle dock post."},
 	{"key": "swords_six_3.desc", "value": "on top of the windmill tower."},
 
 	{"key": "swords_seven.name", "value": "Seven of Swords"},
@@ -157,7 +157,7 @@
 
 	{"key": "swords_nine.name", "value": "Nine of Swords"},
 	{"key": "swords_nine_1.desc", "value": ""},
-	{"key": "swords_nine_2.desc", "value": "On top of the water tower. Need to climb ladder."},
+	{"key": "swords_nine_2.desc", "value": ""},
 	{"key": "swords_nine_3.desc", "value": ""},
 
 	{"key": "swords_ten.name", "value": "Ten of Swords"},
@@ -182,7 +182,7 @@
 
 	{"key": "swords_king.name", "value": "King of Swords"},
 	{"key": "swords_king_1.desc", "value": "On the shelf in Algernon Wasp's Shop."},
-	{"key": "swords_king_2.desc", "value": ""},
+	{"key": "swords_king_2.desc", "value": "On well."},
 	{"key": "swords_king_3.desc", "value": "Inside fenced in area on top of blue barrel."},
 
 	{"key": "wands_ace.name", "value": "Ace of Wands"},
@@ -202,7 +202,7 @@
 
 	{"key": "wands_four.name", "value": "Four of Wands"},
 	{"key": "wands_four_1.desc", "value": ""},
-	{"key": "wands_four_2.desc", "value": ""},
+	{"key": "wands_four_2.desc", "value": "On table inside shack."},
 	{"key": "wands_four_3.desc", "value": ""},
 
 	{"key": "wands_five.name", "value": "Five of Wands"},
@@ -212,7 +212,7 @@
 
 	{"key": "wands_six.name", "value": "Six of Wands"},
 	{"key": "wands_six_1.desc", "value": ""},
-	{"key": "wands_six_2.desc", "value": ""},
+	{"key": "wands_six_2.desc", "value": "Inside building on shelf right of fireplace."},
 	{"key": "wands_six_3.desc", "value": "On a shelf in the back room."},
 
 	{"key": "wands_seven.name", "value": "Seven of Wands"},
@@ -237,7 +237,7 @@
 
 	{"key": "wands_knight.name", "value": "Knight of Wands"},
 	{"key": "wands_knight_1.desc", "value": ""},
-	{"key": "wands_knight_2.desc", "value": "In mausoleum. Enterance only from the north."},
+	{"key": "wands_knight_2.desc", "value": ""},
 	{"key": "wands_knight_3.desc", "value": "On the edge of the water basin."},
 
 	{"key": "wands_page.name", "value": "Page of Wands"},
@@ -287,12 +287,12 @@
 
 	{"key": "pentacles_seven.name", "value": "Seven of Pentacles"},
 	{"key": "pentacles_seven_1.desc", "value": ""},
-	{"key": "pentacles_seven_2.desc", "value": ""},
+	{"key": "pentacles_seven_2.desc", "value": "In Alley. On top of two crates."},
 	{"key": "pentacles_seven_3.desc", "value": ""},
 
 	{"key": "pentacles_eight.name", "value": "Eight of Pentacles"},
 	{"key": "pentacles_eight_1.desc", "value": ""},
-	{"key": "pentacles_eight_2.desc", "value": "On top of a barrel."},
+	{"key": "pentacles_eight_2.desc", "value": ""},
 	{"key": "pentacles_eight_3.desc", "value": "On top of the table."},
 
 	{"key": "pentacles_nine.name", "value": "Nine of Pentacles"},
@@ -307,7 +307,7 @@
 
 	{"key": "pentacles_knight.name", "value": "Knight of Pentacles"},
 	{"key": "pentacles_knight_1.desc", "value": ""},
-	{"key": "pentacles_knight_2.desc", "value": "On southern part of boat that is docked."},
+	{"key": "pentacles_knight_2.desc", "value": ""},
 	{"key": "pentacles_knight_3.desc", "value": ""},
 
 	{"key": "pentacles_page.name", "value": "Page of Pentacles"},
@@ -407,7 +407,7 @@
 
 	{"key": "egg_heron.name", "value": "Heron Egg"},
 	{"key": "egg_heron_1.desc", "value": ""},
-	{"key": "egg_heron_2.desc", "value": ""},
+	{"key": "egg_heron_2.desc", "value": "In a tree. Shoot down with bow or varmin rifle."},
 	{"key": "egg_heron_3.desc", "value": "In a tree. Shoot down with bow or varmin rifle."},
 
 	{"key": "egg_loon.name", "value": "Loon Eggs"},
@@ -452,7 +452,7 @@
 
 	{"key": "egg_goose_1.name", "value": "Goose Eggs"},
 	{"key": "egg_goose_1_1.desc", "value": ""},
-	{"key": "egg_goose_1_2.desc", "value": ""},
+	{"key": "egg_goose_1_2.desc", "value": "In a nest on the ground."},
 	{"key": "egg_goose_1_3.desc", "value": "In a nest on the ground. Don't step on it!"},
 
 	{"key": "egg_goose_2.name", "value": "Goose Eggs"},
@@ -462,7 +462,7 @@
 
 	{"key": "bottle_tennesee_whiskey.name", "value": "Tennesee Whiskey Bottle"},
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": ""},
-	{"key": "bottle_tennesee_whiskey_2.desc", "value": ""},
+	{"key": "bottle_tennesee_whiskey_2.desc", "value": "Inside building in cabinet in far right corner."},
 	{"key": "bottle_tennesee_whiskey_3.desc", "value": "In a cabinet in the livingroom."},
 
 	{"key": "bottle_irish_whiskey.name", "value": "Irish Whiskey Bottle"},
@@ -477,12 +477,12 @@
 
 	{"key": "bottle_absinthe.name", "value": "Absinthe Bottle"},
 	{"key": "bottle_absinthe_1.desc", "value": ""},
-	{"key": "bottle_absinthe_2.desc", "value": "In mausoleum. Enterance only from the west."},
+	{"key": "bottle_absinthe_2.desc", "value": ""},
 	{"key": "bottle_absinthe_3.desc", "value": "In a Green cabinet."},
 
 	{"key": "bottle_gran_corazon_madeira.name", "value": "Gran Corazon Madeira Bottle"},
 	{"key": "bottle_gran_corazon_madeira_1.desc", "value": "On a crate infront of the butchers tent."},
-	{"key": "bottle_gran_corazon_madeira_2.desc", "value": ""},
+	{"key": "bottle_gran_corazon_madeira_2.desc", "value": "At the back of the broken down wagon."},
 	{"key": "bottle_gran_corazon_madeira_3.desc", "value": ""},
 
 	{"key": "bottle_old_tom_gin.name", "value": "Old Tom Gin Bottle"},
@@ -542,7 +542,7 @@
 
 	{"key": "arrowhead_raw.name", "value": "Raw Arrowhead"},
 	{"key": "arrowhead_raw_1.desc", "value": ""},
-	{"key": "arrowhead_raw_2.desc", "value": ""},
+	{"key": "arrowhead_raw_2.desc", "value": "⛏ Behind the huts."},
 	{"key": "arrowhead_raw_3.desc", "value": ""},
 
 	{"key": "arrowhead_obsidian.name", "value": "Obsidian Arrowhead"},
@@ -562,7 +562,7 @@
 
 	{"key": "arrowhead_agate.name", "value": "Agate Arrowhead"},
 	{"key": "arrowhead_agate_1.desc", "value": "🧲 "},
-	{"key": "arrowhead_agate_2.desc", "value": "🧲 "},
+	{"key": "arrowhead_agate_2.desc", "value": "🧲 Inbetween a wagon wheel and part of a tree trunk."},
 	{"key": "arrowhead_agate_3.desc", "value": "🧲 Next to the spewing geiser."},
 
 	{"key": "heirlooms_jade_hairpin.name", "value": "Jade Hairpin Heirloom"},
@@ -572,12 +572,12 @@
 
 	{"key": "heirlooms_cherrywood_comb.name", "value": "Cherrywood Comb Heirloom"},
 	{"key": "heirlooms_cherrywood_comb_1.desc", "value": ""},
-	{"key": "heirlooms_cherrywood_comb_2.desc", "value": "Upstairs in Saloon, east room. On top of wash stand."},
+	{"key": "heirlooms_cherrywood_comb_2.desc", "value": ""},
 	{"key": "heirlooms_cherrywood_comb_3.desc", "value": "In the northeast room in a chest at the foot of the bed."},
 
 	{"key": "heirlooms_ebony_hairbrush.name", "value": "Ebony Hairbrush Heirloom"},
 	{"key": "heirlooms_ebony_hairbrush_1.desc", "value": "On a windowsil right of a bench on the southside of the house."},
-	{"key": "heirlooms_ebony_hairbrush_2.desc", "value": "On a couch on the deck at westside (backyard) of house"},
+	{"key": "heirlooms_ebony_hairbrush_2.desc", "value": ""},
 	{"key": "heirlooms_ebony_hairbrush_3.desc", "value": ""},
 
 	{"key": "heirlooms_metal_hairpin.name", "value": "Metal Hairpin Heirloom"},
@@ -627,7 +627,7 @@
 
 	{"key": "heirlooms_horse_hair_brush.name", "value": "Horse Hair Brush Heirloom"},
 	{"key": "heirlooms_horse_hair_brush_1.desc", "value": ""},
-	{"key": "heirlooms_horse_hair_brush_2.desc", "value": ""},
+	{"key": "heirlooms_horse_hair_brush_2.desc", "value": "In corner table of room upstairs in Saloon."},
 	{"key": "heirlooms_horse_hair_brush_3.desc", "value": "In the green cabinet next to the fireplace."},
 
 	{"key": "heirlooms_boar_bristle_brush.name", "value": "Boar Bristle Brush Heirloom"},
@@ -642,7 +642,7 @@
 
 	{"key": "flower_texas_bluebonnet.name", "value": "Texas Bluebonnet Flower"},
 	{"key": "flower_texas_bluebonnet_1.desc", "value": ""},
-	{"key": "flower_texas_bluebonnet_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_2.desc", "value": "Just south of windmill."},
 	{"key": "flower_texas_bluebonnet_3.desc", "value": ""},
 
 	{"key": "flower_bitterweed_1.name", "value": "Bitterweed Flower"},
@@ -752,7 +752,7 @@
 
 	{"key": "ring_thorburn_turquoise.name", "value": "Thorburn Turquoise Ring"},
 	{"key": "ring_thorburn_turquoise_1.desc", "value": "🧲 "},
-	{"key": "ring_thorburn_turquoise_2.desc", "value": ""},
+	{"key": "ring_thorburn_turquoise_2.desc", "value": "⛏️ At tree on cliff."},
 	{"key": "ring_thorburn_turquoise_3.desc", "value": "Inside the house in the chimney."},
 
 	{"key": "necklace_blakely_miniatue.name", "value": "Blakely Miniature Necklace"},
@@ -852,17 +852,17 @@
 
 	{"key": "earring_emmeline_coral.name", "value": "Emmeline Coral Earrings"},
 	{"key": "earring_emmeline_coral_1.desc", "value": "🧲 "},
-	{"key": "earring_emmeline_coral_2.desc", "value": "🧲 "},
+	{"key": "earring_emmeline_coral_2.desc", "value": "🧲 Right beside the tree."},
 	{"key": "earring_emmeline_coral_3.desc", "value": "⛏ "},
 
 	{"key": "bracelet_greco_sapphire.name", "value": "Greco Sapphire Bracelet"},
 	{"key": "bracelet_greco_sapphire_1.desc", "value": "Inside the chimney."},
-	{"key": "bracelet_greco_sapphire_2.desc", "value": "🧲 "},
+	{"key": "bracelet_greco_sapphire_2.desc", "value": "🧲 Near big boulder."},
 	{"key": "bracelet_greco_sapphire_3.desc", "value": "🧲 Below a dead tree."},
 
 	{"key": "bracelet_abello_ruby_bangle.name", "value": "Abello Ruby Bangle Bracelet"},
 	{"key": "bracelet_abello_ruby_bangle_1.desc", "value": "Inside the tree."},
-	{"key": "bracelet_abello_ruby_bangle_2.desc", "value": "🧲 "},
+	{"key": "bracelet_abello_ruby_bangle_2.desc", "value": "🧲 Between the two trees on the island."},
 	{"key": "bracelet_abello_ruby_bangle_3.desc", "value": "Inside a chest hidden beneath a bunch of dead trees."},
 
 	{"key": "bracelet_ojeda_rose_gold.name", "value": "Ojeda Rose Gold Bangle Bracelet"},
@@ -892,6 +892,6 @@
 
 	{"key": "bracelet_hajnal_garnet_bangle.name", "value": "Hajnal Garnet Bangle Bracelet"},
 	{"key": "bracelet_hajnal_garnet_bangle_1.desc", "value": "In a chest on a ridge."},
-	{"key": "bracelet_hajnal_garnet_bangle_2.desc", "value": ""},
+	{"key": "bracelet_hajnal_garnet_bangle_2.desc", "value": "🧲 In chest at base of tree"},
 	{"key": "bracelet_hajnal_garnet_bangle_3.desc", "value": "In a lockbox underneath the bridge."}
 ]
