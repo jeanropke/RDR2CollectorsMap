@@ -1,8 +1,8 @@
 ---
-name: Missing Item
-about: Missing item or wrong location
-title: ''
-labels: Missing/wrong item
+name: Incorrect Item
+about: Incorrect item location
+title: 'Incorrect item Cycle: day #'
+labels: Incorrect item
 assignees: ''
 
 ---
