@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/favicon.png"/>
 
     <title>Red Dead Redemption II Collector Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
@@ -15,7 +16,6 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
 
 </head>
-
 <body onload="init()">
 <div class="side-menu">
     <h2 data-text="menu.collectables">Collectables</h2>
@@ -25,7 +25,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="american-flowers">
-            <img class="icon" src="./icon/american-flowers.png" />
+            <img class="icon" src="./assets/images/icons/american-flowers.png" />
             <span data-text="menu.american_flowers">American Wild Flowers</span>
             <div class="open-submenu"></div>
         </div>
@@ -37,7 +37,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="antique-bottles">
-            <img class="icon" src="./icon/antique-bottles.png" />
+            <img class="icon" src="./assets/images/icons/antique-bottles.png" />
             <span data-text="menu.antique_bottles">Antique Alcohol Bottles</span>
             <div class="open-submenu"></div>
         </div>
@@ -49,7 +49,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="arrowhead">
-            <img class="icon" src="./icon/arrowhead.png" />
+            <img class="icon" src="./assets/images/icons/arrowhead.png" />
             <span data-text="menu.arrowhead">Arrowheads</span>
             <div class="open-submenu"></div>
         </div>
@@ -61,7 +61,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="bird-eggs">
-            <img class="icon" src="./icon/bird-eggs.png" />
+            <img class="icon" src="./assets/images/icons/bird-eggs.png" />
             <span data-text="menu.bird_eggs">Bird Eggs</span>
             <div class="open-submenu"></div>
         </div>
@@ -73,7 +73,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="coin">
-            <img class="icon" src="./icon/coin.png" />
+            <img class="icon" src="./assets/images/icons/coin.png" />
             <span data-text="menu.coin">Coins</span>
             <div class="open-submenu"></div>
         </div>
@@ -85,7 +85,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="family-heirlooms">
-            <img class="icon" src="./icon/family-heirlooms.png" />
+            <img class="icon" src="./assets/images/icons/family-heirlooms.png" />
             <span data-text="menu.family_heirlooms">Family Heirlooms</span>
             <div class="open-submenu"></div>
         </div>
@@ -97,7 +97,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="lost-bracelet">
-            <img class="icon" src="./icon/lost-bracelet.png" />
+            <img class="icon" src="./assets/images/icons/lost-bracelet.png" />
             <span data-text="menu.lost_bracelet">Lost Jewelry - Bracelets</span>
             <div class="open-submenu"></div>
         </div>
@@ -109,7 +109,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="lost-earrings">
-            <img class="icon" src="./icon/lost-earrings.png" />
+            <img class="icon" src="./assets/images/icons/lost-earrings.png" />
             <span data-text="menu.lost_earrings">Lost Jewelry - Earrings</span>
             <div class="open-submenu"></div>
         </div>
@@ -121,7 +121,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="lost-necklaces">
-            <img class="icon" src="./icon/lost-necklaces.png" />
+            <img class="icon" src="./assets/images/icons/lost-necklaces.png" />
             <span data-text="menu.lost_necklaces">Lost Jewelry - Necklaces</span>
             <div class="open-submenu"></div>
         </div>
@@ -133,7 +133,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="lost-ring">
-            <img class="icon" src="./icon/lost-ring.png" />
+            <img class="icon" src="./assets/images/icons/lost-ring.png" />
             <span data-text="menu.lost_ring">Lost Jewelry - Rings</span>
             <div class="open-submenu"></div>
         </div>
@@ -145,7 +145,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="card-cups">
-            <img class="icon" src="./icon/card-cups.png" />
+            <img class="icon" src="./assets/images/icons/card-cups.png" />
             <span data-text="menu.card_cups">Tarot Cards - Cups</span>
             <div class="open-submenu"></div>
         </div>
@@ -157,7 +157,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="card-pentacles">
-            <img class="icon" src="./icon/card-pentacles.png" />
+            <img class="icon" src="./assets/images/icons/card-pentacles.png" />
             <span data-text="menu.card_pentacles">Tarot Cards - Pentacles</span>
             <div class="open-submenu"></div>
         </div>
@@ -169,7 +169,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="card-swords">
-            <img class="icon" src="./icon/card-swords.png" />
+            <img class="icon" src="./assets/images/icons/card-swords.png" />
             <span data-text="menu.card_swords">Tarot Cards - Swords</span>
             <div class="open-submenu"></div>
         </div>
@@ -181,7 +181,7 @@
     </div>
     <div>
         <div class="menu-option clickable" data-type="card-wands">
-            <img class="icon" src="./icon/card-wands.png" />
+            <img class="icon" src="./assets/images/icons/card-wands.png" />
             <span data-text="menu.card_wands">Tarot Cards - Wands</span>
             <div class="open-submenu"></div>
         </div>
@@ -193,12 +193,16 @@
     </div>
     <h2 data-text="menu.utils">Utils</h2>
     <div class="menu-option clickable" data-type="nazar">
-        <img class="icon" src="./icon/nazar.png" />
+        <img class="icon" src="./assets/images/icons/nazar.png" />
         <span data-text="madam_nazar.name">Madam Nazar</span>
     </div>
     <div class="menu-option clickable" data-type="fast-travel">
-        <img class="icon" src="./icon/fast-travel.png" />
+        <img class="icon" src="./assets/images/icons/fast-travel.png" />
         <span data-text="menu.fast_travel">Fast Travel</span>
+    </div>
+    <div class="menu-option clickable" data-type="treasure">
+        <img class="icon" src="./assets/images/icons/treasure.png" />
+        <span data-text="menu.treasures">Treasures</span>
     </div>
 
     <div class="search-container">
@@ -301,7 +305,7 @@
     <p id="countdown">--:--:--</p>
 </div>
 <div id="map"></div>
-<script src="assets/js/scripts.js?nocache=17"></script>
+<script src="assets/js/scripts.js?nocache=18"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
 <script>
