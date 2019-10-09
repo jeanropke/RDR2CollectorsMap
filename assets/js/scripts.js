@@ -9,10 +9,12 @@ var disableMarkers = [];
 var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
     'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar',
-    'fast-travel'
+    'fast-travel', 'treasure'
 ];
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
+
+var treasureData = [];
 
 var routesData = [];
 var polylines;
@@ -61,8 +63,10 @@ var fastTravelLocations = [
     {"text": "fasttravel.lagras", "x": "-72.59375","y": "143.859375"}
 ];
 
-var nazarCurrentLocation = 8;
-var nazarCurrentDate = '8th October';
+var nazarCurrentLocation = 3;
+var nazarCurrentDate = '9th October';
+
+var nocache = 18;
 
 function init()
 {
@@ -96,9 +100,6 @@ function init()
 
     disableMarkers = Cookies.get('removed-items').split(';');
 
-    var minZoom = 2;
-    var maxZoom = 7;
-
     var mapLayers = [];
     mapLayers['Default'] = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true});
     mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true});
@@ -109,8 +110,8 @@ function init()
 
     // create the map
     map = L.map('map', {
-        minZoom: minZoom,
-        maxZoom: maxZoom,
+        minZoom: 2,
+        maxZoom: 7,
         zoomControl: false,
         crs: L.CRS.Simple,
         layers: [mapLayers[Cookies.get('map-layer')]]
@@ -148,11 +149,12 @@ function init()
     });
 
     loadMarkers();
+    loadTreasures();
     setCurrentDayCycle();
     loadRoutesData();
     var pos = [-53.2978125, 68.7596875];
     var offset = 1.15;
-    L.imageOverlay('overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
+    L.imageOverlay('./assets/overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
 
 }
 
@@ -211,15 +213,25 @@ function getNazarPosition()
 function loadLanguage()
 {
     languageData = [];
-    $.getJSON(`langs/${lang}.json?nocache=4`, {}, function(data)
+
+    $.getJSON(`langs/item/${lang}.json?nocache=${nocache}`, {}, function(data)
     {
         $.each(data, function(key, value) {
             languageData[value.key] = value.value;
 
         });
-        addMarkers();
-        setMenuLanguage();
-        refreshMenu();
+
+        $.getJSON(`langs/menu/${lang}.json?nocache=${nocache}`, {}, function(data)
+        {
+            $.each(data, function(key, value) {
+                languageData[value.key] = value.value;
+            });
+
+            setMenuLanguage();
+            addMarkers();
+            refreshMenu();
+        });
+
     });
 }
 
@@ -327,17 +339,51 @@ function setCurrentDayCycle()
 function loadRoutesData()
 {
 
-    $.getJSON(`assets/routes/day_1.json`, {}, function (data) {
+    $.getJSON(`data/routes/day_1.json`, {}, function (data) {
         routesData[1] = data;
     });
-    $.getJSON(`assets/routes/day_2.json`, {}, function (data) {
+    $.getJSON(`data/routes/day_2.json`, {}, function (data) {
         routesData[2] = data;
     });
-    $.getJSON(`assets/routes/day_3.json`, {}, function (data) {
+    $.getJSON(`data/routes/day_3.json`, {}, function (data) {
         routesData[3] = data;
     });
 
 
+}
+
+function loadTreasures(){
+    $.getJSON(`data/treasures.json`, {}, function (data) {
+        treasureData = data;
+    });
+}
+function addTreasures()
+{
+
+    if(enabledTypes.includes('treasure')) {
+        $.each(treasureData, function (key, value) {
+            var circle = L.circle([value.x, value.y], {
+                color: "#fff79900",
+                fillColor: "#fff799",
+                fillOpacity: 0.5,
+                radius: value.radius
+            });
+            var marker = L.marker([value.x, value.y], {
+                icon: L.AwesomeMarkers.icon({
+                    iconUrl: './assets/images/icons/treasure.png',
+                    markerColor: 'beige'
+                })
+            });
+
+            if (languageData[value.text] == null) {
+                console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
+            }
+            marker.bindPopup(`<h1> ${languageData[value.text]}</h1><p>  </p>`);
+
+            markersLayer.addLayer(marker);
+            markersLayer.addLayer(circle);
+        });
+    }
 }
 
 function drawLines()
@@ -367,7 +413,7 @@ function drawLines()
 function loadMarkers()
 {
     markers = [];
-    $.getJSON("items.json?nocache=4", {}, function(data)
+    $.getJSON(`data/items.json?nocache=${nocache}`, {}, function(data)
     {
         markers = data;
         loadLanguage();
@@ -430,11 +476,13 @@ function addMarkers()
 
     markersLayer.addTo(map);
 
+    addTreasures();
+
     removeCollectedMarkers();
 }
 
 function addMarkerOnMap(value){
-    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/' + value.icon + '.png', markerColor: 'day_' + value.day})});
+    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: './assets/images/icons/' + value.icon + '.png', markerColor: 'day_' + value.day})});
 
     switch (value.day) {
         case 'nazar':
@@ -552,6 +600,10 @@ function addCoordsOnMap(coords)
             $('.lat-lng-container div p').html('lat: ' + coords.latlng.lat + '<br> lng: ' + coords.latlng.lng);
         }
     }
+
+    //console.log(`{"text": "_treasure", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}", "radius": "5"},`);
+
+
 }
 
 function changeCursor()
