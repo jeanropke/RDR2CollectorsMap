@@ -68,7 +68,7 @@
 	{"key": "cups_ace_3.desc", "value": "On the nightstand in the right bedroom."},
 
 	{"key": "cups_two.name", "value": "Two of Cups"},
-	{"key": "cups_two_1.desc", "value": ""},
+	{"key": "cups_two_1.desc", "value": "On a barrel under the building."},
 	{"key": "cups_two_2.desc", "value": "On a crate on the lower deck of the railway bridge."},
 	{"key": "cups_two_3.desc", "value": "On the nightstand"},
 
@@ -118,7 +118,7 @@
 	{"key": "cups_knight_3.desc", "value": "On a crate under the awnining of the barn."},
 
 	{"key": "cups_page.name", "value": "Page of Cups"},
-	{"key": "cups_page_1.desc", "value": ""},
+	{"key": "cups_page_1.desc", "value": "On the window sill in the north western room."},
 	{"key": "cups_page_2.desc", "value": "In a brokendown outhouse."},
 	{"key": "cups_page_3.desc", "value": "On the table near the water tubs."},
 
@@ -148,7 +148,7 @@
 	{"key": "swords_three_3.desc", "value": "In the theatre tent on a chair in the front row."},
 
 	{"key": "swords_four.name", "value": "Four of Swords"},
-	{"key": "swords_four_1.desc", "value": ""},
+	{"key": "swords_four_1.desc", "value": "Up the ladder, on some wooden crates."},
 	{"key": "swords_four_2.desc", "value": ""},
 	{"key": "swords_four_3.desc", "value": ""},
 
@@ -723,7 +723,7 @@
 	{"key": "ring_harland_coral_3.desc", "value": "⛏ At the foot of the dead tree."},
 
 	{"key": "ring_magnate_turquoise.name", "value": "Magnate Turquoise Ring"},
-	{"key": "ring_magnate_turquoise_1.desc", "value": "Inside the chimney."},
+	{"key": "ring_magnate_turquoise_1.desc", "value": "Upper floor, inside the chimney."},
 	{"key": "ring_magnate_turquoise_2.desc", "value": "At the foot of a small tree."},
 	{"key": "ring_magnate_turquoise_3.desc", "value": "In a lockbox on the edge of the rocks."},
 
