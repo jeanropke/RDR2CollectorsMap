@@ -6,3 +6,5 @@ Detailed map by [RDR2Map](https://rdr2map.com/)
 Dark map by [TDLCTV](https://github.com/TDLCTV)
 
 Thanks for the people over at [https://madamnazar.io/](https://madamnazar.io/) for the API 
+
+Discord for contributors and translators https://discord.gg/2Wwj2q
