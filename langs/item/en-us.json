@@ -157,7 +157,7 @@
 
 	{"key": "swords_nine.name", "value": "Nine of Swords"},
 	{"key": "swords_nine_1.desc", "value": ""},
-	{"key": "swords_nine_2.desc", "value": ""},
+	{"key": "swords_nine_2.desc", "value": "On top of the water tower. Need to climb ladder."},
 	{"key": "swords_nine_3.desc", "value": ""},
 
 	{"key": "swords_ten.name", "value": "Ten of Swords"},
@@ -237,7 +237,7 @@
 
 	{"key": "wands_knight.name", "value": "Knight of Wands"},
 	{"key": "wands_knight_1.desc", "value": ""},
-	{"key": "wands_knight_2.desc", "value": ""},
+	{"key": "wands_knight_2.desc", "value": "In mausoleum. Enterance only from the north."},
 	{"key": "wands_knight_3.desc", "value": "On the edge of the water basin."},
 
 	{"key": "wands_page.name", "value": "Page of Wands"},
@@ -292,7 +292,7 @@
 
 	{"key": "pentacles_eight.name", "value": "Eight of Pentacles"},
 	{"key": "pentacles_eight_1.desc", "value": ""},
-	{"key": "pentacles_eight_2.desc", "value": ""},
+	{"key": "pentacles_eight_2.desc", "value": "On top of a barrel."},
 	{"key": "pentacles_eight_3.desc", "value": "On top of the table."},
 
 	{"key": "pentacles_nine.name", "value": "Nine of Pentacles"},
@@ -307,7 +307,7 @@
 
 	{"key": "pentacles_knight.name", "value": "Knight of Pentacles"},
 	{"key": "pentacles_knight_1.desc", "value": ""},
-	{"key": "pentacles_knight_2.desc", "value": ""},
+	{"key": "pentacles_knight_2.desc", "value": "On southern part of boat that is docked."},
 	{"key": "pentacles_knight_3.desc", "value": ""},
 
 	{"key": "pentacles_page.name", "value": "Page of Pentacles"},
@@ -477,7 +477,7 @@
 
 	{"key": "bottle_absinthe.name", "value": "Absinthe Bottle"},
 	{"key": "bottle_absinthe_1.desc", "value": ""},
-	{"key": "bottle_absinthe_2.desc", "value": ""},
+	{"key": "bottle_absinthe_2.desc", "value": "In mausoleum. Enterance only from the west."},
 	{"key": "bottle_absinthe_3.desc", "value": "In a Green cabinet."},
 
 	{"key": "bottle_gran_corazon_madeira.name", "value": "Gran Corazon Madeira Bottle"},
@@ -572,12 +572,12 @@
 
 	{"key": "heirlooms_cherrywood_comb.name", "value": "Cherrywood Comb Heirloom"},
 	{"key": "heirlooms_cherrywood_comb_1.desc", "value": ""},
-	{"key": "heirlooms_cherrywood_comb_2.desc", "value": ""},
+	{"key": "heirlooms_cherrywood_comb_2.desc", "value": "Upstairs in Saloon, east room. On top of wash stand."},
 	{"key": "heirlooms_cherrywood_comb_3.desc", "value": "In the northeast room in a chest at the foot of the bed."},
 
 	{"key": "heirlooms_ebony_hairbrush.name", "value": "Ebony Hairbrush Heirloom"},
 	{"key": "heirlooms_ebony_hairbrush_1.desc", "value": "On a windowsil right of a bench on the southside of the house."},
-	{"key": "heirlooms_ebony_hairbrush_2.desc", "value": ""},
+	{"key": "heirlooms_ebony_hairbrush_2.desc", "value": "On a couch on the deck at westside (backyard) of house"},
 	{"key": "heirlooms_ebony_hairbrush_3.desc", "value": ""},
 
 	{"key": "heirlooms_metal_hairpin.name", "value": "Metal Hairpin Heirloom"},
