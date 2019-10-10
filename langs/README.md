@@ -22,7 +22,7 @@ french (fr-fr.json)
   - Gromino
   
 italian (it-it.json)
-  - no-one yet!
+  - Raffox97
   
 japanese (ja.json)
   - no-one yet!
