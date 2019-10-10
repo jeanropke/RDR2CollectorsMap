@@ -52,7 +52,8 @@ Map.init = function ()
         setMapBackground(e.name);
     });
 
-    Map.loadFastTravels();
+
+    Map.loadWeeklySet();
 
 };
 
@@ -118,6 +119,15 @@ Map.addMarkers = function() {
 
 };
 
+Map.loadWeeklySet = function()
+{
+    $.getJSON(`data/weekly.json?nocache=${nocache}`)
+        .done(function(data) {
+            weeklySetData = data;
+            Map.loadFastTravels();
+        });
+};
+
 Map.removeItemFromMap = function(itemName)
 {
     if(disableMarkers.includes(itemName.toString()))
@@ -154,8 +164,13 @@ Map.removeItemFromMap = function(itemName)
 };
 
 
-Map.addMarkerOnMap = function(value) {
-    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: './assets/images/icons/' + value.icon + '.png', markerColor: 'day_' + value.day})});
+Map.addMarkerOnMap = function(value)
+{
+    var isWeekly = weeklySetData.filter(weekly => {
+            return weekly.item === value.text;
+    }).length > 0;
+
+    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: './assets/images/icons/' + value.icon + '.png', markerColor: isWeekly ? 'green' : 'day_' + value.day})});
 
     tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - ${languageData['menu.day']} ${value.day}</h1><p> ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">${languageData['map.remove_add']}</p>`).on('click', function(e) { Routes.addMarkerOnCustomRoute(value.text); if(customRouteEnabled)e.target.closePopup();});
 
@@ -262,7 +277,7 @@ Map.addMadamNazar = function ()
 };
 
 Map.loadTreasures = function() {
-    $.getJSON(`data/treasures.json`)
+    $.getJSON(`data/treasures.json?nocache=${nocache}`)
         .done(function (data) {
             treasureData = data;
             Map.loadMarkers();
