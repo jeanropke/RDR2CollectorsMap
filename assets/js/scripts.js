@@ -27,7 +27,7 @@ var customRouteConnections = [];
 var showCoordinates = false;
 
 var toolType = '3'; //All type of tools
-var avaliableLanguages = ['de-de', 'es-es', 'en-us', 'fr-fr', 'pt-br', 'pl', 'zh-s', 'zh-t'];
+var avaliableLanguages = ['de-de', 'es-es', 'en-us', 'fr-fr', 'it-it', 'pt-br', 'pl', 'zh-s', 'zh-t'];
 var lang;
 var languageData = [];
 
@@ -37,7 +37,9 @@ var nazarCurrentDate = '10th October';
 
 var fastTravelData;
 
-var nocache = 19;
+var weeklySetData = [];
+
+var nocache = 20;
 
 function init()
 {
@@ -215,7 +217,7 @@ $("#reset-markers").on("change", function()
     Cookies.set('removed-markers-daily', resetMarkersDaily, 999);
 
 
-    removeCollectedMarkers();
+    Map.removeCollectedMarkers();
 });
 
 $("#custom-routes").on("change", function()
