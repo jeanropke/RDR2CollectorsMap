@@ -217,19 +217,15 @@ p {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    z-index: 900;
-}
-
-.lat-lng-container div {
-    position: relative;
+    width: 200px;
+    margin: 0 calc(50% - 100px) 20px;
+    z-index: 990;
     background-color: #FFFAF0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
     padding: 13px 2px;
     border-radius: 3px;
-    text-align: center;
-    max-width: 200px;
-    margin: 0 auto 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: none;
 }
 
 .lat-lng-container #lat-lng-container-close-button {

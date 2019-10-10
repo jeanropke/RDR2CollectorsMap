@@ -20,8 +20,8 @@
 <div class="side-menu">
     <h2 data-text="menu.collectables">Collectables</h2>
     <div class="hide-show-container">
-        <a data-text="menu.hide_all" href="javascript:void(0);" onclick="hideall()">Hide all</a>
-        <a data-text="menu.show_all" href="javascript:void(0);" onclick="showall()">Show all</a>
+        <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
+        <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
     </div>
     <div>
         <div class="menu-option clickable" data-type="american-flowers">
@@ -263,8 +263,8 @@
     </div>
     <h2 data-text="menu.custom_routes">Custom routes</h2>
     <div class="custom-routes-container">
-        <a data-text="menu.import_route" href="javascript:void(0);" onclick="importCustomRoute()">Import route</a>
-        <a data-text="menu.export_route" href="javascript:void(0);" onclick="exportCustomRoute()">Export route</a>
+        <a data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import route</a>
+        <a data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export route</a>
     </div>
     <div class="routes-container">
         <div class="input-container">
@@ -305,7 +305,12 @@
     <p id="countdown">--:--:--</p>
 </div>
 <div id="map"></div>
-<script src="assets/js/scripts.js?nocache=18"></script>
+<div class="lat-lng-container"><p>lat: -119.625<br> lng: 85.25</p><button id="lat-lng-container-close-button">×</button></div>
+<script src="assets/js/map.js?nocache=19"></script>
+<script src="assets/js/language.js?nocache=19"></script>
+<script src="assets/js/menu.js?nocache=19"></script>
+<script src="assets/js/routes.js?nocache=19"></script>
+<script src="assets/js/scripts.js?nocache=19"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
 <script>
