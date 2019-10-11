@@ -2,11 +2,12 @@
 name: Incorrect Item
 about: Incorrect item location
 title: 'Incorrect item Cycle: day #'
-labels: Incorrect item
+labels: ''
 assignees: ''
 
 ---
 
+#### Found a new location? [Use this form here](https://github.com/jeanropke/RDR2CollectorsMap/issues/182)
 * What day cycle it is?
 * Coordinates or a clear image of the location
 * Include the item name
