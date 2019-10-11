@@ -45,5 +45,9 @@ Menu.hideAll = function()
     Map.addMarkers();
 };
 
-
+Menu.refreshItemsCounter = function()
+{
+    console.log(`Collected ${disableMarkers.length-1} of ${Object.keys(visibleMarkers).length}`);
+    $('#item-counter').text(`${disableMarkers.length-1} of ${Object.keys(visibleMarkers).length}`);
+};
 

@@ -27,6 +27,17 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+}
+h4 {
+    text-align: center;
+    font-size: 20px;
+    margin: 15px 0 0 0;
+}
+
 p {
     margin: 0!important;
 }
@@ -38,7 +49,7 @@ p {
     height: 100%;
     height: 100vh;
 }
-#countdown {
+#countdown, #item-counter {
     text-align: center;
     font-size: 16px;
     line-height: 1.7;
@@ -56,6 +67,19 @@ p {
     width: 80px;
     height: 30px;
     transition: all 200ms ease-out;
+}
+.counter-container {
+    position: fixed;
+    z-index: 9999;
+    background: #111;
+    border: 1px solid #888;
+    color: #eee;
+    left: 125px;
+    top: 5px;
+    width: 80px;
+    height: 30px;
+    transition: all 200ms ease-out;
+    display: none;
 }
 .remove-button {
     color: #b92a27;
@@ -238,13 +262,51 @@ p {
     padding: 0;
     background-color: transparent;
 }
-
+.help-button {
+    user-select: none;
+    font-size: 14px;
+}
+.help-popup {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .2);
+    z-index: 9999;
+    padding: 5%;
+    color: #eee;
+    display: none;
+}
+.help-container {
+    height: 100%;
+    padding: 25px;
+    background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px 0 black;
+}
+.help-close {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    right: calc(-100% + 20px);
+    top: 20px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+.help-scroll {
+    overflow-y: auto;
+    height: 100%;
+    padding: 10px;
+}
 /* Fix buttons showing on top of sidebar on mobile menu */
 .leaflet-top, .leaflet-bottom {
     z-index: 998;
 }
 @media (max-width: 1024px) {
     .timer-menu-opened {
+        display: none;
+    }
+    .counter-menu-opened {
         display: none;
     }
 }
@@ -260,6 +322,10 @@ p {
     }
     .timer-menu-opened {
         left: 325px;
+    }
+
+    .counter-menu-opened {
+        left: 410px;
     }
 }
 
