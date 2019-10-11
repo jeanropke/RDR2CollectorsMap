@@ -4,7 +4,8 @@
 
 var Map = {
     minZoom: 2,
-    maxZoom: 7
+    maxZoom: 7,
+    bounds: L.latLngBounds(Map.southWest, Map.northEast)
 };
 
 Map.init = function ()
@@ -52,7 +53,11 @@ Map.init = function ()
         setMapBackground(e.name);
     });
 
+    var southWest = L.latLng(-170.712, -25.227),
+        northEast = L.latLng(10.774, 200.125),
+        bounds = L.latLngBounds(southWest, northEast);
 
+    map.setMaxBounds(bounds);
     Map.loadWeeklySet();
 };
 
