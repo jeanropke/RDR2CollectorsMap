@@ -74,7 +74,7 @@ Map.addMarkers = function() {
     $.each(markers, function (key, value)
     {
 
-        if(value.tool != toolType && toolType !== "3")
+        if(parseInt(toolType) < parseInt(value.tool) && toolType !== "3")
             return;
 
         if(enabledTypes.includes(value.icon))
