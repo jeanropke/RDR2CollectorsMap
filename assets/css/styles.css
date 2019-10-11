@@ -266,6 +266,9 @@ p {
     user-select: none;
     font-size: 14px;
 }
+.help-button a {
+    color: #eee;
+}
 .help-popup {
     position: fixed;
     width: 100%;

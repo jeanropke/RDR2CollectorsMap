@@ -286,20 +286,6 @@ $(document).on('click', '.collectible', function(){
         Map.drawLines();
 });
 
-$('.help-button').on('click', function(){
-    $('.help-popup').css('display', 'block');
-});
-
-$('.help-close').on('click', function() {
-    $('.help-popup').css('display', 'none');
-});
-$('.help-popup').on('click', function() {
-    $('.help-popup').css('display', 'none');
-}).on('click', 'div', function(e) {
-    // clicked on descendant div
-    e.stopPropagation();
-});
-
 $('.menu-toggle').on('click', function()
 {
     $('.side-menu').toggleClass('menu-opened');

@@ -237,9 +237,17 @@ Map.addFastTravelMarker = function()
     }
 };
 
-Map.customMarker = function(coords){
-    var nazarMarker = L.marker(coords, {icon: L.AwesomeMarkers.icon({iconUrl: 'icon/nazar.png', markerColor: 'day_4'})}).bindPopup(`<h1>debug</h1>`);
-    markersLayer.addLayer(nazarMarker);
+Map.debugMarker = function (lat, long)
+{
+    var marker = L.marker([lat, long], {
+    icon: L.AwesomeMarkers.icon({
+        iconUrl: './assets/images/icons/help.png',
+        markerColor: 'darkblue'
+    })
+});
+
+    marker.bindPopup(`<h1>Debug Marker</h1><p>  </p>`);
+    markersLayer.addLayer(marker);
 };
 
 Map.addCoordsOnMap = function(coords)
