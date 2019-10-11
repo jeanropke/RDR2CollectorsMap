@@ -348,3 +348,16 @@ Map.drawLines = function() {
     map.addLayer(polylines);
 };
 
+Map.debugMarker = function (lat, long)
+{
+    var marker = L.marker(lat, long], {
+        icon: L.AwesomeMarkers.icon({
+            iconUrl: '',
+            markerColor: 'white'
+        })
+    });
+
+    marker.bindPopup(`<h1>Debug Marker</h1><p>  </p>`);
+    markersLayer.addLayer(marker);
+};
+
