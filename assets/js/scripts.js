@@ -32,8 +32,8 @@ var lang;
 var languageData = [];
 
 var nazarLocations = [];
-var nazarCurrentLocation = 0;
-var nazarCurrentDate = '10th October';
+var nazarCurrentLocation = 3;
+var nazarCurrentDate = '11th October';
 
 var fastTravelData;
 
@@ -286,6 +286,19 @@ $(document).on('click', '.collectible', function(){
         Map.drawLines();
 });
 
+$('.help-button').on('click', function(){
+    $('.help-popup').css('display', 'block');
+});
+
+$('.help-close').on('click', function() {
+    $('.help-popup').css('display', 'none');
+});
+$('.help-popup').on('click', function() {
+    $('.help-popup').css('display', 'none');
+}).on('click', 'div', function(e) {
+    // clicked on descendant div
+    e.stopPropagation();
+});
 
 $('.menu-toggle').on('click', function()
 {
@@ -300,6 +313,8 @@ $('.menu-toggle').on('click', function()
         $('.menu-toggle').text('>');
     }
     $('.timer-container').toggleClass('timer-menu-opened');
+    $('.counter-container').toggleClass('counter-menu-opened');
+
 });
 
 setInterval(function()
@@ -332,3 +347,4 @@ function addZeroToNumber(number)
         number = '0'+number.toString();
     return number;
 }
+

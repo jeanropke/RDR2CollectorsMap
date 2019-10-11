@@ -54,7 +54,6 @@ Map.init = function ()
 
 
     Map.loadWeeklySet();
-
 };
 
 Map.loadMarkers = function()
@@ -109,6 +108,7 @@ Map.addMarkers = function() {
     });
 
     markersLayer.addTo(map);
+    Menu.refreshItemsCounter();
 
     Map.addFastTravelMarker();
     Map.addTreasures();
@@ -141,8 +141,14 @@ Map.removeItemFromMap = function(itemName)
             return value != itemName.toString();
 
         });
-        $(visibleMarkers[itemName]._icon).css('opacity', '1');
+
+        if(visibleMarkers[itemName] == null)
+            console.warn(`[INFO]: '${itemName}' type is disabled!`);
+        else
+            $(visibleMarkers[itemName]._icon).css('opacity', '1');
+
         $('[data-type=' + itemName + ']').removeClass('disabled');
+
     }
     else
     {
@@ -152,7 +158,10 @@ Map.removeItemFromMap = function(itemName)
                 value.hidden = true;
             }
         });
-        $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
+        if(visibleMarkers[itemName] == null)
+            console.warn(`[INFO]: '${itemName}' type is disabled!`);
+        else
+            $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
         $('[data-type=' + itemName + ']').addClass('disabled');
     }
 
@@ -161,6 +170,7 @@ Map.removeItemFromMap = function(itemName)
     if($("#routes").val() == 1)
         Map.drawLines();
 
+    Menu.refreshItemsCounter();
 };
 
 
