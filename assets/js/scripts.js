@@ -38,7 +38,7 @@ var nazarCurrentDate = '11th October';
 var fastTravelData;
 
 var weeklySetData = [];
-
+var date;
 var nocache = 20;
 
 function init()
@@ -66,7 +66,8 @@ function init()
     resetMarkersDaily = Cookies.get('removed-markers-daily') == 'true';
     $("#reset-markers").val(resetMarkersDaily.toString());
 
-
+    var curDate = new Date();
+    date = `${curDate.getUTCFullYear()}-${curDate.getUTCMonth()+1}-${curDate.getDate()}`;
 
     lang = Cookies.get('language');
     $("#language").val(lang);
@@ -135,16 +136,16 @@ function setCurrentDayCycle()
     $('#day').val(day);
 
     //Cookie day not exists? create
-    if(typeof Cookies.get('day') === 'undefined')
+    if(typeof Cookies.get('date') === 'undefined')
     {
-        Cookies.set('day', day, { expires: 1 });
+        Cookies.set('date', date, { expires: 2 });
     }
     //if exists, remove markers if the days arent the same
     else
     {
-        if(Cookies.get('day') != day.toString())
+        if(Cookies.get('date') != date.toString())
         {
-            Cookies.set('day', day, { expires: 1 });
+            Cookies.set('date', date, { expires: 2 });
             if(resetMarkersDaily)
             {
                 Cookies.set('removed-items', '', {expires: 1});
