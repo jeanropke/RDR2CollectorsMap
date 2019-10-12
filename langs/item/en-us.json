@@ -46,7 +46,7 @@
 	{"key": "west_hill_haven_treasure", 		"value": "West Hill Haven"},
 
 	{"key": "cups_ace.name", "value": "Ace of Cups"},
-	{"key": "cups_ace_1.desc", "value": ""},
+	{"key": "cups_ace_1.desc", "value": "Inside the barn on some haybales."},
 	{"key": "cups_ace_2.desc", "value": "On a barrel behind the rundown shed."},
 	{"key": "cups_ace_3.desc", "value": "On the nightstand in the right bedroom."},
 
@@ -81,7 +81,7 @@
 	{"key": "cups_seven_3.desc", "value": "Inside the house in a open cupboard."},
 
 	{"key": "cups_eight.name", "value": "Eight of Cups"},
-	{"key": "cups_eight_1.desc", "value": "In the outhouse by the river."},
+	{"key": "cups_eight_1.desc", "value": "On a barrel underneath an awning."},
 	{"key": "cups_eight_2.desc", "value": "On the right most shelf at the shootingrange."},
 	{"key": "cups_eight_3.desc", "value": "Inside the house in the bookcase."},
 
@@ -126,7 +126,7 @@
 	{"key": "swords_two_3.desc", "value": "On crates next to a wagon."},
 
 	{"key": "swords_three.name", "value": "Three of Swords"},
-	{"key": "swords_three_1.desc", "value": ""},
+	{"key": "swords_three_1.desc", "value": "On a windowsil left of the house."},
 	{"key": "swords_three_2.desc", "value": "On top of the tower. Climb the ladders."},
 	{"key": "swords_three_3.desc", "value": "In the theatre tent on a chair in the front row."},
 
@@ -156,7 +156,7 @@
 	{"key": "swords_eight_3.desc", "value": ""},
 
 	{"key": "swords_nine.name", "value": "Nine of Swords"},
-	{"key": "swords_nine_1.desc", "value": ""},
+	{"key": "swords_nine_1.desc", "value": "On the back of the haywagon."},
 	{"key": "swords_nine_2.desc", "value": "On top of the water tower. Need to climb ladder."},
 	{"key": "swords_nine_3.desc", "value": ""},
 
@@ -236,7 +236,7 @@
 	{"key": "wands_ten_3.desc", "value": "On a broken wagon."},
 
 	{"key": "wands_knight.name", "value": "Knight of Wands"},
-	{"key": "wands_knight_1.desc", "value": ""},
+	{"key": "wands_knight_1.desc", "value": "In the back of the hut on the right side of the counter."},
 	{"key": "wands_knight_2.desc", "value": "In mausoleum. Enterance only from the north."},
 	{"key": "wands_knight_3.desc", "value": "On the edge of the water basin."},
 
@@ -286,7 +286,7 @@
 	{"key": "pentacles_six_3.desc", "value": ""},
 
 	{"key": "pentacles_seven.name", "value": "Seven of Pentacles"},
-	{"key": "pentacles_seven_1.desc", "value": ""},
+	{"key": "pentacles_seven_1.desc", "value": "Ontop of a blue barrel."},
 	{"key": "pentacles_seven_2.desc", "value": "In Alley. On top of two crates."},
 	{"key": "pentacles_seven_3.desc", "value": ""},
 
@@ -391,7 +391,7 @@
 	{"key": "coin_liberty_quarter_3.desc", "value": "Behind the sign."},
 
 	{"key": "coin_half_dime.name", "value": "1800 Half Dime Coin"},
-	{"key": "coin_half_dime_1.desc", "value": ""},
+	{"key": "coin_half_dime_1.desc", "value": "On the bank of the river next to some lavender plants."},
 	{"key": "coin_half_dime_2.desc", "value": "Underneath the railwaybridge in a small ditch. (not the large one)"},
 	{"key": "coin_half_dime_3.desc", "value": ""},
 
@@ -491,7 +491,7 @@
 	{"key": "bottle_old_tom_gin_3.desc", "value": "In the sink cupboard."},
 
 	{"key": "bottle_caribbean_rum.name", "value": "Caribbean Rum Bottle"},
-	{"key": "bottle_caribbean_rum_1.desc", "value": ""},
+	{"key": "bottle_caribbean_rum_1.desc", "value": "In a cabinet next the door."},
 	{"key": "bottle_caribbean_rum_2.desc", "value": "Infront of the unlit tent."},
 	{"key": "bottle_caribbean_rum_3.desc", "value": "On top of the table as you walk in."},
 
@@ -561,7 +561,7 @@
 	{"key": "arrowhead_flint_3.desc", "value": "Inbetween fallen trees."},
 
 	{"key": "arrowhead_agate.name", "value": "Agate Arrowhead"},
-	{"key": "arrowhead_agate_1.desc", "value": "On fireplace on second floor of building."},
+	{"key": "arrowhead_agate_1.desc", "value": "Infront of the dead tree."},
 	{"key": "arrowhead_agate_2.desc", "value": "Inbetween a wagon wheel and part of a tree trunk."},
 	{"key": "arrowhead_agate_3.desc", "value": "Next to the spewing geiser."},
 
@@ -731,7 +731,7 @@
 	{"key": "ring_beaulieux_diamond_3.desc", "value": "Inside a chimney. Watch for cougars."},
 
 	{"key": "ring_yates_diamond.name", "value": "Yates Diamond Ring"},
-	{"key": "ring_yates_diamond_1.desc", "value": "Underneath the westside."},
+	{"key": "ring_yates_diamond_1.desc", "value": "Underneath the westside awning."},
 	{"key": "ring_yates_diamond_2.desc", "value": ""},
 	{"key": "ring_yates_diamond_3.desc", "value": ""},
 
@@ -796,7 +796,7 @@
 	{"key": "necklace_dane_topaz_3.desc", "value": ""},
 
 	{"key": "necklace_tuamotu_pearl.name", "value": "Tuamotu Pearl Necklace"},
-	{"key": "necklace_tuamotu_pearl_1.desc", "value": ""},
+	{"key": "necklace_tuamotu_pearl_1.desc", "value": "Almost at the end of the peninsula."},
 	{"key": "necklace_tuamotu_pearl_2.desc", "value": "On a small plateu besides a rock."},
 	{"key": "necklace_tuamotu_pearl_3.desc", "value": "Inside lockbox on top of rocks."},
 
