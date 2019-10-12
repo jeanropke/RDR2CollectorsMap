@@ -67,7 +67,7 @@ function init()
     $("#reset-markers").val(resetMarkersDaily.toString());
 
     var curDate = new Date();
-    date = `${curDate.getUTCFullYear()}-${curDate.getUTCMonth()+1}-${curDate.getDate()}`;
+    date = `${curDate.getUTCFullYear()}-${curDate.getUTCMonth()+1}-${curDate.getUTCDate()}`;
 
     lang = Cookies.get('language');
     $("#language").val(lang);
