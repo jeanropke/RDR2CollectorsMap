@@ -41,8 +41,16 @@ var weeklySetData = [];
 var date;
 var nocache = 20;
 
+var wikiLanguage = [];
+
 function init()
 {
+
+    wikiLanguage['en-us'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)';
+    //wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(Portugues)';
+
+
+
     if(typeof Cookies.get('removed-items') === 'undefined')
         Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
 
