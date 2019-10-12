@@ -29,6 +29,12 @@ Language.load = function(isChanged)
 
         });
     });
+
+
+    if(wikiLanguage[lang] != null)
+        $('.wiki-page').attr('href', wikiLanguage[lang]);
+    else
+        $('.wiki-page').attr('href', wikiLanguage['en-us']);
 };
 
 Language.setMenuLanguage = function ()

@@ -25,6 +25,7 @@ Menu.refreshMenu = function ()
             $('[data-type=' + value + ']').addClass('disabled');
         }
     });
+
 };
 
 Menu.showAll = function() {
