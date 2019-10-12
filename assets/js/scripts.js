@@ -173,11 +173,14 @@ function changeCursor()
 
 $("#day").on("input", function()
 {
+    Cookies.remove('ignore-days')
+
     day = $('#day').val();
     Map.addMarkers();
 
     if($("#routes").val() == 1)
         Map.drawLines();
+
 
 });
 

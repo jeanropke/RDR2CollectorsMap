@@ -84,7 +84,7 @@ Map.addMarkers = function() {
 
         if(enabledTypes.includes(value.icon))
         {
-            if (value.day == day || isNaN(value.day)) //if is not a number, will be nazar or fast travel
+            if (value.day == day || Cookies.get('ignore-days') == 'true')
             {
                 if (languageData[value.text+'.name'] == null)
                 {
