@@ -4,10 +4,9 @@
 
 var Map = {
     minZoom: 2,
-    maxZoom: 7,
-    bounds: L.latLngBounds(Map.southWest, Map.northEast)
+    maxZoom: 7
 };
-
+var myRenderer = L.canvas({ padding: 0.5 });
 Map.init = function ()
 {
     var mapLayers = [];
@@ -16,6 +15,7 @@ Map.init = function ()
     mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true});
 
     map = L.map('map', {
+        preferCanvas: true,
         minZoom: Map.minZoom,
         maxZoom: Map.maxZoom,
         zoomControl: false,
@@ -185,7 +185,7 @@ Map.addMarkerOnMap = function(value)
             return weekly.item === value.text;
     }).length > 0;
 
-    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: './assets/images/icons/' + value.icon + '.png', markerColor: isWeekly ? 'green' : 'day_' + value.day})});
+    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: './assets/images/icons/' + value.icon + '.png', markerColor: isWeekly ? 'green' : 'day_' + value.day}), renderer: myRenderer});
 
     tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - ${languageData['menu.day']} ${value.day}</h1><p>  ${Map.getToolIcon(value.tool)} ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">${languageData['map.remove_add']}</p>`).on('click', function(e) { Routes.addMarkerOnCustomRoute(value.text); if(customRouteEnabled)e.target.closePopup();});
 
