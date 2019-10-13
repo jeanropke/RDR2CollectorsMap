@@ -44,5 +44,5 @@
 	{"key": "menu.custom_routes", "value": "自定义路线"},
 	{"key": "menu.import_route", "value": "输入路线"},
 	{"key": "menu.export_route", "value": "导出路线"},
-	{"key": "menu.treasures", "value": "Treasures"}
+	{"key": "menu.treasures", "value": "藏宝图"}
 ]
