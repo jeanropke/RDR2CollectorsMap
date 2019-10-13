@@ -38,7 +38,7 @@ brazilian (pt-br.json)
   - Vitor-Borba72
   
 russian (ru.json)
-  - no-one yet!
+  - Overnoes
   
 chinese simplified (zh-s.json)
   - yamazakitouma
