@@ -26,5 +26,6 @@
 	{"text": "southren_roanoke_treasure", "x": "-55.328125", "y": "150.5546875", "radius": "2.9"},
 	{"text": "blue_water_marsh_treasure", "x": "-72.4140625", "y": "147.3515625", "radius": "2"},
 	{"text": "west_hill_haven_treasure", "x": "-78.21875", "y": "126.2734375", "radius": "2.35"},
-	{"text": "civil_war_treasure", "x": "-91.4375", "y": "134.7734375", "radius": "2"}
+	{"text": "civil_war_treasure", "x": "-91.4375", "y": "134.7734375", "radius": "2"},
+	{"text": "burned_town_treasure", "x": "-65.625", "y": "105.8515625", "radius": "1"}
 ]
