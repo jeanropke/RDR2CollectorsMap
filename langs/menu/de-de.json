@@ -18,7 +18,7 @@
 	{"key": "menu.card_wands", "value": "Tarotkarten - Stäbe"},	
 	{"key": "menu.search", "value": "Suche"},
 	{"key": "menu.settings", "value": "Einstellungen"},
-	{"key": "menu.day", "value": "Sammelstücke-Karte"},
+	{"key": "menu.day", "value": "Landkarte"},
 	{"key": "menu.tool_type", "value": "Werkzeug-Typ"},
 	{"key": "menu.tool_type.no_tools", "value": "Kein Werkzeug"},
 	{"key": "menu.tool_type.shovel", "value": "Schaufel"},
