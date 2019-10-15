@@ -9,6 +9,7 @@ english (en-en.json)
   - rbcunhadesign
   - Tiax
   - sporb
+  - Senexis
   
 german (de-de.json)
   - flameango
