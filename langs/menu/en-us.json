@@ -18,7 +18,7 @@
 	{"key": "menu.card_wands", "value": "Tarot Cards - Wands"},	
 	{"key": "menu.search", "value": "Search"},
 	{"key": "menu.settings", "value": "Settings"},
-	{"key": "menu.day", "value": "Collection map"},
+	{"key": "menu.day", "value": "Day"},
 	{"key": "menu.tool_type", "value": "Tool type"},
 	{"key": "menu.tool_type.no_tools", "value": "No tools"},
 	{"key": "menu.tool_type.shovel", "value": "Shovel"},
