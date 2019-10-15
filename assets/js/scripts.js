@@ -32,8 +32,8 @@ var lang;
 var languageData = [];
 
 var nazarLocations = [];
-var nazarCurrentLocation = 7;
-var nazarCurrentDate = '14th October';
+var nazarCurrentLocation = 4;
+var nazarCurrentDate = '15th October';
 
 var fastTravelData;
 
