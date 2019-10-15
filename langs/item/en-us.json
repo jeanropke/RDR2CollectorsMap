@@ -57,7 +57,7 @@
 	{"key": "cups_two_3.desc", "value": "On the nightstand"},
 
 	{"key": "cups_three.name", "value": "Three of Cups"},
-	{"key": "cups_three_1.desc", "value": ""},
+	{"key": "cups_three_1.desc", "value": "On the back of a wagon."},
 	{"key": "cups_three_2.desc", "value": ""},
 	{"key": "cups_three_3.desc", "value": "On a bench."},
 
@@ -207,7 +207,7 @@
 	{"key": "wands_four_3.desc", "value": ""},
 
 	{"key": "wands_five.name", "value": "Five of Wands"},
-	{"key": "wands_five_1.desc", "value": ""},
+	{"key": "wands_five_1.desc", "value": "On the grave of \"Calvin Draper\"."},
 	{"key": "wands_five_2.desc", "value": "In the bookshelf in the kitchen."},
 	{"key": "wands_five_3.desc", "value": "On barrel right beside the fence."},
 
@@ -262,7 +262,7 @@
 	{"key": "pentacles_ace_3.desc", "value": ""},
 
 	{"key": "pentacles_two.name", "value": "Two of Pentacles"},
-	{"key": "pentacles_two_1.desc", "value": ""},
+	{"key": "pentacles_two_1.desc", "value": "In a coffin next to a mass grave."},
 	{"key": "pentacles_two_2.desc", "value": ""},
 	{"key": "pentacles_two_3.desc", "value": ""},
 
@@ -342,7 +342,7 @@
 	{"key": "coin_one_cent_token_3.desc", "value": ""},	
 
 	{"key": "coin_silver_dollar.name", "value": "1794 Silver Dollar Coin"},
-	{"key": "coin_silver_dollar_1.desc", "value": ""},
+	{"key": "coin_silver_dollar_1.desc", "value": "Next to the chimney."},
 	{"key": "coin_silver_dollar_2.desc", "value": "Underneath the house."},
 	{"key": "coin_silver_dollar_3.desc", "value": "Inside the mine at the end of the tunnel."},
 
@@ -477,7 +477,7 @@
 	{"key": "bottle_scotch_whisky_3.desc", "value": "Upstairs inside wardrobe."},
 
 	{"key": "bottle_absinthe.name", "value": "Absinthe Bottle"},
-	{"key": "bottle_absinthe_1.desc", "value": ""},
+	{"key": "bottle_absinthe_1.desc", "value": "In the burnt wagon."},
 	{"key": "bottle_absinthe_2.desc", "value": "In mausoleum. Enterance only from the west."},
 	{"key": "bottle_absinthe_3.desc", "value": "In a Green cabinet."},
 
@@ -872,7 +872,7 @@
 	{"key": "bracelet_ojeda_rose_gold_3.desc", "value": "Bottom of cliff."},
 
 	{"key": "bracelet_helena_sapphire.name", "value": "Helena Sapphire Bracelet"},
-	{"key": "bracelet_helena_sapphire_1.desc", "value": ""},
+	{"key": "bracelet_helena_sapphire_1.desc", "value": "In a lockbox next to the railroad at the end of the tunnel."},
 	{"key": "bracelet_helena_sapphire_2.desc", "value": "In a chest behind the waterfall."},
 	{"key": "bracelet_helena_sapphire_3.desc", "value": "In a lockbox next to the large rock."},
 
