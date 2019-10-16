@@ -9,10 +9,14 @@ var Map = {
 var myRenderer = L.canvas({ padding: 0.5 });
 Map.init = function ()
 {
+    var southWestTiles = L.latLng(-144, 0),
+        northEastTiles = L.latLng(0, 176),
+        boundsTiles = L.latLngBounds(southWestTiles, northEastTiles);
+
     var mapLayers = [];
-    mapLayers['Default'] = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true});
-    mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true});
-    mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true});
+    mapLayers['Default'] = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', { noWrap: true, bounds: boundsTiles });
+    mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles});
+    mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles});
 
     map = L.map('map', {
         preferCanvas: true,
