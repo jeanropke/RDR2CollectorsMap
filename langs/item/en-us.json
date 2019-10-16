@@ -328,7 +328,7 @@
 
 	{"key": "coin_gold_quarter.name", "value": "1800 Gold Quarter Coin"},
 	{"key": "coin_gold_quarter_1.desc", "value": ""},
-	{"key": "coin_gold_quarter_2.desc", "value": ""},
+	{"key": "coin_gold_quarter_2.desc", "value": "Inbetween a rock and a fallen tree."},
 	{"key": "coin_gold_quarter_3.desc", "value": "Under tree on cliff side."},
 
 	{"key": "coin_draped_bust_silver_dollar.name", "value": "1798 Draped Bust Silver Dollar Coin"},
@@ -393,7 +393,7 @@
 
 	{"key": "coin_half_dime.name", "value": "1800 Half Dime Coin"},
 	{"key": "coin_half_dime_1.desc", "value": "On the bank of the river next to some lavender plants."},
-	{"key": "coin_half_dime_2.desc", "value": "Underneath the railwaybridge in a small ditch. (not the large one)"},
+	{"key": "coin_half_dime_2.desc", "value": "Underneath the railway bridge in a small ditch. (not the large one)"},
 	{"key": "coin_half_dime_3.desc", "value": "Behind the shack."},
 
 	{"key": "coin_penny.name", "value": "1789 Penny Coin"},
@@ -418,7 +418,7 @@
 
 	{"key": "egg_eagle_1.name", "value": "Eagle Egg"},
 	{"key": "egg_eagle_1_1.desc", "value": "In a tree. Shoot down with bow or varmint rifle."},
-	{"key": "egg_eagle_1_2.desc", "value": ""},
+	{"key": "egg_eagle_1_2.desc", "value": "In a tree. Shoot down with bow or varmint rifle."},
 	{"key": "egg_eagle_1_3.desc", "value": "In a tree. Shoot down with bow or varmint rifle."},
 
 	{"key": "egg_eagle_2.name", "value": "Eagle Egg"},
@@ -498,7 +498,7 @@
 
 	{"key": "bottle_cognac_bottle.name", "value": "Cognac Bottle"},
 	{"key": "bottle_cognac_bottle_1.desc", "value": "In cabinet on the right as soon as you jump through the window. Jump on wagon then roof of deck to get to second floor window."},
-	{"key": "bottle_cognac_bottle_2.desc", "value": ""},
+	{"key": "bottle_cognac_bottle_2.desc", "value": "In a turned over metal barrel."},
 	{"key": "bottle_cognac_bottle_3.desc", "value": "In the sherifs desk."},
 
 	{"key": "bottle_london_dry_gin.name", "value": "London Dry Gin Bottle"},
@@ -518,7 +518,7 @@
 
 	{"key": "arrowhead_crude.name", "value": "Crude Arrowhead"},
 	{"key": "arrowhead_crude_1.desc", "value": "Beside tree stump."},
-	{"key": "arrowhead_crude_2.desc", "value": "Between three trees on the southside of the house."},
+	{"key": "arrowhead_crude_2.desc", "value": "Between a fence and a broken down wagon next to the barn."},
 	{"key": "arrowhead_crude_3.desc", "value": "In front of the tipi tent."},
 
 	{"key": "arrowhead_chipped.name", "value": "Chipped Arrowhead"},
@@ -578,7 +578,7 @@
 
 	{"key": "heirlooms_ebony_hairbrush.name", "value": "Ebony Hairbrush Heirloom"},
 	{"key": "heirlooms_ebony_hairbrush_1.desc", "value": "On a window sill southside of the house."},
-	{"key": "heirlooms_ebony_hairbrush_2.desc", "value": "On a couch on the deck at westside of house."},
+	{"key": "heirlooms_ebony_hairbrush_2.desc", "value": "On a couch on the deck at the west side of the house."},
 	{"key": "heirlooms_ebony_hairbrush_3.desc", "value": "Inside house in tall wardrobe."},
 
 	{"key": "heirlooms_metal_hairpin.name", "value": "Metal Hairpin Heirloom"},
@@ -588,7 +588,7 @@
 
 	{"key": "heirlooms_carved_wooden.name", "value": "Carved Wooden Hairpin Heirloom"},
 	{"key": "heirlooms_carved_wooden_1.desc", "value": "Between cabin and fence"},
-	{"key": "heirlooms_carved_wooden_2.desc", "value": ""},
+	{"key": "heirlooms_carved_wooden_2.desc", "value": "In front of the \"Keep Out\" sign."},
 	{"key": "heirlooms_carved_wooden_3.desc", "value": "Inbetween the two dead trees."},
 
 	{"key": "heirlooms_boxwood_comb.name", "value": "Boxwood Comb Heirloom"},
@@ -598,7 +598,7 @@
 
 	{"key": "heirlooms_goat_hair_brush.name", "value": "Goat Hair Brush Heirloom"},
 	{"key": "heirlooms_goat_hair_brush_1.desc", "value": ""},
-	{"key": "heirlooms_goat_hair_brush_2.desc", "value": ""},
+	{"key": "heirlooms_goat_hair_brush_2.desc", "value": "On a dresser in bedroom 1 upstairs"},
 	{"key": "heirlooms_goat_hair_brush_3.desc", "value": "In a chest on the lower deck of the ship."},
 
 	{"key": "heirlooms_ebony_hairpin.name", "value": "Ebony Hairpin Heirloom"},
@@ -613,12 +613,12 @@
 
 	{"key": "heirlooms_rosewood_hairbrush.name", "value": "Rosewood Hairbrush Heirloom"},
 	{"key": "heirlooms_rosewood_hairbrush_1.desc", "value": "Inside a chest in the first room."},
-	{"key": "heirlooms_rosewood_hairbrush_2.desc", "value": ""},
+	{"key": "heirlooms_rosewood_hairbrush_2.desc", "value": "On the nightstand in the corner."},
 	{"key": "heirlooms_rosewood_hairbrush_3.desc", "value": "Inside house in large wardrobe in the bedroom."},
 
 	{"key": "heirlooms_tortoiseshell_comb.name", "value": "Tortoiseshell Comb Heirloom"},
 	{"key": "heirlooms_tortoiseshell_comb_1.desc", "value": "Inside tall wardrobe."},
-	{"key": "heirlooms_tortoiseshell_comb_2.desc", "value": ""},
+	{"key": "heirlooms_tortoiseshell_comb_2.desc", "value": "In the house on the dresser with a mirror."},
 	{"key": "heirlooms_tortoiseshell_comb_3.desc", "value": "In the house on the wash table."},
 
 	{"key": "heirlooms_ivory_comb.name", "value": "Ivory Comb Heirloom"},
@@ -638,7 +638,7 @@
 
 	{"key": "heirlooms_new_guinea_rosewood.name", "value": "New Guinea Rosewood Hairbrush Heirloom"},
 	{"key": "heirlooms_new_guinea_rosewood_1.desc", "value": "On a chair in the room on the main floor."},
-	{"key": "heirlooms_new_guinea_rosewood_2.desc", "value": "In the back room on the ground floor on the dresser with the mirror."},
+	{"key": "heirlooms_new_guinea_rosewood_2.desc", "value": "In room 1B in the back on the ground floor on the dresser with the mirror."},
 	{"key": "heirlooms_new_guinea_rosewood_3.desc", "value": ""},
 
 	{"key": "flower_texas_bluebonnet.name", "value": "Texas Bluebonnet Flower"},
@@ -728,7 +728,7 @@
 
 	{"key": "ring_beaulieux_diamond.name", "value": "Beaulieux Diamond Ring"},
 	{"key": "ring_beaulieux_diamond_1.desc", "value": "Near the rotting tree."},
-	{"key": "ring_beaulieux_diamond_2.desc", "value": "In a lockbox a littlebit below the bridge."},
+	{"key": "ring_beaulieux_diamond_2.desc", "value": "In a lockbox a little bit below the bridge."},
 	{"key": "ring_beaulieux_diamond_3.desc", "value": "Inside a chimney. Watch for cougars."},
 
 	{"key": "ring_yates_diamond.name", "value": "Yates Diamond Ring"},
@@ -768,7 +768,7 @@
 
 	{"key": "necklace_pelle_pearl.name", "value": "Pelle Pearl Necklace"},
 	{"key": "necklace_pelle_pearl_1.desc", "value": ""},
-	{"key": "necklace_pelle_pearl_2.desc", "value": ""},
+	{"key": "necklace_pelle_pearl_2.desc", "value": "In front of a tree surrounded by shrubbery."},
 	{"key": "necklace_pelle_pearl_3.desc", "value": "Within the stone eye."},
 
 	{"key": "necklace_ainsworth_cross.name", "value": "Ainsworth Cross Necklace"},
@@ -788,7 +788,7 @@
 
 	{"key": "necklace_gosselin_white_gold.name", "value": "Gosselin White Gold Necklace"},
 	{"key": "necklace_gosselin_white_gold_1.desc", "value": ""},
-	{"key": "necklace_gosselin_white_gold_2.desc", "value": "n a large chest near other luggage."},
+	{"key": "necklace_gosselin_white_gold_2.desc", "value": "In a large chest near other luggage."},
 	{"key": "necklace_gosselin_white_gold_3.desc", "value": ""},
 
 	{"key": "necklace_dane_topaz.name", "value": "Dane Topaz Necklace"},
@@ -893,6 +893,6 @@
 
 	{"key": "bracelet_hajnal_garnet_bangle.name", "value": "Hajnal Garnet Bangle Bracelet"},
 	{"key": "bracelet_hajnal_garnet_bangle_1.desc", "value": "In a chest on a ridge."},
-	{"key": "bracelet_hajnal_garnet_bangle_2.desc", "value": "In chest at base of tree"},
+	{"key": "bracelet_hajnal_garnet_bangle_2.desc", "value": "In chest at the base of the tree"},
 	{"key": "bracelet_hajnal_garnet_bangle_3.desc", "value": "In a lockbox underneath the bridge."}
 ]
