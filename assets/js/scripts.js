@@ -69,7 +69,7 @@ function init()
         Cookies.set('language', 'en-us');
 
     if(typeof Cookies.get('removed-markers-daily') === 'undefined')
-        Cookies.set('removed-markers-daily', 'true', 999);
+        Cookies.set('removed-markers-daily', 'false', 999);
 
     resetMarkersDaily = Cookies.get('removed-markers-daily') == 'true';
     $("#reset-markers").val(resetMarkersDaily.toString());
