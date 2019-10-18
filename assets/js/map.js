@@ -313,7 +313,7 @@ Map.addMadamNazar = function ()
             })
         });
 
-        marker.bindPopup(`<h1>${languageData['madam_nazar.name']} - ${nazarCurrentDate}</h1><p>  </p>`);
+        marker.bindPopup(`<h1>${languageData['madam_nazar.name']} - ${nazarCurrentDate}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazar' target="_blank">@MadamNazar</a> and <a href='https://twitter.com/FinderNazar' target="_blank">@FinderNazar</a>.</p>`);
         markersLayer.addLayer(marker);
     }
 };
