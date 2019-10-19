@@ -191,7 +191,20 @@ Map.addMarkerOnMap = function(value)
 
     var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: './assets/images/icons/' + value.icon + '.png', markerColor: isWeekly ? 'green' : 'day_' + value.day}), renderer: myRenderer});
 
-    tempMarker.bindPopup(`<h1> ${languageData[value.text + '.name']} - ${languageData['menu.day']} ${value.day}</h1><p>  ${Map.getToolIcon(value.tool)} ${languageData[value.text + '_' + value.day + '.desc']} </p><p class="remove-button" data-item="${value.text}">${languageData['map.remove_add']}</p>`).on('click', function(e) { Routes.addMarkerOnCustomRoute(value.text); if(customRouteEnabled)e.target.closePopup();});
+    tempMarker
+      .bindPopup(
+        `<h1> ${languageData[value.text + ".name"]} - ${
+          languageData["menu.day"]
+        } ${value.day}</h1><p>  ${Map.getToolIcon(value.tool)} ${
+          languageData[value.text + "_" + value.day + ".desc"]
+        } </p><p class="remove-button" data-item="${value.text}">${
+          languageData["map.remove_add"]
+        }</p><p><a href="${value.gtaSeriesVideoYTLink}" target="_blank"/>video</p>`
+      )
+      .on("click", function(e) {
+        Routes.addMarkerOnCustomRoute(value.text);
+        if (customRouteEnabled) e.target.closePopup();
+      });
 
     visibleMarkers[value.text] = tempMarker;
     markersLayer.addLayer(tempMarker);
