@@ -31,11 +31,11 @@ Routes.exportCustomRoute = function ()
 };
 
 Routes.importCustomRoute = function() {
-    var input = prompt("Enter the route code", "");
+    var input = prompt(languageData['routes.import_prompt'], "");
 
     if (input == null || input == "")
     {
-        alert('Empty route');
+        alert(languageData['routes.empty']);
     }
     else
     {
@@ -62,7 +62,7 @@ Routes.loadCustomRoute = function(input)
     }
     catch(e)
     {
-        alert('Invalid route');
+        alert(languageData['routes.invalid']);
     }
 };
 

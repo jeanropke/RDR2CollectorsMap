@@ -44,5 +44,9 @@
 	{"key": "menu.custom_routes", "value": "Routes Personnalisées"},
 	{"key": "menu.import_route", "value": "Importer route"},
 	{"key": "menu.export_route", "value": "Exporter route"},
-	{"key": "menu.treasures", "value": "Trésors"}
+	{"key": "menu.treasures", "value": "Trésors"},
+	{"key": "routes.exported", "value": "Route copied to clipboard!"},
+	{"key": "routes.import_prompt", "value": "Enter the route code"},
+	{"key": "routes.empty", "value": "Empty route"},
+	{"key": "routes.invalid", "value": "Invalid route"}
 ]
