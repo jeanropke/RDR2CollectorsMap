@@ -333,6 +333,7 @@ setInterval(function()
         var seconds = Math.floor((countdownDate % (1000 * 60)) / 1000);
 
         $('#countdown').text(addZeroToNumber(hours)+':'+addZeroToNumber(minutes)+':'+addZeroToNumber(seconds));
+        // + '🌞🌚'
     }
 
 
