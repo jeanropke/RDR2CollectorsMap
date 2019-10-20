@@ -44,5 +44,9 @@
 	{"key": "menu.custom_routes", "value": "Rotas personalizadas"},
 	{"key": "menu.import_route", "value": "Importar rota"},
 	{"key": "menu.export_route", "value": "Exportar rota"},
-	{"key": "menu.treasures", "value": "Tesouros"}
+	{"key": "menu.treasures", "value": "Tesouros"},
+	{"key": "routes.exported", "value": "Rota copiada para a área de transferência!"},
+	{"key": "routes.import_prompt", "value": "Coloque o código da rota"},
+	{"key": "routes.empty", "value": "Rota vazia"},
+	{"key": "routes.invalid", "value": "Rota inválida"}
 ]

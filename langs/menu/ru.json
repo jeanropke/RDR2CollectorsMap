@@ -44,5 +44,9 @@
 	{"key": "menu.custom_routes", 			"value": "Ваши маршруты"},
 	{"key": "menu.import_route", 			"value": "Импорт маршрута"},
 	{"key": "menu.export_route", 			"value": "Экспорт маршрута"},
-	{"key": "menu.treasures", 			"value": "Сокровища"}
+	{"key": "menu.treasures", 			"value": "Сокровища"},
+	{"key": "routes.exported", "value": "Route copied to clipboard!"},
+	{"key": "routes.import_prompt", "value": "Enter the route code"},
+	{"key": "routes.empty", "value": "Empty route"},
+	{"key": "routes.invalid", "value": "Invalid route"}
 ]
