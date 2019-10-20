@@ -44,10 +44,10 @@
 	{"key": "menu.custom_routes", "value": "Rutas personalizadas"},
 	{"key": "menu.import_route", "value": "Importar ruta"},
 	{"key": "menu.export_route", "value": "Exportar ruta"},
-	{"key": "menu.treasures", "value": "Treasures"},
-	{"key": "routes.exported", "value": "Route copied to clipboard!"},
-	{"key": "routes.import_prompt", "value": "Enter the route code"},
-	{"key": "routes.empty", "value": "Empty route"},
-	{"key": "routes.invalid", "value": "Invalid route"}
+	{"key": "menu.treasures", "value": "Tesoros"},
+	{"key": "routes.exported", "value": "¡Ruta copiada al portapapeles!"},
+	{"key": "routes.import_prompt", "value": "Introduce el código de la ruta"},
+	{"key": "routes.empty", "value": "Ruta vacía"},
+	{"key": "routes.invalid", "value": "Ruta inválida"}
 ]
 
