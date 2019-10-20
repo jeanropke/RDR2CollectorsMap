@@ -368,7 +368,7 @@
 
 	{"key": "coin_nickel_coin.name", "value": "1792 Nickel Coin"},
 	{"key": "coin_nickel_coin_1.desc", "value": "In graveyard near headstone."},
-	{"key": "coin_nickel_coin_2.desc", "value": "In the hay shack next the the hay bales."},
+	{"key": "coin_nickel_coin_2.desc", "value": "In the hay shack next to the hay bales."},
 	{"key": "coin_nickel_coin_3.desc", "value": ""},
 
 	{"key": "coin_halfpenny.name", "value": "1796 Halfpenny Coin"},
