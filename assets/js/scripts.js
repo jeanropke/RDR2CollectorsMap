@@ -75,7 +75,7 @@ function init()
     $("#reset-markers").val(resetMarkersDaily.toString());
 
     var curDate = new Date();
-    date = `${curDate.getUTCFullYear()}-${curDate.getUTCMonth()+1}-${curDate.getUTCDate()}`;
+    date = curDate.getUTCFullYear()+'-'+(curDate.getUTCMonth()+1)+'-'+curDate.getUTCDate();
 
     lang = Cookies.get('language');
     $("#language").val(lang);
@@ -324,7 +324,7 @@ setInterval(function()
     var countdownDate = nextGMTMidnight - new Date();
     if(countdownDate <= 0)
     {
-        $('#countdown').text(`00:00:00`);
+        $('#countdown').text('00:00:00');
     }
     else
     {
@@ -332,7 +332,7 @@ setInterval(function()
         var minutes = Math.floor((countdownDate % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((countdownDate % (1000 * 60)) / 1000);
 
-        $('#countdown').text(`${addZeroToNumber(hours)}:${addZeroToNumber(minutes)}:${addZeroToNumber(seconds)}`);
+        $('#countdown').text(addZeroToNumber(hours)+':'+addZeroToNumber(minutes)+':'+addZeroToNumber(seconds));
     }
 
 
