@@ -333,7 +333,7 @@
 
 	{"key": "coin_draped_bust_silver_dollar.name", "value": "1798 Draped Bust Silver Dollar Coin"},
 	{"key": "coin_draped_bust_silver_dollar_1.desc", "value": ""},
-	{"key": "coin_draped_bust_silver_dollar_2.desc", "value": ""},
+	{"key": "coin_draped_bust_silver_dollar_2.desc", "value": "Behind a rock surrounded by cacti."},
 	{"key": "coin_draped_bust_silver_dollar_3.desc", "value": ""},
 
 	{"key": "coin_one_cent_token.name", "value": "1787 One Cent Token Coin"},
@@ -368,12 +368,12 @@
 
 	{"key": "coin_nickel_coin.name", "value": "1792 Nickel Coin"},
 	{"key": "coin_nickel_coin_1.desc", "value": "In graveyard near headstone."},
-	{"key": "coin_nickel_coin_2.desc", "value": ""},
+	{"key": "coin_nickel_coin_2.desc", "value": "In the hay shack next to the hay bales."},
 	{"key": "coin_nickel_coin_3.desc", "value": ""},
 
 	{"key": "coin_halfpenny.name", "value": "1796 Halfpenny Coin"},
 	{"key": "coin_halfpenny_1.desc", "value": "Beside tower."},
-	{"key": "coin_halfpenny_2.desc", "value": ""},
+	{"key": "coin_halfpenny_2.desc", "value": "Behind the cabin between a rock and a tree."},
 	{"key": "coin_halfpenny_3.desc", "value": "Underneath the clothesline."},
 
 	{"key": "coin_half_eagle.name", "value": "1795 Half Eagle Coin"},
@@ -528,17 +528,17 @@
 
 	{"key": "arrowhead_feldspar.name", "value": "Feldspar Arrowhead"},
 	{"key": "arrowhead_feldspar_1.desc", "value": "In the middle of the \"ring\" of rocks."},
-	{"key": "arrowhead_feldspar_2.desc", "value": ""},
+	{"key": "arrowhead_feldspar_2.desc", "value": "At the base of a tree atop the hill."},
 	{"key": "arrowhead_feldspar_3.desc", "value": "Underneath railroad."},
 
 	{"key": "arrowhead_slate.name", "value": "Slate Arrowhead"},
 	{"key": "arrowhead_slate_1.desc", "value": ""},
-	{"key": "arrowhead_slate_2.desc", "value": "Inside the cave."},
+	{"key": "arrowhead_slate_2.desc", "value": "Inside the cave, entrance just below the \"U\" in \"Mount Shann\"."},
 	{"key": "arrowhead_slate_3.desc", "value": "On the southside of the cotton field."},
 
 	{"key": "arrowhead_bone.name", "value": "Bone Arrowhead"},
 	{"key": "arrowhead_bone_1.desc", "value": "In trench."},
-	{"key": "arrowhead_bone_2.desc", "value": ""},
+	{"key": "arrowhead_bone_2.desc", "value": "On the middle of the island in a clearing."},
 	{"key": "arrowhead_bone_3.desc", "value": "On island. Easy to find."},
 
 	{"key": "arrowhead_raw.name", "value": "Raw Arrowhead"},
@@ -733,7 +733,7 @@
 
 	{"key": "ring_yates_diamond.name", "value": "Yates Diamond Ring"},
 	{"key": "ring_yates_diamond_1.desc", "value": "Underneath the westside awning."},
-	{"key": "ring_yates_diamond_2.desc", "value": ""},
+	{"key": "ring_yates_diamond_2.desc", "value": "Upstairs in a lockbox next to the beds."},
 	{"key": "ring_yates_diamond_3.desc", "value": ""},
 
 	{"key": "ring_aubrey_onyx.name", "value": "Aubrey Onyx Ring"},
@@ -783,7 +783,7 @@
 
 	{"key": "necklace_rou_pearl.name", "value": "Rou Pearl Necklace"},
 	{"key": "necklace_rou_pearl_1.desc", "value": "Inside the chimney."},
-	{"key": "necklace_rou_pearl_2.desc", "value": ""},
+	{"key": "necklace_rou_pearl_2.desc", "value": "On the island between some rocks."},
 	{"key": "necklace_rou_pearl_3.desc", "value": "Inside the cave."},
 
 	{"key": "necklace_gosselin_white_gold.name", "value": "Gosselin White Gold Necklace"},
