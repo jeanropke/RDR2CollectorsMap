@@ -44,5 +44,6 @@
 	{"key": "menu.custom_routes", "value": "Custom routes"},
 	{"key": "menu.import_route", "value": "Import route"},
 	{"key": "menu.export_route", "value": "Export route"},
-	{"key": "menu.treasures", "value": "Treasure Maps"}
+	{"key": "menu.treasures", "value": "Treasure Maps"},
+	{"key": "routes.exported", "value": "Route copied to clipboard!"}
 ]

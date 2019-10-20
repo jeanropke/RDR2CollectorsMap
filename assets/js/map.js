@@ -68,7 +68,7 @@ Map.init = function ()
 Map.loadMarkers = function()
 {
     markers = [];
-    $.getJSON(`data/items.json?nocache=${nocache}`)
+    $.getJSON('data/items.json?nocache='+nocache)
         .done(function(data) {
             markers = data;
             Map.addMarkers();
@@ -92,7 +92,7 @@ Map.addMarkers = function() {
             {
                 if (languageData[value.text+'.name'] == null)
                 {
-                    console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
+                    console.error('[LANG]['+lang+']: Text not found: '+value.text);
                 }
 
                 if (searchTerms.length > 0)
@@ -130,7 +130,7 @@ Map.addMarkers = function() {
 
 Map.loadWeeklySet = function()
 {
-    $.getJSON(`data/weekly.json?nocache=${nocache}`)
+    $.getJSON('data/weekly.json?nocache='+nocache)
         .done(function(data) {
             weeklySetData = data;
             Map.loadFastTravels();
@@ -152,7 +152,7 @@ Map.removeItemFromMap = function(itemName)
         });
 
         if(visibleMarkers[itemName] == null)
-            console.warn(`[INFO]: '${itemName}' type is disabled!`);
+            console.warn('[INFO]: \''+itemName+'\' type is disabled!');
         else
             $(visibleMarkers[itemName]._icon).css('opacity', '1');
 
@@ -168,7 +168,7 @@ Map.removeItemFromMap = function(itemName)
             }
         });
         if(visibleMarkers[itemName] == null)
-            console.warn(`[INFO]: '${itemName}' type is disabled!`);
+            console.warn('[INFO]: \''+itemName+'\' type is disabled!');
         else
             $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
         $('[data-type=' + itemName + ']').addClass('disabled');
@@ -193,10 +193,10 @@ Map.addMarkerOnMap = function(value)
 
     tempMarker
       .bindPopup(
-        `<h1> ${languageData[value.text + ".name"]} - ${languageData["menu.day"]} ${value.day}</h1>
-        <p>${Map.getToolIcon(value.tool)} ${languageData[value.text + "_" + value.day + ".desc"]} </p>
-        <p align="center" style="padding: 5px;"><a href="${value.gtaSeriesVideoYTLink}" target="_blank"/>Video</p>
-        <p class="remove-button" data-item="${value.text}">${languageData["map.remove_add"]}</p>`
+        '<h1>'+languageData[value.text + ".name"]+' - '+ languageData["menu.day"] + value.day+'</h1>' +
+        '<p>'+Map.getToolIcon(value.tool) + languageData[value.text + "_" + value.day + ".desc"] +'</p>' +
+        '<p align="center" style="padding: 5px;"><a href="'+value.gtaSeriesVideoYTLink+'" target="_blank">Video</a></p>' +
+        '<p class="remove-button" data-item="'+value.text+'">'+languageData["map.remove_add"]+'</p>'
       )
       .on("click", function(e) {
         Routes.addMarkerOnCustomRoute(value.text);
@@ -241,7 +241,7 @@ Map.removeCollectedMarkers = function()
 };
 
 Map.loadFastTravels = function () {
-    $.getJSON(`data/fasttravels.json?nocache=${nocache}`)
+    $.getJSON('data/fasttravels.json?nocache='+nocache)
         .done(function(data) {
             fastTravelData = data;
             Map.loadMadamNazar();
@@ -262,7 +262,7 @@ Map.addFastTravelMarker = function()
             });
 
             if (languageData[value.text+'.name'] == null) {
-                console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
+                console.error('[LANG]['+lang+']: Text not found: \''+value.text+'\'');
             }
             marker.bindPopup(`<h1> ${languageData[value.text+'.name']}</h1><p>  </p>`);
 
@@ -305,7 +305,7 @@ Map.addCoordsOnMap = function(coords)
 
 Map.loadMadamNazar = function()
 {
-    $.getJSON(`data/nazar.json?nocache=${nocache}`)
+    $.getJSON('data/nazar.json?nocache='+nocache)
         .done(function(data) {
             nazarLocations = data;
             Map.loadTreasures();
@@ -329,7 +329,7 @@ Map.addMadamNazar = function ()
 };
 
 Map.loadTreasures = function() {
-    $.getJSON(`data/treasures.json?nocache=${nocache}`)
+    $.getJSON('data/treasures.json?nocache='+nocache)
         .done(function (data) {
             treasureData = data;
             Map.loadMarkers();
@@ -354,7 +354,7 @@ Map.addTreasures = function ()
             });
 
             if (languageData[value.text] == null) {
-                console.error(`[LANG][${lang}]: Text not found: '${value.text}'`);
+                console.error('[LANG]['+lang+']: Text not found: \''+value.text+'\'');
             }
             marker.bindPopup(`<h1> ${languageData[value.text]}</h1><p>  </p>`);
 

@@ -8,13 +8,13 @@ Menu.refreshMenu = function ()
 {
     $.each(categories, function (key, value)
     {
-        $(`.menu-hidden[data-type=${value}]`).children('p.collectible').remove();
+        $('.menu-hidden[data-type='+value+']').children('p.collectible').remove();
 
         markers.filter(function(item)
         {
             if(item.day == 1 && item.icon == value)
             {
-                $(`.menu-hidden[data-type=${value}]`).append(`<p class="collectible" data-type="${item.text}">${languageData[item.text+'.name']}</p>`);
+                $('.menu-hidden[data-type='+value+']').append('<p class="collectible" data-type="'+item.text+'">'+languageData[item.text+'.name']+'</p>');
             }
         });
     });
@@ -48,7 +48,7 @@ Menu.hideAll = function()
 
 Menu.refreshItemsCounter = function()
 {
-    console.log(`Collected ${disableMarkers.length-1} of ${Object.keys(visibleMarkers).length}`);
-    $('#item-counter').text(`${disableMarkers.length-1} of ${Object.keys(visibleMarkers).length}`);
+    console.log('Collected '+disableMarkers.length-1+' of '+Object.keys(visibleMarkers).length);
+    $('#item-counter').text(disableMarkers.length-1+' of '+Object.keys(visibleMarkers).length);
 };
 

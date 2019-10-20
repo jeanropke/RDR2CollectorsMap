@@ -8,14 +8,14 @@ Language.load = function(isChanged)
 {
     languageData = [];
 
-    $.getJSON(`langs/item/${lang}.json?nocache=${nocache}`, {}, function(data)
+    $.getJSON('langs/item/'+lang+'.json?nocache='+nocache, {}, function(data)
     {
         $.each(data, function(key, value) {
             languageData[value.key] = value.value;
 
         });
 
-        $.getJSON(`langs/menu/${lang}.json?nocache=${nocache}`, {}, function(data)
+        $.getJSON('langs/menu/'+lang+'.json?nocache='+nocache, {}, function(data)
         {
             $.each(data, function(key, value) {
                 languageData[value.key] = value.value;
@@ -43,7 +43,7 @@ Language.setMenuLanguage = function ()
     {
         var temp = $(value);
         if(languageData[temp.data('text')] == null) {
-            console.error(`[LANG][${lang}]: Text not found: '${temp.data('text')}'`);
+            console.error('[LANG]['+lang+']: Text not found: \''+temp.data('text')+'\'');
         }
 
         $(temp).text(languageData[temp.data('text')]);

@@ -7,13 +7,13 @@ var Routes = {};
 Routes.loadRoutesData = function()
 {
 
-    $.getJSON(`data/routes/day_1.json`, {}, function (data) {
+    $.getJSON('data/routes/day_1.json', {}, function (data) {
         routesData[1] = data;
     });
-    $.getJSON(`data/routes/day_2.json`, {}, function (data) {
+    $.getJSON('data/routes/day_2.json', {}, function (data) {
         routesData[2] = data;
     });
-    $.getJSON(`data/routes/day_3.json`, {}, function (data) {
+    $.getJSON('data/routes/day_3.json', {}, function (data) {
         routesData[3] = data;
     });
 };
@@ -27,7 +27,7 @@ Routes.exportCustomRoute = function ()
     document.execCommand('copy');
     document.body.removeChild(el)
 
-    alert('Route copied to clipboard!');
+    alert(languageData['routes.exported']);
 };
 
 Routes.importCustomRoute = function() {
