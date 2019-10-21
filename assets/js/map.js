@@ -120,7 +120,7 @@ Map.addMarkers = function() {
     Menu.refreshItemsCounter();
 
     Map.addFastTravelMarker();
-    Map.addTreasures();
+    Map.setTreasures();
     Map.addMadamNazar();
     Map.removeCollectedMarkers();
 
@@ -139,47 +139,64 @@ Map.loadWeeklySet = function()
 
 Map.removeItemFromMap = function(itemName)
 {
-    if(disableMarkers.includes(itemName.toString()))
+
+    if(itemName.endsWith('_treasure'))
     {
-        disableMarkers = $.grep(disableMarkers, function(value) {
-            $.each(routesData, function(key, j){
-                if (disableMarkers.includes(value.key)){
-                    delete value.hidden;
-                }
+        if(treasureDisabled.includes(itemName.toString()))
+        {
+            treasureDisabled = $.grep(treasureDisabled, function (value)
+            {
+                return value != itemName.toString();
             });
-            return value != itemName.toString();
-
-        });
-
-        if(visibleMarkers[itemName] == null)
-            console.warn('[INFO]: \''+itemName+'\' type is disabled!');
+        }
         else
-            $(visibleMarkers[itemName]._icon).css('opacity', '1');
-
-        $('[data-type=' + itemName + ']').removeClass('disabled');
-
+        {
+            treasureDisabled.push(itemName.toString());
+        }
+        Map.addTreasuresToMap();
     }
     else
     {
-        disableMarkers.push(itemName.toString());
-        $.each(routesData[day], function(b, value){
-            if (disableMarkers.includes(value.key)){
-                value.hidden = true;
-            }
-        });
-        if(visibleMarkers[itemName] == null)
-            console.warn('[INFO]: \''+itemName+'\' type is disabled!');
-        else
-            $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
-        $('[data-type=' + itemName + ']').addClass('disabled');
+        if (disableMarkers.includes(itemName.toString())) {
+            disableMarkers = $.grep(disableMarkers, function (value) {
+                $.each(routesData, function (key, j) {
+                    if (disableMarkers.includes(value.key)) {
+                        delete value.hidden;
+                    }
+                });
+                return value != itemName.toString();
+
+            });
+
+            if (visibleMarkers[itemName] == null)
+                console.warn('[INFO]: \'' + itemName + '\' type is disabled!');
+            else
+                $(visibleMarkers[itemName]._icon).css('opacity', '1');
+
+            $('[data-type=' + itemName + ']').removeClass('disabled');
+
+        }
+        else {
+            disableMarkers.push(itemName.toString());
+            $.each(routesData[day], function (b, value) {
+                if (disableMarkers.includes(value.key)) {
+                    value.hidden = true;
+                }
+            });
+            if (visibleMarkers[itemName] == null)
+                console.warn('[INFO]: \'' + itemName + '\' type is disabled!');
+            else
+                $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
+            $('[data-type=' + itemName + ']').addClass('disabled');
+        }
+
+        Cookies.set('removed-items', disableMarkers.join(';'), {expires: resetMarkersDaily ? 1 : 999});
+
+        if ($("#routes").val() == 1)
+            Map.drawLines();
+
+        Menu.refreshItemsCounter();
     }
-
-    Cookies.set('removed-items', disableMarkers.join(';'), { expires: resetMarkersDaily ? 1 : 999});
-
-    if($("#routes").val() == 1)
-        Map.drawLines();
-
-    Menu.refreshItemsCounter();
 };
 
 
@@ -323,7 +340,7 @@ Map.addMadamNazar = function ()
             })
         });
 
-        marker.bindPopup(`<h1>${languageData['madam_nazar.name']} - ${nazarCurrentDate}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazar' target="_blank">@MadamNazar</a> and <a href='https://twitter.com/FinderNazar' target="_blank">@FinderNazar</a>.</p>`);
+        marker.bindPopup(`<h1>${languageData['madam_nazar.name']} - ${nazarCurrentDate}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazarIO' target="_blank">@MadamNazarIO</a>.</p>`);
         markersLayer.addLayer(marker);
     }
 };
@@ -336,8 +353,9 @@ Map.loadTreasures = function() {
     });
 };
 
-Map.addTreasures = function ()
+Map.setTreasures = function ()
 {
+    treasureMarkers = [];
     if(enabledTypes.includes('treasure')) {
         $.each(treasureData, function (key, value) {
             var circle = L.circle([value.x, value.y], {
@@ -358,10 +376,28 @@ Map.addTreasures = function ()
             }
             marker.bindPopup(`<h1> ${languageData[value.text]}</h1><p>  </p>`);
 
-            markersLayer.addLayer(marker);
-            markersLayer.addLayer(circle);
+            treasureMarkers.push({treasure: value.text, marker: marker, circle: circle});
+            treasureDisabled.push(value.text);
         });
+        Map.addTreasuresToMap();
     }
+};
+
+Map.addTreasuresToMap = function () {
+
+    treasuresLayer.clearLayers();
+
+    $.each(treasureMarkers, function(key, value)
+    {
+        if(!treasureDisabled.includes(value.treasure)) {
+            treasuresLayer.addLayer(value.marker);
+            treasuresLayer.addLayer(value.circle);
+        }
+    });
+
+    treasuresLayer.addTo(map);
+
+
 };
 
 Map.drawLines = function() {

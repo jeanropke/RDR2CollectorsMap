@@ -16,6 +16,9 @@ var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var treasureData = [];
+var treasureMarkers = [];
+var treasureDisabled = [];
+var treasuresLayer = new L.LayerGroup();
 
 var routesData = [];
 var polylines;
