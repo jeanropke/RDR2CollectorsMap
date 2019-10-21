@@ -564,7 +564,7 @@
 	{"key": "arrowhead_agate.name", "value": "Agate Arrowhead"},
 	{"key": "arrowhead_agate_1.desc", "value": "Infront of the dead tree."},
 	{"key": "arrowhead_agate_2.desc", "value": "Inbetween a wagon wheel and part of a tree trunk."},
-	{"key": "arrowhead_agate_3.desc", "value": "Between the spewing geiser and some stacks of stones."},
+	{"key": "arrowhead_agate_3.desc", "value": "Next to the spewing geiser."},
 
 	{"key": "heirlooms_jade_hairpin.name", "value": "Jade Hairpin Heirloom"},
 	{"key": "heirlooms_jade_hairpin_1.desc", "value": "On the red bench behind the house."},
