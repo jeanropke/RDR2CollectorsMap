@@ -17,8 +17,21 @@ Menu.refreshMenu = function ()
                 $('.menu-hidden[data-type='+value+']').append('<p class="collectible" data-type="'+item.text+'">'+languageData[item.text+'.name']+'</p>');
             }
         });
+
+        treasureData.filter(function(item)
+        {
+            $('.menu-hidden[data-type='+value+']').append('<p class="collectible" data-type="'+item.text+'">'+languageData[item.text]+'</p>');
+        });
     });
     $.each(disableMarkers, function (key, value)
+    {
+        if(value.length > 0)
+        {
+            $('[data-type=' + value + ']').addClass('disabled');
+        }
+    });
+
+    $.each(treasureDisabled, function (key, value)
     {
         if(value.length > 0)
         {
