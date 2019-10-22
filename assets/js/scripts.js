@@ -85,7 +85,7 @@ function init()
     lang = Cookies.get('language');
     $("#language").val(lang);
 
-    disableMarkers = Cookies.get('removed-items').split(';');
+    disableMarkers = Cookies.get("removed-items") &&  Cookies.get('removed-items').split(";");
 
     Language.load();
 
@@ -226,7 +226,7 @@ $("#reset-markers").on("change", function()
     if($("#reset-markers").val() == 'clear')
     {
         Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
-        disableMarkers = Cookies.get('removed-items').split(';');
+        disableMarkers = Cookies.get('removed-items') && Cookies.get('removed-items').split(';');
         $("#reset-markers").val('false');
     }
 
