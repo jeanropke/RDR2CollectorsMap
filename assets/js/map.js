@@ -210,8 +210,8 @@ Map.addMarkerOnMap = function(value)
 
     tempMarker
       .bindPopup(
-        '<h1>'+languageData[value.text + ".name"]+' - '+ languageData["menu.day"] + value.day+'</h1>' +
-        '<p>'+Map.getToolIcon(value.tool) + languageData[value.text + "_" + value.day + ".desc"] +'</p>' +
+        '<h1>'+languageData[value.text + ".name"]+' - '+ languageData["menu.day"] + ' ' + value.day+'</h1>' +
+        '<p>'+Map.getToolIcon(value.tool) + ' ' + languageData[value.text + "_" + value.day + ".desc"] +'</p>' +
         '<p align="center" style="padding: 5px;"><a href="'+value.gtaSeriesVideoYTLink+'" target="_blank">Video</a></p>' +
         '<p class="remove-button" data-item="'+value.text+'">'+languageData["map.remove_add"]+'</p>'
       )
