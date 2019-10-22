@@ -24,7 +24,7 @@ Map.init = function ()
         maxZoom: Map.maxZoom,
         zoomControl: false,
         crs: L.CRS.Simple,
-        layers: [mapLayers[Cookies.get('map-layer')]]
+        layers: [mapLayers[$.cookie('map-layer')]]
     }).setView([-70, 111.75], 3);
 
     var baseMaps = {
@@ -88,7 +88,7 @@ Map.addMarkers = function() {
 
         if(enabledTypes.includes(value.icon))
         {
-            if (value.day == day || Cookies.get('ignore-days') == 'true')
+            if (value.day == day || $.cookie('ignore-days') == 'true')
             {
                 if (languageData[value.text+'.name'] == null)
                 {
@@ -190,7 +190,7 @@ Map.removeItemFromMap = function(itemName)
             $('[data-type=' + itemName + ']').addClass('disabled');
         }
 
-        Cookies.set('removed-items', disableMarkers.join(';'), {expires: resetMarkersDaily ? 1 : 999});
+        $.cookie('removed-items', disableMarkers.join(';'), {expires: resetMarkersDaily ? 1 : 999});
 
         if ($("#routes").val() == 1)
             Map.drawLines();
