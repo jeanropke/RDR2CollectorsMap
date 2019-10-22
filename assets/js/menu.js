@@ -20,7 +20,7 @@ Menu.refreshMenu = function ()
 
         treasureData.filter(function(item)
         {
-            $('.menu-hidden[data-type='+value+']').append('<p class="collectible" data-type="'+item.text+'">'+languageData[item.text]+'</p>');
+            $('.menu-hidden[data-type=treasure]').append('<p class="collectible" data-type="'+item.text+'">'+languageData[item.text]+'</p>');
         });
     });
     $.each(disableMarkers, function (key, value)
