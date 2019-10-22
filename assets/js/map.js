@@ -18,7 +18,7 @@ Map.init = function ()
     mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles});
     mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', { noWrap: true, bounds: boundsTiles});
 
-    map = L.map('map', {
+    baseMap = L.map('map', {
         preferCanvas: true,
         minZoom: Map.minZoom,
         maxZoom: Map.maxZoom,
@@ -27,7 +27,7 @@ Map.init = function ()
         layers: [mapLayers[$.cookie('map-layer')]]
     }).setView([-70, 111.75], 3);
 
-    var baseMaps = {
+    var baseMapsLayers = {
         "Default": mapLayers['Default'],
         "Detailed": mapLayers['Detailed'],
         "Dark": mapLayers['Dark']
@@ -35,16 +35,16 @@ Map.init = function ()
 
     L.control.zoom({
         position:'bottomright'
-    }).addTo(map);
+    }).addTo(baseMap);
 
-    L.control.layers(baseMaps).addTo(map);
+    L.control.layers(baseMapsLayers).addTo(baseMap);
 
-    map.on('click', function (e)
+    baseMap.on('click', function (e)
     {
        Map.addCoordsOnMap(e);
     });
 
-    map.on('popupopen', function()
+    baseMap.on('popupopen', function()
     {
         $('.remove-button').click(function(e)
         {
@@ -52,7 +52,7 @@ Map.init = function ()
         });
     });
 
-    map.on('baselayerchange', function (e)
+    baseMap.on('baselayerchange', function (e)
     {
         setMapBackground(e.name);
     });
@@ -61,7 +61,7 @@ Map.init = function ()
         northEast = L.latLng(10.774, 200.125),
         bounds = L.latLngBounds(southWest, northEast);
 
-    map.setMaxBounds(bounds);
+    baseMap.setMaxBounds(bounds);
     Map.loadWeeklySet();
 };
 
@@ -116,7 +116,7 @@ Map.addMarkers = function() {
         }
     });
 
-    markersLayer.addTo(map);
+    markersLayer.addTo(baseMap);
     Menu.refreshItemsCounter();
 
     Map.addFastTravelMarker();
@@ -395,7 +395,7 @@ Map.addTreasuresToMap = function () {
         }
     });
 
-    treasuresLayer.addTo(map);
+    treasuresLayer.addTo(baseMap);
 
 
 };
@@ -419,10 +419,10 @@ Map.drawLines = function() {
 
     if (polylines instanceof L.Polyline)
     {
-        map.removeLayer(polylines);
+        baseMap.removeLayer(polylines);
     }
 
     polylines = L.polyline(connections, {'color': '#9a3033'});
-    map.addLayer(polylines);
+    baseMap.addLayer(polylines);
 };
 

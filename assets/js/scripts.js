@@ -1,5 +1,5 @@
 var day;
-var map;
+var baseMap;
 var markers = [];
 var markersLayer = new L.LayerGroup();
 
@@ -104,7 +104,7 @@ function init()
     //Overlay tests
     var pos = [-53.2978125, 68.7596875];
     var offset = 1.15;
-    L.imageOverlay('./assets/overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
+    L.imageOverlay('./assets/overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(baseMap);
 
 }
 
@@ -213,7 +213,7 @@ $("#routes").on("change", function()
 {
     if($("#routes").val() == 0) {
         if (polylines instanceof L.Polyline) {
-            map.removeLayer(polylines);
+            baseMap.removeLayer(polylines);
         }
     }
     else {
@@ -250,7 +250,7 @@ $("#custom-routes").on("change", function()
     if(temp == 'clear')
     {
         customRouteConnections = [];
-        map.removeLayer(customRoute);
+        baseMap.removeLayer(customRoute);
         customRouteEnabled = true;
         $("#custom-routes").val('1');
     }
