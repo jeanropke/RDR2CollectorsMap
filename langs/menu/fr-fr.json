@@ -32,7 +32,7 @@
 	{"key": "menu.clear", "value": "Effacer"},
 	{"key": "menu.show_coords", "value": "Afficher les coordonnées"},
 	{"key": "menu.reset_markers_daily", "value": "Réinitialiser tous les jours"},
-	{"key": "menu.reset", "value": "rétablir"},
+	{"key": "menu.reset", "value": "Rétablir"},
 	{"key": "menu.issues", "value": "Problèmes"},
 	{"key": "menu.report_issues", "value": "Remonter un problème ici!"},
 	{"key": "menu.return_legacy", "value": "Retour vers la version originale!"},
@@ -45,8 +45,8 @@
 	{"key": "menu.import_route", "value": "Importer route"},
 	{"key": "menu.export_route", "value": "Exporter route"},
 	{"key": "menu.treasures", "value": "Trésors"},
-	{"key": "routes.exported", "value": "Route copied to clipboard!"},
-	{"key": "routes.import_prompt", "value": "Enter the route code"},
-	{"key": "routes.empty", "value": "Empty route"},
-	{"key": "routes.invalid", "value": "Invalid route"}
+	{"key": "routes.exported", "value": "Route Copiée dans le Presse-papiers!"},
+	{"key": "routes.import_prompt", "value": "Renseignez le code route"},
+	{"key": "routes.empty", "value": "Route Vide"},
+	{"key": "routes.invalid", "value": "Route Invalide"}
 ]
