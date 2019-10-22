@@ -56,42 +56,46 @@ function init()
 
 
 
-    if(typeof Cookies.get('removed-items') === 'undefined')
-        Cookies.set('removed-items', ';', { expires: resetMarkersDaily ? 1 : 999});
-
-    if(typeof Cookies.get('map-layer') === 'undefined')
-        Cookies.set('map-layer', 'Detailed', { expires: 999 });
-
-    if(typeof Cookies.get('language') === 'undefined')
-    {
-        if(avaliableLanguages.includes(navigator.language.toLowerCase()))
-            Cookies.set('language', navigator.language.toLowerCase());
-        else
-            Cookies.set('language', 'en-us');
+    if(typeof $.cookie('removed-items') === 'undefined') {
+        $.cookie('removed-items', ';', {expires: resetMarkersDaily ? 1 : 999});
+        disableMarkers = [];
+    }
+    else {
+        disableMarkers = $.cookie('removed-items').split(";");
     }
 
-    if(!avaliableLanguages.includes(Cookies.get('language')))
-        Cookies.set('language', 'en-us');
+    if(typeof $.cookie('map-layer') === 'undefined')
+        $.cookie('map-layer', 'Detailed', { expires: 999 });
 
-    if(typeof Cookies.get('removed-markers-daily') === 'undefined')
-        Cookies.set('removed-markers-daily', 'false', 999);
+    if(typeof $.cookie('language') === 'undefined')
+    {
+        if(avaliableLanguages.includes(navigator.language.toLowerCase()))
+            $.cookie('language', navigator.language.toLowerCase());
+        else
+            $.cookie('language', 'en-us');
+    }
 
-    resetMarkersDaily = Cookies.get('removed-markers-daily') == 'true';
+    if(!avaliableLanguages.includes($.cookie('language')))
+        $.cookie('language', 'en-us');
+
+    if(typeof $.cookie('removed-markers-daily') === 'undefined')
+        $.cookie('removed-markers-daily', 'false', { expires: 999});
+
+    resetMarkersDaily = $.cookie('removed-markers-daily') == 'true';
     $("#reset-markers").val(resetMarkersDaily.toString());
 
     var curDate = new Date();
     date = curDate.getUTCFullYear()+'-'+(curDate.getUTCMonth()+1)+'-'+curDate.getUTCDate();
 
-    lang = Cookies.get('language');
+    lang = $.cookie('language');
     $("#language").val(lang);
 
-    disableMarkers = Cookies.get('removed-items').split(";");
 
     Language.load();
 
     Map.init();
 
-    setMapBackground(Cookies.get('map-layer'));
+    setMapBackground($.cookie('map-layer'));
 
 
     setCurrentDayCycle();
@@ -120,7 +124,7 @@ function setMapBackground(mapName){
             break;
     }
 
-    Cookies.set('map-layer', mapName, { expires: 999 });
+    $.cookie('map-layer', mapName, { expires: 999 });
 }
 function setCurrentDayCycle()
 {
@@ -151,19 +155,19 @@ function setCurrentDayCycle()
     $('#day').val(day);
 
     //Cookie day not exists? create
-    if(typeof Cookies.get('date') === 'undefined')
+    if(typeof $.cookie('date') === 'undefined')
     {
-        Cookies.set('date', date, { expires: 2 });
+        $.cookie('date', date, { expires: 2 });
     }
     //if exists, remove markers if the days arent the same
     else
     {
-        if(Cookies.get('date') != date.toString())
+        if($.cookie('date') != date.toString())
         {
-            Cookies.set('date', date, { expires: 2 });
+            $.cookie('date', date, { expires: 2 });
             if(resetMarkersDaily)
             {
-                Cookies.set('removed-items', ';', {expires: 1});
+                $.cookie('removed-items', ';', {expires: 1});
                 disableMarkers = [];
             }
         }
@@ -180,7 +184,7 @@ function changeCursor()
 
 $("#day").on("input", function()
 {
-    Cookies.remove('ignore-days')
+    $.cookie('ignore-days', null);
 
     day = $('#day').val();
     Map.addMarkers();
@@ -227,13 +231,13 @@ $("#reset-markers").on("change", function()
 {
     if($("#reset-markers").val() == 'clear')
     {
-        Cookies.set('removed-items', ';', { expires: resetMarkersDaily ? 1 : 999});
-        disableMarkers =  Cookies.get('removed-items').split(';');
+        $.cookie('removed-items', ';', { expires: resetMarkersDaily ? 1 : 999});
+        disableMarkers =  $.cookie('removed-items').split(';');
         $("#reset-markers").val('false');
     }
 
     resetMarkersDaily = $("#reset-markers").val() == 'true';
-    Cookies.set('removed-markers-daily', resetMarkersDaily, 999);
+    $.cookie('removed-markers-daily', resetMarkersDaily, { expires: 999 });
 
 
     Map.removeCollectedMarkers();
@@ -266,7 +270,7 @@ $('#show-coordinates').on('change', function()
 $("#language").on("change", function()
 {
     lang = $("#language").val();
-    Cookies.set('language', lang);
+    $.cookie('language', lang, { expires: 999 });
     Language.load(true);
 });
 
