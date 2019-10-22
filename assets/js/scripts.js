@@ -57,7 +57,7 @@ function init()
 
 
     if(typeof Cookies.get('removed-items') === 'undefined')
-        Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
+        Cookies.set('removed-items', ';', { expires: resetMarkersDaily ? 1 : 999});
 
     if(typeof Cookies.get('map-layer') === 'undefined')
         Cookies.set('map-layer', 'Detailed', { expires: 999 });
@@ -85,7 +85,7 @@ function init()
     lang = Cookies.get('language');
     $("#language").val(lang);
 
-    disableMarkers = Cookies.get("removed-items") || Cookies.get('removed-items').split(";");
+    disableMarkers = Cookies.get('removed-items').split(";");
 
     Language.load();
 
@@ -96,6 +96,8 @@ function init()
 
     setCurrentDayCycle();
     Routes.loadRoutesData();
+
+    //Overlay tests
     var pos = [-53.2978125, 68.7596875];
     var offset = 1.15;
     L.imageOverlay('./assets/overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(map);
@@ -161,7 +163,7 @@ function setCurrentDayCycle()
             Cookies.set('date', date, { expires: 2 });
             if(resetMarkersDaily)
             {
-                Cookies.set('removed-items', '', {expires: 1});
+                Cookies.set('removed-items', ';', {expires: 1});
                 disableMarkers = [];
             }
         }
@@ -225,8 +227,8 @@ $("#reset-markers").on("change", function()
 {
     if($("#reset-markers").val() == 'clear')
     {
-        Cookies.set('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
-        disableMarkers = Cookies.get('removed-items') && Cookies.get('removed-items').split(';');
+        Cookies.set('removed-items', ';', { expires: resetMarkersDaily ? 1 : 999});
+        disableMarkers =  Cookies.get('removed-items').split(';');
         $("#reset-markers").val('false');
     }
 
