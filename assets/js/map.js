@@ -132,7 +132,7 @@ Map.loadWeeklySet = function()
 {
     $.getJSON('data/weekly.json?nocache='+nocache)
         .done(function(data) {
-            weeklySetData = data;
+            weeklySetData = data[weeklySet];
             Map.loadFastTravels();
         });
 };

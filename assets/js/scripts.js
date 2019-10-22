@@ -40,9 +40,10 @@ var nazarCurrentDate = '22th October';
 
 var fastTravelData;
 
+var weeklySet = 'cheater_set';
 var weeklySetData = [];
 var date;
-var nocache = 34;
+var nocache = 35;
 
 var wikiLanguage = [];
 
