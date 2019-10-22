@@ -1,5 +1,13 @@
-[
-	{"item": "wands_queen"},
-	{"item": "cups_king"},
-	{"item": "pentacles_ace"}
-]
+{
+	"saint_dennis_set": [
+		{"item": "bottle_cognac_bottle"},
+		{"item": "earring_beauchene_ruby"},
+		{"item": "ring_beaulieux_diamond"}
+	],
+	"cheater_set": [
+		{"item": "wands_queen"},
+		{"item": "cups_king"},
+		{"item": "pentacles_ace"}
+	]
+}
+
