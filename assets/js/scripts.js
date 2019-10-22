@@ -85,7 +85,7 @@ function init()
     lang = Cookies.get('language');
     $("#language").val(lang);
 
-    disableMarkers = Cookies.get("removed-items") &&  Cookies.get('removed-items').split(";");
+    disableMarkers = Cookies.get("removed-items") || Cookies.get('removed-items').split(";");
 
     Language.load();
 
