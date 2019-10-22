@@ -6,7 +6,7 @@ var Map = {
     minZoom: 2,
     maxZoom: 7
 };
-var myRenderer = L.canvas({ padding: 0.5 });
+
 Map.init = function ()
 {
     var southWestTiles = L.latLng(-144, 0),
@@ -206,7 +206,7 @@ Map.addMarkerOnMap = function(value)
             return weekly.item === value.text;
     }).length > 0;
 
-    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: './assets/images/icons/' + value.icon + '.png', markerColor: isWeekly ? 'green' : 'day_' + value.day}), renderer: myRenderer});
+    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: './assets/images/icons/' + value.icon + '.png', markerColor: isWeekly ? 'green' : 'day_' + value.day})});
 
     tempMarker
       .bindPopup(
