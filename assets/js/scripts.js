@@ -344,11 +344,12 @@ setInterval(function()
         var seconds = Math.floor((countdownDate % (1000 * 60)) / 1000);
 
         $('#countdown').text(addZeroToNumber(hours)+':'+addZeroToNumber(minutes)+':'+addZeroToNumber(seconds));
-        // + '🌞🌚'
+
+        if(getVirtual(new Date()).getHours() >= 22 || getVirtual(new Date()).getHours() < 5)
+            $('#day-cycle').css('background', 'url(assets/images/moon.png)');
+        else
+            $('#day-cycle').css('background', 'url(assets/images/sun.png)');
     }
-
-
-
 }, 1000);
 
 function addZeroToNumber(number)
@@ -358,3 +359,15 @@ function addZeroToNumber(number)
     return number;
 }
 
+/**
+ *  RDR2 Free roam timer
+ *  Thanks to kanintesova
+ **/
+var virtualOrigin = Date.parse("2019-08-15T06:00:00Z"),
+    realOrigin = Date.parse("2019-08-15T14:36:00Z"),
+    factor = 30;
+function getVirtual(time)
+{
+    var now = new Date(virtualOrigin + (time - realOrigin) * factor);
+    return new Date(now.getTime() + now.getTimezoneOffset() * 60000);
+}
