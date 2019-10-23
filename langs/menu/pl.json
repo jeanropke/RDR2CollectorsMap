@@ -1,5 +1,5 @@
 [
-	{"key": "menu.collectables", "value": "Collectables"},
+	{"key": "menu.collectables", "value": "Przedmioty kolekcjonerskie"},
 	{"key": "menu.hide_all", "value": "Ukryj wszystkie"},
 	{"key": "menu.show_all", "value": "Pokaż wszystkie"},
 	{"key": "menu.american_flowers", "value": "Amerykańskie dzikie kwiaty"},
@@ -35,18 +35,18 @@
 	{"key": "menu.reset", "value": "Wyzeruj"},
 	{"key": "menu.issues", "value": "Issues"},
 	{"key": "menu.report_issues", "value": "Report issues here!"},
-	{"key": "menu.return_legacy", "value": "Return to legacy version!"},
+	{"key": "menu.return_legacy", "value": "Wróć do starszej wersji (legacy)!"},
 	{"key": "menu.utils", "value": "Narzędzia"},
-	{"key": "menu.fast_travel", "value": "Fast Travel"},
+	{"key": "menu.fast_travel", "value": "Punkty szybkiej podróży"},
 	{"key": "menu.search_placeholder", "value": "Wpisz nazwę/y, oddziel kilka ;"},
 	{"key": "map.remove_add", "value": "Usuń z/dodaj do mapy"},
 	{"key": "menu.collectables_value", "value": "Wartość"},
 	{"key": "menu.custom_routes", "value": "Własna trasa"},
 	{"key": "menu.import_route", "value": "Zaimportuj trasę"},
 	{"key": "menu.export_route", "value": "Wyeksportuj trasę"},
-	{"key": "menu.treasures", "value": "Treasures"},
-	{"key": "routes.exported", "value": "Route copied to clipboard!"},
-	{"key": "routes.import_prompt", "value": "Enter the route code"},
-	{"key": "routes.empty", "value": "Empty route"},
-	{"key": "routes.invalid", "value": "Invalid route"}
+	{"key": "menu.treasures", "value": "Skarby"},
+	{"key": "routes.exported", "value": "Trasa skopiowana do schowka!"},
+	{"key": "routes.import_prompt", "value": "Podaj kod trasy"},
+	{"key": "routes.empty", "value": "Pusta trasa"},
+	{"key": "routes.invalid", "value": "Błędna trasa"}
 ]
