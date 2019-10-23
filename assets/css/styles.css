@@ -50,7 +50,6 @@ p {
     height: 100vh;
 }
 #countdown, #item-counter {
-    text-align: center;
     font-size: 16px;
     line-height: 1.7;
     user-select: none;
@@ -64,9 +63,16 @@ p {
     color: #eee;
     left: 40px;
     top: 5px;
-    width: 80px;
+    width: 95px;
     height: 30px;
     transition: all 200ms ease-out;
+    padding-left: 8px;
+    display: inline-flex;
+}
+#day-cycle {
+    width: 16px;
+    height: 16px;
+    margin: auto 10px auto auto;
 }
 .counter-container {
     position: fixed;
