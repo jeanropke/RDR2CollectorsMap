@@ -54,11 +54,11 @@ Routes.loadCustomRoute = function(input)
         });
 
         if (polylines instanceof L.Polyline) {
-            map.removeLayer(polylines);
+            baseMap.removeLayer(polylines);
         }
 
         polylines = L.polyline(connections, {'color': '#9a3033'});
-        map.addLayer(polylines);
+        baseMap.addLayer(polylines);
     }
     catch(e)
     {
@@ -91,11 +91,11 @@ Routes.addMarkerOnCustomRoute = function(value)
 
         if (polylines instanceof L.Polyline)
         {
-            map.removeLayer(polylines);
+            baseMap.removeLayer(polylines);
         }
 
         polylines = L.polyline(connections, {'color': '#9a3033'});
-        map.addLayer(polylines);
+        baseMap.addLayer(polylines);
 
     }
 
