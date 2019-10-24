@@ -49,5 +49,5 @@
 	{"key": "routes.import_prompt", 		"value": "Введите код маршрута"},
 	{"key": "routes.empty", 			"value": "Пустой код маршрута"},
 	{"key": "routes.invalid", 			"value": "Неверный код маршрута"},
-	{"key": "menu.random_spots", "value": "Random Spots"}
+	{"key": "menu.random_spots", 			"value": "Случайные предметы"}
 ]
