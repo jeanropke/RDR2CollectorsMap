@@ -48,5 +48,6 @@
 	{"key": "routes.exported", "value": "Route copied to clipboard!"},
 	{"key": "routes.import_prompt", "value": "Enter the route code"},
 	{"key": "routes.empty", "value": "Empty route"},
-	{"key": "routes.invalid", "value": "Invalid route"}
+	{"key": "routes.invalid", "value": "Invalid route"},
+	{"key": "menu.random_spots", "value": "Random Spots"}
 ]

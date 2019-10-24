@@ -12,9 +12,22 @@ Menu.refreshMenu = function ()
 
         markers.filter(function(item)
         {
-            if(item.day == 1 && item.icon == value)
+            if(item.day == day && item.icon == value)
             {
-                $('.menu-hidden[data-type='+value+']').append('<p class="collectible" data-type="'+item.text+'">'+languageData[item.text+'.name']+'</p>');
+                //if(item.subdata == null)
+                {
+                    $('.menu-hidden[data-type=' + value + ']').append('<p class="collectible" data-type="' + item.text + '">' + languageData[item.text + '.name'] + '</p>');
+                }
+                /*else
+                {
+                    if($(`.menu-hidden[data-type='american-flowers']`).children(`p.collectible[data-type='${item.subdata}']`).length > 0)
+                        return;
+
+                    var tempName = languageData[item.text + '.name'];
+
+
+                    $('.menu-hidden[data-type=' + value + ']').append('<p class="collectible" data-type="' + item.subdata + '" data-text="'+item.subdata +'">'+ tempName.split('#')[0]+'</p>');
+                }*/
             }
         });
 

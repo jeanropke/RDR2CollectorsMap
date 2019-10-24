@@ -86,6 +86,10 @@ Map.addMarkers = function() {
         if(parseInt(toolType) < parseInt(value.tool) && toolType !== "3")
             return;
 
+        if(value.subdata != null)
+            if(!plantsEnabled.includes(value.subdata))
+                return;
+
         if(enabledTypes.includes(value.icon))
         {
             if (value.day == day || $.cookie('ignore-days') == 'true')
@@ -93,6 +97,7 @@ Map.addMarkers = function() {
                 if (languageData[value.text+'.name'] == null)
                 {
                     console.error('[LANG]['+lang+']: Text not found: '+value.text);
+                    return;
                 }
 
                 if (searchTerms.length > 0)
@@ -117,7 +122,7 @@ Map.addMarkers = function() {
     });
 
     markersLayer.addTo(baseMap);
-    Menu.refreshItemsCounter();
+    //Menu.refreshItemsCounter();
 
     Map.addFastTravelMarker();
     Map.setTreasures();
@@ -157,37 +162,55 @@ Map.removeItemFromMap = function(itemName)
     }
     else
     {
-        if (disableMarkers.includes(itemName.toString())) {
-            disableMarkers = $.grep(disableMarkers, function (value) {
-                $.each(routesData, function (key, j) {
+        if(plantsCategories.includes(itemName))
+        {
+            if(plantsEnabled.includes(itemName)) {
+                plantsEnabled = $.grep(plantsEnabled, function(data) {
+                    return data != itemName;
+                });
+            }
+            else {
+                plantsEnabled.push(itemName);
+            }
+            Map.addMarkers();
+        }
+        else
+        {
+            if (disableMarkers.includes(itemName.toString())) {
+                disableMarkers = $.grep(disableMarkers, function (value) {
+                    $.each(routesData, function (key, j) {
+                        if (disableMarkers.includes(value.key)) {
+                            delete value.hidden;
+                        }
+                    });
+                    return value != itemName.toString();
+
+                });
+
+                if (visibleMarkers[itemName] == null) {
+                    console.warn('[INFO]: \'' + itemName + '\' type is disabled!');
+                }
+                else {
+                    $(visibleMarkers[itemName]._icon).css('opacity', '1');
+                }
+
+                $('[data-type=' + itemName + ']').removeClass('disabled');
+
+            }
+            else
+            {
+                disableMarkers.push(itemName.toString());
+                $.each(routesData[day], function (b, value) {
                     if (disableMarkers.includes(value.key)) {
-                        delete value.hidden;
+                        value.hidden = true;
                     }
                 });
-                return value != itemName.toString();
-
-            });
-
-            if (visibleMarkers[itemName] == null)
-                console.warn('[INFO]: \'' + itemName + '\' type is disabled!');
-            else
-                $(visibleMarkers[itemName]._icon).css('opacity', '1');
-
-            $('[data-type=' + itemName + ']').removeClass('disabled');
-
-        }
-        else {
-            disableMarkers.push(itemName.toString());
-            $.each(routesData[day], function (b, value) {
-                if (disableMarkers.includes(value.key)) {
-                    value.hidden = true;
-                }
-            });
-            if (visibleMarkers[itemName] == null)
-                console.warn('[INFO]: \'' + itemName + '\' type is disabled!');
-            else
-                $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
-            $('[data-type=' + itemName + ']').addClass('disabled');
+                if (visibleMarkers[itemName] == null)
+                    console.warn('[INFO]: \'' + itemName + '\' type is disabled!');
+                else
+                    $(visibleMarkers[itemName]._icon).css('opacity', '0.35');
+                $('[data-type=' + itemName + ']').addClass('disabled');
+            }
         }
 
         $.cookie('removed-items', disableMarkers.join(';'), {expires: resetMarkersDaily ? 1 : 999});
@@ -208,17 +231,19 @@ Map.addMarkerOnMap = function(value)
 
     var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: './assets/images/icons/' + value.icon + '.png', markerColor: isWeekly ? 'green' : 'day_' + value.day})});
 
+    var videoText = value.video != null ? '<p align="center" style="padding: 5px;"><a href="'+value.video+'" target="_blank">Video</a></p>' : '';
     tempMarker
       .bindPopup(
         '<h1>'+languageData[value.text + ".name"]+' - '+ languageData["menu.day"] + ' ' + value.day+'</h1>' +
         '<p>'+Map.getToolIcon(value.tool) + ' ' + languageData[value.text + "_" + value.day + ".desc"] +'</p>' +
-        '<p align="center" style="padding: 5px;"><a href="'+value.gtaSeriesVideoYTLink+'" target="_blank">Video</a></p>' +
+        videoText +
         '<p class="remove-button" data-item="'+value.text+'">'+languageData["map.remove_add"]+'</p>'
       )
       .on("click", function(e) {
         Routes.addMarkerOnCustomRoute(value.text);
         if (customRouteEnabled) e.target.closePopup();
       });
+
 
     visibleMarkers[value.text] = tempMarker;
     markersLayer.addLayer(tempMarker);
