@@ -10,8 +10,16 @@ var disableMarkers = [];
 var categories = [
     'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
     'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar',
-    'fast-travel', 'treasure'
+    'fast-travel', 'treasure', 'random'
 ];
+
+var plantsCategories = [
+    'texas_bluebonnet', 'bitterweed', 'agarita', 'wild_rhubarb', 'cardinal',
+    'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'
+];
+
+var plantsEnabled = plantsCategories;
+
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
@@ -34,15 +42,15 @@ var lang;
 var languageData = [];
 
 var nazarLocations = [];
-var nazarCurrentLocation = 10;
-var nazarCurrentDate = '23th October';
+var nazarCurrentLocation = 7;
+var nazarCurrentDate = '24th October';
 
 var fastTravelData;
 
 var weeklySet = 'cheater_set';
 var weeklySetData = [];
 var date;
-var nocache = 35;
+var nocache = 45;
 
 var wikiLanguage = [];
 
@@ -291,6 +299,7 @@ $('.menu-option.clickable').on('click', function ()
     if($("#routes").val() == 1)
         Map.drawLines();
 });
+
 
 $('.open-submenu').on('click', function(e) {
     e.stopPropagation();

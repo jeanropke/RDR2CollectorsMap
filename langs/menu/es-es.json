@@ -48,6 +48,7 @@
 	{"key": "routes.exported", "value": "¡Ruta copiada al portapapeles!"},
 	{"key": "routes.import_prompt", "value": "Introduce el código de la ruta"},
 	{"key": "routes.empty", "value": "Ruta vacía"},
-	{"key": "routes.invalid", "value": "Ruta inválida"}
+	{"key": "routes.invalid", "value": "Ruta inválida"},
+	{"key": "menu.random_spots", "value": "Random Spots"}
 ]
 

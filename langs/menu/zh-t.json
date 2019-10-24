@@ -44,5 +44,6 @@
 	{"key": "menu.custom_routes", "value": "自訂路線"},
 	{"key": "menu.import_route", "value": "輸入路線"},
 	{"key": "menu.export_route", "value": "輸出路線"},
-	{"key": "menu.treasures", "value": "藏寶圖"}
+	{"key": "menu.treasures", "value": "藏寶圖"},
+	{"key": "menu.random_spots", "value": "Random Spots"}
 ]

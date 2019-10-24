@@ -48,5 +48,6 @@
 	{"key": "routes.exported", "value": "Rota copiada para a área de transferência!"},
 	{"key": "routes.import_prompt", "value": "Coloque o código da rota"},
 	{"key": "routes.empty", "value": "Rota vazia"},
-	{"key": "routes.invalid", "value": "Rota inválida"}
+	{"key": "routes.invalid", "value": "Rota inválida"},
+	{"key": "menu.random_spots", "value": "Locais Aleatórios"}
 ]

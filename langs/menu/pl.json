@@ -48,5 +48,6 @@
 	{"key": "routes.exported", "value": "Trasa skopiowana do schowka!"},
 	{"key": "routes.import_prompt", "value": "Podaj kod trasy"},
 	{"key": "routes.empty", "value": "Pusta trasa"},
-	{"key": "routes.invalid", "value": "Błędna trasa"}
+	{"key": "routes.invalid", "value": "Błędna trasa"},
+	{"key": "menu.random_spots", "value": "Random Spots"}
 ]
