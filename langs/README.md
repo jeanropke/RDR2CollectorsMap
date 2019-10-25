@@ -40,6 +40,9 @@ brazilian (pt-br.json)
   
 russian (ru.json)
   - Overnoes
+  - Korfeeeezy
+  - Asya
+  - Klinorin
   
 chinese simplified (zh-s.json)
   - yamazakitouma
