@@ -635,5 +635,5 @@
 	{"text": "flower_chocolate_daisy_2", "day": "3", "tool": "0", "icon": "american-flowers", "subdata": "chocolate_daisy", "x": "-70.92", "y": "101.11"},	
 	{"text": "random_item_1", "day": "3", "tool": "0", "icon": "random", "x": "-50.79907227", "y": "150.4114685"},
 	{"text": "random_item_2", "day": "3", "tool": "0", "icon": "random", "x": "-89.37534831", "y": "86.78125"},
-	{"text": "random_item_3", "day": "3", "tool": "0", "icon": "random", "x": "-81.24940579", "y": "156.7998177"}
+	{"text": "random_item_3", "day": "3", "tool": "1", "icon": "random", "x": "-81.24940579", "y": "156.7998177"}
 ]
