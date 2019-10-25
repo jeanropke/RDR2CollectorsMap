@@ -227,7 +227,7 @@ p {
 }
 
 .side-menu .menu-hidden.opened {
-    max-height: 1200px;
+    max-height: 2000px;
     transition: max-height 400ms ease-out;
 
 }
