@@ -350,7 +350,7 @@ Map.addCoordsOnMap = function(coords)
     }
 
     //console.log(`{"text": "_treasure", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}", "radius": "5"},`);
-
+    console.log(`{"text": "random_item_", "day": "${day}", "tool": "${tool}", "icon": "random", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}"},`);
 
 };
 
