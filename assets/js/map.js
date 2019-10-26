@@ -213,7 +213,16 @@ Map.removeItemFromMap = function(itemName)
             }
         }
 
-        $.cookie('removed-items', disableMarkers.join(';'), {expires: resetMarkersDaily ? 1 : 999});
+        var disabledMarkersString = disableMarkers.join(';') + ';';
+
+        if(disabledMarkersString.length > 3200)
+        {
+            $.cookie('removed-items', disabledMarkersString.substr(0, 3200), {expires: resetMarkersDaily ? 1 : 999});
+            $.cookie('removed-items-2', disabledMarkersString.substr(3200, disabledMarkersString.length), {expires: resetMarkersDaily ? 1 : 999});
+        }
+        else {
+            $.cookie('removed-items', disabledMarkersString, {expires: resetMarkersDaily ? 1 : 999});
+        }
 
         if ($("#routes").val() == 1)
             Map.drawLines();
