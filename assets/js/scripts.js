@@ -62,13 +62,15 @@ function init()
     wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
     wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portugu%C3%AAs)';
 
-    if(typeof $.cookie('removed-items') === 'undefined') {
-        $.cookie('removed-items', ';', {expires: resetMarkersDaily ? 1 : 999});
-        disableMarkers = [];
-    }
-    else {
-        disableMarkers = $.cookie('removed-items').split(";");
-    }
+    if(typeof $.cookie('removed-items') === 'undefined')
+        $.cookie('removed-items', '', {expires: resetMarkersDaily ? 1 : 999});
+
+    if(typeof $.cookie('removed-items-2') === 'undefined')
+        $.cookie('removed-items-2', '', {expires: resetMarkersDaily ? 1 : 999});
+
+
+    disableMarkers = ($.cookie('removed-items') + $.cookie('removed-items-2')).split(";");
+
 
     if(typeof $.cookie('map-layer') === 'undefined')
         $.cookie('map-layer', 'Detailed', { expires: 999 });
@@ -174,6 +176,8 @@ function setCurrentDayCycle()
             if(resetMarkersDaily)
             {
                 $.cookie('removed-items', ';', {expires: 1});
+                $.cookie('removed-items-2', ';', {expires: 1});
+
                 disableMarkers = [];
             }
         }
@@ -238,6 +242,8 @@ $("#reset-markers").on("change", function()
     if($("#reset-markers").val() == 'clear')
     {
         $.cookie('removed-items', ';', { expires: resetMarkersDaily ? 1 : 999});
+        $.cookie('removed-items-2', ';', { expires: resetMarkersDaily ? 1 : 999});
+
         disableMarkers =  $.cookie('removed-items').split(';');
         $("#reset-markers").val('false');
     }
