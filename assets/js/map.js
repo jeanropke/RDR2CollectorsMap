@@ -262,7 +262,8 @@ Map.addMarkerOnMap = function(value)
                 iconSize: [35,45],
                 iconAnchor: [17,42],
                 popupAnchor: [1,-32],
-                shadowAnchor: [10,12]
+                shadowAnchor: [10,12],
+                shadowUrl: './assets/images/markers-shadow.png'
             }
         )
     }); //, markerColor: isWeekly ? 'green' : 'day_' + value.day
@@ -338,7 +339,8 @@ Map.addFastTravelMarker = function()
                     iconSize: [35,45],
                     iconAnchor: [17,42],
                     popupAnchor: [1,-32],
-                    shadowAnchor: [10,12]
+                    shadowAnchor: [10,12],
+                    shadowUrl: './assets/images/markers-shadow.png'
                 })
             });
 
@@ -360,7 +362,8 @@ Map.debugMarker = function (lat, long)
         iconSize: [35,45],
         iconAnchor: [17,42],
         popupAnchor: [1,-32],
-        shadowAnchor: [10,12]
+        shadowAnchor: [10,12],
+        shadowUrl: './assets/images/markers-shadow.png'
 
     })
 });
@@ -408,7 +411,8 @@ Map.addMadamNazar = function ()
                 iconSize: [35,45],
                 iconAnchor: [17,42],
                 popupAnchor: [1,-32],
-                shadowAnchor: [10,12]
+                shadowAnchor: [10,12],
+                shadowUrl: './assets/images/markers-shadow.png'
             })
         });
 
@@ -442,7 +446,8 @@ Map.setTreasures = function ()
                     iconSize: [35,45],
                     iconAnchor: [17,42],
                     popupAnchor: [1,-32],
-                    shadowAnchor: [10,12]
+                    shadowAnchor: [10,12],
+                    shadowUrl: './assets/images/markers-shadow.png'
                 })
             });
 
