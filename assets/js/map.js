@@ -231,6 +231,23 @@ Map.removeItemFromMap = function(itemName)
     }
 };
 
+Map.getIconColor = function (value)
+{
+    switch(value){
+        case "day_1":
+            return "blue";
+            break;
+        case "day_2":
+            return "orange";
+            break;
+        case "day_3":
+            return "purple";
+            break;
+        case "weekly":
+            return "green";
+            break;
+    }
+};
 
 Map.addMarkerOnMap = function(value)
 {
@@ -238,7 +255,17 @@ Map.addMarkerOnMap = function(value)
             return weekly.item === value.text;
     }).length > 0;
 
-    var tempMarker = L.marker([value.x, value.y], {icon: L.AwesomeMarkers.icon({iconUrl: './assets/images/icons/' + value.icon + '.png', markerColor: isWeekly ? 'green' : 'day_' + value.day})});
+    var tempMarker = L.marker([value.x, value.y], {
+        icon: L.icon(
+            {
+                iconUrl: './assets/images/icons/' + value.icon + '_' + Map.getIconColor(isWeekly ? 'weekly' : 'day_' + value.day)+'.png',
+                iconSize: [35,45],
+                iconAnchor: [17,42],
+                popupAnchor: [1,-32],
+                shadowAnchor: [10,12]
+            }
+        )
+    }); //, markerColor: isWeekly ? 'green' : 'day_' + value.day
 
     var videoText = value.video != null ? '<p align="center" style="padding: 5px;"><a href="'+value.video+'" target="_blank">Video</a></p>' : '';
     tempMarker
@@ -306,9 +333,12 @@ Map.addFastTravelMarker = function()
         $.each(fastTravelData, function (key, value)
         {
             var marker = L.marker([value.x, value.y], {
-                icon: L.AwesomeMarkers.icon({
-                    iconUrl: './assets/images/icons/fast-travel.png',
-                    markerColor: 'gray'
+                icon: L.icon({
+                    iconUrl: './assets/images/icons/fast-travel_gray.png',
+                    iconSize: [35,45],
+                    iconAnchor: [17,42],
+                    popupAnchor: [1,-32],
+                    shadowAnchor: [10,12]
                 })
             });
 
@@ -325,9 +355,13 @@ Map.addFastTravelMarker = function()
 Map.debugMarker = function (lat, long)
 {
     var marker = L.marker([lat, long], {
-    icon: L.AwesomeMarkers.icon({
-        iconUrl: './assets/images/icons/help.png',
-        markerColor: 'darkblue'
+    icon: L.icon({
+        iconUrl: './assets/images/icons/random_darkblue.png',
+        iconSize: [35,45],
+        iconAnchor: [17,42],
+        popupAnchor: [1,-32],
+        shadowAnchor: [10,12]
+
     })
 });
 
@@ -350,7 +384,8 @@ Map.addCoordsOnMap = function(coords)
     }
 
     //console.log(`{"text": "_treasure", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}", "radius": "5"},`);
-    console.log(`{"text": "random_item_", "day": "${day}", "tool": "${tool}", "icon": "random", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}"},`);
+    if(debugTool != null)
+    console.log(`{"text": "random_item_", "day": "${day}", "tool": "${debugTool}", "icon": "random", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}"},`);
 
 };
 
@@ -368,9 +403,12 @@ Map.addMadamNazar = function ()
     if(enabledTypes.includes('nazar'))
     {
         var marker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {
-            icon: L.AwesomeMarkers.icon({
-                iconUrl: './assets/images/icons/nazar.png',
-                markerColor: 'nazar'
+            icon: L.icon({
+                iconUrl: './assets/images/icons/nazar_red.png',
+                iconSize: [35,45],
+                iconAnchor: [17,42],
+                popupAnchor: [1,-32],
+                shadowAnchor: [10,12]
             })
         });
 
@@ -399,9 +437,12 @@ Map.setTreasures = function ()
                 radius: value.radius
             });
             var marker = L.marker([value.x, value.y], {
-                icon: L.AwesomeMarkers.icon({
-                    iconUrl: './assets/images/icons/treasure.png',
-                    markerColor: 'beige'
+                icon: L.icon({
+                    iconUrl: './assets/images/icons/treasure_beige.png',
+                    iconSize: [35,45],
+                    iconAnchor: [17,42],
+                    popupAnchor: [1,-32],
+                    shadowAnchor: [10,12]
                 })
             });
 
