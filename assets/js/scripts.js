@@ -54,6 +54,8 @@ var nocache = 45;
 
 var wikiLanguage = [];
 
+var debugTool = null;
+
 function init()
 {
 
