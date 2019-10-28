@@ -190,7 +190,9 @@ p {
 .side-menu, .menu-toggle {
     transition: all 200ms ease-out;
 }
-
+.side-menu .collectables-counter {
+    text-align: center;
+}
 .side-menu .menu-option {
     display: flex;
     align-items: start;

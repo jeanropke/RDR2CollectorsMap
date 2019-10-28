@@ -10,15 +10,18 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="assets/js/jquery.cookie.js"></script>
-
-    <script src="assets/js/leaflet.awesome-markers.min.js"></script>
-    <link rel="stylesheet" href="assets/css/leaflet.awesome-markers.css" />
-    <link rel="stylesheet" href="assets/css/styles.css?nocache=40" />
+    <link rel="stylesheet" href="assets/css/styles.css?nocache=50" />
 
 </head>
 <body onload="init()">
 <div class="side-menu">
-    <h2><span data-text="menu.collectables">Collectables</span> <span class="help-button"><a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)" target="_blank" class="wiki-page">[Wiki]</a></span></h2>
+    <h2>
+        <span data-text="menu.collectables">Collectables</span>
+        <span class="help-button">
+            <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)" target="_blank" class="wiki-page">[Wiki]</a>
+        </span>
+    </h2>
+    <div class="collectables-counter" data-text="menu.collectables_counter">Collected -- of --</div>
     <div class="hide-show-container">
         <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
         <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
@@ -320,11 +323,11 @@
 <div id="map"></div>
 
 <div class="lat-lng-container"><p></p><button id="lat-lng-container-close-button">×</button></div>
-<script      src="assets/js/map.js?nocache=48"></script>
-<script src="assets/js/language.js?nocache=48"></script>
-<script     src="assets/js/menu.js?nocache=48"></script>
-<script   src="assets/js/routes.js?nocache=48"></script>
-<script  src="assets/js/scripts.js?nocache=48"></script>
+<script      src="assets/js/map.js?nocache=50"></script>
+<script src="assets/js/language.js?nocache=50"></script>
+<script     src="assets/js/menu.js?nocache=50"></script>
+<script   src="assets/js/routes.js?nocache=50"></script>
+<script  src="assets/js/scripts.js?nocache=50"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
 <script>
