@@ -50,7 +50,7 @@ var fastTravelData;
 var weeklySet = 'cheater_set';
 var weeklySetData = [];
 var date;
-var nocache = 45;
+var nocache = 51;
 
 var wikiLanguage = [];
 
