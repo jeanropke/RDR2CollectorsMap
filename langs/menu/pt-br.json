@@ -49,5 +49,6 @@
 	{"key": "routes.import_prompt", "value": "Coloque o código da rota"},
 	{"key": "routes.empty", "value": "Rota vazia"},
 	{"key": "routes.invalid", "value": "Rota inválida"},
-	{"key": "menu.random_spots", "value": "Locais Aleatórios"}
+	{"key": "menu.random_spots", "value": "Locais Aleatórios"},
+	{"key": "menu.collectables_counter", "value": "Coletou {count} de {max}"}
 ]

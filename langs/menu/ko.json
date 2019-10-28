@@ -49,5 +49,6 @@
 	{"key": "routes.import_prompt", "value": "Enter the route code"},
 	{"key": "routes.empty", "value": "Empty route"},
 	{"key": "routes.invalid", "value": "Invalid route"},
-	{"key": "menu.random_spots", "value": "Random Spots"}
+	{"key": "menu.random_spots", "value": "Random Spots"},
+	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"}
 ]

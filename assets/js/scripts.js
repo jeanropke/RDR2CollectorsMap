@@ -97,12 +97,18 @@ function init()
     var curDate = new Date();
     date = curDate.getUTCFullYear()+'-'+(curDate.getUTCMonth()+1)+'-'+curDate.getUTCDate();
 
+
+
+    disableMarkers = disableMarkers.filter(function (el) {
+        return el != "";
+    });
+
     lang = $.cookie('language');
     $("#language").val(lang);
 
 
     Language.load();
-
+    Language.setMenuLanguage();
     Map.init();
 
     setMapBackground($.cookie('map-layer'));
@@ -177,8 +183,8 @@ function setCurrentDayCycle()
             $.cookie('date', date, { expires: 2 });
             if(resetMarkersDaily)
             {
-                $.cookie('removed-items', ';', {expires: 1});
-                $.cookie('removed-items-2', ';', {expires: 1});
+                $.cookie('removed-items', '', {expires: 1});
+                $.cookie('removed-items-2', '', {expires: 1});
 
                 disableMarkers = [];
             }
@@ -243,11 +249,12 @@ $("#reset-markers").on("change", function()
 {
     if($("#reset-markers").val() == 'clear')
     {
-        $.cookie('removed-items', ';', { expires: resetMarkersDaily ? 1 : 999});
-        $.cookie('removed-items-2', ';', { expires: resetMarkersDaily ? 1 : 999});
+        $.cookie('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
+        $.cookie('removed-items-2', '', { expires: resetMarkersDaily ? 1 : 999});
 
-        disableMarkers =  $.cookie('removed-items').split(';');
+        disableMarkers =  $.cookie('removed-items').split('');
         $("#reset-markers").val('false');
+        Menu.refreshItemsCounter();
     }
 
     resetMarkersDaily = $("#reset-markers").val() == 'true';
@@ -285,7 +292,11 @@ $("#language").on("change", function()
 {
     lang = $("#language").val();
     $.cookie('language', lang, { expires: 999 });
-    Language.load(true);
+    Language.setMenuLanguage();
+
+
+    Map.addMarkers();
+    Menu.refreshMenu();
 });
 
 $('.menu-option.clickable').on('click', function ()

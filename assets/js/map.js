@@ -94,7 +94,7 @@ Map.addMarkers = function() {
         {
             if (value.day == day || $.cookie('ignore-days') == 'true')
             {
-                if (languageData[value.text+'.name'] == null)
+                if (languageData[lang][value.text+'.name'] == null)
                 {
                     console.error('[LANG]['+lang+']: Text not found: '+value.text);
                     return;
@@ -104,7 +104,7 @@ Map.addMarkers = function() {
                 {
                     $.each(searchTerms, function (id, term)
                     {
-                        if (languageData[value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
+                        if (languageData[lang][value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
                             if (visibleMarkers[value.text] == null)
                             {
@@ -122,7 +122,7 @@ Map.addMarkers = function() {
     });
 
     markersLayer.addTo(baseMap);
-    //Menu.refreshItemsCounter();
+    Menu.refreshItemsCounter();
 
     Map.addFastTravelMarker();
     Map.setTreasures();
@@ -213,7 +213,7 @@ Map.removeItemFromMap = function(itemName)
             }
         }
 
-        var disabledMarkersString = disableMarkers.join(';') + ';';
+        var disabledMarkersString = disableMarkers.join(';').replace(/;;/g, '');
 
         if(disabledMarkersString.length > 3200)
         {
@@ -271,10 +271,10 @@ Map.addMarkerOnMap = function(value)
     var videoText = value.video != null ? '<p align="center" style="padding: 5px;"><a href="'+value.video+'" target="_blank">Video</a></p>' : '';
     tempMarker
       .bindPopup(
-        '<h1>'+languageData[value.text + ".name"]+' - '+ languageData["menu.day"] + ' ' + value.day+'</h1>' +
-        '<p>'+Map.getToolIcon(value.tool) + ' ' + languageData[value.text + "_" + value.day + ".desc"] +'</p>' +
+        '<h1>'+languageData[lang][value.text + ".name"]+' - '+ languageData[lang]["menu.day"] + ' ' + value.day+'</h1>' +
+        '<p>'+Map.getToolIcon(value.tool) + ' ' + languageData[lang][value.text + "_" + value.day + ".desc"] +'</p>' +
         videoText +
-        '<p class="remove-button" data-item="'+value.text+'">'+languageData["map.remove_add"]+'</p>'
+        '<p class="remove-button" data-item="'+value.text+'">'+languageData[lang]["map.remove_add"]+'</p>'
       )
       .on("click", function(e) {
         Routes.addMarkerOnCustomRoute(value.text);
@@ -344,10 +344,10 @@ Map.addFastTravelMarker = function()
                 })
             });
 
-            if (languageData[value.text+'.name'] == null) {
+            if (languageData[lang][value.text+'.name'] == null) {
                 console.error('[LANG]['+lang+']: Text not found: \''+value.text+'\'');
             }
-            marker.bindPopup(`<h1> ${languageData[value.text+'.name']}</h1><p>  </p>`);
+            marker.bindPopup(`<h1> ${languageData[lang][value.text+'.name']}</h1><p>  </p>`);
 
             markersLayer.addLayer(marker);
         });
@@ -416,7 +416,7 @@ Map.addMadamNazar = function ()
             })
         });
 
-        marker.bindPopup(`<h1>${languageData['madam_nazar.name']} - ${nazarCurrentDate}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazarIO' target="_blank">@MadamNazarIO</a>.</p>`);
+        marker.bindPopup(`<h1>${languageData[lang]['madam_nazar.name']} - ${nazarCurrentDate}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazarIO' target="_blank">@MadamNazarIO</a>.</p>`);
         markersLayer.addLayer(marker);
     }
 };
@@ -451,10 +451,10 @@ Map.setTreasures = function ()
                 })
             });
 
-            if (languageData[value.text] == null) {
+            if (languageData[lang][value.text] == null) {
                 console.error('[LANG]['+lang+']: Text not found: \''+value.text+'\'');
             }
-            marker.bindPopup(`<h1> ${languageData[value.text]}</h1><p>  </p>`);
+            marker.bindPopup(`<h1> ${languageData[lang][value.text]}</h1><p>  </p>`);
 
             treasureMarkers.push({treasure: value.text, marker: marker, circle: circle});
             treasureDisabled.push(value.text);

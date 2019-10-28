@@ -3,7 +3,6 @@
  */
 
 var Menu = {};
-
 Menu.refreshMenu = function ()
 {
     $.each(categories, function (key, value)
@@ -16,14 +15,14 @@ Menu.refreshMenu = function ()
             {
                 //if(item.subdata == null)
                 {
-                    $('.menu-hidden[data-type=' + value + ']').append('<p class="collectible" data-type="' + item.text + '">' + languageData[item.text + '.name'] + '</p>');
+                    $('.menu-hidden[data-type=' + value + ']').append('<p class="collectible" data-type="' + item.text + '">' + languageData[lang][item.text + '.name'] + '</p>');
                 }
                 /*else
                 {
                     if($(`.menu-hidden[data-type='american-flowers']`).children(`p.collectible[data-type='${item.subdata}']`).length > 0)
                         return;
 
-                    var tempName = languageData[item.text + '.name'];
+                    var tempName = languageData[lang][item.text + '.name'];
 
 
                     $('.menu-hidden[data-type=' + value + ']').append('<p class="collectible" data-type="' + item.subdata + '" data-text="'+item.subdata +'">'+ tempName.split('#')[0]+'</p>');
@@ -35,7 +34,7 @@ Menu.refreshMenu = function ()
 
         treasureData.filter(function(item)
         {
-            $('.menu-hidden[data-type=treasure]').append('<p class="collectible" data-type="'+item.text+'">'+languageData[item.text]+'</p>');
+            $('.menu-hidden[data-type=treasure]').append('<p class="collectible" data-type="'+item.text+'">'+languageData[lang][item.text]+'</p>');
         });
     });
     $.each(disableMarkers, function (key, value)
@@ -76,7 +75,6 @@ Menu.hideAll = function()
 
 Menu.refreshItemsCounter = function()
 {
-    console.log('Collected '+(disableMarkers.length-1)+' of '+Object.keys(visibleMarkers).length);
-    $('#item-counter').text((disableMarkers.length-1)+' of '+Object.keys(visibleMarkers).length);
+    $('.collectables-counter').text(languageData[lang]['menu.collectables_counter'].replace('{count}', (disableMarkers.length)).replace('{max}', Object.keys(visibleMarkers).length));
 };
 
