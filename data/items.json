@@ -654,7 +654,7 @@
 	{"text": "random_item_5", "day": "3", "tool": "2", "icon": "random", "x": "-35.234375", "y": "113.1953125"},
 	{"text": "random_item_6", "day": "3", "tool": "2", "icon": "random", "x": "-34.7890625", "y": "154.09375"},
 	{"text": "random_item_7", "day": "3", "tool": "2", "icon": "random", "x": "-37.2734375", "y": "155.0078125"},
-	{"text": "random_item_8", "day": "3", "tool": "2", "icon": "random", "x": "-37.2734375", "y": "155.0078125"},
+	{"text": "random_item_8", "day": "3", "tool": "2", "icon": "random", "x": "-62.484375", "y": "153.0234375"},
 	{"text": "random_item_9", "day": "3", "tool": "2", "icon": "random", "x": "-42.0546875", "y": "153.1640625"},
 	{"text": "random_item_10", "day": "3", "tool": "2", "icon": "random", "x": "-42.9609375", "y": "149.8125"},
 	{"text": "random_item_11", "day": "3", "tool": "2", "icon": "random", "x": "-63.46875", "y": "150.0703125"},
@@ -677,6 +677,10 @@
 	{"text": "random_item_28", "day": "3", "tool": "2", "icon": "random", "x": "-44.9921875", "y": "127.9453125"},
 	{"text": "random_item_29", "day": "3", "tool": "2", "icon": "random", "x": "-40.1953125", "y": "109.9296875"},
 	{"text": "random_item_30", "day": "3", "tool": "2", "icon": "random", "x": "-40.8125", "y": "112.2578125"},
-	{"text": "random_item_31", "day": "3", "tool": "2", "icon": "random", "x": "-45.453125", "y": "117.1484375"}
+	{"text": "random_item_31", "day": "3", "tool": "2", "icon": "random", "x": "-45.453125", "y": "117.1484375"},
+	{"text": "random_item_32", "day": "3", "tool": "2", "icon": "random", "x": "-54.4296875", "y": "152.0078125"},
+	{"text": "random_item_33", "day": "3", "tool": "2", "icon": "random", "x": "-48.2734375", "y": "150.59375"},
+	{"text": "random_item_34", "day": "3", "tool": "2", "icon": "random", "x": "-44.15625", "y": "153.078125"},
+	{"text": "random_item_35", "day": "3", "tool": "2", "icon": "random", "x": "-43.71875", "y": "155.390625"}
 	
 ]
