@@ -8,6 +8,12 @@
 		{"item": "wands_queen"},
 		{"item": "cups_king"},
 		{"item": "pentacles_ace"}
+	],
+	"witch_set": [
+		{"item": "egg_vulture"},
+		{"item": "flower_cardinal"},
+		{"item": "arrowhead_splintered"}
 	]
+	
 }
 
