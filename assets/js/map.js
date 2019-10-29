@@ -266,14 +266,16 @@ Map.addMarkerOnMap = function(value)
                 shadowUrl: './assets/images/markers-shadow.png'
             }
         )
-    }); //, markerColor: isWeekly ? 'green' : 'day_' + value.day
+    });
 
     var videoText = value.video != null ? '<p align="center" style="padding: 5px;"><a href="'+value.video+'" target="_blank">Video</a></p>' : '';
+    var weeklyText = isWeekly ? '<p align="center" style="padding: 5px;">Weekly set by <a target="_blank" href="https://www.youtube.com/channel/UC3LdKFizyou1RfkkmDUUVsg">Dirty Tyler</a></p>' : '';
     tempMarker
       .bindPopup(
         '<h1>'+languageData[lang][value.text + ".name"]+' - '+ languageData[lang]["menu.day"] + ' ' + value.day+'</h1>' +
         '<p>'+Map.getToolIcon(value.tool) + ' ' + languageData[lang][value.text + "_" + value.day + ".desc"] +'</p>' +
         videoText +
+        weeklyText +
         '<p class="remove-button" data-item="'+value.text+'">'+languageData[lang]["map.remove_add"]+'</p>'
       )
       .on("click", function(e) {
