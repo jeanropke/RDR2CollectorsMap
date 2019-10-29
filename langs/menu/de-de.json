@@ -45,10 +45,10 @@
 	{"key": "menu.import_route", "value": "Route importieren"},
 	{"key": "menu.export_route", "value": "Route exportieren"},
 	{"key": "menu.treasures", "value": "Schatzkarten"},
-	{"key": "routes.exported", "value": "Route copied to clipboard!"},
-	{"key": "routes.import_prompt", "value": "Enter the route code"},
-	{"key": "routes.empty", "value": "Empty route"},
-	{"key": "routes.invalid", "value": "Invalid route"},
-	{"key": "menu.random_spots", "value": "Random Spots"},
-	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"}
+	{"key": "routes.exported", "value": "Route in das Klemmbrett kopiert!"},
+	{"key": "routes.import_prompt", "value": "Routen Code eingeben:"},
+	{"key": "routes.empty", "value": "Leere Route"},
+	{"key": "routes.invalid", "value": "Ungültige Route"},
+	{"key": "menu.random_spots", "value": "Zufällige Stelle"},
+	{"key": "menu.collectables_counter", "value": "{count} von {max} gesammelt"}
 ]
