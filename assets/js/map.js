@@ -75,7 +75,7 @@ Map.loadMarkers = function()
         });
 };
 
-Map.addMarkers = function() {
+Map.addMarkers = function(isSearch = false) {
 
     markersLayer.clearLayers();
 
@@ -129,7 +129,8 @@ Map.addMarkers = function() {
     Map.addMadamNazar();
     Map.removeCollectedMarkers();
 
-    Menu.refreshMenu();
+    if(!isSearch)
+        Menu.refreshMenu();
 
 };
 
