@@ -50,5 +50,5 @@
 	{"key": "routes.empty", 			"value": "Пустой код маршрута"},
 	{"key": "routes.invalid", 			"value": "Неверный код маршрута"},
 	{"key": "menu.random_spots", 			"value": "Случайные предметы"},
-	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"}
+	{"key": "menu.collectables_counter", "value": "Собрано {count} из {max}"}
 ]
