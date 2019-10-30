@@ -224,7 +224,7 @@ $("#search").on("input", function()
                 searchTerms.push(value.trim());
         }
     });
-    Map.addMarkers();
+    Map.addMarkers(true);
 });
 
 $("#routes").on("change", function()
