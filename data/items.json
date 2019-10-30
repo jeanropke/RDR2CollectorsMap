@@ -611,7 +611,7 @@
 	{"text": "random_item_14", "day": "2", "tool": "0", "icon": "random", "x": "-83.34375", "y": "137.96875"},
 	{"text": "random_item_15", "day": "2", "tool": "0", "icon": "random", "x": "-86.515625", "y": "137.40625"},
 	{"text": "random_item_16", "day": "2", "tool": "0", "icon": "random", "x": "-109.224597", "y": "84.00312328"},
-	{"text": "random_item_17", "day": "2", "tool": "0", "icon": "random", "x": "-85.51128401", "y": "90.03750181"},
+	{"text": "random_item_17", "day": "2", "tool": "2", "icon": "random", "x": "-85.4296875", "y": "89.78125"},
 	{"text": "random_item_18", "day": "2", "tool": "0", "icon": "random", "x": "-98.5", "y": "57.78125"},
 	{"text": "random_item_19", "day": "2", "tool": "0", "icon": "random", "x": "-35.61206055", "y": "137.7945557"},
 	{"text": "random_item_20", "day": "2", "tool": "0", "icon": "random", "x": "-94.08776385", "y": "87.64346396"},

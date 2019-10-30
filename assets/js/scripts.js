@@ -18,7 +18,7 @@ var plantsCategories = [
     'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'
 ];
 
-var plantsEnabled = plantsCategories;
+var plantsDisabled = [];
 
 var enabledTypes = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
@@ -122,6 +122,8 @@ function init()
     var offset = 1.15;
     L.imageOverlay('./assets/overlays/cave_01.png', [[pos], [pos[0] + offset, pos[1] + offset]]).addTo(baseMap);
 
+
+
 }
 
 function setMapBackground(mapName){
@@ -224,7 +226,7 @@ $("#search").on("input", function()
                 searchTerms.push(value.trim());
         }
     });
-    Map.addMarkers(true);
+    Map.addMarkers(false);
 });
 
 $("#routes").on("change", function()

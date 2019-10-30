@@ -71,11 +71,11 @@ Map.loadMarkers = function()
     $.getJSON('data/items.json?nocache='+nocache)
         .done(function(data) {
             markers = data;
-            Map.addMarkers();
+            Map.addMarkers(true);
         });
 };
 
-Map.addMarkers = function(isSearch = false) {
+Map.addMarkers = function(refreshMenu = false) {
 
     markersLayer.clearLayers();
 
@@ -87,7 +87,7 @@ Map.addMarkers = function(isSearch = false) {
             return;
 
         if(value.subdata != null)
-            if(!plantsEnabled.includes(value.subdata))
+            if(plantsDisabled.includes(value.subdata))
                 return;
 
         if(enabledTypes.includes(value.icon))
@@ -129,7 +129,8 @@ Map.addMarkers = function(isSearch = false) {
     Map.addMadamNazar();
     Map.removeCollectedMarkers();
 
-    if(!isSearch)
+
+    if(refreshMenu)
         Menu.refreshMenu();
 
 };
@@ -165,13 +166,13 @@ Map.removeItemFromMap = function(itemName)
     {
         if(plantsCategories.includes(itemName))
         {
-            if(plantsEnabled.includes(itemName)) {
-                plantsEnabled = $.grep(plantsEnabled, function(data) {
+            if(plantsDisabled.includes(itemName)) {
+                plantsDisabled = $.grep(plantsDisabled, function(data) {
                     return data != itemName;
                 });
             }
             else {
-                plantsEnabled.push(itemName);
+                plantsDisabled.push(itemName);
             }
             Map.addMarkers();
         }
