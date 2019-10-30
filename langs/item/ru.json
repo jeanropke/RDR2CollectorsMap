@@ -204,7 +204,7 @@
 	{"key": "wands_four.name", "value": "Четверка жезлов"},
 	{"key": "wands_four_1.desc", "value": "На столе внутри заброшенного салуна."},
 	{"key": "wands_four_2.desc", "value": "Внутри маленькой постройки."},
-	{"key": "wands_four_3.desc", "value": "На бочке слева от входа в здание."},
+	{"key": "wands_four_3.desc", "value": "Внутри дома на полке справа от входа."},
  
 	{"key": "wands_five.name", "value": "Пятерка жезлов"},
 	{"key": "wands_five_1.desc", "value": "На могильной плите."},
@@ -554,7 +554,7 @@
 	{"key": "arrowhead_quartz.name", "value": "Кварцевый наконечник стрелы"},
 	{"key": "arrowhead_quartz_1.desc", "value": "Внизу, под скалой."},
 	{"key": "arrowhead_quartz_2.desc", "value": "Возле крайнего дерева."},
-	{"key": "arrowhead_quartz_3.desc", "value": "Возле сухого дерева."},
+	{"key": "arrowhead_quartz_3.desc", "value": "Среди деревьев на поляне без травы."},
  
 	{"key": "arrowhead_flint.name", "value": "Кремневый наконечник стрелы"},
 	{"key": "arrowhead_flint_1.desc", "value": "Около черепа на палке."},
