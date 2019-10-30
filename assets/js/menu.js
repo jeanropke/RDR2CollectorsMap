@@ -7,17 +7,18 @@ Menu.refreshMenu = function ()
 {
     $.each(categories, function (key, value)
     {
+
         $('.menu-hidden[data-type='+value+']').children('p.collectible').remove();
 
         markers.filter(function(item)
         {
             if(item.day == day && item.icon == value)
             {
-                //if(item.subdata == null)
+                if(item.subdata == null)
                 {
                     $('.menu-hidden[data-type=' + value + ']').append('<p class="collectible" data-type="' + item.text + '">' + languageData[lang][item.text + '.name'] + '</p>');
                 }
-                /*else
+                else
                 {
                     if($(`.menu-hidden[data-type='american-flowers']`).children(`p.collectible[data-type='${item.subdata}']`).length > 0)
                         return;
@@ -25,8 +26,8 @@ Menu.refreshMenu = function ()
                     var tempName = languageData[lang][item.text + '.name'];
 
 
-                    $('.menu-hidden[data-type=' + value + ']').append('<p class="collectible" data-type="' + item.subdata + '" data-text="'+item.subdata +'">'+ tempName.split('#')[0]+'</p>');
-                }*/
+                    $('.menu-hidden[data-type=' + value + ']').append('<p class="collectible" data-type="' + item.subdata + '">'+ tempName.split('#')[0]+'</p>');
+                }
             }
         });
 
@@ -38,6 +39,14 @@ Menu.refreshMenu = function ()
         });
     });
     $.each(disableMarkers, function (key, value)
+    {
+        if(value.length > 0)
+        {
+            $('[data-type=' + value + ']').addClass('disabled');
+        }
+    });
+
+    $.each(plantsDisabled, function (key, value)
     {
         if(value.length > 0)
         {
