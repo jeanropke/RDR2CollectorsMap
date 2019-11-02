@@ -276,6 +276,7 @@ Map.addMarkerOnMap = function(value)
       .bindPopup(
         '<h1>'+languageData[lang][value.text + ".name"]+' - '+ languageData[lang]["menu.day"] + ' ' + value.day+'</h1>' +
         '<p>'+Map.getToolIcon(value.tool) + ' ' + languageData[lang][value.text + "_" + value.day + ".desc"] +'</p>' +
+        (value.icon == 'random' ? 'Random items resets 24 hours after picking up' : '') +
         videoText +
         weeklyText +
         '<p class="remove-button" data-item="'+value.text+'">'+languageData[lang]["map.remove_add"]+'</p>'
