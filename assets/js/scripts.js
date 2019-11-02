@@ -73,6 +73,9 @@ function init()
 
     disableMarkers = ($.cookie('removed-items') + $.cookie('removed-items-2')).split(";");
 
+    enabledTypes = enabledTypes.filter(function(item) {
+        return item !== "random"
+    });
 
     if(typeof $.cookie('map-layer') === 'undefined')
         $.cookie('map-layer', 'Detailed', { expires: 999 });
