@@ -27,15 +27,15 @@ Routes.exportCustomRoute = function ()
     document.execCommand('copy');
     document.body.removeChild(el)
 
-    alert(languageData['routes.exported']);
+    alert(languageData[lang]['routes.exported']);
 };
 
 Routes.importCustomRoute = function() {
-    var input = prompt(languageData['routes.import_prompt'], "");
+    var input = prompt(languageData[lang]['routes.import_prompt'], "");
 
     if (input == null || input == "")
     {
-        alert(languageData['routes.empty']);
+        alert(languageData[lang]['routes.empty']);
     }
     else
     {
@@ -62,7 +62,7 @@ Routes.loadCustomRoute = function(input)
     }
     catch(e)
     {
-        alert(languageData['routes.invalid']);
+        alert(languageData[lang]['routes.invalid']);
     }
 };
 
