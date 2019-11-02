@@ -43,6 +43,7 @@ russian (ru.json)
   - Korfeeeezy
   - Asya
   - Klinorin
+  - Kiddamned
   
 chinese simplified (zh-s.json)
   - yamazakitouma
