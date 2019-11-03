@@ -399,24 +399,35 @@ Map.addCoordsOnMap = function(coords)
 
 Map.loadMadamNazar = function()
 {
-    $.getJSON('data/nazar.json?nocache='+nocache)
-        .done(function(data) {
-            nazarLocations = data;
-            Map.loadTreasures();
-    });
+
+    $.getJSON('http://pepegapi.jeanropke.net/nazar.php')
+        .done(function(nazar) {
+            nazarCurrentLocation = nazar.nazar_id-1;
+            nazarCurrentDate = nazar.date;
+        }).always(function() {
+            $.getJSON('data/nazar.json?nocache='+nocache)
+                .done(function(data) {
+                    nazarLocations = data;
+                    Map.loadTreasures();
+            });
+        });
 };
 
 Map.addMadamNazar = function ()
 {
-    if(enabledTypes.includes('nazar'))
+    if(nazarCurrentLocation == null)
     {
+        console.error('Unable to get Nazar position. Try again later.');
+        return;
+    }
+    if (enabledTypes.includes('nazar')) {
         var marker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {
             icon: L.icon({
                 iconUrl: './assets/images/icons/nazar_red.png',
-                iconSize: [35,45],
-                iconAnchor: [17,42],
-                popupAnchor: [1,-32],
-                shadowAnchor: [10,12],
+                iconSize: [35, 45],
+                iconAnchor: [17, 42],
+                popupAnchor: [1, -32],
+                shadowAnchor: [10, 12],
                 shadowUrl: './assets/images/markers-shadow.png'
             })
         });
