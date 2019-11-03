@@ -42,15 +42,15 @@ var lang;
 var languageData = [];
 
 var nazarLocations = [];
-var nazarCurrentLocation = 2;
-var nazarCurrentDate = '2nd November';
+var nazarCurrentLocation;
+var nazarCurrentDate;
 
 var fastTravelData;
 
 var weeklySet = 'witch_set';
 var weeklySetData = [];
 var date;
-var nocache = 60;
+var nocache = 65;
 
 var wikiLanguage = [];
 
