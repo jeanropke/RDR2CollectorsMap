@@ -400,7 +400,7 @@ Map.addCoordsOnMap = function(coords)
 Map.loadMadamNazar = function()
 {
 
-    $.getJSON('http://pepegapi.jeanropke.net/nazar.php')
+    $.getJSON('https://pepegapi.jeanropke.net/nazar.php')
         .done(function(nazar) {
             nazarCurrentLocation = nazar.nazar_id-1;
             nazarCurrentDate = nazar.date;
