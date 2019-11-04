@@ -20,7 +20,7 @@
 	{"key": "menu.settings", 			"value": "Настройки"},
 	{"key": "menu.day", 				"value": "День"},
 	{"key": "menu.tool_type", 			"value": "Тип снаряж."},
-	{"key": "menu.tool_type.no_tools", 		"value": "Без снряж."},
+	{"key": "menu.tool_type.no_tools", 		"value": "Без снаряж."},
 	{"key": "menu.tool_type.shovel", 		"value": "Лопата"},
 	{"key": "menu.tool_type.metal_detector",        "value": "Металлоискатель"},
 	{"key": "menu.tool_type.all", 			"value": "Все типы"},
