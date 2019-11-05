@@ -50,7 +50,7 @@ var fastTravelData;
 var weeklySet = 'witch_set';
 var weeklySetData = [];
 var date;
-var nocache = 66;
+var nocache = 70;
 
 var wikiLanguage = [];
 
