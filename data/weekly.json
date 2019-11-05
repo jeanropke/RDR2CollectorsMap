@@ -13,6 +13,11 @@
 		{"item": "egg_vulture"},
 		{"item": "flower_cardinal"},
 		{"item": "arrowhead_splintered"}
+	],
+	"fortune_teller_set": [
+		{"item": "cups_ace"},
+		{"item": "wands_ace"},
+		{"item": "bottle_absinthe"}
 	]
 	
 }
