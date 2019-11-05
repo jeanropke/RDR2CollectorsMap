@@ -47,7 +47,7 @@ var nazarCurrentDate;
 
 var fastTravelData;
 
-var weeklySet = 'witch_set';
+var weeklySet = 'fortune_teller_set';
 var weeklySetData = [];
 var date;
 var nocache = 70;
