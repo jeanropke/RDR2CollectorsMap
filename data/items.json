@@ -589,8 +589,6 @@
 	{"text": "flower_cardinal_5", "day": "2", "tool": "0", "icon": "american-flowers", "subdata": "cardinal", "x": "-70.25", "y": "150.3"},
 	{"text": "flower_cardinal_6", "day": "2", "tool": "0", "icon": "american-flowers", "subdata": "cardinal", "x": "-73.53", "y": "151.42"},
 	{"text": "flower_cardinal_7", "day": "2", "tool": "0", "icon": "american-flowers", "subdata": "cardinal", "x": "-81.53", "y": "141.55"},
-	{"text": "flower_cardinal_8", "day": "2", "tool": "0", "icon": "american-flowers", "subdata": "cardinal", "x": "-87.76", "y": "142.6"},
-	{"text": "flower_cardinal_9", "day": "2", "tool": "0", "icon": "american-flowers", "subdata": "cardinal", "x": "-88.59", "y": "142.85"},	
 	{"text": "flower_wisteria_2", "day": "2", "tool": "0", "icon": "american-flowers", "subdata": "wisteria", "x": "-29.85", "y": "154.07"},
 	{"text": "flower_wisteria_3", "day": "2", "tool": "0", "icon": "american-flowers", "subdata": "wisteria", "x": "-49.36", "y": "146.63"},
 	{"text": "flower_wisteria_4", "day": "2", "tool": "0", "icon": "american-flowers", "subdata": "wisteria", "x": "-85.14", "y": "72.63"},
