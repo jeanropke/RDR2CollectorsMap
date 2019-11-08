@@ -56,7 +56,7 @@ Menu.showAll = function() {
         $(value).children('span').removeClass("disabled")
     });
     enabledTypes = categories;
-    Map.addMarkers();
+    MapBase.addMarkers();
 };
 
 Menu.hideAll = function()
@@ -66,7 +66,7 @@ Menu.hideAll = function()
     });
 
     enabledTypes = [];
-    Map.addMarkers();
+    MapBase.addMarkers();
 };
 
 Menu.refreshItemsCounter = function()

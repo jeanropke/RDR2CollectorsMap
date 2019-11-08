@@ -2,12 +2,12 @@
  * Created by Jean on 2019-10-09.
  */
 
-var Map = {
+var MapBase = {
     minZoom: 2,
     maxZoom: 7
 };
 
-Map.init = function ()
+MapBase.init = function ()
 {
     var southWestTiles = L.latLng(-144, 0),
         northEastTiles = L.latLng(0, 176),
@@ -20,8 +20,8 @@ Map.init = function ()
 
     baseMap = L.map('map', {
         preferCanvas: true,
-        minZoom: Map.minZoom,
-        maxZoom: Map.maxZoom,
+        minZoom: MapBase.minZoom,
+        maxZoom: MapBase.maxZoom,
         zoomControl: false,
         crs: L.CRS.Simple,
         layers: [mapLayers[$.cookie('map-layer')]]
@@ -41,14 +41,14 @@ Map.init = function ()
 
     baseMap.on('click', function (e)
     {
-       Map.addCoordsOnMap(e);
+       MapBase.addCoordsOnMap(e);
     });
 
     baseMap.on('popupopen', function()
     {
         $('.remove-button').click(function(e)
         {
-            Map.removeItemFromMap($(event.target).data("item"));
+            MapBase.removeItemFromMap($(event.target).data("item"));
         });
     });
 
@@ -62,20 +62,20 @@ Map.init = function ()
         bounds = L.latLngBounds(southWest, northEast);
 
     baseMap.setMaxBounds(bounds);
-    Map.loadWeeklySet();
+    MapBase.loadWeeklySet();
 };
 
-Map.loadMarkers = function()
+MapBase.loadMarkers = function()
 {
     markers = [];
     $.getJSON('data/items.json?nocache='+nocache)
         .done(function(data) {
             markers = data;
-            Map.addMarkers(true);
+            MapBase.addMarkers(true);
         });
 };
 
-Map.addMarkers = function(refreshMenu = false) {
+MapBase.addMarkers = function(refreshMenu = false) {
 
     markersLayer.clearLayers();
 
@@ -108,13 +108,13 @@ Map.addMarkers = function(refreshMenu = false) {
                         {
                             if (visibleMarkers[value.text] == null)
                             {
-                                Map.addMarkerOnMap(value);
+                                MapBase.addMarkerOnMap(value);
                             }
                         }
                     });
                 }
                 else {
-                    Map.addMarkerOnMap(value);
+                    MapBase.addMarkerOnMap(value);
                 }
 
             }
@@ -124,10 +124,10 @@ Map.addMarkers = function(refreshMenu = false) {
     markersLayer.addTo(baseMap);
     Menu.refreshItemsCounter();
 
-    Map.addFastTravelMarker();
-    Map.setTreasures();
-    Map.addMadamNazar();
-    Map.removeCollectedMarkers();
+    MapBase.addFastTravelMarker();
+    MapBase.setTreasures();
+    MapBase.addMadamNazar();
+    MapBase.removeCollectedMarkers();
 
 
     if(refreshMenu)
@@ -135,16 +135,16 @@ Map.addMarkers = function(refreshMenu = false) {
 
 };
 
-Map.loadWeeklySet = function()
+MapBase.loadWeeklySet = function()
 {
     $.getJSON('data/weekly.json?nocache='+nocache)
         .done(function(data) {
             weeklySetData = data[weeklySet];
-            Map.loadFastTravels();
+            MapBase.loadFastTravels();
         });
 };
 
-Map.removeItemFromMap = function(itemName)
+MapBase.removeItemFromMap = function(itemName)
 {
 
     if(itemName.endsWith('_treasure'))
@@ -160,7 +160,7 @@ Map.removeItemFromMap = function(itemName)
         {
             treasureDisabled.push(itemName.toString());
         }
-        Map.addTreasuresToMap();
+        MapBase.addTreasuresToMap();
     }
     else
     {
@@ -174,7 +174,7 @@ Map.removeItemFromMap = function(itemName)
             else {
                 plantsDisabled.push(itemName);
             }
-            Map.addMarkers();
+            MapBase.addMarkers();
         }
         else
         {
@@ -227,13 +227,13 @@ Map.removeItemFromMap = function(itemName)
         }
 
         if ($("#routes").val() == 1)
-            Map.drawLines();
+            MapBase.drawLines();
 
         Menu.refreshItemsCounter();
     }
 };
 
-Map.getIconColor = function (value)
+MapBase.getIconColor = function (value)
 {
     switch(value){
         case "day_1":
@@ -251,7 +251,7 @@ Map.getIconColor = function (value)
     }
 };
 
-Map.addMarkerOnMap = function(value)
+MapBase.addMarkerOnMap = function(value)
 {
     var isWeekly = weeklySetData.filter(weekly => {
             return weekly.item === value.text;
@@ -260,7 +260,7 @@ Map.addMarkerOnMap = function(value)
     var tempMarker = L.marker([value.x, value.y], {
         icon: L.icon(
             {
-                iconUrl: './assets/images/icons/' + value.icon + '_' + Map.getIconColor(isWeekly ? 'weekly' : 'day_' + value.day)+'.png',
+                iconUrl: './assets/images/icons/' + value.icon + '_' + MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + value.day)+'.png',
                 iconSize: [35,45],
                 iconAnchor: [17,42],
                 popupAnchor: [1,-32],
@@ -274,7 +274,7 @@ Map.addMarkerOnMap = function(value)
     tempMarker
       .bindPopup(
         '<h1>'+languageData[lang][value.text + ".name"]+' - '+ languageData[lang]["menu.day"] + ' ' + value.day+'</h1>' +
-        '<p>'+Map.getToolIcon(value.tool) + ' ' + languageData[lang][value.text + "_" + value.day + ".desc"] +'</p>' +
+        '<p>'+MapBase.getToolIcon(value.tool) + ' ' + languageData[lang][value.text + "_" + value.day + ".desc"] +'</p>' +
         (value.icon == 'random' ? 'Random items resets 24 hours after picking up' : '') +
         videoText +
         '<p class="remove-button" data-item="'+value.text+'">'+languageData[lang]["map.remove_add"]+'</p>'
@@ -289,7 +289,7 @@ Map.addMarkerOnMap = function(value)
     markersLayer.addLayer(tempMarker);
 };
 
-Map.getToolIcon = function (type) {
+MapBase.getToolIcon = function (type) {
     switch(type)
     {
         case '0':
@@ -304,7 +304,7 @@ Map.getToolIcon = function (type) {
     }
 };
 
-Map.removeCollectedMarkers = function()
+MapBase.removeCollectedMarkers = function()
 {
     $.each(markers, function (key, value)
     {
@@ -322,15 +322,15 @@ Map.removeCollectedMarkers = function()
     });
 };
 
-Map.loadFastTravels = function () {
+MapBase.loadFastTravels = function () {
     $.getJSON('data/fasttravels.json?nocache='+nocache)
         .done(function(data) {
             fastTravelData = data;
-            Map.loadMadamNazar();
+            MapBase.loadMadamNazar();
         });
 };
 
-Map.addFastTravelMarker = function()
+MapBase.addFastTravelMarker = function()
 {
     if(enabledTypes.includes('fast-travel'))
     {
@@ -357,7 +357,7 @@ Map.addFastTravelMarker = function()
     }
 };
 
-Map.debugMarker = function (lat, long)
+MapBase.debugMarker = function (lat, long)
 {
     var marker = L.marker([lat, long], {
     icon: L.icon({
@@ -375,7 +375,7 @@ Map.debugMarker = function (lat, long)
     markersLayer.addLayer(marker);
 };
 
-Map.addCoordsOnMap = function(coords)
+MapBase.addCoordsOnMap = function(coords)
 {
     // Show clicked coordinates (like google maps)
     if (showCoordinates)
@@ -395,7 +395,7 @@ Map.addCoordsOnMap = function(coords)
 
 };
 
-Map.loadMadamNazar = function()
+MapBase.loadMadamNazar = function()
 {
 
     $.getJSON('https://pepegapi.jeanropke.net/nazar.php')
@@ -406,12 +406,12 @@ Map.loadMadamNazar = function()
             $.getJSON('data/nazar.json?nocache='+nocache)
                 .done(function(data) {
                     nazarLocations = data;
-                    Map.loadTreasures();
+                    MapBase.loadTreasures();
             });
         });
 };
 
-Map.addMadamNazar = function ()
+MapBase.addMadamNazar = function ()
 {
     if(nazarCurrentLocation == null)
     {
@@ -435,15 +435,15 @@ Map.addMadamNazar = function ()
     }
 };
 
-Map.loadTreasures = function() {
+MapBase.loadTreasures = function() {
     $.getJSON('data/treasures.json?nocache='+nocache)
         .done(function (data) {
             treasureData = data;
-            Map.loadMarkers();
+            MapBase.loadMarkers();
     });
 };
 
-Map.setTreasures = function ()
+MapBase.setTreasures = function ()
 {
     treasureMarkers = [];
     if(enabledTypes.includes('treasure')) {
@@ -473,11 +473,11 @@ Map.setTreasures = function ()
             treasureMarkers.push({treasure: value.text, marker: marker, circle: circle});
             treasureDisabled.push(value.text);
         });
-        Map.addTreasuresToMap();
+        MapBase.addTreasuresToMap();
     }
 };
 
-Map.addTreasuresToMap = function () {
+MapBase.addTreasuresToMap = function () {
 
     treasuresLayer.clearLayers();
 
@@ -494,7 +494,7 @@ Map.addTreasuresToMap = function () {
 
 };
 
-Map.drawLines = function() {
+MapBase.drawLines = function() {
     var connections = [];
     $.each(routesData[day], function(nodeKey, nodeValue)
     {
