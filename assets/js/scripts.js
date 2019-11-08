@@ -112,7 +112,7 @@ function init()
 
     Language.load();
     Language.setMenuLanguage();
-    Map.init();
+    MapBase.init();
 
     setMapBackground($.cookie('map-layer'));
 
@@ -210,10 +210,10 @@ $("#day").on("input", function()
     $.cookie('ignore-days', null);
 
     day = $('#day').val();
-    Map.addMarkers();
+    MapBase.addMarkers();
 
     if($("#routes").val() == 1)
-        Map.drawLines();
+        MapBase.drawLines();
 
 
 });
@@ -229,7 +229,7 @@ $("#search").on("input", function()
                 searchTerms.push(value.trim());
         }
     });
-    Map.addMarkers(false);
+    MapBase.addMarkers(false);
 });
 
 $("#routes").on("change", function()
@@ -240,14 +240,14 @@ $("#routes").on("change", function()
         }
     }
     else {
-        Map.drawLines();
+        MapBase.drawLines();
     }
 });
 
 $("#tools").on("change", function()
 {
     toolType = $("#tools").val();
-    Map.addMarkers();
+    MapBase.addMarkers();
 });
 
 $("#reset-markers").on("change", function()
@@ -266,7 +266,7 @@ $("#reset-markers").on("change", function()
     $.cookie('removed-markers-daily', resetMarkersDaily, { expires: 999 });
 
 
-    Map.removeCollectedMarkers();
+    MapBase.removeCollectedMarkers();
 });
 
 $("#custom-routes").on("change", function()
@@ -300,7 +300,7 @@ $("#language").on("change", function()
     Language.setMenuLanguage();
 
 
-    Map.addMarkers();
+    MapBase.addMarkers();
     Menu.refreshMenu();
 });
 
@@ -319,9 +319,9 @@ $('.menu-option.clickable').on('click', function ()
     {
         enabledTypes.push(menu.data('type'));
     }
-    Map.addMarkers();
+    MapBase.addMarkers();
     if($("#routes").val() == 1)
-        Map.drawLines();
+        MapBase.drawLines();
 });
 
 
@@ -334,10 +334,10 @@ $(document).on('click', '.collectible', function(){
     var collectible = $(this);
     collectible.toggleClass('disabled');
 
-    Map.removeItemFromMap(collectible.data('type'));
+    MapBase.removeItemFromMap(collectible.data('type'));
 
     if($("#routes").val() == 1)
-        Map.drawLines();
+        MapBase.drawLines();
 });
 
 $('.menu-toggle').on('click', function()
