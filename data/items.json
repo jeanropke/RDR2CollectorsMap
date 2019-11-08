@@ -500,6 +500,9 @@
 	{"text": "bracelet_hajnal_garnet_bangle", "day": "3", "tool": "0", "icon": "lost-bracelet", "x": "-78.0703125", "y": "90.15625", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=921s"},
 	
 	{"text": "flower_blood_flower_2", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "blood_flower", "x": "-76.2890625", "y": "146.015625", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=305s"},
+	{"text": "flower_blood_flower_3", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "blood_flower", "x": "-77.8515625", "y": "135.8046875"},
+ 	{"text": "flower_blood_flower_4", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "blood_flower", "x": "-92.0859375", "y": "144.203125"},
+	{"text": "flower_blood_flower_5", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "blood_flower", "x": "-89.515625", "y": "143.0625"},
 	{"text": "flower_cardinal_2", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "cardinal", "x": "-75.3046875", "y": "140.7109375"},
 	{"text": "flower_wild_rhubarb_2", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "wild_rhubarb", "x": "-105.890625", "y": "35.296875"},
 	{"text": "flower_wild_rhubarb_3", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "wild_rhubarb", "x": "-97.57", "y": "63.07"},
@@ -508,6 +511,8 @@
 	{"text": "flower_wild_rhubarb_6", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "wild_rhubarb", "x": "-101.6", "y": "34.42"},
 	{"text": "flower_creek_plum_2", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "creek_plum", "x": "-85.94", "y": "123.16"},
 	{"text": "flower_creek_plum_3", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "creek_plum", "x": "-89.36", "y": "132.04"},
+	{"text": "flower_creek_plum_4", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "creek_plum", "x": "-61.1015625", "y": "84.9140625"},
+	{"text": "flower_creek_plum_5", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "creek_plum", "x": "-77.828125", "y": "82.9375"},
 	{"text": "flower_bitterweed_2", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "bitterweed", "x": "-59.33", "y": "150.8"},
 	{"text": "flower_bitterweed_3", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "bitterweed", "x": "-62.04", "y": "146.29"},
 	{"text": "flower_bitterweed_4", "day": "1", "tool": "0", "icon": "american-flowers", "subdata": "bitterweed", "x": "-49.83995312", "y": "147.9677183"},
