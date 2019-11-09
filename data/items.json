@@ -234,7 +234,6 @@
 		{"text": "egg_egret", "day": "1", "tool": "0", "x": "-67.90625", "y": "149.7578125", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=347s"},
 		{"text": "egg_duck", "day": "1", "tool": "0", "x": "-29.6328125", "y": "154.1796875", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=398s"},
 		{"text": "egg_goose_1", "day": "1", "tool": "0", "x": "-95.890625", "y": "136.9453125", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=429s"},
-		{"text": "egg_goose_2", "day": "1", "tool": "0", "x": "-69.1958", "y": "141.139"},
 		{"text": "egg_spoonbill", "day": "2", "tool": "0", "x": "-85.75", "y": "143.2421875", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=466s"},
 		{"text": "egg_heron", "day": "2", "tool": "0", "x": "-71.0703125", "y": "144.3984375", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=499s"},
 		{"text": "egg_loon", "day": "2", "tool": "0", "x": "-92.484375", "y": "121.8515625", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=535s"},
