@@ -62,7 +62,8 @@ MapBase.init = function ()
         bounds = L.latLngBounds(southWest, northEast);
 
     baseMap.setMaxBounds(bounds);
-    MapBase.loadWeeklySet();
+
+    miscMarkersLayer.addTo(baseMap);
 };
 
 MapBase.loadMarkers = function()
@@ -77,24 +78,23 @@ MapBase.loadMarkers = function()
 
 MapBase.addMarkers = function(refreshMenu = false) {
 
-    markersLayer.clearLayers();
+    itemMarkersLayer.clearLayers();
 
     visibleMarkers = [];
-    $.each(markers, function (key, value)
+    $.each(enabledTypes, function (key, value)
     {
-
-        if(parseInt(toolType) < parseInt(value.tool) && toolType !== "3")
-            return;
-
-        if(value.subdata != null)
-            if(plantsDisabled.includes(value.subdata))
+        $.each(markers[value], function(mKey, marker)
+        {
+            if(parseInt(toolType) < parseInt(marker.tool) && toolType !== "3")
                 return;
 
-        if(enabledTypes.includes(value.icon))
-        {
-            if (value.day == day || $.cookie('ignore-days') == 'true')
+            if(marker.subdata != null)
+                if(plantsDisabled.includes(marker.subdata))
+                    return;
+
+            if (marker.day == day || marker.day.includes(day))
             {
-                if (languageData[lang][value.text+'.name'] == null)
+                if (value != 'random' && languageData[lang][marker.text+'.name'] == null)
                 {
                     console.error('[LANG]['+lang+']: Text not found: '+value.text);
                     return;
@@ -104,31 +104,28 @@ MapBase.addMarkers = function(refreshMenu = false) {
                 {
                     $.each(searchTerms, function (id, term)
                     {
-                        if (languageData[lang][value.text+'.name'].toLowerCase().indexOf(term.toLowerCase()) !== -1)
+                        if(marker.title == null)
+                            return;
+                        if (marker.title.toLowerCase().indexOf(term.toLowerCase()) !== -1)
                         {
-                            if (visibleMarkers[value.text] == null)
+                            if (visibleMarkers[marker.text] == null)
                             {
-                                MapBase.addMarkerOnMap(value);
+                                MapBase.addMarkerOnMap(marker, value);
                             }
                         }
                     });
                 }
                 else {
-                    MapBase.addMarkerOnMap(value);
+                    MapBase.addMarkerOnMap(marker, value);
                 }
-
             }
-        }
+
+        });
     });
 
-    markersLayer.addTo(baseMap);
+    itemMarkersLayer.addTo(baseMap);
     Menu.refreshItemsCounter();
-
-    MapBase.addFastTravelMarker();
-    MapBase.setTreasures();
-    MapBase.addMadamNazar();
     MapBase.removeCollectedMarkers();
-
 
     if(refreshMenu)
         Menu.refreshMenu();
@@ -140,7 +137,6 @@ MapBase.loadWeeklySet = function()
     $.getJSON('data/weekly.json?nocache='+nocache)
         .done(function(data) {
             weeklySetData = data[weeklySet];
-            MapBase.loadFastTravels();
         });
 };
 
@@ -251,7 +247,7 @@ MapBase.getIconColor = function (value)
     }
 };
 
-MapBase.addMarkerOnMap = function(value)
+MapBase.addMarkerOnMap = function(value, category)
 {
     var isWeekly = weeklySetData.filter(weekly => {
             return weekly.item === value.text;
@@ -260,7 +256,7 @@ MapBase.addMarkerOnMap = function(value)
     var tempMarker = L.marker([value.x, value.y], {
         icon: L.icon(
             {
-                iconUrl: './assets/images/icons/' + value.icon + '_' + MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + value.day)+'.png',
+                iconUrl: './assets/images/icons/' + category + '_' + MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + day)+'.png',
                 iconSize: [35,45],
                 iconAnchor: [17,42],
                 popupAnchor: [1,-32],
@@ -271,11 +267,13 @@ MapBase.addMarkerOnMap = function(value)
     });
 
     var videoText = value.video != null ? '<p align="center" style="padding: 5px;"><a href="'+value.video+'" target="_blank">Video</a></p>' : '';
+    var popupTitle = (category == 'random') ? languageData[lang]["random_item.name"] +value.text.replace('random_item_', '') : languageData[lang][value.text + ".name"]+' - '+ languageData[lang]["menu.day"] + ' ' + value.day;
+    var popupContent = (category == 'random') ? 'Random items resets 24 hours after picking up' : languageData[lang][value.text + "_" + day + ".desc"];
+    value.title = popupTitle;
     tempMarker
       .bindPopup(
-        '<h1>'+languageData[lang][value.text + ".name"]+' - '+ languageData[lang]["menu.day"] + ' ' + value.day+'</h1>' +
-        '<p>'+MapBase.getToolIcon(value.tool) + ' ' + languageData[lang][value.text + "_" + value.day + ".desc"] +'</p>' +
-        (value.icon == 'random' ? 'Random items resets 24 hours after picking up' : '') +
+        '<h1>'+ popupTitle +'</h1>' +
+        '<p>'+ MapBase.getToolIcon(value.tool) + popupContent +'</p>' +
         videoText +
         '<p class="remove-button" data-item="'+value.text+'">'+languageData[lang]["map.remove_add"]+'</p>'
       )
@@ -286,7 +284,7 @@ MapBase.addMarkerOnMap = function(value)
 
 
     visibleMarkers[value.text] = tempMarker;
-    markersLayer.addLayer(tempMarker);
+    itemMarkersLayer.addLayer(tempMarker);
 };
 
 MapBase.getToolIcon = function (type) {
@@ -306,19 +304,22 @@ MapBase.getToolIcon = function (type) {
 
 MapBase.removeCollectedMarkers = function()
 {
-    $.each(markers, function (key, value)
+    $.each(enabledTypes, function(key, value)
     {
-        if(visibleMarkers[value.text] != null)
+        $.each(markers[value], function (mKey, marker)
         {
-            if (disableMarkers.includes(value.text.toString()))
+            if(visibleMarkers[marker.text] != null)
             {
-                $(visibleMarkers[value.text]._icon).css('opacity', '.35');
+                if (disableMarkers.includes(marker.text.toString()))
+                {
+                    $(visibleMarkers[marker.text]._icon).css('opacity', '.35');
+                }
+                else
+                {
+                    $(visibleMarkers[marker.text]._icon).css('opacity', '1');
+                }
             }
-            else
-            {
-                $(visibleMarkers[value.text]._icon).css('opacity', '1');
-            }
-        }
+        });
     });
 };
 
@@ -326,19 +327,19 @@ MapBase.loadFastTravels = function () {
     $.getJSON('data/fasttravels.json?nocache='+nocache)
         .done(function(data) {
             fastTravelData = data;
-            MapBase.loadMadamNazar();
+            MapBase.addFastTravelMarker();
         });
 };
 
 MapBase.addFastTravelMarker = function()
 {
-    if(enabledTypes.includes('fast-travel'))
+    if(enabledTypes.includes('fast_travel'))
     {
         $.each(fastTravelData, function (key, value)
         {
             var marker = L.marker([value.x, value.y], {
                 icon: L.icon({
-                    iconUrl: './assets/images/icons/fast-travel_gray.png',
+                    iconUrl: './assets/images/icons/fast_travel_gray.png',
                     iconSize: [35,45],
                     iconAnchor: [17,42],
                     popupAnchor: [1,-32],
@@ -352,7 +353,7 @@ MapBase.addFastTravelMarker = function()
             }
             marker.bindPopup(`<h1> ${languageData[lang][value.text+'.name']}</h1><p>  </p>`);
 
-            markersLayer.addLayer(marker);
+            miscMarkersLayer.addLayer(marker);
         });
     }
 };
@@ -372,7 +373,7 @@ MapBase.debugMarker = function (lat, long)
 });
 
     marker.bindPopup(`<h1>Debug Marker</h1><p>  </p>`);
-    markersLayer.addLayer(marker);
+    itemMarkersLayer.addLayer(marker);
 };
 
 MapBase.addCoordsOnMap = function(coords)
@@ -391,7 +392,7 @@ MapBase.addCoordsOnMap = function(coords)
 
     //console.log(`{"text": "_treasure", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}", "radius": "5"},`);
     if(debugTool != null)
-    console.log(`{"text": "random_item_", "day": "${day}", "tool": "${debugTool}", "icon": "random", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}"},`);
+        console.log(`{"text": "random_item_", "day": ["1", "2", "3"], "tool": "${debugTool}", "icon": "random", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}"},`);
 
 };
 
@@ -406,7 +407,7 @@ MapBase.loadMadamNazar = function()
             $.getJSON('data/nazar.json?nocache='+nocache)
                 .done(function(data) {
                     nazarLocations = data;
-                    MapBase.loadTreasures();
+                    MapBase.addMadamNazar();
             });
         });
 };
@@ -431,7 +432,7 @@ MapBase.addMadamNazar = function ()
         });
 
         marker.bindPopup(`<h1>${languageData[lang]['madam_nazar.name']} - ${nazarCurrentDate}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazarIO' target="_blank">@MadamNazarIO</a>.</p>`);
-        markersLayer.addLayer(marker);
+        miscMarkersLayer.addLayer(marker);
     }
 };
 
@@ -439,7 +440,7 @@ MapBase.loadTreasures = function() {
     $.getJSON('data/treasures.json?nocache='+nocache)
         .done(function (data) {
             treasureData = data;
-            MapBase.loadMarkers();
+            MapBase.setTreasures();
     });
 };
 
@@ -498,18 +499,26 @@ MapBase.drawLines = function() {
     var connections = [];
     $.each(routesData[day], function(nodeKey, nodeValue)
     {
+        $.each(enabledTypes, function (key, value) {
+            if (markers[value] == null)
+                return;
 
-        var marker = markers.filter(item => {
-            if(item.day == day)
-                return item.text === nodeValue.key;
-        })[0];//Need this 0 because its an array with 1 element
+            var marker = markers[value].filter(item => {
+                if (item.day == day)
+                    return item.text === nodeValue.key;
+            })[0];//Need this 0 because its an array with 1 element
 
-        if (marker.text == nodeValue.key && marker.day ==day && !disableMarkers.includes(nodeValue.key) && enabledTypes.includes(marker.icon))
-        {
-            var connection = [marker.x, marker.y];
-            connections.push(connection);
-        }
+            if (marker == null)
+                return;
+
+            if (marker.text == nodeValue.key && marker.day == day && !disableMarkers.includes(nodeValue.key))// && enabledTypes.includes(marker.icon))
+            {
+                var connection = [marker.x, marker.y];
+                connections.push(connection);
+            }
+        });
     });
+
 
     if (polylines instanceof L.Polyline)
     {

@@ -6,15 +6,18 @@ var Menu = {};
 Menu.refreshMenu = function () {
     $.each(categories, function (key, value) {
 
+        if(markers[value] == null)
+            return;
+
         $('.menu-hidden[data-type=' + value + ']').children('p.collectible').remove();
 
-        markers.filter(function (item) {
-            if (item.day == day && item.icon == value) {
+        markers[value].filter(function (item) {
+            if (item.day == day) {
                 if (item.subdata == null) {
                     $('.menu-hidden[data-type=' + value + ']').append('<p class="collectible" data-type="' + item.text + '">' + languageData[lang][item.text + '.name'] + '</p>');
                 }
                 else {
-                    if ($(`.menu-hidden[data-type='american-flowers']`).children(`p.collectible[data-type='${item.subdata}']`).length > 0)
+                    if ($(`.menu-hidden[data-type='american_flowers']`).children(`p.collectible[data-type='${item.subdata}']`).length > 0)
                         return;
 
                     var tempName = languageData[lang][item.text + '.name'];
