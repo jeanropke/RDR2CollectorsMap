@@ -69,8 +69,11 @@ function init()
 
     if(typeof $.cookie('removed-items-2') === 'undefined')
         $.cookie('removed-items-2', '', {expires: resetMarkersDaily ? 1 : 999});
-
-
+      
+    if(typeof $.cookie('tools') !== 'undefined') {
+        $("#tools").val($.cookie('tools'));
+    }
+    
     disableMarkers = ($.cookie('removed-items') + $.cookie('removed-items-2')).split(";");
 
     enabledTypes = enabledTypes.filter(function(item) {
@@ -247,6 +250,7 @@ $("#routes").on("change", function()
 $("#tools").on("change", function()
 {
     toolType = $("#tools").val();
+    $.cookie('tools', toolType, { expires: 999 });
     MapBase.addMarkers();
 });
 
