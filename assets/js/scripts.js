@@ -1,16 +1,17 @@
 var day;
 var baseMap;
 var markers = [];
-var markersLayer = new L.LayerGroup();
+var itemMarkersLayer = new L.LayerGroup();
+var miscMarkersLayer = new L.LayerGroup();
 
 var searchTerms = [];
 var visibleMarkers = [];
 var resetMarkersDaily;
 var disableMarkers = [];
 var categories = [
-    'american-flowers', 'antique-bottles', 'arrowhead', 'bird-eggs', 'coin', 'family-heirlooms', 'lost-bracelet',
-    'lost-earrings', 'lost-necklaces', 'lost-ring', 'card-cups', 'card-pentacles', 'card-swords', 'card-wands', 'nazar',
-    'fast-travel', 'treasure', 'random'
+    'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
+    'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
+    'fast_travel', 'treasure', 'random'
 ];
 
 var plantsCategories = [
@@ -50,7 +51,7 @@ var fastTravelData;
 var weeklySet = 'fortune_teller_set';
 var weeklySetData = [];
 var date;
-var nocache = 75;
+var nocache = 100;
 
 var wikiLanguage = [];
 
@@ -213,7 +214,7 @@ $("#day").on("input", function()
 {
     $.cookie('ignore-days', null);
 
-    day = $('#day').val();
+    day = parseInt($('#day').val());
     MapBase.addMarkers();
 
     if($("#routes").val() == 1)
@@ -407,3 +408,10 @@ function getVirtual(time)
     var now = new Date(virtualOrigin + (time - realOrigin) * factor);
     return new Date(now.getTime() + now.getTimezoneOffset() * 60000);
 }
+
+window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", MapBase.loadWeeklySet());
+window.addEventListener("DOMContentLoaded", MapBase.loadFastTravels());
+window.addEventListener("DOMContentLoaded", MapBase.loadMadamNazar());
+window.addEventListener("DOMContentLoaded", MapBase.loadTreasures());
+window.addEventListener("DOMContentLoaded", MapBase.loadMarkers());
