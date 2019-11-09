@@ -72,6 +72,7 @@ function init()
       
     if(typeof $.cookie('tools') !== 'undefined') {
         $("#tools").val($.cookie('tools'));
+        toolType = $.cookie('tools');
     }
     
     disableMarkers = ($.cookie('removed-items') + $.cookie('removed-items-2')).split(";");
