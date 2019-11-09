@@ -294,10 +294,10 @@ MapBase.getToolIcon = function (type) {
             return '';
             break;
         case '1':
-            return '⛏';
+            return '<img class="tool-type" src="assets/images/shovel.png">';
             break;
         case '2':
-            return '🧲';
+            return '<img class="tool-type" src="assets/images/magnet.png">';
             break;
     }
 };
