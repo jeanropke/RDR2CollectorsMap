@@ -46,5 +46,6 @@
 	{"key": "menu.export_route", "value": "輸出路線"},
 	{"key": "menu.treasures", "value": "藏寶圖"},
 	{"key": "menu.random_spots", "value": "Random Spots"},
-	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"}
+	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"},
+	{"key": "menu.rdo_map", "value": "RDO Map"}
 ]
