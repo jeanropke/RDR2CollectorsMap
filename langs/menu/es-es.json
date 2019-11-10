@@ -50,6 +50,7 @@
 	{"key": "routes.empty", "value": "Ruta vacía"},
 	{"key": "routes.invalid", "value": "Ruta inválida"},
 	{"key": "menu.random_spots", "value": "Random Spots"},
-	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"}
+	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"},
+	{"key": "menu.rdo_map", "value": "RDO Map"}
 ]
 
