@@ -399,7 +399,7 @@ MapBase.addCoordsOnMap = function(coords)
 MapBase.loadMadamNazar = function()
 {
 
-    $.getJSON('https://pepegapi.jeanropke.net/nazar.php')
+    $.getJSON('https://pepegapi.jeanropke.net/rdo/nazar')
         .done(function(nazar) {
             nazarCurrentLocation = nazar.nazar_id-1;
             nazarCurrentDate = nazar.date;
