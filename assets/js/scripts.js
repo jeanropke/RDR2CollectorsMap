@@ -2,7 +2,6 @@ var day;
 var baseMap;
 var markers = [];
 var itemMarkersLayer = new L.LayerGroup();
-var miscMarkersLayer = new L.LayerGroup();
 
 var searchTerms = [];
 var visibleMarkers = [];
