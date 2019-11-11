@@ -50,7 +50,7 @@ var fastTravelData;
 var weeklySet = 'fortune_teller_set';
 var weeklySetData = [];
 var date;
-var nocache = 101;
+var nocache = 102;
 
 var wikiLanguage = [];
 
