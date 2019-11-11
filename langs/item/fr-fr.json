@@ -1349,7 +1349,12 @@
 	{"key": "flower_chocolate_daisy_14.name", "value": "Fleur Chocolat #14"},
 	{"key": "flower_chocolate_daisy_14_1.desc", "value": ""},
 	{"key": "flower_chocolate_daisy_14_2.desc", "value": ""},
-	{"key": "flower_chocolate_daisy_14_3.desc", "value": ""},	
+	{"key": "flower_chocolate_daisy_14_3.desc", "value": ""},
+	
+	{"key": "flower_chocolate_daisy_15.name", "value": "Fleur Chocolat #15"},
+	{"key": "flower_chocolate_daisy_15_1.desc", "value": ""},
+	{"key": "flower_chocolate_daisy_15_2.desc", "value": ""},
+	{"key": "flower_chocolate_daisy_15_3.desc", "value": ""},	
 	
 	{"key": "random_item.name", "value": "Objet Aléatoire #"}
 ]
