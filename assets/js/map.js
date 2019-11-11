@@ -63,7 +63,6 @@ MapBase.init = function ()
 
     baseMap.setMaxBounds(bounds);
 
-    miscMarkersLayer.addTo(baseMap);
 };
 
 MapBase.loadMarkers = function()
@@ -123,9 +122,14 @@ MapBase.addMarkers = function(refreshMenu = false) {
         });
     });
 
+    MapBase.addFastTravelMarker(!refreshMenu);
+    MapBase.addMadamNazar(!refreshMenu);
+
     itemMarkersLayer.addTo(baseMap);
     Menu.refreshItemsCounter();
     MapBase.removeCollectedMarkers();
+
+    MapBase.addTreasuresToMap();
 
     if(refreshMenu)
         Menu.refreshMenu();
@@ -327,7 +331,6 @@ MapBase.loadFastTravels = function () {
     $.getJSON('data/fasttravels.json?nocache='+nocache)
         .done(function(data) {
             fastTravelData = data;
-            MapBase.addFastTravelMarker();
         });
 };
 
@@ -337,6 +340,7 @@ MapBase.addFastTravelMarker = function()
     {
         $.each(fastTravelData, function (key, value)
         {
+
             var marker = L.marker([value.x, value.y], {
                 icon: L.icon({
                     iconUrl: './assets/images/icons/fast_travel_gray.png',
@@ -353,7 +357,7 @@ MapBase.addFastTravelMarker = function()
             }
             marker.bindPopup(`<h1> ${languageData[lang][value.text+'.name']}</h1><p>  </p>`);
 
-            miscMarkersLayer.addLayer(marker);
+            itemMarkersLayer.addLayer(marker);
         });
     }
 };
@@ -407,13 +411,16 @@ MapBase.loadMadamNazar = function()
             $.getJSON('data/nazar.json?nocache='+nocache)
                 .done(function(data) {
                     nazarLocations = data;
-                    MapBase.addMadamNazar();
+                    MapBase.addMadamNazar(true);
             });
         });
 };
 
-MapBase.addMadamNazar = function ()
+MapBase.addMadamNazar = function (firstLoad)
 {
+    if(!firstLoad)
+        return;
+
     if(nazarCurrentLocation == null)
     {
         console.error('Unable to get Nazar position. Try again later.');
@@ -432,7 +439,7 @@ MapBase.addMadamNazar = function ()
         });
 
         marker.bindPopup(`<h1>${languageData[lang]['madam_nazar.name']} - ${nazarCurrentDate}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazarIO' target="_blank">@MadamNazarIO</a>.</p>`);
-        miscMarkersLayer.addLayer(marker);
+        itemMarkersLayer.addLayer(marker);
     }
 };
 
@@ -482,6 +489,9 @@ MapBase.addTreasuresToMap = function () {
 
     treasuresLayer.clearLayers();
 
+    if(!enabledTypes.includes('treasure'))
+        return;
+
     $.each(treasureMarkers, function(key, value)
     {
         if(!treasureDisabled.includes(value.treasure)) {
@@ -491,7 +501,6 @@ MapBase.addTreasuresToMap = function () {
     });
 
     treasuresLayer.addTo(baseMap);
-
 
 };
 
