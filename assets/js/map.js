@@ -96,7 +96,7 @@ MapBase.addMarkers = function(refreshMenu = false) {
             {
                 if (value != 'random' && languageData[lang][marker.text+'.name'] == null)
                 {
-                    console.error('[LANG]['+lang+']: Text not found: '+value.text);
+                    console.error('[LANG]['+lang+']: Text not found: '+marker.text);
                     return;
                 }
 
@@ -268,7 +268,7 @@ MapBase.addMarkerOnMap = function(value, category)
 
     var videoText = value.video != null ? '<p align="center" style="padding: 5px;"><a href="'+value.video+'" target="_blank">Video</a></p>' : '';
     var popupTitle = (category == 'random') ? languageData[lang]["random_item.name"] +value.text.replace('random_item_', '') : languageData[lang][value.text + ".name"]+' - '+ languageData[lang]["menu.day"] + ' ' + value.day;
-    var popupContent = (category == 'random') ? 'Random items resets 24 hours after picking up' : languageData[lang][value.text + "_" + day + ".desc"];
+    var popupContent = (category == 'random') ? 'Random items resets 24 hours after picking up' : (languageData[lang][value.text + "_" + day + ".desc"] == null) ? '' : languageData[lang][value.text + "_" + day + ".desc"];
     value.title = popupTitle;
     tempMarker
       .bindPopup(
