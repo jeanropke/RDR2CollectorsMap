@@ -502,6 +502,8 @@
 		{"text": "flower_chocolate_daisy_11", "day": "2", "tool": "0", "subdata": "chocolate_daisy", "x": "-74", "y": "117.94"},
 		{"text": "flower_chocolate_daisy_12", "day": "2", "tool": "0", "subdata": "chocolate_daisy", "x": "-71.32", "y": "102.89"},
 		{"text": "flower_chocolate_daisy_13", "day": "2", "tool": "0", "subdata": "chocolate_daisy", "x": "-70.43", "y": "103.98"},
+		{"text": "flower_chocolate_daisy_14", "day": "2", "tool": "0", "subdata": "chocolate_daisy", "x": "-71.8671875", "y": "110.15625"},
+		{"text": "flower_chocolate_daisy_15", "day": "2", "tool": "0", "subdata": "chocolate_daisy", "x": "-72.0859375", "y": "107.046875"},
 		{"text": "flower_wisteria", "day": "2", "tool": "0", "subdata": "wisteria", "x": "-36.8046875", "y": "150.4765625", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=744s"},
 		{"text": "flower_wisteria_2", "day": "2", "tool": "0", "subdata": "wisteria", "x": "-29.85", "y": "154.07"},
 		{"text": "flower_wisteria_3", "day": "2", "tool": "0", "subdata": "wisteria", "x": "-49.36", "y": "146.63"},
