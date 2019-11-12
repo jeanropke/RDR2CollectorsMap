@@ -47,10 +47,10 @@ var nazarCurrentDate;
 
 var fastTravelData;
 
-var weeklySet = 'fortune_teller_set';
+var weeklySet = 'herbalist_set';
 var weeklySetData = [];
 var date;
-var nocache = 102;
+var nocache = 103;
 
 var wikiLanguage = [];
 

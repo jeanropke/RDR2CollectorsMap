@@ -18,6 +18,11 @@
 		{"item": "cups_ace"},
 		{"item": "wands_ace"},
 		{"item": "bottle_absinthe"}
+	],
+	"herbalist_set": [
+		{"item": "flower_blood_flower_1"},
+		{"item": "flower_chocolate_daisy"},
+		{"item": "flower_creek_plum"}
 	]
 	
 }
