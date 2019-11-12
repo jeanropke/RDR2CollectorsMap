@@ -361,7 +361,7 @@ $('.menu-toggle').on('click', function()
     $('.counter-container').toggleClass('counter-menu-opened');
 
 });
-
+var timerAlert = false;
 setInterval(function()
 {
     var nextGMTMidnight = new Date();
@@ -369,23 +369,27 @@ setInterval(function()
     nextGMTMidnight.setUTCMinutes(0);
     nextGMTMidnight.setUTCSeconds(0);
     var countdownDate = nextGMTMidnight - new Date();
-    if(countdownDate <= 0)
+
+    if(countdownDate <= 10)
     {
-        $('#countdown').text('00:00:00');
+        if(!timerAlert) {
+            alert('Cycle is changing in 10 seconds.');
+            timerAlert = true;
+        }
     }
+
+
+    var hours = Math.floor((countdownDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((countdownDate % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((countdownDate % (1000 * 60)) / 1000);
+
+    $('#countdown').text(addZeroToNumber(hours)+':'+addZeroToNumber(minutes)+':'+addZeroToNumber(seconds));
+
+    if(getVirtual(new Date()).getHours() >= 22 || getVirtual(new Date()).getHours() < 5)
+        $('#day-cycle').css('background', 'url(assets/images/moon.png)');
     else
-    {
-        var hours = Math.floor((countdownDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((countdownDate % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((countdownDate % (1000 * 60)) / 1000);
+        $('#day-cycle').css('background', 'url(assets/images/sun.png)');
 
-        $('#countdown').text(addZeroToNumber(hours)+':'+addZeroToNumber(minutes)+':'+addZeroToNumber(seconds));
-
-        if(getVirtual(new Date()).getHours() >= 22 || getVirtual(new Date()).getHours() < 5)
-            $('#day-cycle').css('background', 'url(assets/images/moon.png)');
-        else
-            $('#day-cycle').css('background', 'url(assets/images/sun.png)');
-    }
 }, 1000);
 
 function addZeroToNumber(number)
