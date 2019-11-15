@@ -554,7 +554,7 @@
 		{"text": "flower_bitterweed_7", "day": "3", "tool": "0", "subdata": "bitterweed", "x": "-48.32", "y": "154.27"},
 		{"text": "flower_agarita_1", "day": "3", "tool": "0", "subdata": "agarita", "x": "-108.28125", "y": "66.9921875", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=858s"},
 		{"text": "flower_agarita_2", "day": "3", "tool": "0", "subdata": "agarita", "x": "-119.1171875", "y": "54.1484375", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=892s"},
-		{"text": "flower_wild_rhubarb", "day": "3", "tool": "0", "subdata": "wild_rhubarb", "x": "-101.3125", "y": "54.09375", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=929s"},
+		{"text": "flower_wild_rhubarb", "day": "3", "tool": "0", "subdata": "wild_rhubarb", "x": "-101.453125", "y": "54.09375", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=929s"},
 		{"text": "flower_wild_rhubarb_2", "day": "3", "tool": "0", "subdata": "wild_rhubarb", "x": "-105.17", "y": "60.57"},
 		{"text": "flower_wild_rhubarb_3", "day": "3", "tool": "0", "subdata": "wild_rhubarb", "x": "-111.64", "y": "65.38"},
 		{"text": "flower_wild_rhubarb_4", "day": "3", "tool": "0", "subdata": "wild_rhubarb", "x": "-103.97", "y": "73.84"},
