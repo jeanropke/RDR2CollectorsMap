@@ -50,7 +50,7 @@ var fastTravelData;
 var weeklySet = 'herbalist_set';
 var weeklySetData = [];
 var date;
-var nocache = 103;
+var nocache = 104;
 
 var wikiLanguage = [];
 
@@ -64,18 +64,20 @@ function init()
     wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
     wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
 
-    if(typeof $.cookie('removed-items') === 'undefined')
-        $.cookie('removed-items', '', {expires: resetMarkersDaily ? 1 : 999});
 
-    if(typeof $.cookie('removed-items-2') === 'undefined')
-        $.cookie('removed-items-2', '', {expires: resetMarkersDaily ? 1 : 999});
-      
+    var tempDisabledMarkers = "";
+    $.each($.cookie(), function(key, value) {
+        if(key.startsWith('removed-items')) {
+            tempDisabledMarkers += value;
+        }
+    });
+    disableMarkers = tempDisabledMarkers.split(';');
+
     if(typeof $.cookie('tools') !== 'undefined') {
         $("#tools").val($.cookie('tools'));
         toolType = $.cookie('tools');
     }
     
-    disableMarkers = ($.cookie('removed-items') + $.cookie('removed-items-2')).split(";");
 
     enabledTypes = enabledTypes.filter(function(item) {
         return item !== "random"
@@ -192,8 +194,11 @@ function setCurrentDayCycle()
             $.cookie('date', date, { expires: 2 });
             if(resetMarkersDaily)
             {
-                $.cookie('removed-items', '', {expires: 1});
-                $.cookie('removed-items-2', '', {expires: 1});
+                $.each($.cookie(), function(key, value) {
+                    if(key.startsWith('removed-items')) {
+                        $.removeCookie(key)
+                    }
+                });
 
                 disableMarkers = [];
             }
@@ -259,10 +264,13 @@ $("#reset-markers").on("change", function()
 {
     if($("#reset-markers").val() == 'clear')
     {
-        $.cookie('removed-items', '', { expires: resetMarkersDaily ? 1 : 999});
-        $.cookie('removed-items-2', '', { expires: resetMarkersDaily ? 1 : 999});
+        $.each($.cookie(), function(key, value) {
+            if(key.startsWith('removed-items')) {
+                $.removeCookie(key)
+            }
+        });
 
-        disableMarkers =  $.cookie('removed-items').split('');
+        disableMarkers = [];
         $("#reset-markers").val('false');
         Menu.refreshItemsCounter();
     }

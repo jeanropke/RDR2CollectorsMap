@@ -215,16 +215,22 @@ MapBase.removeItemFromMap = function(itemName)
             }
         }
 
-        var disabledMarkersString = disableMarkers.join(';').replace(/;;/g, '');
 
-        if(disabledMarkersString.length > 3200)
-        {
-            $.cookie('removed-items', disabledMarkersString.substr(0, 3200), {expires: resetMarkersDaily ? 1 : 999});
-            $.cookie('removed-items-2', disabledMarkersString.substr(3200, disabledMarkersString.length), {expires: resetMarkersDaily ? 1 : 999});
-        }
-        else {
-            $.cookie('removed-items', disabledMarkersString, {expires: resetMarkersDaily ? 1 : 999});
-        }
+
+        //Before saving, remove previous cookies peepoSmart
+        $.removeCookie('removed-items');
+        $.each($.cookie(), function(key, value) {
+            if(key.startsWith('removed-items')) {
+                $.removeCookie(key)
+            }
+        });
+
+        var disabledMarkersArray =  disableMarkers.join(';').replace(/;;/g, '').match(/.{1,3200}/g);
+
+
+        $.each(disabledMarkersArray, function(key, value) {
+            $.cookie('removed-items-'+key, value, {expires: resetMarkersDaily ? 1 : 999});
+        });
 
         if ($("#routes").val() == 1)
             MapBase.drawLines();
