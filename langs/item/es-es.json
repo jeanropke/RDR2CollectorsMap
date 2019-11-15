@@ -1321,6 +1321,11 @@
 	{"key": "flower_cardinal_14_2.desc", "value": ""},
 	{"key": "flower_cardinal_14_3.desc", "value": ""},
 	
+	{"key": "flower_cardinal_15.name", "value": "Flor del cardenal #15"},
+	{"key": "flower_cardinal_15_1.desc", "value": ""},
+	{"key": "flower_cardinal_15_2.desc", "value": ""},
+	{"key": "flower_cardinal_15_3.desc", "value": ""},
+	
 	{"key": "flower_wild_rhubarb_11.name", "value": "Ruibarbo salvaje #11"},
 	{"key": "flower_wild_rhubarb_11_1.desc", "value": ""},
 	{"key": "flower_wild_rhubarb_11_2.desc", "value": ""},
