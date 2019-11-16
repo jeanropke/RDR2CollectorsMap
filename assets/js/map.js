@@ -263,10 +263,12 @@ MapBase.addMarkerOnMap = function(value, category)
             return weekly.item === value.text;
     }).length > 0;
 
+    console.log(category);
+
     var tempMarker = L.marker([value.x, value.y], {
         icon: L.icon(
             {
-                iconUrl: './assets/images/icons/' + category + '_' + MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + day)+'.png',
+                iconUrl: './assets/images/icons/' + category + '_' + (category == 'random' ? 'lightgray' : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + day))+'.png',
                 iconSize: [35,45],
                 iconAnchor: [17,42],
                 popupAnchor: [1,-32],
