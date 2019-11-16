@@ -263,8 +263,6 @@ MapBase.addMarkerOnMap = function(value, category)
             return weekly.item === value.text;
     }).length > 0;
 
-    console.log(category);
-
     var tempMarker = L.marker([value.x, value.y], {
         icon: L.icon(
             {
