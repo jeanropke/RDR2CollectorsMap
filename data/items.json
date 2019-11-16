@@ -947,7 +947,8 @@
 		{"text": "random_item_191", "day": [1, 2, 3], "tool": "2", "icon": "random", "x": "-84.890625", "y": "146.484375"},
 		{"text": "random_item_192", "day": [1, 2, 3], "tool": "2", "icon": "random", "x": "-83.3125", "y": "137.890625"},
 		{"text": "random_item_193", "day": [1, 2, 3], "tool": "2", "icon": "random", "x": "-79.84375", "y": "142.609375"},
-		{"text": "random_item_194", "day": [1, 2, 3], "tool": "2", "icon": "random", "x": "-73.84375", "y": "153.484375"}
+		{"text": "random_item_194", "day": [1, 2, 3], "tool": "2", "icon": "random", "x": "-73.84375", "y": "153.484375"},
+		{"text": "random_item_195", "day": [1, 2, 3], "tool": "2", "icon": "random", "x": "-71.75", "y": "100.3125"}
 	]
 	
 }
