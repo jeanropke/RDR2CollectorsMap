@@ -271,11 +271,11 @@ $("#reset-markers").on("change", function()
         });
 
         disableMarkers = [];
-        $("#reset-markers").val('false');
+        $("#reset-markers").val(resetMarkersDaily.toString());
         Menu.refreshItemsCounter();
     }
 
-    resetMarkersDaily = $("#reset-markers").val() == 'true';
+    resetMarkersDaily = $("#reset-markers").val();
     $.cookie('removed-markers-daily', resetMarkersDaily, { expires: 999 });
 
 
