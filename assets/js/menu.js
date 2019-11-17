@@ -45,12 +45,6 @@ Menu.refreshMenu = function () {
             $('[data-type=' + value + ']').addClass('disabled');
         }
     });
-
-    $.each(treasureDisabled, function (key, value) {
-        if (value.length > 0) {
-            $('[data-type=' + value + ']').addClass('disabled');
-        }
-    });
 };
 
 
