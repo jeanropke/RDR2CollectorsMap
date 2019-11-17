@@ -149,16 +149,16 @@ MapBase.removeItemFromMap = function(itemName)
 
     if(itemName.endsWith('_treasure'))
     {
-        if(treasureDisabled.includes(itemName.toString()))
+        if(disableMarkers.includes(itemName.toString()))
         {
-            treasureDisabled = $.grep(treasureDisabled, function (value)
+            disableMarkers = $.grep(disableMarkers, function (value)
             {
                 return value != itemName.toString();
             });
         }
         else
         {
-            treasureDisabled.push(itemName.toString());
+            disableMarkers.push(itemName.toString());
         }
         MapBase.addTreasuresToMap();
     }
@@ -216,27 +216,30 @@ MapBase.removeItemFromMap = function(itemName)
         }
 
 
-
-        //Before saving, remove previous cookies peepoSmart
-        $.removeCookie('removed-items');
-        $.each($.cookie(), function(key, value) {
-            if(key.startsWith('removed-items')) {
-                $.removeCookie(key)
-            }
-        });
-
-        var disabledMarkersArray =  disableMarkers.join(';').replace(/;;/g, '').match(/.{1,3200}/g);
-
-
-        $.each(disabledMarkersArray, function(key, value) {
-            $.cookie('removed-items-'+key, value, {expires: resetMarkersDaily ? 1 : 999});
-        });
-
         if ($("#routes").val() == 1)
             MapBase.drawLines();
 
         Menu.refreshItemsCounter();
     }
+
+    MapBase.save();
+};
+
+MapBase.save = function () {
+    //Before saving, remove previous cookies peepoSmart
+    $.removeCookie('removed-items');
+    $.each($.cookie(), function(key, value) {
+        if(key.startsWith('removed-items')) {
+            $.removeCookie(key)
+        }
+    });
+    //disableMarkers = disableMarkers.concat(treasureDisabled);
+    var disabledMarkersArray =  disableMarkers.join(';').replace(/;;/g, '').match(/.{1,3200}/g);
+
+
+    $.each(disabledMarkersArray, function(key, value) {
+        $.cookie('removed-items-'+key, value, {expires: resetMarkersDaily ? 1 : 999});
+    });
 };
 
 MapBase.getIconColor = function (value)
@@ -459,36 +462,32 @@ MapBase.loadTreasures = function() {
 
 MapBase.setTreasures = function ()
 {
-    treasureMarkers = [];
-    if(enabledTypes.includes('treasure')) {
-        $.each(treasureData, function (key, value) {
-            var circle = L.circle([value.x, value.y], {
-                color: "#fff79900",
-                fillColor: "#fff799",
-                fillOpacity: 0.5,
-                radius: value.radius
-            });
-            var marker = L.marker([value.x, value.y], {
-                icon: L.icon({
-                    iconUrl: './assets/images/icons/treasure_beige.png',
-                    iconSize: [35,45],
-                    iconAnchor: [17,42],
-                    popupAnchor: [1,-32],
-                    shadowAnchor: [10,12],
-                    shadowUrl: './assets/images/markers-shadow.png'
-                })
-            });
-
-            if (languageData[lang][value.text] == null) {
-                console.error('[LANG]['+lang+']: Text not found: \''+value.text+'\'');
-            }
-            marker.bindPopup(`<h1> ${languageData[lang][value.text]}</h1><p>  </p>`);
-
-            treasureMarkers.push({treasure: value.text, marker: marker, circle: circle});
-            treasureDisabled.push(value.text);
+    $.each(treasureData, function (key, value) {
+        var circle = L.circle([value.x, value.y], {
+            color: "#fff79900",
+            fillColor: "#fff799",
+            fillOpacity: 0.5,
+            radius: value.radius
         });
-        MapBase.addTreasuresToMap();
-    }
+        var marker = L.marker([value.x, value.y], {
+            icon: L.icon({
+                iconUrl: './assets/images/icons/treasure_beige.png',
+                iconSize: [35,45],
+                iconAnchor: [17,42],
+                popupAnchor: [1,-32],
+                shadowAnchor: [10,12],
+                shadowUrl: './assets/images/markers-shadow.png'
+            })
+        });
+
+        if (languageData[lang][value.text] == null) {
+            console.error('[LANG]['+lang+']: Text not found: \''+value.text+'\'');
+        }
+        marker.bindPopup(`<h1> ${languageData[lang][value.text]}</h1><p class="remove-button" data-item="${value.text}">${languageData[lang]["map.remove_add"]}</p>`);
+
+        treasureMarkers.push({treasure: value.text, marker: marker, circle: circle});
+    });
+    MapBase.addTreasuresToMap();
 };
 
 MapBase.addTreasuresToMap = function () {
@@ -500,7 +499,7 @@ MapBase.addTreasuresToMap = function () {
 
     $.each(treasureMarkers, function(key, value)
     {
-        if(!treasureDisabled.includes(value.treasure)) {
+        if(!disableMarkers.includes(value.treasure)) {
             treasuresLayer.addLayer(value.marker);
             treasuresLayer.addLayer(value.circle);
         }

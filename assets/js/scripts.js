@@ -25,7 +25,6 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var treasureData = [];
 var treasureMarkers = [];
-var treasureDisabled = [];
 var treasuresLayer = new L.LayerGroup();
 
 var routesData = [];
@@ -50,7 +49,7 @@ var fastTravelData;
 var weeklySet = 'herbalist_set';
 var weeklySetData = [];
 var date;
-var nocache = 104;
+var nocache = 105;
 
 var wikiLanguage = [];
 
@@ -80,7 +79,7 @@ function init()
     
 
     enabledTypes = enabledTypes.filter(function(item) {
-        return item !== "random"
+        return item !== "random" && item !== "treasure";
     });
 
     if(typeof $.cookie('map-layer') === 'undefined')
@@ -333,6 +332,7 @@ $('.menu-option.clickable').on('click', function ()
         enabledTypes.push(menu.data('type'));
     }
     MapBase.addMarkers();
+    MapBase.addTreasuresToMap();
     if($("#routes").val() == 1)
         MapBase.drawLines();
 });
@@ -424,5 +424,5 @@ window.addEventListener("DOMContentLoaded", init);
 window.addEventListener("DOMContentLoaded", MapBase.loadWeeklySet());
 window.addEventListener("DOMContentLoaded", MapBase.loadFastTravels());
 window.addEventListener("DOMContentLoaded", MapBase.loadMadamNazar());
-window.addEventListener("DOMContentLoaded", MapBase.loadTreasures());
 window.addEventListener("DOMContentLoaded", MapBase.loadMarkers());
+window.addEventListener("DOMContentLoaded", MapBase.loadTreasures());
