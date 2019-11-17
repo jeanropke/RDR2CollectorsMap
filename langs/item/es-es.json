@@ -16,13 +16,13 @@
 	{"key": "fasttravel.lagras.name", 		"value": "Lagras"},	
 	{"key": "madam_nazar.name", 			"value": "Madam Nazar"},	
 
-	{"key": "bards_crossing_treasure", 			"value": "Bard's Crossing"},
+	{"key": "bards_crossing_treasure", 			"value": "Cruce del Bardo"},
 	{"key": "benedict_treasure", 				"value": "Benedict Point"},
 	{"key": "blackbone_forest_treasure", 		"value": "Bosque de Black Bone"},
 	{"key": "blue_water_marsh_treasure", 		"value": "Pantano de Bluewater"},
 	{"key": "brandywine_drop_treasure", 		"value": "Salto de Brandywine"},
 	{"key": "burned_town_treasure", 			"value": "Ciudad quemada"},
-	{"key": "calumet_ravine_treasure", 			"value": "Calumet Ravine"},
+	{"key": "calumet_ravine_treasure", 			"value": "Garganta de Calumet"},
 	{"key": "cattail_pond_treasure", 			"value": "Estanque de Cattail"},
 	{"key": "citadel_rock_treasure", 			"value": "Citadel Rock"},
 	{"key": "civil_war_treasure", 				"value": "Civil War Battlefield"},
@@ -32,9 +32,9 @@
 	{"key": "east_watson_treasure", 			"value": "Este de la cabaña de Watson"},
 	{"key": "gaptooth_treasure", 				"value": "Gaptooth Breach"},
 	{"key": "hanging_rock_treasure", 			"value": "Hanging Rock"},
-	{"key": "hawks_eye_treasure", 				"value": "Arroyo de Hawk's Eye"},
+	{"key": "hawks_eye_treasure", 				"value": "Arroyo Hawk's Eye"},
 	{"key": "hennigans_central_treasure", 		"value": "Hennigan's Stead (Central)"},
-	{"key": "hennigans_north_treasure", 		"value": "Hennigan's Stead (Norte)"},
+	{"key": "hennigans_north_treasure", 		"value": "Norte de Hennigan's Stead"},
 	{"key": "kamassa_river_treasure", 			"value": "Río Kamassa"},
 	{"key": "lake_isabella_treasure", 			"value": "Lago Isabella"},
 	{"key": "little_creek_treasure", 			"value": "Little Creek"},
@@ -43,7 +43,7 @@
 	{"key": "north_tumbleweed_treasure", 		"value": "Norte de Tumbleweed"},
 	{"key": "ocreaghs_run_treasure", 			"value": "O'Creagh's Run"},
 	{"key": "san_luis_treasure", 				"value": "Orilla de San Luis"},
-	{"key": "southren_roanoke_treasure", 		"value": "Southern Roanoke"},
+	{"key": "southren_roanoke_treasure", 		"value": "Sur de Roanoke"},
 	{"key": "west_hill_haven_treasure", 		"value": "West Hill Haven"},
 		
 	{"key": "cups_ace.name", "value": "As de copas"},
@@ -1361,5 +1361,5 @@
 	{"key": "flower_chocolate_daisy_15_2.desc", "value": ""},
 	{"key": "flower_chocolate_daisy_15_3.desc", "value": ""},
 	
-	{"key": "random_item.name", "value": "Random Item #"}
+	{"key": "random_item.name", "value": "Artículo aleatorio #"}
 ]
