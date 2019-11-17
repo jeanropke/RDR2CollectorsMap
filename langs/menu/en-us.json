@@ -48,7 +48,7 @@
 	{"key": "routes.exported", "value": "Route copied to clipboard!"},
 	{"key": "routes.import_prompt", "value": "Enter the route code"},
 	{"key": "routes.empty", "value": "Empty route"},
-	{"key": "routes.invalid", "value": "Invalid route"},
+	{"key": "routes.invalid", "value": "Invalid route. Check console for more information (F12)"},
 	{"key": "menu.random_spots", "value": "Random Spots"},
 	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"},
 	{"key": "menu.rdo_map", "value": "RDO Map"}
