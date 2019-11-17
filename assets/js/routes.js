@@ -48,9 +48,17 @@ Routes.loadCustomRoute = function(input)
     try
     {
         var connections = [];
-        input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '');
-        $.each(input.split(','), function (key, value) {
-            connections.push(visibleMarkers[value]._latlng);
+
+        input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
+
+        $.each(input, function (key, value)
+        {
+            if(visibleMarkers[value] == null) {
+                console.log(`Item not found on map: '${value}'`);
+            }
+            else {
+                connections.push(visibleMarkers[value]._latlng);
+            }
         });
 
         if (polylines instanceof L.Polyline) {
@@ -63,6 +71,7 @@ Routes.loadCustomRoute = function(input)
     catch(e)
     {
         alert(languageData[lang]['routes.invalid']);
+        console.log(e);
     }
 };
 
