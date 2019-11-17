@@ -23,7 +23,7 @@
 	{"key": "menu.tool_type.no_tools", "value": "Sin herramientas"},
 	{"key": "menu.tool_type.shovel", "value": "Pala"},
 	{"key": "menu.tool_type.metal_detector", "value": "Detector de metales"},
-	{"key": "menu.tool_type.all", "value": "Todos"},
+	{"key": "menu.tool_type.all", "value": "Todas"},
 	{"key": "menu.language", "value": "Idioma"},
 	{"key": "menu.enable_route", "value": "Habilitar ruta"},
 	{"key": "menu.enable_custom_route", "value": "Habilitar ruta personalizada"},
@@ -34,8 +34,8 @@
 	{"key": "menu.reset_markers_daily", "value": "Reiniciar marcadores diariamente"},
 	{"key": "menu.reset", "value": "Reiniciar"},
 	{"key": "menu.issues", "value": "Incidencias"},
-	{"key": "menu.report_issues", "value": "¡Reportar incidencias aquí!"},
-	{"key": "menu.return_legacy", "value": "¡Volver a la versión anterior!"},
+	{"key": "menu.report_issues", "value": "Reporta tu incidencia aquí"},
+	{"key": "menu.return_legacy", "value": "Volver a la versión anterior"},
 	{"key": "menu.utils", "value": "Utilidades"},
 	{"key": "menu.fast_travel", "value": "Viaje rápido"},
 	{"key": "menu.search_placeholder", "value": "Buscar artículos. Separados por ;"},
@@ -45,12 +45,12 @@
 	{"key": "menu.import_route", "value": "Importar ruta"},
 	{"key": "menu.export_route", "value": "Exportar ruta"},
 	{"key": "menu.treasures", "value": "Tesoros"},
-	{"key": "routes.exported", "value": "¡Ruta copiada al portapapeles!"},
+	{"key": "routes.exported", "value": "Ruta copiada al portapapeles"},
 	{"key": "routes.import_prompt", "value": "Introduce el código de la ruta"},
 	{"key": "routes.empty", "value": "Ruta vacía"},
 	{"key": "routes.invalid", "value": "Ruta inválida"},
-	{"key": "menu.random_spots", "value": "Random Spots"},
-	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"},
-	{"key": "menu.rdo_map", "value": "RDO Map"}
+	{"key": "menu.random_spots", "value": "Puntos aleatorios"},
+	{"key": "menu.collectables_counter", "value": "Recogidos {count} de {max}"},
+	{"key": "menu.rdo_map", "value": "Mapa RDO"}
 ]
 
