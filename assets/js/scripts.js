@@ -50,7 +50,7 @@ var fastTravelData;
 var weeklySet = 'herbalist_set';
 var weeklySetData = [];
 var date;
-var nocache = 106;
+var nocache = 107;
 
 var wikiLanguage = [];
 
