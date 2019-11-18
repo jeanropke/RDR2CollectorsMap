@@ -8,6 +8,20 @@ var Treasures = {
   },
 
   set: function() {
+    var treasureIcon = L.icon({
+        iconUrl: './assets/images/icons/treasure_beige.png',
+        iconSize: [35,45],
+        iconAnchor: [17,42],
+        popupAnchor: [1,-32],
+        shadowAnchor: [10,12],
+        shadowUrl: './assets/images/markers-shadow.png'
+    });
+    var crossIcon = L.icon({
+        iconUrl: './assets/images/icons/cross.png',
+        iconSize: [16,16],
+        iconAnchor: [8,8]
+    });
+
     $.each(treasureData, function (key, value) {
         var circle = L.circle([value.x, value.y], {
             color: "#fff79900",
@@ -16,19 +30,20 @@ var Treasures = {
             radius: value.radius
         });
         var marker = L.marker([value.x, value.y], {
-            icon: L.icon({
-                iconUrl: './assets/images/icons/treasure_beige.png',
-                iconSize: [35,45],
-                iconAnchor: [17,42],
-                popupAnchor: [1,-32],
-                shadowAnchor: [10,12],
-                shadowUrl: './assets/images/markers-shadow.png'
-            })
+            icon: treasureIcon
         });
+
+        var treasuresCross = [];
+        $.each(value.treasures, function(crossKey, crossValue) {
+          treasuresCross.push(L.marker([crossValue.x, crossValue.y], {
+              icon: crossIcon
+          }));
+        });
+
 
         marker.bindPopup(`<h1> ${Language.get(value.text)}</h1><p class="remove-button" data-item="${value.text}">${Language.get("map.remove_add")}</p>`);
 
-        treasureMarkers.push({treasure: value.text, marker: marker, circle: circle});
+        treasureMarkers.push({treasure: value.text, marker: marker, circle: circle, treasuresCross: treasuresCross});
     });
     Treasures.addToMap();
   },
@@ -44,6 +59,9 @@ var Treasures = {
         if(!collectedItems.includes(value.treasure)) {
             treasuresLayer.addLayer(value.marker);
             treasuresLayer.addLayer(value.circle);
+            $.each(value.treasuresCross, function(crossKey, crossValue){
+              treasuresLayer.addLayer(crossValue);
+            });
         }
     });
 
