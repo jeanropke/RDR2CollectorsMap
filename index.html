@@ -1,347 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="./favicon.png"/>
-    <title>Red Dead Online - Collectors Map</title>
-    <meta name="description" content="Red Dead Online Collectors Map. Find all collectibles across the world and sell to Madam Nazar.">
-    <meta name="keywords" content="Red Dead Online, Collectors Map, Collectors Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="assets/js/jquery.cookie.js"></script>
-    <link rel="stylesheet" href="assets/css/styles.css?nocache=105" />
-    <script data-ad-client="ca-pub-8337816533364971" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="./favicon.png" />
+  <title>Red Dead Online - Collectors Map</title>
+  <meta name="description" content="Red Dead Online Collectors Map. Find all collectibles across the world and sell to Madam Nazar.">
+  <meta name="keywords" content="Red Dead Online, Collectors Map, Collectors Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/jquery.cookie.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=106" />
+  <script data-ad-client="ca-pub-8337816533364971" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </head>
+
 <body>
-<div class="side-menu">
+  <div class="side-menu">
     <h2>
-        <span data-text="menu.collectables">Collectables</span>
-        <span class="help-button">
-            <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)" target="_blank" class="wiki-page">[Wiki]</a>
-        </span>
+      <span data-text="menu.collectables">Collectables</span>
+      <span class="help-button">
+        <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)" target="_blank" class="wiki-page">[Wiki]</a>
+      </span>
     </h2>
     <div class="collectables-counter" data-text="menu.collectables_counter">Collected -- of --</div>
     <div class="hide-show-container">
-        <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
-        <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
+      <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
+      <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="american_flowers">
-            <img class="icon" src="./assets/images/icons/american-flowers.png" />
-            <span data-text="menu.american_flowers">American Wild Flowers</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="american_flowers">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $155.50
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="american_flowers">
+        <img class="icon" src="./assets/images/icons/american-flowers.png" />
+        <span data-text="menu.american_flowers">American Wild Flowers</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="american_flowers">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $155.50
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="antique_bottles">
-            <img class="icon" src="./assets/images/icons/antique-bottles.png" />
-            <span data-text="menu.antique_bottles">Antique Alcohol Bottles</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="antique_bottles">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $160.50
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="antique_bottles">
+        <img class="icon" src="./assets/images/icons/antique-bottles.png" />
+        <span data-text="menu.antique_bottles">Antique Alcohol Bottles</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="antique_bottles">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $160.50
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="arrowhead">
-            <img class="icon" src="./assets/images/icons/arrowhead.png" />
-            <span data-text="menu.arrowhead">Arrowheads</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="arrowhead">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $289.00
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="arrowhead">
+        <img class="icon" src="./assets/images/icons/arrowhead.png" />
+        <span data-text="menu.arrowhead">Arrowheads</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="arrowhead">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $289.00
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="bird_eggs">
-            <img class="icon" src="./assets/images/icons/bird-eggs.png" />
-            <span data-text="menu.bird_eggs">Bird Eggs</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="bird_eggs">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $182.50
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="bird_eggs">
+        <img class="icon" src="./assets/images/icons/bird-eggs.png" />
+        <span data-text="menu.bird_eggs">Bird Eggs</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="bird_eggs">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $182.50
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="coin">
-            <img class="icon" src="./assets/images/icons/coin.png" />
-            <span data-text="menu.coin">Coins</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="coin">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $540.00
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="coin">
+        <img class="icon" src="./assets/images/icons/coin.png" />
+        <span data-text="menu.coin">Coins</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="coin">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $540.00
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="family_heirlooms">
-            <img class="icon" src="./assets/images/icons/family-heirlooms.png" />
-            <span data-text="menu.family_heirlooms">Family Heirlooms</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="family_heirlooms">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $292.50
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="family_heirlooms">
+        <img class="icon" src="./assets/images/icons/family-heirlooms.png" />
+        <span data-text="menu.family_heirlooms">Family Heirlooms</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="family_heirlooms">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $292.50
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="lost_bracelet">
-            <img class="icon" src="./assets/images/icons/lost-bracelet.png" />
-            <span data-text="menu.lost_bracelet">Lost Jewelry - Bracelets</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="lost_bracelet">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $271.50
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="lost_bracelet">
+        <img class="icon" src="./assets/images/icons/lost-bracelet.png" />
+        <span data-text="menu.lost_bracelet">Lost Jewelry - Bracelets</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="lost_bracelet">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $271.50
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="lost_earrings">
-            <img class="icon" src="./assets/images/icons/lost-earrings.png" />
-            <span data-text="menu.lost_earrings">Lost Jewelry - Earrings</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="lost_earrings">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $364.50
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="lost_earrings">
+        <img class="icon" src="./assets/images/icons/lost-earrings.png" />
+        <span data-text="menu.lost_earrings">Lost Jewelry - Earrings</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="lost_earrings">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $364.50
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="lost_necklaces">
-            <img class="icon" src="./assets/images/icons/lost-necklaces.png" />
-            <span data-text="menu.lost_necklaces">Lost Jewelry - Necklaces</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="lost_necklaces">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $335.00
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="lost_necklaces">
+        <img class="icon" src="./assets/images/icons/lost-necklaces.png" />
+        <span data-text="menu.lost_necklaces">Lost Jewelry - Necklaces</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="lost_necklaces">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $335.00
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="lost_ring">
-            <img class="icon" src="./assets/images/icons/lost-ring.png" />
-            <span data-text="menu.lost_ring">Lost Jewelry - Rings</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="lost_ring">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $378.00
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="lost_ring">
+        <img class="icon" src="./assets/images/icons/lost-ring.png" />
+        <span data-text="menu.lost_ring">Lost Jewelry - Rings</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="lost_ring">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $378.00
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="card_cups">
-            <img class="icon" src="./assets/images/icons/card-cups.png" />
-            <span data-text="menu.card_cups">Tarot Cards - Cups</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="card_cups">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $240.50
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="card_cups">
+        <img class="icon" src="./assets/images/icons/card-cups.png" />
+        <span data-text="menu.card_cups">Tarot Cards - Cups</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="card_cups">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $240.50
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="card_pentacles">
-            <img class="icon" src="./assets/images/icons/card-pentacles.png" />
-            <span data-text="menu.card_pentacles">Tarot Cards - Pentacles</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="card_pentacles">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $287.00
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="card_pentacles">
+        <img class="icon" src="./assets/images/icons/card-pentacles.png" />
+        <span data-text="menu.card_pentacles">Tarot Cards - Pentacles</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="card_pentacles">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $287.00
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="card_swords">
-            <img class="icon" src="./assets/images/icons/card-swords.png" />
-            <span data-text="menu.card_swords">Tarot Cards - Swords</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="card_swords">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $286.50
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="card_swords">
+        <img class="icon" src="./assets/images/icons/card-swords.png" />
+        <span data-text="menu.card_swords">Tarot Cards - Swords</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="card_swords">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $286.50
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="card_wands">
-            <img class="icon" src="./assets/images/icons/card-wands.png" />
-            <span data-text="menu.card_wands">Tarot Cards - Wands</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="card_wands">
-            <p class="collection-value">
-                <span data-text="menu.collectables_value">Value</span>: $239.00
-            </p>
-        </div>
+      <div class="menu-option clickable" data-type="card_wands">
+        <img class="icon" src="./assets/images/icons/card-wands.png" />
+        <span data-text="menu.card_wands">Tarot Cards - Wands</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="card_wands">
+        <p class="collection-value">
+          <span data-text="menu.collectables_value">Value</span>: $239.00
+        </p>
+      </div>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="random">
-            <img class="icon" src="./assets/images/icons/random.png" />
-            <span data-text="menu.random_spots" class="disabled">Random Spots</span>
-        </div>
+      <div class="menu-option clickable" data-type="random">
+        <img class="icon" src="./assets/images/icons/random.png" />
+        <span data-text="menu.random_spots" class="disabled">Random Spots</span>
+      </div>
     </div>
     <h2 data-text="menu.utils">Utils</h2>
     <div class="menu-option clickable" data-type="nazar">
-        <img class="icon" src="./assets/images/icons/nazar.png" />
-        <span data-text="madam_nazar.name">Madam Nazar</span>
+      <img class="icon" src="./assets/images/icons/nazar.png" />
+      <span data-text="madam_nazar.name">Madam Nazar</span>
     </div>
     <div class="menu-option clickable" data-type="fast_travel">
-        <img class="icon" src="./assets/images/icons/fast-travel.png" />
-        <span data-text="menu.fast_travel">Fast Travel</span>
+      <img class="icon" src="./assets/images/icons/fast-travel.png" />
+      <span data-text="menu.fast_travel">Fast Travel</span>
     </div>
     <div>
-        <div class="menu-option clickable" data-type="treasure">
-            <img class="icon" src="./assets/images/icons/treasure.png" />
-            <span data-text="menu.treasures" class="disabled">Treasures</span>
-            <div class="open-submenu"></div>
-        </div>
-        <div class="menu-hidden" data-type="treasure">
-        </div>
+      <div class="menu-option clickable" data-type="treasure">
+        <img class="icon" src="./assets/images/icons/treasure.png" />
+        <span data-text="menu.treasures" class="disabled">Treasures</span>
+        <div class="open-submenu"></div>
+      </div>
+      <div class="menu-hidden" data-type="treasure">
+      </div>
     </div>
 
     <div class="search-container">
-        <h2 data-text="menu.search">Search</h2>
-        <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
+      <h2 data-text="menu.search">Search</h2>
+      <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
     </div>
 
     <div class="settings-container">
-        <h2 data-text="menu.settings">Settings</h2>       
-         <div class="input-container">
-            <label for="day" data-text="menu.day">Day</label>
-            <input id="day" class="input-day" type="number" min="1" max="3">
-        </div>
-        <div class="input-container">
-            <label for="tools" data-text="menu.tool_type">Tool type</label>
-            <select class="input-day" id="tools">
-                <option value="0" data-text="menu.tool_type.no_tools">No tools</option>
-                <option value="1" data-text="menu.tool_type.shovel">Shovel</option>
-                <option value="2" data-text="menu.tool_type.metal_detector">Metal detector</option>
-                <option value="3" data-text="menu.tool_type.all" selected>All</option>
-            </select>
-        </div>
-        <div class="input-container">
-            <label for="tools" data-text="menu.language">Language</label>
-            <select class="input-day" id="language">
-                <option value="de-de">Deutsch</option>
-                <option value="es-es">Español</option>
-                <option value="en-us" selected>English</option>
-                <option value="fr-fr">Français</option>
-                <option value="it-it">Italiano</option>
-                <option value="pt-br">Português</option>
-                <option value="pl">Polski</option>
-                <option value="ru">Русский</option>
-                <option value="zh-s">简体中文</option>
-                <option value="zh-t">繁体中文</option>
-            </select>
-        </div>
-        <div class="input-container">
-            <label for="routes" data-text="menu.enable_route">Enable route</label>
-            <select class="input-day" id="routes">
-                <option value="1" data-text="menu.yes">Yes</option>
-                <option value="0" data-text="menu.no" selected>No</option>
-            </select>
-        </div>
-        <div class="input-container">
-            <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
-            <select class="input-day" id="show-coordinates">
-                <option value="1" data-text="menu.yes">Yes</option>
-                <option value="0" data-text="menu.no" selected>No</option>
-            </select>
-        </div>
-        <div class="input-container">
-            <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>
-            <select class="input-day" id="reset-markers">
-                <option value="true" data-text="menu.yes" selected>Yes</option>
-                <option value="false" data-text="menu.no">No</option>
-                <option value="clear" data-text="menu.reset">Reset</option>
-            </select>
-        </div>
+      <h2 data-text="menu.settings">Settings</h2>
+      <div class="input-container">
+        <label for="day" data-text="menu.day">Day</label>
+        <input id="day" class="input-day" type="number" min="1" max="3">
+      </div>
+      <div class="input-container">
+        <label for="tools" data-text="menu.tool_type">Tool type</label>
+        <select class="input-day" id="tools">
+          <option value="0" data-text="menu.tool_type.no_tools">No tools</option>
+          <option value="1" data-text="menu.tool_type.shovel">Shovel</option>
+          <option value="2" data-text="menu.tool_type.metal_detector">Metal detector</option>
+          <option value="3" data-text="menu.tool_type.all" selected>All</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="tools" data-text="menu.language">Language</label>
+        <select class="input-day" id="language">
+          <option value="de-de">Deutsch</option>
+          <option value="es-es">Español</option>
+          <option value="en-us" selected>English</option>
+          <option value="fr-fr">Français</option>
+          <option value="it-it">Italiano</option>
+          <option value="pt-br">Português</option>
+          <option value="pl">Polski</option>
+          <option value="ru">Русский</option>
+          <option value="zh-s">简体中文</option>
+          <option value="zh-t">繁体中文</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="routes" data-text="menu.enable_route">Enable route</label>
+        <select class="input-day" id="routes">
+          <option value="1" data-text="menu.yes">Yes</option>
+          <option value="0" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+        <select class="input-day" id="show-coordinates">
+          <option value="1" data-text="menu.yes">Yes</option>
+          <option value="0" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>
+        <select class="input-day" id="reset-markers">
+          <option value="true" data-text="menu.yes" selected>Yes</option>
+          <option value="false" data-text="menu.no">No</option>
+          <option value="clear" data-text="menu.reset">Reset</option>
+        </select>
+      </div>
     </div>
     <h2 data-text="menu.custom_routes">Custom routes</h2>
     <div class="custom-routes-container">
-        <a data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import route</a>
-        <a data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export route</a>
+      <a data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import route</a>
+      <a data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export route</a>
     </div>
     <div class="routes-container">
-        <div class="input-container">
-            <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
-            <select class="input-day" id="custom-routes">
-                <option value="1" data-text="menu.yes">Yes</option>
-                <option value="0" data-text="menu.no" selected>No</option>
-                <option value="clear" data-text="menu.clear">Clear</option>
-            </select>
-        </div>
+      <div class="input-container">
+        <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
+        <select class="input-day" id="custom-routes">
+          <option value="1" data-text="menu.yes">Yes</option>
+          <option value="0" data-text="menu.no" selected>No</option>
+          <option value="clear" data-text="menu.clear">Clear</option>
+        </select>
+      </div>
     </div>
     <div class="issues-container">
-        <h2 data-text="menu.issues">Issues</h2>
-        <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">Report issues here!</a>
+      <h2 data-text="menu.issues">Issues</h2>
+      <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">Report issues here!</a>
     </div>
     <div class="hide-show-container">
-        <a href="https://jeanropke.github.io/RDOMap/" target="_blank" data-text="menu.rdo_map">RDO Map</a>
+      <a href="https://jeanropke.github.io/RDOMap/" target="_blank" data-text="menu.rdo_map">RDO Map</a>
     </div>
     <div class="issues-container">
-        <a href="./index-legacy.html" data-text="menu.return_legacy">Return to legacy version!</a>
+      <a href="./index-legacy.html" data-text="menu.return_legacy">Return to legacy version!</a>
     </div> <br>
     <div class="donate-container">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_donations" />
-            <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
-            <input type="hidden" name="currency_code" value="USD" />
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-        </form>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_donations" />
+        <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
+        <input type="hidden" name="currency_code" value="USD" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+      </form>
     </div>
     <br>
 
-</div>
-<div class="menu-toggle">></div>
+  </div>
+  <div class="menu-toggle">></div>
 
-<div class="timer-container">
+  <div class="timer-container">
     <div id="countdown">--:--:--</div>
     <div id="day-cycle"></div>
-</div>
-<div class="counter-container">
+  </div>
+  <div class="counter-container">
     <p id="item-counter">-- of --</p>
-</div>
-<div id="map"></div>
+  </div>
+  <div id="map"></div>
 
-<div class="lat-lng-container"><p></p><button id="lat-lng-container-close-button">×</button></div>
-<script      src="assets/js/map.js?nocache=105"></script>
-<script src="assets/js/language.js?nocache=105"></script>
-<script     src="assets/js/menu.js?nocache=105"></script>
-<script   src="assets/js/routes.js?nocache=105"></script>
-<script  src="assets/js/scripts.js?nocache=105"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
-<script>
+  <div class="lat-lng-container">
+    <p></p><button id="lat-lng-container-close-button">×</button>
+  </div>
+  <script src="assets/js/marker.js?nocache=106"></script>
+  <script src="assets/js/treasures.js?nocache=106"></script>
+  <script src="assets/js/map.js?nocache=106"></script>
+  <script src="assets/js/language.js?nocache=106"></script>
+  <script src="assets/js/menu.js?nocache=106"></script>
+  <script src="assets/js/routes.js?nocache=106"></script>
+  <script src="assets/js/scripts.js?nocache=106"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'UA-39999584-4');
-</script>
+  </script>
 
 </body>
+
 </html>
