@@ -35,7 +35,7 @@
 	{"key": "menu.reset", "value": "Сброс сейчас"},
 	{"key": "menu.issues", "value": "Обратная связь"},
 	{"key": "menu.report_issues", "value": "Связаться с разработчиком"},
-	{"key": "menu.return_legacy", "value": "Вернуться на версию legacy)"},
+	{"key": "menu.return_legacy", "value": "Вернуться на версию legacy"},
 	{"key": "menu.utils", "value": "Доп. метки"},
 	{"key": "menu.fast_travel","value": "Быстрое перемещение"},
 	{"key": "menu.search_placeholder", "value": "введите название предмета"},
