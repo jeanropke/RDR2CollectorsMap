@@ -47,10 +47,10 @@ var nazarCurrentDate;
 
 var fastTravelData;
 
-var weeklySet = 'herbalist_set';
+var weeklySet = 'bowmans_set';
 var weeklySetData = [];
 var date;
-var nocache = 107;
+var nocache = 108;
 
 var wikiLanguage = [];
 
