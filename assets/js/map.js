@@ -129,6 +129,7 @@ var MapBase = {
 
     Menu.refreshItemsCounter();
     Treasures.addToMap();
+    Encounters.addToMap();
 
     if (refreshMenu)
       Menu.refreshMenu();

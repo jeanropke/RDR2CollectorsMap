@@ -1361,6 +1361,12 @@
 	{"key": "flower_chocolate_daisy_15_2.desc", "value": ""},
 	{"key": "flower_chocolate_daisy_15_3.desc", "value": ""},
 	
-	{"key": "random_item.name", "value": "Item Aleatório #"}
+	{"key": "random_item.name", "value": "Item Aleatório #"},
+
+	{"key": "tree_map.name","value":"Mapa do Tesouro na Árvore"},
+	{"key": "tree_map.desc","value":"Esses mapas são encontros aleatórios. Eles aparecem nas árvores principalmente a noite. Procure pelas lanternas."},
+
+	{"key": "treasure_hunter.name","value":"Caçador de Tesouro"},
+	{"key": "treasure_hunter.desc","value":"Caçador de Tesouro são encontros aleatórios."}
 ]
 

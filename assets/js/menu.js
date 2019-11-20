@@ -49,6 +49,7 @@ Menu.showAll = function() {
   enabledCategories = categories;
   MapBase.addMarkers();
   Treasures.addToMap();
+  Encounters.addToMap();
 };
 
 Menu.hideAll = function() {
@@ -59,6 +60,7 @@ Menu.hideAll = function() {
   enabledCategories = [];
   MapBase.addMarkers();
   Treasures.addToMap();
+  Encounters.addToMap();
 };
 
 Menu.refreshItemsCounter = function() {
