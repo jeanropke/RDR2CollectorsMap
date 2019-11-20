@@ -344,7 +344,6 @@ $('.open-submenu').on('click', function(e) {
 $(document).on('click', '.collectible', function() {
   var collectible = $(this);
 
-  collectible.toggleClass('disabled');
   MapBase.removeItemFromMap(collectible.data('type'));
 
   if ($("#routes").val() == 1)

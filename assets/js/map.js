@@ -184,6 +184,7 @@ var MapBase = {
         marker.isCollected = !marker.isCollected;
       }
     }
+    $('[data-type=' + itemName + ']').toggleClass('disabled');
 
     if ($("#routes").val() == 1)
       Routes.drawLines();
