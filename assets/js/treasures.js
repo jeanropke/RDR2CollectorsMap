@@ -6,7 +6,6 @@ var Treasures = {
             Treasures.set();
     });
   },
-
   set: function() {
     var treasureIcon = L.icon({
         iconUrl: './assets/images/icons/treasure_beige.png',
