@@ -51,5 +51,7 @@
 	{"key": "routes.invalid", "value": "Rota inválida"},
 	{"key": "menu.random_spots", "value": "Locais Aleatórios"},
 	{"key": "menu.collectables_counter", "value": "Coletou {count} de {max}"},
-	{"key": "menu.rdo_map", "value": "Mapa do RDO"}
+	{"key": "menu.rdo_map", "value": "Mapa do RDO"},
+	{"key": "menu.treasure_hunter", "value": "Caçador de Tesouro"},
+	{"key": "menu.tree_map", "value": "Mapa de Tesouro na Árvore"}
 ]

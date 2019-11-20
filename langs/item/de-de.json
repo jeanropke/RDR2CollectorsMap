@@ -1366,5 +1366,11 @@
 	{"key": "flower_chocolate_daisy_15_2.desc", "value": ""},
 	{"key": "flower_chocolate_daisy_15_3.desc", "value": ""},
 	
-	{"key": "random_item.name", "value": "Random Item #"}
+	{"key": "random_item.name", "value": "Random Item #"},
+
+	{"key": "tree_map.name","value":"Treasure Map stuck on Tree"},
+	{"key": "tree_map.desc","value":"Tree Maps are Random Encounters. They spawn on trees mainly at night. Look for lantern light."},
+
+	{"key": "treasure_hunter.name","value":"Treasure Hunter"},
+	{"key": "treasure_hunter.desc","value":"Treasure Hunter are Random Encounters."}
 ]

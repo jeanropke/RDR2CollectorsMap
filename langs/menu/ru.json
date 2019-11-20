@@ -51,5 +51,7 @@
 	{"key": "routes.invalid", "value": "Неверный код маршрута"},
 	{"key": "menu.random_spots", "value": "Случайные предметы"},
 	{"key": "menu.collectables_counter", "value": "Собрано {count} из {max}"},
-	{"key": "menu.rdo_map", "value": "RDO Map"}
+	{"key": "menu.rdo_map", "value": "RDO Map"},
+	{"key": "menu.treasure_hunter", "value": "Treasure Hunter"},
+	{"key": "menu.tree_map", "value": "Treasure Map on Tree"}
 ]
