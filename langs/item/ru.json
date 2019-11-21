@@ -1363,9 +1363,9 @@
 	
 	{"key": "random_item.name", "value": "Случайный предмет #"},
 
-	{"key": "tree_map.name","value":"Treasure Map stuck on Tree"},
-	{"key": "tree_map.desc","value":"Tree Maps are Random Encounters. They spawn on trees mainly at night. Look for lantern light."},
+	{"key": "tree_map.name","value":"Карта сокровищ на дереве"},
+	{"key": "tree_map.desc","value":"Карту сокровищ можно найти на этом месте случайным образом. Карта появляется ночью. Она будет прибита ножом к дереву и освещена светом фонаря."},
 
-	{"key": "treasure_hunter.name","value":"Treasure Hunter"},
-	{"key": "treasure_hunter.desc","value":"Treasure Hunter are Random Encounters."}
+	{"key": "treasure_hunter.name","value":"Охотник за сокровищем"},
+	{"key": "treasure_hunter.desc","value":"Охотника можно найти на этом месте случайным образом."}
 ]
