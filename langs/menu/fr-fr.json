@@ -53,5 +53,7 @@
 	{"key": "menu.collectables_counter", "value": "{count} sur {max} Collecté(s)"},
 	{"key": "menu.rdo_map", "value": "RDO Map"},
 	{"key": "menu.treasure_hunter", "value": "Treasure Hunter"},
-	{"key": "menu.tree_map", "value": "Treasure Map on Tree"}
+	{"key": "menu.tree_map", "value": "Treasure Map on Tree"},
+	{"key": "menu.egg_encounter", "value": "Bird Egg Nest"},
+	{"key": "menu.grave_robber", "value": "Grave Robber"}
 ]

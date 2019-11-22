@@ -1221,6 +1221,31 @@
 	{"key": "flower_texas_bluebonnet_10_2.desc", "value": ""},
 	{"key": "flower_texas_bluebonnet_10_3.desc", "value": ""},
 	
+	{"key": "flower_texas_bluebonnet_11.name", "value": "Łubin teksański #11"},
+	{"key": "flower_texas_bluebonnet_11_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_11_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_11_3.desc", "value": ""},
+	
+	{"key": "flower_texas_bluebonnet_12.name", "value": "Łubin teksański #12"},
+	{"key": "flower_texas_bluebonnet_12_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_12_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_12_3.desc", "value": ""},
+	
+	{"key": "flower_texas_bluebonnet_13.name", "value": "Łubin teksański #13"},
+	{"key": "flower_texas_bluebonnet_13_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_13_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_13_3.desc", "value": ""},
+	
+	{"key": "flower_texas_bluebonnet_14.name", "value": "Łubin teksański #14"},
+	{"key": "flower_texas_bluebonnet_14_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_14_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_14_3.desc", "value": ""},
+	
+	{"key": "flower_texas_bluebonnet_15.name", "value": "Łubin teksański #15"},
+	{"key": "flower_texas_bluebonnet_15_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_15_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_15_3.desc", "value": ""},
+	
 	{"key": "flower_agarita_3.name", "value": "Agarita #3"},
 	{"key": "flower_agarita_3_1.desc", "value": "Tylko w nocy - 22:00 do 5:00."},
 	{"key": "flower_agarita_3_2.desc", "value": "Tylko w nocy - 22:00 do 5:00."},
@@ -1351,6 +1376,31 @@
 	{"key": "flower_wild_rhubarb_15_2.desc", "value": ""},
 	{"key": "flower_wild_rhubarb_15_3.desc", "value": ""},
 	
+	{"key": "flower_wild_rhubarb_16.name", "value": "Łopian #16"},
+	{"key": "flower_wild_rhubarb_16_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_16_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_16_3.desc", "value": ""},
+	
+	{"key": "flower_wild_rhubarb_17.name", "value": "Łopian #17"},
+	{"key": "flower_wild_rhubarb_17_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_17_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_17_3.desc", "value": ""},
+	
+	{"key": "flower_wild_rhubarb_18.name", "value": "Łopian #18"},
+	{"key": "flower_wild_rhubarb_18_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_18_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_18_3.desc", "value": ""},
+	
+	{"key": "flower_wild_rhubarb_19.name", "value": "Łopian #19"},
+	{"key": "flower_wild_rhubarb_19_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_19_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_19_3.desc", "value": ""},
+	
+	{"key": "flower_wild_rhubarb_20.name", "value": "Łopian #20"},
+	{"key": "flower_wild_rhubarb_20_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_20_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_20_3.desc", "value": ""},
+	
 	{"key": "flower_chocolate_daisy_14.name", "value": "Stokrotka czekoladowa #14"},
 	{"key": "flower_chocolate_daisy_14_1.desc", "value": ""},
 	{"key": "flower_chocolate_daisy_14_2.desc", "value": ""},
@@ -1367,5 +1417,11 @@
 	{"key": "tree_map.desc","value":"Tree Maps are Random Encounters. They spawn on trees mainly at night. Look for lantern light."},
 
 	{"key": "treasure_hunter.name","value":"Treasure Hunter"},
-	{"key": "treasure_hunter.desc","value":"Treasure Hunter are Random Encounters."}
+	{"key": "treasure_hunter.desc","value":"Treasure Hunter are Random Encounters."},
+	
+	{"key": "egg_encounter.name","value":"Bird Egg Nest Encounter"},
+	{"key": "egg_encounter.desc","value":"These are Random Encounters. A white blip on the mini map will indicate the encounter. You must get to the egg nest before the predator eats the eggs."},
+
+	{"key": "grave_robber.name","value":"Grave Robber Encounter"},
+	{"key": "grave_robber.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Approach the grave robber to accept the mission. You have limited time to search up to 7 locations for a collectable item before the lawmen come."}
 ]
