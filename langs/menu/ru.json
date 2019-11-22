@@ -53,5 +53,7 @@
 	{"key": "menu.collectables_counter", "value": "Собрано {count} из {max}"},
 	{"key": "menu.rdo_map", "value": "RDO Map"},
 	{"key": "menu.treasure_hunter", "value": "Охотники за сокровищем"},
-	{"key": "menu.tree_map", "value": "Карты сокровищ на дереве"}
+	{"key": "menu.tree_map", "value": "Карты сокровищ на дереве"},
+	{"key": "menu.egg_encounter", "value": "Bird Egg Nest"},
+	{"key": "menu.grave_robber", "value": "Grave Robber"}
 ]

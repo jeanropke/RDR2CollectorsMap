@@ -1221,6 +1221,31 @@
 	{"key": "flower_texas_bluebonnet_10_2.desc", "value": ""},
 	{"key": "flower_texas_bluebonnet_10_3.desc", "value": ""},
 	
+	{"key": "flower_texas_bluebonnet_11.name", "value": "Gorro-Azul-Texano #11"},
+	{"key": "flower_texas_bluebonnet_11_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_11_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_11_3.desc", "value": ""},
+	
+	{"key": "flower_texas_bluebonnet_12.name", "value": "Gorro-Azul-Texano #12"},
+	{"key": "flower_texas_bluebonnet_12_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_12_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_12_3.desc", "value": ""},
+	
+	{"key": "flower_texas_bluebonnet_13.name", "value": "Gorro-Azul-Texano #13"},
+	{"key": "flower_texas_bluebonnet_13_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_13_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_13_3.desc", "value": ""},
+	
+	{"key": "flower_texas_bluebonnet_14.name", "value": "Gorro-Azul-Texano #14"},
+	{"key": "flower_texas_bluebonnet_14_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_14_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_14_3.desc", "value": ""},
+	
+	{"key": "flower_texas_bluebonnet_15.name", "value": "Gorro-Azul-Texano #15"},
+	{"key": "flower_texas_bluebonnet_15_1.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_15_2.desc", "value": ""},
+	{"key": "flower_texas_bluebonnet_15_3.desc", "value": ""},
+	
 	{"key": "flower_agarita_3.name", "value": "Agarita #3"},
 	{"key": "flower_agarita_3_1.desc", "value": "Apenas a noite - 22:00 até 5:00"},
 	{"key": "flower_agarita_3_2.desc", "value": "Apenas a noite - 22:00 até 5:00"},
@@ -1351,6 +1376,31 @@
 	{"key": "flower_wild_rhubarb_15_2.desc", "value": ""},
 	{"key": "flower_wild_rhubarb_15_3.desc", "value": ""},
 	
+	{"key": "flower_wild_rhubarb_16.name", "value": "Ruibarbo Silvestre #16"},
+	{"key": "flower_wild_rhubarb_16_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_16_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_16_3.desc", "value": ""},
+	
+	{"key": "flower_wild_rhubarb_17.name", "value": "Ruibarbo Silvestre #17"},
+	{"key": "flower_wild_rhubarb_17_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_17_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_17_3.desc", "value": ""},
+	
+	{"key": "flower_wild_rhubarb_18.name", "value": "Ruibarbo Silvestre #18"},
+	{"key": "flower_wild_rhubarb_18_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_18_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_18_3.desc", "value": ""},
+	
+	{"key": "flower_wild_rhubarb_19.name", "value": "Ruibarbo Silvestre #19"},
+	{"key": "flower_wild_rhubarb_19_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_19_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_19_3.desc", "value": ""},
+	
+	{"key": "flower_wild_rhubarb_20.name", "value": "Ruibarbo Silvestre #20"},
+	{"key": "flower_wild_rhubarb_20_1.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_20_2.desc", "value": ""},
+	{"key": "flower_wild_rhubarb_20_3.desc", "value": ""},
+	
 	{"key": "flower_chocolate_daisy_14.name", "value": "Margarida-Chocolate #14"},
 	{"key": "flower_chocolate_daisy_14_1.desc", "value": ""},
 	{"key": "flower_chocolate_daisy_14_2.desc", "value": ""},
@@ -1367,6 +1417,12 @@
 	{"key": "tree_map.desc","value":"Esses mapas são encontros aleatórios. Eles aparecem nas árvores principalmente a noite. Procure pelas lanternas."},
 
 	{"key": "treasure_hunter.name","value":"Caçador de Tesouro"},
-	{"key": "treasure_hunter.desc","value":"Caçador de Tesouro são encontros aleatórios."}
+	{"key": "treasure_hunter.desc","value":"Caçador de Tesouro são encontros aleatórios."},
+	
+	{"key": "egg_encounter.name","value":"Ninho de Pássaro"},
+	{"key": "egg_encounter.desc","value":"São Encontros Aleatórios. Um ponto branco vai aparecer no mini map indicando o encontro. Você precisa chegar até ao ninho antes que o predador coma os ovos."},
+
+	{"key": "grave_robber.name","value":"Ladrão de Sepultura"},
+	{"key": "grave_robber.desc","value":"São Encontros Aleatórios. Um ponto branco vai aparecer no mini map indicando o encontro. Aproxime-se do ladrão para começar a missão. Você tem um tempo limitado para cavar 7 locais e conseguir um item coletável antes da polícia aparecer."}
 ]
 

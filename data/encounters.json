@@ -18,7 +18,7 @@
 		{"text": "tree_map_16", "x": "-39.9962", "y": "139"},
 		{"text": "tree_map_17", "x": "-89.3066", "y": "86.7890"},
 		{"text": "tree_map_18", "x": "-75.5827", "y": "91.6640"},
-		{"text": "tree_map_19", "x": "-64.7333", "y": "104.0234"},
+		{"text": "tree_map_19", "x": "-64.6267", "y": "103.7656"},
 		{"text": "tree_map_20", "x": "-61.4504", "y": "96.3359"},
 		{"text": "tree_map_21", "x": "-67.2829", "y": "89.3593"}
 	],
@@ -30,6 +30,26 @@
 		{"text": "treasure_hunter_05", "x": "-65.2734", "y": "85.7343"},
 		{"text": "treasure_hunter_06", "x": "-57.6562", "y": "111.8906"},
 		{"text": "treasure_hunter_07", "x": "-54.8515", "y": "123.9531"},
-		{"text": "treasure_hunter_08", "x": "-59.0468", "y": "89.8593"}
+		{"text": "treasure_hunter_08", "x": "-59.0468", "y": "89.8593"},
+		{"text": "treasure_hunter_09", "x": "-59.0705", "y": "91.4296"},
+		{"text": "treasure_hunter_10", "x": "-60.6961", "y": "101.6484"},
+		{"text": "treasure_hunter_11", "x": "-64.4060", "y": "123.0156"}
+	],
+	"egg_encounter": [
+		{"text": "egg_encounter_01", "x": "-54.625", "y": "128.7812"},
+		{"text": "egg_encounter_02", "x": "-69.3046", "y": "74.2734"},
+		{"text": "egg_encounter_03", "x": "-38.6536", "y": "146.7265"},
+		{"text": "egg_encounter_04", "x": "-71.2119", "y": "148.6406"},
+		{"text": "egg_encounter_05", "x": "-64.5319", "y": "104.8828"},
+		{"text": "egg_encounter_06", "x": "-45.3125", "y": "130.5937"},
+		{"text": "egg_encounter_07", "x": "-49", "y": "149.6015"},
+		{"text": "egg_encounter_08", "x": "-69.3056", "y": "141.2734"}
+		],
+	"grave_robber": [
+		{"text": "grave_robber_01", "x": "-80.2656", "y": "154.0546"},
+		{"text": "grave_robber_02", "x": "-67.2187", "y": "83.9765"},
+		{"text": "grave_robber_03", "x": "-50.8984", "y": "107.8046"},
+		{"text": "grave_robber_04", "x": "-82.5781", "y": "131.1328"},
+		{"text": "grave_robber_05", "x": "-104.8386", "y": "55.4218"}
 	]
 }
