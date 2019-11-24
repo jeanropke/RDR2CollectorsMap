@@ -512,7 +512,7 @@
 		{"text": "flower_cardinal_14", "day": "2", "tool": "0", "subdata": "cardinal", "x": "-94.6328125", "y": "142.8984375"},
 		{"text": "flower_creek_plum", "day": "2", "tool": "0", "subdata": "creek_plum", "x": "-97.8828125", "y": "132.9921875", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=605s"},
 		{"text": "flower_creek_plum_2", "day": "2", "tool": "0", "subdata": "creek_plum", "x": "-67.52", "y": "140"},
-		{"text": "flower_creek_plum_3", "day": "2", "tool": "0", "subdata": "creek_plum", "x": "-68.34", "y": "126.65"},
+		{"text": "flower_creek_plum_3", "day": "2", "tool": "0", "subdata": "creek_plum", "x": "-68.515", "y": "126.437"},
 		{"text": "flower_creek_plum_4", "day": "2", "tool": "0", "subdata": "creek_plum", "x": "-74.83", "y": "86.44"},
 		{"text": "flower_creek_plum_5", "day": "2", "tool": "0", "subdata": "creek_plum", "x": "-70.12", "y": "93.31"},
 		{"text": "flower_blood_flower_1", "day": "2", "tool": "0", "subdata": "blood_flower", "x": "-73.21875", "y": "146.125", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=638s"},
@@ -957,6 +957,8 @@
 		{"text": "random_item_194", "day": [1, 2, 3], "tool": "2", "x": "-73.84375", "y": "153.484375"},
 		{"text": "random_item_195", "day": [1, 2, 3], "tool": "2", "x": "-71.75", "y": "100.3125"},
 		{"text": "random_item_196", "day": [1, 2, 3], "tool": "2", "x": "-47.9053", "y": "124.6562"},
-		{"text": "random_item_197", "day": [1, 2, 3], "tool": "2", "x": "-44.1188", "y": "153.0078"}
+		{"text": "random_item_197", "day": [1, 2, 3], "tool": "2", "x": "-44.1188", "y": "153.0078"},
+		{"text": "random_item_198", "day": [1, 2, 3], "tool": "2", "x": "-72.3128", "y": "137.6875"},
+		{"text": "random_item_199", "day": [1, 2, 3], "tool": "1", "x": "-81.2600", "y": "156.8125"}
 	]
 }
