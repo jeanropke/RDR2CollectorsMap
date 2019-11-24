@@ -4,6 +4,7 @@ var markers = [];
 var itemMarkersLayer = new L.LayerGroup();
 
 var searchTerms = [];
+var uniqueSearchMarkers = [];
 
 var resetMarkersDaily;
 
@@ -55,7 +56,7 @@ var fastTravelData;
 var weeklySet = 'bowmans_set';
 var weeklySetData = [];
 var date;
-var nocache = 110;
+var nocache = 111;
 
 var wikiLanguage = [];
 
@@ -260,6 +261,8 @@ $("#tools").on("change", function() {
     expires: 999
   });
   MapBase.addMarkers();
+  if ($("#routes").val() == 1)
+    Routes.drawLines();
 });
 
 $("#reset-markers").on("change", function() {
