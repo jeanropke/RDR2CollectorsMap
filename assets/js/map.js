@@ -79,14 +79,17 @@ var MapBase = {
         markers.push(new Marker(marker.text, marker.x, marker.y, marker.tool, marker.day, _category, marker.subdata, marker.video, true));
       });
     });
+    uniqueSearchMarkers = markers;
     MapBase.addMarkers(true);
   },
 
   onSearch: function() {
-    if (searchTerms.length > 0) {
+    if (searchTerms.length == 0) {
+      uniqueSearchMarkers = markers;
+    } else {
       itemMarkersLayer.clearLayers();
       var searchMarkers = [];
-      var uniqueMarkers = [];
+      uniqueSearchMarkers = [];
       $.each(searchTerms, function(id, term) {
 
         searchMarkers = searchMarkers.concat(markers.filter(function(_marker) {
@@ -94,16 +97,16 @@ var MapBase = {
         }));
 
         $.each(searchMarkers, function(i, el) {
-          if ($.inArray(el, uniqueMarkers) === -1) uniqueMarkers.push(el);
+          if ($.inArray(el, uniqueSearchMarkers) === -1) uniqueSearchMarkers.push(el);
         });
       });
 
-      $.each(uniqueMarkers, function(key, marker) {
-        MapBase.addMarkerOnMap(marker);
-      });
-    } else {
-      MapBase.addMarkers();
     }
+
+    MapBase.addMarkers();
+
+    if ($("#routes").val() == 1)
+      Routes.drawLines();
   },
 
   addMarkers: function(refreshMenu = false) {
@@ -213,6 +216,10 @@ var MapBase = {
 
   addMarkerOnMap: function(marker) {
     if (marker.day != day && !marker.day.includes(day)) return;
+
+    if(!uniqueSearchMarkers.includes(marker))
+      return;
+
 
     if (!enabledCategories.includes(marker.category)) return;
 
