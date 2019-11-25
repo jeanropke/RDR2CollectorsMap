@@ -10,7 +10,7 @@ english (en-en.json)
   - Tiax
   - sporb
   - Senexis
-  
+
 german (de-de.json)
   - flameango
   - Rakmarok
@@ -37,6 +37,9 @@ polish (pl.json)
 brazilian (pt-br.json)
   - jeanropke
   - Vitor-Borba72
+
+arabic (ar-ar.json)
+  - MSSatari
   
 russian (ru.json)
   - Overnoes
