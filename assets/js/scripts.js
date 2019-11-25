@@ -56,7 +56,7 @@ var fastTravelData;
 var weeklySet = 'bowmans_set';
 var weeklySetData = [];
 var date;
-var nocache = 111;
+var nocache = 112;
 
 var wikiLanguage = [];
 
