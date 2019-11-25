@@ -54,6 +54,6 @@
 	{"key": "menu.rdo_map", "value": "RDO Map"},
 	{"key": "menu.treasure_hunter", "value": "Охотники за сокровищем"},
 	{"key": "menu.tree_map", "value": "Карты сокровищ на дереве"},
-	{"key": "menu.egg_encounter", "value": "Bird Egg Nest"},
-	{"key": "menu.grave_robber", "value": "Grave Robber"}
+	{"key": "menu.egg_encounter", "value": "Птичьи гнезда"},
+	{"key": "menu.grave_robber", "value": "Ограбления могил"}
 ]
