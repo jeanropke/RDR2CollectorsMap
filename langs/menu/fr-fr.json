@@ -32,7 +32,7 @@
 	{"key": "menu.clear", "value": "Effacer"},
 	{"key": "menu.show_coords", "value": "Afficher les coordonnées"},
 	{"key": "menu.reset_markers_daily", "value": "Réinitialiser tous les jours"},
-	{"key": "menu.reset", "value": "Rétablir"},
+	{"key": "menu.reset", "value": "Réinitialiser"},
 	{"key": "menu.issues", "value": "Problèmes"},
 	{"key": "menu.report_issues", "value": "Remonter un problème ici!"},
 	{"key": "menu.return_legacy", "value": "Retour vers la version originale!"},
@@ -51,5 +51,9 @@
 	{"key": "routes.invalid", "value": "Route Invalide"},
 	{"key": "menu.random_spots", "value": "Lieux Aléatoires"},
 	{"key": "menu.collectables_counter", "value": "{count} sur {max} Collecté(s)"},
-	{"key": "menu.rdo_map", "value": "RDO Map"}
+	{"key": "menu.rdo_map", "value": "RDO Map"},
+	{"key": "menu.treasure_hunter", "value": "Chasseur de Trésor"},
+	{"key": "menu.tree_map", "value": "Carte au Trésor sur Arbre"},
+	{"key": "menu.egg_encounter", "value": "Nid"},
+	{"key": "menu.grave_robber", "value": "Pilleur de Tombe"}
 ]

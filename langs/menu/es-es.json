@@ -51,6 +51,10 @@
 	{"key": "routes.invalid", "value": "Ruta inválida"},
 	{"key": "menu.random_spots", "value": "Puntos aleatorios"},
 	{"key": "menu.collectables_counter", "value": "Recogidos {count} de {max}"},
-	{"key": "menu.rdo_map", "value": "Mapa RDO"}
+	{"key": "menu.rdo_map", "value": "Mapa RDO"},
+	{"key": "menu.treasure_hunter", "value": "Treasure Hunter"},
+	{"key": "menu.tree_map", "value": "Treasure Map on Tree"},
+	{"key": "menu.egg_encounter", "value": "Bird Egg Nest"},
+	{"key": "menu.grave_robber", "value": "Grave Robber"}
 ]
 
