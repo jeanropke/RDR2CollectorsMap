@@ -53,10 +53,10 @@ var nazarCurrentDate;
 
 var fastTravelData;
 
-var weeklySet = 'bowmans_set';
+var weeklySet = 'foundation_set';
 var weeklySetData = [];
 var date;
-var nocache = 112;
+var nocache = 113;
 
 var wikiLanguage = [];
 
