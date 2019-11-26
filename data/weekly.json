@@ -28,6 +28,11 @@
 		{"item": "arrowhead_flint"},
 		{"item": "arrowhead_raw"},
 		{"item": "arrowhead_agate"}
+	],
+	"foundation_set": [
+		{"item": "arrowhead_feldspar"},
+		{"item": "earring_endicott_diamond"},
+		{"item": "earring_emmeline_coral"}
 	]
 	
 }
