@@ -56,7 +56,7 @@ var fastTravelData;
 var weeklySet = 'foundation_set';
 var weeklySetData = [];
 var date;
-var nocache = 113;
+var nocache = 114;
 
 var wikiLanguage = [];
 
@@ -84,6 +84,8 @@ function init() {
     toolType = $.cookie('tools');
   }
 
+  if($.cookie('disabled-categories') !== undefined)
+    categoriesDisabledByDefault = categoriesDisabledByDefault.concat($.cookie('disabled-categories').split(','));
 
   enabledCategories = enabledCategories.filter(function(item) {
     return categoriesDisabledByDefault.indexOf(item) === -1;
@@ -332,6 +334,9 @@ $('.menu-option.clickable').on('click', function() {
   } else {
     enabledCategories.push(menu.data('type'));
   }
+
+  $.cookie('disabled-categories', categories.filter(element => !enabledCategories.includes(element)).join(','))
+
   MapBase.addMarkers();
 
   if ($("#routes").val() == 1)
