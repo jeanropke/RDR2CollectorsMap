@@ -7,6 +7,10 @@ Menu.refreshMenu = function() {
   $.each(categories, function(key, category) {
 
     $('.menu-hidden[data-type=' + category + ']').children('p.collectible').remove();
+
+    if(categoriesDisabledByDefault.includes(category))
+      $('.menu-option.clickable[data-type=' + category + ']').children('span').addClass('disabled');
+
     $.each(markers, function(_key, marker) {
       if (marker.day == day && marker.category == category) {
         if (marker.subdata) {
@@ -40,7 +44,6 @@ Menu.refreshMenu = function() {
     }
   });
 };
-
 
 Menu.showAll = function() {
   $.each(categoryButtons, function(key, value) {
