@@ -44,7 +44,7 @@ var customRouteConnections = [];
 var showCoordinates = false;
 
 var toolType = '3'; //All type of tools
-var avaliableLanguages = ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'it-it', 'pt-br', 'pl', 'ru', 'zh-s', 'zh-t'];
+var avaliableLanguages = ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'it-it', 'pt-br', 'pl', 'ru', 'th-th', 'zh-s', 'zh-t'];
 var lang;
 
 var nazarLocations = [];
