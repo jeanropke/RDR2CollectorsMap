@@ -518,8 +518,8 @@
 		{"text": "flower_blood_flower_1", "day": "2", "tool": "0", "subdata": "blood_flower", "x": "-73.21875", "y": "146.125", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=638s"},
 		{"text": "flower_blood_flower_2", "day": "2", "tool": "0", "subdata": "blood_flower", "x": "-73.3046875", "y": "142.796875", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=667s"},
 		{"text": "flower_blood_flower_3", "day": "2", "tool": "0", "subdata": "blood_flower", "x": "-89.0937", "y": "145.6171"},
-		{"text": "flower_blood_flower_4", "day": "2", "tool": "0", "subdata": "blood_flower", "x": "-72.7343", "y": "154.4218"},		
-		{"text": "flower_blood_flower_5", "day": "2", "tool": "0", "subdata": "blood_flower", "x": "-66.5", "y": "147.1328"},		
+		{"text": "flower_blood_flower_4", "day": "2", "tool": "0", "subdata": "blood_flower", "x": "-72.7343", "y": "154.4218"},
+		{"text": "flower_blood_flower_5", "day": "2", "tool": "0", "subdata": "blood_flower", "x": "-66.5", "y": "147.1328"},
 		{"text": "flower_chocolate_daisy", "day": "2", "tool": "0", "subdata": "chocolate_daisy", "x": "-84.8984375", "y": "125.4140625", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=701s"},
 		{"text": "flower_chocolate_daisy_2", "day": "2", "tool": "0", "subdata": "chocolate_daisy", "x": "-77.375", "y": "122.3828125"},
 		{"text": "flower_chocolate_daisy_3", "day": "2", "tool": "0", "subdata": "chocolate_daisy", "x": "-78.9", "y": "123.83"},
@@ -959,6 +959,7 @@
 		{"text": "random_item_196", "day": [1, 2, 3], "tool": "2", "x": "-47.9053", "y": "124.6562"},
 		{"text": "random_item_197", "day": [1, 2, 3], "tool": "2", "x": "-44.1188", "y": "153.0078"},
 		{"text": "random_item_198", "day": [1, 2, 3], "tool": "2", "x": "-72.3128", "y": "137.6875"},
-		{"text": "random_item_199", "day": [1, 2, 3], "tool": "1", "x": "-81.2600", "y": "156.8125"}
+		{"text": "random_item_199", "day": [1, 2, 3], "tool": "1", "x": "-81.2600", "y": "156.8125"},
+		{"text": "random_item_200", "day": [1, 2, 3], "tool": "1", "x": "-41.5859", "y": "166.9375"}
 	]
 }
