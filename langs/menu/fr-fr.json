@@ -53,7 +53,7 @@
 	{"key": "menu.collectables_counter", "value": "{count} sur {max} Collecté(s)"},
 	{"key": "menu.rdo_map", "value": "RDO Map"},
 	{"key": "menu.treasure_hunter", "value": "Chasseur de Trésor"},
-	{"key": "menu.tree_map", "value": "Carte au Trésor sur Arbre"},
+	{"key": "menu.tree_map", "value": "Carte au Trésor Accrochée à un Arbre"},
 	{"key": "menu.egg_encounter", "value": "Nid"},
 	{"key": "menu.grave_robber", "value": "Pilleur de Tombe"}
 ]
