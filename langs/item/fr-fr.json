@@ -1423,5 +1423,5 @@
 	{"key": "egg_encounter.desc","value":"Ceux sont des évenements aléatoires. Un point blanc clignotant sur la carte indique l'évenement. Vous devez rammasser les oeufs avant que le prédateur de les mangent."},
 
     {"key": "grave_robber.name","value":"Pilleur de Tombe"},
-	{"key": "grave_robber.desc","value":"Cet un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenement. Approchez vous du pilleur de tombe pour accepter la mission. Vous avez un temps limité pour chercher un objet de collection, dans l'une des 7 localisations maximum, avant l'arrivé des forces de l'ordre."}
+	{"key": "grave_robber.desc","value":"C'est un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenement. Approchez vous du pilleur de tombe pour accepter la mission. Vous avez un temps limité pour chercher un objet de collection, dans l'une des 7 localisations maximum, avant l'arrivé des forces de l'ordre."}
 ]
