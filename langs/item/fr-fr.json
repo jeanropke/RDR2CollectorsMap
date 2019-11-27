@@ -1413,15 +1413,15 @@
 	
 	{"key": "random_item.name", "value": "Objet Aléatoire #"},
 
-	{"key": "tree_map.name","value":"Treasure Map stuck on Tree"},
-	{"key": "tree_map.desc","value":"Tree Maps are Random Encounters. They spawn on trees mainly at night. Look for lantern light."},
+	{"key": "tree_map.name","value":"Carte au Trésor Accrochée à un Arbre"},
+	{"key": "tree_map.desc","value":"Les cartes aux trésors accrochées à un Arbre sont des évenements aléatoires. Elles apparaissent sur les arbres, la plupart du temps, de nuit. Elle sont éclairées par une lanterne."},
 
-	{"key": "treasure_hunter.name","value":"Treasure Hunter"},
-	{"key": "treasure_hunter.desc","value":"Treasure Hunter are Random Encounters."},
+	{"key": "treasure_hunter.name","value":"Chasseur de Trésor"},
+	{"key": "treasure_hunter.desc","value":"Les Chasseurs de Trésors sont des évenements aléatoires."},
 	
-	{"key": "egg_encounter.name","value":"Bird Egg Nest Encounter"},
-	{"key": "egg_encounter.desc","value":"These are Random Encounters. A white blip on the mini map will indicate the encounter. You must get to the egg nest before the predator eats the eggs."},
+	{"key": "egg_encounter.name","value":"Nid"},
+	{"key": "egg_encounter.desc","value":"Ceux sont des évenements aléatoires. Un point blanc clignotant sur la carte indique l'évenement. Vous devez rammasser les oeufs avant que le prédateur de les mangent."},
 
-	{"key": "grave_robber.name","value":"Grave Robber Encounter"},
-	{"key": "grave_robber.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Approach the grave robber to accept the mission. You have limited time to search up to 7 locations for a collectable item before the lawmen come."}
+    {"key": "grave_robber.name","value":"Pilleur de Tombe"},
+	{"key": "grave_robber.desc","value":"Cet un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenement. Approchez vous du pilleur de tombe pour accepter la mission. Vous avez un temps limité pour chercher un objet de collection, dans l'une des 7 localisations maximum, avant l'arrivé des forces de l'ordre."}
 ]
