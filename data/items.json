@@ -449,6 +449,7 @@
 		{"text": "flower_chocolate_daisy_12", "day": "1", "tool": "0", "subdata": "chocolate_daisy", "x": "-72.140625", "y": "113.828125"},
 		{"text": "flower_chocolate_daisy_13", "day": "1", "tool": "0", "subdata": "chocolate_daisy", "x": "-72.4453125", "y": "117.484375"},
 		{"text": "flower_chocolate_daisy_14", "day": "1", "tool": "0", "subdata": "chocolate_daisy", "x": "-73.6484375", "y": "118.7890625"},
+		{"text": "flower_chocolate_daisy_15", "day": "1", "tool": "0", "subdata": "chocolate_daisy", "x": "-94.8671", "y": "125.375"},
 		{"text": "flower_wisteria", "day": "1", "tool": "0", "subdata": "wisteria", "x": "-81.0625", "y": "83.65625", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=365s"},
 		{"text": "flower_wisteria_2", "day": "1", "tool": "0", "subdata": "wisteria", "x": "-31.46", "y": "154.29"},
 		{"text": "flower_wisteria_3", "day": "1", "tool": "0", "subdata": "wisteria", "x": "-34.85", "y": "152.06"},
