@@ -3,15 +3,15 @@
  */
 
 var Menu = {};
-Menu.refreshMenu = function() {
-  $.each(categories, function(key, category) {
+Menu.refreshMenu = function () {
+  $.each(categories, function (key, category) {
 
     $('.menu-hidden[data-type=' + category + ']').children('p.collectible').remove();
 
-    if(categoriesDisabledByDefault.includes(category))
+    if (categoriesDisabledByDefault.includes(category))
       $('.menu-option.clickable[data-type=' + category + ']').children('span').addClass('disabled');
 
-    $.each(markers, function(_key, marker) {
+    $.each(markers, function (_key, marker) {
       if (marker.day == day && marker.category == category) {
         if (marker.subdata) {
           //This is for plants only
@@ -28,25 +28,25 @@ Menu.refreshMenu = function() {
     });
     $('.menu-hidden[data-type=treasure]').children('p.collectible').remove();
 
-    treasureData.filter(function(item) {
+    treasureData.filter(function (item) {
       $('.menu-hidden[data-type=treasure]').append('<p class="collectible" data-type="' + item.text + '">' + Language.get(item.text) + '</p>');
     });
   });
-  $.each(collectedItems, function(key, value) {
+  $.each(collectedItems, function (key, value) {
     if (value.length > 0) {
       $(`[data-type=${value}]`).addClass('disabled');
     }
   });
 
-  $.each(plantsDisabled, function(key, value) {
+  $.each(plantsDisabled, function (key, value) {
     if (value.length > 0) {
       $('[data-type=' + value + ']').addClass('disabled');
     }
   });
 };
 
-Menu.showAll = function() {
-  $.each(categoryButtons, function(key, value) {
+Menu.showAll = function () {
+  $.each(categoryButtons, function (key, value) {
     $(value).children('span').removeClass("disabled")
   });
   enabledCategories = categories;
@@ -55,8 +55,8 @@ Menu.showAll = function() {
   Encounters.addToMap();
 };
 
-Menu.hideAll = function() {
-  $.each(categoryButtons, function(key, value) {
+Menu.hideAll = function () {
+  $.each(categoryButtons, function (key, value) {
     $(value).children('span').addClass("disabled")
   });
 
@@ -66,6 +66,17 @@ Menu.hideAll = function() {
   Encounters.addToMap();
 };
 
-Menu.refreshItemsCounter = function() {
-  $('.collectables-counter').text(Language.get('menu.collectables_counter').replace('{count}', (collectedItems.length)).replace('{max}', markers.filter(item => (item.day == day || item.day.includes(day)) && item.isVisible).length));
+Menu.refreshItemsCounter = function () {
+  var counterCollected = 0;
+  collectedItems.filter(function(marker) {
+    markers.filter(
+      function(item) { 
+        if(item.text == marker && item.day == day && item.isVisible && item.isCollected) {
+          counterCollected++;
+        }
+      });
+  });
+  $('.collectables-counter').text(Language.get('menu.collectables_counter')
+    .replace('{count}', (counterCollected))
+    .replace('{max}', markers.filter(item => (item.day == day || item.day.includes(day)) && item.isVisible).length));
 };
