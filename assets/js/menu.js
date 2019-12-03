@@ -2,7 +2,13 @@
  * Created by Jean on 2019-10-09.
  */
 
-var Menu = {};
+var Menu = {
+  reorderMenu: function(menu) {
+    $(menu).children().sort(function(a, b) {
+      return a.textContent.localeCompare(b.textContent);
+    }).appendTo(menu);
+  }
+};
 Menu.refreshMenu = function () {
   $.each(categories, function (key, category) {
 
@@ -38,11 +44,14 @@ Menu.refreshMenu = function () {
     }
   });
 
-  $.each(plantsDisabled, function (key, value) {
+  $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
-      $('[data-type=' + value + ']').addClass('disabled');
+      $('span[data-type=' + value + ']').addClass('disabled');
+      $('p[data-type=' + value + ']').addClass('disabled');
     }
   });
+
+  Menu.reorderMenu('.menu-hidden[data-type=treasure]');
 };
 
 Menu.showAll = function () {
@@ -51,8 +60,6 @@ Menu.showAll = function () {
   });
   enabledCategories = categories;
   MapBase.addMarkers();
-  Treasures.addToMap();
-  Encounters.addToMap();
 };
 
 Menu.hideAll = function () {

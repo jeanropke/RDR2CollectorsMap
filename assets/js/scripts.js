@@ -23,7 +23,6 @@ var plantsCategories = [
 var categoriesDisabledByDefault = [
   'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'grave_robber', 'condor_egg'
 ]
-var plantsDisabled = [];
 
 var enabledCategories = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
@@ -59,7 +58,7 @@ var fastTravelData;
 var weeklySet = 'gamblers_choice_set';
 var weeklySetData = [];
 var date;
-var nocache = 115;
+var nocache = 116;
 
 var wikiLanguage = [];
 
@@ -75,7 +74,7 @@ function init() {
 
 
   var tempCollectedMarkers = "";
-  $.each($.cookie(), function(key, value) {
+  $.each($.cookie(), function (key, value) {
     if (key.startsWith('removed-items')) {
       tempCollectedMarkers += value;
     }
@@ -87,12 +86,12 @@ function init() {
     toolType = $.cookie('tools');
   }
 
-  if($.cookie('disabled-categories') !== undefined)
-    categoriesDisabledByDefault = categoriesDisabledByDefault.concat($.cookie('disabled-categories').split(','));
+  if ($.cookie('disabled-categories') !== undefined)
+    categoriesDisabledByDefault = $.cookie('disabled-categories').split(',');
 
-  enabledCategories = enabledCategories.filter(function(item) {
+  enabledCategories = enabledCategories.filter(function (item) {
     return categoriesDisabledByDefault.indexOf(item) === -1;
-})
+  });
 
   if (typeof $.cookie('map-layer') === 'undefined')
     $.cookie('map-layer', 'Detailed', {
@@ -122,7 +121,7 @@ function init() {
 
 
 
-  collectedItems = collectedItems.filter(function(el) {
+  collectedItems = collectedItems.filter(function (el) {
     return el != "";
   });
 
@@ -208,7 +207,7 @@ function setCurrentDayCycle() {
         expires: 2
       });
       if (resetMarkersDaily) {
-        $.each($.cookie(), function(key, value) {
+        $.each($.cookie(), function (key, value) {
           if (key.startsWith('removed-items')) {
             $.removeCookie(key)
           }
@@ -227,7 +226,7 @@ function changeCursor() {
     $('.leaflet-grab').css('cursor', 'grab');
 }
 
-$("#day").on("input", function() {
+$("#day").on("input", function () {
   $.cookie('ignore-days', null);
 
   day = parseInt($('#day').val());
@@ -239,9 +238,9 @@ $("#day").on("input", function() {
 
 });
 
-$("#search").on("input", function() {
+$("#search").on("input", function () {
   searchTerms = [];
-  $.each($('#search').val().split(';'), function(key, value) {
+  $.each($('#search').val().split(';'), function (key, value) {
     if ($.inArray(value.trim(), searchTerms) == -1) {
       if (value.length > 0)
         searchTerms.push(value.trim());
@@ -250,7 +249,7 @@ $("#search").on("input", function() {
   MapBase.onSearch();
 });
 
-$("#routes").on("change", function() {
+$("#routes").on("change", function () {
   if ($("#routes").val() == 0) {
     if (polylines instanceof L.Polyline) {
       baseMap.removeLayer(polylines);
@@ -260,7 +259,7 @@ $("#routes").on("change", function() {
   }
 });
 
-$("#tools").on("change", function() {
+$("#tools").on("change", function () {
   toolType = $("#tools").val();
   $.cookie('tools', toolType, {
     expires: 999
@@ -270,9 +269,9 @@ $("#tools").on("change", function() {
     Routes.drawLines();
 });
 
-$("#reset-markers").on("change", function() {
+$("#reset-markers").on("change", function () {
   if ($("#reset-markers").val() == 'clear') {
-    $.each($.cookie(), function(key, value) {
+    $.each($.cookie(), function (key, value) {
       if (key.startsWith('removed-items')) {
         $.removeCookie(key)
       }
@@ -293,7 +292,7 @@ $("#reset-markers").on("change", function() {
   //MapBase.removeCollectedMarkers();
 });
 
-$("#custom-routes").on("change", function() {
+$("#custom-routes").on("change", function () {
   var temp = $("#custom-routes").val();
   customRouteEnabled = temp == '1';
   if (temp == 'clear') {
@@ -308,13 +307,13 @@ $("#custom-routes").on("change", function() {
 
 });
 
-$('#show-coordinates').on('change', function() {
+$('#show-coordinates').on('change', function () {
   showCoordinates = $('#show-coordinates').val() == '1';
 
   changeCursor();
 });
 
-$("#language").on("change", function() {
+$("#language").on("change", function () {
   lang = $("#language").val();
   $.cookie('language', lang, {
     expires: 999
@@ -326,42 +325,54 @@ $("#language").on("change", function() {
   Menu.refreshMenu();
 });
 
-$('.menu-option.clickable').on('click', function() {
+$('.menu-option.clickable').on('click', function () {
   var menu = $(this);
   menu.children('span').toggleClass('disabled');
 
   if (menu.children('span').hasClass('disabled')) {
-    enabledCategories = $.grep(enabledCategories, function(value) {
+    enabledCategories = $.grep(enabledCategories, function (value) {
       return value != menu.data('type');
     });
+    categoriesDisabledByDefault.push(menu.data('type'));
+
   } else {
     enabledCategories.push(menu.data('type'));
+
+    categoriesDisabledByDefault = $.grep(categoriesDisabledByDefault, function (value) {
+      return value != menu.data('type');
+    });
   }
 
-  $.cookie('disabled-categories', categories.filter(element => !enabledCategories.includes(element)).join(','))
+  $.cookie('disabled-categories', categoriesDisabledByDefault.join(','));
 
   MapBase.addMarkers();
 
   if ($("#routes").val() == 1)
-    Routes.drawLines();
+    Routes.drawLines();  
 });
 
 
-$('.open-submenu').on('click', function(e) {
+$('.open-submenu').on('click', function (e) {
   e.stopPropagation();
   $(this).parent().parent().children('.menu-hidden').toggleClass('opened');
 });
 
-$(document).on('click', '.collectible', function() {
+$(document).on('click', '.collectible', function () {
   var collectible = $(this);
 
   MapBase.removeItemFromMap(collectible.data('type'));
 
   if ($("#routes").val() == 1)
     Routes.drawLines();
+    
+  if (collectible.parent().data('type') == 'american_flowers') {
+    $.cookie('disabled-categories', categoriesDisabledByDefault.join(','));
+  }  
+
+  MapBase.addMarkers();
 });
 
-$('.menu-toggle').on('click', function() {
+$('.menu-toggle').on('click', function () {
   $('.side-menu').toggleClass('menu-opened');
 
   if ($('.side-menu').hasClass('menu-opened')) {
@@ -374,7 +385,7 @@ $('.menu-toggle').on('click', function() {
 
 });
 var timerAlert = false;
-setInterval(function() {
+setInterval(function () {
   var nextGMTMidnight = new Date();
   nextGMTMidnight.setUTCHours(24);
   nextGMTMidnight.setUTCMinutes(0);
@@ -422,7 +433,7 @@ function getVirtual(time) {
 }
 
 L.Icon.DataMarkup = L.Icon.extend({
-  _setIconStyles: function(img, name) {
+  _setIconStyles: function (img, name) {
     L.Icon.prototype._setIconStyles.call(this, img, name);
     if (this.options.marker) {
       img.dataset.marker = this.options.marker;
