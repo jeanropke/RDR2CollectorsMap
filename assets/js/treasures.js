@@ -48,22 +48,20 @@ var Treasures = {
   },
 
   addToMap: function() {
-    treasuresLayer.clearLayers();
-
     if(!enabledCategories.includes('treasure'))
         return;
 
     $.each(treasureMarkers, function(key, value)
     {
         if(!collectedItems.includes(value.treasure)) {
-            treasuresLayer.addLayer(value.marker);
-            treasuresLayer.addLayer(value.circle);
+          miscLayer.addLayer(value.marker);
+          miscLayer.addLayer(value.circle);
             $.each(value.treasuresCross, function(crossKey, crossValue){
-              treasuresLayer.addLayer(crossValue);
+              miscLayer.addLayer(crossValue);
             });
         }
     });
 
-    treasuresLayer.addTo(baseMap);
+    miscLayer.addTo(baseMap);
   }
 }

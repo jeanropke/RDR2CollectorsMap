@@ -13,7 +13,7 @@ var collectedItems = [];
 var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
-  'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'grave_robber'
+  'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'grave_robber', 'condor_egg'
 ];
 
 var plantsCategories = [
@@ -21,7 +21,7 @@ var plantsCategories = [
   'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'
 ];
 var categoriesDisabledByDefault = [
-  'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'grave_robber'
+  'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'grave_robber', 'condor_egg'
 ]
 var plantsDisabled = [];
 
@@ -30,7 +30,10 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var treasureData = [];
 var treasureMarkers = [];
-var treasuresLayer = new L.LayerGroup();
+
+var condorData = [];
+var condorMarkers = [];
+var miscLayer = new L.LayerGroup();
 
 var encountersMarkers = [];
 var encountersLayer = new L.LayerGroup();
@@ -432,5 +435,6 @@ window.addEventListener("DOMContentLoaded", MapBase.loadWeeklySet());
 window.addEventListener("DOMContentLoaded", MapBase.loadFastTravels());
 window.addEventListener("DOMContentLoaded", MapBase.loadMadamNazar());
 window.addEventListener("DOMContentLoaded", Treasures.load());
+window.addEventListener("DOMContentLoaded", CondorEgg.load());
 window.addEventListener("DOMContentLoaded", Encounters.load());
 window.addEventListener("DOMContentLoaded", MapBase.loadMarkers());

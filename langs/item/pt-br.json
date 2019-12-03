@@ -1423,6 +1423,9 @@
 	{"key": "egg_encounter.desc","value":"São Encontros Aleatórios. Um ponto branco vai aparecer no mini map indicando o encontro. Você precisa chegar até ao ninho antes que o predador coma os ovos."},
 
 	{"key": "grave_robber.name","value":"Ladrão de Sepultura"},
-	{"key": "grave_robber.desc","value":"São Encontros Aleatórios. Um ponto branco vai aparecer no mini map indicando o encontro. Aproxime-se do ladrão para começar a missão. Você tem um tempo limitado para cavar 7 locais e conseguir um item coletável antes da polícia aparecer."}
+	{"key": "grave_robber.desc","value":"São Encontros Aleatórios. Um ponto branco vai aparecer no mini map indicando o encontro. Aproxime-se do ladrão para começar a missão. Você tem um tempo limitado para cavar 7 locais e conseguir um item coletável antes da polícia aparecer."},
+	
+	{"key": "condor_egg.name","value":"Evento Ovo de Condor"},
+	{"key": "condor_egg.desc","value":"É um evento"}
 ]
 
