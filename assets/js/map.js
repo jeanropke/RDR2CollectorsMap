@@ -112,7 +112,8 @@ var MapBase = {
   addMarkers: function(refreshMenu = false) {
 
     itemMarkersLayer.clearLayers();
-
+    miscLayer.clearLayers();
+    
     $.each(markers, function(key, marker) {
       //Set isVisible to false. addMarkerOnMap will set to true if needs
       marker.isVisible = false;
@@ -133,6 +134,7 @@ var MapBase = {
     Menu.refreshItemsCounter();
     Treasures.addToMap();
     Encounters.addToMap();
+    CondorEgg.addToMap();
 
     if (refreshMenu)
       Menu.refreshMenu();

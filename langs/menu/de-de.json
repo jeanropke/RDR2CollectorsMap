@@ -55,5 +55,6 @@
 	{"key": "menu.treasure_hunter", "value": "Schatzjäger"},
 	{"key": "menu.tree_map", "value": "Schatzkarten an Bäumen"},
 	{"key": "menu.egg_encounter", "value": "Vogelnester"},
-	{"key": "menu.grave_robber", "value": "Grabräuber"}
+	{"key": "menu.grave_robber", "value": "Grabräuber"},
+	{"key": "menu.condor_egg", "value": "Condor Egg"}
 ]

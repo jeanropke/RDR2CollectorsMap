@@ -55,5 +55,6 @@
 	{"key": "menu.treasure_hunter", "value": "Охотники за сокровищем"},
 	{"key": "menu.tree_map", "value": "Карты сокровищ на дереве"},
 	{"key": "menu.egg_encounter", "value": "Птичьи гнезда"},
-	{"key": "menu.grave_robber", "value": "Ограбления могил"}
+	{"key": "menu.grave_robber", "value": "Ограбления могил"},
+	{"key": "menu.condor_egg", "value": "Condor Egg"}
 ]

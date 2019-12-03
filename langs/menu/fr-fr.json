@@ -55,5 +55,6 @@
 	{"key": "menu.treasure_hunter", "value": "Chasseur de Trésor"},
 	{"key": "menu.tree_map", "value": "Carte au Trésor Accrochée à un Arbre"},
 	{"key": "menu.egg_encounter", "value": "Nid"},
-	{"key": "menu.grave_robber", "value": "Pilleur de Tombe"}
+	{"key": "menu.grave_robber", "value": "Pilleur de Tombe"},
+	{"key": "menu.condor_egg", "value": "Condor Egg"}
 ]

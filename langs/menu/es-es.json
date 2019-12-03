@@ -55,6 +55,7 @@
 	{"key": "menu.treasure_hunter", "value": "Treasure Hunter"},
 	{"key": "menu.tree_map", "value": "Treasure Map on Tree"},
 	{"key": "menu.egg_encounter", "value": "Bird Egg Nest"},
-	{"key": "menu.grave_robber", "value": "Grave Robber"}
+	{"key": "menu.grave_robber", "value": "Grave Robber"},
+	{"key": "menu.condor_egg", "value": "Condor Egg"}
 ]
 

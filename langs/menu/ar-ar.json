@@ -55,5 +55,6 @@
 	{"key": "menu.treasure_hunter", "value": "صائد الكنز"},
 	{"key": "menu.tree_map", "value": "خريطة الكنز على شجرة"},
 	{"key": "menu.egg_encounter", "value": "عش الطائر"},
-	{"key": "menu.grave_robber", "value": "لص القبور"}
+	{"key": "menu.grave_robber", "value": "لص القبور"},
+	{"key": "menu.condor_egg", "value": "Condor Egg"}
 ]
