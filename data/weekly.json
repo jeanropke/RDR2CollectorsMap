@@ -33,6 +33,11 @@
 		{"item": "arrowhead_feldspar"},
 		{"item": "earring_endicott_diamond"},
 		{"item": "earring_emmeline_coral"}
+	],
+	"gamblers_choice_set": [
+		{"item": "swords_ace"},
+		{"item": "bottle_gran_corazon_madeira"},
+		{"item": "coin_gold_dollar_coin"}
 	]
 	
 }
