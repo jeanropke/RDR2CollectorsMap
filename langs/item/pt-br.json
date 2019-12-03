@@ -1426,6 +1426,6 @@
 	{"key": "grave_robber.desc","value":"São Encontros Aleatórios. Um ponto branco vai aparecer no mini map indicando o encontro. Aproxime-se do ladrão para começar a missão. Você tem um tempo limitado para cavar 7 locais e conseguir um item coletável antes da polícia aparecer."},
 	
 	{"key": "condor_egg.name","value":"Evento Ovo de Condor"},
-	{"key": "condor_egg.desc","value":"É um evento"}
+	{"key": "condor_egg.desc","value":"É um evento do modo livre para a profissão de coletor. Marcas vermelhas indicam possíveis locais onde o ovo condor pode estar."}
 ]
 
