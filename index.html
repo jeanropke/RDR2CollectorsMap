@@ -329,8 +329,33 @@
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_donations" />
         <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
-        <input type="hidden" name="currency_code" value="USD" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <select class="input-day" name="currency_code">
+          <option value="AUD">AUD $</option>
+          <option value="BRL">BRL R$</option>
+          <option value="CAD">CAD $</option>
+          <option value="CHF">CHF Fr.</option>
+          <option value="CZK">CZK Kč</option>
+          <option value="DKK">DKK kr.</option>
+          <option value="EUR">EUR €</option>
+          <option value="GBP">GBP £</option>
+          <option value="HKD">HKD $</option>
+          <option value="HUF">HUF Ft</option>
+          <option value="ILS">ILS ₪</option>
+          <option value="JPY">JPY ‎¥‎</option>
+          <option value="MXN">‎MXN $‎</option>
+          <option value="MYR">MYR RM</option>
+          <option value="NOK">NOK kr</option>
+          <option value="NZD">NZD $</option>
+          <option value="PHP">‎PHP ₱</option>
+          <option value="PLN">PLN gr</option>
+          <option value="RUB">RUB ₽</option>
+          <option value="SEK">SEK kr</option>
+          <option value="SGD">SGD $</option>
+          <option value="THB">THB ฿</option>
+          <option value="TWD">TWD $</option>
+          <option value="USD" selected>USD $</option>
+      </select>
+              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
         <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
       </form>
     </div>
