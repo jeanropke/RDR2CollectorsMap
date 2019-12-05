@@ -1428,6 +1428,6 @@
 	{"key": "condor_egg.name","value":"Яйцо Кондора"},
 	{"key": "condor_egg.desc","value":"Это событие свободного режима для роли коллекционера. Красными метками отмечены возможные места, на которых может оказаться яйцо кондора."},
 	
-	{"key": "dog_encounter.name","value":"Dog Encounter Event"},
-	{"key": "dog_encounter.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."}
+	{"key": "dog_encounter.name","value":"Встреча с собакой"},
+	{"key": "dog_encounter.desc","value":"Это событие появляется случайным образом. Белая метка на мини-карте укажет место события."}
 ]
