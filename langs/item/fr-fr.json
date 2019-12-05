@@ -1428,6 +1428,6 @@
 	{"key": "condor_egg.name","value":"Evenement Oeuf de Condor"},
 	{"key": "condor_egg.desc","value":"Ceci est un évenement"},
 	
-	{"key": "dog_encounter.name","value":"Dog Encounter Event"},
-	{"key": "dog_encounter.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."}
+	{"key": "dog_encounter.name","value":"Evenement Chien"},
+	{"key": "dog_encounter.desc","value":"Ceci est un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenemen."}
 ]
