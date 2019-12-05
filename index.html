@@ -14,7 +14,7 @@
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="assets/js/jquery.cookie.js"></script>
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=116" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=117" />
 </head>
 
 <body>
@@ -222,6 +222,10 @@
       <img class="icon" src="./assets/images/icons/grave-robber.png" />
       <span data-text="menu.grave_robber">Grave Robber</span>
     </div>
+    <div class="menu-option clickable" data-type="dog_encounter">
+      <img class="icon" src="./assets/images/icons/dog-encounter.png" />
+      <span data-text="menu.dog_encounter">Dog Encounter</span>
+    </div>
     <div class="menu-option clickable" data-type="treasure_hunter">
       <img class="icon" src="./assets/images/icons/treasure-hunter.png" />
       <span data-text="menu.treasure_hunter">Treasure Hunter</span>
@@ -293,6 +297,13 @@
         <select class="input-day" id="show-coordinates">
           <option value="1" data-text="menu.yes">Yes</option>
           <option value="0" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="auto-refresh" data-text="menu.auto_refresh">Auto-refresh</label>
+        <select class="input-day" id="auto-refresh">
+          <option value="true" data-text="menu.yes">Yes</option>
+          <option value="false" data-text="menu.no" selected>No</option>
         </select>
       </div>
       <div class="input-container">
@@ -382,15 +393,15 @@
   <div class="lat-lng-container">
     <p></p><button id="lat-lng-container-close-button">×</button>
   </div>
-  <script src="assets/js/marker.js?nocache=116"></script>
-  <script src="assets/js/treasures.js?nocache=116"></script>
-  <script src="assets/js/condoregg.js?nocache=116"></script>
-  <script src="assets/js/encounters.js?nocache=116"></script>
-  <script src="assets/js/map.js?nocache=116"></script>
-  <script src="assets/js/language.js?nocache=116"></script>
-  <script src="assets/js/menu.js?nocache=116"></script>
-  <script src="assets/js/routes.js?nocache=116"></script>
-  <script src="assets/js/scripts.js?nocache=116"></script>
+  <script src="assets/js/marker.js?nocache=117"></script>
+  <script src="assets/js/treasures.js?nocache=117"></script>
+  <script src="assets/js/condoregg.js?nocache=117"></script>
+  <script src="assets/js/encounters.js?nocache=117"></script>
+  <script src="assets/js/map.js?nocache=117"></script>
+  <script src="assets/js/language.js?nocache=117"></script>
+  <script src="assets/js/menu.js?nocache=117"></script>
+  <script src="assets/js/routes.js?nocache=117"></script>
+  <script src="assets/js/scripts.js?nocache=117"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
   <script>

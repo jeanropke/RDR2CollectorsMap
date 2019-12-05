@@ -13,7 +13,7 @@ var collectedItems = [];
 var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
-  'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'grave_robber', 'condor_egg'
+  'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber', 'condor_egg'
 ];
 
 var plantsCategories = [
@@ -21,7 +21,7 @@ var plantsCategories = [
   'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'
 ];
 var categoriesDisabledByDefault = [
-  'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'grave_robber', 'condor_egg'
+  'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber', 'condor_egg'
 ]
 
 var enabledCategories = categories;
@@ -58,12 +58,14 @@ var fastTravelData;
 var weeklySet = 'gamblers_choice_set';
 var weeklySetData = [];
 var date;
-var nocache = 116;
+var nocache = 117;
 
 var wikiLanguage = [];
 
 var debugTool = null;
 var isDebug = false;
+
+var autoRefresh = false;
 
 function init() {
 
@@ -86,7 +88,7 @@ function init() {
     toolType = $.cookie('tools');
   }
 
-  if ($.cookie('disabled-categories') !== undefined)
+  if (typeof $.cookie('disabled-categories') !== 'undefined')
     categoriesDisabledByDefault = $.cookie('disabled-categories').split(',');
 
   enabledCategories = enabledCategories.filter(function (item) {
@@ -113,13 +115,18 @@ function init() {
       expires: 999
     });
 
+  if (typeof $.cookie('auto-refresh') === 'undefined')
+    $.cookie('auto-refresh', false, { expires: 999 });
+
+  autoRefresh = $.cookie('auto-refresh') == 'true';
+
+  $("#auto-refresh").val(autoRefresh.toString());
+
   resetMarkersDaily = $.cookie('removed-markers-daily') == 'true';
   $("#reset-markers").val(resetMarkersDaily.toString());
 
   var curDate = new Date();
   date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
-
-
 
   collectedItems = collectedItems.filter(function (el) {
     return el != "";
@@ -168,11 +175,10 @@ function setMapBackground(mapName) {
   });
 }
 
-function setCurrentDayCycle() {
+function setCurrentDayCycle(dev = null) {
   //day1: 2 4 6
   //day2: 0 3
   //day3: 1 5
-
   var weekDay = new Date().getUTCDay();
   switch (weekDay) {
     case 2: //tuesday
@@ -325,6 +331,14 @@ $("#language").on("change", function () {
   Menu.refreshMenu();
 });
 
+$("#auto-refresh").on("change", function () {
+  $.cookie('auto-refresh', $("#auto-refresh").val() == 'true', {
+    expires: 999
+  });
+
+  autoRefresh = $("#auto-refresh").val() == 'true';
+});
+
 $('.menu-option.clickable').on('click', function () {
   var menu = $(this);
   menu.children('span').toggleClass('disabled');
@@ -348,7 +362,7 @@ $('.menu-option.clickable').on('click', function () {
   MapBase.addMarkers();
 
   if ($("#routes").val() == 1)
-    Routes.drawLines();  
+    Routes.drawLines();
 });
 
 
@@ -364,10 +378,10 @@ $(document).on('click', '.collectible', function () {
 
   if ($("#routes").val() == 1)
     Routes.drawLines();
-    
+
   if (collectible.parent().data('type') == 'american_flowers') {
     $.cookie('disabled-categories', categoriesDisabledByDefault.join(','));
-  }  
+  }
 
   MapBase.addMarkers();
 });
@@ -391,11 +405,10 @@ setInterval(function () {
   nextGMTMidnight.setUTCMinutes(0);
   nextGMTMidnight.setUTCSeconds(0);
   var countdownDate = nextGMTMidnight - new Date();
-
-  if (countdownDate <= 10) {
-    if (!timerAlert) {
-      alert('Cycle is changing in 10 seconds.');
-      timerAlert = true;
+  if (countdownDate >= (24 * 60 * 60 * 1000) - 1000) {
+    if (autoRefresh) {
+      setCurrentDayCycle();
+      MapBase.addMarkers();
     }
   }
 
