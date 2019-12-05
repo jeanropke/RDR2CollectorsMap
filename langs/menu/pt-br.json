@@ -56,5 +56,7 @@
 	{"key": "menu.tree_map", "value": "Mapa de Tesouro na Árvore"},
 	{"key": "menu.egg_encounter", "value": "Ninho de Pássaro"},
 	{"key": "menu.grave_robber", "value": "Ladrão de Sepultura"},
-	{"key": "menu.condor_egg", "value": "Ovo de Condor"}
+	{"key": "menu.condor_egg", "value": "Ovo de Condor"},
+	{"key": "menu.dog_encounter", "value": "Encontro com Cachorro"},
+	{"key": "menu.auto_refresh", "value": "Mudar ciclo automaticamente"}
 ]

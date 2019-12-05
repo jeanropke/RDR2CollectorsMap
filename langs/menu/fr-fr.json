@@ -56,5 +56,7 @@
 	{"key": "menu.tree_map", "value": "Carte au Trésor Accrochée à un Arbre"},
 	{"key": "menu.egg_encounter", "value": "Nid"},
 	{"key": "menu.grave_robber", "value": "Pilleur de Tombe"},
-	{"key": "menu.condor_egg", "value": "Oeuf de Condor"}
+	{"key": "menu.condor_egg", "value": "Oeuf de Condor"},
+	{"key": "menu.dog_encounter", "value": "Dog Encounter"},
+	{"key": "menu.auto_refresh", "value": "Change cycle automatically"}
 ]

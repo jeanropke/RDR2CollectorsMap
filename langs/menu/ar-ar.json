@@ -56,5 +56,7 @@
 	{"key": "menu.tree_map", "value": "خريطة الكنز على شجرة"},
 	{"key": "menu.egg_encounter", "value": "عش الطائر"},
 	{"key": "menu.grave_robber", "value": "لص القبور"},
-	{"key": "menu.condor_egg", "value": "Condor Egg"}
+	{"key": "menu.condor_egg", "value": "Condor Egg"},
+	{"key": "menu.dog_encounter", "value": "Dog Encounter"},
+	{"key": "menu.auto_refresh", "value": "Change cycle automatically"}
 ]
