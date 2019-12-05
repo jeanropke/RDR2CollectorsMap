@@ -1401,5 +1401,8 @@
 	{"key": "grave_robber.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Approach the grave robber to accept the mission. You have limited time to search up to 7 locations for a collectable item before the lawmen come."},
 	
 	{"key": "condor_egg.name","value":"Condor Egg Event"},
-	{"key": "condor_egg.desc","value":"This is an event"}
+	{"key": "condor_egg.desc","value":"This is an event"},
+	
+	{"key": "dog_encounter.name","value":"Dog Encounter Event"},
+	{"key": "dog_encounter.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."}
 ]

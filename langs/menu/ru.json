@@ -56,5 +56,7 @@
 	{"key": "menu.tree_map", "value": "Карты сокровищ на дереве"},
 	{"key": "menu.egg_encounter", "value": "Птичьи гнезда"},
 	{"key": "menu.grave_robber", "value": "Ограбления могил"},
-	{"key": "menu.condor_egg", "value": "Яйцо Кондора"}
+	{"key": "menu.condor_egg", "value": "Яйцо Кондора"},
+	{"key": "menu.dog_encounter", "value": "Dog Encounter"},
+	{"key": "menu.auto_refresh", "value": "Change cycle automatically"}
 ]

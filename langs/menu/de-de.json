@@ -56,5 +56,7 @@
 	{"key": "menu.tree_map", "value": "Schatzkarten an Bäumen"},
 	{"key": "menu.egg_encounter", "value": "Vogelnester"},
 	{"key": "menu.grave_robber", "value": "Grabräuber"},
-	{"key": "menu.condor_egg", "value": "Condor Egg"}
+	{"key": "menu.condor_egg", "value": "Condor Egg"},
+	{"key": "menu.dog_encounter", "value": "Dog Encounter"},
+	{"key": "menu.auto_refresh", "value": "Change cycle automatically"}
 ]
