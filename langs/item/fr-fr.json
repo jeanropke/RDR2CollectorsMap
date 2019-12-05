@@ -1429,5 +1429,11 @@
 	{"key": "condor_egg.desc","value":"Ceci est un évenement"},
 	
 	{"key": "dog_encounter.name","value":"Evenement Chien"},
-	{"key": "dog_encounter.desc","value":"Ceci est un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenemen."}
+	{"key": "dog_encounter.desc","value":"Ceci est un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenemen."},
+	
+	{"key": "fame_seeker.name","value":"Fame Seeker Event"},
+	{"key": "fame_seeker.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."},
+	
+	{"key": "wounded_animal.name","value":"Wounded Animal Event"},
+	{"key": "wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."}
 ]

@@ -1429,6 +1429,12 @@
 	{"key": "condor_egg.desc","value":"图中的红色叉叉都是神鹫蛋大概所在的位置，是不是很刘濞！（企鹅侠）"},
 	
 	{"key": "dog_encounter.name","value":"狗狗遭遇随机点"},
-	{"key": "dog_encounter.desc","value":"这是一个随机遭遇点，地图上以白点显示，狗狗会随机给你收藏品或者好东西、也有可能给你带来埋伏.(企鹅侠)"}
+	{"key": "dog_encounter.desc","value":"这是一个随机遭遇点，地图上以白点显示，狗狗会随机给你收藏品或者好东西、也有可能给你带来埋伏.(企鹅侠)"},
+	
+	{"key": "fame_seeker.name","value":"Fame Seeker Event"},
+	{"key": "fame_seeker.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."},
+	
+	{"key": "wounded_animal.name","value":"Wounded Animal Event"},
+	{"key": "wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."}
 
 ]
