@@ -54,5 +54,7 @@
 	{"key": "menu.grave_robber", "value": "Grave Robber"},
 	{"key": "menu.condor_egg", "value": "Condor Egg"},
 	{"key": "menu.dog_encounter", "value": "Dog Encounter"},
-	{"key": "menu.auto_refresh", "value": "Change cycle automatically"}
+	{"key": "menu.auto_refresh", "value": "Change cycle automatically"},
+	{"key": "menu.fame_seeker", "value": "Fame Seeker"},
+	{"key": "menu.wounded_animal", "value": "Wounded Animal"}
 ]

@@ -3,8 +3,8 @@
  */
 
 var Menu = {
-  reorderMenu: function(menu) {
-    $(menu).children().sort(function(a, b) {
+  reorderMenu: function (menu) {
+    $(menu).children().sort(function (a, b) {
       return a.textContent.localeCompare(b.textContent);
     }).appendTo(menu);
   }
@@ -24,8 +24,9 @@ Menu.refreshMenu = function () {
           if ($(`.menu-hidden[data-type='american_flowers']`).children(`p.collectible[data-type=${marker.subdata}]`).length > 0)
             return;
 
-          var tempName = Language.get(`${marker.text}.name`);
-          $('.menu-hidden[data-type=' + marker.category + ']').append(`<p class="collectible" data-type="${marker.subdata}">${tempName.split('#')[0]}</p>`);
+          var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.subdata).text(Language.get(`${marker.text}.name`).split('#')[0]);
+
+          $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement);
         } else {
           //All others items
           $(`.menu-hidden[data-type=${category}]`).append(`<p class="collectible" data-type="${marker.text}">${marker.title}</p>`);
@@ -75,10 +76,10 @@ Menu.hideAll = function () {
 
 Menu.refreshItemsCounter = function () {
   var counterCollected = 0;
-  collectedItems.filter(function(marker) {
+  collectedItems.filter(function (marker) {
     markers.filter(
-      function(item) { 
-        if(item.text == marker && item.day == day && item.isVisible && item.isCollected) {
+      function (item) {
+        if (item.text == marker && item.day == day && item.isVisible && item.isCollected) {
           counterCollected++;
         }
       });

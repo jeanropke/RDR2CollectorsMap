@@ -65,5 +65,18 @@
 		{"text": "dog_encounter_05", "x": "-41.3828", "y": "154.7374"},
 		{"text": "dog_encounter_06", "x": "-93.2968", "y": "88.6015"},
 		{"text": "dog_encounter_07", "x": "-56.2187", "y": "154.3125"}
+	],
+	"fame_seeker": [
+		{"text": "fame_seeker_01", "x": "-97.1093", "y": "80.0703"},
+		{"text": "fame_seeker_02", "x": "-61.1423", "y": "104.9059"},
+		{"text": "fame_seeker_03", "x": "-61.8544", "y": "91.3357"}
+	],
+	"wounded_animal": [
+		{"text": "wounded_animal_01", "x": "-45.1562", "y": "116.0234"},
+		{"text": "wounded_animal_02", "x": "-55.8046", "y": "103.1562"},
+		{"text": "wounded_animal_03", "x": "-67.2815", "y": "83.7031"},
+		{"text": "wounded_animal_04", "x": "-32.2265", "y": "117.8359"},
+		{"text": "wounded_animal_05", "x": "-90.2365", "y": "136.3044"},
+		{"text": "wounded_animal_06", "x": "-98.8671", "y": "85.9134"}
 	]
 }

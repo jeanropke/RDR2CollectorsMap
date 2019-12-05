@@ -13,7 +13,8 @@ var collectedItems = [];
 var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
-  'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber', 'condor_egg'
+  'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
+  'condor_egg', 'wounded_animal', 'fame_seeker'
 ];
 
 var plantsCategories = [
@@ -21,7 +22,8 @@ var plantsCategories = [
   'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'
 ];
 var categoriesDisabledByDefault = [
-  'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber', 'condor_egg'
+  'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber', 
+  'condor_egg', 'wounded_animal', 'fame_seeker'
 ]
 
 var enabledCategories = categories;
@@ -58,7 +60,7 @@ var fastTravelData;
 var weeklySet = 'gamblers_choice_set';
 var weeklySetData = [];
 var date;
-var nocache = 117;
+var nocache = 118;
 
 var wikiLanguage = [];
 

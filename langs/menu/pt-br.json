@@ -58,5 +58,7 @@
 	{"key": "menu.grave_robber", "value": "Ladrão de Sepultura"},
 	{"key": "menu.condor_egg", "value": "Ovo de Condor"},
 	{"key": "menu.dog_encounter", "value": "Encontro com Cachorro"},
-	{"key": "menu.auto_refresh", "value": "Mudar ciclo automaticamente"}
+	{"key": "menu.auto_refresh", "value": "Mudar ciclo automaticamente"},
+	{"key": "menu.fame_seeker", "value": "Caçador de Fame"},
+	{"key": "menu.wounded_animal", "value": "Animal Ferido"}
 ]
