@@ -45,7 +45,10 @@
 		{"text": "egg_encounter_06", "x": "-45.3125", "y": "130.5937"},
 		{"text": "egg_encounter_07", "x": "-49", "y": "149.6015"},
 		{"text": "egg_encounter_08", "x": "-69.3056", "y": "141.2734"},
-		{"text": "egg_encounter_09", "x": "-112.9765", "y": "60.9140"}
+		{"text": "egg_encounter_09", "x": "-112.9765", "y": "60.9140"},
+		{"text": "egg_encounter_10", "x": "-100.5174", "y": "84.3671"},
+		{"text": "egg_encounter_11", "x": "-69.4539", "y": "99.625"},
+		{"text": "egg_encounter_12", "x": "-68.5654", "y": "145.3171"}
 	],
 	"grave_robber": [
 		{"text": "grave_robber_01", "x": "-80.2656", "y": "154.0546"},
@@ -53,5 +56,14 @@
 		{"text": "grave_robber_03", "x": "-50.8984", "y": "107.8046"},
 		{"text": "grave_robber_04", "x": "-82.5781", "y": "131.1328"},
 		{"text": "grave_robber_05", "x": "-104.8386", "y": "55.4218"}
+	],
+	"dog_encounter": [
+		{"text": "dog_encounter_01", "x": "-121.1581", "y": "38.8046"},
+		{"text": "dog_encounter_02", "x": "-68.2597", "y": "102.7109"},
+		{"text": "dog_encounter_03", "x": "-105.7661", "y": "39.4375"},
+		{"text": "dog_encounter_04", "x": "-106.4145", "y": "54.1562"},
+		{"text": "dog_encounter_05", "x": "-41.3828", "y": "154.7374"},
+		{"text": "dog_encounter_06", "x": "-93.2968", "y": "88.6015"},
+		{"text": "dog_encounter_07", "x": "-56.2187", "y": "154.3125"}
 	]
 }
