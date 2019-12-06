@@ -54,14 +54,14 @@ var Treasures = {
     $.each(treasureMarkers, function(key, value)
     {
         if(!collectedItems.includes(value.treasure)) {
-          miscLayer.addLayer(value.marker);
-          miscLayer.addLayer(value.circle);
+          Layers.miscLayer.addLayer(value.marker);
+          Layers.miscLayer.addLayer(value.circle);
             $.each(value.treasuresCross, function(crossKey, crossValue){
-              miscLayer.addLayer(crossValue);
+              Layers.miscLayer.addLayer(crossValue);
             });
         }
     });
 
-    miscLayer.addTo(baseMap);
+    Layers.miscLayer.addTo(MapBase.map);
   }
 }

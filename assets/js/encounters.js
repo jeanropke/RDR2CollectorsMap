@@ -16,7 +16,7 @@ var Encounters = {
   },
 
   addToMap: function() {
-    encountersLayer.clearLayers();
+    Layers.encountersLayer.clearLayers();
     $.each(encountersMarkers, function(key, marker) {
 
       if(!enabledCategories.includes(marker.category))
@@ -40,8 +40,8 @@ var Encounters = {
           '<h1>' + marker.title + '</h1>' +
           '<p>' + marker.description + '</p>'
         );
-      encountersLayer.addLayer(tempMarker);
+        Layers.encountersLayer.addLayer(tempMarker);
     });
-    encountersLayer.addTo(baseMap);
+    Layers.encountersLayer.addTo(MapBase.map);
   }
 }

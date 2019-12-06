@@ -29,13 +29,13 @@ var Routes = {
 
 
     if (polylines instanceof L.Polyline) {
-      baseMap.removeLayer(polylines);
+      MapBase.map.removeLayer(polylines);
     }
 
     polylines = L.polyline(connections, {
       'color': '#9a3033'
     });
-    baseMap.addLayer(polylines);
+    MapBase.map.addLayer(polylines);
   },
 
   loadCustomRoute: function(input) {
@@ -54,13 +54,13 @@ var Routes = {
       });
 
       if (polylines instanceof L.Polyline) {
-        baseMap.removeLayer(polylines);
+        MapBase.map.removeLayer(polylines);
       }
 
       polylines = L.polyline(connections, {
         'color': '#9a3033'
       });
-      baseMap.addLayer(polylines);
+      MapBase.map.addLayer(polylines);
     } catch (e) {
       alert(Language.get('routes.invalid'));
       console.log(e);
@@ -84,13 +84,13 @@ var Routes = {
       });
 
       if (polylines instanceof L.Polyline) {
-        baseMap.removeLayer(polylines);
+        MapBase.map.removeLayer(polylines);
       }
 
       polylines = L.polyline(connections, {
         'color': '#9a3033'
       });
-      baseMap.addLayer(polylines);
+      MapBase.map.addLayer(polylines);
     }
   }
 };
