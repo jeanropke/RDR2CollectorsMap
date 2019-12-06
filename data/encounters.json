@@ -66,7 +66,8 @@
 		{"text": "dog_encounter_05", "x": "-41.3828", "y": "154.7374"},
 		{"text": "dog_encounter_06", "x": "-93.2968", "y": "88.6015"},
 		{"text": "dog_encounter_07", "x": "-56.2187", "y": "154.3125"},
-		{"text": "dog_encounter_08", "x": "-46.3954", "y": "110.7494"}
+		{"text": "dog_encounter_08", "x": "-46.3954", "y": "110.7494"},
+		{"text": "dog_encounter_09", "x": "-77.2968", "y": "87.8593"}
 	],
 	"fame_seeker": [
 		{"text": "fame_seeker_01", "x": "-97.1093", "y": "80.0703"},
