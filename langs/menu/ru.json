@@ -59,6 +59,6 @@
 	{"key": "menu.condor_egg", "value": "Яйцо Кондора"},
 	{"key": "menu.dog_encounter", "value": "Встреча с собакой"},
 	{"key": "menu.auto_refresh", "value": "Автомат. смена циклов"},
-	{"key": "menu.fame_seeker", "value": "Fame Seeker"},
-	{"key": "menu.wounded_animal", "value": "Wounded Animal"}
+	{"key": "menu.fame_seeker", "value": "Любительница славы"},
+	{"key": "menu.wounded_animal", "value": "Раненое животное"}
 ]
