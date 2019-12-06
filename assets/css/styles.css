@@ -210,7 +210,6 @@ p {
 .side-menu .menu-option:hover, .side-menu .menu-hidden .collectible:hover {
     background: rgba(255, 255, 255, 0.1);
 }
-
 .side-menu .disabled {
     color: #6a6a6a;
     text-decoration: line-through;
@@ -248,6 +247,8 @@ p {
     padding: 5px 25px;
     cursor: pointer;
     user-select: none;
+    display: flex;
+    justify-content: space-between;
 }
 
 .lat-lng-container {
