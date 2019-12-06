@@ -2,9 +2,16 @@
  * Created by Jean on 2019-10-09.
  */
 
+var Layers = {
+  itemMarkersLayer: new L.LayerGroup(),
+  miscLayer: new L.LayerGroup(),
+  encountersLayer: new L.LayerGroup()
+};
+
 var MapBase = {
   minZoom: 2,
   maxZoom: 7,
+  map: null,
 
   init: function () {
     var southWestTiles = L.latLng(-144, 0),
@@ -25,7 +32,7 @@ var MapBase = {
       bounds: boundsTiles
     });
 
-    baseMap = L.map('map', {
+    MapBase.map = L.map('map', {
       preferCanvas: true,
       minZoom: this.minZoom,
       maxZoom: this.maxZoom,
@@ -42,28 +49,28 @@ var MapBase = {
 
     L.control.zoom({
       position: 'bottomright'
-    }).addTo(baseMap);
+    }).addTo(MapBase.map);
 
-    L.control.layers(baseMapsLayers).addTo(baseMap);
+    L.control.layers(baseMapsLayers).addTo(MapBase.map);
 
-    baseMap.on('click', function (e) {
+    MapBase.map.on('click', function (e) {
       MapBase.addCoordsOnMap(e);
     });
 
-    baseMap.on('popupopen', function () {
+    MapBase.map.on('popupopen', function () {
       $('.remove-button').click(function (e) {
         MapBase.removeItemFromMap($(event.target).data("item"));
       });
     });
 
-    baseMap.on('baselayerchange', function (e) {
+    MapBase.map.on('baselayerchange', function (e) {
       setMapBackground(e.name);
     });
 
     var southWest = L.latLng(-170.712, -25.227),
       northEast = L.latLng(10.774, 200.125),
       bounds = L.latLngBounds(southWest, northEast);
-    baseMap.setMaxBounds(bounds);
+    MapBase.map.setMaxBounds(bounds);
   },
 
   loadMarkers: function () {
@@ -87,7 +94,7 @@ var MapBase = {
     if (searchTerms.length == 0) {
       uniqueSearchMarkers = markers;
     } else {
-      itemMarkersLayer.clearLayers();
+      Layers.itemMarkersLayer.clearLayers();
       var searchMarkers = [];
       uniqueSearchMarkers = [];
       $.each(searchTerms, function (id, term) {
@@ -111,10 +118,10 @@ var MapBase = {
 
   addMarkers: function (refreshMenu = false) {
 
-    if (itemMarkersLayer != null)
-      itemMarkersLayer.clearLayers();
-    if (miscLayer != null)
-      miscLayer.clearLayers();
+    if (Layers.itemMarkersLayer != null)
+      Layers.itemMarkersLayer.clearLayers();
+    if (Layers.miscLayer != null)
+      Layers.miscLayer.clearLayers();
 
     $.each(markers, function (key, marker) {
       //Set isVisible to false. addMarkerOnMap will set to true if needs
@@ -128,7 +135,7 @@ var MapBase = {
       MapBase.addMarkerOnMap(marker);
     });
 
-    itemMarkersLayer.addTo(baseMap);
+    Layers.itemMarkersLayer.addTo(MapBase.map);
 
     MapBase.addFastTravelMarker(!refreshMenu);
     MapBase.addMadamNazar(refreshMenu);
@@ -264,7 +271,7 @@ var MapBase = {
         Routes.addMarkerOnCustomRoute(marker.text);
         if (customRouteEnabled) e.target.closePopup();
       });
-    itemMarkersLayer.addLayer(tempMarker);
+      Layers.itemMarkersLayer.addLayer(tempMarker);
   },
 
   save: function () {
@@ -323,7 +330,7 @@ MapBase.addFastTravelMarker = function () {
 
       marker.bindPopup(`<h1> ${Language.get(value.text + '.name')}</h1><p>  </p>`);
 
-      itemMarkersLayer.addLayer(marker);
+      Layers.itemMarkersLayer.addLayer(marker);
     });
   }
 };
@@ -342,7 +349,7 @@ MapBase.debugMarker = function (lat, long) {
   });
 
   marker.bindPopup(`<h1>Debug Marker</h1><p>  </p>`);
-  itemMarkersLayer.addLayer(marker);
+  Layers.itemMarkersLayer.addLayer(marker);
 };
 
 MapBase.addCoordsOnMap = function (coords) {
@@ -399,7 +406,7 @@ MapBase.addMadamNazar = function (firstLoad) {
     });
 
     marker.bindPopup(`<h1>${Language.get('madam_nazar.name')} - ${MapBase.formatDate(nazarCurrentDate)}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazarIO' target="_blank">@MadamNazarIO</a>.</p>`);
-    itemMarkersLayer.addLayer(marker);
+    Layers.itemMarkersLayer.addLayer(marker);
   }
 };
 MapBase.formatDate = function (date) {

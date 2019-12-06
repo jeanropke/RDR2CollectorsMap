@@ -1,7 +1,5 @@
 var day;
-var baseMap;
 var markers = [];
-var itemMarkersLayer = new L.LayerGroup();
 
 var searchTerms = [];
 var uniqueSearchMarkers = [];
@@ -34,10 +32,8 @@ var treasureMarkers = [];
 
 var condorData = [];
 var condorMarkers = [];
-var miscLayer = new L.LayerGroup();
 
 var encountersMarkers = [];
-var encountersLayer = new L.LayerGroup();
 
 var routesData = [];
 var polylines;
@@ -60,7 +56,7 @@ var fastTravelData;
 var weeklySet = 'gamblers_choice_set';
 var weeklySetData = [];
 var date;
-var nocache = 118;
+var nocache = 120;
 
 var wikiLanguage = [];
 
@@ -153,7 +149,7 @@ function init() {
   L.imageOverlay('./assets/overlays/cave_01.png', [
     [pos],
     [pos[0] + offset, pos[1] + offset]
-  ]).addTo(baseMap);
+  ]).addTo(MapBase.map);
 }
 
 function setMapBackground(mapName) {
@@ -260,7 +256,7 @@ $("#search").on("input", function () {
 $("#routes").on("change", function () {
   if ($("#routes").val() == 0) {
     if (polylines instanceof L.Polyline) {
-      baseMap.removeLayer(polylines);
+      MapBase.map.removeLayer(polylines);
     }
   } else {
     Routes.drawLines();
@@ -305,7 +301,7 @@ $("#custom-routes").on("change", function () {
   customRouteEnabled = temp == '1';
   if (temp == 'clear') {
     customRouteConnections = [];
-    baseMap.removeLayer(polylines);
+    MapBase.map.removeLayer(polylines);
     customRouteEnabled = true;
     $("#custom-routes").val('1');
   }

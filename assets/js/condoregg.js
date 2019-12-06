@@ -60,6 +60,6 @@ var CondorEgg = {
             });
         });
 
-        miscLayer.addTo(baseMap);
+        miscLayer.addTo(MapBase.map);
     }
 }
