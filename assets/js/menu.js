@@ -25,11 +25,15 @@ Menu.refreshMenu = function () {
             return;
 
           var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.subdata).text(Language.get(`${marker.text}.name`).split('#')[0]);
+          //var collectibleCountElement = $('<small>').addClass('counter').text(Math.ceil(Math.random() * 10));
 
           $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement);
-        } else {
+        }
+        else {
           //All others items
-          $(`.menu-hidden[data-type=${category}]`).append(`<p class="collectible" data-type="${marker.text}">${marker.title}</p>`);
+          var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.text).text(marker.title);
+          //var collectibleCountElement = $('<small>').addClass('counter').text(Math.ceil(Math.random() * 10));
+          $(`.menu-hidden[data-type=${category}]`).append(collectibleElement);
         }
       }
     });
