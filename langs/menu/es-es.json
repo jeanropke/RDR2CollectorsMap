@@ -52,14 +52,14 @@
 	{"key": "menu.random_spots", "value": "Puntos aleatorios"},
 	{"key": "menu.collectables_counter", "value": "Recogidos {count} de {max}"},
 	{"key": "menu.rdo_map", "value": "Mapa RDO"},
-	{"key": "menu.treasure_hunter", "value": "Treasure Hunter"},
-	{"key": "menu.tree_map", "value": "Treasure Map on Tree"},
-	{"key": "menu.egg_encounter", "value": "Bird Egg Nest"},
-	{"key": "menu.grave_robber", "value": "Grave Robber"},
-	{"key": "menu.condor_egg", "value": "Condor Egg"},
-	{"key": "menu.dog_encounter", "value": "Dog Encounter"},
-	{"key": "menu.auto_refresh", "value": "Change cycle automatically"},
-	{"key": "menu.fame_seeker", "value": "Fame Seeker"},
-	{"key": "menu.wounded_animal", "value": "Wounded Animal"}
+	{"key": "menu.treasure_hunter", "value": "Cazatesoros"},
+	{"key": "menu.tree_map", "value": "Mapa del tesoro en árbol"},
+	{"key": "menu.egg_encounter", "value": "Nido de huevo de pájaro"},
+	{"key": "menu.grave_robber", "value": "Ladrón de tumbas"},
+	{"key": "menu.condor_egg", "value": "Huevo de cóndor"},
+	{"key": "menu.dog_encounter", "value": "Encuentro de perro"},
+	{"key": "menu.auto_refresh", "value": "Cambiar ciclo automáticamente"},
+	{"key": "menu.fame_seeker", "value": "Buscador de fama"},
+	{"key": "menu.wounded_animal", "value": "Animal herido"}
 ]
 
