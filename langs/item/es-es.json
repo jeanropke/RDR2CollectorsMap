@@ -33,7 +33,7 @@
 	{"key": "gaptooth_treasure", 				"value": "Gaptooth Breach"},
 	{"key": "hanging_rock_treasure", 			"value": "Hanging Rock"},
 	{"key": "hawks_eye_treasure", 				"value": "Arroyo Hawk's Eye"},
-	{"key": "hennigans_central_treasure", 		"value": "Hennigan's Stead (Central)"},
+	{"key": "hennigans_central_treasure", 		"value": "Hennigan's Stead (centro)"},
 	{"key": "hennigans_north_treasure", 		"value": "Norte de Hennigan's Stead"},
 	{"key": "kamassa_river_treasure", 			"value": "Río Kamassa"},
 	{"key": "lake_isabella_treasure", 			"value": "Lago Isabella"},
@@ -1413,27 +1413,27 @@
 	
 	{"key": "random_item.name", "value": "Artículo aleatorio #"},
 
-	{"key": "tree_map.name","value":"Treasure Map stuck on Tree"},
-	{"key": "tree_map.desc","value":"Tree Maps are Random Encounters. They spawn on trees mainly at night. Look for lantern light."},
+	{"key": "tree_map.name","value":"Mapa del tesoro clavado en árbol"},
+	{"key": "tree_map.desc","value":"Los mapas de árboles son encuentros aleatorios. Aparecen en los árboles principalmente de noche. Busque la luz de la linterna."},
 
-	{"key": "treasure_hunter.name","value":"Treasure Hunter"},
-	{"key": "treasure_hunter.desc","value":"Treasure Hunter are Random Encounters."},
+	{"key": "treasure_hunter.name","value":"Cazatesoros"},
+	{"key": "treasure_hunter.desc","value":"Cazatesoros son encuentros aleatorios."},
 	
-	{"key": "egg_encounter.name","value":"Bird Egg Nest Encounter"},
-	{"key": "egg_encounter.desc","value":"These are Random Encounters. A white blip on the mini map will indicate the encounter. You must get to the egg nest before the predator eats the eggs."},
+	{"key": "egg_encounter.name","value":"Encuentro de nido de huevo de pájaro"},
+	{"key": "egg_encounter.desc","value":"Son encuentros aleatorios. Un punto blanco en el minimapa indicará el encuentro. Debes recoger el nido de huevo antes de que el depredador coma los huevos."},
 
-	{"key": "grave_robber.name","value":"Grave Robber Encounter"},
-	{"key": "grave_robber.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Approach the grave robber to accept the mission. You have limited time to search up to 7 locations for a collectable item before the lawmen come."},
+	{"key": "grave_robber.name","value":"Encuentro de ladón de tumbas"},
+	{"key": "grave_robber.desc","value":"Es un encuentro aleatorio. Un punto blanco en el minimapa indicará el encuentro. Acércate al ladrón de tumbas para aceptar la misión. Tienes un tiempo limitado ara encontrar hasta en las 7 ubicaciones para el coleccionable antes de que las autoridades lleguen."},
 	
-	{"key": "condor_egg.name","value":"Condor Egg Event"},
-	{"key": "condor_egg.desc","value":"This is an event"},
+	{"key": "condor_egg.name","value":"Evento de huevo de cóndor"},
+	{"key": "condor_egg.desc","value":"Esto es un evento"},
 	
-	{"key": "dog_encounter.name","value":"Dog Encounter Event"},
-	{"key": "dog_encounter.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."},
+	{"key": "dog_encounter.name","value":"Evento de encuentro de perro"},
+	{"key": "dog_encounter.desc","value":"Es un encuentro aleatorio. Un punto blanco en el minimapa indicará el encuentro."},
 	
-	{"key": "fame_seeker.name","value":"Fame Seeker Event"},
-	{"key": "fame_seeker.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."},
+	{"key": "fame_seeker.name","value":"Evento de buscador de fama"},
+	{"key": "fame_seeker.desc","value":"Es un encuentro aleatorio. Un punto blanco en el minimapa indicará el encuentro."},
 	
-	{"key": "wounded_animal.name","value":"Wounded Animal Event"},
-	{"key": "wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."}
+	{"key": "wounded_animal.name","value":"Evento de animal herido"},
+	{"key": "wounded_animal.desc","value":"Es un encuentro aleatorio. Un punto blanco en el minimapa indicará el encuentro."}
 ]
