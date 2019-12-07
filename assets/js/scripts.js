@@ -227,13 +227,17 @@ function setCurrentDayCycle(dev = null) {
         expires: 2
       });
       if (resetMarkersDaily) {
-        $.each($.cookie(), function (key, value) {
-          if (key.startsWith('removed-items')) {
-            $.removeCookie(key)
-          }
+        $.each(Object.keys(inventory), function(key, value){
+          inventory[value].isCollected = false;
+          var marker = markers.filter(function (marker) {
+            return marker.text == value && (marker.day == day || marker.day.includes(day));
+          })[0];
+    
+          if(marker != null)
+            marker.isCollected = false;
         });
-
-        inventory = [];
+    
+        MapBase.save();
       }
     }
   }
@@ -403,6 +407,17 @@ $('.menu-option.clickable').on('click', function () {
 $('.open-submenu').on('click', function (e) {
   e.stopPropagation();
   $(this).parent().parent().children('.menu-hidden').toggleClass('opened');
+});
+
+$('.collection-sell').on('click', function (e) {
+  var collectionType = $(this).parent().parent().data('type');
+
+  var getMarkers = markers.filter(_m => _m.category == collectionType);
+
+  $.each(getMarkers, function(key, value) {
+    MapBase.changeMarkerAmount(value.text, -1);
+  });
+
 });
 
 $(document).on('click', '.collectible', function () {
