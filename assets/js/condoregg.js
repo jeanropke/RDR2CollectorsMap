@@ -52,14 +52,14 @@ var CondorEgg = {
             return;
 
         $.each(condorMarkers, function (key, value) {
-            miscLayer.addLayer(value.marker);
-            miscLayer.addLayer(value.circle);
+            Layers.miscLayer.addLayer(value.marker);
+            Layers.miscLayer.addLayer(value.circle);
 
             $.each(value.condorCross, function (crossKey, crossValue) {
-                miscLayer.addLayer(crossValue);
+                Layers.miscLayer.addLayer(crossValue);
             });
         });
 
-        miscLayer.addTo(MapBase.map);
+        Layers.miscLayer.addTo(MapBase.map);
     }
 }
