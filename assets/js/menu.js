@@ -32,8 +32,12 @@ Menu.refreshMenu = function () {
         else {
           //All others items
           var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.text).text(marker.title);
-          //var collectibleCountElement = $('<small>').addClass('counter').text(Math.ceil(Math.random() * 10));
-          $(`.menu-hidden[data-type=${category}]`).append(collectibleElement);
+          var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
+          $(`.menu-hidden[data-type=${category}]`).append(collectibleElement.append(collectibleCountElement));
+
+          if (marker.isCollected) {
+            $(`[data-type=${marker.text}]`).addClass('disabled');
+          }
         }
       }
     });
@@ -43,12 +47,7 @@ Menu.refreshMenu = function () {
       $('.menu-hidden[data-type=treasure]').append('<p class="collectible" data-type="' + item.text + '">' + Language.get(item.text) + '</p>');
     });
   });
-  $.each(collectedItems, function (key, value) {
-    if (value.length > 0) {
-      $(`[data-type=${value}]`).addClass('disabled');
-    }
-  });
-
+ 
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
       $('span[data-type=' + value + ']').addClass('disabled');
@@ -79,16 +78,8 @@ Menu.hideAll = function () {
 };
 
 Menu.refreshItemsCounter = function () {
-  var counterCollected = 0;
-  collectedItems.filter(function (marker) {
-    markers.filter(
-      function (item) {
-        if (item.text == marker && item.day == day && item.isVisible && item.isCollected) {
-          counterCollected++;
-        }
-      });
-  });
+  
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', (counterCollected))
+    .replace('{count}', markers.filter(item => (item.day == day || item.day.includes(day)) && item.isVisible && item.isCollected).length)
     .replace('{max}', markers.filter(item => (item.day == day || item.day.includes(day)) && item.isVisible).length));
 };

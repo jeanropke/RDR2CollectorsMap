@@ -60,6 +60,7 @@
 	{"key": "menu.dog_encounter", "value": "Encuentro de perro"},
 	{"key": "menu.auto_refresh", "value": "Cambiar ciclo automáticamente"},
 	{"key": "menu.fame_seeker", "value": "Buscador de fama"},
-	{"key": "menu.wounded_animal", "value": "Animal herido"}
+	{"key": "menu.wounded_animal", "value": "Animal herido"},
+	{"key": "menu.clear_inventory", "value": "Clear inventory"}
 ]
 
