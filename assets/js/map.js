@@ -310,7 +310,7 @@ var MapBase = {
       temp += `${marker.text}:${marker.isCollected ? '1' : '0'}:${marker.amount};`;
     });
 
-    var collectedItemsArray = temp.match(/.{1,3200}/g);
+    var collectedItemsArray = temp.match(/.{1,2400}/g);
 
     $.each(collectedItemsArray, function (key, value) {
       $.cookie('removed-items-' + key, value, {
