@@ -227,14 +227,11 @@ function setCurrentDayCycle(dev = null) {
         expires: 2
       });
       if (resetMarkersDaily) {
-        $.each(Object.keys(inventory), function(key, value){
-          inventory[value].isCollected = false;
-          var marker = markers.filter(function (marker) {
-            return marker.text == value && (marker.day == day || marker.day.includes(day));
-          })[0];
+        $.each(markers, function(key, value){
+          if(inventory[value.text])
+            inventory[value.text].isCollected = false;     
     
-          if(marker != null)
-            marker.isCollected = false;
+          value.isCollected = false;
         });
     
         MapBase.save();
@@ -295,18 +292,15 @@ $("#tools").on("change", function () {
 
 $("#reset-markers").on("change", function () {
   if ($("#reset-markers").val() == 'clear') {
+    $.each(markers, function(key, value){
+      if(inventory[value.text])
+        inventory[value.text].isCollected = false;     
 
-    $.each(Object.keys(inventory), function(key, value){
-      inventory[value].isCollected = false;
-      var marker = markers.filter(function (marker) {
-        return marker.text == value && (marker.day == day || marker.day.includes(day));
-      })[0];
-
-      if(marker != null)
-        marker.isCollected = false;
+      value.isCollected = false;
     });
 
     MapBase.save();
+    Menu.refreshMenu();
 
     $("#reset-markers").val(resetMarkersDaily.toString());
     Menu.refreshItemsCounter();
