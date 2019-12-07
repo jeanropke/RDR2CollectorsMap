@@ -10,6 +10,6 @@ var Marker = function(text, lat, lng, tool, day, category, subdata, video) {
   this.subdata = subdata;
   this.video = video;
   this.isVisible = enabledCategories.includes(category);
-  this.isCollected = inventory[text] == null ? false : inventory[text].isCollected;//collectedItems.includes(text);
   this.amount = inventory[text] == null ? 0 : inventory[text].amount;
+  this.isCollected = inventory[text] == null ? false : (inventory[text].isCollected || this.amount == 10);//collectedItems.includes(text);
 }
