@@ -258,7 +258,7 @@ var MapBase = {
     }).length > 0;
 
     var tempMarker = L.marker([marker.lat, marker.lng], {
-      opacity: marker.isCollected || marker.amount == 10 ? .35 : 1,
+      opacity: marker.isCollected ? .35 : 1,
       icon: new L.Icon.DataMarkup({
         iconUrl: './assets/images/icons/' + marker.category + '_' + (marker.category == 'random' ? 'lightgray' : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + day)) + '.png',
         iconSize: [35, 45],
