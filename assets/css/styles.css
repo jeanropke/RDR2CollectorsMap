@@ -1,11 +1,9 @@
 @font-face {
     font-family: Hapna;
-    src: url(../fonts/hapna.woff2) format("woff2"),
-    url(../fonts/hapna.woff) format("woff"),
-    url(../fonts/hapna.ttf) format("truetype");
+    src: url(../fonts/hapna.woff2) format("woff2"), url(../fonts/hapna.woff) format("woff"), url(../fonts/hapna.ttf) format("truetype");
     font-style: normal;
     font-weight: 400;
-    text-rendering:optimizeLegibility
+    text-rendering: optimizeLegibility
 }
 
 *, *:before, *:after {
@@ -32,6 +30,7 @@ h3 {
     font-size: 24px;
     margin: 0;
 }
+
 h4 {
     text-align: center;
     font-size: 20px;
@@ -48,17 +47,26 @@ p {
     width: 100vw;
     height: 100%;
     height: 100vh;
+    font-family: Hapna, serif;
+    font-size: 13px;
 }
+
+#map h1 {
+    font-size: 15px;
+    text-align: center;
+}
+
 .tool-type {
     vertical-align: bottom;
     padding-right: 5px;
 }
+
 #countdown, #item-counter {
     font-size: 16px;
     line-height: 1.7;
     user-select: none;
-
 }
+
 .timer-container {
     position: fixed;
     z-index: 9999;
@@ -73,11 +81,13 @@ p {
     padding-left: 8px;
     display: inline-flex;
 }
+
 #day-cycle {
     width: 16px;
     height: 16px;
     margin: auto 4px auto auto;
 }
+
 .counter-container {
     position: fixed;
     z-index: 9999;
@@ -91,12 +101,22 @@ p {
     transition: all 200ms ease-out;
     display: none;
 }
+
 .remove-button {
-    color: #b92a27;
     text-align: center;
     font-size: 14px;
     cursor: pointer;
-    user-select: none;
+    user-select: none;    
+    margin-top: 8px;
+}
+
+.marker-popup-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.marker-popup-buttons small {
+    font-size: 15px;
 }
 
 .hide-show-container, .custom-routes-container {
@@ -146,17 +166,18 @@ p {
     height: 100%;
 }
 
-.issues-container a{
+.issues-container a {
     display: block;
     color: #eee;
     text-align: center;
 }
 
-.donate-container{
+.donate-container {
     display: block;
     color: #eee;
     text-align: center;
 }
+
 .menu-toggle {
     width: 30px;
     height: 30px;
@@ -195,9 +216,11 @@ p {
 .side-menu, .menu-toggle {
     transition: all 200ms ease-out;
 }
+
 .side-menu .collectables-counter {
     text-align: center;
 }
+
 .side-menu .menu-option {
     display: flex;
     align-items: start;
@@ -210,6 +233,7 @@ p {
 .side-menu .menu-option:hover, .side-menu .menu-hidden .collectible:hover {
     background: rgba(255, 255, 255, 0.1);
 }
+
 .side-menu .disabled {
     color: #6a6a6a;
     text-decoration: line-through;
@@ -220,12 +244,14 @@ p {
     margin-top: 6px;
     margin-bottom: -3px;
 }
+
 .side-menu .open-submenu {
     width: 25px;
     height: 25px;
     background: url(../images/arrow.png);
     margin: auto 0 auto auto;
 }
+
 .side-menu .menu-hidden {
     max-height: 0;
     overflow: hidden;
@@ -235,14 +261,15 @@ p {
 .side-menu .menu-hidden.opened {
     max-height: 2000px;
     transition: max-height 400ms ease-out;
-
 }
+
 .side-menu .menu-hidden .collection-value {
     text-align: center;
     border-top: 1px white solid;
     border-bottom: 1px white solid;
     padding: 5px 0;
 }
+
 .side-menu .menu-hidden .collectible {
     padding: 5px 25px;
     cursor: pointer;
@@ -276,13 +303,16 @@ p {
     padding: 0;
     background-color: transparent;
 }
+
 .help-button {
     user-select: none;
     font-size: 14px;
 }
+
 .help-button a {
     color: #eee;
 }
+
 .help-popup {
     position: fixed;
     width: 100%;
@@ -293,6 +323,7 @@ p {
     color: #eee;
     display: none;
 }
+
 .help-container {
     height: 100%;
     padding: 25px;
@@ -300,6 +331,7 @@ p {
     border: 1px solid #eee;
     box-shadow: 0 0 10px 0 black;
 }
+
 .help-close {
     width: 15px;
     height: 15px;
@@ -310,15 +342,25 @@ p {
     user-select: none;
     cursor: pointer;
 }
+
 .help-scroll {
     overflow-y: auto;
     height: 100%;
     padding: 10px;
 }
+
 /* Fix buttons showing on top of sidebar on mobile menu */
+
 .leaflet-top, .leaflet-bottom {
     z-index: 998;
 }
+
+.leaflet-popup-content {
+    font-size: 14px;
+    margin: 8px;
+    display: inline-grid;
+}
+
 @media (max-width: 1024px) {
     .timer-menu-opened {
         display: none;
@@ -327,23 +369,20 @@ p {
         display: none;
     }
 }
+
 @media (min-width: 1025px) {
     .side-menu {
         width: 320px;
         left: -320px;
         top: 0;
     }
-
     .menu-opened {
         left: 0;
     }
     .timer-menu-opened {
         left: 325px;
     }
-
     .counter-menu-opened {
         left: 410px;
     }
 }
-
-

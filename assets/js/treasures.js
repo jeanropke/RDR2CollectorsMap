@@ -53,7 +53,7 @@ var Treasures = {
 
     $.each(treasureMarkers, function(key, value)
     {
-        if(!collectedItems.includes(value.treasure)) {
+        if(!inventory[value.treasure.toString()]) {
           Layers.miscLayer.addLayer(value.marker);
           Layers.miscLayer.addLayer(value.circle);
             $.each(value.treasuresCross, function(crossKey, crossValue){

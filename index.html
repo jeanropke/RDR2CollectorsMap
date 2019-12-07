@@ -14,7 +14,9 @@
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="assets/js/jquery.cookie.js"></script>
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=120" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=121" />
+
 </head>
 
 <body>
@@ -315,6 +317,13 @@
         </select>
       </div>
       <div class="input-container">
+        <label for="clear-inventory" data-text="menu.clear_inventory">Clear inventory</label>
+        <select class="input-day" id="clear-inventory">
+          <option value="true" data-text="menu.yes">Yes</option>
+          <option value="false" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container">
         <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>
         <select class="input-day" id="reset-markers">
           <option value="true" data-text="menu.yes" selected>Yes</option>
@@ -401,15 +410,15 @@
   <div class="lat-lng-container">
     <p></p><button id="lat-lng-container-close-button">×</button>
   </div>
-  <script src="assets/js/marker.js?nocache=120"></script>
-  <script src="assets/js/treasures.js?nocache=120"></script>
-  <script src="assets/js/condoregg.js?nocache=120"></script>
-  <script src="assets/js/encounters.js?nocache=120"></script>
-  <script src="assets/js/map.js?nocache=120"></script>
-  <script src="assets/js/language.js?nocache=120"></script>
-  <script src="assets/js/menu.js?nocache=120"></script>
-  <script src="assets/js/routes.js?nocache=120"></script>
-  <script src="assets/js/scripts.js?nocache=120"></script>
+  <script src="assets/js/marker.js?nocache=121"></script>
+  <script src="assets/js/treasures.js?nocache=121"></script>
+  <script src="assets/js/condoregg.js?nocache=121"></script>
+  <script src="assets/js/encounters.js?nocache=121"></script>
+  <script src="assets/js/map.js?nocache=121"></script>
+  <script src="assets/js/language.js?nocache=121"></script>
+  <script src="assets/js/menu.js?nocache=121"></script>
+  <script src="assets/js/routes.js?nocache=121"></script>
+  <script src="assets/js/scripts.js?nocache=121"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
   <script>

@@ -126,7 +126,7 @@ var MapBase = {
     $.each(markers, function (key, marker) {
       //Set isVisible to false. addMarkerOnMap will set to true if needs
       marker.isVisible = false;
-      marker.isCollected = collectedItems.includes(marker.text);
+      //marker.isCollected = collectedItems.includes(marker.text);
 
       if (marker.subdata != null)
         if (categoriesDisabledByDefault.includes(marker.subdata))
@@ -160,12 +160,13 @@ var MapBase = {
   removeItemFromMap: function (itemName) {
 
     if (itemName.endsWith('_treasure')) {
-      if (collectedItems.includes(itemName.toString())) {
-        collectedItems = $.grep(collectedItems, function (value) {
-          return value != itemName.toString();
-        });
+      if (inventory[itemName]) {
+        delete inventory[itemName];
       } else {
-        collectedItems.push(itemName.toString());
+        inventory[itemName] = {
+          'isCollected': '1',
+          'amount': 0
+        };
       }
       Treasures.addToMap();
     } else {
@@ -185,14 +186,10 @@ var MapBase = {
         })[0];
 
         if (marker.isCollected) {
-          collectedItems = $.grep(collectedItems, function (value) {
-            return value != marker.text;
-          });
-
           $('[data-marker=' + marker.text + ']').css('opacity', '1');
+          MapBase.changeMarkerAmount(marker.text, -1);
         } else {
-          collectedItems.push(marker.text);
-
+          MapBase.changeMarkerAmount(marker.text, 1);
           $('[data-marker=' + marker.text + ']').css('opacity', '.35');
         }
 
@@ -225,12 +222,32 @@ var MapBase = {
     }
   },
 
+
+  changeMarkerAmount: function (name, amount) {
+    var marker = markers.filter(_m => {
+      return _m.text == name && (_m.day == day || _m.day.includes(day));
+    })[0];
+
+    //if(marker == null)
+    //  return;
+
+    marker.amount = parseInt(marker.amount) + amount;
+    if (marker.amount > 10)
+      marker.amount = 10;
+    if (marker.amount < 0)
+      marker.amount = 0;
+
+    $(`small[data-item=${name}]`).text(marker.amount);
+    $(`p.collectible[data-type=${name}] > small`).text(marker.amount);
+    MapBase.save();
+    
+  },
+
   addMarkerOnMap: function (marker) {
     if (marker.day != day && !marker.day.includes(day)) return;
 
     if (!uniqueSearchMarkers.includes(marker))
       return;
-
 
     if (!enabledCategories.includes(marker.category)) return;
 
@@ -259,19 +276,24 @@ var MapBase = {
     var videoText = marker.video != null ? '<p align="center" style="padding: 5px;"><a href="' + marker.video + '" target="_blank">Video</a></p>' : '';
     var popupTitle = `${marker.title} - ${Language.get("menu.day")} ${day}`;
     var popupContent = (marker.category == 'random') ? 'Random items resets 24 hours after picking up' : marker.description;
-
+    var buttons = (marker.category == 'random') ? '' : `<div class="marker-popup-buttons">
+    <button class="btn btn-danger" onclick="MapBase.changeMarkerAmount('${marker.text}', -1)">↓</button>
+    <small data-item="${marker.text}">${marker.amount}</small>
+    <button class="btn btn-success" onclick="MapBase.changeMarkerAmount('${marker.text}', 1)">↑</button>
+    </div>`;
     tempMarker
       .bindPopup(
-        '<h1>' + popupTitle + '</h1>' +
-        '<p>' + MapBase.getToolIcon(marker.tool) + popupContent + '</p>' +
-        videoText +
-        '<p class="remove-button" data-item="' + marker.text + '">' + Language.get("map.remove_add") + '</p>'
+        `<h1>${popupTitle}</h1>
+        <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
+          ${videoText}
+        ${buttons}
+        <button type="button" class="btn btn-info remove-button" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`
       )
       .on("click", function (e) {
         Routes.addMarkerOnCustomRoute(marker.text);
         if (customRouteEnabled) e.target.closePopup();
       });
-      Layers.itemMarkersLayer.addLayer(tempMarker);
+    Layers.itemMarkersLayer.addLayer(tempMarker);
   },
 
   save: function () {
@@ -282,7 +304,13 @@ var MapBase = {
         $.removeCookie(key)
       }
     });
-    var collectedItemsArray = collectedItems.join(';').replace(/;;/g, '').match(/.{1,3200}/g);
+    var temp = "";
+    $.each(markers, function(key, marker) {
+      if((marker.day == day || marker.day.includes(day)) && (marker.amount > 0 || marker.isCollected))
+      temp += `${marker.text}:${marker.isCollected ? '1' : '0'}:${marker.amount};`;
+    });
+
+    var collectedItemsArray = temp.match(/.{1,3200}/g);
 
     $.each(collectedItemsArray, function (key, value) {
       $.cookie('removed-items-' + key, value, {

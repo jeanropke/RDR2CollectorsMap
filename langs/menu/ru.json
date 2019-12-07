@@ -60,5 +60,6 @@
 	{"key": "menu.dog_encounter", "value": "Встреча с собакой"},
 	{"key": "menu.auto_refresh", "value": "Автомат. смена циклов"},
 	{"key": "menu.fame_seeker", "value": "Любительница славы"},
-	{"key": "menu.wounded_animal", "value": "Раненое животное"}
+	{"key": "menu.wounded_animal", "value": "Раненое животное"},
+	{"key": "menu.clear_inventory", "value": "Clear inventory"}
 ]
