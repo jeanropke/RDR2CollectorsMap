@@ -40,7 +40,7 @@ var Treasures = {
       });
 
 
-      marker.bindPopup(`<h1> ${Language.get(value.text)}</h1><p class="remove-button" data-item="${value.text}">${Language.get("map.remove_add")}</p>`);
+      marker.bindPopup(`<h1> ${Language.get(value.text)}</h1><button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${value.text}', '${value.text}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`);
 
       treasureMarkers.push({ treasure: value.text, marker: marker, circle: circle, treasuresCross: treasuresCross });
     });
