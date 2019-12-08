@@ -177,7 +177,7 @@ var MapBase = {
         if (marker.text != itemName && (marker.subdata != category || (_marker.length > 1 && itemName != category)))
           return;
 
-        if (itemName == category) {
+        if (itemName == category && marker.subdata == category) {
           if(!isDisabled) {
             MapBase.changeMarkerAmount(marker.subdata || marker.text, 1);
             $('[data-marker=' + marker.text + ']').css('opacity', '.35');
