@@ -171,25 +171,41 @@ var MapBase = {
       if (_marker == null)
         return;
 
+        var isDisabled = $(`p.collectible[data-type=${category}]`).hasClass('disabled');
       $.each(_marker, function (key, marker) {
 
         if (marker.text != itemName && (marker.subdata != category || (_marker.length > 1 && itemName != category)))
           return;
 
-        marker.isCollected = !marker.isCollected && marker.amount < 10;
-        marker.canCollect = marker.amount < 10 && marker.isCollected;
-        if (marker.canCollect) {
-          MapBase.changeMarkerAmount(marker.subdata || marker.text, 1);
-          $('[data-marker=' + marker.text + ']').css('opacity', '.35');
-          $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
-          marker.canCollect = false;
-        } else {
-          MapBase.changeMarkerAmount(marker.subdata || marker.text, -1);
-          $('[data-marker=' + marker.text + ']').css('opacity', '1');
-          $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
-          marker.canCollect = true;
+        if (itemName == category) {
+          if(!isDisabled) {
+            MapBase.changeMarkerAmount(marker.subdata || marker.text, 1);
+            $('[data-marker=' + marker.text + ']').css('opacity', '.35');
+            $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
+            marker.canCollect = false;
+          }
+          else {
+            MapBase.changeMarkerAmount(marker.subdata || marker.text, -1);
+            $('[data-marker=' + marker.text + ']').css('opacity', '1');
+            $(`[data-type=${marker.subdata}]`).removeClass('disabled');
+            marker.canCollect = true;
+          }
         }
-
+        else {
+          marker.isCollected = !marker.isCollected && marker.amount < 10;
+          marker.canCollect = marker.amount < 10 && marker.isCollected;
+          if (marker.canCollect) {
+            MapBase.changeMarkerAmount(marker.subdata || marker.text, 1);
+            $('[data-marker=' + marker.text + ']').css('opacity', '.35');
+            $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
+            marker.canCollect = false;
+          } else {
+            MapBase.changeMarkerAmount(marker.subdata || marker.text, -1);
+            $('[data-marker=' + marker.text + ']').css('opacity', '1');
+            $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
+            marker.canCollect = true;
+          }
+        }
       });
     }
     if ($("#routes").val() == 1)
@@ -223,7 +239,9 @@ var MapBase = {
       $(`small[data-item=${name}]`).text(_m.amount);
       $(`p.collectible[data-type=${name}] > small`).text(_m.amount);
 
-      Layers.itemMarkersLayer.getLayerById(_m.text)._popup.setContent(MapBase.updateMarkerContent(_m));
+      //If the category is disabled, no needs to update popup
+      if (Layers.itemMarkersLayer.getLayerById(_m.text) != null)
+        Layers.itemMarkersLayer.getLayerById(_m.text)._popup.setContent(MapBase.updateMarkerContent(_m));
 
     });
     //Layers.itemMarkersLayer.removeLayer(Layers.itemMarkersLayer.getLayerById(marker.text));
