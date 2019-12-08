@@ -178,16 +178,18 @@ var MapBase = {
 
         marker.isCollected = !marker.isCollected && marker.amount < 10;
         marker.canCollect = marker.amount < 10 && marker.isCollected;
-
         if (marker.canCollect) {
           MapBase.changeMarkerAmount(marker.subdata || marker.text, 1);
           $('[data-marker=' + marker.text + ']').css('opacity', '.35');
           $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
+          marker.canCollect = false;
         } else {
           MapBase.changeMarkerAmount(marker.subdata || marker.text, -1);
           $('[data-marker=' + marker.text + ']').css('opacity', '1');
           $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
+          marker.canCollect = true;
         }
+
       });
     }
     if ($("#routes").val() == 1)
