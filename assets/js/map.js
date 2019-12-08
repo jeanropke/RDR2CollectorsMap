@@ -112,6 +112,7 @@ var MapBase = {
 
   addMarkers: function (refreshMenu = false) {
 
+    console.log(Layers.miscLayer);
     if (Layers.itemMarkersLayer != null)
       Layers.itemMarkersLayer.clearLayers();
     if (Layers.miscLayer != null)
@@ -161,7 +162,8 @@ var MapBase = {
           'amount': 0
         };
       }
-      Treasures.addToMap();
+      $(`[data-type=${itemName}]`).toggleClass('disabled');
+      MapBase.addMarkers();
     } else {
       var _marker = markers.filter(function (marker) {
         return (marker.text == itemName || (marker.subdata == category)) && (marker.day == day || marker.day.includes(day));
@@ -172,7 +174,7 @@ var MapBase = {
 
       $.each(_marker, function (key, marker) {
 
-        if(marker.text != itemName && (marker.subdata != category || (_marker.length > 1 && itemName != category)))
+        if (marker.text != itemName && (marker.subdata != category || (_marker.length > 1 && itemName != category)))
           return;
 
         marker.isCollected = !marker.isCollected && marker.amount < 10;
@@ -209,7 +211,7 @@ var MapBase = {
       if (_m.amount < 0)
         _m.amount = 0;
 
-        if (_m.amount > 9) {
+      if (_m.amount > 9) {
         $('[data-marker=' + _m.text + ']').css('opacity', '.35');
         $(`[data-type=${_m.text}]`).addClass('disabled');
       } else if (!_m.isCollected) {
