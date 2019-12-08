@@ -47,7 +47,7 @@ Menu.refreshMenu = function () {
     $('.menu-hidden[data-type=treasure]').children('p.collectible').remove();
 
     treasureData.filter(function (item) {
-      $('.menu-hidden[data-type=treasure]').append('<p class="collectible" data-type="' + item.text + '">' + Language.get(item.text) + '</p>');
+      $('.menu-hidden[data-type=treasure]').append('<p class="collectible disabled" data-type="' + item.text + '">' + Language.get(item.text) + '</p>');
     });
   });
  
