@@ -61,5 +61,6 @@
 	{"key": "menu.auto_refresh", "value": "Автомат. смена циклов"},
 	{"key": "menu.fame_seeker", "value": "Любительница славы"},
 	{"key": "menu.wounded_animal", "value": "Раненое животное"},
-	{"key": "menu.clear_inventory", "value": "Очистить инвентарь"}
+	{"key": "menu.clear_inventory", "value": "Очистить инвентарь"},
+	{"key": "menu.sell", "value": "Sell"}
 ]

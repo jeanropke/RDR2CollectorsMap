@@ -12,12 +12,8 @@ var categories = [
   'condor_egg', 'wounded_animal', 'fame_seeker'
 ];
 
-var plantsCategories = [
-  'texas_bluebonnet', 'bitterweed', 'agarita', 'wild_rhubarb', 'cardinal',
-  'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'
-];
 var categoriesDisabledByDefault = [
-  'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber', 
+  'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
   'condor_egg', 'wounded_animal', 'fame_seeker'
 ]
 
@@ -53,7 +49,7 @@ var fastTravelData;
 var weeklySet = 'gamblers_choice_set';
 var weeklySetData = [];
 var date;
-var nocache = 121;
+var nocache = 123;
 
 var wikiLanguage = [];
 
@@ -81,8 +77,8 @@ function init() {
   });
 
   //If the collect markers does not contains ':', need be converted to inventory system
-  if(!tempCollectedMarkers.includes(':')) {
-    $.each(tempCollectedMarkers.split(';'), function(key, value) {
+  if (!tempCollectedMarkers.includes(':')) {
+    $.each(tempCollectedMarkers.split(';'), function (key, value) {
       tempInventory += `${value}:1:1;`;
     });
   } else {
@@ -92,7 +88,7 @@ function init() {
   tempInventory = tempInventory.split(';');
 
   $.each(tempInventory, function (key, value) {
-    if(!value.includes(':'))
+    if (!value.includes(':'))
       return;
     var tempItem = value.split(':');
     inventory[tempItem[0]] = {
@@ -109,6 +105,11 @@ function init() {
 
   if (typeof $.cookie('disabled-categories') !== 'undefined')
     categoriesDisabledByDefault = $.cookie('disabled-categories').split(',');
+
+  categoriesDisabledByDefault = categoriesDisabledByDefault.filter(function (item) {
+    return ['texas_bluebonnet', 'bitterweed', 'agarita', 'wild_rhubarb', 'cardinal',
+      'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'].indexOf(item) === -1;
+  });
 
   enabledCategories = enabledCategories.filter(function (item) {
     return categoriesDisabledByDefault.indexOf(item) === -1;
@@ -227,13 +228,13 @@ function setCurrentDayCycle(dev = null) {
         expires: 2
       });
       if (resetMarkersDaily) {
-        $.each(markers, function(key, value){
-          if(inventory[value.text])
-            inventory[value.text].isCollected = false;     
-    
+        $.each(markers, function (key, value) {
+          if (inventory[value.text])
+            inventory[value.text].isCollected = false;
+
           value.isCollected = false;
         });
-    
+
         MapBase.save();
       }
     }
@@ -292,11 +293,12 @@ $("#tools").on("change", function () {
 
 $("#reset-markers").on("change", function () {
   if ($("#reset-markers").val() == 'clear') {
-    $.each(markers, function(key, value){
-      if(inventory[value.text])
-        inventory[value.text].isCollected = false;     
+    $.each(markers, function (key, value) {
+      if (inventory[value.text])
+        inventory[value.text].isCollected = false;
 
       value.isCollected = false;
+      value.canCollect = value.amount < 10;
     });
 
     MapBase.save();
@@ -316,13 +318,13 @@ $("#reset-markers").on("change", function () {
 
 $("#clear-inventory").on("change", function () {
   if ($("#clear-inventory").val() == 'true') {
-    $.each(Object.keys(inventory), function(key, value){
+    $.each(Object.keys(inventory), function (key, value) {
       inventory[value].amount = 0;
       var marker = markers.filter(function (marker) {
         return marker.text == value && (marker.day == day || marker.day.includes(day));
       })[0];
 
-      if(marker != null)
+      if (marker != null)
         marker.amount = 0;
     });
 
@@ -406,10 +408,16 @@ $('.open-submenu').on('click', function (e) {
 $('.collection-sell').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
 
-  var getMarkers = markers.filter(_m => _m.category == collectionType);
+  var getMarkers = markers.filter(_m => _m.category == collectionType && _m.day == day);
 
-  $.each(getMarkers, function(key, value) {
-    MapBase.changeMarkerAmount(value.text, -1);
+  $.each(getMarkers, function (key, value) {
+    if (value.subdata) {
+      if (value.text.endsWith('_1') || !value.text.match('[0-9]$'))
+        MapBase.changeMarkerAmount(value.subdata, -1);
+    }
+    else {
+      MapBase.changeMarkerAmount(value.text, -1);
+    }
   });
 
 });
@@ -417,16 +425,10 @@ $('.collection-sell').on('click', function (e) {
 $(document).on('click', '.collectible', function () {
   var collectible = $(this);
 
-  MapBase.removeItemFromMap(collectible.data('type'));
+  MapBase.removeItemFromMap(collectible.data('type'), collectible.data('type'));
 
   if ($("#routes").val() == 1)
     Routes.drawLines();
-
-  if (collectible.parent().data('type') == 'american_flowers') {
-    $.cookie('disabled-categories', categoriesDisabledByDefault.join(','));
-  }
-
-  MapBase.addMarkers();
 });
 
 $('.menu-toggle').on('click', function () {
@@ -493,6 +495,17 @@ L.Icon.DataMarkup = L.Icon.extend({
     L.Icon.prototype._setIconStyles.call(this, img, name);
     if (this.options.marker) {
       img.dataset.marker = this.options.marker;
+    }
+  }
+});
+
+
+L.LayerGroup.include({
+  getLayerById: function (id) {
+    for (var i in this._layers) {
+      if (this._layers[i].id == id) {
+        return this._layers[i];
+      }
     }
   }
 });

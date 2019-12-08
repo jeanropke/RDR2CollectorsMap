@@ -61,5 +61,6 @@
 	{"key": "menu.auto_refresh", "value": "Mudar ciclo automaticamente"},
 	{"key": "menu.fame_seeker", "value": "Caçador de Fama"},
 	{"key": "menu.wounded_animal", "value": "Animal Ferido"},
-	{"key": "menu.clear_inventory", "value": "Limpar inventário"}
+	{"key": "menu.clear_inventory", "value": "Limpar inventário"},
+	{"key": "menu.sell", "value": "Vender"}
 ]
