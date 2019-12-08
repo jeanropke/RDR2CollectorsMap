@@ -183,12 +183,14 @@ var MapBase = {
             $('[data-marker=' + marker.text + ']').css('opacity', '.35');
             $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
             marker.canCollect = false;
+            marker.isCollected = true;
           }
           else {
             MapBase.changeMarkerAmount(marker.subdata || marker.text, -1);
             $('[data-marker=' + marker.text + ']').css('opacity', '1');
             $(`[data-type=${marker.subdata}]`).removeClass('disabled');
             marker.canCollect = true;
+            marker.isCollected = false;
           }
         }
         else {
