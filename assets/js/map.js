@@ -112,7 +112,6 @@ var MapBase = {
 
   addMarkers: function (refreshMenu = false) {
 
-    console.log(Layers.miscLayer);
     if (Layers.itemMarkersLayer != null)
       Layers.itemMarkersLayer.clearLayers();
     if (Layers.miscLayer != null)
