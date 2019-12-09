@@ -16,8 +16,8 @@ var Routes = {
 
         if (marker == null)
           return;
-
-        if (!marker.isCollected && enabledCategories.includes(marker.category)
+        
+        if ((!marker.isCollected && marker.amount < 10) && enabledCategories.includes(marker.category)
         && uniqueSearchMarkers.includes(marker) && !categoriesDisabledByDefault.includes(marker.subdata)
         && marker.tool <= parseInt(toolType)) {
           var connection = [marker.lat, marker.lng];
