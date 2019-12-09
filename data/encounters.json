@@ -56,7 +56,8 @@
 		{"text": "grave_robber_03", "x": "-50.8984", "y": "107.8046"},
 		{"text": "grave_robber_04", "x": "-82.5781", "y": "131.1328"},
 		{"text": "grave_robber_05", "x": "-104.8386", "y": "55.4218"},
-		{"text": "grave_robber_06", "x": "-73.6109", "y": "132.9607"}
+		{"text": "grave_robber_06", "x": "-73.6109", "y": "132.9607"},
+		{"text": "grave_robber_07", "x": "-108.0546", "y": "59.5"}
 	],
 	"dog_encounter": [
 		{"text": "dog_encounter_01", "x": "-121.1581", "y": "38.8046"},
