@@ -165,7 +165,7 @@ var MapBase = {
       MapBase.addMarkers();
     } else {
       var _marker = markers.filter(function (marker) {
-        return (marker.text == itemName || (marker.subdata == category)) && (marker.day == day || marker.day.includes(day));
+        return (marker.text == itemName || (marker.subdata == category));
       });
 
       if (_marker == null)
@@ -183,14 +183,12 @@ var MapBase = {
             $('[data-marker=' + marker.text + ']').css('opacity', '.35');
             $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
             marker.canCollect = false;
-            marker.isCollected = true;
           }
           else {
             MapBase.changeMarkerAmount(marker.subdata || marker.text, -1);
             $('[data-marker=' + marker.text + ']').css('opacity', '1');
             $(`[data-type=${marker.subdata}]`).removeClass('disabled');
             marker.canCollect = true;
-            marker.isCollected = false;
           }
         }
         else {
@@ -201,11 +199,13 @@ var MapBase = {
             $('[data-marker=' + marker.text + ']').css('opacity', '.35');
             $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
             marker.canCollect = false;
+            marker.isCollected = true;
           } else {
             MapBase.changeMarkerAmount(marker.subdata || marker.text, -1);
             $('[data-marker=' + marker.text + ']').css('opacity', '1');
             $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
             marker.canCollect = true;
+            marker.isCollected = false;
           }
         }
       });
@@ -219,7 +219,7 @@ var MapBase = {
 
   changeMarkerAmount: function (name, amount) {
     var marker = markers.filter(_m => {
-      return (_m.text == name || _m.subdata == name) && (_m.day == day || _m.day.includes(day));
+      return (_m.text == name || _m.subdata == name);
     });
 
     $.each(marker, function (key, _m) {
