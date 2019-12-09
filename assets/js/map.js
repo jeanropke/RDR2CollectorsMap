@@ -165,7 +165,7 @@ var MapBase = {
       MapBase.addMarkers();
     } else {
       var _marker = markers.filter(function (marker) {
-        return (marker.text == itemName || (marker.subdata == category));
+        return (marker.text == itemName || (marker.subdata == category)) && (marker.day == day || marker.day.includes(day));
       });
 
       if (_marker == null)
@@ -219,7 +219,7 @@ var MapBase = {
 
   changeMarkerAmount: function (name, amount) {
     var marker = markers.filter(_m => {
-      return (_m.text == name || _m.subdata == name);
+      return (_m.text == name || _m.subdata == name) && (_m.day == day || _m.day.includes(day));
     });
 
     $.each(marker, function (key, _m) {
@@ -229,6 +229,8 @@ var MapBase = {
         _m.amount = 10;
       if (_m.amount < 0)
         _m.amount = 0;
+
+      _m.canCollect = _m.amount < 10;
 
       if (_m.amount > 9) {
         $('[data-marker=' + _m.text + ']').css('opacity', '.35');
@@ -302,6 +304,11 @@ var MapBase = {
     var isWeekly = weeklySetData.filter(weekly => {
       return weekly.item === marker.text;
     }).length > 0;
+
+    if(marker.text == 'swords_king')
+    {
+      console.log(marker);
+    }
 
     var tempMarker = L.marker([marker.lat, marker.lng], {
       opacity: marker.canCollect ? 1 : .35,
