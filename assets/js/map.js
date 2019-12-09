@@ -171,14 +171,14 @@ var MapBase = {
       if (_marker == null)
         return;
 
-        var isDisabled = $(`p.collectible[data-type=${category}]`).hasClass('disabled');
+      var isDisabled = $(`p.collectible[data-type=${category}]`).hasClass('disabled');
       $.each(_marker, function (key, marker) {
 
         if (marker.text != itemName && (marker.subdata != category || (_marker.length > 1 && itemName != category)))
           return;
 
         if (itemName == category && marker.subdata == category) {
-          if(!isDisabled) {
+          if (!isDisabled) {
             MapBase.changeMarkerAmount(marker.subdata || marker.text, 1);
             $('[data-marker=' + marker.text + ']').css('opacity', '.35');
             $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
@@ -248,7 +248,8 @@ var MapBase = {
     });
     //Layers.itemMarkersLayer.removeLayer(Layers.itemMarkersLayer.getLayerById(marker.text));
     //MapBase.addMarkerOnMap(marker);
-
+    if ($("#routes").val() == 1)
+      Routes.drawLines();
     MapBase.save();
   },
 
