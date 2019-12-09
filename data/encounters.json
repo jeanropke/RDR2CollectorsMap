@@ -48,7 +48,8 @@
 		{"text": "egg_encounter_09", "x": "-112.9765", "y": "60.9140"},
 		{"text": "egg_encounter_10", "x": "-100.5174", "y": "84.3671"},
 		{"text": "egg_encounter_11", "x": "-69.4539", "y": "99.625"},
-		{"text": "egg_encounter_12", "x": "-68.5654", "y": "145.3171"}
+		{"text": "egg_encounter_12", "x": "-68.5654", "y": "145.3171"},
+		{"text": "egg_encounter_13", "x": "-66.25", "y": "78.875"}
 	],
 	"grave_robber": [
 		{"text": "grave_robber_01", "x": "-80.2656", "y": "154.0546"},
