@@ -181,41 +181,46 @@ var MapBase = {
 
         if (itemName == category && marker.subdata == category) {
           if (!isDisabled) {
-            if ((marker.day == day || marker.day.includes(day)))
+            if ((marker.day == day || marker.day.includes(day))) {
+              marker.isCollected = true;
               MapBase.changeMarkerAmount(marker.subdata || marker.text, 1);
-
+            }
             $('[data-marker=' + marker.text + ']').css('opacity', '.35');
             $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
             marker.canCollect = false;
           }
           else {
-            if ((marker.day == day || marker.day.includes(day)))
+            if ((marker.day == day || marker.day.includes(day))) {
+              marker.isCollected = false;
               MapBase.changeMarkerAmount(marker.subdata || marker.text, -1);
+            }
             $('[data-marker=' + marker.text + ']').css('opacity', '1');
             $(`[data-type=${marker.subdata}]`).removeClass('disabled');
             marker.canCollect = true;
           }
         }
         else {
-          marker.canCollect = marker.amount < 10 && !marker.isCollected;
+          //marker.canCollect = marker.amount < 10 && !marker.isCollected;
 
           if (marker.canCollect) {
-            if (marker.day == day || marker.day.includes(day))
-              MapBase.changeMarkerAmount(marker.subdata || marker.text, 1);
-            $('[data-marker=' + marker.text + ']').css('opacity', '.35');
-            $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
-            marker.canCollect = false;
+            if (marker.day == day || marker.day.includes(day)) {              
             marker.isCollected = true;
-          } else {
-            if (marker.day == day || marker.day.includes(day))
+            MapBase.changeMarkerAmount(marker.subdata || marker.text, 1);
+            }
+            //$('[data-marker=' + marker.text + ']').css('opacity', '.35');
+            //$(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
+            //marker.canCollect = false;
+            marker.canCollect = false;
+          } else {            
+            if (marker.day == day || marker.day.includes(day)) {
+              marker.isCollected = false;
               MapBase.changeMarkerAmount(marker.subdata || marker.text, -1);
-            $('[data-marker=' + marker.text + ']').css('opacity', '1');
-            $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
+            }
+            //$('[data-marker=' + marker.text + ']').css('opacity', '1');
+            //$(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
+            //marker.canCollect = true;
             marker.canCollect = true;
-            marker.isCollected = false;
           }
-          console.log(marker);
-
         }
       });
     }
@@ -239,17 +244,16 @@ var MapBase = {
         _m.amount = 0;
 
       _m.canCollect = _m.amount < 10 && !_m.isCollected;
-
-      if (_m.amount > 9) {
+      if ((_m.isCollected || _m.amount > 9) && _m.day == day) {
         $('[data-marker=' + _m.text + ']').css('opacity', '.35');
         $(`[data-type=${_m.text}]`).addClass('disabled');
-      } else if (!_m.isCollected) {
+      } else if(_m.day == day) {
         $('[data-marker=' + _m.text + ']').css('opacity', '1');
         $(`[data-type=${_m.text}]`).removeClass('disabled');
       }
 
-      $(`small[data-item=${name}]`).text(_m.amount);
-      $(`p.collectible[data-type=${name}] > small`).text(_m.amount);
+      $(`small[data-item=${name}]`).text(marker[0].amount);
+      $(`p.collectible[data-type=${name}] > small`).text(marker[0].amount);
 
       //If the category is disabled, no needs to update popup
       if (Layers.itemMarkersLayer.getLayerById(_m.text) != null)
@@ -313,10 +317,6 @@ var MapBase = {
       return weekly.item === marker.text;
     }).length > 0;
 
-    if (marker.text == 'swords_king') {
-      console.log(marker);
-    }
-
     var tempMarker = L.marker([marker.lat, marker.lng], {
       opacity: marker.canCollect ? 1 : .35,
       icon: new L.Icon.DataMarkup({
@@ -365,7 +365,6 @@ var MapBase = {
       });
     });
     console.log('saved');
-
   }
 };
 
