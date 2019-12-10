@@ -38,6 +38,10 @@
 		{"item": "swords_ace"},
 		{"item": "bottle_gran_corazon_madeira"},
 		{"item": "coin_gold_dollar_coin"}
+	],
+	"ancient_tools_set": [
+		{"item": "arrowhead_obsidian"},
+		{"item": "heirlooms_horse_hair_brush"}
 	]
 	
 }
