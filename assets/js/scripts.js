@@ -233,6 +233,7 @@ function setCurrentDayCycle(dev = null) {
             inventory[value.text].isCollected = false;
 
           value.isCollected = false;
+          value.canCollect = !value.isCollected && value.amount < 10;
         });
 
         MapBase.save();
@@ -453,6 +454,19 @@ setInterval(function () {
   if (countdownDate >= (24 * 60 * 60 * 1000) - 1000) {
     if (autoRefresh) {
       setCurrentDayCycle();
+
+      if (resetMarkersDaily) {
+        $.each(markers, function (key, value) {
+          if (inventory[value.text])
+            inventory[value.text].isCollected = false;
+    
+          value.isCollected = false;
+          value.canCollect = value.amount < 10;
+        });
+        
+        MapBase.save();
+      }
+
       MapBase.addMarkers();
     }
   }
