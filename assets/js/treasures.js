@@ -5,6 +5,7 @@ var Treasures = {
         treasureData = data;
         Treasures.set();
       });
+      console.log('treasures loaded');
   },
   set: function () {
     var treasureIcon = L.icon({

@@ -149,6 +149,8 @@ var MapBase = {
       .done(function (data) {
         weeklySetData = data[weeklySet];
       });
+      
+    console.log('weekly set loaded');
   },
 
   removeItemFromMap: function (itemName, category) {
@@ -221,7 +223,6 @@ var MapBase = {
       Routes.drawLines();
 
     Menu.refreshItemsCounter();
-    MapBase.save();
   },
 
   changeMarkerAmount: function (name, amount) {
@@ -363,6 +364,8 @@ var MapBase = {
         expires: 999
       });
     });
+    console.log('saved');
+
   }
 };
 
@@ -385,6 +388,8 @@ MapBase.loadFastTravels = function () {
     .done(function (data) {
       fastTravelData = data;
     });
+    
+    console.log('fast travels loaded');
 };
 
 MapBase.addFastTravelMarker = function () {
