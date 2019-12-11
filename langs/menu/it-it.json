@@ -64,5 +64,8 @@
 	{"key": "menu.fame_seeker", "value": "Cercatore di fama"},
 	{"key": "menu.wounded_animal", "value": "Animale ferito"},
 	{"key": "menu.clear_inventory", "value": "Pulisci inventario"},
-	{"key": "menu.sell", "value": "Vendi"}
+	{"key": "menu.sell", "value": "Vendi"},
+	{"key": "menu.inventory", "value": "Inventory"},
+	{"key": "menu.enable_inventory", "value": "Enable inventory"},
+	{"key": "menu.inventory_stack", "value": "Item stack size"}
 ]

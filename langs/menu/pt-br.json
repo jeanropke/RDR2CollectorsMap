@@ -62,5 +62,8 @@
 	{"key": "menu.fame_seeker", "value": "Caçador de Fama"},
 	{"key": "menu.wounded_animal", "value": "Animal Ferido"},
 	{"key": "menu.clear_inventory", "value": "Limpar inventário"},
-	{"key": "menu.sell", "value": "Vender"}
+	{"key": "menu.sell", "value": "Vender"},
+	{"key": "menu.inventory", "value": "Inventário"},
+	{"key": "menu.enable_inventory", "value": "Ativar inventário"},
+	{"key": "menu.inventory_stack", "value": "Quant. máx. de itens"}
 ]

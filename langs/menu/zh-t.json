@@ -58,5 +58,8 @@
 	{"key": "menu.fame_seeker", "value": "Fame Seeker"},
 	{"key": "menu.wounded_animal", "value": "Wounded Animal"},
 	{"key": "menu.clear_inventory", "value": "Clear inventory"},
-	{"key": "menu.sell", "value": "Sell"}
+	{"key": "menu.sell", "value": "Sell"},
+	{"key": "menu.inventory", "value": "Inventory"},
+	{"key": "menu.enable_inventory", "value": "Enable inventory"},
+	{"key": "menu.inventory_stack", "value": "Item stack size"}
 ]

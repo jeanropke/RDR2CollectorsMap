@@ -15,7 +15,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="assets/js/jquery.cookie.js"></script>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=124" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=126" />
 
 </head>
 
@@ -331,18 +331,33 @@
         </select>
       </div>
       <div class="input-container">
-        <label for="clear-inventory" data-text="menu.clear_inventory">Clear inventory</label>
-        <select class="input-day" id="clear-inventory">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
-      <div class="input-container">
         <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>
         <select class="input-day" id="reset-markers">
           <option value="true" data-text="menu.yes" selected>Yes</option>
           <option value="false" data-text="menu.no">No</option>
           <option value="clear" data-text="menu.reset">Reset</option>
+        </select>
+      </div>
+    </div>
+    <div class="settings-container">
+      <h2 data-text="menu.inventory">Inventory</h2>
+      <div class="input-container">
+        <label for="enable-inventory" data-text="menu.enable_inventory">Enable inventory</label>
+        <select class="input-day" id="enable-inventory">
+          <option value="true" data-text="menu.yes" selected>Yes</option>
+          <option value="false" data-text="menu.no">No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
+        <input id="inventory-stack" class="input-day" type="number" min="1" max="10" value="10">
+      </div>
+
+      <div class="input-container">
+        <label for="clear-inventory" data-text="menu.clear_inventory">Clear inventory</label>
+        <select class="input-day" id="clear-inventory">
+          <option value="true" data-text="menu.yes">Yes</option>
+          <option value="false" data-text="menu.no" selected>No</option>
         </select>
       </div>
     </div>
@@ -424,14 +439,15 @@
   <div class="lat-lng-container">
     <p></p><button id="lat-lng-container-close-button">×</button>
   </div>
-  <script src="assets/js/marker.js?nocache=124"></script>
-  <script src="assets/js/treasures.js?nocache=124"></script>
-  <script src="assets/js/condoregg.js?nocache=124"></script>
-  <script src="assets/js/encounters.js?nocache=124"></script>
-  <script src="assets/js/map.js?nocache=124"></script>
-  <script src="assets/js/language.js?nocache=124"></script>
-  <script src="assets/js/menu.js?nocache=124"></script>
-  <script src="assets/js/routes.js?nocache=124"></script>
+  <script src="assets/js/marker.js?nocache=126"></script>
+  <script src="assets/js/inventory.js?nocache=126"></script>
+  <script src="assets/js/treasures.js?nocache=126"></script>
+  <script src="assets/js/condoregg.js?nocache=126"></script>
+  <script src="assets/js/encounters.js?nocache=126"></script>
+  <script src="assets/js/map.js?nocache=126"></script>
+  <script src="assets/js/language.js?nocache=126"></script>
+  <script src="assets/js/menu.js?nocache=126"></script>
+  <script src="assets/js/routes.js?nocache=126"></script>
   <script src="assets/js/scripts.js?nocache=125"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
