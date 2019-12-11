@@ -256,7 +256,7 @@ var MapBase = {
       $(`p.collectible[data-type=${name}] > small`).text(marker[0].amount);
 
       //If the category is disabled, no needs to update popup
-      if (Layers.itemMarkersLayer.getLayerById(_m.text) != null)
+      if (Layers.itemMarkersLayer.getLayerById(_m.text) != null && _m.day == day)
         Layers.itemMarkersLayer.getLayerById(_m.text)._popup.setContent(MapBase.updateMarkerContent(_m));
 
     });
