@@ -151,10 +151,9 @@ function init() {
   lang = $.cookie('language');
   $("#language").val(lang);
 
-
   Language.setMenuLanguage();
   MapBase.init();
-
+ 
   setMapBackground($.cookie('map-layer'));
 
   setCurrentDayCycle();
@@ -235,8 +234,6 @@ function setCurrentDayCycle(dev = null) {
           value.isCollected = false;
           value.canCollect = !value.isCollected && value.amount < 10;
         });
-
-        MapBase.save();
       }
     }
   }
@@ -451,6 +448,7 @@ setInterval(function () {
   nextGMTMidnight.setUTCMinutes(0);
   nextGMTMidnight.setUTCSeconds(0);
   var countdownDate = nextGMTMidnight - new Date();
+  
   if (countdownDate >= (24 * 60 * 60 * 1000) - 1000) {
     if (autoRefresh) {
       setCurrentDayCycle();
@@ -463,7 +461,6 @@ setInterval(function () {
           value.isCollected = false;
           value.canCollect = value.amount < 10;
         });
-        
         MapBase.save();
       }
 
