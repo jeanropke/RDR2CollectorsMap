@@ -1,5 +1,5 @@
 var Inventory = {
-    isEnabled: $.cookie('inventory-enabled') ? $.cookie('inventory-enabled') == 'true' : false,
+    isEnabled: $.cookie('inventory-enabled') ? $.cookie('inventory-enabled') == 'true' : typeof $.cookie('inventory-enabled') === 'undefined' ? true : false,
     stackSize: parseInt($.cookie('inventory-stack')) ? parseInt($.cookie('inventory-stack')) : 10,
 
     init: function(){ 
