@@ -244,10 +244,10 @@ var MapBase = {
         _m.amount = 0;
 
       _m.canCollect = _m.amount < 10 && !_m.isCollected;
-      if ((_m.isCollected || _m.amount > 9) && _m.day == day) {
+      if ((_m.isCollected || _m.amount > 9) && (_m.day == day || _m.day.includes(day))) {
         $('[data-marker=' + _m.text + ']').css('opacity', '.35');
         $(`[data-type=${_m.text}]`).addClass('disabled');
-      } else if(_m.day == day) {
+      } else if((_m.day == day || _m.day.includes(day))) {
         $('[data-marker=' + _m.text + ']').css('opacity', '1');
         $(`[data-type=${_m.text}]`).removeClass('disabled');
       }
