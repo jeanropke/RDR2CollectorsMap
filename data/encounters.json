@@ -75,7 +75,8 @@
 	"fame_seeker": [
 		{"text": "fame_seeker_01", "x": "-97.1093", "y": "80.0703"},
 		{"text": "fame_seeker_02", "x": "-61.1423", "y": "104.9059"},
-		{"text": "fame_seeker_03", "x": "-61.8544", "y": "91.3357"}
+		{"text": "fame_seeker_03", "x": "-61.8544", "y": "91.3357"},
+		{"text": "fame_seeker_03", "x": "-116.2421", "y": "34.2656"}		
 	],
 	"wounded_animal": [
 		{"text": "wounded_animal_01", "x": "-45.1562", "y": "116.0234"},
