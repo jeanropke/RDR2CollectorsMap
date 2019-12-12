@@ -63,7 +63,7 @@
 	{"key": "menu.wounded_animal", "value": "Раненое животное"},
 	{"key": "menu.clear_inventory", "value": "Очистить инвентарь"},
 	{"key": "menu.sell", "value": "Продать набор"},
-	{"key": "menu.inventory", "value": "Inventory"},
-	{"key": "menu.enable_inventory", "value": "Enable inventory"},
-	{"key": "menu.inventory_stack", "value": "Item stack size"}
+	{"key": "menu.inventory", "value": "Инвентарь"},
+	{"key": "menu.enable_inventory", "value": "Вкл. инвентарь"},
+	{"key": "menu.inventory_stack", "value": "Макс. кол-во предметов в слоте"}
 ]
