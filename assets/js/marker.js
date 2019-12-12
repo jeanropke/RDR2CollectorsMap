@@ -12,5 +12,5 @@ var Marker = function(text, lat, lng, tool, day, category, subdata, video) {
   this.isVisible = enabledCategories.includes(category);
   this.amount = inventory[text] == null ? 0 : inventory[text].amount;
   this.isCollected = inventory[text] == null ? false : (inventory[text].isCollected);//collectedItems.includes(text);
-  this.canCollect = Inventory.isEnabled ? this.amount < Inventory.stackSize : !this.isCollected;
+  this.canCollect = Inventory.isEnabled ? this.amount < Inventory.stackSize && !this.isCollected : !this.isCollected;
 }
