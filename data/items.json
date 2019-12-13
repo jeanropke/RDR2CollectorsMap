@@ -449,7 +449,7 @@
 		{"text": "heirlooms_new_guinea_rosewood", "day": "3", "tool": "0", "x": "-84.671875", "y": "138.8203125", "video":"https://www.youtube.com/watch?v=I8ykdDAooOI&t=1521s"},
 		{"text": "heirlooms_jade_hairpin", "day": "4", "tool": "1", "x": "", "y": ""},
 		{"text": "heirlooms_cherrywood_comb", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "heirlooms_ebony_hairbrush", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "heirlooms_ebony_hairbrush", "day": "4", "tool": "2", "x": "-65.21875", "y": "106.4375"},
 		{"text": "heirlooms_metal_hairpin", "day": "4", "tool": "1", "x": "", "y": ""},
 		{"text": "heirlooms_carved_wooden", "day": "4", "tool": "1", "x": "", "y": ""},
 		{"text": "heirlooms_boxwood_comb", "day": "4", "tool": "0", "x": "-69.296875", "y": "83.140625"},
@@ -460,7 +460,7 @@
 		{"text": "heirlooms_tortoiseshell_comb", "day": "4", "tool": "0", "x": "-54.7734375", "y": "119.328125"},
 		{"text": "heirlooms_ivory_comb", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "heirlooms_horse_hair_brush", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "heirlooms_boar_bristle_brush", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "heirlooms_boar_bristle_brush", "day": "4", "tool": "0", "x": "-88.84375", "y": "95.34375"},
 		{"text": "heirlooms_new_guinea_rosewood", "day": "4", "tool": "0", "x": "-77.21875", "y": "132.5625"}
 	],
 	"american_flowers": [
