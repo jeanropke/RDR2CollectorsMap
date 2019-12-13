@@ -158,7 +158,7 @@
 		{"text": "wands_page", "day": "3", "tool": "0", "x": "-41.7265625", "y": "147.6796875", "video":"https://www.youtube.com/watch?v=w5uJvlUcal0&t=1391s"},
 		{"text": "wands_queen", "day": "3", "tool": "0", "x": "-110.296875", "y": "51.578125", "video":"https://www.youtube.com/watch?v=w5uJvlUcal0&t=1431s"},
 		{"text": "wands_king", "day": "3", "tool": "0", "x": "-99.359375", "y": "90.2421875", "video":"https://www.youtube.com/watch?v=w5uJvlUcal0&t=1466s"},
-		{"text": "wands_ace", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "wands_ace", "day": "4", "tool": "0", "x": "-52.28125", "y": "76.828125"},
 		{"text": "wands_two", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "wands_three", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "wands_four", "day": "4", "tool": "0", "x": "", "y": ""},
@@ -229,7 +229,7 @@
 		{"text": "pentacles_knight", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "pentacles_page", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "pentacles_queen", "day": "4", "tool": "0", "x": "-54.7578125", "y": "119.9140625"},
-		{"text": "pentacles_king", "day": "4", "tool": "0", "x": "", "y": ""}
+		{"text": "pentacles_king", "day": "4", "tool": "0", "x": "-45.984375", "y": "89.328125"}
 	],
 	"coin": [
 		{"text": "coin_gold_quarter", "day": "1", "tool": "2", "x": "-74.125", "y": "139.9375", "video":"https://www.youtube.com/watch?v=sm8apmtbKCc&t=45s"},
@@ -480,7 +480,7 @@
 		{"text": "heirlooms_ebony_hairpin", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "heirlooms_ivory_hairpin", "day": "4", "tool": "1", "x": "", "y": ""},
 		{"text": "heirlooms_rosewood_hairbrush", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "heirlooms_tortoiseshell_comb", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "heirlooms_tortoiseshell_comb", "day": "4", "tool": "0", "x": "-54.7734375", "y": "119.328125"},
 		{"text": "heirlooms_ivory_comb", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "heirlooms_horse_hair_brush", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "heirlooms_boar_bristle_brush", "day": "4", "tool": "0", "x": "", "y": ""},
@@ -801,7 +801,7 @@
 		{"text": "ring_banais_topaz", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_beaulieux_diamond", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_yates_diamond", "day": "4", "tool": "1", "x": "", "y": ""},
-		{"text": "ring_aubrey_onyx", "day": "4", "tool": "2", "x": "", "y": ""},
+		{"text": "ring_aubrey_onyx", "day": "4", "tool": "2", "x": "-54.21875", "y": "76.5"},
 		{"text": "ring_bosque_emerald", "day": "4", "tool": "2", "x": "", "y": ""},
 		{"text": "ring_sackville_diamond", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_thorburn_turquoise", "day": "4", "tool": "0", "x": "", "y": ""}
@@ -836,7 +836,7 @@
 		{"text": "necklace_tuamotu_pearl", "day": "3", "tool": "0", "x": "-46.03125", "y": "101.4921875", "video":"https://www.youtube.com/watch?v=mzkwrsCqNTc&t=1024s"},
 		{"text": "necklace_blakely_miniatue", "day": "4", "tool": "2", "x": "", "y": ""},
 		{"text": "necklace_richelieu_amethyst", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "necklace_pelle_pearl", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "necklace_pelle_pearl", "day": "4", "tool": "0", "x": "-58.84375", "y": "116.3203125"},
 		{"text": "necklace_ainsworth_cross", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "necklace_braxton_amethyst", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "necklace_rou_pearl", "day": "4", "tool": "2", "x": "", "y": ""},
@@ -915,7 +915,7 @@
 		{"text": "bracelet_infanta_turquoise", "day": "3", "tool": "2", "x": "-78.90625", "y": "133.0703125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=843s"},
 		{"text": "bracelet_elliston_carved", "day": "3", "tool": "2", "x": "-107.96875", "y": "59.3984375", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=882s"},
 		{"text": "bracelet_hajnal_garnet_bangle", "day": "3", "tool": "0", "x": "-78.0703125", "y": "90.15625", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=921s"},
-		{"text": "bracelet_greco_sapphire", "day": "4", "tool": "2", "x": "", "y": ""},
+		{"text": "bracelet_greco_sapphire", "day": "4", "tool": "2", "x": "-55.4453125", "y": "101.78125"},
 		{"text": "bracelet_abello_ruby_bangle", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "bracelet_ojeda_rose_gold", "day": "4", "tool": "2", "x": "", "y": ""},
 		{"text": "bracelet_helena_sapphire", "day": "4", "tool": "0", "x": "", "y": ""},
