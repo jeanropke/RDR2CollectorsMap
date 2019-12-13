@@ -371,7 +371,7 @@
 		{"text": "bottle_gran_corazon_madeira", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "bottle_old_tom_gin", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "bottle_caribbean_rum", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "bottle_cognac_bottle", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_cognac_bottle", "day": "4", "tool": "0", "x": "-101.09375", "y": "43.4609375"},
 		{"text": "bottle_london_dry_gin", "day": "4", "tool": "0", "x": "", "y": ""}
 	],
 	"arrowhead": [
