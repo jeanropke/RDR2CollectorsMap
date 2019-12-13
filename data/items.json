@@ -888,7 +888,7 @@
 		{"text": "earring_beauchene_ruby", "day": "4", "tool": "2", "x": "", "y": ""},
 		{"text": "earring_endicott_diamond", "day": "4", "tool": "2", "x": "-41.03125", "y": "133.7109375"},
 		{"text": "earring_josephine_pearl", "day": "4", "tool": "2", "x": "", "y": ""},
-		{"text": "earring_emmeline_coral", "day": "4", "tool": "1", "x": "", "y": ""}
+		{"text": "earring_emmeline_coral", "day": "4", "tool": "1", "x": "", "y": ""} 
 	],
 	"lost_bracelet": [
 		{"text": "bracelet_greco_sapphire", "day": "1", "tool": "0", "x": "-55.4453125", "y": "101.78125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=45s"},
