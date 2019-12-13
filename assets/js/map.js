@@ -233,6 +233,9 @@ var MapBase = {
       case "day_3":
         return "purple";
         break;
+      case "day_4":
+        return "darkpurple";
+        break;
       case "weekly":
         return "green";
         break;

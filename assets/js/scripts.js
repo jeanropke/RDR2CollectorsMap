@@ -49,7 +49,7 @@ var fastTravelData;
 var weeklySet = 'ancient_tools_set';
 var weeklySetData = [];
 var date;
-var nocache = 125;
+var nocache = 131;
 
 var wikiLanguage = [];
 
@@ -156,7 +156,9 @@ function init() {
 
   setMapBackground($.cookie('map-layer'));
 
-  setCurrentDayCycle();
+  //setCurrentDayCycle();
+  day = 4;
+  $('#day').val(day);
   Routes.loadRoutesData();
 
   //Overlay tests
