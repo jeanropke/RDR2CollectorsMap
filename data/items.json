@@ -372,7 +372,7 @@
 		{"text": "bottle_old_tom_gin", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "bottle_caribbean_rum", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "bottle_cognac_bottle", "day": "4", "tool": "0", "x": "-101.09375", "y": "43.4609375"},
-		{"text": "bottle_london_dry_gin", "day": "4", "tool": "0", "x": "", "y": ""}
+		{"text": "bottle_london_dry_gin", "day": "4", "tool": "0", "x": "-52.203125", "y": "76.5390625"}
 	],
 	"arrowhead": [
 		{"text": "arrowhead_rough", "day": "1", "tool": "1", "x": "-106.8515625", "y": "80.078125", "video":"https://www.youtube.com/watch?v=EJYsStXzjX0&t=45s"},
