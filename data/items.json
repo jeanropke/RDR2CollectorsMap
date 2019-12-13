@@ -104,7 +104,7 @@
 		{"text": "swords_two", "day": "4", "tool": "0", "x": "-79.78125", "y": "154.3984375"},
 		{"text": "swords_three", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "swords_four", "day": "4", "tool": "0", "x": "-98.734375", "y": "89"},
-		{"text": "swords_five", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "swords_five", "day": "4", "tool": "0", "x": "-59.51", "y": "125.29"},
 		{"text": "swords_six", "day": "4", "tool": "0", "x": "-69.9140625", "y": "137.828125"},
 		{"text": "swords_seven", "day": "4", "tool": "0", "x": "-59.28125", "y": "155.140625"},
 		{"text": "swords_eight", "day": "4", "tool": "0", "x": "-41.0703125", "y": "146.6640625"},
@@ -170,8 +170,8 @@
 		{"text": "wands_ten", "day": "4", "tool": "0", "x": "-69.828125", "y": "130.96875"},
 		{"text": "wands_knight", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "wands_page", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "wands_queen", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "wands_king", "day": "4", "tool": "0", "x": "", "y": ""}
+		{"text": "wands_queen", "day": "4", "tool": "0", "x": "-84.79", "y": "85.87"},
+		{"text": "wands_king", "day": "4", "tool": "0", "x": "-108.68", "y": "26.46"}
 	],
 	"card_pentacles": [
 		{"text": "pentacles_ace", "day": "1", "tool": "0", "x": "-113.0859375", "y": "20.328125", "video":"https://www.youtube.com/watch?v=NEzk9QyX8D4&t=45s"},
@@ -227,7 +227,7 @@
 		{"text": "pentacles_nine", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "pentacles_ten", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "pentacles_knight", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "pentacles_page", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "pentacles_page", "day": "4", "tool": "0", "x": "-53.28125", "y": "83.09375"},
 		{"text": "pentacles_queen", "day": "4", "tool": "0", "x": "-54.7578125", "y": "119.9140625"},
 		{"text": "pentacles_king", "day": "4", "tool": "0", "x": "-45.984375", "y": "89.328125"}
 	],
