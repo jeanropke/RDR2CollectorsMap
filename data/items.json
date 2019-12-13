@@ -48,7 +48,7 @@
 		{"text": "cups_four", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "cups_five", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "cups_six", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "cups_seven", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "cups_seven", "day": "4", "tool": "0", "x": "-58.09375", "y": "98.578125"},
 		{"text": "cups_eight", "day": "4", "tool": "0", "x": "-72.859375", "y": "144.171875"},
 		{"text": "cups_nine", "day": "4", "tool": "0", "x": "-55.72656", "y": "128.640625"},
 		{"text": "cups_ten", "day": "4", "tool": "0", "x": "-101.1640625", "y": "72.5390625"},
