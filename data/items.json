@@ -476,7 +476,7 @@
 		{"text": "heirlooms_metal_hairpin", "day": "4", "tool": "1", "x": "", "y": ""},
 		{"text": "heirlooms_carved_wooden", "day": "4", "tool": "1", "x": "", "y": ""},
 		{"text": "heirlooms_boxwood_comb", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "heirlooms_goat_hair_brush", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "heirlooms_goat_hair_brush", "day": "4", "tool": "0", "x": "-75.546875", "y": "145.796875"},
 		{"text": "heirlooms_ebony_hairpin", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "heirlooms_ivory_hairpin", "day": "4", "tool": "1", "x": "", "y": ""},
 		{"text": "heirlooms_rosewood_hairbrush", "day": "4", "tool": "0", "x": "", "y": ""},
