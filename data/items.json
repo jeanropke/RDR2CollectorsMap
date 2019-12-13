@@ -55,7 +55,7 @@
 		{"text": "cups_knight", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "cups_page", "day": "4", "tool": "0", "x": "-50.4375", "y": "123.3125"},
 		{"text": "cups_queen", "day": "4", "tool": "0", "x": "-58.046875", "y": "132.6171875"},
-		{"text": "cups_king", "day": "4", "tool": "0", "x": "", "y": ""}
+		{"text": "cups_king", "day": "4", "tool": "0", "x": "-99.078125", "y": "131.796875"}
 	],
 	"card_swords": [
 		{"text": "swords_ace", "day": "1", "tool": "0", "x": "-68.75", "y": "106.296875", "video":"https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=45s"},
@@ -224,7 +224,7 @@
 		{"text": "pentacles_six", "day": "4", "tool": "0", "x": "-65.796875", "y": "145.9921875"},
 		{"text": "pentacles_seven", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "pentacles_eight", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "pentacles_nine", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "pentacles_nine", "day": "4", "tool": "0", "x": "-82.96875", "y": "132.3515625"},
 		{"text": "pentacles_ten", "day": "4", "tool": "0", "x": "-94.453125", "y": "128.640625"},
 		{"text": "pentacles_knight", "day": "4", "tool": "0", "x": "-91.828125", "y": "140.90625"},
 		{"text": "pentacles_page", "day": "4", "tool": "0", "x": "-53.28125", "y": "83.09375"},
