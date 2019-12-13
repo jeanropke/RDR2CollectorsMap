@@ -355,7 +355,7 @@
 		{"text": "bottle_scotch_whisky", "day": "4", "tool": "0", "x": "-78.7578125", "y": "122.9921875"},
 		{"text": "bottle_absinthe", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "bottle_gran_corazon_madeira", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "bottle_old_tom_gin", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_old_tom_gin", "day": "4", "tool": "0", "x": "-113.90625", "y": "18.703125"},
 		{"text": "bottle_caribbean_rum", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "bottle_cognac_bottle", "day": "4", "tool": "0", "x": "-101.09375", "y": "43.4609375"},
 		{"text": "bottle_london_dry_gin", "day": "4", "tool": "0", "x": "-52.203125", "y": "76.5390625"}
