@@ -50,6 +50,16 @@ p {
     padding: 10px;
     text-align: center;
 }
+.map-alert .close-button {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 27px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
 #map {
     background: #d2b790;
     width: 100%;
