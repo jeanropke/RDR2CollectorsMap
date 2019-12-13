@@ -40,7 +40,16 @@ h4 {
 p {
     margin: 0!important;
 }
-
+.map-alert {
+    background: darkred;
+    color: #fff;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    padding: 10px;
+    text-align: center;
+}
 #map {
     background: #d2b790;
     width: 100%;
@@ -281,6 +290,7 @@ p {
     user-select: none;
     display: flex;
     justify-content: space-between;
+    font-size: 15px;
 }
 
 .lat-lng-container {

@@ -21,6 +21,7 @@ Menu.refreshMenu = function () {
       if (marker.day == day && marker.category == category) {
         if (marker.subdata) {
           //This is for items with subdata to merge them
+          //TODO: create a 'marker' to subdata with item amount
           if ($(`.menu-hidden[data-type=${category}]`).children(`p.collectible[data-type=${marker.subdata}]`).length > 0)
             return;
 

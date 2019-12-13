@@ -414,6 +414,11 @@ $("#custom-routes").on("change", function () {
   changeCursor();
 });
 
+//When map-alert is clicked
+$('.map-alert').on('click', function() {
+  $('.map-alert').hide();
+});
+
 //Enable & disable show coordinates on menu
 $('#show-coordinates').on('change', function () {
   showCoordinates = $('#show-coordinates').val() == '1';
