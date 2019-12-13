@@ -52,7 +52,7 @@
 		{"text": "cups_eight", "day": "4", "tool": "0", "x": "-72.859375", "y": "144.171875"},
 		{"text": "cups_nine", "day": "4", "tool": "0", "x": "-55.72656", "y": "128.640625"},
 		{"text": "cups_ten", "day": "4", "tool": "0", "x": "-101.1640625", "y": "72.5390625"},
-		{"text": "cups_knight", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "cups_knight", "day": "4", "tool": "0", "x": "-81.4296875", "y": "155.5390625"},
 		{"text": "cups_page", "day": "4", "tool": "0", "x": "-50.4375", "y": "123.3125"},
 		{"text": "cups_queen", "day": "4", "tool": "0", "x": "-58.046875", "y": "132.6171875"},
 		{"text": "cups_king", "day": "4", "tool": "0", "x": "-99.078125", "y": "131.796875"}
@@ -102,7 +102,7 @@
 		{"text": "swords_king", "day": "3", "tool": "0", "x": "-100.8359375", "y": "25.0703125", "video":"https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1549s"},
 		{"text": "swords_ace", "day": "4", "tool": "0", "x": "-55.6328125", "y": "156.78125"},
 		{"text": "swords_two", "day": "4", "tool": "0", "x": "-79.78125", "y": "154.3984375"},
-		{"text": "swords_three", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "swords_three", "day": "4", "tool": "0", "x": "-51.625", "y": "149.90625"},
 		{"text": "swords_four", "day": "4", "tool": "0", "x": "-98.734375", "y": "89"},
 		{"text": "swords_five", "day": "4", "tool": "0", "x": "-59.51", "y": "125.29"},
 		{"text": "swords_six", "day": "4", "tool": "0", "x": "-69.9140625", "y": "137.828125"},
@@ -169,7 +169,7 @@
 		{"text": "wands_nine", "day": "4", "tool": "0", "x": "-116.96875", "y": "30.5546875"},
 		{"text": "wands_ten", "day": "4", "tool": "0", "x": "-69.828125", "y": "130.96875"},
 		{"text": "wands_knight", "day": "4", "tool": "0", "x": "-69.359375", "y": "83.03125"},
-		{"text": "wands_page", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "wands_page", "day": "4", "tool": "0", "x": "-87.234375", "y": "153.1015625"},
 		{"text": "wands_queen", "day": "4", "tool": "0", "x": "-84.79", "y": "85.87"},
 		{"text": "wands_king", "day": "4", "tool": "0", "x": "-108.68", "y": "26.46"}
 	],
