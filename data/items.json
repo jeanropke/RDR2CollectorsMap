@@ -101,7 +101,7 @@
 		{"text": "swords_queen", "day": "3", "tool": "0", "x": "-54.546875", "y": "140.2734375", "video":"https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1511s"},
 		{"text": "swords_king", "day": "3", "tool": "0", "x": "-100.8359375", "y": "25.0703125", "video":"https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1549s"},
 		{"text": "swords_ace", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "swords_two", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "swords_two", "day": "4", "tool": "0", "x": "-79.78125", "y": "154.3984375"},
 		{"text": "swords_three", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "swords_four", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "swords_five", "day": "4", "tool": "0", "x": "", "y": ""},
