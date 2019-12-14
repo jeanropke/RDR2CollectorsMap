@@ -100,6 +100,13 @@ function init() {
     toolType = $.cookie('tools');
   }
 
+  if (typeof $.cookie('alert-closed') == 'undefined') {
+    $('.map-alert').show();
+  }
+  else {
+    $('.map-alert').hide();
+  }
+
   if (typeof $.cookie('disabled-categories') !== 'undefined')
     categoriesDisabledByDefault = $.cookie('disabled-categories').split(',');
 
@@ -415,6 +422,7 @@ $("#custom-routes").on("change", function () {
 
 //When map-alert is clicked
 $('.map-alert').on('click', function() {
+  $.cookie('alert-closed', 'true');
   $('.map-alert').hide();
 });
 

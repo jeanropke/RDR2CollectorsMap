@@ -49,6 +49,7 @@ p {
     z-index: 9999;
     padding: 10px;
     text-align: center;
+    display: none;
 }
 .map-alert .close-button {
     position: absolute;
