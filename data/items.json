@@ -57,7 +57,7 @@
 		{"text": "cups_queen", "day": "4", "tool": "0", "x": "-58.046875", "y": "132.6171875"},
 		{"text": "cups_king", "day": "4", "tool": "0", "x": "-99.078125", "y": "131.796875"},
 		{"text": "cups_ace", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "cups_two", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "cups_two", "day": "5", "tool": "0", "x": "-109.5625", "y": "27.125"},
 		{"text": "cups_three", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "cups_four", "day": "5", "tool": "0", "x": "-51", "y": "107.0078125"},
 		{"text": "cups_five", "day": "5", "tool": "0", "x": "", "y": ""},
@@ -66,7 +66,7 @@
 		{"text": "cups_eight", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "cups_nine", "day": "5", "tool": "0", "x": "-53.859375", "y": "156.2890625"},
 		{"text": "cups_ten", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "cups_knight", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "cups_knight", "day": "5", "tool": "0", "x": "-100.828125", "y": "25.046875"},
 		{"text": "cups_page", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "cups_queen", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "cups_king", "day": "5", "tool": "0", "x": "-64.71875", "y": "101.515625"}
