@@ -340,7 +340,7 @@
 		{"text": "coin_new_yorke_token", "day": "5", "tool": "2", "x": "-78.9609375", "y": "149.5703125"},
 		{"text": "coin_five_dollar_bechtler", "day": "5", "tool": "2", "x": "-35.6953125", "y": "142.09375"},
 		{"text": "coin_quarter", "day": "5", "tool": "2", "x": "-52.6171875", "y": "153.5078125"},
-		{"text": "coin_gold_dollar_coin", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_gold_dollar_coin", "day": "5", "tool": "2", "x": "-79.6875", "y": "80.359375"},
 		{"text": "coin_nickel_coin", "day": "5", "tool": "2", "x": "-95.890625", "y": "132.6484375"},
 		{"text": "coin_halfpenny", "day": "5", "tool": "2", "x": "-74.1328125", "y": "141.5390625"},
 		{"text": "coin_half_eagle", "day": "5", "tool": "2", "x": "-88.5234375", "y": "91.734375"},
@@ -851,7 +851,8 @@
 		{"text": "flower_wisteria", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-85.046875", "y": "72.3359375"},
 		{"text": "flower_wisteria_2", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-29.1328125", "y": "156.046875"},
 		{"text": "flower_wisteria_3", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-75.9765625", "y": "78.7421875"},
-		{"text": "flower_wisteria_3", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-51.140625", "y": "149.515625"}
+		{"text": "flower_wisteria_4", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-51.140625", "y": "149.515625"},
+		{"text": "flower_wisteria_5", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-37.2265625", "y": "149.34375"}
 
 	],
 	"lost_ring": [
