@@ -932,7 +932,7 @@
 		{"text": "necklace_richelieu_amethyst", "day": "5", "tool": "2", "x": "-83.734375", "y": "128.7421875"},
 		{"text": "necklace_pelle_pearl", "day": "5", "tool": "2", "x": "-90.3671875", "y": "82.2265625"},
 		{"text": "necklace_ainsworth_cross", "day": "5", "tool": "2", "x": "-58.9296875", "y": "140.703125"},
-		{"text": "necklace_braxton_amethyst", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "necklace_braxton_amethyst", "day": "5", "tool": "2", "x": "-88.6640625", "y": "142.2578125"},
 		{"text": "necklace_rou_pearl", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "necklace_gosselin_white_gold", "day": "5", "tool": "2", "x": "-106.296875", "y": "59.40625"},
 		{"text": "necklace_dane_topaz", "day": "5", "tool": "0", "x": "-36.7578125", "y": "105.15625"},
