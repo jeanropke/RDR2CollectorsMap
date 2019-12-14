@@ -429,7 +429,7 @@
 		{"text": "bottle_old_tom_gin", "day": "5", "tool": "0", "x": "-42.2109375", "y": "156.375"},
 		{"text": "bottle_caribbean_rum", "day": "5", "tool": "0", "x": "-56.6171875", "y": "153.2265625"},
 		{"text": "bottle_cognac_bottle", "day": "5", "tool": "0", "x": "-69.265625", "y": "136.4453125"},
-		{"text": "bottle_london_dry_gin", "day": "5", "tool": "0", "x": "-86.8125", "y": "145.6796875"}
+		{"text": "bottle_london_dry_gin", "day": "5", "tool": "0", "x": "-86.9375", "y": "145.4609375"}
 	],
 	"arrowhead": [
 		{"text": "arrowhead_rough", "day": "1", "tool": "1", "x": "-106.8515625", "y": "80.078125", "video":"https://www.youtube.com/watch?v=EJYsStXzjX0&t=45s"},
@@ -838,7 +838,7 @@
 		{"text": "flower_wild_rhubarb_2", "day": "5", "tool": "0", "subdata": "wild_rhubarb", "x": "-111.125", "y": "69.0234375"},
 		{"text": "flower_wild_rhubarb_3", "day": "5", "tool": "0", "subdata": "wild_rhubarb", "x": "-103.2265625", "y": "55.296875"},
 		{"text": "flower_cardinal", "day": "5", "tool": "0", "subdata": "cardinal", "x": "-93.53125", "y": "142.078125"},
-		{"text": "flower_cardinal_2", "day": "5", "tool": "0", "subdata": "cardinal", "x": "-76.2265625", "y": "139.1953125"},		
+		{"text": "flower_cardinal_2", "day": "5", "tool": "0", "subdata": "cardinal", "x": "-76.2265625", "y": "139.1953125"},
 		{"text": "flower_creek_plum", "day": "5", "tool": "0", "subdata": "creek_plum", "x": "", "y": ""},
 		{"text": "flower_blood_flower_1", "day": "5", "tool": "0", "subdata": "blood_flower", "x": "", "y": ""},
 		{"text": "flower_chocolate_daisy", "day": "5", "tool": "0", "subdata": "chocolate_daisy", "x": "-59.0078125", "y": "94.390625"},
