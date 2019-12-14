@@ -257,6 +257,9 @@ p {
     color: #6a6a6a;
     text-decoration: line-through;
 }
+.side-menu .not-found {
+    color: darkred;
+}
 
 .side-menu .menu-option .icon {
     width: 35px;

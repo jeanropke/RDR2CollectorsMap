@@ -36,8 +36,12 @@ Menu.refreshMenu = function () {
         else {
           //All others items
           var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.text).text(marker.title);
+          var buttonsElement = $('div').addClass('');
           var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
           $(`.menu-hidden[data-type=${category}]`).append(collectibleElement.append(collectibleCountElement));
+
+          if(marker.lat.length == 0)
+            $(`[data-type=${marker.text}]`).addClass('not-found');
 
           if (!marker.canCollect) {            
             $(`[data-type=${marker.text}]`).addClass('disabled');
