@@ -128,7 +128,7 @@
 		{"text": "swords_page", "day": "4", "tool": "0", "x": "-35.9921875", "y": "158.28125"},
 		{"text": "swords_queen", "day": "4", "tool": "0", "x": "-93.75", "y": "93.1953125"},
 		{"text": "swords_king", "day": "4", "tool": "0", "x": "-79.1796875", "y": "137.8125"},
-		{"text": "swords_ace", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "swords_ace", "day": "5", "tool": "0", "x": "-44.390625", "y": "110.3359375"},
 		{"text": "swords_two", "day": "5", "tool": "0", "x": "-51.6640625", "y": "107.5234375"},
 		{"text": "swords_three", "day": "5", "tool": "0", "x": "-82.4921875", "y": "132.6328125"},
 		{"text": "swords_four", "day": "5", "tool": "0", "x": "-99.1328125", "y": "131.8125"},
@@ -423,11 +423,11 @@
 		{"text": "bottle_london_dry_gin", "day": "4", "tool": "0", "x": "-52.203125", "y": "76.5390625"},
 		{"text": "bottle_tennesee_whiskey", "day": "5", "tool": "0", "x": "-104.6171875", "y": "55.359375"},
 		{"text": "bottle_irish_whiskey", "day": "5", "tool": "0", "x": "-44.203125", "y": "88.125"},
-		{"text": "bottle_scotch_whisky", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_scotch_whisky", "day": "5", "tool": "0", "x": "-67.5859375", "y": "155.8515625"},
 		{"text": "bottle_absinthe", "day": "5", "tool": "0", "x": "-56.234375", "y": "74.484375"},
 		{"text": "bottle_gran_corazon_madeira", "day": "5", "tool": "0", "x": "-51.6328125", "y": "107.5625"},
 		{"text": "bottle_old_tom_gin", "day": "5", "tool": "0", "x": "-42.2109375", "y": "156.375"},
-		{"text": "bottle_caribbean_rum", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_caribbean_rum", "day": "5", "tool": "0", "x": "-56.6171875", "y": "153.2265625"},
 		{"text": "bottle_cognac_bottle", "day": "5", "tool": "0", "x": "-69.265625", "y": "136.4453125"},
 		{"text": "bottle_london_dry_gin", "day": "5", "tool": "0", "x": "-86.8125", "y": "145.6796875"}
 	],
@@ -832,11 +832,13 @@
 		{"text": "flower_wisteria", "day": "4", "tool": "0", "subdata": "wisteria", "x": "", "y": ""},
 		{"text": "flower_texas_bluebonnet", "day": "5", "tool": "0", "subdata": "texas_bluebonnet", "x": "", "y": ""},
 		{"text": "flower_texas_bluebonnet_2", "day": "5", "tool": "0", "subdata": "texas_bluebonnet", "x": "", "y": ""},
-		{"text": "flower_bitterweed_1", "day": "5", "tool": "0", "subdata": "bitterweed", "x": "", "y": ""},
+		{"text": "flower_bitterweed_1", "day": "5", "tool": "0", "subdata": "bitterweed", "x": "-58.140625", "y": "85.0703125"},
 		{"text": "flower_agarita_1", "day": "5", "tool": "0", "subdata": "agarita", "x": "", "y": ""},
 		{"text": "flower_wild_rhubarb", "day": "5", "tool": "0", "subdata": "wild_rhubarb", "x": "-102.734375", "y": "80.53125"},
+		{"text": "flower_wild_rhubarb_2", "day": "5", "tool": "0", "subdata": "wild_rhubarb", "x": "-111.125", "y": "69.0234375"},
+		{"text": "flower_wild_rhubarb_3", "day": "5", "tool": "0", "subdata": "wild_rhubarb", "x": "-103.2265625", "y": "55.296875"},
 		{"text": "flower_cardinal", "day": "5", "tool": "0", "subdata": "cardinal", "x": "-93.53125", "y": "142.078125"},
-		{"text": "flower_cardinal_2", "day": "5", "tool": "0", "subdata": "cardinal", "x": "", "y": ""},		
+		{"text": "flower_cardinal_2", "day": "5", "tool": "0", "subdata": "cardinal", "x": "-76.2265625", "y": "139.1953125"},		
 		{"text": "flower_creek_plum", "day": "5", "tool": "0", "subdata": "creek_plum", "x": "", "y": ""},
 		{"text": "flower_blood_flower_1", "day": "5", "tool": "0", "subdata": "blood_flower", "x": "", "y": ""},
 		{"text": "flower_chocolate_daisy", "day": "5", "tool": "0", "subdata": "chocolate_daisy", "x": "-59.0078125", "y": "94.390625"},
@@ -845,7 +847,10 @@
 		{"text": "flower_chocolate_daisy_4", "day": "5", "tool": "0", "subdata": "chocolate_daisy", "x": "-96.96875", "y": "127.078125"},
 		{"text": "flower_chocolate_daisy_5", "day": "5", "tool": "0", "subdata": "chocolate_daisy", "x": "-59.0859375", "y": "94.4609375"},
 		{"text": "flower_chocolate_daisy_6", "day": "5", "tool": "0", "subdata": "chocolate_daisy", "x": "-81.37", "y": "88.44"},
-		{"text": "flower_wisteria", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-85.046875", "y": "72.3359375"}
+		{"text": "flower_wisteria", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-85.046875", "y": "72.3359375"},
+		{"text": "flower_wisteria_2", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-29.1328125", "y": "156.046875"},
+		{"text": "flower_wisteria_3", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-75.9765625", "y": "78.7421875"}
+
 	],
 	"lost_ring": [
 		{"text": "ring_harland_coral", "day": [1, 4], "tool": "2", "x": "-52.4375", "y": "151.1796875", "video":"https://www.youtube.com/watch?v=6X_nrwO39aU&t=45s"},
@@ -890,7 +895,7 @@
 		{"text": "ring_yates_diamond", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_aubrey_onyx", "day": "5", "tool": "2", "x": "-87.125", "y": "98.3671875"},
 		{"text": "ring_bosque_emerald", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "ring_sackville_diamond", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "ring_sackville_diamond", "day": "5", "tool": "2", "x": "-47.6171875", "y": "100.6171875"},
 		{"text": "ring_thorburn_turquoise", "day": "5", "tool": "2", "x": "-42.9296875", "y": "147.4375"}
 	],
 	"lost_necklaces": [
