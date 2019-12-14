@@ -259,7 +259,7 @@ p {
     text-decoration: line-through;
 }
 .side-menu .not-found {
-    color: darkred;
+    color: #f95050;
 }
 
 .side-menu .menu-option .icon {
