@@ -136,7 +136,6 @@ var MapBase = {
 
     Menu.refreshItemsCounter();
     Treasures.addToMap();
-    CondorEgg.addToMap();
     Encounters.addToMap();
 
     if (refreshMenu)

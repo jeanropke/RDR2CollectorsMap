@@ -9,12 +9,12 @@ var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
   'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'condor_egg', 'wounded_animal', 'fame_seeker'
+   'wounded_animal', 'fame_seeker'
 ];
 
 var categoriesDisabledByDefault = [
   'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'condor_egg', 'wounded_animal', 'fame_seeker'
+  'wounded_animal', 'fame_seeker'
 ]
 
 var enabledCategories = categories;
@@ -22,9 +22,6 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var treasureData = [];
 var treasureMarkers = [];
-
-var condorData = [];
-var condorMarkers = [];
 
 var encountersMarkers = [];
 
@@ -569,6 +566,5 @@ window.addEventListener("DOMContentLoaded", MapBase.loadWeeklySet());
 window.addEventListener("DOMContentLoaded", MapBase.loadFastTravels());
 window.addEventListener("DOMContentLoaded", MapBase.loadMadamNazar());
 window.addEventListener("DOMContentLoaded", Treasures.load());
-window.addEventListener("DOMContentLoaded", CondorEgg.load());
 window.addEventListener("DOMContentLoaded", Encounters.load());
 window.addEventListener("DOMContentLoaded", MapBase.loadMarkers());
