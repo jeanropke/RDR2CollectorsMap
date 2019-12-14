@@ -336,18 +336,18 @@
 		{"text": "coin_gold_quarter", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_draped_bust_silver_dollar", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_one_cent_token", "day": "5", "tool": "2", "x": "-51.8984375", "y": "77.1640625"},
-		{"text": "coin_silver_dollar", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_silver_dollar", "day": "5", "tool": "2", "x": "-88.8125", "y": "80.359375"},
 		{"text": "coin_new_yorke_token", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_five_dollar_bechtler", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_quarter", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_gold_dollar_coin", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_nickel_coin", "day": "5", "tool": "2", "x": "", "y": ""},
-		{"text": "coin_halfpenny", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_halfpenny", "day": "5", "tool": "2", "x": "-74.1328125", "y": "141.5390625"},
 		{"text": "coin_half_eagle", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_gold_eagle", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_liberty_quarter", "day": "5", "tool": "2", "x": "", "y": ""},
-		{"text": "coin_half_dime", "day": "5", "tool": "2", "x": "", "y": ""},
-		{"text": "coin_penny", "day": "5", "tool": "2", "x": "", "y": ""}
+		{"text": "coin_half_dime", "day": "5", "tool": "2", "x": "-101.671875", "y": "44.0234375"},
+		{"text": "coin_penny", "day": "5", "tool": "2", "x": "-22.125", "y": "102.96875"}
 	],
 	"bird_eggs": [
 		{"text": "egg_spoonbill", "day": [1, 5], "tool": "0", "x": "-74.46875", "y": "154.7734375", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=45s"},
@@ -480,8 +480,8 @@
 		{"text": "arrowhead_quartz", "day": "4", "tool": "2", "x": "-87.7578125", "y": "131.390625"},
 		{"text": "arrowhead_flint", "day": "4", "tool": "2", "x": "-104.1640625", "y": "48.046875"},
 		{"text": "arrowhead_agate", "day": "4", "tool": "2", "x": "", "y": ""},
-		{"text": "arrowhead_rough", "day": "5", "tool": "1", "x": "", "y": ""},
-		{"text": "arrowhead_splintered", "day": "5", "tool": "1", "x": "", "y": ""},
+		{"text": "arrowhead_rough", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "arrowhead_splintered", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "arrowhead_crude", "day": "5", "tool": "1", "x": "", "y": ""},
 		{"text": "arrowhead_chipped", "day": "5", "tool": "1", "x": "-73.8671875", "y": "110.859375"},
 		{"text": "arrowhead_feldspar", "day": "5", "tool": "2", "x": "-86.0078125", "y": "77.15625"},
@@ -929,7 +929,7 @@
 		{"text": "necklace_rou_pearl", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "necklace_gosselin_white_gold", "day": "5", "tool": "2", "x": "-106.296875", "y": "59.40625"},
 		{"text": "necklace_dane_topaz", "day": "5", "tool": "0", "x": "-36.7578125", "y": "105.15625"},
-		{"text": "necklace_tuamotu_pearl", "day": "5", "tool": "0", "x": "", "y": ""}
+		{"text": "necklace_tuamotu_pearl", "day": "5", "tool": "2", "x": "-60.8203125", "y": "113.3671875"}
 	],
 	"lost_earrings": [
 		{"text": "earring_ursula_citrine", "day": [1, 4], "tool": "1", "x": "-45.2421875", "y": "122.9609375", "video":"https://www.youtube.com/watch?v=QK2IO7DkOmY&t=45s"},
@@ -973,7 +973,7 @@
 		{"text": "earring_harford_garnet", "day": "5", "tool": "2", "x": "-105.6640625", "y": "36.5390625"},
 		{"text": "earring_duchess_emerald", "day": "5", "tool": "1", "x": "", "y": ""},
 		{"text": "earring_beauchene_ruby", "day": "5", "tool": "2", "x": "-50.4765625", "y": "115.90625"},
-		{"text": "earring_endicott_diamond", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "earring_endicott_diamond", "day": "5", "tool": "2", "x": "-47.9140625", "y": "147.5859375"},
 		{"text": "earring_josephine_pearl", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "earring_emmeline_coral", "day": "5", "tool": "2", "x": "-75.0625", "y": "140.1484375"}
 	],
@@ -1008,7 +1008,7 @@
 		{"text": "bracelet_helena_sapphire", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "bracelet_durant_pearl", "day": "5", "tool": "2", "x": "-109.3984375", "y": "23.8046875"},
 		{"text": "bracelet_infanta_turquoise", "day": "5", "tool": "2", "x": "-57.453125", "y": "126.09375"},
-		{"text": "bracelet_elliston_carved", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "bracelet_elliston_carved", "day": "5", "tool": "0", "x": "-117.4453125", "y": "57.1953125"},
 		{"text": "bracelet_hajnal_garnet_bangle", "day": "5", "tool": "0", "x": "", "y": ""}
 	],
 	"random": [
