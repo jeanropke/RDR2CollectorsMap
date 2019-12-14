@@ -69,7 +69,7 @@
 		{"text": "cups_knight", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "cups_page", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "cups_queen", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "cups_king", "day": "5", "tool": "0", "x": "", "y": ""}
+		{"text": "cups_king", "day": "5", "tool": "0", "x": "-64.71875", "y": "101.515625"}
 	],
 	"card_swords": [
 		{"text": "swords_ace", "day": "1", "tool": "0", "x": "-68.75", "y": "106.296875", "video":"https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=45s"},
@@ -133,13 +133,13 @@
 		{"text": "swords_three", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "swords_four", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "swords_five", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "swords_six", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "swords_six", "day": "5", "tool": "0", "x": "-52.4296875", "y": "77.5"},
 		{"text": "swords_seven", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "swords_eight", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "swords_nine", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "swords_ten", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "swords_knight", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "swords_page", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "swords_knight", "day": "5", "tool": "0", "x": "-72.515625", "y": "94.3203125"},
+		{"text": "swords_page", "day": "5", "tool": "0", "x": "-43.109375", "y": "82.09375"},
 		{"text": "swords_queen", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "swords_king", "day": "5", "tool": "0", "x": "", "y": ""}
 	],
@@ -206,7 +206,7 @@
 		{"text": "wands_four", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "wands_five", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "wands_six", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "wands_seven", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "wands_seven", "day": "5", "tool": "0", "x": "-36.03125", "y": "158.3203125"},
 		{"text": "wands_eight", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "wands_nine", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "wands_ten", "day": "5", "tool": "0", "x": "", "y": ""},
@@ -285,7 +285,7 @@
 		{"text": "pentacles_knight", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "pentacles_page", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "pentacles_queen", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "pentacles_king", "day": "5", "tool": "0", "x": "", "y": ""}
+		{"text": "pentacles_king", "day": "5", "tool": "0", "x": "-29.5546875", "y": "157.6640625"}
 	],
 	"coin": [
 		{"text": "coin_gold_quarter", "day": [1, 4], "tool": "2", "x": "-74.125", "y": "139.9375", "video":"https://www.youtube.com/watch?v=sm8apmtbKCc&t=45s"},
@@ -332,7 +332,22 @@
 		{"text": "coin_gold_eagle", "day": "3", "tool": "2", "x": "-66.1015625", "y": "141.8125", "video":"https://www.youtube.com/watch?v=sm8apmtbKCc&t=1635s"},
 		{"text": "coin_liberty_quarter", "day": "3", "tool": "2", "x": "-64.7890625", "y": "105.515625", "video":"https://www.youtube.com/watch?v=sm8apmtbKCc&t=1673s"},
 		{"text": "coin_half_dime", "day": "3", "tool": "2", "x": "-70", "y": "114.265625", "video":"https://www.youtube.com/watch?v=sm8apmtbKCc&t=1709s"},
-		{"text": "coin_penny", "day": "3", "tool": "2", "x": "-50.6796875", "y": "136.7109375", "video":"https://www.youtube.com/watch?v=sm8apmtbKCc&t=1747s"}
+		{"text": "coin_penny", "day": "3", "tool": "2", "x": "-50.6796875", "y": "136.7109375", "video":"https://www.youtube.com/watch?v=sm8apmtbKCc&t=1747s"},
+		{"text": "coin_gold_quarter", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_draped_bust_silver_dollar", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_one_cent_token", "day": "5", "tool": "2", "x": "-51.8984375", "y": "77.1640625"},
+		{"text": "coin_silver_dollar", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_new_yorke_token", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_five_dollar_bechtler", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_quarter", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_gold_dollar_coin", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_nickel_coin", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_halfpenny", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_half_eagle", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_gold_eagle", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_liberty_quarter", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_half_dime", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_penny", "day": "5", "tool": "2", "x": "", "y": ""}
 	],
 	"bird_eggs": [
 		{"text": "egg_spoonbill", "day": [1, 4], "tool": "0", "x": "-74.46875", "y": "154.7734375", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=45s"},
