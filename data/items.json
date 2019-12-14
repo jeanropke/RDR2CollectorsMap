@@ -893,7 +893,16 @@
 		{"text": "necklace_rou_pearl", "day": "3", "tool": "2", "x": "-33.921875", "y": "123.7890625", "video":"https://www.youtube.com/watch?v=mzkwrsCqNTc&t=903s"},
 		{"text": "necklace_gosselin_white_gold", "day": "3", "tool": "0", "x": "-32.640625", "y": "153.109375", "video":"https://www.youtube.com/watch?v=mzkwrsCqNTc&t=951s"},
 		{"text": "necklace_dane_topaz", "day": "3", "tool": "2", "x": "-104.9765625", "y": "53.9921875", "video":"https://www.youtube.com/watch?v=mzkwrsCqNTc&t=984s"},
-		{"text": "necklace_tuamotu_pearl", "day": "3", "tool": "0", "x": "-46.03125", "y": "101.4921875", "video":"https://www.youtube.com/watch?v=mzkwrsCqNTc&t=1024s"}
+		{"text": "necklace_tuamotu_pearl", "day": "3", "tool": "0", "x": "-46.03125", "y": "101.4921875", "video":"https://www.youtube.com/watch?v=mzkwrsCqNTc&t=1024s"},
+		{"text": "necklace_blakely_miniatue", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "necklace_richelieu_amethyst", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "necklace_pelle_pearl", "day": "5", "tool": "2", "x": "-90.3671875", "y": "82.2265625"},
+		{"text": "necklace_ainsworth_cross", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "necklace_braxton_amethyst", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "necklace_rou_pearl", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "necklace_gosselin_white_gold", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "necklace_dane_topaz", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "necklace_tuamotu_pearl", "day": "5", "tool": "0", "x": "", "y": ""}
 	],
 	"lost_earrings": [
 		{"text": "earring_ursula_citrine", "day": [1, 4], "tool": "1", "x": "-45.2421875", "y": "122.9609375", "video":"https://www.youtube.com/watch?v=QK2IO7DkOmY&t=45s"},
@@ -954,7 +963,15 @@
 		{"text": "bracelet_durant_pearl", "day": "3", "tool": "0", "x": "-40.4375", "y": "136.40625", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=810s"},
 		{"text": "bracelet_infanta_turquoise", "day": "3", "tool": "2", "x": "-78.90625", "y": "133.0703125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=843s"},
 		{"text": "bracelet_elliston_carved", "day": "3", "tool": "2", "x": "-107.96875", "y": "59.3984375", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=882s"},
-		{"text": "bracelet_hajnal_garnet_bangle", "day": "3", "tool": "0", "x": "-78.0703125", "y": "90.15625", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=921s"}
+		{"text": "bracelet_hajnal_garnet_bangle", "day": "3", "tool": "0", "x": "-78.0703125", "y": "90.15625", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=921s"},
+		{"text": "bracelet_greco_sapphire", "day": "5", "tool": "0", "x": "-73.9765625", "y": "116.625"},
+		{"text": "bracelet_abello_ruby_bangle", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "bracelet_ojeda_rose_gold", "day": "5", "tool": "2", "x": "-64.421875", "y": "69.2421875"},
+		{"text": "bracelet_helena_sapphire", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "bracelet_durant_pearl", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "bracelet_infanta_turquoise", "day": "5", "tool": "2", "x": "-57.453125", "y": "126.09375"},
+		{"text": "bracelet_elliston_carved", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "bracelet_hajnal_garnet_bangle", "day": "5", "tool": "0", "x": "", "y": ""}
 	],
 	"random": [
 		{"text": "random_item_1", "day": [1, 2, 3], "tool": "1", "x": "-118.1562", "y": "11.3984"},
