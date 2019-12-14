@@ -894,7 +894,7 @@
 		{"text": "ring_beaulieux_diamond", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_yates_diamond", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_aubrey_onyx", "day": "5", "tool": "2", "x": "-87.125", "y": "98.3671875"},
-		{"text": "ring_bosque_emerald", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "ring_bosque_emerald", "day": "5", "tool": "2", "x": "-34.921875", "y": "118.7578125"},
 		{"text": "ring_sackville_diamond", "day": "5", "tool": "2", "x": "-47.6171875", "y": "100.6171875"},
 		{"text": "ring_thorburn_turquoise", "day": "5", "tool": "2", "x": "-42.9296875", "y": "147.4375"}
 	],
