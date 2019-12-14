@@ -343,8 +343,8 @@
 		{"text": "coin_gold_dollar_coin", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_nickel_coin", "day": "5", "tool": "2", "x": "-95.890625", "y": "132.6484375"},
 		{"text": "coin_halfpenny", "day": "5", "tool": "2", "x": "-74.1328125", "y": "141.5390625"},
-		{"text": "coin_half_eagle", "day": "5", "tool": "2", "x": "", "y": ""},
-		{"text": "coin_gold_eagle", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_half_eagle", "day": "5", "tool": "2", "x": "-88.5234375", "y": "91.734375"},
+		{"text": "coin_gold_eagle", "day": "5", "tool": "2", "x": "-63.921875", "y": "152.3515625"},
 		{"text": "coin_liberty_quarter", "day": "5", "tool": "2", "x": "-41.53125", "y": "116.8203125"},
 		{"text": "coin_half_dime", "day": "5", "tool": "2", "x": "-101.671875", "y": "44.0234375"},
 		{"text": "coin_penny", "day": "5", "tool": "2", "x": "-22.125", "y": "102.96875"}
