@@ -212,7 +212,7 @@
 		{"text": "wands_ten", "day": "5", "tool": "0", "x": "-67.5078125", "y": "156.1171875"},
 		{"text": "wands_knight", "day": "5", "tool": "0", "x": "-54.3359375", "y": "119.703125"},
 		{"text": "wands_page", "day": "5", "tool": "0", "x": "-50.5390625", "y": "123.0859375"},
-		{"text": "wands_queen", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "wands_queen", "day": "5", "tool": "0", "x": "-118.02", "y": "30.22"},
 		{"text": "wands_king", "day": "5", "tool": "0", "x": "-36.7265625", "y": "105.09375"}
 	],
 	"card_pentacles": [
@@ -421,7 +421,7 @@
 		{"text": "bottle_caribbean_rum", "day": "4", "tool": "0", "x": "-82.578125", "y": "98"},
 		{"text": "bottle_cognac_bottle", "day": "4", "tool": "0", "x": "-101.09375", "y": "43.4609375"},
 		{"text": "bottle_london_dry_gin", "day": "4", "tool": "0", "x": "-52.203125", "y": "76.5390625"},
-		{"text": "bottle_tennesee_whiskey", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_tennesee_whiskey", "day": "5", "tool": "0", "x": "-104.6171875", "y": "55.359375"},
 		{"text": "bottle_irish_whiskey", "day": "5", "tool": "0", "x": "-44.203125", "y": "88.125"},
 		{"text": "bottle_scotch_whisky", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "bottle_absinthe", "day": "5", "tool": "0", "x": "-56.234375", "y": "74.484375"},
@@ -844,6 +844,7 @@
 		{"text": "flower_chocolate_daisy_3", "day": "5", "tool": "0", "subdata": "chocolate_daisy", "x": "-82.2890625", "y": "121.3359375"},
 		{"text": "flower_chocolate_daisy_4", "day": "5", "tool": "0", "subdata": "chocolate_daisy", "x": "-96.96875", "y": "127.078125"},
 		{"text": "flower_chocolate_daisy_5", "day": "5", "tool": "0", "subdata": "chocolate_daisy", "x": "-59.0859375", "y": "94.4609375"},
+		{"text": "flower_chocolate_daisy_6", "day": "5", "tool": "0", "subdata": "chocolate_daisy", "x": "-81.37", "y": "88.44"},
 		{"text": "flower_wisteria", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-85.046875", "y": "72.3359375"}
 	],
 	"lost_ring": [
@@ -881,7 +882,7 @@
 		{"text": "ring_sackville_diamond", "day": "3", "tool": "0", "x": "-55.546875", "y": "87.671875", "video":"https://www.youtube.com/watch?v=6X_nrwO39aU&t=1273s"},
 		{"text": "ring_thorburn_turquoise", "day": "3", "tool": "0", "x": "-50.375", "y": "123.40625", "video":"https://www.youtube.com/watch?v=6X_nrwO39aU&t=1305s"},
 		{"text": "ring_harland_coral", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "ring_magnate_turquoise", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "ring_magnate_turquoise", "day": "5", "tool": "0", "x": "-65.7890625", "y": "146.0078125"},
 		{"text": "ring_pilgrim_moonstone", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_bonnard_pearl", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_banais_topaz", "day": "5", "tool": "0", "x": "-40.2421875", "y": "108.796875"},
@@ -923,10 +924,10 @@
 		{"text": "necklace_blakely_miniatue", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "necklace_richelieu_amethyst", "day": "5", "tool": "2", "x": "-83.734375", "y": "128.7421875"},
 		{"text": "necklace_pelle_pearl", "day": "5", "tool": "2", "x": "-90.3671875", "y": "82.2265625"},
-		{"text": "necklace_ainsworth_cross", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "necklace_ainsworth_cross", "day": "5", "tool": "2", "x": "-58.9296875", "y": "140.703125"},
 		{"text": "necklace_braxton_amethyst", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "necklace_rou_pearl", "day": "5", "tool": "2", "x": "", "y": ""},
-		{"text": "necklace_gosselin_white_gold", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "necklace_gosselin_white_gold", "day": "5", "tool": "2", "x": "-106.296875", "y": "59.40625"},
 		{"text": "necklace_dane_topaz", "day": "5", "tool": "0", "x": "-36.7578125", "y": "105.15625"},
 		{"text": "necklace_tuamotu_pearl", "day": "5", "tool": "0", "x": "", "y": ""}
 	],
@@ -971,7 +972,7 @@
 		{"text": "earring_sterling_tooth", "day": "5", "tool": "2", "x": "-29.640625", "y": "135.9921875"},
 		{"text": "earring_harford_garnet", "day": "5", "tool": "2", "x": "-105.6640625", "y": "36.5390625"},
 		{"text": "earring_duchess_emerald", "day": "5", "tool": "1", "x": "", "y": ""},
-		{"text": "earring_beauchene_ruby", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "earring_beauchene_ruby", "day": "5", "tool": "2", "x": "-50.4765625", "y": "115.90625"},
 		{"text": "earring_endicott_diamond", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "earring_josephine_pearl", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "earring_emmeline_coral", "day": "5", "tool": "2", "x": "-75.0625", "y": "140.1484375"}
