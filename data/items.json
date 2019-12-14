@@ -979,7 +979,7 @@
 		{"text": "earring_duchess_emerald", "day": "5", "tool": "1", "x": "", "y": ""},
 		{"text": "earring_beauchene_ruby", "day": "5", "tool": "2", "x": "-50.4765625", "y": "115.90625"},
 		{"text": "earring_endicott_diamond", "day": "5", "tool": "2", "x": "-47.9140625", "y": "147.5859375"},
-		{"text": "earring_josephine_pearl", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "earring_josephine_pearl", "day": "5", "tool": "0", "x": "-65.1484375", "y": "129.6328125"},
 		{"text": "earring_emmeline_coral", "day": "5", "tool": "2", "x": "-75.0625", "y": "140.1484375"}
 	],
 	"lost_bracelet": [
