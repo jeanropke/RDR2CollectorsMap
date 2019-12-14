@@ -279,7 +279,7 @@
 		{"text": "pentacles_five", "day": "5", "tool": "0", "x": "-56.890625", "y": "129.5703125"},
 		{"text": "pentacles_six", "day": "5", "tool": "0", "x": "-78.86682", "y": "128.897765"},
 		{"text": "pentacles_seven", "day": "5", "tool": "0", "x": "-53.6875", "y": "107.3671875"},
-		{"text": "pentacles_eight", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "pentacles_eight", "day": "5", "tool": "0", "x": "-85.015625", "y": "149.5859375"},
 		{"text": "pentacles_nine", "day": "5", "tool": "0", "x": "-70.203125", "y": "82.640625"},
 		{"text": "pentacles_ten", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "pentacles_knight", "day": "5", "tool": "0", "x": "-101.9296875", "y": "73.9921875"},
@@ -489,9 +489,9 @@
 		{"text": "arrowhead_bone", "day": "5", "tool": "2", "x": "-43.3203125", "y": "153.703125"},
 		{"text": "arrowhead_raw", "day": "5", "tool": "2", "x": "-60.1953125", "y": "122.75"},
 		{"text": "arrowhead_obsidian", "day": "5", "tool": "2", "x": "-78.4765625", "y": "93.5390625"},
-		{"text": "arrowhead_quartz", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "arrowhead_quartz", "day": "5", "tool": "2", "x": "-117.453125", "y": "49.28125"},
 		{"text": "arrowhead_flint", "day": "5", "tool": "2", "x": "-93.8359375", "y": "133.734375"},
-		{"text": "arrowhead_agate", "day": "5", "tool": "2", "x": "", "y": ""}
+		{"text": "arrowhead_agate", "day": "5", "tool": "2", "x": "-30.3671875", "y": "118.2734375"}
 	],
 	"family_heirlooms": [
 		{"text": "heirlooms_jade_hairpin", "day": "1", "tool": "0", "x": "-83.5546875", "y": "96.8046875", "video":"https://www.youtube.com/watch?v=I8ykdDAooOI&t=45s"},
@@ -883,12 +883,12 @@
 		{"text": "ring_thorburn_turquoise", "day": "3", "tool": "0", "x": "-50.375", "y": "123.40625", "video":"https://www.youtube.com/watch?v=6X_nrwO39aU&t=1305s"},
 		{"text": "ring_harland_coral", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_magnate_turquoise", "day": "5", "tool": "0", "x": "-65.7890625", "y": "146.0078125"},
-		{"text": "ring_pilgrim_moonstone", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "ring_pilgrim_moonstone", "day": "5", "tool": "2", "x": "-90.953125", "y": "143.3203125"},
 		{"text": "ring_bonnard_pearl", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_banais_topaz", "day": "5", "tool": "0", "x": "-40.2421875", "y": "108.796875"},
 		{"text": "ring_beaulieux_diamond", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_yates_diamond", "day": "5", "tool": "0", "x": "", "y": ""},
-		{"text": "ring_aubrey_onyx", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "ring_aubrey_onyx", "day": "5", "tool": "2", "x": "-87.125", "y": "98.3671875"},
 		{"text": "ring_bosque_emerald", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_sackville_diamond", "day": "5", "tool": "0", "x": "", "y": ""},
 		{"text": "ring_thorburn_turquoise", "day": "5", "tool": "2", "x": "-42.9296875", "y": "147.4375"}
