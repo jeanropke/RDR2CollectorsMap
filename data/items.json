@@ -273,7 +273,7 @@
 		{"text": "pentacles_queen", "day": "4", "tool": "0", "x": "-54.7578125", "y": "119.9140625"},
 		{"text": "pentacles_king", "day": "4", "tool": "0", "x": "-45.984375", "y": "89.328125"},
 		{"text": "pentacles_ace", "day": "5", "tool": "0", "x": "-52.1015625", "y": "150.203125"},
-		{"text": "pentacles_two", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "pentacles_two", "day": "5", "tool": "0", "x": "-84.5703125", "y": "131.6015625"},
 		{"text": "pentacles_three", "day": "5", "tool": "0", "x": "-58.390625", "y": "97.984375"},
 		{"text": "pentacles_four", "day": "5", "tool": "0", "x": "-56.0703125", "y": "157.8125"},
 		{"text": "pentacles_five", "day": "5", "tool": "0", "x": "-56.890625", "y": "129.5703125"},
@@ -345,7 +345,7 @@
 		{"text": "coin_halfpenny", "day": "5", "tool": "2", "x": "-74.1328125", "y": "141.5390625"},
 		{"text": "coin_half_eagle", "day": "5", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_gold_eagle", "day": "5", "tool": "2", "x": "", "y": ""},
-		{"text": "coin_liberty_quarter", "day": "5", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_liberty_quarter", "day": "5", "tool": "2", "x": "-41.53125", "y": "116.8203125"},
 		{"text": "coin_half_dime", "day": "5", "tool": "2", "x": "-101.671875", "y": "44.0234375"},
 		{"text": "coin_penny", "day": "5", "tool": "2", "x": "-22.125", "y": "102.96875"}
 	],
