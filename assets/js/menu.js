@@ -18,7 +18,7 @@ Menu.refreshMenu = function () {
       $('.menu-option.clickable[data-type=' + category + ']').children('span').addClass('disabled');
 
     $.each(markers, function (_key, marker) {
-      if (marker.day == day && marker.category == category) {
+      if ((marker.day == day || marker.day.includes(day)) && marker.category == category) {
         if (marker.subdata) {
           //This is for items with subdata to merge them
           //TODO: create a 'marker' to subdata with item amount
