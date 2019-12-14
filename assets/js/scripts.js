@@ -9,12 +9,12 @@ var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
   'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'condor_egg', 'wounded_animal', 'fame_seeker'
+   'wounded_animal', 'fame_seeker'
 ];
 
 var categoriesDisabledByDefault = [
   'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'condor_egg', 'wounded_animal', 'fame_seeker'
+  'wounded_animal', 'fame_seeker'
 ]
 
 var enabledCategories = categories;
@@ -22,9 +22,6 @@ var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
 var treasureData = [];
 var treasureMarkers = [];
-
-var condorData = [];
-var condorMarkers = [];
 
 var encountersMarkers = [];
 
@@ -49,7 +46,7 @@ var fastTravelData;
 var weeklySet = 'ancient_tools_set';
 var weeklySetData = [];
 var date;
-var nocache = 134;
+var nocache = 135;
 
 var wikiLanguage = [];
 
@@ -101,6 +98,13 @@ function init() {
   if (typeof $.cookie('tools') !== 'undefined') {
     $("#tools").val($.cookie('tools'));
     toolType = $.cookie('tools');
+  }
+
+  if (typeof $.cookie('alert-closed') == 'undefined') {
+    $('.map-alert').show();
+  }
+  else {
+    $('.map-alert').hide();
   }
 
   if (typeof $.cookie('disabled-categories') !== 'undefined')
@@ -418,6 +422,7 @@ $("#custom-routes").on("change", function () {
 
 //When map-alert is clicked
 $('.map-alert').on('click', function() {
+  $.cookie('alert-closed', 'true');
   $('.map-alert').hide();
 });
 
@@ -569,6 +574,5 @@ window.addEventListener("DOMContentLoaded", MapBase.loadWeeklySet());
 window.addEventListener("DOMContentLoaded", MapBase.loadFastTravels());
 window.addEventListener("DOMContentLoaded", MapBase.loadMadamNazar());
 window.addEventListener("DOMContentLoaded", Treasures.load());
-window.addEventListener("DOMContentLoaded", CondorEgg.load());
 window.addEventListener("DOMContentLoaded", Encounters.load());
 window.addEventListener("DOMContentLoaded", MapBase.loadMarkers());
