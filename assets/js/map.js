@@ -149,7 +149,7 @@ var MapBase = {
       .done(function (data) {
         weeklySetData = data[weeklySet];
       });
-      
+
     console.log('weekly set loaded');
   },
 
@@ -201,12 +201,12 @@ var MapBase = {
         }
         else {
           if (marker.canCollect) {
-            if (marker.day == day || marker.day.includes(day)) {              
-            marker.isCollected = true;
-            Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
+            if (marker.day == day || marker.day.includes(day)) {
+              marker.isCollected = true;
+              Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
             }
             marker.canCollect = false;
-          } else {            
+          } else {
             if (marker.day == day || marker.day.includes(day)) {
               marker.isCollected = false;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
@@ -235,6 +235,9 @@ var MapBase = {
         break;
       case "day_4":
         return "darkpurple";
+        break;
+      case "day_5":
+        return "darkred";
         break;
       case "weekly":
         return "green";
@@ -344,8 +347,8 @@ MapBase.loadFastTravels = function () {
     .done(function (data) {
       fastTravelData = data;
     });
-    
-    console.log('fast travels loaded');
+
+  console.log('fast travels loaded');
 };
 
 MapBase.addFastTravelMarker = function () {

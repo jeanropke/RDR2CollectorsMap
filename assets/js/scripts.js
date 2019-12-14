@@ -157,7 +157,7 @@ function init() {
   setMapBackground($.cookie('map-layer'));
 
   //setCurrentDayCycle();
-  day = 4;
+  day = 5;
   $('#day').val(day);
   Routes.loadRoutesData();
 
