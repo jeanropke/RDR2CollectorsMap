@@ -383,17 +383,17 @@
 		{"text": "egg_egret", "day": "3", "tool": "0", "x": "-76.96875", "y": "140.078125", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=1221s"},
 		{"text": "egg_duck", "day": "3", "tool": "0", "x": "-48.3046875", "y": "148.2890625", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=1260s"},
 		{"text": "egg_goose_1", "day": "3", "tool": "0", "x": "-75.4296875", "y": "114.015625", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=1290s"},
-		{"text": "egg_spoonbill", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "egg_heron", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "egg_spoonbill", "day": "4", "tool": "0", "x": "-90.52325", "y": "142.32965"},
+		{"text": "egg_heron", "day": "4", "tool": "0", "x": "-81.2107", "y": "146.0843"},
 		{"text": "egg_loon", "day": "4", "tool": "0", "x": "-73.90625", "y": "118.28125"},
-		{"text": "egg_eagle_1", "day": "4", "tool": "0", "subdata": "egg_eagle", "x": "", "y": ""},
-		{"text": "egg_eagle_2", "day": "4", "tool": "0", "subdata": "egg_eagle", "x": "", "y": ""},
+		{"text": "egg_eagle_1", "day": "4", "tool": "0", "subdata": "egg_eagle", "x": "-60.5546875", "y": "74.4140625"},
+		{"text": "egg_eagle_2", "day": "4", "tool": "0", "subdata": "egg_eagle", "x": "-30.859375 ", "y": "93.1171875"},
 		{"text": "egg_vulture", "day": "4", "tool": "0", "x": "-41.13307", "y": "147.8203125"},
-		{"text": "egg_hawk_1", "day": "4", "tool": "0", "subdata": "egg_hawk", "x": "", "y": ""},
+		{"text": "egg_hawk_1", "day": "4", "tool": "0", "subdata": "egg_hawk", "x": "-37.125", "y": "112.75"},
 		{"text": "egg_hawk_2", "day": "4", "tool": "0", "subdata": "egg_hawk", "x": "", "y": ""},
-		{"text": "egg_egret", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "egg_egret", "day": "4", "tool": "0", "x": "-68.9921875", "y": "140.125"},
 		{"text": "egg_duck", "day": "4", "tool": "0", "x": "-86.453125", "y": "72.4765625"},
-		{"text": "egg_goose_1", "day": "4", "tool": "0", "x": "", "y": ""}
+		{"text": "egg_goose_1", "day": "4", "tool": "0", "x": "-89.6015625", "y": "118.140625"}
 		
 	],
 	"antique_bottles": [
