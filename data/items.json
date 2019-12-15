@@ -392,7 +392,7 @@
 		{"text": "egg_hawk_1", "day": "4", "tool": "0", "subdata": "egg_hawk", "x": "", "y": ""},
 		{"text": "egg_hawk_2", "day": "4", "tool": "0", "subdata": "egg_hawk", "x": "", "y": ""},
 		{"text": "egg_egret", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "egg_duck", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "egg_duck", "day": "4", "tool": "0", "x": "-86.453125", "y": "72.4765625"},
 		{"text": "egg_goose_1", "day": "4", "tool": "0", "x": "", "y": ""}
 		
 	],
