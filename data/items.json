@@ -382,7 +382,19 @@
 		{"text": "egg_hawk_2", "day": "3", "tool": "0", "subdata": "egg_hawk", "x": "-22.4296875", "y": "95.1484375", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=1185s"},
 		{"text": "egg_egret", "day": "3", "tool": "0", "x": "-76.96875", "y": "140.078125", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=1221s"},
 		{"text": "egg_duck", "day": "3", "tool": "0", "x": "-48.3046875", "y": "148.2890625", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=1260s"},
-		{"text": "egg_goose_1", "day": "3", "tool": "0", "x": "-75.4296875", "y": "114.015625", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=1290s"}
+		{"text": "egg_goose_1", "day": "3", "tool": "0", "x": "-75.4296875", "y": "114.015625", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=1290s"},
+		{"text": "egg_spoonbill", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "egg_heron", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "egg_loon", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "egg_eagle_1", "day": "4", "tool": "0", "subdata": "egg_eagle", "x": "", "y": ""},
+		{"text": "egg_eagle_2", "day": "4", "tool": "0", "subdata": "egg_eagle", "x": "", "y": ""},
+		{"text": "egg_vulture", "day": "4", "tool": "0", "x": "-41.13307", "y": "147.8203125"},
+		{"text": "egg_hawk_1", "day": "4", "tool": "0", "subdata": "egg_hawk", "x": "", "y": ""},
+		{"text": "egg_hawk_2", "day": "4", "tool": "0", "subdata": "egg_hawk", "x": "", "y": ""},
+		{"text": "egg_egret", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "egg_duck", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "egg_goose_1", "day": "4", "tool": "0", "x": "", "y": ""}
+		
 	],
 	"antique_bottles": [
 		{"text": "bottle_tennesee_whiskey", "day": "1", "tool": "0", "x": "-48.3359375", "y": "114.8125", "video":"https://www.youtube.com/watch?v=qfP3HwcG9Mc&t=45s"},
@@ -479,7 +491,7 @@
 		{"text": "arrowhead_obsidian", "day": "4", "tool": "2", "x": "-47.078125", "y": "146.7109375"},
 		{"text": "arrowhead_quartz", "day": "4", "tool": "2", "x": "-87.7578125", "y": "131.390625"},
 		{"text": "arrowhead_flint", "day": "4", "tool": "2", "x": "-104.1640625", "y": "48.046875"},
-		{"text": "arrowhead_agate", "day": "4", "tool": "2", "x": "", "y": ""},
+		{"text": "arrowhead_agate", "day": "4", "tool": "2", "x": "-56.375", "y": "151.5390625"},
 		{"text": "arrowhead_rough", "day": "5", "tool": "2", "x": "-104.7578125", "y": "62.484375"},
 		{"text": "arrowhead_splintered", "day": "5", "tool": "1", "x": "-74.0703125", "y": "145.6328125"},
 		{"text": "arrowhead_crude", "day": "5", "tool": "1", "x": "", "y": ""},
