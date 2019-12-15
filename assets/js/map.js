@@ -189,10 +189,10 @@ var MapBase = {
             marker.canCollect = false;
           }
           else {
-            if ((marker.day == day || marker.day.includes(day))) {
+            //if ((marker.day == day || marker.day.includes(day))) {
               marker.isCollected = false;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
-            }
+            //}
             $('[data-marker=' + marker.text + ']').css('opacity', '1');
             $(`[data-type=${marker.subdata}]`).removeClass('disabled');
             marker.canCollect = true;
