@@ -48,7 +48,7 @@ var fastTravelData;
 var weeklySet = 'ancient_tools_set';
 var weeklySetData = [];
 var date;
-var nocache = 139;
+var nocache = 140;
 
 var wikiLanguage = [];
 
@@ -329,6 +329,17 @@ function getVirtual(time) {
     Routes.drawLines();
 });
 */
+
+//Disable menu category when click on input
+$('.menu-option.clickable input').on('click', function (e) {
+  e.stopPropagation();
+});
+//change cycle by collection
+$('.menu-option.clickable input').on('change', function (e) {
+  var el = $(e.target);
+  Cycles.data.cycles[currentCycle][el.attr("name")] = parseInt(el.val());
+  MapBase.addMarkers();
+});
 //Search system on menu
 $("#search").on("input", function () {
   searchTerms = [];

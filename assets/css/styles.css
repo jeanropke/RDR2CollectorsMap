@@ -272,7 +272,7 @@ p {
     width: 25px;
     height: 25px;
     background: url(../images/arrow.png);
-    margin: auto 0 auto auto;
+    margin: auto 0;
 }
 
 .side-menu .menu-hidden {
@@ -377,9 +377,16 @@ p {
     height: 100%;
     padding: 10px;
 }
+.menu-option.clickable input {
+    margin: auto 10px auto auto;
+    max-width: 50px;
+    min-width: 40px;
+    height: 30px;
+    padding: 0 0 0 8px;
+}
+
 
 /* Fix buttons showing on top of sidebar on mobile menu */
-
 .leaflet-top, .leaflet-bottom {
     z-index: 998;
 }
@@ -401,15 +408,15 @@ p {
 
 @media (min-width: 1025px) {
     .side-menu {
-        width: 320px;
-        left: -320px;
+        width: 380px;
+        left: -380px;
         top: 0;
     }
     .menu-opened {
         left: 0;
     }
     .timer-menu-opened {
-        left: 325px;
+        left: 385px;
     }
     .counter-menu-opened {
         left: 410px;

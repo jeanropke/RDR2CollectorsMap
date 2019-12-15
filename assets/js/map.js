@@ -77,8 +77,7 @@ var MapBase = {
   setMarkers: function (data) {
     $.each(data, function (_category, _markers) {
       $.each(_markers, function (key, marker) {
-        if(marker.day == Cycles.data.cycles[currentCycle][_category])
-          markers.push(new Marker(marker.text, marker.x, marker.y, marker.tool, Cycles.data.cycles[currentCycle][_category], _category, marker.subdata, marker.video, true));
+        markers.push(new Marker(marker.text, marker.x, marker.y, marker.tool, marker.day, _category, marker.subdata, marker.video, true));
       });
     });
     uniqueSearchMarkers = markers;
@@ -182,8 +181,8 @@ var MapBase = {
         if (itemName == category && marker.subdata == category) {
           if (!isDisabled) {
             //if ((marker.day == day || marker.day.includes(day))) {
-              marker.isCollected = true;
-              Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
+            marker.isCollected = true;
+            Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
             //}
             $('[data-marker=' + marker.text + ']').css('opacity', '.35');
             $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
@@ -202,14 +201,14 @@ var MapBase = {
         else {
           if (marker.canCollect) {
             //if (marker.day == day || marker.day.includes(day)) {
-              marker.isCollected = true;
-              Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
+            marker.isCollected = true;
+            Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
             //}
             marker.canCollect = false;
           } else {
             //if (marker.day == day || marker.day.includes(day)) {
-              marker.isCollected = false;
-              Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
+            marker.isCollected = false;
+            Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
             //}
             marker.canCollect = true;
           }
@@ -264,7 +263,7 @@ var MapBase = {
   },
 
   addMarkerOnMap: function (marker) {
-    //if (marker.day != day/* && !marker.day.includes(day)*/) return;
+    if (marker.day != Cycles.data.cycles[currentCycle][marker.category]/* && !marker.day.includes(day)*/) return;
 
     if (!uniqueSearchMarkers.includes(marker))
       return;
