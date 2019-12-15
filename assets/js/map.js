@@ -77,8 +77,8 @@ var MapBase = {
   setMarkers: function (data) {
     $.each(data, function (_category, _markers) {
       $.each(_markers, function (key, marker) {
-        if(marker.day == collectionsCycle[_category])
-          markers.push(new Marker(marker.text, marker.x, marker.y, marker.tool, collectionsCycle[_category], _category, marker.subdata, marker.video, true));
+        if(marker.day == Cycles.data.cycles[currentCycle][_category])
+          markers.push(new Marker(marker.text, marker.x, marker.y, marker.tool, Cycles.data.cycles[currentCycle][_category], _category, marker.subdata, marker.video, true));
       });
     });
     uniqueSearchMarkers = markers;
@@ -248,7 +248,7 @@ var MapBase = {
 
   updateMarkerContent: function (marker) {
     var videoText = marker.video != null ? '<p align="center" style="padding: 5px;"><a href="' + marker.video + '" target="_blank">Video</a></p>' : '';
-    var popupTitle = `${marker.title} - ${Language.get("menu.day")} ${day}`;
+    var popupTitle = `${marker.title} - ${Language.get("menu.day")} ${Cycles.data.cycles[currentCycle][marker.category]}`;
     var popupContent = (marker.category == 'random') ? 'Random items resets 24 hours after picking up' : marker.description;
     var buttons = (marker.category == 'random') ? '' : `<div class="marker-popup-buttons">
     <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
@@ -293,7 +293,7 @@ var MapBase = {
     marker.isVisible = true;
 
     marker.title = (marker.category == 'random') ? Language.get("random_item.name") + marker.text.replace('random_item_', '') : Language.get(`${marker.text}.name`);
-    marker.description = Language.get(`${marker.text}_${day}.desc`);
+    marker.description = Language.get(`${marker.text}_${marker.day}.desc`);;
 
     tempMarker.bindPopup(MapBase.updateMarkerContent(marker))
       .on("click", function (e) {

@@ -1,22 +1,7 @@
 //Since Moonshiners update, R* changed how cycles works.
 //Instead of 1 cycle for each collection in the day, each collection has your own cycle.
 //Eg: Coins can be on cycle 1, Eggs on cycle 3, Flowers on 5... and so on
-var collectionsCycle = {
-  'american_flowers': -1,
-  'antique_bottles' : 1,
-  'arrowhead'       : -1,
-  'bird_eggs'       : -1,
-  'coin'            : 3,
-  'family_heirlooms': -1,
-  'lost_bracelet'   : 3,
-  'lost_earrings'   : 3,
-  'lost_necklaces'  : 3,
-  'lost_ring'       : 3,
-  'card_cups'       : 1,
-  'card_pentacles'  : 1,
-  'card_swords'     : 1,
-  'card_wands'      : 1
-};
+var currentCycle = 2;
 var markers = [];
 var searchTerms = [];
 var uniqueSearchMarkers = [];
@@ -63,7 +48,7 @@ var fastTravelData;
 var weeklySet = 'ancient_tools_set';
 var weeklySetData = [];
 var date;
-var nocache = 137;
+var nocache = 138;
 
 var wikiLanguage = [];
 
@@ -586,6 +571,7 @@ L.LayerGroup.include({
  * Event listeners
  */
 window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", Cycles.load());
 window.addEventListener("DOMContentLoaded", Inventory.init());
 window.addEventListener("DOMContentLoaded", MapBase.loadWeeklySet());
 window.addEventListener("DOMContentLoaded", MapBase.loadFastTravels());
