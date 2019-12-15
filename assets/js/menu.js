@@ -18,7 +18,7 @@ Menu.refreshMenu = function () {
       $('.menu-option.clickable[data-type=' + category + ']').children('span').addClass('disabled');
 
     $.each(markers, function (_key, marker) {
-      if ((marker.day == day || marker.day.includes(day)) && marker.category == category) {
+      if (marker.day == collectionsCycle[category] && marker.category == category) {
         if (marker.subdata) {
           //This is for items with subdata to merge them
           //TODO: create a 'marker' to subdata with item amount
@@ -87,7 +87,7 @@ Menu.hideAll = function () {
 
 Menu.refreshItemsCounter = function () {
   
-  $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', markers.filter(item => (item.day == day || item.day.includes(day)) && item.isVisible && (item.isCollected || item.amount == 10)).length)
-    .replace('{max}', markers.filter(item => (item.day == day || item.day.includes(day)) && item.isVisible).length));
+  //$('.collectables-counter').text(Language.get('menu.collectables_counter')
+  //  .replace('{count}', markers.filter(item => (item.day == day || item.day.includes(day)) && item.isVisible && (item.isCollected || item.amount == 10)).length)
+  //  .replace('{max}', markers.filter(item => (item.day == day || item.day.includes(day)) && item.isVisible).length));
 };

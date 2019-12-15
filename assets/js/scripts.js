@@ -1,8 +1,25 @@
-var day;
+//Since Moonshiners update, R* changed how cycles works.
+//Instead of 1 cycle for each collection in the day, each collection has your own cycle.
+//Eg: Coins can be on cycle 1, Eggs on cycle 3, Flowers on 5... and so on
+var collectionsCycle = {
+  'american_flowers': -1,
+  'antique_bottles' : 1,
+  'arrowhead'       : -1,
+  'bird_eggs'       : -1,
+  'coin'            : 3,
+  'family_heirlooms': -1,
+  'lost_bracelet'   : 3,
+  'lost_earrings'   : 3,
+  'lost_necklaces'  : 3,
+  'lost_ring'       : 3,
+  'card_cups'       : 1,
+  'card_pentacles'  : 1,
+  'card_swords'     : 1,
+  'card_wands'      : 1
+};
 var markers = [];
 var searchTerms = [];
 var uniqueSearchMarkers = [];
-
 var resetMarkersDaily;
 
 var categories = [
@@ -46,7 +63,7 @@ var fastTravelData;
 var weeklySet = 'ancient_tools_set';
 var weeklySetData = [];
 var date;
-var nocache = 136;
+var nocache = 137;
 
 var wikiLanguage = [];
 
@@ -161,8 +178,8 @@ function init() {
   setMapBackground($.cookie('map-layer'));
 
   //setCurrentDayCycle();
-  day = 5;
-  $('#day').val(day);
+  //day = 5;
+  //$('#day').val(day);
   Routes.loadRoutesData();
 
   //Overlay tests
@@ -262,7 +279,7 @@ setInterval(function () {
 
   if (countdownDate >= (24 * 60 * 60 * 1000) - 1000) {
     if (autoRefresh) {
-      setCurrentDayCycle();
+      //setCurrentDayCycle();
 
       if (resetMarkersDaily) {
         $.each(markers, function (key, value) {
@@ -317,7 +334,7 @@ function getVirtual(time) {
  */
 
 //Change day on menu
-$("#day").on("input", function () {
+/*$("#day").on("input", function () {
   $.cookie('ignore-days', null);
 
   day = parseInt($('#day').val());
@@ -326,7 +343,7 @@ $("#day").on("input", function () {
   if ($("#routes").val() == 1)
     Routes.drawLines();
 });
-
+*/
 //Search system on menu
 $("#search").on("input", function () {
   searchTerms = [];

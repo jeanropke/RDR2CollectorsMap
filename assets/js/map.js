@@ -77,7 +77,8 @@ var MapBase = {
   setMarkers: function (data) {
     $.each(data, function (_category, _markers) {
       $.each(_markers, function (key, marker) {
-        markers.push(new Marker(marker.text, marker.x, marker.y, marker.tool, marker.day, _category, marker.subdata, marker.video, true));
+        if(marker.day == collectionsCycle[_category])
+          markers.push(new Marker(marker.text, marker.x, marker.y, marker.tool, collectionsCycle[_category], _category, marker.subdata, marker.video, true));
       });
     });
     uniqueSearchMarkers = markers;
@@ -180,10 +181,10 @@ var MapBase = {
 
         if (itemName == category && marker.subdata == category) {
           if (!isDisabled) {
-            if ((marker.day == day || marker.day.includes(day))) {
+            //if ((marker.day == day || marker.day.includes(day))) {
               marker.isCollected = true;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
-            }
+            //}
             $('[data-marker=' + marker.text + ']').css('opacity', '.35');
             $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
             marker.canCollect = false;
@@ -200,16 +201,16 @@ var MapBase = {
         }
         else {
           if (marker.canCollect) {
-            if (marker.day == day || marker.day.includes(day)) {
+            //if (marker.day == day || marker.day.includes(day)) {
               marker.isCollected = true;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
-            }
+            //}
             marker.canCollect = false;
           } else {
-            if (marker.day == day || marker.day.includes(day)) {
+            //if (marker.day == day || marker.day.includes(day)) {
               marker.isCollected = false;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
-            }
+            //}
             marker.canCollect = true;
           }
         }
@@ -263,7 +264,7 @@ var MapBase = {
   },
 
   addMarkerOnMap: function (marker) {
-    if (marker.day != day && !marker.day.includes(day)) return;
+    //if (marker.day != day/* && !marker.day.includes(day)*/) return;
 
     if (!uniqueSearchMarkers.includes(marker))
       return;
@@ -279,7 +280,7 @@ var MapBase = {
     var tempMarker = L.marker([marker.lat, marker.lng], {
       opacity: marker.canCollect ? 1 : .35,
       icon: new L.Icon.DataMarkup({
-        iconUrl: './assets/images/icons/' + marker.category + '_' + (marker.category == 'random' ? 'lightgray' : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + day)) + '.png',
+        iconUrl: './assets/images/icons/' + marker.category + '_' + (marker.category == 'random' ? 'lightgray' : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)) + '.png',
         iconSize: [35, 45],
         iconAnchor: [17, 42],
         popupAnchor: [1, -32],
@@ -312,7 +313,7 @@ var MapBase = {
     });
     var temp = "";
     $.each(markers, function (key, marker) {
-      if ((marker.day == day || marker.day.includes(day)) && (marker.amount > 0 || marker.isCollected))
+      if (/*(marker.day == day || marker.day.includes(day)) && */(marker.amount > 0 || marker.isCollected))
         temp += `${marker.text}:${marker.isCollected ? '1' : '0'}:${marker.amount};`;
     });
 
