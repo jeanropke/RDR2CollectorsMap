@@ -385,7 +385,7 @@
 		{"text": "egg_goose_1", "day": "3", "tool": "0", "x": "-75.4296875", "y": "114.015625", "video":"https://www.youtube.com/watch?v=zibVEhjsFg8&t=1290s"},
 		{"text": "egg_spoonbill", "day": "4", "tool": "0", "x": "", "y": ""},
 		{"text": "egg_heron", "day": "4", "tool": "0", "x": "", "y": ""},
-		{"text": "egg_loon", "day": "4", "tool": "0", "x": "", "y": ""},
+		{"text": "egg_loon", "day": "4", "tool": "0", "x": "-73.90625", "y": "118.28125"},
 		{"text": "egg_eagle_1", "day": "4", "tool": "0", "subdata": "egg_eagle", "x": "", "y": ""},
 		{"text": "egg_eagle_2", "day": "4", "tool": "0", "subdata": "egg_eagle", "x": "", "y": ""},
 		{"text": "egg_vulture", "day": "4", "tool": "0", "x": "-41.13307", "y": "147.8203125"},
