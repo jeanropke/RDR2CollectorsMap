@@ -180,7 +180,7 @@ var MapBase = {
 
         if (itemName == category && marker.subdata == category) {
           if (!isDisabled) {
-            if (marker.day == parseInt($(`input[name=${marker.category}]`).val())) {
+            if (marker.day == Cycles.data.cycles[currentCycle][marker.category]) {
               marker.isCollected = true;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
             }
@@ -189,7 +189,7 @@ var MapBase = {
             marker.canCollect = false;
           }
           else {
-            if (marker.day == parseInt($(`input[name=${marker.category}]`).val())) {
+            if (marker.day == Cycles.data.cycles[currentCycle][marker.category]) {
               marker.isCollected = false;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
             }
@@ -200,13 +200,13 @@ var MapBase = {
         }
         else {
           if (marker.canCollect) {
-            if (marker.day == parseInt($(`input[name=${marker.category}]`).val())) {
+            if (marker.day == Cycles.data.cycles[currentCycle][marker.category]) {
               marker.isCollected = true;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
             }
             marker.canCollect = false;
           } else {
-            if (marker.day == parseInt($(`input[name=${marker.category}]`).val())) {
+            if (marker.day == Cycles.data.cycles[currentCycle][marker.category]) {
               marker.isCollected = false;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
             }
@@ -318,7 +318,7 @@ var MapBase = {
     });
     var temp = "";
     $.each(markers, function (key, marker) {
-      if (marker.day == parseInt($(`input[name=${marker.category}]`).val()) && (marker.amount > 0 || marker.isCollected))
+      if (marker.day == Cycles.data.cycles[currentCycle][marker.category] && (marker.amount > 0 || marker.isCollected))
         temp += `${marker.text}:${marker.isCollected ? '1' : '0'}:${marker.amount};`;
     });
 

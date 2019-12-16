@@ -88,6 +88,6 @@ Menu.hideAll = function () {
 Menu.refreshItemsCounter = function () {
   
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', markers.filter(item => item.day == parseInt($(`input[name=${item.category}]`).val()) && item.isVisible && (item.isCollected || item.amount == 10)).length)
-    .replace('{max}', markers.filter(item => item.day == parseInt($(`input[name=${item.category}]`).val()) && item.isVisible).length));
+    .replace('{count}', markers.filter(item => item.day == Cycles.data.cycles[currentCycle][item.category] && item.isVisible && (item.isCollected || item.amount == 10)).length)
+    .replace('{max}', markers.filter(item => item.day == Cycles.data.cycles[currentCycle][item.category] && item.isVisible).length));
 };

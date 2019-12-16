@@ -21,10 +21,10 @@ var Inventory = {
             _m.amount = 0;
     
           _m.canCollect = _m.amount < Inventory.stackSize && !_m.isCollected;
-          if ((_m.isCollected || _m.amount >= Inventory.stackSize) && _m.day == parseInt($(`input[name=${_m.category}]`).val())) {
+          if ((_m.isCollected || _m.amount >= Inventory.stackSize) && _m.day == Cycles.data.cycles[currentCycle][_m.category]) {
             $('[data-marker=' + _m.text + ']').css('opacity', '.35');
             $(`[data-type=${_m.text}]`).addClass('disabled');
-          } else if(_m.day == parseInt($(`input[name=${_m.category}]`).val())) {
+          } else if(_m.day == Cycles.data.cycles[currentCycle][_m.category]) {
             $('[data-marker=' + _m.text + ']').css('opacity', '1');
             $(`[data-type=${_m.text}]`).removeClass('disabled');
           }
