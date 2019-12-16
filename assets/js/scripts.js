@@ -48,7 +48,7 @@ var fastTravelData;
 var weeklySet = 'ancient_tools_set';
 var weeklySetData = [];
 var date;
-var nocache = 142;
+var nocache = 143;
 
 var wikiLanguage = [];
 
