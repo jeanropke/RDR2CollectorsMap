@@ -927,7 +927,31 @@
 		{"text": "flower_wisteria", "day": "6", "tool": "0", "subdata": "wisteria", "x": "-39.14885", "y": "149.0078"},
 		{"text": "flower_wisteria_2", "day": "6", "tool": "0", "subdata": "wisteria", "x": "-29.828125", "y": "154.0234375"},
 		{"text": "flower_wisteria_3", "day": "6", "tool": "0", "subdata": "wisteria", "x": "-53.6644", "y": "149.25"},
-		{"text": "flower_wisteria_", "day": "6", "tool": "0", "subdata": "wisteria", "x": "-76.99935", "y": "79.8671875"}
+		{"text": "flower_texas_bluebonnet", "day": "7", "tool": "0", "subdata": "texas_bluebonnet", "x": "-115.6328125", "y": "22.2734375"},
+		{"text": "flower_bitterweed_1", "day": "7", "tool": "0", "subdata": "bitterweed", "x": "-64.8274", "y": "145.046875"},
+		{"text": "flower_bitterweed_2", "day": "7", "tool": "0", "subdata": "bitterweed", "x": "-56.24926", "y": "141.328125"},
+		{"text": "flower_agarita_1", "day": "7", "tool": "0", "subdata": "agarita", "x": "-98.65625", "y": "63.046875"},
+		{"text": "flower_wild_rhubarb", "day": "7", "tool": "0", "subdata": "wild_rhubarb", "x": "-113.5390625", "y": "56.03125"},
+		{"text": "flower_cardinal", "day": "7", "tool": "0", "subdata": "cardinal", "x": "-78.0234375", "y": "143.734375"},
+		{"text": "flower_cardinal_2", "day": "7", "tool": "0", "subdata": "cardinal", "x": "-71.71875", "y": "141.6953125"},		
+		{"text": "flower_cardinal_3", "day": "7", "tool": "0", "subdata": "cardinal", "x": "-93.9765625", "y": "144.0859375"},		
+		{"text": "flower_cardinal_4", "day": "7", "tool": "0", "subdata": "cardinal", "x": "-79.9921875", "y": "140.390625"},		
+		{"text": "flower_cardinal_5", "day": "7", "tool": "0", "subdata": "cardinal", "x": "-86.49975", "y": "143.3046875"},		
+		{"text": "flower_cardinal_6", "day": "7", "tool": "0", "subdata": "cardinal", "x": "-71.4766", "y": "147.25"},		
+		{"text": "flower_creek_plum", "day": "7", "tool": "0", "subdata": "creek_plum", "x": "-89.34708758", "y": "132.02506759"},
+		{"text": "flower_creek_plum_2", "day": "7", "tool": "0", "subdata": "creek_plum", "x": "-70.2032", "y": "79.7343"},
+		{"text": "flower_creek_plum_3", "day": "7", "tool": "0", "subdata": "creek_plum", "x": "-67.50827", "y": "140.03125"},
+		{"text": "flower_blood_flower_1", "day": "7", "tool": "0", "subdata": "blood_flower", "x": "-72.7421875", "y": "154.3984375"},
+		{"text": "flower_blood_flower_2", "day": "7", "tool": "0", "subdata": "blood_flower", "x": "-73.28125", "y": "142.71875"},
+		{"text": "flower_blood_flower_2", "day": "7", "tool": "0", "subdata": "blood_flower", "x": "", "y": ""},
+		{"text": "flower_chocolate_daisy", "day": "7", "tool": "0", "subdata": "chocolate_daisy", "x": "-72.16145", "y": "107.04166"},
+		{"text": "flower_chocolate_daisy_2", "day": "7", "tool": "0", "subdata": "chocolate_daisy", "x": "-73.2265", "y": "123.2968"},
+		{"text": "flower_chocolate_daisy_3", "day": "7", "tool": "0", "subdata": "chocolate_daisy", "x": "-79.8515", "y": "124.3359"},
+		{"text": "flower_chocolate_daisy_4", "day": "7", "tool": "0", "subdata": "chocolate_daisy", "x": "-95.7734", "y": "125.8828"},
+		{"text": "flower_wisteria", "day": "7", "tool": "0", "subdata": "wisteria", "x": "-49.41", "y": "146.62812"},
+		{"text": "flower_wisteria_2", "day": "7", "tool": "0", "subdata": "wisteria", "x": "-93.234375", "y": "79.4296875"},
+		{"text": "flower_wisteria_3", "day": "7", "tool": "0", "subdata": "wisteria", "x": "-36.7265625", "y": "150.46875"}
+
 
 	],
 	"lost_ring": [
@@ -967,9 +991,9 @@
 		{"text": "ring_harland_coral", "day": "5", "tool": "2", "x": "-79.25", "y": "137.75"},
 		{"text": "ring_magnate_turquoise", "day": "5", "tool": "0", "x": "-65.7890625", "y": "146.0078125"},
 		{"text": "ring_pilgrim_moonstone", "day": "5", "tool": "2", "x": "-90.953125", "y": "143.3203125"},
-		{"text": "ring_bonnard_pearl", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "ring_bonnard_pearl", "day": "5", "tool": "0", "x": "-91.680234", "y": "139.84843"},
 		{"text": "ring_banais_topaz", "day": "5", "tool": "0", "x": "-40.2421875", "y": "108.796875"},
-		{"text": "ring_beaulieux_diamond", "day": "5", "tool": "0", "x": "", "y": ""},
+		{"text": "ring_beaulieux_diamond", "day": "5", "tool": "2", "x": "-123.765475", "y": "42.19062"},
 		{"text": "ring_yates_diamond", "day": "5", "tool": "2", "x": "-93.546875", "y": "79.171875"},
 		{"text": "ring_aubrey_onyx", "day": "5", "tool": "2", "x": "-87.125", "y": "98.3671875"},
 		{"text": "ring_bosque_emerald", "day": "5", "tool": "2", "x": "-34.921875", "y": "118.7578125"},
@@ -1092,6 +1116,6 @@
 		{"text": "bracelet_durant_pearl", "day": "5", "tool": "2", "x": "-109.3984375", "y": "23.8046875"},
 		{"text": "bracelet_infanta_turquoise", "day": "5", "tool": "2", "x": "-57.453125", "y": "126.09375"},
 		{"text": "bracelet_elliston_carved", "day": "5", "tool": "0", "x": "-117.4453125", "y": "57.1953125"},
-		{"text": "bracelet_hajnal_garnet_bangle", "day": "5", "tool": "0", "x": "", "y": ""}
+		{"text": "bracelet_hajnal_garnet_bangle", "day": "5", "tool": "2", "x": "-105.153925", "y": "79.11875"}
 	]
 }

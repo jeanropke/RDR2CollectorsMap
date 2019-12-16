@@ -190,8 +190,8 @@ var MapBase = {
           }
           else {
             //if ((marker.day == day || marker.day.includes(day))) {
-              marker.isCollected = false;
-              Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
+            marker.isCollected = false;
+            Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
             //}
             $('[data-marker=' + marker.text + ']').css('opacity', '1');
             $(`[data-type=${marker.subdata}]`).removeClass('disabled');
@@ -240,6 +240,9 @@ var MapBase = {
         break;
       case "day_6":
         return "darkgreen";
+        break;
+      case "day_7":
+        return "cadetblue";
         break;
       case "weekly":
         return "green";
