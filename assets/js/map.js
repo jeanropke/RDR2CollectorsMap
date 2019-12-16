@@ -180,19 +180,19 @@ var MapBase = {
 
         if (itemName == category && marker.subdata == category) {
           if (!isDisabled) {
-            //if ((marker.day == day || marker.day.includes(day))) {
-            marker.isCollected = true;
-            Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
-            //}
+            if (marker.day == parseInt($(`input[name=${marker.category}]`).val())) {
+              marker.isCollected = true;
+              Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
+            }
             $('[data-marker=' + marker.text + ']').css('opacity', '.35');
             $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
             marker.canCollect = false;
           }
           else {
-            //if ((marker.day == day || marker.day.includes(day))) {
-            marker.isCollected = false;
-            Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
-            //}
+            if (marker.day == parseInt($(`input[name=${marker.category}]`).val())) {
+              marker.isCollected = false;
+              Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
+            }
             $('[data-marker=' + marker.text + ']').css('opacity', '1');
             $(`[data-type=${marker.subdata}]`).removeClass('disabled');
             marker.canCollect = true;
@@ -200,16 +200,16 @@ var MapBase = {
         }
         else {
           if (marker.canCollect) {
-            //if (marker.day == day || marker.day.includes(day)) {
-            marker.isCollected = true;
-            Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
-            //}
+            if (marker.day == parseInt($(`input[name=${marker.category}]`).val())) {
+              marker.isCollected = true;
+              Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
+            }
             marker.canCollect = false;
           } else {
-            //if (marker.day == day || marker.day.includes(day)) {
-            marker.isCollected = false;
-            Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
-            //}
+            if (marker.day == parseInt($(`input[name=${marker.category}]`).val())) {
+              marker.isCollected = false;
+              Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
+            }
             marker.canCollect = true;
           }
         }
@@ -318,7 +318,7 @@ var MapBase = {
     });
     var temp = "";
     $.each(markers, function (key, marker) {
-      if (/*(marker.day == day || marker.day.includes(day)) && */(marker.amount > 0 || marker.isCollected))
+      if (marker.day == parseInt($(`input[name=${marker.category}]`).val()) && (marker.amount > 0 || marker.isCollected))
         temp += `${marker.text}:${marker.isCollected ? '1' : '0'}:${marker.amount};`;
     });
 
