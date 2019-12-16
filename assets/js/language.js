@@ -8,20 +8,24 @@ var Language = {
   ,
   get: function(value) {
     if(Language.data[lang][value]) {
-        return Language.data[lang][value];
-      } else if(isDebug) {
-        console.error(`[LANG][${lang}]: Text not found: '${value}'`);
-      } else {
+      return Language.data[lang][value];
+    } else if(Language.data['en-us'][value]) {
+      return Language.data['en-us'][value];
+    } else {
       return '';
     }
+    //else if(isDebug) {
+    // console.error(`[LANG][${lang}]: Text not found: '${value}'`);
+    //} 
+    //else {
+    //  return '';
+    //}
   }
 
 };
 
 Language.setMenuLanguage = function ()
 {
-
-
     if(wikiLanguage[lang] != null)
         $('.wiki-page').attr('href', wikiLanguage[lang]);
     else
