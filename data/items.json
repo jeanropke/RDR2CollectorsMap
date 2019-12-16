@@ -513,7 +513,7 @@
 		{"text": "arrowhead_bone", "day": "6", "tool": "0", "x": "", "y": ""},
 		{"text": "arrowhead_raw", "day": "6", "tool": "2", "x": "-69.13382", "y": "133.8125"},
 		{"text": "arrowhead_obsidian", "day": "6", "tool": "2", "x": "-53.71875", "y": "123.203125"},
-		{"text": "arrowhead_quartz", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "arrowhead_quartz", "day": "6", "tool": "2", "x": "-88.5703125", "y": "83.125"},
 		{"text": "arrowhead_flint", "day": "6", "tool": "2", "x": "-52.165197", "y": "87.7109375"},
 		{"text": "arrowhead_agate", "day": "6", "tool": "2", "x": "-71.29899", "y": "79.046875"}
 		
