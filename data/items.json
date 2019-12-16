@@ -504,9 +504,9 @@
 		{"text": "arrowhead_quartz", "day": "5", "tool": "2", "x": "-117.453125", "y": "49.28125"},
 		{"text": "arrowhead_flint", "day": "5", "tool": "2", "x": "-93.8359375", "y": "133.734375"},
 		{"text": "arrowhead_agate", "day": "5", "tool": "2", "x": "-30.3671875", "y": "118.2734375"},
-		{"text": "arrowhead_rough", "day": "6", "tool": "0", "x": "", "y": ""},
-		{"text": "arrowhead_splintered", "day": "6", "tool": "0", "x": "", "y": ""},
-		{"text": "arrowhead_crude", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "arrowhead_rough", "day": "6", "tool": "2", "x": "-100.7265625", "y": "36.734375"},
+		{"text": "arrowhead_splintered", "day": "6", "tool": "2", "x": "-52.953125", "y": "69.0703125"},
+		{"text": "arrowhead_crude", "day": "6", "tool": "2", "x": "-44.6328125", "y": "156.53125"},
 		{"text": "arrowhead_chipped", "day": "6", "tool": "2", "x": "-40.75146", "y": "115.5234375"},
 		{"text": "arrowhead_feldspar", "day": "6", "tool": "2", "x": "-120.6322", "y": "12.1140625"},
 		{"text": "arrowhead_slate", "day": "6", "tool": "2", "x": "-36.128525", "y": "148.664062"},
@@ -515,7 +515,7 @@
 		{"text": "arrowhead_obsidian", "day": "6", "tool": "2", "x": "-53.71875", "y": "123.203125"},
 		{"text": "arrowhead_quartz", "day": "6", "tool": "2", "x": "-88.5703125", "y": "83.125"},
 		{"text": "arrowhead_flint", "day": "6", "tool": "2", "x": "-52.165197", "y": "87.7109375"},
-		{"text": "arrowhead_agate", "day": "6", "tool": "2", "x": "-71.29899", "y": "79.046875"}
+		{"text": "arrowhead_agate", "day": "6", "tool": "2", "x": "-71.171875", "y": "79.4453125"}
 		
 	],
 	"family_heirlooms": [
