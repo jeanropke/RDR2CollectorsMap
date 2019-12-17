@@ -405,10 +405,21 @@
 		{"text": "egg_eagle_2", "day": "4", "tool": "0", "subdata": "egg_eagle", "x": "-30.859375 ", "y": "93.1171875"},
 		{"text": "egg_vulture", "day": "4", "tool": "0", "x": "-41.13307", "y": "147.8203125"},
 		{"text": "egg_hawk_1", "day": "4", "tool": "0", "subdata": "egg_hawk", "x": "-37.125", "y": "112.75"},
-		{"text": "egg_hawk_2", "day": "4", "tool": "0", "subdata": "egg_hawk", "x": "", "y": ""},
+		{"text": "egg_hawk_2", "day": "4", "tool": "0", "subdata": "egg_hawk", "x": "-32.53", "y": "90.51575"},
 		{"text": "egg_egret", "day": "4", "tool": "0", "x": "-68.9921875", "y": "140.125"},
 		{"text": "egg_duck", "day": "4", "tool": "0", "x": "-86.453125", "y": "72.4765625"},
-		{"text": "egg_goose_1", "day": "4", "tool": "0", "x": "-89.3815", "y": "118.046875"}
+		{"text": "egg_goose_1", "day": "4", "tool": "0", "x": "-89.3815", "y": "118.046875"},
+		{"text": "egg_spoonbill", "day": "5", "tool": "0", "x": "-77.77315", "y": "135.633197"},
+		{"text": "egg_heron", "day": "5", "tool": "0", "x": "-67.688", "y": "145.9378"},
+		{"text": "egg_loon", "day": "5", "tool": "0", "x": "-54.50098", "y": "97.92176"},
+		{"text": "egg_eagle_1", "day": "5", "tool": "0", "subdata": "egg_eagle", "x": "-44.226045", "y": "81.368046"},
+		{"text": "egg_eagle_2", "day": "5", "tool": "0", "subdata": "egg_eagle", "x": "-67.3364", "y": "82.17998"},
+		{"text": "egg_vulture", "day": "5", "tool": "0", "x": "-30.02254", "y": "153.55537"},
+		{"text": "egg_hawk_1", "day": "5", "tool": "0", "subdata": "egg_hawk", "x": "-38.331", "y": "118.3067"},
+		{"text": "egg_hawk_2", "day": "5", "tool": "0", "subdata": "egg_hawk", "x": "-32.53", "y": "90.51575"},
+		{"text": "egg_egret", "day": "5", "tool": "0", "x": "-81.305", "y": "141.180335"},
+		{"text": "egg_duck", "day": "5", "tool": "0", "x": "-71.83672", "y": "73.25048"},
+		{"text": "egg_goose_1", "day": "5", "tool": "0", "x": "-80.73556", "y": "105.56307"}
 		
 	],
 	"antique_bottles": [
