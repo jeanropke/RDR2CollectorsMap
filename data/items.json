@@ -1119,7 +1119,7 @@
 		{"text": "earring_emmeline_coral", "day": "3", "tool": "1", "x": "-100.6484375", "y": "80.3984375", "video":"https://www.youtube.com/watch?v=QK2IO7DkOmY&t=1316s"},
 		{"text": "earring_ursula_citrine", "day": "4", "tool": "2", "x": "-116.1953125", "y": "56.0859375"},
 		{"text": "earring_royal_victoria", "day": "4", "tool": "2", "x": "-85.65625", "y": "76.15625"},
-		{"text": "earring_calumet_turquoise", "day": "4", "tool": "2", "x": "", "y": ""},
+		{"text": "earring_calumet_turquoise", "day": "4", "tool": "0", "x": "-28.8203125", "y": "119.21875"},
 		{"text": "earring_orchidee_diamond", "day": "4", "tool": "2", "x": "-49.9355", "y": "104.1875"},
 		{"text": "earring_sterling_tooth", "day": "4", "tool": "2", "x": "-44.2421875", "y": "110.9375"},
 		{"text": "earring_harford_garnet", "day": "4", "tool": "2", "x": "-49.09375", "y": "143.3671875"},
