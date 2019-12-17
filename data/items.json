@@ -340,7 +340,7 @@
 		{"text": "coin_new_yorke_token", "day": "4", "tool": "2", "x": "-121.66876", "y": "38.503125"},
 		{"text": "coin_five_dollar_bechtler", "day": "4", "tool": "2", "x": "-84.421875", "y": "85.6953125"},
 		{"text": "coin_quarter", "day": "4", "tool": "2", "x": "-73.7265625", "y": "152.0078125"},
-		{"text": "coin_gold_dollar_coin", "day": "4", "tool": "2", "x": "", "y": ""},
+		{"text": "coin_gold_dollar_coin", "day": "4", "tool": "2", "x": "-112.7047", "y": "50.6828"},
 		{"text": "coin_nickel_coin", "day": "4", "tool": "2", "x": "-84.1953125", "y": "76.046875"},
 		{"text": "coin_halfpenny", "day": "4", "tool": "2", "x": "", "y": ""},
 		{"text": "coin_half_eagle", "day": "4", "tool": "2", "x": "-49.25", "y": "106.8984375"},
