@@ -18,24 +18,32 @@ Menu.refreshMenu = function () {
       $('.menu-option.clickable[data-type=' + category + ']').children('span').addClass('disabled');
 
     $.each(markers, function (_key, marker) {
-      if (marker.day == day && marker.category == category) {
+      if (marker.day == Cycles.data.cycles[currentCycle][category] && marker.category == category) {
         if (marker.subdata) {
-          //This is for plants only
-          if ($(`.menu-hidden[data-type='american_flowers']`).children(`p.collectible[data-type=${marker.subdata}]`).length > 0)
+          //This is for items with subdata to merge them
+          //TODO: create a 'marker' to subdata with item amount
+          if ($(`.menu-hidden[data-type=${category}]`).children(`p.collectible[data-type=${marker.subdata}]`).length > 0)
             return;
 
           var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.subdata).text(Language.get(`${marker.text}.name`).split('#')[0]);
-          //var collectibleCountElement = $('<small>').addClass('counter').text(Math.ceil(Math.random() * 10));
+          var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
 
-          $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement);
+          $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement.append(collectibleCountElement));
+          if (marker.amount == 10) {       
+            $(`p[data-type=${marker.subdata}]`).addClass('disabled');
+          }
         }
         else {
           //All others items
           var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.text).text(marker.title);
+          var buttonsElement = $('div').addClass('');
           var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
           $(`.menu-hidden[data-type=${category}]`).append(collectibleElement.append(collectibleCountElement));
 
-          if (marker.isCollected) {
+          if(marker.lat.length == 0)
+            $(`[data-type=${marker.text}]`).addClass('not-found');
+
+          if (!marker.canCollect) {            
             $(`[data-type=${marker.text}]`).addClass('disabled');
           }
         }
@@ -44,7 +52,7 @@ Menu.refreshMenu = function () {
     $('.menu-hidden[data-type=treasure]').children('p.collectible').remove();
 
     treasureData.filter(function (item) {
-      $('.menu-hidden[data-type=treasure]').append('<p class="collectible" data-type="' + item.text + '">' + Language.get(item.text) + '</p>');
+      $('.menu-hidden[data-type=treasure]').append('<p class="collectible disabled" data-type="' + item.text + '">' + Language.get(item.text) + '</p>');
     });
   });
  
@@ -80,6 +88,6 @@ Menu.hideAll = function () {
 Menu.refreshItemsCounter = function () {
   
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', markers.filter(item => (item.day == day || item.day.includes(day)) && item.isVisible && (item.isCollected || item.amount == 10)).length)
-    .replace('{max}', markers.filter(item => (item.day == day || item.day.includes(day)) && item.isVisible).length));
+    .replace('{count}', markers.filter(item => item.day == Cycles.data.cycles[currentCycle][item.category] && item.isVisible && (item.isCollected || item.amount == 10)).length)
+    .replace('{max}', markers.filter(item => item.day == Cycles.data.cycles[currentCycle][item.category] && item.isVisible).length));
 };

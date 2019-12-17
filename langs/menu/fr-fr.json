@@ -61,5 +61,9 @@
 	{"key": "menu.auto_refresh", "value": "Changement de Cycle Automatique"},
 	{"key": "menu.fame_seeker", "value": "Chasseuse de Gloire"},
 	{"key": "menu.wounded_animal", "value": "Animal Bléssé"},
-	{"key": "menu.clear_inventory", "value": "Vider l'inventaire"}
+	{"key": "menu.clear_inventory", "value": "Vider l'inventaire"},
+	{"key": "menu.sell", "value": "Vendre"},
+	{"key": "menu.inventory", "value": "Inventory"},
+	{"key": "menu.enable_inventory", "value": "Enable inventory"},
+	{"key": "menu.inventory_stack", "value": "Item stack size"}
 ]

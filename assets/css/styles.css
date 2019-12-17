@@ -40,7 +40,27 @@ h4 {
 p {
     margin: 0!important;
 }
-
+.map-alert {
+    background: darkred;
+    color: #fff;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    padding: 10px;
+    text-align: center;
+    display: none;
+}
+.map-alert .close-button {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 27px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
 #map {
     background: #d2b790;
     width: 100%;
@@ -238,6 +258,9 @@ p {
     color: #6a6a6a;
     text-decoration: line-through;
 }
+.side-menu .not-found {
+    color: #f95050;
+}
 
 .side-menu .menu-option .icon {
     width: 35px;
@@ -249,7 +272,7 @@ p {
     width: 25px;
     height: 25px;
     background: url(../images/arrow.png);
-    margin: auto 0 auto auto;
+    margin: auto 0;
 }
 
 .side-menu .menu-hidden {
@@ -267,15 +290,21 @@ p {
     text-align: center;
     border-top: 1px white solid;
     border-bottom: 1px white solid;
-    padding: 5px 0;
+    padding: 5px 0;    
+    display: flex;
+    justify-content: space-around;
 }
-
+.side-menu .menu-hidden .collection-sell {
+    cursor: pointer;
+    user-select: none;
+}
 .side-menu .menu-hidden .collectible {
     padding: 5px 25px;
     cursor: pointer;
     user-select: none;
     display: flex;
     justify-content: space-between;
+    font-size: 15px;
 }
 
 .lat-lng-container {
@@ -348,9 +377,16 @@ p {
     height: 100%;
     padding: 10px;
 }
+.menu-option.clickable input {
+    margin: auto 10px auto auto;
+    max-width: 50px;
+    min-width: 40px;
+    height: 30px;
+    padding: 0 0 0 8px;
+}
+
 
 /* Fix buttons showing on top of sidebar on mobile menu */
-
 .leaflet-top, .leaflet-bottom {
     z-index: 998;
 }
@@ -372,15 +408,15 @@ p {
 
 @media (min-width: 1025px) {
     .side-menu {
-        width: 320px;
-        left: -320px;
+        width: 380px;
+        left: -380px;
         top: 0;
     }
     .menu-opened {
         left: 0;
     }
     .timer-menu-opened {
-        left: 325px;
+        left: 385px;
     }
     .counter-menu-opened {
         left: 410px;

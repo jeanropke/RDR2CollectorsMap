@@ -50,7 +50,7 @@
 	{"key": "routes.empty", "value": "空的路线"},
 	{"key": "routes.invalid", "value": "无效的路径"},
 	{"key": "menu.random_spots", "value": "随机收藏点"},
-	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"},
+	{"key": "menu.collectables_counter", "value": "已收集 {count} 还差 {max}"},
 	{"key": "menu.rdo_map", "value": "RDO Map"},
 	{"key": "menu.treasure_hunter", "value": "宝藏猎人"},
 	{"key": "menu.tree_map", "value": "插在树上的藏宝图"},
@@ -61,5 +61,9 @@
 	{"key": "menu.auto_refresh", "value": "自动更改周期"},
 	{"key": "menu.fame_seeker", "value": "追求名誉者随机点"},
 	{"key": "menu.wounded_animal", "value": "受伤的动物随机点"},
-	{"key": "menu.clear_inventory", "value": "Clear inventory"}
+	{"key": "menu.clear_inventory", "value": "清除物品数量"},
+	{"key": "menu.sell", "value": "已有数量"},
+	{"key": "menu.inventory", "value": "物品数量"},
+	{"key": "menu.enable_inventory", "value": "是否启用数量功能"},
+	{"key": "menu.inventory_stack", "value": "物品数量大小"}
 ]

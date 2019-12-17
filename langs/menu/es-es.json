@@ -61,6 +61,10 @@
 	{"key": "menu.auto_refresh", "value": "Cambiar ciclo automáticamente"},
 	{"key": "menu.fame_seeker", "value": "Buscador de fama"},
 	{"key": "menu.wounded_animal", "value": "Animal herido"},
-	{"key": "menu.clear_inventory", "value": "Clear inventory"}
+	{"key": "menu.clear_inventory", "value": "Clear inventory"},
+	{"key": "menu.sell", "value": "Sell"},
+	{"key": "menu.inventory", "value": "Inventory"},
+	{"key": "menu.enable_inventory", "value": "Enable inventory"},
+	{"key": "menu.inventory_stack", "value": "Item stack size"}
 ]
 
