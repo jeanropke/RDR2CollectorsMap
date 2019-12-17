@@ -613,7 +613,7 @@
 		{"text": "heirlooms_boxwood_comb", "day": "5", "tool": "0", "x": "-59.5295", "y": "125.296875"},
 		{"text": "heirlooms_goat_hair_brush", "day": "5", "tool": "0", "x": "-84.921875", "y": "131.953125"},
 		{"text": "heirlooms_ebony_hairpin", "day": "5", "tool": "0", "x": "-76.7890625", "y": "143.34375"},
-		{"text": "heirlooms_ivory_hairpin", "day": "5", "tool": "0", "x": "-33.0689", "y": "141.28125"},
+		{"text": "heirlooms_ivory_hairpin", "day": "5", "tool": "2", "x": "-33.0689", "y": "141.28125"},
 		{"text": "heirlooms_rosewood_hairbrush", "day": "5", "tool": "0", "x": "-79.20109", "y": "137.828125"},
 		{"text": "heirlooms_tortoiseshell_comb", "day": "5", "tool": "0", "x": "-30.0859375", "y": "80.796875"},
 		{"text": "heirlooms_ivory_comb", "day": "5", "tool": "0", "x": "-77.84365", "y": "150.984375"},
