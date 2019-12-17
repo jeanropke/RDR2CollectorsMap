@@ -45,10 +45,10 @@ var nazarCurrentDate;
 
 var fastTravelData;
 
-var weeklySet = 'ancient_tools_set';
+var weeklySet = 'nightwatch_set';
 var weeklySetData = [];
 var date;
-var nocache = 146;
+var nocache = 147;
 
 var wikiLanguage = [];
 

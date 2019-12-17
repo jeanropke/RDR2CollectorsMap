@@ -42,6 +42,11 @@
 	"ancient_tools_set": [
 		{"item": "arrowhead_obsidian"},
 		{"item": "heirlooms_horse_hair_brush"}
+	],
+	"nightwatch_set": [
+		{"item": "ring_pilgrim_moonstone"},
+		{"item": "flower_wisteria"},
+		{"item": "egg_hawk_1"}
 	]
 	
 }
