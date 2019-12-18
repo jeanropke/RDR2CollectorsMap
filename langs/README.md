@@ -29,7 +29,7 @@ japanese (ja.json)
   - no-one yet!
   
 korean (ko.json)
-  - no-one yet!
+  - pb29
   
 polish (pl.json)
   - githb123
