@@ -50,7 +50,7 @@ russian (ru.json)
   
 chinese simplified (zh-s.json)
   - yamazakitouma
+  - qiexia
   
 chinese traditional (zh-t.json)
   - yamazakitouma
-  

@@ -16,15 +16,15 @@
 	{"key": "fasttravel.lagras.name", 	"value": "拉格拉斯"},	
 	{"key": "madam_nazar.name", 		"value": "纳扎尔夫人"},	
 
-	{"key": "bards_crossing_treasure", 			"value": "巴德渡桥(藏)"},
-	{"key": "benedict_treasure", 				"value": "本尼迪克特车站(宝)"},
-	{"key": "blackbone_forest_treasure", 		"value": "黑谷森林(图)"},
-	{"key": "blue_water_marsh_treasure", 		"value": "蓝水沼泽(由)"},
-	{"key": "brandywine_drop_treasure", 		"value": "白兰地瀑布(中)"},
-	{"key": "burned_town_treasure", 			"value": "烧毁的城镇(文)"},
-	{"key": "calumet_ravine_treasure", 			"value": "烟斗he(网)"},
-	{"key": "cattail_pond_treasure", 			"value": "香蒲池(翻)"},
-	{"key": "citadel_rock_treasure", 			"value": "堡垒山(译)"},
+	{"key": "bards_crossing_treasure", 			"value": "巴德渡桥"},
+	{"key": "benedict_treasure", 				"value": "本尼迪克特车站"},
+	{"key": "blackbone_forest_treasure", 		"value": "黑谷森林"},
+	{"key": "blue_water_marsh_treasure", 		"value": "蓝水沼泽"},
+	{"key": "brandywine_drop_treasure", 		"value": "白兰地瀑布"},
+	{"key": "burned_town_treasure", 			"value": "烧毁的城镇"},
+	{"key": "calumet_ravine_treasure", 			"value": "烟斗he"},
+	{"key": "cattail_pond_treasure", 			"value": "香蒲池"},
+	{"key": "citadel_rock_treasure", 			"value": "堡垒山"},
 	{"key": "civil_war_treasure", 				"value": "内战战场"},
 	{"key": "cumberland_forest_west_treasure", 	"value": "坎伯兰森林（西部）"},
 	{"key": "dakota_river_treasure", 			"value": "达科他河湾"},
@@ -44,7 +44,7 @@
 	{"key": "ocreaghs_run_treasure", 			"value": "奥克里夫谭"},
 	{"key": "san_luis_treasure", 				"value": "圣路易斯河岸"},
 	{"key": "southren_roanoke_treasure", 		"value": "罗诺克（南部）"},
-	{"key": "west_hill_haven_treasure", 		"value": "西山港"},
+	{"key": "west_hill_haven_treasure", 		"value": "哈文山（西部）"},
 	
 	{"key": "cups_ace.name", "value": "圣杯首牌塔罗牌"},
 	{"key": "cups_ace_1.desc", "value": ""},
@@ -1414,27 +1414,27 @@
 	{"key": "random_item.name", "value": "收藏品随机点 #"},
 
 	{"key": "tree_map.name","value":"插在树上的藏宝图"},
-	{"key": "tree_map.desc","value":"这个是随机点，不是每个点都有，晚上的话你会发现有的树旁会有提灯亮光，一把刀子插在树上，插着一张藏宝图(企鹅侠)"},
+	{"key": "tree_map.desc","value":"这个是随机点，不是每个点都有，晚上的话你会发现有的树旁会有提灯亮光，一把刀子插在树上，插着一张藏宝图"},
 
 	{"key": "treasure_hunter.name","value":"宝藏猎人"},
-	{"key": "treasure_hunter.desc","value":"宝藏猎人是所有点中随机遇到的(企鹅侠)"},
+	{"key": "treasure_hunter.desc","value":"宝藏猎人是所有点中随机遇到的"},
 	
 	{"key": "egg_encounter.name","value":"神鹫蛋任务随机开启点"},
-	{"key": "egg_encounter.desc","value":"这些都是一些随机的任务，地图上会以小白点显示，你必须在狩猎者吃掉鸟蛋之前到达(企鹅侠)"},
+	{"key": "egg_encounter.desc","value":"这些都是一些随机的任务，地图上会以小白点显示，你必须在狩猎者吃掉鸟蛋之前到达"},
 
 	{"key": "grave_robber.name","value":"愚人金活动"},
-	{"key": "grave_robber.desc","value":"这是一个很无聊的对抗活动，意思就是活动中会有绿帽子，带上之后可以加强防御，带上绿帽子击杀其他玩家可获得分数，或者普通玩家击杀带绿帽的玩家也可以获取分数，总之，超级无聊！（企鹅侠）"},
+	{"key": "grave_robber.desc","value":"这是一个很无聊的对抗活动，意思就是活动中会有绿帽子，带上之后可以加强防御，带上绿帽子击杀其他玩家可获得分数，或者普通玩家击杀带绿帽的玩家也可以获取分数，总之，超级无聊！"},
 	
 	{"key": "condor_egg.name","value":"神鹫蛋大致位置"},
-	{"key": "condor_egg.desc","value":"图中的红色叉叉都是神鹫蛋大概所在的位置，是不是很刘濞！（企鹅侠）"},
+	{"key": "condor_egg.desc","value":"图中的红色叉叉都是神鹫蛋大概所在的位置，是不是很刘濞！"},
 	
 	{"key": "dog_encounter.name","value":"狗狗遭遇随机点"},
-	{"key": "dog_encounter.desc","value":"这是一个随机遭遇点，地图上以白点显示，狗狗会随机给你收藏品或者好东西、也有可能给你带来埋伏.(企鹅侠)"},
+	{"key": "dog_encounter.desc","value":"这是一个随机遭遇点，地图上以白点显示，狗狗会随机给你收藏品或者好东西、也有可能给你带来埋伏."},
 	
 	{"key": "fame_seeker.name","value":"追求名誉者事件"},
-	{"key": "fame_seeker.desc","value":"随机遭遇事件，和其他事件一样小地图闪白点标记NPC。基本上是个二货NPC，要求你给他和贼凶猛的猛兽/贼胆小的食草动物拍合影，拍完合影还能顺手打猎。(河马翻译)"},
+	{"key": "fame_seeker.desc","value":"随机遭遇事件，和其他事件一样小地图闪白点标记NPC。基本上是个二货NPC，要求你给他和贼凶猛的猛兽/贼胆小的食草动物拍合影，拍完合影还能顺手打猎。"},
 	
 	{"key": "wounded_animal.name","value":"受伤的动物事件"},
-	{"key": "wounded_animal.desc","value":"随机遭遇事件，小地图有动物图标（一个兽爪）闪烁。过去用枪终结动物的痛苦，能获取击杀和“给个痛快”经验，还白捞个箭头收藏品，甚至能顺个猎物。(河马翻译)"}
+	{"key": "wounded_animal.desc","value":"随机遭遇事件，小地图有动物图标（一个兽爪）闪烁。过去用枪终结动物的痛苦，能获取击杀和“给个痛快”经验，还白捞个箭头收藏品，甚至能顺个猎物。"}
 
 ]
