@@ -7,6 +7,8 @@ var searchTerms = [];
 var uniqueSearchMarkers = [];
 var resetMarkersDaily;
 
+var showAllMarkers = false;
+
 var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
@@ -48,7 +50,7 @@ var fastTravelData;
 var weeklySet = 'nightwatch_set';
 var weeklySetData = [];
 var date;
-var nocache = 156;
+var nocache = 157;
 
 var wikiLanguage = [];
 
@@ -329,6 +331,12 @@ function getVirtual(time) {
     Routes.drawLines();
 });
 */
+
+//Show all markers on map
+$("#show-all-markers").on("change", function () {
+  showAllMarkers = $("#show-all-markers").val() == '1';  
+  MapBase.addMarkers();
+});
 
 //Disable menu category when click on input
 $('.menu-option.clickable input').on('click', function (e) {

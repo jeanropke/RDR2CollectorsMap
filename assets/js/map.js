@@ -272,7 +272,7 @@ var MapBase = {
   },
 
   addMarkerOnMap: function (marker) {
-    if (marker.day != Cycles.data.cycles[currentCycle][marker.category]) return;
+    if (marker.day != Cycles.data.cycles[currentCycle][marker.category] && !showAllMarkers) return;
 
     if (!uniqueSearchMarkers.includes(marker))
       return;
