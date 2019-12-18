@@ -15,7 +15,7 @@
   <script src="assets/js/jquery-3.4.1.min.js"></script>
   <script src="assets/js/jquery.cookie.js"></script>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=154" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=155" />
 
 </head>
 
@@ -289,7 +289,7 @@
     </div>
 
     <div class="settings-container">
-      <h2 data-text="menu.settings">Settings</h2>      
+      <h2 data-text="menu.settings">Settings</h2>
       <div class="input-container">
         <label for="tools" data-text="menu.tool_type">Tool type</label>
         <select class="input-day" id="tools">
@@ -385,6 +385,18 @@
         </select>
       </div>
     </div>
+    <h2>Debug marker</h2>
+    <div class="routes-container">
+      <div class="input-container">
+        <label for="debug-marker"></label>
+        <form name="debug-marker">
+          <p><input placeholder="lat" type="text" name="debug-marker-lat" class="input-day">
+          <input placeholder="lng" type="text" name="debug-marker-lng" class="input-day">
+        </p>
+          <p style="float: right; position: relative; padding-top: 5px;"><button type="button" class="btn btn-info" onclick="MapBase.submitDebugForm()">Place</button></p>
+        </form>
+      </div>
+    </div>
     <div class="issues-container">
       <h2 data-text="menu.issues">Issues</h2>
       <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDR2CollectorsMap/issues"
@@ -456,16 +468,16 @@
   </div>
 
 
-  <script src="assets/js/cycles.js?nocache=154"></script>
-  <script src="assets/js/marker.js?nocache=154"></script>
-  <script src="assets/js/inventory.js?nocache=154"></script>
-  <script src="assets/js/treasures.js?nocache=154"></script>
-  <script src="assets/js/encounters.js?nocache=154"></script>
-  <script src="assets/js/map.js?nocache=154"></script>
-  <script src="assets/js/language.js?nocache=154"></script>
-  <script src="assets/js/menu.js?nocache=154"></script>
-  <script src="assets/js/routes.js?nocache=154"></script>
-  <script src="assets/js/scripts.js?nocache=154"></script>
+  <script src="assets/js/cycles.js?nocache=155"></script>
+  <script src="assets/js/marker.js?nocache=155"></script>
+  <script src="assets/js/inventory.js?nocache=155"></script>
+  <script src="assets/js/treasures.js?nocache=155"></script>
+  <script src="assets/js/encounters.js?nocache=155"></script>
+  <script src="assets/js/map.js?nocache=155"></script>
+  <script src="assets/js/language.js?nocache=155"></script>
+  <script src="assets/js/menu.js?nocache=155"></script>
+  <script src="assets/js/routes.js?nocache=155"></script>
+  <script src="assets/js/scripts.js?nocache=155"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
   <script>

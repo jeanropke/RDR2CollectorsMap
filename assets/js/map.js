@@ -381,6 +381,13 @@ MapBase.addFastTravelMarker = function () {
   }
 };
 
+MapBase.submitDebugForm = function(){
+  var lat = $('input[name=debug-marker-lat]').val();
+  var lng = $('input[name=debug-marker-lng]').val();
+  if(!isNaN(lat) || !isNaN(lng))
+    MapBase.debugMarker(lat, lng);
+},
+
 MapBase.debugMarker = function (lat, long) {
   var marker = L.marker([lat, long], {
     icon: L.icon({
