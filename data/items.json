@@ -362,8 +362,7 @@
 		{"text": "coin_gold_eagle", "day": "5", "tool": "2", "x": "-63.921875", "y": "152.3515625"},
 		{"text": "coin_liberty_quarter", "day": "5", "tool": "2", "x": "-41.53125", "y": "116.8203125"},
 		{"text": "coin_half_dime", "day": "5", "tool": "2", "x": "-101.671875", "y": "44.0234375"},
-		{"text": "coin_penny", "day": "5", "tool": "2", "x": "-22.125", "y": "102.96875"},
-		
+		{"text": "coin_penny", "day": "5", "tool": "2", "x": "-22.125", "y": "102.96875"},		
 		{"text": "coin_gold_quarter", "day": "6", "tool": "2", "x": "-69.77245", "y": "82.52218"},
 		{"text": "coin_draped_bust_silver_dollar", "day": "6", "tool": "2", "x": "-120.3925", "y": "27.5631117"},
 		{"text": "coin_one_cent_token", "day": "6", "tool": "2", "x": "-83.466675", "y": "144.015625"},
@@ -635,7 +634,22 @@
 		{"text": "heirlooms_ivory_comb", "day": "5", "tool": "0", "x": "-77.84365", "y": "150.984375"},
 		{"text": "heirlooms_horse_hair_brush", "day": "5", "tool": "0", "x": "-65.1796875", "y": "129.7421875"},
 		{"text": "heirlooms_boar_bristle_brush", "day": "5", "tool": "0", "x": "-75.9140625", "y": "146.3359375"},
-		{"text": "heirlooms_new_guinea_rosewood", "day": "5", "tool": "0", "x": "-82.2179", "y": "147.5765"}
+		{"text": "heirlooms_new_guinea_rosewood", "day": "5", "tool": "0", "x": "-82.2179", "y": "147.5765"},		
+		{"text": "heirlooms_jade_hairpin", "day": "6", "tool": "2", "x": "-50.65293", "y": "151.515625"},
+		{"text": "heirlooms_cherrywood_comb", "day": "6", "tool": "0", "x": "-51.5613146", "y": "106.25"},
+		{"text": "heirlooms_ebony_hairbrush", "day": "6", "tool": "0", "x": "-80.078125", "y": "148.6953125"},
+		{"text": "heirlooms_metal_hairpin", "day": "6", "tool": "2", "x": "-54.637765", "y": "157.078125"},
+		{"text": "heirlooms_carved_wooden", "day": "6", "tool": "2", "x": "-84.701455", "y": "147.453125"},
+		{"text": "heirlooms_boxwood_comb", "day": "6", "tool": "0", "x": "-82.6796875", "y": "155.15625"},
+		{"text": "heirlooms_goat_hair_brush", "day": "6", "tool": "0", "x": "-109.33735", "y": "23.90625"},
+		{"text": "heirlooms_ebony_hairpin", "day": "6", "tool": "2", "x": "-106.3001", "y": "36.959375"},
+		{"text": "heirlooms_ivory_hairpin", "day": "6", "tool": "0", "x": "-29.6953125", "y": "157.7578125"},
+		{"text": "heirlooms_rosewood_hairbrush", "day": "6", "tool": "0", "x": "-84.06136", "y": "130.671875"},
+		{"text": "heirlooms_tortoiseshell_comb", "day": "6", "tool": "0", "x": "-83.6953125", "y": "152.5390625"},
+		{"text": "heirlooms_ivory_comb", "day": "6", "tool": "0", "x": "-84.89691", "y": "98.765625"},
+		{"text": "heirlooms_horse_hair_brush", "day": "6", "tool": "0", "x": " -104.289135", "y": "55.1046875"},
+		{"text": "heirlooms_boar_bristle_brush", "day": "6", "tool": "0", "x": "-50.192775", "y": "106.734375"},
+		{"text": "heirlooms_new_guinea_rosewood", "day": "6", "tool": "0", "x": "-45.02886", "y": "142.109375"}
 	],
 	"american_flowers": [
 		{"text": "flower_texas_bluebonnet", "day": "1", "tool": "0", "subdata": "texas_bluebonnet", "x": "-121.890625", "y": "38.3046875", "video":"https://www.youtube.com/watch?v=IK9KWAZqcMg&t=45s"},
