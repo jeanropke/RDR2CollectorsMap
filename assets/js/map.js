@@ -256,7 +256,7 @@ var MapBase = {
 
   updateMarkerContent: function (marker) {
     var videoText = marker.video != null ? '<p align="center" style="padding: 5px;"><a href="' + marker.video + '" target="_blank">Video</a></p>' : '';
-    var popupTitle = marker.category == 'random' ? marker.title : ` ${marker.title} - ${Language.get("menu.day")} ${Cycles.data.cycles[currentCycle][marker.category]}`;
+    var popupTitle = marker.category == 'random' ? marker.title : ` ${marker.title} - ${Language.get("menu.day")} ${marker.day}`;
     var popupContent = marker.category == 'random' ? 'Random items resets 24 hours after picking up' : marker.description;
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
     <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
