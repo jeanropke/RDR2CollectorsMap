@@ -61,8 +61,8 @@ var MapBase = {
       setMapBackground(e.name);
     });
 
-    var southWest = L.latLng(-170.712, -25.227),
-      northEast = L.latLng(10.774, 200.125),
+    var southWest = L.latLng(-160, -50),
+      northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
   },
