@@ -13,7 +13,7 @@ var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
   'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-   'wounded_animal', 'fame_seeker'
+  'wounded_animal', 'fame_seeker'
 ];
 
 var categoriesDisabledByDefault = [
@@ -35,8 +35,6 @@ var polylines;
 var customRouteEnabled = false;
 var customRouteConnections = [];
 
-var showCoordinates = false;
-
 var toolType = '3'; //All type of tools
 var avaliableLanguages = ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'th-th', 'zh-s', 'zh-t'];
 var lang;
@@ -50,7 +48,7 @@ var fastTravelData;
 var weeklySet = 'nightwatch_set';
 var weeklySetData = [];
 var date;
-var nocache = 158;
+var nocache = 159;
 
 var wikiLanguage = [];
 
@@ -176,6 +174,13 @@ function init() {
     [pos],
     [pos[0] + offset, pos[1] + offset]
   ]).addTo(MapBase.map);
+
+
+  if (Settings.isMenuOpened)
+    $('.menu-toggle').click();
+
+  $('#show-coordinates').val(Settings.isCoordsEnabled ? '1' : '0');
+  changeCursor();
 }
 
 function setMapBackground(mapName) {
@@ -250,7 +255,7 @@ function setCurrentDayCycle(dev = null) {
 }
 
 function changeCursor() {
-  if (showCoordinates || customRouteEnabled)
+  if (Settings.isCoordsEnabled || customRouteEnabled)
     $('.leaflet-grab').css('cursor', 'pointer');
   else
     $('.leaflet-grab').css('cursor', 'grab');
@@ -334,7 +339,7 @@ function getVirtual(time) {
 
 //Show all markers on map
 $("#show-all-markers").on("change", function () {
-  showAllMarkers = $("#show-all-markers").val() == '1';  
+  showAllMarkers = $("#show-all-markers").val() == '1';
   MapBase.addMarkers();
 });
 
@@ -443,14 +448,15 @@ $("#custom-routes").on("change", function () {
 });
 
 //When map-alert is clicked
-$('.map-alert').on('click', function() {
+$('.map-alert').on('click', function () {
   $.cookie('alert-closed', 'true');
   $('.map-alert').hide();
 });
 
 //Enable & disable show coordinates on menu
 $('#show-coordinates').on('change', function () {
-  showCoordinates = $('#show-coordinates').val() == '1';
+  $.cookie('coords-enabled', $('#show-coordinates').val());
+  Settings.isCoordsEnabled = $('#show-coordinates').val() == '1';
 
   changeCursor();
 });
@@ -541,8 +547,10 @@ $('.menu-toggle').on('click', function () {
 
   if ($('.side-menu').hasClass('menu-opened')) {
     $('.menu-toggle').text('X');
+    $.cookie('menu-opened', '1');
   } else {
-    $('.menu-toggle').text('>');
+    $('.menu-toggle').text('>');    
+    $.cookie('menu-opened', '0');
   }
   $('.timer-container').toggleClass('timer-menu-opened');
   $('.counter-container').toggleClass('counter-menu-opened');
@@ -553,14 +561,14 @@ $('.menu-toggle').on('click', function () {
 $('#enable-inventory').on("change", function () {
   var inputValue = $('#enable-inventory').val();
   $.cookie('inventory-enabled', inputValue);
-  Inventory.isEnabled = inputValue == 'true';  
+  Inventory.isEnabled = inputValue == 'true';
   MapBase.addMarkers();
 });
 
 //Enable & disable inventory on menu
 $('#inventory-stack').on("change", function () {
   var inputValue = parseInt($('#inventory-stack').val());
-  inputValue = !isNaN(inputValue) ? inputValue : 10;  
+  inputValue = !isNaN(inputValue) ? inputValue : 10;
   $.cookie('inventory-stack', inputValue);
   Inventory.stackSize = inputValue;
 });

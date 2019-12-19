@@ -407,7 +407,7 @@ MapBase.debugMarker = function (lat, long) {
 
 MapBase.addCoordsOnMap = function (coords) {
   // Show clicked coordinates (like google maps)
-  if (showCoordinates) {
+  if (Settings.isCoordsEnabled) {
     $('.lat-lng-container').css('display', 'block');
 
     $('.lat-lng-container p').html(`lat: ${coords.latlng.lat} <br> lng: ${coords.latlng.lng}`);
