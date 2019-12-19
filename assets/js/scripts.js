@@ -347,6 +347,7 @@ $('.menu-option.clickable input').on('change', function (e) {
   var el = $(e.target);
   Cycles.data.cycles[currentCycle][el.attr("name")] = parseInt(el.val());
   MapBase.addMarkers();
+  Menu.refreshMenu();
 });
 //Search system on menu
 $("#search").on("input", function () {
