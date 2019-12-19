@@ -50,7 +50,7 @@ var fastTravelData;
 var weeklySet = 'nightwatch_set';
 var weeklySetData = [];
 var date;
-var nocache = 157;
+var nocache = 158;
 
 var wikiLanguage = [];
 
