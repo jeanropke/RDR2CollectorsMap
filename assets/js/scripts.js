@@ -1,7 +1,7 @@
 //Since Moonshiners update, R* changed how cycles works.
 //Instead of 1 cycle for each collection in the day, each collection has your own cycle.
 //Eg: Coins can be on cycle 1, Eggs on cycle 3, Flowers on 5... and so on
-var currentCycle = 5;
+var currentCycle = 6;
 var markers = [];
 var searchTerms = [];
 var uniqueSearchMarkers = [];
