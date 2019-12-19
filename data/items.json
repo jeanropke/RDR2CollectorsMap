@@ -482,7 +482,16 @@
 		{"text": "bottle_old_tom_gin", "day": "5", "tool": "0", "x": "-42.2109375", "y": "156.375"},
 		{"text": "bottle_caribbean_rum", "day": "5", "tool": "0", "x": "-56.6171875", "y": "153.2265625"},
 		{"text": "bottle_cognac_bottle", "day": "5", "tool": "0", "x": "-69.265625", "y": "136.4453125"},
-		{"text": "bottle_london_dry_gin", "day": "5", "tool": "0", "x": "-86.9375", "y": "145.4609375"}
+		{"text": "bottle_london_dry_gin", "day": "5", "tool": "0", "x": "-86.9375", "y": "145.4609375"},
+		{"text": "bottle_tennesee_whiskey", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_irish_whiskey", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_scotch_whisky", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_absinthe", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_gran_corazon_madeira", "day": "6", "tool": "0", "x": "-69.8671875", "y": "83.21875"},
+		{"text": "bottle_old_tom_gin", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_caribbean_rum", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_cognac_bottle", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "bottle_london_dry_gin", "day": "6", "tool": "0", "x": "", "y": ""}
 	],
 	"arrowhead": [
 		{"text": "arrowhead_rough", "day": "1", "tool": "1", "x": "-106.8515625", "y": "80.078125", "video":"https://www.youtube.com/watch?v=EJYsStXzjX0&t=45s"},
