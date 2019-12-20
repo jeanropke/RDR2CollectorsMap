@@ -5,29 +5,24 @@
 var Routes = {
 
   drawLines: function() {
+	var points = [];
+	var connections = [];
+	$.each(markers, function(_index, marker) {
+		if (marker.isVisible && (Inventory.isEnabled ? !marker.isCollected && (marker.amount < Inventory.stackSize) : !marker.isCollected) && enabledCategories.includes(marker.category)
+		&& uniqueSearchMarkers.includes(marker) && !categoriesDisabledByDefault.includes(marker.subdata)
+		&& marker.tool <= parseInt(toolType)) {
+		  points.push(new SalesmanPoint(marker.lat, marker.lng));
+		}
+	});
 
-    var connections = [];
-    $.each(routesData[day], function(nodeKey, nodeValue) {
-      $.each(nodeValue, function(_key, _marker) {
-        var marker = markers.filter(item => {
-          if (item.day == day)
-            return item.text === _marker;
-        })[0];
-
-        if (marker == null)
-          return;
-        
-        if ((Inventory.isEnabled ? !marker.isCollected && (marker.amount < Inventory.stackSize) : !marker.isCollected) && enabledCategories.includes(marker.category)
-        && uniqueSearchMarkers.includes(marker) && !categoriesDisabledByDefault.includes(marker.subdata)
-        && marker.tool <= parseInt(toolType)) {
-          var connection = [marker.lat, marker.lng];
-          connections.push(connection);
-        }
-
-      });
-    });
-
-
+	var solution = solveSalesman(points);
+	var orderedPoints = solution.map(i => points[i]);
+	$.each(orderedPoints, function(_index, point) {
+	connections.push([point.x, point.y]);
+	});
+	connections.push(connections[0]);
+	
+	
     if (polylines instanceof L.Polyline) {
       MapBase.map.removeLayer(polylines);
     }
