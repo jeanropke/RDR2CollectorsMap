@@ -1250,7 +1250,6 @@
 		{"text": "earring_emmeline_coral", "day": "5", "tool": "2", "x": "-75.0625", "y": "140.1484375"}
 	],
 	"lost_bracelet": [
-		{"text": "bracelet_greco_sapphire", "day": "1", "tool": "0", "x": "-55.4453125", "y": "101.78125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=45s"},
 		{"text": "bracelet_abello_ruby_bangle", "day": "1", "tool": "0", "x": "-49.8828125", "y": "148.28125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=71s"},
 		{"text": "bracelet_ojeda_rose_gold", "day": "1", "tool": "0", "x": "-116.625", "y": "19.59375", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=98s"},
 		{"text": "bracelet_helena_sapphire", "day": "1", "tool": "0", "x": "-92.109375", "y": "60.0234375", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=160s"},
@@ -1258,7 +1257,7 @@
 		{"text": "bracelet_infanta_turquoise", "day": "1", "tool": "0", "x": "-107.1796875", "y": "86.6796875", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=229s"},
 		{"text": "bracelet_elliston_carved", "day": "1", "tool": "2", "x": "-52.3515625", "y": "87.0390625", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=276s"},
 		{"text": "bracelet_hajnal_garnet_bangle", "day": "1", "tool": "0", "x": "-54.0625", "y": "97.9375", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=312s"},
-		{"text": "bracelet_greco_sapphire", "day": "2", "tool": "2", "x": "-89.421875", "y": "77.484375", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=349s"},
+		{"text": "bracelet_greco_sapphire", "day": "1", "tool": "0", "x": "-55.4453125", "y": "101.78125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=45s"},
 		{"text": "bracelet_abello_ruby_bangle", "day": "2", "tool": "2", "x": "-93.453125", "y": "94.6640625", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=388s"},
 		{"text": "bracelet_ojeda_rose_gold", "day": "2", "tool": "0", "x": "-83.046875", "y": "122.0859375", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=442s"},
 		{"text": "bracelet_helena_sapphire", "day": "2", "tool": "0", "x": "-57.015625", "y": "94.9453125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=469s"},
@@ -1266,7 +1265,7 @@
 		{"text": "bracelet_infanta_turquoise", "day": "2", "tool": "2", "x": "-35.2578125", "y": "132.5", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=530s"},
 		{"text": "bracelet_elliston_carved", "day": "2", "tool": "2", "x": "-61.1640625", "y": "143.78125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=559s"},
 		{"text": "bracelet_hajnal_garnet_bangle", "day": "2", "tool": "2", "x": "-75.96875", "y": "143.1875", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=597s"},
-		{"text": "bracelet_greco_sapphire", "day": "3", "tool": "2", "x": "-46.7890625", "y": "118.53125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=641s"},
+		{"text": "bracelet_greco_sapphire", "day": "2", "tool": "2", "x": "-89.421875", "y": "77.484375", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=349s"},
 		{"text": "bracelet_abello_ruby_bangle", "day": "3", "tool": "0", "x": "-90.984375", "y": "83.375", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=674s"},
 		{"text": "bracelet_ojeda_rose_gold", "day": "3", "tool": "2", "x": "-58.015625", "y": "113.765625", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=722s"},
 		{"text": "bracelet_helena_sapphire", "day": "3", "tool": "0", "x": "-49.7578125", "y": "76.640625", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=774s"},
@@ -1274,7 +1273,7 @@
 		{"text": "bracelet_infanta_turquoise", "day": "3", "tool": "2", "x": "-78.90625", "y": "133.0703125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=843s"},
 		{"text": "bracelet_elliston_carved", "day": "3", "tool": "2", "x": "-107.96875", "y": "59.3984375", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=882s"},
 		{"text": "bracelet_hajnal_garnet_bangle", "day": "3", "tool": "0", "x": "-78.0703125", "y": "90.15625", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=921s"},
-		{"text": "bracelet_greco_sapphire", "day": "4", "tool": "2", "x": "-73.296875", "y": "91.3203125"},
+		{"text": "bracelet_greco_sapphire", "day": "3", "tool": "2", "x": "-46.7890625", "y": "118.53125", "video":"https://www.youtube.com/watch?v=rapMBFCyqnA&t=641s"},
 		{"text": "bracelet_abello_ruby_bangle", "day": "4", "tool": "2", "x": "-69.25", "y": "105.2578125"},
 		{"text": "bracelet_ojeda_rose_gold", "day": "4", "tool": "2", "x": "-38.3203125", "y": "136.0546875"},
 		{"text": "bracelet_helena_sapphire", "day": "4", "tool": "2", "x": "-107.9453125", "y": "73.109375"},
@@ -1282,14 +1281,15 @@
 		{"text": "bracelet_infanta_turquoise", "day": "4", "tool": "2", "x": "-111.3828125", "y": "43.2734375"},
 		{"text": "bracelet_elliston_carved", "day": "4", "tool": "2", "x": "-67.5859375", "y": "77.484"},
 		{"text": "bracelet_hajnal_garnet_bangle", "day": "4", "tool": "2", "x": "-117.84375", "y": "43.90625"},
-		{"text": "bracelet_greco_sapphire", "day": "5", "tool": "0", "x": "-73.9765625", "y": "116.625"},
+		{"text": "bracelet_greco_sapphire", "day": "4", "tool": "2", "x": "-73.296875", "y": "91.3203125"},
 		{"text": "bracelet_abello_ruby_bangle", "day": "5", "tool": "0", "x": "-81.8203125", "y": "152"},
 		{"text": "bracelet_ojeda_rose_gold", "day": "5", "tool": "2", "x": "-64.421875", "y": "69.2421875"},
 		{"text": "bracelet_helena_sapphire", "day": "5", "tool": "2", "x": "-54.34375", "y": "137.9765625"},
 		{"text": "bracelet_durant_pearl", "day": "5", "tool": "2", "x": "-109.3984375", "y": "23.8046875"},
 		{"text": "bracelet_infanta_turquoise", "day": "5", "tool": "2", "x": "-57.453125", "y": "126.09375"},
 		{"text": "bracelet_elliston_carved", "day": "5", "tool": "0", "x": "-117.4453125", "y": "57.1953125"},
-		{"text": "bracelet_hajnal_garnet_bangle", "day": "5", "tool": "2", "x": "-105.153925", "y": "79.11875"}
+		{"text": "bracelet_hajnal_garnet_bangle", "day": "5", "tool": "2", "x": "-105.153925", "y": "79.11875"},
+		{"text": "bracelet_greco_sapphire", "day": "5", "tool": "0", "x": "-73.9765625", "y": "116.625"}
 	],
 	"random": [
 		{"text": "random_item_1", "tool": "1", "x": "-118.1562", "y": "11.3984"},
