@@ -57,13 +57,13 @@
 	{"key": "menu.egg_encounter", "value": "Vogelnester"},
 	{"key": "menu.grave_robber", "value": "Grabräuber"},
 	{"key": "menu.condor_egg", "value": "Condor Egg"},
-	{"key": "menu.dog_encounter", "value": "Dog Encounter"},
-	{"key": "menu.auto_refresh", "value": "Change cycle automatically"},
-	{"key": "menu.fame_seeker", "value": "Fame Seeker"},
-	{"key": "menu.wounded_animal", "value": "Wounded Animal"},
-	{"key": "menu.clear_inventory", "value": "Clear inventory"},
-	{"key": "menu.sell", "value": "Sell"},
-	{"key": "menu.inventory", "value": "Inventory"},
-	{"key": "menu.enable_inventory", "value": "Enable inventory"},
-	{"key": "menu.inventory_stack", "value": "Item stack size"}
+	{"key": "menu.dog_encounter", "value": "Hunde Begegnungen"},
+	{"key": "menu.auto_refresh", "value": "Zyklus automatisch anpassen"},
+	{"key": "menu.fame_seeker", "value": "Ruhmsuchende"},
+	{"key": "menu.wounded_animal", "value": "Verwundete Tiere"},
+	{"key": "menu.clear_inventory", "value": "Inventar leeren"},
+	{"key": "menu.sell", "value": "Verkaufen"},
+	{"key": "menu.inventory", "value": "Inventar"},
+	{"key": "menu.enable_inventory", "value": "Inventar verwenden"},
+	{"key": "menu.inventory_stack", "value": "Inventar Größe"}
 ]
