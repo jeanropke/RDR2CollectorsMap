@@ -247,6 +247,9 @@ var MapBase = {
       case "day_8":
         return "lightred";
         break;
+      case "day_9":
+        return "darkblue";
+        break;
       case "weekly":
         return "green";
         break;
@@ -381,29 +384,29 @@ MapBase.addFastTravelMarker = function () {
   }
 };
 
-MapBase.submitDebugForm = function(){
+MapBase.submitDebugForm = function () {
   var lat = $('input[name=debug-marker-lat]').val();
   var lng = $('input[name=debug-marker-lng]').val();
-  if(!isNaN(lat) || !isNaN(lng))
+  if (!isNaN(lat) || !isNaN(lng))
     MapBase.debugMarker(lat, lng);
 },
 
-MapBase.debugMarker = function (lat, long) {
-  var marker = L.marker([lat, long], {
-    icon: L.icon({
-      iconUrl: './assets/images/icons/random_darkblue.png',
-      iconSize: [35, 45],
-      iconAnchor: [17, 42],
-      popupAnchor: [1, -32],
-      shadowAnchor: [10, 12],
-      shadowUrl: './assets/images/markers-shadow.png'
+  MapBase.debugMarker = function (lat, long) {
+    var marker = L.marker([lat, long], {
+      icon: L.icon({
+        iconUrl: './assets/images/icons/random_darkblue.png',
+        iconSize: [35, 45],
+        iconAnchor: [17, 42],
+        popupAnchor: [1, -32],
+        shadowAnchor: [10, 12],
+        shadowUrl: './assets/images/markers-shadow.png'
 
-    })
-  });
+      })
+    });
 
-  marker.bindPopup(`<h1>Debug Marker</h1><p>  </p>`);
-  Layers.itemMarkersLayer.addLayer(marker);
-};
+    marker.bindPopup(`<h1>Debug Marker</h1><p>  </p>`);
+    Layers.itemMarkersLayer.addLayer(marker);
+  };
 
 MapBase.addCoordsOnMap = function (coords) {
   // Show clicked coordinates (like google maps)
