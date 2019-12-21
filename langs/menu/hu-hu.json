@@ -9,7 +9,7 @@
 	{"key": "menu.coin", "value": "Érmék"},
 	{"key": "menu.family_heirlooms", "value": "Családi örökségek"},
 	{"key": "menu.lost_bracelet", "value": "Elveszett ékszerek - Karkötők"},
-	{"key": "menu.lost_necklaces", "value": Elveszett ékszerek - Nyakláncok"},
+	{"key": "menu.lost_necklaces", "value": "Elveszett ékszerek - Nyakláncok"},
 	{"key": "menu.lost_earrings", "value": "Elveszett ékszerek - Fülbevalók"},
 	{"key": "menu.lost_ring", "value": "Elveszett ékszerek - Gyűrűk"},
 	{"key": "menu.card_cups", "value": "Tarot Kártyák - Csészék"},
