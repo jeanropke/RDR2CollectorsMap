@@ -240,7 +240,11 @@ p {
 .side-menu .collectables-counter {
     text-align: center;
 }
-
+.side-menu .cycle-data {
+    text-align: center;
+    font-size: 17px;
+    padding-bottom: 3px;
+}
 .side-menu .menu-option {
     display: flex;
     align-items: start;

@@ -1064,6 +1064,7 @@
 		{"text": "flower_cardinal_6", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-94.8359375", "y": "142.015625"},
 		{"text": "flower_cardinal_7", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-79.8359375", "y": "143.859375"},
 		{"text": "flower_cardinal_8", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-81.2734375", "y": "142.7890625"},
+		{"text": "flower_cardinal_9", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-87.77", "y": "142.24"},
 
 		{"text": "flower_creek_plum", "day": "8", "tool": "0", "subdata": "creek_plum", "x": "-78.29840", "y": "132.26417"},
 		{"text": "flower_creek_plum_2", "day": "8", "tool": "0", "subdata": "creek_plum", "x": "-64.76", "y": "75.59"},
@@ -1076,6 +1077,7 @@
 		{"text": "flower_chocolate_daisy_3", "day": "8", "tool": "0", "subdata": "chocolate_daisy", "x": "-91.94", "y": "124.67"},
 		{"text": "flower_chocolate_daisy_4", "day": "8", "tool": "0", "subdata": "chocolate_daisy", "x": "-72.9375", "y": "114.46875"},
 		{"text": "flower_chocolate_daisy_5", "day": "8", "tool": "0", "subdata": "chocolate_daisy", "x": "-73.2890625", "y": "121"},
+		{"text": "flower_chocolate_daisy_6", "day": "8", "tool": "0", "subdata": "chocolate_daisy", "x": "-61.4296875", "y": "99.296875"},
 		
 		{"text": "flower_wisteria", "day": "8", "tool": "0", "subdata": "wisteria", "x": "-71.4851", "y": "74.5865"},
 		{"text": "flower_wisteria_2", "day": "8", "tool": "0", "subdata": "wisteria", "x": "-80.015625", "y": "80.9921875"},
