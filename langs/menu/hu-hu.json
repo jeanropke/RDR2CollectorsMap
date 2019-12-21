@@ -50,7 +50,7 @@
 	{"key": "routes.empty", "value": "Empty route"},
 	{"key": "routes.invalid", "value": "Érvénytelen útvonal. További információkét ellenőrizd a konzolt. (F12)"},
 	{"key": "menu.random_spots", "value": "Véletlenszerű helyek"},
-	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"},
+	{"key": "menu.collectables_counter", "value": "Begyűjtött {count} Ennyiből {max}"},
 	{"key": "menu.rdo_map", "value": "RDO Térkép"},
 	{"key": "menu.treasure_hunter", "value": "Kincsvadász"},
 	{"key": "menu.tree_map", "value": "Kincsestérkép a fán"},
