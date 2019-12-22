@@ -3,7 +3,7 @@
  */
 
 var Layers = {
-  itemMarkersLayer: new L.LayerGroup(),
+  itemMarkersLayer:  L.markerClusterGroup({maxClusterRadius: 8}),
   miscLayer: new L.LayerGroup(),
   encountersLayer: new L.LayerGroup()
 };
