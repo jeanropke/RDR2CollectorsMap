@@ -129,9 +129,9 @@
 			"card_wands"        : 4
         },
         "9": {
-            "american_flowers"  : -1,
+            "american_flowers"  : 4,
 			"antique_bottles"   : 4,
-			"arrowhead"         : -1,
+			"arrowhead"         : 3,
 			"bird_eggs"         : 4,
 			"coin"              : 3,
 			"family_heirlooms"  : 1,
