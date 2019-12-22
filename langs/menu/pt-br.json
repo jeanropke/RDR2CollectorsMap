@@ -65,5 +65,6 @@
 	{"key": "menu.sell", "value": "Vender"},
 	{"key": "menu.inventory", "value": "Inventário"},
 	{"key": "menu.enable_inventory", "value": "Ativar inventário"},
-	{"key": "menu.inventory_stack", "value": "Quant. máx. de itens"}
+	{"key": "menu.inventory_stack", "value": "Quant. máx. de itens"},
+	{"key": "menu.marker_cluster", "value": "Juntar marcadores"}
 ]

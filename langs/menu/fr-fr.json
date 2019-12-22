@@ -65,5 +65,6 @@
 	{"key": "menu.sell", "value": "Vendre"},
 	{"key": "menu.inventory", "value": "Inventaire"},
 	{"key": "menu.enable_inventory", "value": "Activer l'Inventaire"},
-	{"key": "menu.inventory_stack", "value": "Taille de la Pile d'Objet"}
+	{"key": "menu.inventory_stack", "value": "Taille de la Pile d'Objet"},
+	{"key": "menu.marker_cluster", "value": "Markers cluster"}
 ]

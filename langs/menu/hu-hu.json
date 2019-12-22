@@ -67,5 +67,6 @@
 	{"key": "menu.sell", "value": "Eladás"},
 	{"key": "menu.inventory", "value": "Leltár"},
 	{"key": "menu.enable_inventory", "value": "Leltár engedélyezése"},
-	{"key": "menu.inventory_stack", "value": "Gyűjtött tételek mennyisége"}
+	{"key": "menu.inventory_stack", "value": "Gyűjtött tételek mennyisége"},
+	{"key": "menu.marker_cluster", "value": "Markers cluster"}
 ]
