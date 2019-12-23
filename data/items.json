@@ -1107,6 +1107,8 @@
 		{"text": "flower_wild_rhubarb_5", "day": "7", "tool": "0", "subdata": "wild_rhubarb", "x": "-101.453125", "y": "54.09375"},
 		{"text": "flower_wild_rhubarb_6", "day": "7", "tool": "0",  "subdata": "wild_rhubarb", "x": "-99.0234375", "y": "57.2734375"},
 		{"text": "flower_wild_rhubarb_7", "day": "7", "tool": "0", "subdata": "wild_rhubarb", "x": "-103.203125", "y": "63.8984375"},
+		{"text": "flower_wild_rhubarb_8", "day": "7", "tool": "0", "subdata": "wild_rhubarb", "x": "-104.296875", "y": "72.828125"},
+		{"text": "flower_wild_rhubarb_9", "day": "7", "tool": "0", "subdata": "wild_rhubarb", "x": "-107.046875", "y": "38.03125"},
 
 		{"text": "flower_cardinal", "day": "7", "tool": "0", "subdata": "cardinal", "x": "-78.0234375", "y": "143.734375"},
 		{"text": "flower_cardinal_2", "day": "7", "tool": "0", "subdata": "cardinal", "x": "-71.71875", "y": "141.6953125"},
