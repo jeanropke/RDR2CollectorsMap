@@ -329,7 +329,7 @@
 		{"text": "pentacles_queen", "day": "5", "tool": "0", "x": "-114.2734375", "y": "18.9453125"},
 		{"text": "pentacles_king", "day": "5", "tool": "0", "x": "-29.5546875", "y": "157.6640625"},
 		{"text": "pentacles_ace", "day": "6", "tool": "0", "x": "", "y": ""},
-		{"text": "pentacles_two", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "pentacles_two", "day": "6", "tool": "0", "x": "-97.6953125", "y": "89.15625"},
 		{"text": "pentacles_three", "day": "6", "tool": "0", "x": "-99.2109375", "y": "132.0625"},
 		{"text": "pentacles_four", "day": "6", "tool": "0", "x": "-59.4518875", "y": "125.15625"},
 		{"text": "pentacles_five", "day": "6", "tool": "0", "x": "-59.1953125", "y": "155.15625"},
