@@ -65,5 +65,6 @@
 	{"key": "menu.sell", "value": "Verkaufen"},
 	{"key": "menu.inventory", "value": "Inventar"},
 	{"key": "menu.enable_inventory", "value": "Inventar verwenden"},
-	{"key": "menu.inventory_stack", "value": "Inventar Größe"}
+	{"key": "menu.inventory_stack", "value": "Inventar Größe"},
+	{"key": "menu.marker_cluster", "value": "Markers cluster"}
 ]

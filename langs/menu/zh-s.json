@@ -65,5 +65,6 @@
 	{"key": "menu.sell", "value": "已有数量"},
 	{"key": "menu.inventory", "value": "物品数量"},
 	{"key": "menu.enable_inventory", "value": "是否启用数量功能"},
-	{"key": "menu.inventory_stack", "value": "物品数量大小"}
+	{"key": "menu.inventory_stack", "value": "物品数量大小"},
+	{"key": "menu.marker_cluster", "value": "Markers cluster"}
 ]

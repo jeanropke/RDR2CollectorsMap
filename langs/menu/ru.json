@@ -65,5 +65,6 @@
 	{"key": "menu.sell", "value": "Продать набор"},
 	{"key": "menu.inventory", "value": "Инвентарь"},
 	{"key": "menu.enable_inventory", "value": "Вкл. инвентарь"},
-	{"key": "menu.inventory_stack", "value": "Макс. кол-во предметов в слоте"}
+	{"key": "menu.inventory_stack", "value": "Макс. кол-во предметов в слоте"},
+	{"key": "menu.marker_cluster", "value": "Markers cluster"}
 ]
