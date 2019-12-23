@@ -40,7 +40,7 @@
 		{"text": "cups_ten", "day": "3", "tool": "0", "x": "-50", "y": "123.2265625", "video":"https://www.youtube.com/watch?v=PBpwf3ILgkM&t=1284s"},
 		{"text": "cups_knight", "day": "3", "tool": "0", "x": "-75.6640625", "y": "151.171875", "video":"https://www.youtube.com/watch?v=PBpwf3ILgkM&t=1319s"},
 		{"text": "cups_page", "day": "3", "tool": "0", "x": "-88.625", "y": "80.375", "video":"https://www.youtube.com/watch?v=PBpwf3ILgkM&t=1349s"},
-		{"text": "cups_queen", "day": "3", "tool": "0", "x": "-112.640625", "y": "18.640625", "video":"https://www.youtube.com/watch?v=PBpwf3ILgkM&t=1381s"},
+		{"text": "cups_queen", "day": "3", "tool": "0", "x": "-112.9279", "y": "19.08675", "video":"https://www.youtube.com/watch?v=PBpwf3ILgkM&t=1381s"},
 		{"text": "cups_king", "day": "3", "tool": "0", "x": "-33.9921875", "y": "124.2265625", "video":"https://www.youtube.com/watch?v=PBpwf3ILgkM&t=1420s"},
 		{"text": "cups_ace", "day": "4", "tool": "0", "x": "-112.375", "y": "17.984375"},
 		{"text": "cups_two", "day": "4", "tool": "0", "x": "-53.828125", "y": "108.6171875"},
