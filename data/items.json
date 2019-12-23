@@ -249,7 +249,7 @@
 		{"text": "wands_five", "day": "6", "tool": "0", "x": "-42.8984375", "y": "81.8828125"},
 		{"text": "wands_six", "day": "6", "tool": "0", "x": "-42.10785", "y": "155.5625"},
 		{"text": "wands_seven", "day": "6", "tool": "0", "x": "-45.0234375", "y": "142.171875"},
-		{"text": "wands_eight", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "wands_eight", "day": "6", "tool": "0", "x": "-85", "y": "85.4375"},
 		{"text": "wands_nine", "day": "6", "tool": "0", "x": "", "y": ""},
 		{"text": "wands_ten", "day": "6", "tool": "0", "x": "", "y": ""},
 		{"text": "wands_knight", "day": "6", "tool": "0", "x": "-81.67695", "y": "147.69375"},
