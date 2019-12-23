@@ -599,7 +599,7 @@
 		{"text": "arrowhead_flint", "day": "4", "tool": "2", "x": "-104.1640625", "y": "48.046875"},
 		{"text": "arrowhead_agate", "day": "4", "tool": "2", "x": "-56.375", "y": "151.5390625"},
 		{"text": "arrowhead_rough", "day": "5", "tool": "2", "x": "-104.7578125", "y": "62.484375"},
-		{"text": "arrowhead_splintered", "day": "5", "tool": "1", "x": "-74.0703125", "y": "145.6328125"},
+		{"text": "arrowhead_splintered", "day": "5", "tool": "2", "x": "-74.0703125", "y": "145.6328125"},
 		{"text": "arrowhead_crude", "day": "5", "tool": "2", "x": "-105.26563", "y": "72.65625"},
 		{"text": "arrowhead_chipped", "day": "5", "tool": "2", "x": "-46.42188", "y": "98.33594"},
 		{"text": "arrowhead_feldspar", "day": "5", "tool": "2", "x": "-86.0078125", "y": "77.15625"},
