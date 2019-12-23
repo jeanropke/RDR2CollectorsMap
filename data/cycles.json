@@ -145,10 +145,10 @@
 			"card_wands"        : 3
         },
         "10": {
-            "american_flowers"  : -1,
+            "american_flowers"  : 7,
 			"antique_bottles"   : 3,
 			"arrowhead"         : 5,
-			"bird_eggs"         : -1,
+			"bird_eggs"         : 3,
 			"coin"              : 5,
 			"family_heirlooms"  : 3,
 			"lost_bracelet"     : 4,
