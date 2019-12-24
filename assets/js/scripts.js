@@ -48,7 +48,7 @@ var fastTravelData;
 var weeklySet = 'festive_feast_set';
 var weeklySetData = [];
 var date;
-var nocache = 169;
+var nocache = 170;
 
 var wikiLanguage = [];
 
