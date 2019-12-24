@@ -674,7 +674,7 @@
 			{"text": "arrowhead_agate","tool": "2","lat": "-34","lng": "114.8828125","video": "https://www.youtube.com/watch?v=EJYsStXzjX0&t=1418s"}
 		],
 		"4": [
-			{"text": "arrowhead_rough","tool": "1","lat": "-72.2109375","lng": "142.09375"},
+			{"text": "arrowhead_rough","tool": "2","lat": "-72.2109375","lng": "142.09375"},
 			{"text": "arrowhead_splintered","tool": "2","lat": "-41.453125","lng": "104.140625"},
 			{"text": "arrowhead_crude","tool": "2","lat": "-111.703125","lng": "17.984375"},
 			{"text": "arrowhead_chipped","tool": "2","lat": "-89.0078125","lng": "140.125"},
