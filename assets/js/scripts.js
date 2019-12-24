@@ -45,10 +45,10 @@ var nazarCurrentDate;
 
 var fastTravelData;
 
-var weeklySet = 'nightwatch_set';
+var weeklySet = 'festive_feast_set';
 var weeklySetData = [];
 var date;
-var nocache = 168;
+var nocache = 169;
 
 var wikiLanguage = [];
 

@@ -47,6 +47,10 @@
 		{"item": "ring_pilgrim_moonstone"},
 		{"item": "flower_wisteria"},
 		{"item": "egg_hawk_1"}
+	],
+	"festive_feast_set": [
+		{"item": "egg_goose_1"},
+		{"item": "bottle_cognac_bottle"}
 	]
 	
 }
