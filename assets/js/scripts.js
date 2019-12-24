@@ -48,7 +48,7 @@ var fastTravelData;
 var weeklySet = 'nightwatch_set';
 var weeklySetData = [];
 var date;
-var nocache = 167;
+var nocache = 168;
 
 var wikiLanguage = [];
 

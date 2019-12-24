@@ -174,7 +174,8 @@
 			"card_cups"         : 5,
 			"card_pentacles"    : 5,
 			"card_swords"       : 5,
-			"card_wands"        : 5
+			"card_wands"        : 5,
+			"random"        	: 4
         }
     }
 }

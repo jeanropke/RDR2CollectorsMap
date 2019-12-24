@@ -3,7 +3,7 @@
  */
 
 var Layers = {
-  itemMarkersLayer: Settings.markerCluster ? L.markerClusterGroup({maxClusterRadius: 8}) : new L.LayerGroup(),
+  itemMarkersLayer: Settings.markerCluster ? L.markerClusterGroup({ maxClusterRadius: 8 }) : new L.LayerGroup(),
   miscLayer: new L.LayerGroup(),
   encountersLayer: new L.LayerGroup()
 };
@@ -75,9 +75,12 @@ var MapBase = {
   },
 
   setMarkers: function (data) {
-    $.each(data, function (_category, _markers) {
-      $.each(_markers, function (key, marker) {
-        markers.push(new Marker(marker.text, marker.x, marker.y, marker.tool, marker.day, _category, marker.subdata, marker.video, true));
+    $.each(data, function (_category, _cycles) {
+      $.each(_cycles, function (day, _markers) {
+        $.each(_markers, function(key, marker){
+          markers.push(new Marker(marker.text, marker.lat, marker.lng, marker.tool, day, _category, marker.subdata, marker.video, true));
+ 
+        });
       });
     });
     uniqueSearchMarkers = markers;
