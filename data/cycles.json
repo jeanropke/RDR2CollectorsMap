@@ -159,6 +159,22 @@
 			"card_pentacles"    : 6,
 			"card_swords"       : 6,
 			"card_wands"        : 6
+        },
+        "11": {
+            "american_flowers"  : 6,
+			"antique_bottles"   : 4,
+			"arrowhead"         : 4,
+			"bird_eggs"         : 5,
+			"coin"              : 6,
+			"family_heirlooms"  : 6,
+			"lost_bracelet"     : 2,
+			"lost_earrings"     : 2,
+			"lost_necklaces"    : 2,
+			"lost_ring"         : 2,
+			"card_cups"         : 5,
+			"card_pentacles"    : 5,
+			"card_swords"       : 5,
+			"card_wands"        : 5
         }
     }
 }
