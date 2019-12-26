@@ -1092,35 +1092,59 @@
 		"4": [
 			{"text": "flower_texas_bluebonnet","tool": "0","subdata": "texas_bluebonnet","lat": "-90.859375","lng": "99.53125"},
 			{"text": "flower_texas_bluebonnet_2","tool": "0","subdata": "texas_bluebonnet","lat": "-112.9921875","lng": "25.796875"},
+			{"text": "flower_texas_bluebonnet_3","tool": "0","subdata": "texas_bluebonnet","lat": "-118.60722","lng": "38.765625"},
+			{"text": "flower_texas_bluebonnet_4","tool": "0","subdata": "texas_bluebonnet","lat": "-91.97","lng": "93.61"},
+			{"text": "flower_texas_bluebonnet_5","tool": "0","subdata": "texas_bluebonnet","lat": "-115.63","lng": "43.88"},
+			{"text": "flower_texas_bluebonnet_6","tool": "0","subdata": "texas_bluebonnet","lat": "-119.40625","lng": "25.5078125"},
+
 			{"text": "flower_bitterweed_1","tool": "0","subdata": "bitterweed","lat": "-49.8828125","lng": "148.0234375"},
 			{"text": "flower_bitterweed_2","tool": "0","subdata": "bitterweed","lat": "-57.5234375","lng": "146.140625"},
 			{"text": "flower_bitterweed_3","tool": "0","subdata": "bitterweed","lat": "-54.28125","lng": "84.7265625"},
 			{"text": "flower_bitterweed_4","tool": "0","subdata": "bitterweed","lat": "-53.265625","lng": "71.796875"},
+
 			{"text": "flower_agarita_1","tool": "0","subdata": "agarita","lat": "-108.28125","lng": "66.9921875"},
 			{"text": "flower_agarita_2","tool": "0","subdata": "agarita","lat": "-119.1171875","lng": "54.1484375"},
+
 			{"text": "flower_wild_rhubarb","tool": "0","subdata": "wild_rhubarb","lat": "-104.6328125","lng": "87.625"},
 			{"text": "flower_wild_rhubarb_2","tool": "0","subdata": "wild_rhubarb","lat": "-101.4531","lng": "52.1328"},
+			{"text": "flower_wild_rhubarb_3","tool": "0","subdata": "wild_rhubarb","lat": "-103.97","lng": "73.84"},
+			{"text": "flower_wild_rhubarb_4","tool": "0","subdata": "wild_rhubarb","lat": "-95.890625","lng": "55.8046875"},
+			{"text": "flower_wild_rhubarb_5","tool": "0","subdata": "wild_rhubarb","lat": "-112.40314","lng": "52.9995"},
+			{"text": "flower_wild_rhubarb_6","tool": "0","subdata": "wild_rhubarb","lat": "-110.26","lng": "35.46"},
+
 			{"text": "flower_cardinal","tool": "0","subdata": "cardinal","lat": "-92.2421875","lng": "141.15625"},
 			{"text": "flower_cardinal_2","tool": "0","subdata": "cardinal","lat": "-69.0078125","lng": "147"},
 			{"text": "flower_cardinal_3","tool": "0","subdata": "cardinal","lat": "-81.53","lng": "141.55"},
-			{"text": "flower_cardinal_4","tool": "0","subdata": "cardinal","lat": "-72.492187","lng": "148.804687"},
+			{"text": "flower_cardinal_4","tool": "0","subdata": "cardinal","lat": "-74.87977","lng": "148.75633"},
 			{"text": "flower_cardinal_5","tool": "0","subdata": "cardinal","lat": "-81.265625","lng": "139.15625"},
 			{"text": "flower_cardinal_6","tool": "0","subdata": "cardinal","lat": "-76.4296875","lng": "134.734375"},
+			{"text": "flower_cardinal_7","tool": "0","subdata": "cardinal","lat": "-87.6484375","lng": "142.5859375"},
+			{"text": "flower_cardinal_8","tool": "0","subdata": "cardinal","lat": "-94.6328125","lng": "142.8984375"},
+			{"text": "flower_cardinal_9","tool": "0","subdata": "cardinal","lat": "-72.38252","lng": "147.16507"},
+
 			{"text": "flower_creek_plum","tool": "0","subdata": "creek_plum","lat": "-67.53906","lng": "81.2343"},
 			{"text": "flower_creek_plum_2","tool": "0","subdata": "creek_plum","lat": "-85.94","lng": "123.16"},
 			{"text": "flower_creek_plum_3","tool": "0","subdata": "creek_plum","lat": "-70.12","lng": "93.31"},
+
 			{"text": "flower_blood_flower_1","tool": "0","subdata": "blood_flower","lat": "-82.7578125","lng": "145.34375"},
 			{"text": "flower_blood_flower_2","tool": "0","subdata": "blood_flower","lat": "-73.21875","lng": "146.125"},
 			{"text": "flower_blood_flower_3","tool": "0","subdata": "blood_flower","lat": "-69.046875","lng": "144.578125"},
+
 			{"text": "flower_chocolate_daisy","tool": "0","subdata": "chocolate_daisy","lat": "-78.9","lng": "123.83"},
 			{"text": "flower_chocolate_daisy_2","tool": "0","subdata": "chocolate_daisy","lat": "-94.8671","lng": "125.375"},
 			{"text": "flower_chocolate_daisy_3","tool": "0","subdata": "chocolate_daisy","lat": "-72.22","lng": "122.38"},
 			{"text": "flower_chocolate_daisy_4","tool": "0","subdata": "chocolate_daisy","lat": "-75.34","lng": "95.81"},
 			{"text": "flower_chocolate_daisy_5","tool": "0","subdata": "chocolate_daisy","lat": "-81.7","lng": "85.52"},
 			{"text": "flower_chocolate_daisy_6","tool": "0","subdata": "chocolate_daisy","lat": "-72.375","lng": "115.40625"},
+			{"text": "flower_chocolate_daisy_7","tool": "0","subdata": "chocolate_daisy","lat": "-68.203125","lng": "102.40625"},
+			{"text": "flower_chocolate_daisy_8","tool": "0","subdata": "chocolate_daisy","lat": "-64.06391","lng": "95.5073"},
+
 			{"text": "flower_wisteria","tool": "0","subdata": "wisteria","lat": "-47","lng": "148.171875"},
 			{"text": "flower_wisteria_2","tool": "0","subdata": "wisteria","lat": "-34.85","lng": "152.06"},
-			{"text": "flower_wisteria_3","tool": "0","subdata": "wisteria","lat": "-81.05","lng": "80.73"}
+			{"text": "flower_wisteria_3","tool": "0","subdata": "wisteria","lat": "-81.05","lng": "80.73"},
+			{"text": "flower_wisteria_4","tool": "0","subdata": "wisteria","lat": "-95.11700","lng": "78.30468"},
+			{"text": "flower_wisteria_5","tool": "0","subdata": "wisteria","lat": "-88.14843","lng": "73.49218"},
+			{"text": "flower_wisteria_6","tool": "0","subdata": "wisteria","lat": "-72.328125","lng": "77.984375"}
 		],
 		"5": [
 			{"text": "flower_texas_bluebonnet","tool": "0","subdata": "texas_bluebonnet","lat": "-117.9296875","lng": "18.734375"},
