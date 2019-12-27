@@ -45,10 +45,9 @@ var nazarCurrentDate;
 
 var fastTravelData;
 
-var weeklySet = 'festive_feast_set';
 var weeklySetData = [];
 var date;
-var nocache = 173;
+var nocache = 174;
 
 var wikiLanguage = [];
 
