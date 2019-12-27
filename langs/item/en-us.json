@@ -65,6 +65,7 @@
 	{"key": "cups_four_1.desc", "value": "On top of fireplace inside building."},
 	{"key": "cups_four_2.desc", "value": ""},
 	{"key": "cups_four_3.desc", "value": "On window seal by the outhouse."},
+	{"key": "cups_four_3.desc", "value": "On a box near a fountain with a light."},
 
 	{"key": "cups_five.name", "value": "Five of Cups"},
 	{"key": "cups_five_1.desc", "value": "On a table next to a scale."},
@@ -75,6 +76,7 @@
 	{"key": "cups_six_1.desc", "value": "Inside on the eastern windowsil."},
 	{"key": "cups_six_2.desc", "value": "On the back of the wagon."},
 	{"key": "cups_six_3.desc", "value": "On top of wood box/table."},
+	{"key": "cups_six_4.desc", "value": "On a table right side of the yellow and green house."},
 
 	{"key": "cups_seven.name", "value": "Seven of Cups"},
 	{"key": "cups_seven_1.desc", "value": "On a barrel outside of the shed."},
@@ -85,11 +87,13 @@
 	{"key": "cups_eight_1.desc", "value": "On a barrel underneath an awning."},
 	{"key": "cups_eight_2.desc", "value": "On the right most shelf at the shootingrange."},
 	{"key": "cups_eight_3.desc", "value": "Inside the pit latrine."},
+	{"key": "cups_eight_4.desc", "value": "Front side of the house on a table."},
 
 	{"key": "cups_nine.name", "value": "Nine of Cups"},
 	{"key": "cups_nine_1.desc", "value": "On window sill of building."},
 	{"key": "cups_nine_2.desc", "value": "Inside building, under the bed."},
 	{"key": "cups_nine_3.desc", "value": "On shelf right side of entrance."},
+	{"key": "cups_nine_4.desc", "value": "On some boxes behind the out house."},
 
 	{"key": "cups_ten.name", "value": "Ten of Cups"},
 	{"key": "cups_ten_1.desc", "value": "on table beside bucket of water."},
@@ -100,36 +104,43 @@
 	{"key": "cups_knight_1.desc", "value": "Inside the eastern cabin."},
 	{"key": "cups_knight_2.desc", "value": "On a table underneath the awning in the back. of wands"},
 	{"key": "cups_knight_3.desc", "value": "On a crate under the awnining of the barn."},
+	{"key": "cups_knight_4.desc", "value": "On a box with a sheet haning next to it."},
 
 	{"key": "cups_page.name", "value": "Page of Cups"},
 	{"key": "cups_page_1.desc", "value": "On the window sill in the north western room."},
 	{"key": "cups_page_2.desc", "value": "In a brokendown outhouse."},
 	{"key": "cups_page_3.desc", "value": "On the table near the water tubs."},
+	{"key": "cups_page_4.desc", "value": "On the fireplace inside the house."},
 
 	{"key": "cups_queen.name", "value": "Queen of Cups"},
 	{"key": "cups_queen_1.desc", "value": "On top of the first nightstand to the right."},
 	{"key": "cups_queen_2.desc", "value": "On top of barrel right side of dock."},
 	{"key": "cups_queen_3.desc", "value": "Inside the mine on a crate next to a lantern.<br/><img src=\"https://i.imgur.com/ciqlFTG.png\" style=\"width:200px;\">"},
+	{"key": "cups_queen_4.desc", "value": "On a table with tools left side inside the stable."},
 
 	{"key": "cups_king.name", "value": "King of Cups"},
 	{"key": "cups_king_1.desc", "value": "On a table on the second floor. Walk up the stairs."},
 	{"key": "cups_king_2.desc", "value": ""},
 	{"key": "cups_king_3.desc", "value": "Inside the cave."},
+	{"key": "cups_king_4.desc", "value": "On a cuboard behind the sofa."},
 
 	{"key": "swords_ace.name", "value": "Ace of Swords"},
 	{"key": "swords_ace_1.desc", "value": "On top level of windmill. Climb the ladders."},
 	{"key": "swords_ace_2.desc", "value": "In the windowsil on the upper floor of the barn."},
 	{"key": "swords_ace_3.desc", "value": ""},
+	{"key": "swords_ace_4.desc", "value": "Inside the shack with the fireplace outside it"},
 
 	{"key": "swords_two.name", "value": "Two of Swords"},
 	{"key": "swords_two_1.desc", "value": "On the table on the front porch."},
 	{"key": "swords_two_2.desc", "value": "In The eastern broken down window."},
 	{"key": "swords_two_3.desc", "value": "On crates next to a wagon."},
+	{"key": "swords_two_4.desc", "value": "On a box by a fireplace"},
 
 	{"key": "swords_three.name", "value": "Three of Swords"},
 	{"key": "swords_three_1.desc", "value": "On a windowsil left of the house."},
 	{"key": "swords_three_2.desc", "value": "On top of the tower. Climb the ladders."},
 	{"key": "swords_three_3.desc", "value": "In the theatre tent on a chair in the front row."},
+	{"key": "swords_three_4.desc", "value": "On a table with some cloths."},
 
 	{"key": "swords_four.name", "value": "Four of Swords"},
 	{"key": "swords_four_1.desc", "value": "Up the ladder, on some wooden crates."},
@@ -140,26 +151,31 @@
 	{"key": "swords_five_1.desc", "value": "On white table inside gazebo."},
 	{"key": "swords_five_2.desc", "value": "On a bench under the front porch."},
 	{"key": "swords_five_3.desc", "value": "Behind the building on a crate."},
+	{"key": "swords_five_4.desc", "value": "On the dinner table inside the house"},
 
 	{"key": "swords_six.name", "value": "Six of Swords"},
 	{"key": "swords_six_1.desc", "value": "On a barrel in a tent."},
 	{"key": "swords_six_2.desc", "value": "On middle dock post."},
-	{"key": "swords_six_3.desc", "value": "on top of the windmill tower."},
+	{"key": "swords_six_3.desc", "value": "On top of the windmill tower."},
+	{"key": "swords_six_4.desc", "value": "On a window sill."},
 
 	{"key": "swords_seven.name", "value": "Seven of Swords"},
 	{"key": "swords_seven_1.desc", "value": "Next to a blue barrel on the south west dock."},
 	{"key": "swords_seven_2.desc", "value": "In the back of a wagon on a green crate."},
 	{"key": "swords_seven_3.desc", "value": "Underneath the awning on a bench. Watch for grizzly bear."},
+	{"key": "swords_seven_4.desc", "value": "Inside the house on a shelf in the basement floor."},
 
 	{"key": "swords_eight.name", "value": "Eight of Swords"},
 	{"key": "swords_eight_1.desc", "value": "On a white table with a chess board."},
 	{"key": "swords_eight_2.desc", "value": "On a white table with a large ceramic bottle."},
 	{"key": "swords_eight_3.desc", "value": "On barrel inside barn doors."},
+	{"key": "swords_eight_4.desc", "value": "Inside a cave (watch out for the drop down)"},
 
 	{"key": "swords_nine.name", "value": "Nine of Swords"},
 	{"key": "swords_nine_1.desc", "value": "On the back of the haywagon."},
 	{"key": "swords_nine_2.desc", "value": "On top of the water tower. Need to climb ladder."},
 	{"key": "swords_nine_3.desc", "value": ""},
+	{"key": "swords_nine_4.desc", "value": "On a railing ontop of the house climb the ladder inside"},
 
 	{"key": "swords_ten.name", "value": "Ten of Swords"},
 	{"key": "swords_ten_1.desc", "value": "On a shelf above the coathooks directly to the right."},
@@ -170,11 +186,13 @@
 	{"key": "swords_knight_1.desc", "value": "On top of building."},
 	{"key": "swords_knight_2.desc", "value": ""},
 	{"key": "swords_knight_3.desc", "value": "In a boat."},
+	{"key": "swords_knight_4.desc", "value": "On the table inside the shack."},
 
 	{"key": "swords_page.name", "value": "Page of Swords"},
 	{"key": "swords_page_1.desc", "value": "On the windowsil of the outhouse."},
 	{"key": "swords_page_2.desc", "value": "On the log bench with a lantern on it"},
 	{"key": "swords_page_3.desc", "value": "Sitting on crates beside a pile of silver pipes."},
+	{"key": "swords_page_4.desc", "value": "In a barrel right side of the house"},
 
 	{"key": "swords_queen.name", "value": "Queen of Swords"},
 	{"key": "swords_queen_1.desc", "value": "Inside building on shelf against south wall."},
@@ -185,6 +203,7 @@
 	{"key": "swords_king_1.desc", "value": "On the shelf behind the counter in Algernon Wasp's Shop."},
 	{"key": "swords_king_2.desc", "value": "On well."},
 	{"key": "swords_king_3.desc", "value": "Inside fenced in area on top of blue barrel."},
+	{"key": "swords_king_4.desc", "value": "Inside the shack on the table to the right"},
 
 	{"key": "wands_ace.name", "value": "Ace of Wands"},
 	{"key": "wands_ace_1.desc", "value": "On top of piano in corner of room inside house on main floor"},
@@ -195,6 +214,7 @@
 	{"key": "wands_two_1.desc", "value": "On a bench on the patio of the house."},
 	{"key": "wands_two_2.desc", "value": "On a sidetable on the front porch."},
 	{"key": "wands_two_3.desc", "value": "On the side of the pier."},
+	{"key": "wands_two_4.desc", "value": "On a box leftside inside the barn."},
 
 	{"key": "wands_three.name", "value": "Three of Wands"},
 	{"key": "wands_three_1.desc", "value": "Outside on the left side of the chimney."},
@@ -225,6 +245,7 @@
 	{"key": "wands_eight_1.desc", "value": "On shelf against the south wall of saloon."},
 	{"key": "wands_eight_2.desc", "value": "On a barrel on the top floor of the barn."},
 	{"key": "wands_eight_3.desc", "value": ""},
+	{"key": "wands_eight_4.desc", "value": "On some plans by the station"},
 
 	{"key": "wands_nine.name", "value": "Nine of Wands"},
 	{"key": "wands_nine_1.desc", "value": "Get on shorter roof. Card is on window sill."},
@@ -235,6 +256,7 @@
 	{"key": "wands_ten_1.desc", "value": "On the elevated platform in two trees."},
 	{"key": "wands_ten_2.desc", "value": ""},
 	{"key": "wands_ten_3.desc", "value": "On a broken wagon."},
+	{"key": "wands_ten_4.desc", "value": "On a bench on the front porch."},
 
 	{"key": "wands_knight.name", "value": "Knight of Wands"},
 	{"key": "wands_knight_1.desc", "value": "In the back of the hut on the right side of the counter."},
@@ -245,6 +267,7 @@
 	{"key": "wands_page_1.desc", "value": "In basement on the crates."},
 	{"key": "wands_page_2.desc", "value": "On the shelving unit next to the door."},
 	{"key": "wands_page_3.desc", "value": "Inside a cave."},
+	{"key": "wands_page_4.desc", "value": "On a table on the boat."},
 
 	{"key": "wands_queen.name", "value": "Queen of Wands"},
 	{"key": "wands_queen_1.desc", "value": "On top of a barrel in the boat."},
@@ -271,6 +294,7 @@
 	{"key": "pentacles_three_1.desc", "value": "Behind the post office on the railing at the top of the stairs."},
 	{"key": "pentacles_three_2.desc", "value": "On the larger table in the back"},
 	{"key": "pentacles_three_3.desc", "value": "Outside. Sitting on bench of broken down wagon."},
+	{"key": "pentacles_three_4.desc", "value": "Inside the house on a piano."},
 
 	{"key": "pentacles_four.name", "value": "Four of Pentacles"},
 	{"key": "pentacles_four_1.desc", "value": "On top of the well cover. Watch out bears!"},
@@ -282,42 +306,49 @@
 	{"key": "pentacles_five_1.desc", "value": "Inside the house on the desk below the window."},
 	{"key": "pentacles_five_2.desc", "value": ""},
 	{"key": "pentacles_five_3.desc", "value": "In the windowsil with with barrels infront of it."},
+	{"key": "pentacles_five_4.desc", "value": "On the table inside the house."},
 	{"key": "pentacles_five_6.desc", "value": "Inside the house on top of the fireplace."},
 
 	{"key": "pentacles_six.name", "value": "Six of Pentacles"},
 	{"key": "pentacles_six_1.desc", "value": "In second floor of building on desk."},
 	{"key": "pentacles_six_2.desc", "value": "On the back of a wagon."},
 	{"key": "pentacles_six_3.desc", "value": "On a crate on the ground floor."},
+	{"key": "pentacles_six_4.desc", "value": "On the table inside the house."},
 	{"key": "pentacles_six_6.desc", "value": "On a table outside of the house to the left."},
 
 	{"key": "pentacles_seven.name", "value": "Seven of Pentacles"},
 	{"key": "pentacles_seven_1.desc", "value": "Ontop of a blue barrel."},
 	{"key": "pentacles_seven_2.desc", "value": "In Alley. On top of two crates."},
 	{"key": "pentacles_seven_3.desc", "value": ""},
+	{"key": "pentacles_seven_4.desc", "value": "On some boxes in a allyway"},
 	{"key": "pentacles_seven_6.desc", "value": "On the railing outside the top floor double doors of the saloon"},
 
 	{"key": "pentacles_eight.name", "value": "Eight of Pentacles"},
 	{"key": "pentacles_eight_1.desc", "value": "Inside house on a window sill in a bedroom."},
 	{"key": "pentacles_eight_2.desc", "value": "On top of a barrel."},
 	{"key": "pentacles_eight_3.desc", "value": "On top of the table."},
+	{"key": "pentacles_eight_4.desc", "value": "Inside the factory on a railing with a lantern"},
 	{"key": "pentacles_eight_6.desc", "value": "On a table on the front porch"},
 
 	{"key": "pentacles_nine.name", "value": "Nine of Pentacles"},
 	{"key": "pentacles_nine_1.desc", "value": "Inside building on a shelf in the storeroom."},
 	{"key": "pentacles_nine_2.desc", "value": "Inside the house on a table."},
 	{"key": "pentacles_nine_3.desc", "value": ""},
+	{"key": "pentacles_nine_4.desc", "value": "Inside the house on a worktable"},
 	{"key": "pentacles_nine_6.desc", "value": "On the bench outside the house"},
 
 	{"key": "pentacles_ten.name", "value": "Ten of Pentacles"},
 	{"key": "pentacles_ten_1.desc", "value": "On window sill. Climb ladder to get to it."},
 	{"key": "pentacles_ten_2.desc", "value": "On a crate in the middle of the broken down house."},
 	{"key": "pentacles_ten_3.desc", "value": "Inside house on fireplace."},
+	{"key": "pentacles_ten_4.desc", "value": "Inside a fallen box in the house."},
 	{"key": "pentacles_ten_6.desc", "value": "Outside the house on the railing"},
 
 	{"key": "pentacles_knight.name", "value": "Knight of Pentacles"},
 	{"key": "pentacles_knight_1.desc", "value": "On a crate sitting on the porch."},
 	{"key": "pentacles_knight_2.desc", "value": "On southern part of boat that is docked."},
 	{"key": "pentacles_knight_3.desc", "value": "In the basement on a barrel."},
+	{"key": "pentacles_knight_4.desc", "value": "On a pillar that holds the bridge."},
 	{"key": "pentacles_knight_6.desc", "value": "Inside the house in the dinner table with the lantern above it."},
 
 	{"key": "pentacles_page.name", "value": "Page of Pentacles"},
@@ -330,7 +361,7 @@
 	{"key": "pentacles_queen_1.desc", "value": "In the jai on the bench between the two cells."},
 	{"key": "pentacles_queen_2.desc", "value": "Inside on a small table next to the entrance. Watchout Cougars!"},
 	{"key": "pentacles_queen_3.desc", "value": "Inside burnt building on top of fire place."},
-	{"key": "pentacles_queen_4.desc", "value": ""},
+	{"key": "pentacles_queen_4.desc", "value": "On some planks on the scaffolding"},
 	{"key": "pentacles_queen_5.desc", "value": ""},
 	{"key": "pentacles_queen_6.desc", "value": "On the railing secound floor of the construction over the wood fence"},
 
@@ -354,16 +385,20 @@
 	{"key": "coin_one_cent_token_1.desc", "value": "Besided the eastern tree."},
 	{"key": "coin_one_cent_token_2.desc", "value": "Near the crates next to the tree."},
 	{"key": "coin_one_cent_token_3.desc", "value": "At the edge of the cliff, follow the natural path downward from the top of the cliff."},	
+	{"key": "coin_one_cent_token_6.desc", "value": "By the broken wagon."},	
 
 	{"key": "coin_silver_dollar.name", "value": "1794 Silver Dollar Coin"},
 	{"key": "coin_silver_dollar_1.desc", "value": "Next to the chimney."},
 	{"key": "coin_silver_dollar_2.desc", "value": "Underneath the house."},
 	{"key": "coin_silver_dollar_3.desc", "value": "Inside the mine at the end of the tunnel."},
+	{"key": "coin_silver_dollar_4.desc", "value": "By a large rock where the waterfall starts."},
+	{"key": "coin_silver_dollar_6.desc", "value": "By the fallen dead tree."},
 
 	{"key": "coin_new_yorke_token.name", "value": "1700 New Yorke Token Coin"},
 	{"key": "coin_new_yorke_token_1.desc", "value": "Inside the cave."},
 	{"key": "coin_new_yorke_token_2.desc", "value": "Next to the two trees. <br/> <img width='200' src='https://imgur.com/mBRhNaf.png' />"},
 	{"key": "coin_new_yorke_token_3.desc", "value": "In the middle of the ruined house."},
+	{"key": "coin_new_yorke_token_6.desc", "value": "By the first step of stairs"},
 
 	{"key": "coin_five_dollar_bechtler.name", "value": "1800 Five Dollar Bechtler Coin"},
 	{"key": "coin_five_dollar_bechtler_1.desc", "value": "At trunk of dead tree. Beside two fallen tree trunks."},
@@ -394,6 +429,7 @@
 	{"key": "coin_half_eagle_1.desc", "value": "On a ledge almost at the top of the cliff."},
 	{"key": "coin_half_eagle_2.desc", "value": "Underneath the clotheslines."},
 	{"key": "coin_half_eagle_3.desc", "value": "Under bridge."},
+	{"key": "coin_half_eagle_6.desc", "value": "Above the stone letters N and O."},
 
 	{"key": "coin_gold_eagle.name", "value": "1797 Gold Eagle Coin"},
 	{"key": "coin_gold_eagle_1.desc", "value": "On shoreline near two trees."},
@@ -414,6 +450,7 @@
 	{"key": "coin_penny_1.desc", "value": "Next to a tree in the middle of the peninsula."},
 	{"key": "coin_penny_2.desc", "value": "On the right side of the dead tree."},
 	{"key": "coin_penny_3.desc", "value": "Next to a broken down wagon."},
+	{"key": "coin_penny_6.desc", "value": "Below the large tree."},
 
 	{"key": "egg_spoonbill.name", "value": "Spoonbill Egg"},
 	{"key": "egg_spoonbill_1.desc", "value": "In a tree. Shoot down with varmint rifle or bow using small game arrows."},
@@ -769,7 +806,7 @@
 	{"key": "ring_aubrey_onyx.name", "value": "Aubrey Onyx Ring"},
 	{"key": "ring_aubrey_onyx_1.desc", "value": "Besides the dead tree."},
 	{"key": "ring_aubrey_onyx_2.desc", "value": "On the side of the cliff near the wallpainting."},
-	{"key": "ring_aubrey_onyx_3.desc", "value": "On the landfill."},
+	{"key": "ring_aubrey_onyx_3.desc", "value": "On the landfill. Near some broken wagon wheels"},
 
 	{"key": "ring_bosque_emerald.name", "value": "Bosque Emerald Ring"},
 	{"key": "ring_bosque_emerald_1.desc", "value": "Between the bushes in a small clearing."},
