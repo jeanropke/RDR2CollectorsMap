@@ -66,10 +66,11 @@ var MapBase = {
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
-
-
    
-    Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map);
+    Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map, {keepSpiderfied: true});
+    Layers.oms.addListener('spiderfy', function(markers) {
+     MapBase.map.closePopup();
+    });
 
   },
 
