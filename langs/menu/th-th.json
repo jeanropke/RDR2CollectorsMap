@@ -40,6 +40,7 @@
 	{"key": "menu.fast_travel", "value": "Fast Travel"},
 	{"key": "menu.search_placeholder", "value": "ค้นหาไอเท็ม คั่นด้วย ;"},
 	{"key": "map.remove_add", "value": "ปิด/เปิด"},
+	{"key": "map.night_only", "value": "กลางคืนเท่านั้น - 10PM ถึง 5AM"},
 	{"key": "menu.collectables_value", "value": "มูลค่า"},
 	{"key": "menu.custom_routes", "value": "กำหนดเส้นทางเอง"},
 	{"key": "menu.import_route", "value": "น้ำเข้าเส้นทาง"},

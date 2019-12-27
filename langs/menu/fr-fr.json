@@ -40,6 +40,7 @@
 	{"key": "menu.fast_travel", "value": "Voyage Rapide"},
 	{"key": "menu.search_placeholder", "value": "Recherche d'objet. Séparés par des ;"},
 	{"key": "map.remove_add", "value": "Supprimer/Ajouter de la carte"},
+	{"key": "map.night_only", "value": "Night only - 10PM to 5AM"},
 	{"key": "menu.collectables_value", "value": "Valeur"},
 	{"key": "menu.custom_routes", "value": "Routes Personnalisées"},
 	{"key": "menu.import_route", "value": "Importer route"},

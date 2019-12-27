@@ -40,6 +40,7 @@
 	{"key": "menu.fast_travel", "value": "快速旅行"},
 	{"key": "menu.search_placeholder", "value": "搜索物品名称.用;隔开"},
 	{"key": "map.remove_add", "value": "移除/添加至地图"},
+	{"key": "map.night_only", "value": "Night only - 10PM to 5AM"},
 	{"key": "menu.collectables_value", "value": "价值"},
 	{"key": "menu.custom_routes", "value": "自定义路线"},
 	{"key": "menu.import_route", "value": "输入路线"},

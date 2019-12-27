@@ -313,7 +313,7 @@ var MapBase = {
     marker.isVisible = true;
 
     marker.title = (marker.category == 'random') ? Language.get("random_item.name") + marker.text.replace('random_item_', '') : Language.get(`${marker.text}.name`);
-    marker.description = Language.get(`${marker.text}_${marker.day}.desc`);;
+    marker.description = (marker.subdata == 'agarita' || marker.subdata == 'blood_flower' ? Language.get('map.night_only') : '') + Language.get(`${marker.text}_${marker.day}.desc`);
 
     tempMarker.bindPopup(MapBase.updateMarkerContent(marker))
       .on("click", function (e) {

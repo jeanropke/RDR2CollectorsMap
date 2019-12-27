@@ -40,6 +40,7 @@
 	{"key": "menu.fast_travel", "value": "Gyorsutazás"},
 	{"key": "menu.search_placeholder", "value": "Tárgyak keresése"},
 	{"key": "map.remove_add", "value": "Eltávolítás/Hozzáadás a térképről"},
+	{"key": "map.night_only", "value": "Night only - 10PM to 5AM"},
 	{"key": "menu.collectables_value", "value": "Érték"},
 	{"key": "menu.custom_routes", "value": "Egyedi Útvonalak"},
 	{"key": "menu.import_route", "value": "Ótvonal Importálása"},

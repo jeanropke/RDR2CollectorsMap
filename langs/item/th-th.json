@@ -657,14 +657,14 @@
 	{"key": "flower_bitterweed_2_3.desc", "value": ""},
 
 	{"key": "flower_agarita_1.name", "value": "Agarita Flower #1"},
-	{"key": "flower_agarita_1_1.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
-	{"key": "flower_agarita_1_2.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
-	{"key": "flower_agarita_1_3.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
+	{"key": "flower_agarita_1_1.desc", "value": ""},
+	{"key": "flower_agarita_1_2.desc", "value": ""},
+	{"key": "flower_agarita_1_3.desc", "value": ""},
 
 	{"key": "flower_agarita_2.name", "value": "Agarita Flower #2"},
-	{"key": "flower_agarita_2_1.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
-	{"key": "flower_agarita_2_2.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
-	{"key": "flower_agarita_2_3.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
+	{"key": "flower_agarita_2_1.desc", "value": ""},
+	{"key": "flower_agarita_2_2.desc", "value": ""},
+	{"key": "flower_agarita_2_3.desc", "value": ""},
 
 	{"key": "flower_wild_rhubarb.name", "value": "Wild Rhubarb Flower #1"},
 	{"key": "flower_wild_rhubarb_1.desc", "value": ""},
@@ -682,14 +682,14 @@
 	{"key": "flower_creek_plum_3.desc", "value": "เป็นพุ่มไม้"},
 
 	{"key": "flower_blood_flower_1.name", "value": "Blood Flower #1"},
-	{"key": "flower_blood_flower_1_1.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
-	{"key": "flower_blood_flower_1_2.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
-	{"key": "flower_blood_flower_1_3.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
+	{"key": "flower_blood_flower_1_1.desc", "value": ""},
+	{"key": "flower_blood_flower_1_2.desc", "value": ""},
+	{"key": "flower_blood_flower_1_3.desc", "value": ""},
 
 	{"key": "flower_blood_flower_2.name", "value": "Blood Flower  #2"},
-	{"key": "flower_blood_flower_2_1.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
-	{"key": "flower_blood_flower_2_2.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM"},
-	{"key": "flower_blood_flower_2_3.desc", "value": "กลางคือเท่านั้น - 10PM ถึง 5AM <br /> อยู่ระหว่างต้นไม้ 4 ต้น"},
+	{"key": "flower_blood_flower_2_1.desc", "value": ""},
+	{"key": "flower_blood_flower_2_2.desc", "value": ""},
+	{"key": "flower_blood_flower_2_3.desc", "value": " อยู่ระหว่างต้นไม้ 4 ต้น"},
 
 	{"key": "flower_chocolate_daisy.name", "value": "Chocolate Daisy Flower #1"},
 	{"key": "flower_chocolate_daisy_1.desc", "value": ""},

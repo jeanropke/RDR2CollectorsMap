@@ -40,6 +40,7 @@
 	{"key": "menu.fast_travel", "value": "Punkty szybkiej podróży"},
 	{"key": "menu.search_placeholder", "value": "Wpisz nazwę/y, oddziel kilka ;"},
 	{"key": "map.remove_add", "value": "Usuń z/dodaj do mapy"},
+	{"key": "map.night_only", "value": "Tylko w nocy - 22:00 do 5:00."},
 	{"key": "menu.collectables_value", "value": "Wartość"},
 	{"key": "menu.custom_routes", "value": "Własna trasa"},
 	{"key": "menu.import_route", "value": "Zaimportuj trasę"},
