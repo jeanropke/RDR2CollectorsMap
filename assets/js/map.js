@@ -3,9 +3,10 @@
  */
 
 var Layers = {
-  itemMarkersLayer: Settings.markerCluster ? L.markerClusterGroup({ maxClusterRadius: 8 }) : new L.LayerGroup(),
+  itemMarkersLayer: new L.LayerGroup(),
   miscLayer: new L.LayerGroup(),
-  encountersLayer: new L.LayerGroup()
+  encountersLayer: new L.LayerGroup(),
+  oms: null
 };
 
 var MapBase = {
@@ -65,6 +66,11 @@ var MapBase = {
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
+
+
+   
+    Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map);
+
   },
 
   loadMarkers: function () {
@@ -315,6 +321,8 @@ var MapBase = {
         if (customRouteEnabled) e.target.closePopup();
       });
     Layers.itemMarkersLayer.addLayer(tempMarker);
+    if(Settings.markerCluster)
+      Layers.oms.addMarker(tempMarker);
   },
 
   save: function () {
