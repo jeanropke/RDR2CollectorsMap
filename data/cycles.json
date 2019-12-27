@@ -193,6 +193,40 @@
 			"card_swords"       : 1,
 			"card_wands"        : 1,
 			"random"        	: 1
+        },
+        "13": {
+            "american_flowers"  : 4,
+			"antique_bottles"   : 5,
+			"arrowhead"         : 1,
+			"bird_eggs"         : 5,
+			"coin"              : 4,
+			"family_heirlooms"  : 5,
+			"lost_bracelet"     : 5,
+			"lost_earrings"     : 5,
+			"lost_necklaces"    : 5,
+			"lost_ring"         : 5,
+			"card_cups"         : 6,
+			"card_pentacles"    : 6,
+			"card_swords"       : 6,
+			"card_wands"        : 6,
+			"random"        	: -1
+        },
+        "14": {
+            "american_flowers"  : 8,
+			"antique_bottles"   : 1,
+			"arrowhead"         : 3,
+			"bird_eggs"         : 2,
+			"coin"              : 6,
+			"family_heirlooms"  : 2,
+			"lost_bracelet"     : 3,
+			"lost_earrings"     : 3,
+			"lost_necklaces"    : 3,
+			"lost_ring"         : 3,
+			"card_cups"         : 4,
+			"card_pentacles"    : 4,
+			"card_swords"       : 4,
+			"card_wands"        : 4,
+			"random"        	: 7
         }
     }
 }

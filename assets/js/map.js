@@ -149,10 +149,10 @@ var MapBase = {
   loadWeeklySet: function () {
     $.getJSON('data/weekly.json?nocache=' + nocache)
       .done(function (data) {
-        weeklySetData = data[weeklySet];
+        weeklySetData = data;
       });
 
-    console.log('weekly set loaded');
+    console.log('weekly sets loaded');
   },
 
   removeItemFromMap: function (itemName, category) {
@@ -287,7 +287,7 @@ var MapBase = {
 
     if (parseInt(toolType) < parseInt(marker.tool)) return;
 
-    var isWeekly = weeklySetData.filter(weekly => {
+    var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
       return weekly.item === marker.text;
     }).length > 0;
 
