@@ -10,6 +10,7 @@ english (en-en.json)
   - Tiax
   - sporb
   - Senexis
+  - Kaffe97
 
 german (de-de.json)
   - flameango
