@@ -66,10 +66,10 @@ var MapBase = {
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
-   
-    Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map, {keepSpiderfied: true});
-    Layers.oms.addListener('spiderfy', function(markers) {
-     MapBase.map.closePopup();
+
+    Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map, { keepSpiderfied: true });
+    Layers.oms.addListener('spiderfy', function (markers) {
+      MapBase.map.closePopup();
     });
 
   },
@@ -84,9 +84,9 @@ var MapBase = {
   setMarkers: function (data) {
     $.each(data, function (_category, _cycles) {
       $.each(_cycles, function (day, _markers) {
-        $.each(_markers, function(key, marker){
+        $.each(_markers, function (key, marker) {
           markers.push(new Marker(marker.text, marker.lat, marker.lng, marker.tool, day, _category, marker.subdata, marker.video, true));
- 
+
         });
       });
     });
@@ -322,7 +322,7 @@ var MapBase = {
         if (customRouteEnabled) e.target.closePopup();
       });
     Layers.itemMarkersLayer.addLayer(tempMarker);
-    if(Settings.markerCluster)
+    if (Settings.markerCluster)
       Layers.oms.addMarker(tempMarker);
   },
 
@@ -348,6 +348,9 @@ var MapBase = {
       });
     });
     console.log('saved');
+  },
+  convertCoords: function (lat, lng) {
+    console.log(`"lat": "${0.01554 * lng + -63.6}", "lng": "${0.01554 * lat + 111.35}"`);
   }
 };
 

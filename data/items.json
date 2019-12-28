@@ -1570,6 +1570,19 @@
 			{"text": "earring_endicott_diamond","tool": "2","lat": "-47.9140625","lng": "147.5859375"},
 			{"text": "earring_josephine_pearl","tool": "0","lat": "-65.1484375","lng": "129.6328125"},
 			{"text": "earring_emmeline_coral","tool": "2","lat": "-75.0625","lng": "140.1484375"}
+		],
+		"6": [
+			{"text": "earring_ursula_citrine","tool": "2","lat": "-47.75993814", "lng": "140.50414334"},
+			{"text": "earring_royal_victoria","tool": "2","lat": "-86.04850902", "lng": "122.81974766"},
+			{"text": "earring_calumet_turquoise","tool": "2","lat": "-48.01585086", "lng": "114.8384969"},
+			{"text": "earring_orchidee_diamond","tool": "2","lat": "-97.4371845", "lng": "131.90704238"},
+			{"text": "earring_sterling_tooth","tool": "2","lat": "-73.55695974", "lng": "144.30752726"},
+			{"text": "earring_harford_garnet","tool": "2","lat": "-65.92397592", "lng": "117.99962816"},
+			{"text": "earring_duchess_emerald","tool": "2","lat": "-62.27227794", "lng": "93.16134686"},
+			{"text": "earring_beauchene_ruby","tool": "2","lat": "-83.25388866", "lng": "147.56691794"},
+			{"text": "earring_endicott_diamond","tool": "2","lat": "-54.61688545", "lng": "140.43809834"},
+			{"text": "earring_josephine_pearl","tool": "2","lat": "-104.978575", "lng": "55.17871195"},
+			{"text": "earring_emmeline_coral","tool": "2","lat": "-70.31035848", "lng": "68.2676033"}
 		]
 	},
 	"lost_bracelet": {
