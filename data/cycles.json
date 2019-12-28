@@ -227,6 +227,23 @@
 			"card_swords"       : 4,
 			"card_wands"        : 4,
 			"random"        	: 7
+        },
+        "15": {
+            "american_flowers"  : 7,
+			"antique_bottles"   : 4,
+			"arrowhead"         : 1,
+			"bird_eggs"         : 4,
+			"coin"              : -1,
+			"family_heirlooms"  : -1,
+			"lost_bracelet"     : -1,
+			"lost_earrings"     : -1,
+			"lost_necklaces"    : -1,
+			"lost_ring"         : -1,
+			"card_cups"         : 1,
+			"card_pentacles"    : 1,
+			"card_swords"       : 1,
+			"card_wands"        : 1,
+			"random"        	: -1
         }
     }
 }

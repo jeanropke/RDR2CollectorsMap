@@ -1232,7 +1232,7 @@
 		"7": [
 			{"text": "flower_texas_bluebonnet","tool": "0","subdata": "texas_bluebonnet","lat": "-115.6328125","lng": "22.2734375"},
 			{"text": "flower_texas_bluebonnet_2","tool": "0","subdata": "texas_bluebonnet","lat": "-89.8359375","lng": "94.96875"},
-			{"text": "flower_texas_bluebonnet_3","tool": "0","subdata": "chocolate_daisy","lat": "-89.12735","lng": "98.59375"},
+			{"text": "flower_texas_bluebonnet_3","tool": "0","subdata": "texas_bluebonnet","lat": "-89.12735","lng": "98.59375"},
 			{"text": "flower_texas_bluebonnet_4","tool": "0","subdata": "texas_bluebonnet","lat": "-94.359375","lng": "89.15625"},
 			{"text": "flower_bitterweed_1","tool": "0","subdata": "bitterweed","lat": "-64.8274","lng": "145.046875"},
 			{"text": "flower_bitterweed_2","tool": "0","subdata": "bitterweed","lat": "-56.24926","lng": "141.328125"},
@@ -1433,6 +1433,19 @@
 			{"text": "ring_bosque_emerald","tool": "2","lat": "-34.921875","lng": "118.7578125"},
 			{"text": "ring_sackville_diamond","tool": "2","lat": "-47.6171875","lng": "100.6171875"},
 			{"text": "ring_thorburn_turquoise","tool": "2","lat": "-42.9296875","lng": "147.4375"}
+		],
+		"6": [
+			{"text": "ring_harland_coral","tool": "2","lat": "-102.0667059", "lng": "62.04711224"},
+			{"text": "ring_magnate_turquoise","tool": "2","lat": "-75.51170526", "lng": "146.2927"},
+			{"text": "ring_pilgrim_moonstone","tool": "2","lat": "-29.53001076", "lng": "136.0308925"},
+			{"text": "ring_bonnard_pearl","tool": "2","lat": "-110.24784768", "lng": "52.0293911"},
+			{"text": "ring_banais_topaz","tool": "2","lat": "-59.08541244", "lng": "149.31572738"},
+			{"text": "ring_beaulieux_diamond","tool": "2","lat": "-92.68786524", "lng": "141.8902181"},
+			{"text": "ring_yates_diamond","tool": "2","lat": "-65.83406925", "lng": "130.2779065"},
+			{"text": "ring_aubrey_onyx","tool": "2","lat": "-113.47426248", "lng": "68.2170206"},
+			{"text": "ring_bosque_emerald","tool": "2","lat": "-113.851325", "lng": "17.7430695"},
+			{"text": "ring_sackville_diamond","tool": "2","lat": "-50.68489248", "lng": "123.85443194"},
+			{"text": "ring_thorburn_turquoise","tool": "2","lat": "-36.4535", "lng": "119.63979745"}
 		]
 	},
 	"lost_necklaces": {
