@@ -1438,17 +1438,17 @@
 			{"text": "ring_thorburn_turquoise","tool": "2","lat": "-42.9296875","lng": "147.4375"}
 		],
 		"6": [
-			{"text": "ring_harland_coral","tool": "2","lat": "-102.0667059", "lng": "62.04711224"},
-			{"text": "ring_magnate_turquoise","tool": "2","lat": "-75.51170526", "lng": "146.2927"},
-			{"text": "ring_pilgrim_moonstone","tool": "2","lat": "-29.53001076", "lng": "136.0308925"},
-			{"text": "ring_bonnard_pearl","tool": "2","lat": "-110.24784768", "lng": "52.0293911"},
-			{"text": "ring_banais_topaz","tool": "2","lat": "-59.08541244", "lng": "149.31572738"},
-			{"text": "ring_beaulieux_diamond","tool": "2","lat": "-92.68786524", "lng": "141.8902181"},
-			{"text": "ring_yates_diamond","tool": "2","lat": "-65.83406925", "lng": "130.2779065"},
-			{"text": "ring_aubrey_onyx","tool": "2","lat": "-113.47426248", "lng": "68.2170206"},
-			{"text": "ring_bosque_emerald","tool": "2","lat": "-113.851325", "lng": "17.7430695"},
-			{"text": "ring_sackville_diamond","tool": "2","lat": "-50.68489248", "lng": "123.85443194"},
-			{"text": "ring_thorburn_turquoise","tool": "2","lat": "-36.4535", "lng": "119.63979745"}
+			{"text": "ring_harland_coral","tool": "2","lat": "-102.0171992", "lng": "62.05056512"},
+			{"text": "ring_magnate_turquoise","tool": "2","lat": "-75.49637488", "lng": "146.1877288"},
+			{"text": "ring_pilgrim_moonstone","tool": "2","lat": "-29.57385888", "lng": "135.93912784"},
+			{"text": "ring_bonnard_pearl","tool": "2","lat": "-110.18781184", "lng": "52.0457368"},
+			{"text": "ring_banais_topaz","tool": "2","lat": "-59.09122272", "lng": "149.20686544"},
+			{"text": "ring_beaulieux_diamond","tool": "2","lat": "-92.65042912", "lng": "141.7909128"},
+			{"text": "ring_yates_diamond","tool": "2","lat": "-65.831194", "lng": "130.19354624"},
+			{"text": "ring_aubrey_onyx","tool": "2","lat": "-113.41007424", "lng": "68.2125328"},
+			{"text": "ring_bosque_emerald","tool": "2","lat": "-113.78665152", "lng": "17.80354176"},
+			{"text": "ring_sackville_diamond","tool": "2","lat": "-50.70151424", "lng": "123.77833872"},
+			{"text": "ring_thorburn_turquoise","tool": "2","lat": "-36.48843792", "lng": "119.56912848"}
 		]
 	},
 	"lost_necklaces": {
@@ -1506,6 +1506,17 @@
 			{"text": "necklace_gosselin_white_gold","tool": "2","lat": "-106.296875","lng": "59.40625"},
 			{"text": "necklace_dane_topaz","tool": "0","lat": "-36.7578125","lng": "105.15625"},
 			{"text": "necklace_tuamotu_pearl","tool": "2","lat": "-60.8203125","lng": "113.3671875"}
+		],
+		"6": [
+			{"text": "necklace_blakely_miniatue","tool": "2","lat": "-38.02426608", "lng": "152.9535952"},
+			{"text": "necklace_richelieu_amethyst","tool": "2","lat": "-55.298927792", "lng": "154.44090784"},
+			{"text": "necklace_pelle_pearl","tool": "2","lat": "-64.6905904", "lng": "103.79871328"},
+			{"text": "necklace_ainsworth_cross","tool": "2","lat": "-51.2013824", "lng": "134.10174608"},
+			{"text": "necklace_braxton_amethyst","tool": "2","lat": "-75.32121616", "lng": "87.91241024"},
+			{"text": "necklace_rou_pearl","tool": "2","lat": "-103.77542896", "lng": "24.63200032"},
+			{"text": "necklace_gosselin_white_gold","tool": "2","lat": "-83.8317944", "lng": "137.87155408"},
+			{"text": "necklace_dane_topaz","tool": "2","lat": "-77.19229184", "lng": "91.07772976"},
+			{"text": "necklace_tuamotu_pearl","tool": "2","lat": "-79.48892592", "lng": "127.84071424"}
 		]
 	},
 	"lost_earrings": {
@@ -1575,17 +1586,17 @@
 			{"text": "earring_emmeline_coral","tool": "2","lat": "-75.0625","lng": "140.1484375"}
 		],
 		"6": [
-			{"text": "earring_ursula_citrine","tool": "2","lat": "-47.75993814", "lng": "140.50414334"},
-			{"text": "earring_royal_victoria","tool": "2","lat": "-86.04850902", "lng": "122.81974766"},
-			{"text": "earring_calumet_turquoise","tool": "2","lat": "-48.01585086", "lng": "114.8384969"},
-			{"text": "earring_orchidee_diamond","tool": "2","lat": "-97.4371845", "lng": "131.90704238"},
-			{"text": "earring_sterling_tooth","tool": "2","lat": "-73.55695974", "lng": "144.30752726"},
-			{"text": "earring_harford_garnet","tool": "2","lat": "-65.92397592", "lng": "117.99962816"},
-			{"text": "earring_duchess_emerald","tool": "2","lat": "-62.27227794", "lng": "93.16134686"},
-			{"text": "earring_beauchene_ruby","tool": "2","lat": "-83.25388866", "lng": "147.56691794"},
-			{"text": "earring_endicott_diamond","tool": "2","lat": "-54.61688545", "lng": "140.43809834"},
-			{"text": "earring_josephine_pearl","tool": "2","lat": "-104.978575", "lng": "55.17871195"},
-			{"text": "earring_emmeline_coral","tool": "2","lat": "-70.31035848", "lng": "68.2676033"}
+			{"text": "earring_ursula_citrine","tool": "2","lat": "-47.78032432", "lng": "140.40662192"},
+			{"text": "earring_royal_victoria","tool": "2","lat": "-86.01961776", "lng": "122.74498608"},
+			{"text": "earring_calumet_turquoise","tool": "2","lat": "-48.03590768", "lng": "114.7740072"},
+			{"text": "earring_orchidee_diamond","tool": "2","lat": "-97.393636", "lng": "90.75941456"},
+			{"text": "earring_sterling_tooth","tool": "2","lat": "-73.54414512", "lng": "144.20511088"},
+			{"text": "earring_harford_garnet","tool": "2","lat": "-65.92098496", "lng": "117.93107008"},
+			{"text": "earring_duchess_emerald","tool": "2","lat": "-62.27398672", "lng": "93.12475568"},
+			{"text": "earring_beauchene_ruby","tool": "2","lat": "-83.22859408", "lng": "147.46030672"},
+			{"text": "earring_endicott_diamond","tool": "2","lat": "-54.62844672", "lng": "140.34066192"},
+			{"text": "earring_josephine_pearl","tool": "2","lat": "-104.92532128", "lng": "55.19100448"},
+			{"text": "earring_emmeline_coral","tool": "2","lat": "-70.30172224", "lng": "68.2630504"}
 		]
 	},
 	"lost_bracelet": {
@@ -1638,6 +1649,16 @@
 			{"text": "bracelet_elliston_carved","tool": "0","lat": "-117.4453125","lng": "57.1953125"},
 			{"text": "bracelet_hajnal_garnet_bangle","tool": "2","lat": "-105.153925","lng": "79.11875"},
 			{"text": "bracelet_greco_sapphire","tool": "0","lat": "-73.9765625","lng": "116.625"}
+		],
+		"6": [
+			{"text": "bracelet_abello_ruby_bangle","tool": "2","lat": "-107.83064976", "lng": "59.97965392"},
+			{"text": "bracelet_ojeda_rose_gold","tool": "2","lat": "-36.66184288", "lng": "105.0948816"},
+			{"text": "bracelet_helena_sapphire","tool": "2","lat": "-46.39455904", "lng": "110.71113504"},
+			{"text": "bracelet_durant_pearl","tool": "2","lat": "-76.943065472", "lng": "148.11025328"},
+			{"text": "bracelet_infanta_turquoise","tool": "2","lat": "-52.7347584", "lng": "142.35497168"},
+			{"text": "bracelet_elliston_carved","tool": "2","lat": "-100.23222848", "lng": "74.26994224"},
+			{"text": "bracelet_hajnal_garnet_bangle","tool": "2","lat": "-55.87229712", "lng": "108.73272304"},
+			{"text": "bracelet_greco_sapphire","tool": "2","lat": "-56.79123632", "lng": "157.29418224"}
 		]
 	},
 "random": {
