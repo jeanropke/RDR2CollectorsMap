@@ -351,6 +351,7 @@ var MapBase = {
   },
   convertCoords: function (lat, lng) {
     console.log(`"lat": "${0.01554 * lng + -63.6}", "lng": "${0.01554 * lat + 111.35}"`);
+    MapBase.debugMarker((0.01554 * lng + -63.6), (0.01554 * lat + 111.35));
   }
 };
 
