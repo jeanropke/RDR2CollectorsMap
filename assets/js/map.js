@@ -349,9 +349,9 @@ var MapBase = {
     });
     console.log('saved');
   },
-  convertCoords: function (lat, lng) {
-    console.log(`"lat": "${0.01554 * lng + -63.6}", "lng": "${0.01554 * lat + 111.35}"`);
-    MapBase.debugMarker((0.01554 * lng + -63.6), (0.01554 * lat + 111.35));
+  gameToMap: function (lat, lng, name = "Debug Marker") {
+    console.log(`name: ${name} // "lat": "${0.01552 * lng + -63.6}", "lng": "${0.01552 * lat + 111.29}"`);
+    MapBase.debugMarker((0.01552 * lng + -63.6), (0.01552 * lat + 111.29), name);
   }
 };
 
@@ -407,7 +407,7 @@ MapBase.submitDebugForm = function () {
     MapBase.debugMarker(lat, lng);
 },
 
-  MapBase.debugMarker = function (lat, long) {
+  MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
     var marker = L.marker([lat, long], {
       icon: L.icon({
         iconUrl: './assets/images/icons/random_darkblue.png',
@@ -420,7 +420,7 @@ MapBase.submitDebugForm = function () {
       })
     });
 
-    marker.bindPopup(`<h1>Debug Marker</h1><p>  </p>`);
+    marker.bindPopup(`<h1>${name}</h1><p>  </p>`);
     Layers.itemMarkersLayer.addLayer(marker);
   };
 
