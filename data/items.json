@@ -540,10 +540,10 @@
 			{"text": "egg_heron","tool": "0","lat": "-81.2107","lng": "146.0843"},
 			{"text": "egg_loon","tool": "0","lat": "-73.90625","lng": "118.28125"},
 			{"text": "egg_eagle_1","tool": "0","subdata": "egg_eagle","lat": "-60.5546875","lng": "74.4140625"},
-			{"text": "egg_eagle_2","tool": "0","subdata": "egg_eagle","lat": "-30.859375 ","lng": "93.1171875"},
+			{"text": "egg_eagle_2","tool": "0","subdata": "egg_eagle","lat": "-31.11383088", "lng": "92.91767232"},
 			{"text": "egg_vulture","tool": "0","lat": "-41.13307","lng": "147.8203125"},
 			{"text": "egg_hawk_1","tool": "0","subdata": "egg_hawk","lat": "-37.125","lng": "112.75"},
-			{"text": "egg_hawk_2","tool": "0","subdata": "egg_hawk","lat": "-32.53","lng": "90.51575"},
+			{"text": "egg_hawk_2","tool": "0","subdata": "egg_hawk","lat": "-19.4140944", "lng": "100.18097024"},
 			{"text": "egg_egret","tool": "0","lat": "-68.9921875","lng": "140.125"},
 			{"text": "egg_duck","tool": "0","lat": "-86.453125","lng": "72.4765625"},
 			{"text": "egg_goose_1","tool": "0","lat": "-89.3815","lng": "118.046875"}
