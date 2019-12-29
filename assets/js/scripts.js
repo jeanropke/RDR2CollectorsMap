@@ -47,7 +47,7 @@ var fastTravelData;
 
 var weeklySetData = [];
 var date;
-var nocache = 177;
+var nocache = 178;
 
 var wikiLanguage = [];
 
@@ -346,7 +346,7 @@ $('.menu-option.clickable input').on('click', function (e) {
 //change cycle by collection
 $('.menu-option.clickable input').on('change', function (e) {
   var el = $(e.target);
-  Cycles.data.cycles[currentCycle][el.attr("name")] = parseInt(el.val());
+  Cycles.data.cycles[Cycles.data.current][el.attr("name")] = parseInt(el.val());
   MapBase.addMarkers();
   Menu.refreshMenu();
 });
@@ -417,7 +417,7 @@ $("#clear-inventory").on("change", function () {
     $.each(Object.keys(inventory), function (key, value) {
       inventory[value].amount = 0;
       var marker = markers.filter(function (marker) {
-        return marker.text == value && marker.day == Cycles.data.cycles[currentCycle][marker.category];
+        return marker.text == value && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category];
       })[0];
 
       if (marker != null)
@@ -514,7 +514,7 @@ $('.open-submenu').on('click', function (e) {
 //Sell collections on menu
 $('.collection-sell').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = markers.filter(_m => _m.category == collectionType && _m.day == Cycles.data.cycles[currentCycle][_m.category]);
+  var getMarkers = markers.filter(_m => _m.category == collectionType && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]);
 
   $.each(getMarkers, function (key, value) {
     if (value.subdata) {
