@@ -214,7 +214,7 @@
 	{"key": "wands_two_1.desc", "value": "On a bench on the patio of the house."},
 	{"key": "wands_two_2.desc", "value": "On a sidetable on the front porch."},
 	{"key": "wands_two_3.desc", "value": "On the side of the pier."},
-	{"key": "wands_two_4.desc", "value": "On a box leftside inside the barn."},
+	{"key": "wands_two_4.desc", "value": "Right side inside the barn, on top of a barrel."},
 
 	{"key": "wands_three.name", "value": "Three of Wands"},
 	{"key": "wands_three_1.desc", "value": "Outside on the left side of the chimney."},
