@@ -350,7 +350,8 @@ var MapBase = {
     console.log('saved');
   },
   gameToMap: function (lat, lng, name = "Debug Marker") {
-    console.log(`name: ${name} // "lat": "${0.01552 * lng + -63.6}", "lng": "${0.01552 * lat + 111.29}"`);
+    //console.log(`name: ${name} // "lat": "${0.01552 * lng + -63.6}", "lng": "${0.01552 * lat + 111.29}"`);
+    //console.log(`{"text": "${name}","tool": "0","subdata": "${name}_","lat": "${0.01552 * lng + -63.6}", "lng": "${0.01552 * lat + 111.29}"},`);
     MapBase.debugMarker((0.01552 * lng + -63.6), (0.01552 * lat + 111.29), name);
 
     /*
