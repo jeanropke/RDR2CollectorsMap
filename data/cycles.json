@@ -262,7 +262,7 @@
 			"card_pentacles"    : 4,
 			"card_swords"       : 4,
 			"card_wands"        : 4,
-			"random"        	: -1
+			"random"        	: 6
         }
     }
 }
