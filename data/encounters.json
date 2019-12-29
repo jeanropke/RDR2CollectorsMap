@@ -33,7 +33,7 @@
 		{ "text": "treasure_hunter_09", "x": "-60.7002", "y": "101.6485" },
 		{ "text": "treasure_hunter_10", "x": "-57.5746", "y": "111.9788" },
 		{ "text": "treasure_hunter_11", "x": "-64.5019", "y": "122.9763" },
-		{ "text": "treasure_hunter_12", "x": "-54.8103", "y": "123.9811" },
+		{ "text": "treasure_hunter_12", "x": "-54.8103", "y": "123.9811" }
 	],
 	"egg_encounter": [
 		{ "text": "egg_encounter_01", "x": "-42.7612", "y": "146.2416" },
