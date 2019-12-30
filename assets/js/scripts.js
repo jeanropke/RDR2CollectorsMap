@@ -317,6 +317,37 @@ function getVirtual(time) {
   return new Date(now.getTime() + now.getTimezoneOffset() * 60000);
 }
 
+// Clock in game created by Michal__d
+setInterval(function () {
+  var display_24 = false,
+    newDate = new Date(),
+    startTime = newDate.valueOf(),
+    factor = 30,
+    correctTime = new Date(startTime * factor);
+  correctTime.setHours(correctTime.getUTCHours());
+  correctTime.setMinutes(correctTime.getUTCMinutes() - 3); //for some reason time in game is 3 sec. delayed to normal time
+
+  if (display_24)
+    $('#time-in-game').text(correctTime.getHours() + ":" + addZeroToNumber(correctTime.getMinutes()));
+
+  else {
+    $('#time-in-game').text(correctTime.getHours() % 12 + ":" + addZeroToNumber(correctTime.getMinutes()));
+    $('#am-pm-time').text(((correctTime.getHours() > 12) ? "PM" : "AM"));
+  }
+}, 1000);
+
+// toggle counter and clock after click the container
+$('.timer-container').click('click', function () {
+  $(this).toggleClass("display-in-front");
+  $('.clock-container').toggleClass("display-in-front");
+});
+
+$('.clock-container').click('click', function () {
+  $(this).toggleClass("display-in-front");
+  $('.timer-container').toggleClass("display-in-front");
+});
+
+
 /**
  * jQuery triggers
  */
@@ -550,6 +581,7 @@ $('.menu-toggle').on('click', function () {
   }
   $('.timer-container').toggleClass('timer-menu-opened');
   $('.counter-container').toggleClass('counter-menu-opened');
+  $('.clock-container').toggleClass('timer-menu-opened');
 });
 //Enable & disable markers cluster
 $('#marker-cluster').on("change", function () {

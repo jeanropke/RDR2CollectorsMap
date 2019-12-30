@@ -81,15 +81,16 @@ p {
     padding-right: 5px;
 }
 
-#countdown, #item-counter {
+#countdown, #item-counter, #time-in-game {
     font-size: 16px;
     line-height: 1.7;
     user-select: none;
+    margin: auto;
 }
 
-.timer-container {
+.timer-container, .clock-container {
     position: fixed;
-    z-index: 9999;
+    z-index: 9998;
     background: #111;
     border: 1px solid #888;
     color: #eee;
@@ -100,6 +101,18 @@ p {
     transition: all 200ms ease-out;
     padding-left: 8px;
     display: inline-flex;
+    cursor: pointer;
+}
+
+.display-in-front {
+    z-index: 9999;
+}
+
+#am-pm-time {
+    margin: auto 15px auto auto;
+    font-size: 16px;
+    line-height: 1.7;
+    user-select: none;
 }
 
 #day-cycle {
