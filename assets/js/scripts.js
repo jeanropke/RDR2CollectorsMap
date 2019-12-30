@@ -336,13 +336,12 @@ setInterval(function () {
   }
 }, 1000);
 
-// toggle counter and clock after click the container
-$('.timer-container').click('click', function () {
+// toggle timer and clock after click the container
+$('.timer-container').on('click', function () {
   $(this).toggleClass("display-in-front");
   $('.clock-container').toggleClass("display-in-front");
 });
-
-$('.clock-container').click('click', function () {
+$('.clock-container').on('click', function () {
   $(this).toggleClass("display-in-front");
   $('.timer-container').toggleClass("display-in-front");
 });
