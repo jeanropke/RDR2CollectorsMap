@@ -85,7 +85,7 @@ p {
     font-size: 16px;
     line-height: 1.7;
     user-select: none;
-    margin: auto;
+    margin: auto auto auto 2px;
 }
 
 .timer-container, .clock-container {

@@ -328,10 +328,10 @@ setInterval(function () {
   correctTime.setMinutes(correctTime.getUTCMinutes() - 3); //for some reason time in game is 3 sec. delayed to normal time
 
   if (display_24)
-    $('#time-in-game').text(correctTime.getHours() + ":" + addZeroToNumber(correctTime.getMinutes()));
+    $('#time-in-game').text(addZeroToNumber(correctTime.getHours()) + ":" + addZeroToNumber(correctTime.getMinutes()));
 
   else {
-    $('#time-in-game').text(correctTime.getHours() % 12 + ":" + addZeroToNumber(correctTime.getMinutes()));
+    $('#time-in-game').text(addZeroToNumber(correctTime.getHours() % 12) + ":" + addZeroToNumber(correctTime.getMinutes()));
     $('#am-pm-time').text(((correctTime.getHours() > 12) ? "PM" : "AM"));
   }
 }, 1000);
