@@ -10,6 +10,14 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #eee;
+}
+
 body {
     margin: 0;
     font-size: 16px;
