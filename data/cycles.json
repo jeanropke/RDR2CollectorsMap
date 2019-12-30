@@ -35,7 +35,7 @@
 			"card_wands"        : 1
         },
         "3": {
-            "american_flowers"  : 7,
+            "american_flowers"  : 4,
 			"antique_bottles"   : 5,
 			"arrowhead"         : 6,
 			"bird_eggs"         : 1,
@@ -51,7 +51,7 @@
 			"card_wands"        : 2
         },
         "4": {
-            "american_flowers"  : 8,
+            "american_flowers"  : 3,
 			"antique_bottles"   : 1,
 			"arrowhead"         : 1,
 			"bird_eggs"         : 5,
@@ -99,7 +99,7 @@
 			"card_wands"        : 2
         },
         "7": {
-            "american_flowers"  : 9,
+            "american_flowers"  : 2,
 			"antique_bottles"   : 2,
 			"arrowhead"         : 2,
 			"bird_eggs"         : 3,
@@ -115,7 +115,7 @@
 			"card_wands"        : 5
         },
         "8": {
-            "american_flowers"  : 8,
+            "american_flowers"  : 3,
 			"antique_bottles"   : 6,
 			"arrowhead"         : 1,
 			"bird_eggs"         : 2,
@@ -131,7 +131,7 @@
 			"card_wands"        : 4
         },
         "9": {
-            "american_flowers"  : 4,
+            "american_flowers"  : 1,
 			"antique_bottles"   : 4,
 			"arrowhead"         : 3,
 			"bird_eggs"         : 4,
@@ -147,7 +147,7 @@
 			"card_wands"        : 3
         },
         "10": {
-            "american_flowers"  : 7,
+            "american_flowers"  : 4,
 			"antique_bottles"   : 3,
 			"arrowhead"         : 5,
 			"bird_eggs"         : 3,
@@ -180,7 +180,7 @@
 			"random"        	: 4
         },
         "12": {
-            "american_flowers"  : 7,
+            "american_flowers"  : 4,
 			"antique_bottles"   : 3,
 			"arrowhead"         : 6,
 			"bird_eggs"         : 1,
@@ -197,7 +197,7 @@
 			"random"        	: 1
         },
         "13": {
-            "american_flowers"  : 4,
+            "american_flowers"  : 1,
 			"antique_bottles"   : 5,
 			"arrowhead"         : 1,
 			"bird_eggs"         : 5,
@@ -214,7 +214,7 @@
 			"random"        	: -1
         },
         "14": {
-            "american_flowers"  : 8,
+            "american_flowers"  : 3,
 			"antique_bottles"   : 1,
 			"arrowhead"         : 3,
 			"bird_eggs"         : 2,
@@ -231,7 +231,7 @@
 			"random"        	: 7
         },
         "15": {
-            "american_flowers"  : 7,
+            "american_flowers"  : 4,
 			"antique_bottles"   : 4,
 			"arrowhead"         : 1,
 			"bird_eggs"         : 4,
@@ -265,7 +265,7 @@
 			"random"        	: 6
         },
         "17": {
-            "american_flowers"  : 4,
+            "american_flowers"  : 1,
 			"antique_bottles"   : 5,
 			"arrowhead"         : 2,
 			"bird_eggs"         : 2,

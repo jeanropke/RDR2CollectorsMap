@@ -451,10 +451,10 @@
 	{"key": "egg_duck_2.desc", "value": "รังอยู่บนพื้น"},
 	{"key": "egg_duck_3.desc", "value": "รังอยู่บนพื้น"},
 
-	{"key": "egg_goose_1.name", "value": "Goose Eggs"},
-	{"key": "egg_goose_1_1.desc", "value": "รังอยู่บนพื้น ล่างของเรือติดอยู่กับต้นไม้"},
-	{"key": "egg_goose_1_2.desc", "value": "รังอยู่บนพื้น"},
-	{"key": "egg_goose_1_3.desc", "value": "รังอยู่บนพื้น อย่าเหยียบ!"},
+	{"key": "egg_goose.name", "value": "Goose Eggs"},
+	{"key": "egg_goose_1.desc", "value": "รังอยู่บนพื้น ล่างของเรือติดอยู่กับต้นไม้"},
+	{"key": "egg_goose_2.desc", "value": "รังอยู่บนพื้น"},
+	{"key": "egg_goose_3.desc", "value": "รังอยู่บนพื้น อย่าเหยียบ!"},
 
 	{"key": "egg_goose_2.name", "value": "Goose Eggs"},
 	{"key": "egg_goose_2_1.desc", "value": "รังอยู่บนพื้น"},

@@ -451,10 +451,10 @@
 	{"key": "egg_duck_2.desc", "value": ""},
 	{"key": "egg_duck_3.desc", "value": ""},
 
-	{"key": "egg_goose_1.name", "value": "Ovo de Ganso"},
-	{"key": "egg_goose_1_1.desc", "value": ""},
-	{"key": "egg_goose_1_2.desc", "value": ""},
-	{"key": "egg_goose_1_3.desc", "value": ""},
+	{"key": "egg_goose.name", "value": "Ovo de Ganso"},
+	{"key": "egg_goose_1.desc", "value": ""},
+	{"key": "egg_goose_2.desc", "value": ""},
+	{"key": "egg_goose_3.desc", "value": ""},
 
 	{"key": "egg_goose_2.name", "value": "Ovo de Ganso"},
 	{"key": "egg_goose_2_1.desc", "value": ""},

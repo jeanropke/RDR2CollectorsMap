@@ -451,10 +451,10 @@
 	{"key": "egg_duck_2.desc", "value": "W gnieździe na ziemi."},
 	{"key": "egg_duck_3.desc", "value": "W gnieździe na ziemi."},
 
-	{"key": "egg_goose_1.name", "value": "Jajo gęsi"},
-	{"key": "egg_goose_1_1.desc", "value": "W gnieździe na ziemi pod łodzią, która utknęła na drzewie."},
-	{"key": "egg_goose_1_2.desc", "value": "W gnieździe na ziemi."},
-	{"key": "egg_goose_1_3.desc", "value": "W gnieździe na ziemi. Nie wejdź w nie!"},
+	{"key": "egg_goose.name", "value": "Jajo gęsi"},
+	{"key": "egg_goose_1.desc", "value": "W gnieździe na ziemi pod łodzią, która utknęła na drzewie."},
+	{"key": "egg_goose_2.desc", "value": "W gnieździe na ziemi."},
+	{"key": "egg_goose_3.desc", "value": "W gnieździe na ziemi. Nie wejdź w nie!"},
 
 	{"key": "egg_goose_2.name", "value": "Jajo gęsi"},
 	{"key": "egg_goose_2_1.desc", "value": "W gnieździe na ziemi."},

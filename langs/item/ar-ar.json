@@ -451,10 +451,10 @@
 	{"key": "egg_duck_2.desc", "value": "في العش على الأرض. "},
 	{"key": "egg_duck_3.desc", "value": "في العش على الأرض. "},
 
-	{"key": "egg_goose_1.name", "value": "Goose Eggs"},
-	{"key": "egg_goose_1_1.desc", "value": "في عش على الأرض تحت القارب العالق في شجرة."},
-	{"key": "egg_goose_1_2.desc", "value": "في العش على الأرض."},
-	{"key": "egg_goose_1_3.desc", "value": "في العش على الأرض. Don't step on it!"},
+	{"key": "egg_goose.name", "value": "Goose Eggs"},
+	{"key": "egg_goose_1.desc", "value": "في عش على الأرض تحت القارب العالق في شجرة."},
+	{"key": "egg_goose_2.desc", "value": "في العش على الأرض."},
+	{"key": "egg_goose_3.desc", "value": "في العش على الأرض. Don't step on it!"},
 
 	{"key": "egg_goose_2.name", "value": "Goose Eggs"},
 	{"key": "egg_goose_2_1.desc", "value": "في العش على الأرض. "},

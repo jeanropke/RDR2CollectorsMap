@@ -24,7 +24,7 @@ Menu.refreshMenu = function () {
           //TODO: create a 'marker' to subdata with item amount
           if ($(`.menu-hidden[data-type=${category}]`).children(`p.collectible[data-type=${marker.subdata}]`).length > 0)
             return;
-
+          
           var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.subdata).text(Language.get(`${marker.text}.name`).split('#')[0]);
           var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
 
