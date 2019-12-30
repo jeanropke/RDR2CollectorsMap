@@ -47,7 +47,7 @@ var fastTravelData;
 
 var weeklySetData = [];
 var date;
-var nocache = 178;
+var nocache = 179;
 
 var wikiLanguage = [];
 
