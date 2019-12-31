@@ -1183,7 +1183,7 @@
         "2": [
             { "text": "flower_agarita_1", "subdata": "agarita", "tool": "0", "lat": "-120.5930", "lng": "15.7206" },
             { "text": "flower_agarita_2", "subdata": "agarita", "tool": "0", "lat": "-102.3179", "lng": "61.9996" },
-            { "text": "flower_agarita_3", "subdata": "agarita", "tool": "0", "lat": "-120.2432", "lng": "42.1640" },
+            { "text": "flower_agarita_3", "subdata": "agarita", "tool": "0", "lat": "-120.6466125", "lng": "42.01920" },
             { "text": "flower_bitterweed_1", "subdata": "bitterweed", "tool": "0", "lat": "-66.3883", "lng": "98.3026" },
             { "text": "flower_bitterweed_2", "subdata": "bitterweed", "tool": "0", "lat": "-56.2184", "lng": "88.7675" },
             { "text": "flower_bitterweed_3", "subdata": "bitterweed", "tool": "0", "lat": "-57.9776", "lng": "72.0639" },
