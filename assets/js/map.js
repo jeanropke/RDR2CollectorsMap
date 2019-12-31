@@ -268,9 +268,18 @@ var MapBase = {
 
 
   updateMarkerContent: function (marker) {
+
     var videoText = marker.video != null ? '<p align="center" style="padding: 5px;"><a href="' + marker.video + '" target="_blank">Video</a></p>' : '';
     var popupTitle = marker.category == 'random' ? marker.title : ` ${marker.title} - ${Language.get("menu.day")} ${marker.day}`;
-    var popupContent = marker.category == 'random' ? 'Random items resets 24 hours after picking up' : marker.description;
+
+    var popupContent = null;
+
+    if (marker.category == 'random')
+      popupContent = Language.get("random_item.desc");
+    else
+      var weeklyText = marker.weeklyCollection != null ? Language.get("menu.weekly.description").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) + ' ' : '';
+      popupContent = weeklyText + marker.description;
+
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
     <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
     <small data-item="${marker.text}">${marker.amount}</small>
@@ -279,7 +288,7 @@ var MapBase = {
 
     return `<h1>${popupTitle}</h1>
         <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
-          ${videoText}
+        ${videoText}
         ${Inventory.isEnabled ? buttons : ''}
         <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.text}', '${marker.subdata}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`;
   },
@@ -310,11 +319,23 @@ var MapBase = {
         marker: marker.text
       })
     });
+
     tempMarker.id = marker.text;
     marker.isVisible = true;
 
     marker.title = (marker.category == 'random') ? Language.get("random_item.name") + marker.text.replace('random_item_', '') : Language.get(`${marker.text}.name`);
-    marker.description = (marker.subdata == 'agarita' || marker.subdata == 'blood_flower' ? Language.get('map.night_only') : '') + Language.get(`${marker.text}_${marker.day}.desc`);
+    marker.weeklyCollection = isWeekly ? weeklySetData.current : null;
+
+    if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
+      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.night_only');
+    else if (marker.subdata == 'egg_spoonbill' || marker.subdata == 'egg_heron' || marker.subdata == 'egg_eagle' || marker.subdata == 'egg_hawk' || marker.subdata == 'egg_egret')
+      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.tree');
+    else if (marker.subdata == 'egg_vulture')
+      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.stump');
+    else if (marker.subdata == 'egg_duck' || marker.subdata == 'egg_goose')
+      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.ground');
+    else
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
 
     tempMarker.bindPopup(MapBase.updateMarkerContent(marker))
       .on("click", function (e) {
