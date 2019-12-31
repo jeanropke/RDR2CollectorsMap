@@ -46,18 +46,18 @@
 	{"key": "menu.import_route", "value": "Route importieren"},
 	{"key": "menu.export_route", "value": "Route exportieren"},
 	{"key": "menu.treasures", "value": "Schatzkarten"},
-	{"key": "routes.exported", "value": "Route in das Klemmbrett kopiert!"},
+	{"key": "routes.exported", "value": "Route in die Zwischenablage kopiert!"},
 	{"key": "routes.import_prompt", "value": "Routen Code eingeben:"},
 	{"key": "routes.empty", "value": "Leere Route"},
 	{"key": "routes.invalid", "value": "Ungültige Route"},
-	{"key": "menu.random_spots", "value": "Zufällige Stelle"},
+	{"key": "menu.random_spots", "value": "Zufällige Stellen"},
 	{"key": "menu.collectables_counter", "value": "{count} von {max} gesammelt"},
 	{"key": "menu.rdo_map", "value": "Red Dead Online Karte"},
 	{"key": "menu.treasure_hunter", "value": "Schatzjäger"},
 	{"key": "menu.tree_map", "value": "Schatzkarten an Bäumen"},
 	{"key": "menu.egg_encounter", "value": "Vogelnester"},
 	{"key": "menu.grave_robber", "value": "Grabräuber"},
-	{"key": "menu.condor_egg", "value": "Condor Egg"},
+	{"key": "menu.condor_egg", "value": "Kondor Ei"},
 	{"key": "menu.dog_encounter", "value": "Hunde Begegnungen"},
 	{"key": "menu.auto_refresh", "value": "Zyklus automatisch anpassen"},
 	{"key": "menu.fame_seeker", "value": "Ruhmsuchende"},
@@ -67,5 +67,5 @@
 	{"key": "menu.inventory", "value": "Inventar"},
 	{"key": "menu.enable_inventory", "value": "Inventar verwenden"},
 	{"key": "menu.inventory_stack", "value": "Inventar Größe"},
-	{"key": "menu.marker_cluster", "value": "Markers cluster"}
+	{"key": "menu.marker_cluster", "value": "Anhäufungen markieren"}
 ]
