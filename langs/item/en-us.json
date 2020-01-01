@@ -60,6 +60,7 @@
 	{"key": "cups_three_1.desc", "value": "On the back of a wagon."},
 	{"key": "cups_three_2.desc", "value": ""},
 	{"key": "cups_three_3.desc", "value": "On a bench."},
+	{"key": "cups_three_4.desc", "value": "On top of bench on front porch."},
 
 	{"key": "cups_four.name", "value": "Four of Cups"},
 	{"key": "cups_four_1.desc", "value": "On top of fireplace inside building."},
@@ -262,6 +263,7 @@
 	{"key": "wands_knight_1.desc", "value": "In the back of the hut on the right side of the counter."},
 	{"key": "wands_knight_2.desc", "value": "In mausoleum. Enterance only from the north."},
 	{"key": "wands_knight_3.desc", "value": "On the edge of the water basin."},
+	{"key": "wands_knight_4.desc", "value": "Left side of deer mounts on first floor."},
 
 	{"key": "wands_page.name", "value": "Page of Wands"},
 	{"key": "wands_page_1.desc", "value": "In basement on the crates."},
