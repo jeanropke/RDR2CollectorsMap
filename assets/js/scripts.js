@@ -575,7 +575,7 @@ $('.menu-toggle').on('click', function () {
     $('.menu-toggle').text('X');
     $.cookie('menu-opened', '1');
   } else {
-    $('.menu-toggle').text('>');    
+    $('.menu-toggle').text('>');
     $.cookie('menu-opened', '0');
   }
   $('.timer-container').toggleClass('timer-menu-opened');
@@ -605,6 +605,78 @@ $('#inventory-stack').on("change", function () {
   inputValue = !isNaN(inputValue) ? inputValue : 10;
   $.cookie('inventory-stack', inputValue);
   Inventory.stackSize = inputValue;
+});
+
+/**
+ * Path generator by Senexis
+ */
+$('#generate-route-distance').on("change", function () {
+  var inputValue = parseInt($('#generate-route-distance').val());
+  inputValue = !isNaN(inputValue) && inputValue > 0 ? inputValue : 25;
+  $.cookie('generator-path-distance', inputValue);
+  Routes.maxDistance = inputValue;
+});
+
+$('#generate-route-start').on("change", function () {
+  var inputValue = $('#generate-route-start').val();
+  $.cookie('generator-path-start', inputValue);
+
+  var startLat = null;
+  var startLng = null;
+
+  $('#generate-route-start-lat').prop('disabled', true);
+  $('#generate-route-start-lng').prop('disabled', true);
+
+  switch (inputValue) {
+    case "Custom":
+      $('#generate-route-start-lat').prop('disabled', false);
+      $('#generate-route-start-lng').prop('disabled', false);
+      return;
+
+    case "N":
+      startLat = -11.875;
+      startLng = 86.875;
+      break;
+
+    case "NE":
+      startLat = -27.4375;
+      startLng = 161.2813;
+      break;
+
+    case "SE":
+      startLat = -100.75;
+      startLng = 131.125;
+      break;
+
+    case "SW":
+    default:
+      startLat = -119.9063;
+      startLng = 8.0313;
+      break;
+  }
+
+  $('#generate-route-start-lat').val(startLat);
+  $('#generate-route-start-lng').val(startLng);
+
+  $.cookie('generator-path-start-lat', startLat);
+  $.cookie('generator-path-start-lng', startLng);
+
+  Routes.startMarkerLat = startLat;
+  Routes.startMarkerLng = startLng;
+});
+
+$('#generate-route-start-lat').on("change", function () {
+  var inputValue = parseFloat($('#generate-route-start-lat').val());
+  inputValue = !isNaN(inputValue) ? inputValue : -119.9063;
+  $.cookie('generator-path-start-lat', inputValue);
+  Routes.startMarkerLat = inputValue;
+});
+
+$('#generate-route-start-lng').on("change", function () {
+  var inputValue = parseFloat($('#generate-route-start-lng').val());
+  inputValue = !isNaN(inputValue) ? inputValue : 8.0313;
+  $.cookie('generator-path-start-lng', inputValue);
+  Routes.startMarkerLng = inputValue;
 });
 
 /**
@@ -641,3 +713,4 @@ window.addEventListener("DOMContentLoaded", MapBase.loadMadamNazar());
 window.addEventListener("DOMContentLoaded", Treasures.load());
 window.addEventListener("DOMContentLoaded", Encounters.load());
 window.addEventListener("DOMContentLoaded", MapBase.loadMarkers());
+window.addEventListener("DOMContentLoaded", Routes.init());
