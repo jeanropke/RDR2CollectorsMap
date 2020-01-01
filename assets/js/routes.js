@@ -10,8 +10,8 @@ var Routes = {
     $('#generate-route-start-lng').val(Routes.startMarkerLng);
 
     var genPathStart = $.cookie('generator-path-start');
-    if(!genPathStart) genPathStart = "SW";
-    
+    if (!genPathStart) genPathStart = "SW";
+
     $('#generate-route-start').val(genPathStart);
 
     if (genPathStart != "Custom") {
@@ -180,7 +180,10 @@ var Routes = {
 
   // Simple utility to clear the given polyline from Leaflet.
   clearPath: function () {
-    if (Routes.lastPolyline) Routes.lastPolyline.remove(MapBase.map);
+    if (!Routes.lastPolyline) return;
+
+    Routes.lastPolyline.remove(MapBase.map);
+    Routes.lastPolyline = null;
   },
 
   // Find the nearest neighbor to the given marker.
@@ -267,11 +270,9 @@ var Routes = {
     // Clean up before generating.
     Routes.clearPath();
 
-    console.log(Routes.startMarker())
-
     // Setup variables.
     var newMarkers = markers.filter((marker) => { return marker.isVisible; });
-    
+
     // Optionally ignore the already collected markers.
     if (Routes.ignoreCollected) {
       newMarkers = newMarkers.filter((marker) => { return !marker.isCollected; });

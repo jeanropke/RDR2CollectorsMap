@@ -246,8 +246,12 @@ var MapBase = {
         }
       });
     }
+
     if ($("#routes").val() == 1)
       Routes.drawLines();
+
+    if (Routes.lastPolyline != null && Routes.ignoreCollected)
+      Routes.generatePath();
 
     Menu.refreshItemsCounter();
   },
