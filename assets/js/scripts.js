@@ -610,6 +610,13 @@ $('#inventory-stack').on("change", function () {
 /**
  * Path generator by Senexis
  */
+$('#generate-route-ignore-collected').on("change", function () {
+  var inputValue = $('#generate-route-ignore-collected').val();
+  inputValue = inputValue == 'true';
+  $.cookie('generator-path-ignore-collected', inputValue);
+  Routes.ignoreCollected = inputValue;
+});
+
 $('#generate-route-distance').on("change", function () {
   var inputValue = parseInt($('#generate-route-distance').val());
   inputValue = !isNaN(inputValue) && inputValue > 0 ? inputValue : 25;

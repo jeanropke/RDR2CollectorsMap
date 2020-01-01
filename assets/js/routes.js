@@ -4,13 +4,14 @@
 
 var Routes = {
   init: function () {
+    $('#generate-route-ignore-collected').val(Routes.ignoreCollected ? 'true' : 'false');
     $('#generate-route-distance').val(Routes.maxDistance);
     $('#generate-route-start-lat').val(Routes.startMarkerLat);
     $('#generate-route-start-lng').val(Routes.startMarkerLng);
 
     var genPathStart = $.cookie('generator-path-start');
-    if(!genPathStart) genPathStart = "SW";
-    
+    if (!genPathStart) genPathStart = "SW";
+
     $('#generate-route-start').val(genPathStart);
 
     if (genPathStart != "Custom") {
@@ -144,6 +145,8 @@ var Routes = {
   /**
    * Path generator by Senexis
    */
+  // Whether collected items should be ignored or not when pathing.
+  ignoreCollected: $.cookie('generator-path-ignore-collected') == 'true',
 
   // The maximum distance a path can be in points.
   // - This number might need to be tweaked depending on how many markers there are.
@@ -177,7 +180,10 @@ var Routes = {
 
   // Simple utility to clear the given polyline from Leaflet.
   clearPath: function () {
-    if (Routes.lastPolyline) Routes.lastPolyline.remove(MapBase.map);
+    if (!Routes.lastPolyline) return;
+
+    Routes.lastPolyline.remove(MapBase.map);
+    Routes.lastPolyline = null;
   },
 
   // Find the nearest neighbor to the given marker.
@@ -264,10 +270,14 @@ var Routes = {
     // Clean up before generating.
     Routes.clearPath();
 
-    console.log(Routes.startMarker())
-
     // Setup variables.
     var newMarkers = markers.filter((marker) => { return marker.isVisible; });
+
+    // Optionally ignore the already collected markers.
+    if (Routes.ignoreCollected) {
+      newMarkers = newMarkers.filter((marker) => { return !marker.isCollected; });
+    }
+
     var polylines = [];
 
     // The starting point of the path.
