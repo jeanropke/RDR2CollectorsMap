@@ -86,8 +86,8 @@
 	{"key": "cups_six_2.desc", "value": "On the back of the wagon."},
 	{"key": "cups_six_3.desc", "value": "On top of wood box/table."},
 	{"key": "cups_six_4.desc", "value": "On a table right side of the yellow and green house."},
-	{"key": "cups_six_4.desc", "value": "On a crate next to the corner of the house."},
-	{"key": "cups_six_4.desc", "value": ""},
+	{"key": "cups_six_5.desc", "value": "On a crate next to the corner of the house."},
+	{"key": "cups_six_6.desc", "value": ""},
 
 	{"key": "cups_seven.name", "value": "Seven of Cups"},
 	{"key": "cups_seven_1.desc", "value": "On a barrel outside of the shed."},
@@ -234,7 +234,7 @@
 	{"key": "swords_page_2.desc", "value": "On the log bench with a lantern on it"},
 	{"key": "swords_page_3.desc", "value": "Sitting on crates beside a pile of silver pipes."},
 	{"key": "swords_page_4.desc", "value": "In a barrel right side of the house"},
-	{"key": "swords_page_4.desc", "value": "On a storage shelf in the shack."},
+	{"key": "swords_page_5.desc", "value": "On a storage shelf in the shack."},
 
 	{"key": "swords_queen.name", "value": "Queen of Swords"},
 	{"key": "swords_queen_1.desc", "value": "Inside building on shelf against south wall."},
@@ -264,8 +264,8 @@
 	{"key": "wands_two_2.desc", "value": "On a sidetable on the front porch."},
 	{"key": "wands_two_3.desc", "value": "On the side of the pier."},
 	{"key": "wands_two_4.desc", "value": "Right side inside the barn, on top of a barrel."},
-	{"key": "wands_two_4.desc", "value": "On the ledge before climbing any stairs to go out of the cave. Cave entrance above the \"A\" in Annesburg."},
-	{"key": "wands_two_4.desc", "value": ""},
+	{"key": "wands_two_5.desc", "value": "On the ledge before climbing any stairs to go out of the cave. Cave entrance above the \"A\" in Annesburg."},
+	{"key": "wands_two_6.desc", "value": ""},
 
 	{"key": "wands_three.name", "value": "Three of Wands"},
 	{"key": "wands_three_1.desc", "value": "Outside on the left side of the chimney."},
@@ -334,7 +334,7 @@
 	{"key": "wands_knight_2.desc", "value": "In mausoleum. Enterance only from the north."},
 	{"key": "wands_knight_3.desc", "value": "On the edge of the water basin."},
 	{"key": "wands_knight_4.desc", "value": "Left side of deer mounts on first floor."},
-	{"key": "wands_knight_4.desc", "value": "On the railing on top of the tower, climb the ladders."},
+	{"key": "wands_knight_5.desc", "value": "On the railing on top of the tower, climb the ladders."},
 
 	{"key": "wands_page.name", "value": "Page of Wands"},
 	{"key": "wands_page_1.desc", "value": "In basement on the crates."},
@@ -400,7 +400,7 @@
 	{"key": "pentacles_six_2.desc", "value": "On the back of a wagon."},
 	{"key": "pentacles_six_3.desc", "value": "On a crate on the ground floor."},
 	{"key": "pentacles_six_4.desc", "value": "On the table inside the house."},
-	{"key": "pentacles_six_4.desc", "value": "On the back of the wagon."},
+	{"key": "pentacles_six_5.desc", "value": "On the back of the wagon."},
 	{"key": "pentacles_six_6.desc", "value": "On a table outside of the house to the left."},
 
 	{"key": "pentacles_seven.name", "value": "Seven of Pentacles"},
@@ -424,7 +424,7 @@
 	{"key": "pentacles_nine_2.desc", "value": "Inside the house on a table."},
 	{"key": "pentacles_nine_3.desc", "value": ""},
 	{"key": "pentacles_nine_4.desc", "value": "Inside the house on a worktable."},
-	{"key": "pentacles_nine_4.desc", "value": "On the picknick table."},
+	{"key": "pentacles_nine_5.desc", "value": "On the picknick table."},
 	{"key": "pentacles_nine_6.desc", "value": "On the bench outside the house."},
 
 	{"key": "pentacles_ten.name", "value": "Ten of Pentacles"},
@@ -677,14 +677,14 @@
 	{"key": "arrowhead_feldspar_1.desc", "value": "In the middle of the \"ring\" of rocks."},
 	{"key": "arrowhead_feldspar_2.desc", "value": "At the base of a tree atop the hill."},
 	{"key": "arrowhead_feldspar_3.desc", "value": "Underneath railroad."},
-	{"key": "arrowhead_feldspar_6.desc", "value": "By the split dead tree."},
+	{"key": "arrowhead_feldspar_4.desc", "value": "By the split dead tree."},
 	{"key": "arrowhead_feldspar_6.desc", "value": "Backside of the big rocks near the road."},
 
 	{"key": "arrowhead_slate.name", "value": "Slate Arrowhead"},
 	{"key": "arrowhead_slate_1.desc", "value": "Next to a fallen tree."},
 	{"key": "arrowhead_slate_2.desc", "value": "Inside the cave, entrance just below the \"U\" in \"Mount Shann\"."},
 	{"key": "arrowhead_slate_3.desc", "value": "On the southside of the cotton field."},
-	{"key": "arrowhead_slate_3.desc", "value": "Next to the dead tree."},
+	{"key": "arrowhead_slate_4.desc", "value": "Next to the dead tree."},
 
 	{"key": "arrowhead_bone.name", "value": "Bone Arrowhead"},
 	{"key": "arrowhead_bone_1.desc", "value": "In trench."},
