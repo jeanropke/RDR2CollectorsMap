@@ -145,7 +145,7 @@
 	{"key": "cups_king_2.desc", "value": ""},
 	{"key": "cups_king_3.desc", "value": "Inside the cave."},
 	{"key": "cups_king_4.desc", "value": "On a cuboard behind the sofa."},
-	{"key": "cups_king_4.desc", "value": "On a shelf in the back of the stables."},
+	{"key": "cups_king_5.desc", "value": "On a shelf in the back of the stables."},
 
 	{"key": "swords_ace.name", "value": "Ace of Swords"},
 	{"key": "swords_ace_1.desc", "value": "On top level of windmill. Climb the ladders."},
@@ -190,14 +190,14 @@
 	{"key": "swords_six_2.desc", "value": "On middle dock post."},
 	{"key": "swords_six_3.desc", "value": "On top of the windmill tower."},
 	{"key": "swords_six_4.desc", "value": "On a window sill."},
-	{"key": "swords_six_4.desc", "value": "On a bed upstairs."},
+	{"key": "swords_six_5.desc", "value": "On a bed upstairs."},
 
 	{"key": "swords_seven.name", "value": "Seven of Swords"},
 	{"key": "swords_seven_1.desc", "value": "Next to a blue barrel on the south west dock."},
 	{"key": "swords_seven_2.desc", "value": "In the back of a wagon on a green crate."},
 	{"key": "swords_seven_3.desc", "value": "Underneath the awning on a bench. Watch for grizzly bear."},
 	{"key": "swords_seven_4.desc", "value": "Inside the house on a shelf in the basement floor."},
-	{"key": "swords_seven_4.desc", "value": "Inside the mine."},
+	{"key": "swords_seven_5.desc", "value": "Inside the mine. <br/> <img src=\"https://i.imgur.com/h8K2hIi.png\" style=\"width: 200px;\">"},
 
 	{"key": "swords_eight.name", "value": "Eight of Swords"},
 	{"key": "swords_eight_1.desc", "value": "On a white table with a chess board."},
@@ -241,7 +241,7 @@
 	{"key": "swords_queen_2.desc", "value": ""},
 	{"key": "swords_queen_3.desc", "value": "On the small coffee table."},
 	{"key": "swords_queen_4.desc", "value": ""},
-	{"key": "swords_queen_5.desc", "value": "Inside the train garage on a worktable on the south side of the building."},
+	{"key": "swords_queen_5.desc", "value": "Inside the train garage on a worktable on the south side of the building. <br/> <img src=\"https://i.imgur.com/VlnIwzj.png\" style=\"width: 200px;\">"},
 	{"key": "swords_queen_6.desc", "value": ""},
 
 	{"key": "swords_king.name", "value": "King of Swords"},
@@ -264,7 +264,7 @@
 	{"key": "wands_two_2.desc", "value": "On a sidetable on the front porch."},
 	{"key": "wands_two_3.desc", "value": "On the side of the pier."},
 	{"key": "wands_two_4.desc", "value": "Right side inside the barn, on top of a barrel."},
-	{"key": "wands_two_5.desc", "value": "On the ledge before climbing any stairs to go out of the cave. Cave entrance above the \"A\" in Annesburg."},
+	{"key": "wands_two_5.desc", "value": "On the ledge before climbing any stairs to go out of the cave. Cave entrance above the \"A\" in Annesburg. <br/> <img src=\"https://i.imgur.com/cfLWVcv.png\" style=\"width: 200px;\">"},
 	{"key": "wands_two_6.desc", "value": ""},
 
 	{"key": "wands_three.name", "value": "Three of Wands"},
@@ -432,7 +432,7 @@
 	{"key": "pentacles_ten_2.desc", "value": "On a crate in the middle of the broken down house."},
 	{"key": "pentacles_ten_3.desc", "value": "Inside house on fireplace."},
 	{"key": "pentacles_ten_4.desc", "value": "Inside a fallen box in the house."},
-	{"key": "pentacles_ten_4.desc", "value": "On a bench next to the entrance of the church."},
+	{"key": "pentacles_ten_5.desc", "value": "On a bench next to the entrance of the church."},
 	{"key": "pentacles_ten_6.desc", "value": "Outside the house on the railing."},
 
 	{"key": "pentacles_knight.name", "value": "Knight of Pentacles"},
@@ -702,7 +702,7 @@
 	{"key": "arrowhead_obsidian_1.desc", "value": "In the middle of the chalk drawing."},
 	{"key": "arrowhead_obsidian_2.desc", "value": "Next to the scarecrow in the wheat field."},
 	{"key": "arrowhead_obsidian_3.desc", "value": "In the middle of the stone circle."},
-	{"key": "arrowhead_obsidian_4.desc", "value": "Inside the cave."},
+	{"key": "arrowhead_obsidian_4.desc", "value": "Inside the cave. <br/> <img src=\"https://i.imgur.com/Vkaa8cY.png\" style=\"width: 200px;\">"},
 	{"key": "arrowhead_obsidian_6.desc", "value": "By a large tree with bushes."},
 
 	{"key": "arrowhead_quartz.name", "value": "Quartz Arrowhead"},
