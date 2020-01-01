@@ -207,6 +207,11 @@ p {
     height: 100%;
 }
 
+.input-day:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .issues-container a {
     display: block;
     color: #eee;
