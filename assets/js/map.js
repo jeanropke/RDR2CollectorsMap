@@ -74,6 +74,27 @@ var MapBase = {
 
   },
 
+ 
+  devGameToMap: function(t) {
+    var image = [48841, 38666];
+    var topLeft = [-7168, 4096];
+    var bottomRight = [5120, -5632];
+
+      var i = image[0]
+        , n = image[1]
+        , e = MapBase._normal_xy(topLeft, bottomRight)
+        , s = MapBase._normal_xy(topLeft, t);
+        console.log(t);
+      return [i * (s[0] / e[0]), n * (s[1] / e[1])]
+  },
+  _normal_xy: function(t, i) {
+    console.log(`MapBase._num_distance(${t[0]}, ${i[0]})`);
+    return [MapBase._num_distance(t[0], i[0]), MapBase._num_distance(t[1], i[1])]
+  },
+  _num_distance: function(t ,i) {
+    return t > i ? t - i : i - t;
+  },
+
   loadMarkers: function () {
     $.getJSON('data/items.json?nocache=' + nocache)
       .done(function (data) {
@@ -276,15 +297,18 @@ var MapBase = {
 
     if (marker.category == 'random')
       popupContent = Language.get("random_item.desc");
-    else
+    else {
       var weeklyText = marker.weeklyCollection != null ? Language.get("menu.weekly.description").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) + ' ' : '';
       popupContent = weeklyText + marker.description;
+    }
+
 
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
     <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
     <small data-item="${marker.text}">${marker.amount}</small>
     <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
     </div>`;
+
 
     return `<h1>${popupTitle}</h1>
         <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
