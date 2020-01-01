@@ -397,6 +397,38 @@
         </select>
       </div>
     </div>
+    <h2>
+      <span data-text="menu.route_generator">Route generator</span>
+      <span class="help-button">[Beta]</span>
+    </h2>
+    <div class="custom-routes-container">
+      <a data-text="menu.generate_route" href="javascript:void(0);" onclick="Routes.generatePath()">Generate route</a>
+      <a data-text="menu.generate_route_clear" href="javascript:void(0);" onclick="Routes.clearPath()">Clear route</a>
+    </div>
+    <div class="settings-container">
+      <div class="input-container">
+        <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
+        <input id="generate-route-distance" class="input-day" type="number" min="1" max="200" value="25">
+      </div>
+      <div class="input-container">
+        <label for="generate-route-start" data-text="menu.generate_route_start">Route starts at</label>
+        <select class="input-day" id="generate-route-start">
+          <option value="SW">Southwest (↙)</option>
+          <option value="NE">Northeast (↗)</option>
+          <option value="N">North (↑)</option>
+          <option value="SE">Southeast (↘)</option>
+          <option value="Custom">Custom</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="generate-route-start-lat" data-text="menu.generate_route_start_lat">Route start lat.</label>
+        <input id="generate-route-start-lat" class="input-day" type="number" step="any" value="-119.9063">
+      </div>
+      <div class="input-container">
+        <label for="generate-route-start-lng" data-text="menu.generate_route_start_lng">Route start long.</label>
+        <input id="generate-route-start-lng" class="input-day" type="number" step="any" value="8.0313">
+      </div>
+    </div>
     <h2>Debug marker</h2>
     <div class="routes-container">
       <div class="input-container">

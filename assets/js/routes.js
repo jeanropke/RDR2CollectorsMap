@@ -3,12 +3,26 @@
  */
 
 var Routes = {
+  init: function () {
+    $('#generate-route-distance').val(Routes.maxDistance);
+    $('#generate-route-start-lat').val(Routes.startMarkerLat);
+    $('#generate-route-start-lng').val(Routes.startMarkerLng);
 
-  drawLines: function() {
+    var genPathStart = $.cookie('generator-path-start');
+    if(!genPathStart) genPathStart = "SW";
+    
+    $('#generate-route-start').val(genPathStart);
 
+    if (genPathStart != "Custom") {
+      $('#generate-route-start-lat').prop('disabled', true);
+      $('#generate-route-start-lng').prop('disabled', true);
+    }
+  },
+
+  drawLines: function () {
     var connections = [];
-    $.each(routesData[day], function(nodeKey, nodeValue) {
-      $.each(nodeValue, function(_key, _marker) {
+    $.each(routesData[day], function (nodeKey, nodeValue) {
+      $.each(nodeValue, function (_key, _marker) {
         var marker = markers.filter(item => {
           if (item.day == day)
             return item.text === _marker;
@@ -16,17 +30,16 @@ var Routes = {
 
         if (marker == null)
           return;
-        
+
         if ((Inventory.isEnabled ? !marker.isCollected && (marker.amount < Inventory.stackSize) : !marker.isCollected) && enabledCategories.includes(marker.category)
-        && uniqueSearchMarkers.includes(marker) && !categoriesDisabledByDefault.includes(marker.subdata)
-        && marker.tool <= parseInt(toolType)) {
+          && uniqueSearchMarkers.includes(marker) && !categoriesDisabledByDefault.includes(marker.subdata)
+          && marker.tool <= parseInt(toolType)) {
           var connection = [marker.lat, marker.lng];
           connections.push(connection);
         }
 
       });
     });
-
 
     if (polylines instanceof L.Polyline) {
       MapBase.map.removeLayer(polylines);
@@ -38,13 +51,13 @@ var Routes = {
     MapBase.map.addLayer(polylines);
   },
 
-  loadCustomRoute: function(input) {
+  loadCustomRoute: function (input) {
     try {
       var connections = [];
 
       input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
 
-      $.each(input, function(key, value) {
+      $.each(input, function (key, value) {
         var _marker = markers.filter(marker => marker.text == value && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category])[0];
         if (_marker == null) {
           console.log(`Item not found on map: '${value}'`);
@@ -66,10 +79,11 @@ var Routes = {
       console.log(e);
     }
   },
-  addMarkerOnCustomRoute: function(value) {
+
+  addMarkerOnCustomRoute: function (value) {
     if (customRouteEnabled) {
       if (customRouteConnections.includes(value)) {
-        customRouteConnections = customRouteConnections.filter(function(item) {
+        customRouteConnections = customRouteConnections.filter(function (item) {
           return item !== value
         })
       } else {
@@ -78,7 +92,7 @@ var Routes = {
 
       var connections = [];
 
-      $.each(customRouteConnections, function(key, item) {
+      $.each(customRouteConnections, function (key, item) {
         var _marker = markers.filter(marker => marker.text == item && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category])[0];
         connections.push([_marker.lat, _marker.lng]);
       });
@@ -92,39 +106,194 @@ var Routes = {
       });
       MapBase.map.addLayer(polylines);
     }
-  }
-};
+  },
 
-Routes.loadRoutesData = function() {
+  loadRoutesData: function () {
+    $.getJSON('data/routes/day_1.json', {}, function (data) {
+      routesData[1] = data;
+    });
+    $.getJSON('data/routes/day_2.json', {}, function (data) {
+      routesData[2] = data;
+    });
+    $.getJSON('data/routes/day_3.json', {}, function (data) {
+      routesData[3] = data;
+    });
+  },
 
-  $.getJSON('data/routes/day_1.json', {}, function(data) {
-    routesData[1] = data;
-  });
-  $.getJSON('data/routes/day_2.json', {}, function(data) {
-    routesData[2] = data;
-  });
-  $.getJSON('data/routes/day_3.json', {}, function(data) {
-    routesData[3] = data;
-  });
-};
+  exportCustomRoute: function () {
+    const el = document.createElement('textarea');
+    el.value = customRouteConnections.join(',');
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el)
 
-Routes.exportCustomRoute = function() {
-  const el = document.createElement('textarea');
-  el.value = customRouteConnections.join(',');
-  document.body.appendChild(el);
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el)
+    alert(Language.get('routes.exported'));
+  },
 
-  alert(Language.get('routes.exported'));
-};
+  importCustomRoute: function () {
+    var input = prompt(Language.get('routes.import_prompt'), "");
 
-Routes.importCustomRoute = function() {
-  var input = prompt(Language.get('routes.import_prompt'), "");
+    if (input == null || input == "") {
+      alert(Language.get('routes.empty'));
+    } else {
+      Routes.loadCustomRoute(input);
+    }
+  },
 
-  if (input == null || input == "") {
-    alert(Language.get('routes.empty'));
-  } else {
-    Routes.loadCustomRoute(input);
+  /**
+   * Path generator by Senexis
+   */
+
+  // The maximum distance a path can be in points.
+  // - This number might need to be tweaked depending on how many markers there are.
+  // - 25 seems optimal for everything, a higher number is needed for less markers.
+  // - If the number is too low, the path will end prematurely.
+  // - If the number is too high, undesirable paths might be drawn (across Iron Lake for example).
+  maxDistance: parseInt($.cookie('generator-path-distance')) ? parseInt($.cookie('generator-path-distance')) : 25,
+
+  // The point to start the path generator from, default is SW edge.
+  startMarkerLat: parseFloat($.cookie('generator-path-start-lat')) ? parseFloat($.cookie('generator-path-start-lat')) : -119.9063,
+  startMarkerLng: parseFloat($.cookie('generator-path-start-lng')) ? parseFloat($.cookie('generator-path-start-lng')) : 8.0313,
+  startMarker: function () {
+    return { lat: Routes.startMarkerLat, lng: Routes.startMarkerLng };
+  },
+
+  // Needed to keep track of the previously drawn path so we can remove it later.
+  lastPolyline: null,
+
+  // Simple utility to get the distance between two markers in Leaflet.
+  getDistance: function (marker1, marker2) {
+    var latlng1 = L.latLng([marker1.lat, marker1.lng]);
+    var latlng2 = L.latLng([marker2.lat, marker2.lng]);
+
+    return MapBase.map.distance(latlng1, latlng2);
+  },
+
+  // Simple utility to check whether the two given markers are the same.
+  isSameMarker: function (marker1, marker2) {
+    return marker1.lat == marker2.lat && marker1.lng == marker2.lng
+  },
+
+  // Simple utility to clear the given polyline from Leaflet.
+  clearPath: function () {
+    if (Routes.lastPolyline) Routes.lastPolyline.remove(MapBase.map);
+  },
+
+  // Find the nearest neighbor to the given marker.
+  // Needs to have an array of the possible markers and currently chosen paths and the maximum distance a path can be.
+  nearestNeighborTo: function (marker, possibleNeighbors, polylines) {
+    var resDistance = null;
+    for (var i = 0; i < possibleNeighbors.length; i++) {
+      var element = possibleNeighbors[i];
+
+      // Calculate closest path.
+      var distance = Routes.getDistance(marker, element);
+
+      // Skip any distance over maxDistance.
+      if (distance > Routes.maxDistance) continue;
+
+      // Skip the current marker.
+      if (Routes.isSameMarker(marker, element)) continue;
+
+      // Skip existing paths in polylines.
+      var pathExists = false;
+      var markerNodeCount = 0;
+      var elementNodeCount = 0;
+
+      polylines.forEach((polyline) => {
+        // Check if the path is already drawn to prevent looping paths.
+        // {element, marker} exists
+        if (Routes.isSameMarker(polyline[0], element) && Routes.isSameMarker(polyline[1], marker)) {
+          pathExists = true;
+        }
+
+        // {marker, element} exists
+        if (Routes.isSameMarker(polyline[0], marker) && Routes.isSameMarker(polyline[1], element)) {
+          pathExists = true;
+        }
+
+        // Count how many paths the element and marker is in already to prevent more than two path lines from each marker.
+        // {element, Any} or {Any, element} exists
+        if (Routes.isSameMarker(polyline[0], element) || Routes.isSameMarker(polyline[1], element)) {
+          elementNodeCount++;
+        }
+
+        // {marker, Any} or {Any, marker} exists
+        if (Routes.isSameMarker(polyline[0], marker) || Routes.isSameMarker(polyline[1], marker)) {
+          markerNodeCount++;
+        }
+      });
+
+      // The path already is present in the path list.
+      if (pathExists) continue;
+
+      // The current marker already has a path chosen for it.
+      if (markerNodeCount > 1) continue;
+
+      // We are drawing a one-way path, in other words we can only go to uncharted nodes.
+      if (elementNodeCount != 0) continue;
+
+      // If resDistance is empty, set it to the first valid marker.
+      // If you put this anywhere else, a bug is possible where the first Array item gets chosen incorrectly.
+      if (!resDistance) {
+        resIndex = i;
+        resMarker = element;
+        resDistance = distance;
+      }
+
+      // If distance is less than previous distance, set the current path as more optimal than the last.
+      if (distance < resDistance) {
+        resIndex = i;
+        resMarker = element;
+        resDistance = distance;
+      }
+    }
+
+    // Return the most optimal path.
+    return {
+      index: resIndex,
+      marker: resMarker,
+      distance: resDistance,
+    }
+  },
+
+  // Generate a path using a nearest neighbor algorithm.
+  // markers: A list of all markers to generate a path with, will be filtered on isVisible.
+  generatePath: function () {
+    // Clean up before generating.
+    Routes.clearPath();
+
+    console.log(Routes.startMarker())
+
+    // Setup variables.
+    var newMarkers = markers.filter((marker) => { return marker.isVisible; });
+    var polylines = [];
+
+    // The starting point of the path.
+    var first = null;
+
+    // Grab the nearest marker to the start of the path.
+    first = Routes.nearestNeighborTo(Routes.startMarker(), newMarkers, polylines, Routes.maxDistance);
+
+    // The last marker from the loop.
+    var last = first.marker;
+
+    // Loop through all markers and pick the nearest neighbor to that marker.
+    for (var i = 0; i < newMarkers.length; i++) {
+      var current = Routes.nearestNeighborTo(last, newMarkers, polylines, Routes.maxDistance);
+      if (!current) break;
+      current = current.marker;
+
+      // A last fallback to not draw paths that are too long.
+      if (Routes.getDistance(last, current) < Routes.maxDistance) {
+        polylines.push([{ lat: last.lat, lng: last.lng }, { lat: current.lat, lng: current.lng }]);
+      }
+
+      last = current;
+    }
+
+    // Draw all paths on the map, and save the instance of the polyline to be able to clean it up later.
+    Routes.lastPolyline = L.polyline(polylines).addTo(MapBase.map);
   }
 };

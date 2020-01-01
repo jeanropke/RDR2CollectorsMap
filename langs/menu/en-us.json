@@ -72,5 +72,17 @@
 	{"key": "menu.inventory", "value": "Inventory"},
 	{"key": "menu.enable_inventory", "value": "Enable inventory"},
 	{"key": "menu.inventory_stack", "value": "Item stack size"},
-	{"key": "menu.marker_cluster", "value": "Markers cluster"}
+	{"key": "menu.marker_cluster", "value": "Markers cluster"},
+	{"key": "menu.route_generator", "value": "Route generator"},
+	{"key": "menu.generate_route", "value": "Generate route"},
+	{"key": "menu.generate_route_clear", "value": "Clear route"},
+	{"key": "menu.generate_route_distance", "value": "Maximum line length"},
+	{"key": "menu.generate_route_start", "value": "Route starts at"},
+	{"key": "menu.generate_route_start.sw", "value": "Southwest (↙)"},
+	{"key": "menu.generate_route_start.ne", "value": "Northeast (↗)"},
+	{"key": "menu.generate_route_start.n", "value": "North (↑)"},
+	{"key": "menu.generate_route_start.se", "value": "Southeast (↘)"},
+	{"key": "menu.generate_route_start.custom", "value": "Custom"},
+	{"key": "menu.generate_route_start_lat", "value": "Route start lat."},
+	{"key": "menu.generate_route_start_lng", "value": "Route start long."}
 ]
