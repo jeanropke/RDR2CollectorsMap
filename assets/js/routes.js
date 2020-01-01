@@ -4,6 +4,7 @@
 
 var Routes = {
   init: function () {
+    $('#generate-route-ignore-collected').val(Routes.ignoreCollected ? 'true' : 'false');
     $('#generate-route-distance').val(Routes.maxDistance);
     $('#generate-route-start-lat').val(Routes.startMarkerLat);
     $('#generate-route-start-lng').val(Routes.startMarkerLng);
@@ -144,6 +145,8 @@ var Routes = {
   /**
    * Path generator by Senexis
    */
+  // Whether collected items should be ignored or not when pathing.
+  ignoreCollected: $.cookie('generator-path-ignore-collected') == 'true',
 
   // The maximum distance a path can be in points.
   // - This number might need to be tweaked depending on how many markers there are.
@@ -268,6 +271,12 @@ var Routes = {
 
     // Setup variables.
     var newMarkers = markers.filter((marker) => { return marker.isVisible; });
+    
+    // Optionally ignore the already collected markers.
+    if (Routes.ignoreCollected) {
+      newMarkers = newMarkers.filter((marker) => { return !marker.isCollected; });
+    }
+
     var polylines = [];
 
     // The starting point of the path.

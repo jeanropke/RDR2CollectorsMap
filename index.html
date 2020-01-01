@@ -407,6 +407,13 @@
     </div>
     <div class="settings-container">
       <div class="input-container">
+        <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected items</label>
+        <select class="input-day" id="generate-route-ignore-collected">
+          <option value="true" data-text="menu.yes">Yes</option>
+          <option value="false" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container">
         <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
         <input id="generate-route-distance" class="input-day" type="number" min="1" max="200" value="25">
       </div>
