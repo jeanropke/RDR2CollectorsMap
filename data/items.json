@@ -51,7 +51,7 @@
             { "text": "arrowhead_flint", "tool": "2", "lat": "-104.1516", "lng": "48.0816" },
             { "text": "arrowhead_obsidian", "tool": "2", "lat": "-47.1299", "lng": "146.6197" },
             { "text": "arrowhead_quartz", "tool": "2", "lat": "-87.7395", "lng": "131.3805" },
-            { "text": "arrowhead_raw", "tool": "2", "lat": "-90.7095", "lng": "126.2632" },
+            { "text": "arrowhead_raw", "tool": "2", "lat": "-90.7095", "lng": "96.2632" },
             { "text": "arrowhead_rough", "tool": "2", "lat": "-72.2334", "lng": "142.1053" },
             { "text": "arrowhead_slate", "tool": "2", "lat": "-60.2151", "lng": "96.1918" },
             { "text": "arrowhead_splintered", "tool": "2", "lat": "-41.4516", "lng": "104.1205" }
