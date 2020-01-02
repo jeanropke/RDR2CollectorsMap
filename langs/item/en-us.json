@@ -556,7 +556,7 @@
 	{"key": "coin_gold_dollar_coin_3.desc", "value": "In between a big and small rock."},
 	{"key": "coin_gold_dollar_coin_4.desc", "value": ""},
 	{"key": "coin_gold_dollar_coin_5.desc", "value": ""},
-	{"key": "coin_gold_dollar_coin_6.desc", "value": "At the bottom, below the oil pump."},
+	{"key": "coin_gold_dollar_coin_6.desc", "value": "At the bottom, below the oil pump. Currently bugged and gives a 1700 New Yorke Token instead."},
 
 	{"key": "coin_nickel_coin.name", "value": "1792 Nickel Coin"},
 	{"key": "coin_nickel_coin_1.desc", "value": "In graveyard near headstone."},
