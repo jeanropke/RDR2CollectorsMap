@@ -301,7 +301,7 @@ var MapBase = {
       popupContent = Language.get("random_item.desc");
     else {
       var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
-      popupContent = marker.tool == '-1' ? Language.get('map.item.unable') : '' + ' ' + marker.description + ' ' + weeklyText;
+      popupContent = (marker.tool == '-1' ? Language.get('map.item.unable') : '') + ' ' + marker.description + ' ' + weeklyText;
     }
     
 
