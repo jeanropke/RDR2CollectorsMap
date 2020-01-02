@@ -74,24 +74,24 @@ var MapBase = {
 
   },
 
- 
-  devGameToMap: function(t) {
+
+  devGameToMap: function (t) {
     var image = [48841, 38666];
     var topLeft = [-7168, 4096];
     var bottomRight = [5120, -5632];
 
-      var i = image[0]
-        , n = image[1]
-        , e = MapBase._normal_xy(topLeft, bottomRight)
-        , s = MapBase._normal_xy(topLeft, t);
-        console.log(t);
-      return [i * (s[0] / e[0]), n * (s[1] / e[1])]
+    var i = image[0]
+      , n = image[1]
+      , e = MapBase._normal_xy(topLeft, bottomRight)
+      , s = MapBase._normal_xy(topLeft, t);
+    console.log(t);
+    return [i * (s[0] / e[0]), n * (s[1] / e[1])]
   },
-  _normal_xy: function(t, i) {
+  _normal_xy: function (t, i) {
     console.log(`MapBase._num_distance(${t[0]}, ${i[0]})`);
     return [MapBase._num_distance(t[0], i[0]), MapBase._num_distance(t[1], i[1])]
   },
-  _num_distance: function(t ,i) {
+  _num_distance: function (t, i) {
     return t > i ? t - i : i - t;
   },
 
@@ -304,13 +304,11 @@ var MapBase = {
       popupContent = weeklyText + marker.description;
     }
 
-
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
     <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
     <small data-item="${marker.text}">${marker.amount}</small>
     <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
     </div>`;
-
 
     return `<h1>${marker.title} - ${Language.get("menu.day")} ${marker.day}</h1>
         <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
@@ -353,13 +351,15 @@ var MapBase = {
     marker.weeklyCollection = isWeekly ? weeklySetData.current : null;
 
     if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
-      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.night_only');
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.flower_type.night_only');
+    else if (marker.subdata == 'creek_plum')
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.flower_type.bush');
     else if (marker.subdata == 'egg_spoonbill' || marker.subdata == 'egg_heron' || marker.subdata == 'egg_eagle' || marker.subdata == 'egg_hawk' || marker.subdata == 'egg_egret')
-      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.tree');
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.tree');
     else if (marker.subdata == 'egg_vulture')
-      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.stump');
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.stump');
     else if (marker.subdata == 'egg_duck' || marker.subdata == 'egg_goose')
-      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.ground');
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.ground');
     else
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
 
