@@ -159,6 +159,7 @@ p {
 
 .marker-popup-buttons small {
     font-size: 15px;
+    line-height: 33px;
 }
 
 .hide-show-container, .custom-routes-container {
