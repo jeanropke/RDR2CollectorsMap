@@ -617,6 +617,13 @@ $('#generate-route-ignore-collected').on("change", function () {
   Routes.ignoreCollected = inputValue;
 });
 
+$('#generate-route-generate-on-visit').on("change", function () {
+  var inputValue = $('#generate-route-generate-on-visit').val();
+  inputValue = inputValue == 'true';
+  $.cookie('generator-path-generate-on-visit', inputValue);
+  Routes.runOnStart = inputValue;
+});
+
 $('#generate-route-distance').on("change", function () {
   var inputValue = parseInt($('#generate-route-distance').val());
   inputValue = !isNaN(inputValue) && inputValue > 0 ? inputValue : 25;
