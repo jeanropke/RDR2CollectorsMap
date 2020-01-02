@@ -45,6 +45,7 @@
 	{"key": "map.egg_type.tree", "value": "In a tree. Shoot down with varmint rifle or bow using small game arrows."},
 	{"key": "map.egg_type.stump", "value": "Inside a tree stump."},
 	{"key": "map.egg_type.ground", "value": "In a nest on the ground. Don't step on it or (some of) the eggs inside will be broken."},
+	{"key": "map.item.unable", "value": "Unable to get this item."},
 	{"key": "menu.collectables_value", "value": "Value"},
 	{"key": "menu.custom_routes", "value": "Custom routes"},
 	{"key": "menu.import_route", "value": "Import route"},

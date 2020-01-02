@@ -301,8 +301,10 @@ var MapBase = {
       popupContent = Language.get("random_item.desc");
     else {
       var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
-      popupContent = marker.description + ' ' + weeklyText;
+      popupContent = marker.tool == '-1' ? Language.get('map.item.unable') : '' + ' ' + marker.description + ' ' + weeklyText;
     }
+    
+
 
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
     <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
@@ -457,6 +459,7 @@ var MapBase = {
 
 MapBase.getToolIcon = function (type) {
   switch (type) {
+    default:
     case '0':
       return '';
       break;
