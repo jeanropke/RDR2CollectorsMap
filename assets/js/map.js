@@ -300,8 +300,8 @@ var MapBase = {
     if (marker.category == 'random')
       popupContent = Language.get("random_item.desc");
     else {
-      var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) + ' ' : '';
-      popupContent = weeklyText + marker.description;
+      var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
+      popupContent = marker.description + ' ' + weeklyText;
     }
 
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
