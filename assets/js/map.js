@@ -346,19 +346,26 @@ var MapBase = {
 
     tempMarker.id = marker.text;
     marker.isVisible = true;
-
-    marker.title = (marker.category == 'random') ? Language.get("random_item.name") + marker.text.replace('random_item_', '') : Language.get(`${marker.text}.name`);
     marker.weeklyCollection = isWeekly ? weeklySetData.current : null;
+
+    if (marker.category == 'random')
+      marker.title = `${Language.get("random_item.name")} #${marker.text.replace('random_item_', '')}}`
+    else if (marker.category == 'american_flowers')
+      marker.title = `${Language.get(`flower_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`
+    else if (marker.category == 'bird_eggs' && (marker.subdata == 'eagle' || marker.subdata == 'hawk'))
+      marker.title = `${Language.get(`egg_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`
+    else
+      marker.title = Language.get(`${marker.text}.name`);
 
     if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.flower_type.night_only');
     else if (marker.subdata == 'creek_plum')
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.flower_type.bush');
-    else if (marker.subdata == 'egg_spoonbill' || marker.subdata == 'egg_heron' || marker.subdata == 'egg_eagle' || marker.subdata == 'egg_hawk' || marker.subdata == 'egg_egret')
+    else if (marker.subdata == 'spoonbill' || marker.subdata == 'heron' || marker.subdata == 'eagle' || marker.subdata == 'hawk' || marker.subdata == 'egret')
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.tree');
-    else if (marker.subdata == 'egg_vulture')
+    else if (marker.subdata == 'vulture')
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.stump');
-    else if (marker.subdata == 'egg_duck' || marker.subdata == 'egg_goose')
+    else if (marker.subdata == 'duck' || marker.subdata == 'goose')
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.ground');
     else
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
