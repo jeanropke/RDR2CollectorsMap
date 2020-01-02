@@ -78,6 +78,7 @@
 	{"key": "menu.route_generator", "value": "Route generator"},
 	{"key": "menu.generate_route", "value": "Generate route"},
 	{"key": "menu.generate_route_clear", "value": "Clear route"},
+	{"key": "menu.generate_route_generate_on_visit", "value": "Generate route on every visit"},
 	{"key": "menu.generate_route_ignore_collected", "value": "Ignore collected items"},
 	{"key": "menu.generate_route_distance", "value": "Maximum line length"},
 	{"key": "menu.generate_route_start", "value": "Route starts at"},

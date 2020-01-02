@@ -36,7 +36,7 @@ var customRouteEnabled = false;
 var customRouteConnections = [];
 
 var toolType = '3'; //All type of tools
-var avaliableLanguages = ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'th-th', 'zh-s', 'zh-t'];
+var availableLanguages = ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'th-th', 'zh-s', 'zh-t'];
 var lang;
 
 var nazarLocations = [];
@@ -119,24 +119,20 @@ function init() {
   });
 
   if (typeof $.cookie('map-layer') === 'undefined')
-    $.cookie('map-layer', 'Detailed', {
-      expires: 999
-    });
+    $.cookie('map-layer', 'Detailed', { expires: 999 });
 
   if (typeof $.cookie('language') === 'undefined') {
-    if (avaliableLanguages.includes(navigator.language.toLowerCase()))
-      $.cookie('language', navigator.language.toLowerCase());
+    if (availableLanguages.includes(navigator.language.toLowerCase()))
+      $.cookie('language', navigator.language.toLowerCase(), { expires: 999 });
     else
-      $.cookie('language', 'en-us');
+      $.cookie('language', 'en-us', { expires: 999 });
   }
 
-  if (!avaliableLanguages.includes($.cookie('language')))
-    $.cookie('language', 'en-us');
+  if (!availableLanguages.includes($.cookie('language')))
+    $.cookie('language', 'en-us', { expires: 999 });
 
   if (typeof $.cookie('remove-markers-daily') === 'undefined')
-    $.cookie('remove-markers-daily', 'false', {
-      expires: 999
-    });
+    $.cookie('remove-markers-daily', 'false', { expires: 999 });
 
   if (typeof $.cookie('auto-refresh') === 'undefined')
     $.cookie('auto-refresh', false, { expires: 999 });
@@ -195,9 +191,7 @@ function setMapBackground(mapName) {
       break;
   }
 
-  $.cookie('map-layer', mapName, {
-    expires: 999
-  });
+  $.cookie('map-layer', mapName, { expires: 999 });
 }
 
 function setCurrentDayCycle(dev = null) {
@@ -227,16 +221,12 @@ function setCurrentDayCycle(dev = null) {
 
   //Cookie day not exists? create
   if (typeof $.cookie('date') === 'undefined') {
-    $.cookie('date', date, {
-      expires: 2
-    });
+    $.cookie('date', date, { expires: 2 });
   }
   //if exists, remove markers if the days arent the same
   else {
     if ($.cookie('date') != date.toString()) {
-      $.cookie('date', date, {
-        expires: 2
-      });
+      $.cookie('date', date, { expires: 2 });
       if (resetMarkersDaily) {
         $.each(markers, function (key, value) {
           if (inventory[value.text])
@@ -406,10 +396,9 @@ $("#routes").on("change", function () {
 //Change & save tool type
 $("#tools").on("change", function () {
   toolType = $("#tools").val();
-  $.cookie('tools', toolType, {
-    expires: 999
-  });
+  $.cookie('tools', toolType, { expires: 999 });
   MapBase.addMarkers();
+
   if ($("#routes").val() == 1)
     Routes.drawLines();
 });
@@ -433,9 +422,7 @@ $("#reset-markers").on("change", function () {
   }
 
   resetMarkersDaily = $("#reset-markers").val();
-  $.cookie('remove-markers-daily', resetMarkersDaily, {
-    expires: 999
-  });
+  $.cookie('remove-markers-daily', resetMarkersDaily, { expires: 999 });
 
   MapBase.addMarkers();
 
@@ -475,7 +462,7 @@ $("#custom-routes").on("change", function () {
 
 //When map-alert is clicked
 $('.map-alert').on('click', function () {
-  $.cookie('alert-closed', 'true');
+  $.cookie('alert-closed', 'true', { expires: 999 });
   $('.map-alert').hide();
 });
 
@@ -490,9 +477,7 @@ $('#show-coordinates').on('change', function () {
 //Change & save language option
 $("#language").on("change", function () {
   lang = $("#language").val();
-  $.cookie('language', lang, {
-    expires: 999
-  });
+  $.cookie('language', lang, { expires: 999 });
   Language.setMenuLanguage();
   MapBase.addMarkers();
   Menu.refreshMenu();
@@ -500,9 +485,7 @@ $("#language").on("change", function () {
 
 //Change & save auto-refresh option
 $("#auto-refresh").on("change", function () {
-  $.cookie('auto-refresh', $("#auto-refresh").val() == 'true', {
-    expires: 999
-  });
+  $.cookie('auto-refresh', $("#auto-refresh").val() == 'true', { expires: 999 });
 
   autoRefresh = $("#auto-refresh").val() == 'true';
 });
@@ -527,7 +510,7 @@ $('.menu-option.clickable').on('click', function () {
     });
   }
 
-  $.cookie('disabled-categories', categoriesDisabledByDefault.join(','));
+  $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });
 
   MapBase.addMarkers();
 
@@ -585,7 +568,7 @@ $('.menu-toggle').on('click', function () {
 //Enable & disable markers cluster
 $('#marker-cluster').on("change", function () {
   var inputValue = $('#marker-cluster').val();
-  $.cookie('marker-cluster', inputValue);
+  $.cookie('marker-cluster', inputValue, { expires: 999 });
   Settings.markerCluster = inputValue == '1';
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
@@ -594,7 +577,7 @@ $('#marker-cluster').on("change", function () {
 //Enable & disable inventory on menu
 $('#enable-inventory').on("change", function () {
   var inputValue = $('#enable-inventory').val();
-  $.cookie('inventory-enabled', inputValue);
+  $.cookie('inventory-enabled', inputValue, { expires: 999 });
   Inventory.isEnabled = inputValue == 'true';
   MapBase.addMarkers();
 });
@@ -603,7 +586,7 @@ $('#enable-inventory').on("change", function () {
 $('#inventory-stack').on("change", function () {
   var inputValue = parseInt($('#inventory-stack').val());
   inputValue = !isNaN(inputValue) ? inputValue : 10;
-  $.cookie('inventory-stack', inputValue);
+  $.cookie('inventory-stack', inputValue, { expires: 999 });
   Inventory.stackSize = inputValue;
 });
 
@@ -613,20 +596,33 @@ $('#inventory-stack').on("change", function () {
 $('#generate-route-ignore-collected').on("change", function () {
   var inputValue = $('#generate-route-ignore-collected').val();
   inputValue = inputValue == 'true';
-  $.cookie('generator-path-ignore-collected', inputValue);
+  $.cookie('generator-path-ignore-collected', inputValue, { expires: 999 });
   Routes.ignoreCollected = inputValue;
+
+  if (Routes.lastPolyline != null)
+    Routes.generatePath();
+});
+
+$('#generate-route-generate-on-visit').on("change", function () {
+  var inputValue = $('#generate-route-generate-on-visit').val();
+  inputValue = inputValue == 'true';
+  $.cookie('generator-path-generate-on-visit', inputValue, { expires: 999 });
+  Routes.runOnStart = inputValue;
 });
 
 $('#generate-route-distance').on("change", function () {
   var inputValue = parseInt($('#generate-route-distance').val());
   inputValue = !isNaN(inputValue) && inputValue > 0 ? inputValue : 25;
-  $.cookie('generator-path-distance', inputValue);
+  $.cookie('generator-path-distance', inputValue, { expires: 999 });
   Routes.maxDistance = inputValue;
+
+  if (Routes.lastPolyline != null)
+    Routes.generatePath();
 });
 
 $('#generate-route-start').on("change", function () {
   var inputValue = $('#generate-route-start').val();
-  $.cookie('generator-path-start', inputValue);
+  $.cookie('generator-path-start', inputValue, { expires: 999 });
 
   var startLat = null;
   var startLng = null;
@@ -665,25 +661,34 @@ $('#generate-route-start').on("change", function () {
   $('#generate-route-start-lat').val(startLat);
   $('#generate-route-start-lng').val(startLng);
 
-  $.cookie('generator-path-start-lat', startLat);
-  $.cookie('generator-path-start-lng', startLng);
+  $.cookie('generator-path-start-lat', startLat, { expires: 999 });
+  $.cookie('generator-path-start-lng', startLng, { expires: 999 });
 
   Routes.startMarkerLat = startLat;
   Routes.startMarkerLng = startLng;
+
+  if (Routes.lastPolyline != null)
+    Routes.generatePath();
 });
 
 $('#generate-route-start-lat').on("change", function () {
   var inputValue = parseFloat($('#generate-route-start-lat').val());
   inputValue = !isNaN(inputValue) ? inputValue : -119.9063;
-  $.cookie('generator-path-start-lat', inputValue);
+  $.cookie('generator-path-start-lat', inputValue, { expires: 999 });
   Routes.startMarkerLat = inputValue;
+
+  if (Routes.lastPolyline != null)
+    Routes.generatePath();
 });
 
 $('#generate-route-start-lng').on("change", function () {
   var inputValue = parseFloat($('#generate-route-start-lng').val());
   inputValue = !isNaN(inputValue) ? inputValue : 8.0313;
-  $.cookie('generator-path-start-lng', inputValue);
+  $.cookie('generator-path-start-lng', inputValue, { expires: 999 });
   Routes.startMarkerLng = inputValue;
+
+  if (Routes.lastPolyline != null)
+    Routes.generatePath();
 });
 
 /**
