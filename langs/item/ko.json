@@ -401,66 +401,6 @@
 	{"key": "coin_penny_2.desc", "value": "On the right side of the dead tree."},
 	{"key": "coin_penny_3.desc", "value": "Next to a broken down wagon."},
 
-	{"key": "egg_spoonbill.name", "value": "저어새 알"},
-	{"key": "egg_spoonbill_1.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_spoonbill_2.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_spoonbill_3.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-
-	{"key": "egg_heron.name", "value": "왜가리 알"},
-	{"key": "egg_heron_1.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_heron_2.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_heron_3.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-
-	{"key": "egg_loon.name", "value": "아비새 알"},
-	{"key": "egg_loon_1.desc", "value": ""},
-	{"key": "egg_loon_2.desc", "value": ""},
-	{"key": "egg_loon_3.desc", "value": ""},
-
-	{"key": "egg_eagle_1.name", "value": "독수리 알"},
-	{"key": "egg_eagle_1_1.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_eagle_1_2.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_eagle_1_3.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-
-	{"key": "egg_eagle_2.name", "value": "독수리 알"},
-	{"key": "egg_eagle_2_1.desc", "value": ""},
-	{"key": "egg_eagle_2_2.desc", "value": "In the large fir tree. Shoot down with varmint rifle or bow using small game arrows."},
-	{"key": "egg_eagle_2_3.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-
-	{"key": "egg_vulture.name", "value": "벌처 알"},
-	{"key": "egg_vulture_1.desc", "value": "나무 그루터기 안 속."},
-	{"key": "egg_vulture_2.desc", "value": ""},
-	{"key": "egg_vulture_3.desc", "value": "나무 그루터기 안 속."},
-
-	{"key": "egg_hawk_1.name", "value": "매 알"},
-	{"key": "egg_hawk_1_1.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_hawk_1_2.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_hawk_1_3.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-
-	{"key": "egg_hawk_2.name", "value": "매 알"},
-	{"key": "egg_hawk_2_1.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_hawk_2_2.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_hawk_2_3.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-
-	{"key": "egg_egret.name", "value": "백로 알"},
-	{"key": "egg_egret_1.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_egret_2.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-	{"key": "egg_egret_3.desc", "value": "나무 속. 바민트 라이플이나 작은 동물용 화살을 사용한 활로 쏘세요."},
-
-	{"key": "egg_duck.name", "value": "오리 알"},
-	{"key": "egg_duck_1.desc", "value": "In a nest on the ground. Don't step on it!"},
-	{"key": "egg_duck_2.desc", "value": "In a nest on the ground. "},
-	{"key": "egg_duck_3.desc", "value": "In a nest on the ground. "},
-
-	{"key": "egg_goose.name", "value": "거위 알"},
-	{"key": "egg_goose_1.desc", "value": "In a nest on the ground below the boat stuck in tree."},
-	{"key": "egg_goose_2.desc", "value": "In a nest on the ground."},
-	{"key": "egg_goose_3.desc", "value": "In a nest on the ground. Don't step on it!"},
-
-	{"key": "egg_goose_2.name", "value": "거위 알"},
-	{"key": "egg_goose_2_1.desc", "value": "In a nest on the ground. "},
-	{"key": "egg_goose_2_2.desc", "value": "In a nest on the ground. "},
-	{"key": "egg_goose_2_3.desc", "value": "In a nest on the ground. "},
-
 	{"key": "bottle_tennesee_whiskey.name", "value": "테네시 위스키"},
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": "On the dinner table inside."},
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": "Inside building in cabinet in far right corner."},
@@ -835,6 +775,16 @@
 	{"key": "bracelet_hajnal_garnet_bangle_1.desc", "value": "In a chest on a ridge."},
 	{"key": "bracelet_hajnal_garnet_bangle_2.desc", "value": "In chest at the base of the tree"},
 	{"key": "bracelet_hajnal_garnet_bangle_3.desc", "value": "In a lockbox underneath the bridge."},
+
+	{"key": "egg_duck.name", "value": "오리 알"},
+	{"key": "egg_eagle.name", "value": "독수리 알"},
+	{"key": "egg_egret.name", "value": "백로 알"},
+	{"key": "egg_goose.name", "value": "거위 알"},
+	{"key": "egg_hawk.name", "value": "매 알"},
+	{"key": "egg_heron.name", "value": "왜가리 알"},
+	{"key": "egg_loon.name", "value": "아비새 알"},
+	{"key": "egg_spoonbill.name", "value": "저어새 알"},
+	{"key": "egg_vulture.name", "value": "벌처 알"},
 
 	{"key": "flower_agarita.name", "value": "아가리타"},
 	{"key": "flower_bitterweed.name", "value": "비터위드"},

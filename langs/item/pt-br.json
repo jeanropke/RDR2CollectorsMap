@@ -401,66 +401,6 @@
 	{"key": "coin_penny_2.desc", "value": ""},
 	{"key": "coin_penny_3.desc", "value": ""},
 
-	{"key": "egg_spoonbill.name", "value": "Ovo de Colhedeiro"},
-	{"key": "egg_spoonbill_1.desc", "value": ""},
-	{"key": "egg_spoonbill_2.desc", "value": ""},
-	{"key": "egg_spoonbill_3.desc", "value": ""},
-
-	{"key": "egg_heron.name", "value": "Ovo de Garça-Grande"},
-	{"key": "egg_heron_1.desc", "value": ""},
-	{"key": "egg_heron_2.desc", "value": ""},
-	{"key": "egg_heron_3.desc", "value": ""},
-
-	{"key": "egg_loon.name", "value": "Ovo de Mobelha"},
-	{"key": "egg_loon_1.desc", "value": ""},
-	{"key": "egg_loon_2.desc", "value": ""},
-	{"key": "egg_loon_3.desc", "value": ""},
-
-	{"key": "egg_eagle_1.name", "value": "Ovo de Águia"},
-	{"key": "egg_eagle_1_1.desc", "value": ""},
-	{"key": "egg_eagle_1_2.desc", "value": ""},
-	{"key": "egg_eagle_1_3.desc", "value": ""},
-
-	{"key": "egg_eagle_2.name", "value": "Ovo de Águia"},
-	{"key": "egg_eagle_2_1.desc", "value": ""},
-	{"key": "egg_eagle_2_2.desc", "value": ""},
-	{"key": "egg_eagle_2_3.desc", "value": ""},
-	
-	{"key": "egg_vulture.name", "value": "Ovo de Abutre"},
-	{"key": "egg_vulture_1.desc", "value": ""},
-	{"key": "egg_vulture_2.desc", "value": ""},
-	{"key": "egg_vulture_3.desc", "value": ""},
-
-	{"key": "egg_hawk_1.name", "value": "Ovo de Gavião"},
-	{"key": "egg_hawk_1_1.desc", "value": ""},
-	{"key": "egg_hawk_1_2.desc", "value": ""},
-	{"key": "egg_hawk_1_3.desc", "value": ""},
-
-	{"key": "egg_hawk_2.name", "value": "Ovo de Gavião"},
-	{"key": "egg_hawk_2_1.desc", "value": ""},
-	{"key": "egg_hawk_2_2.desc", "value": ""},
-	{"key": "egg_hawk_2_3.desc", "value": ""},
-
-	{"key": "egg_egret.name", "value": "Ovo de Garça"},
-	{"key": "egg_egret_1.desc", "value": ""},
-	{"key": "egg_egret_2.desc", "value": ""},
-	{"key": "egg_egret_3.desc", "value": ""},
-
-	{"key": "egg_duck.name", "value": "Ovo de Pato"},
-	{"key": "egg_duck_1.desc", "value": ""},
-	{"key": "egg_duck_2.desc", "value": ""},
-	{"key": "egg_duck_3.desc", "value": ""},
-
-	{"key": "egg_goose.name", "value": "Ovo de Ganso"},
-	{"key": "egg_goose_1.desc", "value": ""},
-	{"key": "egg_goose_2.desc", "value": ""},
-	{"key": "egg_goose_3.desc", "value": ""},
-
-	{"key": "egg_goose_2.name", "value": "Ovo de Ganso"},
-	{"key": "egg_goose_2_1.desc", "value": ""},
-	{"key": "egg_goose_2_2.desc", "value": ""},
-	{"key": "egg_goose_2_3.desc", "value": ""},
-	
 	{"key": "bottle_tennesee_whiskey.name", "value": "Uísque Tennesse"},
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": ""},
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": ""},
@@ -836,6 +776,17 @@
 	{"key": "bracelet_hajnal_garnet_bangle_2.desc", "value": ""},
 	{"key": "bracelet_hajnal_garnet_bangle_3.desc", "value": ""},
 
+	
+	{"key": "egg_spoonbill.name", "value": "Ovo de Colhedeiro"},
+	{"key": "egg_heron.name", "value": "Ovo de Garça-Grande"},
+	{"key": "egg_loon.name", "value": "Ovo de Mobelha"},
+	{"key": "egg_eagle.name", "value": "Ovo de Águia"},
+	{"key": "egg_vulture.name", "value": "Ovo de Abutre"},
+	{"key": "egg_hawk.name", "value": "Ovo de Gavião"},
+	{"key": "egg_egret.name", "value": "Ovo de Garça"},
+	{"key": "egg_duck.name", "value": "Ovo de Pato"},
+	{"key": "egg_goose.name", "value": "Ovo de Ganso"},
+	
 	{"key": "flower_agarita.name", "value": "Agarita"},
 	{"key": "flower_bitterweed.name", "value": "Erva-Amarga"},
 	{"key": "flower_blood_flower.name", "value": "Sanguinária"},

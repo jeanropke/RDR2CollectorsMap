@@ -401,66 +401,6 @@
 	{"key": "coin_penny_2.desc", "value": ""},
 	{"key": "coin_penny_3.desc", "value": ""},
 
-	{"key": "egg_spoonbill.name", "value": "Œuf de Spatule"},
-	{"key": "egg_spoonbill_1.desc", "value": ""},
-	{"key": "egg_spoonbill_2.desc", "value": ""},
-	{"key": "egg_spoonbill_3.desc", "value": ""},
-
-	{"key": "egg_heron.name", "value": "Œuf de Héron"},
-	{"key": "egg_heron_1.desc", "value": ""},
-	{"key": "egg_heron_2.desc", "value": ""},
-	{"key": "egg_heron_3.desc", "value": ""},
-
-	{"key": "egg_loon.name", "value": "Œuf de Plongeon"},
-	{"key": "egg_loon_1.desc", "value": ""},
-	{"key": "egg_loon_2.desc", "value": ""},
-	{"key": "egg_loon_3.desc", "value": ""},
-
-	{"key": "egg_eagle_1.name", "value": "Œuf d'Aigle"},
-	{"key": "egg_eagle_1_1.desc", "value": ""},
-	{"key": "egg_eagle_1_2.desc", "value": ""},
-	{"key": "egg_eagle_1_3.desc", "value": ""},
-
-	{"key": "egg_eagle_2.name", "value": "Œuf d'Aigle"},
-	{"key": "egg_eagle_2_1.desc", "value": ""},
-	{"key": "egg_eagle_2_2.desc", "value": ""},
-	{"key": "egg_eagle_2_3.desc", "value": ""},
-
-	{"key": "egg_vulture.name", "value": "Œuf de Vautour"},
-	{"key": "egg_vulture_1.desc", "value": ""},
-	{"key": "egg_vulture_2.desc", "value": ""},
-	{"key": "egg_vulture_3.desc", "value": ""},
-
-	{"key": "egg_hawk_1.name", "value": "Œuf de Buse"},
-	{"key": "egg_hawk_1_1.desc", "value": ""},
-	{"key": "egg_hawk_1_2.desc", "value": ""},
-	{"key": "egg_hawk_1_3.desc", "value": ""},
-
-	{"key": "egg_hawk_2.name", "value": "Œuf de Buse"},
-	{"key": "egg_hawk_2_1.desc", "value": ""},
-	{"key": "egg_hawk_2_2.desc", "value": ""},
-	{"key": "egg_hawk_2_3.desc", "value": ""},
-
-	{"key": "egg_egret.name", "value": "Œuf d'Aigrette"},
-	{"key": "egg_egret_1.desc", "value": ""},
-	{"key": "egg_egret_2.desc", "value": ""},
-	{"key": "egg_egret_3.desc", "value": ""},
-
-	{"key": "egg_duck.name", "value": "Œuf de Canard"},
-	{"key": "egg_duck_1.desc", "value": ""},
-	{"key": "egg_duck_2.desc", "value": ""},
-	{"key": "egg_duck_3.desc", "value": ""},
-
-	{"key": "egg_goose.name", "value": "Œuf d'Oie"},
-	{"key": "egg_goose_1.desc", "value": ""},
-	{"key": "egg_goose_2.desc", "value": ""},
-	{"key": "egg_goose_3.desc", "value": ""},
-
-	{"key": "egg_goose_2.name", "value": "Œuf d'Oie"},
-	{"key": "egg_goose_2_1.desc", "value": ""},
-	{"key": "egg_goose_2_2.desc", "value": ""},
-	{"key": "egg_goose_2_3.desc", "value": ""},
-
 	{"key": "bottle_tennesee_whiskey.name", "value": "Whisky du Tennessee"},
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": ""},
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": ""},
@@ -836,6 +776,16 @@
 	{"key": "bracelet_hajnal_garnet_bangle_2.desc", "value": ""},
 	{"key": "bracelet_hajnal_garnet_bangle_3.desc", "value": ""},
 
+	{"key": "egg_duck.name", "value": "Œuf de Canard"},
+	{"key": "egg_eagle.name", "value": "Œuf d'Aigle"},
+	{"key": "egg_egret.name", "value": "Œuf d'Aigrette"},
+	{"key": "egg_goose.name", "value": "Œuf d'Oie"},
+	{"key": "egg_hawk.name", "value": "Œuf de Buse"},
+	{"key": "egg_heron.name", "value": "Œuf de Héron"},
+	{"key": "egg_loon.name", "value": "Œuf de Plongeon"},
+	{"key": "egg_spoonbill.name", "value": "Œuf de Spatule"},
+	{"key": "egg_vulture.name", "value": "Œuf de Vautour"},
+	
 	{"key": "flower_agarita.name", "value": "Agarita"},
 	{"key": "flower_bitterweed.name", "value": "Ambroisie"},
 	{"key": "flower_blood_flower.name", "value": "Asclépiade de Curaçao"},

@@ -401,66 +401,6 @@
 	{"key": "coin_penny_2.desc", "value": "Po prawej stronie obok uschniętego drzewa."},
 	{"key": "coin_penny_3.desc", "value": "Obok zepsutego wozu."},
 
-	{"key": "egg_spoonbill.name", "value": "Jajo warzęchy"},
-	{"key": "egg_spoonbill_1.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_spoonbill_2.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_spoonbill_3.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-
-	{"key": "egg_heron.name", "value": "Jajo czapli modrej"},
-	{"key": "egg_heron_1.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_heron_2.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_heron_3.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-
-	{"key": "egg_loon.name", "value": "Jajo nura"},
-	{"key": "egg_loon_1.desc", "value": ""},
-	{"key": "egg_loon_2.desc", "value": ""},
-	{"key": "egg_loon_3.desc", "value": ""},
-
-	{"key": "egg_eagle_1.name", "value": "Jajo orła"},
-	{"key": "egg_eagle_1_1.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_eagle_1_2.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_eagle_1_3.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-
-	{"key": "egg_eagle_2.name", "value": "Jajo orła"},
-	{"key": "egg_eagle_2_1.desc", "value": ""},
-	{"key": "egg_eagle_2_2.desc", "value": "Na dużej jodle. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_eagle_2_3.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-
-	{"key": "egg_vulture.name", "value": "Jajo sępa"},
-	{"key": "egg_vulture_1.desc", "value": "W pniu drzewa."},
-	{"key": "egg_vulture_2.desc", "value": ""},
-	{"key": "egg_vulture_3.desc", "value": "W pniu drzewa."},
-
-	{"key": "egg_hawk_1.name", "value": "Jajo jastrzębia"},
-	{"key": "egg_hawk_1_1.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_hawk_1_2.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_hawk_1_3.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-
-	{"key": "egg_hawk_2.name", "value": "Jajo jastrzębia"},
-	{"key": "egg_hawk_2_1.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_hawk_2_2.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_hawk_2_3.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-
-	{"key": "egg_egret.name", "value": "Jajo czapli egretta"},
-	{"key": "egg_egret_1.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_egret_2.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-	{"key": "egg_egret_3.desc", "value": "Na drzewie. Zestrzel z łuku strzałą na drobną zwierzynę albo sztucerem."},
-
-	{"key": "egg_duck.name", "value": "Jajo kaczki"},
-	{"key": "egg_duck_1.desc", "value": "W gnieździe na ziemi. Nie wejdź w nie!"},
-	{"key": "egg_duck_2.desc", "value": "W gnieździe na ziemi."},
-	{"key": "egg_duck_3.desc", "value": "W gnieździe na ziemi."},
-
-	{"key": "egg_goose.name", "value": "Jajo gęsi"},
-	{"key": "egg_goose_1.desc", "value": "W gnieździe na ziemi pod łodzią, która utknęła na drzewie."},
-	{"key": "egg_goose_2.desc", "value": "W gnieździe na ziemi."},
-	{"key": "egg_goose_3.desc", "value": "W gnieździe na ziemi. Nie wejdź w nie!"},
-
-	{"key": "egg_goose_2.name", "value": "Jajo gęsi"},
-	{"key": "egg_goose_2_1.desc", "value": "W gnieździe na ziemi."},
-	{"key": "egg_goose_2_2.desc", "value": "W gnieździe na ziemi."},
-	{"key": "egg_goose_2_3.desc", "value": "W gnieździe na ziemi."},
-
 	{"key": "bottle_tennesee_whiskey.name", "value": "Tennesee Whiskey"},
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": "Na stole w środku."},
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": "W szafce z tyłu po prawej."},
@@ -835,7 +775,17 @@
 	{"key": "bracelet_hajnal_garnet_bangle_1.desc", "value": "W skrzyni na wzniesieniu."},
 	{"key": "bracelet_hajnal_garnet_bangle_2.desc", "value": "W skrzyni pod drzewem."},
 	{"key": "bracelet_hajnal_garnet_bangle_3.desc", "value": "W skrytce pod mostem."},
-
+	
+	{"key": "egg_duck.name", "value": "Jajo kaczki"},
+	{"key": "egg_eagle.name", "value": "Jajo orła"},
+	{"key": "egg_egret.name", "value": "Jajo czapli egretta"},
+	{"key": "egg_goose.name", "value": "Jajo gęsi"},
+	{"key": "egg_hawk.name", "value": "Jajo jastrzębia"},
+	{"key": "egg_heron.name", "value": "Jajo czapli modrej"},
+	{"key": "egg_loon.name", "value": "Jajo nura"},
+	{"key": "egg_spoonbill.name", "value": "Jajo warzęchy"},
+	{"key": "egg_vulture.name", "value": "Jajo sępa"},
+	
 	{"key": "flower_agarita.name", "value": "Agarita"},
 	{"key": "flower_bitterweed.name", "value": "Helenka"},
 	{"key": "flower_blood_flower.name", "value": "Kwiat sangwinarii"},

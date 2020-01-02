@@ -401,66 +401,6 @@
 	{"key": "coin_penny_2.desc", "value": ""},
 	{"key": "coin_penny_3.desc", "value": ""},
 
-	{"key": "egg_spoonbill.name", "value": "Uovo di Spatola"},
-	{"key": "egg_spoonbill_1.desc", "value": ""},
-	{"key": "egg_spoonbill_2.desc", "value": ""},
-	{"key": "egg_spoonbill_3.desc", "value": ""},
-
-	{"key": "egg_heron.name", "value": "Uovo d'airone"},
-	{"key": "egg_heron_1.desc", "value": ""},
-	{"key": "egg_heron_2.desc", "value": ""},
-	{"key": "egg_heron_3.desc", "value": ""},
-
-	{"key": "egg_loon.name", "value": "Uovo di Strolaga"},
-	{"key": "egg_loon_1.desc", "value": ""},
-	{"key": "egg_loon_2.desc", "value": ""},
-	{"key": "egg_loon_3.desc", "value": ""},
-
-	{"key": "egg_eagle_1.name", "value": "Uovo d'Aquila"},
-	{"key": "egg_eagle_1_1.desc", "value": ""},
-	{"key": "egg_eagle_1_2.desc", "value": ""},
-	{"key": "egg_eagle_1_3.desc", "value": ""},
-
-	{"key": "egg_eagle_2.name", "value": "Uovo d'Aquila"},
-	{"key": "egg_eagle_2_1.desc", "value": ""},
-	{"key": "egg_eagle_2_2.desc", "value": ""},
-	{"key": "egg_eagle_2_3.desc", "value": ""},
-
-	{"key": "egg_vulture.name", "value": "Uovo di Avvoltoio"},
-	{"key": "egg_vulture_1.desc", "value": ""},
-	{"key": "egg_vulture_2.desc", "value": ""},
-	{"key": "egg_vulture_3.desc", "value": ""},
-
-	{"key": "egg_hawk_1.name", "value": "Uovo di Falco"},
-	{"key": "egg_hawk_1_1.desc", "value": ""},
-	{"key": "egg_hawk_1_2.desc", "value": ""},
-	{"key": "egg_hawk_1_3.desc", "value": ""},
-
-	{"key": "egg_hawk_2.name", "value": "Uovo di Falco"},
-	{"key": "egg_hawk_2_1.desc", "value": ""},
-	{"key": "egg_hawk_2_2.desc", "value": ""},
-	{"key": "egg_hawk_2_3.desc", "value": ""},
-
-	{"key": "egg_egret.name", "value": "Uovo d'Egretta"},
-	{"key": "egg_egret_1.desc", "value": ""},
-	{"key": "egg_egret_2.desc", "value": ""},
-	{"key": "egg_egret_3.desc", "value": ""},
-
-	{"key": "egg_duck.name", "value": "Uovo d'Anatra"},
-	{"key": "egg_duck_1.desc", "value": ""},
-	{"key": "egg_duck_2.desc", "value": ""},
-	{"key": "egg_duck_3.desc", "value": ""},
-
-	{"key": "egg_goose.name", "value": "Uovo d'Oca"},
-	{"key": "egg_goose_1.desc", "value": ""},
-	{"key": "egg_goose_2.desc", "value": ""},
-	{"key": "egg_goose_3.desc", "value": ""},
-
-	{"key": "egg_goose_2.name", "value": "Uovo d'Oca"},
-	{"key": "egg_goose_2_1.desc", "value": ""},
-	{"key": "egg_goose_2_2.desc", "value": ""},
-	{"key": "egg_goose_2_3.desc", "value": ""},
-
 	{"key": "bottle_tennesee_whiskey.name", "value": "Whisky del Tennesee"},
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": ""},
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": ""},
@@ -836,6 +776,16 @@
 	{"key": "bracelet_hajnal_garnet_bangle_2.desc", "value": ""},
 	{"key": "bracelet_hajnal_garnet_bangle_3.desc", "value": ""},
 
+	{"key": "egg_duck.name", "value": "Uovo d'Anatra"},
+	{"key": "egg_eagle.name", "value": "Uovo d'Aquila"},
+	{"key": "egg_egret.name", "value": "Uovo d'Egretta"},
+	{"key": "egg_goose.name", "value": "Uovo d'Oca"},
+	{"key": "egg_hawk.name", "value": "Uovo di Falco"},
+	{"key": "egg_heron.name", "value": "Uovo d'airone"},
+	{"key": "egg_loon.name", "value": "Uovo di Strolaga"},
+	{"key": "egg_spoonbill.name", "value": "Uovo di Spatola"},
+	{"key": "egg_vulture.name", "value": "Uovo di Avvoltoio"},
+	
 	{"key": "flower_agarita.name", "value": "Ribes selvatico"},
 	{"key": "flower_bitterweed.name", "value": "Hymenoxys odorata"},
 	{"key": "flower_blood_flower.name", "value": "Asclepia Curaçao"},
