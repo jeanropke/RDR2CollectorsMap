@@ -74,24 +74,24 @@ var MapBase = {
 
   },
 
- 
-  devGameToMap: function(t) {
+
+  devGameToMap: function (t) {
     var image = [48841, 38666];
     var topLeft = [-7168, 4096];
     var bottomRight = [5120, -5632];
 
-      var i = image[0]
-        , n = image[1]
-        , e = MapBase._normal_xy(topLeft, bottomRight)
-        , s = MapBase._normal_xy(topLeft, t);
-        console.log(t);
-      return [i * (s[0] / e[0]), n * (s[1] / e[1])]
+    var i = image[0]
+      , n = image[1]
+      , e = MapBase._normal_xy(topLeft, bottomRight)
+      , s = MapBase._normal_xy(topLeft, t);
+    console.log(t);
+    return [i * (s[0] / e[0]), n * (s[1] / e[1])]
   },
-  _normal_xy: function(t, i) {
+  _normal_xy: function (t, i) {
     console.log(`MapBase._num_distance(${t[0]}, ${i[0]})`);
     return [MapBase._num_distance(t[0], i[0]), MapBase._num_distance(t[1], i[1])]
   },
-  _num_distance: function(t ,i) {
+  _num_distance: function (t, i) {
     return t > i ? t - i : i - t;
   },
 
@@ -295,17 +295,14 @@ var MapBase = {
   updateMarkerContent: function (marker) {
 
     var videoText = marker.video != null ? '<p align="center" style="padding: 5px;"><a href="' + marker.video + '" target="_blank">Video</a></p>' : '';
-    var popupTitle = marker.category == 'random' ? marker.title : ` ${marker.title} - ${Language.get("menu.day")} ${marker.day}`;
-
     var popupContent = null;
 
     if (marker.category == 'random')
       popupContent = Language.get("random_item.desc");
     else {
-      var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) + ' ' : '';
-      popupContent = weeklyText + marker.description;
+      var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
+      popupContent = marker.description + ' ' + weeklyText;
     }
-
 
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
     <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
@@ -313,8 +310,7 @@ var MapBase = {
     <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
     </div>`;
 
-
-    return `<h1>${popupTitle}</h1>
+    return `<h1>${marker.title} - ${Language.get("menu.day")} ${marker.day}</h1>
         <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
         ${videoText}
         ${Inventory.isEnabled ? buttons : ''}
@@ -350,18 +346,27 @@ var MapBase = {
 
     tempMarker.id = marker.text;
     marker.isVisible = true;
-
-    marker.title = (marker.category == 'random') ? Language.get("random_item.name") + marker.text.replace('random_item_', '') : Language.get(`${marker.text}.name`);
     marker.weeklyCollection = isWeekly ? weeklySetData.current : null;
 
+    if (marker.category == 'random')
+      marker.title = `${Language.get("random_item.name")} #${marker.text.split('_').pop()}}`
+    else if (marker.category == 'american_flowers')
+      marker.title = `${Language.get(`flower_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`
+    else if (marker.category == 'bird_eggs' && (marker.subdata == 'eagle' || marker.subdata == 'hawk'))
+      marker.title = `${Language.get(`egg_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`
+    else
+      marker.title = Language.get(`${marker.text}.name`);
+
     if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
-      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.night_only');
-    else if (marker.subdata == 'egg_spoonbill' || marker.subdata == 'egg_heron' || marker.subdata == 'egg_eagle' || marker.subdata == 'egg_hawk' || marker.subdata == 'egg_egret')
-      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.tree');
-    else if (marker.subdata == 'egg_vulture')
-      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.stump');
-    else if (marker.subdata == 'egg_duck' || marker.subdata == 'egg_goose')
-      marker.description =  Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.ground');
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.flower_type.night_only');
+    else if (marker.subdata == 'creek_plum')
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.flower_type.bush');
+    else if (marker.subdata == 'spoonbill' || marker.subdata == 'heron' || marker.subdata == 'eagle' || marker.subdata == 'hawk' || marker.subdata == 'egret')
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.tree');
+    else if (marker.subdata == 'vulture')
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.stump');
+    else if (marker.subdata == 'duck' || marker.subdata == 'goose')
+      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.ground');
     else
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
 
