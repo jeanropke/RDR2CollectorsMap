@@ -172,7 +172,7 @@
 	{"key": "swords_two_3.desc", "value": "On crates next to a wagon."},
 	{"key": "swords_two_4.desc", "value": "On a box by a fireplace."},
 	{"key": "swords_two_5.desc", "value": "On a table in the saloon."},
-	{"key": "swords_two_6.desc", "value": ""},
+	{"key": "swords_two_6.desc", "value": "On a stack of barrels."},
 
 	{"key": "swords_three.name", "value": "Three of Swords"},
 	{"key": "swords_three_1.desc", "value": "On a windowsil left of the house."},
@@ -436,7 +436,7 @@
 	{"key": "pentacles_seven_3.desc", "value": ""},
 	{"key": "pentacles_seven_4.desc", "value": "On some boxes in a allyway"},
 	{"key": "pentacles_seven_5.desc", "value": "On the window still on the second floor of the barn."},
-	{"key": "pentacles_seven_6.desc", "value": "On the railing outside the top floor double doors of the saloon"},
+	{"key": "pentacles_seven_6.desc", "value": "On the railing outside the top floor double doors of the saloon."},
 
 	{"key": "pentacles_eight.name", "value": "Eight of Pentacles"},
 	{"key": "pentacles_eight_1.desc", "value": "Inside house on a window sill in a bedroom."},
@@ -508,7 +508,7 @@
 	{"key": "coin_draped_bust_silver_dollar_3.desc", "value": "On the island by the tree stump."},
 	{"key": "coin_draped_bust_silver_dollar_4.desc", "value": ""},
 	{"key": "coin_draped_bust_silver_dollar_5.desc", "value": ""},
-	{"key": "coin_draped_bust_silver_dollar_6.desc", "value": ""},
+	{"key": "coin_draped_bust_silver_dollar_6.desc", "value": "Next to a pile of rubble and some barrels."},
 
 	{"key": "coin_one_cent_token.name", "value": "1787 One Cent Token Coin"},
 	{"key": "coin_one_cent_token_1.desc", "value": "Besided the eastern tree."},
@@ -642,9 +642,9 @@
 	{"key": "bottle_absinthe_1.desc", "value": "In the burnt wagon."},
 	{"key": "bottle_absinthe_2.desc", "value": "In mausoleum. Enterance only from the west."},
 	{"key": "bottle_absinthe_3.desc", "value": "In a Green cabinet."},
-	{"key": "bottle_absinthe_4.desc", "value": "In a Green cabinet."},
-	{"key": "bottle_absinthe_5.desc", "value": "In a Green cabinet."},
-	{"key": "bottle_absinthe_6.desc", "value": "In a Green cabinet."},
+	{"key": "bottle_absinthe_4.desc", "value": ""},
+	{"key": "bottle_absinthe_5.desc", "value": ""},
+	{"key": "bottle_absinthe_6.desc", "value": "In the basement on a storage shelf."},
 
 	{"key": "bottle_gran_corazon_madeira.name", "value": "Gran Corazon Madeira Bottle"},
 	{"key": "bottle_gran_corazon_madeira_1.desc", "value": "On a crate infront of the butchers tent."},
@@ -947,7 +947,7 @@
 	{"key": "ring_beaulieux_diamond_2.desc", "value": "In a lockbox a little bit below the bridge."},
 	{"key": "ring_beaulieux_diamond_3.desc", "value": "Inside a chimney. Watch for cougars."},
 	{"key": "ring_beaulieux_diamond_4.desc", "value": "Inside the barn up the ladder inside a chest."},
-	{"key": "ring_beaulieux_diamond_5.desc", "value": ""},
+	{"key": "ring_beaulieux_diamond_5.desc", "value": "On the island in front of a big boulder."},
 	{"key": "ring_beaulieux_diamond_6.desc", "value": ""},
 
 	{"key": "ring_yates_diamond.name", "value": "Yates Diamond Ring"},
@@ -1187,7 +1187,7 @@
 	{"key": "bracelet_durant_pearl_2.desc", "value": "Inside the chimney."},
 	{"key": "bracelet_durant_pearl_3.desc", "value": "On the small island in a large chest."},
 	{"key": "bracelet_durant_pearl_4.desc", "value": "Infront of the big tree."},
-	{"key": "bracelet_durant_pearl_5.desc", "value": ""},
+	{"key": "bracelet_durant_pearl_5.desc", "value": "Next to the entrance of the basement."},
 	{"key": "bracelet_durant_pearl_6.desc", "value": ""},
 
 	{"key": "bracelet_infanta_turquoise.name", "value": "Infanta Turquoise Bracelet"},
