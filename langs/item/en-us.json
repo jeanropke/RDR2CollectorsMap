@@ -220,7 +220,7 @@
 	{"key": "swords_eight_3.desc", "value": "On barrel inside barn doors."},
 	{"key": "swords_eight_4.desc", "value": "Inside a cave (watch out for the drop down)."},
 	{"key": "swords_eight_5.desc", "value": "On a worktable next to the barn."},
-	{"key": "swords_eight_6.desc", "value": ""},
+	{"key": "swords_eight_6.desc", "value": "On the worktable in the shack."},
 
 	{"key": "swords_nine.name", "value": "Nine of Swords"},
 	{"key": "swords_nine_1.desc", "value": "On the back of the haywagon."},
@@ -260,7 +260,7 @@
 	{"key": "swords_queen_3.desc", "value": "On the small coffee table."},
 	{"key": "swords_queen_4.desc", "value": ""},
 	{"key": "swords_queen_5.desc", "value": "Inside the train garage on a worktable on the south side of the building. <br/> <img src=\"https://i.imgur.com/VlnIwzj.png\" style=\"width: 200px;\">"},
-	{"key": "swords_queen_6.desc", "value": ""},
+	{"key": "swords_queen_6.desc", "value": "On the back of the wagon near some workers' tents."},
 
 	{"key": "swords_king.name", "value": "King of Swords"},
 	{"key": "swords_king_1.desc", "value": "On the shelf behind the counter in Algernon Wasp's Shop."},
@@ -332,7 +332,7 @@
 	{"key": "wands_eight_3.desc", "value": ""},
 	{"key": "wands_eight_4.desc", "value": "On some planks by the station"},
 	{"key": "wands_eight_5.desc", "value": "On a couple of crates next to the shack."},
-	{"key": "wands_eight_6.desc", "value": ""},
+	{"key": "wands_eight_6.desc", "value": "Inside the ruined outhouse."},
 
 	{"key": "wands_nine.name", "value": "Nine of Wands"},
 	{"key": "wands_nine_1.desc", "value": "Get on shorter roof. Card is on window sill."},
@@ -364,7 +364,7 @@
 	{"key": "wands_page_3.desc", "value": "Inside a cave."},
 	{"key": "wands_page_4.desc", "value": "On a table on the boat."},
 	{"key": "wands_page_5.desc", "value": "In the outhouse."},
-	{"key": "wands_page_6.desc", "value": ""},
+	{"key": "wands_page_6.desc", "value": "Under the bed inside the cabin."},
 
 	{"key": "wands_queen.name", "value": "Queen of Wands"},
 	{"key": "wands_queen_1.desc", "value": "On top of a barrel in the boat."},
@@ -548,7 +548,7 @@
 	{"key": "coin_quarter_3.desc", "value": "Below the tower."},
 	{"key": "coin_quarter_4.desc", "value": ""},
 	{"key": "coin_quarter_5.desc", "value": ""},
-	{"key": "coin_quarter_6.desc", "value": ""},
+	{"key": "coin_quarter_6.desc", "value": "Behind the signs at the side of the road."},
 
 	{"key": "coin_gold_dollar_coin.name", "value": "1800 Gold Dollar Coin"},
 	{"key": "coin_gold_dollar_coin_1.desc", "value": "At the base of the dead tree."},
@@ -723,7 +723,7 @@
 	{"key": "arrowhead_feldspar_2.desc", "value": "At the base of a tree atop the hill."},
 	{"key": "arrowhead_feldspar_3.desc", "value": "Underneath railroad."},
 	{"key": "arrowhead_feldspar_4.desc", "value": "By the split dead tree."},
-	{"key": "arrowhead_feldspar_5.desc", "value": ""},
+	{"key": "arrowhead_feldspar_5.desc", "value": "Next to the split dead tree."},
 	{"key": "arrowhead_feldspar_6.desc", "value": "Backside of the big rocks near the road."},
 
 	{"key": "arrowhead_slate.name", "value": "Slate Arrowhead"},
@@ -755,7 +755,7 @@
 	{"key": "arrowhead_obsidian_2.desc", "value": "Next to the scarecrow in the wheat field."},
 	{"key": "arrowhead_obsidian_3.desc", "value": "In the middle of the stone circle."},
 	{"key": "arrowhead_obsidian_4.desc", "value": "Inside the cave. <br/> <img src=\"https://i.imgur.com/Vkaa8cY.png\" style=\"width: 200px;\">"},
-	{"key": "arrowhead_obsidian_5.desc", "value": ""},
+	{"key": "arrowhead_obsidian_5.desc", "value": "At the base of the biggest tree."},
 	{"key": "arrowhead_obsidian_6.desc", "value": "By a large tree with bushes."},
 
 	{"key": "arrowhead_quartz.name", "value": "Quartz Arrowhead"},
@@ -955,7 +955,7 @@
 	{"key": "ring_yates_diamond_2.desc", "value": "Upstairs in a lockbox next to the beds."},
 	{"key": "ring_yates_diamond_3.desc", "value": "Behind the large tree."},
 	{"key": "ring_yates_diamond_4.desc", "value": "By the wagon wheel on the backside of the house."},
-	{"key": "ring_yates_diamond_5.desc", "value": ""},
+	{"key": "ring_yates_diamond_5.desc", "value": "Next to the log that's acting as a ramp."},
 	{"key": "ring_yates_diamond_6.desc", "value": ""},
 
 	{"key": "ring_aubrey_onyx.name", "value": "Aubrey Onyx Ring"},
@@ -963,7 +963,7 @@
 	{"key": "ring_aubrey_onyx_2.desc", "value": "On the side of the cliff near the wallpainting."},
 	{"key": "ring_aubrey_onyx_3.desc", "value": "On the landfill. Near some broken wagon wheels."},
 	{"key": "ring_aubrey_onyx_4.desc", "value": "By side of the large rock with the bush and fallen tree."},
-	{"key": "ring_aubrey_onyx_5.desc", "value": ""},
+	{"key": "ring_aubrey_onyx_5.desc", "value": "At the base of the tree."},
 	{"key": "ring_aubrey_onyx_6.desc", "value": ""},
 
 	{"key": "ring_bosque_emerald.name", "value": "Bosque Emerald Ring"},
@@ -1011,7 +1011,7 @@
 	{"key": "necklace_pelle_pearl_2.desc", "value": "In front of a tree surrounded by shrubbery."},
 	{"key": "necklace_pelle_pearl_3.desc", "value": "Within the stone eye."},
 	{"key": "necklace_pelle_pearl_4.desc", "value": "Inside the house in the tall cabinet."},
-	{"key": "necklace_pelle_pearl_5.desc", "value": ""},
+	{"key": "necklace_pelle_pearl_5.desc", "value": "In front of the canoe."},
 	{"key": "necklace_pelle_pearl_6.desc", "value": ""},
 
 	{"key": "necklace_ainsworth_cross.name", "value": "Ainsworth Cross Necklace"},
@@ -1075,7 +1075,7 @@
 	{"key": "earring_royal_victoria_2.desc", "value": "On the west side of the larger rock."},
 	{"key": "earring_royal_victoria_3.desc", "value": "In front of the two boulders."},
 	{"key": "earring_royal_victoria_4.desc", "value": "By a circle of trees near a big rock."},
-	{"key": "earring_royal_victoria_5.desc", "value": ""},
+	{"key": "earring_royal_victoria_5.desc", "value": "Between a log and a tree at the shoreline."},
 	{"key": "earring_royal_victoria_6.desc", "value": ""},
 
 	{"key": "earring_calumet_turquoise.name", "value": "Calumet Turquoise Earrings"},
