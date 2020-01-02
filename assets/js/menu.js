@@ -21,15 +21,21 @@ Menu.refreshMenu = function () {
       if (marker.day == Cycles.data.cycles[Cycles.data.current][category] && marker.category == category) {
         if (marker.subdata) {
           //This is for items with subdata to merge them
-          //TODO: create a 'marker' to subdata with item amount
           if ($(`.menu-hidden[data-type=${category}]`).children(`p.collectible[data-type=${marker.subdata}]`).length > 0)
             return;
-          
-          var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.subdata).text(Language.get(`${marker.text}.name`).split('#')[0]);
+
+
+          var colelctibleName = null;
+          if ((marker.category == 'american_flowers'))
+            colelctibleName = Language.get(`flower_${marker.subdata}.name`);
+          else if (marker.category == 'bird_eggs')
+            colelctibleName = Language.get(`egg_${marker.subdata}.name`);
+
+          var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.subdata).text(colelctibleName);
           var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
 
           $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement.append(collectibleCountElement));
-          if (marker.amount == 10) {       
+          if (marker.amount == 10) {
             $(`p[data-type=${marker.subdata}]`).addClass('disabled');
           }
         }
@@ -40,10 +46,10 @@ Menu.refreshMenu = function () {
           var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
           $(`.menu-hidden[data-type=${category}]`).append(collectibleElement.append(collectibleCountElement));
 
-          if(marker.lat.length == 0)
+          if (marker.lat.length == 0)
             $(`[data-type=${marker.text}]`).addClass('not-found');
 
-          if (!marker.canCollect) {            
+          if (!marker.canCollect) {
             $(`[data-type=${marker.text}]`).addClass('disabled');
           }
         }
@@ -55,7 +61,7 @@ Menu.refreshMenu = function () {
       $('.menu-hidden[data-type=treasure]').append('<p class="collectible disabled" data-type="' + item.text + '">' + Language.get(item.text) + '</p>');
     });
   });
- 
+
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
       $('span[data-type=' + value + ']').addClass('disabled');
@@ -86,7 +92,7 @@ Menu.hideAll = function () {
 };
 
 Menu.refreshItemsCounter = function () {
-  
+
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
     .replace('{count}', markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible && (item.isCollected || item.amount == 10)).length)
     .replace('{max}', markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible).length));
