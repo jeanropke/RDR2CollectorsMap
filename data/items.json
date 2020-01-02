@@ -264,7 +264,7 @@
             { "text": "coin_gold_eagle", "tool": "2", "lat": "-50.5433", "lng": "73.1157" },
             { "text": "coin_draped_bust_silver_dollar", "tool": "2", "lat": "-120.4130", "lng": "27.6786" },
             { "text": "coin_five_dollar_bechtler", "tool": "2", "lat": "-46.9959", "lng": "117.0663" },
-            { "text": "coin_gold_dollar_coin", "tool": "2", "lat": "-63.8431", "lng": "116.9711" },
+            { "text": "coin_gold_dollar_coin", "tool": "-1", "lat": "-63.8431", "lng": "116.9711" },
             { "text": "coin_gold_quarter", "tool": "2", "lat": "-69.7842", "lng": "82.5355" },
             { "text": "coin_half_dime", "tool": "2", "lat": "-95.0278", "lng": "66.7316" }
         ]
