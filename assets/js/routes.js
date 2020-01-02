@@ -188,7 +188,7 @@ var Routes = {
 
   // Find the nearest neighbor to the given marker.
   // Needs to have an array of the possible markers and currently chosen paths and the maximum distance a path can be.
-  nearestNeighborTo: function (marker, possibleNeighbors, polylines) {
+  nearestNeighborTo: function (marker, possibleNeighbors, polylines, maxDistance) {
     var resDistance = null;
     for (var i = 0; i < possibleNeighbors.length; i++) {
       var element = possibleNeighbors[i];
@@ -197,7 +197,7 @@ var Routes = {
       var distance = Routes.getDistance(marker, element);
 
       // Skip any distance over maxDistance.
-      if (distance > Routes.maxDistance) continue;
+      if (maxDistance != -1 && distance > maxDistance) continue;
 
       // Skip the current marker.
       if (Routes.isSameMarker(marker, element)) continue;
@@ -284,7 +284,7 @@ var Routes = {
     var first = null;
 
     // Grab the nearest marker to the start of the path.
-    first = Routes.nearestNeighborTo(Routes.startMarker(), newMarkers, polylines, Routes.maxDistance);
+    first = Routes.nearestNeighborTo(Routes.startMarker(), newMarkers, polylines, -1);
 
     // The last marker from the loop.
     var last = first.marker;
