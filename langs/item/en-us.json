@@ -164,7 +164,7 @@
 	{"key": "swords_ace_3.desc", "value": ""},
 	{"key": "swords_ace_4.desc", "value": "Inside the shack with the fireplace outside it"},
 	{"key": "swords_ace_5.desc", "value": "On the green nightstand next to the fireplace."},
-	{"key": "swords_ace_6.desc", "value": ""},
+	{"key": "swords_ace_6.desc", "value": "Outside on the window still of the jail cell."},
 
 	{"key": "swords_two.name", "value": "Two of Swords"},
 	{"key": "swords_two_1.desc", "value": "On the table on the front porch."},
@@ -500,7 +500,7 @@
 	{"key": "coin_gold_quarter_3.desc", "value": "Under tree on cliff side."},
 	{"key": "coin_gold_quarter_4.desc", "value": ""},
 	{"key": "coin_gold_quarter_5.desc", "value": ""},
-	{"key": "coin_gold_quarter_6.desc", "value": ""},
+	{"key": "coin_gold_quarter_6.desc", "value": "At the back of the outhouse."},
 
 	{"key": "coin_draped_bust_silver_dollar.name", "value": "1798 Draped Bust Silver Dollar Coin"},
 	{"key": "coin_draped_bust_silver_dollar_1.desc", "value": "On the shoreline next to the beaver burrow."},
@@ -652,7 +652,7 @@
 	{"key": "bottle_gran_corazon_madeira_3.desc", "value": "In the green cabinet in the corner."},
 	{"key": "bottle_gran_corazon_madeira_4.desc", "value": ""},
 	{"key": "bottle_gran_corazon_madeira_5.desc", "value": ""},
-	{"key": "bottle_gran_corazon_madeira_6.desc", "value": ""},
+	{"key": "bottle_gran_corazon_madeira_6.desc", "value": "Next the barrel next to the waterfall."},
 
 	{"key": "bottle_old_tom_gin.name", "value": "Old Tom Gin Bottle"},
 	{"key": "bottle_old_tom_gin_1.desc", "value": "West side of the house in the broken porch."},
@@ -1067,7 +1067,7 @@
 	{"key": "earring_ursula_citrine_2.desc", "value": ""},
 	{"key": "earring_ursula_citrine_3.desc", "value": "Between two rocks."},
 	{"key": "earring_ursula_citrine_4.desc", "value": "Inbetween the cactus and the big rock."},
-	{"key": "earring_ursula_citrine_5.desc", "value": ""},
+	{"key": "earring_ursula_citrine_5.desc", "value": "Between the bulrush at the shoreline."},
 	{"key": "earring_ursula_citrine_6.desc", "value": ""},
 
 	{"key": "earring_royal_victoria.name", "value": "Royal Victoria Diamond Earrings"},
@@ -1171,7 +1171,7 @@
 	{"key": "bracelet_ojeda_rose_gold_2.desc", "value": "Inside the tree."},
 	{"key": "bracelet_ojeda_rose_gold_3.desc", "value": "Bottom of cliff."},
 	{"key": "bracelet_ojeda_rose_gold_4.desc", "value": "Next to the big stone near the road."},
-	{"key": "bracelet_ojeda_rose_gold_5.desc", "value": ""},
+	{"key": "bracelet_ojeda_rose_gold_5.desc", "value": "In the corner of two fallen trees."},
 	{"key": "bracelet_ojeda_rose_gold_6.desc", "value": ""},
 
 	{"key": "bracelet_helena_sapphire.name", "value": "Helena Sapphire Bracelet"},
