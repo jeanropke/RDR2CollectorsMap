@@ -295,8 +295,6 @@ var MapBase = {
   updateMarkerContent: function (marker) {
 
     var videoText = marker.video != null ? '<p align="center" style="padding: 5px;"><a href="' + marker.video + '" target="_blank">Video</a></p>' : '';
-    var popupTitle = marker.category == 'random' ? marker.title : ` ${marker.title} - ${Language.get("menu.day")} ${marker.day}`;
-
     var popupContent = null;
 
     if (marker.category == 'random')
@@ -314,7 +312,7 @@ var MapBase = {
     </div>`;
 
 
-    return `<h1>${popupTitle}</h1>
+    return `<h1>${marker.title} - ${Language.get("menu.day")} ${marker.day}</h1>
         <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
         ${videoText}
         ${Inventory.isEnabled ? buttons : ''}
