@@ -615,6 +615,9 @@ $('#generate-route-ignore-collected').on("change", function () {
   inputValue = inputValue == 'true';
   $.cookie('generator-path-ignore-collected', inputValue);
   Routes.ignoreCollected = inputValue;
+
+  if (Routes.lastPolyline != null)
+    Routes.generatePath();
 });
 
 $('#generate-route-generate-on-visit').on("change", function () {
@@ -629,6 +632,9 @@ $('#generate-route-distance').on("change", function () {
   inputValue = !isNaN(inputValue) && inputValue > 0 ? inputValue : 25;
   $.cookie('generator-path-distance', inputValue);
   Routes.maxDistance = inputValue;
+
+  if (Routes.lastPolyline != null)
+    Routes.generatePath();
 });
 
 $('#generate-route-start').on("change", function () {
@@ -677,6 +683,9 @@ $('#generate-route-start').on("change", function () {
 
   Routes.startMarkerLat = startLat;
   Routes.startMarkerLng = startLng;
+
+  if (Routes.lastPolyline != null)
+    Routes.generatePath();
 });
 
 $('#generate-route-start-lat').on("change", function () {
@@ -684,6 +693,9 @@ $('#generate-route-start-lat').on("change", function () {
   inputValue = !isNaN(inputValue) ? inputValue : -119.9063;
   $.cookie('generator-path-start-lat', inputValue);
   Routes.startMarkerLat = inputValue;
+
+  if (Routes.lastPolyline != null)
+    Routes.generatePath();
 });
 
 $('#generate-route-start-lng').on("change", function () {
@@ -691,6 +703,9 @@ $('#generate-route-start-lng').on("change", function () {
   inputValue = !isNaN(inputValue) ? inputValue : 8.0313;
   $.cookie('generator-path-start-lng', inputValue);
   Routes.startMarkerLng = inputValue;
+
+  if (Routes.lastPolyline != null)
+    Routes.generatePath();
 });
 
 /**
