@@ -92,7 +92,7 @@
 	{"key": "cups_six_3.desc", "value": "On top of wood box/table."},
 	{"key": "cups_six_4.desc", "value": "On a table right side of the yellow and green house."},
 	{"key": "cups_six_5.desc", "value": "On a crate next to the corner of the house."},
-	{"key": "cups_six_6.desc", "value": ""},
+	{"key": "cups_six_6.desc", "value": "On top of the tower on the railing. Climb both ladders."},
 
 	{"key": "cups_seven.name", "value": "Seven of Cups"},
 	{"key": "cups_seven_1.desc", "value": "On a barrel outside of the shed."},
@@ -180,7 +180,7 @@
 	{"key": "swords_three_3.desc", "value": "In the theatre tent on a chair in the front row."},
 	{"key": "swords_three_4.desc", "value": "On a table with some cloths."},
 	{"key": "swords_three_5.desc", "value": "On the railing of the hanging platform."},
-	{"key": "swords_three_6.desc", "value": ""},
+	{"key": "swords_three_6.desc", "value": "On a barrel next to the fence."},
 
 	{"key": "swords_four.name", "value": "Four of Swords"},
 	{"key": "swords_four_1.desc", "value": "Up the ladder, on some wooden crates."},
@@ -252,7 +252,7 @@
 	{"key": "swords_page_3.desc", "value": "Sitting on crates beside a pile of silver pipes."},
 	{"key": "swords_page_4.desc", "value": "In a barrel right side of the house"},
 	{"key": "swords_page_5.desc", "value": "On a storage shelf in the shack."},
-	{"key": "swords_page_6.desc", "value": ""},
+	{"key": "swords_page_6.desc", "value": "On a green crate in front of the \"Kerosene Storage\" lettering."},
 
 	{"key": "swords_queen.name", "value": "Queen of Swords"},
 	{"key": "swords_queen_1.desc", "value": "Inside building on shelf against south wall."},
@@ -428,7 +428,7 @@
 	{"key": "pentacles_six_3.desc", "value": "On a crate on the ground floor."},
 	{"key": "pentacles_six_4.desc", "value": "On the table inside the house."},
 	{"key": "pentacles_six_5.desc", "value": "On the back of the wagon."},
-	{"key": "pentacles_six_6.desc", "value": "On a table outside of the house to the left."},
+	{"key": "pentacles_six_6.desc", "value": "On a picknick table outside the house on the other side of the road."},
 
 	{"key": "pentacles_seven.name", "value": "Seven of Pentacles"},
 	{"key": "pentacles_seven_1.desc", "value": "Ontop of a blue barrel."},
@@ -460,7 +460,7 @@
 	{"key": "pentacles_ten_3.desc", "value": "Inside house on fireplace."},
 	{"key": "pentacles_ten_4.desc", "value": "Inside a fallen box in the house."},
 	{"key": "pentacles_ten_5.desc", "value": "On a bench next to the entrance of the church."},
-	{"key": "pentacles_ten_6.desc", "value": "Outside the house on the railing."},
+	{"key": "pentacles_ten_6.desc", "value": "Outside the house on the bench next to the railing."},
 
 	{"key": "pentacles_knight.name", "value": "Knight of Pentacles"},
 	{"key": "pentacles_knight_1.desc", "value": "On a crate sitting on the porch."},
@@ -476,7 +476,7 @@
 	{"key": "pentacles_page_3.desc", "value": ""},
 	{"key": "pentacles_page_4.desc", "value": ""},
 	{"key": "pentacles_page_5.desc", "value": "On a barrel on the dock."},
-	{"key": "pentacles_page_6.desc", "value": "On the back of a wagon in the woods"},
+	{"key": "pentacles_page_6.desc", "value": "On the back of a wagon in the woods."},
 
 	{"key": "pentacles_queen.name", "value": "Queen of Pentacles"},
 	{"key": "pentacles_queen_1.desc", "value": "In the jai on the bench between the two cells."},
@@ -492,7 +492,7 @@
 	{"key": "pentacles_king_3.desc", "value": ""},
 	{"key": "pentacles_king_4.desc", "value": ""},
 	{"key": "pentacles_king_5.desc", "value": "On the bench on the front porch."},
-	{"key": "pentacles_king_6.desc", "value": "Outside of the barn on a table"},
+	{"key": "pentacles_king_6.desc", "value": "Outside of the barn on a table with skulls on it."},
 
 	{"key": "coin_gold_quarter.name", "value": "1800 Gold Quarter Coin"},
 	{"key": "coin_gold_quarter_1.desc", "value": "At the base of a tree next to a puddle."},
@@ -540,7 +540,7 @@
 	{"key": "coin_five_dollar_bechtler_3.desc", "value": "Underneath the windmill."},
 	{"key": "coin_five_dollar_bechtler_4.desc", "value": ""},
 	{"key": "coin_five_dollar_bechtler_5.desc", "value": ""},
-	{"key": "coin_five_dollar_bechtler_6.desc", "value": ""},
+	{"key": "coin_five_dollar_bechtler_6.desc", "value": "At the back of the abandoned wagon."},
 
 	{"key": "coin_quarter.name", "value": "1792 Quarter Coin"},
 	{"key": "coin_quarter_1.desc", "value": "At the trunk of the tree."},
@@ -1123,7 +1123,7 @@
 	{"key": "earring_beauchene_ruby_2.desc", "value": "Halfway up the cliffside. Between two trees."},
 	{"key": "earring_beauchene_ruby_3.desc", "value": "On the west side of the island near a bush."},
 	{"key": "earring_beauchene_ruby_4.desc", "value": "By the large tree by the road."},
-	{"key": "earring_beauchene_ruby_5.desc", "value": ""},
+	{"key": "earring_beauchene_ruby_5.desc", "value": "Next to the tree at the top of the cliff."},
 	{"key": "earring_beauchene_ruby_6.desc", "value": ""},
 
 	{"key": "earring_endicott_diamond.name", "value": "Endicott Diamond Earrings"},
