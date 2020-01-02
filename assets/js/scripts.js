@@ -36,7 +36,7 @@ var customRouteEnabled = false;
 var customRouteConnections = [];
 
 var toolType = '3'; //All type of tools
-var avaliableLanguages = ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'th-th', 'zh-s', 'zh-t'];
+var availableLanguages = ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'th-th', 'zh-s', 'zh-t'];
 var lang;
 
 var nazarLocations = [];
@@ -122,14 +122,14 @@ function init() {
     $.cookie('map-layer', 'Detailed', { expires: 999 });
 
   if (typeof $.cookie('language') === 'undefined') {
-    if (avaliableLanguages.includes(navigator.language.toLowerCase()))
-      $.cookie('language', navigator.language.toLowerCase());
+    if (availableLanguages.includes(navigator.language.toLowerCase()))
+      $.cookie('language', navigator.language.toLowerCase(), { expires: 999 });
     else
-      $.cookie('language', 'en-us');
+      $.cookie('language', 'en-us', { expires: 999 });
   }
 
-  if (!avaliableLanguages.includes($.cookie('language')))
-    $.cookie('language', 'en-us');
+  if (!availableLanguages.includes($.cookie('language')))
+    $.cookie('language', 'en-us', { expires: 999 });
 
   if (typeof $.cookie('remove-markers-daily') === 'undefined')
     $.cookie('remove-markers-daily', 'false', { expires: 999 });
