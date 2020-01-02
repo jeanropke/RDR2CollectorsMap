@@ -891,7 +891,7 @@
             { "text": "ring_sackville_diamond", "tool": "2", "lat": "-47.7375", "lng": "100.6449" },
             { "text": "ring_yates_diamond", "tool": "2", "lat": "-93.5278", "lng": "79.2120" },
             { "text": "ring_beaulieux_diamond", "tool": "2", "lat": "-123.8172", "lng": "42.2263" },
-            { "text": "ring_banais_topaz", "tool": "0", "lat": "-40.2365", "lng": "108.8152" },
+            { "text": "ring_banais_topaz", "tool": "2", "lat": "-40.2365", "lng": "108.8152" },
             { "text": "ring_bonnard_pearl", "tool": "0", "lat": "-91.7385", "lng": "139.9329" },
             { "text": "ring_harland_coral", "tool": "2", "lat": "-79.2511", "lng": "137.7560" },
             { "text": "ring_bosque_emerald", "tool": "2", "lat": "-34.9640", "lng": "118.7683" },
