@@ -353,7 +353,7 @@ var MapBase = {
     marker.weeklyCollection = isWeekly ? weeklySetData.current : null;
 
     if (marker.category == 'random')
-      marker.title = `${Language.get("random_item.name")} #${marker.text.split('_').pop()}}`
+      marker.title = `${Language.get("random_item.name")} #${marker.text.split('_').pop()}`
     else if (marker.category == 'american_flowers')
       marker.title = `${Language.get(`flower_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`
     else if (marker.category == 'bird_eggs' && (marker.subdata == 'eagle' || marker.subdata == 'hawk'))
