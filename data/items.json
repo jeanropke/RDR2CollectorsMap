@@ -394,7 +394,7 @@
             { "text": "bottle_old_tom_gin", "tool": "0", "lat": "-75.0763", "lng": "140.4283", "video": "https://www.youtube.com/watch?v=qfP3HwcG9Mc&t=482s" },
             { "text": "bottle_gran_corazon_madeira", "tool": "0", "lat": "-63.6087", "lng": "152.2533", "video": "https://www.youtube.com/watch?v=qfP3HwcG9Mc&t=446s" },
             { "text": "bottle_scotch_whisky", "tool": "0", "lat": "-83.1169", "lng": "117.5386", "video": "https://www.youtube.com/watch?v=qfP3HwcG9Mc&t=383s" },
-            { "text": "bottle_tennesee_whiskey", "tool": "0", "lat": "-89.4997", "lng": "80.5307", "video": "https://www.youtube.com/watch?v=qfP3HwcG9Mc&t=335s" }
+            { "text": "bottle_tennesee_whiskey", "tool": "0", "lat": "-89.4921875", "lng": "80.609375", "video": "https://www.youtube.com/watch?v=qfP3HwcG9Mc&t=335s" }
         ],
         "3": [
             { "text": "bottle_caribbean_rum", "tool": "0", "lat": "-40.4808", "lng": "108.8587", "video": "https://www.youtube.com/watch?v=qfP3HwcG9Mc&t=806s" },
