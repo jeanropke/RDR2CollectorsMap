@@ -332,7 +332,7 @@ var MapBase = {
     if (parseInt(toolType) < parseInt(marker.tool)) return;
 
     var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
-      return weekly.item === marker.text;
+      return weekly.item === (marker.text).replace(/_\d+/, "");
     }).length > 0;
 
     var tempMarker = L.marker([marker.lat, marker.lng], {
