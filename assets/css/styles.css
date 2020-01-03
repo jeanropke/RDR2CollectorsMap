@@ -290,6 +290,11 @@ p {
     opacity: .5;
     text-decoration: line-through;
 }
+
+.weekly-item {
+    color: greenyellow;
+}
+
 .side-menu .not-found {
     color: #f95050;
 }
@@ -337,10 +342,6 @@ p {
     display: flex;
     justify-content: space-between;
     font-size: 15px;
-}
-
-.weekly-item {
-    color: greenyellow !important;
 }
 
 .lat-lng-container {
