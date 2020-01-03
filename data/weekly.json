@@ -1,8 +1,8 @@
 {
-  "current": "new_year_set",
+  "current": "gold_panner_set",
 	"sets": {
 		"sacred_set": [
-			{"item": "egg_eagle_1"},
+			{"item": "egg_eagle"},
 			{"item": "arrowhead_bone"},
 			{"item": "heirlooms_boar_bristle_brush"}
 		],
@@ -12,7 +12,7 @@
 			{"item": "ring_aubrey_onyx"}
 		],
 		"herbalist_set": [
-			{"item": "flower_blood_flower_1"},
+			{"item": "flower_blood_flower"},
 			{"item": "flower_chocolate_daisy"},
 			{"item": "flower_creek_plum"}
 		],	
@@ -33,7 +33,7 @@
 		"naturalist_set": [
 			{"item": "heirlooms_cherrywood_comb"},
 			{"item": "egg_egret"},
-			{"item": "flower_bitterweed_1"}
+			{"item": "flower_bitterweed"}
 		],
 		"poacher_set": [
 			{"item": "earring_sterling_tooth"},
@@ -89,7 +89,7 @@
 		],
 		"exotics_set": [
 			{"item": "egg_loon"},
-			{"item": "flower_agarita_1"},
+			{"item": "flower_agarita"},
 			{"item": "egg_spoonbill"}
 		],
 		"1800_coins_set": [
@@ -141,7 +141,7 @@
 		"night_watch_set": [
 			{"item": "ring_pilgrim_moonstone"},
 			{"item": "flower_wisteria"},
-			{"item": "egg_hawk_1"}
+			{"item": "egg_hawk"}
 		],
 		"foundation_set": [
 			{"item": "arrowhead_feldspar"},
@@ -159,7 +159,7 @@
 			{"item": "coin_halfpenny"}
 		],
 		"festive_feast_set": [
-			{"item": "egg_goose_1"},
+			{"item": "egg_goose"},
 			{"item": "bottle_cognac_bottle"}
 		],
 		"new_year_set": [
@@ -174,7 +174,7 @@
 		"egg_hunt_set": [
 			{"item": "egg_duck"},
 			{"item": "egg_heron"},
-			{"item": "egg_goose_1"}
+			{"item": "egg_goose"}
 		]
 	}
 }
