@@ -84,7 +84,7 @@
 	{"key": "menu.generate_route_start.n", "value": "Norte (↑)"},
 	{"key": "menu.generate_route_start.se", "value": "Sureste (↘)"},
 	{"key": "menu.generate_route_start.custom", "value": "Personalizado"},
-	{"key": "menu.generate_route_start_lat", "value": "Ruta empieza lat",},
+	{"key": "menu.generate_route_start_lat", "value": "Ruta empieza lat"},
 	{"key": "menu.generate_route_start_lng", "value": "Ruta empieza long."}
 ]
 
