@@ -1258,7 +1258,7 @@
 	{"key": "fame_seeker.desc","value":"Это событие появляется случайным образом. Белая метка на мини-карте укажет место события."},
 	
 	{"key": "wounded_animal.name","value":"Раненое животное"},
-	{"key": "wounded_animal.desc","value":"Это событие появляется случайным образом. Белая метка на мини-карте укажет место события."}
+	{"key": "wounded_animal.desc","value":"Это событие появляется случайным образом. Белая метка на мини-карте укажет место события."},
 
 	{"key": "weekly.desc", "value": "Этот предмет является частью {collection} weekly collection."},
 	{"key": "weekly.desc.sacred_set", "value": "Sacred"},
