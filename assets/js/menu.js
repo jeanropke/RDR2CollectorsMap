@@ -39,9 +39,12 @@ Menu.refreshMenu = function () {
           if (marker.amount == 10) {
             $(`p[data-type=${marker.subdata}]`).addClass('disabled');
           }
+          if (marker.lat.length == 0)
+            $(`p[data-type=${marker.subdata}]`).addClass('not-found');
+          
           //set green color of weekly collection items (flowers and eggs)
           for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
-            if (((`flower_${marker.subdata}`)) == weeklyItems[i].item || (`egg_${marker.subdata}`) == weeklyItems[i].item) {
+            if ((`flower_${marker.subdata}`) == weeklyItems[i].item || (`egg_${marker.subdata}`) == weeklyItems[i].item) {
               $(`p[data-type=${marker.subdata}]`).addClass('weekly-item');
             }
           }

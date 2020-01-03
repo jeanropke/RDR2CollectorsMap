@@ -291,12 +291,12 @@ p {
     text-decoration: line-through;
 }
 
-.weekly-item {
+.side-menu .weekly-item {
     color: greenyellow;
 }
 
 .side-menu .not-found {
-    color: #f95050;
+    color: #f95050 !important;
 }
 
 .side-menu .menu-option .icon {
