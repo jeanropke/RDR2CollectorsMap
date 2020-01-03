@@ -172,6 +172,8 @@ var MapBase = {
     if (refreshMenu)
       Menu.refreshMenu();
 
+    if (Routes.generateOnVisit)
+      Routes.generatePath();
   },
 
   loadWeeklySet: function () {

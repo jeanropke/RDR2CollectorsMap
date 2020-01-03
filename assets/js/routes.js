@@ -4,6 +4,7 @@
 
 var Routes = {
   init: function () {
+    $('#generate-route-generate-on-visit').val(Routes.generateOnVisit ? 'true' : 'false');
     $('#generate-route-ignore-collected').val(Routes.ignoreCollected ? 'true' : 'false');
     $('#generate-route-distance').val(Routes.maxDistance);
     $('#generate-route-start-lat').val(Routes.startMarkerLat);
@@ -145,6 +146,9 @@ var Routes = {
   /**
    * Path generator by Senexis
    */
+  // Whether the route should be generated when the map is loaded.
+  generateOnVisit: $.cookie('generator-path-generate-on-visit') == 'true',
+
   // Whether collected items should be ignored or not when pathing.
   ignoreCollected: $.cookie('generator-path-ignore-collected') == 'true',
 
