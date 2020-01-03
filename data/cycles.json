@@ -330,7 +330,7 @@
 			"card_pentacles"    : 6,
 			"card_swords"       : 6,
 			"card_wands"        : 6,
-			"random"        	: 7
+			"random"        	: 6
         },
 		"21": {
             "american_flowers"  : 4,
@@ -347,7 +347,7 @@
 			"card_pentacles"    : 2,
 			"card_swords"       : 2,
 			"card_wands"        : 2,
-			"random"        	: 6
+			"random"        	: 7
         }
     }
 }
