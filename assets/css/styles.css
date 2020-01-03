@@ -287,9 +287,14 @@ p {
 }
 
 .side-menu .disabled {
-    color: #6a6a6a;
+    opacity: .5;
     text-decoration: line-through;
 }
+
+.weekly-item {
+    color: greenyellow;
+}
+
 .side-menu .not-found {
     color: #f95050;
 }

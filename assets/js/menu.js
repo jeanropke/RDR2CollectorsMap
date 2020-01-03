@@ -10,6 +10,7 @@ var Menu = {
   }
 };
 Menu.refreshMenu = function () {
+  var weeklyItems = weeklySetData.sets[weeklySetData.current];
   $.each(categories, function (key, category) {
 
     $('.menu-hidden[data-type=' + category + ']').children('p.collectible').remove();
@@ -38,8 +39,13 @@ Menu.refreshMenu = function () {
           if (marker.amount == 10) {
             $(`p[data-type=${marker.subdata}]`).addClass('disabled');
           }
-        }
-        else {
+          //set green color of weekly collection items (flowers and eggs)
+          for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
+            if (((`flower_${marker.subdata}`)) == weeklyItems[i].item || (`egg_${marker.subdata}`) == weeklyItems[i].item) {
+              $(`p[data-type=${marker.subdata}]`).addClass('weekly-item');
+            }
+          }
+        } else {
           //All others items
           var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.text).text(marker.title);
           var buttonsElement = $('div').addClass('');
@@ -51,6 +57,12 @@ Menu.refreshMenu = function () {
 
           if (!marker.canCollect) {
             $(`[data-type=${marker.text}]`).addClass('disabled');
+          }
+          // set green color of weekly collection items (other items)
+          for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
+            if ((marker.text) == weeklyItems[i].item) {
+              $(`[data-type=${marker.text}]`).addClass('weekly-item');
+            }
           }
         }
       }
