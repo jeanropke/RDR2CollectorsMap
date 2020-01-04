@@ -903,9 +903,9 @@
         "6": [
             { "text": "ring_pilgrim_moonstone", "tool": "2", "lat": "-29.5739", "lng": "135.9431" },
             { "text": "ring_sackville_diamond", "tool": "2", "lat": "-50.7015", "lng": "123.7823" },
-            { "text": "ring_yates_diamond", "tool": "2", "lat": "-65.8312", "lng": "130.1975" },
+            { "text": "ring_yates_diamond", "tool": "0", "lat": "-65.8312", "lng": "130.1975" },
             { "text": "ring_beaulieux_diamond", "tool": "2", "lat": "-92.6504", "lng": "141.7949" },
-            { "text": "ring_banais_topaz", "tool": "2", "lat": "-59.0912", "lng": "149.2109" },
+            { "text": "ring_banais_topaz", "tool": "0", "lat": "-59.0912", "lng": "149.2109" },
             { "text": "ring_bonnard_pearl", "tool": "2", "lat": "-110.1878", "lng": "52.0497" },
             { "text": "ring_harland_coral", "tool": "2", "lat": "-102.0172", "lng": "62.0546" },
             { "text": "ring_bosque_emerald", "tool": "2", "lat": "-113.7867", "lng": "17.8075" },
@@ -1053,7 +1053,7 @@
             { "text": "bracelet_hajnal_garnet_bangle", "tool": "2", "lat": "-55.8723", "lng": "108.7367" },
             { "text": "bracelet_greco_sapphire", "tool": "2", "lat": "-56.7912", "lng": "157.2982" },
             { "text": "bracelet_helena_sapphire", "tool": "2", "lat": "-46.3946", "lng": "110.7151" },
-            { "text": "bracelet_durant_pearl", "tool": "2", "lat": "-76.9431", "lng": "148.1143" }
+            { "text": "bracelet_durant_pearl", "tool": "0", "lat": "-76.9431", "lng": "148.1143" }
         ]
     },
     "lost_necklaces": {
@@ -1119,8 +1119,8 @@
             { "text": "necklace_rou_pearl", "tool": "2", "lat": "-103.7754", "lng": "24.6360" },
             { "text": "necklace_gosselin_white_gold", "tool": "2", "lat": "-83.8318", "lng": "137.8756" },
             { "text": "necklace_pelle_pearl", "tool": "2", "lat": "-64.6906", "lng": "103.8027" },
-            { "text": "necklace_blakely_miniatue", "tool": "2", "lat": "-38.0243", "lng": "152.9576" },
-            { "text": "necklace_richelieu_amethyst", "tool": "2", "lat": "-55.2989", "lng": "154.4449" },
+            { "text": "necklace_blakely_miniatue", "tool": "0", "lat": "-38.0243", "lng": "152.9576" },
+            { "text": "necklace_richelieu_amethyst", "tool": "0", "lat": "-55.2989", "lng": "154.4449" },
             { "text": "necklace_dane_topaz", "tool": "2", "lat": "-77.1923", "lng": "91.0817" }
         ]
     },
