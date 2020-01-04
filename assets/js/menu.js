@@ -9,14 +9,15 @@ var Menu = {
     }).appendTo(menu);
   }
 };
+
 Menu.refreshMenu = function () {
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
   $.each(categories, function (key, category) {
 
-    $('.menu-hidden[data-type=' + category + ']').children('p.collectible').remove();
+    $('.menu-hidden[data-type=' + category + ']').children('.collectible-wrapper').remove();
 
     if (categoriesDisabledByDefault.includes(category))
-      $('.menu-option[data-type=' + category + ']').children('span').addClass('disabled');
+      $('.menu-option[data-type=' + category + ']').addClass('disabled');
 
     $.each(markers, function (_key, marker) {
       if (marker.day == Cycles.data.cycles[Cycles.data.current][category] && marker.category == category) {
@@ -116,7 +117,6 @@ Menu.refreshMenu = function () {
 
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
-      $('span[data-type=' + value + ']').addClass('disabled');
       $('[data-type=' + value + ']').addClass('disabled');
     }
   });
@@ -126,7 +126,7 @@ Menu.refreshMenu = function () {
 
 Menu.showAll = function () {
   $.each(categoryButtons, function (key, value) {
-    $(value).children('span').removeClass("disabled")
+    $(value).removeClass("disabled")
   });
   enabledCategories = categories;
   MapBase.addMarkers();
@@ -134,7 +134,7 @@ Menu.showAll = function () {
 
 Menu.hideAll = function () {
   $.each(categoryButtons, function (key, value) {
-    $(value).children('span').addClass("disabled")
+    $(value).addClass("disabled")
   });
 
   enabledCategories = [];

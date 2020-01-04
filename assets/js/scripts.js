@@ -485,9 +485,9 @@ $("#auto-refresh").on("change", function () {
 //Disable & enable collection category
 $('.menu-option.clickable').on('click', function () {
   var menu = $(this);
-  menu.children('span').toggleClass('disabled');
+  menu.toggleClass('disabled');
 
-  if (menu.children('span').hasClass('disabled')) {
+  if (menu.hasClass('disabled')) {
     enabledCategories = $.grep(enabledCategories, function (value) {
       return value != menu.data('type');
     });
