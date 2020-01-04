@@ -48,6 +48,30 @@ h4 {
 p {
     margin: 0!important;
 }
+
+#main-header {
+    display: flex;
+    margin: 0 10px;
+}
+
+#main-header::after {
+    clear: both;
+}
+
+#main-header-center {
+    flex-grow: 1;
+    height: 75px;
+    line-height: 67px;
+    background-image: url(../../assets/images/header_bg_center.png);
+    background-repeat: repeat-x;
+    background-size: auto 75px;
+}
+
+#main-header-left, #main-header-right {
+    user-select: none;
+    height: 75px;
+}
+
 .map-alert {
     background: darkred;
     color: #fff;
@@ -59,6 +83,7 @@ p {
     text-align: center;
     display: none;
 }
+
 .map-alert .close-button {
     position: absolute;
     top: 0;
@@ -69,6 +94,7 @@ p {
     padding: 0;
     background-color: transparent;
 }
+
 #map {
     background: #d2b790;
     width: 100%;
@@ -155,7 +181,7 @@ p {
     text-align: center;
     font-size: 14px;
     cursor: pointer;
-    user-select: none;    
+    user-select: none;
     margin-top: 8px;
 }
 
@@ -290,11 +316,13 @@ p {
 .side-menu .collectables-counter {
     text-align: center;
 }
+
 .side-menu .cycle-data {
     text-align: center;
     font-size: 17px;
     padding-bottom: 3px;
 }
+
 .side-menu .menu-option {
     display: flex;
     align-items: start;
@@ -349,10 +377,11 @@ p {
     text-align: center;
     border-top: 1px white solid;
     border-bottom: 1px white solid;
-    padding: 5px 0;    
+    padding: 5px 0;
     display: flex;
     justify-content: space-around;
 }
+
 .side-menu .menu-hidden .collection-sell {
     cursor: pointer;
     user-select: none;
@@ -448,6 +477,7 @@ p {
     height: 100%;
     padding: 10px;
 }
+
 .menu-option.clickable input {
     margin: auto 10px auto auto;
     max-width: 50px;
@@ -461,6 +491,7 @@ p {
 }
 
 /* Fix buttons showing on top of sidebar on mobile menu */
+
 .leaflet-top, .leaflet-bottom {
     z-index: 998;
 }
