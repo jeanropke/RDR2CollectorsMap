@@ -188,6 +188,15 @@ p {
     cursor: pointer;
     user-select: none;
     margin-top: 8px;
+    background: #eee;
+    border: none;
+    color: #000;
+}
+
+.btn-danger, .btn-success{
+    background: #eee;
+    color: #000;
+    border: none;
 }
 
 .marker-popup-buttons {
@@ -231,6 +240,7 @@ p {
     color: #f0f0f0;
     font-size: 14px;
     width: 100%;
+    border-radius: 3px;
 }
 
 .input-container {
@@ -259,6 +269,7 @@ p {
     color: #f0f0f0;
     font-size: 14px;
     height: 100%;
+    border-radius: 3px;
 }
 
 .input-day:disabled {
@@ -499,6 +510,21 @@ p {
 
 .leaflet-top, .leaflet-bottom {
     z-index: 998;
+}
+
+.leaflet-control-layers, .leaflet-bar a, .leaflet-bar a:hover {
+    background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
+    color: #eee;
+}
+
+.leaflet-bar a.leaflet-disabled {
+    background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
+	color: #777;
+}
+
+.leaflet-popup-content-wrapper{
+    background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
+    color: #eee;
 }
 
 .leaflet-popup-content {
