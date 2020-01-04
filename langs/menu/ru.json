@@ -76,7 +76,7 @@
 	{"key": "menu.route_generator", "value": "Генератор маршрутов"},
 	{"key": "menu.generate_route", "value": "Создать маршрут"},
 	{"key": "menu.generate_route_clear", "value": "Удалить маршрут"},
-	{"key": "menu.generate_route_generate_on_visit", "value": "Создавать маршрут при каждом входе на сайт"},
+	{"key": "menu.generate_route_generate_on_visit", "value": "Показ. маршрут при входе на сайт"},
 	{"key": "menu.generate_route_ignore_collected", "value": "Игнорировать собранные предметы"},
 	{"key": "menu.generate_route_distance", "value": "Максимальная длина линии"},
 	{"key": "menu.generate_route_start", "value": "Начать маршрут на"},
@@ -85,6 +85,6 @@
 	{"key": "menu.generate_route_start.n", "value": "Севере (↑)"},
 	{"key": "menu.generate_route_start.se", "value": "Юго-востоке (↘)"},
 	{"key": "menu.generate_route_start.custom", "value": "Custom"},
-	{"key": "menu.generate_route_start_lat", "value": "Начать маршрут по коорд. lat:"},
-	{"key": "menu.generate_route_start_lng", "value": "Начать маршрут по коорд. long:"}
+	{"key": "menu.generate_route_start_lat", "value": "Старт маршрута по коорд. lat:"},
+	{"key": "menu.generate_route_start_lng", "value": "Старт маршрута по коорд. long:"}
 ]
