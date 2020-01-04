@@ -59,33 +59,13 @@ Menu.refreshMenu = function () {
           //All others items
           var collectibleImage = null;
 
-          switch (marker.category) {
-            // Random items don't even have a openable menu, don't do anything.
-            case 'random':
-              collectibleImage = null;
-              break;
-            // Use the generic cards icons for now, might improve later. Keep for now...
-            case 'card_cups':
-              collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/card_cups.png`).addClass('collectible-icon');
-              break;
-            case 'card_pentacles':
-              collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/card_pentacles.png`).addClass('collectible-icon');
-              break;
-            case 'card_swords':
-              collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/card_swords.png`).addClass('collectible-icon');
-              break;
-            case 'card_wands':
-              collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/card_wands.png`).addClass('collectible-icon');
-              break;
-            // Everything else can be obtained from `{marker.text}.png`.
-            default:
-              collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${marker.text}.png`).addClass('collectible-icon')
-              break;
-          }
+          // Prevents 404 errors. If doing the if-statement the other way round, jQuery tries to load the images.
+          if (marker.category != 'random')
+            collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${marker.text}.png`).addClass('collectible-icon');
 
           var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', marker.text);
           var collectibleTextElement = $('<p>').addClass('collectible').text(marker.title);
-          var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
+          var collectibleCountElement = Inventory.isEnabled ? $('<small>').addClass('counter').text(marker.amount) : '';
 
           $(`.menu-hidden[data-type=${category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
 
