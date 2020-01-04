@@ -146,7 +146,7 @@ p {
 .white-line-divider {
     margin: 15px 0 2px 0;
     height: 10px;
-    background-image: url(../../assets/images/header_border_gray.png);
+    background-image: url(../../assets/images/header_border_divider.png);
     background-repeat: repeat-x;
     background-size: auto 3px;
 }
