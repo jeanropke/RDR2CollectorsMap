@@ -924,7 +924,7 @@
 	{"key": "ring_pilgrim_moonstone_3.desc", "value": "In the crater next to the central meteorite."},
 	{"key": "ring_pilgrim_moonstone_4.desc", "value": "Underneath the overhang."},
 	{"key": "ring_pilgrim_moonstone_5.desc", "value": "Next to the uprooted tree."},
-	{"key": "ring_pilgrim_moonstone_6.desc", "value": ""},
+	{"key": "ring_pilgrim_moonstone_6.desc", "value": "On a shelf in the shack."},
 
 	{"key": "ring_bonnard_pearl.name", "value": "Bonnard Pearl Ring"},
 	{"key": "ring_bonnard_pearl_1.desc", "value": "Inside the chimney."},
@@ -988,7 +988,7 @@
 	{"key": "ring_thorburn_turquoise_3.desc", "value": "Inside the house in the chimney."},
 	{"key": "ring_thorburn_turquoise_4.desc", "value": "Inside the wardrobe in the first room to the right."},
 	{"key": "ring_thorburn_turquoise_5.desc", "value": "Next to the log atop the plateau."},
-	{"key": "ring_thorburn_turquoise_6.desc", "value": ""},
+	{"key": "ring_thorburn_turquoise_6.desc", "value": "Underneath rail bridge."},
 
 	{"key": "necklace_blakely_miniatue.name", "value": "Blakely Miniature Necklace"},
 	{"key": "necklace_blakely_miniatue_1.desc", "value": "In a chest on a ridge next to a rotting elk."},
@@ -1212,7 +1212,7 @@
 	{"key": "bracelet_hajnal_garnet_bangle_3.desc", "value": "In a lockbox underneath the bridge."},
 	{"key": "bracelet_hajnal_garnet_bangle_4.desc", "value": "By the small tree on the side of the road."},
 	{"key": "bracelet_hajnal_garnet_bangle_5.desc", "value": "At the base of the lone tree."},
-	{"key": "bracelet_hajnal_garnet_bangle_6.desc", "value": ""},
+	{"key": "bracelet_hajnal_garnet_bangle_6.desc", "value": "Is below rail bridge."},
 
 	{"key": "egg_duck.name", "value": "Duck Eggs"},
 	{"key": "egg_eagle.name", "value": "Eagle Egg"},
