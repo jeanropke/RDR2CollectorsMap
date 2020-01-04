@@ -129,7 +129,8 @@ Menu.refreshMenu = function () {
 
 Menu.showAll = function () {
   $.each(categoryButtons, function (key, value) {
-    $(value).removeClass("disabled")
+    $(value).removeClass("disabled");
+    $(`.menu-hidden[data-type=${$(value).attr('data-type')}]`).removeClass("disabled");
   });
   enabledCategories = categories;
   MapBase.addMarkers();
@@ -137,7 +138,9 @@ Menu.showAll = function () {
 
 Menu.hideAll = function () {
   $.each(categoryButtons, function (key, value) {
-    $(value).addClass("disabled")
+    $(value).addClass("disabled");
+    $(`.menu-hidden[data-type=${$(value).attr('data-type')}]`).addClass("disabled");
+    console.log($(value).attr('data-type'));
   });
 
   enabledCategories = [];
