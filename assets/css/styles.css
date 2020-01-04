@@ -110,6 +110,11 @@ p {
     text-align: center;
 }
 
+.share-marker {
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;;
+}
 .tool-type {
     vertical-align: bottom;
     padding-right: 5px;

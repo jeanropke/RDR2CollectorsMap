@@ -22,5 +22,13 @@
 	"cave_06": {
 		"img": "./assets/overlays/cave_06.png",
 		"bounds": [[-52.345, 87.57], [-51.985, 87.93]]
+	},
+	"mine_01": {
+		"img": "./assets/overlays/mine_01.png",
+		"bounds": [[-43.515, 152.935], [-41.505, 155.045]]
+	},
+	"tunnel_01": {
+		"img": "./assets/overlays/tunnel_01.png",
+		"bounds": [[-87.29, 147.115], [-86.59, 147.815]]
 	}
 }

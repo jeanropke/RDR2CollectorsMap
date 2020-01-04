@@ -324,13 +324,13 @@ var MapBase = {
     var videoText = marker.video != null ? '<p align="center" style="padding: 5px;"><a href="' + marker.video + '" target="_blank">Video</a></p>' : '';
     var popupContent = null;
 
-    if (marker.category == 'random')
+    if (marker.category == 'random') {
       popupContent = Language.get("random_item.desc");
+    }
     else {
       var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
       popupContent = (marker.tool == '-1' ? Language.get('map.item.unable') : '') + ' ' + marker.description + ' ' + weeklyText;
     }
-
 
 
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
@@ -343,7 +343,9 @@ var MapBase = {
         <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
         ${videoText}
         ${Inventory.isEnabled ? buttons : ''}
-        <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.text}', '${marker.subdata}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`;
+        <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.text}', '${marker.subdata}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>
+        <a class="share-marker" onclick="copyMarkerLink('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">Copy marker link</a>
+        `;
   },
 
   addMarkerOnMap: function (marker) {
@@ -399,7 +401,7 @@ var MapBase = {
     else
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
 
-    tempMarker.bindPopup(MapBase.updateMarkerContent(marker))
+    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), {maxWidth : 450})
       .on("click", function (e) {
         Routes.addMarkerOnCustomRoute(marker.text);
         if (customRouteEnabled) e.target.closePopup();

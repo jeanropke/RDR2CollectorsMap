@@ -772,7 +772,7 @@
 	{"key": "arrowhead_flint_3.desc", "value": "Inbetween fallen trees."},
 	{"key": "arrowhead_flint_4.desc", "value": "Inbetween the boulder and the small rock."},
 	{"key": "arrowhead_flint_5.desc", "value": "At the base of the huge tree on the northwestern side."},
-	{"key": "arrowhead_flint_6.desc", "value": ""},
+	{"key": "arrowhead_flint_6.desc", "value": "Inside the cave."},
 
 	{"key": "arrowhead_agate.name", "value": "Agate Arrowhead"},
 	{"key": "arrowhead_agate_1.desc", "value": "Infront of the dead tree."},
