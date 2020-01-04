@@ -524,8 +524,8 @@ MapBase.submitDebugForm = function () {
 
       })
     });
-
-    marker.bindPopup(`<h1>${name}</h1><p>  </p>`);
+    var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
+    marker.bindPopup(`<h1>${customMarkerName}</h1><p>  </p>`);
     Layers.itemMarkersLayer.addLayer(marker);
   };
 
@@ -540,6 +540,8 @@ MapBase.addCoordsOnMap = function (coords) {
       $('.lat-lng-container').css('display', 'none');
     });
   }
+  // Auto fill debug markers inputs
+  Menu.liveUpdateDebugMarkersInputs(coords.latlng.lat, coords.latlng.lng);
 
   //console.log(`{"text": "_treasure", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}", "radius": "5"},`);
   if (debugTool != null)

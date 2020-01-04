@@ -452,10 +452,12 @@
       <div class="input-container">
         <label for="debug-marker"></label>
         <form name="debug-marker">
-          <p><input id="debug-marker-lat" placeholder="lat" type="text" name="debug-marker-lat" class="input-day" value="">
+          <p>
+            <input id="debug-marker-lat" placeholder="lat" type="text" name="debug-marker-lat" class="input-day" value="">
             <input id="debug-marker-lng" placeholder="lng" type="text" name="debug-marker-lng" class="input-day" value="">
+            <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search" autocomplete="off">
           </p>
-          <p style="float: right; position: relative; padding-top: 5px;"><button type="button" class="btn btn-info narrow-select-menu"
+        <p style="float: right; position: relative; padding-top: 5px;"><button type="button" class="btn btn-info narrow-select-menu"
               onclick="MapBase.submitDebugForm()">Place</button></p>
         </form>
       </div>
