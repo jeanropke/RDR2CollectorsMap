@@ -16,7 +16,7 @@ Menu.refreshMenu = function () {
     $('.menu-hidden[data-type=' + category + ']').children('p.collectible').remove();
 
     if (categoriesDisabledByDefault.includes(category))
-      $('.menu-option.clickable[data-type=' + category + ']').children('span').addClass('disabled');
+      $('.menu-option[data-type=' + category + ']').children('span').addClass('disabled');
 
     $.each(markers, function (_key, marker) {
       if (marker.day == Cycles.data.cycles[Cycles.data.current][category] && marker.category == category) {
@@ -37,7 +37,7 @@ Menu.refreshMenu = function () {
           }
 
           var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', marker.subdata);
-          var collectibleTextElement = $('<p>').addClass('collectible').addClass(marker.text).text(collectibleName);
+          var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleName);
           var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
 
           $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
@@ -83,7 +83,7 @@ Menu.refreshMenu = function () {
           }
 
           var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', marker.text);
-          var collectibleTextElement = $('<p>').addClass('collectible').addClass(marker.text).text(marker.title);
+          var collectibleTextElement = $('<p>').addClass('collectible').text(marker.title);
           var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
 
           $(`.menu-hidden[data-type=${category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
@@ -103,17 +103,21 @@ Menu.refreshMenu = function () {
         }
       }
     });
-    $('.menu-hidden[data-type=treasure]').children('p.collectible').remove();
+
+    $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
 
     treasureData.filter(function (item) {
-      $('.menu-hidden[data-type=treasure]').append('<p class="collectible disabled" data-type="' + item.text + '">' + Language.get(item.text) + '</p>');
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', item.text);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(item.text));
+
+      $('.menu-hidden[data-type=treasure]').append(collectibleElement.append(collectibleTextElement));
     });
   });
 
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
       $('span[data-type=' + value + ']').addClass('disabled');
-      $('p[data-type=' + value + ']').addClass('disabled');
+      $('[data-type=' + value + ']').addClass('disabled');
     }
   });
 
