@@ -710,7 +710,7 @@
             { "text": "swords_four", "tool": "0", "lat": "-99.0992", "lng": "131.8703" },
             { "text": "swords_five", "tool": "0", "lat": "-41.2190", "lng": "158.2444" },
             { "text": "swords_six", "tool": "0", "lat": "-52.4087", "lng": "77.4260" },
-            { "text": "swords_seven", "tool": "0", "lat": "-44.9264", "lng": "89.0874" },
+            { "text": "swords_seven", "tool": "0", "lat": "-44.859375", "lng": "89.078125" },
             { "text": "swords_eight", "tool": "0", "lat": "-48.2118", "lng": "114.2903" },
             { "text": "swords_nine", "tool": "0", "lat": "-58.8511", "lng": "149.1719" },
             { "text": "swords_ten", "tool": "0", "lat": "-25.3836", "lng": "90.8263" },

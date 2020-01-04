@@ -13,6 +13,7 @@ var MapBase = {
   minZoom: 2,
   maxZoom: 7,
   map: null,
+  overlays: [],
 
   init: function () {
     var southWestTiles = L.latLng(-144, 0),
@@ -72,8 +73,25 @@ var MapBase = {
       MapBase.map.closePopup();
     });
 
+    MapBase.loadOverlays();
+
   },
 
+  loadOverlays: function () {
+    $.getJSON('data/overlays.json?nocache=' + nocache)
+      .done(function (data) {
+        MapBase.overlays = data;
+        MapBase.setOverlays();
+
+        console.log('overlays loaded');
+      });
+  },
+
+  setOverlays: function () {
+    $.each(MapBase.overlays, function (key, value) {
+      L.imageOverlay(value.img, value.bounds).addTo(MapBase.map);     
+    });
+  },
 
   devGameToMap: function (t) {
     var image = [48841, 38666];
@@ -305,7 +323,7 @@ var MapBase = {
       var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
       popupContent = (marker.tool == '-1' ? Language.get('map.item.unable') : '') + ' ' + marker.description + ' ' + weeklyText;
     }
-    
+
 
 
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
