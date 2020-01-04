@@ -27,9 +27,17 @@
 		"img": "./assets/overlays/cave_06.png",
 		"bounds": [[-52.345, 87.57], [-51.985, 87.93]]
 	},
+	"cave_07": {
+		"img": "./assets/overlays/cave_07.png",
+		"bounds": [[-61.481, 77.735], [-63.13, 79.05]]
+	},
 	"mine_01": {
 		"img": "./assets/overlays/mine_01.png",
 		"bounds": [[-43.515, 152.935], [-41.505, 155.045]]
+	},
+	"mine_02": {
+		"img": "./assets/overlays/mine_02.png",
+		"bounds": [[-62.125, 75.24], [-61.4656, 74.3625]]
 	},
 	"tunnel_01": {
 		"img": "./assets/overlays/tunnel_01.png",
