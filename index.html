@@ -443,30 +443,28 @@
     <h2>Debug marker</h2>
     <div class="routes-container">
       <div class="input-container">
+        <label for="show-all-markers">Show all markers</label>
+        <select class="input-day narrow-select-menu" id="show-all-markers">
+          <option value="1" data-text="menu.yes">Yes</option>
+          <option value="0" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container">
           <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
           <select class="input-day narrow-select-menu" id="show-coordinates">
             <option value="1" data-text="menu.yes">Yes</option>
             <option value="0" data-text="menu.no" selected>No</option>
           </select>
         </div>
-      <div class="input-container">
-        <label for="debug-marker"></label>
-        <form name="debug-marker">
-          <p>
-            <input id="debug-marker-lat" placeholder="lat" type="text" name="debug-marker-lat" class="input-day" value="">
-            <input id="debug-marker-lng" placeholder="lng" type="text" name="debug-marker-lng" class="input-day" value="">
-            <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search" autocomplete="off">
-          </p>
-        <p style="float: right; position: relative; padding-top: 5px;"><button type="button" class="btn btn-info narrow-select-menu"
-              onclick="MapBase.submitDebugForm()">Place</button></p>
-        </form>
+      <div class="input-container-noflex">
+        <input id="debug-marker-lat" placeholder="Lat." type="text" name="debug-marker-lat" class="input-day" value="">
+        <input id="debug-marker-lng" placeholder="Long." type="text" name="debug-marker-lng" class="input-day" value="">
       </div>
-      <div class="input-container">
-        <label for="show-all-markers">Show all markers</label>
-        <select class="input-day narrow-select-menu" id="show-all-markers">
-          <option value="1" data-text="menu.yes">Yes</option>
-          <option value="0" data-text="menu.no" selected>No</option>
-        </select>
+      <div class="input-container-noflex">
+        <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search" autocomplete="off">
+      </div>
+      <div class="input-container-noflex">
+        <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu" onclick="MapBase.submitDebugForm()">Place</button>
       </div>
     </div>
     <div class="white-line-divider"></div>

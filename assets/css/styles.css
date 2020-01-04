@@ -144,11 +144,11 @@ p {
 }
 
 .white-line-divider {
-    display: flex;
-    justify-content: space-around;
-    border-top: 4px solid #fff;
     margin: 15px 0 2px 0;
     height: 10px;
+    background-image: url(../../assets/images/header_border_divider.png);
+    background-repeat: repeat-x;
+    background-size: auto 3px;
 }
 
 .remove-button {
@@ -206,6 +206,11 @@ p {
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
+}
+
+.input-container-noflex {
+    margin: 5px 0;
+    text-align: center;
 }
 
 .wide-select-menu {
@@ -451,6 +456,9 @@ p {
     padding: 0 0 0 8px;
 }
 
+#debug-marker-lat, #debug-marker-lng {
+    width: calc(50% - 4px);
+}
 
 /* Fix buttons showing on top of sidebar on mobile menu */
 .leaflet-top, .leaflet-bottom {
