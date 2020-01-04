@@ -113,14 +113,14 @@ Menu.refreshItemsCounter = function () {
     .replace('{max}', markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible).length));
 };
 
-// Auto fill debug markers inputs, when show coordinates on click is enabled
+// Auto fill debug markers inputs, when "show coordinates on click" is enabled
 Menu.liveUpdateDebugMarkersInputs = function (lat, lng) {
   $('#debug-marker-lat').val(lat);
   $('#debug-marker-lng').val(lng);
-  // Auto remove coordinates when show coordinates on click is disabled
-  $('#show-coordinates').on('change', function () {
-    $('#debug-marker-lat').val('');
-    $('#debug-marker-lng').val('');
-    $('#debug-marker-name').val('')
-  });
 }
+// Auto remove debug markers coordinates when "show coordinates on click" is disabled
+$('#show-coordinates').on('change', function () {
+  $('#debug-marker-lat').val('');
+  $('#debug-marker-lng').val('');
+  $('#debug-marker-name').val('');
+});

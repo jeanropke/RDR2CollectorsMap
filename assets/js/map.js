@@ -539,9 +539,10 @@ MapBase.addCoordsOnMap = function (coords) {
     $('#lat-lng-container-close-button').click(function () {
       $('.lat-lng-container').css('display', 'none');
     });
+    // Auto fill debug markers inputs
+    Menu.liveUpdateDebugMarkersInputs(coords.latlng.lat, coords.latlng.lng);
   }
-  // Auto fill debug markers inputs
-  Menu.liveUpdateDebugMarkersInputs(coords.latlng.lat, coords.latlng.lng);
+
 
   //console.log(`{"text": "_treasure", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}", "radius": "5"},`);
   if (debugTool != null)
