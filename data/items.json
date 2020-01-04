@@ -901,7 +901,7 @@
             { "text": "ring_thorburn_turquoise", "tool": "2", "lat": "-42.9543", "lng": "147.4424" }
         ],
         "6": [
-            { "text": "ring_pilgrim_moonstone", "tool": "2", "lat": "-29.5739", "lng": "135.9431" },
+            { "text": "ring_pilgrim_moonstone", "tool": "0", "lat": "-29.5739", "lng": "135.9431" },
             { "text": "ring_sackville_diamond", "tool": "2", "lat": "-50.7015", "lng": "123.7823" },
             { "text": "ring_yates_diamond", "tool": "0", "lat": "-65.8312", "lng": "130.1975" },
             { "text": "ring_beaulieux_diamond", "tool": "2", "lat": "-92.6504", "lng": "141.7949" },
@@ -1049,7 +1049,7 @@
             { "text": "bracelet_infanta_turquoise", "tool": "2", "lat": "-52.7348", "lng": "142.3590" },
             { "text": "bracelet_abello_ruby_bangle", "tool": "2", "lat": "-107.8306", "lng": "59.9837" },
             { "text": "bracelet_elliston_carved", "tool": "2", "lat": "-100.2322", "lng": "74.2739" },
-            { "text": "bracelet_ojeda_rose_gold", "tool": "2", "lat": "-36.6618", "lng": "105.0989" },
+            { "text": "bracelet_ojeda_rose_gold", "tool": "0", "lat": "-36.6618", "lng": "105.0989" },
             { "text": "bracelet_hajnal_garnet_bangle", "tool": "2", "lat": "-55.8723", "lng": "108.7367" },
             { "text": "bracelet_greco_sapphire", "tool": "2", "lat": "-56.7912", "lng": "157.2982" },
             { "text": "bracelet_helena_sapphire", "tool": "2", "lat": "-46.3946", "lng": "110.7151" },
