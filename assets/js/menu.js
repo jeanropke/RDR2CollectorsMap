@@ -108,8 +108,11 @@ Menu.refreshMenu = function () {
     $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
 
     treasureData.filter(function (item) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').addClass('disabled').attr('data-type', item.text);
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', item.text);
       var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(item.text));
+
+      if(!Treasures.enabledTreasures.includes(item.text))
+        collectibleElement.addClass('disabled');
 
       $('.menu-hidden[data-type=treasure]').append(collectibleElement.append(collectibleTextElement));
     });

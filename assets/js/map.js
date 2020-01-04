@@ -89,7 +89,7 @@ var MapBase = {
 
   setOverlays: function () {
     $.each(MapBase.overlays, function (key, value) {
-      L.imageOverlay(value.img, value.bounds).addTo(MapBase.map);     
+      L.imageOverlay(value.img, value.bounds).addTo(MapBase.map);
     });
   },
 
@@ -205,16 +205,18 @@ var MapBase = {
 
   removeItemFromMap: function (itemName, category) {
     if (itemName.endsWith('_treasure')) {
-      if (inventory[itemName]) {
-        delete inventory[itemName];
-      } else {
-        inventory[itemName] = {
-          'isCollected': '1',
-          'amount': 0
-        };
-      }
+
+      if (Treasures.enabledTreasures.includes(itemName))
+        Treasures.enabledTreasures = $.grep(Treasures.enabledTreasures, function (treasure) {
+          return treasure !== itemName;
+        });
+      else
+        Treasures.enabledTreasures.push(itemName);
+
       $(`[data-type=${itemName}]`).toggleClass('disabled');
-      MapBase.addMarkers();
+
+      Treasures.addToMap();
+      Treasures.save();
     } else {
       var _marker = markers.filter(function (marker) {
         return (marker.text == itemName || (marker.subdata == category));

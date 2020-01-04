@@ -66,10 +66,16 @@ function init() {
 
 
   var tempCollectedMarkers = "";
-  $.each($.cookie(), function (key, value) {
+  //sometimes, cookies are saved in the wrong order
+  var cookiesList = [];  
+  $.each($.cookie(), function (key, value) {    
     if (key.startsWith('removed-items')) {
-      tempCollectedMarkers += value;
+      cookiesList.push(key);
     }
+  });
+  cookiesList.sort();
+  $.each(cookiesList, function (key, value) {
+    tempCollectedMarkers += $.cookie(value);
   });
 
   //If the collect markers does not contains ':', need be converted to inventory system
@@ -485,7 +491,7 @@ $("#auto-refresh").on("change", function () {
 //Disable & enable collection category
 $('.menu-option.clickable').on('click', function () {
   var menu = $(this);
-  menu.toggleClass('disabled');
+  $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
 
   if (menu.hasClass('disabled')) {
     enabledCategories = $.grep(enabledCategories, function (value) {

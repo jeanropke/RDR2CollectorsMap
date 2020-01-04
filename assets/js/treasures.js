@@ -1,4 +1,5 @@
 var Treasures = {
+  enabledTreasures: $.cookie('treasures-enabled') ? $.cookie('treasures-enabled').split(';') : [],
   load: function () {
     $.getJSON('data/treasures.json?nocache=' + nocache)
       .done(function (data) {
@@ -49,11 +50,14 @@ var Treasures = {
   },
 
   addToMap: function () {
+
+    Layers.miscLayer.clearLayers();
+
     if (!enabledCategories.includes('treasure'))
       return;
 
     $.each(treasureMarkers, function (key, value) {
-      if (inventory[value.treasure.toString()]) {
+      if (Treasures.enabledTreasures.includes(value.treasure)) {
         Layers.miscLayer.addLayer(value.marker);
         Layers.miscLayer.addLayer(value.circle);
         $.each(value.treasuresCross, function (crossKey, crossValue) {
@@ -63,5 +67,8 @@ var Treasures = {
     });
 
     Layers.miscLayer.addTo(MapBase.map);
+  },
+  save: function() {
+    $.cookie('treasures-enabled', Treasures.enabledTreasures.join(';'), { expires: 999 })
   }
 }
