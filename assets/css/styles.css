@@ -143,6 +143,14 @@ p {
     display: none;
 }
 
+.white-line-divider {
+    display: flex;
+    justify-content: space-around;
+    border-top: 4px solid #fff;
+    margin: 15px 0 2px 0;
+    height: 10px;
+}
+
 .remove-button {
     text-align: center;
     font-size: 14px;
@@ -165,8 +173,8 @@ p {
 .hide-show-container, .custom-routes-container {
     display: flex;
     justify-content: space-around;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-top: 1px solid #B0B0B0;
+    border-bottom: 1px solid #B0B0B0;
     padding: 10px 0;
     margin: 15px 0;
 }
@@ -198,6 +206,14 @@ p {
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
+}
+
+.wide-select-menu {
+    width: 150px;
+}
+
+.narrow-select-menu {
+    width: 75px;
 }
 
 .input-day {
@@ -255,6 +271,7 @@ p {
     color: #eee;
     z-index: 999;
     padding-top: 10px;
+    scrollbar-width: thin;
 }
 
 .menu-opened {
@@ -348,13 +365,14 @@ p {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 200px;
+    width: 220px;
     margin: 0 calc(50% - 100px) 20px;
     z-index: 990;
-    background-color: #FFFAF0;
+    color: #fff;
+    background-color: #333333;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
-    padding: 13px 2px;
+    padding: 14px 8px;
     border-radius: 3px;
     display: none;
 }

@@ -286,16 +286,18 @@
       </div>
     </div>
 
+    <div class="white-line-divider"></div>
     <div class="search-container">
       <h2 data-text="menu.search">Search</h2>
       <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
     </div>
 
+    <div class="white-line-divider"></div>
     <div class="settings-container">
       <h2 data-text="menu.settings">Settings</h2>
       <div class="input-container">
         <label for="tools" data-text="menu.tool_type">Tool type</label>
-        <select class="input-day" id="tools">
+        <select class="input-day wide-select-menu" id="tools">
           <option value="0" data-text="menu.tool_type.no_tools">No tools</option>
           <option value="1" data-text="menu.tool_type.shovel">Shovel</option>
           <option value="2" data-text="menu.tool_type.metal_detector">Metal detector</option>
@@ -304,7 +306,7 @@
       </div>
       <div class="input-container">
         <label for="tools" data-text="menu.language">Language</label>
-        <select class="input-day" id="language">
+        <select class="input-day wide-select-menu" id="language">
           <option value="de-de">Deutsch</option>
           <option value="en-us" selected>English</option>
           <option value="es-es">Español</option>
@@ -330,56 +332,50 @@
       </div-->
       <div class="input-container">
         <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
-        <select class="input-day" id="marker-cluster">
-          <option value="1" data-text="menu.yes">Yes</option>
-          <option value="0" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
-        <select class="input-day" id="show-coordinates">
+        <select class="input-day narrow-select-menu" id="marker-cluster">
           <option value="1" data-text="menu.yes">Yes</option>
           <option value="0" data-text="menu.no" selected>No</option>
         </select>
       </div>
       <div class="input-container">
         <label for="auto-refresh" data-text="menu.auto_refresh">Auto-refresh</label>
-        <select class="input-day" id="auto-refresh">
+        <select class="input-day narrow-select-menu" id="auto-refresh">
           <option value="true" data-text="menu.yes">Yes</option>
           <option value="false" data-text="menu.no" selected>No</option>
         </select>
       </div>
       <div class="input-container">
         <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>
-        <select class="input-day" id="reset-markers">
+        <select class="input-day narrow-select-menu" id="reset-markers">
           <option value="true" data-text="menu.yes" selected>Yes</option>
           <option value="false" data-text="menu.no">No</option>
           <option value="clear" data-text="menu.reset">Reset</option>
         </select>
       </div>
     </div>
+    <div class="white-line-divider"></div>
     <div class="settings-container">
       <h2 data-text="menu.inventory">Inventory</h2>
       <div class="input-container">
         <label for="enable-inventory" data-text="menu.enable_inventory">Enable inventory</label>
-        <select class="input-day" id="enable-inventory">
+        <select class="input-day narrow-select-menu" id="enable-inventory">
           <option value="true" data-text="menu.yes" selected>Yes</option>
           <option value="false" data-text="menu.no">No</option>
         </select>
       </div>
       <div class="input-container">
-        <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
-        <input id="inventory-stack" class="input-day" type="number" min="1" max="10" value="10">
-      </div>
-
-      <div class="input-container">
         <label for="clear-inventory" data-text="menu.clear_inventory">Clear inventory</label>
-        <select class="input-day" id="clear-inventory">
+        <select class="input-day narrow-select-menu" id="clear-inventory">
           <option value="true" data-text="menu.yes">Yes</option>
           <option value="false" data-text="menu.no" selected>No</option>
         </select>
       </div>
+      <div class="input-container">
+        <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
+        <input id="inventory-stack" class="input-day narrow-select-menu" type="number" min="1" max="10" value="10">
+      </div>
     </div>
+    <div class="white-line-divider"></div>
     <h2 data-text="menu.custom_routes">Custom routes</h2>
     <div class="custom-routes-container">
       <a data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
@@ -390,7 +386,7 @@
     <div class="routes-container">
       <div class="input-container">
         <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
-        <select class="input-day" id="custom-routes">
+        <select class="input-day narrow-select-menu" id="custom-routes">
           <option value="1" data-text="menu.yes">Yes</option>
           <option value="0" data-text="menu.no" selected>No</option>
           <option value="clear" data-text="menu.clear">Clear</option>
@@ -408,25 +404,25 @@
     <div class="settings-container">
       <div class="input-container">
         <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route on every visit</label>
-        <select class="input-day" id="generate-route-generate-on-visit">
+        <select class="input-day narrow-select-menu" id="generate-route-generate-on-visit">
           <option value="true" data-text="menu.yes">Yes</option>
           <option value="false" data-text="menu.no" selected>No</option>
         </select>
       </div>
       <div class="input-container">
         <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected items</label>
-        <select class="input-day" id="generate-route-ignore-collected">
+        <select class="input-day narrow-select-menu" id="generate-route-ignore-collected">
           <option value="true" data-text="menu.yes">Yes</option>
           <option value="false" data-text="menu.no" selected>No</option>
         </select>
       </div>
       <div class="input-container">
         <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
-        <input id="generate-route-distance" class="input-day" type="number" min="1" max="200" value="25">
+        <input id="generate-route-distance" class="input-day narrow-select-menu" type="number" min="1" max="200" value="25">
       </div>
       <div class="input-container">
         <label for="generate-route-start" data-text="menu.generate_route_start">Route starts at</label>
-        <select class="input-day" id="generate-route-start">
+        <select class="input-day wide-select-menu" id="generate-route-start">
           <option value="SW" data-text="menu.generate_route_start.sw">Southwest (↙)</option>
           <option value="NE" data-text="menu.generate_route_start.ne">Northeast (↗)</option>
           <option value="N" data-text="menu.generate_route_start.n">North (↑)</option>
@@ -436,33 +432,42 @@
       </div>
       <div class="input-container">
         <label for="generate-route-start-lat" data-text="menu.generate_route_start_lat">Route start lat.</label>
-        <input id="generate-route-start-lat" class="input-day" type="number" step="any" value="-119.9063">
+        <input id="generate-route-start-lat" class="input-day wide-select-menu" type="number" step="any" value="-119.9063">
       </div>
       <div class="input-container">
         <label for="generate-route-start-lng" data-text="menu.generate_route_start_lng">Route start long.</label>
-        <input id="generate-route-start-lng" class="input-day" type="number" step="any" value="8.0313">
+        <input id="generate-route-start-lng" class="input-day wide-select-menu" type="number" step="any" value="8.0313">
       </div>
     </div>
+    <div class="white-line-divider"></div>
     <h2>Debug marker</h2>
     <div class="routes-container">
       <div class="input-container">
+          <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+          <select class="input-day narrow-select-menu" id="show-coordinates">
+            <option value="1" data-text="menu.yes">Yes</option>
+            <option value="0" data-text="menu.no" selected>No</option>
+          </select>
+        </div>
+      <div class="input-container">
         <label for="debug-marker"></label>
         <form name="debug-marker">
-          <p><input placeholder="lat" type="text" name="debug-marker-lat" class="input-day">
-            <input placeholder="lng" type="text" name="debug-marker-lng" class="input-day">
+          <p><input id="debug-marker-lat" placeholder="lat" type="text" name="debug-marker-lat" class="input-day" value="">
+            <input id="debug-marker-lng" placeholder="lng" type="text" name="debug-marker-lng" class="input-day" value="">
           </p>
-          <p style="float: right; position: relative; padding-top: 5px;"><button type="button" class="btn btn-info"
+          <p style="float: right; position: relative; padding-top: 5px;"><button type="button" class="btn btn-info narrow-select-menu"
               onclick="MapBase.submitDebugForm()">Place</button></p>
         </form>
       </div>
       <div class="input-container">
         <label for="show-all-markers">Show all markers</label>
-        <select class="input-day" id="show-all-markers">
+        <select class="input-day narrow-select-menu" id="show-all-markers">
           <option value="1" data-text="menu.yes">Yes</option>
           <option value="0" data-text="menu.no" selected>No</option>
         </select>
       </div>
     </div>
+    <div class="white-line-divider"></div>
     <div class="issues-container">
       <h2 data-text="menu.issues">Issues</h2>
       <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDR2CollectorsMap/issues"
