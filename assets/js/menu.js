@@ -22,45 +22,78 @@ Menu.refreshMenu = function () {
       if (marker.day == Cycles.data.cycles[Cycles.data.current][category] && marker.category == category) {
         if (marker.subdata) {
           //This is for items with subdata to merge them
-          if ($(`.menu-hidden[data-type=${category}]`).children(`p.collectible[data-type=${marker.subdata}]`).length > 0)
+          if ($(`.menu-hidden[data-type=${category}]`).children(`[data-type=${marker.subdata}]`).length > 0)
             return;
 
+          var collectibleImage = null;
+          var collectibleName = null;
 
-          var colelctibleName = null;
-          if ((marker.category == 'american_flowers'))
-            colelctibleName = Language.get(`flower_${marker.subdata}.name`);
-          else if (marker.category == 'bird_eggs')
-            colelctibleName = Language.get(`egg_${marker.subdata}.name`);
+          if (marker.category == 'american_flowers') {
+            collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/flower_${marker.subdata}.png`).addClass('collectible-icon');
+            collectibleName = Language.get(`flower_${marker.subdata}.name`);
+          } else if (marker.category == 'bird_eggs') {
+            collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/egg_${marker.subdata}.png`).addClass('collectible-icon');
+            collectibleName = Language.get(`egg_${marker.subdata}.name`);
+          }
 
-          var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.subdata).text(colelctibleName);
+          var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', marker.subdata);
+          var collectibleTextElement = $('<p>').addClass('collectible').addClass(marker.text).text(collectibleName);
           var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
 
-          $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement.append(collectibleCountElement));
-          if (marker.amount == 10) {
-            $(`p[data-type=${marker.subdata}]`).addClass('disabled');
-          }
+          $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
+
+          if (marker.amount == 10)
+            $(`[data-type=${marker.subdata}]`).addClass('disabled');
+
           if (marker.lat.length == 0)
-            $(`p[data-type=${marker.subdata}]`).addClass('not-found');
-          
+            $(`[data-type=${marker.subdata}]`).addClass('not-found');
+
           //set green color of weekly collection items (flowers and eggs)
           for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
             if ((`flower_${marker.subdata}`) == weeklyItems[i].item || (`egg_${marker.subdata}`) == weeklyItems[i].item) {
-              $(`p[data-type=${marker.subdata}]`).addClass('weekly-item');
+              $(`[data-type=${marker.subdata}]`).addClass('weekly-item');
             }
           }
         } else {
           //All others items
-          var collectibleElement = $('<p>').addClass('collectible').attr('data-type', marker.text).text(marker.title);
-          var buttonsElement = $('div').addClass('');
+          var collectibleImage = null;
+
+          switch (marker.category) {
+            // Random items don't even have a openable menu, don't do anything.
+            case 'random':
+              collectibleImage = null;
+              break;
+            // Use the generic cards icons for now, might improve later. Keep for now...
+            case 'card_cups':
+              collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/card_cups.png`).addClass('collectible-icon');
+              break;
+            case 'card_pentacles':
+              collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/card_pentacles.png`).addClass('collectible-icon');
+              break;
+            case 'card_swords':
+              collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/card_swords.png`).addClass('collectible-icon');
+              break;
+            case 'card_wands':
+              collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/card_wands.png`).addClass('collectible-icon');
+              break;
+            // Everything else can be obtained from `{marker.text}.png`.
+            default:
+              collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${marker.text}.png`).addClass('collectible-icon')
+              break;
+          }
+
+          var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', marker.text);
+          var collectibleTextElement = $('<p>').addClass('collectible').addClass(marker.text).text(marker.title);
           var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
-          $(`.menu-hidden[data-type=${category}]`).append(collectibleElement.append(collectibleCountElement));
+
+          $(`.menu-hidden[data-type=${category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
 
           if (marker.lat.length == 0)
             $(`[data-type=${marker.text}]`).addClass('not-found');
 
-          if (!marker.canCollect) {
+          if (!marker.canCollect)
             $(`[data-type=${marker.text}]`).addClass('disabled');
-          }
+
           // set green color of weekly collection items (other items)
           for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
             if ((marker.text) == weeklyItems[i].item) {

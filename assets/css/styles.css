@@ -282,7 +282,7 @@ p {
     line-height: 36px;
 }
 
-.side-menu .menu-option:hover, .side-menu .menu-hidden .collectible:hover {
+.side-menu .menu-option:hover, .side-menu .menu-hidden .collectible-wrapper:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -335,10 +335,21 @@ p {
     cursor: pointer;
     user-select: none;
 }
-.side-menu .menu-hidden .collectible {
-    padding: 5px 25px;
+
+.side-menu .menu-hidden .collectible-wrapper {
+    padding: 5px 20px;
     cursor: pointer;
     user-select: none;
+}
+
+.side-menu .menu-hidden .collectible-icon {
+    float: left;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.side-menu .menu-hidden .collectible {
+    padding: 5px 0;
     display: flex;
     justify-content: space-between;
     font-size: 15px;

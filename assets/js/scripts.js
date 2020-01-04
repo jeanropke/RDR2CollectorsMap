@@ -532,7 +532,7 @@ $('.collection-sell').on('click', function (e) {
 });
 
 //Remove item from map when using the menu
-$(document).on('click', '.collectible', function () {
+$(document).on('click', '.collectible-wrapper', function () {
   var collectible = $(this);
 
   MapBase.removeItemFromMap(collectible.data('type'), collectible.data('type'));

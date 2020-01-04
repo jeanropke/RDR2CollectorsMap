@@ -614,7 +614,7 @@
 	{"key": "coin_penny_5.desc", "value": ""},
 	{"key": "coin_penny_6.desc", "value": "At the base of the eastern large tree."},
 
-	{"key": "bottle_tennesee_whiskey.name", "value": "Tennesee Whiskey Bottle"},
+	{"key": "bottle_tennesee_whiskey.name", "value": "Tennessee Whiskey Bottle"},
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": "On the dinner table inside."},
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": "Inside building in cabinet in far right corner."},
 	{"key": "bottle_tennesee_whiskey_3.desc", "value": "In a cabinet in the livingroom."},
@@ -830,7 +830,7 @@
 	{"key": "heirlooms_boxwood_comb_5.desc", "value": ""},
 	{"key": "heirlooms_boxwood_comb_6.desc", "value": ""},
 
-	{"key": "heirlooms_goat_hair_brush.name", "value": "Goat Hair Brush Heirloom"},
+	{"key": "heirlooms_goat_hair_brush.name", "value": "Goat Hairbrush Heirloom"},
 	{"key": "heirlooms_goat_hair_brush_1.desc", "value": "Upstairs on top of the fireplace."},
 	{"key": "heirlooms_goat_hair_brush_2.desc", "value": "On a dresser in bedroom 1 upstairs"},
 	{"key": "heirlooms_goat_hair_brush_3.desc", "value": "In a chest on the lower deck of the ship."},
@@ -878,7 +878,7 @@
 	{"key": "heirlooms_ivory_comb_5.desc", "value": ""},
 	{"key": "heirlooms_ivory_comb_6.desc", "value": ""},
 
-	{"key": "heirlooms_horse_hair_brush.name", "value": "Horse Hair Brush Heirloom"},
+	{"key": "heirlooms_horse_hair_brush.name", "value": "Horse Hairbrush Heirloom"},
 	{"key": "heirlooms_horse_hair_brush_1.desc", "value": "On a table on the deck."},
 	{"key": "heirlooms_horse_hair_brush_2.desc", "value": "In corner table of room upstairs in Saloon."},
 	{"key": "heirlooms_horse_hair_brush_3.desc", "value": "In the green cabinet next to the fireplace."},
@@ -886,7 +886,7 @@
 	{"key": "heirlooms_horse_hair_brush_5.desc", "value": ""},
 	{"key": "heirlooms_horse_hair_brush_6.desc", "value": ""},
 
-	{"key": "heirlooms_boar_bristle_brush.name", "value": "Boar Bristle Brush Heirloom"},
+	{"key": "heirlooms_boar_bristle_brush.name", "value": "Boar Bristle Hairbrush Heirloom"},
 	{"key": "heirlooms_boar_bristle_brush_1.desc", "value": "Inside house on a table."},
 	{"key": "heirlooms_boar_bristle_brush_2.desc", "value": "In the chair on the front porch."},
 	{"key": "heirlooms_boar_bristle_brush_3.desc", "value": "Inside chest left of house entrance."},

@@ -223,7 +223,7 @@ var MapBase = {
       if (_marker == null)
         return;
 
-      var isDisabled = $(`p.collectible[data-type=${category}]`).hasClass('disabled');
+      var isDisabled = $(`[data-type=${category}]`).hasClass('disabled');
       $.each(_marker, function (key, marker) {
 
         if (marker.text != itemName && (marker.subdata != category || (_marker.length > 1 && itemName != category)))
