@@ -503,11 +503,6 @@ p {
     z-index: 998;
 }
 
-.leaflet-bar a.leaflet-disabled {
-    background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
-	color: #777;
-}
-
 .leaflet-popup-content {
     font-size: 14px;
     margin: 8px;
