@@ -909,7 +909,7 @@
             { "text": "ring_bonnard_pearl", "tool": "2", "lat": "-110.1878", "lng": "52.0497" },
             { "text": "ring_harland_coral", "tool": "2", "lat": "-102.0172", "lng": "62.0546" },
             { "text": "ring_bosque_emerald", "tool": "2", "lat": "-113.7867", "lng": "17.8075" },
-            { "text": "ring_aubrey_onyx", "tool": "2", "lat": "-113.4101", "lng": "68.2165" },
+            { "text": "ring_aubrey_onyx", "tool": "0", "lat": "-113.4101", "lng": "68.2165" },
             { "text": "ring_magnate_turquoise", "tool": "2", "lat": "-75.4964", "lng": "146.1917" },
             { "text": "ring_thorburn_turquoise", "tool": "2", "lat": "-36.4884", "lng": "119.5731" }
         ]
