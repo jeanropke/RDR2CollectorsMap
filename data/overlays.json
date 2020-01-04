@@ -1,4 +1,8 @@
 {
+	"build_01": {
+		"img": "./assets/overlays/build_01.png",
+		"bounds": [[-86.45, 147.85], [-86.03, 148.25]]
+	},
 	"cave_01": {
 		"img": "./assets/overlays/cave_01.png",
 		"bounds": [[-53.2978125, 68.7596875], [-52.1478125, 69.9096875]]
