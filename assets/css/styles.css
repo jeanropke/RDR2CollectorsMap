@@ -210,6 +210,7 @@ p {
 
 .input-container-noflex {
     margin: 5px 0;
+    text-align: center;
 }
 
 .wide-select-menu {
@@ -457,11 +458,6 @@ p {
 
 #debug-marker-lat, #debug-marker-lng {
     width: calc(50% - 4px);
-}
-
-#debug-place-marker {
-    margin: 0 auto;
-    display: block;
 }
 
 /* Fix buttons showing on top of sidebar on mobile menu */
