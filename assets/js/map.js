@@ -401,7 +401,7 @@ var MapBase = {
     else
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
 
-    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), {maxWidth : 450})
+    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), {maxWidth : 400})
       .on("click", function (e) {
         Routes.addMarkerOnCustomRoute(marker.text);
         if (customRouteEnabled) e.target.closePopup();
