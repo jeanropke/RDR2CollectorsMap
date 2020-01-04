@@ -188,15 +188,6 @@ p {
     cursor: pointer;
     user-select: none;
     margin-top: 8px;
-    background: #eee;
-    border: none;
-    color: #000;
-}
-
-.btn-danger, .btn-success{
-    background: #eee;
-    color: #000;
-    border: none;
 }
 
 .marker-popup-buttons {
@@ -510,11 +501,6 @@ p {
 
 .leaflet-top, .leaflet-bottom {
     z-index: 998;
-}
-
-.leaflet-popup-content-wrapper, .leaflet-control-layers, .leaflet-bar a, .leaflet-bar a:hover {
-    background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
-    color: #eee;
 }
 
 .leaflet-bar a.leaflet-disabled {
