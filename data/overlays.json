@@ -18,5 +18,9 @@
 	"cave_05": {
 		"img": "./assets/overlays/cave_05.png",
 		"bounds": [[-42.155, 146.1525], [-40.155, 148.1525]]
+	},
+	"cave_06": {
+		"img": "./assets/overlays/cave_06.png",
+		"bounds": [[-52.345, 87.57], [-51.985, 87.93]]
 	}
 }
