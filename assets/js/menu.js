@@ -39,7 +39,7 @@ Menu.refreshMenu = function () {
 
           var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', marker.subdata);
           var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleName);
-          var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
+          var collectibleCountElement = Inventory.isEnabled ? $('<small>').addClass('counter').text(marker.amount) : '';
 
           $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
 
