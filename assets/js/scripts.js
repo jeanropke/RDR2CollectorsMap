@@ -67,8 +67,8 @@ function init() {
 
   var tempCollectedMarkers = "";
   //sometimes, cookies are saved in the wrong order
-  var cookiesList = [];  
-  $.each($.cookie(), function (key, value) {    
+  var cookiesList = [];
+  $.each($.cookie(), function (key, value) {
     if (key.startsWith('removed-items')) {
       cookiesList.push(key);
     }
@@ -159,10 +159,7 @@ function init() {
 
   setMapBackground($.cookie('map-layer'));
 
-  //setCurrentDayCycle();
-  //day = 5;
-  //$('#day').val(day);
-  Routes.loadRoutesData();
+   Routes.loadRoutesData();
 
   if (Settings.isMenuOpened)
     $('.menu-toggle').click();
@@ -291,6 +288,16 @@ function addZeroToNumber(number) {
   return number;
 }
 
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
 /**
  *  RDR2 Free roam timer
  *  Thanks to kanintesova
@@ -337,18 +344,6 @@ $('.clock-container').on('click', function () {
 /**
  * jQuery triggers
  */
-
-//Change day on menu
-/*$("#day").on("input", function () {
-  $.cookie('ignore-days', null);
-
-  day = parseInt($('#day').val());
-  MapBase.addMarkers();
-
-  if ($("#routes").val() == 1)
-    Routes.drawLines();
-});
-*/
 
 //Show all markers on map
 $("#show-all-markers").on("change", function () {

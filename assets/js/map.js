@@ -192,6 +192,11 @@ var MapBase = {
 
     if (Routes.generateOnVisit)
       Routes.generatePath();
+
+
+    if (goTo = markers.filter(_m => _m.text == getParameterByName('m'))[0]) {
+      MapBase.map.setView([goTo.lat, goTo.lng], 6)
+    }
   },
 
   loadWeeklySet: function () {
