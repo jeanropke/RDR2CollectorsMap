@@ -14,8 +14,9 @@ var Language = {
       return Language.data[lang][value];
     } else if(Language.data['en-us'][value]) {
       return Language.data['en-us'][value];
+    } else {
+      return '';
     }
-    //If the fallback fails, does not replace with empty text
   }
 
 };
