@@ -51,7 +51,7 @@ p {
 
 #main-header {
     display: flex;
-    margin: 0 10px;
+    margin: 0 10px 10px 10px;
 }
 
 #main-header::after {
@@ -61,15 +61,20 @@ p {
 #main-header-center {
     flex-grow: 1;
     height: 75px;
-    line-height: 67px;
     background-image: url(../../assets/images/header_bg_center.png);
     background-repeat: repeat-x;
     background-size: auto 75px;
+    padding: 6px 0;
 }
 
 #main-header-left, #main-header-right {
     user-select: none;
     height: 75px;
+}
+
+#sub-header {
+    font-size: 14px;
+    color: #cacaca;
 }
 
 .map-alert {
@@ -320,16 +325,6 @@ p {
 
 .side-menu, .menu-toggle {
     transition: all 200ms ease-out;
-}
-
-.side-menu .collectables-counter {
-    text-align: center;
-}
-
-.side-menu .cycle-data {
-    text-align: center;
-    font-size: 17px;
-    padding-bottom: 3px;
 }
 
 .side-menu .menu-option {
