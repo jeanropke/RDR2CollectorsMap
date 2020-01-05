@@ -154,7 +154,8 @@ var MapBase = {
       $.each(searchTerms, function (id, term) {
 
         searchMarkers = searchMarkers.concat(MapBase.markers.filter(function (_marker) {
-          return _marker.title.toLowerCase().includes(term.toLowerCase())
+          if (_marker.title != null)
+            return _marker.title.toLowerCase().includes(term.toLowerCase())
         }));
 
         $.each(searchMarkers, function (i, el) {
