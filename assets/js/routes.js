@@ -20,39 +20,7 @@ var Routes = {
       $('#generate-route-start-lng').prop('disabled', true);
     }
   },
-
-  drawLines: function () {
-    var connections = [];
-    $.each(routesData[day], function (nodeKey, nodeValue) {
-      $.each(nodeValue, function (_key, _marker) {
-        var marker = markers.filter(item => {
-          if (item.day == day)
-            return item.text === _marker;
-        })[0];
-
-        if (marker == null)
-          return;
-
-        if ((Inventory.isEnabled ? !marker.isCollected && (marker.amount < Inventory.stackSize) : !marker.isCollected) && enabledCategories.includes(marker.category)
-          && uniqueSearchMarkers.includes(marker) && !categoriesDisabledByDefault.includes(marker.subdata)
-          && marker.tool <= parseInt(toolType)) {
-          var connection = [marker.lat, marker.lng];
-          connections.push(connection);
-        }
-
-      });
-    });
-
-    if (polylines instanceof L.Polyline) {
-      MapBase.map.removeLayer(polylines);
-    }
-
-    polylines = L.polyline(connections, {
-      'color': '#9a3033'
-    });
-    MapBase.map.addLayer(polylines);
-  },
-
+ 
   loadCustomRoute: function (input) {
     try {
       var connections = [];
@@ -68,14 +36,14 @@ var Routes = {
         }
       });
 
-      if (polylines instanceof L.Polyline) {
-        MapBase.map.removeLayer(polylines);
+      if (Routes.polylines instanceof L.Polyline) {
+        MapBase.map.removeLayer(Routes.polylines);
       }
 
-      polylines = L.polyline(connections, {
+      Routes.polylines = L.polyline(connections, {
         'color': '#9a3033'
       });
-      MapBase.map.addLayer(polylines);
+      MapBase.map.addLayer(Routes.polylines);
     } catch (e) {
       alert(Language.get('routes.invalid'));
       console.log(e);
@@ -83,48 +51,36 @@ var Routes = {
   },
 
   addMarkerOnCustomRoute: function (value) {
-    if (customRouteEnabled) {
-      if (customRouteConnections.includes(value)) {
-        customRouteConnections = customRouteConnections.filter(function (item) {
+    if (Routes.customRouteEnabled) {
+      if (Routes.customRouteConnections.includes(value)) {
+        Routes.customRouteConnections = Routes.customRouteConnections.filter(function (item) {
           return item !== value
         })
       } else {
-        customRouteConnections.push(value);
+        Routes.customRouteConnections.push(value);
       }
 
       var connections = [];
 
-      $.each(customRouteConnections, function (key, item) {
-        var _marker = markers.filter(marker => marker.text == item && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category])[0];
+      $.each(Routes.customRouteConnections, function (key, item) {
+        var _marker = MapBase.markers.filter(marker => marker.text == item && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category])[0];
         connections.push([_marker.lat, _marker.lng]);
       });
 
-      if (polylines instanceof L.Polyline) {
-        MapBase.map.removeLayer(polylines);
+      if (Routes.polylines instanceof L.Polyline) {
+        MapBase.map.removeLayer(Routes.polylines);
       }
 
-      polylines = L.polyline(connections, {
+      Routes.polylines = L.polyline(connections, {
         'color': '#9a3033'
       });
-      MapBase.map.addLayer(polylines);
+      MapBase.map.addLayer(Routes.polylines);
     }
-  },
-
-  loadRoutesData: function () {
-    $.getJSON('data/routes/day_1.json', {}, function (data) {
-      routesData[1] = data;
-    });
-    $.getJSON('data/routes/day_2.json', {}, function (data) {
-      routesData[2] = data;
-    });
-    $.getJSON('data/routes/day_3.json', {}, function (data) {
-      routesData[3] = data;
-    });
   },
 
   exportCustomRoute: function () {
     const el = document.createElement('textarea');
-    el.value = customRouteConnections.join(',');
+    el.value = Routes.customRouteConnections.join(',');
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
@@ -142,6 +98,13 @@ var Routes = {
       Routes.loadCustomRoute(input);
     }
   },
+
+  
+  routesData: [],
+  polylines: null,
+
+  customRouteEnabled: false,
+  customRouteConnections: [],
 
   /**
    * Path generator by Senexis
@@ -275,7 +238,7 @@ var Routes = {
     Routes.clearPath();
 
     // Setup variables.
-    var newMarkers = markers.filter((marker) => { return marker.isVisible; });
+    var newMarkers = MapBase.markers.filter((marker) => { return marker.isVisible; });
 
     // Optionally ignore the already collected markers.
     if (Routes.ignoreCollected) {

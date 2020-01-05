@@ -1,12 +1,14 @@
 var Treasures = {
   enabledTreasures: $.cookie('treasures-enabled') ? $.cookie('treasures-enabled').split(';') : [],
+  data: [],
+  markers: [],
   load: function () {
     $.getJSON('data/treasures.json?nocache=' + nocache)
       .done(function (data) {
-        treasureData = data;
+        Treasures.data = data;
         Treasures.set();
       });
-      console.log('treasures loaded');
+    console.log('treasures loaded');
   },
   set: function () {
     var treasureIcon = L.icon({
@@ -23,7 +25,7 @@ var Treasures = {
       iconAnchor: [8, 8]
     });
 
-    $.each(treasureData, function (key, value) {
+    $.each(Treasures.data, function (key, value) {
       var circle = L.circle([value.x, value.y], {
         color: "#fff79900",
         fillColor: "#fff799",
@@ -44,7 +46,7 @@ var Treasures = {
 
       marker.bindPopup(`<h1> ${Language.get(value.text)}</h1><button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${value.text}', '${value.text}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`);
 
-      treasureMarkers.push({ treasure: value.text, marker: marker, circle: circle, treasuresCross: treasuresCross });
+      Treasures.markers.push({ treasure: value.text, marker: marker, circle: circle, treasuresCross: treasuresCross });
     });
     Treasures.addToMap();
   },
@@ -56,7 +58,7 @@ var Treasures = {
     if (!enabledCategories.includes('treasure'))
       return;
 
-    $.each(treasureMarkers, function (key, value) {
+    $.each(Treasures.markers, function (key, value) {
       if (Treasures.enabledTreasures.includes(value.treasure)) {
         Layers.miscLayer.addLayer(value.marker);
         Layers.miscLayer.addLayer(value.circle);
@@ -67,8 +69,19 @@ var Treasures = {
     });
 
     Layers.miscLayer.addTo(MapBase.map);
+    Menu.refreshTreasures();
   },
-  save: function() {
+  save: function () {
     $.cookie('treasures-enabled', Treasures.enabledTreasures.join(';'), { expires: 999 })
+  },
+  showHideAll: function(isToHide) {
+    if (isToHide) {
+      Treasures.enabledTreasures = [];
+    } else {
+      Treasures.enabledTreasures = Treasures.data.map(_treasure => _treasure.text);
+    }
+    Treasures.addToMap();
+    Treasures.save();
   }
+
 }

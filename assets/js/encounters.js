@@ -1,4 +1,5 @@
 var Encounters = {
+  markers: [],
   load: function(){
     $.getJSON('data/encounters.json?nocache='+nocache)
         .done(function (data) {
@@ -8,7 +9,7 @@ var Encounters = {
   set: function(data){
     $.each(data, function(_category, _markers) {
       $.each(_markers, function(key, marker) {
-        encountersMarkers.push(new Marker(marker.text, marker.x, marker.y, null, null, _category, null, null, true));
+        Encounters.markers.push(new Marker(marker.text, marker.x, marker.y, null, null, _category, null, null, true));
       });
     });
 
@@ -17,7 +18,7 @@ var Encounters = {
 
   addToMap: function() {
     Layers.encountersLayer.clearLayers();
-    $.each(encountersMarkers, function(key, marker) {
+    $.each(Encounters.markers, function(key, marker) {
 
       if(!enabledCategories.includes(marker.category))
         return;

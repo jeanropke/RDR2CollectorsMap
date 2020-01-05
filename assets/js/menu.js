@@ -7,6 +7,19 @@ var Menu = {
     $(menu).children().sort(function (a, b) {
       return a.textContent.localeCompare(b.textContent);
     }).appendTo(menu);
+  },
+  refreshTreasures: function(){
+    $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
+
+    Treasures.data.filter(function (item) {
+      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', item.text);
+      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(item.text));
+
+      if(!Treasures.enabledTreasures.includes(item.text))
+        collectibleElement.addClass('disabled');
+
+      $('.menu-hidden[data-type=treasure]').append(collectibleElement.append(collectibleTextElement));
+    });
   }
 };
 
@@ -19,7 +32,7 @@ Menu.refreshMenu = function () {
     if (categoriesDisabledByDefault.includes(category))
       $('.menu-option[data-type=' + category + ']').addClass('disabled');
 
-    $.each(markers, function (_key, marker) {
+    $.each(MapBase.markers, function (_key, marker) {
       if (marker.day == Cycles.data.cycles[Cycles.data.current][category] && marker.category == category) {
         if (marker.subdata) {
           //This is for items with subdata to merge them
@@ -83,19 +96,8 @@ Menu.refreshMenu = function () {
           }
         }
       }
-    });
-
-    $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
-
-    treasureData.filter(function (item) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', item.text);
-      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(item.text));
-
-      if(!Treasures.enabledTreasures.includes(item.text))
-        collectibleElement.addClass('disabled');
-
-      $('.menu-hidden[data-type=treasure]').append(collectibleElement.append(collectibleTextElement));
-    });
+    });  
+    Menu.refreshTreasures();  
   });
 
   $.each(categoriesDisabledByDefault, function (key, value) {
@@ -132,8 +134,8 @@ Menu.hideAll = function () {
 Menu.refreshItemsCounter = function () {
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible && (item.isCollected || item.amount == 10)).length)
-    .replace('{max}', markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible).length));
+    .replace('{count}', MapBase.markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible && (item.isCollected || item.amount == 10)).length)
+    .replace('{max}', MapBase.markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible).length));
 };
 
 // Auto fill debug markers inputs, when "show coordinates on click" is enabled

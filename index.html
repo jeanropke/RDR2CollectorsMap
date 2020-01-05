@@ -15,9 +15,12 @@
   <script src="assets/js/jquery-3.4.1.min.js"></script>
   <script src="assets/js/jquery.cookie.js"></script>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=186" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=187" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script>
+  <script>
+    var nocache = 187;
+  </script>
 </head>
 
 <body>
@@ -28,7 +31,7 @@
         <span data-text="menu.collectables">Collectables</span>
         <span class="help-button">
           <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
-          target="_blank" class="wiki-page">[Wiki]</a>
+            target="_blank" class="wiki-page">[Wiki]</a>
         </span>
       </div>
       <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
@@ -287,6 +290,10 @@
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
       <div class="menu-hidden" data-type="treasure">
+        <div class="collection-value">
+          <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Treasures.showHideAll(true)">Hide all</a>
+          <a data-text="menu.show_all" href="javascript:void(0);" onclick="Treasures.showHideAll(false)">Show all</a>
+        </div>
       </div>
     </div>
 
@@ -327,27 +334,13 @@
           <option value="zh-t">繁体中文</option>
         </select>
       </div>
-      <!--div class="input-container">
-        <label for="routes" data-text="menu.enable_route">Enable route</label>
-        <select class="input-day" id="routes">
-          <option value="1" data-text="menu.yes">Yes</option>
-          <option value="0" data-text="menu.no" selected>No</option>
-        </select>
-      </div-->
       <div class="input-container">
         <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
         <select class="input-day narrow-select-menu" id="marker-cluster">
           <option value="1" data-text="menu.yes">Yes</option>
           <option value="0" data-text="menu.no" selected>No</option>
         </select>
-      </div>
-      <div class="input-container">
-        <label for="auto-refresh" data-text="menu.auto_refresh">Auto-refresh</label>
-        <select class="input-day narrow-select-menu" id="auto-refresh">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
+      </div>      
       <div class="input-container">
         <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>
         <select class="input-day narrow-select-menu" id="reset-markers">
@@ -407,14 +400,16 @@
     </div>
     <div class="settings-container">
       <div class="input-container">
-        <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route on every visit</label>
+        <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route
+          on every visit</label>
         <select class="input-day narrow-select-menu" id="generate-route-generate-on-visit">
           <option value="true" data-text="menu.yes">Yes</option>
           <option value="false" data-text="menu.no" selected>No</option>
         </select>
       </div>
       <div class="input-container">
-        <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected items</label>
+        <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected
+          items</label>
         <select class="input-day narrow-select-menu" id="generate-route-ignore-collected">
           <option value="true" data-text="menu.yes">Yes</option>
           <option value="false" data-text="menu.no" selected>No</option>
@@ -422,7 +417,8 @@
       </div>
       <div class="input-container">
         <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
-        <input id="generate-route-distance" class="input-day narrow-select-menu" type="number" min="1" max="200" value="25">
+        <input id="generate-route-distance" class="input-day narrow-select-menu" type="number" min="1" max="200"
+          value="25">
       </div>
       <div class="input-container">
         <label for="generate-route-start" data-text="menu.generate_route_start">Route starts at</label>
@@ -436,7 +432,8 @@
       </div>
       <div class="input-container">
         <label for="generate-route-start-lat" data-text="menu.generate_route_start_lat">Route start lat.</label>
-        <input id="generate-route-start-lat" class="input-day wide-select-menu" type="number" step="any" value="-119.9063">
+        <input id="generate-route-start-lat" class="input-day wide-select-menu" type="number" step="any"
+          value="-119.9063">
       </div>
       <div class="input-container">
         <label for="generate-route-start-lng" data-text="menu.generate_route_start_lng">Route start long.</label>
@@ -454,21 +451,23 @@
         </select>
       </div>
       <div class="input-container">
-          <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
-          <select class="input-day narrow-select-menu" id="show-coordinates">
-            <option value="1" data-text="menu.yes">Yes</option>
-            <option value="0" data-text="menu.no" selected>No</option>
-          </select>
-        </div>
+        <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+        <select class="input-day narrow-select-menu" id="show-coordinates">
+          <option value="1" data-text="menu.yes">Yes</option>
+          <option value="0" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
       <div class="input-container-noflex">
         <input id="debug-marker-lat" placeholder="Lat." type="text" name="debug-marker-lat" class="input-day" value="">
         <input id="debug-marker-lng" placeholder="Long." type="text" name="debug-marker-lng" class="input-day" value="">
       </div>
       <div class="input-container-noflex">
-        <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search" autocomplete="off">
+        <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search"
+          autocomplete="off">
       </div>
       <div class="input-container-noflex">
-        <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu" onclick="MapBase.submitDebugForm()">Place</button>
+        <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
+          onclick="MapBase.submitDebugForm()">Place</button>
       </div>
     </div>
     <div class="white-line-divider"></div>
@@ -547,17 +546,17 @@
   </div>
 
 
-  <script src="assets/js/settings.js?nocache=186"></script>
-  <script src="assets/js/cycles.js?nocache=186"></script>
-  <script src="assets/js/marker.js?nocache=186"></script>
-  <script src="assets/js/inventory.js?nocache=186"></script>
-  <script src="assets/js/treasures.js?nocache=186"></script>
-  <script src="assets/js/encounters.js?nocache=186"></script>
-  <script src="assets/js/map.js?nocache=186"></script>
-  <script src="assets/js/language.js?nocache=186"></script>
-  <script src="assets/js/menu.js?nocache=186"></script>
-  <script src="assets/js/routes.js?nocache=186"></script>
-  <script src="assets/js/scripts.js?nocache=186"></script>
+  <script src="assets/js/settings.js?nocache=187"></script>
+  <script src="assets/js/cycles.js?nocache=187"></script>
+  <script src="assets/js/marker.js?nocache=187"></script>
+  <script src="assets/js/inventory.js?nocache=187"></script>
+  <script src="assets/js/treasures.js?nocache=187"></script>
+  <script src="assets/js/encounters.js?nocache=187"></script>
+  <script src="assets/js/map.js?nocache=187"></script>
+  <script src="assets/js/language.js?nocache=187"></script>
+  <script src="assets/js/menu.js?nocache=187"></script>
+  <script src="assets/js/routes.js?nocache=187"></script>
+  <script src="assets/js/scripts.js?nocache=187"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
   <script>

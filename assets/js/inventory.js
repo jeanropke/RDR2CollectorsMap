@@ -9,7 +9,7 @@ var Inventory = {
 
   changeMarkerAmount: function (name, amount) {
 
-    var marker = markers.filter(_m => {
+    var marker = MapBase.markers.filter(_m => {
       return (_m.text == name || _m.subdata == name);
     });
 

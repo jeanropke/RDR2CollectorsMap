@@ -113,8 +113,10 @@ p {
 .share-marker {
     text-align: center;
     cursor: pointer;
-    padding: 5px;;
+    padding: 5px;
+    ;
 }
+
 .tool-type {
     vertical-align: bottom;
     padding-right: 5px;
@@ -389,6 +391,10 @@ p {
     padding: 5px 0;
     display: flex;
     justify-content: space-around;
+}
+
+.side-menu .menu-hidden .collection-value a {
+    color: #fff;
 }
 
 .side-menu .menu-hidden .collection-sell {
