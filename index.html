@@ -469,7 +469,11 @@
           autocomplete="off">
       </div>
       <div class="input-container-noflex">
-        <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
+        <button id="import-custom-markers" type="button" class="btn btn-default narrow-select-menu"
+          onclick="MapBase.importCustomMarkers()">Import [Beta]</button>
+        <button id="export-custom-markers" type="button" class="btn btn-default narrow-select-menu"
+          onclick="MapBase.exportCustomMarkers()">Export [Beta]</button>
+        <button id="debug-place-marker" type="button" class="btn btn-default btn-special narrow-select-menu"
           onclick="MapBase.submitDebugForm()">Place</button>
       </div>
     </div>

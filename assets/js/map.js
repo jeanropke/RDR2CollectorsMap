@@ -492,22 +492,45 @@ MapBase.submitDebugForm = function () {
     MapBase.debugMarker(lat, lng);
 },
 
-  MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
-    var marker = L.marker([lat, long], {
-      icon: L.icon({
-        iconUrl: './assets/images/icons/random_darkblue.png',
-        iconSize: [35, 45],
-        iconAnchor: [17, 42],
-        popupAnchor: [1, -32],
-        shadowAnchor: [10, 12],
-        shadowUrl: './assets/images/markers-shadow.png'
+MapBase.importCustomMarkers = function () {
+  var arr = prompt("Paste coordinates here:", "");
+  arr = arr.substr(1, arr.length - 2).split(",");
+  var loops = arr.length;
+  
+  for (var i = 0; i < loops; i = i + 3) {
+    MapBase.debugMarker(parseFloat(arr[i]), parseFloat(arr[i + 1]), arr[i + 2]);
+  }
+},
 
-      })
-    });
-    var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
-    marker.bindPopup(`<h1>${customMarkerName}</h1><p>  </p>`);
-    Layers.itemMarkersLayer.addLayer(marker);
-  };
+MapBase.exportCustomMarkers = function () {
+  var tempDoc = document.createElement("textarea");
+  tempDoc.value = "[" + debugMarkersArray + "]";
+  document.body.appendChild(tempDoc);
+  tempDoc.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempDoc);
+  alert('Markers copied to clipboard');
+},
+
+MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
+  var marker = L.marker([lat, long], {
+    icon: L.icon({
+      iconUrl: './assets/images/icons/random_darkblue.png',
+      iconSize: [35, 45],
+      iconAnchor: [17, 42],
+      popupAnchor: [1, -32],
+      shadowAnchor: [10, 12],
+      shadowUrl: './assets/images/markers-shadow.png'
+
+    })
+  });
+  var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
+  marker.bindPopup(`<h1>${customMarkerName}</h1><p>  </p><br>lat: ${lat}<br>lng: ${long}`);
+  Layers.itemMarkersLayer.addLayer(marker);
+  var tempArray = [];
+  tempArray.push(lat, long, customMarkerName)
+  debugMarkersArray.push(tempArray);
+};
 
 MapBase.addCoordsOnMap = function (coords) {
   // Show clicked coordinates (like google maps)

@@ -260,6 +260,17 @@ p {
     width: 75px;
 }
 
+.btn-default {
+    background-color: #383838;
+    width: 32%;
+    font-weight: 500;
+    color: #fff;
+}
+
+.btn-special {
+    background-color: #747474;
+}
+
 .input-day {
     background: #383838;
     border: none;
