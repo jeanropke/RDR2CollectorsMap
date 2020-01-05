@@ -77,6 +77,45 @@ p {
     color: #cacaca;
 }
 
+.header {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    margin: 12px 0;
+}
+
+.header-title {
+    -webkit-box-flex: 0;
+    flex: 0 1 auto;
+    line-height: normal;
+    margin: 0 12px;
+    text-align: center;
+}
+
+.header-border {
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    min-width: 40px;
+    position: relative;
+}
+
+.header-border:after {
+    background-image: url(../../assets/images/header_border_divider.png);
+    background-repeat: repeat-x;
+    background-size: auto 3px;
+    top: 18px;
+    content: " ";
+    height: 3px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
 .map-alert {
     background: darkred;
     color: #fff;
@@ -113,13 +152,6 @@ p {
 #map h1 {
     font-size: 15px;
     text-align: center;
-}
-
-.share-marker {
-    text-align: center;
-    cursor: pointer;
-    padding: 5px;
-    ;
 }
 
 .tool-type {
@@ -195,6 +227,11 @@ p {
     cursor: pointer;
     user-select: none;
     margin-top: 8px;
+}
+
+.marker-popup-links {
+    text-align: center;
+    margin: 6px 0 !important;
 }
 
 .marker-popup-buttons {

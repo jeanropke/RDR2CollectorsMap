@@ -484,7 +484,17 @@ $('#enable-inventory').on("change", function () {
   $.cookie('inventory-enabled', inputValue, { expires: 999 });
   Inventory.isEnabled = inputValue == 'true';
   MapBase.addMarkers();
+
+  if (Inventory.isEnabled)
+    $('.collection-sell, small.counter').show();
+  else
+    $('.collection-sell, small.counter').hide();
 });
+
+if (Inventory.isEnabled)
+  $('.collection-sell, small.counter').show();
+else
+  $('.collection-sell, small.counter').hide();
 
 //Enable & disable inventory on menu
 $('#inventory-stack').on("change", function () {
