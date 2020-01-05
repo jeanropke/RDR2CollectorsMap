@@ -338,7 +338,9 @@ p {
 }
 
 .side-menu .menu-option:hover, .side-menu .menu-hidden .collectible-wrapper:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background-image: url(../images/menu_hover.png);
+    background-size: 100% 37px;
+    background-repeat: no-repeat;
 }
 
 .side-menu .disabled {
