@@ -68,19 +68,19 @@
 	{"key": "menu.inventory", "value": "Inventar"},
 	{"key": "menu.enable_inventory", "value": "Inventar verwenden"},
 	{"key": "menu.inventory_stack", "value": "Inventar Größe"},
-	{"key": "menu.marker_cluster", "value": "Anhäufungen markieren"}
-	{"key": "menu.route_generator", "value": "Routen-Navigator"}
-	{"key": "menu.generate_route", "value": "Route berechnen"}
-	{"key": "menu.generate_route_clear", "value": "Route löschen"}
-	{"key": "menu.generate_route_generate_on_visit", "value": "Route bei jedem Besuch neu berechnen"}
-	{"key": "menu.generate_route_ignore_collected", "value": "Gesammelte Gegenstände ignorieren"}
-	{"key": "menu.generate_route_distance", "value": "Maximale Einzelstrecke"}
-	{"key": "menu.generate_route_start", "value": "Startpunkt"}
-	{"key": "menu.generate_route_start.sw", "value": "Südwest (↙)"}
-	{"key": "menu.generate_route_start.ne", "value": "Nordost (↗)"}
-	{"key": "menu.generate_route_start.n", "value": "Norden (↑)"}
-	{"key": "menu.generate_route_start.se", "value": "Südost (↘)"}
-	{"key": "menu.generate_route_start.custom", "value": "Eigener Punkt"}
-	{"key": "menu.generate_route_start_lat", "value": "Startpunkt lat."}
+	{"key": "menu.marker_cluster", "value": "Anhäufungen markieren"},
+	{"key": "menu.route_generator", "value": "Routen-Navigator"},
+	{"key": "menu.generate_route", "value": "Route berechnen"},
+	{"key": "menu.generate_route_clear", "value": "Route löschen"},
+	{"key": "menu.generate_route_generate_on_visit", "value": "Route bei jedem Besuch neu berechnen"},
+	{"key": "menu.generate_route_ignore_collected", "value": "Gesammelte Gegenstände ignorieren"},
+	{"key": "menu.generate_route_distance", "value": "Maximale Einzelstrecke"},
+	{"key": "menu.generate_route_start", "value": "Startpunkt"},
+	{"key": "menu.generate_route_start.sw", "value": "Südwest (↙)"},
+	{"key": "menu.generate_route_start.ne", "value": "Nordost (↗)"},
+	{"key": "menu.generate_route_start.n", "value": "Norden (↑)"},
+	{"key": "menu.generate_route_start.se", "value": "Südost (↘)"},
+	{"key": "menu.generate_route_start.custom", "value": "Eigener Punkt"},
+	{"key": "menu.generate_route_start_lat", "value": "Startpunkt lat."},
 	{"key": "menu.generate_route_start_lng", "value": "Startpunkt long."}
 ]
