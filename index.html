@@ -33,15 +33,21 @@
           <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
             target="_blank" class="wiki-page">[Wiki]</a>
         </span>
+        <h3 id="sub-header">
+          <span class="cycle-data">Loading</span> - <span class="collectables-counter" data-text="menu.collectables_counter">Collected -- of --</span>
+        </h3>
       </div>
       <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
     </h2>
-    <div class="collectables-counter" data-text="menu.collectables_counter">Collected -- of --</div>
+    <div class="settings-container">
+      <div class="input-container-noflex">
+        <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
+      </div>
+    </div>
     <div class="hide-show-container">
       <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
       <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
     </div>
-    <div class="cycle-data">December 28</div>
     <div>
       <div class="menu-option clickable" data-type="american_flowers">
         <img class="icon" src="./assets/images/icons/american-flowers.png" />
@@ -298,12 +304,6 @@
     </div>
 
     <div class="white-line-divider"></div>
-    <div class="search-container">
-      <h2 data-text="menu.search">Search</h2>
-      <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
-    </div>
-
-    <div class="white-line-divider"></div>
     <div class="settings-container">
       <h2 data-text="menu.settings">Settings</h2>
       <div class="input-container">
@@ -350,46 +350,8 @@
         </select>
       </div>
     </div>
+
     <div class="white-line-divider"></div>
-    <div class="settings-container">
-      <h2 data-text="menu.inventory">Inventory</h2>
-      <div class="input-container">
-        <label for="enable-inventory" data-text="menu.enable_inventory">Enable inventory</label>
-        <select class="input-day narrow-select-menu" id="enable-inventory">
-          <option value="true" data-text="menu.yes" selected>Yes</option>
-          <option value="false" data-text="menu.no">No</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="clear-inventory" data-text="menu.clear_inventory">Clear inventory</label>
-        <select class="input-day narrow-select-menu" id="clear-inventory">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
-        <input id="inventory-stack" class="input-day narrow-select-menu" type="number" min="1" max="10" value="10">
-      </div>
-    </div>
-    <div class="white-line-divider"></div>
-    <h2 data-text="menu.custom_routes">Custom routes</h2>
-    <div class="custom-routes-container">
-      <a data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
-        route</a>
-      <a data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export
-        route</a>
-    </div>
-    <div class="routes-container">
-      <div class="input-container">
-        <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
-        <select class="input-day narrow-select-menu" id="custom-routes">
-          <option value="1" data-text="menu.yes">Yes</option>
-          <option value="0" data-text="menu.no" selected>No</option>
-          <option value="clear" data-text="menu.clear">Clear</option>
-        </select>
-      </div>
-    </div>
     <h2>
       <span data-text="menu.route_generator">Route generator</span>
       <span class="help-button">[Beta]</span>
@@ -440,6 +402,48 @@
         <input id="generate-route-start-lng" class="input-day wide-select-menu" type="number" step="any" value="8.0313">
       </div>
     </div>
+
+    <h2 data-text="menu.custom_routes">Custom routes</h2>
+    <div class="custom-routes-container">
+      <a data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
+        route</a>
+      <a data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export
+        route</a>
+    </div>
+    <div class="routes-container">
+      <div class="input-container">
+        <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
+        <select class="input-day narrow-select-menu" id="custom-routes">
+          <option value="1" data-text="menu.yes">Yes</option>
+          <option value="0" data-text="menu.no" selected>No</option>
+          <option value="clear" data-text="menu.clear">Clear</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="white-line-divider"></div>
+    <div class="settings-container">
+      <h2 data-text="menu.inventory">Inventory</h2>
+      <div class="input-container">
+        <label for="enable-inventory" data-text="menu.enable_inventory">Enable inventory</label>
+        <select class="input-day narrow-select-menu" id="enable-inventory">
+          <option value="true" data-text="menu.yes" selected>Yes</option>
+          <option value="false" data-text="menu.no">No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="clear-inventory" data-text="menu.clear_inventory">Clear inventory</label>
+        <select class="input-day narrow-select-menu" id="clear-inventory">
+          <option value="true" data-text="menu.yes">Yes</option>
+          <option value="false" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
+        <input id="inventory-stack" class="input-day narrow-select-menu" type="number" min="1" max="10" value="10">
+      </div>
+    </div>
+
     <div class="white-line-divider"></div>
     <h2>Debug marker</h2>
     <div class="routes-container">
@@ -470,18 +474,23 @@
           onclick="MapBase.submitDebugForm()">Place</button>
       </div>
     </div>
+
     <div class="white-line-divider"></div>
     <div class="issues-container">
       <h2 data-text="menu.issues">Issues</h2>
       <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDR2CollectorsMap/issues"
         target="_blank">Report issues here!</a>
     </div>
+
     <div class="hide-show-container">
       <a href="https://jeanropke.github.io/RDOMap/" target="_blank" data-text="menu.rdo_map">RDO Map</a>
     </div>
+
     <div class="issues-container">
       <a href="./index-legacy.html" data-text="menu.return_legacy">Return to legacy version!</a>
-    </div> <br>
+    </div>
+    
+    <br>
     <div class="donate-container">
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_donations" />
