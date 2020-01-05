@@ -528,7 +528,7 @@ MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
   marker.bindPopup(`<h1>${customMarkerName}</h1><p>  </p><br>lat: ${lat}<br>lng: ${long}`);
   Layers.itemMarkersLayer.addLayer(marker);
   var tempArray = [];
-  tempArray.push(lat, long, customMarkerName)
+  tempArray.push(lat || 0, long || 0, customMarkerName);
   debugMarkersArray.push(tempArray);
 };
 
