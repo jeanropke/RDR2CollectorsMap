@@ -24,6 +24,7 @@ var Menu = {
 };
 
 Menu.refreshMenu = function () {
+  $('.menu-hidden[data-type]').children('.collectible-wrapper').remove();
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
 
   $.each(MapBase.markers, function (_key, marker) {
