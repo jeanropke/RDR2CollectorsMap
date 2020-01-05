@@ -28,7 +28,7 @@ var Routes = {
       input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
 
       $.each(input, function (key, value) {
-        var _marker = markers.filter(marker => marker.text == value && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category])[0];
+        var _marker = MapBase.markers.filter(marker => marker.text == value && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category])[0];
         if (_marker == null) {
           console.log(`Item not found on map: '${value}'`);
         } else {
