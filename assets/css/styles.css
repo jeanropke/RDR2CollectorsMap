@@ -115,13 +115,6 @@ p {
     text-align: center;
 }
 
-.share-marker {
-    text-align: center;
-    cursor: pointer;
-    padding: 5px;
-    ;
-}
-
 .tool-type {
     vertical-align: bottom;
     padding-right: 5px;
@@ -195,6 +188,11 @@ p {
     cursor: pointer;
     user-select: none;
     margin-top: 8px;
+}
+
+.marker-popup-links {
+    text-align: center;
+    margin: 6px 0 !important;
 }
 
 .marker-popup-buttons {

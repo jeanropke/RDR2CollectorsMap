@@ -320,8 +320,6 @@ var MapBase = {
 
 
   updateMarkerContent: function (marker) {
-
-    var videoText = marker.video != null ? '<p align="center" style="padding: 5px;"><a href="' + marker.video + '" target="_blank">Video</a></p>' : '';
     var popupContent = null;
 
     if (marker.category == 'random') {
@@ -332,6 +330,9 @@ var MapBase = {
       popupContent = (marker.tool == '-1' ? Language.get('map.item.unable') : '') + ' ' + marker.description + ' ' + weeklyText;
     }
 
+    var shareText = `<a href="javascript:void(0)" onclick="copyMarkerLink('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">Copy marker link</a>`;
+    var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">Video</a>' : '';
+    var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(videoText);
 
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
     <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
@@ -341,10 +342,9 @@ var MapBase = {
 
     return `<h1>${marker.title} - ${Language.get("menu.day")} ${marker.day}</h1>
         <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
-        ${videoText}
+        ${linksElement.prop('outerHTML')}
         ${Inventory.isEnabled ? buttons : ''}
         <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.text}', '${marker.subdata}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>
-        <a class="share-marker" onclick="copyMarkerLink('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">Copy marker link</a>
         `;
   },
 
