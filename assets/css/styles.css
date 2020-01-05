@@ -452,6 +452,19 @@ p {
     color: #eee;
 }
 
+a.wiki-page {
+    color: #fff;
+    text-decoration: none;
+}
+a.wiki-page:hover {
+    color: #fff;
+    text-decoration: none;
+}
+a.wiki-page:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
 .help-popup {
     position: fixed;
     width: 100%;
