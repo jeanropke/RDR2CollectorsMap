@@ -297,6 +297,17 @@ p {
     width: 75px;
 }
 
+.btn-default {
+    background-color: #383838;
+    width: 32%;
+    font-weight: 500;
+    color: #fff;
+}
+
+.btn-special {
+    background-color: #747474;
+}
+
 .input-day {
     background: #383838;
     border: none;
@@ -487,6 +498,18 @@ p {
 
 .help-button a {
     color: #eee;
+}
+
+a.wiki-page {
+    color: #fff;
+    text-decoration: none;
+}
+a.wiki-page:hover {
+    color: #fff;
+}
+a.wiki-page:visited {
+    color: #fff;
+    text-decoration: none;
 }
 
 .help-popup {

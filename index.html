@@ -28,11 +28,10 @@
     <h2 id="main-header">
       <img id="main-header-left" src="./assets/images/header_bg_left.png" alt="">
       <div id="main-header-center">
-        <span data-text="menu.collectables">Collectables</span>
-        <span class="help-button">
-          <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
-            target="_blank" class="wiki-page">[Wiki]</a>
-        </span>
+        <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
+          target="_blank" class="wiki-page">
+          <span data-text="menu.collectables">Collectables</span>
+        </a>
         <h3 id="sub-header">
           <span class="cycle-data">Loading</span> - <span class="collectables-counter" data-text="menu.collectables_counter">Collected -- of --</span>
         </h3>
@@ -482,7 +481,11 @@
           autocomplete="off">
       </div>
       <div class="input-container-noflex">
-        <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
+        <button id="import-custom-markers" type="button" class="btn btn-default narrow-select-menu"
+          onclick="MapBase.importCustomMarkers()">Import [Beta]</button>
+        <button id="export-custom-markers" type="button" class="btn btn-default narrow-select-menu"
+          onclick="MapBase.exportCustomMarkers()">Export [Beta]</button>
+        <button id="debug-place-marker" type="button" class="btn btn-default btn-special narrow-select-menu"
           onclick="MapBase.submitDebugForm()">Place</button>
       </div>
     </div>
@@ -503,6 +506,12 @@
 
     <div class="issues-container">
       <a href="./index-legacy.html" data-text="menu.return_legacy">Return to legacy version!</a>
+    </div>
+    <div class="hide-show-container">
+      <span class="help-button">
+        <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
+        target="_blank" class="wiki-page">About this map: [Wiki]</a>
+      </span>
     </div>
     
     <br>

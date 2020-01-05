@@ -41,6 +41,8 @@ var isDebug = false;
 var inventory = [];
 var tempInventory = [];
 
+var debugMarkersArray = [];
+
 function init() {
 
   wikiLanguage['de-de'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)';
