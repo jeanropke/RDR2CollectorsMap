@@ -40,7 +40,7 @@
 	{"key": "menu.fast_travel", "value": "Schnellreise"},
 	{"key": "menu.search_placeholder", "value": "Gegenstände suchen. Getrennt durch ;"},
 	{"key": "map.remove_add", "value": "Von Karte entfernen/hinzufügen"},
-	{"key": "map.flower_type.night_only", "value": "Diese Blumen kommen nur Nachts vor (von 10 Uhr Abends bis 5 Uhr früh)."},
+	{"key": "map.flower_type.night_only", "value": "Diese Blumen kommen nur Nachts vor (von 10 Uhr abends bis 5 Uhr früh)."},
 	{"key": "map.flower_type.bush", "value": "Diese Blumen blühen auf Büschen."},
 	{"key": "menu.collectables_value", "value": "Wert"},	
 	{"key": "menu.custom_routes", "value": "Benutzerdefinierte Route"},
