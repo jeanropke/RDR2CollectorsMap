@@ -46,7 +46,10 @@ Menu.refreshMenu = function () {
 
         var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', marker.subdata);
         var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleName);
-        var collectibleCountElement = Inventory.isEnabled ? $('<small>').addClass('counter').text(marker.amount) : '';
+        var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
+
+        if (!Inventory.isEnabled)
+          collectibleCountElement.hide();
 
         $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
 
@@ -72,7 +75,10 @@ Menu.refreshMenu = function () {
 
         var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', marker.text);
         var collectibleTextElement = $('<p>').addClass('collectible').text(marker.title);
-        var collectibleCountElement = Inventory.isEnabled ? $('<small>').addClass('counter').text(marker.amount) : '';
+        var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
+
+        if (!Inventory.isEnabled)
+          collectibleCountElement.hide();
 
         $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
 
