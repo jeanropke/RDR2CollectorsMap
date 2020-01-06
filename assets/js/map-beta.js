@@ -18,6 +18,7 @@ var MapBase = {
   map: null,
   overlays: [],
   markers: [],
+  geoJson: {},
 
   // Beta only
   drawnItems: null,
@@ -89,6 +90,9 @@ var MapBase = {
       MapBase.drawnItems.addLayer(layer);
     });
 
+    MapBase.loadGeoJson();
+
+    // End of beta only.
     var southWest = L.latLng(-160, -50),
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
@@ -111,6 +115,20 @@ var MapBase = {
 
     //     console.log('overlays loaded');
     //   });
+  },
+
+  loadGeoJson: function () {
+    $.getJSON('data/geojson/lemoyne.json?nocache=' + nocache)
+      .done(function (data) {
+        MapBase.geoJson.lemoyne = data;
+
+        L.geoJSON(MapBase.geoJson.lemoyne, {
+          style: {
+            "color": "#ff7800",
+            "weight": 5
+          }
+        }).addTo(MapBase.map);
+      });
   },
 
   setOverlays: function () {
