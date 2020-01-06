@@ -212,7 +212,7 @@
 	{"key": "swords_seven_3.desc", "value": "Unter der Markise auf einer Bank. ACHTUNG: Hier lauert ab und an ein Grizzlybär."},
 	{"key": "swords_seven_4.desc", "value": "Im Haus auf einem Regal im Untergeschoss."},
 	{"key": "swords_seven_5.desc", "value": "In der Mine. <br/> <img src=\"https://i.imgur.com/h8K2hIi.png\" style=\"width: 200px;\">"},
-	 {"key": "swords_seven_6.desc", "value": "Auf dem Tisch neben einem kleinen kaputten Wagen."},
+	{"key": "swords_seven_6.desc", "value": "Auf dem Tisch neben einem kleinen kaputten Wagen."},
 
 	{"key": "swords_eight.name", "value": "Acht der Schwerter"},
 	{"key": "swords_eight_1.desc", "value": "Auf einem weißen Tisch mit einem Schachbrett."},
@@ -260,7 +260,7 @@
 	{"key": "swords_queen_3.desc", "value": "Auf dem kleinen Kaffeetisch."},
 	{"key": "swords_queen_4.desc", "value": ""},
 	{"key": "swords_queen_5.desc", "value": "In der Zug-Garage auf einem Arbeitstisch an der Südseite des Gebäudes. <br/> <img src=\"https://i.imgur.com/VlnIwzj.png\" style=\"width: 200px;\">"},
-	 {"key": "swords_queen_6.desc", "value": "Auf der Rückseite des Wagens in der Nähe einiger Arbeiterzelte."},
+	{"key": "swords_queen_6.desc", "value": "Auf der Rückseite des Wagens in der Nähe einiger Arbeiterzelte."},
 
 	{"key": "swords_king.name", "value": "König der Schwerter"},
 	{"key": "swords_king_1.desc", "value": "Im Regal hinter der Theke in Algernon Wasp's Geschäft."},
@@ -284,12 +284,12 @@
 	{"key": "wands_two_3.desc", "value": "An der Seite des Piers."},
 	{"key": "wands_two_4.desc", "value": "Rechte Seite in der Scheune, oben auf einem Fass."},
 	{"key": "wands_two_5.desc", "value": "Auf dem Sims, vor der Treppe, um die Höhle zu verlassen. Höhleneingang über dem \"A\" von Annesburg. <br/> <img src=\"https://i.imgur.com/cfLWVcv.png\" style=\"width: 200px;\">"},
-	 {"key": "wands_two_6.desc", "value": "Auf dem Tisch mit dem Telegraphengerät."},
+	{"key": "wands_two_6.desc", "value": "Auf dem Tisch mit dem Telegraphengerät."},
 
 	{"key": "wands_three.name", "value": "Drei der Stäbe"},
 	{"key": "wands_three_1.desc", "value": "Draußen auf der linken Seite des Schornsteins."},
 	{"key": "wands_three_2.desc", "value": "Auf der Rückseite des Friedhofs auf \"Samantha Worths\" Grab"},
-	 {"key": "wands_three_3.desc", "value": ""},
+	{"key": "wands_three_3.desc", "value": ""},
 	{"key": "wands_three_4.desc", "value": ""},
 	{"key": "wands_three_5.desc", "value": "Auf einem Regal in der östlichen Ecke des Erdgeschosses."},
 	{"key": "wands_three_6.desc", "value": "Auf einem Kistenstapel im nordöstlichen Turm."},
@@ -1018,7 +1018,7 @@
 	{"key": "necklace_ainsworth_cross_1.desc", "value": "Auf dem Tisch in einem winzigen Kirchengebäude. Duck dich um hinein zu kommen."},
 	{"key": "necklace_ainsworth_cross_2.desc", "value": "Neben dem einsamen Baum mit den Traumfängern."},
 	{"key": "necklace_ainsworth_cross_3.desc", "value": "Auf einem Suchfeld mitten in einer Holzbrücke. <br /> <img src=\"https://i.imgur.com/D6K4gxV.jpg\" style=\"width:200px;\">"},
-	 {"key": "necklace_ainsworth_cross_4.desc", "value": "In einem Obergeschoss im Hauptschlafzimmer."},
+	{"key": "necklace_ainsworth_cross_4.desc", "value": "In einem Obergeschoss im Hauptschlafzimmer."},
 	{"key": "necklace_ainsworth_cross_5.desc", "value": "Im kleinen Hof neben dem Haus."},
 	{"key": "necklace_ainsworth_cross_6.desc", "value": ""},
 	
