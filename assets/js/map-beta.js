@@ -104,13 +104,13 @@ var MapBase = {
   },
 
   loadOverlays: function () {
-    $.getJSON('data/overlays.json?nocache=' + nocache)
-      .done(function (data) {
-        MapBase.overlays = data;
-        MapBase.setOverlays();
+    // $.getJSON('data/overlays.json?nocache=' + nocache)
+    //   .done(function (data) {
+    //     MapBase.overlays = data;
+    //     MapBase.setOverlays();
 
-        console.log('overlays loaded');
-      });
+    //     console.log('overlays loaded');
+    //   });
   },
 
   setOverlays: function () {
