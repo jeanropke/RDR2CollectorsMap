@@ -118,6 +118,7 @@ var MapBase = {
   },
 
   setMarkers: function (data) {
+    console.log(`categoties disabled: ${categoriesDisabledByDefault}`);
     $.each(data, function (_category, _cycles) {
       $.each(_cycles, function (day, _markers) {
         $.each(_markers, function (key, marker) {
