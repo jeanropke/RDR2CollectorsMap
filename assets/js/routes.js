@@ -79,13 +79,7 @@ var Routes = {
   },
 
   exportCustomRoute: function () {
-    const el = document.createElement('textarea');
-    el.value = Routes.customRouteConnections.join(',');
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el)
-
+    setClipboardText(Routes.customRouteConnections.join(','));
     alert(Language.get('routes.exported'));
   },
 

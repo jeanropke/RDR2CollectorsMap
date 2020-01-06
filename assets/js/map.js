@@ -17,22 +17,18 @@ var MapBase = {
   markers: [],
 
   init: function () {
-    var southWestTiles = L.latLng(-144, 0),
-      northEastTiles = L.latLng(0, 176),
-      boundsTiles = L.latLngBounds(southWestTiles, northEastTiles);
-
     var mapLayers = [];
     mapLayers['Default'] = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
       noWrap: true,
-      bounds: boundsTiles
+      bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
     });
     mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', {
       noWrap: true,
-      bounds: boundsTiles
+      bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
     });
     mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', {
       noWrap: true,
-      bounds: boundsTiles
+      bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
     });
 
     MapBase.map = L.map('map', {
@@ -189,7 +185,7 @@ var MapBase = {
     Layers.itemMarkersLayer.addTo(MapBase.map);
 
     MapBase.addFastTravelMarker(!refreshMenu);
-    MapBase.addMadamNazar(refreshMenu);
+    MadamNazar.addMadamNazar(refreshMenu);
 
     Menu.refreshItemsCounter();
     Treasures.addToMap();
@@ -207,7 +203,6 @@ var MapBase = {
       .done(function (data) {
         weeklySetData = data;
       });
-
     console.log('weekly sets loaded');
   },
 
@@ -301,19 +296,13 @@ var MapBase = {
         return "darkred";
         break;
       case "day_6":
-        return "darkgreen";
-        break;
-      case "day_7":
-        return "cadetblue";
-        break;
-      case "day_8":
-        return "lightred";
-        break;
-      case "day_9":
         return "darkblue";
         break;
       case "weekly":
         return "green";
+        break;
+      default:
+        return "lightred";
         break;
     }
   },
@@ -330,7 +319,7 @@ var MapBase = {
       popupContent = (marker.tool == '-1' ? Language.get('map.item.unable') : '') + ' ' + marker.description + ' ' + weeklyText;
     }
 
-    var shareText = `<a href="javascript:void(0)" onclick="copyMarkerLink('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">Copy marker link</a>`;
+    var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">Copy marker link</a>`;
     var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">Video</a>' : '';
     var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(videoText);
 
@@ -356,7 +345,7 @@ var MapBase = {
 
     if (!enabledCategories.includes(marker.category)) return;
 
-    if (parseInt(toolType) < parseInt(marker.tool)) return;
+    if (parseInt(Settings.toolType) < parseInt(marker.tool)) return;
 
     var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
       return weekly.item === (marker.text).replace(/_\d+/, "");
@@ -492,45 +481,40 @@ MapBase.submitDebugForm = function () {
     MapBase.debugMarker(lat, lng);
 },
 
-MapBase.importCustomMarkers = function () {
-  var arr = prompt("Paste coordinates here:", "");
-  arr = arr.substr(1, arr.length - 2).split(",");
-  var loops = arr.length;
-  
-  for (var i = 0; i < loops; i = i + 3) {
-    MapBase.debugMarker(parseFloat(arr[i]), parseFloat(arr[i + 1]), arr[i + 2]);
-  }
-},
+  MapBase.importCustomMarkers = function () {
+    var arr = prompt("Paste coordinates here:", "");
+    arr = arr.substr(1, arr.length - 2).split(",");
+    var loops = arr.length;
 
-MapBase.exportCustomMarkers = function () {
-  var tempDoc = document.createElement("textarea");
-  tempDoc.value = "[" + debugMarkersArray + "]";
-  document.body.appendChild(tempDoc);
-  tempDoc.select();
-  document.execCommand("copy");
-  document.body.removeChild(tempDoc);
-  alert('Markers copied to clipboard');
-},
+    for (var i = 0; i < loops; i = i + 3) {
+      MapBase.debugMarker(parseFloat(arr[i]), parseFloat(arr[i + 1]), arr[i + 2]);
+    }
+  },
+//setClipboardText
+  MapBase.exportCustomMarkers = function () {   
+    setClipboardText("[" + debugMarkersArray + "]");
+    alert('Markers copied to clipboard');
+  },
 
-MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
-  var marker = L.marker([lat, long], {
-    icon: L.icon({
-      iconUrl: './assets/images/icons/random_darkblue.png',
-      iconSize: [35, 45],
-      iconAnchor: [17, 42],
-      popupAnchor: [1, -32],
-      shadowAnchor: [10, 12],
-      shadowUrl: './assets/images/markers-shadow.png'
+  MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
+    var marker = L.marker([lat, long], {
+      icon: L.icon({
+        iconUrl: './assets/images/icons/random_lightred.png',
+        iconSize: [35, 45],
+        iconAnchor: [17, 42],
+        popupAnchor: [1, -32],
+        shadowAnchor: [10, 12],
+        shadowUrl: './assets/images/markers-shadow.png'
 
-    })
-  });
-  var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
-  marker.bindPopup(`<h1>${customMarkerName}</h1><p>  </p><br>lat: ${lat}<br>lng: ${long}`);
-  Layers.itemMarkersLayer.addLayer(marker);
-  var tempArray = [];
-  tempArray.push(lat || 0, long || 0, customMarkerName);
-  debugMarkersArray.push(tempArray);
-};
+      })
+    });
+    var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
+    marker.bindPopup(`<h1>${customMarkerName}</h1><p>  </p><br>lat: ${lat}<br>lng: ${long}`);
+    Layers.itemMarkersLayer.addLayer(marker);
+    var tempArray = [];
+    tempArray.push(lat || 0, long || 0, customMarkerName);
+    debugMarkersArray.push(tempArray);
+  };
 
 MapBase.addCoordsOnMap = function (coords) {
   // Show clicked coordinates (like google maps)
@@ -545,53 +529,8 @@ MapBase.addCoordsOnMap = function (coords) {
     // Auto fill debug markers inputs
     Menu.liveUpdateDebugMarkersInputs(coords.latlng.lat, coords.latlng.lng);
   }
-
-
-  //console.log(`{"text": "_treasure", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}", "radius": "5"},`);
-  if (debugTool != null)
-    console.log(`{"text": "random_item_", "day": ["1", "2", "3"], "tool": "${debugTool}", "icon": "random", "x": "${coords.latlng.lat}", "y": "${coords.latlng.lng}"},`);
-
 };
 
-MapBase.loadMadamNazar = function () {
-
-  $.getJSON('https://pepegapi.jeanropke.net/rdo/nazar')
-    .done(function (nazar) {
-      nazarCurrentLocation = nazar.nazar_id - 1;
-      nazarCurrentDate = nazar.date;
-    }).always(function () {
-      $.getJSON('data/nazar.json?nocache=' + nocache)
-        .done(function (data) {
-          nazarLocations = data;
-          MapBase.addMadamNazar(false);
-        });
-    });
-};
-
-MapBase.addMadamNazar = function (firstLoad) {
-  if (firstLoad)
-    return;
-
-  if (nazarCurrentLocation == null) {
-    console.error('Unable to get Nazar position. Try again later.');
-    return;
-  }
-  if (enabledCategories.includes('nazar')) {
-    var marker = L.marker([nazarLocations[nazarCurrentLocation].x, nazarLocations[nazarCurrentLocation].y], {
-      icon: L.icon({
-        iconUrl: './assets/images/icons/nazar_red.png',
-        iconSize: [35, 45],
-        iconAnchor: [17, 42],
-        popupAnchor: [1, -32],
-        shadowAnchor: [10, 12],
-        shadowUrl: './assets/images/markers-shadow.png'
-      })
-    });
-
-    marker.bindPopup(`<h1>${Language.get('madam_nazar.name')} - ${MapBase.formatDate(nazarCurrentDate)}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazarIO' target="_blank">@MadamNazarIO</a>.</p>`);
-    Layers.itemMarkersLayer.addLayer(marker);
-  }
-};
 MapBase.formatDate = function (date) {
   var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var _day = date.split('/')[2];
@@ -599,3 +538,52 @@ MapBase.formatDate = function (date) {
   var _year = date.split('/')[0];
   return `${_month} ${_day}, ${_year}`;
 };
+
+/**
+ * Madam Nazar functions
+ */
+var MadamNazar = {
+
+  possibleLocations: [],
+  currentLocation: null,
+  currentDate: null,
+
+  loadMadamNazar: function () {
+    $.getJSON('https://pepegapi.jeanropke.net/rdo/nazar')
+      .done(function (nazar) {
+        MadamNazar.currentLocation = nazar.nazar_id - 1;
+        MadamNazar.currentDate = nazar.date;
+      }).always(function () {
+        $.getJSON('data/nazar.json?nocache=' + nocache)
+          .done(function (data) {
+            MadamNazar.possibleLocations = data;
+            MadamNazar.addMadamNazar(false);
+          });
+      });
+  },
+
+  addMadamNazar: function (firstLoad) {
+    if (firstLoad)
+      return;
+
+    if (MadamNazar.currentLocation == null) {
+      console.error('Unable to get Nazar position. Try again later.');
+      return;
+    }
+    if (enabledCategories.includes('nazar')) {
+      var marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
+        icon: L.icon({
+          iconUrl: './assets/images/icons/nazar_red.png',
+          iconSize: [35, 45],
+          iconAnchor: [17, 42],
+          popupAnchor: [1, -32],
+          shadowAnchor: [10, 12],
+          shadowUrl: './assets/images/markers-shadow.png'
+        })
+      });
+
+      marker.bindPopup(`<h1>${Language.get('madam_nazar.name')} - ${MapBase.formatDate(MadamNazar.currentDate)}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazarIO' target="_blank">@MadamNazarIO</a>.</p>`);
+      Layers.itemMarkersLayer.addLayer(marker);
+    }
+  }
+}
