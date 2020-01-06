@@ -416,15 +416,19 @@ p {
     margin: auto 0;
 }
 
+.open-submenu.rotate {
+    transform: rotate(180deg);
+}
+
 .side-menu .menu-hidden {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 200ms ease-out;
+    transition: max-height 250ms ease-out;
 }
 
 .side-menu .menu-hidden.opened {
     max-height: 2000px;
-    transition: max-height 400ms ease-out;
+    transition: max-height 400ms linear;
 }
 
 .side-menu .menu-hidden .collection-value {
@@ -504,9 +508,11 @@ a.wiki-page {
     color: #fff;
     text-decoration: none;
 }
+
 a.wiki-page:hover {
     color: #fff;
 }
+
 a.wiki-page:visited {
     color: #fff;
     text-decoration: none;

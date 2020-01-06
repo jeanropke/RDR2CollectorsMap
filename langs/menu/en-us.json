@@ -86,5 +86,18 @@
 	{"key": "menu.generate_route_start.se", "value": "Southeast (↘)"},
 	{"key": "menu.generate_route_start.custom", "value": "Custom"},
 	{"key": "menu.generate_route_start_lat", "value": "Route start lat."},
-	{"key": "menu.generate_route_start_lng", "value": "Route start long."}
+	{"key": "menu.generate_route_start_lng", "value": "Route start long."},	
+	{"key": "menu.month.january", "value": "January"},
+	{"key": "menu.month.february", "value": "February"},
+	{"key": "menu.month.march", "value": "March"},
+	{"key": "menu.month.april", "value": "April"},
+	{"key": "menu.month.may", "value": "May"},
+	{"key": "menu.month.june", "value": "June"},
+	{"key": "menu.month.july", "value": "July"},
+	{"key": "menu.month.august", "value": "August"},
+	{"key": "menu.month.september", "value": "September"},
+	{"key": "menu.month.october", "value": "October"},
+	{"key": "menu.month.november", "value": "November"},
+	{"key": "menu.month.december", "value": "December"},
+	{"key": "menu.date", "value": "{day} {month}"}
 ]

@@ -129,13 +129,20 @@ var MapBase = {
     uniqueSearchMarkers = MapBase.markers;
     MapBase.addMarkers(true);
 
+    //if a marker is passed on url, check if is valid
     if (goTo = MapBase.markers.filter(_m => _m.text == getParameterByName('m') && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category])[0]) {
+      
+      //set map view with marker lat & lng
       MapBase.map.setView([goTo.lat, goTo.lng], 6);
+
+      //check if marker category is enabled, if not, enable it
       if (Layers.itemMarkersLayer.getLayerById(goTo.text) == null) {
         enabledCategories.push(goTo.category);
         MapBase.addMarkers();
         $(`[data-type="${goTo.category}"]`).removeClass('disabled');
       }
+
+      //open marker popup
       Layers.itemMarkersLayer.getLayerById(goTo.text).openPopup();
     }
   },
@@ -184,7 +191,7 @@ var MapBase = {
 
     Layers.itemMarkersLayer.addTo(MapBase.map);
 
-    MapBase.addFastTravelMarker(!refreshMenu);
+    MapBase.addFastTravelMarker();
     MadamNazar.addMadamNazar(refreshMenu);
 
     Menu.refreshItemsCounter();

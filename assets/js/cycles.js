@@ -6,7 +6,13 @@ var Cycles = {
                 Cycles.data = _data;
                 Cycles.setCycles();
 
-                $('.cycle-data').text(Cycles.data.updated_at);
+                var _date = Cycles.data.updated_at.split(' ');
+
+                $('.cycle-data').text(
+                    Language.get('menu.date')
+                    .replace('{month}', Language.get(`menu.month.${_date[0]}`))
+                    .replace('{day}', _date[1])
+                    );
             });
         console.log('cycles loaded');
     },

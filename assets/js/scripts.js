@@ -171,7 +171,7 @@ function changeCursor() {
 }
 function addZeroToNumber(number) {
   if (number < 10)
-    number = '0' + number.toString();
+    number = '0' + number;
   return number;
 }
 
@@ -393,6 +393,7 @@ $('.menu-option.clickable').on('click', function () {
 $('.open-submenu').on('click', function (e) {
   e.stopPropagation();
   $(this).parent().parent().children('.menu-hidden').toggleClass('opened');
+  $(this).toggleClass('rotate');
 });
 
 //Sell collections on menu
