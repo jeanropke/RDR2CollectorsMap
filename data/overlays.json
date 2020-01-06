@@ -39,6 +39,10 @@
 		"img": "./assets/overlays/mine_02.png",
 		"bounds": [[-62.125, 75.24], [-61.4656, 74.3625]]
 	},
+	"mine_03": {
+		"img": "./assets/overlays/mine_03.png",
+		"bounds": [[-113.3, 17.68], [-111.7, 19.28]]
+	},
 	"tunnel_01": {
 		"img": "./assets/overlays/tunnel_01.png",
 		"bounds": [[-87.29, 147.115], [-86.59, 147.815]]
