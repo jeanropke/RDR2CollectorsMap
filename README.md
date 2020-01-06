@@ -1,4 +1,6 @@
 # RDR2CollectorsMap
+[![Discord](https://img.shields.io/discord/631510938016677889?label=discord)](https://discord.gg/HkU6ugT) ![GitHub last commit](https://img.shields.io/github/last-commit/jeanropke/RDR2CollectorsMap) ![GitHub issues](https://img.shields.io/github/issues-raw/jeanropke/RDR2CollectorsMap) ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/jeanropke/RDR2CollectorsMap) ![GitHub repo size](https://img.shields.io/github/repo-size/jeanropke/RDR2CollectorsMap)
+
 Cycle 1 - 3 collectible locations credits to [GTA Series Videos](https://www.youtube.com/user/GTASeriesVideos), [Gtax Barrett](https://twitter.com/gtaxbarrett), [IronJeff80](https://github.com/IronJeff80) and [/r/RedDeadOnline](https://www.reddit.com/r/RedDeadOnline) and the Discord community.
 
 Cycle 4 - 6 collectible locations credits to [Tez2](https://twitter.com/TezFunz2), [Senexis](https://github.com/Senexis), [IronJeff80](https://github.com/IronJeff80) and the Discord community.
