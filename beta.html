@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
 
+  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
   <!-- Beta only; Add draw plugin -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
@@ -26,6 +30,19 @@
     #export {
       position: absolute;
       top: 310px;
+      left: 6px;
+      z-index: 998;
+      background: white;
+      color: black;
+      padding: 6px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      text-decoration: none;
+    }
+    #findpath {
+      position: absolute;
+      top: 380px;
       left: 6px;
       z-index: 998;
       background: white;
@@ -606,6 +623,7 @@
   <div id="map">
     <div id='delete'>Clear all</div>
     <a href='#' id='export'>Export to .geojson</a>
+    <a href='#' id='findpath'>Find path</a>
 
   </div>
   <div class="lat-lng-container">
@@ -628,6 +646,7 @@
   <script src="assets/js/language.js?nocache=189"></script>
   <script src="assets/js/menu.js?nocache=189"></script>
   <script src="assets/js/routes.js?nocache=189"></script>
+  <script src="assets/js/pathfinder.js?nocache=189"></script>
   <script src="assets/js/scripts.js?nocache=189"></script>
 
   <!-- Beta only -->
@@ -646,6 +665,10 @@
       // Create export
       document.getElementById('export').setAttribute('href', 'data:' + convertedData);
       document.getElementById('export').setAttribute('download', 'data.geojson');
+    }
+
+    document.getElementById('findpath').onclick = function(e) {
+      pathfinderStart()
     }
   </script>
 
