@@ -40,6 +40,8 @@
 	{"key": "menu.fast_travel", "value": "Fast Travel"},
 	{"key": "menu.search_placeholder", "value": "Search items. Separated by ;"},
 	{"key": "map.remove_add", "value": "Remove/Add from map"},
+	{"key": "map.copy_link", "value": "Copy marker link"},
+	{"key": "map.video", "value": "Video"},
 	{"key": "map.flower_type.night_only", "value": "This flower only spawns at night (from 10:00 PM to 5:00 AM)."},
 	{"key": "map.flower_type.bush", "value": "This flower grows on a bush."},
 	{"key": "map.egg_type.tree", "value": "In a tree. Shoot down with varmint rifle or bow using small game arrows."},

@@ -324,8 +324,8 @@ var MapBase = {
       popupContent = (marker.tool == '-1' ? Language.get('map.item.unable') : '') + ' ' + marker.description + ' ' + weeklyText;
     }
 
-    var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">Copy marker link</a>`;
-    var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">Video</a>' : '';
+    var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
+    var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">'+ Language.get('map.video') +'</a>' : '';
     var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(videoText);
 
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
@@ -369,6 +369,7 @@ var MapBase = {
       })
     });
 
+
     tempMarker.id = marker.text;
     marker.isVisible = true;
     marker.weeklyCollection = isWeekly ? weeklySetData.current : null;
@@ -402,7 +403,7 @@ var MapBase = {
       });
     Layers.itemMarkersLayer.addLayer(tempMarker);
     if (Settings.markerCluster)
-      Layers.oms.addMarker(tempMarker);
+      Layers.oms.addMarker(tempMarker);      
   },
 
   save: function () {

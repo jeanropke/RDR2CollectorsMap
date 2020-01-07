@@ -40,6 +40,8 @@
 	{"key": "menu.fast_travel", "value": "Viagem Rápida"},
 	{"key": "menu.search_placeholder", "value": "Busque itens. Separe-os com ;"},
 	{"key": "map.remove_add", "value": "Remover/Adicionar ao mapa"},
+	{"key": "map.copy_link", "value": "Copiar link do marcador"},
+	{"key": "map.video", "value": "Vídeo"},
 	{"key": "map.flower_type.night_only", "value": "Essa flor aparece apenas a noite - 22:00 até 5:00"},
 	{"key": "map.flower_type.bush", "value": "Essa flor cresce em arbustos."},	
 	{"key": "map.item.unable", "value": "Não é possivel obter esse item."},
