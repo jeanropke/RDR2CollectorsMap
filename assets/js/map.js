@@ -241,7 +241,7 @@ var MapBase = {
         if (text != subdata && marker.text != text)
           return;
 
-        if ((marker.subdata == subdata && !subdataCategoryIsDisabled) || marker.canCollect) {
+        if ((text == subdata && marker.subdata == subdata && !subdataCategoryIsDisabled) || marker.canCollect) {
           if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
             marker.isCollected = true;
             Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
