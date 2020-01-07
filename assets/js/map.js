@@ -235,13 +235,13 @@ var MapBase = {
       if (_marker == null)
         return;
 
-      var subdataCategoryIsDisabled = $(`[data-type=${subdata}]`).hasClass('disabled');
+      var subdataCategoryIsDisabled = (text == subdata && $(`[data-type=${subdata}]`).hasClass('disabled'));
 
       $.each(_marker, function (key, marker) {
         if (text != subdata && marker.text != text)
           return;
 
-        if ((text == subdata && marker.subdata == subdata && !subdataCategoryIsDisabled) || marker.canCollect) {
+        if ((marker.subdata == subdata && !subdataCategoryIsDisabled) || marker.canCollect) {
           if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
             marker.isCollected = true;
             Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
