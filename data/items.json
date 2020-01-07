@@ -149,7 +149,7 @@
             { "text": "egg_heron", "subdata": "heron", "tool": "0", "lat": "-67.7025", "lng": "145.9069" },
             { "text": "egg_loon", "subdata": "loon", "tool": "0", "lat": "-54.4755", "lng": "97.9010" },
             { "text": "egg_spoonbill", "subdata": "spoonbill", "tool": "0", "lat": "-77.7716", "lng": "135.6510" },
-            { "text": "egg_vulture", "subdata": "vulture", "tool": "0", "lat": "-29.6054", "lng": "153.4932" }
+            { "text": "egg_vulture", "subdata": "vulture", "tool": "0", "lat": "-29.8439", "lng": "153.5091" }
         ],
         "6": [
             { "text": "egg_duck", "subdata": "duck", "tool": "0", "lat": "-42.4071", "lng": "135.7002" },
