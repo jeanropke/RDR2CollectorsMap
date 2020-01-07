@@ -356,6 +356,7 @@ $("#language").on("change", function () {
   Language.setMenuLanguage();
   MapBase.addMarkers();
   Menu.refreshMenu();
+  Cycles.setLocaleDate();
 });
 
 //Disable & enable collection category
