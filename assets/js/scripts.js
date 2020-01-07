@@ -420,10 +420,7 @@ $(document).on('click', '.collectible-wrapper', function () {
   var collectible = $(this).data('type');
   var category = $(this).parent().data('type');
 
-  console.log(Cycles.data.cycles[Cycles.data.current][category], collectible, category);
-
   MapBase.removeItemFromMap(Cycles.data.cycles[Cycles.data.current][category], collectible, collectible, category);
-
 });
 
 //Open & close side menu
