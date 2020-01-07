@@ -252,6 +252,7 @@ $("#show-all-markers").on("change", function () {
 $('.menu-option.clickable input').on('click', function (e) {
   e.stopPropagation();
 });
+
 //change cycle by collection
 $('.menu-option.clickable input').on('change', function (e) {
   var el = $(e.target);
@@ -259,6 +260,7 @@ $('.menu-option.clickable input').on('change', function (e) {
   MapBase.addMarkers();
   Menu.refreshMenu();
 });
+
 //Search system on menu
 $("#search").on("input", function () {
   searchTerms = [];
@@ -415,9 +417,12 @@ $('.collection-sell').on('click', function (e) {
 
 //Remove item from map when using the menu
 $(document).on('click', '.collectible-wrapper', function () {
-  var collectible = $(this);
+  var collectible = $(this).data('type');
+  var category = $(this).parent().data('type');
 
-  MapBase.removeItemFromMap(collectible.data('type'), collectible.data('type'));
+  console.log(Cycles.data.cycles[Cycles.data.current][category], collectible, category);
+
+  MapBase.removeItemFromMap(Cycles.data.cycles[Cycles.data.current][category], collectible, collectible, category);
 
 });
 

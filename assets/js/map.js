@@ -132,7 +132,7 @@ var MapBase = {
 
     //if a marker is passed on url, check if is valid
     if (goTo = MapBase.markers.filter(_m => _m.text == getParameterByName('m') && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category])[0]) {
-      
+
       //set map view with marker lat & lng
       MapBase.map.setView([goTo.lat, goTo.lng], 6);
 
@@ -214,70 +214,55 @@ var MapBase = {
     console.log('weekly sets loaded');
   },
 
-  removeItemFromMap: function (itemName, category) {
-    if (itemName.endsWith('_treasure')) {
-
-      if (Treasures.enabledTreasures.includes(itemName))
+  removeItemFromMap: function (day, text, subdata, category) {
+    if (text.endsWith('_treasure')) {
+      if (Treasures.enabledTreasures.includes(text))
         Treasures.enabledTreasures = $.grep(Treasures.enabledTreasures, function (treasure) {
-          return treasure !== itemName;
+          return treasure !== text;
         });
       else
-        Treasures.enabledTreasures.push(itemName);
+        Treasures.enabledTreasures.push(text);
 
-      $(`[data-type=${itemName}]`).toggleClass('disabled');
+      $(`[data-type=${text}]`).toggleClass('disabled');
 
       Treasures.addToMap();
       Treasures.save();
     } else {
       var _marker = MapBase.markers.filter(function (marker) {
-        return (marker.text == itemName || (marker.subdata == category));
+        return marker.day == day && (marker.text == text || marker.subdata == subdata);
       });
 
       if (_marker == null)
         return;
 
-      var isDisabled = $(`[data-type=${category}]`).hasClass('disabled');
       $.each(_marker, function (key, marker) {
-
-        if (marker.text != itemName && (marker.subdata != category || (_marker.length > 1 && itemName != category)))
+        if (text != subdata && marker.text != text)
           return;
 
-        if (itemName == category && marker.subdata == category) {
-          if (!isDisabled) {
-            if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
-              marker.isCollected = true;
-              Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
-            }
-            $('[data-marker=' + marker.text + ']').css('opacity', '.35');
-            $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
-            marker.canCollect = false;
+        if (marker.canCollect) {
+          if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
+            marker.isCollected = true;
+            Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
           }
-          else {
-            if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
-              marker.isCollected = false;
-              Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
-            }
-            $('[data-marker=' + marker.text + ']').css('opacity', '1');
-            $(`[data-type=${marker.subdata}]`).removeClass('disabled');
-            marker.canCollect = true;
+
+          marker.canCollect = false;
+        } else {
+          if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
+            marker.isCollected = false;
+            Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
           }
-        }
-        else {
-          if (marker.canCollect) {
-            if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
-              marker.isCollected = true;
-              Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
-            }
-            marker.canCollect = false;
-          } else {
-            if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
-              marker.isCollected = false;
-              Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
-            }
-            marker.canCollect = true;
-          }
+
+          marker.canCollect = true;
         }
       });
+
+      if (subdata != '' && day == Cycles.data.cycles[Cycles.data.current][category]) {
+        if ((_marker.length == 1 && !_marker[0].canCollect) || _marker.every(function (marker) { return !marker.canCollect; })) {
+          $(`[data-type=${subdata}]`).addClass('disabled');
+        } else {
+          $(`[data-type=${subdata}]`).removeClass('disabled');
+        }
+      }
     }
 
     if (Routes.lastPolyline != null && Routes.ignoreCollected)
@@ -325,7 +310,7 @@ var MapBase = {
     }
 
     var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
-    var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">'+ Language.get('map.video') +'</a>' : '';
+    var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">' + Language.get('map.video') + '</a>' : '';
     var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(videoText);
 
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
@@ -338,7 +323,7 @@ var MapBase = {
         <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
         ${linksElement.prop('outerHTML')}
         ${Inventory.isEnabled ? buttons : ''}
-        <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.text}', '${marker.subdata}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>
+        <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.day || ''}', '${marker.text || ''}', '${marker.subdata || ''}', '${marker.category || ''}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>
         `;
   },
 
@@ -403,7 +388,7 @@ var MapBase = {
       });
     Layers.itemMarkersLayer.addLayer(tempMarker);
     if (Settings.markerCluster)
-      Layers.oms.addMarker(tempMarker);      
+      Layers.oms.addMarker(tempMarker);
   },
 
   save: function () {
@@ -496,8 +481,8 @@ MapBase.submitDebugForm = function () {
       MapBase.debugMarker(parseFloat(arr[i]), parseFloat(arr[i + 1]), arr[i + 2]);
     }
   },
-//setClipboardText
-  MapBase.exportCustomMarkers = function () {   
+  //setClipboardText
+  MapBase.exportCustomMarkers = function () {
     setClipboardText("[" + debugMarkersArray + "]");
     alert('Markers copied to clipboard');
   },
