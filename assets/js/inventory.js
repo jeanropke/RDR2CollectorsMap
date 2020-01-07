@@ -42,6 +42,7 @@ var Inventory = {
 
     if ($("#routes").val() == 1)
       Routes.drawLines();
+
     MapBase.save();
   }
 }

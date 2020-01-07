@@ -57,7 +57,7 @@ Menu.refreshMenu = function () {
         if (marker.lat.length == 0)
           $(`[data-type=${marker.subdata}]`).addClass('not-found');
 
-        if (marker.amount == 10)
+        if (marker.amount == Inventory.stackSize)
           $(`[data-type=${marker.subdata}]`).addClass('disabled');
 
         var _markers = MapBase.markers.filter(function (_marker) {
@@ -99,7 +99,7 @@ Menu.refreshMenu = function () {
         if (marker.lat.length == 0)
           $(`[data-type=${marker.text}]`).addClass('not-found');
 
-        if (marker.amount == 10)
+        if (marker.amount == Inventory.stackSize)
           $(`[data-type=${marker.text}]`).addClass('disabled');
 
         if (!marker.canCollect)

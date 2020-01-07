@@ -121,7 +121,7 @@ function init() {
           inventory[value.text].isCollected = false;
 
         value.isCollected = false;
-        value.canCollect = value.amount < 10;
+        value.canCollect = value.amount < Inventory.stackSize;
       });
       MapBase.save();
     }
@@ -288,7 +288,7 @@ $("#reset-markers").on("change", function () {
         inventory[value.text].isCollected = false;
 
       value.isCollected = false;
-      value.canCollect = value.amount < 10;
+      value.canCollect = value.amount < Inventory.stackSize;
     });
 
     MapBase.save();
