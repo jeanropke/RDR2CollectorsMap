@@ -96,8 +96,8 @@ function init() {
     return categoriesDisabledByDefault.indexOf(item) === -1;
   });
 
-  if (typeof $.cookie('map-layer') === 'undefined')
-    $.cookie('map-layer', 'Detailed', { expires: 999 });
+  if (typeof $.cookie('map-layer') === 'undefined' || isNaN(parseInt($.cookie('map-layer'))))
+    $.cookie('map-layer', 1, { expires: 999 });
 
 
   if (!availableLanguages.includes(Settings.language))
@@ -128,8 +128,8 @@ function init() {
   }
   $.cookie('date', date, { expires: 7 });
 
-  Language.setMenuLanguage();
   MapBase.init();
+  Language.setMenuLanguage();
 
   setMapBackground($.cookie('map-layer'));
 
@@ -148,21 +148,22 @@ function init() {
 function setMapBackground(mapName) {
   switch (mapName) {
     default:
-    case 'Default':
+    case 0:
       $('#map').css('background-color', '#d2b790');
       break;
 
-    case 'Detailed':
+    case 1:
       $('#map').css('background-color', '#d2b790');
       break;
 
-    case 'Dark':
+    case 2:
       $('#map').css('background-color', '#3d3d3d');
       break;
   }
 
   $.cookie('map-layer', mapName, { expires: 999 });
 }
+
 function changeCursor() {
   if (Settings.isCoordsEnabled || Routes.customRouteEnabled)
     $('.leaflet-grab').css('cursor', 'pointer');

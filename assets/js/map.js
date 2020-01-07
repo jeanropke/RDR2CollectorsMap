@@ -17,19 +17,20 @@ var MapBase = {
   markers: [],
 
   init: function () {
-    var mapLayers = [];
-    mapLayers['Default'] = L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
-      noWrap: true,
-      bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
-    });
-    mapLayers['Detailed'] = L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', {
-      noWrap: true,
-      bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
-    });
-    mapLayers['Dark'] = L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', {
-      noWrap: true,
-      bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
-    });
+    var mapLayers = [
+      L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
+        noWrap: true,
+        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
+      }),
+      L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', {
+        noWrap: true,
+        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
+      }),
+      L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', {
+        noWrap: true,
+        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
+      })
+    ];
 
     MapBase.map = L.map('map', {
       preferCanvas: true,
@@ -37,27 +38,42 @@ var MapBase = {
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
-      layers: [mapLayers[$.cookie('map-layer')]]
+      layers: [mapLayers[parseInt($.cookie('map-layer'))]]
     }).setView([-70, 111.75], 3);
-
-    var baseMapsLayers = {
-      "Default": mapLayers['Default'],
-      "Detailed": mapLayers['Detailed'],
-      "Dark": mapLayers['Dark']
-    };
 
     L.control.zoom({
       position: 'bottomright'
     }).addTo(MapBase.map);
 
+    var baseMapsLayers = {
+      'map.layers.default': mapLayers[0],
+      'map.layers.detailed': mapLayers[1],
+      'map.layers.dark': mapLayers[2]
+    };
+
     L.control.layers(baseMapsLayers).addTo(MapBase.map);
+
+    MapBase.map.on('baselayerchange', function (e) {
+      var mapIndex;
+
+      switch (e.name) {
+        case 'map.layers.default':
+          mapIndex = 0;
+          break;
+        case 'map.layers.dark':
+          mapIndex = 2;
+          break;
+        case 'map.layers.detailed':
+        default:
+          mapIndex = 1;
+          break;
+      }
+
+      setMapBackground(mapIndex);
+    });
 
     MapBase.map.on('click', function (e) {
       MapBase.addCoordsOnMap(e);
-    });
-
-    MapBase.map.on('baselayerchange', function (e) {
-      setMapBackground(e.name);
     });
 
     var southWest = L.latLng(-160, -50),

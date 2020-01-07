@@ -37,4 +37,8 @@ Language.setMenuLanguage = function ()
     ///Special cases:
     $('#search').attr("placeholder", Language.get('menu.search_placeholder'));
 
+    $('.leaflet-control-layers-list span').each(function (key, value) {
+      var element = $(value);
+      element.text(Language.get(element.text));
+    });
 };
