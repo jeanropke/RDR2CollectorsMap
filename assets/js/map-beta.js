@@ -14,7 +14,7 @@ var Layers = {
 
 var MapBase = {
   minZoom: 2,
-  maxZoom: 7,
+  maxZoom: 11,
   map: null,
   overlays: [],
   markers: [],
@@ -127,7 +127,9 @@ var MapBase = {
             "color": "#ff7800",
             "weight": 5
           }
-        }).addTo(MapBase.map);
+        }).eachLayer(function(l){
+          MapBase.drawnItems.addLayer(l);
+        })
       });
   },
 
