@@ -75,6 +75,7 @@ var Pins = {
     },
 
     removeAllPins: function () {
+        MapBase.map.closePopup();
         this.pinsList.forEach(pin => { this.removePin(pin.options.id, false) });
     },
 
