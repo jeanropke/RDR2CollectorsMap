@@ -145,8 +145,8 @@ function init() {
   changeCursor();
 }
 
-function setMapBackground(mapName) {
-  switch (mapName) {
+function setMapBackground(mapIndex) {
+  switch (parseInt(mapIndex)) {
     default:
     case 0:
       $('#map').css('background-color', '#d2b790');
@@ -161,7 +161,7 @@ function setMapBackground(mapName) {
       break;
   }
 
-  $.cookie('map-layer', mapName, { expires: 999 });
+  $.cookie('map-layer', mapIndex, { expires: 999 });
 }
 
 function changeCursor() {
