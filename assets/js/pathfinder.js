@@ -1,60 +1,109 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 var PathFinder = require('geojson-path-finder')
-var nearest = require('turf-nearest')
+//var nearest = require('turf-nearest')
 var point = require('turf-point')
 var featurecollection = require('turf-featurecollection')
 //var lemoyne = require('./../../data/geojson/lemoyne.json')
 
+window.PF = {
+	router: null,
+	_PathFinder: null,
+	_points: []
+}
 
-window.router = null
+PF.getNearestNode = function(point, collection) {
+	var pointLatLng = PF.PointToLatLng(point)
+	var pointBounds = L.latLngBounds([
+		[pointLatLng.lat-10, pointLatLng.lng-10],
+		[pointLatLng.lat+10, pointLatLng.lng+10]
+	])
 
-function createControler() {
-	window._PathFinder = new PathFinder(MapBase.drawnItems.toGeoJSON(), { precision: 0.1 })
-	var _vertices = window._PathFinder._graph.vertices;
-	window._points = featurecollection(
+	var filtered = collection.features.filter((p) => {
+		return pointBounds.contains(PF.PointToLatLng(p));
+	})
+	var n = {distance: Number.MAX_SAFE_INTEGER, point: null}
+	for(let i = 0; i < filtered.length; i++) {
+		var distance = MapBase.map.distance(
+			pointLatLng, 
+			PF.PointToLatLng(filtered[i])
+		);
+		if(distance < n.distance) {
+			n.distance = distance
+			n.point = filtered[i]
+		}
+	}
+
+	return n.point
+}
+
+PF.createPathFinder = function() {
+	window.PF._PathFinder = new PathFinder(MapBase.drawnItems.toGeoJSON(), {
+		precision: 0.04,
+		weightFn: function(a, b, props) {
+			var dx = a[0] - b[0];
+			var dy = a[1] - b[1];
+			return Math.sqrt(dx * dx + dy * dy);
+		}
+	})
+	var _vertices = window.PF._PathFinder._graph.vertices;
+	window.PF._points = featurecollection(
 		Object
 			.keys(_vertices)
 			.filter(function(nodeName) {
 				return Object.keys(_vertices[nodeName]).length
 			})
 			.map(function(nodeName) {
-				var vertice = window._PathFinder._graph.sourceVertices[nodeName]
+				var vertice = window.PF._PathFinder._graph.sourceVertices[nodeName]
 				return point(vertice)
 			})
 	);
+}
 
-	if(window.router !== null) {
-		MapBase.map.removeControl(window.router)
+PF.latLngToPoint = function(latlng) {
+	return {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[latlng.lng, latlng.lat]}}
+}
+PF.PointToLatLng = function(point) {
+	return L.latLng(point.geometry.coordinates[1], point.geometry.coordinates[0])
+}
+
+PF.createControler = function() {
+	if(PF.router !== null) {
+		MapBase.map.removeControl(PF.router)
 	}
 
-	window.router = L.Routing.control({
+	PF.router = L.Routing.control({
 		showAlternatives: false,
+		fitSelectedRoutes: false,
+		plan: L.Routing.plan([], { draggableWaypoints: false, createMarker: function(){} }),
 		router: { route: function(waypoints, callback, context) {
+			if(PF._PathFinder === null) PF.createPathFinder()
 			console.log('Finding route...')
 		
 			let pick = []
 			for(let i = 0; i < waypoints.length; i++) {
-				var point = {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[waypoints[i].latLng.lng, waypoints[i].latLng.lat]}}
-				var realpoint = nearest(point, window._points)
-				pick.push(realpoint)
+				var point = PF.latLngToPoint(waypoints[i].latLng)
+				var realpoint = PF.getNearestNode(point, PF._points)
+				if(realpoint !== null)
+					pick.push(realpoint)
 			}
 			try {
-				var pathWaypoints = [{latLng: L.latLng(pick[0].geometry.coordinates[1], pick[0].geometry.coordinates[0])}]
+				var pathWaypoints = [{latLng: PF.PointToLatLng(pick[0])}]
 				var pathPoints = []
+				var weight = 0
 	
 				for(let i = 1; i < pick.length; i++) {
-					pathWaypoints.push({latLng: L.latLng(pick[i].geometry.coordinates[1], pick[i].geometry.coordinates[0])})
-					var p = window._PathFinder.findPath(
+					pathWaypoints.push({latLng: PF.PointToLatLng(pick[i])})
+					var p = PF._PathFinder.findPath(
 						pick[i-1],
 						pick[i]
 					)
 					if(p !== null) {
 						pathPoints = pathPoints.concat(p.path)
+						weight += p.weight
 					}
 				}
 	
 				if(pathPoints.length > 1) {
-					
 					var path = []
 					for(var i = 0; i < pathPoints.length; i++) {
 						path.push(L.latLng(pathPoints[i][1], pathPoints[i][0]))
@@ -64,7 +113,7 @@ function createControler() {
 						name: '',
 						waypoints: pathWaypoints,
 						inputWaypoints: waypoints,
-						summary: {totalTime: 0, totalDistance: 0},
+						summary: {totalTime: (weight*20) * 0.1, totalDistance: weight*20},
 						coordinates: path,
 						instructions: []
 					}]
@@ -80,20 +129,26 @@ function createControler() {
 	}).addTo(MapBase.map)
 }
 
-window.pathfinderStart = function() {
-	createControler()
+PF.findNearestTravelItem = function(start, markers) {
+	if(PF._PathFinder === null) PF.createPathFinder()
 
-	var markers = MapBase.markers.filter((marker) => { return marker.isVisible; })
+}
+
+PF.pathfinderStart = function(markers) {
+	if(PF.router === null)
+		PF.createControler()
+
+	if(typeof(markers) === 'undefined') markers = MapBase.markers.filter((marker) => { return marker.isVisible; })
 	var markersWaypoints = []
 	for(let i = 0; i < markers.length; i++) {
 		if(markers[i].lat < -61 && markers[i].lng > 120) {
 			markersWaypoints.push([parseFloat(markers[i].lat), parseFloat(markers[i].lng)])
 		}
 	}
-	window.router.setWaypoints(markersWaypoints)
+	PF.router.setWaypoints(markersWaypoints)
 	//window.router.route()
 }
-},{"geojson-path-finder":11,"turf-featurecollection":17,"turf-nearest":20,"turf-point":21}],2:[function(require,module,exports){
+},{"geojson-path-finder":11,"turf-featurecollection":16,"turf-point":17}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var invariant_1 = require("@turf/invariant");
@@ -3412,7 +3467,7 @@ module.exports = function preprocess(graph, options) {
     };
 };
 
-},{"./compactor":9,"./round-coord":13,"./topology":14,"@turf/distance":2,"turf-point":21}],13:[function(require,module,exports){
+},{"./compactor":9,"./round-coord":13,"./topology":14,"@turf/distance":2,"turf-point":17}],13:[function(require,module,exports){
 module.exports = function roundCoord(c, precision) {
     return [
         Math.round(c[0] / precision) * precision,
@@ -3591,68 +3646,6 @@ return TinyQueue;
 }));
 
 },{}],16:[function(require,module,exports){
-var getCoord = require('turf-invariant').getCoord;
-var radiansToDistance = require('turf-helpers').radiansToDistance;
-//http://en.wikipedia.org/wiki/Haversine_formula
-//http://www.movable-type.co.uk/scripts/latlong.html
-
-/**
- * Calculates the distance between two {@link Point|points} in degrees, radians,
- * miles, or kilometers. This uses the
- * [Haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
- * to account for global curvature.
- *
- * @name distance
- * @param {Feature<Point>} from origin point
- * @param {Feature<Point>} to destination point
- * @param {String} [units=kilometers] can be degrees, radians, miles, or kilometers
- * @return {Number} distance between the two points
- * @example
- * var from = {
- *   "type": "Feature",
- *   "properties": {},
- *   "geometry": {
- *     "type": "Point",
- *     "coordinates": [-75.343, 39.984]
- *   }
- * };
- * var to = {
- *   "type": "Feature",
- *   "properties": {},
- *   "geometry": {
- *     "type": "Point",
- *     "coordinates": [-75.534, 39.123]
- *   }
- * };
- * var units = "miles";
- *
- * var points = {
- *   "type": "FeatureCollection",
- *   "features": [from, to]
- * };
- *
- * //=points
- *
- * var distance = turf.distance(from, to, units);
- *
- * //=distance
- */
-module.exports = function (from, to, units) {
-    var degrees2radians = Math.PI / 180;
-    var coordinates1 = getCoord(from);
-    var coordinates2 = getCoord(to);
-    var dLat = degrees2radians * (coordinates2[1] - coordinates1[1]);
-    var dLon = degrees2radians * (coordinates2[0] - coordinates1[0]);
-    var lat1 = degrees2radians * coordinates1[1];
-    var lat2 = degrees2radians * coordinates2[1];
-
-    var a = Math.pow(Math.sin(dLat / 2), 2) +
-          Math.pow(Math.sin(dLon / 2), 2) * Math.cos(lat1) * Math.cos(lat2);
-
-    return radiansToDistance(2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)), units);
-};
-
-},{"turf-helpers":18,"turf-invariant":19}],17:[function(require,module,exports){
 /**
  * Takes one or more {@link Feature|Features} and creates a {@link FeatureCollection}
  *
@@ -3678,502 +3671,7 @@ module.exports = function(features){
   };
 };
 
-},{}],18:[function(require,module,exports){
-/**
- * Wraps a GeoJSON {@link Geometry} in a GeoJSON {@link Feature}.
- *
- * @name feature
- * @param {Geometry} geometry input geometry
- * @param {Object} properties properties
- * @returns {FeatureCollection} a FeatureCollection of input features
- * @example
- * var geometry = {
- *      "type": "Point",
- *      "coordinates": [
- *        67.5,
- *        32.84267363195431
- *      ]
- *    }
- *
- * var feature = turf.feature(geometry);
- *
- * //=feature
- */
-function feature(geometry, properties) {
-    return {
-        type: 'Feature',
-        properties: properties || {},
-        geometry: geometry
-    };
-}
-
-module.exports.feature = feature;
-
-/**
- * Takes coordinates and properties (optional) and returns a new {@link Point} feature.
- *
- * @name point
- * @param {number[]} coordinates longitude, latitude position (each in decimal degrees)
- * @param {Object=} properties an Object that is used as the {@link Feature}'s
- * properties
- * @returns {Feature<Point>} a Point feature
- * @example
- * var pt1 = turf.point([-75.343, 39.984]);
- *
- * //=pt1
- */
-module.exports.point = function (coordinates, properties) {
-    if (!Array.isArray(coordinates)) throw new Error('Coordinates must be an array');
-    if (coordinates.length < 2) throw new Error('Coordinates must be at least 2 numbers long');
-    return feature({
-        type: 'Point',
-        coordinates: coordinates.slice()
-    }, properties);
-};
-
-/**
- * Takes an array of LinearRings and optionally an {@link Object} with properties and returns a {@link Polygon} feature.
- *
- * @name polygon
- * @param {Array<Array<Array<number>>>} coordinates an array of LinearRings
- * @param {Object=} properties a properties object
- * @returns {Feature<Polygon>} a Polygon feature
- * @throws {Error} throw an error if a LinearRing of the polygon has too few positions
- * or if a LinearRing of the Polygon does not have matching Positions at the
- * beginning & end.
- * @example
- * var polygon = turf.polygon([[
- *  [-2.275543, 53.464547],
- *  [-2.275543, 53.489271],
- *  [-2.215118, 53.489271],
- *  [-2.215118, 53.464547],
- *  [-2.275543, 53.464547]
- * ]], { name: 'poly1', population: 400});
- *
- * //=polygon
- */
-module.exports.polygon = function (coordinates, properties) {
-
-    if (!coordinates) throw new Error('No coordinates passed');
-
-    for (var i = 0; i < coordinates.length; i++) {
-        var ring = coordinates[i];
-        if (ring.length < 4) {
-            throw new Error('Each LinearRing of a Polygon must have 4 or more Positions.');
-        }
-        for (var j = 0; j < ring[ring.length - 1].length; j++) {
-            if (ring[ring.length - 1][j] !== ring[0][j]) {
-                throw new Error('First and last Position are not equivalent.');
-            }
-        }
-    }
-
-    return feature({
-        type: 'Polygon',
-        coordinates: coordinates
-    }, properties);
-};
-
-/**
- * Creates a {@link LineString} based on a
- * coordinate array. Properties can be added optionally.
- *
- * @name lineString
- * @param {Array<Array<number>>} coordinates an array of Positions
- * @param {Object=} properties an Object of key-value pairs to add as properties
- * @returns {Feature<LineString>} a LineString feature
- * @throws {Error} if no coordinates are passed
- * @example
- * var linestring1 = turf.lineString([
- *	[-21.964416, 64.148203],
- *	[-21.956176, 64.141316],
- *	[-21.93901, 64.135924],
- *	[-21.927337, 64.136673]
- * ]);
- * var linestring2 = turf.lineString([
- *	[-21.929054, 64.127985],
- *	[-21.912918, 64.134726],
- *	[-21.916007, 64.141016],
- * 	[-21.930084, 64.14446]
- * ], {name: 'line 1', distance: 145});
- *
- * //=linestring1
- *
- * //=linestring2
- */
-module.exports.lineString = function (coordinates, properties) {
-    if (!coordinates) {
-        throw new Error('No coordinates passed');
-    }
-    return feature({
-        type: 'LineString',
-        coordinates: coordinates
-    }, properties);
-};
-
-/**
- * Takes one or more {@link Feature|Features} and creates a {@link FeatureCollection}.
- *
- * @name featureCollection
- * @param {Feature[]} features input features
- * @returns {FeatureCollection} a FeatureCollection of input features
- * @example
- * var features = [
- *  turf.point([-75.343, 39.984], {name: 'Location A'}),
- *  turf.point([-75.833, 39.284], {name: 'Location B'}),
- *  turf.point([-75.534, 39.123], {name: 'Location C'})
- * ];
- *
- * var fc = turf.featureCollection(features);
- *
- * //=fc
- */
-module.exports.featureCollection = function (features) {
-    return {
-        type: 'FeatureCollection',
-        features: features
-    };
-};
-
-/**
- * Creates a {@link Feature<MultiLineString>} based on a
- * coordinate array. Properties can be added optionally.
- *
- * @name multiLineString
- * @param {Array<Array<Array<number>>>} coordinates an array of LineStrings
- * @param {Object=} properties an Object of key-value pairs to add as properties
- * @returns {Feature<MultiLineString>} a MultiLineString feature
- * @throws {Error} if no coordinates are passed
- * @example
- * var multiLine = turf.multiLineString([[[0,0],[10,10]]]);
- *
- * //=multiLine
- *
- */
-module.exports.multiLineString = function (coordinates, properties) {
-    if (!coordinates) {
-        throw new Error('No coordinates passed');
-    }
-    return feature({
-        type: 'MultiLineString',
-        coordinates: coordinates
-    }, properties);
-};
-
-/**
- * Creates a {@link Feature<MultiPoint>} based on a
- * coordinate array. Properties can be added optionally.
- *
- * @name multiPoint
- * @param {Array<Array<number>>} coordinates an array of Positions
- * @param {Object=} properties an Object of key-value pairs to add as properties
- * @returns {Feature<MultiPoint>} a MultiPoint feature
- * @throws {Error} if no coordinates are passed
- * @example
- * var multiPt = turf.multiPoint([[0,0],[10,10]]);
- *
- * //=multiPt
- *
- */
-module.exports.multiPoint = function (coordinates, properties) {
-    if (!coordinates) {
-        throw new Error('No coordinates passed');
-    }
-    return feature({
-        type: 'MultiPoint',
-        coordinates: coordinates
-    }, properties);
-};
-
-
-/**
- * Creates a {@link Feature<MultiPolygon>} based on a
- * coordinate array. Properties can be added optionally.
- *
- * @name multiPolygon
- * @param {Array<Array<Array<Array<number>>>>} coordinates an array of Polygons
- * @param {Object=} properties an Object of key-value pairs to add as properties
- * @returns {Feature<MultiPolygon>} a multipolygon feature
- * @throws {Error} if no coordinates are passed
- * @example
- * var multiPoly = turf.multiPolygon([[[[0,0],[0,10],[10,10],[10,0],[0,0]]]);
- *
- * //=multiPoly
- *
- */
-module.exports.multiPolygon = function (coordinates, properties) {
-    if (!coordinates) {
-        throw new Error('No coordinates passed');
-    }
-    return feature({
-        type: 'MultiPolygon',
-        coordinates: coordinates
-    }, properties);
-};
-
-/**
- * Creates a {@link Feature<GeometryCollection>} based on a
- * coordinate array. Properties can be added optionally.
- *
- * @name geometryCollection
- * @param {Array<{Geometry}>} geometries an array of GeoJSON Geometries
- * @param {Object=} properties an Object of key-value pairs to add as properties
- * @returns {Feature<GeometryCollection>} a geometrycollection feature
- * @example
- * var pt = {
- *     "type": "Point",
- *       "coordinates": [100, 0]
- *     };
- * var line = {
- *     "type": "LineString",
- *     "coordinates": [ [101, 0], [102, 1] ]
- *   };
- * var collection = turf.geometrycollection([[0,0],[10,10]]);
- *
- * //=collection
- */
-module.exports.geometryCollection = function (geometries, properties) {
-    return feature({
-        type: 'GeometryCollection',
-        geometries: geometries
-    }, properties);
-};
-
-var factors = {
-    miles: 3960,
-    nauticalmiles: 3441.145,
-    degrees: 57.2957795,
-    radians: 1,
-    inches: 250905600,
-    yards: 6969600,
-    meters: 6373000,
-    metres: 6373000,
-    kilometers: 6373,
-    kilometres: 6373
-};
-
-/*
- * Convert a distance measurement from radians to a more friendly unit.
- *
- * @name radiansToDistance
- * @param {number} distance in radians across the sphere
- * @param {string=kilometers} units: one of miles, nauticalmiles, degrees, radians,
- * inches, yards, metres, meters, kilometres, kilometers.
- * @returns {number} distance
- */
-module.exports.radiansToDistance = function (radians, units) {
-    var factor = factors[units || 'kilometers'];
-    if (factor === undefined) {
-        throw new Error('Invalid unit');
-    }
-    return radians * factor;
-};
-
-/*
- * Convert a distance measurement from a real-world unit into radians
- *
- * @name distanceToRadians
- * @param {number} distance in real units
- * @param {string=kilometers} units: one of miles, nauticalmiles, degrees, radians,
- * inches, yards, metres, meters, kilometres, kilometers.
- * @returns {number} radians
- */
-module.exports.distanceToRadians = function (distance, units) {
-    var factor = factors[units || 'kilometers'];
-    if (factor === undefined) {
-        throw new Error('Invalid unit');
-    }
-    return distance / factor;
-};
-
-/*
- * Convert a distance measurement from a real-world unit into degrees
- *
- * @name distanceToRadians
- * @param {number} distance in real units
- * @param {string=kilometers} units: one of miles, nauticalmiles, degrees, radians,
- * inches, yards, metres, meters, kilometres, kilometers.
- * @returns {number} degrees
- */
-module.exports.distanceToDegrees = function (distance, units) {
-    var factor = factors[units || 'kilometers'];
-    if (factor === undefined) {
-        throw new Error('Invalid unit');
-    }
-    return (distance / factor) * 57.2958;
-};
-
-},{}],19:[function(require,module,exports){
-/**
- * Unwrap a coordinate from a Feature with a Point geometry, a Point
- * geometry, or a single coordinate.
- *
- * @param {*} obj any value
- * @returns {Array<number>} a coordinate
- */
-function getCoord(obj) {
-    if (Array.isArray(obj) &&
-        typeof obj[0] === 'number' &&
-        typeof obj[1] === 'number') {
-        return obj;
-    } else if (obj) {
-        if (obj.type === 'Feature' &&
-            obj.geometry &&
-            obj.geometry.type === 'Point' &&
-            Array.isArray(obj.geometry.coordinates)) {
-            return obj.geometry.coordinates;
-        } else if (obj.type === 'Point' &&
-            Array.isArray(obj.coordinates)) {
-            return obj.coordinates;
-        }
-    }
-    throw new Error('A coordinate, feature, or point geometry is required');
-}
-
-/**
- * Enforce expectations about types of GeoJSON objects for Turf.
- *
- * @alias geojsonType
- * @param {GeoJSON} value any GeoJSON object
- * @param {string} type expected GeoJSON type
- * @param {string} name name of calling function
- * @throws {Error} if value is not the expected type.
- */
-function geojsonType(value, type, name) {
-    if (!type || !name) throw new Error('type and name required');
-
-    if (!value || value.type !== type) {
-        throw new Error('Invalid input to ' + name + ': must be a ' + type + ', given ' + value.type);
-    }
-}
-
-/**
- * Enforce expectations about types of {@link Feature} inputs for Turf.
- * Internally this uses {@link geojsonType} to judge geometry types.
- *
- * @alias featureOf
- * @param {Feature} feature a feature with an expected geometry type
- * @param {string} type expected GeoJSON type
- * @param {string} name name of calling function
- * @throws {Error} error if value is not the expected type.
- */
-function featureOf(feature, type, name) {
-    if (!name) throw new Error('.featureOf() requires a name');
-    if (!feature || feature.type !== 'Feature' || !feature.geometry) {
-        throw new Error('Invalid input to ' + name + ', Feature with geometry required');
-    }
-    if (!feature.geometry || feature.geometry.type !== type) {
-        throw new Error('Invalid input to ' + name + ': must be a ' + type + ', given ' + feature.geometry.type);
-    }
-}
-
-/**
- * Enforce expectations about types of {@link FeatureCollection} inputs for Turf.
- * Internally this uses {@link geojsonType} to judge geometry types.
- *
- * @alias collectionOf
- * @param {FeatureCollection} featurecollection a featurecollection for which features will be judged
- * @param {string} type expected GeoJSON type
- * @param {string} name name of calling function
- * @throws {Error} if value is not the expected type.
- */
-function collectionOf(featurecollection, type, name) {
-    if (!name) throw new Error('.collectionOf() requires a name');
-    if (!featurecollection || featurecollection.type !== 'FeatureCollection') {
-        throw new Error('Invalid input to ' + name + ', FeatureCollection required');
-    }
-    for (var i = 0; i < featurecollection.features.length; i++) {
-        var feature = featurecollection.features[i];
-        if (!feature || feature.type !== 'Feature' || !feature.geometry) {
-            throw new Error('Invalid input to ' + name + ', Feature with geometry required');
-        }
-        if (!feature.geometry || feature.geometry.type !== type) {
-            throw new Error('Invalid input to ' + name + ': must be a ' + type + ', given ' + feature.geometry.type);
-        }
-    }
-}
-
-module.exports.geojsonType = geojsonType;
-module.exports.collectionOf = collectionOf;
-module.exports.featureOf = featureOf;
-module.exports.getCoord = getCoord;
-
-},{}],20:[function(require,module,exports){
-var distance = require('turf-distance');
-
-/**
- * Takes a reference {@link Point|point} and a FeatureCollection of Features
- * with Point geometries and returns the
- * point from the FeatureCollection closest to the reference. This calculation
- * is geodesic.
- *
- * @name nearest
- * @param {Feature<Point>} targetPoint the reference point
- * @param {FeatureCollection<Point>} points against input point set
- * @return {Feature<Point>} the closest point in the set to the reference point
- * @example
- * var point = {
- *   "type": "Feature",
- *   "properties": {
- *     "marker-color": "#0f0"
- *   },
- *   "geometry": {
- *     "type": "Point",
- *     "coordinates": [28.965797, 41.010086]
- *   }
- * };
- * var against = {
- *   "type": "FeatureCollection",
- *   "features": [
- *     {
- *       "type": "Feature",
- *       "properties": {},
- *       "geometry": {
- *         "type": "Point",
- *         "coordinates": [28.973865, 41.011122]
- *       }
- *     }, {
- *       "type": "Feature",
- *       "properties": {},
- *       "geometry": {
- *         "type": "Point",
- *         "coordinates": [28.948459, 41.024204]
- *       }
- *     }, {
- *       "type": "Feature",
- *       "properties": {},
- *       "geometry": {
- *         "type": "Point",
- *         "coordinates": [28.938674, 41.013324]
- *       }
- *     }
- *   ]
- * };
- *
- * var nearest = turf.nearest(point, against);
- * nearest.properties['marker-color'] = '#f00';
- *
- * var resultFeatures = against.features.concat(point);
- * var result = {
- *   "type": "FeatureCollection",
- *   "features": resultFeatures
- * };
- *
- * //=result
- */
-module.exports = function (targetPoint, points) {
-    var nearestPoint, minDist = Infinity;
-    for (var i = 0; i < points.features.length; i++) {
-        var distanceToPoint = distance(targetPoint, points.features[i], 'miles');
-        if (distanceToPoint < minDist) {
-            nearestPoint = points.features[i];
-            minDist = distanceToPoint;
-        }
-    }
-    return nearestPoint;
-};
-
-},{"turf-distance":16}],21:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /**
  * Takes coordinates and properties (optional) and returns a new {@link Point} feature.
  *
