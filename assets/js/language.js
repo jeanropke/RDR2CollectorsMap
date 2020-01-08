@@ -39,8 +39,18 @@ Language.setMenuLanguage = function ()
 
     $('.leaflet-control-layers-list span').each(function (key, value) {
       var element = $(value);
-      //trim() needed. there is a space before the text
-      //eg: ' map.layers.default'
-      element.text(Language.get(element.text().trim()));
+
+      switch (key) {
+        case 0:
+          element.text(Language.get('map.layers.default'));
+          break;
+        case 2:
+          element.text(Language.get('map.layers.dark'));
+          break;
+        case 1:
+        default:
+          element.text(Language.get('map.layers.detailed'));
+          break;
+      }
     });
 };
