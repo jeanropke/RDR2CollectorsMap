@@ -8,14 +8,14 @@ var Menu = {
       return a.textContent.localeCompare(b.textContent);
     }).appendTo(menu);
   },
-  refreshTreasures: function(){
+  refreshTreasures: function () {
     $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
 
     Treasures.data.filter(function (item) {
       var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', item.text);
       var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(item.text));
 
-      if(!Treasures.enabledTreasures.includes(item.text))
+      if (!Treasures.enabledTreasures.includes(item.text))
         collectibleElement.addClass('disabled');
 
       $('.menu-hidden[data-type=treasure]').append(collectibleElement.append(collectibleTextElement));
@@ -28,7 +28,7 @@ Menu.refreshMenu = function () {
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
 
   $.each(MapBase.markers, function (_key, marker) {
-    if(marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
+    if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
       if (marker.subdata) {
         //This is for items with subdata to merge them
         if ($(`.menu-hidden[data-type=${marker.category}]`).children(`[data-type=${marker.subdata}]`).length > 0)
@@ -52,17 +52,30 @@ Menu.refreshMenu = function () {
         if (!Inventory.isEnabled)
           collectibleCountElement.hide();
 
-        $('.menu-hidden[data-type=' + marker.category + ']').append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
-
-        if (marker.amount == 10)
-          $(`[data-type=${marker.subdata}]`).addClass('disabled');
+        $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
 
         if (marker.lat.length == 0)
           $(`[data-type=${marker.subdata}]`).addClass('not-found');
 
+        if (marker.amount >= Inventory.stackSize)
+          $(`[data-type=${marker.subdata}]`).addClass('disabled');
+
+        var _markers = MapBase.markers.filter(function (_marker) {
+          if (marker.subdata != _marker.subdata)
+            return false;
+
+          if (_marker.day != Cycles.data.cycles[Cycles.data.current][_marker.category])
+            return false;
+
+          return true;
+        });
+
+        if ((_markers.length == 1 && !_markers[0].canCollect) || _markers.every(function (marker) { return !marker.canCollect; }))
+          $(`[data-type=${marker.subdata}]`).addClass('disabled');
+
         //set green color of weekly collection items (flowers and eggs)
         for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
-          if ((`flower_${marker.subdata}`) == weeklyItems[i].item || (`egg_${marker.subdata}`) == weeklyItems[i].item) {
+          if (`flower_${marker.subdata}` == weeklyItems[i].item || `egg_${marker.subdata}` == weeklyItems[i].item) {
             $(`[data-type=${marker.subdata}]`).addClass('weekly-item');
           }
         }
@@ -86,19 +99,24 @@ Menu.refreshMenu = function () {
         if (marker.lat.length == 0)
           $(`[data-type=${marker.text}]`).addClass('not-found');
 
+        if (marker.amount >= Inventory.stackSize)
+          $(`[data-type=${marker.text}]`).addClass('disabled');
+
         if (!marker.canCollect)
           $(`[data-type=${marker.text}]`).addClass('disabled');
 
         // set green color of weekly collection items (other items)
         for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
-          if ((marker.text) == weeklyItems[i].item) {
+          if (marker.text == weeklyItems[i].item) {
             $(`[data-type=${marker.text}]`).addClass('weekly-item');
           }
         }
       }
     }
   });
-  Menu.refreshTreasures();  
+
+  Menu.refreshTreasures();
+
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
       $('[data-type=' + value + ']').addClass('disabled');

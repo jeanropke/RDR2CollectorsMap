@@ -49,6 +49,10 @@ p {
     margin: 0!important;
 }
 
+input, select, .btn {
+    outline: none;
+}
+
 #main-header {
     display: flex;
     margin: 0 10px 10px 10px;
@@ -275,6 +279,17 @@ p {
     color: #f0f0f0;
     font-size: 14px;
     width: 100%;
+    border-radius: 3px;
+}
+
+.input-file {
+    background-image: url(../images/menu_hover.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: none;
+    padding: 6px 16px;
+    color: #f0f0f0;
+    font-size: 14px;
     border-radius: 3px;
 }
 
@@ -560,6 +575,10 @@ a.wiki-page:visited {
     min-width: 40px;
     height: 30px;
     padding: 0 0 0 8px;
+}
+
+.explain-text {
+    margin-bottom: 12px !important;
 }
 
 #debug-marker-lat, #debug-marker-lng {

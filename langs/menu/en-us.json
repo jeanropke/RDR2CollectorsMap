@@ -78,7 +78,7 @@
 	{"key": "menu.route_generator", "value": "Route generator"},
 	{"key": "menu.generate_route", "value": "Generate route"},
 	{"key": "menu.generate_route_clear", "value": "Clear route"},
-	{"key": "menu.generate_route_generate_on_visit", "value": "Generate route on every visit"},
+	{"key": "menu.generate_route_generate_on_visit", "value": "Generate route on page visit"},
 	{"key": "menu.generate_route_ignore_collected", "value": "Ignore collected items"},
 	{"key": "menu.generate_route_distance", "value": "Maximum line length"},
 	{"key": "menu.generate_route_start", "value": "Route starts at"},
@@ -101,5 +101,12 @@
 	{"key": "menu.month.october", "value": "October"},
 	{"key": "menu.month.november", "value": "November"},
 	{"key": "menu.month.december", "value": "December"},
-	{"key": "menu.date", "value": "{day} {month}"}
+	{"key": "menu.date", "value": "{day} {month}"},
+	{"key": "map.layers.default", "value": "Default"},
+	{"key": "map.layers.detailed", "value": "Detailed"},
+	{"key": "map.layers.dark", "value": "Dark"},
+	{"key": "menu.import_export_title", "value": "Import/Export"},
+	{"key": "menu.import_export_explanation", "value": "This will import or export your settings. Importing settings will replace all current settings and reload the page."},
+	{"key": "menu.import_button", "value": "Import"},
+	{"key": "menu.export_button", "value": "Export"}
 ]

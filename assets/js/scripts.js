@@ -96,8 +96,8 @@ function init() {
     return categoriesDisabledByDefault.indexOf(item) === -1;
   });
 
-  if (typeof $.cookie('map-layer') === 'undefined')
-    $.cookie('map-layer', 'Detailed', { expires: 999 });
+  if (typeof $.cookie('map-layer') === 'undefined' || isNaN(parseInt($.cookie('map-layer'))))
+    $.cookie('map-layer', 1, { expires: 999 });
 
 
   if (!availableLanguages.includes(Settings.language))
@@ -121,15 +121,15 @@ function init() {
           inventory[value.text].isCollected = false;
 
         value.isCollected = false;
-        value.canCollect = value.amount < 10;
+        value.canCollect = value.amount < Inventory.stackSize;
       });
       MapBase.save();
     }
   }
   $.cookie('date', date, { expires: 7 });
 
-  Language.setMenuLanguage();
   MapBase.init();
+  Language.setMenuLanguage();
 
   setMapBackground($.cookie('map-layer'));
 
@@ -145,24 +145,25 @@ function init() {
   changeCursor();
 }
 
-function setMapBackground(mapName) {
-  switch (mapName) {
+function setMapBackground(mapIndex) {
+  switch (parseInt(mapIndex)) {
     default:
-    case 'Default':
+    case 0:
       $('#map').css('background-color', '#d2b790');
       break;
 
-    case 'Detailed':
+    case 1:
       $('#map').css('background-color', '#d2b790');
       break;
 
-    case 'Dark':
+    case 2:
       $('#map').css('background-color', '#3d3d3d');
       break;
   }
 
-  $.cookie('map-layer', mapName, { expires: 999 });
+  $.cookie('map-layer', mapIndex, { expires: 999 });
 }
+
 function changeCursor() {
   if (Settings.isCoordsEnabled || Routes.customRouteEnabled)
     $('.leaflet-grab').css('cursor', 'pointer');
@@ -193,6 +194,20 @@ function setClipboardText(text) {
   el.select();
   document.execCommand('copy');
   document.body.removeChild(el)
+}
+
+// Simple download function
+function downloadAsFile(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
 }
 
 setInterval(function () {
@@ -252,6 +267,7 @@ $("#show-all-markers").on("change", function () {
 $('.menu-option.clickable input').on('click', function (e) {
   e.stopPropagation();
 });
+
 //change cycle by collection
 $('.menu-option.clickable input').on('change', function (e) {
   var el = $(e.target);
@@ -259,6 +275,7 @@ $('.menu-option.clickable input').on('change', function (e) {
   MapBase.addMarkers();
   Menu.refreshMenu();
 });
+
 //Search system on menu
 $("#search").on("input", function () {
   searchTerms = [];
@@ -286,7 +303,7 @@ $("#reset-markers").on("change", function () {
         inventory[value.text].isCollected = false;
 
       value.isCollected = false;
-      value.canCollect = value.amount < 10;
+      value.canCollect = value.amount < Inventory.stackSize;
     });
 
     MapBase.save();
@@ -415,10 +432,10 @@ $('.collection-sell').on('click', function (e) {
 
 //Remove item from map when using the menu
 $(document).on('click', '.collectible-wrapper', function () {
-  var collectible = $(this);
+  var collectible = $(this).data('type');
+  var category = $(this).parent().data('type');
 
-  MapBase.removeItemFromMap(collectible.data('type'), collectible.data('type'));
-
+  MapBase.removeItemFromMap(Cycles.data.cycles[Cycles.data.current][category], collectible, collectible, category);
 });
 
 //Open & close side menu
@@ -444,7 +461,11 @@ $('#marker-cluster').on("change", function () {
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
 });
-//Inventory triggers
+
+/**
+ * Inventory
+ */
+
 //Enable & disable inventory on menu
 $('#enable-inventory').on("change", function () {
   var inputValue = $('#enable-inventory').val();
@@ -472,8 +493,69 @@ $('#inventory-stack').on("change", function () {
 });
 
 /**
+ * Cookie import/exporting
+ */
+
+$('#cookie-export').on("click", function () {
+  try {
+    var cookies = $.cookie();
+
+    // Google Analytics cookie isn't relevant.
+    delete cookies._ga;
+
+    var cookiesJson = JSON.stringify(cookies, null, 4);
+
+    downloadAsFile("collectible-map-settings.json", cookiesJson);
+  } catch (error) {
+    console.error(error);
+    alert("This feature is not supported by your browser.");
+  }
+});
+
+$('#cookie-import').on('click', function () {
+  try {
+    var file = $('#cookie-import-file').prop('files')[0];
+
+    if (!file) {
+      alert("Please select a file in the field above the import button, then try again.");
+      return;
+    }
+
+    file.text().then(function (res) {
+      var json = null;
+
+      try {
+        json = JSON.parse(res);
+      } catch (error) {
+        alert("The file you selected was not valid. Please select a different file.");
+        return;
+      }
+
+      // Remove all current cookies.
+      var currentCookies = $.cookie();
+
+      Object.keys(currentCookies).forEach(cookie => {
+        $.removeCookie(cookie);
+      });
+
+      // Import all the cookies from the file.
+      Object.keys(json).forEach(key => {
+        $.cookie(key, json[key], { expires: 999 });
+      });
+
+      // Do this for now, maybe look into refreshing the menu completely (from init) later.
+      location.reload();
+    })
+  } catch (error) {
+    console.error(error);
+    alert("This feature is not supported by your browser.");
+  }
+});
+
+/**
  * Path generator by Senexis
  */
+
 $('#generate-route-ignore-collected').on("change", function () {
   var inputValue = $('#generate-route-ignore-collected').val();
   inputValue = inputValue == 'true';
