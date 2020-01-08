@@ -142,6 +142,10 @@ function init() {
   $('#tools').val(Settings.toolType);
   $("#language").val(Settings.language);
 
+  $('#pins-place-mode').val(Settings.isPinsPlacingEnabled ? 'true' : 'false');
+  $('#pins-edit-mode').val(Settings.isPinsEditingEnabled ? 'true' : 'false');
+  Pins.loadAllPins();
+
   changeCursor();
 }
 
@@ -460,6 +464,54 @@ $('#marker-cluster').on("change", function () {
   Settings.markerCluster = inputValue == '1';
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
+});
+
+
+/**
+ * User pins
+ */
+
+$('#pins-place-mode').on("change", function () {
+  var inputValue = $('#pins-place-mode').val();
+  inputValue = inputValue == 'true';
+  $.cookie('pins-place-enabled', inputValue, { expires: 999 });
+  Settings.isPinsPlacingEnabled = inputValue;
+});
+
+$('#pins-edit-mode').on("change", function () {
+  var inputValue = $('#pins-edit-mode').val();
+  inputValue = inputValue == 'true';
+  $.cookie('pins-edit-enabled', inputValue, { expires: 999 });
+  Settings.isPinsEditingEnabled = inputValue;
+
+  Pins.loadAllPins();
+});
+
+$('#pins-export').on("click", function () {
+  try {
+    Pins.exportPins();
+  } catch (error) {
+    console.error(error);
+    alert("This feature is not supported by your browser.");
+  }
+});
+
+$('#pins-import').on('click', function () {
+  try {
+    var file = $('#pins-import-file').prop('files')[0];
+
+    if (!file) {
+      alert("Please select a file in the field above the import button, then try again.");
+      return;
+    }
+
+    file.text().then(function (text) {
+      Pins.importPins(text);
+    })
+  } catch (error) {
+    console.error(error);
+    alert("This feature is not supported by your browser.");
+  }
 });
 
 /**

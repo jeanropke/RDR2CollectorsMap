@@ -225,7 +225,7 @@ input, select, .btn {
     background-size: auto 3px;
 }
 
-.remove-button {
+.save-button, .remove-button {
     text-align: center;
     font-size: 14px;
     cursor: pointer;
@@ -317,10 +317,6 @@ input, select, .btn {
     width: 32%;
     font-weight: 500;
     color: #fff;
-}
-
-.btn-special {
-    background-color: #747474;
 }
 
 .input-day {

@@ -427,6 +427,35 @@
 
     <div class="header">
       <span class="header-border"></span>
+      <h2 class="header-title" data-text="menu.user_pins">Pins</h2>
+      <span class="header-border"></span>
+    </div>
+    <div class="routes-container">
+      <div class="input-container">
+        <label for="pins-place-mode" data-text="menu.user_pins_place_mode">Create new pin on click</label>
+        <select class="input-day narrow-select-menu" id="pins-place-mode">
+          <option value="true" data-text="menu.yes">Yes</option>
+          <option value="false" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="pins-edit-mode" data-text="menu.user_pins_edit_mode">Enable pin editing</label>
+        <select class="input-day narrow-select-menu" id="pins-edit-mode">
+          <option value="true" data-text="menu.yes">Yes</option>
+          <option value="false" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container-noflex">
+        <input id="pins-import-file" type="file" class="input-file" autocomplete="off">
+      </div>
+      <div class="input-container-noflex">
+        <button id="pins-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.import_user_pins">Import</button>
+        <button id="pins-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.export_user_pins">Export</button>
+      </div>
+    </div>
+
+    <div class="header">
+      <span class="header-border"></span>
       <h2 class="header-title" data-text="menu.inventory">Inventory</h2>
       <span class="header-border"></span>
     </div>
@@ -498,11 +527,7 @@
           autocomplete="off">
       </div>
       <div class="input-container-noflex">
-        <button id="import-custom-markers" type="button" class="btn btn-default narrow-select-menu"
-          onclick="MapBase.importCustomMarkers()">Import [Beta]</button>
-        <button id="export-custom-markers" type="button" class="btn btn-default narrow-select-menu"
-          onclick="MapBase.exportCustomMarkers()">Export [Beta]</button>
-        <button id="debug-place-marker" type="button" class="btn btn-default btn-special narrow-select-menu"
+        <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
           onclick="MapBase.submitDebugForm()">Place</button>
       </div>
     </div>
@@ -602,6 +627,7 @@
   <script src="assets/js/inventory.js?nocache=194"></script>
   <script src="assets/js/treasures.js?nocache=194"></script>
   <script src="assets/js/encounters.js?nocache=194"></script>
+  <script src="assets/js/pins.js?nocache=194"></script>
   <script src="assets/js/map.js?nocache=194"></script>
   <script src="assets/js/language.js?nocache=194"></script>
   <script src="assets/js/menu.js?nocache=194"></script>
