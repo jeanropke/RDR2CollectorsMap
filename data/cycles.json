@@ -1,6 +1,6 @@
 {
-    "updated_at": "january 7",
-    "current": "25",
+    "updated_at": "january 8",
+    "current": "26",
     "cycles": {
         "1": {
             "american_flowers"  : 5,
@@ -416,6 +416,23 @@
             "card_swords"       : 3,
             "card_wands"        : 3,
             "random"            : 3
+        },
+        "26": {
+            "american_flowers"  : 2,
+            "antique_bottles"   : 4,
+            "arrowhead"         : 5,
+            "bird_eggs"         : 1,
+            "coin"              : 5,
+            "family_heirlooms"  : 2,
+            "lost_bracelet"     : 2,
+            "lost_earrings"     : 2,
+            "lost_necklaces"    : 2,
+            "lost_ring"         : 2,
+            "card_cups"         : 6,
+            "card_pentacles"    : 6,
+            "card_swords"       : 6,
+            "card_wands"        : 6,
+            "random"            : -1
         }
     }
 }
