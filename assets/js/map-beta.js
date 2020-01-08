@@ -135,7 +135,7 @@ var MapBase = {
   },
 
   loadGeoJson: function () {
-    $.getJSON('data/geojson/new-hanover.json?nocache=' + Math.random())
+    $.getJSON('data/geojson/lemoyne.json?nocache=' + Math.random())
       .done(function (data) {
         MapBase.geoJson.lemoyne = data;
 
