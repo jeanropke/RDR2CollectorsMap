@@ -531,6 +531,14 @@ $('#cookie-import').on('click', function () {
         return;
       }
 
+      // Remove all current cookies.
+      var currentCookies = $.cookie();
+
+      Object.keys(currentCookies).forEach(cookie => {
+        $.removeCookie(cookie);
+      });
+
+      // Import all the cookies from the file.
       Object.keys(json).forEach(key => {
         $.cookie(key, json[key], { expires: 999 });
       });
