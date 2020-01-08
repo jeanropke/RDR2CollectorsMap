@@ -101,14 +101,13 @@ Menu.refreshMenu = function () {
       }
       
       // set green color of weekly collection items
-      for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
-        // Flowers and eggs
-        if (`flower_${marker.subdata}` == weeklyItems[i].item || `egg_${marker.subdata}` == weeklyItems[i].item)
+      $.each(weeklyItems, function (key, weeklyItem) {
+        if (`flower_${marker.subdata}` == weeklyItem.item || `egg_${marker.subdata}` == weeklyItem.item)
           $(`[data-type=${marker.subdata}]`).addClass('weekly-item');
         // All other items
-        if (marker.text == weeklyItems[i].item)
+        if (marker.text == weeklyItem.item)
           $(`[data-type=${marker.text}]`).addClass('weekly-item');
-      }
+      });
     }
   });
 
