@@ -227,7 +227,7 @@ var Routes = {
   
 	// Generate a path using a nearest neighbor algorithm.
 	// markers: A list of all markers to generate a path with, will be filtered on isVisible.
-	generatePath: function () {
+	generatePath: async function () {
 	  // Clean up before generating.
 	  Routes.clearPath();
 	  PF.createPathFinder()
@@ -245,32 +245,43 @@ var Routes = {
 	  // The starting point of the path.
 	  var first = null;
   
+	  var starter = Routes.startMarker()
+
+	  var markerLength = newMarkers.length
+
 	  // Grab the nearest marker to the start of the path.
-	  first = Routes.nearestNeighborTo(Routes.startMarker(), newMarkers, polylines, -1);
+	  //first = Routes.nearestNeighborTo(starter, newMarkers, polylines, -1);
+	  first = await PF.findNearestTravelItem(starter, newMarkers)
+	  newMarkers = newMarkers.filter((m) => { return (m.lat != first.lat && m.lng != first.lng)})
   
 	  // The last marker from the loop.
-	  var last = first.marker;
+	  var last = first;
   
-	  var waypoints = []
-	  waypoints.push(last)
+	  var waypoints = [last]
   
 	  // Loop through all markers and pick the nearest neighbor to that marker.
-	  for (var i = 0; i < newMarkers.length; i++) {
-		var current = Routes.nearestNeighborTo(last, newMarkers, polylines, Routes.maxDistance);
+	  for (var i = 0; i < markerLength; i++) {
+		//var current = Routes.nearestNeighborTo(last, newMarkers, polylines, Routes.maxDistance);
+		var current = await PF.findNearestTravelItem(last, newMarkers);
 		if (!current) break;
-		current = current.marker;
+		newMarkers = newMarkers.filter((m) => { return (m.lat != current.lat && m.lng != current.lng) })
+		console.log(newMarkers.length)
   
 		// A last fallback to not draw paths that are too long.
-		if (Routes.getDistance(last, current) < Routes.maxDistance) {
+		//if (Routes.getDistance(last, current) < Routes.maxDistance) {
 		  polylines.push([{ lat: last.lat, lng: last.lng }, { lat: current.lat, lng: current.lng }]);
-		}
+		//}
   
 		last = current;
 		waypoints.push(last)
+		PF.pathfinderStart(waypoints)
+
+		Routes.clearPath();
+		Routes.lastPolyline = L.polyline(polylines).addTo(MapBase.map);
 	  }
   
 	  // Draw all paths on the map, and save the instance of the polyline to be able to clean it up later.
-	  Routes.lastPolyline = L.polyline(polylines).addTo(MapBase.map);
+	  
 	  PF.pathfinderStart(waypoints)
 	}
   };

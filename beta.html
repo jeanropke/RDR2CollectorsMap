@@ -40,19 +40,6 @@
       font-size: 12px;
       text-decoration: none;
     }
-    #findpath {
-      position: absolute;
-      top: 380px;
-      left: 6px;
-      z-index: 998;
-      background: white;
-      color: black;
-      padding: 6px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 12px;
-      text-decoration: none;
-    }
 
     #delete, .leaflet-draw-edit-remove {
       background-color: lightcoral !important;
@@ -623,7 +610,6 @@
   <div id="map">
     <div id='delete'>Clear all</div>
     <a href='#' id='export'>Export to .geojson</a>
-    <a href='#' id='findpath'>Find path</a>
 
   </div>
   <div class="lat-lng-container">
@@ -665,10 +651,6 @@
       // Create export
       document.getElementById('export').setAttribute('href', 'data:' + convertedData);
       document.getElementById('export').setAttribute('download', 'data.geojson');
-    }
-
-    document.getElementById('findpath').onclick = function(e) {
-      PF.pathfinderStart()
     }
   </script>
 

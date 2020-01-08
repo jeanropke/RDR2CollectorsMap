@@ -10,14 +10,23 @@ window.PF = {
 	_points: []
 }
 
-PF.getNearestNode = function(point, collection) {
-	var pointLatLng = PF.PointToLatLng(point)
+PF.getNearestNode = function(point, drawBounds) {
+	var pointLatLng = point
+	if(typeof(point.lat) == 'undefined') {
+		pointLatLng = PF.PointToLatLng(point)
+	} else {
+		pointLatLng.lat = parseFloat(pointLatLng.lat)
+		pointLatLng.lng = parseFloat(pointLatLng.lng)
+	}
 	var pointBounds = L.latLngBounds([
-		[pointLatLng.lat-10, pointLatLng.lng-10],
-		[pointLatLng.lat+10, pointLatLng.lng+10]
+		[pointLatLng.lat-5, pointLatLng.lng-5],
+		[pointLatLng.lat+5, pointLatLng.lng+5]
 	])
+	if(typeof(drawBounds) === 'boolean' && drawBounds) {
+		L.rectangle(pointBounds, {color: "#ff7800", weight: 3}).addTo(MapBase.map);
+	}
 
-	var filtered = collection.features.filter((p) => {
+	var filtered = PF._points.features.filter((p) => {
 		return pointBounds.contains(PF.PointToLatLng(p));
 	})
 	var n = {distance: Number.MAX_SAFE_INTEGER, point: null}
@@ -36,7 +45,7 @@ PF.getNearestNode = function(point, collection) {
 }
 
 PF.createPathFinder = function() {
-	window.PF._PathFinder = new PathFinder(MapBase.drawnItems.toGeoJSON(), {
+	PF._PathFinder = new PathFinder(MapBase.drawnItems.toGeoJSON(), {
 		precision: 0.04,
 		weightFn: function(a, b, props) {
 			var dx = a[0] - b[0];
@@ -44,28 +53,28 @@ PF.createPathFinder = function() {
 			return Math.sqrt(dx * dx + dy * dy);
 		}
 	})
-	var _vertices = window.PF._PathFinder._graph.vertices;
-	window.PF._points = featurecollection(
+	var _vertices = PF._PathFinder._graph.vertices;
+	PF._points = featurecollection(
 		Object
 			.keys(_vertices)
 			.filter(function(nodeName) {
 				return Object.keys(_vertices[nodeName]).length
 			})
 			.map(function(nodeName) {
-				var vertice = window.PF._PathFinder._graph.sourceVertices[nodeName]
+				var vertice = PF._PathFinder._graph.sourceVertices[nodeName]
 				return point(vertice)
 			})
 	);
 }
 
 PF.latLngToPoint = function(latlng) {
-	return {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[latlng.lng, latlng.lat]}}
+	return {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[parseFloat(latlng.lng), parseFloat(latlng.lat)]}}
 }
 PF.PointToLatLng = function(point) {
 	return L.latLng(point.geometry.coordinates[1], point.geometry.coordinates[0])
 }
 
-PF.createControler = function() {
+PF.createController = function() {
 	if(PF.router !== null) {
 		MapBase.map.removeControl(PF.router)
 	}
@@ -74,6 +83,10 @@ PF.createControler = function() {
 		showAlternatives: false,
 		fitSelectedRoutes: false,
 		plan: L.Routing.plan([], { draggableWaypoints: false, createMarker: function(){} }),
+		lineOptions: {
+			styles: [{color: 'black', opacity: 0.15, weight: 9}, {color: 'white', opacity: 0.8, weight: 6}, {color: 'blue', opacity: 1, weight: 2}],
+			addWaypoints: false
+		},
 		router: { route: function(waypoints, callback, context) {
 			if(PF._PathFinder === null) PF.createPathFinder()
 			console.log('Finding route...')
@@ -81,7 +94,7 @@ PF.createControler = function() {
 			let pick = []
 			for(let i = 0; i < waypoints.length; i++) {
 				var point = PF.latLngToPoint(waypoints[i].latLng)
-				var realpoint = PF.getNearestNode(point, PF._points)
+				var realpoint = PF.getNearestNode(point)
 				if(realpoint !== null)
 					pick.push(realpoint)
 			}
@@ -91,13 +104,19 @@ PF.createControler = function() {
 				var weight = 0
 	
 				for(let i = 1; i < pick.length; i++) {
-					pathWaypoints.push({latLng: PF.PointToLatLng(pick[i])})
 					var p = PF._PathFinder.findPath(
 						pick[i-1],
 						pick[i]
 					)
 					if(p !== null) {
+						pathWaypoints.push({latLng: PF.PointToLatLng(pick[i])})
+
+						if(pathPoints.length == 0)
+							pathPoints.push(pick[i-1].geometry.coordinates)
+
 						pathPoints = pathPoints.concat(p.path)
+						pathPoints.push(PF.latLngToPoint(waypoints[i].latLng).geometry.coordinates)
+
 						weight += p.weight
 					}
 				}
@@ -128,21 +147,40 @@ PF.createControler = function() {
 	}).addTo(MapBase.map)
 }
 
-PF.findNearestTravelItem = function(start, markers) {
+PF.findNearestTravelItem = async function(start, markers) {
 	if(PF._PathFinder === null) PF.createPathFinder()
 
+	var startPoint = PF.getNearestNode(start)
+
+	var markerPoints = markers.map(function(mark){
+		return PF.getNearestNode(mark)
+	})
+
+	var shortest = {weight: Number.MAX_SAFE_INTEGER, marker: false}
+	for(let i = 0; i < markerPoints.length; i++) {
+		if(markerPoints[i] == null) continue
+		var path = await (new Promise((res) => { window.requestAnimationFrame(() => {
+			res(PF._PathFinder.findPath(startPoint, markerPoints[i]))
+		}) }))
+		if(path !== null) {
+			if(path.weight < shortest.weight) {
+				shortest.weight = path.weight
+				shortest.marker = markers[i]
+			}
+		}
+	}
+	
+	return shortest.marker
 }
 
 PF.pathfinderStart = function(markers) {
 	if(PF.router === null)
-		PF.createControler()
+		PF.createController()
 
 	if(typeof(markers) === 'undefined') markers = MapBase.markers.filter((marker) => { return marker.isVisible; })
 	var markersWaypoints = []
 	for(let i = 0; i < markers.length; i++) {
-		if(markers[i].lat < -61 && markers[i].lng > 120) {
-			markersWaypoints.push([parseFloat(markers[i].lat), parseFloat(markers[i].lng)])
-		}
+		markersWaypoints.push([parseFloat(markers[i].lat), parseFloat(markers[i].lng)])
 	}
 	PF.router.setWaypoints(markersWaypoints)
 	//window.router.route()
