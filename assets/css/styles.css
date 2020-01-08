@@ -579,6 +579,7 @@ a.wiki-page:visited {
 
 .explain-text {
     margin-bottom: 12px !important;
+    font-size: 14px;
 }
 
 #debug-marker-lat, #debug-marker-lng {
