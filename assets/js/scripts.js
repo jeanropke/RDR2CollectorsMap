@@ -532,7 +532,7 @@ $('#cookie-import').on('click', function () {
       }
 
       Object.keys(json).forEach(key => {
-        $.cookie(key, json[key]);
+        $.cookie(key, json[key], { expires: 999 });
       });
 
       // Do this for now, maybe look into refreshing the menu completely (from init) later.
