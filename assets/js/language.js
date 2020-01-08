@@ -44,12 +44,13 @@ Language.setMenuLanguage = function ()
         case 0:
           element.text(' ' + Language.get('map.layers.default'));
           break;
+        case 1:
+          element.text(' ' + Language.get('map.layers.detailed'));
+          break;
         case 2:
           element.text(' ' + Language.get('map.layers.dark'));
           break;
-        case 1:
         default:
-          element.text(' ' + Language.get('map.layers.detailed'));
           break;
       }
     });
