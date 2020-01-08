@@ -104,5 +104,9 @@
 	{"key": "menu.date", "value": "{day} {month}"},
 	{"key": "map.layers.default", "value": "Default"},
 	{"key": "map.layers.detailed", "value": "Detailed"},
-	{"key": "map.layers.dark", "value": "Dark"}
+	{"key": "map.layers.dark", "value": "Dark"},
+	{"key": "menu.import_export_title", "value": "Import/Export"},
+	{"key": "menu.import_export_explanation", "value": "This will import or export your settings. Importing settings will reload the page."},
+	{"key": "menu.import_button", "value": "Import"},
+	{"key": "menu.export_button", "value": "Export"}
 ]

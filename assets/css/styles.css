@@ -562,6 +562,10 @@ a.wiki-page:visited {
     padding: 0 0 0 8px;
 }
 
+.explain-text {
+    margin-bottom: 12px !important;
+}
+
 #debug-marker-lat, #debug-marker-lng {
     width: calc(50% - 4px);
 }

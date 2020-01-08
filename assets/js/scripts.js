@@ -196,6 +196,20 @@ function setClipboardText(text) {
   document.body.removeChild(el)
 }
 
+// Simple download function
+function downloadAsFile(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
 setInterval(function () {
 
   // Clock in game created by Michal__d
@@ -447,7 +461,11 @@ $('#marker-cluster').on("change", function () {
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
 });
-//Inventory triggers
+
+/**
+ * Inventory
+ */
+
 //Enable & disable inventory on menu
 $('#enable-inventory').on("change", function () {
   var inputValue = $('#enable-inventory').val();
@@ -475,8 +493,61 @@ $('#inventory-stack').on("change", function () {
 });
 
 /**
+ * Cookie import/exporting
+ */
+
+$('#cookie-export').on("click", function () {
+  try {
+    var cookies = $.cookie();
+
+    // Google Analytics cookie isn't relevant.
+    delete cookies._ga;
+
+    var cookiesJson = JSON.stringify(cookies, null, 4);
+
+    downloadAsFile("collectible-map-settings.json", cookiesJson);
+  } catch (error) {
+    console.error(error);
+    alert("This feature is not supported by your browser.");
+  }
+});
+
+$('#cookie-import').on('click', function () {
+  try {
+    var file = $('#cookie-import-file').prop('files')[0];
+
+    if (!file) {
+      alert("Please select a file in the field above the import button, then try again.");
+      return;
+    }
+
+    file.text().then(function (res) {
+      var json = null;
+
+      try {
+        json = JSON.parse(res);
+      } catch (error) {
+        alert("The file you selected was not valid. Please select a different file.");
+        return;
+      }
+
+      Object.keys(json).forEach(key => {
+        $.cookie(key, json[key]);
+      });
+
+      // Do this for now, maybe look into refreshing the menu completely (from init) later.
+      location.reload();
+    })
+  } catch (error) {
+    console.error(error);
+    alert("This feature is not supported by your browser.");
+  }
+});
+
+/**
  * Path generator by Senexis
  */
+
 $('#generate-route-ignore-collected').on("change", function () {
   var inputValue = $('#generate-route-ignore-collected').val();
   inputValue = inputValue == 'true';
