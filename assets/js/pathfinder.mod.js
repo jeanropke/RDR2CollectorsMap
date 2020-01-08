@@ -4,10 +4,60 @@ var point = require('turf-point')
 var featurecollection = require('turf-featurecollection')
 //var lemoyne = require('./../../data/geojson/lemoyne.json')
 
+
+class Chunk {
+
+	constructor() {
+		this.markers = []
+		this.bounds = null
+	}
+
+	_calcBounds() {
+		var latMin = null
+		var lngMin = null
+		var latMax = null
+		var lngMax = null
+		for(var i = 0; i < this.markers.length; i++) {
+			this.markers[i].lat = parseFloat(this.markers[i].lat)
+			this.markers[i].lng = parseFloat(this.markers[i].lng)
+			if(latMin === null || this.markers[i].lat < latMin) latMin = this.markers[i].lat
+			if(lngMin === null || this.markers[i].lng < lngMin) lngMin = this.markers[i].lng
+			if(latMax === null || this.markers[i].lat > latMax) latMax = this.markers[i].lat
+			if(lngMax === null || this.markers[i].lng > lngMax) lngMax = this.markers[i].lng
+		}
+		if(latMin == latMax) latMax += 0.000001
+		if(lngMin == lngMax) lngMax += 0.000001
+
+		this.bounds = L.latLngBounds({ lat: latMin, lng: lngMin }, { lat: latMax, lng: lngMax })
+	}
+
+	_canAdd(marker) {
+		if(this.bounds == null) return true
+		var d = MapBase.map.distance(marker, this.bounds.getCenter())
+		return d < 10
+	}
+
+	addMarker(marker) {
+		if(this._canAdd(marker)) {
+			this.markers.push(marker)
+			this._calcBounds()
+			return true
+		} else {
+			return false
+		}
+	}
+
+	getBounds() {
+		return this.bounds
+	}
+
+}
+
 window.PF = {
 	router: null,
 	_PathFinder: null,
-	_points: []
+	_points: [],
+	_chunks: []
 }
 
 PF.getNearestNode = function(point, drawBounds) {
@@ -44,6 +94,31 @@ PF.getNearestNode = function(point, drawBounds) {
 	return n.point
 }
 
+PF.generateChunks = function() {
+	var markers = MapBase.markers.filter((marker) => { return marker.isVisible; })
+
+	var chunks = [new Chunk()]
+	for(var i = 0; i < markers.length; i++) {
+		var added = false
+		for(var j = 0; j < chunks.length; j++) {
+			if(chunks[j].addMarker(markers[i])) {
+				added = true
+				break
+			}
+		}
+		if(!added) {
+			var c = new Chunk()
+			c.addMarker(markers[i])
+			chunks.push(c)
+		}
+	}
+
+	console.log(chunks.length)
+	for(var j = 0; j < chunks.length; j++) {
+		L.rectangle(chunks[j].getBounds(), {color: "#ff7800", weight: 1}).addTo(MapBase.map);
+	}
+}
+
 PF.createPathFinder = function() {
 	PF._PathFinder = new PathFinder(MapBase.drawnItems.toGeoJSON(), {
 		precision: 0.04,
@@ -65,6 +140,8 @@ PF.createPathFinder = function() {
 				return point(vertice)
 			})
 	);
+
+	PF.generateChunks()
 }
 
 PF.latLngToPoint = function(latlng) {
@@ -147,7 +224,7 @@ PF.createController = function() {
 	}).addTo(MapBase.map)
 }
 
-PF.findNearestTravelItem = async function(start, markers) {
+PF.findNearestTravelItem = async function(start, markers, maxWeight) {
 	if(PF._PathFinder === null) PF.createPathFinder()
 
 	var startPoint = PF.getNearestNode(start)
@@ -156,14 +233,14 @@ PF.findNearestTravelItem = async function(start, markers) {
 		return PF.getNearestNode(mark)
 	})
 
-	var shortest = {weight: Number.MAX_SAFE_INTEGER, marker: false}
+	var shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null}
 	for(let i = 0; i < markerPoints.length; i++) {
 		if(markerPoints[i] == null) continue
 		var path = await (new Promise((res) => { window.requestAnimationFrame(() => {
 			res(PF._PathFinder.findPath(startPoint, markerPoints[i]))
 		}) }))
 		if(path !== null) {
-			if(path.weight < shortest.weight) {
+			if(maxWeight <= path.weight && path.weight < shortest.weight) {
 				shortest.weight = path.weight
 				shortest.marker = markers[i]
 			}
