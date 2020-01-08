@@ -73,12 +73,6 @@ Menu.refreshMenu = function () {
         if ((_markers.length == 1 && !_markers[0].canCollect) || _markers.every(function (marker) { return !marker.canCollect; }))
           $(`[data-type=${marker.subdata}]`).addClass('disabled');
 
-        //set green color of weekly collection items (flowers and eggs)
-        for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
-          if (`flower_${marker.subdata}` == weeklyItems[i].item || `egg_${marker.subdata}` == weeklyItems[i].item) {
-            $(`[data-type=${marker.subdata}]`).addClass('weekly-item');
-          }
-        }
       } else {
         //All others items
         var collectibleImage = null;
@@ -104,13 +98,16 @@ Menu.refreshMenu = function () {
 
         if (!marker.canCollect)
           $(`[data-type=${marker.text}]`).addClass('disabled');
-
-        // set green color of weekly collection items (other items)
-        for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
-          if (marker.text == weeklyItems[i].item) {
-            $(`[data-type=${marker.text}]`).addClass('weekly-item');
-          }
-        }
+      }
+      
+      // set green color of weekly collection items
+      for (var i = 0, weeklyItemsLength = weeklyItems.length; i < weeklyItemsLength; i++) {
+        // Flowers and eggs
+        if (`flower_${marker.subdata}` == weeklyItems[i].item || `egg_${marker.subdata}` == weeklyItems[i].item)
+          $(`[data-type=${marker.subdata}]`).addClass('weekly-item');
+        // All other items
+        if (marker.text == weeklyItems[i].item)
+          $(`[data-type=${marker.text}]`).addClass('weekly-item');
       }
     }
   });
