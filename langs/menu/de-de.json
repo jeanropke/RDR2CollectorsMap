@@ -137,6 +137,5 @@
 	{"key": "menu.pins_import_export_title", "value": "Eigene Markierungen"},
 	{"key": "menu.pins_import_export_explanation", "value": "Hier kannst du deine eigenen Markierungen importieren oder exportieren. Beim Importieren werden alle eigenen Markierungen ersetzt."},
 	{"key": "menu.information_links", "value": "Links/Informationen"},
-	{"key": "menu.read_wiki", "value": "Karten-Wiki lesen"},
-	{"key": "menu.rdo_map", "value": "Red Dead Online Karte"}
+	{"key": "menu.read_wiki", "value": "Karten-Wiki lesen"}
 ]
