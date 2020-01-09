@@ -93,7 +93,7 @@ var Pins = {
             markerIconSelect = $('<select>').attr('id', `${markerId}_icon`).addClass('marker-popup-pin-input-icon');
 
             markerIcons.forEach(icon => {
-                var option = $('<option></option>').attr('value', icon).attr('data-text', `map.user_pins.icon.${icon}`).text(icon);
+                var option = $('<option></option>').attr('value', icon).attr('data-text', `map.user_pins.icon.${icon}`).text(Language.get(`map.user_pins.icon.${icon}`));
                 if (icon == marker.options.icon_name) option.attr('selected','selected');
                 markerIconSelect.append(option);
             });
