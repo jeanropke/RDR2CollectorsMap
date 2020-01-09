@@ -262,6 +262,25 @@ input, textarea, select, .btn {
     resize: none;
 }
 
+.marker-popup-pin-input-divider {
+    margin: 2px 0;
+    border: none;
+    border-top: solid 1px #B0B0B0;
+}
+
+.marker-popup-pin-label {
+    margin-bottom: 2px;
+}
+
+.marker-popup-pin-input-icon {
+    background: #eee;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    height: 100%;
+    border-radius: 3px;
+}
+
 .hide-show-container, .custom-routes-container {
     display: flex;
     justify-content: space-around;

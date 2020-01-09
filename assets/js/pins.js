@@ -1,14 +1,16 @@
 var Pins = {
     pinsList: [],
 
-    addPin: function (lat, lng, id = null, name = null, desc = null, doSave = true) {
+    addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true) {
+        var icon = icon == null ? 'pin' : icon;
         var marker = L.marker([lat, lng], {
             id: id == null ? this.generatePinHash(`${lat}_${lng}_${Date.now()}`) : id,
             name: name == null ? 'User pin' : name,
             desc: desc == null ? 'This is your custom user pin, you can edit the name and description, just don\'t forget to save!' : desc,
+            icon_name: icon,
             draggable: Settings.isPinsEditingEnabled,
             icon: L.icon({
-                iconUrl: './assets/images/icons/pin_red.png',
+                iconUrl: `./assets/images/icons/${icon}_red.png`,
                 iconSize: [35, 45],
                 iconAnchor: [17, 42],
                 popupAnchor: [1, -32],
@@ -29,12 +31,13 @@ var Pins = {
         if (doSave) this.saveAllPins();
     },
 
-    savePin: function (id, name, desc) {
+    savePin: function (id, name, desc, icon) {
         var markerIndex = this.pinsList.findIndex(function (marker) { return marker.options.id == id; });
 
         var marker = this.pinsList[markerIndex];
         marker.options.name = name.replace(/[\:\;\<\>\"]/gi, '');
         marker.options.desc = desc.replace(/[\:\;\<\>\"]/gi, '');
+        marker.options.icon_name = icon;
 
         this.updatePopup(marker);
         this.saveAllPins();
@@ -54,11 +57,13 @@ var Pins = {
         var pinnedItems = "";
 
         this.pinsList.forEach(pin => {
-            pinnedItems += `${pin._latlng.lat}:${pin._latlng.lng}:${pin.options.id}:${pin.options.name}:${pin.options.desc};`;
+            pinnedItems += `${pin._latlng.lat}:${pin._latlng.lng}:${pin.options.id}:${pin.options.name}:${pin.options.desc}:${pin.options.icon_name};`;
         });
 
         localStorage.setItem("pinned-items", pinnedItems)
         console.log("Saved all pins!");
+
+        this.loadAllPins();
     },
 
     loadAllPins: function () {
@@ -70,7 +75,7 @@ var Pins = {
             if (pinnedItem == '') return;
 
             var properties = pinnedItem.split(':');
-            this.addPin(properties[0], properties[1], properties[2], properties[3], properties[4], false);
+            this.addPin(properties[0], properties[1], properties[2] || null, properties[3] || null, properties[4] || null, properties[5] || null, false);
         });
     },
 
@@ -81,11 +86,28 @@ var Pins = {
 
     updatePopup: function (marker) {
         var markerId = marker.options.id;
+        var markerIconSelect = "";
+
+        if (Settings.isPinsEditingEnabled) {
+            var markerIcons = ["pin", "random", "spade", "metal_detector", "american_flowers", "antique_bottles", "arrowhead", "bird_eggs", "card_cups", "card_pentacles", "card_swords", "card_wands", "coin", "family_heirlooms", "fast_travel", "hide", "lost_bracelet", "lost_earrings", "lost_necklaces", "lost_ring", "nazar", "treasure"];
+            markerIconSelect = $('<select>').attr('id', `${markerId}_icon`).addClass('marker-popup-pin-input-icon');
+
+            markerIcons.forEach(icon => {
+                var option = $('<option></option>').attr('value', icon).attr('data-text', `map.user_pins.icon.${icon}`).text(icon);
+                if (icon == marker.options.icon_name) option.attr('selected','selected');
+                markerIconSelect.append(option);
+            });
+
+            markerIconSelect = markerIconSelect.prop('outerHTML');
+        }
+
         var markerTitle = Settings.isPinsEditingEnabled ? `<h1><input type="text" id="${markerId}_name" class="marker-popup-pin-input-name" value="${marker.options.name}" placeholder="Name"></h1>` : `<h1 id="${markerId}_name">${marker.options.name}</h1>`;
         var markerDesc = Settings.isPinsEditingEnabled ? `<p><textarea id="${markerId}_desc" class="marker-popup-pin-input-desc" rows="5" value="${marker.options.desc}" placeholder="Description">${marker.options.desc}</textarea></p>` : `<p id="${markerId}_desc">${marker.options.desc}</p>`;
-        var markerSaveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-info save-button" onclick="Pins.savePin(${markerId}, $('#${markerId}_name').val(), $('#${markerId}_desc').val())">Save</button>` : '';
-        var markerRemoveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-danger remove-button" onclick="Pins.removePin(${markerId})">Remove</button>` : '';
-        var markerContent = markerTitle + markerDesc + markerSaveButton + markerRemoveButton;
+        var markerDivider = Settings.isPinsEditingEnabled ? `<hr class="marker-popup-pin-input-divider">` : '';
+        var markerIconLabel = Settings.isPinsEditingEnabled ? `<label for="${markerId}_icon" class="marker-popup-pin-label" data-text="map.user_pins.icon">Icon</label>` : '';
+        var markerSaveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-info save-button" onclick="Pins.savePin(${markerId}, $('#${markerId}_name').val(), $('#${markerId}_desc').val(), $('#${markerId}_icon').val())" data-text="map.user_pins.save">Save</button>` : '';
+        var markerRemoveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-danger remove-button" onclick="Pins.removePin(${markerId})" data-text="map.user_pins.remove">Remove</button>` : '';
+        var markerContent = markerTitle + markerDesc + markerDivider + markerIconLabel + markerIconSelect + markerSaveButton + markerRemoveButton;
 
         marker.bindPopup(markerContent, { minWidth: 300, maxWidth: 300 });
     },
