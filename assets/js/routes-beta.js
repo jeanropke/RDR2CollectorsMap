@@ -228,6 +228,9 @@ var Routes = {
 	// Generate a path using a nearest neighbor algorithm.
 	// markers: A list of all markers to generate a path with, will be filtered on isVisible.
 	generatePath: async function () {
+
+	  return PF.pathfinderStart()
+
 	  // Clean up before generating.
 	  Routes.clearPath();
 	  PF.createPathFinder()
@@ -250,9 +253,9 @@ var Routes = {
 	  var markerLength = newMarkers.length
 
 	  // Grab the nearest marker to the start of the path.
-	  //first = Routes.nearestNeighborTo(starter, newMarkers, polylines, -1);
+	  //first = Routes.nearestNeighborTo(Routes.startMarker(), newMarkers, polylines, -1);
 	  first = await PF.findNearestTravelItem(starter, newMarkers)
-	  newMarkers = newMarkers.filter((m) => { return (m.lat != first.lat && m.lng != first.lng)})
+	  newMarkers = newMarkers.filter((m) => { return (m.text != first.text)})
   
 	  // The last marker from the loop.
 	  var last = first;
@@ -264,7 +267,7 @@ var Routes = {
 		//var current = Routes.nearestNeighborTo(last, newMarkers, polylines, Routes.maxDistance);
 		var current = await PF.findNearestTravelItem(last, newMarkers);
 		if (!current) break;
-		newMarkers = newMarkers.filter((m) => { return (m.lat != current.lat && m.lng != current.lng) })
+		newMarkers = newMarkers.filter((m) => { return (m.text != current.text) })
 		console.log(newMarkers.length)
   
 		// A last fallback to not draw paths that are too long.

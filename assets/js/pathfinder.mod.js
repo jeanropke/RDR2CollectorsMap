@@ -10,6 +10,7 @@ class Chunk {
 	constructor() {
 		this.markers = []
 		this.bounds = null
+		this.isDone = false
 	}
 
 	_calcBounds() {
@@ -18,8 +19,6 @@ class Chunk {
 		var latMax = null
 		var lngMax = null
 		for(var i = 0; i < this.markers.length; i++) {
-			this.markers[i].lat = parseFloat(this.markers[i].lat)
-			this.markers[i].lng = parseFloat(this.markers[i].lng)
 			if(latMin === null || this.markers[i].lat < latMin) latMin = this.markers[i].lat
 			if(lngMin === null || this.markers[i].lng < lngMin) lngMin = this.markers[i].lng
 			if(latMax === null || this.markers[i].lat > latMax) latMax = this.markers[i].lat
@@ -38,6 +37,8 @@ class Chunk {
 	}
 
 	addMarker(marker) {
+		marker.lat = parseFloat(marker.lat)
+		marker.lng = parseFloat(marker.lng)
 		if(this._canAdd(marker)) {
 			this.markers.push(marker)
 			this._calcBounds()
@@ -47,8 +48,55 @@ class Chunk {
 		}
 	}
 
+	contains(marker) {
+		for(var i = 0; i < this.markers.length; i++) {
+			if(this.markers[i].text == marker.text)
+				return true
+		}
+		return false
+	}
+
 	getBounds() {
 		return this.bounds
+	}
+
+	static get chunks() {
+		if(typeof(Chunk._chunks) === 'undefined') return []
+		return Chunk._chunks
+	}
+
+	static newChunk() {
+		if(typeof(Chunk._chunks) === 'undefined') Chunk.clearChunks()
+		var c = new Chunk()
+		Chunk._chunks.push(c)
+		return c
+	}
+
+	static clearChunks() {
+		Chunk._chunks = []
+	}
+
+	static sortMarker(marker) {
+		var added = false
+		for(var j = 0; j < Chunk.chunks.length; j++) {
+			if(Chunk.chunks[j].addMarker(marker)) {
+				added = true
+				break
+			}
+		}
+		if(!added) {
+			var c = Chunk.newChunk()
+			c.addMarker(marker)
+		}
+	}
+
+	static getChunkByMarker(marker) {
+		for(var j = 0; j < Chunk.chunks.length; j++) {
+			if(Chunk.chunks[j].contains(marker)) {
+				return Chunk.chunks[j]
+			}
+		}
+		return null
 	}
 
 }
@@ -57,7 +105,10 @@ window.PF = {
 	router: null,
 	_PathFinder: null,
 	_points: [],
-	_chunks: []
+	_currentChunk: null,
+	_layerGroup: null,
+	_layerControl: null,
+	_running: false
 }
 
 PF.getNearestNode = function(point, drawBounds) {
@@ -68,9 +119,10 @@ PF.getNearestNode = function(point, drawBounds) {
 		pointLatLng.lat = parseFloat(pointLatLng.lat)
 		pointLatLng.lng = parseFloat(pointLatLng.lng)
 	}
+	var searchArea = 5
 	var pointBounds = L.latLngBounds([
-		[pointLatLng.lat-5, pointLatLng.lng-5],
-		[pointLatLng.lat+5, pointLatLng.lng+5]
+		[pointLatLng.lat-searchArea, pointLatLng.lng-searchArea],
+		[pointLatLng.lat+searchArea, pointLatLng.lng+searchArea]
 	])
 	if(typeof(drawBounds) === 'boolean' && drawBounds) {
 		L.rectangle(pointBounds, {color: "#ff7800", weight: 3}).addTo(MapBase.map);
@@ -95,28 +147,16 @@ PF.getNearestNode = function(point, drawBounds) {
 }
 
 PF.generateChunks = function() {
+	Chunk.clearChunks()
+
 	var markers = MapBase.markers.filter((marker) => { return marker.isVisible; })
-
-	var chunks = [new Chunk()]
 	for(var i = 0; i < markers.length; i++) {
-		var added = false
-		for(var j = 0; j < chunks.length; j++) {
-			if(chunks[j].addMarker(markers[i])) {
-				added = true
-				break
-			}
-		}
-		if(!added) {
-			var c = new Chunk()
-			c.addMarker(markers[i])
-			chunks.push(c)
-		}
+		Chunk.sortMarker(markers[i])
 	}
 
-	console.log(chunks.length)
-	for(var j = 0; j < chunks.length; j++) {
-		L.rectangle(chunks[j].getBounds(), {color: "#ff7800", weight: 1}).addTo(MapBase.map);
-	}
+	/*for(var j = 0; j < Chunk.chunks.length; j++) {
+		L.rectangle(Chunk.chunks[j].getBounds(), {color: "#ff7800", weight: 1}).addTo(MapBase.map);
+	}*/
 }
 
 PF.createPathFinder = function() {
@@ -145,7 +185,9 @@ PF.createPathFinder = function() {
 }
 
 PF.latLngToPoint = function(latlng) {
-	return {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[parseFloat(latlng.lng), parseFloat(latlng.lat)]}}
+	var p = {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[parseFloat(latlng.lng), parseFloat(latlng.lat)]}}
+	if(typeof(latlng.text) === 'string') p.properties.text = latlng.text
+	return p
 }
 PF.PointToLatLng = function(point) {
 	return L.latLng(point.geometry.coordinates[1], point.geometry.coordinates[0])
@@ -224,41 +266,117 @@ PF.createController = function() {
 	}).addTo(MapBase.map)
 }
 
-PF.findNearestTravelItem = async function(start, markers, maxWeight) {
+PF.findNearestChunk = function(marker, markerChunk) {
+	var c = {distance: Number.MAX_SAFE_INTEGER, c: null}
+	for(var i = 0; i < Chunk.chunks.length; i++) {
+		if(Chunk.chunks[i].isDone) continue
+		if(Chunk.chunks[i] == markerChunk) continue
+
+		var d = MapBase.map.distance(marker, Chunk.chunks[i].getBounds().getCenter())
+		if(d < c.distance) {
+			c.distance = d
+			c.c = Chunk.chunks[i]
+		}
+	}
+	return c.c
+}
+
+PF.findMarkerByPoint = function(point, markers) {
+	for(var i = 0; i < markers.length; i++) {
+		if(point.properties.text == markers[i].text)
+			return markers[i]
+	}
+	return null
+}
+
+PF.findNearestTravelItem = async function(start, markers) {
 	if(PF._PathFinder === null) PF.createPathFinder()
 
+	if(PF._currentChunk === null) {
+		PF._currentChunk = Chunk.getChunkByMarker(start)
+		if(PF._currentChunk == null) {
+			console.error('Starting marker is not in chunk', start)
+			return null
+		}
+	}
 	var startPoint = PF.getNearestNode(start)
 
-	var markerPoints = markers.map(function(mark){
-		return PF.getNearestNode(mark)
-	})
 
 	var shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null}
-	for(let i = 0; i < markerPoints.length; i++) {
-		if(markerPoints[i] == null) continue
-		var path = await (new Promise((res) => { window.requestAnimationFrame(() => {
-			res(PF._PathFinder.findPath(startPoint, markerPoints[i]))
-		}) }))
-		if(path !== null) {
-			if(maxWeight <= path.weight && path.weight < shortest.weight) {
-				shortest.weight = path.weight
-				shortest.marker = markers[i]
+	while(shortest.marker === null) {
+		var availableInChunk = PF._currentChunk.markers.filter((m) => { return markers.includes(m) })
+		if(PF._currentChunk.isDone || availableInChunk.length <= 0) {
+			PF._currentChunk.isDone = true
+			PF._currentChunk = PF.findNearestChunk(start, PF._currentChunk)
+			if(PF._currentChunk == null) return null
+			availableInChunk = PF._currentChunk.markers.filter((m) => { return markers.includes(m) })
+		}
+
+		for(let i = 0; i < availableInChunk.length; i++) {
+			// Request animation frame to unblock browser
+			var path = await (new Promise((res) => { window.requestAnimationFrame(() => {
+				// Find the nearest road node to all the markers
+				var markerPoint = PF.getNearestNode(availableInChunk[i])
+				if(markerPoint !== null) {
+					// Find path and resolve
+					res(PF._PathFinder.findPath(startPoint, markerPoint))
+				} else {
+					console.error('No node found to ', availableInChunk[i])
+					res(null)
+				}
+			}) }))
+			if(path !== null) {
+				if(path.weight < shortest.weight) {
+					shortest.weight = path.weight
+					shortest.marker = availableInChunk[i]
+				}
 			}
+		}
+
+		if(shortest.marker === null) {
+			PF._currentChunk.isDone = true
+
 		}
 	}
 	
 	return shortest.marker
 }
 
-PF.pathfinderStart = function(markers) {
-	if(PF.router === null)
-		PF.createController()
+PF.pathfinderStart = async function() {
+	if(PF._running) return
+	PF._running = true
+	PF._currentChunk = null
 
-	if(typeof(markers) === 'undefined') markers = MapBase.markers.filter((marker) => { return marker.isVisible; })
-	var markersWaypoints = []
-	for(let i = 0; i < markers.length; i++) {
-		markersWaypoints.push([parseFloat(markers[i].lat), parseFloat(markers[i].lng)])
+	PF.generateChunks()
+	if(PF._PathFinder === null) PF.createPathFinder()
+	if(PF.router === null) PF.createController()
+	
+	if(PF._layerControl !== null) MapBase.map.removeControl(PF._layerControl)
+	if(PF._layerGroup !== null) MapBase.map.removeLayer(PF._layerGroup)
+
+	PF._layerGroup = L.layerGroup()
+	PF._layerControl = L.control.layers({'Path': PF._layerGroup})
+
+	var markers = MapBase.markers.filter((marker) => { return (marker.isVisible && (!Routes.ignoreCollected || !marker.isCollected)); });
+
+	var current = Routes.nearestNeighborTo(Routes.startMarker(), markers, [], -1).marker
+	markers = markers.filter((m) => { return (m.text != current.text) })
+
+
+	var last = current
+	var waypoints = [L.latLng(last.lat, last.lng)]
+
+	var markersNum = markers.length
+	for (var i = 0; i < markersNum; i++) {
+		var current = await PF.findNearestTravelItem(last, markers)
+		if(current == null) break
+		markers = markers.filter((m, i) => { return (m.text != current.text); })
+		last = current
+
+		waypoints.push(L.latLng(last.lat, last.lng))
+		PF.router.setWaypoints(waypoints)
 	}
-	PF.router.setWaypoints(markersWaypoints)
-	//window.router.route()
+
+	PF._running = false
+
 }
