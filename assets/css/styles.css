@@ -49,7 +49,7 @@ p {
     margin: 0!important;
 }
 
-input, select, .btn {
+input, textarea, select, .btn {
     outline: none;
 }
 
@@ -247,6 +247,19 @@ input, select, .btn {
 .marker-popup-buttons small {
     font-size: 15px;
     line-height: 33px;
+}
+
+.marker-popup-pin-input-name, .marker-popup-pin-input-desc {
+    border: none;
+    width: 100%;
+}
+
+.marker-popup-pin-input-name {
+    text-align: center;
+}
+
+.marker-popup-pin-input-desc {
+    resize: none;
 }
 
 .hide-show-container, .custom-routes-container {
@@ -592,6 +605,10 @@ a.wiki-page:visited {
     font-size: 14px;
     margin: 8px;
     display: inline-grid;
+}
+
+.leaflet-popup-content ::-webkit-scrollbar-thumb {
+    background: #000 !important;
 }
 
 @media (max-width: 1024px) {

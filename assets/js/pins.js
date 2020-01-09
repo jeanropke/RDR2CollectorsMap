@@ -33,8 +33,8 @@ var Pins = {
         var markerIndex = this.pinsList.findIndex(function (marker) { return marker.options.id == id; });
 
         var marker = this.pinsList[markerIndex];
-        marker.options.name = name;
-        marker.options.desc = desc;
+        marker.options.name = name.replace(/[\:\;\<\>]/gi, '');
+        marker.options.desc = desc.replace(/[\:\;\<\>]/gi, '');
 
         this.updatePopup(marker);
         this.saveAllPins();
@@ -81,10 +81,11 @@ var Pins = {
 
     updatePopup: function (marker) {
         var markerId = marker.options.id;
-        var markerSaveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-info save-button" onclick="Pins.savePin(${markerId}, $('#${markerId}_name').text(), $('#${markerId}_desc').text())">Save</button>` : '';
+        var markerTitle = Settings.isPinsEditingEnabled ? `<h1><input type="text" id="${markerId}_name" class="marker-popup-pin-input-name" value="${marker.options.name}" placeholder="Name"></h1>` : `<h1 id="${markerId}_name">${marker.options.name}</h1>`;
+        var markerDesc = Settings.isPinsEditingEnabled ? `<p><textarea id="${markerId}_desc" class="marker-popup-pin-input-desc" rows="5" value="${marker.options.desc}" placeholder="Description">${marker.options.desc}</textarea></p>` : `<p id="${markerId}_desc">${marker.options.desc}</p>`;
+        var markerSaveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-info save-button" onclick="Pins.savePin(${markerId}, $('#${markerId}_name').val(), $('#${markerId}_desc').val())">Save</button>` : '';
         var markerRemoveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-danger remove-button" onclick="Pins.removePin(${markerId})">Remove</button>` : '';
-        var markerContentEditable = Settings.isPinsEditingEnabled ? ' contenteditable="true"' : '';
-        var markerContent = `<h1 id="${markerId}_name"${markerContentEditable}>${marker.options.name}</h1><p id="${markerId}_desc"${markerContentEditable}>${marker.options.desc}</p>${markerSaveButton}${markerRemoveButton}`;
+        var markerContent = markerTitle + markerDesc + markerSaveButton + markerRemoveButton;
 
         marker.bindPopup(markerContent, { minWidth: 300, maxWidth: 300 });
     },
