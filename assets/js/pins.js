@@ -33,8 +33,8 @@ var Pins = {
         var markerIndex = this.pinsList.findIndex(function (marker) { return marker.options.id == id; });
 
         var marker = this.pinsList[markerIndex];
-        marker.options.name = name.replace(/[\:\;\<\>]/gi, '');
-        marker.options.desc = desc.replace(/[\:\;\<\>]/gi, '');
+        marker.options.name = name.replace(/[\:\;\<\>\"]/gi, '');
+        marker.options.desc = desc.replace(/[\:\;\<\>\"]/gi, '');
 
         this.updatePopup(marker);
         this.saveAllPins();
