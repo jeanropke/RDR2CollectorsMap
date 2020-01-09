@@ -674,6 +674,10 @@ a.wiki-page:visited {
     background-repeat: no-repeat;
 }
 
+.input-action.external {
+    background-image: url(../images/action_indicator_external.png) !important;
+}
+
 a.no-style {
     color: #fff;
     text-decoration: none;
