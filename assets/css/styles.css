@@ -727,6 +727,12 @@ a.no-style:visited {
     padding-bottom: 80px;
 }
 
+@media (min-width: 768px) {
+    .modal-sm {
+        width: 450px;
+    }
+}
+
 /* Fix buttons showing on top of sidebar on mobile menu */
 
 .leaflet-top, .leaflet-bottom {
