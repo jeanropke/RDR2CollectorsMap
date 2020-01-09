@@ -99,16 +99,18 @@ function init() {
   if (typeof $.cookie('map-layer') === 'undefined' || isNaN(parseInt($.cookie('map-layer'))))
     $.cookie('map-layer', 1, { expires: 999 });
 
-
   if (!availableLanguages.includes(Settings.language))
     Settings.language = 'en-us';
 
+  if (typeof $.cookie('remove-markers-daily') === 'undefined') {
+    Settings.resetMarkersDaily = true;
+    $.cookie('remove-markers-daily', '1', { expires: 999 });
+  }
 
-  if (typeof $.cookie('remove-markers-daily') === 'undefined')
-    $.cookie('remove-markers-daily', 'false', { expires: 999 });
-
-
-  $("#reset-markers").val(Settings.resetMarkersDaily.toString());
+  if (typeof $.cookie('marker-cluster') === 'undefined') {
+    Settings.markerCluster = true;
+    $.cookie('marker-cluster', '1', { expires: 999 });
+  }
 
   var curDate = new Date();
   date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
@@ -136,12 +138,16 @@ function init() {
   if (Settings.isMenuOpened)
     $('.menu-toggle').click();
 
-
-  $('#show-coordinates').val(Settings.isCoordsEnabled ? '1' : '0');
-  $('#marker-cluster').val(Settings.markerCluster ? '1' : '0');
   $('#tools').val(Settings.toolType);
-  $("#language").val(Settings.language);
+  $('#language').val(Settings.language);
 
+  $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
+  $('#marker-cluster').prop("checked", Settings.markerCluster);
+  $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
+  $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
+  $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
+
+  Pins.loadAllPins();
   changeCursor();
 }
 
@@ -259,7 +265,7 @@ $('.clock-container').on('click', function () {
 
 //Show all markers on map
 $("#show-all-markers").on("change", function () {
-  Settings.showAllMarkers = $("#show-all-markers").val() == '1';
+  Settings.showAllMarkers = $("#show-all-markers").prop('checked');
   MapBase.addMarkers();
 });
 
@@ -297,59 +303,54 @@ $("#tools").on("change", function () {
 
 //Change & save markers reset daily or manually
 $("#reset-markers").on("change", function () {
-  if ($("#reset-markers").val() == 'clear') {
-    $.each(MapBase.markers, function (key, value) {
-      if (inventory[value.text])
-        inventory[value.text].isCollected = false;
-
-      value.isCollected = false;
-      value.canCollect = value.amount < Inventory.stackSize;
-    });
-
-    MapBase.save();
-    Menu.refreshMenu();
-
-    $("#reset-markers").val(Settings.resetMarkersDaily.toString());
-    Menu.refreshItemsCounter();
-  }
-
-  Settings.resetMarkersDaily = $("#reset-markers").val();
-  $.cookie('remove-markers-daily', Settings.resetMarkersDaily, { expires: 999 });
-
-  MapBase.addMarkers();
-
+  Settings.resetMarkersDaily = $("#reset-markers").prop('checked');
+  $.cookie('remove-markers-daily', Settings.resetMarkersDaily ? '1' : '0', { expires: 999 });
 });
 
+$("#clear-markers").on("click", function () {
+  $.each(MapBase.markers, function (key, value) {
+    if (inventory[value.text])
+      inventory[value.text].isCollected = false;
+
+    value.isCollected = false;
+    value.canCollect = value.amount < Inventory.stackSize;
+  });
+
+  MapBase.save();
+  Menu.refreshMenu();
+
+  Menu.refreshItemsCounter();
+  MapBase.addMarkers();
+})
+
 //Clear inventory on menu
-$("#clear-inventory").on("change", function () {
-  if ($("#clear-inventory").val() == 'true') {
-    $.each(Object.keys(inventory), function (key, value) {
-      inventory[value].amount = 0;
-      var marker = MapBase.markers.filter(function (marker) {
-        return marker.text == value && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category];
-      })[0];
+$("#clear-inventory").on("click", function () {
+  $.each(Object.keys(inventory), function (key, value) {
+    inventory[value].amount = 0;
+    var marker = MapBase.markers.filter(function (marker) {
+      return marker.text == value && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category];
+    })[0];
 
-      if (marker != null)
-        marker.amount = 0;
-    });
+    if (marker != null)
+      marker.amount = 0;
+  });
 
-    MapBase.save();
-    MapBase.addMarkers();
-    Menu.refreshMenu();
-  }
+  MapBase.save();
+  MapBase.addMarkers();
+  Menu.refreshMenu();
 });
 
 //Enable & disable custom routes on menu
 $("#custom-routes").on("change", function () {
-  var temp = $("#custom-routes").val();
-  Routes.customRouteEnabled = temp == '1';
-  if (temp == 'clear') {
-    Routes.customRouteConnections = [];
-    MapBase.map.removeLayer(polylines);
-    Routes.customRouteEnabled = true;
-    $("#custom-routes").val('1');
-  }
+  Routes.customRouteEnabled = $("#custom-routes").prop('checked');
+  $.cookie('custom-routes-enabled', Routes.customRouteEnabled ? '1' : '0', { expires: 999 });
+
   changeCursor();
+});
+
+$("#clear-custom-routes").on("click", function () {
+  Routes.customRouteConnections = [];
+  MapBase.map.removeLayer(Routes.polylines);
 });
 
 //When map-alert is clicked
@@ -360,8 +361,8 @@ $('.map-alert').on('click', function () {
 
 //Enable & disable show coordinates on menu
 $('#show-coordinates').on('change', function () {
-  $.cookie('coords-enabled', $('#show-coordinates').val());
-  Settings.isCoordsEnabled = $('#show-coordinates').val() == '1';
+  Settings.isCoordsEnabled = $("#show-coordinates").prop('checked');
+  $.cookie('coords-enabled', Settings.isCoordsEnabled ? '1' : '0', { expires: 999 });
 
   changeCursor();
 });
@@ -455,11 +456,55 @@ $('.menu-toggle').on('click', function () {
 });
 //Enable & disable markers cluster
 $('#marker-cluster').on("change", function () {
-  var inputValue = $('#marker-cluster').val();
-  $.cookie('marker-cluster', inputValue, { expires: 999 });
-  Settings.markerCluster = inputValue == '1';
+  Settings.markerCluster = $("#marker-cluster").prop('checked');
+  $.cookie('marker-cluster', Settings.markerCluster ? '1' : '0', { expires: 999 });
+
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
+});
+
+
+/**
+ * User pins
+ */
+
+$('#pins-place-mode').on("change", function () {
+  Settings.isPinsPlacingEnabled = $("#pins-place-mode").prop('checked');
+  $.cookie('pins-place-enabled', Settings.isPinsPlacingEnabled ? '1' : '0', { expires: 999 });
+});
+
+$('#pins-edit-mode').on("change", function () {
+  Settings.isPinsEditingEnabled = $("#pins-edit-mode").prop('checked');
+  $.cookie('pins-edit-enabled', Settings.isPinsEditingEnabled ? '1' : '0', { expires: 999 });
+
+  Pins.loadAllPins();
+});
+
+$('#pins-export').on("click", function () {
+  try {
+    Pins.exportPins();
+  } catch (error) {
+    console.error(error);
+    alert("This feature is not supported by your browser.");
+  }
+});
+
+$('#pins-import').on('click', function () {
+  try {
+    var file = $('#pins-import-file').prop('files')[0];
+
+    if (!file) {
+      alert("Please select a file in the field above the import button, then try again.");
+      return;
+    }
+
+    file.text().then(function (text) {
+      Pins.importPins(text);
+    })
+  } catch (error) {
+    console.error(error);
+    alert("This feature is not supported by your browser.");
+  }
 });
 
 /**
@@ -468,9 +513,9 @@ $('#marker-cluster').on("change", function () {
 
 //Enable & disable inventory on menu
 $('#enable-inventory').on("change", function () {
-  var inputValue = $('#enable-inventory').val();
-  $.cookie('inventory-enabled', inputValue, { expires: 999 });
-  Inventory.isEnabled = inputValue == 'true';
+  Inventory.isEnabled = $("#enable-inventory").prop('checked');
+  $.cookie('inventory-enabled', Inventory.isEnabled ? '1' : '0', { expires: 999 });
+
   MapBase.addMarkers();
 
   if (Inventory.isEnabled)
@@ -557,20 +602,16 @@ $('#cookie-import').on('click', function () {
  */
 
 $('#generate-route-ignore-collected').on("change", function () {
-  var inputValue = $('#generate-route-ignore-collected').val();
-  inputValue = inputValue == 'true';
-  $.cookie('generator-path-ignore-collected', inputValue, { expires: 999 });
-  Routes.ignoreCollected = inputValue;
+  Routes.ignoreCollected = $("#generate-route-ignore-collected").prop('checked');
+  $.cookie('generator-path-ignore-collected', Routes.ignoreCollected ? '1' : '0', { expires: 999 });
 
   if (Routes.lastPolyline != null)
     Routes.generatePath();
 });
 
 $('#generate-route-generate-on-visit').on("change", function () {
-  var inputValue = $('#generate-route-generate-on-visit').val();
-  inputValue = inputValue == 'true';
-  $.cookie('generator-path-generate-on-visit', inputValue, { expires: 999 });
-  Routes.runOnStart = inputValue;
+  Routes.runOnStart = $("#generate-route-generate-on-visit").prop('checked');
+  $.cookie('generator-path-generate-on-visit', Routes.runOnStart ? '1' : '0', { expires: 999 });
 });
 
 $('#generate-route-distance').on("change", function () {

@@ -1,9 +1,9 @@
 var Inventory = {
-  isEnabled: $.cookie('inventory-enabled') ? $.cookie('inventory-enabled') == 'true' : typeof $.cookie('inventory-enabled') === 'undefined' ? false : true,
+  isEnabled: $.cookie('inventory-enabled') == '1',
   stackSize: parseInt($.cookie('inventory-stack')) ? parseInt($.cookie('inventory-stack')) : 10,
 
   init: function () {
-    $('#enable-inventory').val(Inventory.isEnabled.toString());
+    $('#enable-inventory').prop("checked", Inventory.isEnabled);
     $('#inventory-stack').val(Inventory.stackSize);
   },
 

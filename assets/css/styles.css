@@ -49,7 +49,7 @@ p {
     margin: 0!important;
 }
 
-input, select, .btn {
+input, textarea, select, .btn {
     outline: none;
 }
 
@@ -118,6 +118,16 @@ input, select, .btn {
     position: absolute;
     width: 100%;
     left: 0;
+}
+
+.menu-divider {
+    height: 3px;
+    border: none;
+    background-image: url(../../assets/images/header_border_white.png);
+    background-repeat: repeat-x;
+    background-size: auto 3px;
+    margin: 6px auto;
+    opacity: 0.15;
 }
 
 .map-alert {
@@ -225,7 +235,7 @@ input, select, .btn {
     background-size: auto 3px;
 }
 
-.remove-button {
+.save-button, .remove-button {
     text-align: center;
     font-size: 14px;
     cursor: pointer;
@@ -247,6 +257,38 @@ input, select, .btn {
 .marker-popup-buttons small {
     font-size: 15px;
     line-height: 33px;
+}
+
+.marker-popup-pin-input-name, .marker-popup-pin-input-desc {
+    border: none;
+    width: 100%;
+}
+
+.marker-popup-pin-input-name {
+    text-align: center;
+}
+
+.marker-popup-pin-input-desc {
+    resize: none;
+}
+
+.marker-popup-pin-input-divider {
+    margin: 2px 0;
+    border: none;
+    border-top: solid 1px #B0B0B0;
+}
+
+.marker-popup-pin-label {
+    margin-bottom: 2px;
+}
+
+.marker-popup-pin-input-icon {
+    background: #eee;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    height: 100%;
+    border-radius: 3px;
 }
 
 .hide-show-container, .custom-routes-container {
@@ -294,12 +336,14 @@ input, select, .btn {
 }
 
 .input-container {
+    user-select: none;
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
 }
 
 .input-container-noflex {
+    user-select: none;
     margin: 5px 0;
     text-align: center;
 }
@@ -309,18 +353,14 @@ input, select, .btn {
 }
 
 .narrow-select-menu {
-    width: 75px;
+    min-width: 75px;
 }
 
 .btn-default {
     background-color: #383838;
-    width: 32%;
+    min-width: 32%;
     font-weight: 500;
     color: #fff;
-}
-
-.btn-special {
-    background-color: #747474;
 }
 
 .input-day {
@@ -339,12 +379,6 @@ input, select, .btn {
 }
 
 .issues-container a {
-    display: block;
-    color: #eee;
-    text-align: center;
-}
-
-.donate-container {
     display: block;
     color: #eee;
     text-align: center;
@@ -579,10 +613,83 @@ a.wiki-page:visited {
 
 .explain-text {
     margin-bottom: 12px !important;
+    font-size: 14px;
+}
+
+.donate-form {
+    text-align: center;
+}
+
+.donate-form .input-day {
+    margin-bottom: 8px;
+}
+
+.no-margin-top {
+    margin-top: 0 !important;
 }
 
 #debug-marker-lat, #debug-marker-lng {
     width: calc(50% - 4px);
+}
+
+/* Custom checkbox styling */
+
+.input-checkbox-wrapper {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+}
+
+.input-checkbox-wrapper .input-checkbox {
+    display: none;
+}
+
+.input-checkbox-wrapper .input-checkbox-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/selection_boxes.png);
+    background-position: left center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    cursor: pointer !important;
+}
+
+.input-checkbox-wrapper .input-checkbox:checked+.input-checkbox-label {
+    background-position: right center;
+}
+
+/* Custom action button styling */
+
+.input-container.clickable, .input-container.clickable label {
+    cursor: pointer !important;
+}
+
+.input-action {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-image: url(../images/action_indicator.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+.input-action.external {
+    background-image: url(../images/action_indicator_external.png) !important;
+}
+
+a.no-style {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.no-style:hover {
+    color: #fff;
+}
+
+a.no-style:visited {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Fix buttons showing on top of sidebar on mobile menu */
@@ -595,6 +702,10 @@ a.wiki-page:visited {
     font-size: 14px;
     margin: 8px;
     display: inline-grid;
+}
+
+.leaflet-popup-content ::-webkit-scrollbar-thumb {
+    background: #000 !important;
 }
 
 @media (max-width: 1024px) {
