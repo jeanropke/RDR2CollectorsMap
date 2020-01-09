@@ -15,11 +15,11 @@
   <script src="assets/js/jquery-3.4.1.min.js"></script>
   <script src="assets/js/jquery.cookie.js"></script>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=197" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=198" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script>
   <script>
-    var nocache = 197;
+    var nocache = 198;
   </script>
 </head>
 
@@ -317,6 +317,63 @@
         </select>
       </div>
       <div class="input-container">
+        <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="marker-cluster" value="1" id="marker-cluster" />
+          <label class="input-checkbox-label" for="marker-cluster"></label>
+        </div>
+      </div>
+      <div class="input-container">
+        <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="reset-markers" value="1" id="reset-markers" />
+          <label class="input-checkbox-label" for="reset-markers"></label>
+        </div>
+      </div>
+      <div id="clear-markers" class="input-container clickable">
+        <label for="clear-markers" data-text="menu.clear_markers">Reset markers now</label>
+        <div class="input-action"></div>
+      </div>
+      <hr class="menu-divider">
+      <div class="input-container">
+        <label for="pins-place-mode" data-text="menu.user_pins_place_mode">Create new pin on click</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="pins-place-mode" value="1" id="pins-place-mode" />
+          <label class="input-checkbox-label" for="pins-place-mode"></label>
+        </div>
+      </div>
+      <div class="input-container">
+        <label for="pins-edit-mode" data-text="menu.user_pins_edit_mode">Enable pin editing</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="pins-edit-mode" value="1" id="pins-edit-mode" />
+          <label class="input-checkbox-label" for="pins-edit-mode"></label>
+        </div>
+      </div>
+      <hr class="menu-divider">
+      <div class="input-container">
+        <label for="enable-inventory" data-text="menu.enable_inventory">Enable inventory</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="enable-inventory" value="1" id="enable-inventory" />
+          <label class="input-checkbox-label" for="enable-inventory"></label>
+        </div>
+      </div>
+      <div class="input-container">
+        <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
+        <input id="inventory-stack" class="input-day narrow-select-menu" type="number" min="1" max="10" value="10">
+      </div>
+      <div class="input-container clickable" id="clear-inventory">
+        <label for="clear-inventory" data-text="menu.clear_inventory">Clear inventory</label>
+        <div class="input-action"></div>
+      </div>
+      <hr class="menu-divider">
+      <div class="input-container">
+        <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="show-coordinates" value="1" id="show-coordinates" />
+          <label class="input-checkbox-label" for="show-coordinates"></label>
+        </div>
+      </div>
+      <div class="input-container">
         <label for="tools" data-text="menu.language">Language</label>
         <select class="input-day wide-select-menu" id="language">
           <option value="de-de">Deutsch</option>
@@ -333,21 +390,6 @@
           <option value="th-th">ภาษาไทย</option>
           <option value="zh-s">简体中文</option>
           <option value="zh-t">繁体中文</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
-        <select class="input-day narrow-select-menu" id="marker-cluster">
-          <option value="1" data-text="menu.yes">Yes</option>
-          <option value="0" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>
-        <select class="input-day narrow-select-menu" id="reset-markers">
-          <option value="true" data-text="menu.yes" selected>Yes</option>
-          <option value="false" data-text="menu.no">No</option>
-          <option value="clear" data-text="menu.reset">Reset</option>
         </select>
       </div>
     </div>
@@ -368,18 +410,20 @@
       <div class="input-container">
         <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route
           on page visit</label>
-        <select class="input-day narrow-select-menu" id="generate-route-generate-on-visit">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
-        </select>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="generate-route-generate-on-visit" value="1"
+            id="generate-route-generate-on-visit" />
+          <label class="input-checkbox-label" for="generate-route-generate-on-visit"></label>
+        </div>
       </div>
       <div class="input-container">
         <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected
           items</label>
-        <select class="input-day narrow-select-menu" id="generate-route-ignore-collected">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
-        </select>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="generate-route-ignore-collected" value="1"
+            id="generate-route-ignore-collected" />
+          <label class="input-checkbox-label" for="generate-route-ignore-collected"></label>
+        </div>
       </div>
       <div class="input-container">
         <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
@@ -407,7 +451,7 @@
       </div>
     </div>
 
-    <h2 data-text="menu.custom_routes">Custom routes</h2>
+    <h4 data-text="menu.custom_routes">Custom routes</h4>
     <div class="custom-routes-container">
       <a data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
         route</a>
@@ -417,66 +461,14 @@
     <div class="routes-container">
       <div class="input-container">
         <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
-        <select class="input-day narrow-select-menu" id="custom-routes">
-          <option value="1" data-text="menu.yes">Yes</option>
-          <option value="0" data-text="menu.no" selected>No</option>
-          <option value="clear" data-text="menu.clear">Clear</option>
-        </select>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="custom-routes" value="1" id="custom-routes" />
+          <label class="input-checkbox-label" for="custom-routes"></label>
+        </div>
       </div>
-    </div>
-
-    <div class="header">
-      <span class="header-border"></span>
-      <h2 class="header-title" data-text="menu.user_pins">Pins</h2>
-      <span class="header-border"></span>
-    </div>
-    <div class="routes-container">
-      <div class="input-container">
-        <label for="pins-place-mode" data-text="menu.user_pins_place_mode">Create new pin on click</label>
-        <select class="input-day narrow-select-menu" id="pins-place-mode">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="pins-edit-mode" data-text="menu.user_pins_edit_mode">Enable pin editing</label>
-        <select class="input-day narrow-select-menu" id="pins-edit-mode">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
-      <div class="input-container-noflex">
-        <input id="pins-import-file" type="file" class="input-file" autocomplete="off">
-      </div>
-      <div class="input-container-noflex">
-        <button id="pins-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_import">Import</button>
-        <button id="pins-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_export">Export</button>
-      </div>
-    </div>
-
-    <div class="header">
-      <span class="header-border"></span>
-      <h2 class="header-title" data-text="menu.inventory">Inventory</h2>
-      <span class="header-border"></span>
-    </div>
-    <div class="settings-container">
-      <div class="input-container">
-        <label for="enable-inventory" data-text="menu.enable_inventory">Enable inventory</label>
-        <select class="input-day narrow-select-menu" id="enable-inventory">
-          <option value="true" data-text="menu.yes" selected>Yes</option>
-          <option value="false" data-text="menu.no">No</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="clear-inventory" data-text="menu.clear_inventory">Clear inventory</label>
-        <select class="input-day narrow-select-menu" id="clear-inventory">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
-        <input id="inventory-stack" class="input-day narrow-select-menu" type="number" min="1" max="10" value="10">
+      <div class="input-container clickable" id="clear-custom-routes">
+        <label for="clear-custom-routes" data-text="menu.clear_custom_routes">Clear custom route</label>
+        <div class="input-action"></div>
       </div>
     </div>
 
@@ -487,14 +479,39 @@
     </div>
     <div class="routes-container">
       <div class="input-container-noflex">
-        <p class="explain-text" data-text="menu.import_export_explanation">This will import or export your settings. Importing settings will replace all current settings and reload the page. This feature does not include pins.</p>
+        <h4 class="no-margin-top" data-text="menu.settings_import_export_title">Settings</h4>
+      </div>
+      <div class="input-container-noflex">
+        <p class="explain-text" data-text="menu.import_export_explanation">
+          This will import or export your settings. Importing settings will replace all current settings and reload the
+          page. This feature does not include pins.
+        </p>
       </div>
       <div class="input-container-noflex">
         <input id="cookie-import-file" type="file" class="input-file" autocomplete="off">
       </div>
       <div class="input-container-noflex">
-        <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.import_button">Import</button>
-        <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.export_button">Export</button>
+        <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.import_button">Import</button>
+        <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.export_button">Export</button>
+      </div>
+      <div class="input-container-noflex">
+        <h4 data-text="menu.pins_import_export_title">Pins</h4>
+      </div>
+      <div class="input-container-noflex">
+        <p class="explain-text" data-text="menu.pins_import_export_explanation">
+          This will import or export your pins. Importing pins will replace all current pins.
+        </p>
+      </div>
+      <div class="input-container-noflex">
+        <input id="pins-import-file" type="file" class="input-file" autocomplete="off">
+      </div>
+      <div class="input-container-noflex">
+        <button id="pins-import" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.user_pins_import">Import</button>
+        <button id="pins-export" type="button" class="btn btn-default narrow-select-menu"
+          data-text="menu.user_pins_export">Export</button>
       </div>
     </div>
 
@@ -504,19 +521,18 @@
       <span class="header-border"></span>
     </div>
     <div class="routes-container">
-      <div class="input-container">
-        <label for="show-all-markers">Show all markers</label>
-        <select class="input-day narrow-select-menu" id="show-all-markers">
-          <option value="1" data-text="menu.yes">Yes</option>
-          <option value="0" data-text="menu.no" selected>No</option>
-        </select>
+      <div class="input-container-noflex">
+        <p class="explain-text">
+          These settings will not be saved. These settings are for development purposes and should not be used by
+          regular users.
+        </p>
       </div>
       <div class="input-container">
-        <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
-        <select class="input-day narrow-select-menu" id="show-coordinates">
-          <option value="1" data-text="menu.yes">Yes</option>
-          <option value="0" data-text="menu.no" selected>No</option>
-        </select>
+        <label for="show-all-markers">Show all markers</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="show-all-markers" value="1" id="show-all-markers" />
+          <label class="input-checkbox-label" for="show-all-markers"></label>
+        </div>
       </div>
       <div class="input-container-noflex">
         <input id="debug-marker-lat" placeholder="Lat." type="text" name="debug-marker-lat" class="input-day" value="">
@@ -534,31 +550,38 @@
 
     <div class="header">
       <span class="header-border"></span>
-      <h2 class="header-title" data-text="menu.issues">Issues</h2>
+      <h2 class="header-title" data-text="menu.information_links">Links/Information</h2>
       <span class="header-border"></span>
     </div>
-    <div class="issues-container">
-      <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDR2CollectorsMap/issues"
-        target="_blank">Report issues here!</a>
-    </div>
-
-    <div class="hide-show-container">
-      <a href="https://jeanropke.github.io/RDOMap/" target="_blank" data-text="menu.rdo_map">RDO Map</a>
-    </div>
-
-    <div class="issues-container">
-      <a href="./index-legacy.html" data-text="menu.return_legacy">Return to legacy version!</a>
-    </div>
-    <div class="hide-show-container">
-      <span class="help-button">
-        <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
-          target="_blank" class="wiki-page">About this map: [Wiki]</a>
-      </span>
-    </div>
-
-    <br>
-    <div class="donate-container">
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <div class="settings-container">
+      <a class="no-style wiki-page"
+        href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
+        target="_blank">
+        <div class="input-container clickable" id="clear-inventory">
+          <label data-text="menu.read_wiki">Read this map's Wiki</label>
+          <div class="input-action"></div>
+        </div>
+      </a>
+      <a class="no-style" href="https://jeanropke.github.io/RDOMap/" target="_blank">
+        <div class="input-container clickable" id="clear-inventory">
+          <label data-text="menu.rdo_map">RDO Map</label>
+          <div class="input-action"></div>
+        </div>
+      </a>
+      <a class="no-style" href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">
+        <div class="input-container clickable" id="clear-inventory">
+          <label data-text="menu.report_issues">Report issues here</label>
+          <div class="input-action"></div>
+        </div>
+      </a>
+      <a class="no-style" href="./index-legacy.html" target="_blank">
+        <div class="input-container clickable" id="clear-inventory">
+          <label data-text="menu.return_legacy">Return to legacy version</label>
+          <div class="input-action"></div>
+        </div>
+      </a>
+      <hr class="menu-divider">
+      <form class="donate-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_donations" />
         <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
         <select class="input-day" name="currency_code">
@@ -587,13 +610,14 @@
           <option value="TWD">TWD $</option>
           <option value="USD" selected>USD $</option>
         </select>
+        <br>
         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit"
           title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
         <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
       </form>
     </div>
-    <br>
 
+    <br>
   </div>
   <div class="menu-toggle">></div>
 
@@ -621,18 +645,18 @@
   </div-->
 
 
-  <script src="assets/js/settings.js?nocache=197"></script>
-  <script src="assets/js/cycles.js?nocache=197"></script>
-  <script src="assets/js/marker.js?nocache=197"></script>
-  <script src="assets/js/inventory.js?nocache=197"></script>
-  <script src="assets/js/treasures.js?nocache=197"></script>
-  <script src="assets/js/encounters.js?nocache=197"></script>
-  <script src="assets/js/pins.js?nocache=197"></script>
-  <script src="assets/js/map.js?nocache=197"></script>
-  <script src="assets/js/language.js?nocache=197"></script>
-  <script src="assets/js/menu.js?nocache=197"></script>
-  <script src="assets/js/routes.js?nocache=197"></script>
-  <script src="assets/js/scripts.js?nocache=197"></script>
+  <script src="assets/js/settings.js?nocache=198"></script>
+  <script src="assets/js/cycles.js?nocache=198"></script>
+  <script src="assets/js/marker.js?nocache=198"></script>
+  <script src="assets/js/inventory.js?nocache=198"></script>
+  <script src="assets/js/treasures.js?nocache=198"></script>
+  <script src="assets/js/encounters.js?nocache=198"></script>
+  <script src="assets/js/pins.js?nocache=198"></script>
+  <script src="assets/js/map.js?nocache=198"></script>
+  <script src="assets/js/language.js?nocache=198"></script>
+  <script src="assets/js/menu.js?nocache=198"></script>
+  <script src="assets/js/routes.js?nocache=198"></script>
+  <script src="assets/js/scripts.js?nocache=198"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
   <script>

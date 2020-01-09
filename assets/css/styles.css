@@ -120,6 +120,16 @@ input, textarea, select, .btn {
     left: 0;
 }
 
+.menu-divider {
+    height: 3px;
+    border: none;
+    background-image: url(../../assets/images/header_border_white.png);
+    background-repeat: repeat-x;
+    background-size: auto 3px;
+    margin: 6px auto;
+    opacity: 0.15;
+}
+
 .map-alert {
     background: darkred;
     color: #fff;
@@ -326,12 +336,14 @@ input, textarea, select, .btn {
 }
 
 .input-container {
+    user-select: none;
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
 }
 
 .input-container-noflex {
+    user-select: none;
     margin: 5px 0;
     text-align: center;
 }
@@ -341,12 +353,12 @@ input, textarea, select, .btn {
 }
 
 .narrow-select-menu {
-    width: 75px;
+    min-width: 75px;
 }
 
 .btn-default {
     background-color: #383838;
-    width: 32%;
+    min-width: 32%;
     font-weight: 500;
     color: #fff;
 }
@@ -367,12 +379,6 @@ input, textarea, select, .btn {
 }
 
 .issues-container a {
-    display: block;
-    color: #eee;
-    text-align: center;
-}
-
-.donate-container {
     display: block;
     color: #eee;
     text-align: center;
@@ -610,8 +616,76 @@ a.wiki-page:visited {
     font-size: 14px;
 }
 
+.donate-form {
+    text-align: center;
+}
+
+.donate-form .input-day {
+    margin-bottom: 8px;
+}
+
+.no-margin-top {
+    margin-top: 0 !important;
+}
+
 #debug-marker-lat, #debug-marker-lng {
     width: calc(50% - 4px);
+}
+
+/* Custom checkbox styling */
+
+.input-checkbox-wrapper {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+}
+
+.input-checkbox-wrapper .input-checkbox {
+    display: none;
+}
+
+.input-checkbox-wrapper .input-checkbox-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/selection_boxes.png);
+    background-position: left center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    cursor: pointer !important;
+}
+
+.input-checkbox-wrapper .input-checkbox:checked+.input-checkbox-label {
+    background-position: right center;
+}
+
+/* Custom action button styling */
+
+.input-container.clickable, .input-container.clickable label {
+    cursor: pointer !important;
+}
+
+.input-action {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-image: url(../images/action_indicator.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+a.no-style {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.no-style:hover {
+    color: #fff;
+}
+
+a.no-style:visited {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Fix buttons showing on top of sidebar on mobile menu */

@@ -513,7 +513,7 @@ MapBase.addCoordsOnMap = function (coords) {
   if (Settings.isCoordsEnabled) {
     $('.lat-lng-container').css('display', 'block');
 
-    $('.lat-lng-container p').html(`lat: ${coords.latlng.lat} <br> lng: ${coords.latlng.lng}`);
+    $('.lat-lng-container p').html(`Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}<br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}`);
 
     $('#lat-lng-container-close-button').click(function () {
       $('.lat-lng-container').css('display', 'none');
