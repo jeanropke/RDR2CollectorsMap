@@ -71,6 +71,9 @@ var Pins = {
 
         var pinnedItems = localStorage.getItem("pinned-items");
 
+        if (pinnedItems == null)
+            return;
+
         pinnedItems.split(';').forEach(pinnedItem => {
             if (pinnedItem == '') return;
 
@@ -94,7 +97,7 @@ var Pins = {
 
             markerIcons.forEach(icon => {
                 var option = $('<option></option>').attr('value', icon).attr('data-text', `map.user_pins.icon.${icon}`).text(Language.get(`map.user_pins.icon.${icon}`));
-                if (icon == marker.options.icon_name) option.attr('selected','selected');
+                if (icon == marker.options.icon_name) option.attr('selected', 'selected');
                 markerIconSelect.append(option);
             });
 
