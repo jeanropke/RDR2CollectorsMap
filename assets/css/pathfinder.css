@@ -1,0 +1,25 @@
+.pathfinder-control {
+	padding: 5px;
+	background: #fff
+}
+
+button.pathfinder-btn {
+	display: inline-block;
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+button.pathfinder-btn-before {
+	padding: 0;
+	width: 30px;
+	text-align: center;
+}
+button.pathfinder-btn-after {
+	padding: 0;
+	width: 30px;
+	text-align: center;
+}

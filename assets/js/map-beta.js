@@ -142,7 +142,8 @@ var MapBase = {
         L.geoJSON(MapBase.geoJson.lemoyne, {
           style: {
             "color": "#ff7800",
-            "weight": 5
+            "weight": 5,
+            "opacity": 0
           }
         }).eachLayer(function(l){
           MapBase.drawnItems.addLayer(l);

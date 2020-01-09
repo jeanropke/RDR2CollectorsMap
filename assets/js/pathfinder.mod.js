@@ -101,6 +101,43 @@ class Chunk {
 
 }
 
+class RouteControl extends L.Control {
+
+	constructor() {
+		super({ position: 'topright' })
+
+		this._element = null
+
+		this._beforeButton = null
+		this._currentButton = null
+		this._afterButton = null
+	}
+
+
+
+	onAdd() {
+		this._element = L.DomUtil.create('div', 'leaflet-bar pathfinder-control');
+
+		this._beforeButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-before', this._element);
+		this._currentButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-current', this._element);
+		this._afterButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-after', this._element);
+		
+		this._beforeButton.innerHTML = '&lt;'
+
+		this._currentButton.style.fontWeight =  'bold'
+		this._currentButton.innerHTML = '0 / 0'
+
+		this._afterButton.innerHTML = '&gt;'
+
+		return this._element;
+	}
+
+	onRemove() {
+		delete this._element;
+	}
+
+}
+
 window.PF = {
 	router: null,
 	_PathFinder: null,
@@ -111,40 +148,6 @@ window.PF = {
 	_running: false
 }
 
-PF.getNearestNode = function(point, drawBounds) {
-	var pointLatLng = point
-	if(typeof(point.lat) == 'undefined') {
-		pointLatLng = PF.PointToLatLng(point)
-	} else {
-		pointLatLng.lat = parseFloat(pointLatLng.lat)
-		pointLatLng.lng = parseFloat(pointLatLng.lng)
-	}
-	var searchArea = 5
-	var pointBounds = L.latLngBounds([
-		[pointLatLng.lat-searchArea, pointLatLng.lng-searchArea],
-		[pointLatLng.lat+searchArea, pointLatLng.lng+searchArea]
-	])
-	if(typeof(drawBounds) === 'boolean' && drawBounds) {
-		L.rectangle(pointBounds, {color: "#ff7800", weight: 3}).addTo(MapBase.map);
-	}
-
-	var filtered = PF._points.features.filter((p) => {
-		return pointBounds.contains(PF.PointToLatLng(p));
-	})
-	var n = {distance: Number.MAX_SAFE_INTEGER, point: null}
-	for(let i = 0; i < filtered.length; i++) {
-		var distance = MapBase.map.distance(
-			pointLatLng, 
-			PF.PointToLatLng(filtered[i])
-		);
-		if(distance < n.distance) {
-			n.distance = distance
-			n.point = filtered[i]
-		}
-	}
-
-	return n.point
-}
 
 PF.generateChunks = function() {
 	Chunk.clearChunks()
@@ -182,15 +185,6 @@ PF.createPathFinder = function() {
 	);
 
 	PF.generateChunks()
-}
-
-PF.latLngToPoint = function(latlng) {
-	var p = {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[parseFloat(latlng.lng), parseFloat(latlng.lat)]}}
-	if(typeof(latlng.text) === 'string') p.properties.text = latlng.text
-	return p
-}
-PF.PointToLatLng = function(point) {
-	return L.latLng(point.geometry.coordinates[1], point.geometry.coordinates[0])
 }
 
 PF.createController = function() {
@@ -266,6 +260,65 @@ PF.createController = function() {
 	}).addTo(MapBase.map)
 }
 
+PF.drawPath = function(path, color) {
+	if(typeof(color) === 'undefined') color = '#0000ff'
+
+	L.polyline(path, {color: '#000000', opacity: 0.3, weight: 9 }).addTo(PF._layerGroup)
+	L.polyline(path, {color: '#ffffff', opacity: 1, weight: 7 }).addTo(PF._layerGroup)
+	L.polyline(path, {color: color, opacity: 1, weight: 3 }).addTo(PF._layerGroup)
+}
+PF.drawRoute = function(paths) {
+	PF._layerGroup.clearLayers()
+	for(var i = 0; i < paths.length; i++) {
+		PF.drawPath(paths[i], '#0000bb')
+	}
+	PF.drawPath(paths[0], '#00bb00')
+}
+
+PF.latLngToPoint = function(latlng) {
+	var p = {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[parseFloat(latlng.lng), parseFloat(latlng.lat)]}}
+	if(typeof(latlng.text) === 'string') p.properties.text = latlng.text
+	return p
+}
+PF.PointToLatLng = function(point) {
+	return L.latLng(point.geometry.coordinates[1], point.geometry.coordinates[0])
+}
+
+PF.getNearestNode = function(point, drawBounds) {
+	var pointLatLng = point
+	if(typeof(point.lat) == 'undefined') {
+		pointLatLng = PF.PointToLatLng(point)
+	} else {
+		pointLatLng.lat = parseFloat(pointLatLng.lat)
+		pointLatLng.lng = parseFloat(pointLatLng.lng)
+	}
+	var searchArea = 5
+	var pointBounds = L.latLngBounds([
+		[pointLatLng.lat-searchArea, pointLatLng.lng-searchArea],
+		[pointLatLng.lat+searchArea, pointLatLng.lng+searchArea]
+	])
+	if(typeof(drawBounds) === 'boolean' && drawBounds) {
+		L.rectangle(pointBounds, {color: "#ff7800", weight: 3}).addTo(MapBase.map);
+	}
+
+	var filtered = PF._points.features.filter((p) => {
+		return pointBounds.contains(PF.PointToLatLng(p));
+	})
+	var n = {distance: Number.MAX_SAFE_INTEGER, point: null}
+	for(let i = 0; i < filtered.length; i++) {
+		var distance = MapBase.map.distance(
+			pointLatLng, 
+			PF.PointToLatLng(filtered[i])
+		);
+		if(distance < n.distance) {
+			n.distance = distance
+			n.point = filtered[i]
+		}
+	}
+
+	return n.point
+}
+
 PF.findNearestChunk = function(marker, markerChunk) {
 	var c = {distance: Number.MAX_SAFE_INTEGER, c: null}
 	for(var i = 0; i < Chunk.chunks.length; i++) {
@@ -301,8 +354,7 @@ PF.findNearestTravelItem = async function(start, markers) {
 	}
 	var startPoint = PF.getNearestNode(start)
 
-
-	var shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null}
+	var shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null, path: null}
 	while(shortest.marker === null) {
 		var availableInChunk = PF._currentChunk.markers.filter((m) => { return markers.includes(m) })
 		if(PF._currentChunk.isDone || availableInChunk.length <= 0) {
@@ -329,17 +381,23 @@ PF.findNearestTravelItem = async function(start, markers) {
 				if(path.weight < shortest.weight) {
 					shortest.weight = path.weight
 					shortest.marker = availableInChunk[i]
+					shortest.path = path.path.map((c) => { return [c[1], c[0]] })
 				}
 			}
 		}
 
 		if(shortest.marker === null) {
 			PF._currentChunk.isDone = true
-
 		}
 	}
 	
-	return shortest.marker
+	return shortest
+}
+
+PF.pathfinderClear = function() {
+	if(PF._running) return
+	if(PF._layerControl !== null) MapBase.map.removeControl(PF._layerControl)
+	if(PF._layerGroup !== null) MapBase.map.removeLayer(PF._layerGroup)
 }
 
 PF.pathfinderStart = async function() {
@@ -349,13 +407,13 @@ PF.pathfinderStart = async function() {
 
 	PF.generateChunks()
 	if(PF._PathFinder === null) PF.createPathFinder()
-	if(PF.router === null) PF.createController()
+	//if(PF.router === null) PF.createController()
 	
 	if(PF._layerControl !== null) MapBase.map.removeControl(PF._layerControl)
 	if(PF._layerGroup !== null) MapBase.map.removeLayer(PF._layerGroup)
 
-	PF._layerGroup = L.layerGroup()
-	PF._layerControl = L.control.layers({'Path': PF._layerGroup})
+	PF._layerGroup = L.layerGroup([]).addTo(MapBase.map)
+	PF._layerControl = (new RouteControl()).addTo(MapBase.map)
 
 	var markers = MapBase.markers.filter((marker) => { return (marker.isVisible && (!Routes.ignoreCollected || !marker.isCollected)); });
 
@@ -365,16 +423,18 @@ PF.pathfinderStart = async function() {
 
 	var last = current
 	var waypoints = [L.latLng(last.lat, last.lng)]
+	var paths = []
 
 	var markersNum = markers.length
 	for (var i = 0; i < markersNum; i++) {
 		var current = await PF.findNearestTravelItem(last, markers)
-		if(current == null) break
-		markers = markers.filter((m, i) => { return (m.text != current.text); })
-		last = current
+		if(current == null || current.marker == null) break
+		markers = markers.filter((m, i) => { return (m.text != current.marker.text); })
+		last = current.marker
 
 		waypoints.push(L.latLng(last.lat, last.lng))
-		PF.router.setWaypoints(waypoints)
+		paths.push(current.path)
+		PF.drawRoute(paths)
 	}
 
 	PF._running = false

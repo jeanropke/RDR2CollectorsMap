@@ -141,6 +141,7 @@ var Routes = {
   
 	// Simple utility to clear the given polyline from Leaflet.
 	clearPath: function () {
+	  PF.pathfinderClear()
 	  if (!Routes.lastPolyline) return;
   
 	  Routes.lastPolyline.remove(MapBase.map);
