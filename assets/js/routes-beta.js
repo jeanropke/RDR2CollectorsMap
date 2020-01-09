@@ -4,8 +4,10 @@
 
 var Routes = {
 	init: function () {
-	  $('#generate-route-generate-on-visit').val(Routes.generateOnVisit ? 'true' : 'false');
-	  $('#generate-route-ignore-collected').val(Routes.ignoreCollected ? 'true' : 'false');
+	  $('#custom-routes').prop("checked", Routes.customRouteEnabled);
+  
+	  $('#generate-route-generate-on-visit').prop("checked", Routes.generateOnVisit);
+	  $('#generate-route-ignore-collected').prop("checked", Routes.ignoreCollected);
 	  $('#generate-route-distance').val(Routes.maxDistance);
 	  $('#generate-route-start-lat').val(Routes.startMarkerLat);
 	  $('#generate-route-start-lng').val(Routes.startMarkerLng);
@@ -97,17 +99,17 @@ var Routes = {
 	routesData: [],
 	polylines: null,
   
-	customRouteEnabled: false,
+	customRouteEnabled: $.cookie('custom-routes-enabled') == '1',
 	customRouteConnections: [],
   
 	/**
 	 * Path generator by Senexis
 	 */
 	// Whether the route should be generated when the map is loaded.
-	generateOnVisit: $.cookie('generator-path-generate-on-visit') == 'true',
+	generateOnVisit: $.cookie('generator-path-generate-on-visit') == '1',
   
 	// Whether collected items should be ignored or not when pathing.
-	ignoreCollected: $.cookie('generator-path-ignore-collected') == 'true',
+	ignoreCollected: $.cookie('generator-path-ignore-collected') == '1',
   
 	// The maximum distance a path can be in points.
 	// - This number might need to be tweaked depending on how many markers there are.
@@ -141,7 +143,7 @@ var Routes = {
   
 	// Simple utility to clear the given polyline from Leaflet.
 	clearPath: function () {
-	  PF.pathfinderClear()
+		PF.pathfinderClear()
 	  if (!Routes.lastPolyline) return;
   
 	  Routes.lastPolyline.remove(MapBase.map);
@@ -228,13 +230,12 @@ var Routes = {
   
 	// Generate a path using a nearest neighbor algorithm.
 	// markers: A list of all markers to generate a path with, will be filtered on isVisible.
-	generatePath: async function () {
+	generatePath: function () {
 
-	  return PF.pathfinderStart()
+		return PF.pathfinderStart()
 
 	  // Clean up before generating.
 	  Routes.clearPath();
-	  PF.createPathFinder()
   
 	  // Setup variables.
 	  var newMarkers = MapBase.markers.filter((marker) => { return marker.isVisible; });
@@ -249,44 +250,28 @@ var Routes = {
 	  // The starting point of the path.
 	  var first = null;
   
-	  var starter = Routes.startMarker()
-
-	  var markerLength = newMarkers.length
-
 	  // Grab the nearest marker to the start of the path.
-	  //first = Routes.nearestNeighborTo(Routes.startMarker(), newMarkers, polylines, -1);
-	  first = await PF.findNearestTravelItem(starter, newMarkers)
-	  newMarkers = newMarkers.filter((m) => { return (m.text != first.text)})
+	  first = Routes.nearestNeighborTo(Routes.startMarker(), newMarkers, polylines, -1);
   
 	  // The last marker from the loop.
-	  var last = first;
-  
-	  var waypoints = [last]
+	  var last = first.marker;
   
 	  // Loop through all markers and pick the nearest neighbor to that marker.
-	  for (var i = 0; i < markerLength; i++) {
-		//var current = Routes.nearestNeighborTo(last, newMarkers, polylines, Routes.maxDistance);
-		var current = await PF.findNearestTravelItem(last, newMarkers);
+	  for (var i = 0; i < newMarkers.length; i++) {
+		var current = Routes.nearestNeighborTo(last, newMarkers, polylines, Routes.maxDistance);
 		if (!current) break;
-		newMarkers = newMarkers.filter((m) => { return (m.text != current.text) })
-		console.log(newMarkers.length)
+		current = current.marker;
   
 		// A last fallback to not draw paths that are too long.
-		//if (Routes.getDistance(last, current) < Routes.maxDistance) {
+		if (Routes.getDistance(last, current) < Routes.maxDistance) {
 		  polylines.push([{ lat: last.lat, lng: last.lng }, { lat: current.lat, lng: current.lng }]);
-		//}
+		}
   
 		last = current;
-		waypoints.push(last)
-		PF.pathfinderStart(waypoints)
-
-		Routes.clearPath();
-		Routes.lastPolyline = L.polyline(polylines).addTo(MapBase.map);
 	  }
   
 	  // Draw all paths on the map, and save the instance of the polyline to be able to clean it up later.
-	  
-	  PF.pathfinderStart(waypoints)
+	  Routes.lastPolyline = L.polyline(polylines).addTo(MapBase.map);
 	}
   };
   

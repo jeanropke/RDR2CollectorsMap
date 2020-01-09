@@ -11,6 +11,10 @@ button.pathfinder-btn {
 	background: transparent;
 	border: none;
 	cursor: pointer;
+	color: #000;
+}
+button.pathfinder-btn:disabled {
+	color: #789;
 }
 
 button.pathfinder-btn-before {

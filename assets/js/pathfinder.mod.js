@@ -111,9 +111,10 @@ class RouteControl extends L.Control {
 		this._beforeButton = null
 		this._currentButton = null
 		this._afterButton = null
+
+		this.currentPath = 0
+		this._paths = []
 	}
-
-
 
 	onAdd() {
 		this._element = L.DomUtil.create('div', 'leaflet-bar pathfinder-control');
@@ -123,17 +124,48 @@ class RouteControl extends L.Control {
 		this._afterButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-after', this._element);
 		
 		this._beforeButton.innerHTML = '&lt;'
+		this._beforeButton.setAttribute('disabled', true)
+		L.DomEvent.on(this._beforeButton, 'click', () => { this.selectPath(-1) })
 
 		this._currentButton.style.fontWeight =  'bold'
 		this._currentButton.innerHTML = '0 / 0'
+		L.DomEvent.on(this._currentButton, 'click', () => { this.selectPath(0) })
 
 		this._afterButton.innerHTML = '&gt;'
+		this._afterButton.setAttribute('disabled', true)
+		L.DomEvent.on(this._afterButton, 'click', () => { this.selectPath(1) })
 
 		return this._element;
 	}
 
 	onRemove() {
 		delete this._element;
+	}
+
+	addPath(path) {
+		this._paths.push(path)
+		this.updateButtons()
+	}
+
+	updateButtons() {
+		this._currentButton.innerHTML = this.currentPath + ' / ' + this._paths.length
+
+		if(this.currentPath == 1) this._beforeButton.setAttribute('disabled', true)
+		else this._beforeButton.removeAttribute('disabled', false)
+
+		if(this.currentPath == this._paths.length) this._afterButton.setAttribute('disabled', true)
+		else this._afterButton.removeAttribute('disabled', false)
+	}
+
+	selectPath(offset, absolute) {
+		if(typeof(absolute) !== 'boolean') absolute = false
+		var newindex = offset
+		if(!absolute) newindex = this.currentPath + offset
+		if(newindex >= 1 && newindex <= this._paths.length) {
+			this.currentPath = newindex
+			this.updateButtons()
+			PF.highlightPath(this._paths[(this.currentPath-1)])
+		}
 	}
 
 }
@@ -145,6 +177,7 @@ window.PF = {
 	_currentChunk: null,
 	_layerGroup: null,
 	_layerControl: null,
+	_currentPath: null,
 	_running: false
 }
 
@@ -263,16 +296,21 @@ PF.createController = function() {
 PF.drawPath = function(path, color) {
 	if(typeof(color) === 'undefined') color = '#0000ff'
 
-	L.polyline(path, {color: '#000000', opacity: 0.3, weight: 9 }).addTo(PF._layerGroup)
-	L.polyline(path, {color: '#ffffff', opacity: 1, weight: 7 }).addTo(PF._layerGroup)
-	L.polyline(path, {color: color, opacity: 1, weight: 3 }).addTo(PF._layerGroup)
+	return L.polyline(path, {color: color, opacity: 0.6, weight: 5 }).addTo(PF._layerGroup)
+}
+PF.highlightPath = function(path) {
+	if(PF._currentPath !== null) {
+		PF._layerGroup.removeLayer(PF._currentPath)
+	}
+	PF._currentPath = PF.drawPath(path, '#00bb00')
+	MapBase.map.fitBounds(PF._currentPath.getBounds(), { padding: [30, 30], maxZoom: MapBase.maxZoom })
 }
 PF.drawRoute = function(paths) {
 	PF._layerGroup.clearLayers()
+	PF._currentPath = null
 	for(var i = 0; i < paths.length; i++) {
-		PF.drawPath(paths[i], '#0000bb')
+		PF.drawPath(paths[i], '#ff0000')
 	}
-	PF.drawPath(paths[0], '#00bb00')
 }
 
 PF.latLngToPoint = function(latlng) {
@@ -381,6 +419,8 @@ PF.findNearestTravelItem = async function(start, markers) {
 				if(path.weight < shortest.weight) {
 					shortest.weight = path.weight
 					shortest.marker = availableInChunk[i]
+					path.path.unshift([start.lng, start.lat])
+					path.path.push([availableInChunk[i].lng, availableInChunk[i].lat])
 					shortest.path = path.path.map((c) => { return [c[1], c[0]] })
 				}
 			}
@@ -433,9 +473,12 @@ PF.pathfinderStart = async function() {
 		last = current.marker
 
 		waypoints.push(L.latLng(last.lat, last.lng))
+		PF._layerControl.addPath(current.path)
 		paths.push(current.path)
 		PF.drawRoute(paths)
 	}
+
+	PF._layerControl.selectPath(1, true)
 
 	PF._running = false
 

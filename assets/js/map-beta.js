@@ -6,22 +6,20 @@ var Layers = {
   itemMarkersLayer: new L.LayerGroup(),
   miscLayer: new L.LayerGroup(),
   encountersLayer: new L.LayerGroup(),
-  oms: null,
+  pinsLayer: new L.LayerGroup(),
+  oms: null
 
   // Beta only
-  drawLayer: new L.LayerGroup(),
+  ,drawLayer: new L.LayerGroup()
 };
 
 var MapBase = {
   minZoom: 2,
-  maxZoom: 11,
+  maxZoom: 9,
   map: null,
   overlays: [],
   markers: [],
   geoJson: {},
-
-  // Beta only
-  drawnItems: null,
 
   init: function () {
     var mapLayers = [
@@ -45,7 +43,7 @@ var MapBase = {
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
-      layers: [mapLayers[$.cookie('map-layer')]]
+      layers: [mapLayers[parseInt($.cookie('map-layer'))]]
     }).setView([-70, 111.75], 3);
 
     L.control.zoom({
@@ -83,6 +81,7 @@ var MapBase = {
       MapBase.addCoordsOnMap(e);
     });
 
+
     // Beta only.
     MapBase.drawnItems = L.featureGroup().addTo(MapBase.map);
 
@@ -107,9 +106,9 @@ var MapBase = {
     });
 
     MapBase.loadGeoJson();
-
-
     // End of beta only.
+
+
     var southWest = L.latLng(-160, -50),
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
@@ -124,16 +123,6 @@ var MapBase = {
 
   },
 
-  loadOverlays: function () {
-    // $.getJSON('data/overlays.json?nocache=' + nocache)
-    //   .done(function (data) {
-    //     MapBase.overlays = data;
-    //     MapBase.setOverlays();
-
-    //     console.log('overlays loaded');
-    //   });
-  },
-
   loadGeoJson: function () {
     $.getJSON('data/geojson/hanover-lemoyne.json?nocache=' + Math.random())
       .done(function (data) {
@@ -143,12 +132,22 @@ var MapBase = {
           style: {
             "color": "#ff7800",
             "weight": 5,
-            "opacity": 0
+            "opacity": 0.8
           }
         }).eachLayer(function(l){
           MapBase.drawnItems.addLayer(l);
         })
       });
+  },
+
+  loadOverlays: function () {
+    /*$.getJSON('data/overlays.json?nocache=' + nocache)
+      .done(function (data) {
+        MapBase.overlays = data;
+        MapBase.setOverlays();
+
+        console.log('overlays loaded');
+      });*/
   },
 
   setOverlays: function () {
@@ -258,6 +257,7 @@ var MapBase = {
     });
 
     Layers.itemMarkersLayer.addTo(MapBase.map);
+    Layers.pinsLayer.addTo(MapBase.map);
 
     MapBase.addFastTravelMarker();
     MadamNazar.addMadamNazar(refreshMenu);
@@ -493,13 +493,10 @@ MapBase.getToolIcon = function (type) {
     default:
     case '0':
       return '';
-      break;
     case '1':
       return '<img class="tool-type" src="assets/images/shovel.png">';
-      break;
     case '2':
       return '<img class="tool-type" src="assets/images/magnet.png">';
-      break;
   }
 };
 
@@ -539,56 +536,44 @@ MapBase.submitDebugForm = function () {
   var lng = $('input[name=debug-marker-lng]').val();
   if (!isNaN(lat) || !isNaN(lng))
     MapBase.debugMarker(lat, lng);
-},
+};
 
-  MapBase.importCustomMarkers = function () {
-    var arr = prompt("Paste coordinates here:", "");
-    arr = arr.substr(1, arr.length - 2).split(",");
-    var loops = arr.length;
-
-    for (var i = 0; i < loops; i = i + 3) {
-      MapBase.debugMarker(parseFloat(arr[i]), parseFloat(arr[i + 1]), arr[i + 2]);
-    }
-  },
-  //setClipboardText
-  MapBase.exportCustomMarkers = function () {
-    setClipboardText("[" + debugMarkersArray + "]");
-    alert('Markers copied to clipboard');
-  },
-
-  MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
-    var marker = L.marker([lat, long], {
-      icon: L.icon({
-        iconUrl: './assets/images/icons/random_lightred.png',
-        iconSize: [35, 45],
-        iconAnchor: [17, 42],
-        popupAnchor: [1, -32],
-        shadowAnchor: [10, 12],
-        shadowUrl: './assets/images/markers-shadow.png'
-
-      })
-    });
-    var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
-    marker.bindPopup(`<h1>${customMarkerName}</h1><p>  </p><br>lat: ${lat}<br>lng: ${long}`);
-    Layers.itemMarkersLayer.addLayer(marker);
-    var tempArray = [];
-    tempArray.push(lat || 0, long || 0, customMarkerName);
-    debugMarkersArray.push(tempArray);
-  };
+MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
+  var marker = L.marker([lat, long], {
+    icon: L.icon({
+      iconUrl: './assets/images/icons/random_lightred.png',
+      iconSize: [35, 45],
+      iconAnchor: [17, 42],
+      popupAnchor: [1, -32],
+      shadowAnchor: [10, 12],
+      shadowUrl: './assets/images/markers-shadow.png'
+    })
+  });
+  var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
+  marker.bindPopup(`<h1>${customMarkerName}</h1><p>  </p><br>lat: ${lat}<br>lng: ${long}`);
+  Layers.itemMarkersLayer.addLayer(marker);
+  var tempArray = [];
+  tempArray.push(lat || 0, long || 0, customMarkerName);
+  debugMarkersArray.push(tempArray);
+};
 
 MapBase.addCoordsOnMap = function (coords) {
   // Show clicked coordinates (like google maps)
   if (Settings.isCoordsEnabled) {
     $('.lat-lng-container').css('display', 'block');
 
-    $('.lat-lng-container p').html(`lat: ${coords.latlng.lat} <br> lng: ${coords.latlng.lng}`);
+    $('.lat-lng-container p').html(`Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}<br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}`);
 
     $('#lat-lng-container-close-button').click(function () {
       $('.lat-lng-container').css('display', 'none');
     });
+
     // Auto fill debug markers inputs
     Menu.liveUpdateDebugMarkersInputs(coords.latlng.lat, coords.latlng.lng);
   }
+
+  if (Settings.isPinsPlacingEnabled)
+    Pins.addPin(coords.latlng.lat, coords.latlng.lng);
 };
 
 MapBase.formatDate = function (date) {
