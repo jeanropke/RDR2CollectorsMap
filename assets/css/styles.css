@@ -436,7 +436,7 @@ input, textarea, select, .btn {
 
 .side-menu .menu-option:hover, .side-menu .menu-hidden .collectible-wrapper:hover {
     background-image: url(../images/menu_hover.png);
-    background-size: 100% 37px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
@@ -500,7 +500,7 @@ input, textarea, select, .btn {
 }
 
 .side-menu .menu-hidden .collectible-wrapper {
-    padding: 5px 20px;
+    padding: 5px 12px;
     cursor: pointer;
     user-select: none;
 }
@@ -511,11 +511,17 @@ input, textarea, select, .btn {
     margin-right: 10px;
 }
 
-.side-menu .menu-hidden .collectible {
+.side-menu .menu-hidden .collectible-text {
     padding: 5px 0;
     display: flex;
     justify-content: space-between;
     font-size: 15px;
+}
+
+.side-menu .menu-hidden .collectible {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .lat-lng-container {
@@ -635,6 +641,8 @@ a.wiki-page:visited {
 
 .counter {
     line-height: 12px;
+    white-space: nowrap;
+    margin-left: 6px;
 }
 
 .counter-number {
