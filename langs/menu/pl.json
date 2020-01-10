@@ -138,7 +138,7 @@
  	{"key": "map.user_pins.icon.lost_necklaces", "value": "Naszyjnik"},
  	{"key": "map.user_pins.icon.lost_ring", "value": "Pierścionek"},
  	{"key": "map.user_pins.icon.nazar", "value": "Madam Nazar"},
-	{"key": "map.user_pins.icon.treasure", "value": "Skarb"}
+	{"key": "map.user_pins.icon.treasure", "value": "Skarb"},
 	{"key": "menu.clear_custom_routes", "value": "Usuń niestandardową trasę"},
 	{"key": "menu.clear_markers", "value": "Wyczyść znaczniki"},
 	{"key": "menu.information_links", "value": "Odnośniki/informacje"},
