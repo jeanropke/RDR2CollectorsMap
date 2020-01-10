@@ -109,7 +109,7 @@
 	{"key": "cups_queen.name", "value": "성배의 여왕"},
 	{"key": "cups_queen_1.desc", "value": "On top of the first nightstand to the right."},
 	{"key": "cups_queen_2.desc", "value": "On top of barrel right side of dock."},
-	{"key": "cups_queen_3.desc", "value": "Inside the mine on a crate next to a lantern.<br/><img src=\"https://i.imgur.com/ciqlFTG.png\" style=\"width:200px;\">"},
+	{"key": "cups_queen_3.desc", "value": "Inside the mine on a crate next to a lantern."},
 
 	{"key": "cups_king.name", "value": "성배의 왕"},
 	{"key": "cups_king_1.desc", "value": "On a table on the second floor. Walk up the stairs."},
@@ -228,7 +228,7 @@
 
 	{"key": "wands_nine.name", "value": "지팡이 9"},
 	{"key": "wands_nine_1.desc", "value": "Get on shorter roof. Card is on window sill."},
-	{"key": "wands_nine_2.desc", "value": "Inside the mine on a barrel next to a lantern. <br/> <img src=\"https://i.imgur.com/HXbuCWi.png\" style=\"width: 200px;\">"},
+	{"key": "wands_nine_2.desc", "value": "Inside the mine on a barrel next to a lantern."},
 	{"key": "wands_nine_3.desc", "value": "On the railing of the dam near one of the weels."},
 
 	{"key": "wands_ten.name", "value": "지팡이 10"},
@@ -348,7 +348,7 @@
 
 	{"key": "coin_new_yorke_token.name", "value": "1700년 뉴욕 토큰"},
 	{"key": "coin_new_yorke_token_1.desc", "value": "Inside the cave."},
-	{"key": "coin_new_yorke_token_2.desc", "value": "Next to the two trees. <br/> <img width='200' src='https://imgur.com/mBRhNaf.png' />"},
+	{"key": "coin_new_yorke_token_2.desc", "value": "Next to the two trees."},
 	{"key": "coin_new_yorke_token_3.desc", "value": "In the middle of the ruined house."},
 
 	{"key": "coin_five_dollar_bechtler.name", "value": "1800년 5달러 베츨러"},
@@ -363,7 +363,7 @@
 
 	{"key": "coin_gold_dollar_coin.name", "value": "1800년 골드 달러"},
 	{"key": "coin_gold_dollar_coin_1.desc", "value": "At the base of the dead tree."},
-	{"key": "coin_gold_dollar_coin_2.desc", "value": "Inside the cave underneath the hanging lantern. <br/> <img src=\"https://i.imgur.com/IM8CdaJ.png\" style=\"width: 200px;\">"},
+	{"key": "coin_gold_dollar_coin_2.desc", "value": "Inside the cave underneath the hanging lantern."},
 	{"key": "coin_gold_dollar_coin_3.desc", "value": "In between a big and small rock."},
 
 	{"key": "coin_nickel_coin.name", "value": "1792년 니켈"},
@@ -628,7 +628,7 @@
 
 	{"key": "ring_sackville_diamond.name", "value": "색빌 다이아몬드 반지"},
 	{"key": "ring_sackville_diamond_1.desc", "value": "In front of a dead tree."},
-	{"key": "ring_sackville_diamond_2.desc", "value": "Hard climb! <a href=\"https://www.youtube.com/watch?v=7RV2qm90UaU&t=684s\" target=\"_blank\">Watch video</a>"},
+	{"key": "ring_sackville_diamond_2.desc", "value": "Hard climb!"},
 	{"key": "ring_sackville_diamond_3.desc", "value": "Inside the chimney."},
 
 	{"key": "ring_thorburn_turquoise.name", "value": "소어번 터키석 반지"},
@@ -654,7 +654,7 @@
 	{"key": "necklace_ainsworth_cross.name", "value": "에인스워스 십자가 목걸이"},
 	{"key": "necklace_ainsworth_cross_1.desc", "value": "On table inside tiny church building. Crouch to get in."},
 	{"key": "necklace_ainsworth_cross_2.desc", "value": "Besides the lone tree with the dreamcatchers."},
-	{"key": "necklace_ainsworth_cross_3.desc", "value": "On a search spot in the middle of a log brige. <br /> <img src=\"https://i.imgur.com/D6K4gxV.jpg\" style=\"width:200px;\">"},
+	{"key": "necklace_ainsworth_cross_3.desc", "value": "On a search spot in the middle of a log brige."},
 
 	{"key": "necklace_braxton_amethyst.name", "value": "브랙스턴 자수정 목걸이"},
 	{"key": "necklace_braxton_amethyst_1.desc", "value": "On a ledge in a lockbox below a rock next to an elk skeleton."},

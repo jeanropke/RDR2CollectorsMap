@@ -145,7 +145,7 @@
 	{"key": "cups_queen.name", "value": "Königin der Kelche"},
 	{"key": "cups_queen_1.desc", "value": "Auf dem ersten Nachttisch rechts."},
 	{"key": "cups_queen_2.desc", "value": "Auf der rechten Seite des Docks."},
-	{"key": "cups_queen_3.desc", "value": "In der Mine auf einer Kiste neben einer Laterne.<br/><img src=\"https://i.imgur.com/ciqlFTG.png\" style=\"width:200px;\">"},
+	{"key": "cups_queen_3.desc", "value": "In der Mine auf einer Kiste neben einer Laterne."},
 	{"key": "cups_queen_4.desc", "value": "Auf einem Tisch mit Werkzeugen links im Stall."},
 	{"key": "cups_queen_5.desc", "value": "Auf der Rückseite des Herrenhauses auf dem Balkon. Erreichbar über eine Treppe im Südwesten."},
 	{"key": "cups_queen_6.desc", "value": "Auf dem Hauptpult im hinteren Teil des Gebäudes."},
@@ -211,7 +211,7 @@
 	{"key": "swords_seven_2.desc", "value": "Auf der Rückseite eines Wagens auf der grünen Kiste."},
 	{"key": "swords_seven_3.desc", "value": "Unter der Markise auf einer Bank. ACHTUNG: Hier lauert ab und an ein Grizzlybär."},
 	{"key": "swords_seven_4.desc", "value": "Im Haus auf einem Regal im Untergeschoss."},
-	{"key": "swords_seven_5.desc", "value": "In der Mine. <br/> <img src=\"https://i.imgur.com/h8K2hIi.png\" style=\"width: 200px;\">"},
+	{"key": "swords_seven_5.desc", "value": "In der Mine."},
 	{"key": "swords_seven_6.desc", "value": "Auf dem Tisch neben einem kleinen kaputten Wagen."},
 
 	{"key": "swords_eight.name", "value": "Acht der Schwerter"},
@@ -259,7 +259,7 @@
 	{"key": "swords_queen_2.desc", "value": ""},
 	{"key": "swords_queen_3.desc", "value": "Auf dem kleinen Kaffeetisch."},
 	{"key": "swords_queen_4.desc", "value": ""},
-	{"key": "swords_queen_5.desc", "value": "In der Zug-Garage auf einem Arbeitstisch an der Südseite des Gebäudes. <br/> <img src=\"https://i.imgur.com/VlnIwzj.png\" style=\"width: 200px;\">"},
+	{"key": "swords_queen_5.desc", "value": "In der Zug-Garage auf einem Arbeitstisch an der Südseite des Gebäudes."},
 	{"key": "swords_queen_6.desc", "value": "Auf der Rückseite des Wagens in der Nähe einiger Arbeiterzelte."},
 
 	{"key": "swords_king.name", "value": "König der Schwerter"},
@@ -283,7 +283,7 @@
 	{"key": "wands_two_2.desc", "value": "Auf einem Beistelltisch auf der Veranda."},
 	{"key": "wands_two_3.desc", "value": "An der Seite des Piers."},
 	{"key": "wands_two_4.desc", "value": "Rechte Seite in der Scheune, oben auf einem Fass."},
-	{"key": "wands_two_5.desc", "value": "Auf dem Sims, vor der Treppe, um die Höhle zu verlassen. Höhleneingang über dem \"A\" von Annesburg. <br/> <img src=\"https://i.imgur.com/cfLWVcv.png\" style=\"width: 200px;\">"},
+	{"key": "wands_two_5.desc", "value": "Auf dem Sims, vor der Treppe, um die Höhle zu verlassen. Höhleneingang über dem \"A\" von Annesburg."},
 	{"key": "wands_two_6.desc", "value": "Auf dem Tisch mit dem Telegraphengerät."},
 
 	{"key": "wands_three.name", "value": "Drei der Stäbe"},
@@ -336,7 +336,7 @@
 
 	{"key": "wands_nine.name", "value": "Neun der Stäbe"},
 	{"key": "wands_nine_1.desc", "value": "Gehe über das kurze Dach. Die Karte liegt auf der Fensterbank."},
-	{"key": "wands_nine_2.desc", "value": "In der Mine auf einem Fass neben einer Laterne. <br/> <img src=\"https://i.imgur.com/HXbuCWi.png\" style=\"width: 200px;\">"},
+	{"key": "wands_nine_2.desc", "value": "In der Mine auf einem Fass neben einer Laterne."},
 	{"key": "wands_nine_3.desc", "value": "Auf dem Geländer des Damms in der Nähe einer der Wasserräder."},
 	{"key": "wands_nine_4.desc", "value": ""},
 	{"key": "wands_nine_5.desc", "value": "Im Haus auf dem Esstisch."},
@@ -528,7 +528,7 @@
 
 	{"key": "coin_new_yorke_token.name", "value": "New-Yorke-Münze von 1700"},
 	{"key": "coin_new_yorke_token_1.desc", "value": "In der Höhle."},
-	{"key": "coin_new_yorke_token_2.desc", "value": "Neben den beiden Bäumen. <br/> <img width='200' src='https://imgur.com/mBRhNaf.png' />"},
+	{"key": "coin_new_yorke_token_2.desc", "value": "Neben den beiden Bäumen."},
 	{"key": "coin_new_yorke_token_3.desc", "value": "Mitten im zerstörten Haus."},
 	{"key": "coin_new_yorke_token_4.desc", "value": ""},
 	{"key": "coin_new_yorke_token_5.desc", "value": ""},
@@ -552,7 +552,7 @@
 
 	{"key": "coin_gold_dollar_coin.name", "value": "Golddollar von 1800"},
 	{"key": "coin_gold_dollar_coin_1.desc", "value": "An der Basis des toten Baumes."},
-	{"key": "coin_gold_dollar_coin_2.desc", "value": "In der Höhle unter der hängenden Laterne. <br/> <img src=\"https://i.imgur.com/IM8CdaJ.png\" style=\"width: 200px;\">"},
+	{"key": "coin_gold_dollar_coin_2.desc", "value": "In der Höhle unter der hängenden Laterne."},
 	{"key": "coin_gold_dollar_coin_3.desc", "value": "Zwischen einem großen und einem kleinen Stein."},
 	{"key": "coin_gold_dollar_coin_4.desc", "value": ""},
 	{"key": "coin_gold_dollar_coin_5.desc", "value": ""},
@@ -754,7 +754,7 @@
 	{"key": "arrowhead_obsidian_1.desc", "value": "In der Mitte der Kreidezeichnung."},
 	{"key": "arrowhead_obsidian_2.desc", "value": "Neben der Vogelscheuche im Weizenfeld."},
 	{"key": "arrowhead_obsidian_3.desc", "value": "In der Mitte des Steinkreises."},
-	{"key": "arrowhead_obsidian_4.desc", "value": "In der Höhle. <br/> <img src=\"https://i.imgur.com/Vkaa8cY.png\" style=\"width: 200px;\">"},
+	{"key": "arrowhead_obsidian_4.desc", "value": "In der Höhle."},
 	{"key": "arrowhead_obsidian_5.desc", "value": "An der Basis des größten Baums."},
 	{"key": "arrowhead_obsidian_6.desc", "value": "Bei einem großen Baum mit Büschen."},
 
@@ -976,7 +976,7 @@
 
 	{"key": "ring_sackville_diamond.name", "value": "Sackville-Diamantring"},
 	{"key": "ring_sackville_diamond_1.desc", "value": "Vor einem toten Baum."},
-	{"key": "ring_sackville_diamond_2.desc", "value": "Harter Aufstieg! <a href=\"https://www.youtube.com/watch?v=7RV2qm90UaU&t=684s\" target=\"_blank\">siehe Video</a>"},
+	{"key": "ring_sackville_diamond_2.desc", "value": "Harter Aufstieg!"},
 	{"key": "ring_sackville_diamond_3.desc", "value": "Im Kamin."},
 	{"key": "ring_sackville_diamond_4.desc", "value": "Im Kamin."},
 	{"key": "ring_sackville_diamond_5.desc", "value": "An der Basis des Baums."},
@@ -1017,7 +1017,7 @@
 	{"key": "necklace_ainsworth_cross.name", "value": "Ainsworth-Kreuzkette"},
 	{"key": "necklace_ainsworth_cross_1.desc", "value": "Auf dem Tisch in einem winzigen Kirchengebäude. Duck dich um hinein zu kommen."},
 	{"key": "necklace_ainsworth_cross_2.desc", "value": "Neben dem einsamen Baum mit den Traumfängern."},
-	{"key": "necklace_ainsworth_cross_3.desc", "value": "Auf einem Suchfeld mitten in einer Holzbrücke. <br /> <img src=\"https://i.imgur.com/D6K4gxV.jpg\" style=\"width:200px;\">"},
+	{"key": "necklace_ainsworth_cross_3.desc", "value": "Auf einem Suchfeld mitten in einer Holzbrücke."},
 	{"key": "necklace_ainsworth_cross_4.desc", "value": "In einem Obergeschoss im Hauptschlafzimmer."},
 	{"key": "necklace_ainsworth_cross_5.desc", "value": "Im kleinen Hof neben dem Haus."},
 	{"key": "necklace_ainsworth_cross_6.desc", "value": ""},

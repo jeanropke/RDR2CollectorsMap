@@ -109,7 +109,7 @@
 	{"key": "cups_queen.name", "value": "Queen of Cups"},
 	{"key": "cups_queen_1.desc", "value": "أعلى أول منضدة من جهة اليمين."},
 	{"key": "cups_queen_2.desc", "value": "أعلى برميل على الجانب الأيمن من رصيف الميناء."},
-	{"key": "cups_queen_3.desc", "value": "داخل المنجم في صندوق بجانب المصباح.<br/><img src=\"https://i.imgur.com/ciqlFTG.png\" style=\"width:200px;\">"},
+	{"key": "cups_queen_3.desc", "value": "داخل المنجم في صندوق بجانب المصباح."},
 
 	{"key": "cups_king.name", "value": "King of Cups"},
 	{"key": "cups_king_1.desc", "value": "على طاولة في الطابق الثاني. اصعد الدرج."},
@@ -228,7 +228,7 @@
 
 	{"key": "wands_nine.name", "value": "Nine of Wands"},
 	{"key": "wands_nine_1.desc", "value": "على أقصر سقف. البطاقة على حافة النافذة."},
-	{"key": "wands_nine_2.desc", "value": "داخل المنجم على برميل بجانب فانوس. <br/> <img src=\"https://i.imgur.com/HXbuCWi.png\" style=\"width: 200px;\">"},
+	{"key": "wands_nine_2.desc", "value": "داخل المنجم على برميل بجانب فانوس."},
 	{"key": "wands_nine_3.desc", "value": "على درابزين السد بالقرب من واحدة من العجلات."},
 
 	{"key": "wands_ten.name", "value": "Ten of Wands"},
@@ -348,7 +348,7 @@
 
 	{"key": "coin_new_yorke_token.name", "value": "1700 New Yorke Token Coin"},
 	{"key": "coin_new_yorke_token_1.desc", "value": "بداخل الكهف."},
-	{"key": "coin_new_yorke_token_2.desc", "value": "بجانب الشجرتين. <br/> <img width='200' src='https://imgur.com/mBRhNaf.png' />"},
+	{"key": "coin_new_yorke_token_2.desc", "value": "بجانب الشجرتين."},
 	{"key": "coin_new_yorke_token_3.desc", "value": "في منتصف المنزل المدمر."},
 
 	{"key": "coin_five_dollar_bechtler.name", "value": "1800 Five Dollar Bechtler Coin"},
@@ -363,7 +363,7 @@
 
 	{"key": "coin_gold_dollar_coin.name", "value": "1800 Gold Dollar Coin"},
 	{"key": "coin_gold_dollar_coin_1.desc", "value": "عند قاعدة الشجرة الميتة."},
-	{"key": "coin_gold_dollar_coin_2.desc", "value": "داخل الكهف تحت الفانوس المعلق. <br/> <img src=\"https://i.imgur.com/IM8CdaJ.png\" style=\"width: 200px;\">"},
+	{"key": "coin_gold_dollar_coin_2.desc", "value": "داخل الكهف تحت الفانوس المعلق."},
 	{"key": "coin_gold_dollar_coin_3.desc", "value": "بين الصخور الكبيرة والصغيرة."},
 
 	{"key": "coin_nickel_coin.name", "value": "1792 Nickel Coin"},
@@ -628,7 +628,7 @@
 
 	{"key": "ring_sackville_diamond.name", "value": "Sackville Diamond Ring"},
 	{"key": "ring_sackville_diamond_1.desc", "value": "أمام شجرة ميتة."},
-	{"key": "ring_sackville_diamond_2.desc", "value": "تسلق صعب! <a href=\"https://www.youtube.com/watch?v=7RV2qm90UaU&t=684s\" target=\"_blank\">Watch video</a>"},
+	{"key": "ring_sackville_diamond_2.desc", "value": "تسلق صعب!"},
 	{"key": "ring_sackville_diamond_3.desc", "value": "داخل المدخنة."},
 
 	{"key": "ring_thorburn_turquoise.name", "value": "Thorburn Turquoise Ring"},
@@ -654,7 +654,7 @@
 	{"key": "necklace_ainsworth_cross.name", "value": "Ainsworth Cross Necklace"},
 	{"key": "necklace_ainsworth_cross_1.desc", "value": "على طاولة داخل مبنى الكنيسة الصغيرة. انحني للحصول عليها."},
 	{"key": "necklace_ainsworth_cross_2.desc", "value": "إلى جانب شجرة وحيدة مع dreamcatchers."},
-	{"key": "necklace_ainsworth_cross_3.desc", "value": "في بقعة في منتصف جسر خشبي. <br /> <img src=\"https://i.imgur.com/D6K4gxV.jpg\" style=\"width:200px;\">"},
+	{"key": "necklace_ainsworth_cross_3.desc", "value": "في بقعة في منتصف جسر خشبي."},
 
 	{"key": "necklace_braxton_amethyst.name", "value": "Braxton Amethyst Necklace"},
 	{"key": "necklace_braxton_amethyst_1.desc", "value": "على الحافة في صندوق أسفل صخرة بجانب هيكل عظمي للأيائل."},

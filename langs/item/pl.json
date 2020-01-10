@@ -145,7 +145,7 @@
 	{"key": "cups_queen.name", "value": "Dama kielichów"},
 	{"key": "cups_queen_1.desc", "value": "Na pierwszym stoliku nocnym po prawej."},
 	{"key": "cups_queen_2.desc", "value": "Na beczce po prawej stronie doków."},
-	{"key": "cups_queen_3.desc", "value": "W kopalni na skrzyni obok latarni.<br/><img src=\"https://i.imgur.com/ciqlFTG.png\" style=\"width:200px;\">"},
+	{"key": "cups_queen_3.desc", "value": "W kopalni na skrzyni obok latarni."},
 	{"key": "cups_queen_4.desc", "value": "Na stole z narzędziami po lewej stronie wewnątrz stajni."},
 	{"key": "cups_queen_5.desc", "value": "W tyłach posiadłości na balkonie. By dostać się zleć ze schodów w południowo-zach stronie."},
 	{"key": "cups_queen_6.desc", "value": "Na stole recepcji w tylnej części budynku."},
@@ -211,7 +211,7 @@
 	{"key": "swords_seven_2.desc", "value": "Na tyle wozu na zielonej skrzyni." },
 	{"key": "swords_seven_3.desc", "value": "Na ławce pod zadaszeniem. UWAGA na grizli." },
 	{"key": "swords_seven_4.desc", "value": "W piwnicy na półce." },
-	{"key": "swords_seven_5.desc", "value": "Wewnątrz kopalni. <br/> <img src=\"https://i.imgur.com/h8K2hIi.png\" style=\"width: 200px;\">" },
+	{"key": "swords_seven_5.desc", "value": "Wewnątrz kopalni." },
 	{"key": "swords_seven_6.desc", "value": "Na stole obok małego zepsutego wózka." },
 
 	{"key": "swords_eight.name", "value": "Ósemka mieczy" },
@@ -259,7 +259,7 @@
 	{"key": "swords_queen_2.desc", "value": "" },
 	{"key": "swords_queen_3.desc", "value": "Na małym stoliku do kawy." },
 	{"key": "swords_queen_4.desc", "value": "" },
-	{"key": "swords_queen_5.desc", "value": "Wewnątrz garażu kolejowego na stole roboczym po południowej stronie budynku. <br/> <img src=\"https://i.imgur.com/VlnIwzj.png\" style=\"width: 200px;\">" },
+	{"key": "swords_queen_5.desc", "value": "Wewnątrz garażu kolejowego na stole roboczym po południowej stronie budynku." },
 	{"key": "swords_queen_6.desc", "value": "Z tyłu wozu w pobliżu namiotów robotniczych." },
 
 	{"key": "swords_king.name", "value": "Król mieczy" },
@@ -312,7 +312,7 @@
 
 	{"key": "wands_nine.name", "value": "Dziewiątka buław"},
 	{"key": "wands_nine_1.desc", "value": "W kopalni."},
-	{"key": "wands_nine_2.desc", "value": "W kopalni na beczce obok latarni. <br/> <img src=\"https://i.imgur.com/HXbuCWi.png\" style=\"width: 200px;\">"},
+	{"key": "wands_nine_2.desc", "value": "W kopalni na beczce obok latarni."},
 	{"key": "wands_nine_3.desc", "value": "Na poręczy przy mechanizmie zapory."},
 
 	{"key": "wands_ten.name", "value": "Dziesiątka buław"},
@@ -432,7 +432,7 @@
 
 	{"key": "coin_new_yorke_token.name", "value": "Moneta New Yorke z 1700 r."},
 	{"key": "coin_new_yorke_token_1.desc", "value": "W jaskini."},
-	{"key": "coin_new_yorke_token_2.desc", "value": "Obok dwóch drzew.<br/> <img width='200' src='https://imgur.com/mBRhNaf.png' />"},
+	{"key": "coin_new_yorke_token_2.desc", "value": "Obok dwóch drzew."},
 	{"key": "coin_new_yorke_token_3.desc", "value": "Na środku ruin domu."},
 
 	{"key": "coin_five_dollar_bechtler.name", "value": "Pięciodolarówka Bechtler z 1800 r."},
@@ -447,7 +447,7 @@
 
 	{"key": "coin_gold_dollar_coin.name", "value": "Złoty dolar z 1800 r."},
 	{"key": "coin_gold_dollar_coin_1.desc", "value": "Przy uschniętym drzewie."},
-	{"key": "coin_gold_dollar_coin_2.desc", "value": "W jaskini pod wiszącą latarnią. <br/> <img src=\"https://i.imgur.com/IM8CdaJ.png\" style=\"width: 200px;\">"},
+	{"key": "coin_gold_dollar_coin_2.desc", "value": "W jaskini pod wiszącą latarnią."},
 	{"key": "coin_gold_dollar_coin_3.desc", "value": "Między małą i dużą skałą."},
 
 	{"key": "coin_nickel_coin.name", "value": "Pięciocentówka z 1792 r."},
@@ -712,7 +712,7 @@
 
 	{"key": "ring_sackville_diamond.name", "value": "Pierścionek z diamentem Sackville"},
 	{"key": "ring_sackville_diamond_1.desc", "value": "Przed uschniętym drzewem."},
-	{"key": "ring_sackville_diamond_2.desc", "value": "W niszy na ścianie pod spodem. Trudna wspinaczka od punktu po północnej stronie piktogramu torów! <a href=\"https://www.youtube.com/watch?v=7RV2qm90UaU&t=684s\">Obejrzyj jak dojść.</a>"},
+	{"key": "ring_sackville_diamond_2.desc", "value": "W niszy na ścianie pod spodem. Trudna wspinaczka od punktu po północnej stronie piktogramu torów!"},
 	{"key": "ring_sackville_diamond_3.desc", "value": "W kominku."},
 
 	{"key": "ring_thorburn_turquoise.name", "value": "Pierścionek z turkusem Thorburn"},

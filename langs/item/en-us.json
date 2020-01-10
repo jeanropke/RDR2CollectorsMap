@@ -145,7 +145,7 @@
 	{"key": "cups_queen.name", "value": "Queen of Cups"},
 	{"key": "cups_queen_1.desc", "value": "On top of the first nightstand to the right."},
 	{"key": "cups_queen_2.desc", "value": "On top of barrel right side of dock."},
-	{"key": "cups_queen_3.desc", "value": "Inside the mine on a crate next to a lantern.<br/><img src=\"https://i.imgur.com/ciqlFTG.png\" style=\"width:200px;\">"},
+	{"key": "cups_queen_3.desc", "value": "Inside the mine on a crate next to a lantern."},
 	{"key": "cups_queen_4.desc", "value": "On a table with tools left side inside the stable."},
 	{"key": "cups_queen_5.desc", "value": "On the backside of the mansion on the balcony. Reachable by a flight of stairs on the southwestern side."},
 	{"key": "cups_queen_6.desc", "value": "On the main desk in the back of the building."},
@@ -211,7 +211,7 @@
 	{"key": "swords_seven_2.desc", "value": "In the back of a wagon on a green crate."},
 	{"key": "swords_seven_3.desc", "value": "Underneath the awning on a bench. Watch for grizzly bear."},
 	{"key": "swords_seven_4.desc", "value": "Inside the house on a shelf in the basement floor."},
-	{"key": "swords_seven_5.desc", "value": "Inside the mine. <br/> <img src=\"https://i.imgur.com/h8K2hIi.png\" style=\"width: 200px;\">"},
+	{"key": "swords_seven_5.desc", "value": "Inside the mine."},
 	{"key": "swords_seven_6.desc", "value": "On the table next to a small broken cart."},
 
 	{"key": "swords_eight.name", "value": "Eight of Swords"},
@@ -259,7 +259,7 @@
 	{"key": "swords_queen_2.desc", "value": ""},
 	{"key": "swords_queen_3.desc", "value": "On the small coffee table."},
 	{"key": "swords_queen_4.desc", "value": ""},
-	{"key": "swords_queen_5.desc", "value": "Inside the train garage on a worktable on the south side of the building. <br/> <img src=\"https://i.imgur.com/VlnIwzj.png\" style=\"width: 200px;\">"},
+	{"key": "swords_queen_5.desc", "value": "Inside the train garage on a worktable on the south side of the building."},
 	{"key": "swords_queen_6.desc", "value": "On the back of the wagon near some workers' tents."},
 
 	{"key": "swords_king.name", "value": "King of Swords"},
@@ -268,7 +268,7 @@
 	{"key": "swords_king_3.desc", "value": "Inside fenced in area on top of blue barrel."},
 	{"key": "swords_king_4.desc", "value": "Inside the shack on the table to the right."},
 	{"key": "swords_king_5.desc", "value": "On a strut of the foundation of the old log mill."},
-	{"key": "swords_king_6.desc", "value": "About halfway through in the cave above the \"A\" in Annesburg on a crate."},
+	{"key": "swords_king_6.desc", "value": "In the cave about halfway through on a crate."},
 
 	{"key": "wands_ace.name", "value": "Ace of Wands"},
 	{"key": "wands_ace_1.desc", "value": "On top of piano in corner of room inside house on main floor"},
@@ -283,7 +283,7 @@
 	{"key": "wands_two_2.desc", "value": "On a sidetable on the front porch."},
 	{"key": "wands_two_3.desc", "value": "On the side of the pier."},
 	{"key": "wands_two_4.desc", "value": "Right side inside the barn, on top of a barrel."},
-	{"key": "wands_two_5.desc", "value": "On the ledge before climbing any stairs to go out of the cave. Cave entrance above the \"A\" in Annesburg. <br/> <img src=\"https://i.imgur.com/cfLWVcv.png\" style=\"width: 200px;\">"},
+	{"key": "wands_two_5.desc", "value": "On the ledge before climbing the stairs to go out of the cave."},
 	{"key": "wands_two_6.desc", "value": "On the table inside with the telegraph machine on it."},
 
 	{"key": "wands_three.name", "value": "Three of Wands"},
@@ -336,7 +336,7 @@
 
 	{"key": "wands_nine.name", "value": "Nine of Wands"},
 	{"key": "wands_nine_1.desc", "value": "Get on shorter roof. Card is on window sill."},
-	{"key": "wands_nine_2.desc", "value": "Inside the mine on a barrel next to a lantern. <br/> <img src=\"https://i.imgur.com/HXbuCWi.png\" style=\"width: 200px;\">"},
+	{"key": "wands_nine_2.desc", "value": "Inside the mine on a barrel next to a lantern."},
 	{"key": "wands_nine_3.desc", "value": "On the railing of the dam near one of the weels."},
 	{"key": "wands_nine_4.desc", "value": ""},
 	{"key": "wands_nine_5.desc", "value": "Inside the house on the dinner table."},
@@ -528,7 +528,7 @@
 
 	{"key": "coin_new_yorke_token.name", "value": "1700 New Yorke Token Coin"},
 	{"key": "coin_new_yorke_token_1.desc", "value": "Inside the cave."},
-	{"key": "coin_new_yorke_token_2.desc", "value": "Next to the two trees. <br/> <img width='200' src='https://imgur.com/mBRhNaf.png' />"},
+	{"key": "coin_new_yorke_token_2.desc", "value": "Next to the two trees."},
 	{"key": "coin_new_yorke_token_3.desc", "value": "In the middle of the ruined house."},
 	{"key": "coin_new_yorke_token_4.desc", "value": ""},
 	{"key": "coin_new_yorke_token_5.desc", "value": ""},
@@ -552,7 +552,7 @@
 
 	{"key": "coin_gold_dollar_coin.name", "value": "1800 Gold Dollar Coin"},
 	{"key": "coin_gold_dollar_coin_1.desc", "value": "At the base of the dead tree."},
-	{"key": "coin_gold_dollar_coin_2.desc", "value": "Inside the cave underneath the hanging lantern. <br/> <img src=\"https://i.imgur.com/IM8CdaJ.png\" style=\"width: 200px;\">"},
+	{"key": "coin_gold_dollar_coin_2.desc", "value": "Inside the cave underneath the hanging lantern."},
 	{"key": "coin_gold_dollar_coin_3.desc", "value": "In between a big and small rock."},
 	{"key": "coin_gold_dollar_coin_4.desc", "value": ""},
 	{"key": "coin_gold_dollar_coin_5.desc", "value": ""},
@@ -728,7 +728,7 @@
 
 	{"key": "arrowhead_slate.name", "value": "Slate Arrowhead"},
 	{"key": "arrowhead_slate_1.desc", "value": "Next to a fallen tree."},
-	{"key": "arrowhead_slate_2.desc", "value": "Inside the cave, entrance just below the \"U\" in \"Mount Shann\"."},
+	{"key": "arrowhead_slate_2.desc", "value": "Inside the cave."},
 	{"key": "arrowhead_slate_3.desc", "value": "On the southside of the cotton field."},
 	{"key": "arrowhead_slate_4.desc", "value": "Next to the dead tree."},
 	{"key": "arrowhead_slate_5.desc", "value": "Halfway down the cliff, reachable from the top using the natural path."},
@@ -754,7 +754,7 @@
 	{"key": "arrowhead_obsidian_1.desc", "value": "In the middle of the chalk drawing."},
 	{"key": "arrowhead_obsidian_2.desc", "value": "Next to the scarecrow in the wheat field."},
 	{"key": "arrowhead_obsidian_3.desc", "value": "In the middle of the stone circle."},
-	{"key": "arrowhead_obsidian_4.desc", "value": "Inside the cave. <br/> <img src=\"https://i.imgur.com/Vkaa8cY.png\" style=\"width: 200px;\">"},
+	{"key": "arrowhead_obsidian_4.desc", "value": "Inside the cave."},
 	{"key": "arrowhead_obsidian_5.desc", "value": "At the base of the biggest tree."},
 	{"key": "arrowhead_obsidian_6.desc", "value": "By a large tree with bushes."},
 
@@ -976,7 +976,7 @@
 
 	{"key": "ring_sackville_diamond.name", "value": "Sackville Diamond Ring"},
 	{"key": "ring_sackville_diamond_1.desc", "value": "In front of a dead tree."},
-	{"key": "ring_sackville_diamond_2.desc", "value": "Hard climb! <a href=\"https://www.youtube.com/watch?v=7RV2qm90UaU&t=684s\" target=\"_blank\">Watch video</a>"},
+	{"key": "ring_sackville_diamond_2.desc", "value": "Hard climb!"},
 	{"key": "ring_sackville_diamond_3.desc", "value": "Inside the chimney."},
 	{"key": "ring_sackville_diamond_4.desc", "value": "Inside the chimney."},
 	{"key": "ring_sackville_diamond_5.desc", "value": "At the base of the tree."},
@@ -1017,7 +1017,7 @@
 	{"key": "necklace_ainsworth_cross.name", "value": "Ainsworth Cross Necklace"},
 	{"key": "necklace_ainsworth_cross_1.desc", "value": "On table inside tiny church building. Crouch to get in."},
 	{"key": "necklace_ainsworth_cross_2.desc", "value": "Besides the lone tree with the dreamcatchers."},
-	{"key": "necklace_ainsworth_cross_3.desc", "value": "On a search spot in the middle of a log brige. <br /> <img src=\"https://i.imgur.com/D6K4gxV.jpg\" style=\"width:200px;\">"},
+	{"key": "necklace_ainsworth_cross_3.desc", "value": "On a search spot in the middle of a log brige."},
 	{"key": "necklace_ainsworth_cross_4.desc", "value": "Inside a chest top floor in the master bedroom."},
 	{"key": "necklace_ainsworth_cross_5.desc", "value": "In the little yard next to the house."},
 	{"key": "necklace_ainsworth_cross_6.desc", "value": "Next to the little fence with a wagon wheel next to it."},
@@ -1135,7 +1135,7 @@
 	{"key": "earring_endicott_diamond_6.desc", "value": "Outside next to the southern corner of the shack."},
 
 	{"key": "earring_josephine_pearl.name", "value": "Josephine Pearl Earrings"},
-	{"key": "earring_josephine_pearl_1.desc", "value": "Inside the cave. Entrance above the \"A\" of Annesburg."},
+	{"key": "earring_josephine_pearl_1.desc", "value": "Inside the cave."},
 	{"key": "earring_josephine_pearl_2.desc", "value": ""},
 	{"key": "earring_josephine_pearl_3.desc", "value": "Underneath the bridge."},
 	{"key": "earring_josephine_pearl_4.desc", "value": "By the wooden cross in the graveyard."},
