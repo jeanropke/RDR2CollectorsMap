@@ -153,5 +153,6 @@
 	{"key": "menu.read_wiki", "value": "Read this map's Wiki"},
 	{"key": "menu.settings_import_export_title", "value": "Settings"},
 	{"key": "menu.generate_route_auto_update", "value": "Automatically update route"},
-	{"key": "menu.enable_inventory_popups", "value": "Enable inventory in popups"}
+	{"key": "menu.enable_inventory_popups", "value": "Enable inventory in popups"},
+	{"key": "menu.random_encounters", "value": "Random encounters"}
 ]

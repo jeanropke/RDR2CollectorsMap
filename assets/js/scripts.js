@@ -18,7 +18,7 @@ var categoriesDisabledByDefault = [
 ]
 
 var enabledCategories = categories;
-var categoryButtons = document.getElementsByClassName("menu-option clickable");
+var categoryButtons = document.getElementsByClassName("clickable");
 
 var fastTravelData;
 
@@ -376,9 +376,9 @@ $("#language").on("change", function () {
 });
 
 //Disable & enable collection category
-$('.menu-option.clickable').on('click', function () {
+$('.clickable').on('click', function () {
   var menu = $(this);
-
+  
   $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
   var isDisabled = menu.hasClass('disabled');
 
@@ -386,8 +386,8 @@ $('.menu-option.clickable').on('click', function () {
     enabledCategories = $.grep(enabledCategories, function (value) {
       return value != menu.data('type');
     });
-    categoriesDisabledByDefault.push(menu.data('type'));
 
+    categoriesDisabledByDefault.push(menu.data('type'));
   } else {
     enabledCategories.push(menu.data('type'));
 
@@ -395,6 +395,7 @@ $('.menu-option.clickable').on('click', function () {
       return value != menu.data('type');
     });
   }
+
   $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });
 
   if (menu.data('type') !== 'treasure')

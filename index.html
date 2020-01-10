@@ -13,10 +13,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=209" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=210" />
 
   <script>
-    var nocache = 209;
+    var nocache = 210;
   </script>
 </head>
 
@@ -261,7 +261,7 @@
         <input style="margin: auto 35px auto auto" class="input-day" type="number" min="1" max="7" name="random">
       </div>
     </div>
-    <h2 data-text="menu.utils">Utils</h2>
+    <h2 data-text="menu.utils">Utilities</h2>
     <div class="menu-option clickable" data-type="nazar">
       <img class="icon" src="./assets/images/icons/nazar.png" />
       <span data-text="madam_nazar.name">Madam Nazar</span>
@@ -270,33 +270,56 @@
       <img class="icon" src="./assets/images/icons/fast-travel.png" />
       <span data-text="menu.fast_travel">Fast Travel</span>
     </div>
-    <div class="menu-option clickable" data-type="egg_encounter">
-      <img class="icon" src="./assets/images/icons/egg-encounter.png" />
-      <span data-text="menu.egg_encounter">Egg Encounter</span>
-    </div>
-    <div class="menu-option clickable" data-type="grave_robber">
-      <img class="icon" src="./assets/images/icons/grave-robber.png" />
-      <span data-text="menu.grave_robber">Grave Robber</span>
-    </div>
-    <div class="menu-option clickable" data-type="dog_encounter">
-      <img class="icon" src="./assets/images/icons/dog-encounter.png" />
-      <span data-text="menu.dog_encounter">Dog Encounter</span>
-    </div>
-    <div class="menu-option clickable" data-type="treasure_hunter">
-      <img class="icon" src="./assets/images/icons/treasure-hunter.png" />
-      <span data-text="menu.treasure_hunter">Treasure Hunter</span>
-    </div>
-    <div class="menu-option clickable" data-type="tree_map">
-      <img class="icon" src="./assets/images/icons/tree-map.png" />
-      <span data-text="menu.tree_map">Treasure Map</span>
-    </div>
-    <div class="menu-option clickable" data-type="fame_seeker">
-      <img class="icon" src="./assets/images/icons/fame-seeker.png" />
-      <span data-text="menu.fame_seeker">Fame Seeker</span>
-    </div>
-    <div class="menu-option clickable" data-type="wounded_animal">
-      <img class="icon" src="./assets/images/icons/wounded-animal.png" />
-      <span data-text="menu.wounded_animal">Wounded Animal</span>
+    <div>
+      <div class="menu-option">
+        <img class="icon" src="./assets/images/icons/random.png">
+        <span data-text="menu.random_encounters">Random encounters</span>
+        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+      </div>
+      <div class="menu-hidden">
+        <div class="collectible-wrapper clickable" data-type="egg_encounter">
+          <img src="./assets/images/icons/egg-encounter.png" class="collectible-icon" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.egg_encounter">Egg Encounter</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="grave_robber">
+          <img src="./assets/images/icons/grave-robber.png" class="collectible-icon" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.grave_robber">Grave Robber</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="dog_encounter">
+          <img src="./assets/images/icons/dog-encounter.png" class="collectible-icon" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.dog_encounter">Dog Encounter</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="treasure_hunter">
+          <img src="./assets/images/icons/treasure-hunter.png" class="collectible-icon" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.treasure_hunter">Treasure Hunter</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="tree_map">
+          <img src="./assets/images/icons/tree-map.png" class="collectible-icon" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.tree_map">Treasure Map</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="fame_seeker">
+          <img src="./assets/images/icons/fame-seeker.png" class="collectible-icon" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.fame_seeker">Fame Seeker</p>
+          </span>
+        </div>
+        <div class="collectible-wrapper clickable" data-type="wounded_animal">
+          <img src="./assets/images/icons/wounded-animal.png" class="collectible-icon" />
+          <span class="collectible-text">
+            <p class="collectible" data-text="menu.wounded_animal">Wounded Animal</p>
+          </span>
+        </div>
+      </div>
     </div>
     <div>
       <div class="menu-option clickable" data-type="treasure">
@@ -371,7 +394,8 @@
       <div class="input-container">
         <label for="enable-inventory-popups" data-text="menu.enable_inventory_popups">Enable inventory in popups</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-inventory-popups" value="1" id="enable-inventory-popups" />
+          <input class="input-checkbox" type="checkbox" name="enable-inventory-popups" value="1"
+            id="enable-inventory-popups" />
           <label class="input-checkbox-label" for="enable-inventory-popups"></label>
         </div>
       </div>
@@ -737,18 +761,18 @@
   <script src="assets/js/lib/jquery.cookie.js"></script>
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script>
-  <script src="assets/js/settings.js?nocache=209"></script>
-  <script src="assets/js/cycles.js?nocache=209"></script>
-  <script src="assets/js/marker.js?nocache=209"></script>
-  <script src="assets/js/inventory.js?nocache=209"></script>
-  <script src="assets/js/treasures.js?nocache=209"></script>
-  <script src="assets/js/encounters.js?nocache=209"></script>
-  <script src="assets/js/pins.js?nocache=209"></script>
-  <script src="assets/js/map.js?nocache=209"></script>
-  <script src="assets/js/language.js?nocache=209"></script>
-  <script src="assets/js/menu.js?nocache=209"></script>
-  <script src="assets/js/routes.js?nocache=209"></script>
-  <script src="assets/js/scripts.js?nocache=209"></script>
+  <script src="assets/js/settings.js?nocache=210"></script>
+  <script src="assets/js/cycles.js?nocache=210"></script>
+  <script src="assets/js/marker.js?nocache=210"></script>
+  <script src="assets/js/inventory.js?nocache=210"></script>
+  <script src="assets/js/treasures.js?nocache=210"></script>
+  <script src="assets/js/encounters.js?nocache=210"></script>
+  <script src="assets/js/pins.js?nocache=210"></script>
+  <script src="assets/js/map.js?nocache=210"></script>
+  <script src="assets/js/language.js?nocache=210"></script>
+  <script src="assets/js/menu.js?nocache=210"></script>
+  <script src="assets/js/routes.js?nocache=210"></script>
+  <script src="assets/js/scripts.js?nocache=210"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
   <script>

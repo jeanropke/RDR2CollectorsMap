@@ -280,7 +280,7 @@ var MapBase = {
         }
       });
 
-      if (subdata != '' && day == Cycles.data.cycles[Cycles.data.current][category]) {
+      if (subdata != '' && day != null && day == Cycles.data.cycles[Cycles.data.current][category]) {
         if ((_marker.length == 1 && !_marker[0].canCollect) || _marker.every(function (marker) { return !marker.canCollect; })) {
           $(`[data-type=${subdata}]`).addClass('disabled');
         } else {
