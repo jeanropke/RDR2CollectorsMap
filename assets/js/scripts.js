@@ -20,8 +20,6 @@ var categoriesDisabledByDefault = [
 var enabledCategories = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
-var availableLanguages = ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'th-th', 'zh-s', 'zh-t'];
-
 var fastTravelData;
 
 var weeklySetData = [];
@@ -99,7 +97,7 @@ function init() {
   if (typeof $.cookie('map-layer') === 'undefined' || isNaN(parseInt($.cookie('map-layer'))))
     $.cookie('map-layer', 1, { expires: 999 });
 
-  if (!availableLanguages.includes(Settings.language))
+  if (!Language.availableLanguages.includes(Settings.language))
     Settings.language = 'en-us';
 
   if (typeof $.cookie('remove-markers-daily') === 'undefined') {
