@@ -18,7 +18,7 @@ var categoriesDisabledByDefault = [
 ]
 
 var enabledCategories = categories;
-var categoryButtons = document.getElementsByClassName("clickable");
+var categoryButtons = $(".clickable[data-type]");
 
 var fastTravelData;
 
