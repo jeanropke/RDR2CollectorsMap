@@ -441,15 +441,13 @@ $('.collection-reset').on('click', function (e) {
       inventory[value.text].isCollected = false;
     value.isCollected = false;
     value.canCollect = true;
-  });
 
-  $.each(getMarkers, function (key, value) {
     if (value.subdata) {
-        Inventory.changeMarkerAmount(value.subdata, -10);
+        Inventory.changeMarkerAmount(value.subdata, -Inventory.stackSize);
         $(this).removeClass('disabled');
     }
     else {
-        Inventory.changeMarkerAmount(value.text, -10);
+        Inventory.changeMarkerAmount(value.text, -Inventory.stackSize);
         $(this).removeClass('disabled');
     }
   });
