@@ -12,7 +12,7 @@
     content="Red Dead Online, Collectors Map, Collectors Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  
+
   <link rel="stylesheet" href="assets/css/styles.css?nocache=205" />
 
   <script>
@@ -400,7 +400,8 @@
       <span class="header-border"></span>
     </div>
     <div class="links-container">
-      <a data-text="menu.generate_route" href="javascript:void(0);" onclick="Routes.generatePath()">Generate route</a>
+      <a data-text="menu.generate_route" href="javascript:void(0);" onclick="Routes.generatePath(true)">Generate
+        route</a>
       <a data-text="menu.generate_route_clear" href="javascript:void(0);" onclick="Routes.clearPath()">Clear route</a>
     </div>
     <div class="settings-container">
@@ -420,6 +421,15 @@
           <input class="input-checkbox" type="checkbox" name="generate-route-ignore-collected" value="1"
             id="generate-route-ignore-collected" />
           <label class="input-checkbox-label" for="generate-route-ignore-collected"></label>
+        </div>
+      </div>
+      <div class="input-container">
+        <label for="generate-route-auto-update" data-text="menu.generate_route_auto_update">Automatically
+          update route</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="generate-route-auto-update" value="1"
+            id="generate-route-auto-update" />
+          <label class="input-checkbox-label" for="generate-route-auto-update"></label>
         </div>
       </div>
       <div class="input-container">
@@ -646,31 +656,36 @@
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="clear-markers-title" data-text="menu.modal_clear_markers_title">Reset markers?</h4>
+          <h4 class="modal-title" id="clear-markers-title" data-text="menu.modal_clear_markers_title">Reset markers?
+          </h4>
         </div>
         <div class="modal-body" data-text="menu.modal_clear_markers_body">
           This will reset all markers you've removed from the map. This action cannot be undone.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="clear-markers" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
+          <button id="clear-markers" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="clear-inventory-modal" tabindex="-1" role="dialog" aria-labelledby="clear-inventory-title">
+  <div class="modal fade" id="clear-inventory-modal" tabindex="-1" role="dialog"
+    aria-labelledby="clear-inventory-title">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="clear-inventory-title" data-text="menu.modal_clear_inventory_title">Clear inventory?</h4>
+          <h4 class="modal-title" id="clear-inventory-title" data-text="menu.modal_clear_inventory_title">Clear
+            inventory?</h4>
         </div>
         <div class="modal-body" data-text="menu.modal_clear_inventory_body">
           This will clear your inventory. This action cannot be undone.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="clear-inventory" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
+          <button id="clear-inventory" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
@@ -680,14 +695,17 @@
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="clear-routes-title" data-text="menu.modal_clear_routes_title">Remove custom routes?</h4>
+          <h4 class="modal-title" id="clear-routes-title" data-text="menu.modal_clear_routes_title">Remove custom
+            routes?</h4>
         </div>
         <div class="modal-body" data-text="menu.modal_clear_routes_body">
-          This will remove all custom routes currently on the map. Unsaved progress will be lost. This action cannot be undone.
+          This will remove all custom routes currently on the map. Unsaved progress will be lost. This action cannot be
+          undone.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="clear-custom-routes" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
+          <button id="clear-custom-routes" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>

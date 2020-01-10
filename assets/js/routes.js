@@ -8,6 +8,7 @@ var Routes = {
 
     $('#generate-route-generate-on-visit').prop("checked", Routes.generateOnVisit);
     $('#generate-route-ignore-collected').prop("checked", Routes.ignoreCollected);
+    $('#generate-route-auto-update').prop("checked", Routes.autoUpdatePath);
     $('#generate-route-distance').val(Routes.maxDistance);
     $('#generate-route-start-lat').val(Routes.startMarkerLat);
     $('#generate-route-start-lng').val(Routes.startMarkerLng);
@@ -110,6 +111,9 @@ var Routes = {
 
   // Whether collected items should be ignored or not when pathing.
   ignoreCollected: $.cookie('generator-path-ignore-collected') == '1',
+
+  // Whether to automatically update the path.
+  autoUpdatePath: $.cookie('generator-path-auto-update') == '1',
 
   // The maximum distance a path can be in points.
   // - This number might need to be tweaked depending on how many markers there are.
@@ -228,8 +232,16 @@ var Routes = {
   },
 
   // Generate a path using a nearest neighbor algorithm.
-  // markers: A list of all markers to generate a path with, will be filtered on isVisible.
-  generatePath: function () {
+  // force: Whether the path should be generated with or without checking the restrictions.
+  generatePath: function (force = false) {
+    if (!force) {
+      // Only run when an update is needed.
+      if (Routes.lastPolyline == null) return;
+
+      // Only run when the autoUpdatePath option is selected.
+      if (!Routes.autoUpdatePath) return;
+    }
+
     // Clean up before generating.
     Routes.clearPath();
 
