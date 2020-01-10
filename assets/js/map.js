@@ -346,7 +346,7 @@ var MapBase = {
     return `<h1>${marker.title} - ${Language.get("menu.day")} ${marker.day}</h1>
         <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
         ${linksElement.prop('outerHTML')}
-        ${Inventory.isEnabled ? buttons : ''}
+        ${(Inventory.isEnabled && Inventory.isPopupEnabled) ? buttons : ''}
         <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.day || ''}', '${marker.text || ''}', '${marker.subdata || ''}', '${marker.category || ''}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>
         `;
   },

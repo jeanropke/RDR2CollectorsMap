@@ -546,6 +546,13 @@ $('#enable-inventory').on("change", function () {
     $('.collection-sell, .counter').hide();
 });
 
+$('#enable-inventory-popups').on("change", function () {
+  Inventory.isPopupEnabled = $("#enable-inventory-popups").prop('checked');
+  $.cookie('inventory-popups-enabled', Inventory.isEnabled ? '1' : '0', { expires: 999 });
+
+  MapBase.addMarkers();
+});
+
 if (Inventory.isEnabled)
   $('.collection-sell, .counter').show();
 else
