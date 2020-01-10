@@ -155,7 +155,7 @@
 	{"key": "menu.generate_route_auto_update", "value": "Automatically update route"},
 	{"key": "menu.enable_inventory_popups", "value": "Enable inventory in popups"},
 	{"key": "menu.random_encounters", "value": "Random encounters"},
-	{"key": "map.madam_nazar.desc", "value": "Wrong location? Follow <a href=\"https://twitter.com/MadamNazarIO\" target=\"_blank\">@MadamNazarIO</a>."},
+	{"key": "map.madam_nazar.desc", "value": "Wrong location? Follow {link}."},
 	{"key": "map.user_pins.placeholder_title", "value": "Name"},
 	{"key": "map.user_pins.default_title", "value": "User pin"},
 	{"key": "map.user_pins.placeholder_desc", "value": "Description"},
