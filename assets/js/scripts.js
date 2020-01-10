@@ -434,18 +434,22 @@ $('.collection-reset').on('click', function (e) {
   var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]);
 
   $.each(getMarkers, function (key, value) {
+    if (value.canCollect)
+      return;
+
     if (inventory[value.text])
       inventory[value.text].isCollected = false;
+
     value.isCollected = false;
     value.canCollect = true;
 
     if (value.subdata) {
-        Inventory.changeMarkerAmount(value.subdata, -Inventory.stackSize);
-        $(this).removeClass('disabled');
+      Inventory.changeMarkerAmount(value.subdata, -1);
+      $(this).removeClass('disabled');
     }
     else {
-        Inventory.changeMarkerAmount(value.text, -Inventory.stackSize);
-        $(this).removeClass('disabled');
+      Inventory.changeMarkerAmount(value.text, -1);
+      $(this).removeClass('disabled');
     }
   });
   MapBase.save();
