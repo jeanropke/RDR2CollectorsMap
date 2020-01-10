@@ -431,6 +431,31 @@ $('.collection-sell').on('click', function (e) {
   });
 });
 
+// Reset collections on menu
+$('.collection-reset').on('click', function (e) {
+  var collectionType = $(this).parent().parent().data('type');
+  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]);
+
+  $.each(getMarkers, function (key, value) {
+    if (inventory[value.text])
+      inventory[value.text].isCollected = false;
+    value.isCollected = false;
+    value.canCollect = true;
+  });
+
+  $.each(getMarkers, function (key, value) {
+    if (value.subdata) {
+        Inventory.changeMarkerAmount(value.subdata, -10);
+        $(this).removeClass('disabled');
+    }
+    else {
+        Inventory.changeMarkerAmount(value.text, -10);
+        $(this).removeClass('disabled');
+    }
+  });
+  MapBase.save();
+});
+
 //Remove item from map when using the menu
 $(document).on('click', '.collectible-wrapper', function () {
   var collectible = $(this).data('type');
