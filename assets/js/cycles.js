@@ -32,7 +32,7 @@ setInterval(function () {
     var day = new Date().getUTCDate();
 
     if (day != Cycles.setLocaleDate())
-        $('.map-alert').css('opacity', '1');
+        $('.map-alert').removeClass('hidden');
     else
-        $('.map-alert').css('opacity', '0');
+        $('.map-alert').addClass('hidden');
 }, 1000 * 60);
