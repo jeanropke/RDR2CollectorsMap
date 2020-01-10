@@ -9,7 +9,7 @@ var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
   'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'wounded_animal', 'fame_seeker'
+  'wounded_animal', 'fame_seeker', 'user_pins'
 ];
 
 var categoriesDisabledByDefault = [
@@ -145,7 +145,7 @@ function init() {
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
 
-  Pins.loadAllPins();
+  Pins.addToMap();
   changeCursor();
 }
 
@@ -382,7 +382,7 @@ $("#language").on("change", function () {
 //Disable & enable collection category
 $('.clickable').on('click', function () {
   var menu = $(this);
-  
+
   $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
   var isDisabled = menu.hasClass('disabled');
 
@@ -402,10 +402,12 @@ $('.clickable').on('click', function () {
 
   $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });
 
-  if (menu.data('type') !== 'treasure')
-    MapBase.addMarkers();
-  else
+  if (menu.data('type') == 'treasure')
     Treasures.addToMap();
+  else if (menu.data('type') == 'user_pins')
+    Pins.addToMap();
+  else
+    MapBase.addMarkers();
 });
 
 //Open collection submenu
@@ -510,7 +512,7 @@ $('#pins-edit-mode').on("change", function () {
   Settings.isPinsEditingEnabled = $("#pins-edit-mode").prop('checked');
   $.cookie('pins-edit-enabled', Settings.isPinsEditingEnabled ? '1' : '0', { expires: 999 });
 
-  Pins.loadAllPins();
+  Pins.addToMap();
 });
 
 $('#pins-export').on("click", function () {

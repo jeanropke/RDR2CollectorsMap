@@ -1,6 +1,13 @@
 var Pins = {
     pinsList: [],
 
+    addToMap: function () {
+        if (!enabledCategories.includes('user_pins'))
+            this.removeAllPins();
+        else
+            this.loadAllPins();
+    },
+
     addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true) {
         var icon = icon == null ? 'pin' : icon;
         var marker = L.marker([lat, lng], {

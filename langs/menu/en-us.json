@@ -109,7 +109,7 @@
 	{"key": "menu.import_export_explanation", "value": "This will import or export your settings. Importing settings will replace all current settings and reload the page. This feature does not include pins."},
 	{"key": "menu.import_button", "value": "Import"},
 	{"key": "menu.export_button", "value": "Export"},
-	{"key": "menu.user_pins", "value": "Pins"},
+	{"key": "menu.user_pins", "value": "User Pins"},
 	{"key": "menu.user_pins_place_mode", "value": "Create new pin on click"},
 	{"key": "menu.user_pins_edit_mode", "value": "Enable pin editing"},
 	{"key": "menu.user_pins_import", "value": "Import"},
