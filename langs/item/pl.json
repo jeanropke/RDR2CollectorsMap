@@ -158,7 +158,7 @@
 	{"key": "cups_king_5.desc", "value": "Na półce w tylnej części stajni."},
 	{"key": "cups_king_6.desc", "value": "Na stole obiadowym po wejściu do domu."},
 
-		{"key": "swords_ace.name", "value": "As mieczy" },
+	{"key": "swords_ace.name", "value": "As mieczy" },
 	{"key": "swords_ace_1.desc", "value": "Na najwyżsyzm poziomie wieży z wiatrakiem. Wejdź po drabinach." },
 	{"key": "swords_ace_2.desc", "value": "Na parapecie na górnym piętrze stodoły." },
 	{"key": "swords_ace_3.desc", "value": "" },
