@@ -11,23 +11,18 @@
   <meta name="keywords"
     content="Red Dead Online, Collectors Map, Collectors Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
-  <script src="assets/js/jquery-3.4.1.min.js"></script>
-  <script src="assets/js/jquery.cookie.js"></script>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=199" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=206" />
+
   <script>
-    var nocache = 199;
+    var nocache = 206;
   </script>
 
   <!-- Beta only; Add draw plugin -->
-  <link rel="stylesheet" href="assets/css/pathfinder.css?nocache=199" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
-  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+  <link rel="stylesheet" href="assets/css/pathfinder.css?nocache=199" />
   <style>
     .leaflet-top.leaflet-left {
       top: 30px !important;
@@ -78,7 +73,7 @@
           autocomplete="off">
       </div>
     </div>
-    <div class="hide-show-container">
+    <div class="links-container">
       <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
       <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
     </div>
@@ -92,6 +87,7 @@
       <div class="menu-hidden" data-type="american_flowers">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $155.50</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -106,6 +102,7 @@
       <div class="menu-hidden" data-type="card_cups">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $240.50</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -120,6 +117,7 @@
       <div class="menu-hidden" data-type="card_swords">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $286.00</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -134,6 +132,7 @@
       <div class="menu-hidden" data-type="card_wands">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $239.00</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -148,6 +147,7 @@
       <div class="menu-hidden" data-type="card_pentacles">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $287.00</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -162,6 +162,7 @@
       <div class="menu-hidden" data-type="lost_bracelet">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $271.50</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -176,6 +177,7 @@
       <div class="menu-hidden" data-type="lost_earrings">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $364.50</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -190,6 +192,7 @@
       <div class="menu-hidden" data-type="lost_necklaces">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $335.00</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -204,6 +207,7 @@
       <div class="menu-hidden" data-type="lost_ring">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $378.00</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -218,6 +222,7 @@
       <div class="menu-hidden" data-type="antique_bottles">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $160.50</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -232,6 +237,7 @@
       <div class="menu-hidden" data-type="bird_eggs">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $182.50</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -246,6 +252,7 @@
       <div class="menu-hidden" data-type="arrowhead">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $289.00</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -260,6 +267,7 @@
       <div class="menu-hidden" data-type="family_heirlooms">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $292.50</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -274,6 +282,7 @@
       <div class="menu-hidden" data-type="coin">
         <div class="collection-value">
           <span><span data-text="menu.collectables_value">Value</span>: $540.00</span>
+          <span class="collection-reset" data-text="menu.reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell">Sell</span>
         </div>
       </div>
@@ -366,8 +375,8 @@
           <label class="input-checkbox-label" for="reset-markers"></label>
         </div>
       </div>
-      <div id="clear-markers" class="input-container clickable">
-        <label for="clear-markers" data-text="menu.clear_markers">Reset markers now</label>
+      <div class="input-container clickable" data-toggle="modal" data-target="#clear-markers-modal">
+        <label data-text="menu.clear_markers">Reset markers now</label>
         <div class="input-action"></div>
       </div>
       <hr class="menu-divider">
@@ -397,8 +406,8 @@
         <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
         <input id="inventory-stack" class="input-day narrow-select-menu" type="number" min="1" max="10" value="10">
       </div>
-      <div class="input-container clickable" id="clear-inventory">
-        <label for="clear-inventory" data-text="menu.clear_inventory">Clear inventory</label>
+      <div class="input-container clickable" data-toggle="modal" data-target="#clear-inventory-modal">
+        <label data-text="menu.clear_inventory">Clear inventory</label>
         <div class="input-action"></div>
       </div>
       <hr class="menu-divider">
@@ -438,8 +447,9 @@
       </h2>
       <span class="header-border"></span>
     </div>
-    <div class="custom-routes-container">
-      <a data-text="menu.generate_route" href="javascript:void(0);" onclick="Routes.generatePath()">Generate route</a>
+    <div class="links-container">
+      <a data-text="menu.generate_route" href="javascript:void(0);" onclick="Routes.generatePath(true)">Generate
+        route</a>
       <a data-text="menu.generate_route_clear" href="javascript:void(0);" onclick="Routes.clearPath()">Clear route</a>
     </div>
     <div class="settings-container">
@@ -459,6 +469,15 @@
           <input class="input-checkbox" type="checkbox" name="generate-route-ignore-collected" value="1"
             id="generate-route-ignore-collected" />
           <label class="input-checkbox-label" for="generate-route-ignore-collected"></label>
+        </div>
+      </div>
+      <div class="input-container">
+        <label for="generate-route-auto-update" data-text="menu.generate_route_auto_update">Automatically
+          update route</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="generate-route-auto-update" value="1"
+            id="generate-route-auto-update" />
+          <label class="input-checkbox-label" for="generate-route-auto-update"></label>
         </div>
       </div>
       <div class="input-container">
@@ -488,13 +507,13 @@
     </div>
 
     <h4 data-text="menu.custom_routes">Custom routes</h4>
-    <div class="custom-routes-container">
+    <div class="links-container">
       <a data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
         route</a>
       <a data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export
         route</a>
     </div>
-    <div class="routes-container">
+    <div class="settings-container">
       <div class="input-container">
         <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
         <div class="input-checkbox-wrapper">
@@ -502,8 +521,8 @@
           <label class="input-checkbox-label" for="custom-routes"></label>
         </div>
       </div>
-      <div class="input-container clickable" id="clear-custom-routes">
-        <label for="clear-custom-routes" data-text="menu.clear_custom_routes">Clear custom route</label>
+      <div class="input-container clickable" data-toggle="modal" data-target="#clear-routes-modal">
+        <label data-text="menu.clear_custom_routes">Clear custom route</label>
         <div class="input-action"></div>
       </div>
     </div>
@@ -513,7 +532,7 @@
       <h2 class="header-title" data-text="menu.import_export_title">Import/Export</h2>
       <span class="header-border"></span>
     </div>
-    <div class="routes-container">
+    <div class="settings-container">
       <div class="input-container-noflex">
         <h4 class="no-margin-top" data-text="menu.settings_import_export_title">Settings</h4>
       </div>
@@ -556,7 +575,7 @@
       <h2 class="header-title">Debug</h2>
       <span class="header-border"></span>
     </div>
-    <div class="routes-container">
+    <div class="settings-container">
       <div class="input-container-noflex">
         <p class="explain-text">
           These settings will not be saved. These settings are for development purposes and should not be used by
@@ -593,25 +612,25 @@
       <a class="no-style wiki-page"
         href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
         target="_blank">
-        <div class="input-container clickable" id="clear-inventory">
+        <div class="input-container clickable">
           <label data-text="menu.read_wiki">Read this map's Wiki</label>
           <div class="input-action external"></div>
         </div>
       </a>
       <a class="no-style" href="https://jeanropke.github.io/RDOMap/" target="_blank">
-        <div class="input-container clickable" id="clear-inventory">
+        <div class="input-container clickable">
           <label data-text="menu.rdo_map">RDO Map</label>
           <div class="input-action external"></div>
         </div>
       </a>
       <a class="no-style" href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">
-        <div class="input-container clickable" id="clear-inventory">
+        <div class="input-container clickable">
           <label data-text="menu.report_issues">Report issues here</label>
           <div class="input-action external"></div>
         </div>
       </a>
       <a class="no-style" href="./index-legacy.html" target="_blank">
-        <div class="input-container clickable" id="clear-inventory">
+        <div class="input-container clickable">
           <label data-text="menu.return_legacy">Return to legacy version</label>
           <div class="input-action external"></div>
         </div>
@@ -682,22 +701,94 @@
     <button class="close-button">×</button>
   </div-->
 
+  <!-- Modals -->
+  <div class="modal fade" id="clear-markers-modal" tabindex="-1" role="dialog" aria-labelledby="clear-markers-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="clear-markers-title" data-text="menu.modal_clear_markers_title">Reset markers?
+          </h4>
+        </div>
+        <div class="modal-body" data-text="menu.modal_clear_markers_body">
+          This will reset all markers you've removed from the map. This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
+          <button id="clear-markers" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <script src="assets/js/settings.js?nocache=199"></script>
-  <script src="assets/js/cycles.js?nocache=199"></script>
-  <script src="assets/js/marker.js?nocache=199"></script>
-  <script src="assets/js/inventory.js?nocache=199"></script>
-  <script src="assets/js/treasures.js?nocache=199"></script>
-  <script src="assets/js/encounters.js?nocache=199"></script>
-  <script src="assets/js/pins.js?nocache=199"></script>
-  <script src="assets/js/map-beta.js?nocache=199"></script>
-  <script src="assets/js/language.js?nocache=199"></script>
-  <script src="assets/js/menu.js?nocache=199"></script>
-  <script src="assets/js/routes-beta.js?nocache=199"></script>
-  <script src="assets/js/pathfinder.js?nocache=199"></script>
-  <script src="assets/js/scripts.js?nocache=199"></script>
+  <div class="modal fade" id="clear-inventory-modal" tabindex="-1" role="dialog"
+    aria-labelledby="clear-inventory-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="clear-inventory-title" data-text="menu.modal_clear_inventory_title">Clear
+            inventory?</h4>
+        </div>
+        <div class="modal-body" data-text="menu.modal_clear_inventory_body">
+          This will clear your inventory. This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
+          <button id="clear-inventory" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="clear-routes-modal" tabindex="-1" role="dialog" aria-labelledby="clear-routes-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="clear-routes-title" data-text="menu.modal_clear_routes_title">Remove custom
+            routes?</h4>
+        </div>
+        <div class="modal-body" data-text="menu.modal_clear_routes_body">
+          This will remove all custom routes currently on the map. Unsaved progress will be lost. This action cannot be
+          undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
+          <button id="clear-custom-routes" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--div class="map-alert">
+    Cycles are setted manually after Moonshiners update. Usually takes 20 minutes to update.
+    <button class="close-button">×</button>
+  </div-->
+
+
+  <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script src="assets/js/lib/jquery.cookie.js"></script>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script>
+  <script src="assets/js/settings.js?nocache=206"></script>
+  <script src="assets/js/cycles.js?nocache=206"></script>
+  <script src="assets/js/marker.js?nocache=206"></script>
+  <script src="assets/js/inventory.js?nocache=206"></script>
+  <script src="assets/js/treasures.js?nocache=206"></script>
+  <script src="assets/js/encounters.js?nocache=206"></script>
+  <script src="assets/js/pins.js?nocache=206"></script>
+  <script src="assets/js/map-beta.js?nocache=206"></script>
+  <script src="assets/js/language.js?nocache=206"></script>
+  <script src="assets/js/menu.js?nocache=206"></script>
+  <script src="assets/js/routes-beta.js?nocache=206"></script>
+  <script src="assets/js/scripts.js?nocache=206"></script>
 
   <!-- Beta only -->
+  <script src="assets/js/pathfinder.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
   <script>
     document.getElementById('delete').onclick = function (e) {
       MapBase.drawnItems.clearLayers();

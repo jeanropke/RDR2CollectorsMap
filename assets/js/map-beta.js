@@ -124,20 +124,34 @@ var MapBase = {
   },
 
   loadGeoJson: function () {
-    $.getJSON('data/geojson/hanover-lemoyne.json?nocache=' + Math.random())
+    $.getJSON('data/geojson/new-austin.json?nocache=' + Math.random())
       .done(function (data) {
         MapBase.geoJson.lemoyne = data;
 
         L.geoJSON(MapBase.geoJson.lemoyne, {
           style: {
             "color": "#ff7800",
-            "weight": 5,
+            "weight": 3,
             "opacity": 0.8
           }
         }).eachLayer(function(l){
           MapBase.drawnItems.addLayer(l);
         })
       });
+      /*$.getJSON('data/geojson/new-austin.json?nocache=' + Math.random())
+        .done(function (data) {
+          MapBase.geoJson.lemoyne = data;
+  
+          L.geoJSON(MapBase.geoJson.lemoyne, {
+            style: {
+              "color": "#78ff00",
+              "weight": 3,
+              "opacity": 0.8
+            }
+          }).eachLayer(function(l){
+            MapBase.drawnItems.addLayer(l);
+          })
+        });*/
   },
 
   loadOverlays: function () {

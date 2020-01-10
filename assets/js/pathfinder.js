@@ -34,7 +34,7 @@ class Chunk {
 	_canAdd(marker) {
 		if(this.bounds == null) return true
 		var d = MapBase.map.distance(marker, this.bounds.getCenter())
-		return d < 10
+		return d < 20
 	}
 
 	addMarker(marker) {
@@ -303,8 +303,12 @@ PF.highlightPath = function(path) {
 	if(PF._currentPath !== null) {
 		PF._layerGroup.removeLayer(PF._currentPath)
 	}
-	PF._currentPath = PF.drawPath(path, '#00bb00')
-	MapBase.map.fitBounds(PF._currentPath.getBounds(), { padding: [30, 30], maxZoom: MapBase.maxZoom })
+	PF._currentPath = L.layerGroup().addTo(PF._layerGroup)
+
+	var line = L.polyline(path, {color: '#000000', opacity: 0.5, weight: 9 }).addTo(PF._currentPath)
+	L.polyline(path, {color: '#ffffff', opacity: 1, weight: 7 }).addTo(PF._currentPath)
+	L.polyline(path, {color: '#00bb00', opacity: 1, weight: 3 }).addTo(PF._currentPath)
+	MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
 }
 PF.drawRoute = function(paths) {
 	PF._layerGroup.clearLayers()
@@ -447,7 +451,8 @@ PF.pathfinderStart = async function() {
 	PF._currentChunk = null
 
 	PF.generateChunks()
-	if(PF._PathFinder === null) PF.createPathFinder()
+	//if(PF._PathFinder === null) 
+	PF.createPathFinder()
 	//if(PF.router === null) PF.createController()
 	
 	if(PF._layerControl !== null) MapBase.map.removeControl(PF._layerControl)
