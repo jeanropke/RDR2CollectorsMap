@@ -23,5 +23,21 @@ var Cycles = {
                 .replace('{month}', Language.get(`menu.month.${_date[0]}`))
                 .replace('{day}', _date[1])
         );
+        return _date[1];
     }
 }
+
+// show alert when cycles are not up to date
+setInterval(function () {
+    var newDate = new Date(),
+        day = newDate.getUTCDate(),
+        hour = newDate.getUTCHours(),
+        minute = newDate.getUTCMinutes();
+    
+    if (day != Cycles.setLocaleDate())
+        $('.map-alert').css('opacity', '1');
+
+    else
+        $('.map-alert').css('opacity', '0');
+    
+}, 1000 * 60);
