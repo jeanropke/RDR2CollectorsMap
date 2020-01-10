@@ -411,6 +411,12 @@ $('.open-submenu').on('click', function (e) {
   $(this).toggleClass('rotate');
 });
 
+$('.submenu-only').on('click', function (e) {
+  e.stopPropagation();
+  $(this).parent().children('.menu-hidden').toggleClass('opened');
+  $(this).children('.open-submenu').toggleClass('rotate');
+});
+
 //Sell collections on menu
 $('.collection-sell').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
