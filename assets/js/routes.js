@@ -4,8 +4,10 @@
 
 var Routes = {
   init: function () {
-    $('#generate-route-generate-on-visit').val(Routes.generateOnVisit ? 'true' : 'false');
-    $('#generate-route-ignore-collected').val(Routes.ignoreCollected ? 'true' : 'false');
+    $('#custom-routes').prop("checked", Routes.customRouteEnabled);
+
+    $('#generate-route-generate-on-visit').prop("checked", Routes.generateOnVisit);
+    $('#generate-route-ignore-collected').prop("checked", Routes.ignoreCollected);
     $('#generate-route-distance').val(Routes.maxDistance);
     $('#generate-route-start-lat').val(Routes.startMarkerLat);
     $('#generate-route-start-lng').val(Routes.startMarkerLng);
@@ -97,17 +99,17 @@ var Routes = {
   routesData: [],
   polylines: null,
 
-  customRouteEnabled: false,
+  customRouteEnabled: $.cookie('custom-routes-enabled') == '1',
   customRouteConnections: [],
 
   /**
    * Path generator by Senexis
    */
   // Whether the route should be generated when the map is loaded.
-  generateOnVisit: $.cookie('generator-path-generate-on-visit') == 'true',
+  generateOnVisit: $.cookie('generator-path-generate-on-visit') == '1',
 
   // Whether collected items should be ignored or not when pathing.
-  ignoreCollected: $.cookie('generator-path-ignore-collected') == 'true',
+  ignoreCollected: $.cookie('generator-path-ignore-collected') == '1',
 
   // The maximum distance a path can be in points.
   // - This number might need to be tweaked depending on how many markers there are.
