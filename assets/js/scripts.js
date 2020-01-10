@@ -541,15 +541,15 @@ $('#enable-inventory').on("change", function () {
   MapBase.addMarkers();
 
   if (Inventory.isEnabled)
-    $('.collection-sell, small.counter').show();
+    $('.collection-sell, .counter').show();
   else
-    $('.collection-sell, small.counter').hide();
+    $('.collection-sell, .counter').hide();
 });
 
 if (Inventory.isEnabled)
-  $('.collection-sell, small.counter').show();
+  $('.collection-sell, .counter').show();
 else
-  $('.collection-sell, small.counter').hide();
+  $('.collection-sell, .counter').hide();
 
 //Enable & disable inventory on menu
 $('#inventory-stack').on("change", function () {

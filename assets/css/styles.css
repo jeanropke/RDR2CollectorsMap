@@ -633,6 +633,28 @@ a.wiki-page:visited {
     width: calc(50% - 4px);
 }
 
+.counter {
+    line-height: 12px;
+}
+
+.counter-number {
+    margin: 0 6px;
+    min-width: 12px;
+    display: inline-block;
+    text-align: center;
+}
+
+.counter-button {
+    display: inline-block;
+    padding: 3px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    background-color: #333;
+    color: #eee !important;
+    border-radius: 50%;
+}
+
 /* Custom checkbox styling */
 
 .input-checkbox-wrapper {
