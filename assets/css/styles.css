@@ -494,7 +494,7 @@ input, textarea, select, .btn {
     color: #fff;
 }
 
-.side-menu .menu-hidden .collection-sell {
+.side-menu .menu-hidden .collection-sell, .collection-reset {
     cursor: pointer;
     user-select: none;
 }
