@@ -27,6 +27,9 @@
 	{"key": "menu.language", "value": "Sprache"},
 	{"key": "menu.enable_route", "value": "Dynamische Route aktivieren"},
 	{"key": "menu.enable_custom_route", "value": "Benutzerdefinierte Route aktivieren"},
+	{"key": "menu.clear_custom_routes", "value": "Benutzerdefinierte Route löschen"},
+	{"key": "menu.modal_clear_markers_title", "value": "Benutzerdefinierte Route löschen?"},
+	{"key": "menu.modal_clear_markers_body", "value": "Sind sie sicher das sie ihre benutzerdefinierte Route löschen möchten? Ungespeicherte Änderungen gehen verloren. Dieser Vorgang kann nicht rückgängig gemacht werden."},
 	{"key": "menu.yes", "value": "Ja"},
 	{"key": "menu.no", "value": "Nein"},
 	{"key": "menu.clear", "value": "Löschen"},
@@ -137,5 +140,6 @@
 	{"key": "menu.pins_import_export_title", "value": "Eigene Markierungen"},
 	{"key": "menu.pins_import_export_explanation", "value": "Hier kannst du deine eigenen Markierungen importieren oder exportieren. Beim Importieren werden alle eigenen Markierungen ersetzt."},
 	{"key": "menu.information_links", "value": "Links/Informationen"},
-	{"key": "menu.read_wiki", "value": "Karten-Wiki lesen"}
+	{"key": "menu.read_wiki", "value": "Karten-Wiki lesen"},
+	{"key": "menu.generate_route_auto_update", "value": "Route automatisch neu berechnen"}
 ]
