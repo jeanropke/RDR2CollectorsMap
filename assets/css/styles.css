@@ -136,7 +136,7 @@ input, textarea, select, .btn {
     width: 100%;
     position: absolute;
     top: 0;
-    z-index: 1010;
+    z-index: 1020;
     padding: 10px;
     text-align: center;
     display: none;
