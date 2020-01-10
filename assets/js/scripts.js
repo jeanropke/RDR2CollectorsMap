@@ -500,7 +500,7 @@ $('#marker-cluster').on("change", function () {
 
 
 /**
- * User pins
+ * User Pins
  */
 
 $('#pins-place-mode').on("change", function () {
