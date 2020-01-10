@@ -548,7 +548,7 @@ $('#enable-inventory').on("change", function () {
 
 $('#enable-inventory-popups').on("change", function () {
   Inventory.isPopupEnabled = $("#enable-inventory-popups").prop('checked');
-  $.cookie('inventory-popups-enabled', Inventory.isEnabled ? '1' : '0', { expires: 999 });
+  $.cookie('inventory-popups-enabled', Inventory.isPopupEnabled ? '1' : '0', { expires: 999 });
 
   MapBase.addMarkers();
 });
