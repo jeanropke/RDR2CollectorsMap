@@ -34,13 +34,9 @@ setInterval(function () {
         hour = newDate.getUTCHours(),
         minute = newDate.getUTCMinutes();
     
-    if (hour < 1 && minute <= 20)
+    if (day != Cycles.setLocaleDate())
         $('.map-alert').css('opacity', '1');
-    
-    if (day != Cycles.setLocaleDate()) {
-        $('.map-alert').css('opacity', '1');
-        return;
-    }
+
     else
         $('.map-alert').css('opacity', '0');
     
