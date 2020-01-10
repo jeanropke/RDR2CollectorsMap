@@ -20,8 +20,6 @@ var categoriesDisabledByDefault = [
 var enabledCategories = categories;
 var categoryButtons = document.getElementsByClassName("menu-option clickable");
 
-var availableLanguages = ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'th-th', 'zh-s', 'zh-t'];
-
 var fastTravelData;
 
 var weeklySetData = [];
@@ -99,7 +97,7 @@ function init() {
   if (typeof $.cookie('map-layer') === 'undefined' || isNaN(parseInt($.cookie('map-layer'))))
     $.cookie('map-layer', 1, { expires: 999 });
 
-  if (!availableLanguages.includes(Settings.language))
+  if (!Language.availableLanguages.includes(Settings.language))
     Settings.language = 'en-us';
 
   if (typeof $.cookie('remove-markers-daily') === 'undefined') {
@@ -399,13 +397,10 @@ $('.menu-option.clickable').on('click', function () {
   }
   $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });
 
-  if (menu.data('type') !== 'treasure') {
+  if (menu.data('type') !== 'treasure')
     MapBase.addMarkers();
-  }
-  else {
+  else
     Treasures.addToMap();
-  }
-
 });
 
 //Open collection submenu
@@ -429,6 +424,33 @@ $('.collection-sell').on('click', function (e) {
       Inventory.changeMarkerAmount(value.text, -1);
     }
   });
+});
+
+// Reset collections on menu
+$('.collection-reset').on('click', function (e) {
+  var collectionType = $(this).parent().parent().data('type');
+  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]);
+
+  $.each(getMarkers, function (key, value) {
+    if (value.canCollect)
+      return;
+
+    if (inventory[value.text])
+      inventory[value.text].isCollected = false;
+
+    value.isCollected = false;
+    value.canCollect = true;
+
+    if (value.subdata) {
+      Inventory.changeMarkerAmount(value.subdata, -1);
+      $(this).removeClass('disabled');
+    }
+    else {
+      Inventory.changeMarkerAmount(value.text, -1);
+      $(this).removeClass('disabled');
+    }
+  });
+  MapBase.save();
 });
 
 //Remove item from map when using the menu
@@ -601,17 +623,21 @@ $('#cookie-import').on('click', function () {
  * Path generator by Senexis
  */
 
+$('#generate-route-generate-on-visit').on("change", function () {
+  Routes.runOnStart = $("#generate-route-generate-on-visit").prop('checked');
+  $.cookie('generator-path-generate-on-visit', Routes.runOnStart ? '1' : '0', { expires: 999 });
+});
+
 $('#generate-route-ignore-collected').on("change", function () {
   Routes.ignoreCollected = $("#generate-route-ignore-collected").prop('checked');
   $.cookie('generator-path-ignore-collected', Routes.ignoreCollected ? '1' : '0', { expires: 999 });
 
-  if (Routes.lastPolyline != null)
-    Routes.generatePath();
+  Routes.generatePath();
 });
 
-$('#generate-route-generate-on-visit').on("change", function () {
-  Routes.runOnStart = $("#generate-route-generate-on-visit").prop('checked');
-  $.cookie('generator-path-generate-on-visit', Routes.runOnStart ? '1' : '0', { expires: 999 });
+$('#generate-route-auto-update').on("change", function () {
+  Routes.autoUpdatePath = $("#generate-route-auto-update").prop('checked');
+  $.cookie('generator-path-auto-update', Routes.autoUpdatePath ? '1' : '0', { expires: 999 });
 });
 
 $('#generate-route-distance').on("change", function () {
@@ -620,8 +646,7 @@ $('#generate-route-distance').on("change", function () {
   $.cookie('generator-path-distance', inputValue, { expires: 999 });
   Routes.maxDistance = inputValue;
 
-  if (Routes.lastPolyline != null)
-    Routes.generatePath();
+  Routes.generatePath();
 });
 
 $('#generate-route-start').on("change", function () {
@@ -671,8 +696,7 @@ $('#generate-route-start').on("change", function () {
   Routes.startMarkerLat = startLat;
   Routes.startMarkerLng = startLng;
 
-  if (Routes.lastPolyline != null)
-    Routes.generatePath();
+  Routes.generatePath();
 });
 
 $('#generate-route-start-lat').on("change", function () {
@@ -681,8 +705,7 @@ $('#generate-route-start-lat').on("change", function () {
   $.cookie('generator-path-start-lat', inputValue, { expires: 999 });
   Routes.startMarkerLat = inputValue;
 
-  if (Routes.lastPolyline != null)
-    Routes.generatePath();
+  Routes.generatePath();
 });
 
 $('#generate-route-start-lng').on("change", function () {
@@ -691,8 +714,7 @@ $('#generate-route-start-lng').on("change", function () {
   $.cookie('generator-path-start-lng', inputValue, { expires: 999 });
   Routes.startMarkerLng = inputValue;
 
-  if (Routes.lastPolyline != null)
-    Routes.generatePath();
+  Routes.generatePath();
 });
 
 /**

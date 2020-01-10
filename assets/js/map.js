@@ -219,9 +219,13 @@ var MapBase = {
 
     if (refreshMenu)
       Menu.refreshMenu();
+    else {
+      Routes.generatePath();
+      return;
+    }
 
     if (Routes.generateOnVisit)
-      Routes.generatePath();
+      Routes.generatePath(true);
   },
 
   loadWeeklySet: function () {
@@ -285,7 +289,7 @@ var MapBase = {
       }
     }
 
-    if (Routes.lastPolyline != null && Routes.ignoreCollected)
+    if (Routes.ignoreCollected)
       Routes.generatePath();
 
     Menu.refreshItemsCounter();

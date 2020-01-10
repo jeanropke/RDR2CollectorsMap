@@ -138,5 +138,19 @@
 	{"key": "map.user_pins.icon.lost_necklaces", "value": "Necklace"},
 	{"key": "map.user_pins.icon.lost_ring", "value": "Ring"},
 	{"key": "map.user_pins.icon.nazar", "value": "Madam Nazar"},
-	{"key": "map.user_pins.icon.treasure", "value": "Treasure"}
+	{"key": "map.user_pins.icon.treasure", "value": "Treasure"},
+	{"key": "menu.clear_custom_routes", "value": "Clear custom route"},
+	{"key": "menu.clear_markers", "value": "Reset markers now"},
+	{"key": "menu.information_links", "value": "Links/Information"},
+	{"key": "menu.modal_clear_inventory_body", "value": "This will clear your inventory. This action cannot be undone."},
+	{"key": "menu.modal_clear_inventory_title", "value": "Clear inventory?"},
+	{"key": "menu.modal_clear_markers_body", "value": "This will reset all markers you've removed from the map. This action cannot be undone."},
+	{"key": "menu.modal_clear_markers_title", "value": "Reset markers?"},
+	{"key": "menu.modal_clear_routes_body", "value": "This will remove all custom routes currently on the map. Unsaved progress will be lost. This action cannot be undone."},
+	{"key": "menu.modal_clear_routes_title", "value": "Remove custom routes?"},
+	{"key": "menu.pins_import_export_explanation", "value": "This will import or export your pins. Importing pins will replace all current pins."},
+	{"key": "menu.pins_import_export_title", "value": "Pins"},
+	{"key": "menu.read_wiki", "value": "Read this map's Wiki"},
+	{"key": "menu.settings_import_export_title", "value": "Settings"},
+	{"key": "menu.generate_route_auto_update", "value": "Automatically update route"}
 ]
