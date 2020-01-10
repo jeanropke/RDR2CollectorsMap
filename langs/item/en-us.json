@@ -536,7 +536,7 @@
 
 	{"key": "coin_five_dollar_bechtler.name", "value": "1800 Five Dollar Bechtler Coin"},
 	{"key": "coin_five_dollar_bechtler_1.desc", "value": "At trunk of dead tree. Beside two fallen tree trunks."},
-	{"key": "coin_five_dollar_bechtler_2.desc", "value": "Underneath the railroad"},
+	{"key": "coin_five_dollar_bechtler_2.desc", "value": "Underneath the railroad."},
 	{"key": "coin_five_dollar_bechtler_3.desc", "value": "Underneath the windmill."},
 	{"key": "coin_five_dollar_bechtler_4.desc", "value": ""},
 	{"key": "coin_five_dollar_bechtler_5.desc", "value": ""},
@@ -618,7 +618,7 @@
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": "On the dinner table inside."},
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": "Inside building in cabinet in far right corner."},
 	{"key": "bottle_tennesee_whiskey_3.desc", "value": "In a cabinet in the livingroom."},
-	{"key": "bottle_tennesee_whiskey_4.desc", "value": ""},
+	{"key": "bottle_tennesee_whiskey_4.desc", "value": "On the crate in the middle of the tunnel."},
 	{"key": "bottle_tennesee_whiskey_5.desc", "value": ""},
 	{"key": "bottle_tennesee_whiskey_6.desc", "value": "On a shelf at the below the bar in the saloon."},
 
@@ -626,7 +626,7 @@
 	{"key": "bottle_irish_whiskey_1.desc", "value": "It's up. Climb ladder, hop rail, walk over, hop another rail, walk around corner. At last door."},
 	{"key": "bottle_irish_whiskey_2.desc", "value": ""},
 	{"key": "bottle_irish_whiskey_3.desc", "value": "Inside on the table."},
-	{"key": "bottle_irish_whiskey_4.desc", "value": ""},
+	{"key": "bottle_irish_whiskey_4.desc", "value": "Underneath the abandoned wagon."},
 	{"key": "bottle_irish_whiskey_5.desc", "value": ""},
 	{"key": "bottle_irish_whiskey_6.desc", "value": "In the broken boat next to the skeleton."},
 
@@ -634,7 +634,7 @@
 	{"key": "bottle_scotch_whisky_1.desc", "value": "On the table on the right as soon as you walk in the shack."},
 	{"key": "bottle_scotch_whisky_2.desc", "value": ""},
 	{"key": "bottle_scotch_whisky_3.desc", "value": "Upstairs inside wardrobe."},
-	{"key": "bottle_scotch_whisky_4.desc", "value": ""},
+	{"key": "bottle_scotch_whisky_4.desc", "value": "Next to the fireplace of the ruined building."},
 	{"key": "bottle_scotch_whisky_5.desc", "value": ""},
 	{"key": "bottle_scotch_whisky_6.desc", "value": "On a crate outside."},
 
@@ -642,7 +642,7 @@
 	{"key": "bottle_absinthe_1.desc", "value": "In the burnt wagon."},
 	{"key": "bottle_absinthe_2.desc", "value": "In mausoleum. Enterance only from the west."},
 	{"key": "bottle_absinthe_3.desc", "value": "In a Green cabinet."},
-	{"key": "bottle_absinthe_4.desc", "value": ""},
+	{"key": "bottle_absinthe_4.desc", "value": "At the top of the electricity tower next to the switchboard."},
 	{"key": "bottle_absinthe_5.desc", "value": ""},
 	{"key": "bottle_absinthe_6.desc", "value": "In the basement on a storage shelf."},
 
@@ -650,7 +650,7 @@
 	{"key": "bottle_gran_corazon_madeira_1.desc", "value": "On a crate infront of the butchers tent."},
 	{"key": "bottle_gran_corazon_madeira_2.desc", "value": "At the back of the broken down wagon."},
 	{"key": "bottle_gran_corazon_madeira_3.desc", "value": "In the green cabinet in the corner."},
-	{"key": "bottle_gran_corazon_madeira_4.desc", "value": ""},
+	{"key": "bottle_gran_corazon_madeira_4.desc", "value": "In the sink cabinet on the lower floor."},
 	{"key": "bottle_gran_corazon_madeira_5.desc", "value": ""},
 	{"key": "bottle_gran_corazon_madeira_6.desc", "value": "Next the barrel next to the waterfall."},
 
@@ -787,7 +787,7 @@
 	{"key": "heirlooms_jade_hairpin_2.desc", "value": "Near \"Landry's\" grave."},
 	{"key": "heirlooms_jade_hairpin_3.desc", "value": "In the middle of the wagon circle."},
 	{"key": "heirlooms_jade_hairpin_4.desc", "value": "On top of the fireplace secound floor first room to the left."},
-	{"key": "heirlooms_jade_hairpin_5.desc", "value": ""},
+	{"key": "heirlooms_jade_hairpin_5.desc", "value": "Between a bunch of crates and a wooden structure at the side of the shack."},
 	{"key": "heirlooms_jade_hairpin_6.desc", "value": ""},
 
 	{"key": "heirlooms_cherrywood_comb.name", "value": "Cherrywood Comb Heirloom"},
@@ -819,7 +819,7 @@
 	{"key": "heirlooms_carved_wooden_2.desc", "value": "In front of the \"Keep Out\" sign."},
 	{"key": "heirlooms_carved_wooden_3.desc", "value": "Inbetween the two dead trees."},
 	{"key": "heirlooms_carved_wooden_4.desc", "value": "In the yard to the left of the entrance by two bix boxes."},
-	{"key": "heirlooms_carved_wooden_5.desc", "value": ""},
+	{"key": "heirlooms_carved_wooden_5.desc", "value": "Between the wooden foundation and a small wagon."},
 	{"key": "heirlooms_carved_wooden_6.desc", "value": ""},
 
 	{"key": "heirlooms_boxwood_comb.name", "value": "Boxwood Comb Heirloom"},
@@ -827,7 +827,7 @@
 	{"key": "heirlooms_boxwood_comb_2.desc", "value": "Inside the house in the tall wardrobe."},
 	{"key": "heirlooms_boxwood_comb_3.desc", "value": "Upstairs on the dresser in room 2B."},
 	{"key": "heirlooms_boxwood_comb_4.desc", "value": "Inside the chest by the big bed on the secound floor."},
-	{"key": "heirlooms_boxwood_comb_5.desc", "value": ""},
+	{"key": "heirlooms_boxwood_comb_5.desc", "value": "On the shelf next to the door."},
 	{"key": "heirlooms_boxwood_comb_6.desc", "value": ""},
 
 	{"key": "heirlooms_goat_hair_brush.name", "value": "Goat Hairbrush Heirloom"},
@@ -835,7 +835,7 @@
 	{"key": "heirlooms_goat_hair_brush_2.desc", "value": "On a dresser in bedroom 1 upstairs"},
 	{"key": "heirlooms_goat_hair_brush_3.desc", "value": "In a chest on the lower deck of the ship."},
 	{"key": "heirlooms_goat_hair_brush_4.desc", "value": ""},
-	{"key": "heirlooms_goat_hair_brush_5.desc", "value": ""},
+	{"key": "heirlooms_goat_hair_brush_5.desc", "value": "In the chest in one of the bedrooms on the ground floor."},
 	{"key": "heirlooms_goat_hair_brush_6.desc", "value": ""},
 
 	{"key": "heirlooms_ebony_hairpin.name", "value": "Ebony Hairpin Heirloom"},
@@ -843,7 +843,7 @@
 	{"key": "heirlooms_ebony_hairpin_2.desc", "value": "Behind the large house."},
 	{"key": "heirlooms_ebony_hairpin_3.desc", "value": "On a three seater bench inside and to the right."},
 	{"key": "heirlooms_ebony_hairpin_4.desc", "value": "Inside the broken/burnt down house."},
-	{"key": "heirlooms_ebony_hairpin_5.desc", "value": ""},
+	{"key": "heirlooms_ebony_hairpin_5.desc", "value": "In the green wardrobe in the corner."},
 	{"key": "heirlooms_ebony_hairpin_6.desc", "value": ""},
 
 	{"key": "heirlooms_ivory_hairpin.name", "value": "Ivory Hairpin Heirloom"},
@@ -851,7 +851,7 @@
 	{"key": "heirlooms_ivory_hairpin_2.desc", "value": "On the small blue nightstand."},
 	{"key": "heirlooms_ivory_hairpin_3.desc", "value": "In the backyard next to the shed."},
 	{"key": "heirlooms_ivory_hairpin_4.desc", "value": "On a table otherside of the brick wall with the gate."},
-	{"key": "heirlooms_ivory_hairpin_5.desc", "value": ""},
+	{"key": "heirlooms_ivory_hairpin_5.desc", "value": "Next to the campfire with a cooking pot."},
 	{"key": "heirlooms_ivory_hairpin_6.desc", "value": ""},
 
 	{"key": "heirlooms_rosewood_hairbrush.name", "value": "Rosewood Hairbrush Heirloom"},
@@ -859,7 +859,7 @@
 	{"key": "heirlooms_rosewood_hairbrush_2.desc", "value": "On the nightstand in the corner."},
 	{"key": "heirlooms_rosewood_hairbrush_3.desc", "value": "Inside house in large wardrobe in the bedroom."},
 	{"key": "heirlooms_rosewood_hairbrush_4.desc", "value": "Inside the room too the right of the fireplace on a table."},
-	{"key": "heirlooms_rosewood_hairbrush_5.desc", "value": ""},
+	{"key": "heirlooms_rosewood_hairbrush_5.desc", "value": "On the red loveseat in the cabin."},
 	{"key": "heirlooms_rosewood_hairbrush_6.desc", "value": ""},
 
 	{"key": "heirlooms_tortoiseshell_comb.name", "value": "Tortoiseshell Comb Heirloom"},
@@ -867,7 +867,7 @@
 	{"key": "heirlooms_tortoiseshell_comb_2.desc", "value": "In the house on the dresser with a mirror."},
 	{"key": "heirlooms_tortoiseshell_comb_3.desc", "value": "In the house on the wash table."},
 	{"key": "heirlooms_tortoiseshell_comb_4.desc", "value": "Inside a chest in a tent."},
-	{"key": "heirlooms_tortoiseshell_comb_5.desc", "value": ""},
+	{"key": "heirlooms_tortoiseshell_comb_5.desc", "value": "On a shelf in the corner of the cabin, next to the fireplace."},
 	{"key": "heirlooms_tortoiseshell_comb_6.desc", "value": ""},
 
 	{"key": "heirlooms_ivory_comb.name", "value": "Ivory Comb Heirloom"},
@@ -875,7 +875,7 @@
 	{"key": "heirlooms_ivory_comb_2.desc", "value": "On a sidetable near the couches on the top floor of the saloon."},
 	{"key": "heirlooms_ivory_comb_3.desc", "value": "Inside on the table in the back."},
 	{"key": "heirlooms_ivory_comb_4.desc", "value": "In the room to the right on a table by a mirror."},
-	{"key": "heirlooms_ivory_comb_5.desc", "value": ""},
+	{"key": "heirlooms_ivory_comb_5.desc", "value": "On a bench on the south-side porch."},
 	{"key": "heirlooms_ivory_comb_6.desc", "value": ""},
 
 	{"key": "heirlooms_horse_hair_brush.name", "value": "Horse Hairbrush Heirloom"},
@@ -883,7 +883,7 @@
 	{"key": "heirlooms_horse_hair_brush_2.desc", "value": "In corner table of room upstairs in Saloon."},
 	{"key": "heirlooms_horse_hair_brush_3.desc", "value": "In the green cabinet next to the fireplace."},
 	{"key": "heirlooms_horse_hair_brush_4.desc", "value": "Inside the tall cabinet."},
-	{"key": "heirlooms_horse_hair_brush_5.desc", "value": ""},
+	{"key": "heirlooms_horse_hair_brush_5.desc", "value": "In the wardrobe in the basement."},
 	{"key": "heirlooms_horse_hair_brush_6.desc", "value": ""},
 
 	{"key": "heirlooms_boar_bristle_brush.name", "value": "Boar Bristle Hairbrush Heirloom"},
@@ -891,7 +891,7 @@
 	{"key": "heirlooms_boar_bristle_brush_2.desc", "value": "In the chair on the front porch."},
 	{"key": "heirlooms_boar_bristle_brush_3.desc", "value": "Inside chest left of house entrance."},
 	{"key": "heirlooms_boar_bristle_brush_4.desc", "value": "On a bench on the left side of the house."},
-	{"key": "heirlooms_boar_bristle_brush_5.desc", "value": ""},
+	{"key": "heirlooms_boar_bristle_brush_5.desc", "value": "In the green wardrobe in the bedroom in the back."},
 	{"key": "heirlooms_boar_bristle_brush_6.desc", "value": ""},
 
 	{"key": "heirlooms_new_guinea_rosewood.name", "value": "New Guinea Rosewood Hairbrush Heirloom"},
@@ -899,7 +899,7 @@
 	{"key": "heirlooms_new_guinea_rosewood_2.desc", "value": "In room 1B in the back on the ground floor on the dresser with the mirror."},
 	{"key": "heirlooms_new_guinea_rosewood_3.desc", "value": "On the back porch of the mansion on the table."},
 	{"key": "heirlooms_new_guinea_rosewood_4.desc", "value": "In a chest in the bedroom."},
-	{"key": "heirlooms_new_guinea_rosewood_5.desc", "value": ""},
+	{"key": "heirlooms_new_guinea_rosewood_5.desc", "value": "On the white bench."},
 	{"key": "heirlooms_new_guinea_rosewood_6.desc", "value": ""},
 
 	{"key": "ring_harland_coral.name", "value": "Harland Coral Ring"},
@@ -916,7 +916,7 @@
 	{"key": "ring_magnate_turquoise_3.desc", "value": "In a lockbox on the edge of the rocks."},
 	{"key": "ring_magnate_turquoise_4.desc", "value": "By two barrels by the wagon with wheels around it."},
 	{"key": "ring_magnate_turquoise_5.desc", "value": "On top of the fireplace."},
-	{"key": "ring_magnate_turquoise_6.desc", "value": ""},
+	{"key": "ring_magnate_turquoise_6.desc", "value": "Next to the skull altar."},
 
 	{"key": "ring_pilgrim_moonstone.name", "value": "Pilgrim Moonstone Ring"},
 	{"key": "ring_pilgrim_moonstone_1.desc", "value": "East side of the house."},
@@ -940,7 +940,7 @@
 	{"key": "ring_banais_topaz_3.desc", "value": "Inside a birdsnest next to the bell."},
 	{"key": "ring_banais_topaz_4.desc", "value": "Inside the crypt."},
 	{"key": "ring_banais_topaz_5.desc", "value": "At the back of two rocks."},
-	{"key": "ring_banais_topaz_6.desc", "value": ""},
+	{"key": "ring_banais_topaz_6.desc", "value": "Inside a chest in the basement of Fort Brennand."},
 
 	{"key": "ring_beaulieux_diamond.name", "value": "Beaulieux Diamond Ring"},
 	{"key": "ring_beaulieux_diamond_1.desc", "value": "Near the rotting tree."},
@@ -948,7 +948,7 @@
 	{"key": "ring_beaulieux_diamond_3.desc", "value": "Inside a chimney. Watch for cougars."},
 	{"key": "ring_beaulieux_diamond_4.desc", "value": "Inside the barn up the ladder inside a chest."},
 	{"key": "ring_beaulieux_diamond_5.desc", "value": "On the island in front of a big boulder."},
-	{"key": "ring_beaulieux_diamond_6.desc", "value": ""},
+	{"key": "ring_beaulieux_diamond_6.desc", "value": "Next to some debris and a crate in front of the shack."},
 
 	{"key": "ring_yates_diamond.name", "value": "Yates Diamond Ring"},
 	{"key": "ring_yates_diamond_1.desc", "value": "Underneath the westside awning."},
@@ -956,7 +956,7 @@
 	{"key": "ring_yates_diamond_3.desc", "value": "Behind the large tree."},
 	{"key": "ring_yates_diamond_4.desc", "value": "By the wagon wheel on the backside of the house."},
 	{"key": "ring_yates_diamond_5.desc", "value": "Next to the log that's acting as a ramp."},
-	{"key": "ring_yates_diamond_6.desc", "value": ""},
+	{"key": "ring_yates_diamond_6.desc", "value": "Inside the tree next to the road."},
 
 	{"key": "ring_aubrey_onyx.name", "value": "Aubrey Onyx Ring"},
 	{"key": "ring_aubrey_onyx_1.desc", "value": "Besides the dead tree."},
@@ -980,7 +980,7 @@
 	{"key": "ring_sackville_diamond_3.desc", "value": "Inside the chimney."},
 	{"key": "ring_sackville_diamond_4.desc", "value": "Inside the chimney."},
 	{"key": "ring_sackville_diamond_5.desc", "value": "At the base of the tree."},
-	{"key": "ring_sackville_diamond_6.desc", "value": ""},
+	{"key": "ring_sackville_diamond_6.desc", "value": "Next to the broken wagon at the side of the road."},
 
 	{"key": "ring_thorburn_turquoise.name", "value": "Thorburn Turquoise Ring"},
 	{"key": "ring_thorburn_turquoise_1.desc", "value": "Next to a big rock."},
@@ -988,7 +988,7 @@
 	{"key": "ring_thorburn_turquoise_3.desc", "value": "Inside the house in the chimney."},
 	{"key": "ring_thorburn_turquoise_4.desc", "value": "Inside the wardrobe in the first room to the right."},
 	{"key": "ring_thorburn_turquoise_5.desc", "value": "Next to the log atop the plateau."},
-	{"key": "ring_thorburn_turquoise_6.desc", "value": "Underneath rail bridge."},
+	{"key": "ring_thorburn_turquoise_6.desc", "value": "At the supports of rail bridge, next to the path underneath the railroad bridge."},
 
 	{"key": "necklace_blakely_miniatue.name", "value": "Blakely Miniature Necklace"},
 	{"key": "necklace_blakely_miniatue_1.desc", "value": "In a chest on a ridge next to a rotting elk."},
@@ -996,7 +996,7 @@
 	{"key": "necklace_blakely_miniatue_3.desc", "value": "Between a tree and a fallen tree."},
 	{"key": "necklace_blakely_miniatue_4.desc", "value": "Inbetween trees covered with vines."},
 	{"key": "necklace_blakely_miniatue_5.desc", "value": "Between the center two graves."},
-	{"key": "necklace_blakely_miniatue_6.desc", "value": ""},
+	{"key": "necklace_blakely_miniatue_6.desc", "value": "Inside the tree."},
 
 	{"key": "necklace_richelieu_amethyst.name", "value": "Richelieu Amethyst Necklace"},
 	{"key": "necklace_richelieu_amethyst_1.desc", "value": "In a lockbox in the worn down shack."},
@@ -1004,7 +1004,7 @@
 	{"key": "necklace_richelieu_amethyst_3.desc", "value": "In a lockbox in the shed."},
 	{"key": "necklace_richelieu_amethyst_4.desc", "value": "By a big rock."},
 	{"key": "necklace_richelieu_amethyst_5.desc", "value": "In front of the ruined outhouse directly next to the house."},
-	{"key": "necklace_richelieu_amethyst_6.desc", "value": ""},
+	{"key": "necklace_richelieu_amethyst_6.desc", "value": "On top of the the fireplace inside. Jump on wagon then roof of deck to get to second floor window."},
 
 	{"key": "necklace_pelle_pearl.name", "value": "Pelle Pearl Necklace"},
 	{"key": "necklace_pelle_pearl_1.desc", "value": "At the very top of the plateau near the edge."},
@@ -1020,7 +1020,7 @@
 	{"key": "necklace_ainsworth_cross_3.desc", "value": "On a search spot in the middle of a log brige. <br /> <img src=\"https://i.imgur.com/D6K4gxV.jpg\" style=\"width:200px;\">"},
 	{"key": "necklace_ainsworth_cross_4.desc", "value": "Inside a chest top floor in the master bedroom."},
 	{"key": "necklace_ainsworth_cross_5.desc", "value": "In the little yard next to the house."},
-	{"key": "necklace_ainsworth_cross_6.desc", "value": ""},
+	{"key": "necklace_ainsworth_cross_6.desc", "value": "Next to the little fence with a wagon wheel next to it."},
 
 	{"key": "necklace_braxton_amethyst.name", "value": "Braxton Amethyst Necklace"},
 	{"key": "necklace_braxton_amethyst_1.desc", "value": "On a ledge in a lockbox below a rock next to an elk skeleton."},
@@ -1044,7 +1044,7 @@
 	{"key": "necklace_gosselin_white_gold_3.desc", "value": "In the tree on the cliff edge."},
 	{"key": "necklace_gosselin_white_gold_4.desc", "value": "Inside a dead tree."},
 	{"key": "necklace_gosselin_white_gold_5.desc", "value": "In the middle of the ruined house."},
-	{"key": "necklace_gosselin_white_gold_6.desc", "value": ""},
+	{"key": "necklace_gosselin_white_gold_6.desc", "value": "Next to the sign at the end of the fence."},
 
 	{"key": "necklace_dane_topaz.name", "value": "Dane Topaz Necklace"},
 	{"key": "necklace_dane_topaz_1.desc", "value": "Inside the chimney."},
@@ -1060,7 +1060,7 @@
 	{"key": "necklace_tuamotu_pearl_3.desc", "value": "Inside lockbox on top of rocks."},
 	{"key": "necklace_tuamotu_pearl_4.desc", "value": "By a small rock on the side of the stable."},
 	{"key": "necklace_tuamotu_pearl_5.desc", "value": "On one of the ledges of the cliff."},
-	{"key": "necklace_tuamotu_pearl_6.desc", "value": ""},
+	{"key": "necklace_tuamotu_pearl_6.desc", "value": "In front of the scarecrow."},
 
 	{"key": "earring_ursula_citrine.name", "value": "Ursula Citrine Earrings"},
 	{"key": "earring_ursula_citrine_1.desc", "value": "In the clearing between a bunch of rocks."},
@@ -1068,7 +1068,7 @@
 	{"key": "earring_ursula_citrine_3.desc", "value": "Between two rocks."},
 	{"key": "earring_ursula_citrine_4.desc", "value": "Inbetween the cactus and the big rock."},
 	{"key": "earring_ursula_citrine_5.desc", "value": "Between the bulrush at the shoreline."},
-	{"key": "earring_ursula_citrine_6.desc", "value": ""},
+	{"key": "earring_ursula_citrine_6.desc", "value": "In between two large trees next to some twigs."},
 
 	{"key": "earring_royal_victoria.name", "value": "Royal Victoria Diamond Earrings"},
 	{"key": "earring_royal_victoria_1.desc", "value": "Next to a tree atop the plateau."},
@@ -1076,7 +1076,7 @@
 	{"key": "earring_royal_victoria_3.desc", "value": "In front of the two boulders."},
 	{"key": "earring_royal_victoria_4.desc", "value": "By a circle of trees near a big rock."},
 	{"key": "earring_royal_victoria_5.desc", "value": "Between a log and a tree at the shoreline."},
-	{"key": "earring_royal_victoria_6.desc", "value": ""},
+	{"key": "earring_royal_victoria_6.desc", "value": "In the center of two fallen branches."},
 
 	{"key": "earring_calumet_turquoise.name", "value": "Calumet Turquoise Earrings"},
 	{"key": "earring_calumet_turquoise_1.desc", "value": "On shore near washed up tree trunk."},
@@ -1084,7 +1084,7 @@
 	{"key": "earring_calumet_turquoise_3.desc", "value": "Below the window underneath the house next to a barrel with a red lid."},
 	{"key": "earring_calumet_turquoise_4.desc", "value": "Inside a dead tree by a rock."},
 	{"key": "earring_calumet_turquoise_5.desc", "value": "Underneath the awning."},
-	{"key": "earring_calumet_turquoise_6.desc", "value": ""},
+	{"key": "earring_calumet_turquoise_6.desc", "value": "At the base of the tree."},
 
 	{"key": "earring_orchidee_diamond.name", "value": "Orchidee Diamond Earrings"},
 	{"key": "earring_orchidee_diamond_1.desc", "value": "Underneath the bridge besides the support pillar."},
@@ -1100,7 +1100,7 @@
 	{"key": "earring_sterling_tooth_3.desc", "value": "By the treetrunk on the cliff edge."},
 	{"key": "earring_sterling_tooth_4.desc", "value": "By a fallen dead tree."},
 	{"key": "earring_sterling_tooth_5.desc", "value": "In between the wagon and the tree."},
-	{"key": "earring_sterling_tooth_6.desc", "value": ""},
+	{"key": "earring_sterling_tooth_6.desc", "value": "Next to the broken wagon on the shoreline."},
 
 	{"key": "earring_harford_garnet.name", "value": "Harford Garnet Earrings"},
 	{"key": "earring_harford_garnet_1.desc", "value": "On the west side of the large rock."},
@@ -1108,7 +1108,7 @@
 	{"key": "earring_harford_garnet_3.desc", "value": "In a chest in the red wagon."},
 	{"key": "earring_harford_garnet_4.desc", "value": "By a small tree with a fallen dead tree."},
 	{"key": "earring_harford_garnet_5.desc", "value": "Next to the two wagons on the clearing."},
-	{"key": "earring_harford_garnet_6.desc", "value": ""},
+	{"key": "earring_harford_garnet_6.desc", "value": "Next to a couple of stacked stone slabs."},
 
 	{"key": "earring_duchess_emerald.name", "value": "Duchess Emerald Earrings"},
 	{"key": "earring_duchess_emerald_1.desc", "value": "In the center clearing of the intersection next to the tree with the signs."},
@@ -1124,7 +1124,7 @@
 	{"key": "earring_beauchene_ruby_3.desc", "value": "On the west side of the island near a bush."},
 	{"key": "earring_beauchene_ruby_4.desc", "value": "By the large tree by the road."},
 	{"key": "earring_beauchene_ruby_5.desc", "value": "Next to the tree at the top of the cliff."},
-	{"key": "earring_beauchene_ruby_6.desc", "value": ""},
+	{"key": "earring_beauchene_ruby_6.desc", "value": "At the base of the big tree in the backyard."},
 
 	{"key": "earring_endicott_diamond.name", "value": "Endicott Diamond Earrings"},
 	{"key": "earring_endicott_diamond_1.desc", "value": "Atop the ledge, next to two trees."},
@@ -1132,7 +1132,7 @@
 	{"key": "earring_endicott_diamond_3.desc", "value": "between the rocks."},
 	{"key": "earring_endicott_diamond_4.desc", "value": "By the road sign."},
 	{"key": "earring_endicott_diamond_5.desc", "value": "At the end of the plateau overlooking the Elysian Pool."},
-	{"key": "earring_endicott_diamond_6.desc", "value": ""},
+	{"key": "earring_endicott_diamond_6.desc", "value": "Outside next to the southern corner of the shack."},
 
 	{"key": "earring_josephine_pearl.name", "value": "Josephine Pearl Earrings"},
 	{"key": "earring_josephine_pearl_1.desc", "value": "Inside the cave. Entrance above the \"A\" of Annesburg."},
@@ -1156,7 +1156,7 @@
 	{"key": "bracelet_greco_sapphire_3.desc", "value": "Below a dead tree."},
 	{"key": "bracelet_greco_sapphire_4.desc", "value": "In front of the signs in the middle of the crossing."},
 	{"key": "bracelet_greco_sapphire_5.desc", "value": "In the cabinet immediately in front of you as you enter the house."},
-	{"key": "bracelet_greco_sapphire_6.desc", "value": ""},
+	{"key": "bracelet_greco_sapphire_6.desc", "value": "At the base of the tree atop the hill."},
 
 	{"key": "bracelet_abello_ruby_bangle.name", "value": "Abello Ruby Bangle Bracelet"},
 	{"key": "bracelet_abello_ruby_bangle_1.desc", "value": "Inside the tree."},
@@ -1172,7 +1172,7 @@
 	{"key": "bracelet_ojeda_rose_gold_3.desc", "value": "Bottom of cliff."},
 	{"key": "bracelet_ojeda_rose_gold_4.desc", "value": "Next to the big stone near the road."},
 	{"key": "bracelet_ojeda_rose_gold_5.desc", "value": "In the corner of two fallen trees."},
-	{"key": "bracelet_ojeda_rose_gold_6.desc", "value": "Inside the loft, in a chest."},
+	{"key": "bracelet_ojeda_rose_gold_6.desc", "value": "Inside the loft, in a chest on the second flooring of one of the bedrooms."},
 
 	{"key": "bracelet_helena_sapphire.name", "value": "Helena Sapphire Bracelet"},
 	{"key": "bracelet_helena_sapphire_1.desc", "value": "In a lockbox left of the railroad at the entrance of the tunnel. Climb up the hill from the dotted path to the south and walk east on the railroad."},
@@ -1180,7 +1180,7 @@
 	{"key": "bracelet_helena_sapphire_3.desc", "value": "In a lockbox next to the large rock."},
 	{"key": "bracelet_helena_sapphire_4.desc", "value": "Bottom of the very large tree."},
 	{"key": "bracelet_helena_sapphire_5.desc", "value": "In between two rocks."},
-	{"key": "bracelet_helena_sapphire_6.desc", "value": ""},
+	{"key": "bracelet_helena_sapphire_6.desc", "value": "In front of the signs in the middle of the road."},
 
 	{"key": "bracelet_durant_pearl.name", "value": "Durant Pearl Bracelet"},
 	{"key": "bracelet_durant_pearl_1.desc", "value": "In a lockbox below a log next to a cliff face."},
@@ -1188,7 +1188,7 @@
 	{"key": "bracelet_durant_pearl_3.desc", "value": "On the small island in a large chest."},
 	{"key": "bracelet_durant_pearl_4.desc", "value": "Infront of the big tree."},
 	{"key": "bracelet_durant_pearl_5.desc", "value": "Next to the entrance of the basement."},
-	{"key": "bracelet_durant_pearl_6.desc", "value": ""},
+	{"key": "bracelet_durant_pearl_6.desc", "value": "On top of the fireplace."},
 
 	{"key": "bracelet_infanta_turquoise.name", "value": "Infanta Turquoise Bracelet"},
 	{"key": "bracelet_infanta_turquoise_1.desc", "value": "In a chest, on the big central rock just on top of the waterfall!"},
@@ -1196,7 +1196,7 @@
 	{"key": "bracelet_infanta_turquoise_3.desc", "value": "Beside log."},
 	{"key": "bracelet_infanta_turquoise_4.desc", "value": "By the broken fence with some cactus near by."},
 	{"key": "bracelet_infanta_turquoise_5.desc", "value": "In front of the signs at the side of the road."},
-	{"key": "bracelet_infanta_turquoise_6.desc", "value": ""},
+	{"key": "bracelet_infanta_turquoise_6.desc", "value": "At the base of the tower, next to the wooden landing on the west side."},
 
 	{"key": "bracelet_elliston_carved.name", "value": "Elliston Carved Bracelet"},
 	{"key": "bracelet_elliston_carved_1.desc", "value": "Besides the dead tree."},
@@ -1212,7 +1212,7 @@
 	{"key": "bracelet_hajnal_garnet_bangle_3.desc", "value": "In a lockbox underneath the bridge."},
 	{"key": "bracelet_hajnal_garnet_bangle_4.desc", "value": "By the small tree on the side of the road."},
 	{"key": "bracelet_hajnal_garnet_bangle_5.desc", "value": "At the base of the lone tree."},
-	{"key": "bracelet_hajnal_garnet_bangle_6.desc", "value": "Is below rail bridge."},
+	{"key": "bracelet_hajnal_garnet_bangle_6.desc", "value": "Below the railroad bridge."},
 
 	{"key": "egg_duck.name", "value": "Duck Eggs"},
 	{"key": "egg_eagle.name", "value": "Eagle Egg"},
