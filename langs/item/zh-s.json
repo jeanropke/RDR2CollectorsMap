@@ -14,7 +14,7 @@
 	{"key": "fasttravel.annesburg.name", 	"value": "安尼斯堡"},
 	{"key": "fasttravel.saint_denis.name", 	"value": "圣丹尼斯"},
 	{"key": "fasttravel.lagras.name", 	"value": "拉格拉斯"},	
-	{"key": "madam_nazar.name", 		"value": "纳扎尔夫人"},	
+	{"key": "menu.madam_nazar", 		"value": "纳扎尔夫人"},	
 
 	{"key": "bards_crossing_treasure", 			"value": "巴德渡桥"},
 	{"key": "benedict_treasure", 				"value": "本尼迪克特车站"},

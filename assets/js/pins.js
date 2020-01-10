@@ -5,8 +5,8 @@ var Pins = {
         var icon = icon == null ? 'pin' : icon;
         var marker = L.marker([lat, lng], {
             id: id == null ? this.generatePinHash(`${lat}_${lng}_${Date.now()}`) : id,
-            name: name == null ? 'User pin' : name,
-            desc: desc == null ? 'This is your custom user pin, you can edit the name and description, just don\'t forget to save!' : desc,
+            name: name == null ? Language.get('map.user_pins.default_title') : name,
+            desc: desc == null ? Language.get('map.user_pins.default_desc') : desc,
             icon_name: icon,
             draggable: Settings.isPinsEditingEnabled,
             icon: L.icon({
@@ -104,12 +104,12 @@ var Pins = {
             markerIconSelect = markerIconSelect.prop('outerHTML');
         }
 
-        var markerTitle = Settings.isPinsEditingEnabled ? `<h1><input type="text" id="${markerId}_name" class="marker-popup-pin-input-name" value="${marker.options.name}" placeholder="Name"></h1>` : `<h1 id="${markerId}_name">${marker.options.name}</h1>`;
-        var markerDesc = Settings.isPinsEditingEnabled ? `<p><textarea id="${markerId}_desc" class="marker-popup-pin-input-desc" rows="5" value="${marker.options.desc}" placeholder="Description">${marker.options.desc}</textarea></p>` : `<p id="${markerId}_desc">${marker.options.desc}</p>`;
+        var markerTitle = Settings.isPinsEditingEnabled ? `<h1><input type="text" id="${markerId}_name" class="marker-popup-pin-input-name" value="${marker.options.name}" placeholder="${Language.get('map.user_pins.placeholder_title')}"></h1>` : `<h1 id="${markerId}_name">${marker.options.name}</h1>`;
+        var markerDesc = Settings.isPinsEditingEnabled ? `<p><textarea id="${markerId}_desc" class="marker-popup-pin-input-desc" rows="5" value="${marker.options.desc}" placeholder="${Language.get('map.user_pins.placeholder_desc')}">${marker.options.desc}</textarea></p>` : `<p id="${markerId}_desc">${marker.options.desc}</p>`;
         var markerDivider = Settings.isPinsEditingEnabled ? `<hr class="marker-popup-pin-input-divider">` : '';
-        var markerIconLabel = Settings.isPinsEditingEnabled ? `<label for="${markerId}_icon" class="marker-popup-pin-label" data-text="map.user_pins.icon">Icon</label>` : '';
-        var markerSaveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-info save-button" onclick="Pins.savePin(${markerId}, $('#${markerId}_name').val(), $('#${markerId}_desc').val(), $('#${markerId}_icon').val())" data-text="map.user_pins.save">Save</button>` : '';
-        var markerRemoveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-danger remove-button" onclick="Pins.removePin(${markerId})" data-text="map.user_pins.remove">Remove</button>` : '';
+        var markerIconLabel = Settings.isPinsEditingEnabled ? `<label for="${markerId}_icon" class="marker-popup-pin-label" data-text="map.user_pins.icon">${Language.get('map.user_pins.icon')}</label>` : '';
+        var markerSaveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-info save-button" onclick="Pins.savePin(${markerId}, $('#${markerId}_name').val(), $('#${markerId}_desc').val(), $('#${markerId}_icon').val())" data-text="map.user_pins.save">${Language.get('map.user_pins.save')}</button>` : '';
+        var markerRemoveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-danger remove-button" onclick="Pins.removePin(${markerId})" data-text="map.user_pins.remove">${Language.get('map.user_pins.remove')}</button>` : '';
         var markerContent = markerTitle + markerDesc + markerDivider + markerIconLabel + markerIconSelect + markerSaveButton + markerRemoveButton;
 
         marker.bindPopup(markerContent, { minWidth: 300, maxWidth: 300 });
@@ -138,7 +138,7 @@ var Pins = {
 
     importPins: function (text) {
         if (!text.includes(':') || !text.includes(';')) {
-            alert("The file you selected was not valid. Please select a different file.");
+            alert(Language.get('alerts.file_not_valid'));
         }
 
         localStorage.setItem("pinned-items", text);
@@ -147,7 +147,7 @@ var Pins = {
             this.loadAllPins();
         } catch (error) {
             this.removeAllPins();
-            alert("The file you selected was not valid. Please select a different file.");
+            alert(Language.get('alerts.file_not_valid'));
         }
     },
 

@@ -14,7 +14,7 @@
 	{"key": "fasttravel.annesburg.name", 	"value": "앤즈버그"},
 	{"key": "fasttravel.saint_denis.name", 	"value": "생 드니"},
 	{"key": "fasttravel.lagras.name", 		"value": "라그라스"},	
-	{"key": "madam_nazar.name", 			"value": "마담 나자르"},
+	{"key": "menu.madam_nazar", 			"value": "마담 나자르"},
 	
 	{"key": "bards_crossing_treasure", 			"value": "바드의 건널목"},
 	{"key": "benedict_treasure", 				"value": "베네딕트 포인트"},

@@ -170,8 +170,7 @@ input, textarea, select, .btn {
 }
 
 .tool-type {
-    vertical-align: bottom;
-    padding-right: 5px;
+    margin-right: 5px;
 }
 
 #countdown, #item-counter, #time-in-game {
@@ -661,6 +660,11 @@ a.wiki-page:visited {
     background-color: #333;
     color: #eee !important;
     border-radius: 50%;
+}
+
+.marker-content-wrapper {
+    display: flex;
+    align-items: center;
 }
 
 /* Custom checkbox styling */

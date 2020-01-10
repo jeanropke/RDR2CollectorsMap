@@ -135,7 +135,7 @@ var MapBase = {
   },
 
   setMarkers: function (data) {
-    console.log(`categoties disabled: ${categoriesDisabledByDefault}`);
+    console.log(`Categories disabled: ${categoriesDisabledByDefault}`);
     $.each(data, function (_category, _cycles) {
       $.each(_cycles, function (day, _markers) {
         $.each(_markers, function (key, marker) {
@@ -344,7 +344,10 @@ var MapBase = {
     </div>`;
 
     return `<h1>${marker.title} - ${Language.get("menu.day")} ${marker.day}</h1>
-        <p>${MapBase.getToolIcon(marker.tool)} ${popupContent}</p>
+        <span class="marker-content-wrapper">
+        <div>${MapBase.getToolIcon(marker.tool)}</div>
+        <p>${popupContent}</p>
+        </span>
         ${linksElement.prop('outerHTML')}
         ${(Inventory.isEnabled && Inventory.isPopupEnabled) ? buttons : ''}
         <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.day || ''}', '${marker.text || ''}', '${marker.subdata || ''}', '${marker.category || ''}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>
@@ -405,7 +408,7 @@ var MapBase = {
     else
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
 
-    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), { maxWidth: 400 })
+    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 })
       .on("click", function (e) {
         Routes.addMarkerOnCustomRoute(marker.text);
         if (Routes.customRouteEnabled) e.target.closePopup();
@@ -479,7 +482,7 @@ MapBase.addFastTravelMarker = function () {
         })
       });
 
-      marker.bindPopup(`<h1> ${Language.get(value.text + '.name')}</h1><p>  </p>`);
+      marker.bindPopup(`<h1>${Language.get(value.text + '.name')}</h1><p></p>`, { minWidth: 300 });
 
       Layers.itemMarkersLayer.addLayer(marker);
     });
@@ -505,7 +508,7 @@ MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
     })
   });
   var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
-  marker.bindPopup(`<h1>${customMarkerName}</h1><p>  </p><br>lat: ${lat}<br>lng: ${long}`);
+  marker.bindPopup(`<h1>${customMarkerName}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, { minWidth: 300 });
   Layers.itemMarkersLayer.addLayer(marker);
   var tempArray = [];
   tempArray.push(lat || 0, long || 0, customMarkerName);
@@ -582,7 +585,7 @@ var MadamNazar = {
         })
       });
 
-      marker.bindPopup(`<h1>${Language.get('madam_nazar.name')} - ${MapBase.formatDate(MadamNazar.currentDate)}</h1><p>Wrong location? Follow <a href='https://twitter.com/MadamNazarIO' target="_blank">@MadamNazarIO</a>.</p>`);
+      marker.bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MapBase.formatDate(MadamNazar.currentDate)}</h1><p style="text-align: center;">${Language.get('map.madam_nazar.desc')}</p>`, { minWidth: 300 });
       Layers.itemMarkersLayer.addLayer(marker);
     }
   }

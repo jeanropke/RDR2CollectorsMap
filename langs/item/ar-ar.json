@@ -14,7 +14,7 @@
 	{"key": "fasttravel.annesburg.name", 	"value": "مدينة Annesburg"},
 	{"key": "fasttravel.saint_denis.name", 	"value": "مدينة Saint Denis"},
 	{"key": "fasttravel.lagras.name", 		"value": "مدينة Lagras"},
-	{"key": "madam_nazar.name", 			"value": "مدام نازار"},
+	{"key": "menu.madam_nazar", 			"value": "مدام نازار"},
 	
 	{"key": "bards_crossing_treasure", 			"value": "Bard's Crossing خريطة"},
 	{"key": "benedict_treasure", 				"value": "خريطة Benedict Point"},

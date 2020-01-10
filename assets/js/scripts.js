@@ -514,7 +514,7 @@ $('#pins-export').on("click", function () {
     Pins.exportPins();
   } catch (error) {
     console.error(error);
-    alert("This feature is not supported by your browser.");
+    alert(Language.get('alerts.feature_not_supported'));
   }
 });
 
@@ -523,7 +523,7 @@ $('#pins-import').on('click', function () {
     var file = $('#pins-import-file').prop('files')[0];
 
     if (!file) {
-      alert("Please select a file in the field above the import button, then try again.");
+      alert(Language.get('alerts.file_not_found'));
       return;
     }
 
@@ -532,7 +532,7 @@ $('#pins-import').on('click', function () {
     })
   } catch (error) {
     console.error(error);
-    alert("This feature is not supported by your browser.");
+    alert(Language.get('alerts.feature_not_supported'));
   }
 });
 
@@ -589,7 +589,7 @@ $('#cookie-export').on("click", function () {
     downloadAsFile("collectible-map-settings.json", cookiesJson);
   } catch (error) {
     console.error(error);
-    alert("This feature is not supported by your browser.");
+    alert(Language.get('alerts.feature_not_supported'));
   }
 });
 
@@ -598,7 +598,7 @@ $('#cookie-import').on('click', function () {
     var file = $('#cookie-import-file').prop('files')[0];
 
     if (!file) {
-      alert("Please select a file in the field above the import button, then try again.");
+      alert(Language.get('alerts.file_not_found'));
       return;
     }
 
@@ -608,7 +608,7 @@ $('#cookie-import').on('click', function () {
       try {
         json = JSON.parse(res);
       } catch (error) {
-        alert("The file you selected was not valid. Please select a different file.");
+        alert(Language.get('alerts.file_not_valid'));
         return;
       }
 
@@ -629,7 +629,7 @@ $('#cookie-import').on('click', function () {
     })
   } catch (error) {
     console.error(error);
-    alert("This feature is not supported by your browser.");
+    alert(Language.get('alerts.feature_not_supported'));
   }
 });
 

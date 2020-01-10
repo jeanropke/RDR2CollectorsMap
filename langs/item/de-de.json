@@ -14,7 +14,7 @@
 	{"key": "fasttravel.annesburg.name", 	"value": "Annesburg"},
 	{"key": "fasttravel.saint_denis.name", 	"value": "Saint Denis"},
 	{"key": "fasttravel.lagras.name", 		"value": "Lagras"},	
-	{"key": "madam_nazar.name", 			"value": "Madam Nazar"},	
+	{"key": "menu.madam_nazar", 			"value": "Madam Nazar"},	
 
 	{"key": "bards_crossing_treasure", 			"value": "Bard's Crossing"},
 	{"key": "benedict_treasure", 				"value": "Benedict Point"},
