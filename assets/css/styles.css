@@ -139,7 +139,6 @@ input, textarea, select, .btn {
     z-index: 1020;
     padding: 10px;
     text-align: center;
-    display: none;
 }
 
 .map-alert .close-button {
