@@ -29,15 +29,10 @@ var Cycles = {
 
 // show alert when cycles are not up to date
 setInterval(function () {
-    var newDate = new Date(),
-        day = newDate.getUTCDate(),
-        hour = newDate.getUTCHours(),
-        minute = newDate.getUTCMinutes();
-    
+    var day = new Date().getUTCDate();
+
     if (day != Cycles.setLocaleDate())
         $('.map-alert').css('opacity', '1');
-
     else
         $('.map-alert').css('opacity', '0');
-    
 }, 1000 * 60);
