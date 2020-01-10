@@ -140,7 +140,6 @@ input, textarea, select, .btn {
     padding: 10px;
     text-align: center;
     display: none;
-    opacity: 0; /* assets/js/cycles.js function that change this value */
 }
 
 .map-alert .close-button {
