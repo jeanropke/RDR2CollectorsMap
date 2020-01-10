@@ -136,12 +136,25 @@ input, textarea, select, .btn {
     width: 100%;
     position: absolute;
     top: 0;
+    z-index: 1010;
+    padding: 10px;
+    text-align: center;
+}
+
+.map-cycle-alert {
+    background: #000;
+    color: #fff;
+    width: 50%;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    bottom: 20px;
     z-index: 1020;
     padding: 10px;
     text-align: center;
 }
 
-.map-alert .close-button {
+.map-alert .close-button, .map-cycle-alert .close-button {
     position: absolute;
     top: 0;
     right: 15px;

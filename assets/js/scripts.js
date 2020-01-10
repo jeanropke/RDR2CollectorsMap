@@ -75,6 +75,13 @@ function init() {
 
   });
 
+  if (typeof $.cookie('alert-closed-1') == 'undefined') {
+    $('.map-alert').show();
+  }
+  else {
+    $('.map-alert').hide();
+  }
+
   if (typeof $.cookie('disabled-categories') !== 'undefined')
     categoriesDisabledByDefault = $.cookie('disabled-categories').split(',');
 
@@ -346,7 +353,12 @@ $("#clear-custom-routes").on("click", function () {
 
 //When map-alert is clicked
 $('.map-alert').on('click', function () {
-  $('.map-alert').addClass('hidden');
+  $.cookie('alert-closed-1', 'true', { expires: 999 });
+  $('.map-alert').hide();
+});
+
+$('.map-cycle-alert').on('click', function () {
+  $('.map-cycle-alert').hide();
 });
 
 //Enable & disable show coordinates on menu
