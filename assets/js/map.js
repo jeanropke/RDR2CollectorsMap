@@ -486,7 +486,7 @@ MapBase.addFastTravelMarker = function () {
         })
       });
 
-      marker.bindPopup(`<h1>${Language.get(value.text + '.name')}</h1><p></p>`, { minWidth: 300 });
+      marker.bindPopup(`<h1>${Language.get(value.text + '.name')}</h1><p></p>`);
 
       Layers.itemMarkersLayer.addLayer(marker);
     });
