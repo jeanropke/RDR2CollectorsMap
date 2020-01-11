@@ -236,7 +236,7 @@ var MapBase = {
     console.log('weekly sets loaded');
   },
 
-  removeItemFromMap: function (day, text, subdata, category) {
+  removeItemFromMap: function (day, text, subdata, category, skipInventory = false) {
     if (text.endsWith('_treasure')) {
       if (Treasures.enabledTreasures.includes(text))
         Treasures.enabledTreasures = $.grep(Treasures.enabledTreasures, function (treasure) {
@@ -266,14 +266,16 @@ var MapBase = {
         if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
           if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
             marker.isCollected = true;
-            Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
+
+            Inventory.changeMarkerAmount(marker.subdata || marker.text, 1, skipInventory);
           }
 
           marker.canCollect = false;
         } else {
           if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
             marker.isCollected = false;
-            Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
+
+            Inventory.changeMarkerAmount(marker.subdata || marker.text, -1, skipInventory);
           }
 
           marker.canCollect = true;

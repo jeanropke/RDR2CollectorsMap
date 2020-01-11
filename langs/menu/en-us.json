@@ -162,5 +162,6 @@
 	{"key": "map.user_pins.default_desc", "value": "This is your custom user pin, you can edit the name and description, just don't forget to save!"},
 	{"key": "alerts.file_not_valid", "value": "The file you selected was not valid. Please select a different file."},
 	{"key": "alerts.file_not_found", "value": "Please select a file in the field above the import button, then try again."},
-	{"key": "alerts.feature_not_supported", "value": "This feature is not supported by your browser."}
+	{"key": "alerts.feature_not_supported", "value": "This feature is not supported by your browser."},
+	{"key": "menu.enable_inventory_menu_update", "value": "Toggling menu items updates inventory"}
 ]
