@@ -343,7 +343,7 @@ PF.highlightPath = function(path) {
 	var line = L.polyline(path, {color: '#000000', opacity: 0.5, weight: 9 }).addTo(PF._currentPath)
 	L.polyline(path, {color: '#ffffff', opacity: 1, weight: 7 }).addTo(PF._currentPath)
 	L.polyline(path, {color: '#00bb00', opacity: 1, weight: 3 }).addTo(PF._currentPath)
-	//MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
+	MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
 }
 PF.drawRoute = function(paths) {
 	PF._layerGroup.clearLayers()
@@ -492,6 +492,8 @@ PF.pathfinderStart = async function() {
 	PF._running = true
 	PF._currentChunk = null
 
+	var startTime = new Date().getTime()
+
 	PF.generateChunks()
 	//if(PF._PathFinder === null) 
 	PF.createPathFinder()
@@ -529,6 +531,10 @@ PF.pathfinderStart = async function() {
 	PF._layerControl.selectPath(1, true)
 
 	PF._running = false
+
+	var endTime = new Date().getTime();
+
+	alert((endTime - startTime) / 1000 + ' seconds for ' + markersNum + ' items')
 
 }
 
