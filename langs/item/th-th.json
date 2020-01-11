@@ -14,7 +14,7 @@
 	{"key": "fasttravel.annesburg.name", 	"value": "Annesburg"},
 	{"key": "fasttravel.saint_denis.name", 	"value": "Saint Denis"},
 	{"key": "fasttravel.lagras.name", 		"value": "Lagras"},	
-	{"key": "madam_nazar.name", 			"value": "Madam Nazar"},
+	{"key": "menu.madam_nazar", 			"value": "Madam Nazar"},
 	
 	{"key": "bards_crossing_treasure", 			"value": "Bard's Crossing"},
 	{"key": "benedict_treasure", 				"value": "Benedict Point"},
@@ -109,7 +109,7 @@
 	{"key": "cups_queen.name", "value": "Queen of Cups"},
 	{"key": "cups_queen_1.desc", "value": "บนโต๊ะหัวเตียงแรกทางขวา"},
 	{"key": "cups_queen_2.desc", "value": "บนของถังด้านขวาของท่าเรือ"},
-	{"key": "cups_queen_3.desc", "value": "ในเหมืองบนลังติดกับตะเกียง <br/><img src=\"https://i.imgur.com/ciqlFTG.png\" style=\"width:200px;\">"},
+	{"key": "cups_queen_3.desc", "value": "ในเหมืองบนลังติดกับตะเกียง"},
 
 	{"key": "cups_king.name", "value": "King of Cups"},
 	{"key": "cups_king_1.desc", "value": "บนโต๊ะชั้นสอง เดินขึ้นบันได"},
@@ -228,7 +228,7 @@
 
 	{"key": "wands_nine.name", "value": "Nine of Wands"},
 	{"key": "wands_nine_1.desc", "value": "บนหลังคาที่เตี้ยกว่า การ์ดอยู่บนขอบหน้าต่าง"},
-	{"key": "wands_nine_2.desc", "value": "ในเหมืองบนบาร์เรลถัดจากตะเกียง <br/> <img src=\"https://i.imgur.com/HXbuCWi.png\" style=\"width: 200px;\">"},
+	{"key": "wands_nine_2.desc", "value": "ในเหมืองบนบาร์เรลถัดจากตะเกียง"},
 	{"key": "wands_nine_3.desc", "value": "บนราวบันไดของเขื่อนใกล้กับล้อ"},
 
 	{"key": "wands_ten.name", "value": "Ten of Wands"},
@@ -348,7 +348,7 @@
 
 	{"key": "coin_new_yorke_token.name", "value": "1700 New Yorke Token Coin"},
 	{"key": "coin_new_yorke_token_1.desc", "value": "Inside the cave."},
-	{"key": "coin_new_yorke_token_2.desc", "value": "Next to the two trees. <br/> <img width='200' src='https://imgur.com/mBRhNaf.png' />"},
+	{"key": "coin_new_yorke_token_2.desc", "value": "Next to the two trees."},
 	{"key": "coin_new_yorke_token_3.desc", "value": "In the middle of the ruined house."},
 
 	{"key": "coin_five_dollar_bechtler.name", "value": "1800 Five Dollar Bechtler Coin"},
@@ -363,7 +363,7 @@
 
 	{"key": "coin_gold_dollar_coin.name", "value": "1800 Gold Dollar Coin"},
 	{"key": "coin_gold_dollar_coin_1.desc", "value": "At the base of the dead tree."},
-	{"key": "coin_gold_dollar_coin_2.desc", "value": "Inside the cave underneath the hanging lantern. <br/> <img src=\"https://i.imgur.com/IM8CdaJ.png\" style=\"width: 200px;\">"},
+	{"key": "coin_gold_dollar_coin_2.desc", "value": "Inside the cave underneath the hanging lantern."},
 	{"key": "coin_gold_dollar_coin_3.desc", "value": "In between a big and small rock."},
 
 	{"key": "coin_nickel_coin.name", "value": "1792 Nickel Coin"},
@@ -628,7 +628,7 @@
 
 	{"key": "ring_sackville_diamond.name", "value": "Sackville Diamond Ring"},
 	{"key": "ring_sackville_diamond_1.desc", "value": "In front of a dead tree."},
-	{"key": "ring_sackville_diamond_2.desc", "value": "Hard climb! <a href=\"https://www.youtube.com/watch?v=7RV2qm90UaU&t=684s\" target=\"_blank\">Watch video</a>"},
+	{"key": "ring_sackville_diamond_2.desc", "value": "Hard climb!"},
 	{"key": "ring_sackville_diamond_3.desc", "value": "Inside the chimney."},
 
 	{"key": "ring_thorburn_turquoise.name", "value": "Thorburn Turquoise Ring"},
@@ -654,7 +654,7 @@
 	{"key": "necklace_ainsworth_cross.name", "value": "Ainsworth Cross Necklace"},
 	{"key": "necklace_ainsworth_cross_1.desc", "value": "On table inside tiny church building. Crouch to get in."},
 	{"key": "necklace_ainsworth_cross_2.desc", "value": "Besides the lone tree with the dreamcatchers."},
-	{"key": "necklace_ainsworth_cross_3.desc", "value": "On a search spot in the middle of a log brige. <br /> <img src=\"https://i.imgur.com/D6K4gxV.jpg\" style=\"width:200px;\">"},
+	{"key": "necklace_ainsworth_cross_3.desc", "value": "On a search spot in the middle of a log brige."},
 
 	{"key": "necklace_braxton_amethyst.name", "value": "Braxton Amethyst Necklace"},
 	{"key": "necklace_braxton_amethyst_1.desc", "value": "On a ledge in a lockbox below a rock next to an elk skeleton."},

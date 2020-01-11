@@ -9,7 +9,7 @@ var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
   'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'wounded_animal', 'fame_seeker'
+  'wounded_animal', 'fame_seeker', 'user_pins'
 ];
 
 var categoriesDisabledByDefault = [
@@ -18,7 +18,7 @@ var categoriesDisabledByDefault = [
 ]
 
 var enabledCategories = categories;
-var categoryButtons = document.getElementsByClassName("menu-option clickable");
+var categoryButtons = $(".clickable[data-type]");
 
 var fastTravelData;
 
@@ -145,7 +145,7 @@ function init() {
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
 
-  Pins.loadAllPins();
+  Pins.addToMap();
   changeCursor();
 }
 
@@ -357,6 +357,10 @@ $('.map-alert').on('click', function () {
   $('.map-alert').hide();
 });
 
+$('.map-cycle-alert').on('click', function () {
+  $('.map-cycle-alert').hide();
+});
+
 //Enable & disable show coordinates on menu
 $('#show-coordinates').on('change', function () {
   Settings.isCoordsEnabled = $("#show-coordinates").prop('checked');
@@ -376,7 +380,7 @@ $("#language").on("change", function () {
 });
 
 //Disable & enable collection category
-$('.menu-option.clickable').on('click', function () {
+$('.clickable').on('click', function () {
   var menu = $(this);
 
   $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
@@ -386,8 +390,8 @@ $('.menu-option.clickable').on('click', function () {
     enabledCategories = $.grep(enabledCategories, function (value) {
       return value != menu.data('type');
     });
-    categoriesDisabledByDefault.push(menu.data('type'));
 
+    categoriesDisabledByDefault.push(menu.data('type'));
   } else {
     enabledCategories.push(menu.data('type'));
 
@@ -395,12 +399,15 @@ $('.menu-option.clickable').on('click', function () {
       return value != menu.data('type');
     });
   }
+
   $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });
 
-  if (menu.data('type') !== 'treasure')
-    MapBase.addMarkers();
-  else
+  if (menu.data('type') == 'treasure')
     Treasures.addToMap();
+  else if (menu.data('type') == 'user_pins')
+    Pins.addToMap();
+  else
+    MapBase.addMarkers();
 });
 
 //Open collection submenu
@@ -408,6 +415,12 @@ $('.open-submenu').on('click', function (e) {
   e.stopPropagation();
   $(this).parent().parent().children('.menu-hidden').toggleClass('opened');
   $(this).toggleClass('rotate');
+});
+
+$('.submenu-only').on('click', function (e) {
+  e.stopPropagation();
+  $(this).parent().children('.menu-hidden').toggleClass('opened');
+  $(this).children('.open-submenu').toggleClass('rotate');
 });
 
 //Sell collections on menu
@@ -454,11 +467,11 @@ $('.collection-reset').on('click', function (e) {
 });
 
 //Remove item from map when using the menu
-$(document).on('click', '.collectible-wrapper', function () {
+$(document).on('click', '.collectible-wrapper[data-type]', function () {
   var collectible = $(this).data('type');
   var category = $(this).parent().data('type');
 
-  MapBase.removeItemFromMap(Cycles.data.cycles[Cycles.data.current][category], collectible, collectible, category);
+  MapBase.removeItemFromMap(Cycles.data.cycles[Cycles.data.current][category], collectible, collectible, category, true);
 });
 
 //Open & close side menu
@@ -487,7 +500,7 @@ $('#marker-cluster').on("change", function () {
 
 
 /**
- * User pins
+ * User Pins
  */
 
 $('#pins-place-mode').on("change", function () {
@@ -499,7 +512,7 @@ $('#pins-edit-mode').on("change", function () {
   Settings.isPinsEditingEnabled = $("#pins-edit-mode").prop('checked');
   $.cookie('pins-edit-enabled', Settings.isPinsEditingEnabled ? '1' : '0', { expires: 999 });
 
-  Pins.loadAllPins();
+  Pins.addToMap();
 });
 
 $('#pins-export').on("click", function () {
@@ -507,7 +520,7 @@ $('#pins-export').on("click", function () {
     Pins.exportPins();
   } catch (error) {
     console.error(error);
-    alert("This feature is not supported by your browser.");
+    alert(Language.get('alerts.feature_not_supported'));
   }
 });
 
@@ -516,7 +529,7 @@ $('#pins-import').on('click', function () {
     var file = $('#pins-import-file').prop('files')[0];
 
     if (!file) {
-      alert("Please select a file in the field above the import button, then try again.");
+      alert(Language.get('alerts.file_not_found'));
       return;
     }
 
@@ -525,7 +538,7 @@ $('#pins-import').on('click', function () {
     })
   } catch (error) {
     console.error(error);
-    alert("This feature is not supported by your browser.");
+    alert(Language.get('alerts.feature_not_supported'));
   }
 });
 
@@ -541,15 +554,27 @@ $('#enable-inventory').on("change", function () {
   MapBase.addMarkers();
 
   if (Inventory.isEnabled)
-    $('.collection-sell, small.counter').show();
+    $('.collection-sell, .counter').show();
   else
-    $('.collection-sell, small.counter').hide();
+    $('.collection-sell, .counter').hide();
+});
+
+$('#enable-inventory-popups').on("change", function () {
+  Inventory.isPopupEnabled = $("#enable-inventory-popups").prop('checked');
+  $.cookie('inventory-popups-enabled', Inventory.isPopupEnabled ? '1' : '0', { expires: 999 });
+
+  MapBase.addMarkers();
+});
+
+$('#enable-inventory-menu-update').on("change", function () {
+  Inventory.isMenuUpdateEnabled = $("#enable-inventory-menu-update").prop('checked');
+  $.cookie('inventory-menu-update-enabled', Inventory.isMenuUpdateEnabled ? '1' : '0', { expires: 999 });
 });
 
 if (Inventory.isEnabled)
-  $('.collection-sell, small.counter').show();
+  $('.collection-sell, .counter').show();
 else
-  $('.collection-sell, small.counter').hide();
+  $('.collection-sell, .counter').hide();
 
 //Enable & disable inventory on menu
 $('#inventory-stack').on("change", function () {
@@ -575,7 +600,7 @@ $('#cookie-export').on("click", function () {
     downloadAsFile("collectible-map-settings.json", cookiesJson);
   } catch (error) {
     console.error(error);
-    alert("This feature is not supported by your browser.");
+    alert(Language.get('alerts.feature_not_supported'));
   }
 });
 
@@ -584,7 +609,7 @@ $('#cookie-import').on('click', function () {
     var file = $('#cookie-import-file').prop('files')[0];
 
     if (!file) {
-      alert("Please select a file in the field above the import button, then try again.");
+      alert(Language.get('alerts.file_not_found'));
       return;
     }
 
@@ -594,7 +619,7 @@ $('#cookie-import').on('click', function () {
       try {
         json = JSON.parse(res);
       } catch (error) {
-        alert("The file you selected was not valid. Please select a different file.");
+        alert(Language.get('alerts.file_not_valid'));
         return;
       }
 
@@ -615,7 +640,7 @@ $('#cookie-import').on('click', function () {
     })
   } catch (error) {
     console.error(error);
-    alert("This feature is not supported by your browser.");
+    alert(Language.get('alerts.feature_not_supported'));
   }
 });
 

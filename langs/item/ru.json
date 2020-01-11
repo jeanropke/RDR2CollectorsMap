@@ -14,7 +14,7 @@
 	{"key": "fasttravel.annesburg.name", 	   	"value": "Аннесберг"},
 	{"key": "fasttravel.saint_denis.name", 	    	"value": "Сен-Дени"},
 	{"key": "fasttravel.lagras.name", 	        "value": "Лаграс"},	
-	{"key": "madam_nazar.name", 		        "value": "Мадам Назар"},	
+	{"key": "menu.madam_nazar", 		        "value": "Мадам Назар"},	
  
 	{"key": "bards_crossing_treasure", 		"value": "Бардс-Кроссинг"},
 	{"key": "benedict_treasure", 			"value": "Бенедикт-Пойнт"},
@@ -211,7 +211,7 @@
 	{"key": "swords_seven_2.desc", "value": "На повозке."},
 	{"key": "swords_seven_3.desc", "value": "На лавке возле дома."},
 	{"key": "swords_seven_4.desc", "value": "Inside the house on a shelf in the basement floor."},
-	{"key": "swords_seven_5.desc", "value": "Inside the mine. <br/> <img src=\"https://i.imgur.com/h8K2hIi.png\" style=\"width: 200px;\">"},
+	{"key": "swords_seven_5.desc", "value": "Inside the mine."},
 	{"key": "swords_seven_6.desc", "value": "On the table next to a small broken cart."},
  
 	{"key": "swords_eight.name", "value": "Восьмерка мечей"},
@@ -259,7 +259,7 @@
 	{"key": "swords_queen_2.desc", "value": "На ящике наверху."},
 	{"key": "swords_queen_3.desc", "value": "В доме на столе."},
 	{"key": "swords_queen_4.desc", "value": ""},
-	{"key": "swords_queen_5.desc", "value": "Inside the train garage on a worktable on the south side of the building. <br/> <img src=\"https://i.imgur.com/VlnIwzj.png\" style=\"width: 200px;\">"},
+	{"key": "swords_queen_5.desc", "value": "Inside the train garage on a worktable on the south side of the building."},
 	{"key": "swords_queen_6.desc", "value": "On the back of the wagon near some workers' tents."},
  
 	{"key": "swords_king.name", "value": "Король мечей"},
@@ -283,7 +283,7 @@
 	{"key": "wands_two_2.desc", "value": "На столе веранды."},
 	{"key": "wands_two_3.desc", "value": "На пирсе справа."},
 	{"key": "wands_two_4.desc", "value": "Right side inside the barn, on top of a barrel."},
-	{"key": "wands_two_5.desc", "value": "On the ledge before climbing any stairs to go out of the cave. Cave entrance above the \"A\" in Annesburg. <br/> <img src=\"https://i.imgur.com/cfLWVcv.png\" style=\"width: 200px;\">"},
+	{"key": "wands_two_5.desc", "value": "On the ledge before climbing any stairs to go out of the cave. Cave entrance above the \"A\" in Annesburg."},
 	{"key": "wands_two_6.desc", "value": "On the table inside with the telegraph machine on it."},
  
 	{"key": "wands_three.name", "value": "Тройка жезлов"},
@@ -336,7 +336,7 @@
  
 	{"key": "wands_nine.name", "value": "Девятка жезлов"},
 	{"key": "wands_nine_1.desc", "value": "На маленьком верхнем оконном проёме с северо-восточной стороны."},
-	{"key": "wands_nine_2.desc", "value": "Внутри шахты на бочке рядом с фонарем <br/> <img src=\"https://i.imgur.com/HXbuCWi.png\" style=\"width: 200px;\">"},
+	{"key": "wands_nine_2.desc", "value": "Внутри шахты на бочке рядом с фонарем."},
 	{"key": "wands_nine_3.desc", "value": "На перилах плотины."},
 	{"key": "wands_nine_4.desc", "value": ""},
 	{"key": "wands_nine_5.desc", "value": "Inside the house on the dinner table."},
@@ -552,7 +552,7 @@
  
 	{"key": "coin_gold_dollar_coin.name", "value": "Золотой доллар 1800 г."},
 	{"key": "coin_gold_dollar_coin_1.desc", "value": "Между большим погибшим и упавшим деревьями."},
-	{"key": "coin_gold_dollar_coin_2.desc", "value": "Внутри пещеры под висячим фонарем <br/> <img src=\"https://i.imgur.com/IM8CdaJ.png\" style=\"width: 200px;\">"},
+	{"key": "coin_gold_dollar_coin_2.desc", "value": "Внутри пещеры под висячим фонарем."},
 	{"key": "coin_gold_dollar_coin_3.desc", "value": "Между камушками."},
 	{"key": "coin_gold_dollar_coin_4.desc", "value": ""},
 	{"key": "coin_gold_dollar_coin_5.desc", "value": ""},
@@ -754,7 +754,7 @@
 	{"key": "arrowhead_obsidian_1.desc", "value": "По центру рисунка на земле."},
 	{"key": "arrowhead_obsidian_2.desc", "value": "Рядом с пугалом на пшеничном поле."},
 	{"key": "arrowhead_obsidian_3.desc", "value": "В выложеном круге камней."},
-	{"key": "arrowhead_obsidian_4.desc", "value": "Inside the cave. <br/> <img src=\"https://i.imgur.com/Vkaa8cY.png\" style=\"width: 200px;\">"},
+	{"key": "arrowhead_obsidian_4.desc", "value": "Inside the cave."},
 	{"key": "arrowhead_obsidian_5.desc", "value": "At the base of the biggest tree."},
 	{"key": "arrowhead_obsidian_6.desc", "value": "By a large tree with bushes."},
  

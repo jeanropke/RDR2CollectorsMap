@@ -46,13 +46,29 @@ Menu.refreshMenu = function () {
         }
 
         var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', marker.subdata);
+        var collectibleTextWrapperElement = $('<span>').addClass('collectible-text');
         var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleName);
-        var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
+
+        var collectibleCountDecreaseElement = $('<div>').addClass('counter-button').text('-');
+        var collectibleCountTextElement = $('<div>').addClass('counter-number').text(marker.amount);
+        var collectibleCountIncreaseElement = $('<div>').addClass('counter-button').text('+');
+
+        collectibleCountDecreaseElement.on('click', function (e) {
+          e.stopPropagation();
+          Inventory.changeMarkerAmount(marker.subdata, -1)
+        });
+
+        collectibleCountIncreaseElement.on('click', function (e) {
+          e.stopPropagation();
+          Inventory.changeMarkerAmount(marker.subdata, 1)
+        });
+
+        var collectibleCountElement = $('<span>').addClass('counter').append(collectibleCountDecreaseElement).append(collectibleCountTextElement).append(collectibleCountIncreaseElement);
 
         if (!Inventory.isEnabled)
           collectibleCountElement.hide();
 
-        $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
+        $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
 
         if (marker.lat.length == 0)
           $(`[data-type=${marker.subdata}]`).addClass('not-found');
@@ -82,13 +98,29 @@ Menu.refreshMenu = function () {
           collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${marker.text}.png`).addClass('collectible-icon');
 
         var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', marker.text);
+        var collectibleTextWrapperElement = $('<span>').addClass('collectible-text');
         var collectibleTextElement = $('<p>').addClass('collectible').text(marker.title);
-        var collectibleCountElement = $('<small>').addClass('counter').text(marker.amount);
+
+        var collectibleCountDecreaseElement = $('<div>').addClass('counter-button').text('-');
+        var collectibleCountTextElement = $('<div>').addClass('counter-number').text(marker.amount);
+        var collectibleCountIncreaseElement = $('<div>').addClass('counter-button').text('+');
+
+        collectibleCountDecreaseElement.on('click', function (e) {
+          e.stopPropagation();
+          Inventory.changeMarkerAmount(marker.text, -1)
+        });
+
+        collectibleCountIncreaseElement.on('click', function (e) {
+          e.stopPropagation();
+          Inventory.changeMarkerAmount(marker.text, 1)
+        });
+
+        var collectibleCountElement = $('<span>').addClass('counter').append(collectibleCountDecreaseElement).append(collectibleCountTextElement).append(collectibleCountIncreaseElement);
 
         if (!Inventory.isEnabled)
           collectibleCountElement.hide();
 
-        $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextElement.append(collectibleCountElement)));
+        $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
 
         if (marker.lat.length == 0)
           $(`[data-type=${marker.text}]`).addClass('not-found');

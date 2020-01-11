@@ -33,15 +33,12 @@ var Encounters = {
           shadowUrl: './assets/images/markers-shadow.png'
         })
       });
+      
       marker.title = Language.get(`${marker.category}.name`);
       marker.description = Language.get(`${marker.category}.desc`);
 
-      tempMarker
-        .bindPopup(
-          '<h1>' + marker.title + '</h1>' +
-          '<p>' + marker.description + '</p>'
-        );
-        Layers.encountersLayer.addLayer(tempMarker);
+      tempMarker.bindPopup(`<h1>${marker.title}</h1><p>${marker.description}</p>`, { minWidth: 300 });
+      Layers.encountersLayer.addLayer(tempMarker);
     });
     Layers.encountersLayer.addTo(MapBase.map);
   }
