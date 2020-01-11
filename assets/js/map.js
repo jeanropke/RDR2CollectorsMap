@@ -450,6 +450,8 @@ var MapBase = {
 
 MapBase.getToolIcon = function (type) {
   switch (type) {
+    case '-1':
+      return '<img class="tool-type" src="assets/images/cross.png">';
     default:
     case '0':
       return '';
