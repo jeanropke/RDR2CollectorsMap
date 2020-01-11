@@ -499,7 +499,7 @@
 	{"key": "coin_gold_quarter_2.desc", "value": "Inbetween a rock and a fallen tree."},
 	{"key": "coin_gold_quarter_3.desc", "value": "Under tree on cliff side."},
 	{"key": "coin_gold_quarter_4.desc", "value": ""},
-	{"key": "coin_gold_quarter_5.desc", "value": ""},
+	{"key": "coin_gold_quarter_5.desc", "value": "Under the bridge."},
 	{"key": "coin_gold_quarter_6.desc", "value": "At the back of the outhouse."},
 
 	{"key": "coin_draped_bust_silver_dollar.name", "value": "1798 Draped Bust Silver Dollar Coin"},
@@ -507,7 +507,7 @@
 	{"key": "coin_draped_bust_silver_dollar_2.desc", "value": "Behind a rock surrounded by cacti."},
 	{"key": "coin_draped_bust_silver_dollar_3.desc", "value": "On the island by the tree stump."},
 	{"key": "coin_draped_bust_silver_dollar_4.desc", "value": ""},
-	{"key": "coin_draped_bust_silver_dollar_5.desc", "value": ""},
+	{"key": "coin_draped_bust_silver_dollar_5.desc", "value": "At the base of the southern-most non-slanted burned tree."},
 	{"key": "coin_draped_bust_silver_dollar_6.desc", "value": "Next to a pile of rubble and some barrels."},
 
 	{"key": "coin_one_cent_token.name", "value": "1787 One Cent Token Coin"},
@@ -515,7 +515,7 @@
 	{"key": "coin_one_cent_token_2.desc", "value": "Near the crates next to the tree."},
 	{"key": "coin_one_cent_token_3.desc", "value": "At the edge of the cliff, follow the natural path downward from the top of the cliff."},	
 	{"key": "coin_one_cent_token_4.desc", "value": ""},	
-	{"key": "coin_one_cent_token_5.desc", "value": ""},	
+	{"key": "coin_one_cent_token_5.desc", "value": "Below the clothesline."},	
 	{"key": "coin_one_cent_token_6.desc", "value": "By the broken wagon."},	
 
 	{"key": "coin_silver_dollar.name", "value": "1794 Silver Dollar Coin"},
@@ -523,7 +523,7 @@
 	{"key": "coin_silver_dollar_2.desc", "value": "Underneath the house."},
 	{"key": "coin_silver_dollar_3.desc", "value": "Inside the mine at the end of the tunnel."},
 	{"key": "coin_silver_dollar_4.desc", "value": "By a large rock where the waterfall starts."},
-	{"key": "coin_silver_dollar_5.desc", "value": ""},
+	{"key": "coin_silver_dollar_5.desc", "value": "Between a horse hitching bar and a board on the ground at the back of the main house."},
 	{"key": "coin_silver_dollar_6.desc", "value": "By the fallen dead tree."},
 
 	{"key": "coin_new_yorke_token.name", "value": "1700 New Yorke Token Coin"},
@@ -531,7 +531,7 @@
 	{"key": "coin_new_yorke_token_2.desc", "value": "Next to the two trees."},
 	{"key": "coin_new_yorke_token_3.desc", "value": "In the middle of the ruined house."},
 	{"key": "coin_new_yorke_token_4.desc", "value": ""},
-	{"key": "coin_new_yorke_token_5.desc", "value": ""},
+	{"key": "coin_new_yorke_token_5.desc", "value": "Underneath the stone bridge."},
 	{"key": "coin_new_yorke_token_6.desc", "value": "In front of the first flight of stairs."},
 
 	{"key": "coin_five_dollar_bechtler.name", "value": "1800 Five Dollar Bechtler Coin"},
@@ -539,7 +539,7 @@
 	{"key": "coin_five_dollar_bechtler_2.desc", "value": "Underneath the railroad."},
 	{"key": "coin_five_dollar_bechtler_3.desc", "value": "Underneath the windmill."},
 	{"key": "coin_five_dollar_bechtler_4.desc", "value": ""},
-	{"key": "coin_five_dollar_bechtler_5.desc", "value": ""},
+	{"key": "coin_five_dollar_bechtler_5.desc", "value": "Inside the wooden landslide barrier, enter from the mountainside."},
 	{"key": "coin_five_dollar_bechtler_6.desc", "value": "At the back of the abandoned wagon."},
 
 	{"key": "coin_quarter.name", "value": "1792 Quarter Coin"},
@@ -547,7 +547,7 @@
 	{"key": "coin_quarter_2.desc", "value": "At the foot of the northen dead tree."},
 	{"key": "coin_quarter_3.desc", "value": "Below the tower."},
 	{"key": "coin_quarter_4.desc", "value": ""},
-	{"key": "coin_quarter_5.desc", "value": ""},
+	{"key": "coin_quarter_5.desc", "value": "In front of the main entrance of the shack."},
 	{"key": "coin_quarter_6.desc", "value": "Behind the signs at the side of the road."},
 
 	{"key": "coin_gold_dollar_coin.name", "value": "1800 Gold Dollar Coin"},
@@ -555,7 +555,7 @@
 	{"key": "coin_gold_dollar_coin_2.desc", "value": "Inside the cave underneath the hanging lantern."},
 	{"key": "coin_gold_dollar_coin_3.desc", "value": "In between a big and small rock."},
 	{"key": "coin_gold_dollar_coin_4.desc", "value": ""},
-	{"key": "coin_gold_dollar_coin_5.desc", "value": ""},
+	{"key": "coin_gold_dollar_coin_5.desc", "value": "Between the two rocks on the bank in the middle of the river."},
 	{"key": "coin_gold_dollar_coin_6.desc", "value": "At the bottom, below the oil pump. Currently bugged and gives a 1700 New Yorke Token instead."},
 
 	{"key": "coin_nickel_coin.name", "value": "1792 Nickel Coin"},
@@ -563,7 +563,7 @@
 	{"key": "coin_nickel_coin_2.desc", "value": "In the hay shack next to the hay bales."},
 	{"key": "coin_nickel_coin_3.desc", "value": "Within the circle of burned down trees."},
 	{"key": "coin_nickel_coin_4.desc", "value": ""},
-	{"key": "coin_nickel_coin_5.desc", "value": ""},
+	{"key": "coin_nickel_coin_5.desc", "value": "Next to the big tree."},
 	{"key": "coin_nickel_coin_6.desc", "value": "Next to the crashed flying machine."},
 
 	{"key": "coin_halfpenny.name", "value": "1796 Halfpenny Coin"},
@@ -571,7 +571,7 @@
 	{"key": "coin_halfpenny_2.desc", "value": "Behind the cabin between a rock and a tree."},
 	{"key": "coin_halfpenny_3.desc", "value": "Underneath the clothesline."},
 	{"key": "coin_halfpenny_4.desc", "value": ""},
-	{"key": "coin_halfpenny_5.desc", "value": ""},
+	{"key": "coin_halfpenny_5.desc", "value": "At the northeastern side of the wooden shack with the moonshine stil."},
 	{"key": "coin_halfpenny_6.desc", "value": "Next to the new-looking coffin in the mass grave."},
 
 	{"key": "coin_half_eagle.name", "value": "1795 Half Eagle Coin"},
@@ -579,7 +579,7 @@
 	{"key": "coin_half_eagle_2.desc", "value": "Underneath the clotheslines."},
 	{"key": "coin_half_eagle_3.desc", "value": "Under bridge."},
 	{"key": "coin_half_eagle_4.desc", "value": ""},
-	{"key": "coin_half_eagle_5.desc", "value": ""},
+	{"key": "coin_half_eagle_5.desc", "value": "In the middle of the two rocks."},
 	{"key": "coin_half_eagle_6.desc", "value": "At the base of a tree."},
 
 	{"key": "coin_gold_eagle.name", "value": "1797 Gold Eagle Coin"},
@@ -587,15 +587,15 @@
 	{"key": "coin_gold_eagle_2.desc", "value": "Inside well"},
 	{"key": "coin_gold_eagle_3.desc", "value": "West side of the large rock."},
 	{"key": "coin_gold_eagle_4.desc", "value": ""},
-	{"key": "coin_gold_eagle_5.desc", "value": ""},
-	{"key": "coin_gold_eagle_6.desc", "value": "Undeneath the raised cabin."},
+	{"key": "coin_gold_eagle_5.desc", "value": "Under the clothesline."},
+	{"key": "coin_gold_eagle_6.desc", "value": "Underneath the raised cabin."},
 
 	{"key": "coin_liberty_quarter.name", "value": "1792 Liberty Quarter Coin"},
 	{"key": "coin_liberty_quarter_1.desc", "value": "At the dead end of the path next to a broken bridge."},
 	{"key": "coin_liberty_quarter_2.desc", "value": "In front of a large rock."},
 	{"key": "coin_liberty_quarter_3.desc", "value": "Behind the sign."},
 	{"key": "coin_liberty_quarter_4.desc", "value": ""},
-	{"key": "coin_liberty_quarter_5.desc", "value": ""},
+	{"key": "coin_liberty_quarter_5.desc", "value": "Next to the tree stump next to the road."},
 	{"key": "coin_liberty_quarter_6.desc", "value": "Near the eastern corner of the ruined house near a collapsed wall."},
 
 	{"key": "coin_half_dime.name", "value": "1800 Half Dime Coin"},
@@ -603,7 +603,7 @@
 	{"key": "coin_half_dime_2.desc", "value": "Underneath the railway bridge in a small ditch. (not the large one)"},
 	{"key": "coin_half_dime_3.desc", "value": "Behind the shack."},
 	{"key": "coin_half_dime_4.desc", "value": ""},
-	{"key": "coin_half_dime_5.desc", "value": ""},
+	{"key": "coin_half_dime_5.desc", "value": "Next to the broken wagon next to the fence on the east side of the property."},
 	{"key": "coin_half_dime_6.desc", "value": "Inside the tunnel next to the railroad."},
 
 	{"key": "coin_penny.name", "value": "1789 Penny Coin"},
@@ -611,7 +611,7 @@
 	{"key": "coin_penny_2.desc", "value": "On the right side of the dead tree."},
 	{"key": "coin_penny_3.desc", "value": "Next to a broken down wagon."},
 	{"key": "coin_penny_4.desc", "value": ""},
-	{"key": "coin_penny_5.desc", "value": ""},
+	{"key": "coin_penny_5.desc", "value": "In the barn next to a wagon wheel."},
 	{"key": "coin_penny_6.desc", "value": "At the base of the eastern large tree."},
 
 	{"key": "bottle_tennesee_whiskey.name", "value": "Tennessee Whiskey Bottle"},
@@ -714,7 +714,7 @@
 	{"key": "arrowhead_chipped_1.desc", "value": "On top of the cliff."},
 	{"key": "arrowhead_chipped_2.desc", "value": ""},
 	{"key": "arrowhead_chipped_3.desc", "value": "In the center of a half-circle of rocks. Beware of cougars."},
-	{"key": "arrowhead_chipped_4.desc", "value": ""},
+	{"key": "arrowhead_chipped_4.desc", "value": "At the base of the large tree."},
 	{"key": "arrowhead_chipped_5.desc", "value": "At the base of the dead tree at the side of the road."},
 	{"key": "arrowhead_chipped_6.desc", "value": ""},
 
@@ -746,7 +746,7 @@
 	{"key": "arrowhead_raw_1.desc", "value": "Under the tree with the dreamcatchers."},
 	{"key": "arrowhead_raw_2.desc", "value": "Behind the huts."},
 	{"key": "arrowhead_raw_3.desc", "value": "In front of a tree on the shoreline of a small stream."},
-	{"key": "arrowhead_raw_4.desc", "value": ""},
+	{"key": "arrowhead_raw_4.desc", "value": "At the base of the tree, next to a rock."},
 	{"key": "arrowhead_raw_5.desc", "value": "At the middle ledge, eachable from both above and below."},
 	{"key": "arrowhead_raw_6.desc", "value": ""},
 
@@ -935,7 +935,7 @@
 	{"key": "ring_bonnard_pearl_6.desc", "value": "Next to the pile of bones in the corale."},
 
 	{"key": "ring_banais_topaz.name", "value": "Banais Topaz Ring"},
-	{"key": "ring_banais_topaz_1.desc", "value": ""},
+	{"key": "ring_banais_topaz_1.desc", "value": "At the southwestern side of the hermit home."},
 	{"key": "ring_banais_topaz_2.desc", "value": "Inside the dead tree."},
 	{"key": "ring_banais_topaz_3.desc", "value": "Inside a birdsnest next to the bell."},
 	{"key": "ring_banais_topaz_4.desc", "value": "Inside the crypt."},
