@@ -148,7 +148,7 @@
 	{"key": "menu.read_wiki", "value": "Karten-Wiki lesen"},
 	{"key": "menu.generate_route_auto_update", "value": "Route automatisch neu berechnen"},
 	{"key": "menu.random_encounters", "value": "Zufällige Ereignisse"},
-	{"key": "map.madam_nazar.desc", "value": "Falsche Position? Folge <a href=\"https://twitter.com/MadamNazarIO\" target=\"_blank\">@MadamNazarIO</a>."},
+	{"key": "map.madam_nazar.desc", "value": "Falsche Position? Folge {link}."},
 	{"key": "map.user_pins.placeholder_title", "value": "Name"},
 	{"key": "map.user_pins.default_title", "value": "Eigene Makierung"},
 	{"key": "map.user_pins.placeholder_desc", "value": "Beschreibung"},
