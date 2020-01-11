@@ -124,7 +124,7 @@ var MapBase = {
   },
 
   loadGeoJson: function () {
-    $.getJSON('data/geojson/new-austin.json?nocache=' + Math.random())
+    /*$.getJSON('data/geojson/new-hanover.json?nocache=' + Math.random())
       .done(function (data) {
         MapBase.geoJson.lemoyne = data;
 
@@ -137,7 +137,7 @@ var MapBase = {
         }).eachLayer(function(l){
           MapBase.drawnItems.addLayer(l);
         })
-      });
+      });*/
       /*$.getJSON('data/geojson/new-austin.json?nocache=' + Math.random())
         .done(function (data) {
           MapBase.geoJson.lemoyne = data;

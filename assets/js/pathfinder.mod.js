@@ -2,7 +2,20 @@ var PathFinder = require('geojson-path-finder')
 //var nearest = require('turf-nearest')
 var point = require('turf-point')
 var featurecollection = require('turf-featurecollection')
-//var lemoyne = require('./../../data/geojson/lemoyne.json')
+
+var ambarino = require('./../../data/geojson/ambarino.json')
+var lemoyne = require('./../../data/geojson/lemoyne.json')
+var newAustin = require('./../../data/geojson/new-austin.json')
+var newHanover = require('./../../data/geojson/new-hanover.json')
+var westElizabeth = require('./../../data/geojson/west-elizabeth.json')
+
+var completeGeoJson = {"type":"FeatureCollection","features":[]}
+completeGeoJson.features = completeGeoJson.features.concat(ambarino.features)
+completeGeoJson.features = completeGeoJson.features.concat(lemoyne.features)
+completeGeoJson.features = completeGeoJson.features.concat(newAustin.features)
+completeGeoJson.features = completeGeoJson.features.concat(newHanover.features)
+completeGeoJson.features = completeGeoJson.features.concat(westElizabeth.features)
+
 
 
 class Chunk {
@@ -50,7 +63,7 @@ class Chunk {
 
 	contains(marker) {
 		for(var i = 0; i < this.markers.length; i++) {
-			if(this.markers[i].text == marker.text)
+			if(this.markers[i].text == marker.text && this.markers[i].lat == marker.lat)
 				return true
 		}
 		return false
@@ -178,7 +191,8 @@ window.PF = {
 	_layerGroup: null,
 	_layerControl: null,
 	_currentPath: null,
-	_running: false
+	_running: false,
+	_geoJson: completeGeoJson
 }
 
 
@@ -196,7 +210,7 @@ PF.generateChunks = function() {
 }
 
 PF.createPathFinder = function() {
-	PF._PathFinder = new PathFinder(MapBase.drawnItems.toGeoJSON(), {
+	PF._PathFinder = new PathFinder(PF._geoJson, {
 		precision: 0.04,
 		weightFn: function(a, b, props) {
 			var dx = a[0] - b[0];
@@ -221,6 +235,7 @@ PF.createPathFinder = function() {
 }
 
 PF.createController = function() {
+	return
 	if(PF.router !== null) {
 		MapBase.map.removeControl(PF.router)
 	}
@@ -307,7 +322,7 @@ PF.highlightPath = function(path) {
 	var line = L.polyline(path, {color: '#000000', opacity: 0.5, weight: 9 }).addTo(PF._currentPath)
 	L.polyline(path, {color: '#ffffff', opacity: 1, weight: 7 }).addTo(PF._currentPath)
 	L.polyline(path, {color: '#00bb00', opacity: 1, weight: 3 }).addTo(PF._currentPath)
-	MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
+	//MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
 }
 PF.drawRoute = function(paths) {
 	PF._layerGroup.clearLayers()
@@ -362,14 +377,17 @@ PF.getNearestNode = function(point, drawBounds) {
 }
 
 PF.findNearestChunk = function(marker, markerChunk) {
-	var c = {distance: Number.MAX_SAFE_INTEGER, c: null}
+	var c = {weight: Number.MAX_SAFE_INTEGER, c: null}
+
+	var markerNode = PF.getNearestNode(PF.latLngToPoint(marker))
 	for(var i = 0; i < Chunk.chunks.length; i++) {
 		if(Chunk.chunks[i].isDone) continue
 		if(Chunk.chunks[i] == markerChunk) continue
 
-		var d = MapBase.map.distance(marker, Chunk.chunks[i].getBounds().getCenter())
-		if(d < c.distance) {
-			c.distance = d
+		var chunkNode = PF.getNearestNode(PF.latLngToPoint(Chunk.chunks[i].getBounds().getCenter()))
+		var p = PF._PathFinder.findPath(markerNode, chunkNode)
+		if(p.weight < c.weight) {
+			c.weight = p.weight
 			c.c = Chunk.chunks[i]
 		}
 	}
@@ -462,11 +480,11 @@ PF.pathfinderStart = async function() {
 
 	var markers = MapBase.markers.filter((marker) => { return (marker.isVisible && (!Routes.ignoreCollected || !marker.isCollected)); });
 
-	var current = Routes.nearestNeighborTo(Routes.startMarker(), markers, [], -1).marker
-	markers = markers.filter((m) => { return (m.text != current.text) })
+	var current = Routes.nearestNeighborTo(Routes.startMarker(), markers, [], -1)
+	markers = markers.filter((m, i) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
 
 
-	var last = current
+	var last = current.marker
 	var waypoints = [L.latLng(last.lat, last.lng)]
 	var paths = []
 
@@ -474,7 +492,7 @@ PF.pathfinderStart = async function() {
 	for (var i = 0; i < markersNum; i++) {
 		var current = await PF.findNearestTravelItem(last, markers)
 		if(current == null || current.marker == null) break
-		markers = markers.filter((m, i) => { return (m.text != current.marker.text); })
+		markers = markers.filter((m, i) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
 		last = current.marker
 
 		waypoints.push(L.latLng(last.lat, last.lng))
