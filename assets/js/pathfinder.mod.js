@@ -21,11 +21,11 @@ function loadGeoJsonData(path) {
 }
 
 async function loadAllGeoJson() {
-	ambarino = await loadGeoJsonData('/data/geojson/ambarino.json')
-	lemoyne = await loadGeoJsonData('/data/geojson/lemoyne.json')
-	newAustin = await loadGeoJsonData('/data/geojson/new-austin.json')
-	newHanover = await loadGeoJsonData('/data/geojson/new-hanover.json')
-	westElizabeth = await loadGeoJsonData('/data/geojson/west-elizabeth.json')
+	ambarino = await loadGeoJsonData('data/geojson/ambarino.json')
+	lemoyne = await loadGeoJsonData('data/geojson/lemoyne.json')
+	newAustin = await loadGeoJsonData('data/geojson/new-austin.json')
+	newHanover = await loadGeoJsonData('data/geojson/new-hanover.json')
+	westElizabeth = await loadGeoJsonData('data/geojson/west-elizabeth.json')
 
 	var completeGeoJson = {"type":"FeatureCollection","features":[]}
 	completeGeoJson.features = completeGeoJson.features.concat(ambarino.features)
