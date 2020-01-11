@@ -146,5 +146,15 @@
 	{"key": "menu.pins_import_export_explanation", "value": "Hier kannst du deine eigenen Markierungen importieren oder exportieren. Beim Importieren werden alle eigenen Markierungen ersetzt."},
 	{"key": "menu.information_links", "value": "Links/Informationen"},
 	{"key": "menu.read_wiki", "value": "Karten-Wiki lesen"},
-	{"key": "menu.generate_route_auto_update", "value": "Route automatisch neu berechnen"}
+	{"key": "menu.generate_route_auto_update", "value": "Route automatisch neu berechnen"},
+	{"key": "menu.random_encounters", "value": "Zufällige Ereignisse"},
+	{"key": "map.madam_nazar.desc", "value": "Falsche Position? Folge <a href=\"https://twitter.com/MadamNazarIO\" target=\"_blank\">@MadamNazarIO</a>."},
+	{"key": "map.user_pins.placeholder_title", "value": "Name"},
+	{"key": "map.user_pins.default_title", "value": "Eigene Makierung"},
+	{"key": "map.user_pins.placeholder_desc", "value": "Beschreibung"},
+	{"key": "map.user_pins.default_desc", "value": "Das ist deine eigene Markierung. Du kannst den Namen und die Beschreibung anpassen. Speichern nicht vergessen!"},
+	{"key": "alerts.file_not_valid", "value": "Die ausgewählte Datei kann nicht eingelesen werden, bitte wähle eine passende Datei."},
+	{"key": "alerts.file_not_found", "value": "Vor dem importieren, bitte eine Datei im Feld über diesen Button auswählen."},
+	{"key": "alerts.feature_not_supported", "value": "Diese Option wird nicht von deinem Browser unterstützt."},
+	{"key": "menu.enable_inventory_menu_update", "value": "Änderungen übers Menü ändern das Inventar"}
 ]
