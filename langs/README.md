@@ -55,3 +55,4 @@ chinese simplified (zh-s.json)
   
 chinese traditional (zh-t.json)
   - yamazakitouma
+  - qiexia
