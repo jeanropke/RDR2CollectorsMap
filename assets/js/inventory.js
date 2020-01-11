@@ -19,10 +19,11 @@ var Inventory = {
     $('#enable-inventory-popups').prop("checked", Inventory.isPopupEnabled);
     $('#enable-inventory-menu-update').prop("checked", Inventory.isMenuUpdateEnabled);
     $('#inventory-stack').val(Inventory.stackSize);
+
+    this.toggleMenuItemsDisabled();
   },
 
   changeMarkerAmount: function (name, amount, skipInventory = false) {
-
     var marker = MapBase.markers.filter(_m => {
       return (_m.text == name || _m.subdata == name);
     });
@@ -60,5 +61,33 @@ var Inventory = {
       Routes.drawLines();
 
     MapBase.save();
+  },
+
+  toggleMenuItemsDisabled: function () {
+    if (!Inventory.isEnabled) {
+      $('#enable-inventory-popups').parent().parent().addClass('disabled');
+      $('#enable-inventory-popups').prop('disabled', true);
+      
+      $('#enable-inventory-menu-update').parent().parent().addClass('disabled');
+      $('#enable-inventory-menu-update').prop('disabled', true);
+
+      $('#inventory-stack').parent().addClass('disabled');
+      $('#inventory-stack').prop('disabled', true);
+
+      $('[data-target="#clear-inventory-modal"]').addClass('disabled');
+      $('[data-target="#clear-inventory-modal"]').prop('disabled', true);
+    } else {
+      $('#enable-inventory-popups').parent().parent().removeClass('disabled');
+      $('#enable-inventory-popups').prop('disabled', false);
+      
+      $('#enable-inventory-menu-update').parent().parent().removeClass('disabled');
+      $('#enable-inventory-menu-update').prop('disabled', false);
+
+      $('#inventory-stack').parent().removeClass('disabled');
+      $('#inventory-stack').prop('disabled', false);
+      
+      $('[data-target="#clear-inventory-modal"]').removeClass('disabled');
+      $('[data-target="#clear-inventory-modal"]').prop('disabled', false);
+    }
   }
 }

@@ -391,7 +391,6 @@ input, textarea, select, .btn {
 }
 
 .input-day:disabled {
-    opacity: 0.5;
     cursor: not-allowed;
 }
 
@@ -712,10 +711,18 @@ a.wiki-page:visited {
     background-position: right center;
 }
 
+.input-checkbox-wrapper .input-checkbox:disabled+.input-checkbox-label {
+    cursor: not-allowed !important;
+}
+
 /* Custom action button styling */
 
 .input-container.clickable, .input-container.clickable label {
     cursor: pointer !important;
+}
+
+.input-container.clickable.disabled, .input-container.clickable.disabled label {
+    cursor: not-allowed !important;
 }
 
 .input-action {

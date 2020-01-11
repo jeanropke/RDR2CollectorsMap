@@ -19,7 +19,10 @@ var Routes = {
     $('#generate-route-start').val(genPathStart);
 
     if (genPathStart != "Custom") {
+      $('#generate-route-start-lat').parent().addClass('disabled');
       $('#generate-route-start-lat').prop('disabled', true);
+
+      $('#generate-route-start-lng').parent().addClass('disabled');
       $('#generate-route-start-lng').prop('disabled', true);
     }
   },
