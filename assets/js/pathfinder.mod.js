@@ -3,19 +3,39 @@ var PathFinder = require('geojson-path-finder')
 var point = require('turf-point')
 var featurecollection = require('turf-featurecollection')
 
-var ambarino = require('./../../data/geojson/ambarino.json')
-var lemoyne = require('./../../data/geojson/lemoyne.json')
-var newAustin = require('./../../data/geojson/new-austin.json')
-var newHanover = require('./../../data/geojson/new-hanover.json')
-var westElizabeth = require('./../../data/geojson/west-elizabeth.json')
+var ambarino = null, lemoyne = null, newAustin = null, newHanover = null, westElizabeth = null
 
-var completeGeoJson = {"type":"FeatureCollection","features":[]}
-completeGeoJson.features = completeGeoJson.features.concat(ambarino.features)
-completeGeoJson.features = completeGeoJson.features.concat(lemoyne.features)
-completeGeoJson.features = completeGeoJson.features.concat(newAustin.features)
-completeGeoJson.features = completeGeoJson.features.concat(newHanover.features)
-completeGeoJson.features = completeGeoJson.features.concat(westElizabeth.features)
+function loadGeoJsonData(path) {
+	return new Promise((res) => {
+		$.getJSON(path + '?nocache=' + nocache)
+			.done(function(data){
+				console.log('geojson ' + path.substr(path.lastIndexOf('/')+1) + ' loaded')
+				res(data)
+			})
+			.fail(function(){
+				console.error('failed to load geojson ' + path.substr(path.lastIndexOf('/')+1))
+				// resolve to empty featurecollection so the rest doesn't break
+				res({"type":"FeatureCollection","features":[]})
+			})
+	})
+}
 
+async function loadAllGeoJson() {
+	ambarino = await loadGeoJsonData('/data/geojson/ambarino.json')
+	lemoyne = await loadGeoJsonData('/data/geojson/lemoyne.json')
+	newAustin = await loadGeoJsonData('/data/geojson/new-austin.json')
+	newHanover = await loadGeoJsonData('/data/geojson/new-hanover.json')
+	westElizabeth = await loadGeoJsonData('/data/geojson/west-elizabeth.json')
+
+	var completeGeoJson = {"type":"FeatureCollection","features":[]}
+	completeGeoJson.features = completeGeoJson.features.concat(ambarino.features)
+	completeGeoJson.features = completeGeoJson.features.concat(lemoyne.features)
+	completeGeoJson.features = completeGeoJson.features.concat(newAustin.features)
+	completeGeoJson.features = completeGeoJson.features.concat(newHanover.features)
+	completeGeoJson.features = completeGeoJson.features.concat(westElizabeth.features)
+
+	PF._geoJson = completeGeoJson
+}
 
 
 class Chunk {
@@ -192,7 +212,7 @@ window.PF = {
 	_layerControl: null,
 	_currentPath: null,
 	_running: false,
-	_geoJson: completeGeoJson
+	_geoJson: null
 }
 
 
@@ -464,6 +484,10 @@ PF.pathfinderClear = function() {
 
 PF.pathfinderStart = async function() {
 	if(PF._running) return
+	if(PF._geoJson === null) {
+		console.error('geojson not fully loaded yet')
+		return
+	}
 	PF._running = true
 	PF._currentChunk = null
 
@@ -506,3 +530,14 @@ PF.pathfinderStart = async function() {
 	PF._running = false
 
 }
+
+// Append stylesheet to head
+$('head').append($('<link />').attr({'rel': 'stylesheet', 'href': 'assets/css/pathfinder.css'}))
+
+// Overwrite route generator functions
+Routes.generatePath = function() { PF.pathfinderStart() }
+Routes.orgClearPath = Routes.clearPath
+Routes.clearPath = function() {  PF.pathfinderClear(); Routes.orgClearPath() }
+
+// Load geojson now
+loadAllGeoJson()
