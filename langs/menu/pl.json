@@ -153,5 +153,15 @@
 	{"key": "menu.read_wiki", "value": "Przeczytaj wiki tej mapy"},
 	{"key": "menu.settings_import_export_title", "value": "Ustawienia"},
 	{"key": "menu.generate_route_auto_update", "value": "Automatycznie aktywuj trasę"},
-	{"key": "menu.enable_inventory_popups", "value": "Aktywuj ekwipunek w wyskakujących okienkach"}
+	{"key": "menu.enable_inventory_popups", "value": "Włącz ekwip. w okienkach przedmiotu"},
+	{"key": "menu.random_encounters", "value": "Przypadkowe zdarzenia"},
+	{"key": "map.madam_nazar.desc", "value": "Zła lokalizacja? Zajrzyj tutaj: {link}."},
+	{"key": "map.user_pins.placeholder_title", "value": "Nazwa"},
+	{"key": "map.user_pins.default_title", "value": "Twoja pinezka"},
+	{"key": "map.user_pins.placeholder_desc", "value": "Opis"},
+	{"key": "map.user_pins.default_desc", "value": "To jest Twoja niestandardowa pinezka, możesz edytować jej nazwę i opis. Nie zapomnij zapisać!"},
+	{"key": "alerts.file_not_valid", "value": "Plik, który wybrałeś jest nieprawidłowy. Proszę wybierz inny plik."},
+	{"key": "alerts.file_not_found", "value": "Proszę wybierz inny plik w polu (nad napisem Importuj) i spróbuj ponownie."},
+	{"key": "alerts.feature_not_supported", "value": "Ta funkcja nie jest wspierana przez Twoją przeglądarkę."},
+	{"key": "menu.enable_inventory_menu_update", "value": "Przeł. przedmiotów w menu akt. ekwp."}
 ]
