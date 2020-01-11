@@ -253,7 +253,11 @@ var Routes = {
 
     // Optionally ignore the already collected markers.
     if (Routes.ignoreCollected) {
-      newMarkers = newMarkers.filter((marker) => { return !marker.isCollected; });
+      newMarkers = newMarkers.filter((marker) => { return marker.canCollect && !marker.isCollected; });
+    }
+
+    if (Inventory.isEnabled) {
+      newMarkers = newMarkers.filter((marker) => { return marker.amount < Inventory.stackSize; });
     }
 
     var polylines = [];
