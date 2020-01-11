@@ -553,6 +553,8 @@ $('#enable-inventory').on("change", function () {
 
   MapBase.addMarkers();
 
+  Inventory.toggleMenuItemsDisabled();
+
   if (Inventory.isEnabled)
     $('.collection-sell, .counter').show();
   else
@@ -681,12 +683,18 @@ $('#generate-route-start').on("change", function () {
   var startLat = null;
   var startLng = null;
 
+  $('#generate-route-start-lat').parent().addClass('disabled');
   $('#generate-route-start-lat').prop('disabled', true);
+
+  $('#generate-route-start-lng').parent().addClass('disabled');
   $('#generate-route-start-lng').prop('disabled', true);
 
   switch (inputValue) {
     case "Custom":
+      $('#generate-route-start-lat').parent().removeClass('disabled');
       $('#generate-route-start-lat').prop('disabled', false);
+
+      $('#generate-route-start-lng').parent().removeClass('disabled');
       $('#generate-route-start-lng').prop('disabled', false);
       return;
 
