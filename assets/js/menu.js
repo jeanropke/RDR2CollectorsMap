@@ -143,6 +143,19 @@ Menu.refreshMenu = function () {
     }
   });
 
+  $('.menu-hidden[data-type]').each(function (key, value) {
+    var category = $(this);
+
+    if (category.data('type').includes('card_')) return;
+    if (category.data('type') == 'treasure') return;
+
+    var children = category.children('.collectible-wrapper');
+    
+    children.sort(function (a, b) {
+      return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
+    }).appendTo(this);
+  })
+
   Menu.refreshTreasures();
 
   $.each(categoriesDisabledByDefault, function (key, value) {
@@ -159,7 +172,9 @@ Menu.showAll = function () {
     $(value).removeClass("disabled");
     $(`.menu-hidden[data-type=${$(value).attr('data-type')}]`).removeClass("disabled");
   });
+
   enabledCategories = categories;
+  
   MapBase.addMarkers();
 };
 
@@ -167,10 +182,10 @@ Menu.hideAll = function () {
   $.each(categoryButtons, function (key, value) {
     $(value).addClass("disabled");
     $(`.menu-hidden[data-type=${$(value).attr('data-type')}]`).addClass("disabled");
-    console.log($(value).attr('data-type'));
   });
 
   enabledCategories = [];
+
   MapBase.addMarkers();
   Treasures.addToMap();
   Encounters.addToMap();
