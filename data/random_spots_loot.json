@@ -1,7 +1,7 @@
 {
     "mound": [
         {
-            "name": "category_arrowheads_buried_mounds",
+            "name": "category_arrowheads",
             "rate": "0.6",
             "items": [
                 {
@@ -28,11 +28,11 @@
             ]
         },
         {
-            "name": "category_jewelry_all",
+            "name": "category_jewelry",
             "rate": "0.1",
             "items": [
                 {
-                    "name": "category_jewelry_rings_01",
+                    "name": "category_rings_1",
                     "rate": "0.125",
                     "items": [
                         { "name": "ring_pilgrim_moonstone", "rate": "0.2" },
@@ -44,7 +44,7 @@
                     ]
                 },
                 {
-                    "name": "category_jewelry_rings_02",
+                    "name": "category_rings_2",
                     "rate": "0.125",
                     "items": [
                         { "name": "ring_bonnard_pearl", "rate": "0.2" },
@@ -55,7 +55,7 @@
                     ]
                 },
                 {
-                    "name": "category_jewelry_earrings_01",
+                    "name": "category_earrings_1",
                     "rate": "0.125",
                     "items": [
                         { "name": "earring_duchess_emerald", "rate": "0.2" },
@@ -67,7 +67,7 @@
                     ]
                 },
                 {
-                    "name": "category_jewelry_earrings_02",
+                    "name": "category_earrings_2",
                     "rate": "0.125",
                     "items": [
                         { "name": "earring_calumet_turquoise", "rate": "0.2" },
@@ -78,7 +78,7 @@
                     ]
                 },
                 {
-                    "name": "category_jewelry_necklaces",
+                    "name": "category_necklaces",
                     "rate": "0.25",
                     "items": [
                         { "name": "necklace_tuamotu_pearl", "rate": "0.15" },
@@ -93,7 +93,7 @@
                     ]
                 },
                 {
-                    "name": "category_jewelry_bracelets",
+                    "name": "category_bracelets",
                     "rate": "0.25",
                     "items": [
                         { "name": "bracelet_elliston_carved", "rate": "0.15" },
@@ -109,7 +109,7 @@
             ]
         },
         {
-            "name": "category_heirlooms_buried_mounds",
+            "name": "category_heirlooms",
             "rate": "0.3",
             "items": [
                 { "name": "heirlooms_carved_wooden", "rate": "0.2" },
@@ -122,7 +122,7 @@
     ],
     "box": [
         {
-            "name": "category_items_buried_flat_ground_shallow",
+            "name": "category_loot_table_shallow",
             "rate": "0.5",
             "items": [
                 {
@@ -191,11 +191,11 @@
             ]
         },
         {
-            "name": "category_jewelry_all",
+            "name": "category_jewelry",
             "rate": "0.5",
             "items": [
                 {
-                    "name": "category_jewelry_rings_01",
+                    "name": "category_rings_1",
                     "rate": "0.125",
                     "items": [
                         { "name": "ring_pilgrim_moonstone", "rate": "0.2" },
@@ -207,7 +207,7 @@
                     ]
                 },
                 {
-                    "name": "category_jewelry_rings_02",
+                    "name": "category_rings_2",
                     "rate": "0.125",
                     "items": [
                         { "name": "ring_bonnard_pearl", "rate": "0.2" },
@@ -218,7 +218,7 @@
                     ]
                 },
                 {
-                    "name": "category_jewelry_earrings_01",
+                    "name": "category_earrings_1",
                     "rate": "0.125",
                     "items": [
                         { "name": "earring_duchess_emerald", "rate": "0.2" },
@@ -230,7 +230,7 @@
                     ]
                 },
                 {
-                    "name": "category_jewelry_earrings_02",
+                    "name": "category_earrings_2",
                     "rate": "0.125",
                     "items": [
                         { "name": "earring_calumet_turquoise", "rate": "0.2" },
@@ -241,7 +241,7 @@
                     ]
                 },
                 {
-                    "name": "category_jewelry_necklaces",
+                    "name": "category_necklaces",
                     "rate": "0.25",
                     "items": [
                         { "name": "necklace_tuamotu_pearl", "rate": "0.15" },
@@ -256,7 +256,7 @@
                     ]
                 },
                 {
-                    "name": "category_jewelry_bracelets",
+                    "name": "category_bracelets",
                     "rate": "0.25",
                     "items": [
                         { "name": "bracelet_elliston_carved", "rate": "0.15" },
