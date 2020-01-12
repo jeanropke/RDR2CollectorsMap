@@ -111,7 +111,7 @@
                 ]
             },
             {
-                "name": "category_heirlooms",
+                "name": "category_family_heirlooms",
                 "rate": "0.3",
                 "items": [
                     { "name": "heirlooms_carved_wooden", "rate": "0.2" },
