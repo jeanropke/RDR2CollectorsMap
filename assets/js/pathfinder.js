@@ -67,7 +67,7 @@ class Chunk {
 	_canAdd(marker) {
 		if(this.bounds == null) return true
 		var d = MapBase.map.distance(marker, this.bounds.getCenter())
-		return d < 20
+		return d < 10
 	}
 
 	addMarker(marker) {
@@ -115,7 +115,6 @@ class Chunk {
 		for(var j = 0; j < Chunk.chunks.length; j++) {
 			if(Chunk.chunks[j].addMarker(marker)) {
 				added = true
-				break
 			}
 		}
 		if(!added) {
