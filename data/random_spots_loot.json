@@ -35,75 +35,75 @@
                     "name": "category_jewelry_rings_01",
                     "rate": "0.125",
                     "items": [
-                        { "name": "jewelry_moon_ring", "rate": "0.2" },
-                        { "name": "jewelry_whtgld_dmnd_ring", "rate": "0.2" },
-                        { "name": "jewelry_ylwgld_dmnd_ring", "rate": "0.15" },
-                        { "name": "jewelry_french_dmnd_ring", "rate": "0.15" },
-                        { "name": "jewelry_turquoise_ring", "rate": "0.15" },
-                        { "name": "jewelry_topaz_ring", "rate": "0.15" }
+                        { "name": "ring_jewelry_moon", "rate": "0.2" },
+                        { "name": "ring_jewelry_whtgld_dmnd", "rate": "0.2" },
+                        { "name": "ring_jewelry_ylwgld_dmnd", "rate": "0.15" },
+                        { "name": "ring_jewelry_french_dmnd", "rate": "0.15" },
+                        { "name": "ring_jewelry_turquoise", "rate": "0.15" },
+                        { "name": "ring_jewelry_topaz", "rate": "0.15" }
                     ]
                 },
                 {
                     "name": "category_jewelry_rings_02",
                     "rate": "0.125",
                     "items": [
-                        { "name": "jewelry_pearl_ring", "rate": "0.2" },
-                        { "name": "jewelry_onyx_ring", "rate": "0.2" },
-                        { "name": "jewelry_emerald_ring", "rate": "0.2" },
-                        { "name": "jewelry_pers_turq_ring", "rate": "0.2" },
-                        { "name": "jewelry_coral_ring", "rate": "0.2" }
+                        { "name": "ring_jewelry_pearl", "rate": "0.2" },
+                        { "name": "ring_jewelry_onyx", "rate": "0.2" },
+                        { "name": "ring_jewelry_emerald", "rate": "0.2" },
+                        { "name": "ring_jewelry_pers_turq", "rate": "0.2" },
+                        { "name": "ring_jewelry_coral", "rate": "0.2" }
                     ]
                 },
                 {
                     "name": "category_jewelry_earrings_01",
                     "rate": "0.125",
                     "items": [
-                        { "name": "jewelry_emerald_earring", "rate": "0.2" },
-                        { "name": "jewelry_qn_dmnd_earring", "rate": "0.2" },
-                        { "name": "jewelry_wht_dmnd_earring", "rate": "0.15" },
-                        { "name": "jewelry_rudy_dngl_earring", "rate": "0.15" },
-                        { "name": "jewelry_drop_earring", "rate": "0.15" },
-                        { "name": "jewelry_coral_dngl_earring", "rate": "0.15" }
+                        { "name": "earring_emerald", "rate": "0.2" },
+                        { "name": "earring_qn_dmnd", "rate": "0.2" },
+                        { "name": "earring_wht_dmnd", "rate": "0.15" },
+                        { "name": "earring_rudy_dngl", "rate": "0.15" },
+                        { "name": "earring_drop", "rate": "0.15" },
+                        { "name": "earring_coral_dngl", "rate": "0.15" }
                     ]
                 },
                 {
                     "name": "category_jewelry_earrings_02",
                     "rate": "0.125",
                     "items": [
-                        { "name": "jewelry_turq_stud_earring", "rate": "0.2" },
-                        { "name": "jewelry_elk_tooth_earring", "rate": "0.2" },
-                        { "name": "jewelry_grnet_post_earring", "rate": "0.2" },
-                        { "name": "jewelry_dmnd_pendt_earring", "rate": "0.2" },
-                        { "name": "jewelry_pearl_earring", "rate": "0.2" }
+                        { "name": "earring_turq_stud", "rate": "0.2" },
+                        { "name": "earring_elk_tooth", "rate": "0.2" },
+                        { "name": "earring_grnet_post", "rate": "0.2" },
+                        { "name": "earring_dmnd_pendt", "rate": "0.2" },
+                        { "name": "earring_pearl", "rate": "0.2" }
                     ]
                 },
                 {
                     "name": "category_jewelry_necklaces",
                     "rate": "0.25",
                     "items": [
-                        { "name": "jewelry_blck_pearl_necklace", "rate": "0.15" },
-                        { "name": "jewelry_topaz_necklace", "rate": "0.15" },
-                        { "name": "jewelry_mthr_pearl_necklace", "rate": "0.1" },
-                        { "name": "jewelry_gld_pendt_necklace", "rate": "0.1" },
-                        { "name": "jewelry_amethyst_necklace", "rate": "0.1" },
-                        { "name": "jewelry_porcelain_necklace", "rate": "0.1" },
-                        { "name": "jewelry_slvr_pearl_necklace", "rate": "0.1" },
-                        { "name": "jewelry_gld_cross_necklace", "rate": "0.1" },
-                        { "name": "jewelry_gld_pearl_necklace", "rate": "0.1" }
+                        { "name": "necklace_blck_pearl", "rate": "0.15" },
+                        { "name": "necklace_topaz", "rate": "0.15" },
+                        { "name": "necklace_mthr_pearl", "rate": "0.1" },
+                        { "name": "necklace_gld_pendt", "rate": "0.1" },
+                        { "name": "necklace_amethyst", "rate": "0.1" },
+                        { "name": "necklace_porcelain", "rate": "0.1" },
+                        { "name": "necklace_slvr_pearl", "rate": "0.1" },
+                        { "name": "necklace_gld_cross", "rate": "0.1" },
+                        { "name": "necklace_gld_pearl", "rate": "0.1" }
                     ]
                 },
                 {
                     "name": "category_jewelry_bracelets",
                     "rate": "0.25",
                     "items": [
-                        { "name": "jewelry_carved_bracelet", "rate": "0.15" },
-                        { "name": "jewelry_gld_bngle_bracelet", "rate": "0.15" },
-                        { "name": "jewelry_pearl_bracelet", "rate": "0.15" },
-                        { "name": "jewelry_grnet_bracelet", "rate": "0.15" },
-                        { "name": "jewelry_turquoise_bracelet", "rate": "0.1" },
-                        { "name": "jewelry_sphr_bngle_bracelet", "rate": "0.1" },
-                        { "name": "jewelry_sphr_bracelet", "rate": "0.1" },
-                        { "name": "jewelry_dmnd_bngle_bracelet", "rate": "0.1" }
+                        { "name": "bracelet_carved", "rate": "0.15" },
+                        { "name": "bracelet_gld_bngle", "rate": "0.15" },
+                        { "name": "bracelet_pearl", "rate": "0.15" },
+                        { "name": "bracelet_grnet", "rate": "0.15" },
+                        { "name": "bracelet_turquoise", "rate": "0.1" },
+                        { "name": "bracelet_sphr_bngle", "rate": "0.1" },
+                        { "name": "bracelet_sphr", "rate": "0.1" },
+                        { "name": "bracelet_dmnd_bngle", "rate": "0.1" }
                     ]
                 }
             ]
@@ -198,75 +198,75 @@
                     "name": "category_jewelry_rings_01",
                     "rate": "0.125",
                     "items": [
-                        { "name": "jewelry_moon_ring", "rate": "0.2" },
-                        { "name": "jewelry_whtgld_dmnd_ring", "rate": "0.2" },
-                        { "name": "jewelry_ylwgld_dmnd_ring", "rate": "0.15" },
-                        { "name": "jewelry_french_dmnd_ring", "rate": "0.15" },
-                        { "name": "jewelry_turquoise_ring", "rate": "0.15" },
-                        { "name": "jewelry_topaz_ring", "rate": "0.15" }
+                        { "name": "ring_jewelry_moon", "rate": "0.2" },
+                        { "name": "ring_jewelry_whtgld_dmnd", "rate": "0.2" },
+                        { "name": "ring_jewelry_ylwgld_dmnd", "rate": "0.15" },
+                        { "name": "ring_jewelry_french_dmnd", "rate": "0.15" },
+                        { "name": "ring_jewelry_turquoise", "rate": "0.15" },
+                        { "name": "ring_jewelry_topaz", "rate": "0.15" }
                     ]
                 },
                 {
                     "name": "category_jewelry_rings_02",
                     "rate": "0.125",
                     "items": [
-                        { "name": "jewelry_pearl_ring", "rate": "0.2" },
-                        { "name": "jewelry_onyx_ring", "rate": "0.2" },
-                        { "name": "jewelry_emerald_ring", "rate": "0.2" },
-                        { "name": "jewelry_pers_turq_ring", "rate": "0.2" },
-                        { "name": "jewelry_coral_ring", "rate": "0.2" }
+                        { "name": "ring_jewelry_pearl", "rate": "0.2" },
+                        { "name": "ring_jewelry_onyx", "rate": "0.2" },
+                        { "name": "ring_jewelry_emerald", "rate": "0.2" },
+                        { "name": "ring_jewelry_pers_turq", "rate": "0.2" },
+                        { "name": "ring_jewelry_coral", "rate": "0.2" }
                     ]
                 },
                 {
                     "name": "category_jewelry_earrings_01",
                     "rate": "0.125",
                     "items": [
-                        { "name": "jewelry_emerald_earring", "rate": "0.2" },
-                        { "name": "jewelry_qn_dmnd_earring", "rate": "0.2" },
-                        { "name": "jewelry_wht_dmnd_earring", "rate": "0.15" },
-                        { "name": "jewelry_rudy_dngl_earring", "rate": "0.15" },
-                        { "name": "jewelry_drop_earring", "rate": "0.15" },
-                        { "name": "jewelry_coral_dngl_earring", "rate": "0.15" }
+                        { "name": "earring_emerald", "rate": "0.2" },
+                        { "name": "earring_qn_dmnd", "rate": "0.2" },
+                        { "name": "earring_wht_dmnd", "rate": "0.15" },
+                        { "name": "earring_rudy_dngl", "rate": "0.15" },
+                        { "name": "earring_drop", "rate": "0.15" },
+                        { "name": "earring_coral_dngl", "rate": "0.15" }
                     ]
                 },
                 {
                     "name": "category_jewelry_earrings_02",
                     "rate": "0.125",
                     "items": [
-                        { "name": "jewelry_turq_stud_earring", "rate": "0.2" },
-                        { "name": "jewelry_elk_tooth_earring", "rate": "0.2" },
-                        { "name": "jewelry_grnet_post_earring", "rate": "0.2" },
-                        { "name": "jewelry_dmnd_pendt_earring", "rate": "0.2" },
-                        { "name": "jewelry_pearl_earring", "rate": "0.2" }
+                        { "name": "earring_turq_stud", "rate": "0.2" },
+                        { "name": "earring_elk_tooth", "rate": "0.2" },
+                        { "name": "earring_grnet_post", "rate": "0.2" },
+                        { "name": "earring_dmnd_pendt", "rate": "0.2" },
+                        { "name": "earring_pearl", "rate": "0.2" }
                     ]
                 },
                 {
                     "name": "category_jewelry_necklaces",
                     "rate": "0.25",
                     "items": [
-                        { "name": "jewelry_blck_pearl_necklace", "rate": "0.15" },
-                        { "name": "jewelry_topaz_necklace", "rate": "0.15" },
-                        { "name": "jewelry_mthr_pearl_necklace", "rate": "0.1" },
-                        { "name": "jewelry_gld_pendt_necklace", "rate": "0.1" },
-                        { "name": "jewelry_amethyst_necklace", "rate": "0.1" },
-                        { "name": "jewelry_porcelain_necklace", "rate": "0.1" },
-                        { "name": "jewelry_slvr_pearl_necklace", "rate": "0.1" },
-                        { "name": "jewelry_gld_cross_necklace", "rate": "0.1" },
-                        { "name": "jewelry_gld_pearl_necklace", "rate": "0.1" }
+                        { "name": "necklace_blck_pearl", "rate": "0.15" },
+                        { "name": "necklace_topaz", "rate": "0.15" },
+                        { "name": "necklace_mthr_pearl", "rate": "0.1" },
+                        { "name": "necklace_gld_pendt", "rate": "0.1" },
+                        { "name": "necklace_amethyst", "rate": "0.1" },
+                        { "name": "necklace_porcelain", "rate": "0.1" },
+                        { "name": "necklace_slvr_pearl", "rate": "0.1" },
+                        { "name": "necklace_gld_cross", "rate": "0.1" },
+                        { "name": "necklace_gld_pearl", "rate": "0.1" }
                     ]
                 },
                 {
                     "name": "category_jewelry_bracelets",
                     "rate": "0.25",
                     "items": [
-                        { "name": "jewelry_carved_bracelet", "rate": "0.15" },
-                        { "name": "jewelry_gld_bngle_bracelet", "rate": "0.15" },
-                        { "name": "jewelry_pearl_bracelet", "rate": "0.15" },
-                        { "name": "jewelry_grnet_bracelet", "rate": "0.15" },
-                        { "name": "jewelry_turquoise_bracelet", "rate": "0.1" },
-                        { "name": "jewelry_sphr_bngle_bracelet", "rate": "0.1" },
-                        { "name": "jewelry_sphr_bracelet", "rate": "0.1" },
-                        { "name": "jewelry_dmnd_bngle_bracelet", "rate": "0.1" }
+                        { "name": "bracelet_carved", "rate": "0.15" },
+                        { "name": "bracelet_gld_bngle", "rate": "0.15" },
+                        { "name": "bracelet_pearl", "rate": "0.15" },
+                        { "name": "bracelet_grnet", "rate": "0.15" },
+                        { "name": "bracelet_turquoise", "rate": "0.1" },
+                        { "name": "bracelet_sphr_bngle", "rate": "0.1" },
+                        { "name": "bracelet_sphr", "rate": "0.1" },
+                        { "name": "bracelet_dmnd_bngle", "rate": "0.1" }
                     ]
                 }
             ]
