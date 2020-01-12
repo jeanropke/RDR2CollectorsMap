@@ -405,7 +405,7 @@ var MapBase = {
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.tree');
     else if (marker.subdata == 'vulture')
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.stump');
-    else if (marker.subdata == 'duck' || marker.subdata == 'goose')
+    else if (marker.subdata == 'duck' || marker.subdata == 'goose' || marker.subdata == 'loon')
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.ground');
     else
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
