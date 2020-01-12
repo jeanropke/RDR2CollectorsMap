@@ -405,7 +405,7 @@ var MapBase = {
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.tree');
     else if (marker.subdata == 'vulture')
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.stump');
-    else if (marker.subdata == 'duck' || marker.subdata == 'goose')
+    else if (marker.subdata == 'duck' || marker.subdata == 'goose' || marker.subdata == 'loon')
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.ground');
     else
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
@@ -450,6 +450,8 @@ var MapBase = {
 
 MapBase.getToolIcon = function (type) {
   switch (type) {
+    case '-1':
+      return '<img class="tool-type" src="assets/images/cross.png">';
     default:
     case '0':
       return '';
@@ -484,7 +486,7 @@ MapBase.addFastTravelMarker = function () {
         })
       });
 
-      marker.bindPopup(`<h1>${Language.get(value.text + '.name')}</h1><p></p>`, { minWidth: 300 });
+      marker.bindPopup(`<h1>${Language.get(value.text + '.name')}</h1><p></p>`);
 
       Layers.itemMarkersLayer.addLayer(marker);
     });

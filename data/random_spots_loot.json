@@ -1,0 +1,340 @@
+{
+    "mound": [
+        {
+            "name": "category_arrowheads_buried_mounds",
+            "rate": "0.6",
+            "items": [
+                {
+                    "name": "category_arrowheads_common",
+                    "rate": "0.7",
+                    "items": [
+                        { "name": "arrowhead_chipped", "rate": "0.2" },
+                        { "name": "arrowhead_crude", "rate": "0.2" },
+                        { "name": "arrowhead_raw", "rate": "0.2" },
+                        { "name": "arrowhead_rough", "rate": "0.2" },
+                        { "name": "arrowhead_splintered", "rate": "0.2" }
+                    ]
+                },
+                {
+                    "name": "category_arrowheads_uncommon",
+                    "rate": "0.3",
+                    "items": [
+                        { "name": "arrowhead_bone", "rate": "0.25" },
+                        { "name": "arrowhead_feldspar", "rate": "0.25" },
+                        { "name": "arrowhead_flint", "rate": "0.25" },
+                        { "name": "arrowhead_slate", "rate": "0.25" }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "category_jewelry_all",
+            "rate": "0.1",
+            "items": [
+                {
+                    "name": "category_jewelry_rings_01",
+                    "rate": "0.125",
+                    "items": [
+                        { "name": "ring_jewelry_moon", "rate": "0.2" },
+                        { "name": "ring_jewelry_whtgld_dmnd", "rate": "0.2" },
+                        { "name": "ring_jewelry_ylwgld_dmnd", "rate": "0.15" },
+                        { "name": "ring_jewelry_french_dmnd", "rate": "0.15" },
+                        { "name": "ring_jewelry_turquoise", "rate": "0.15" },
+                        { "name": "ring_jewelry_topaz", "rate": "0.15" }
+                    ]
+                },
+                {
+                    "name": "category_jewelry_rings_02",
+                    "rate": "0.125",
+                    "items": [
+                        { "name": "ring_jewelry_pearl", "rate": "0.2" },
+                        { "name": "ring_jewelry_onyx", "rate": "0.2" },
+                        { "name": "ring_jewelry_emerald", "rate": "0.2" },
+                        { "name": "ring_jewelry_pers_turq", "rate": "0.2" },
+                        { "name": "ring_jewelry_coral", "rate": "0.2" }
+                    ]
+                },
+                {
+                    "name": "category_jewelry_earrings_01",
+                    "rate": "0.125",
+                    "items": [
+                        { "name": "earring_emerald", "rate": "0.2" },
+                        { "name": "earring_qn_dmnd", "rate": "0.2" },
+                        { "name": "earring_wht_dmnd", "rate": "0.15" },
+                        { "name": "earring_rudy_dngl", "rate": "0.15" },
+                        { "name": "earring_drop", "rate": "0.15" },
+                        { "name": "earring_coral_dngl", "rate": "0.15" }
+                    ]
+                },
+                {
+                    "name": "category_jewelry_earrings_02",
+                    "rate": "0.125",
+                    "items": [
+                        { "name": "earring_turq_stud", "rate": "0.2" },
+                        { "name": "earring_elk_tooth", "rate": "0.2" },
+                        { "name": "earring_grnet_post", "rate": "0.2" },
+                        { "name": "earring_dmnd_pendt", "rate": "0.2" },
+                        { "name": "earring_pearl", "rate": "0.2" }
+                    ]
+                },
+                {
+                    "name": "category_jewelry_necklaces",
+                    "rate": "0.25",
+                    "items": [
+                        { "name": "necklace_blck_pearl", "rate": "0.15" },
+                        { "name": "necklace_topaz", "rate": "0.15" },
+                        { "name": "necklace_mthr_pearl", "rate": "0.1" },
+                        { "name": "necklace_gld_pendt", "rate": "0.1" },
+                        { "name": "necklace_amethyst", "rate": "0.1" },
+                        { "name": "necklace_porcelain", "rate": "0.1" },
+                        { "name": "necklace_slvr_pearl", "rate": "0.1" },
+                        { "name": "necklace_gld_cross", "rate": "0.1" },
+                        { "name": "necklace_gld_pearl", "rate": "0.1" }
+                    ]
+                },
+                {
+                    "name": "category_jewelry_bracelets",
+                    "rate": "0.25",
+                    "items": [
+                        { "name": "bracelet_carved", "rate": "0.15" },
+                        { "name": "bracelet_gld_bngle", "rate": "0.15" },
+                        { "name": "bracelet_pearl", "rate": "0.15" },
+                        { "name": "bracelet_grnet", "rate": "0.15" },
+                        { "name": "bracelet_turquoise", "rate": "0.1" },
+                        { "name": "bracelet_sphr_bngle", "rate": "0.1" },
+                        { "name": "bracelet_sphr", "rate": "0.1" },
+                        { "name": "bracelet_dmnd_bngle", "rate": "0.1" }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "category_heirlooms_buried_mounds",
+            "rate": "0.3",
+            "items": [
+                { "name": "heirloom_hairpin_wooden", "rate": "0.2" },
+                { "name": "heirloom_hairpin_ebony", "rate": "0.2" },
+                { "name": "heirloom_hairpin_ivory", "rate": "0.2" },
+                { "name": "heirloom_hairpin_jade", "rate": "0.2" },
+                { "name": "heirloom_hairpin_metal", "rate": "0.2" }
+            ]
+        }
+    ],
+    "box": [
+        {
+            "name": "category_items_buried_flat_ground_shallow",
+            "rate": "0.5",
+            "items": [
+                {
+                    "name": "category_arrowheads_common",
+                    "rate": "0.25",
+                    "items": [
+                        { "name": "arrowhead_chipped", "rate": "0.2" },
+                        { "name": "arrowhead_crude", "rate": "0.2" },
+                        { "name": "arrowhead_raw", "rate": "0.2" },
+                        { "name": "arrowhead_rough", "rate": "0.2" },
+                        { "name": "arrowhead_splintered", "rate": "0.2" }
+                    ]
+                },
+                {
+                    "name": "category_arrowheads_uncommon",
+                    "rate": "0.2",
+                    "items": [
+                        { "name": "arrowhead_bone", "rate": "0.25" },
+                        { "name": "arrowhead_feldspar", "rate": "0.25" },
+                        { "name": "arrowhead_flint", "rate": "0.25" },
+                        { "name": "arrowhead_slate", "rate": "0.25" }
+                    ]
+                },
+                {
+                    "name": "category_arrowheads_rare",
+                    "rate": "0.1",
+                    "items": [
+                        { "name": "arrowhead_agate", "rate": "0.35" },
+                        { "name": "arrowhead_obsidian", "rate": "0.35" },
+                        { "name": "arrowhead_quartz", "rate": "0.3" }
+                    ]
+                },
+                {
+                    "name": "category_coins_common",
+                    "rate": "0.2",
+                    "items": [
+                        { "name": "coin_1792_qtr", "rate": "0.2" },
+                        { "name": "coin_1792_nickel", "rate": "0.2" },
+                        { "name": "coin_1789_pny", "rate": "0.2" },
+                        { "name": "coin_1795_hlf_eag", "rate": "0.2" },
+                        { "name": "coin_1796_hlf_pny", "rate": "0.2" }
+                    ]
+                },
+                {
+                    "name": "category_coins_uncommon",
+                    "rate": "0.15",
+                    "items": [
+                        { "name": "coin_1787_cent_tkn", "rate": "0.2" },
+                        { "name": "coin_1794_slv_dlr", "rate": "0.2" },
+                        { "name": "coin_1798_slv_dlr", "rate": "0.2" },
+                        { "name": "coin_1800_five_dlr", "rate": "0.2" },
+                        { "name": "coin_1800_hlf_dime", "rate": "0.2" }
+                    ]
+                },
+                {
+                    "name": "category_coins_rare",
+                    "rate": "0.1",
+                    "items": [
+                        { "name": "coin_1700_ny_tkn", "rate": "0.2" },
+                        { "name": "coin_1797_gld_eag", "rate": "0.2" },
+                        { "name": "coin_1792_lib_qtr", "rate": "0.2" },
+                        { "name": "coin_1800_gld_dlr", "rate": "0.2" },
+                        { "name": "coin_1800_gld_qtr", "rate": "0.2" }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "category_jewelry_all",
+            "rate": "0.5",
+            "items": [
+                {
+                    "name": "category_jewelry_rings_01",
+                    "rate": "0.125",
+                    "items": [
+                        { "name": "ring_jewelry_moon", "rate": "0.2" },
+                        { "name": "ring_jewelry_whtgld_dmnd", "rate": "0.2" },
+                        { "name": "ring_jewelry_ylwgld_dmnd", "rate": "0.15" },
+                        { "name": "ring_jewelry_french_dmnd", "rate": "0.15" },
+                        { "name": "ring_jewelry_turquoise", "rate": "0.15" },
+                        { "name": "ring_jewelry_topaz", "rate": "0.15" }
+                    ]
+                },
+                {
+                    "name": "category_jewelry_rings_02",
+                    "rate": "0.125",
+                    "items": [
+                        { "name": "ring_jewelry_pearl", "rate": "0.2" },
+                        { "name": "ring_jewelry_onyx", "rate": "0.2" },
+                        { "name": "ring_jewelry_emerald", "rate": "0.2" },
+                        { "name": "ring_jewelry_pers_turq", "rate": "0.2" },
+                        { "name": "ring_jewelry_coral", "rate": "0.2" }
+                    ]
+                },
+                {
+                    "name": "category_jewelry_earrings_01",
+                    "rate": "0.125",
+                    "items": [
+                        { "name": "earring_emerald", "rate": "0.2" },
+                        { "name": "earring_qn_dmnd", "rate": "0.2" },
+                        { "name": "earring_wht_dmnd", "rate": "0.15" },
+                        { "name": "earring_rudy_dngl", "rate": "0.15" },
+                        { "name": "earring_drop", "rate": "0.15" },
+                        { "name": "earring_coral_dngl", "rate": "0.15" }
+                    ]
+                },
+                {
+                    "name": "category_jewelry_earrings_02",
+                    "rate": "0.125",
+                    "items": [
+                        { "name": "earring_turq_stud", "rate": "0.2" },
+                        { "name": "earring_elk_tooth", "rate": "0.2" },
+                        { "name": "earring_grnet_post", "rate": "0.2" },
+                        { "name": "earring_dmnd_pendt", "rate": "0.2" },
+                        { "name": "earring_pearl", "rate": "0.2" }
+                    ]
+                },
+                {
+                    "name": "category_jewelry_necklaces",
+                    "rate": "0.25",
+                    "items": [
+                        { "name": "necklace_blck_pearl", "rate": "0.15" },
+                        { "name": "necklace_topaz", "rate": "0.15" },
+                        { "name": "necklace_mthr_pearl", "rate": "0.1" },
+                        { "name": "necklace_gld_pendt", "rate": "0.1" },
+                        { "name": "necklace_amethyst", "rate": "0.1" },
+                        { "name": "necklace_porcelain", "rate": "0.1" },
+                        { "name": "necklace_slvr_pearl", "rate": "0.1" },
+                        { "name": "necklace_gld_cross", "rate": "0.1" },
+                        { "name": "necklace_gld_pearl", "rate": "0.1" }
+                    ]
+                },
+                {
+                    "name": "category_jewelry_bracelets",
+                    "rate": "0.25",
+                    "items": [
+                        { "name": "bracelet_carved", "rate": "0.15" },
+                        { "name": "bracelet_gld_bngle", "rate": "0.15" },
+                        { "name": "bracelet_pearl", "rate": "0.15" },
+                        { "name": "bracelet_grnet", "rate": "0.15" },
+                        { "name": "bracelet_turquoise", "rate": "0.1" },
+                        { "name": "bracelet_sphr_bngle", "rate": "0.1" },
+                        { "name": "bracelet_sphr", "rate": "0.1" },
+                        { "name": "bracelet_dmnd_bngle", "rate": "0.1" }
+                    ]
+                }
+            ]
+        }
+    ],
+    "shallow": [
+        {
+            "name": "category_arrowheads_common",
+            "rate": "0.25",
+            "items": [
+                { "name": "arrowhead_chipped", "rate": "0.2" },
+                { "name": "arrowhead_crude", "rate": "0.2" },
+                { "name": "arrowhead_raw", "rate": "0.2" },
+                { "name": "arrowhead_rough", "rate": "0.2" },
+                { "name": "arrowhead_splintered", "rate": "0.2" }
+            ]
+        },
+        {
+            "name": "category_arrowheads_uncommon",
+            "rate": "0.2",
+            "items": [
+                { "name": "arrowhead_bone", "rate": "0.25" },
+                { "name": "arrowhead_feldspar", "rate": "0.25" },
+                { "name": "arrowhead_flint", "rate": "0.25" },
+                { "name": "arrowhead_slate", "rate": "0.25" }
+            ]
+        },
+        {
+            "name": "category_arrowheads_rare",
+            "rate": "0.1",
+            "items": [
+                { "name": "arrowhead_agate", "rate": "0.35" },
+                { "name": "arrowhead_obsidian", "rate": "0.35" },
+                { "name": "arrowhead_quartz", "rate": "0.3" }
+            ]
+        },
+        {
+            "name": "category_coins_common",
+            "rate": "0.2",
+            "items": [
+                { "name": "coin_1792_qtr", "rate": "0.2" },
+                { "name": "coin_1792_nickel", "rate": "0.2" },
+                { "name": "coin_1789_pny", "rate": "0.2" },
+                { "name": "coin_1795_hlf_eag", "rate": "0.2" },
+                { "name": "coin_1796_hlf_pny", "rate": "0.2" }
+            ]
+        },
+        {
+            "name": "category_coins_uncommon",
+            "rate": "0.15",
+            "items": [
+                { "name": "coin_1787_cent_tkn", "rate": "0.2" },
+                { "name": "coin_1794_slv_dlr", "rate": "0.2" },
+                { "name": "coin_1798_slv_dlr", "rate": "0.2" },
+                { "name": "coin_1800_five_dlr", "rate": "0.2" },
+                { "name": "coin_1800_hlf_dime", "rate": "0.2" }
+            ]
+        },
+        {
+            "name": "category_coins_rare",
+            "rate": "0.1",
+            "items": [
+                { "name": "coin_1700_ny_tkn", "rate": "0.2" },
+                { "name": "coin_1797_gld_eag", "rate": "0.2" },
+                { "name": "coin_1792_lib_qtr", "rate": "0.2" },
+                { "name": "coin_1800_gld_dlr", "rate": "0.2" },
+                { "name": "coin_1800_gld_qtr", "rate": "0.2" }
+            ]
+        }
+    ]
+}
