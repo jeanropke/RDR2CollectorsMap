@@ -1,7 +1,7 @@
 {
     "mound": {
-        "itemCategories": ["arrowhead", "family_heirlooms", "lost_ring", "lost_earrings", "lost_bracelet", "lost_necklaces"],
-        "items": [
+        "categories": ["arrowhead", "family_heirlooms", "lost_bracelet", "lost_earrings", "lost_necklaces", "lost_ring"],
+        "rates": [
             {
                 "name": "category_arrowheads",
                 "rate": "0.6",
@@ -124,8 +124,8 @@
         ]
     },
     "box": {
-        "itemCategories": ["arrowhead", "coin", "lost_ring", "lost_earrings", "lost_bracelet", "lost_necklaces"],
-        "items": [
+        "categories": ["arrowhead", "coin", "lost_bracelet", "lost_earrings", "lost_necklaces", "lost_ring"],
+        "rates": [
             {
                 "name": "category_loot_table_shallow",
                 "rate": "0.5",
@@ -279,8 +279,8 @@
         ]
     },
     "shallow": {
-        "itemCategories": ["arrowhead", "coin"],
-        "items": [
+        "categories": ["arrowhead", "coin"],
+        "rates": [
             {
                 "name": "category_arrowheads_common",
                 "rate": "0.25",
