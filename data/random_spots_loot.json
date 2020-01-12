@@ -1,11 +1,11 @@
 {
     "mound": [
         {
-            "name": "arrowheads_buried_mounds",
+            "name": "category_arrowheads_buried_mounds",
             "rate": "0.6",
             "items": [
                 {
-                    "name": "arrowheads_common",
+                    "name": "category_arrowheads_common",
                     "rate": "0.7",
                     "items": [
                         { "name": "arrowhead_chipped", "rate": "0.2" },
@@ -16,7 +16,7 @@
                     ]
                 },
                 {
-                    "name": "arrowheads_uncommon",
+                    "name": "category_arrowheads_uncommon",
                     "rate": "0.3",
                     "items": [
                         { "name": "arrowhead_bone", "rate": "0.25" },
@@ -28,11 +28,11 @@
             ]
         },
         {
-            "name": "jewelry_all",
+            "name": "category_jewelry_all",
             "rate": "0.1",
             "items": [
                 {
-                    "name": "jewelry_rings_01",
+                    "name": "category_jewelry_rings_01",
                     "rate": "0.125",
                     "items": [
                         { "name": "jewelry_moon_ring", "rate": "0.2" },
@@ -44,7 +44,7 @@
                     ]
                 },
                 {
-                    "name": "jewelry_rings_02",
+                    "name": "category_jewelry_rings_02",
                     "rate": "0.125",
                     "items": [
                         { "name": "jewelry_pearl_ring", "rate": "0.2" },
@@ -55,7 +55,7 @@
                     ]
                 },
                 {
-                    "name": "jewelry_earrings_01",
+                    "name": "category_jewelry_earrings_01",
                     "rate": "0.125",
                     "items": [
                         { "name": "jewelry_emerald_earring", "rate": "0.2" },
@@ -67,7 +67,7 @@
                     ]
                 },
                 {
-                    "name": "jewelry_earrings_02",
+                    "name": "category_jewelry_earrings_02",
                     "rate": "0.125",
                     "items": [
                         { "name": "jewelry_turq_stud_earring", "rate": "0.2" },
@@ -78,7 +78,7 @@
                     ]
                 },
                 {
-                    "name": "jewelry_necklaces",
+                    "name": "category_jewelry_necklaces",
                     "rate": "0.25",
                     "items": [
                         { "name": "jewelry_blck_pearl_necklace", "rate": "0.15" },
@@ -93,7 +93,7 @@
                     ]
                 },
                 {
-                    "name": "jewelry_bracelets",
+                    "name": "category_jewelry_bracelets",
                     "rate": "0.25",
                     "items": [
                         { "name": "jewelry_carved_bracelet", "rate": "0.15" },
@@ -109,24 +109,24 @@
             ]
         },
         {
-            "name": "hrlms_buried_mounds",
+            "name": "category_heirlooms_buried_mounds",
             "rate": "0.3",
             "items": [
-                { "name": "hrlm_hairpin_wooden", "rate": "0.2" },
-                { "name": "hrlm_hairpin_ebony", "rate": "0.2" },
-                { "name": "hrlm_hairpin_ivory", "rate": "0.2" },
-                { "name": "hrlm_hairpin_jade", "rate": "0.2" },
-                { "name": "hrlm_hairpin_metal", "rate": "0.2" }
+                { "name": "heirloom_hairpin_wooden", "rate": "0.2" },
+                { "name": "heirloom_hairpin_ebony", "rate": "0.2" },
+                { "name": "heirloom_hairpin_ivory", "rate": "0.2" },
+                { "name": "heirloom_hairpin_jade", "rate": "0.2" },
+                { "name": "heirloom_hairpin_metal", "rate": "0.2" }
             ]
         }
     ],
     "box": [
         {
-            "name": "items_buried_flat_ground_shallow",
+            "name": "category_items_buried_flat_ground_shallow",
             "rate": "0.5",
             "items": [
                 {
-                    "name": "arrowheads_common",
+                    "name": "category_arrowheads_common",
                     "rate": "0.25",
                     "items": [
                         { "name": "arrowhead_chipped", "rate": "0.2" },
@@ -137,7 +137,7 @@
                     ]
                 },
                 {
-                    "name": "arrowheads_uncommon",
+                    "name": "category_arrowheads_uncommon",
                     "rate": "0.2",
                     "items": [
                         { "name": "arrowhead_bone", "rate": "0.25" },
@@ -147,7 +147,7 @@
                     ]
                 },
                 {
-                    "name": "arrowheads_rare",
+                    "name": "category_arrowheads_rare",
                     "rate": "0.1",
                     "items": [
                         { "name": "arrowhead_agate", "rate": "0.35" },
@@ -156,7 +156,7 @@
                     ]
                 },
                 {
-                    "name": "coins_common",
+                    "name": "category_coins_common",
                     "rate": "0.2",
                     "items": [
                         { "name": "coin_1792_qtr", "rate": "0.2" },
@@ -167,7 +167,7 @@
                     ]
                 },
                 {
-                    "name": "coins_uncommon",
+                    "name": "category_coins_uncommon",
                     "rate": "0.15",
                     "items": [
                         { "name": "coin_1787_cent_tkn", "rate": "0.2" },
@@ -178,7 +178,7 @@
                     ]
                 },
                 {
-                    "name": "coins_rare",
+                    "name": "category_coins_rare",
                     "rate": "0.1",
                     "items": [
                         { "name": "coin_1700_ny_tkn", "rate": "0.2" },
@@ -191,11 +191,11 @@
             ]
         },
         {
-            "name": "jewelry_all",
+            "name": "category_jewelry_all",
             "rate": "0.5",
             "items": [
                 {
-                    "name": "jewelry_rings_01",
+                    "name": "category_jewelry_rings_01",
                     "rate": "0.125",
                     "items": [
                         { "name": "jewelry_moon_ring", "rate": "0.2" },
@@ -207,7 +207,7 @@
                     ]
                 },
                 {
-                    "name": "jewelry_rings_02",
+                    "name": "category_jewelry_rings_02",
                     "rate": "0.125",
                     "items": [
                         { "name": "jewelry_pearl_ring", "rate": "0.2" },
@@ -218,7 +218,7 @@
                     ]
                 },
                 {
-                    "name": "jewelry_earrings_01",
+                    "name": "category_jewelry_earrings_01",
                     "rate": "0.125",
                     "items": [
                         { "name": "jewelry_emerald_earring", "rate": "0.2" },
@@ -230,7 +230,7 @@
                     ]
                 },
                 {
-                    "name": "jewelry_earrings_02",
+                    "name": "category_jewelry_earrings_02",
                     "rate": "0.125",
                     "items": [
                         { "name": "jewelry_turq_stud_earring", "rate": "0.2" },
@@ -241,7 +241,7 @@
                     ]
                 },
                 {
-                    "name": "jewelry_necklaces",
+                    "name": "category_jewelry_necklaces",
                     "rate": "0.25",
                     "items": [
                         { "name": "jewelry_blck_pearl_necklace", "rate": "0.15" },
@@ -256,7 +256,7 @@
                     ]
                 },
                 {
-                    "name": "jewelry_bracelets",
+                    "name": "category_jewelry_bracelets",
                     "rate": "0.25",
                     "items": [
                         { "name": "jewelry_carved_bracelet", "rate": "0.15" },
@@ -274,7 +274,7 @@
     ],
     "shallow": [
         {
-            "name": "arrowheads_common",
+            "name": "category_arrowheads_common",
             "rate": "0.25",
             "items": [
                 { "name": "arrowhead_chipped", "rate": "0.2" },
@@ -285,7 +285,7 @@
             ]
         },
         {
-            "name": "arrowheads_uncommon",
+            "name": "category_arrowheads_uncommon",
             "rate": "0.2",
             "items": [
                 { "name": "arrowhead_bone", "rate": "0.25" },
@@ -295,7 +295,7 @@
             ]
         },
         {
-            "name": "arrowheads_rare",
+            "name": "category_arrowheads_rare",
             "rate": "0.1",
             "items": [
                 { "name": "arrowhead_agate", "rate": "0.35" },
@@ -304,7 +304,7 @@
             ]
         },
         {
-            "name": "coins_common",
+            "name": "category_coins_common",
             "rate": "0.2",
             "items": [
                 { "name": "coin_1792_qtr", "rate": "0.2" },
@@ -315,7 +315,7 @@
             ]
         },
         {
-            "name": "coins_uncommon",
+            "name": "category_coins_uncommon",
             "rate": "0.15",
             "items": [
                 { "name": "coin_1787_cent_tkn", "rate": "0.2" },
@@ -326,7 +326,7 @@
             ]
         },
         {
-            "name": "coins_rare",
+            "name": "category_coins_rare",
             "rate": "0.1",
             "items": [
                 { "name": "coin_1700_ny_tkn", "rate": "0.2" },
