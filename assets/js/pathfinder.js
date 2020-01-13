@@ -254,80 +254,6 @@ PF.createPathFinder = function() {
 	PF.generateChunks()
 }
 
-PF.createController = function() {
-	return
-	if(PF.router !== null) {
-		MapBase.map.removeControl(PF.router)
-	}
-
-	PF.router = L.Routing.control({
-		showAlternatives: false,
-		fitSelectedRoutes: false,
-		plan: L.Routing.plan([], { draggableWaypoints: false, createMarker: function(){} }),
-		lineOptions: {
-			styles: [{color: 'black', opacity: 0.15, weight: 9}, {color: 'white', opacity: 0.8, weight: 6}, {color: 'blue', opacity: 1, weight: 2}],
-			addWaypoints: false
-		},
-		router: { route: function(waypoints, callback, context) {
-			if(PF._PathFinder === null) PF.createPathFinder()
-			console.log('Finding route...')
-		
-			let pick = []
-			for(let i = 0; i < waypoints.length; i++) {
-				var point = PF.latLngToPoint(waypoints[i].latLng)
-				var realpoint = PF.getNearestNode(point)
-				if(realpoint !== null)
-					pick.push(realpoint)
-			}
-			try {
-				var pathWaypoints = [{latLng: PF.PointToLatLng(pick[0])}]
-				var pathPoints = []
-				var weight = 0
-	
-				for(let i = 1; i < pick.length; i++) {
-					var p = PF._PathFinder.findPath(
-						pick[i-1],
-						pick[i]
-					)
-					if(p !== null) {
-						pathWaypoints.push({latLng: PF.PointToLatLng(pick[i])})
-
-						if(pathPoints.length == 0)
-							pathPoints.push(pick[i-1].geometry.coordinates)
-
-						pathPoints = pathPoints.concat(p.path)
-						pathPoints.push(PF.latLngToPoint(waypoints[i].latLng).geometry.coordinates)
-
-						weight += p.weight
-					}
-				}
-	
-				if(pathPoints.length > 1) {
-					var path = []
-					for(var i = 0; i < pathPoints.length; i++) {
-						path.push(L.latLng(pathPoints[i][1], pathPoints[i][0]))
-					}
-	
-					var r = [{
-						name: '',
-						waypoints: pathWaypoints,
-						inputWaypoints: waypoints,
-						summary: {totalTime: (weight*20) * 0.1, totalDistance: weight*20},
-						coordinates: path,
-						instructions: []
-					}]
-					callback.call(context, null, r)
-				} else {
-					callback.call(context, {status: 'failed', message: 'No path found'}, null)
-				}
-			} catch(e) {
-				console.error(e)
-				callback.call(context, {status: 'failed', message: e.message}, null)
-			}
-		} }
-	}).addTo(MapBase.map)
-}
-
 PF.drawPath = function(path, color) {
 	if(typeof(color) === 'undefined') color = '#0000ff'
 
@@ -482,6 +408,31 @@ PF.pathfinderClear = function() {
 	if(PF._layerGroup !== null) MapBase.map.removeLayer(PF._layerGroup)
 }
 
+PF.findHoles = async function() {
+	PF.createPathFinder()
+
+	if(PF._layerControl !== null) MapBase.map.removeControl(PF._layerControl)
+	if(PF._layerGroup !== null) MapBase.map.removeLayer(PF._layerGroup)
+
+	PF._layerGroup = L.layerGroup([]).addTo(MapBase.map)
+	PF._layerControl = (new RouteControl()).addTo(MapBase.map)
+	
+	var sourcePoint = PF._points.features[0]
+	L.circle([sourcePoint.geometry.coordinates[1], sourcePoint.geometry.coordinates[0]], { color: '#ff0000', radius: 0.5 }).addTo(PF._layerGroup)
+	for(var i = 1; i < PF._points.features.length; i++) {
+		var path = await new Promise(res => {
+			window.requestAnimationFrame(function(){
+				res(PF._PathFinder.findPath(sourcePoint, PF._points.features[i]))
+			})
+		})
+		if(path == null) {
+			L.circle([PF._points.features[i].geometry.coordinates[1], PF._points.features[i].geometry.coordinates[0]], { radius: 0.04 }).addTo(PF._layerGroup)
+			console.error('No path found to ', sourcePoint, PF._points.features[i])
+		}
+	}
+	console.log('We\'re done')
+}
+
 PF.pathfinderStart = async function() {
 	if(PF._running) return
 	if(PF._geoJson === null) {
@@ -494,10 +445,8 @@ PF.pathfinderStart = async function() {
 	var startTime = new Date().getTime()
 
 	PF.generateChunks()
-	//if(PF._PathFinder === null) 
 	PF.createPathFinder()
-	//if(PF.router === null) PF.createController()
-	
+
 	if(PF._layerControl !== null) MapBase.map.removeControl(PF._layerControl)
 	if(PF._layerGroup !== null) MapBase.map.removeLayer(PF._layerGroup)
 
