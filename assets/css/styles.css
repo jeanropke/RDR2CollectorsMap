@@ -851,3 +851,27 @@ a.no-style:visited {
         left: 410px;
     }
 }
+
+/* Loot table styling */
+
+.loot-table-table-title {
+    text-align: left;
+    margin: 0;
+}
+
+.loot-table-category-title, .loot-table-category-rate, .loot-table-subcategory-title, .loot-table-subcategory-rate {
+    font-size: 20px;
+}
+
+.loot-table-item-title, .loot-table-item-rate {
+    font-size: 16px;
+}
+
+.loot-table-category-header, .loot-table-subcategory-header, .loot-table-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.loot-table-categories .loot-table-category, .loot-table-category-items, .loot-table-subcategory-items {
+    padding: 0 20px;
+}
