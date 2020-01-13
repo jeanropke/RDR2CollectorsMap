@@ -453,12 +453,12 @@ $('.collection-reset').on('click', function (e) {
     
     value.isCollected = false;
     value.canCollect = true;
-    
+
     // .changeMarkerAmount() must run to check whether to remove "disabled" class
     if (value.subdata) 
-      Inventory.changeMarkerAmount(value.subdata, (Inventory.isMenuUpdateEnabled ? -1 : 0));
+      Inventory.changeMarkerAmount(value.subdata, (Inventory.resetButtonChangingInventory ? -1 : 0));
     else
-      Inventory.changeMarkerAmount(value.text, (Inventory.isMenuUpdateEnabled ? -1 : 0));
+      Inventory.changeMarkerAmount(value.text, (Inventory.resetButtonChangingInventory ? -1 : 0));
 
     $(this).removeClass('disabled');
   });
@@ -570,6 +570,11 @@ $('#enable-inventory-popups').on("change", function () {
 $('#enable-inventory-menu-update').on("change", function () {
   Inventory.isMenuUpdateEnabled = $("#enable-inventory-menu-update").prop('checked');
   $.cookie('inventory-menu-update-enabled', Inventory.isMenuUpdateEnabled ? '1' : '0', { expires: 999 });
+});
+
+$('#reset-collection-changing-inventory').on("change", function () {
+  Inventory.resetButtonChangingInventory = $('#reset-collection-changing-inventory').prop('checked');
+  $.cookie('reset-changing-inventory-enabled', Inventory.resetButtonChangingInventory ? '1' : '0', { expires: 999 });
 });
 
 if (Inventory.isEnabled)
