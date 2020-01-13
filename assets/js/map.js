@@ -328,7 +328,7 @@ var MapBase = {
 
 
   updateMarkerContent: function (marker) {
-    var popupContent = Cycles.isSameAsYesterday(marker.category) ? Language.get("map.same_cycle_yesterday") : '';
+    var popupContent = Cycles.isSameAsYesterday(marker.category) ? '<span class="warning">'+Language.get("map.same_cycle_yesterday")+'</span>' : '';
 
     if (marker.category != 'random') {
       var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
