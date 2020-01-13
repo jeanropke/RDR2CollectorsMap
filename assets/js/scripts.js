@@ -751,6 +751,20 @@ $('#generate-route-start-lng').on("change", function () {
 });
 
 /**
+ * Loot table modal
+ */
+$('#detailed-loot-modal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget);
+  var table = button.data('table');
+
+  var modal = $(this)
+  modal.find('.modal-title').text(Language.get('menu.loot_table.table_' + table));
+
+  if (table == 'unknown') table = null;
+  modal.find('.modal-body').html(Loot.generateTable(table));
+})
+
+/**
  * Leaflet plugins
  */
 L.Icon.DataMarkup = L.Icon.extend({
