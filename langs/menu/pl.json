@@ -163,5 +163,26 @@
 	{"key": "alerts.file_not_valid", "value": "Plik, który wybrałeś jest nieprawidłowy. Proszę wybierz inny plik."},
 	{"key": "alerts.file_not_found", "value": "Proszę wybierz inny plik w polu (nad napisem Importuj) i spróbuj ponownie."},
 	{"key": "alerts.feature_not_supported", "value": "Ta funkcja nie jest wspierana przez Twoją przeglądarkę."},
-	{"key": "menu.enable_inventory_menu_update", "value": "Przeł. przedmiotów w menu akt. ekwp."}
+	{"key": "menu.enable_inventory_menu_update", "value": "Przeł. przedmiotów w menu aktu. ekwip."},
+	{"key": "map.same_cycle_yesterday", "value": "Ten przedmiot jest w tym samym cyklu co wczoraj. W tym przypadku przedmiot pojawi się ponownie z 24 godzinnym opóźnieniem."},
+	
+	{"key": "menu.loot_table.category_arrowheads", "value": "Groty"},
+	{"key": "menu.loot_table.category_arrowheads_common", "value": "Groty (Zwykłe)"},
+	{"key": "menu.loot_table.category_arrowheads_uncommon", "value": "Groty (Niepospolite)"},
+	{"key": "menu.loot_table.category_arrowheads_rare", "value": "Groty (Rzadkie)"},
+	{"key": "menu.loot_table.category_bracelets", "value": "Bransoletki"},
+	{"key": "menu.loot_table.category_coins_common", "value": "Monety (Zwykłe)"},
+	{"key": "menu.loot_table.category_coins_uncommon", "value": "Monety (Niepospolite)"},
+	{"key": "menu.loot_table.category_coins_rare", "value": "Monety (Rzadkie)"},
+	{"key": "menu.loot_table.category_earrings_1", "value": "Kolczyki #1"},
+	{"key": "menu.loot_table.category_earrings_2", "value": "Kolczyki #2"},
+	{"key": "menu.loot_table.category_family_heirlooms", "value": "Pamiątki rodzinne"},
+	{"key": "menu.loot_table.category_jewelry", "value": "Biżuteria"},
+	{"key": "menu.loot_table.category_loot_table_shallow", "value": "Płytko (Wykrywacz metalu)"},
+	{"key": "menu.loot_table.category_necklaces", "value": "Naszyjniki"},
+	{"key": "menu.loot_table.category_rings_1", "value": "Pierścionki #1"},
+	{"key": "menu.loot_table.category_rings_2", "value": "Pierścionki #2"},
+	{"key": "menu.loot_table.table_box", "value": "Metalowa skrzynka (Wykrywacz metalu)"},
+	{"key": "menu.loot_table.table_mound", "value": "Kopiec ziemi (Łopata)"}
+	
 ]
