@@ -156,5 +156,7 @@
 	{"key": "alerts.file_not_valid", "value": "Die ausgewählte Datei kann nicht eingelesen werden, bitte wähle eine passende Datei."},
 	{"key": "alerts.file_not_found", "value": "Vor dem importieren, bitte eine Datei im Feld über diesen Button auswählen."},
 	{"key": "alerts.feature_not_supported", "value": "Diese Option wird nicht von deinem Browser unterstützt."},
-	{"key": "menu.enable_inventory_menu_update", "value": "Änderungen übers Menü ändern das Inventar"}
+	{"key": "menu.enable_inventory_menu_update", "value": "Änderungen übers Menü ändern das Inventar"},
+	{"key": "menu.enable_inventory_popups", "value": "Inventar in Gegenstands-Popovern anzeigen"},
+	{"key": "map.same_cycle_yesterday", "value": "Dieser Gegenstand hat die gleiche Position wie gestern. In diesem Fall dauert es 24h nachdem du den Gegenstand gestern gesammelt hast, bis dieser erneut erscheint."}
 ]

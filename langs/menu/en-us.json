@@ -163,5 +163,26 @@
 	{"key": "alerts.file_not_valid", "value": "The file you selected was not valid. Please select a different file."},
 	{"key": "alerts.file_not_found", "value": "Please select a file in the field above the import button, then try again."},
 	{"key": "alerts.feature_not_supported", "value": "This feature is not supported by your browser."},
-	{"key": "menu.enable_inventory_menu_update", "value": "Toggling menu items updates inventory"}
+	{"key": "menu.enable_inventory_menu_update", "value": "Toggling menu items updates inventory"},
+	{"key": "map.same_cycle_yesterday", "value": "This item has the same cycle as yesterday. In this case, there is a 24 hour delay to respawn the item."},
+
+	{"key": "menu.loot_table.category_arrowheads", "value": "Arrowheads"},
+	{"key": "menu.loot_table.category_arrowheads_common", "value": "Arrowheads (Common)"},
+	{"key": "menu.loot_table.category_arrowheads_uncommon", "value": "Arrowheads (Uncommon)"},
+	{"key": "menu.loot_table.category_arrowheads_rare", "value": "Arrowheads (Rare)"},
+	{"key": "menu.loot_table.category_bracelets", "value": "Bracelets"},
+	{"key": "menu.loot_table.category_coins_common", "value": "Coins (Common)"},
+	{"key": "menu.loot_table.category_coins_uncommon", "value": "Coins (Uncommon)"},
+	{"key": "menu.loot_table.category_coins_rare", "value": "Coins (Rare)"},
+	{"key": "menu.loot_table.category_earrings_1", "value": "Earrings #1"},
+	{"key": "menu.loot_table.category_earrings_2", "value": "Earrings #2"},
+	{"key": "menu.loot_table.category_family_heirlooms", "value": "Family Heirlooms"},
+	{"key": "menu.loot_table.category_jewelry", "value": "Jewelry"},
+	{"key": "menu.loot_table.category_loot_table_shallow", "value": "Shallow (Metal Detector)"},
+	{"key": "menu.loot_table.category_necklaces", "value": "Necklaces"},
+	{"key": "menu.loot_table.category_rings_1", "value": "Rings #1"},
+	{"key": "menu.loot_table.category_rings_2", "value": "Rings #2"},
+	{"key": "menu.loot_table.table_box", "value": "Metal Box (Metal Detector)"},
+	{"key": "menu.loot_table.table_mound", "value": "Dirt Mound (Shovel)"},
+	{"key": "menu.loot_table.table_shallow", "value": "Loose Item (Metal Detector)"}
 ]

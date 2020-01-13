@@ -783,5 +783,6 @@ window.addEventListener("DOMContentLoaded", MapBase.loadFastTravels());
 window.addEventListener("DOMContentLoaded", MadamNazar.loadMadamNazar());
 window.addEventListener("DOMContentLoaded", Treasures.load());
 window.addEventListener("DOMContentLoaded", Encounters.load());
+window.addEventListener("DOMContentLoaded", Loot.load());
 window.addEventListener("DOMContentLoaded", MapBase.loadMarkers());
 window.addEventListener("DOMContentLoaded", Routes.init());

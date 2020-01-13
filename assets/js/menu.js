@@ -4,10 +4,11 @@
 
 var Menu = {
   reorderMenu: function (menu) {
-    $(menu).children().sort(function (a, b) {
-      return a.textContent.localeCompare(b.textContent);
+    $(menu).children().sort(function (a, b) { 
+      return a.textContent.toLowerCase().localeCompare(b.textContent.toLowerCase());
     }).appendTo(menu);
   },
+
   refreshTreasures: function () {
     $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
 

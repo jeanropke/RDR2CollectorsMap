@@ -36,6 +36,12 @@ var Cycles = {
             $('.map-cycle-alert').removeClass('hidden');
         else
             $('.map-cycle-alert').addClass('hidden');
+    },
+    isSameAsYesterday: function (category) {
+        var todayCycle = Cycles.data.cycles[Cycles.data.current][category];
+        var yesterdayCycle = Cycles.data.cycles[Cycles.data.current-1][category];
+
+        return todayCycle == yesterdayCycle;
     }
 }
 
