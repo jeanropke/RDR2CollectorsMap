@@ -456,9 +456,9 @@ $('.collection-reset').on('click', function (e) {
 
     // .changeMarkerAmount() must run to check whether to remove "disabled" class
     if (value.subdata) 
-      Inventory.changeMarkerAmount(value.subdata, (Inventory.resetButtonChangingInventory ? -1 : 0));
+      Inventory.changeMarkerAmount(value.subdata, (Inventory.resetButtonUpdatesInventory ? -1 : 0));
     else
-      Inventory.changeMarkerAmount(value.text, (Inventory.resetButtonChangingInventory ? -1 : 0));
+      Inventory.changeMarkerAmount(value.text, (Inventory.resetButtonUpdatesInventory ? -1 : 0));
 
     $(this).removeClass('disabled');
   });
@@ -572,9 +572,9 @@ $('#enable-inventory-menu-update').on("change", function () {
   $.cookie('inventory-menu-update-enabled', Inventory.isMenuUpdateEnabled ? '1' : '0', { expires: 999 });
 });
 
-$('#reset-collection-changing-inventory').on("change", function () {
-  Inventory.resetButtonChangingInventory = $('#reset-collection-changing-inventory').prop('checked');
-  $.cookie('reset-changing-inventory-enabled', Inventory.resetButtonChangingInventory ? '1' : '0', { expires: 999 });
+$('#reset-collection-updates-inventory').on("change", function () {
+  Inventory.resetButtonUpdatesInventory = $('#reset-collection-updates-inventory').prop('checked');
+  $.cookie('reset-updates-inventory-enabled', Inventory.resetButtonUpdatesInventory ? '1' : '0', { expires: 999 });
 });
 
 if (Inventory.isEnabled)

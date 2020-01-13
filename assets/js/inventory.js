@@ -3,7 +3,7 @@ var Inventory = {
   isPopupEnabled: $.cookie('inventory-popups-enabled') == '1',
   isMenuUpdateEnabled: $.cookie('inventory-menu-update-enabled') == '1',
   stackSize: parseInt($.cookie('inventory-stack')) ? parseInt($.cookie('inventory-stack')) : 10,
-  resetButtonChangingInventory: $.cookie('reset-changing-inventory-enabled') == '1',
+  resetButtonUpdatesInventory: $.cookie('reset-updates-inventory-enabled') == '1',
 
   init: function () {
     if (typeof $.cookie('inventory-popups-enabled') === 'undefined') {
@@ -16,16 +16,16 @@ var Inventory = {
       $.cookie('inventory-menu-update-enabled', '1', { expires: 999 });
     }
 
-    if (typeof $.cookie('reset-changing-inventory-enabled') === 'undefined') {
-      Inventory.resetButtonChangingInventory = false;
-      $.cookie('reset-changing-inventory-enabled', '0', { expires: 999 });
+    if (typeof $.cookie('reset-updates-inventory-enabled') === 'undefined') {
+      Inventory.resetButtonUpdatesInventory = true;
+      $.cookie('reset-updates-inventory-enabled', '1', { expires: 999 });
     }
 
     $('#enable-inventory').prop("checked", Inventory.isEnabled);
     $('#enable-inventory-popups').prop("checked", Inventory.isPopupEnabled);
     $('#enable-inventory-menu-update').prop("checked", Inventory.isMenuUpdateEnabled);
+    $('#reset-collection-updates-inventory').prop("checked", Inventory.resetButtonUpdatesInventory);
     $('#inventory-stack').val(Inventory.stackSize);
-    $('#reset-collection-changing-inventory').prop("checked", Inventory.resetButtonChangingInventory);
 
     this.toggleMenuItemsDisabled();
   },
