@@ -2,7 +2,7 @@ var GeoJSONPathFinder = require('geojson-path-finder')
 var point = require('turf-point')
 var featurecollection = require('turf-featurecollection')
 
-var ambarino = null, lemoyne = null, newAustin = null, newHanover = null, westElizabeth = null
+var ambarino = null, lemoyne = null, newAustin = null, newHanover = null, westElizabeth = null, fasttravel = null
 
 function loadGeoJsonData(path) {
 	return new Promise((res) => {
@@ -25,6 +25,7 @@ async function loadAllGeoJson() {
 	newAustin = await loadGeoJsonData('data/geojson/new-austin.json')
 	newHanover = await loadGeoJsonData('data/geojson/new-hanover.json')
 	westElizabeth = await loadGeoJsonData('data/geojson/west-elizabeth.json')
+	fasttravel = await loadGeoJsonData('data/geojson/fasttravel.json')
 
 	var completeGeoJson = {"type":"FeatureCollection","features":[]}
 	completeGeoJson.features = completeGeoJson.features.concat(ambarino.features)
@@ -34,6 +35,9 @@ async function loadAllGeoJson() {
 	completeGeoJson.features = completeGeoJson.features.concat(westElizabeth.features)
 
 	PathFinder._geoJson = completeGeoJson
+	var completeGeoJsonFT = Object.assign({}, completeGeoJson)
+	completeGeoJsonFT.features = completeGeoJson.features.concat(fasttravel.features)
+	PathFinder._geoJsonFT = completeGeoJsonFT
 }
 
 
@@ -154,23 +158,42 @@ class RouteControl extends L.Control {
 		this._currentButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-current', this._element);
 		this._afterButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-after', this._element);
 		
-		this._beforeButton.innerHTML = '&lt;'
+		this._beforeButton.innerHTML = '&lt;<small>j</small>'
 		this._beforeButton.setAttribute('disabled', true)
 		L.DomEvent.on(this._beforeButton, 'click', () => { this.selectPath(-1) })
 
 		this._currentButton.style.fontWeight =  'bold'
-		this._currentButton.innerHTML = '0 / 0'
+		this._currentButton.innerHTML = '0 / 0 <small>k</small>'
 		L.DomEvent.on(this._currentButton, 'click', () => { this.selectPath(0) })
 
-		this._afterButton.innerHTML = '&gt;'
+		this._afterButton.innerHTML = '&gt;<small>l</small>'
 		this._afterButton.setAttribute('disabled', true)
 		L.DomEvent.on(this._afterButton, 'click', () => { this.selectPath(1) })
+
+		const self = this
+		this.onKeyPress = (e) => {
+			console.log(e.originalEvent)
+			// press on J
+			if(e.originalEvent.keyCode == 74) {
+				self.selectPath(-1)
+				
+			// press on K
+			} else if(e.originalEvent.keyCode == 75) {
+				self.selectPath(0)
+				
+			// press on L
+			} else if(e.originalEvent.keyCode == 76) {
+				self.selectPath(1)
+			}
+		}
+		MapBase.map.on('keydown', this.onKeyPress)
 
 		return this._element;
 	}
 
 	onRemove() {
 		delete this._element;
+		MapBase.map.off('keydown', this.onKeyPress)
 	}
 
 	addPath(path) {
@@ -179,7 +202,7 @@ class RouteControl extends L.Control {
 	}
 
 	updateButtons() {
-		this._currentButton.innerHTML = this.currentPath + ' / ' + this._paths.length
+		this._currentButton.innerHTML = this.currentPath + ' / ' + this._paths.length + ' <small>k</small>'
 
 		if(this.currentPath == 1) this._beforeButton.setAttribute('disabled', true)
 		else this._beforeButton.removeAttribute('disabled', false)
@@ -204,7 +227,6 @@ class RouteControl extends L.Control {
 class PathFinder {
 
 	static init() {
-		PathFinder.router = null
 		PathFinder._PathFinder = null
 		PathFinder._points = []
 		PathFinder._currentChunk = null
@@ -213,13 +235,16 @@ class PathFinder {
 		PathFinder._currentPath = null
 		PathFinder._running = false
 		PathFinder._geoJson = null
+		PathFinder._geoJsonFT = null
 		PathFinder._nodeCache = {}
 		PathFinder._cancel = false
+		PathFinder._pathfinderFT = false
 
 		return PathFinder
 	}
 
 	static generateChunks() {
+		console.log('[pathfinder] Sorting marker into chunks')
 		Chunk.clearChunks()
 	
 		var markers = MapBase.markers.filter((marker) => { return marker.isVisible; })
@@ -232,15 +257,22 @@ class PathFinder {
 		}*/
 	}
 	
-	static createPathFinder() {
-		PathFinder._PathFinder = new GeoJSONPathFinder(PathFinder._geoJson, {
+	static createPathFinder(allowFastTravel) {
+		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = PathFinder._pathfinderFT
+		if(PathFinder._PathFinder !== null && PathFinder._pathfinderFT == allowFastTravel) return
+
+		console.log('[pathfinder] Creating geojson path finder ' + (allowFastTravel ? 'with' : 'without') + ' fasttravel')
+		PathFinder._PathFinder = new GeoJSONPathFinder(allowFastTravel ? PathFinder._geoJsonFT : PathFinder._geoJson, {
 			precision: 0.04,
 			weightFn: function(a, b, props) {
 				var dx = a[0] - b[0];
 				var dy = a[1] - b[1];
-				return Math.sqrt(dx * dx + dy * dy);
+				var r = Math.sqrt(dx * dx + dy * dy);
+				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * 0.5
+				return r
 			}
 		})
+		PathFinder._pathfinderFT = allowFastTravel
 		var _vertices = PathFinder._PathFinder._graph.vertices;
 		PathFinder._points = featurecollection(
 			Object
@@ -253,8 +285,6 @@ class PathFinder {
 					return point(vertice)
 				})
 		);
-	
-		PathFinder.generateChunks()
 	}
 	
 	static drawPath(path, color) {
@@ -293,7 +323,7 @@ class PathFinder {
 		return L.latLng(point.geometry.coordinates[1], point.geometry.coordinates[0])
 	}
 	
-	static getNearestNode(point, drawBounds) {
+	static getNearestNode(point, searchArea) {
 		var pointLatLng = point
 		if(typeof(point.lat) == 'undefined') {
 			pointLatLng = PathFinder.pointToLatLng(point)
@@ -302,18 +332,17 @@ class PathFinder {
 			pointLatLng.lng = parseFloat(pointLatLng.lng)
 		}
 
+		// Check if we already picked a point
 		if(typeof(PathFinder._nodeCache[pointLatLng.lat + '|' + pointLatLng.lng]) !== 'undefined') {
 			return PathFinder._nodeCache[pointLatLng.lat + '|' + pointLatLng.lng]
 		}
 
-		var searchArea = 5
+		if(typeof(searchArea) === 'undefined')
+			searchArea = 5
 		var pointBounds = L.latLngBounds([
 			[pointLatLng.lat-searchArea, pointLatLng.lng-searchArea],
 			[pointLatLng.lat+searchArea, pointLatLng.lng+searchArea]
 		])
-		if(typeof(drawBounds) === 'boolean' && drawBounds) {
-			L.rectangle(pointBounds, {color: "#ff7800", weight: 3}).addTo(MapBase.map);
-		}
 	
 		var filtered = PathFinder._points.features.filter((p) => {
 			return pointBounds.contains(PathFinder.pointToLatLng(p));
@@ -342,7 +371,7 @@ class PathFinder {
 			if(Chunk.chunks[i].isDone) continue
 			if(Chunk.chunks[i] == markerChunk) continue
 	
-			var chunkNode = PathFinder.getNearestNode(PathFinder.latLngToPoint(Chunk.chunks[i].getBounds().getCenter()))
+			var chunkNode = PathFinder.getNearestNode(PathFinder.latLngToPoint(Chunk.chunks[i].getBounds().getCenter()), 15)
 			var p = PathFinder._PathFinder.findPath(markerNode, chunkNode)
 			if(p.weight < c.weight) {
 				c.weight = p.weight
@@ -366,7 +395,7 @@ class PathFinder {
 		if(PathFinder._currentChunk === null) {
 			PathFinder._currentChunk = Chunk.getChunkByMarker(start)
 			if(PathFinder._currentChunk == null) {
-				console.error('Starting marker is not in chunk', start)
+				console.error('[pathfinder] Starting marker is not in chunk', start)
 				return null
 			}
 		}
@@ -375,7 +404,10 @@ class PathFinder {
 		var shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null, path: null}
 		while(shortest.marker === null) {
 			var availableInChunk = PathFinder._currentChunk.markers.filter((m) => { return markers.includes(m) })
+
+			// if current chunk is empty or done, fetch a new one
 			if(PathFinder._currentChunk.isDone || availableInChunk.length <= 0) {
+				// mark this chunk as done to skip it when searching a new one
 				PathFinder._currentChunk.isDone = true
 				PathFinder._currentChunk = await (new Promise((res) => { window.requestAnimationFrame(() => {
 					res(PathFinder.findNearestChunk(start, PathFinder._currentChunk))
@@ -393,7 +425,7 @@ class PathFinder {
 						// Find path and resolve
 						res(PathFinder._PathFinder.findPath(startPoint, markerPoint))
 					} else {
-						console.error('No node found to ', availableInChunk[i])
+						console.error('[pathfinder] No node found to ', availableInChunk[i])
 						res(null)
 					}
 				}) }))
@@ -440,7 +472,8 @@ class PathFinder {
 	}
 
 	static async findHoles() {
-		PathFinder.createPathFinder()
+		console.log('[pathfinder] Searching for holes')
+		PathFinder.createPathFinder(false)
 	
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
@@ -461,25 +494,29 @@ class PathFinder {
 				console.log('[pathfinder] No path found to ', sourcePoint, PathFinder._points.features[i])
 			}
 		}
-		console.log('[pathfinder] We\'re done')
+		console.log('[pathfinder] Done finding holes')
 	}
 
-	static async pathfinderStart() {
-		if(PathFinder._running) {
-			await PathFinder.pathfinderCancel()
-		}
+	static async pathfinderStart(allowFastTravel) {
 		if(PathFinder._geoJson === null) {
 			console.error('[pathfinder] geojson not fully loaded yet')
 			return
 		}
+		if(PathFinder._running) {
+			await PathFinder.pathfinderCancel()
+		}
+
+		console.log('[pathfinder] Starting route generation')
+
 		PathFinder._running = true
 		PathFinder._currentChunk = null
 		PathFinder._nodeCache = {}
 	
 		var startTime = new Date().getTime()
 	
+		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = false
+		PathFinder.createPathFinder(allowFastTravel)
 		PathFinder.generateChunks()
-		PathFinder.createPathFinder()
 	
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
@@ -498,18 +535,24 @@ class PathFinder {
 		var paths = []
 	
 		var markersNum = markers.length
-		for (var i = 0; i < markersNum; i++) {
-			var current = await PathFinder.findNearestTravelItem(last, markers)
-			if(current == null || current.marker == null) break
-			markers = markers.filter((m, i) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
-			last = current.marker
-	
-			waypoints.push(L.latLng(last.lat, last.lng))
-			PathFinder._layerControl.addPath(current.path)
-			paths.push(current.path)
-			PathFinder.drawRoute(paths)
 
-			if(PathFinder._cancel) break
+		try {
+			for (var i = 0; i < markersNum; i++) {
+				var current = await PathFinder.findNearestTravelItem(last, markers)
+				if(current == null || current.marker == null) break
+				markers = markers.filter((m, i) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
+				last = current.marker
+		
+				waypoints.push(L.latLng(last.lat, last.lng))
+				PathFinder._layerControl.addPath(current.path)
+				paths.push(current.path)
+				PathFinder.drawRoute(paths)
+
+				if(PathFinder._cancel) break
+			}
+		} catch(e) {
+			// catching all errors, just in case
+			console.error('[pathfinder]', e)
 		}
 	
 		PathFinder._running = false
