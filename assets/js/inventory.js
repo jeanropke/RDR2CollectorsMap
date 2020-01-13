@@ -78,6 +78,9 @@ var Inventory = {
       $('#enable-inventory-menu-update').parent().parent().addClass('disabled');
       $('#enable-inventory-menu-update').prop('disabled', true);
 
+      $('#reset-collection-updates-inventory').parent().parent().addClass('disabled');
+      $('#reset-collection-updates-inventory').prop('disabled', true);
+
       $('#inventory-stack').parent().addClass('disabled');
       $('#inventory-stack').prop('disabled', true);
 
@@ -89,6 +92,9 @@ var Inventory = {
       
       $('#enable-inventory-menu-update').parent().parent().removeClass('disabled');
       $('#enable-inventory-menu-update').prop('disabled', false);
+
+      $('#reset-collection-updates-inventory').parent().parent().removeClass('disabled');
+      $('#reset-collection-updates-inventory').prop('disabled', false);
 
       $('#inventory-stack').parent().removeClass('disabled');
       $('#inventory-stack').prop('disabled', false);
