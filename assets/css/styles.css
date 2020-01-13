@@ -769,6 +769,10 @@ a.no-style:visited {
 /* Bootstrap modal styling */
 
 .modal-content {
+    background-color: #222;
+}
+
+.modal-sm .modal-content {
     background: url(../images/modal_bg.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
