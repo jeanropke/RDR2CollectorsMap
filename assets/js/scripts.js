@@ -454,12 +454,13 @@ $('.collection-reset').on('click', function (e) {
     value.isCollected = false;
     value.canCollect = true;
 
+    if (Inventory.isMenuUpdateEnabled) {
       if (value.subdata)
-        Inventory.changeMarkerAmount(value.subdata, (Inventory.isMenuUpdateEnabled ? -1 : 0));
-
+        Inventory.changeMarkerAmount(value.subdata, -1);
       else
-        Inventory.changeMarkerAmount(value.text, (Inventory.isMenuUpdateEnabled ? -1 : 0));
-    
+        Inventory.changeMarkerAmount(value.text, -1);
+    }
+
     $(this).removeClass('disabled');
   });
   MapBase.save();
