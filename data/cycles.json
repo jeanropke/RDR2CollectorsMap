@@ -517,7 +517,7 @@
             "card_pentacles"    : 3,
             "card_swords"       : 3,
             "card_wands"        : 3,
-            "random"            : -1
+            "random"            : 2
         }
     }
 }
