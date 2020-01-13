@@ -769,16 +769,20 @@ a.no-style:visited {
 /* Bootstrap modal styling */
 
 .modal-content {
-    background-color: #222;
+    background: url(../images/modal_bg_long.png);
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 .modal-sm .modal-content {
     background: url(../images/modal_bg.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: none;
+    background-repeat: no-repeat !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 .modal-header, .modal-body, .modal-footer {
