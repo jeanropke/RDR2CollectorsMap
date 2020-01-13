@@ -499,7 +499,7 @@
 	{"key": "coin_gold_quarter_2.desc", "value": "Zwischen einem Stein und einem umgestürzten Baum."},
 	{"key": "coin_gold_quarter_3.desc", "value": "Unter einem Baum auf der Seite des Kliffs."},
 	{"key": "coin_gold_quarter_4.desc", "value": ""},
-	{"key": "coin_gold_quarter_5.desc", "value": ""},
+	{"key": "coin_gold_quarter_5.desc", "value": "Unter der Brücke."},
 	{"key": "coin_gold_quarter_6.desc", "value": "Im hinteren Teil des Nebengebäudes."},
 
 	{"key": "coin_draped_bust_silver_dollar.name", "value": "Silberdollar mit Büste von 1798"},
@@ -507,7 +507,7 @@
 	{"key": "coin_draped_bust_silver_dollar_2.desc", "value": "Hinter einem von Kakteen umgebenen Felsen."},
 	{"key": "coin_draped_bust_silver_dollar_3.desc", "value": "Auf der Insel am Baumstumpf."},
 	{"key": "coin_draped_bust_silver_dollar_4.desc", "value": ""},
-	{"key": "coin_draped_bust_silver_dollar_5.desc", "value": ""},
+	{"key": "coin_draped_bust_silver_dollar_5.desc", "value": "Am südlichsten nicht umgestürzten verbrannten Baum."},
 	{"key": "coin_draped_bust_silver_dollar_6.desc", "value": "Neben einem Haufen Schutt und einigen Fässern."},
 
 	{"key": "coin_one_cent_token.name", "value": "Ein-Cent-Münze von 1787"},
@@ -515,7 +515,7 @@
 	{"key": "coin_one_cent_token_2.desc", "value": "In der Nähe der Kisten neben dem Baum."},
 	{"key": "coin_one_cent_token_3.desc", "value": "Folge den Rand der Klippe den natürlichen Pfad von oben nach unten."},
 	{"key": "coin_one_cent_token_4.desc", "value": ""},
-	{"key": "coin_one_cent_token_5.desc", "value": ""},
+	{"key": "coin_one_cent_token_5.desc", "value": "Unter der Wäscheleine."},
 	{"key": "coin_one_cent_token_6.desc", "value": "Beim kaputten Wagen."},	
 
 	{"key": "coin_silver_dollar.name", "value": "Silberdollar von 1794"},
@@ -523,7 +523,7 @@
 	{"key": "coin_silver_dollar_2.desc", "value": "Unter dem Haus."},
 	{"key": "coin_silver_dollar_3.desc", "value": "In der Mine am Ende des Tunnels."},
 	{"key": "coin_silver_dollar_4.desc", "value": "An einem großen Felsen wo der Wasserfall beginnt."},
-	{"key": "coin_silver_dollar_5.desc", "value": ""},
+	{"key": "coin_silver_dollar_5.desc", "value": "Zwischen einer Pferdekoppel und einem Brett auf dem Boden hinter dem Haupthaus."},
 	{"key": "coin_silver_dollar_6.desc", "value": "Beim umgestürzten toten Baum."},
 
 	{"key": "coin_new_yorke_token.name", "value": "New-Yorke-Münze von 1700"},
@@ -531,7 +531,7 @@
 	{"key": "coin_new_yorke_token_2.desc", "value": "Neben den beiden Bäumen."},
 	{"key": "coin_new_yorke_token_3.desc", "value": "Mitten im zerstörten Haus."},
 	{"key": "coin_new_yorke_token_4.desc", "value": ""},
-	{"key": "coin_new_yorke_token_5.desc", "value": ""},
+	{"key": "coin_new_yorke_token_5.desc", "value": "Unterhalb der Stein-Brücke."},
 	{"key": "coin_new_yorke_token_6.desc", "value": "Vor der ersten Treppe."},
 	
 	{"key": "coin_five_dollar_bechtler.name", "value": "Fünf-Dollar-Bechtler von 1800"},
@@ -539,7 +539,7 @@
 	{"key": "coin_five_dollar_bechtler_2.desc", "value": "Unter der Zugstrecke."},
 	{"key": "coin_five_dollar_bechtler_3.desc", "value": "Unter der Windmühle."},
 	{"key": "coin_five_dollar_bechtler_4.desc", "value": ""},
-	{"key": "coin_five_dollar_bechtler_5.desc", "value": ""},
+	{"key": "coin_five_dollar_bechtler_5.desc", "value": "Innerhalb der Erdrutschsperre, erreichbar über die Bergseite."},
 	{"key": "coin_five_dollar_bechtler_6.desc", "value": "Auf der Rückseite des verlassenen Wagens."},
 
 	{"key": "coin_quarter.name", "value": "Vierteldollar von 1792"},
@@ -547,7 +547,7 @@
 	{"key": "coin_quarter_2.desc", "value": "Am Fuße des toten Baumes im Norden."},
 	{"key": "coin_quarter_3.desc", "value": "Unter dem Turm."},
 	{"key": "coin_quarter_4.desc", "value": ""},
-	{"key": "coin_quarter_5.desc", "value": ""},
+	{"key": "coin_quarter_5.desc", "value": "Vor dem Haupteingang der Hütte."},
 	{"key": "coin_quarter_6.desc", "value": "Hinter den Schildern am Straßenrand."},
 
 	{"key": "coin_gold_dollar_coin.name", "value": "Golddollar von 1800"},
@@ -555,7 +555,7 @@
 	{"key": "coin_gold_dollar_coin_2.desc", "value": "In der Höhle unter der hängenden Laterne."},
 	{"key": "coin_gold_dollar_coin_3.desc", "value": "Zwischen einem großen und einem kleinen Stein."},
 	{"key": "coin_gold_dollar_coin_4.desc", "value": ""},
-	{"key": "coin_gold_dollar_coin_5.desc", "value": ""},
+	{"key": "coin_gold_dollar_coin_5.desc", "value": "Zwischen zwei Felsen auf der Flussbank."},
 	{"key": "coin_gold_dollar_coin_6.desc", "value": "Unten unter der Ölpumpe. Derzeit fehlerhaft und gibt stattdessen eine New-Yorke-Münze von 1700."},
 
 	{"key": "coin_nickel_coin.name", "value": "Fünf-Cent-Münze von 1792"},
@@ -563,7 +563,7 @@
 	{"key": "coin_nickel_coin_2.desc", "value": "In der Heuhütte neben den Heuballen."},
 	{"key": "coin_nickel_coin_3.desc", "value": "Innerhalb eines Kreises aus niedergebrannter Bäume."},
 	{"key": "coin_nickel_coin_4.desc", "value": ""},
-	{"key": "coin_nickel_coin_5.desc", "value": ""},
+	{"key": "coin_nickel_coin_5.desc", "value": "Neben dem großen Baum."},
 	{"key": "coin_nickel_coin_6.desc", "value": "Neben der abgestürzten Flugmaschine."},
 
 	{"key": "coin_halfpenny.name", "value": "Halber Penny von 1796"},
@@ -571,7 +571,7 @@
 	{"key": "coin_halfpenny_2.desc", "value": "Hinter der Hütte zwischen einem Stein und einem Baum."},
 	{"key": "coin_halfpenny_3.desc", "value": "Unter der Wäscheleine."},
 	{"key": "coin_halfpenny_4.desc", "value": ""},
-	{"key": "coin_halfpenny_5.desc", "value": ""},
+	{"key": "coin_halfpenny_5.desc", "value": "An der nordöstlichen Seite der Holzhütte mit der Schwarzbrennerei."},
 	{"key": "coin_halfpenny_6.desc", "value": "Neben dem neu aussehenden Sarg im Massengrab."},
 
 	{"key": "coin_half_eagle.name", "value": "Fünf-Dollar-Münze von 1795"},
@@ -579,7 +579,7 @@
 	{"key": "coin_half_eagle_2.desc", "value": "Unter der Wäscheleine."},
 	{"key": "coin_half_eagle_3.desc", "value": "Unter der Brücke."},
 	{"key": "coin_half_eagle_4.desc", "value": ""},
-	{"key": "coin_half_eagle_5.desc", "value": ""},
+	{"key": "coin_half_eagle_5.desc", "value": "In der Mitte zweier Felsen."},
 	{"key": "coin_half_eagle_6.desc", "value": "An der Basis eines Baumes."},
 
 	{"key": "coin_gold_eagle.name", "value": "Zehn-Dollar-Münze von 1797"},
@@ -587,7 +587,7 @@
 	{"key": "coin_gold_eagle_2.desc", "value": "Im Brunnen."},
 	{"key": "coin_gold_eagle_3.desc", "value": "Westseite des großen Felsens"},
 	{"key": "coin_gold_eagle_4.desc", "value": ""},
-	{"key": "coin_gold_eagle_5.desc", "value": ""},
+	{"key": "coin_gold_eagle_5.desc", "value": "Unter der Wäscheleine."},
 	{"key": "coin_gold_eagle_6.desc", "value": "Unter der angehobenen Kabine."},
 
 	{"key": "coin_liberty_quarter.name", "value": "Liberty-Vierteldollar von 1792"},
@@ -595,7 +595,7 @@
 	{"key": "coin_liberty_quarter_2.desc", "value": "Vor einem großen Felsen."},
 	{"key": "coin_liberty_quarter_3.desc", "value": "Hinter dem Schild."},
 	{"key": "coin_liberty_quarter_4.desc", "value": ""},
-	{"key": "coin_liberty_quarter_5.desc", "value": ""},
+	{"key": "coin_liberty_quarter_5.desc", "value": "Neben dem Baumstumpf neben der Straße."},
 	{"key": "coin_liberty_quarter_6.desc", "value": "Nahe der östlichen Ecke des zerstörten Hauses in der Nähe einer eingestürzten Mauer."},
 
 	{"key": "coin_half_dime.name", "value": "Fünf-Cent-Münze von 1800"},
@@ -603,7 +603,7 @@
 	{"key": "coin_half_dime_2.desc", "value": "Unter der Eisenbahnbrücke in einem kleinen Graben (nicht dem großen)"},
 	{"key": "coin_half_dime_3.desc", "value": "Hinter dem Schrank."},
 	{"key": "coin_half_dime_4.desc", "value": ""},
-	{"key": "coin_half_dime_5.desc", "value": ""},
+	{"key": "coin_half_dime_5.desc", "value": "Neben dem kaputten Wagen neben dem Zaun an der Ostseite des Grundstücks."},
 	{"key": "coin_half_dime_6.desc", "value": "Im Tunnel neben der Eisenbahnschienen."},
 
 	{"key": "coin_penny.name", "value": "Penny von 1789"},
@@ -611,7 +611,7 @@
 	{"key": "coin_penny_2.desc", "value": "Auf der rechten Seite des toten Baumes."},
 	{"key": "coin_penny_3.desc", "value": "Neben einem kaputten Wagen."},
 	{"key": "coin_penny_4.desc", "value": ""},
-	{"key": "coin_penny_5.desc", "value": ""},
+	{"key": "coin_penny_5.desc", "value": "In der Scheune neben einem Wagenrad."},
 	{"key": "coin_penny_6.desc", "value": "An der Basis des östlichen großen Baumes."},
 
 	{"key": "bottle_tennesee_whiskey.name", "value": "Tennesee Whiskey"},
@@ -700,7 +700,7 @@
 	{"key": "arrowhead_splintered_3.desc", "value": "Vor dem toten Baumstumpf neben dem Haus."},
 	{"key": "arrowhead_splintered_4.desc", "value": "Auf der Nordseite eines umgestürzten Baumstamms."},
 	{"key": "arrowhead_splintered_5.desc", "value": "An der Basis des Baums."},
-	{"key": "arrowhead_splintered_6.desc", "value": ""},
+	{"key": "arrowhead_splintered_6.desc", "value": "In der Höhle neben dem Felsvorsprung. Nicht hineinfallen!"},
 
 	{"key": "arrowhead_crude.name", "value": "Primitive Pfeilspitze"},
 	{"key": "arrowhead_crude_1.desc", "value": "Neben dem Baumstumpf."},
@@ -708,15 +708,15 @@
 	{"key": "arrowhead_crude_3.desc", "value": "Vor dem Tipizelt."},
 	{"key": "arrowhead_crude_4.desc", "value": "Am Ende der Minenwagen-Spur."},
 	{"key": "arrowhead_crude_5.desc", "value": "An der Basis des Baums."},
-	{"key": "arrowhead_crude_6.desc", "value": ""},
+	{"key": "arrowhead_crude_6.desc", "value": "Zwischen ein paar Felsen und einem Baumstamm am Ufer."},
 
 	{"key": "arrowhead_chipped.name", "value": "Abgebrochene Pfeilspitze"},
 	{"key": "arrowhead_chipped_1.desc", "value": "Oben auf der Klippe."},
 	{"key": "arrowhead_chipped_2.desc", "value": ""},
 	{"key": "arrowhead_chipped_3.desc", "value": "In der Mitte eines Halbkreises aus Felsen. Vorsicht vor Pumas."},
-	{"key": "arrowhead_chipped_4.desc", "value": ""},
+	{"key": "arrowhead_chipped_4.desc", "value": "An der Basis des großen Baums."},
 	{"key": "arrowhead_chipped_5.desc", "value": "Am Fuße des toten Baumes am Straßenrand."},
-	{"key": "arrowhead_chipped_6.desc", "value": ""},
+	{"key": "arrowhead_chipped_6.desc", "value": "Neben dem kleinen Baum neben der Felswand."},
 
 	{"key": "arrowhead_feldspar.name", "value": "Feldspat-Pfeilspitze"},
 	{"key": "arrowhead_feldspar_1.desc", "value": "Mitten im \"Ring\" aus Felsen."},
@@ -732,7 +732,7 @@
 	{"key": "arrowhead_slate_3.desc", "value": "Auf der Südseite des Baumwollfeldes."},
 	{"key": "arrowhead_slate_4.desc", "value": "Neben dem toten Baum."},
 	{"key": "arrowhead_slate_5.desc", "value": "Auf halber Höhe der Klippe, über den natürlichen Pfad von oben erreichbar."},
-	{"key": "arrowhead_slate_6.desc", "value": ""},
+	{"key": "arrowhead_slate_6.desc", "value": "Im hinteren Teil der Nische auf der Westseite."},
 
 	{"key": "arrowhead_bone.name", "value": "Knochen-Pfeilspitze"},
 	{"key": "arrowhead_bone_1.desc", "value": "Im Graben."},
@@ -746,9 +746,9 @@
 	{"key": "arrowhead_raw_1.desc", "value": "Unter dem Baum mit den Traumfängern."},
 	{"key": "arrowhead_raw_2.desc", "value": "Hinter den Hütten."},
 	{"key": "arrowhead_raw_3.desc", "value": "Vor einem Baum an der Küste eines kleinen Baches."},
-	{"key": "arrowhead_raw_4.desc", "value": ""},
+	{"key": "arrowhead_raw_4.desc", "value": "An der Basis des Baumes, neben dem Felsen."},
 	{"key": "arrowhead_raw_5.desc", "value": "An der mittleren Kante."},
-	{"key": "arrowhead_raw_6.desc", "value": ""},
+	{"key": "arrowhead_raw_6.desc", "value": "Neben dem Baumstumpf."},
 
 	{"key": "arrowhead_obsidian.name", "value": "Obsidian-Pfeilspitze"},
 	{"key": "arrowhead_obsidian_1.desc", "value": "In der Mitte der Kreidezeichnung."},
@@ -764,7 +764,7 @@
 	{"key": "arrowhead_quartz_3.desc", "value": "Zwischen einem Baumring."},
 	{"key": "arrowhead_quartz_4.desc", "value": "Neben dem umgestürzten Baum."},
 	{"key": "arrowhead_quartz_5.desc", "value": "Neben einem der Bäume."},
-	{"key": "arrowhead_quartz_6.desc", "value": ""},
+	{"key": "arrowhead_quartz_6.desc", "value": "Am östlichsten hohen Baum in etwas rötlichem Schmutz."},
 
 	{"key": "arrowhead_flint.name", "value": "Kiesel-Pfeilspitze"},
 	{"key": "arrowhead_flint_1.desc", "value": "Mitten in Fort Brennand."},
@@ -780,7 +780,7 @@
 	{"key": "arrowhead_agate_3.desc", "value": "Neben dem speienden Geysir."},
 	{"key": "arrowhead_agate_4.desc", "value": "Neben dem Schild am Straßenrand."},
 	{"key": "arrowhead_agate_5.desc", "value": "Mitten in der zerstörten Hütte."},
-	{"key": "arrowhead_agate_6.desc", "value": ""},
+	{"key": "arrowhead_agate_6.desc", "value": "An der Nordseite des aufrechten flachen Felsbrocken."},
 
 	{"key": "heirlooms_jade_hairpin.name", "value": "Jade-Haarnadel"},
 	{"key": "heirlooms_jade_hairpin_1.desc", "value": "Auf der roten Bank hinter dem Haus."},
@@ -928,14 +928,14 @@
 
 	{"key": "ring_bonnard_pearl.name", "value": "Bonnard-Perlenring"},
 	{"key": "ring_bonnard_pearl_1.desc", "value": "Im Kamin."},
-	{"key": "ring_bonnard_pearl_2.desc", "value": ""},
+	{"key": "ring_bonnard_pearl_2.desc", "value": "An der östlichen Seite des Baums mit den zwei Gräbern."},
 	{"key": "ring_bonnard_pearl_3.desc", "value": "In einer Metall-Kiste hinter dem Wasserfall."},
 	{"key": "ring_bonnard_pearl_4.desc", "value": "Beim Kamin des kleinen Hauses."},
 	{"key": "ring_bonnard_pearl_5.desc", "value": "Im Baum."},
 	{"key": "ring_bonnard_pearl_6.desc", "value": "Neben dem Knochenhaufen in der Koralle."},
 
 	{"key": "ring_banais_topaz.name", "value": "Banais-Topasring"},
-	{"key": "ring_banais_topaz_1.desc", "value": ""},
+	{"key": "ring_banais_topaz_1.desc", "value": "An der südwestlichen Seite des Einsiedlerhauses."},
 	{"key": "ring_banais_topaz_2.desc", "value": "Im toten Baum."},
 	{"key": "ring_banais_topaz_3.desc", "value": "In einem Vogelnest neben der Glocke."},
 	{"key": "ring_banais_topaz_4.desc", "value": "In der Krypta."},
@@ -976,7 +976,7 @@
 
 	{"key": "ring_sackville_diamond.name", "value": "Sackville-Diamantring"},
 	{"key": "ring_sackville_diamond_1.desc", "value": "Vor einem toten Baum."},
-	{"key": "ring_sackville_diamond_2.desc", "value": "Harter Aufstieg!"},
+	{"key": "ring_sackville_diamond_2.desc", "value": "Schwer zu erreichen. Den Pfad vom Berg hinunter mit verschiedenen Hindernissen. Der genaue Weg wird im Video gezeigt."},
 	{"key": "ring_sackville_diamond_3.desc", "value": "Im Kamin."},
 	{"key": "ring_sackville_diamond_4.desc", "value": "Im Kamin."},
 	{"key": "ring_sackville_diamond_5.desc", "value": "An der Basis des Baums."},
@@ -1064,7 +1064,7 @@
 	
 	{"key": "earring_ursula_citrine.name", "value": "Ursula-Zitrinohrringe"},
 	{"key": "earring_ursula_citrine_1.desc", "value": "Auf der Lichtung zwischen ein paar Steinen."},
-	{"key": "earring_ursula_citrine_2.desc", "value": ""},
+	{"key": "earring_ursula_citrine_2.desc", "value": "Neben dem Baum beim zerstörten Wagen."},
 	{"key": "earring_ursula_citrine_3.desc", "value": "Zwischen zwei Felsen."},
 	{"key": "earring_ursula_citrine_4.desc", "value": "Zwischen dem Kaktus und dem großen Stein."},
 	{"key": "earring_ursula_citrine_5.desc", "value": "Zwischen Rohrkolbenschilf an der Küste."},
@@ -1088,7 +1088,7 @@
 
 	{"key": "earring_orchidee_diamond.name", "value": "Orchidee-Diamantohrringe"},
 	{"key": "earring_orchidee_diamond_1.desc", "value": "Unter der Brücke am Wasser."},
-	{"key": "earring_orchidee_diamond_2.desc", "value": ""},
+	{"key": "earring_orchidee_diamond_2.desc", "value": "In einer Metall-Box in der kleinen Krypta mit den Särgen am Ufer."},
 	{"key": "earring_orchidee_diamond_3.desc", "value": "Hinter dem Wasserfall."},
 	{"key": "earring_orchidee_diamond_4.desc", "value": "Bei einem kleinen toten Baum."},
 	{"key": "earring_orchidee_diamond_5.desc", "value": "Neben dem großen Baumstumpf."},
@@ -1136,7 +1136,7 @@
 
 	{"key": "earring_josephine_pearl.name", "value": "Josephine-Perlenohrringe"},
 	{"key": "earring_josephine_pearl_1.desc", "value": "In der Höhle. Eingang über dem \"A\" von Annesburg."},
-	{"key": "earring_josephine_pearl_2.desc", "value": ""},
+	{"key": "earring_josephine_pearl_2.desc", "value": "Auf der kleinen Flussbank."},
 	{"key": "earring_josephine_pearl_3.desc", "value": "Unter der Brücke."},
 	{"key": "earring_josephine_pearl_4.desc", "value": "Beim Holzkreuz auf dem Friedhof."},
 	{"key": "earring_josephine_pearl_5.desc", "value": "Im Kamin."},
