@@ -450,16 +450,15 @@ $('.collection-reset').on('click', function (e) {
 
     if (inventory[value.text])
       inventory[value.text].isCollected = false;
-
+    
     value.isCollected = false;
     value.canCollect = true;
-
-    if (Inventory.isMenuUpdateEnabled) {
-      if (value.subdata)
-        Inventory.changeMarkerAmount(value.subdata, -1);
-      else
-        Inventory.changeMarkerAmount(value.text, -1);
-    }
+    
+    // .changeMarkerAmount() must run to check whether to remove "disabled" class
+    if (value.subdata) 
+      Inventory.changeMarkerAmount(value.subdata, (Inventory.isMenuUpdateEnabled ? -1 : 0));
+    else
+      Inventory.changeMarkerAmount(value.text, (Inventory.isMenuUpdateEnabled ? -1 : 0));
 
     $(this).removeClass('disabled');
   });
