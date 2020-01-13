@@ -59,7 +59,7 @@ var Loot = {
 
                             var lootTableSubitem = $('<div>').addClass('loot-table-item');
                             lootTableSubitem.append($('<h3>').addClass('loot-table-item-title').attr('data-text', value4.name + '.name').text(Language.get(value4.name + '.name')));
-                            lootTableSubitem.append($('<span>').addClass('loot-table-item-rate').text((value2.rate * value4.rate * value4.rate * 100).toFixed(2) + '%'));
+                            lootTableSubitem.append($('<span>').addClass('loot-table-item-rate').text((value2.rate * value3.rate * value4.rate * 100).toFixed(2) + '%'));
     
                             lootTableSubitems.append(lootTableSubitem);
                         });
