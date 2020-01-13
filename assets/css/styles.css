@@ -683,11 +683,17 @@ a.wiki-page:visited {
     align-items: center;
 }
 
-.warning {
-    display: block;
-    padding-left: 40px;
-    background: #ffffd4 url("https://i.imgur.com/9cpUjoh.png") 5px center/30px auto  no-repeat;
-    border: 1px solid #cccc3b;
+.marker-warning-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    border: 1px solid #f2cf20;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.marker-warning-wrapper .warning-icon {
+    margin-right: 5px;
 }
 
 /* Custom checkbox styling */

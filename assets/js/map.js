@@ -328,7 +328,9 @@ var MapBase = {
 
 
   updateMarkerContent: function (marker) {
-    var popupContent = Cycles.isSameAsYesterday(marker.category) ? '<span class="warning">'+Language.get("map.same_cycle_yesterday")+'</span>' : '';
+    var popupContent = '';
+
+    var warningText = Cycles.isSameAsYesterday(marker.category) ? `<span class="marker-warning-wrapper"><div><img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert"></div><p>${Language.get("map.same_cycle_yesterday")}</p></span>` : '';
 
     if (marker.category != 'random') {
       var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
@@ -346,6 +348,7 @@ var MapBase = {
     </div>`;
 
     return `<h1>${marker.title} - ${Language.get("menu.day")} ${marker.day}</h1>
+        ${warningText}
         <span class="marker-content-wrapper">
         <div>${MapBase.getToolIcon(marker.tool)}</div>
         <p>${popupContent}</p>
