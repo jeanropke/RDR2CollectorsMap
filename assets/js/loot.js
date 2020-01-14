@@ -14,10 +14,10 @@ var Loot = {
         var lootTableWrapper = $('<div>').addClass('loot-table-wrapper');
         $.each(this.lootTable, function (key1, value1) {
             if (table != null && key1 != table) return;
+            if (table == null && key1 == 'mound') return;
 
-            // console.log(key1);
-
-            lootTableWrapper.append($('<h2>').addClass('loot-table-table-title').attr('data-text', 'menu.loot_table.table_' + key1).text(Language.get('menu.loot_table.table_' + key1)));
+            if (table == null)
+                lootTableWrapper.append($('<h2>').addClass('loot-table-table-title').attr('data-text', 'menu.loot_table.table_' + key1).text(Language.get('menu.loot_table.table_' + key1)));
 
             var lootTableCategories = $('<div>').addClass('loot-table-categories');
 
@@ -59,7 +59,7 @@ var Loot = {
 
                             var lootTableSubitem = $('<div>').addClass('loot-table-item');
                             lootTableSubitem.append($('<h3>').addClass('loot-table-item-title').attr('data-text', value4.name + '.name').text(Language.get(value4.name + '.name')));
-                            lootTableSubitem.append($('<span>').addClass('loot-table-item-rate').text((value2.rate * value4.rate * value4.rate * 100).toFixed(2) + '%'));
+                            lootTableSubitem.append($('<span>').addClass('loot-table-item-rate').text((value2.rate * value3.rate * value4.rate * 100).toFixed(2) + '%'));
     
                             lootTableSubitems.append(lootTableSubitem);
                         });

@@ -164,6 +164,7 @@
 	{"key": "alerts.file_not_found", "value": "Please select a file in the field above the import button, then try again."},
 	{"key": "alerts.feature_not_supported", "value": "This feature is not supported by your browser."},
 	{"key": "menu.enable_inventory_menu_update", "value": "Toggling menu items updates inventory"},
+	{"key": "menu.reset_button_updates_inventory", "value": "Collection reset updates inventory"},
 	{"key": "map.same_cycle_yesterday", "value": "This item has the same cycle as yesterday. In this case, there is a 24 hour delay to respawn the item."},
 
 	{"key": "menu.loot_table.category_arrowheads", "value": "Arrowheads"},
@@ -177,12 +178,20 @@
 	{"key": "menu.loot_table.category_earrings_1", "value": "Earrings #1"},
 	{"key": "menu.loot_table.category_earrings_2", "value": "Earrings #2"},
 	{"key": "menu.loot_table.category_family_heirlooms", "value": "Family Heirlooms"},
-	{"key": "menu.loot_table.category_jewelry", "value": "Jewelry"},
+	{"key": "menu.loot_table.category_jewelry", "value": "Lost Jewelry"},
 	{"key": "menu.loot_table.category_loot_table_shallow", "value": "Shallow (Metal Detector)"},
 	{"key": "menu.loot_table.category_necklaces", "value": "Necklaces"},
 	{"key": "menu.loot_table.category_rings_1", "value": "Rings #1"},
 	{"key": "menu.loot_table.category_rings_2", "value": "Rings #2"},
 	{"key": "menu.loot_table.table_box", "value": "Metal Box (Metal Detector)"},
+	{"key": "menu.loot_table.table_box.desc", "value": "This spot will randomly give you an Arrowhead (27.5%), Coin (22.5%) or Lost Jewelry (50%) item."},
 	{"key": "menu.loot_table.table_mound", "value": "Dirt Mound (Shovel)"},
-	{"key": "menu.loot_table.table_shallow", "value": "Loose Item (Metal Detector)"}
+	{"key": "menu.loot_table.table_mound.desc", "value": "This spot will randomly give you an Arrowhead (60%), Family Heirloom Hairpin (30%) or Lost Jewelry (10%) item."},
+	{"key": "menu.loot_table.table_shallow", "value": "Loose Item (Metal Detector)"},
+	{"key": "menu.loot_table.table_shallow.desc", "value": "This spot will randomly give you an Arrowhead (55%) or Coin (45%) item."},
+	{"key": "menu.loot_table.table_unknown", "value": "All Loot"},
+	{"key": "menu.loot_table.table_unknown.desc", "value": "The items this spot can give isn't known yet."},
+	{"key": "menu.loot_table.view_loot", "value": "View detailed loot"},
+	{"key": "menu.loot_table.loot_modal_title", "value": "Detailed loot"},
+	{"key": "menu.close", "value": "Close"}
 ]

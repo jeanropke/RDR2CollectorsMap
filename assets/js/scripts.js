@@ -450,18 +450,17 @@ $('.collection-reset').on('click', function (e) {
 
     if (inventory[value.text])
       inventory[value.text].isCollected = false;
-
+    
     value.isCollected = false;
     value.canCollect = true;
 
-    if (value.subdata) {
-      Inventory.changeMarkerAmount(value.subdata, -1);
-      $(this).removeClass('disabled');
-    }
-    else {
-      Inventory.changeMarkerAmount(value.text, -1);
-      $(this).removeClass('disabled');
-    }
+    // .changeMarkerAmount() must run to check whether to remove "disabled" class
+    if (value.subdata) 
+      Inventory.changeMarkerAmount(value.subdata, (Inventory.resetButtonUpdatesInventory ? -1 : 0));
+    else
+      Inventory.changeMarkerAmount(value.text, (Inventory.resetButtonUpdatesInventory ? -1 : 0));
+
+    $(this).removeClass('disabled');
   });
   MapBase.save();
 });
@@ -571,6 +570,11 @@ $('#enable-inventory-popups').on("change", function () {
 $('#enable-inventory-menu-update').on("change", function () {
   Inventory.isMenuUpdateEnabled = $("#enable-inventory-menu-update").prop('checked');
   $.cookie('inventory-menu-update-enabled', Inventory.isMenuUpdateEnabled ? '1' : '0', { expires: 999 });
+});
+
+$('#reset-collection-updates-inventory').on("change", function () {
+  Inventory.resetButtonUpdatesInventory = $('#reset-collection-updates-inventory').prop('checked');
+  $.cookie('reset-updates-inventory-enabled', Inventory.resetButtonUpdatesInventory ? '1' : '0', { expires: 999 });
 });
 
 if (Inventory.isEnabled)
@@ -749,6 +753,20 @@ $('#generate-route-start-lng').on("change", function () {
 
   Routes.generatePath();
 });
+
+/**
+ * Loot table modal
+ */
+$('#detailed-loot-modal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget);
+  var table = button.data('table');
+
+  var modal = $(this)
+  modal.find('.modal-title').text(Language.get('menu.loot_table.table_' + table));
+
+  if (table == 'unknown') table = null;
+  modal.find('.modal-body').html(Loot.generateTable(table));
+})
 
 /**
  * Leaflet plugins

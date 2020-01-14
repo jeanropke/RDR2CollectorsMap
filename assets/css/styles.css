@@ -361,11 +361,13 @@ input, textarea, select, .btn {
 }
 
 .wide-select-menu {
+    min-width: 150px;
     width: 150px;
 }
 
 .narrow-select-menu {
     min-width: 75px;
+    width: 75px;
 }
 
 .btn-default {
@@ -683,11 +685,17 @@ a.wiki-page:visited {
     align-items: center;
 }
 
-.warning {
-    display: block;
-    padding-left: 40px;
-    background: #ffffd4 url("https://i.imgur.com/9cpUjoh.png") 5px center/30px auto  no-repeat;
-    border: 1px solid #cccc3b;
+.marker-warning-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    border: 1px solid #f2cf20;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.marker-warning-wrapper .warning-icon {
+    margin-right: 5px;
 }
 
 /* Custom checkbox styling */
@@ -763,12 +771,20 @@ a.no-style:visited {
 /* Bootstrap modal styling */
 
 .modal-content {
+    background: url(../images/modal_bg_long.png);
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.modal-sm .modal-content {
     background: url(../images/modal_bg.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: none;
+    background-repeat: no-repeat !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 .modal-header, .modal-body, .modal-footer {

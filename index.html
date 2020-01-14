@@ -13,10 +13,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=220" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=229" />
 
   <script>
-    var nocache = 220;
+    var nocache = 229;
   </script>
 </head>
 
@@ -412,6 +412,14 @@
         </div>
       </div>
       <div class="input-container">
+        <label for="reset-collection-updates-inventory" data-text="menu.reset_button_updates_inventory">Collection reset updates inventory</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="reset-collection-updates-inventory" value="0"
+            id="reset-collection-updates-inventory" />
+          <label class="input-checkbox-label" for="reset-collection-updates-inventory"></label>
+        </div>
+      </div>
+      <div class="input-container">
         <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
         <input id="inventory-stack" class="input-day narrow-select-menu" type="number" min="1" max="10" value="10">
       </div>
@@ -768,24 +776,38 @@
     </div>
   </div>
 
+  <div class="modal fade" id="detailed-loot-modal" tabindex="-1" role="dialog" aria-labelledby="detailed-loot-title">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="detailed-loot-title" data-text="menu.loot_table.table_unknown">All Loot</h4>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script>
-  <script src="assets/js/settings.js?nocache=220"></script>
-  <script src="assets/js/cycles.js?nocache=220"></script>
-  <script src="assets/js/marker.js?nocache=220"></script>
-  <script src="assets/js/inventory.js?nocache=220"></script>
-  <script src="assets/js/treasures.js?nocache=220"></script>
-  <script src="assets/js/encounters.js?nocache=220"></script>
-  <script src="assets/js/pins.js?nocache=220"></script>
-  <script src="assets/js/map.js?nocache=220"></script>
-  <script src="assets/js/language.js?nocache=220"></script>
-  <script src="assets/js/menu.js?nocache=220"></script>
-  <script src="assets/js/routes.js?nocache=220"></script>
-  <script src="assets/js/loot.js?nocache=220"></script>
-  <script src="assets/js/scripts.js?nocache=220"></script>
+  <script src="assets/js/settings.js?nocache=229"></script>
+  <script src="assets/js/cycles.js?nocache=229"></script>
+  <script src="assets/js/marker.js?nocache=229"></script>
+  <script src="assets/js/inventory.js?nocache=229"></script>
+  <script src="assets/js/treasures.js?nocache=229"></script>
+  <script src="assets/js/encounters.js?nocache=229"></script>
+  <script src="assets/js/pins.js?nocache=229"></script>
+  <script src="assets/js/map.js?nocache=229"></script>
+  <script src="assets/js/language.js?nocache=229"></script>
+  <script src="assets/js/menu.js?nocache=229"></script>
+  <script src="assets/js/routes.js?nocache=229"></script>
+  <script src="assets/js/loot.js?nocache=229"></script>
+  <script src="assets/js/scripts.js?nocache=229"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
   <script>

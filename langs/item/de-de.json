@@ -619,7 +619,7 @@
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": "Innengebäude im Schrank in der äußersten rechten Ecke."},
 	{"key": "bottle_tennesee_whiskey_3.desc", "value": "In einem Schrank im Wohnzimmer."},
 	{"key": "bottle_tennesee_whiskey_4.desc", "value": "Auf der Kiste in der Mitte des Tunnels."},
-	{"key": "bottle_tennesee_whiskey_5.desc", "value": ""},
+	{"key": "bottle_tennesee_whiskey_5.desc", "value": "In einer kleinen Nische im Felsen unter dem angeschwemmten Boot."},
 	{"key": "bottle_tennesee_whiskey_6.desc", "value": "Auf einem Regal unterhalb der Bar im Saloon."},
 
 	{"key": "bottle_irish_whiskey.name", "value": "Irish Whiskey"},
@@ -651,7 +651,7 @@
 	{"key": "bottle_gran_corazon_madeira_2.desc", "value": "Auf der Rückseite des kaputten Wagens."},
 	{"key": "bottle_gran_corazon_madeira_3.desc", "value": "Im grünen Schrank in der Ecke."},
 	{"key": "bottle_gran_corazon_madeira_4.desc", "value": "Im Schank unter der Spüle im Untergeschoss."},
-	{"key": "bottle_gran_corazon_madeira_5.desc", "value": ""},
+	{"key": "bottle_gran_corazon_madeira_5.desc", "value": "Hinter der Bar unter dem Bierfass."},
 	{"key": "bottle_gran_corazon_madeira_6.desc", "value": "Nächstes Fass neben dem Wasserfall."},
 
 	{"key": "bottle_old_tom_gin.name", "value": "Old Tom Gin"},
@@ -659,7 +659,7 @@
 	{"key": "bottle_old_tom_gin_2.desc", "value": ""},
 	{"key": "bottle_old_tom_gin_3.desc", "value": "Im Waschbecken-Schrank."},
 	{"key": "bottle_old_tom_gin_4.desc", "value": "In der Hütte auf einer Kiste."},
-	{"key": "bottle_old_tom_gin_5.desc", "value": ""},
+	{"key": "bottle_old_tom_gin_5.desc", "value": "In der Truhe zwischen den beiden Hütten."},
 	{"key": "bottle_old_tom_gin_6.desc", "value": "Oben auf der Eisenbahnbrücke."},
 
 	{"key": "bottle_caribbean_rum.name", "value": "Karibischer Rum"},
@@ -667,7 +667,7 @@
 	{"key": "bottle_caribbean_rum_2.desc", "value": "Vor dem unbeleuchteten Zelt."},
 	{"key": "bottle_caribbean_rum_3.desc", "value": "Beim Eingang auf dem Tisch."},
 	{"key": "bottle_caribbean_rum_4.desc", "value": "Im linken Arbeiter-Zelt auf einem Fass im hinteren Teil."},
-	{"key": "bottle_caribbean_rum_5.desc", "value": ""},
+	{"key": "bottle_caribbean_rum_5.desc", "value": "Oben auf der Aussichtsplattform."},
 	{"key": "bottle_caribbean_rum_6.desc", "value": "Auf einem kleinen Tisch im zweiten Stock des Bootes."},
 	
 	{"key": "bottle_cognac_bottle.name", "value": "Cognac"},
@@ -675,7 +675,7 @@
 	{"key": "bottle_cognac_bottle_2.desc", "value": "In einem umgedrehten Metallfass."},
 	{"key": "bottle_cognac_bottle_3.desc", "value": "Im Schreibtisch des Sheriffs."},
 	{"key": "bottle_cognac_bottle_4.desc", "value": "Im Schrank unter der Spüle."},
-	{"key": "bottle_cognac_bottle_5.desc", "value": ""},
+	{"key": "bottle_cognac_bottle_5.desc", "value": "Oben auf dem schlafzimmerseitigen Kamin."},
 	{"key": "bottle_cognac_bottle_6.desc", "value": "Auf dem Sims im Dachgeschoss des Gebäudes. Spring auf Gehweg in der Nähe, um dorthin zu gelangen."},
 
 	{"key": "bottle_london_dry_gin.name", "value": "London Dry Gin"},
@@ -683,7 +683,7 @@
 	{"key": "bottle_london_dry_gin_2.desc", "value": "Im Baum."},
 	{"key": "bottle_london_dry_gin_3.desc", "value": "Im Leuchturm am Ende der Treppe."},
 	{"key": "bottle_london_dry_gin_4.desc", "value": "Oben auf der gleben Windmühle, erreichbar über die Leiter."},
-	{"key": "bottle_london_dry_gin_5.desc", "value": ""},
+	{"key": "bottle_london_dry_gin_5.desc", "value": "In der nordwestlichen Ecke eines Zuges auf der Pritsche."},
 	{"key": "bottle_london_dry_gin_6.desc", "value": "Im Schrank in der Ecke."},
 
 	{"key": "arrowhead_rough.name", "value": "Grobe Pfeilspitze"},

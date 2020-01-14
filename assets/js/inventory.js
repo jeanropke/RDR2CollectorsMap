@@ -3,6 +3,7 @@ var Inventory = {
   isPopupEnabled: $.cookie('inventory-popups-enabled') == '1',
   isMenuUpdateEnabled: $.cookie('inventory-menu-update-enabled') == '1',
   stackSize: parseInt($.cookie('inventory-stack')) ? parseInt($.cookie('inventory-stack')) : 10,
+  resetButtonUpdatesInventory: $.cookie('reset-updates-inventory-enabled') == '1',
 
   init: function () {
     if (typeof $.cookie('inventory-popups-enabled') === 'undefined') {
@@ -15,9 +16,15 @@ var Inventory = {
       $.cookie('inventory-menu-update-enabled', '1', { expires: 999 });
     }
 
+    if (typeof $.cookie('reset-updates-inventory-enabled') === 'undefined') {
+      Inventory.resetButtonUpdatesInventory = true;
+      $.cookie('reset-updates-inventory-enabled', '1', { expires: 999 });
+    }
+
     $('#enable-inventory').prop("checked", Inventory.isEnabled);
     $('#enable-inventory-popups').prop("checked", Inventory.isPopupEnabled);
     $('#enable-inventory-menu-update').prop("checked", Inventory.isMenuUpdateEnabled);
+    $('#reset-collection-updates-inventory').prop("checked", Inventory.resetButtonUpdatesInventory);
     $('#inventory-stack').val(Inventory.stackSize);
 
     this.toggleMenuItemsDisabled();
@@ -71,6 +78,9 @@ var Inventory = {
       $('#enable-inventory-menu-update').parent().parent().addClass('disabled');
       $('#enable-inventory-menu-update').prop('disabled', true);
 
+      $('#reset-collection-updates-inventory').parent().parent().addClass('disabled');
+      $('#reset-collection-updates-inventory').prop('disabled', true);
+
       $('#inventory-stack').parent().addClass('disabled');
       $('#inventory-stack').prop('disabled', true);
 
@@ -82,6 +92,9 @@ var Inventory = {
       
       $('#enable-inventory-menu-update').parent().parent().removeClass('disabled');
       $('#enable-inventory-menu-update').prop('disabled', false);
+
+      $('#reset-collection-updates-inventory').parent().parent().removeClass('disabled');
+      $('#reset-collection-updates-inventory').prop('disabled', false);
 
       $('#inventory-stack').parent().removeClass('disabled');
       $('#inventory-stack').prop('disabled', false);
