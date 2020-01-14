@@ -635,7 +635,7 @@
 	{"key": "bottle_scotch_whisky_2.desc", "value": ""},
 	{"key": "bottle_scotch_whisky_3.desc", "value": "Upstairs inside wardrobe."},
 	{"key": "bottle_scotch_whisky_4.desc", "value": "Next to the fireplace of the ruined building."},
-	{"key": "bottle_scotch_whisky_5.desc", "value": ""},
+	{"key": "bottle_scotch_whisky_5.desc", "value": "In a little alcove in the rock under the washed up boat."},
 	{"key": "bottle_scotch_whisky_6.desc", "value": "On a crate outside."},
 
 	{"key": "bottle_absinthe.name", "value": "Absinthe Bottle"},
@@ -651,7 +651,7 @@
 	{"key": "bottle_gran_corazon_madeira_2.desc", "value": "At the back of the broken down wagon."},
 	{"key": "bottle_gran_corazon_madeira_3.desc", "value": "In the green cabinet in the corner."},
 	{"key": "bottle_gran_corazon_madeira_4.desc", "value": "In the sink cabinet on the lower floor."},
-	{"key": "bottle_gran_corazon_madeira_5.desc", "value": ""},
+	{"key": "bottle_gran_corazon_madeira_5.desc", "value": "Behind the bar below the beer keg."},
 	{"key": "bottle_gran_corazon_madeira_6.desc", "value": "Next the barrel next to the waterfall."},
 
 	{"key": "bottle_old_tom_gin.name", "value": "Old Tom Gin Bottle"},
@@ -659,7 +659,7 @@
 	{"key": "bottle_old_tom_gin_2.desc", "value": ""},
 	{"key": "bottle_old_tom_gin_3.desc", "value": "In the sink cupboard."},
 	{"key": "bottle_old_tom_gin_4.desc", "value": "In the shack on a crate."},
-	{"key": "bottle_old_tom_gin_5.desc", "value": ""},
+	{"key": "bottle_old_tom_gin_5.desc", "value": "In the chest between the two cabins."},
 	{"key": "bottle_old_tom_gin_6.desc", "value": "On top of the railroad bridge."},
 
 	{"key": "bottle_caribbean_rum.name", "value": "Caribbean Rum Bottle"},
@@ -667,7 +667,7 @@
 	{"key": "bottle_caribbean_rum_2.desc", "value": "In front of the unlit tent."},
 	{"key": "bottle_caribbean_rum_3.desc", "value": "On top of the table as you walk in."},
 	{"key": "bottle_caribbean_rum_4.desc", "value": "In the left-most worker tent on a barrel in the back."},
-	{"key": "bottle_caribbean_rum_5.desc", "value": ""},
+	{"key": "bottle_caribbean_rum_5.desc", "value": "At the top of the viewing platform overlooking the eye."},
 	{"key": "bottle_caribbean_rum_6.desc", "value": "On a small table on the second floor of the boat."},
 
 	{"key": "bottle_cognac_bottle.name", "value": "Cognac Bottle"},
@@ -675,7 +675,7 @@
 	{"key": "bottle_cognac_bottle_2.desc", "value": "In a turned over metal barrel."},
 	{"key": "bottle_cognac_bottle_3.desc", "value": "In the sheriff's desk."},
 	{"key": "bottle_cognac_bottle_4.desc", "value": "In the sink cabinet."},
-	{"key": "bottle_cognac_bottle_5.desc", "value": ""},
+	{"key": "bottle_cognac_bottle_5.desc", "value": "On top of the bedroom-side fireplace."},
 	{"key": "bottle_cognac_bottle_6.desc", "value": "On the ledge in the attic of the building, jump on the walkway nearby to reach it."},
 
 	{"key": "bottle_london_dry_gin.name", "value": "London Dry Gin Bottle"},
@@ -683,7 +683,7 @@
 	{"key": "bottle_london_dry_gin_2.desc", "value": "Inside the tree."},
 	{"key": "bottle_london_dry_gin_3.desc", "value": "Inside the lighthouse."},
 	{"key": "bottle_london_dry_gin_4.desc", "value": "At the top of the yellow windmill, climb the ladders."},
-	{"key": "bottle_london_dry_gin_5.desc", "value": ""},
+	{"key": "bottle_london_dry_gin_5.desc", "value": "In the north western corner of a train flatbed with walls."},
 	{"key": "bottle_london_dry_gin_6.desc", "value": "In the cabinet in the corner."},
 
 	{"key": "arrowhead_rough.name", "value": "Rough Arrowhead"},
