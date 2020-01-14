@@ -361,11 +361,13 @@ input, textarea, select, .btn {
 }
 
 .wide-select-menu {
-    width: 40%;
+    min-width: 150px;
+    width: 150px;
 }
 
 .narrow-select-menu {
-    width: 20%;
+    min-width: 75px;
+    width: 75px;
 }
 
 .btn-default {
