@@ -164,6 +164,7 @@
 	{"key": "alerts.file_not_found", "value": "Proszę wybierz inny plik w polu (nad napisem Importuj) i spróbuj ponownie."},
 	{"key": "alerts.feature_not_supported", "value": "Ta funkcja nie jest wspierana przez Twoją przeglądarkę."},
 	{"key": "menu.enable_inventory_menu_update", "value": "Przeł. przedmiotów w menu aktu. ekwip."},
+	{"key": "menu.reset_button_updates_inventory", "value": "Przycisk reset aktualizuje ekwipunek"},
 	{"key": "map.same_cycle_yesterday", "value": "Ten przedmiot jest w tym samym cyklu co wczoraj. W tym przypadku przedmiot pojawi się ponownie z 24 godzinnym opóźnieniem."},
 	
 	{"key": "menu.loot_table.category_arrowheads", "value": "Groty"},
