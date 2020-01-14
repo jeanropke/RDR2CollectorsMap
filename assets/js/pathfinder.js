@@ -109,7 +109,7 @@ class Chunk {
 	 */
 	contains(marker) {
 		for(var i = 0; i < this.markers.length; i++) {
-			if(this.markers[i].text == marker.text && this.markers[i].lat == marker.lat)
+			if(this.markers[i].text == marker.text && parseFloat(this.markers[i].lat) == parseFloat(marker.lat))
 				return true
 		}
 		return false
@@ -323,10 +323,6 @@ class PathFinder {
 		for(var i = 0; i < markers.length; i++) {
 			Chunk.sortMarker(markers[i])
 		}
-	
-		/*for(var j = 0; j < Chunk.chunks.length; j++) {
-			L.rectangle(Chunk.chunks[j].getBounds(), {color: "#ff7800", weight: 1}).addTo(MapBase.map);
-		}*/
 	}
 	
 	/**
@@ -362,6 +358,8 @@ class PathFinder {
 					return point(vertice)
 				})
 		);
+
+		PathFinder._nodeCache = {}
 	}
 	
 	/**
@@ -429,7 +427,13 @@ class PathFinder {
 		return L.latLng(point.geometry.coordinates[1], point.geometry.coordinates[0])
 	}
 	
-	
+	/**
+	 * Searches for nodes nearby on the roadmap
+	 * @static
+	 * @param {LatLng|Marker|Object} point Can be LatLng, Marker or GeoJSON point
+	 * @param {Number} [searchArea=5] Optional radius around the point to search for nodes, defaults to 5
+	 * @returns {Object} GeoJSON point
+	 */
 	static getNearestNode(point, searchArea) {
 		var pointLatLng = point
 		if(typeof(point.lat) == 'undefined') {
@@ -470,6 +474,13 @@ class PathFinder {
 		return n.point
 	}
 
+	/**
+	 * Find the closest Chunk to the marker by road length
+	 * @static
+	 * @param {Marker} marker 
+	 * @param {Chunk} markerChunk Chunk the marker is in. Just to rule that one out.
+	 * @returns {Chunk|null}
+	 */
 	static findNearestChunk(marker, markerChunk) {
 		var c = {weight: Number.MAX_SAFE_INTEGER, c: null}
 	
@@ -479,23 +490,25 @@ class PathFinder {
 			if(Chunk.chunks[i] == markerChunk) continue
 	
 			var chunkNode = PathFinder.getNearestNode(PathFinder.latLngToPoint(Chunk.chunks[i].getBounds().getCenter()), 15)
-			var p = PathFinder._PathFinder.findPath(markerNode, chunkNode)
-			if(p.weight < c.weight) {
-				c.weight = p.weight
-				c.c = Chunk.chunks[i]
+			if(chunkNode !== null) {
+				var p = PathFinder._PathFinder.findPath(markerNode, chunkNode)
+				if(p.weight < c.weight) {
+					c.weight = p.weight
+					c.c = Chunk.chunks[i]
+				}
 			}
 		}
 		return c.c
 	}
 
-	static findMarkerByPoint(point, markers) {
-		for(var i = 0; i < markers.length; i++) {
-			if(point.properties.text == markers[i].text)
-				return markers[i]
-		}
-		return null
-	}
-
+	/**
+	 * Finds the nearest marker in markers from start. This function uses the created chunks, so make sure to re-create
+	 * the chunks when you start the route generator
+	 * @static
+	 * @param {Marker} start 
+	 * @param {Array<Marker>} markers This array of markers must not include start or any already visited markers
+	 * @returns {Promise<Object>} Resolving Object containes the properties weight, marker and path
+	 */
 	static async findNearestTravelItem(start, markers) {
 		if(PathFinder._PathFinder === null) PathFinder.createPathFinder()
 	
@@ -555,7 +568,12 @@ class PathFinder {
 		return shortest
 	}
 
-	static pathfinderCancel() {
+	/**
+	 * Cancels the route generation and resolves the returning Promise when route generation has stopped.
+	 * @static
+	 * @returns {Promise}
+	 */
+	static routegenCancel() {
 		return new Promise(async (res) => {
 			if(PathFinder._running) {
 				PathFinder._cancel = true
@@ -570,7 +588,12 @@ class PathFinder {
 		})
 	}
 
-	static async pathfinderClear() {
+	/**
+	 * Removes controler and layer group from map and canceles route generation when running
+	 * @static
+	 * @returns {Promise}
+	 */
+	static async routegenClear() {
 		if(PathFinder._running) {
 			await PathFinder.pathfinderCancel()
 		}
@@ -578,17 +601,24 @@ class PathFinder {
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
 	}
 
+	/**
+	 * Finds unreachable points in the roadmap and shows you on the map. It takes a random node and tries to find a way
+	 * to every other node in the map. If no path could be found a blue circle will be drawn around the node.
+	 * The starting node will be highlighted by a red circle.
+	 * @static
+	 * @returns {Promise}
+	 */
 	static async findHoles() {
 		console.log('[pathfinder] Searching for holes')
 		PathFinder.createPathFinder(false)
-	
+
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
-	
+
 		PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map)
 		PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map)
-		
-		var sourcePoint = PathFinder._points.features[0]
+
+		var sourcePoint = PathFinder._points.features[Math.floor(Math.random() * PathFinder._points.features.length)]
 		L.circle([sourcePoint.geometry.coordinates[1], sourcePoint.geometry.coordinates[0]], { color: '#ff0000', radius: 0.5 }).addTo(PathFinder._layerGroup)
 		for(var i = 1; i < PathFinder._points.features.length; i++) {
 			var path = await new Promise(res => {
@@ -604,53 +634,67 @@ class PathFinder {
 		console.log('[pathfinder] Done finding holes')
 	}
 
-	static async pathfinderStart(allowFastTravel) {
+	/**
+	 * Adds controls to the map and starts route generation. It will also cancel ongoing route generation.
+	 * @static
+	 * @param {Marker} startingMarker Where to start
+	 * @param {Array<Marker>} markers Contains markers a route should be generated for. Must contain startingMarker.
+	 * @param {Boolean} [allowFastTravel=false]
+	 * @returns {Promise<Boolean>} false if geojson isn't fully loaded or route generation was canceled
+	 */
+	static async routegenStart(startingMarker, markers, allowFastTravel) {
 		if(PathFinder._geoJson === null) {
 			console.error('[pathfinder] geojson not fully loaded yet')
-			return
+			return false
 		}
+
+		// Cancel current running route generation
 		if(PathFinder._running) {
-			await PathFinder.pathfinderCancel()
+			await PathFinder.routegenCancel()
 		}
 
 		console.log('[pathfinder] Starting route generation')
 
 		PathFinder._running = true
 		PathFinder._currentChunk = null
-		PathFinder._nodeCache = {}
-	
+
 		var startTime = new Date().getTime()
-	
+
+		// Create GeoJSON path finder object (function will check if already created)
 		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = false
 		PathFinder.createPathFinder(allowFastTravel)
-	
+
+		// Generate Chunks
+		PathFinder.generateChunks(markers)
+
+		// Remove controller and layer group if already created
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
-	
+
+		// Add controller and layer group to map
 		PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map)
 		PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map)
-	
-		var markers = MapBase.markers.filter((marker) => { return (marker.isVisible && (!Routes.ignoreCollected || !marker.isCollected)); });
-		PathFinder.generateChunks(markers)
-	
-		var current = Routes.nearestNeighborTo(Routes.startMarker(), markers, [], -1)
-		markers = markers.filter((m, i) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
-	
-	
-		var last = current.marker
-		var waypoints = [L.latLng(last.lat, last.lng)]
-		var paths = []
-	
-		var markersNum = markers.length
 
+		// Removing startingMarker from markers
+		var current = {marker: startingMarker}
+		markers = markers.filter((m) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
+
+		var last = current.marker
+		var paths = []
+
+		var markersNum = markers.length
 		try {
 			for (var i = 0; i < markersNum; i++) {
+				// Find next marker
 				var current = await PathFinder.findNearestTravelItem(last, markers)
+				// if no marker was found, we're propably done
 				if(current == null || current.marker == null) break
-				markers = markers.filter((m, i) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
+
+				// remove found marker from markers array
+				markers = markers.filter((m) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
 				last = current.marker
 		
-				waypoints.push(L.latLng(last.lat, last.lng))
+				// add route to controller and draw the current route
 				PathFinder._layerControl.addPath(current.path)
 				paths.push(current.path)
 				PathFinder.drawRoute(paths)
@@ -662,14 +706,16 @@ class PathFinder {
 			console.error('[pathfinder]', e)
 		}
 	
-		PathFinder._running = false
-	
 		var endTime = new Date().getTime();
-	
-		if(PathFinder._cancel) console.log(`[pathfinder] Pathfinding was canceled`)
+
+		var canceled = PathFinder._cancel
+		if(canceled) console.log(`[pathfinder] Pathfinding was canceled`)
 		else PathFinder._layerControl.selectPath(1, true)
 
 		console.log(`[pathfinder] ${(endTime - startTime) / 1000} seconds for ${markersNum} items`)
+		PathFinder._running = false
+
+		return !canceled
 	}
 
 }
@@ -681,9 +727,13 @@ window.PathFinder = PathFinder.init()
 $('head').append($('<link />').attr({'rel': 'stylesheet', 'href': 'assets/css/pathfinder.css'}))
 
 // Overwrite route generator functions
-Routes.generatePath = function() { PathFinder.pathfinderStart() }
+Routes.generatePath = function() {
+	var markers = MapBase.markers.filter((marker) => { return (marker.isVisible && (!Routes.ignoreCollected || !marker.isCollected)); });
+	var startingMarker = Routes.nearestNeighborTo(Routes.startMarker(), markers, [], -1).marker
+	PathFinder.routegenStart(startingMarker, markers)
+}
 Routes.orgClearPath = Routes.clearPath
-Routes.clearPath = function() {  PathFinder.pathfinderClear(); Routes.orgClearPath() }
+Routes.clearPath = function() {  PathFinder.routegenClear(); Routes.orgClearPath() }
 },{"geojson-path-finder":11,"turf-featurecollection":16,"turf-point":17}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
