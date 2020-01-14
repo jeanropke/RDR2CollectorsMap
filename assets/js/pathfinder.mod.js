@@ -41,6 +41,9 @@ async function loadAllGeoJson() {
 }
 
 
+/**
+ * Helping class to hold markers, that are nearby
+ */
 class Chunk {
 
 	constructor() {
@@ -49,6 +52,9 @@ class Chunk {
 		this.isDone = false
 	}
 
+	/**
+	 * Calculates the bounds of the chunk
+	 */
 	_calcBounds() {
 		var latMin = null
 		var lngMin = null
@@ -66,12 +72,23 @@ class Chunk {
 		this.bounds = L.latLngBounds({ lat: latMin, lng: lngMin }, { lat: latMax, lng: lngMax })
 	}
 
+	/**
+	 * Checks if the marker can be added to the chunk
+	 * This is the case if the marker is now further away than 10 from the center of the chunk
+	 * @param {Marker} marker 
+	 * @returns {Boolean}
+	 */
 	_canAdd(marker) {
 		if(this.bounds == null) return true
 		var d = MapBase.map.distance(marker, this.bounds.getCenter())
 		return d < 10
 	}
 
+	/**
+	 * Checks if the marker can be added to the chunk and returns true if it was added
+	 * @param {Marker} marker 
+	 * @returns {Boolean}
+	 */
 	addMarker(marker) {
 		marker.lat = parseFloat(marker.lat)
 		marker.lng = parseFloat(marker.lng)
@@ -84,6 +101,11 @@ class Chunk {
 		}
 	}
 
+	/**
+	 * Returns true if chunks contains marker
+	 * @param {Marker} marker 
+	 * @returns {Boolean}
+	 */
 	contains(marker) {
 		for(var i = 0; i < this.markers.length; i++) {
 			if(this.markers[i].text == marker.text && this.markers[i].lat == marker.lat)
@@ -92,15 +114,31 @@ class Chunk {
 		return false
 	}
 
+	/**
+	 * Returns the bounds of the chunk
+	 * @see {@link https://leafletjs.com/reference-1.6.0.html#latlngbounds|LatLngBounds}
+	 * @returns {LatLngBounds}
+	 */
 	getBounds() {
 		return this.bounds
 	}
 
+	/**
+	 * Returns all availabe chunks
+	 * @static
+	 * @readonly
+	 * @returns {Array<Chunk>}
+	 */
 	static get chunks() {
 		if(typeof(Chunk._chunks) === 'undefined') return []
 		return Chunk._chunks
 	}
 
+	/**
+	 * Creates and returns a new Chunk
+	 * @static
+	 * @returns {Chunk}
+	 */
 	static newChunk() {
 		if(typeof(Chunk._chunks) === 'undefined') Chunk.clearChunks()
 		var c = new Chunk()
@@ -108,10 +146,20 @@ class Chunk {
 		return c
 	}
 
+	/**
+	 * Removes all saved chunks
+	 * @static
+	 */
 	static clearChunks() {
 		Chunk._chunks = []
 	}
 
+	/**
+	 * Sorts the marker into all chunks that are suitable.
+	 * If it wasn't sorted into an existing chunk, a new chunk is created.
+	 * @static
+	 * @param {Marker} marker 
+	 */
 	static sortMarker(marker) {
 		var added = false
 		for(var j = 0; j < Chunk.chunks.length; j++) {
@@ -125,6 +173,12 @@ class Chunk {
 		}
 	}
 
+	/**
+	 * Searches for the marker in all chunks and returns the first chunk it's found in or null if it's in no chunk
+	 * @static
+	 * @param {Marker} marker 
+	 * @returns {Chunk|null}
+	 */
 	static getChunkByMarker(marker) {
 		for(var j = 0; j < Chunk.chunks.length; j++) {
 			if(Chunk.chunks[j].contains(marker)) {
@@ -136,6 +190,9 @@ class Chunk {
 
 }
 
+/**
+ * Leaflet control class for the path finder
+ */
 class RouteControl extends L.Control {
 
 	constructor() {
@@ -224,8 +281,16 @@ class RouteControl extends L.Control {
 
 }
 
+/**
+ * Main path finder class; all properties are static
+ */
 class PathFinder {
 
+	/**
+	 * Initiates properties and starts loading geojson data
+	 * @static
+	 * @returns {PathFinder}
+	 */
 	static init() {
 		PathFinder._PathFinder = null
 		PathFinder._points = []
@@ -240,14 +305,20 @@ class PathFinder {
 		PathFinder._cancel = false
 		PathFinder._pathfinderFT = false
 
+		loadAllGeoJson()
+
 		return PathFinder
 	}
 
-	static generateChunks() {
-		console.log('[pathfinder] Sorting marker into chunks')
+	/**
+	 * Start sorting markers into chunks
+	 * @static
+	 * @param {Array<Marker>} markers
+	 */
+	static generateChunks(markers) {
+		console.log('[pathfinder] Sorting markers into chunks')
 		Chunk.clearChunks()
 	
-		var markers = MapBase.markers.filter((marker) => { return marker.isVisible; })
 		for(var i = 0; i < markers.length; i++) {
 			Chunk.sortMarker(markers[i])
 		}
@@ -257,6 +328,11 @@ class PathFinder {
 		}*/
 	}
 	
+	/**
+	 * Creating the GeoJSON Path Finder object from geojson data and extracting all nodes
+	 * @static
+	 * @param {Boolean} allowFastTravel Wether or not to include fast travel nodes
+	 */
 	static createPathFinder(allowFastTravel) {
 		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = PathFinder._pathfinderFT
 		if(PathFinder._PathFinder !== null && PathFinder._pathfinderFT == allowFastTravel) return
@@ -287,12 +363,24 @@ class PathFinder {
 		);
 	}
 	
+	/**
+	 * Draw a path to the path finder layer group
+	 * @static
+	 * @param {Array<[Number, Number]>} path 
+	 * @param {String} color 
+	 * @returns {Polyline}
+	 */
 	static drawPath(path, color) {
 		if(typeof(color) === 'undefined') color = '#0000ff'
 	
 		return L.polyline(path, {color: color, opacity: 0.6, weight: 5 }).addTo(PathFinder._layerGroup)
 	}
 
+	/**
+	 * Draw a fancy path to the path finder layer group and removes the fancy path that was drawn before
+	 * @static
+	 * @param {Array<[Number, Number]>} path 
+	 */
 	static highlightPath(path) {
 		if(PathFinder._currentPath !== null) {
 			PathFinder._layerGroup.removeLayer(PathFinder._currentPath)
@@ -305,6 +393,11 @@ class PathFinder {
 		MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
 	}
 
+	/**
+	 * Draw an entire route/multiple paths
+	 * @static
+	 * @param {Array<Array<[Number, Number]>>} paths 
+	 */
 	static drawRoute(paths) {
 		PathFinder._layerGroup.clearLayers()
 		PathFinder._currentPath = null
@@ -313,15 +406,28 @@ class PathFinder {
 		}
 	}
 
+	/**
+	 * Turns an LatLng object into a GeoJSON point
+	 * @static
+	 * @param {LatLng} latlng 
+	 * @returns {Object}
+	 */
 	static latLngToPoint(latlng) {
 		var p = {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[parseFloat(latlng.lng), parseFloat(latlng.lat)]}}
 		if(typeof(latlng.text) === 'string') p.properties.text = latlng.text
 		return p
 	}
 	
+	/**
+	 * Turns GeoJSON point into a LatLng object
+	 * @static
+	 * @param {Object} point 
+	 * @returns {LatLng}
+	 */
 	static pointToLatLng(point) {
 		return L.latLng(point.geometry.coordinates[1], point.geometry.coordinates[0])
 	}
+	
 	
 	static getNearestNode(point, searchArea) {
 		var pointLatLng = point
@@ -516,7 +622,6 @@ class PathFinder {
 	
 		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = false
 		PathFinder.createPathFinder(allowFastTravel)
-		PathFinder.generateChunks()
 	
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
@@ -525,6 +630,7 @@ class PathFinder {
 		PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map)
 	
 		var markers = MapBase.markers.filter((marker) => { return (marker.isVisible && (!Routes.ignoreCollected || !marker.isCollected)); });
+		PathFinder.generateChunks(markers)
 	
 		var current = Routes.nearestNeighborTo(Routes.startMarker(), markers, [], -1)
 		markers = markers.filter((m, i) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
@@ -577,6 +683,3 @@ $('head').append($('<link />').attr({'rel': 'stylesheet', 'href': 'assets/css/pa
 Routes.generatePath = function() { PathFinder.pathfinderStart() }
 Routes.orgClearPath = Routes.clearPath
 Routes.clearPath = function() {  PathFinder.pathfinderClear(); Routes.orgClearPath() }
-
-// Load geojson now
-loadAllGeoJson()
