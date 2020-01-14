@@ -1,5 +1,5 @@
 {
-  "current": "squire_set",
+  "current": "gold_panner_set",
 	"sets": {
 		"sacred_set": [
 			{"item": "egg_eagle"},
@@ -17,7 +17,7 @@
 			{"item": "flower_creek_plum"}
 		],	
 		"gold_panner_set": [
-			{"item": "bracelet_abello_ruby_bangle"},
+			{"item": "bracelet_ojeda_rose_gold"},
 			{"item": "coin_gold_eagle"}
 		],
 		"pearls_set": [
