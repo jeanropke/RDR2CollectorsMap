@@ -305,6 +305,11 @@ class PathFinder {
 		PathFinder._cancel = false
 		PathFinder._pathfinderFT = false
 
+		
+		// Append stylesheet to head
+		$('head').append($('<link />').attr({'rel': 'stylesheet', 'href': 'assets/css/pathfinder.css'}))
+
+		// Load geojson
 		loadAllGeoJson()
 
 		return PathFinder
@@ -721,15 +726,3 @@ class PathFinder {
 
 // Make Pathfinder publicly accessible
 window.PathFinder = PathFinder.init()
-
-// Append stylesheet to head
-$('head').append($('<link />').attr({'rel': 'stylesheet', 'href': 'assets/css/pathfinder.css'}))
-
-// Overwrite route generator functions
-Routes.generatePath = function() {
-	var markers = MapBase.markers.filter((marker) => { return (marker.isVisible && (!Routes.ignoreCollected || !marker.isCollected)); });
-	var startingMarker = Routes.nearestNeighborTo(Routes.startMarker(), markers, [], -1).marker
-	PathFinder.routegenStart(startingMarker, markers)
-}
-Routes.orgClearPath = Routes.clearPath
-Routes.clearPath = function() {  PathFinder.routegenClear(); Routes.orgClearPath() }
