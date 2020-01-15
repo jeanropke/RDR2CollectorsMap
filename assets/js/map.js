@@ -451,6 +451,9 @@ var MapBase = {
   },
   gameToMap: function (lat, lng, name = "Debug Marker") {
     MapBase.debugMarker((0.01552 * lng + -63.6), (0.01552 * lat + 111.29), name);
+  },
+  game2Map: function ({x, y, z}) {
+    MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   }
 };
 
