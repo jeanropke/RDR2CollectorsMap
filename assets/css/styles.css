@@ -56,7 +56,7 @@ input, textarea, select, .btn {
     color: white;
     background: black;
 }
-.cycle-table td {
+.cycle-table td, .cycle-table th {
     padding: 2px;
     border: 1px solid black;
 }
