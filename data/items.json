@@ -1465,7 +1465,6 @@
     "random": {
         "1": [
             { "text": "random_item_20", "loot_table": "mound", "tool": "1", "lat": "-97.6719", "lng": "83.5781" },
-            { "text": "random_item_27", "loot_table": "mound", "tool": "1", "lat": "-85.28125", "lng": "72.5625" },
             { "text": "random_item_28", "loot_table": "mound", "tool": "1", "lat": "-67.1484", "lng": "82.0625" },
             { "text": "random_item_119", "loot_table": "", "tool": "2", "lat": "-42.5859", "lng": "137.2266" },
             { "text": "random_item_124", "loot_table": "", "tool": "2", "lat": "-41.046875", "lng": "112.390625" },
@@ -1581,6 +1580,7 @@
             { "text": "random_item_13", "loot_table": "mound", "tool": "1", "lat": "-116.640625", "lng": "38.9765625" },
             { "text": "random_item_15", "loot_table": "mound", "tool": "1", "lat": "-123.515625", "lng": "45.921875" },
             { "text": "random_item_24", "loot_table": "mound", "tool": "1", "lat": "-78.265625", "lng": "95.171875" },
+            { "text": "random_item_27", "loot_table": "mound", "tool": "1", "lat": "-85.28125", "lng": "72.5625" },
             { "text": "random_item_30", "loot_table": "mound", "tool": "1", "lat": "-64.953125", "lng": "101.75" },
             { "text": "random_item_33", "loot_table": "mound", "tool": "1", "lat": "-73.96875", "lng": "110.828125" },
             { "text": "random_item_43", "loot_table": "mound", "tool": "1", "lat": "-91.78125", "lng": "124.859375" },
