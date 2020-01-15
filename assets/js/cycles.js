@@ -108,18 +108,62 @@ var Cycles = {
         }
         return _cycles;
     },
-    exportTable: function (inGameCycles = false) {
-        var tempTable = new Object();
+    getCycleColor: function (cycle) {
+        var color = "";
+        switch (cycle) {
+            case 1:
+                color = "#35a0d0";
+                break;
+            case 2:
+                color = "#ef932f";
+                break;
+            case 3:
+                color = "#c74db0";
+                break;
+            case 4:
+                color = "#573767";
+                break;
+            case 5:
+                color = "#993033";
+                break;
+            case 6:
+                color = "#005f9a";
+                break;
+        }
+        return color;
+    },
+    exportTable: function (inGameCycles = false, toPrint = false) {
+        var _tempTable = new Object();
         $.each(Cycles.data.cycles, function (key, value) {
-            tempTable[key] = new Object();
+            _tempTable[key] = new Object();
             $.each(value, function (_k, _c) {
-                if (_k == "card_pentacles" || _k == "card_swords" || _k == "card_wands" || _k == "lost_bracelet" || _k == "lost_earrings" || _k == "lost_necklaces")
+                if (_k == "card_pentacles" || _k == "card_swords" || _k == "card_wands" ||
+                    _k == "lost_bracelet" || _k == "lost_earrings" || _k == "lost_necklaces")
                     return;
-                tempTable[key][[_k]] = inGameCycles ? Cycles.getInGameCycle(_k)[_c] : _c;
+                _tempTable[key][[_k]] = inGameCycles ? Cycles.getInGameCycle(_k)[_c] : _c;
             });
         });
 
-        console.table(tempTable);
+        if (toPrint) {
+            $('body').empty();
+            var cols = [];
+            for (var k in _tempTable) {
+                for (var c in _tempTable[k]) {
+                    if (cols.indexOf(c) === -1) cols.push(c);
+                }
+            }
+            var html = '<table class="cycle-table"><thead><tr><th></th>' +
+                cols.map(function (c) { return '<th>' + c + '</th>' }).join('') +
+                '</tr></thead><tbody>';
+            for (var l in _tempTable) {
+                html += '<tr><th>' + l + '</th>' + cols.map(function (c) { return '<td bgcolor="' + Cycles.getCycleColor(_tempTable[l][c]) + '">' + (_tempTable[l][c] || '') + '</td>' }).join('') + '</tr>';
+            }
+            html += '</tbody></table>';
+            $('body').append(html);
+        }
+        else {
+            console.table(_tempTable);
+        }
     }
 }
 
