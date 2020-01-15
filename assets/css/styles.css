@@ -52,7 +52,14 @@ p {
 input, textarea, select, .btn {
     outline: none;
 }
-
+.cycle-table {
+    color: white;
+    background: black;
+}
+.cycle-table td, .cycle-table th {
+    padding: 2px;
+    border: 1px solid black;
+}
 #main-header {
     display: flex;
     margin: 0 10px 10px 10px;

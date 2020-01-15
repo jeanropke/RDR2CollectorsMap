@@ -11,6 +11,7 @@ english (en-en.json)
   - sporb
   - Senexis
   - Kaffe97
+  - yeradd12
 
 german (de-de.json)
   - flameango
@@ -34,6 +35,7 @@ korean (ko.json)
   
 polish (pl.json)
   - githb123
+  - yeradd12
   
 brazilian (pt-br.json)
   - jeanropke
