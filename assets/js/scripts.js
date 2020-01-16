@@ -149,6 +149,10 @@ function init() {
   changeCursor();
 }
 
+function isLocalHost() {
+   return location.hostname === "localhost" || location.hostname === "127.0.0.1";
+}
+
 function setMapBackground(mapIndex) {
   switch (parseInt(mapIndex)) {
     default:
