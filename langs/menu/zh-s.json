@@ -165,7 +165,7 @@
 	{"key": "alerts.feature_not_supported", "value": "您的浏览器不支持此功能。"},
 	{"key": "menu.enable_inventory_menu_update", "value": "切换菜单选项更新数量"},
 	{"key": "menu.reset_button_updates_inventory", "value": "收藏品重置更新数量"},
-	{"key": "map.same_cycle_yesterday", "value": "如果这个“随机地点收藏品”与昨日周期重复。在这种情况下，重新生成收藏品会需要24小时。"},
+	{"key": "map.same_cycle_yesterday", "value": "如果这个“收藏品”与昨日周期重复。在这种情况下，重新生成收藏品会需要24小时。言简意赅：昨天塔罗牌是天1，今天还是天1，那么从你昨天拿的那一刻起需要24小时今天才能拿"},
 	{"key": "menu.loot_table.category_arrowheads", "value": "箭头"},
 	{"key": "menu.loot_table.category_arrowheads_common", "value": "箭头 (普通)"},
 	{"key": "menu.loot_table.category_arrowheads_uncommon", "value": "箭头 (Uncommon)"},
