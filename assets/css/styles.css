@@ -324,8 +324,21 @@ input, textarea, select, .btn {
     text-decoration: none;
 }
 
-.links-container a:hover {
-    text-decoration: underline;
+.links-container button {
+    background-color: #383838;
+    color: #eee;
+    text-decoration: none;
+    width: 165px;
+    border-radius: 5px;
+    padding: 4px 12px;
+    border: 1px solid #999;
+    font-size: 14px;
+}
+
+.links-container button:hover {
+    background-color: #444;
+    color: #eee;
+    text-decoration: none;
 }
 
 .settings-container {
@@ -379,9 +392,10 @@ input, textarea, select, .btn {
 
 .btn-default {
     background-color: #383838;
-    min-width: 32%;
+    min-width: 40%;
     font-weight: 500;
     color: #fff;
+    border: 1px solid #999;
 }
 
 .input-day {

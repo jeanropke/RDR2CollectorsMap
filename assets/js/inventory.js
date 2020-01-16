@@ -17,8 +17,8 @@ var Inventory = {
     }
 
     if (typeof $.cookie('reset-updates-inventory-enabled') === 'undefined') {
-      Inventory.resetButtonUpdatesInventory = true;
-      $.cookie('reset-updates-inventory-enabled', '1', { expires: 999 });
+      Inventory.resetButtonUpdatesInventory = false;
+      $.cookie('reset-updates-inventory-enabled', '0', { expires: 999 });
     }
 
     $('#enable-inventory').prop("checked", Inventory.isEnabled);
