@@ -72,7 +72,7 @@
 
 	{"key": "cups_four.name", "value": "Czwórka kielichów"},
 	{"key": "cups_four_1.desc", "value": "Na kominku w budynku."},
-	{"key": "cups_four_2.desc", "value": ""},
+	{"key": "cups_four_2.desc", "value": "Po zachodniej stronie białej stodoły. Na ławce."},
 	{"key": "cups_four_3.desc", "value": "Na parapecie na zewnątrz."},
 	{"key": "cups_four_4.desc", "value": "Na pudełku przy fontannie z lampą."},
 	{"key": "cups_four_5.desc", "value": "Na balkonie z tyłu biura szeryfa."},
@@ -80,7 +80,7 @@
 
 	{"key": "cups_five.name", "value": "Piątka kielichów"},
 	{"key": "cups_five_1.desc", "value": "Na stole obok wagi."},
-	{"key": "cups_five_2.desc", "value": ""},
+	{"key": "cups_five_2.desc", "value": "Wewnątrz podniszczonej chaty od strony wschodniej. Na stercie skrzyń."},
 	{"key": "cups_five_3.desc", "value": "Na dachu teatru po stronie restauracji i Atlanta Inn."},
 	{"key": "cups_five_4.desc", "value": ""},
 	{"key": "cups_five_5.desc", "value": "Na ławce po południowo-wschodniej stronie budynku. W górnej części \"T\"."},
@@ -152,7 +152,7 @@
 	
 	{"key": "cups_king.name", "value": "Król kielichów"},
 	{"key": "cups_king_1.desc", "value": "Na stole na drugim piętrze. Wejdź po schodach."},
-	{"key": "cups_king_2.desc", "value": ""},
+	{"key": "cups_king_2.desc", "value": "Wejdź po schodach znajdujących się na terenie rzeźni po pół-zach stronie. Na balustradzie."},
 	{"key": "cups_king_3.desc", "value": "W jaskini."},
 	{"key": "cups_king_4.desc", "value": "Na szafie za sofą."},
 	{"key": "cups_king_5.desc", "value": "Na półce w tylnej części stajni."},
@@ -240,7 +240,7 @@
 	
 	{"key": "swords_knight.name", "value": "Rycerz mieczy"},
 	{"key": "swords_knight_1.desc", "value": "Na górze/dachu budynku."},
-	{"key": "swords_knight_2.desc", "value": ""},
+	{"key": "swords_knight_2.desc", "value": "Na górnym piętrze tarasu. Na stoliku przy oknie."},
 	{"key": "swords_knight_3.desc", "value": "W łodzi"},
 	{"key": "swords_knight_4.desc", "value": "Na stole w szałasie."},
 	{"key": "swords_knight_5.desc", "value": "Na beczce na drugim piętrze balkonu stacji."},
@@ -301,6 +301,7 @@
 	{"key": "wands_four_4.desc", "value": ""},
 	{"key": "wands_four_5.desc", "value": "Na poręczy z tyłu budynku."},
 	{"key": "wands_four_6.desc", "value": "Na stole w altanie."},
+
 	{"key": "wands_five.name", "value": "Piątka buław"},
 	{"key": "wands_five_1.desc", "value": "Na grobie „Calvina Drapera”."},
 	{"key": "wands_five_2.desc", "value": "Na biblioteczce w kuchni."},
@@ -308,6 +309,7 @@
 	{"key": "wands_five_4.desc", "value": ""},
 	{"key": "wands_five_5.desc", "value": "Obok drzewa ... Karta unosi się w powietrzu.. "},
 	{"key": "wands_five_6.desc", "value": "Na półce magazynowej w budynku."},
+
 	{"key": "wands_six.name", "value": "Szóstka buław"},
 	{"key": "wands_six_1.desc", "value": "Na zewnątrz na skrzyni."},
 	{"key": "wands_six_2.desc", "value": "W budynku na półce po prawej od kominka."},
@@ -315,6 +317,7 @@
 	{"key": "wands_six_4.desc", "value": ""},
 	{"key": "wands_six_5.desc", "value": "Po północnej stronie dużej altany."},
 	{"key": "wands_six_6.desc", "value": "Na skrzyni przy torze dla wózków."},
+
 	{"key": "wands_seven.name", "value": "Siódemka buław"},
 	{"key": "wands_seven_1.desc", "value": "Na nagrobku."},
 	{"key": "wands_seven_2.desc", "value": "Na stole na ganku."},
@@ -322,6 +325,7 @@
 	{"key": "wands_seven_4.desc", "value": ""},
 	{"key": "wands_seven_5.desc", "value": "Na stole na werandzie chaty pustelnika."},
 	{"key": "wands_seven_6.desc", "value": "Na stole bezpośrednio po prawej stronie, gdy wchodzisz do chaty."},
+
 	{"key": "wands_eight.name", "value": "Ósemka buław"},
 	{"key": "wands_eight_1.desc", "value": "Na półce po płd stronie saloonu."},
 	{"key": "wands_eight_2.desc", "value": "Na beczce na górnym piętrze stodoły"},
@@ -329,6 +333,7 @@
 	{"key": "wands_eight_4.desc", "value": "Na deskach przy stacji kolejowej."},
 	{"key": "wands_eight_5.desc", "value": "Na kilku skrzyniach obok budy."},
 	{"key": "wands_eight_6.desc", "value": "Wewnątrz zrujnowanego wychodka."},
+	
 	{"key": "wands_nine.name", "value": "Dziewiątka buław"},
 	{"key": "wands_nine_1.desc", "value": "W kopalni."},
 	{"key": "wands_nine_2.desc", "value": "W kopalni na beczce obok latarni."},
@@ -336,13 +341,15 @@
 	{"key": "wands_nine_4.desc", "value": ""},
 	{"key": "wands_nine_5.desc", "value": "W domu na stole obiadowym."},
 	{"key": "wands_nine_6.desc", "value": "Na pierwszym piętrze kościoła na parapecie rozwalonego okna."},
+
 	{"key": "wands_ten.name", "value": "Dziesiątka buław"},
 	{"key": "wands_ten_1.desc", "value": "Na płaskim wzniesieniu przy dwóch drzewach."},
-	{"key": "wands_ten_2.desc", "value": ""},
+	{"key": "wands_ten_2.desc", "value": "Na ławce na końcu zerwanego pomostu."},
 	{"key": "wands_ten_3.desc", "value": "Na zepsutym wozie."},
 	{"key": "wands_ten_4.desc", "value": "Na ławce na ganku."},
 	{"key": "wands_ten_5.desc", "value": "Na beczce w zrujnowanym domu."},
 	{"key": "wands_ten_6.desc", "value": "Na biurku z maszyną do pisania w północno-wschodnim rogu budynku."},
+
 	{"key": "wands_knight.name", "value": "Rycerz buław"},
 	{"key": "wands_knight_1.desc", "value": "W tyle chaty po prawej stronie od lady."},
 	{"key": "wands_knight_2.desc", "value": "W mauzoleum. Wejście od północnej strony."},
@@ -350,6 +357,7 @@
 	{"key": "wands_knight_4.desc", "value": "Na lewo od wypchanego jelenia na parterze."},
 	{"key": "wands_knight_5.desc", "value": "Na balustradzie na szczycie wieży, wespnij się po drabinach."},
 	{"key": "wands_knight_6.desc", "value": "Na poręczy tylnego ganku."},
+
 	{"key": "wands_page.name", "value": "Giermek buław"},
 	{"key": "wands_page_1.desc", "value": "W piwnicy na skrzyniach."},
 	{"key": "wands_page_2.desc", "value": "Na regale bok drzwi."},
@@ -357,6 +365,7 @@
 	{"key": "wands_page_4.desc", "value": "Na stole na łodzi."},
 	{"key": "wands_page_5.desc", "value": "W wychodku."},
 	{"key": "wands_page_6.desc", "value": "Pod łóżkiem w chacie."},
+
 	{"key": "wands_queen.name", "value": "Dama buław"},
 	{"key": "wands_queen_1.desc", "value": "Na beczce na łodzi."},
 	{"key": "wands_queen_2.desc", "value": "W domu na stole do wypychania. Trzeba się wspiąć do górnego okna."},
@@ -364,6 +373,7 @@
 	{"key": "wands_queen_4.desc", "value": ""},
 	{"key": "wands_queen_5.desc", "value": "Na parapecie stajni."},
 	{"key": "wands_queen_6.desc", "value": "Na skrzyni tuż pod torami."},
+	
 	{"key": "wands_king.name", "value": "Król buław"},
 	{"key": "wands_king_1.desc", "value": "Na wozie."},
 	{"key": "wands_king_2.desc", "value": "W jaskini."},
@@ -371,6 +381,7 @@
 	{"key": "wands_king_4.desc", "value": ""},
 	{"key": "wands_king_5.desc", "value": "Na krześle przed kominkiem."},
 	{"key": "wands_king_6.desc", "value": "Na zepsutej pułapce z boku domu."},
+	
 	{"key": "pentacles_ace.name", "value": "As monet"},
 	{"key": "pentacles_ace_1.desc", "value": "W szopie na półce."},
 	{"key": "pentacles_ace_2.desc", "value": "Na stole obok wagi."},
@@ -378,6 +389,7 @@
 	{"key": "pentacles_ace_4.desc", "value": ""},
 	{"key": "pentacles_ace_5.desc", "value": "Na beczce w małym śmietniku."},
 	{"key": "pentacles_ace_6.desc", "value": "Na stole na ganku rezydencji."},
+
 	{"key": "pentacles_two.name", "value": "Dwójka monet"},
 	{"key": "pentacles_two_1.desc", "value": "W trumnie przy masowym grobie."},
 	{"key": "pentacles_two_2.desc", "value": ""},
@@ -385,6 +397,7 @@
 	{"key": "pentacles_two_4.desc", "value": ""},
 	{"key": "pentacles_two_5.desc", "value": "Na stole w stodole."},
 	{"key": "pentacles_two_6.desc", "value": "Na beczkach z tyłu stajni."},
+
 	{"key": "pentacles_three.name", "value": "Trójka monet"},
 	{"key": "pentacles_three_1.desc", "value": "Za pocztą na poręczy na górze na końcu schodów."},
 	{"key": "pentacles_three_2.desc", "value": "Na większym stole z tyłu."},
@@ -392,20 +405,23 @@
 	{"key": "pentacles_three_4.desc", "value": "W domu na pianinie."},
 	{"key": "pentacles_three_5.desc", "value": "Na parapecie na pierwszym piętrze stodoły."},
 	{"key": "pentacles_three_6.desc", "value": "Na półce bezpośrednio po lewej stronie drzwi."},
+
 	{"key": "pentacles_four.name", "value": "Czwórka monet"},
 	{"key": "pentacles_four_1.desc", "value": "Na studni. Uwaga na niedźwiedzie!"},
-	{"key": "pentacles_four_2.desc", "value": ""},
+	{"key": "pentacles_four_2.desc", "value": "W piwnicy, wejście przez zniszczony dom. Patrzysz w kierunku karty schodząc po drabinie."},
 	{"key": "pentacles_four_3.desc", "value": "Na kamiennej ławce."},
 	{"key": "pentacles_four_4.desc", "value": ""},
 	{"key": "pentacles_four_5.desc", "value": "Z tyłu łodzi ustawionej burtą do brzegu."},
 	{"key": "pentacles_four_6.desc", "value": "Na pniu drzewa po zachodniej stronie domu."},
+
 	{"key": "pentacles_five.name", "value": "Piątka monet"},
 	{"key": "pentacles_five_1.desc", "value": "W domu na biurku pod oknem."},
-	{"key": "pentacles_five_2.desc", "value": ""},
+	{"key": "pentacles_five_2.desc", "value": "W podniszczonej stodole. Wchodząc bezspośrednio na skos, na skrzyni."},
 	{"key": "pentacles_five_3.desc", "value": "Na oknie przy beczkach."},
 	{"key": "pentacles_five_4.desc", "value": "Na stole w domu."},
 	{"key": "pentacles_five_5.desc", "value": "Na parapecie stodoły, (czasami) obok bimbru."},
 	{"key": "pentacles_five_6.desc", "value": "Wewnątrz domu na kominku."},
+	
 	{"key": "pentacles_six.name", "value": "Szóstka monet"},
 	{"key": "pentacles_six_1.desc", "value": "Na pierwszym piętrze na biurku."},
 	{"key": "pentacles_six_2.desc", "value": "Na wozie z tyłu."},
@@ -413,6 +429,7 @@
 	{"key": "pentacles_six_4.desc", "value": "Na stole w domu."},
 	{"key": "pentacles_six_5.desc", "value": "Z tyłu wozu."},
 	{"key": "pentacles_six_6.desc", "value": "Na stole piknikowym przy budynku po drugiej stronie dróżki biegnącej obok."},
+	
 	{"key": "pentacles_seven.name", "value": "Siódemka monet"},
 	{"key": "pentacles_seven_1.desc", "value": "Na niebieskiej beczce."},
 	{"key": "pentacles_seven_2.desc", "value": "W alejce na dwóch skrzyniach."},
@@ -420,6 +437,7 @@
 	{"key": "pentacles_seven_4.desc", "value": "Na skrzyniach w alejce."},
 	{"key": "pentacles_seven_5.desc", "value": "Na parapecie na pierwszym piętrze stodoły."},
 	{"key": "pentacles_seven_6.desc", "value": "Na balustradzie na najwyższym piętrze przy podwójnych drzwiach saloonu."},
+	
 	{"key": "pentacles_eight.name", "value": "Ósemka monet"},
 	{"key": "pentacles_eight_1.desc", "value": "W domu na parapecie w sypialni."},
 	{"key": "pentacles_eight_2.desc", "value": "Na beczce."},
@@ -427,6 +445,7 @@
 	{"key": "pentacles_eight_4.desc", "value": "Wewnątrz fabryki na poręczy z latarnią."},
 	{"key": "pentacles_eight_5.desc", "value": "Na ławce na pomoście przy jeziorze."},
 	{"key": "pentacles_eight_6.desc", "value": "Na stole na ganku."},
+	
 	{"key": "pentacles_nine.name", "value": "Dziewiątka monet"},
 	{"key": "pentacles_nine_1.desc", "value": "Na półce w magazynie/spiżarni."},
 	{"key": "pentacles_nine_2.desc", "value": "W domu na stole."},
@@ -434,6 +453,7 @@
 	{"key": "pentacles_nine_4.desc", "value": "W domu na stole roboczym."},
 	{"key": "pentacles_nine_5.desc", "value": "Na stole piknikowym."},
 	{"key": "pentacles_nine_6.desc", "value": "Na ławce na zewnątrz domu."},
+	
 	{"key": "pentacles_ten.name", "value": "Dziesiątka monet"},
 	{"key": "pentacles_ten_1.desc", "value": "Na parapecie. Wejdź po drabinie."},
 	{"key": "pentacles_ten_2.desc", "value": "Na skrzyni na środku w zniszczonym domu."},
@@ -441,6 +461,7 @@
 	{"key": "pentacles_ten_4.desc", "value": "Wewnątrz przewróconego pudła w domu."},
 	{"key": "pentacles_ten_5.desc", "value": "Na ławce przy wejściu do kościoła."},
 	{"key": "pentacles_ten_6.desc", "value": "Na zewnątrz domu na ławce obok poręczy."},
+	
 	{"key": "pentacles_knight.name", "value": "Rycerz monet"},
 	{"key": "pentacles_knight_1.desc", "value": "Na skrzyni na ganku."},
 	{"key": "pentacles_knight_2.desc", "value": "W płd części zacumowanej łodzi."},
@@ -448,13 +469,15 @@
 	{"key": "pentacles_knight_4.desc", "value": "Na filarze podtrzymującym most."},
 	{"key": "pentacles_knight_5.desc", "value": "Na jednej z dwóch beczek obok stajni."},
 	{"key": "pentacles_knight_6.desc", "value": "Wewnątrz domu na stole z lampą nad nim."},
+
 	{"key": "pentacles_page.name", "value": "Giermek monet"},
 	{"key": "pentacles_page_1.desc", "value": "Na kamiennym stole na środku grobu Wikingów."},
-	{"key": "pentacles_page_2.desc", "value": "W ruinach domu."},
+	{"key": "pentacles_page_2.desc", "value": "W wychodku przy spalonym mieście."},
 	{"key": "pentacles_page_3.desc", "value": ""},
 	{"key": "pentacles_page_4.desc", "value": ""},
 	{"key": "pentacles_page_5.desc", "value": "Na beczce w doku."},
 	{"key": "pentacles_page_6.desc", "value": "Z tyłu wozu w lesie."},
+
 	{"key": "pentacles_queen.name", "value": "Dama monet"},
 	{"key": "pentacles_queen_1.desc", "value": "W więzieniu na ławce między celami."},
 	{"key": "pentacles_queen_2.desc", "value": "W środku na małym stole przy wejściu. Uwaga na pumy!"},
@@ -462,6 +485,7 @@
 	{"key": "pentacles_queen_4.desc", "value": "Na deskach na rusztowaniu"},
 	{"key": "pentacles_queen_5.desc", "value": "Wewnątrz chaty."},
 	{"key": "pentacles_queen_6.desc", "value": "Na balustradzie drugiego piętra platformy na placu budowy. Wejdź po drewnianym płocie."},
+
 	{"key": "pentacles_king.name", "value": "Król monet"},
 	{"key": "pentacles_king_1.desc", "value": "W budynku na małym żółtym stoliku nocnym po prawej."},
 	{"key": "pentacles_king_2.desc", "value": "Na beczce obok szopy."},
@@ -469,13 +493,15 @@
 	{"key": "pentacles_king_4.desc", "value": ""},
 	{"key": "pentacles_king_5.desc", "value": "Na ławce na ganku."},
 	{"key": "pentacles_king_6.desc", "value": "Na zewnątrz stodoły na stole z czaszkami."},
+
 	{"key": "coin_gold_quarter.name", "value": "Złota ćwierćdolarówka z 1800 r."},
 	{"key": "coin_gold_quarter_1.desc", "value": "Przy drzewie przy kałuży."},
 	{"key": "coin_gold_quarter_2.desc", "value": "Między skałą a przewróconym drzewem."},
 	{"key": "coin_gold_quarter_3.desc", "value": "Pod drzewem na klifie."},
 	{"key": "coin_gold_quarter_4.desc", "value": ""},
 	{"key": "coin_gold_quarter_5.desc", "value": "Pod mostem."},
-	{"key": "coin_gold_quarter_6.desc", "value": "Z tyłu wychodka."},
+	{"key": "coin_gold_quarter_6.desc", "value": "Za wychodkiem."},
+
 	{"key": "coin_draped_bust_silver_dollar.name", "value": "Srebrny dolar z popiersiem z 1798 r."},
 	{"key": "coin_draped_bust_silver_dollar_1.desc", "value": "Na linii brzegowej obok nory bobra."},
 	{"key": "coin_draped_bust_silver_dollar_2.desc", "value": "Za skałą z kaktusami wokoło."},
@@ -483,6 +509,7 @@
 	{"key": "coin_draped_bust_silver_dollar_4.desc", "value": ""},
 	{"key": "coin_draped_bust_silver_dollar_5.desc", "value": "U podstawy najbardziej wysuniętego na południe nie pochylonego spalonego drzewa."},
 	{"key": "coin_draped_bust_silver_dollar_6.desc", "value": "Obok stos gruzu i kilku beczek."},
+
 	{"key": "coin_one_cent_token.name", "value": "Cent z 1787 r."},
 	{"key": "coin_one_cent_token_1.desc", "value": "Obok drzewa na wschodzie."},
 	{"key": "coin_one_cent_token_2.desc", "value": "Obok skrzyń przy drzewie."},
@@ -490,6 +517,7 @@
 	{"key": "coin_one_cent_token_4.desc", "value": ""},
 	{"key": "coin_one_cent_token_5.desc", "value": "Pod wiszącym praniem."},
 	{"key": "coin_one_cent_token_6.desc", "value": "Przy zniszczonym wozie."},
+
 	{"key": "coin_silver_dollar.name", "value": "Srebrny dolar z 1794 r."},
 	{"key": "coin_silver_dollar_1.desc", "value": "Obok kominka."},
 	{"key": "coin_silver_dollar_2.desc", "value": "Pod domem."},
@@ -497,6 +525,7 @@
 	{"key": "coin_silver_dollar_4.desc", "value": "Przy dużej skale, przy której zaczyna się wodospad."},
 	{"key": "coin_silver_dollar_5.desc", "value": "Między zaczepem do koni, a deską na ziemi z tyłu głównego domu."},
 	{"key": "coin_silver_dollar_6.desc", "value": "Przy powalonym martwym drzewie."},
+
 	{"key": "coin_new_yorke_token.name", "value": "Moneta New Yorke z 1700 r."},
 	{"key": "coin_new_yorke_token_1.desc", "value": "W jaskini."},
 	{"key": "coin_new_yorke_token_2.desc", "value": "Obok dwóch drzew."},
@@ -504,6 +533,7 @@
 	{"key": "coin_new_yorke_token_4.desc", "value": ""},
 	{"key": "coin_new_yorke_token_5.desc", "value": "Pod kamiennym mostem."},
 	{"key": "coin_new_yorke_token_6.desc", "value": "Przed pierwszym półpiętrem schodów."},
+	
 	{"key": "coin_five_dollar_bechtler.name", "value": "Pięciodolarówka Bechtler z 1800 r."},
 	{"key": "coin_five_dollar_bechtler_1.desc", "value": "Przy pniu uschniętego drzewa obok dwóch powalonych drzew."},
 	{"key": "coin_five_dollar_bechtler_2.desc", "value": "Pod torami."},
@@ -511,6 +541,7 @@
 	{"key": "coin_five_dollar_bechtler_4.desc", "value": ""},
 	{"key": "coin_five_dollar_bechtler_5.desc", "value": "Wewnątrz drewnianej bariery osuwiskowej, wejdź od zbocza góry."},
 	{"key": "coin_five_dollar_bechtler_6.desc", "value": "Z tyłu zostawionego wozu."},
+	
 	{"key": "coin_quarter.name", "value": "Ćwierćdolarówka z 1792 r."},
 	{"key": "coin_quarter_1.desc", "value": "Przy pniu drzewa."},
 	{"key": "coin_quarter_2.desc", "value": "Przy uschniętym drzewie po północnej stronie."},
@@ -518,6 +549,7 @@
 	{"key": "coin_quarter_4.desc", "value": ""},
 	{"key": "coin_quarter_5.desc", "value": "Przed głównym wejściem do chaty."},
 	{"key": "coin_quarter_6.desc", "value": "Za znakami na poboczu drogi."},
+	
 	{"key": "coin_gold_dollar_coin.name", "value": "Złoty dolar z 1800 r."},
 	{"key": "coin_gold_dollar_coin_1.desc", "value": "Przy uschniętym drzewie."},
 	{"key": "coin_gold_dollar_coin_2.desc", "value": "W jaskini pod wiszącą latarnią."},
@@ -525,6 +557,7 @@
 	{"key": "coin_gold_dollar_coin_4.desc", "value": ""},
 	{"key": "coin_gold_dollar_coin_5.desc", "value": "Między dwiema skałami na środku rzeki (brzeg wyspy)."},
 	{"key": "coin_gold_dollar_coin_6.desc", "value": "Na dnie dziury. Przedmiot jest obecnie zbugowany i daje monetę New Yorke z 1700 r."},
+	
 	{"key": "coin_nickel_coin.name", "value": "Pięciocentówka z 1792 r."},
 	{"key": "coin_nickel_coin_1.desc", "value": "Na cmentarzu przy nagrobku."},
 	{"key": "coin_nickel_coin_2.desc", "value": "W stodole przy belach siana."},
@@ -532,6 +565,7 @@
 	{"key": "coin_nickel_coin_4.desc", "value": ""},
 	{"key": "coin_nickel_coin_5.desc", "value": "Obok dużego drzewa."},
 	{"key": "coin_nickel_coin_6.desc", "value": "Obok rozbitej maszyny latającej."},
+	
 	{"key": "coin_halfpenny.name", "value": "Pół pensa z 1796 r."},
 	{"key": "coin_halfpenny_1.desc", "value": "Przy wieży."},
 	{"key": "coin_halfpenny_2.desc", "value": "Za chatą między skałą a drzewem."},
@@ -539,6 +573,7 @@
 	{"key": "coin_halfpenny_4.desc", "value": ""},
 	{"key": "coin_halfpenny_5.desc", "value": "Po północno-wschodniej stronie drewnianej chaty z destylatorem bimbru."},
 	{"key": "coin_halfpenny_6.desc", "value": "Obok nowo wyglądającej trumny w masowym grobie."},
+	
 	{"key": "coin_half_eagle.name", "value": "Pięciodolarówka z orłem z 1795 r."},
 	{"key": "coin_half_eagle_1.desc", "value": "Na półce prawie na szczycie klifu."},
 	{"key": "coin_half_eagle_2.desc", "value": "Pod linką na pranie."},
@@ -546,6 +581,7 @@
 	{"key": "coin_half_eagle_4.desc", "value": ""},
 	{"key": "coin_half_eagle_5.desc", "value": "Pomiędzy dwoma skałami."},
 	{"key": "coin_half_eagle_6.desc", "value": "U podstawy drzewa."},
+	
 	{"key": "coin_gold_eagle.name", "value": "Dziesięciodolarówka z orłem z 1797 r."},
 	{"key": "coin_gold_eagle_1.desc", "value": "Na brzegu przy dwóch drzewach."},
 	{"key": "coin_gold_eagle_2.desc", "value": "W studni."},
@@ -553,6 +589,7 @@
 	{"key": "coin_gold_eagle_4.desc", "value": ""},
 	{"key": "coin_gold_eagle_5.desc", "value": "Pod linką na pranie."},
 	{"key": "coin_gold_eagle_6.desc", "value": "Pod chatą na palach."},
+	
 	{"key": "coin_liberty_quarter.name", "value": "Ćwierćdolarówka Liberty z 1792 r."},
 	{"key": "coin_liberty_quarter_1.desc", "value": "Na końcu ścieżki obok zerwanego mostu."},
 	{"key": "coin_liberty_quarter_2.desc", "value": "Przed dużą skałą."},
@@ -560,6 +597,7 @@
 	{"key": "coin_liberty_quarter_4.desc", "value": ""},
 	{"key": "coin_liberty_quarter_5.desc", "value": "Obok pnia drzewa przy drodze."},
 	{"key": "coin_liberty_quarter_6.desc", "value": "W pobliżu wschodniego rogu zrujnowanego domu przy zawalonej ścianie."},
+	
 	{"key": "coin_half_dime.name", "value": "Pięciocentówka z 1800 r."},
 	{"key": "coin_half_dime_1.desc", "value": "Na brzegu rzeki obok kwiatów lawendy."},
 	{"key": "coin_half_dime_2.desc", "value": "Pod torami w małej wnęce (nie w dużej)."},
@@ -567,6 +605,7 @@
 	{"key": "coin_half_dime_4.desc", "value": ""},
 	{"key": "coin_half_dime_5.desc", "value": "Obok zepsutego wozu obok ogrodzenia po wschodniej stronie nieruchomości."},
 	{"key": "coin_half_dime_6.desc", "value": "Wewnątrz tunelu obok linii kolejowej."},
+	
 	{"key": "coin_penny.name", "value": "Pens z 1789 r."},
 	{"key": "coin_penny_1.desc", "value": "Obok drzewa na środku półwyspu."},
 	{"key": "coin_penny_2.desc", "value": "Po prawej stronie obok uschniętego drzewa."},
@@ -574,6 +613,7 @@
 	{"key": "coin_penny_4.desc", "value": ""},
 	{"key": "coin_penny_5.desc", "value": "W stodole obok koła wozu."},
 	{"key": "coin_penny_6.desc", "value": "U podstawy dużego drzewa (po wschodniej stronie)."},
+	
 	{"key": "bottle_tennesee_whiskey.name", "value": "Tennesee Whiskey"},
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": "Na stole w środku."},
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": "W szafce z tyłu po prawej."},
@@ -581,6 +621,7 @@
 	{"key": "bottle_tennesee_whiskey_4.desc", "value": "Na skrzyni na środku tunelu."},
 	{"key": "bottle_tennesee_whiskey_5.desc", "value": ""},
 	{"key": "bottle_tennesee_whiskey_6.desc", "value": "Na półce pod barem w salonie."},
+	
 	{"key": "bottle_irish_whiskey.name", "value": "Irlandzka Whiskey"},
 	{"key": "bottle_irish_whiskey_1.desc", "value": "U góry. Wejdź po drabinie, przeskocz przez poręcz, podejdź kawałek, przeskocz przez poręcz, pójdź za róg. Przy ostatnich drzwiach."},
 	{"key": "bottle_irish_whiskey_2.desc", "value": ""},
@@ -588,6 +629,7 @@
 	{"key": "bottle_irish_whiskey_4.desc", "value": "Pod opuszczonym wozem."},
 	{"key": "bottle_irish_whiskey_5.desc", "value": ""},
 	{"key": "bottle_irish_whiskey_6.desc", "value": "W zepsutej łodzi obok szkieletu."},
+	
 	{"key": "bottle_scotch_whisky.name", "value": "Szkocka Whisky"},
 	{"key": "bottle_scotch_whisky_1.desc", "value": "Na stole po prawej zaraz przy wejściu."},
 	{"key": "bottle_scotch_whisky_2.desc", "value": ""},
@@ -595,6 +637,7 @@
 	{"key": "bottle_scotch_whisky_4.desc", "value": "Obok kominka zrujnowanego budynku."},
 	{"key": "bottle_scotch_whisky_5.desc", "value": ""},
 	{"key": "bottle_scotch_whisky_6.desc", "value": "Na skrzyni na zewnątrz."},
+	
 	{"key": "bottle_absinthe.name", "value": "Absynt"},
 	{"key": "bottle_absinthe_1.desc", "value": "Na spalonym wozie."},
 	{"key": "bottle_absinthe_2.desc", "value": "W mauzoleum. Wejście od zachodu."},
@@ -602,6 +645,7 @@
 	{"key": "bottle_absinthe_4.desc", "value": "Na szczycie wieży Wardenclyffa obok rozdzielnicy."},
 	{"key": "bottle_absinthe_5.desc", "value": ""},
 	{"key": "bottle_absinthe_6.desc", "value": "W piwnicy na półce."},
+	
 	{"key": "bottle_gran_corazon_madeira.name", "value": "Gran Corazon Madeira"},
 	{"key": "bottle_gran_corazon_madeira_1.desc", "value": "Na skrzyni przed namiotem rzeźnika."},
 	{"key": "bottle_gran_corazon_madeira_2.desc", "value": "Na tyle zepsutego wozu."},
@@ -609,6 +653,7 @@
 	{"key": "bottle_gran_corazon_madeira_4.desc", "value": "W szafce zlewowej na dolnym piętrze."},
 	{"key": "bottle_gran_corazon_madeira_5.desc", "value": "Za barem pod beczką piwa."},
 	{"key": "bottle_gran_corazon_madeira_6.desc", "value": "Beczka obok wodospadu."},
+	
 	{"key": "bottle_old_tom_gin.name", "value": "Gin Old Tom"},
 	{"key": "bottle_old_tom_gin_1.desc", "value": "Po zachodniej stronie domu na zepsutej werandzie."},
 	{"key": "bottle_old_tom_gin_2.desc", "value": ""},
@@ -616,6 +661,7 @@
 	{"key": "bottle_old_tom_gin_4.desc", "value": "W chacie na skrzyni."},
 	{"key": "bottle_old_tom_gin_5.desc", "value": "W skrzyni między dwiema chatami."},
 	{"key": "bottle_old_tom_gin_6.desc", "value": "Na moście kolejowym."},
+	
 	{"key": "bottle_caribbean_rum.name", "value": "Rum Karaibski"},
 	{"key": "bottle_caribbean_rum_1.desc", "value": "W szafce przy drzwiach."},
 	{"key": "bottle_caribbean_rum_2.desc", "value": "Przed namiotem bez oświetlenia."},
@@ -623,6 +669,7 @@
 	{"key": "bottle_caribbean_rum_4.desc", "value": "W najbardziej wysuniętym na lewo namiocie roboczym na beczce z tyłu."},
 	{"key": "bottle_caribbean_rum_5.desc", "value": "Na szczycie platformy widokowej z widokiem na oczko."},
 	{"key": "bottle_caribbean_rum_6.desc", "value": "Na małym stoliku na górnym pokładzie łodzi."},
+	
 	{"key": "bottle_cognac_bottle.name", "value": "Koniak"},
 	{"key": "bottle_cognac_bottle_1.desc", "value": "Wskocz na wóz, potem na daszek i wejdź przez okno. W szafce po prawej zaraz jak wskoczysz do środka. "},
 	{"key": "bottle_cognac_bottle_2.desc", "value": "W przewróconej metalowej beczce."},
@@ -630,6 +677,7 @@
 	{"key": "bottle_cognac_bottle_4.desc", "value": "W szafce zlewowej."},
 	{"key": "bottle_cognac_bottle_5.desc", "value": "Na górze kominka po stronie sypialni."},
 	{"key": "bottle_cognac_bottle_6.desc", "value": "Na półce na poddaszu budynku wskocz na pobliski chodnik, aby do niego dotrzeć."},
+	
 	{"key": "bottle_london_dry_gin.name", "value": "London Dry Gin"},
 	{"key": "bottle_london_dry_gin_1.desc", "value": "Na parterze na stole."},
 	{"key": "bottle_london_dry_gin_2.desc", "value": "W drzewie."},
@@ -637,6 +685,7 @@
 	{"key": "bottle_london_dry_gin_4.desc", "value": "Na szczycie żółtego wiatraka wspinaj się po drabinach."},
 	{"key": "bottle_london_dry_gin_5.desc", "value": "W północno-zachodnim rogu wagonu ze ścianami."},
 	{"key": "bottle_london_dry_gin_6.desc", "value": "W szafce w rogu."},
+	
 	{"key": "arrowhead_rough.name", "value": "Toporny grot"},
 	{"key": "arrowhead_rough_1.desc", "value": "Obok skał pod drzewem."},
 	{"key": "arrowhead_rough_2.desc", "value": "Po zachodniej stronie dużej skały."},
@@ -644,6 +693,7 @@
 	{"key": "arrowhead_rough_4.desc", "value": "Obok drzewa na linii brzegowej."},
 	{"key": "arrowhead_rough_5.desc", "value": "Na dole klifu obok kaktusa."},
 	{"key": "arrowhead_rough_6.desc", "value": "Między dwoma kaktusami."},
+	
 	{"key": "arrowhead_splintered.name", "value": "Rozszczepiony grot"},
 	{"key": "arrowhead_splintered_1.desc", "value": "Obok zniszczonego tipi."},
 	{"key": "arrowhead_splintered_2.desc", "value": "Pod uschniętym drzewem."},
@@ -651,6 +701,7 @@
 	{"key": "arrowhead_splintered_4.desc", "value": "Po północnej stronie powalonego pnia."},
 	{"key": "arrowhead_splintered_5.desc", "value": "U podstawy drzewa."},
 	{"key": "arrowhead_splintered_6.desc", "value": "Wewnątrz jaskini obok półki skalnej. Nie spadnij."},
+	
 	{"key": "arrowhead_crude.name", "value": "Prymitywny grot"},
 	{"key": "arrowhead_crude_1.desc", "value": "Obok ściętego pnia."},
 	{"key": "arrowhead_crude_2.desc", "value": "Między trzema drzewami po południowej stronie domu."},
@@ -658,6 +709,7 @@
 	{"key": "arrowhead_crude_4.desc", "value": "Na końcu toru wózkowego."},
 	{"key": "arrowhead_crude_5.desc", "value": "U podstawy drzewa."},
 	{"key": "arrowhead_crude_6.desc", "value": "Między kilkoma kamieniami i kłodą na brzegu."},
+	
 	{"key": "arrowhead_chipped.name", "value": "Ułamany grot"},
 	{"key": "arrowhead_chipped_1.desc", "value": "Na górze klifu."},
 	{"key": "arrowhead_chipped_2.desc", "value": ""},
@@ -665,6 +717,7 @@
 	{"key": "arrowhead_chipped_4.desc", "value": "U podstawy dużego drzewa."},
 	{"key": "arrowhead_chipped_5.desc", "value": "U podstawy martwego drzewa na poboczu drogi."},
 	{"key": "arrowhead_chipped_6.desc", "value": "Obok małego drzewa przy ścianie klifu."},
+	
 	{"key": "arrowhead_feldspar.name", "value": "Skaleniowy grot"},
 	{"key": "arrowhead_feldspar_1.desc", "value": "W środku \"kręgu\" ze skał."},
 	{"key": "arrowhead_feldspar_2.desc", "value": "Przy drzewie na szczycie."},
@@ -672,6 +725,7 @@
 	{"key": "arrowhead_feldspar_4.desc", "value": "Przy rozdzielającym się martwym drzewie."},
 	{"key": "arrowhead_feldspar_5.desc", "value": "Przy rozdzielającym się martwym drzewie."},
 	{"key": "arrowhead_feldspar_6.desc", "value": "Z tyłu dużych skał w pobliżu drogi."},
+	
 	{"key": "arrowhead_slate.name", "value": "Łupkowy grot"},
 	{"key": "arrowhead_slate_1.desc", "value": "Obok powalonego drzewa."},
 	{"key": "arrowhead_slate_2.desc", "value": "W jaskini."},
@@ -679,6 +733,7 @@
 	{"key": "arrowhead_slate_4.desc", "value": "Obok martwego drzewa."},
 	{"key": "arrowhead_slate_5.desc", "value": "W połowie drogi z klifu, gdzie można dotrzeć z góry naturalną ścieżką."},
 	{"key": "arrowhead_slate_6.desc", "value": "Z tyłu wnęki po zachodniej stronie."},
+	
 	{"key": "arrowhead_bone.name", "value": "Kościany grot"},
 	{"key": "arrowhead_bone_1.desc", "value": "W rowie/okopie."},
 	{"key": "arrowhead_bone_2.desc", "value": "Na środku wyspy w pustym miejscu."},
@@ -686,6 +741,7 @@
 	{"key": "arrowhead_bone_4.desc", "value": "Przed platformą z widokiem na gospodarstwo."},
 	{"key": "arrowhead_bone_5.desc", "value": "Obok drzew na poboczu drogi."},
 	{"key": "arrowhead_bone_6.desc", "value": "Tylna część budy przy rozwalonych kołach wozu."},
+	
 	{"key": "arrowhead_raw.name", "value": "Niewykończony grot"},
 	{"key": "arrowhead_raw_1.desc", "value": "Pod drzewem z łapaczami snów."},
 	{"key": "arrowhead_raw_2.desc", "value": "Za chatami."},
@@ -693,6 +749,7 @@
 	{"key": "arrowhead_raw_4.desc", "value": "U podstawy drzewa, obok skały."},
 	{"key": "arrowhead_raw_5.desc", "value": "Na środkowej półce skalnej, można dostać się tam i ze szczytu i z dołu."},
 	{"key": "arrowhead_raw_6.desc", "value": "Obok pnia drzewa."},
+	
 	{"key": "arrowhead_obsidian.name", "value": "Obsydianowy grot"},
 	{"key": "arrowhead_obsidian_1.desc", "value": "Na środku rysunku z kredy."},
 	{"key": "arrowhead_obsidian_2.desc", "value": "Obok stracha na wróble na polu pszenicy."},
@@ -700,6 +757,7 @@
 	{"key": "arrowhead_obsidian_4.desc", "value": "Wewnątrz jaskini."},
 	{"key": "arrowhead_obsidian_5.desc", "value": "U podstawy największego drzewa."},
 	{"key": "arrowhead_obsidian_6.desc", "value": "Przy dużym drzewie z krzakami."},
+	
 	{"key": "arrowhead_quartz.name", "value": "Kwarcowy grot"},
 	{"key": "arrowhead_quartz_1.desc", "value": "Pod klifem."},
 	{"key": "arrowhead_quartz_2.desc", "value": "Między większym drzewem a skałą."},
@@ -707,6 +765,7 @@
 	{"key": "arrowhead_quartz_4.desc", "value": "Obok upadłej kłody."},
 	{"key": "arrowhead_quartz_5.desc", "value": "Obok jednego z drzew."},
 	{"key": "arrowhead_quartz_6.desc", "value": "Pod najbardziej wysuniętym na wschód drzewie w czerwonawej ziemi."},
+	
 	{"key": "arrowhead_flint.name", "value": "Krzemienny grot"},
 	{"key": "arrowhead_flint_1.desc", "value": "Na środku Fortu Brennand."},
 	{"key": "arrowhead_flint_2.desc", "value": "W niszy w połowie wysokości ściany."},
@@ -714,6 +773,7 @@
 	{"key": "arrowhead_flint_4.desc", "value": "Między głazem a małą skałą."},
 	{"key": "arrowhead_flint_5.desc", "value": "U podstawy ogromnego drzewa po północno-zachodniej stronie."},
 	{"key": "arrowhead_flint_6.desc", "value": "Wewnątrz jaskini."},
+	
 	{"key": "arrowhead_agate.name", "value": "Agatowy grot"},
 	{"key": "arrowhead_agate_1.desc", "value": "Przed uschniętym drzewem."},
 	{"key": "arrowhead_agate_2.desc", "value": "Między kołem wozu i kawałkiem pnia."},
@@ -721,6 +781,7 @@
 	{"key": "arrowhead_agate_4.desc", "value": "Obok znaku na poboczu drogi."},
 	{"key": "arrowhead_agate_5.desc", "value": "W środku zrujnowanej chaty."},
 	{"key": "arrowhead_agate_6.desc", "value": "Po północnej stronie pionowego płaskiego głazu."},
+	
 	{"key": "heirlooms_jade_hairpin.name", "value": "Jadeitowa szpilka"},
 	{"key": "heirlooms_jade_hairpin_1.desc", "value": "Na czerwonej ławce za domem."},
 	{"key": "heirlooms_jade_hairpin_2.desc", "value": "Przy grobie \"Landry\"."},
@@ -728,6 +789,7 @@
 	{"key": "heirlooms_jade_hairpin_4.desc", "value": "Na pierwszym piętrze, na kominku w pierwszym pokój po lewej stronie."},
 	{"key": "heirlooms_jade_hairpin_5.desc", "value": "Między stosem skrzyń a drewnianą konstrukcją z boku budy/szałasu."},
 	{"key": "heirlooms_jade_hairpin_6.desc", "value": ""},
+	
 	{"key": "heirlooms_cherrywood_comb.name", "value": "Grzebień z drzewa wiśniowego"},
 	{"key": "heirlooms_cherrywood_comb_1.desc", "value": "Na parterze w pokoju z tyłu w skrzyni."},
 	{"key": "heirlooms_cherrywood_comb_2.desc", "value": "Na górze w Saloonie po wschodniej stronie. Na toaletce."},
@@ -735,6 +797,7 @@
 	{"key": "heirlooms_cherrywood_comb_4.desc", "value": "Na stole na podwórku."},
 	{"key": "heirlooms_cherrywood_comb_5.desc", "value": "Na ławce na ganku."},
 	{"key": "heirlooms_cherrywood_comb_6.desc", "value": ""},
+	
 	{"key": "heirlooms_ebony_hairbrush.name", "value": "Hebanowa szczotka"},
 	{"key": "heirlooms_ebony_hairbrush_1.desc", "value": "Na parapacie na prawo od ławki po południowej stronie domu."},
 	{"key": "heirlooms_ebony_hairbrush_2.desc", "value": "Na kanapie po zachodniej stronie domu."},
@@ -742,6 +805,7 @@
 	{"key": "heirlooms_ebony_hairbrush_4.desc", "value": "Wewnątrz dużej garderoby przy łóżku."},
 	{"key": "heirlooms_ebony_hairbrush_5.desc", "value": "Na stole na werandzie."},
 	{"key": "heirlooms_ebony_hairbrush_6.desc", "value": ""},
+	
 	{"key": "heirlooms_metal_hairpin.name", "value": "Metalowa szpilka"},
 	{"key": "heirlooms_metal_hairpin_1.desc", "value": "Obok zepsutego wozu."},
 	{"key": "heirlooms_metal_hairpin_2.desc", "value": "Przy ścianie koło skrzyń."},
@@ -749,6 +813,7 @@
 	{"key": "heirlooms_metal_hairpin_4.desc", "value": "Przy zniszczonym wozie na jego boku."},
 	{"key": "heirlooms_metal_hairpin_5.desc", "value": "Po północno-zachodniej stronie zrujnowanego domu."},
 	{"key": "heirlooms_metal_hairpin_6.desc", "value": ""},
+	
 	{"key": "heirlooms_carved_wooden.name", "value": "Rzeźbiona drewniana szpilka"},
 	{"key": "heirlooms_carved_wooden_1.desc", "value": "Między chatą a płotem."},
 	{"key": "heirlooms_carved_wooden_2.desc", "value": "Przed znakiem \"Keep Out\"."},
@@ -756,6 +821,7 @@
 	{"key": "heirlooms_carved_wooden_4.desc", "value": "Na dziedzińcu po lewej stronie wejścia znajdują się dwa duże pudła."},
 	{"key": "heirlooms_carved_wooden_5.desc", "value": "Pomiędzy drewnianym fundamentem a małym wozem."},
 	{"key": "heirlooms_carved_wooden_6.desc", "value": ""},
+	
 	{"key": "heirlooms_boxwood_comb.name", "value": "Bukszpanowy grzebień"},
 	{"key": "heirlooms_boxwood_comb_1.desc", "value": "W środku w skrzyni przy łóżku od strony nóg."},
 	{"key": "heirlooms_boxwood_comb_2.desc", "value": "W domu w wysokiej garderobie."},
@@ -763,13 +829,15 @@
 	{"key": "heirlooms_boxwood_comb_4.desc", "value": "Wewnątrz skrzyni przy dużym łóżku na pierwszym piętrze."},
 	{"key": "heirlooms_boxwood_comb_5.desc", "value": "Na półce obok drzwi."},
 	{"key": "heirlooms_boxwood_comb_6.desc", "value": ""},
+	
 	{"key": "heirlooms_goat_hair_brush.name", "value": "Szczotka z koziego włosia"},
 	{"key": "heirlooms_goat_hair_brush_1.desc", "value": "U góry na kominku."},
 	{"key": "heirlooms_goat_hair_brush_2.desc", "value": "U góry na toaletce w pokoju 1."},
 	{"key": "heirlooms_goat_hair_brush_3.desc", "value": "W skrzyni na dolnym pokładzie."},
-	{"key": "heirlooms_goat_hair_brush_4.desc", "value": ""},
+	{"key": "heirlooms_goat_hair_brush_4.desc", "value": "W zachodniej chacie w kształcie litery L. Na końcu przy drzwiach na ławce."},
 	{"key": "heirlooms_goat_hair_brush_5.desc", "value": "W skrzyni w jednej z sypialni na parterze."},
 	{"key": "heirlooms_goat_hair_brush_6.desc", "value": ""},
+	
 	{"key": "heirlooms_ebony_hairpin.name", "value": "Hebanowa szpilka"},
 	{"key": "heirlooms_ebony_hairpin_1.desc", "value": "Obok beczki."},
 	{"key": "heirlooms_ebony_hairpin_2.desc", "value": "Za dużym domem."},
@@ -777,6 +845,7 @@
 	{"key": "heirlooms_ebony_hairpin_4.desc", "value": "Wewnątrz zniszczonego/spalonego domu."},
 	{"key": "heirlooms_ebony_hairpin_5.desc", "value": "W zielonej garderobie w rogu."},
 	{"key": "heirlooms_ebony_hairpin_6.desc", "value": ""},
+	
 	{"key": "heirlooms_ivory_hairpin.name", "value": "Szpilka z kości słoniowej"},
 	{"key": "heirlooms_ivory_hairpin_1.desc", "value": "Na białym stole z szachownicą."},
 	{"key": "heirlooms_ivory_hairpin_2.desc", "value": "Na małym niebieskim stoliku nocnym."},
@@ -784,6 +853,7 @@
 	{"key": "heirlooms_ivory_hairpin_4.desc", "value": "Na stole po drugiej stronie ceglanego muru z bramą."},
 	{"key": "heirlooms_ivory_hairpin_5.desc", "value": "Obok ogniska z garnkiem do gotowania."},
 	{"key": "heirlooms_ivory_hairpin_6.desc", "value": ""},
+	
 	{"key": "heirlooms_rosewood_hairbrush.name", "value": "Palisandrowa szczotka"},
 	{"key": "heirlooms_rosewood_hairbrush_1.desc", "value": "W skrzyni w pierwszym pomieszczeniu."},
 	{"key": "heirlooms_rosewood_hairbrush_2.desc", "value": "Na nocnym stoliku w rogu."},
@@ -791,6 +861,7 @@
 	{"key": "heirlooms_rosewood_hairbrush_4.desc", "value": "Wewnątrz pokoju na prawo od kominka na stole."},
 	{"key": "heirlooms_rosewood_hairbrush_5.desc", "value": "Na czerwonym fotelu w chacie."},
 	{"key": "heirlooms_rosewood_hairbrush_6.desc", "value": ""},
+	
 	{"key": "heirlooms_tortoiseshell_comb.name", "value": "Szylkretowy grzebień"},
 	{"key": "heirlooms_tortoiseshell_comb_1.desc", "value": "W wysokiej garderobie."},
 	{"key": "heirlooms_tortoiseshell_comb_2.desc", "value": "Na toaletce z lustrem."},
@@ -798,6 +869,7 @@
 	{"key": "heirlooms_tortoiseshell_comb_4.desc", "value": "Wewnątrz skrzyni w namiocie."},
 	{"key": "heirlooms_tortoiseshell_comb_5.desc", "value": "Na półce w rogu chaty, obok kominka."},
 	{"key": "heirlooms_tortoiseshell_comb_6.desc", "value": ""},
+	
 	{"key": "heirlooms_ivory_comb.name", "value": "Grzebień z kości słoniowej"},
 	{"key": "heirlooms_ivory_comb_1.desc", "value": "Obok zlewu na łodzi."},
 	{"key": "heirlooms_ivory_comb_2.desc", "value": "Na stoliku przy sofach na górnym piętrze nad salonem."},
@@ -805,6 +877,7 @@
 	{"key": "heirlooms_ivory_comb_4.desc", "value": "W pokoju po prawej na stole przy lustrze."},
 	{"key": "heirlooms_ivory_comb_5.desc", "value": "Na ławce na werandzie od strony południowej."},
 	{"key": "heirlooms_ivory_comb_6.desc", "value": ""},
+	
 	{"key": "heirlooms_horse_hair_brush.name", "value": "Szczotka z końskiego włosia"},
 	{"key": "heirlooms_horse_hair_brush_1.desc", "value": "Na stole."},
 	{"key": "heirlooms_horse_hair_brush_2.desc", "value": "W Saloonie na piętrze na stole w rogu."},
@@ -812,6 +885,7 @@
 	{"key": "heirlooms_horse_hair_brush_4.desc", "value": "Wewnątrz wysokiej szafki."},
 	{"key": "heirlooms_horse_hair_brush_5.desc", "value": "W garderobie w piwnicy."},
 	{"key": "heirlooms_horse_hair_brush_6.desc", "value": ""},
+	
 	{"key": "heirlooms_boar_bristle_brush.name", "value": "Szczotka z dziczego włosia"},
 	{"key": "heirlooms_boar_bristle_brush_1.desc", "value": "W domu na stole."},
 	{"key": "heirlooms_boar_bristle_brush_2.desc", "value": "Na krześle na werandzie."},
@@ -819,6 +893,7 @@
 	{"key": "heirlooms_boar_bristle_brush_4.desc", "value": "Na ławce po lewej stronie domu."},
 	{"key": "heirlooms_boar_bristle_brush_5.desc", "value": "W zielonej garderobie w sypialni z tyłu."},
 	{"key": "heirlooms_boar_bristle_brush_6.desc", "value": ""},
+	
 	{"key": "heirlooms_new_guinea_rosewood.name", "value": "Amboinowa szczotka"},
 	{"key": "heirlooms_new_guinea_rosewood_1.desc", "value": "Na krześle na parterze."},
 	{"key": "heirlooms_new_guinea_rosewood_2.desc", "value": "Na parterze w pomieszczeniu w tyle na toaletce."},
@@ -826,6 +901,7 @@
 	{"key": "heirlooms_new_guinea_rosewood_4.desc", "value": "W skrzyni w sypialni."},
 	{"key": "heirlooms_new_guinea_rosewood_5.desc", "value": "Na białej ławce."},
 	{"key": "heirlooms_new_guinea_rosewood_6.desc", "value": ""},
+	
 	{"key": "ring_harland_coral.name", "value": "Pierścionek z koralem Harland"},
 	{"key": "ring_harland_coral_1.desc", "value": "Obok uschniętego drzewa."},
 	{"key": "ring_harland_coral_2.desc", "value": "W skrytce w zamarzniętym wodospadzie."},
@@ -833,6 +909,7 @@
 	{"key": "ring_harland_coral_4.desc", "value": "Pod mostem kolejowym."},
 	{"key": "ring_harland_coral_5.desc", "value": "Z tyłu domu."},
 	{"key": "ring_harland_coral_6.desc", "value": "Przed wielkim głazem."},
+	
 	{"key": "ring_magnate_turquoise.name", "value": "Pierścionek z turkusem Magnate"},
 	{"key": "ring_magnate_turquoise_1.desc", "value": "Na piętrze w kominku."},
 	{"key": "ring_magnate_turquoise_2.desc", "value": "Pod uschniętym drzewem."},
@@ -840,6 +917,7 @@
 	{"key": "ring_magnate_turquoise_4.desc", "value": "Przy dwóch beczkach obok wozu z kołami (wozu) wokoło niego."},
 	{"key": "ring_magnate_turquoise_5.desc", "value": "Na kominku."},
 	{"key": "ring_magnate_turquoise_6.desc", "value": "Obok ołtarza z czaszką."},
+	
 	{"key": "ring_pilgrim_moonstone.name", "value": "Pierścionek z kamieniem księżycowym Pilgrim"},
 	{"key": "ring_pilgrim_moonstone_1.desc", "value": "Po wschodniej stronie domu."},
 	{"key": "ring_pilgrim_moonstone_2.desc", "value": "W domu, wejdź po drzewie do środka. Uwaga na wilki."},
@@ -847,6 +925,7 @@
 	{"key": "ring_pilgrim_moonstone_4.desc", "value": "Pod zwisem."},
 	{"key": "ring_pilgrim_moonstone_5.desc", "value": "Obok wyrwanego drzewa."},
 	{"key": "ring_pilgrim_moonstone_6.desc", "value": "Na półce w budzie."},
+	
 	{"key": "ring_bonnard_pearl.name", "value": "Pierścionek z perłą Bonnard"},
 	{"key": "ring_bonnard_pearl_1.desc", "value": "W kominku."},
 	{"key": "ring_bonnard_pearl_2.desc", "value": ""},
@@ -854,6 +933,7 @@
 	{"key": "ring_bonnard_pearl_4.desc", "value": "Przy kominie małego domu."},
 	{"key": "ring_bonnard_pearl_5.desc", "value": "Wewnątrz drzewa."},
 	{"key": "ring_bonnard_pearl_6.desc", "value": "Obok stosu kości."},
+	
 	{"key": "ring_banais_topaz.name", "value": "Pierścionek z topazem Banais"},
 	{"key": "ring_banais_topaz_1.desc", "value": "Po południowo-zachodniej stronie domu pustelnika."},
 	{"key": "ring_banais_topaz_2.desc", "value": "Wewnątrz martwego drzewa."},
@@ -861,6 +941,7 @@
 	{"key": "ring_banais_topaz_4.desc", "value": "Wewnątrz krypty."},
 	{"key": "ring_banais_topaz_5.desc", "value": "Z tyłu dwóch skał."},
 	{"key": "ring_banais_topaz_6.desc", "value": "Wewnątrz skrzyni w piwnicy Fortu Brennand."},
+	
 	{"key": "ring_beaulieux_diamond.name", "value": "Pierścionek z diamentem Beaulieux"},
 	{"key": "ring_beaulieux_diamond_1.desc", "value": "Przy spróchniałym drzewie."},
 	{"key": "ring_beaulieux_diamond_2.desc", "value": "W skrytce trochę poniżej mostu."},
@@ -868,6 +949,7 @@
 	{"key": "ring_beaulieux_diamond_4.desc", "value": "Wewnątrz stodoły, po wejściu po drabinie, w skrzyni."},
 	{"key": "ring_beaulieux_diamond_5.desc", "value": "Na wyspie przed wielkim głazem."},
 	{"key": "ring_beaulieux_diamond_6.desc", "value": "Obok gruzu i skrzyni przed chatą."},
+	
 	{"key": "ring_yates_diamond.name", "value": "Pierścionek z diamentem Yates"},
 	{"key": "ring_yates_diamond_1.desc", "value": "Po zachodniej stronie zadaszenia."},
 	{"key": "ring_yates_diamond_2.desc", "value": "Na piętrze w skrytce obok łóżek."},
@@ -875,6 +957,7 @@
 	{"key": "ring_yates_diamond_4.desc", "value": "Przy kole wozu z tyłu domu."},
 	{"key": "ring_yates_diamond_5.desc", "value": "Obok pnia, który funkcjonuje jako rampa."},
 	{"key": "ring_yates_diamond_6.desc", "value": "Wewnątrz drzewa obok drogi."},
+	
 	{"key": "ring_aubrey_onyx.name", "value": "Pierścionek z onyksem Aubrey"},
 	{"key": "ring_aubrey_onyx_1.desc", "value": "Za uschniętym drzewem."},
 	{"key": "ring_aubrey_onyx_2.desc", "value": "Na ścianie przy malowidle."},
@@ -882,6 +965,7 @@
 	{"key": "ring_aubrey_onyx_4.desc", "value": "Obok dużej skały z krzakiem i powalonym drzewem."},
 	{"key": "ring_aubrey_onyx_5.desc", "value": "U podstawy drzewa."},
 	{"key": "ring_aubrey_onyx_6.desc", "value": "W kominie"},
+	
 	{"key": "ring_bosque_emerald.name", "value": "Pierścionek ze szmaragdem Bosque"},
 	{"key": "ring_bosque_emerald_1.desc", "value": "Między krzakami na małym placu."},
 	{"key": "ring_bosque_emerald_2.desc", "value": "Obok skały z rysunkiem z kredy."},
@@ -889,6 +973,7 @@
 	{"key": "ring_bosque_emerald_4.desc", "value": "Przy dużym drzewie."},
 	{"key": "ring_bosque_emerald_5.desc", "value": "Na środku dwóch skał przed rozłamem między dwoma płaskowyżami."},
 	{"key": "ring_bosque_emerald_6.desc", "value": "Między zniszczonym wozem a dwiema skałami."},
+	
 	{"key": "ring_sackville_diamond.name", "value": "Pierścionek z diamentem Sackville"},
 	{"key": "ring_sackville_diamond_1.desc", "value": "Przed uschniętym drzewem."},
 	{"key": "ring_sackville_diamond_2.desc", "value": "Trudne zejście. Szlakiem z różnymi przeszkodami. Zalecane jest obejrzenie wideo."},
@@ -896,6 +981,7 @@
 	{"key": "ring_sackville_diamond_4.desc", "value": "Wewnątrz komina."},
 	{"key": "ring_sackville_diamond_5.desc", "value": "U podstawy drzewa."},
 	{"key": "ring_sackville_diamond_6.desc", "value": "Obok zepsutego wozu na poboczu drogi."},
+	
 	{"key": "ring_thorburn_turquoise.name", "value": "Pierścionek z turkusem Thorburn"},
 	{"key": "ring_thorburn_turquoise_1.desc", "value": "Obok dużej skały."},
 	{"key": "ring_thorburn_turquoise_2.desc", "value": "Przy drzewie na klifie."},
@@ -903,6 +989,7 @@
 	{"key": "ring_thorburn_turquoise_4.desc", "value": "Wewnątrz garderoby w pierwszym pokoju po prawej stronie."},
 	{"key": "ring_thorburn_turquoise_5.desc", "value": "Obok kłody na płaskowyżu."},
 	{"key": "ring_thorburn_turquoise_6.desc", "value": "Na podporach mostu kolejowego, obok ścieżki pod mostem kolejowym."},
+	
 	{"key": "necklace_blakely_miniatue.name", "value": "Miniaturowy naszyjnik Blakely"},
 	{"key": "necklace_blakely_miniatue_1.desc", "value": "W skrzyni obok rozkładającego się łosia."},
 	{"key": "necklace_blakely_miniatue_2.desc", "value": "W grobowcu vikinga."},
@@ -910,6 +997,7 @@
 	{"key": "necklace_blakely_miniatue_4.desc", "value": "Pomiędzy drzewami porośniętymi winoroślą."},
 	{"key": "necklace_blakely_miniatue_5.desc", "value": "Pomiędzy dwoma grobami."},
 	{"key": "necklace_blakely_miniatue_6.desc", "value": "Wewnątrz drzewa."},
+	
 	{"key": "necklace_richelieu_amethyst.name", "value": "Ametystowy naszyjnik Richelieu"},
 	{"key": "necklace_richelieu_amethyst_1.desc", "value": "W skrytce w zniszczonej się chacie."},
 	{"key": "necklace_richelieu_amethyst_2.desc", "value": "W chacie w skrytce obok zlewu."},
@@ -917,6 +1005,7 @@
 	{"key": "necklace_richelieu_amethyst_4.desc", "value": "Przy wielkim kamieniu."},
 	{"key": "necklace_richelieu_amethyst_5.desc", "value": "Przed zrujnowaną przybudówką bezpośrednio przy domu."},
 	{"key": "necklace_richelieu_amethyst_6.desc", "value": "Na kominku w środku. Wskocz na wóz, następnie na dach, aby dostać się do okna na pierwszym piętrze."},
+	
 	{"key": "necklace_pelle_pearl.name", "value": "Perłowy naszyjnik Pellé"},
 	{"key": "necklace_pelle_pearl_1.desc", "value": "Na samej górze przy brzegu."},
 	{"key": "necklace_pelle_pearl_2.desc", "value": "Przed drzewem otoczonym krzakami."},
@@ -924,6 +1013,7 @@
 	{"key": "necklace_pelle_pearl_4.desc", "value": "W domu w wysokiej szafce."},
 	{"key": "necklace_pelle_pearl_5.desc", "value": "Przed kajakiem."},
 	{"key": "necklace_pelle_pearl_6.desc", "value": "W „trójkącie” drzew."},
+	
 	{"key": "necklace_ainsworth_cross.name", "value": "Naszyjnik z krzyżem Answorth"},
 	{"key": "necklace_ainsworth_cross_1.desc", "value": "Prz ołtarzu w miniaturowej kaplicy. Ukucnij żeby wejść i wyjść."},
 	{"key": "necklace_ainsworth_cross_2.desc", "value": "Za samotnym drzewem z łapaczami snów."},
@@ -931,6 +1021,7 @@
 	{"key": "necklace_ainsworth_cross_4.desc", "value": "Wewnątrz skrzyni w głównej sypialni."},
 	{"key": "necklace_ainsworth_cross_5.desc", "value": "Na małym podwórku obok domu."},
 	{"key": "necklace_ainsworth_cross_6.desc", "value": "Obok ogrodzenia z kółkiem od wozu."},
+	
 	{"key": "necklace_braxton_amethyst.name", "value": "Ametystowy naszyjnik Braxton"},
 	{"key": "necklace_braxton_amethyst_1.desc", "value": "Na półce skalnej w skrytce pod skałą obok szkieletu łosia."},
 	{"key": "necklace_braxton_amethyst_2.desc", "value": "W skrytce na ścianie w połowie wysokości."},
@@ -938,6 +1029,7 @@
 	{"key": "necklace_braxton_amethyst_4.desc", "value": "Przy wielkim drzewie."},
 	{"key": "necklace_braxton_amethyst_5.desc", "value": "Wewnątrz zrujnowanego budynku pod resztkami górnego piętra."},
 	{"key": "necklace_braxton_amethyst_6.desc", "value": "Przed wysoką drewnianą konstrukcją."},
+	
 	{"key": "necklace_rou_pearl.name", "value": "Perłowy naszyjnik Rou"},
 	{"key": "necklace_rou_pearl_1.desc", "value": "W kominku."},
 	{"key": "necklace_rou_pearl_2.desc", "value": "Na wyspie między skałami."},
@@ -945,6 +1037,7 @@
 	{"key": "necklace_rou_pearl_4.desc", "value": "Między drzewami w pobliżu grani z widokiem na wodę."},
 	{"key": "necklace_rou_pearl_5.desc", "value": "W grobie rodzinnym „Fellowes”."},
 	{"key": "necklace_rou_pearl_6.desc", "value": "Z tyłu zrujnowanego domu."},
+	
 	{"key": "necklace_gosselin_white_gold.name", "value": "Jasnozłoty naszyjnik Gosselin"},
 	{"key": "necklace_gosselin_white_gold_1.desc", "value": "Na końcu wyspy obok skał."},
 	{"key": "necklace_gosselin_white_gold_2.desc", "value": "W dużej skrzyni przy innych bagażach."},
@@ -952,6 +1045,7 @@
 	{"key": "necklace_gosselin_white_gold_4.desc", "value": "Wewnątrz martwego drzewa."},
 	{"key": "necklace_gosselin_white_gold_5.desc", "value": "W środku zrujnowanego domu."},
 	{"key": "necklace_gosselin_white_gold_6.desc", "value": "Obok znaku na końcu ogrodzenia."},
+	
 	{"key": "necklace_dane_topaz.name", "value": "Topazowy naszyjnik Dane"},
 	{"key": "necklace_dane_topaz_1.desc", "value": "W kominku."},
 	{"key": "necklace_dane_topaz_2.desc", "value": "Między altaną a zagajnikiem."},
@@ -959,6 +1053,7 @@
 	{"key": "necklace_dane_topaz_4.desc", "value": "Tył domu z oknem i beczką."},
 	{"key": "necklace_dane_topaz_5.desc", "value": "W garderobie przy biurku."},
 	{"key": "necklace_dane_topaz_6.desc", "value": "Na półce skalnej obok drzewa i skały."},
+	
 	{"key": "necklace_tuamotu_pearl.name", "value": "Perłowy naszyjnik Tuamotu"},
 	{"key": "necklace_tuamotu_pearl_1.desc", "value": "Prawie na końcu półwyspu."},
 	{"key": "necklace_tuamotu_pearl_2.desc", "value": "Na małym wzgórzu obok skały."},
@@ -966,6 +1061,7 @@
 	{"key": "necklace_tuamotu_pearl_4.desc", "value": "Przy małej skale z boku stajni."},
 	{"key": "necklace_tuamotu_pearl_5.desc", "value": "Na jednej z półek klifu."},
 	{"key": "necklace_tuamotu_pearl_6.desc", "value": "Przed strachem na wróble."},
+	
 	{"key": "earring_ursula_citrine.name", "value": "Cytrynowe kolczyki Ursula"},
 	{"key": "earring_ursula_citrine_1.desc", "value": "Na placu między skałami."},
 	{"key": "earring_ursula_citrine_2.desc", "value": "Obok drzewa i zepsutego wozu."},
@@ -973,6 +1069,7 @@
 	{"key": "earring_ursula_citrine_4.desc", "value": "Pomiędzy kaktusem a wielką skałą."},
 	{"key": "earring_ursula_citrine_5.desc", "value": "Między szuwarami na linii brzegowej."},
 	{"key": "earring_ursula_citrine_6.desc", "value": "Pomiędzy dwoma dużymi drzewami obok gałązek."},
+	
 	{"key": "earring_royal_victoria.name", "value": "Diamentowe kolczyki Royal Victoria"},
 	{"key": "earring_royal_victoria_1.desc", "value": "Przy drzewie na górze."},
 	{"key": "earring_royal_victoria_2.desc", "value": "Po zachodniej stronie większej skały."},
@@ -980,6 +1077,7 @@
 	{"key": "earring_royal_victoria_4.desc", "value": "Przy kręgu drzew w pobliżu dużej skały."},
 	{"key": "earring_royal_victoria_5.desc", "value": "Między kłodą a drzewem na linii brzegowej."},
 	{"key": "earring_royal_victoria_6.desc", "value": "W centrum dwóch opadłych gałęzi."},
+	
 	{"key": "earring_calumet_turquoise.name", "value": "Turkusowe kolczyki Calumet"},
 	{"key": "earring_calumet_turquoise_1.desc", "value": "Na brzegu przy drzewie."},
 	{"key": "earring_calumet_turquoise_2.desc", "value": "Po prawej stronie grobu \"Dorothy Hewitt\""},
@@ -987,6 +1085,7 @@
 	{"key": "earring_calumet_turquoise_4.desc", "value": "Wewnątrz martwego drzewa przy skale."},
 	{"key": "earring_calumet_turquoise_5.desc", "value": "Pod markizą."},
 	{"key": "earring_calumet_turquoise_6.desc", "value": "U podstawy drzewa."},
+	
 	{"key": "earring_orchidee_diamond.name", "value": "Diamentowe kolczyki Orchidée"},
 	{"key": "earring_orchidee_diamond_1.desc", "value": "Pod mostem za podporą."},
 	{"key": "earring_orchidee_diamond_2.desc", "value": "W skrytce w małej krypcie z trumnami na brzegu."},
@@ -1136,7 +1235,7 @@
 	{"key": "flower_wisteria.name", "value": "Glicynia"},
 	
 	{"key": "random_item.name", "value": "Losowy przedmiot"},
-	{"key": "random_item.desc", "value": "Losowy przedmiot resetuje się po 24 godzinach (w czasie rzeczywistym) po jego podniesieniu."},
+	{"key": "random_item.desc", "value": "Losowy przedmiot resetuje się po 24 godzinach po jego podniesieniu (w czasie rzeczywistym)."},
 	{"key": "tree_map.name", "value": "Mapa skarbów wsadzona w drzewo (zdarzenie)"},
 	{"key": "tree_map.desc", "value": "Mapy na drzewie są przypadkowymi zdarzeniami. Pojawiają się na drzewach głównie w nocy. Wypatruj światła latarni."},
 	{"key": "treasure_hunter.name", "value": "Łowca skarbów (zdarzenie)"},
