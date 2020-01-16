@@ -18,6 +18,7 @@ var MapBase = {
   markers: [],
 
   init: function () {
+    //map layers temporary disabled
     var mapLayers = [
       L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
         noWrap: true,
@@ -39,7 +40,7 @@ var MapBase = {
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
-      layers: [mapLayers[parseInt($.cookie('map-layer'))]]
+      layers: [mapLayers[0]] //parseInt($.cookie('map-layer'))
     }).setView([-70, 111.75], 3);
 
     L.control.zoom({
@@ -52,7 +53,7 @@ var MapBase = {
       'map.layers.dark': mapLayers[2]
     };
 
-    L.control.layers(baseMapsLayers).addTo(MapBase.map);
+    //L.control.layers(baseMapsLayers).addTo(MapBase.map);
 
     MapBase.map.on('baselayerchange', function (e) {
       var mapIndex;
