@@ -184,7 +184,15 @@
 	{"key": "menu.loot_table.category_necklaces", "value": "Ожерелья"},
 	{"key": "menu.loot_table.category_rings_1", "value": "Кольца #1"},
 	{"key": "menu.loot_table.category_rings_2", "value": "Кольца #2"},
-	{"key": "menu.loot_table.table_box", "value": "Metal Box (Metal Detector)"},
-	{"key": "menu.loot_table.table_mound", "value": "Dirt Mound (Shovel)"},
-	{"key": "menu.loot_table.table_shallow", "value": "Loose Item (Metal Detector)"}
+	{"key": "menu.loot_table.table_box", "value": "Metal Box (Металлоискатель)"},
+	{"key": "menu.loot_table.table_box.desc", "value": "На этом месте можно случайным образом получить Наконечник (27.5%), Монету (22.5%) или Потерянную драгоценность (50%)."},
+	{"key": "menu.loot_table.table_mound", "value": "Dirt Mound (Лопата)"},
+	{"key": "menu.loot_table.table_mound.desc", "value": "На этом месте можно случайным образом получить Наконечник (60%), Фамильную ценность (30%) или Потерянную драгоценность (10%)."},
+	{"key": "menu.loot_table.table_shallow", "value": "Loose Item (Металоискатель)"},
+	{"key": "menu.loot_table.table_shallow.desc", "value": "На этом месте можно случайным образом получить Наконечник (55%) или Монету (45%)."},
+	{"key": "menu.loot_table.table_unknown", "value": "Все предметы"},
+	{"key": "menu.loot_table.table_unknown.desc", "value": "Пока неизвестно какие коллекции можно получить здесь."},
+	{"key": "menu.loot_table.view_loot", "value": "Показать информацию"},
+	{"key": "menu.loot_table.loot_modal_title", "value": "Detailed loot"},
+	{"key": "menu.close", "value": "Закрыть"}
 ]
