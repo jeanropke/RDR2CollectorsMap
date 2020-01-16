@@ -18,17 +18,18 @@ var MapBase = {
   markers: [],
 
   init: function () {
-    //map layers temporary disabled
+
+    //Please, do not use the GitHub map tiles. Thanks
     var mapLayers = [
       L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
         noWrap: true,
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
       }),
-      L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', {
+      L.tileLayer((isLocalHost() ? 'assets/maps/' : 'https://jeanropke.b-cdn.net/') + 'detailed/{z}/{x}_{y}.jpg', {
         noWrap: true,
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
       }),
-      L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', {
+      L.tileLayer((isLocalHost() ? 'assets/maps/' : 'https://jeanropke.b-cdn.net/') +'darkmode/{z}/{x}_{y}.jpg', {
         noWrap: true,
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
       })
@@ -40,7 +41,7 @@ var MapBase = {
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
-      layers: [mapLayers[0]] //parseInt($.cookie('map-layer'))
+      layers: [mapLayers[parseInt($.cookie('map-layer'))]]
     }).setView([-70, 111.75], 3);
 
     L.control.zoom({
@@ -53,7 +54,7 @@ var MapBase = {
       'map.layers.dark': mapLayers[2]
     };
 
-    //L.control.layers(baseMapsLayers).addTo(MapBase.map);
+    L.control.layers(baseMapsLayers).addTo(MapBase.map);
 
     MapBase.map.on('baselayerchange', function (e) {
       var mapIndex;
