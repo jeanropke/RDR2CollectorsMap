@@ -8,6 +8,7 @@ Cycle 4 - 6 collectible locations credits to [Tez2](https://twitter.com/TezFunz2
 Possible treasures locations by [IronJeff80](https://github.com/IronJeff80), [Dirty Tyler](https://www.youtube.com/channel/UC3LdKFizyou1RfkkmDUUVsg) and [Dean Nutz](https://www.youtube.com/channel/UCBSYrZQsPndOm-zckXNUItw).
 
 Route generator by [Senexis](https://github.com/Senexis).
+
 Path finder by [PakL](https://github.com/PakL).
 
 Detailed map by [RDR2Map](https://rdr2map.com/).
