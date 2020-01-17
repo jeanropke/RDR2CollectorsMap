@@ -72,7 +72,7 @@
 
 	{"key": "cups_four.name", "value": "Four of Cups"},
 	{"key": "cups_four_1.desc", "value": "On top of fireplace inside building."},
-	{"key": "cups_four_2.desc", "value": ""},
+	{"key": "cups_four_2.desc", "value": "Western side of the white barn. On a bench next to wall."},
 	{"key": "cups_four_3.desc", "value": "On window seal by the outhouse."},
 	{"key": "cups_four_4.desc", "value": "On a box near a fountain with a light."},
 	{"key": "cups_four_5.desc", "value": "On the balcony at the back of the sheriff's office."},
@@ -80,7 +80,7 @@
 
 	{"key": "cups_five.name", "value": "Five of Cups"},
 	{"key": "cups_five_1.desc", "value": "On a table next to a scale."},
-	{"key": "cups_five_2.desc", "value": ""},
+	{"key": "cups_five_2.desc", "value": "Inside a shack. East side on a stack of boxes."},
 	{"key": "cups_five_3.desc", "value": "On top of the theatre facing Blackwater Restaurant and Althewate Inn."},
 	{"key": "cups_five_4.desc", "value": ""},
 	{"key": "cups_five_5.desc", "value": "On the bench on the southeast side of the building at the head of the \"T\"."},
@@ -152,7 +152,7 @@
 
 	{"key": "cups_king.name", "value": "King of Cups"},
 	{"key": "cups_king_1.desc", "value": "On a table on the second floor. Walk up the stairs."},
-	{"key": "cups_king_2.desc", "value": ""},
+	{"key": "cups_king_2.desc", "value": "Go up the stairs located next to the slaughterhouse on the north-west side. On a railing."},
 	{"key": "cups_king_3.desc", "value": "Inside the cave."},
 	{"key": "cups_king_4.desc", "value": "On a cupboard behind the sofa."},
 	{"key": "cups_king_5.desc", "value": "On a shelf in the back of the stables."},
@@ -240,7 +240,7 @@
 
 	{"key": "swords_knight.name", "value": "Knight of Swords"},
 	{"key": "swords_knight_1.desc", "value": "On top of building."},
-	{"key": "swords_knight_2.desc", "value": ""},
+	{"key": "swords_knight_2.desc", "value": "On the upper floor of the terrace. On the table by the window."},
 	{"key": "swords_knight_3.desc", "value": "In a boat."},
 	{"key": "swords_knight_4.desc", "value": "On the table inside the shack."},
 	{"key": "swords_knight_5.desc", "value": "On a barrel on the second floor balcony of the station."},
@@ -344,7 +344,7 @@
 
 	{"key": "wands_ten.name", "value": "Ten of Wands"},
 	{"key": "wands_ten_1.desc", "value": "On the elevated platform in two trees."},
-	{"key": "wands_ten_2.desc", "value": ""},
+	{"key": "wands_ten_2.desc", "value": "On a bench at the end of the broken bridge."},
 	{"key": "wands_ten_3.desc", "value": "On a broken wagon."},
 	{"key": "wands_ten_4.desc", "value": "On a bench on the front porch."},
 	{"key": "wands_ten_5.desc", "value": "On a barrel inside the ruined house."},
@@ -408,7 +408,7 @@
 
 	{"key": "pentacles_four.name", "value": "Four of Pentacles"},
 	{"key": "pentacles_four_1.desc", "value": "On top of the well cover. Watch out bears!"},
-	{"key": "pentacles_four_2.desc", "value": ""},
+	{"key": "pentacles_four_2.desc", "value": "In the basement. The ladder down is in the ruined building."},
 	{"key": "pentacles_four_3.desc", "value": "On a stone bench."},
 	{"key": "pentacles_four_4.desc", "value": ""},
 	{"key": "pentacles_four_5.desc", "value": "On the back of the boat facing north/south."},
@@ -416,7 +416,7 @@
 
 	{"key": "pentacles_five.name", "value": "Five of Pentacles"},
 	{"key": "pentacles_five_1.desc", "value": "Inside the house on the desk below the window."},
-	{"key": "pentacles_five_2.desc", "value": ""},
+	{"key": "pentacles_five_2.desc", "value": "Inside the neglected stable/barn. Directly straight as you enter it."},
 	{"key": "pentacles_five_3.desc", "value": "In the windowsill with barrels in front of it."},
 	{"key": "pentacles_five_4.desc", "value": "On the table inside the house."},
 	{"key": "pentacles_five_5.desc", "value": "On the windowsill of the barn, sometimes next to some moonshine."},
@@ -834,7 +834,7 @@
 	{"key": "heirlooms_goat_hair_brush_1.desc", "value": "Upstairs on top of the fireplace."},
 	{"key": "heirlooms_goat_hair_brush_2.desc", "value": "On a dresser in bedroom 1 upstairs"},
 	{"key": "heirlooms_goat_hair_brush_3.desc", "value": "In a chest on the lower deck of the ship."},
-	{"key": "heirlooms_goat_hair_brush_4.desc", "value": ""},
+	{"key": "heirlooms_goat_hair_brush_4.desc", "value": "In the western shack, L-shaped. In the back on a bench."},
 	{"key": "heirlooms_goat_hair_brush_5.desc", "value": "In the chest in one of the bedrooms on the ground floor."},
 	{"key": "heirlooms_goat_hair_brush_6.desc", "value": ""},
 
