@@ -758,6 +758,20 @@ $('#generate-route-start-lng').on("change", function () {
   Routes.generatePath();
 });
 
+$('#generate-route-use-pathfinder').on("change", function () {
+  Routes.usePathfinder = $("#generate-route-use-pathfinder").prop('checked');
+  $.cookie('generator-path-use-pathfinder', Routes.usePathfinder ? '1' : '0', { expires: 999 });
+
+  Routes.generatePath();
+});
+
+$('#generate-route-allow-fasttravel').on("change", function () {
+  Routes.allowFasttravel = $("#generate-route-allow-fasttravel").prop('checked');
+  $.cookie('generator-path-allow-fasttravel', Routes.allowFasttravel ? '1' : '0', { expires: 999 });
+
+  Routes.generatePath();
+});
+
 /**
  * Loot table modal
  */
