@@ -6,6 +6,7 @@ var Cycles = {
         $.getJSON(`data/cycles.json?nocache=${nocache}&date=${dateString}`)
             .done(function (_data) {
                 Cycles.data = _data;
+                Cycles.setCustomCycles();
                 Cycles.setCycles();
 
                 Cycles.setLocaleDate();
@@ -13,6 +14,38 @@ var Cycles = {
             });
         console.log('cycles loaded');
     },
+
+    setCustomCycles: function () {
+
+        if(getParameterByName('cycles') == null)
+            return;
+
+        if (getParameterByName('cycles').includes(',')) {
+            var _cycles = getParameterByName('cycles').split(',');
+            if (_cycles.length == 9) {
+                Cycles.data.cycles[Cycles.data.current].american_flowers = _cycles[0];
+                Cycles.data.cycles[Cycles.data.current].card_cups = _cycles[1];
+                Cycles.data.cycles[Cycles.data.current].card_swords = _cycles[1];
+                Cycles.data.cycles[Cycles.data.current].card_wands = _cycles[1];
+                Cycles.data.cycles[Cycles.data.current].card_pentacles = _cycles[1];
+                Cycles.data.cycles[Cycles.data.current].lost_bracelet = _cycles[2];
+                Cycles.data.cycles[Cycles.data.current].lost_earrings = _cycles[2];
+                Cycles.data.cycles[Cycles.data.current].lost_necklaces = _cycles[2];
+                Cycles.data.cycles[Cycles.data.current].lost_ring = _cycles[2];
+                Cycles.data.cycles[Cycles.data.current].antique_bottles = _cycles[3];
+                Cycles.data.cycles[Cycles.data.current].bird_eggs = _cycles[4];
+                Cycles.data.cycles[Cycles.data.current].arrowhead = _cycles[5];
+                Cycles.data.cycles[Cycles.data.current].family_heirlooms = _cycles[6];
+                Cycles.data.cycles[Cycles.data.current].coin = _cycles[7];
+                Cycles.data.cycles[Cycles.data.current].random = _cycles[8];
+
+            } else {
+                console.warn('Cycles parameters invalid');
+            }
+        }
+
+    },
+
     setCycles: function () {
         $.each(Cycles.data.cycles[Cycles.data.current], function (key, value) {
             $(`input[name=${key}]`).val(value);
