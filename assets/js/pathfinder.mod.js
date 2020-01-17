@@ -229,7 +229,6 @@ class RouteControl extends L.Control {
 
 		const self = this
 		this.onKeyPress = (e) => {
-			console.log(e.originalEvent)
 			// press on J
 			if(e.originalEvent.keyCode == 74) {
 				self.selectPath(-1)
@@ -305,6 +304,8 @@ class PathFinder {
 		PathFinder._cancel = false
 		PathFinder._pathfinderFT = false
 		PathFinder._worker = null
+		PathFinder._drawing = false
+		PathFinder._redrawWhenFinished = false
 
 		
 		// Append stylesheet to head
@@ -372,12 +373,29 @@ class PathFinder {
 	 * @static
 	 * @param {Array<[Number, Number]>} path 
 	 * @param {String} color 
+	 * @param {Number} weight
+	 * @param {Number} opacity Between 0 and 1
 	 * @returns {Polyline}
 	 */
-	static drawPath(path, color) {
+	static drawPath(path, color, weight, opacity, layer) {
 		if(typeof(color) === 'undefined') color = '#0000ff'
+
+		if(typeof(weight) !== 'number') weight = 5
+		if(typeof(opacity) !== 'number') opacity = 1
+		if(typeof(layer) === 'undefined') layer = PathFinder._layerGroup
+
+		let pathGroup = L.layerGroup().addTo(layer)
+		let last = path[0]
+		for(let i = 1; i < path.length; i++) {
+			if(MapBase.map.distance(last, path[i]) > 10) {
+				L.polyline([last, path[i]], {color: color, opacity: opacity, weight: weight, dashArray: '10 10' }).addTo(pathGroup)
+			} else {
+				L.polyline([last, path[i]], {color: color, opacity: opacity, weight: weight }).addTo(pathGroup)
+			}
+			last = path[i]
+		}
 	
-		return L.polyline(path, {color: color, opacity: 0.6, weight: 5 }).addTo(PathFinder._layerGroup)
+		return L.polyline(path, { stroke: false })
 	}
 
 	/**
@@ -386,15 +404,18 @@ class PathFinder {
 	 * @param {Array<[Number, Number]>} path 
 	 */
 	static highlightPath(path) {
-		if(PathFinder._currentPath !== null) {
-			PathFinder._layerGroup.removeLayer(PathFinder._currentPath)
-		}
-		PathFinder._currentPath = L.layerGroup().addTo(PathFinder._layerGroup)
-	
-		var line = L.polyline(path, {color: '#000000', opacity: 0.5, weight: 9 }).addTo(PathFinder._currentPath)
-		L.polyline(path, {color: '#ffffff', opacity: 1, weight: 7 }).addTo(PathFinder._currentPath)
-		L.polyline(path, {color: '#00bb00', opacity: 1, weight: 3 }).addTo(PathFinder._currentPath)
-		MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
+		window.requestAnimationFrame(function(){
+			if(PathFinder._currentPath !== null) {
+				MapBase.map.removeLayer(PathFinder._currentPath)
+			}
+			PathFinder._currentPath = L.layerGroup().addTo(MapBase.map)
+		
+
+			var line = PathFinder.drawPath(path, '#000000', 9, 0.5, PathFinder._currentPath)
+			PathFinder.drawPath(path, '#ffffff', 7, 1, PathFinder._currentPath)
+			PathFinder.drawPath(path, '#00bb00', 3, 1, PathFinder._currentPath)
+			MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
+		})
 	}
 
 	/**
@@ -403,10 +424,22 @@ class PathFinder {
 	 * @param {Array<Array<[Number, Number]>>} paths 
 	 */
 	static drawRoute(paths) {
-		PathFinder._layerGroup.clearLayers()
-		PathFinder._currentPath = null
-		for(var i = 0; i < paths.length; i++) {
-			PathFinder.drawPath(paths[i], '#ff0000')
+		if(PathFinder._drawing) {
+			PathFinder._redrawWhenFinished = paths
+		} else {
+			PathFinder._drawing = true
+			window.requestAnimationFrame(function(){
+				PathFinder._layerGroup.clearLayers()
+				PathFinder._currentPath = null
+				for(var i = 0; i < paths.length; i++) {
+					PathFinder.drawPath(paths[i], '#bb0000')
+				}
+				PathFinder._drawing = false
+				if(PathFinder._redrawWhenFinished !== false) {
+					PathFinder.drawRoute(PathFinder._redrawWhenFinished)
+					PathFinder._redrawWhenFinished = false
+				}
+			})
 		}
 	}
 
@@ -696,7 +729,9 @@ class PathFinder {
 						case 'route-done':
 							var endTime = new Date().getTime();
 							
-							PathFinder._layerControl.selectPath(1, true)
+							window.setTimeout(function(){
+								PathFinder._layerControl.selectPath(1, true)
+							}, 100)
 
 							PathFinder._running = false
 							res(data.result)
@@ -750,7 +785,7 @@ class PathFinder {
 
 		var canceled = PathFinder._cancel
 		if(canceled) console.log(`[pathfinder] Pathfinding was canceled`)
-		else PathFinder._layerControl.selectPath(1, true)
+		else window.setTimeout(function(){ PathFinder._layerControl.selectPath(1, true) }, 100)
 
 		console.log(`[pathfinder] ${(endTime - startTime) / 1000} seconds for ${markersNum} items`)
 		PathFinder._running = false

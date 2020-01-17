@@ -12,6 +12,8 @@ var Routes = {
     $('#generate-route-distance').val(Routes.maxDistance);
     $('#generate-route-start-lat').val(Routes.startMarkerLat);
     $('#generate-route-start-lng').val(Routes.startMarkerLng);
+    $('#generate-route-use-pathfinder').prop("checked", Routes.usePathfinder);
+    $('#generate-route-allow-fasttravel').prop("checked", Routes.allowFasttravel);
 
     var genPathStart = $.cookie('generator-path-start');
     if (!genPathStart) genPathStart = "SW";
@@ -131,6 +133,10 @@ var Routes = {
   startMarker: function () {
     return { lat: Routes.startMarkerLat, lng: Routes.startMarkerLng };
   },
+
+  // Path finder options
+  usePathfinder: $.cookie('generator-path-use-pathfinder') == '1',
+  allowFasttravel: $.cookie('generator-path-allow-fasttravel') == '1',
 
   // Needed to keep track of the previously drawn path so we can remove it later.
   lastPolyline: null,
@@ -270,6 +276,12 @@ var Routes = {
 
     // The last marker from the loop.
     var last = first.marker;
+
+    // Use path finder when enabled
+    if(Routes.usePathfinder) {
+      PathFinder.routegenStart(last, newMarkers, Routes.allowFasttravel)
+      return
+    }
 
     // Loop through all markers and pick the nearest neighbor to that marker.
     for (var i = 0; i < newMarkers.length; i++) {

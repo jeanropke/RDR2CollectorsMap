@@ -516,6 +516,25 @@
         <label for="generate-route-start-lng" data-text="menu.generate_route_start_lng">Route start long.</label>
         <input id="generate-route-start-lng" class="input-day wide-select-menu" type="number" step="any" value="8.0313">
       </div>
+      <hr class="menu-divider">
+      <div class="input-container">
+        <label for="generate-route-use-pathfinder" data-text="menu.generate_route_use_pathfinder">Use path finder
+          (very slow)</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="generate-route-use-pathfinder" value="1"
+            id="generate-route-use-pathfinder" />
+          <label class="input-checkbox-label" for="generate-route-use-pathfinder"></label>
+        </div>
+      </div>
+      <div class="input-container">
+        <label for="generate-route-allow-fasttravel" data-text="menu.generate_route_allow_fasttravel">Allow fast travel
+          (path finder)</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="generate-route-allow-fasttravel" value="1"
+            id="generate-route-allow-fasttravel" />
+          <label class="input-checkbox-label" for="generate-route-allow-fasttravel"></label>
+        </div>
+      </div>
     </div>
     <div class="links-container">
       <button data-text="menu.generate_route_clear" href="javascript:void(0);" onclick="Routes.clearPath()">Clear route</button>
@@ -808,6 +827,7 @@
   <script src="assets/js/language.js?nocache=229"></script>
   <script src="assets/js/menu.js?nocache=229"></script>
   <script src="assets/js/routes.js?nocache=229"></script>
+  <script src="assets/js/pathfinder.js?nocache=229"></script>
   <script src="assets/js/loot.js?nocache=229"></script>
   <script src="assets/js/scripts.js?nocache=229"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
