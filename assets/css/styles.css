@@ -919,3 +919,15 @@ a.no-style:visited {
 .loot-table-categories .loot-table-category, .loot-table-category-items, .loot-table-subcategory-items {
     padding: 0 20px;
 }
+
+/*highlight night flowers on map*/
+[data-marker*="flower_blood"],
+[data-marker*="flower_agarita"] {
+    animation: night-flowers-blinking 2s infinite;
+}
+
+@keyframes night-flowers-blinking {
+   0% {filter: drop-shadow(0px 0px 1px #fff) drop-shadow(0px 0px 1px #fff) saturate(1);}
+   50% {filter:  drop-shadow(0px 0px 7px #fff) drop-shadow(0px 0px 2px #fff) saturate(2);}
+   100% {filter: drop-shadow(0px 0px 1px #fff) drop-shadow(0px 0px 1px #fff) saturate(1);}
+}
