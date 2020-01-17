@@ -9,6 +9,8 @@ Possible treasures locations by [IronJeff80](https://github.com/IronJeff80), [Di
 
 Route generator by [Senexis](https://github.com/Senexis).
 
+Path finder by [PakL](https://github.com/PakL).
+
 Detailed map by [RDR2Map](https://rdr2map.com/).
 
 Dark map by [TDLCTV](https://github.com/TDLCTV).
