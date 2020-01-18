@@ -155,7 +155,12 @@ var Routes = {
   },
 
   // Simple utility to clear the given polyline from Leaflet.
-  clearPath: function () {
+  clearPath: function (starting) {
+    if((typeof(starting) !== 'boolean' || !starting) && Routes.usePathfinder) {
+      console.log('clear!')
+      PathFinder.routegenClear()
+    }
+
     if (!Routes.lastPolyline) return;
 
     Routes.lastPolyline.remove(MapBase.map);
@@ -252,7 +257,7 @@ var Routes = {
     }
 
     // Clean up before generating.
-    Routes.clearPath();
+    Routes.clearPath(true);
 
     // Setup variables.
     var newMarkers = MapBase.markers.filter((marker) => { return marker.isVisible; });
