@@ -387,13 +387,20 @@ class PathFinder {
 
 		let pathGroup = L.layerGroup().addTo(layer)
 		let last = path[0]
+		let pathBuffer = [last]
 		for(let i = 1; i < path.length; i++) {
 			if(MapBase.map.distance(last, path[i]) > 10) {
+				if(pathBuffer.length > 1) {
+					L.polyline(pathBuffer, {color: color, opacity: opacity, weight: weight }).addTo(pathGroup)
+					pathBuffer = []
+				}
 				L.polyline([last, path[i]], {color: color, opacity: opacity, weight: weight, dashArray: '10 10' }).addTo(pathGroup)
-			} else {
-				L.polyline([last, path[i]], {color: color, opacity: opacity, weight: weight }).addTo(pathGroup)
 			}
+			pathBuffer.push(path[i])
 			last = path[i]
+		}
+		if(pathBuffer.length > 1) {
+			L.polyline(pathBuffer, {color: color, opacity: opacity, weight: weight }).addTo(pathGroup)
 		}
 	
 		return L.polyline(path, { stroke: false })
@@ -690,8 +697,13 @@ class PathFinder {
 	 */
 	static async routegenStart(startingMarker, markers, allowFastTravel) {
 		if(PathFinder._geoJson === null) {
-			console.error('[pathfinder] geojson not fully loaded yet')
-			return false
+			console.log('[pathfinder] geojson not fully loaded yet; we\'ll wait...')
+			await new Promise(async (res) => {
+				while(PathFinder._geoJson === null && PathFinder._geoJsonFT === null) {
+					await new Promise((r) => { setTimeout(() => { r() }, 100) })
+				}
+				res()
+			})
 		}
 
 		// Cancel current running route generation
@@ -705,10 +717,6 @@ class PathFinder {
 		PathFinder._currentChunk = null
 
 		var startTime = new Date().getTime()
-
-		// Remove controller and layer group if already created
-		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
-		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
 
 		// Add controller and layer group to map
 		PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map)
