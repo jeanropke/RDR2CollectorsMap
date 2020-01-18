@@ -39,7 +39,6 @@ function init() {
   wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
   wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
 
-
   var tempCollectedMarkers = "";
   //sometimes, cookies are saved in the wrong order
   var cookiesList = [];
@@ -110,24 +109,6 @@ function init() {
     $.cookie('marker-cluster', '1', { expires: 999 });
   }
 
-  var curDate = new Date();
-  date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
-
-  //Reset markers daily
-  if (date != $.cookie('date')) {
-    if (Settings.resetMarkersDaily) {
-      $.each(MapBase.markers, function (key, value) {
-        if (inventory[value.text])
-          inventory[value.text].isCollected = false;
-
-        value.isCollected = false;
-        value.canCollect = value.amount < Inventory.stackSize;
-      });
-      MapBase.save();
-    }
-  }
-  $.cookie('date', date, { expires: 7 });
-
   MapBase.init();
   Language.setMenuLanguage();
 
@@ -150,7 +131,7 @@ function init() {
 }
 
 function isLocalHost() {
-   return location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  return location.hostname === "localhost" || location.hostname === "127.0.0.1";
 }
 
 function setMapBackground(mapIndex) {
@@ -454,12 +435,12 @@ $('.collection-reset').on('click', function (e) {
 
     if (inventory[value.text])
       inventory[value.text].isCollected = false;
-    
+
     value.isCollected = false;
     value.canCollect = true;
 
     // .changeMarkerAmount() must run to check whether to remove "disabled" class
-    if (value.subdata) 
+    if (value.subdata)
       Inventory.changeMarkerAmount(value.subdata, (Inventory.resetButtonUpdatesInventory ? -1 : 0));
     else
       Inventory.changeMarkerAmount(value.text, (Inventory.resetButtonUpdatesInventory ? -1 : 0));
