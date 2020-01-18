@@ -691,19 +691,13 @@ $('#generate-route-start').on("change", function () {
   var startLat = null;
   var startLng = null;
 
-  $('#generate-route-start-lat').parent().addClass('disabled');
-  $('#generate-route-start-lat').prop('disabled', true);
-
-  $('#generate-route-start-lng').parent().addClass('disabled');
-  $('#generate-route-start-lng').prop('disabled', true);
+  $('#generate-route-start-lat').parent().hide();
+  $('#generate-route-start-lng').parent().hide();
 
   switch (inputValue) {
     case "Custom":
-      $('#generate-route-start-lat').parent().removeClass('disabled');
-      $('#generate-route-start-lat').prop('disabled', false);
-
-      $('#generate-route-start-lng').parent().removeClass('disabled');
-      $('#generate-route-start-lng').prop('disabled', false);
+      $('#generate-route-start-lat').parent().show();
+      $('#generate-route-start-lng').parent().show();
       return;
 
     case "N":
@@ -761,6 +755,20 @@ $('#generate-route-start-lng').on("change", function () {
 $('#generate-route-use-pathfinder').on("change", function () {
   Routes.usePathfinder = $("#generate-route-use-pathfinder").prop('checked');
   $.cookie('generator-path-use-pathfinder', Routes.usePathfinder ? '1' : '0', { expires: 999 });
+
+  // Hide incompatible options.
+  if (Routes.usePathfinder) {
+    $('#generate-route-distance').parent().hide();
+    $('#generate-route-auto-update').parent().parent().hide();
+    $('#generate-route-allow-fasttravel').parent().parent().show();
+  } else {
+    $('#generate-route-distance').parent().show();
+    $('#generate-route-auto-update').parent().parent().show();
+    $('#generate-route-allow-fasttravel').parent().parent().hide();
+  }
+
+  // Prevent both routes being stuck on screen.
+  Routes.clearPath();
 
   Routes.generatePath();
 });

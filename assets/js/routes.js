@@ -6,29 +6,38 @@ var Routes = {
   init: function () {
     $('#custom-routes').prop("checked", Routes.customRouteEnabled);
 
+    $('#generate-route-use-pathfinder').prop("checked", Routes.usePathfinder);
     $('#generate-route-generate-on-visit').prop("checked", Routes.generateOnVisit);
     $('#generate-route-ignore-collected').prop("checked", Routes.ignoreCollected);
+    $('#generate-route-allow-fasttravel').prop("checked", Routes.allowFasttravel);
     $('#generate-route-auto-update').prop("checked", Routes.autoUpdatePath);
     $('#generate-route-distance').val(Routes.maxDistance);
     $('#generate-route-start-lat').val(Routes.startMarkerLat);
     $('#generate-route-start-lng').val(Routes.startMarkerLng);
-    $('#generate-route-use-pathfinder').prop("checked", Routes.usePathfinder);
-    $('#generate-route-allow-fasttravel').prop("checked", Routes.allowFasttravel);
 
+    // Pathfinder / Generator toggle
+    if (Routes.usePathfinder) {
+      $('#generate-route-distance').parent().hide();
+      $('#generate-route-auto-update').parent().parent().hide();
+      $('#generate-route-allow-fasttravel').parent().parent().show();
+    } else {
+      $('#generate-route-distance').parent().show();
+      $('#generate-route-auto-update').parent().parent().show();
+      $('#generate-route-allow-fasttravel').parent().parent().hide();
+    }
+
+    // Route starts at
     var genPathStart = $.cookie('generator-path-start');
     if (!genPathStart) genPathStart = "SW";
 
     $('#generate-route-start').val(genPathStart);
 
     if (genPathStart != "Custom") {
-      $('#generate-route-start-lat').parent().addClass('disabled');
-      $('#generate-route-start-lat').prop('disabled', true);
-
-      $('#generate-route-start-lng').parent().addClass('disabled');
-      $('#generate-route-start-lng').prop('disabled', true);
+      $('#generate-route-start-lat').parent().hide();
+      $('#generate-route-start-lng').parent().hide();
     }
   },
- 
+
   loadCustomRoute: function (input) {
     try {
       var connections = [];
@@ -101,7 +110,7 @@ var Routes = {
     }
   },
 
-  
+
   routesData: [],
   polylines: null,
 
@@ -156,8 +165,7 @@ var Routes = {
 
   // Simple utility to clear the given polyline from Leaflet.
   clearPath: function (starting) {
-    if((typeof(starting) !== 'boolean' || !starting) && Routes.usePathfinder) {
-      console.log('clear!')
+    if ((typeof (starting) !== 'boolean' || !starting) && Routes.usePathfinder) {
       PathFinder.routegenClear()
     }
 
@@ -283,7 +291,7 @@ var Routes = {
     var last = first.marker;
 
     // Use path finder when enabled
-    if(Routes.usePathfinder) {
+    if (Routes.usePathfinder) {
       PathFinder.routegenStart(last, newMarkers, Routes.allowFasttravel)
       return
     }

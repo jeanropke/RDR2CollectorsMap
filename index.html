@@ -465,6 +465,19 @@
       <span class="header-border"></span>
     </div>
     <div class="settings-container">
+      <div class="input-container-noflex">
+        <button class="btn btn-default" data-text="menu.generate_route" href="javascript:void(0);" onclick="Routes.generatePath(true)">Generate route</button>
+        <button class="btn btn-default" data-text="menu.generate_route_clear" href="javascript:void(0);" onclick="Routes.clearPath()">Clear route</button>
+      </div>
+      <hr class="menu-divider">
+      <div class="input-container">
+        <label for="generate-route-use-pathfinder" data-text="menu.generate_route_use_pathfinder">Use path finder (slower)</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="generate-route-use-pathfinder" value="1"
+            id="generate-route-use-pathfinder" />
+          <label class="input-checkbox-label" for="generate-route-use-pathfinder"></label>
+        </div>
+      </div>
       <div class="input-container">
         <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route
           on page visit</label>
@@ -493,6 +506,14 @@
         </div>
       </div>
       <div class="input-container">
+        <label for="generate-route-allow-fasttravel" data-text="menu.generate_route_allow_fasttravel">Use fast travel in path finder</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="generate-route-allow-fasttravel" value="1"
+            id="generate-route-allow-fasttravel" />
+          <label class="input-checkbox-label" for="generate-route-allow-fasttravel"></label>
+        </div>
+      </div>
+      <div class="input-container">
         <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
         <input id="generate-route-distance" class="input-day narrow-select-menu" type="number" min="1" max="200"
           value="25">
@@ -516,30 +537,8 @@
         <label for="generate-route-start-lng" data-text="menu.generate_route_start_lng">Route start long.</label>
         <input id="generate-route-start-lng" class="input-day wide-select-menu" type="number" step="any" value="8.0313">
       </div>
-      <hr class="menu-divider">
-      <div class="input-container">
-        <label for="generate-route-use-pathfinder" data-text="menu.generate_route_use_pathfinder">Use path finder
-          (very slow)</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-use-pathfinder" value="1"
-            id="generate-route-use-pathfinder" />
-          <label class="input-checkbox-label" for="generate-route-use-pathfinder"></label>
-        </div>
-      </div>
-      <div class="input-container">
-        <label for="generate-route-allow-fasttravel" data-text="menu.generate_route_allow_fasttravel">Allow fast travel
-          (path finder)</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-allow-fasttravel" value="1"
-            id="generate-route-allow-fasttravel" />
-          <label class="input-checkbox-label" for="generate-route-allow-fasttravel"></label>
-        </div>
-      </div>
     </div>
-    <div class="links-container">
-      <button data-text="menu.generate_route_clear" href="javascript:void(0);" onclick="Routes.clearPath()">Clear route</button>
-      <button data-text="menu.generate_route" href="javascript:void(0);" onclick="Routes.generatePath(true)">Generate route</button>
-    </div>
+
     <div class="header">
       <span class="header-border"></span>
       <h2 class="header-title" data-text="menu.custom_routes">Custom routes</h2>
@@ -557,12 +556,13 @@
         <label data-text="menu.clear_custom_routes">Clear custom route</label>
         <div class="input-action"></div>
       </div>
-    </div>
-    <div class="links-container">
-      <button data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
-        route</button>
-      <button data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export
-        route</button>
+      <hr class="menu-divider">
+      <div class="input-container-noflex">
+        <button class="btn btn-default" data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
+          route</button>
+        <button class="btn btn-default" data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export
+          route</button>
+      </div>
     </div>
 
     <div class="header">

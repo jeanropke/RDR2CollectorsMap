@@ -80,7 +80,7 @@ class Chunk {
 	 * @returns {Boolean}
 	 */
 	_canAdd(marker) {
-		if(this.bounds == null) return true
+        if(this.bounds == null) return true
 		var d = MapBase.map.distance(marker, this.bounds.getCenter())
 		return d < 10
 	}
