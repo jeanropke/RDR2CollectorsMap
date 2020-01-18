@@ -652,6 +652,7 @@ class PathFinder {
 		}
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
+		if(PathFinder._currentPath !== null) MapBase.map.removeLayer(PathFinder._currentPath)
 	}
 
 	/**
@@ -706,10 +707,8 @@ class PathFinder {
 			})
 		}
 
-		// Cancel current running route generation
-		if(PathFinder._running) {
-			await PathFinder.routegenCancel()
-		}
+		// Clear layers and cancel if running
+		await PathFinder.routegenClear()
 
 		console.log('[pathfinder] Starting route generation')
 
