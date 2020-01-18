@@ -227,11 +227,11 @@ setInterval(function () {
 
   if (correctTime.getHours() >= 22 || correctTime.getHours() < 5) {
     $('#day-cycle').css('background', 'url(assets/images/moon.png)');
-    $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'drop-shadow(0 0 7px #fff) drop-shadow(0 0 4px #fff) saturate(1.5)');
+    $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
   }
   else {
     $('#day-cycle').css('background', 'url(assets/images/sun.png)');
-    $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) saturate(1)');
+    $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'none');
   }
 }, 1000);
 
