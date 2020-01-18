@@ -234,7 +234,7 @@ setInterval(function () {
 
   else {
     $('#time-in-game').text(addZeroToNumber(correctTime.getHours() % 12) + ":" + addZeroToNumber(correctTime.getMinutes()));
-    $('#am-pm-time').text(((correctTime.getHours() > 12) ? "PM" : "AM"));
+    $('#am-pm-time').text(((correctTime.getHours() < 12) ? "AM" : "PM"));
   }
 
   //Countdown for the next cycle
