@@ -38,6 +38,10 @@ var Pins = {
         if (doSave) this.saveAllPins();
     },
 
+    addPinToCenter: function (doSave = true) {
+        this.addPin(-63.6, 111.29, doSave);
+    },
+
     savePin: function (id, name, desc, icon) {
         var markerIndex = this.pinsList.findIndex(function (marker) { return marker.options.id == id; });
 

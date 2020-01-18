@@ -401,10 +401,19 @@ var MapBase = {
       return weekly.item === (marker.text).replace(/_\d+/, "");
     }).length > 0;
 
+    var icon = '';
+    if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower') {
+      icon = `./assets/images/icons/${marker.category}_timed_${MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)}.png`;
+    } else if (marker.category == 'random') {
+      icon = `./assets/images/icons/${marker.category}_lightgray_${marker.tool}.png`;
+    } else {
+      icon = `./assets/images/icons/${marker.category}_${MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)}.png`;
+    }
+
     var tempMarker = L.marker([marker.lat, marker.lng], {
       opacity: marker.canCollect ? 1 : .35,
       icon: new L.Icon.DataMarkup({
-        iconUrl: './assets/images/icons/' + marker.category + '_' + (marker.category == 'random' ? `lightgray_${marker.tool}` : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)) + '.png',
+        iconUrl: icon,
         iconSize: [35, 45],
         iconAnchor: [17, 42],
         popupAnchor: [1, -32],
