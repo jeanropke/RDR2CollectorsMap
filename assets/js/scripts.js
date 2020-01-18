@@ -244,10 +244,14 @@ setInterval(function () {
   var seconds = 59 - nextGMTMidnight.getUTCSeconds();
   $('#countdown').text(addZeroToNumber(hours) + ':' + addZeroToNumber(minutes) + ':' + addZeroToNumber(seconds));
 
-  if (correctTime.getHours() >= 22 || correctTime.getHours() < 5)
+  if (correctTime.getHours() >= 22 || correctTime.getHours() < 5) {
     $('#day-cycle').css('background', 'url(assets/images/moon.png)');
-  else
+    $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'drop-shadow(0 0 7px #fff) drop-shadow(0 0 4px #fff) saturate(1.5)');
+  }
+  else {
     $('#day-cycle').css('background', 'url(assets/images/sun.png)');
+    $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'drop-shadow(0 0 1px #fff) drop-shadow(0 0 1px #fff) saturate(1)');
+  }
 }, 1000);
 
 // toggle timer and clock after click the container
