@@ -91,6 +91,8 @@
 	{"key": "menu.generate_route_start.custom", "value": "Eigener Punkt"},
 	{"key": "menu.generate_route_start_lat", "value": "Startpunkt lat."},
 	{"key": "menu.generate_route_start_lng", "value": "Startpunkt long."},
+	{"key": "menu.generate_route_use_pathfinder", "value": "Nutze Wegfindung für die Route (Berechnung sehr langsam)"},
+	{"key": "menu.generate_route_allow_fasttravel", "value": "Wegfindung darf Schnellreise-Posten verwenden"},
 	{"key": "menu.user_pins", "value": "Eigene Markierungen"},
 	{"key": "menu.user_pins_place_mode", "value": "Eigene Markierungen beim Klick setzen"},
 	{"key": "menu.user_pins_edit_mode", "value": "Edit-Modus für eigene Markierungen aktivieren"},
