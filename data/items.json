@@ -1670,7 +1670,7 @@
             { "text": "random_item_148", "loot_table": "", "tool": "2", "lat": "-31.2890625", "lng": "149.390625" },
             { "text": "random_item_152", "loot_table": "", "tool": "2", "lat": "-50.78125", "lng": "145.15625" },
             { "text": "random_item_157", "loot_table": "", "tool": "2", "lat": "-59.53125", "lng": "147.109375" },
-            { "text": "random_item_163", "loot_table": "", "tool": "2", "lat": "-42.140625", "lng": "152.984375" },
+            { "text": "random_item_163", "loot_table": "box", "tool": "2", "lat": "-42.140625", "lng": "152.984375" },
             { "text": "random_item_174", "loot_table": "", "tool": "2", "lat": "-66.890625", "lng": "151.234375" },
             { "text": "random_item_182", "loot_table": "", "tool": "2", "lat": "-74.875", "lng": "125.515625" },
             { "text": "random_item_192", "loot_table": "", "tool": "2", "lat": "-83.3125", "lng": "137.890625" },

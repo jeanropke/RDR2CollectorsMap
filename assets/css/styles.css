@@ -428,7 +428,7 @@ input, textarea, select, .btn {
 
 .side-menu {
     width: 100%;
-    background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
+    background: #000 url(../images/bg.jpg);
     box-shadow: 1px 0 2px 0 rgba(85, 85, 85, 0.85);
     position: fixed;
     top: -1800px;
@@ -613,7 +613,7 @@ a.wiki-page:visited {
 .help-container {
     height: 100%;
     padding: 25px;
-    background: #000 url('https://s.rsg.sc/sc/images/games/RDR2/bg.jpg');
+    background: #000 url(../images/bg.jpg);
     border: 1px solid #eee;
     box-shadow: 0 0 10px 0 black;
 }
@@ -905,4 +905,46 @@ a.no-style:visited {
 
 .loot-table-categories .loot-table-category, .loot-table-category-items, .loot-table-subcategory-items {
     padding: 0 20px;
+}
+
+/* Pathfinder styling */
+.pathfinder-control {
+	padding: 5px;
+	background: #fff
+}
+
+.pathfinder-btn {
+	display: inline-block;
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	color: #000;
+}
+.pathfinder-btn:disabled {
+	color: #789;
+}
+
+.pathfinder-btn-before {
+	padding: 0;
+	width: 30px;
+	text-align: center;
+}
+.pathfinder-btn-after {
+	padding: 0;
+	width: 30px;
+	text-align: center;
+}
+
+.pathfinder-btn > small {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+	top: -0.5em;
+	left: 0.1em;
+	font-family: 'Courier New', Courier, monospace;
+	text-transform: uppercase;
 }
