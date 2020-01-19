@@ -608,6 +608,10 @@ a.wiki-page:visited {
     text-decoration: none;
 }
 
+.highlightItems {
+    filter: drop-shadow(0 0 .5rem #cc0000) drop-shadow(0 0 .4rem #cc0000);
+}
+
 .help-popup {
     position: fixed;
     width: 100%;
