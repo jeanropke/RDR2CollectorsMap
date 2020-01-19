@@ -109,6 +109,11 @@ function init() {
     $.cookie('marker-cluster', '1', { expires: 999 });
   }
 
+  if (typeof $.cookie('enable-marker-popups') === 'undefined') {
+    Settings.isPopupsEnabled = true;
+    $.cookie('enable-marker-popups', '1', { expires: 999 });
+  }
+
   MapBase.init();
   Language.setMenuLanguage();
 
@@ -122,6 +127,7 @@ function init() {
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.markerCluster);
+  $('#enable-marker-popups').prop("checked", Settings.isPopupsEnabled);
   $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
@@ -486,6 +492,13 @@ $('#marker-cluster').on("change", function () {
   MapBase.addMarkers();
 });
 
+$('#enable-marker-popups').on("change", function () {
+  Settings.isPopupsEnabled = $("#enable-marker-popups").prop('checked');
+  $.cookie('enable-marker-popups', Settings.isPopupsEnabled ? '1' : '0', { expires: 999 });
+
+  MapBase.map.removeLayer(Layers.itemMarkersLayer);
+  MapBase.addMarkers();
+});
 
 /**
  * User Pins

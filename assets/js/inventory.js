@@ -60,7 +60,7 @@ var Inventory = {
       $(`[data-type=${name}] .counter-number`).text(marker[0].amount);
 
       //If the category is disabled, no needs to update popup
-      if (Layers.itemMarkersLayer.getLayerById(_m.text) != null && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category])
+      if (Settings.isPopupsEnabled && Layers.itemMarkersLayer.getLayerById(_m.text) != null && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category])
         Layers.itemMarkersLayer.getLayerById(_m.text)._popup.setContent(MapBase.updateMarkerContent(_m));
     });
 

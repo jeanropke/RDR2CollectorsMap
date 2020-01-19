@@ -467,11 +467,17 @@ var MapBase = {
     else
       marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
 
-    tempMarker.bindPopup(MapBase.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 })
-      .on("click", function (e) {
-        Routes.addMarkerOnCustomRoute(marker.text);
-        if (Routes.customRouteEnabled) e.target.closePopup();
-      });
+    if (Settings.isPopupsEnabled) {
+      tempMarker.bindPopup(MapBase.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 });
+    }
+
+    tempMarker.on("click", function (e) {
+      if (!Settings.isPopupsEnabled) MapBase.removeItemFromMap(marker.day || '', marker.text || '', marker.subdata || '', marker.category || '');
+
+      Routes.addMarkerOnCustomRoute(marker.text);
+      if (Routes.customRouteEnabled) e.target.closePopup();
+    });
+
     Layers.itemMarkersLayer.addLayer(tempMarker);
     if (Settings.markerCluster)
       Layers.oms.addMarker(tempMarker);
