@@ -38,8 +38,9 @@ var Pins = {
         if (doSave) this.saveAllPins();
     },
 
-    addPinToCenter: function (doSave = true) {
-        this.addPin(-63.6, 111.29, doSave);
+    addPinToCenter: function () {
+        var center = MapBase.map.getCenter();
+        this.addPin(center.lat, center.lng);
     },
 
     savePin: function (id, name, desc, icon) {

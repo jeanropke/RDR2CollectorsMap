@@ -516,6 +516,10 @@ $('#pins-edit-mode').on("change", function () {
   Pins.addToMap();
 });
 
+$('#pins-place-new').on("click", function () {
+  Pins.addPinToCenter();
+})
+
 $('#pins-export').on("click", function () {
   try {
     Pins.exportPins();
