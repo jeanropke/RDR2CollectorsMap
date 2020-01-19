@@ -10,6 +10,11 @@
     content="Red Dead Online Collectors Map. Find all collectibles across the world and sell to Madam Nazar.">
   <meta name="keywords"
     content="Red Dead Online, Collectors Map, Collectors Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
+
+  <!-- Preconnects to improve performance -->
+  <link rel="preconnect" href="https://pepegapi.jeanropke.net">
+  <link rel="preconnect" href="https://jeanropke.b-cdn.net">
+
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
@@ -423,7 +428,8 @@
         </div>
       </div>
       <div class="input-container">
-        <label for="enable-inventory-menu-update" data-text="menu.enable_inventory_menu_update">Toggling menu items updates inventory</label>
+        <label for="enable-inventory-menu-update" data-text="menu.enable_inventory_menu_update">Toggling menu items
+          updates inventory</label>
         <div class="input-checkbox-wrapper">
           <input class="input-checkbox" type="checkbox" name="enable-inventory-menu-update" value="1"
             id="enable-inventory-menu-update" />
@@ -431,7 +437,8 @@
         </div>
       </div>
       <div class="input-container">
-        <label for="reset-collection-updates-inventory" data-text="menu.reset_button_updates_inventory">Collection reset updates inventory</label>
+        <label for="reset-collection-updates-inventory" data-text="menu.reset_button_updates_inventory">Collection reset
+          updates inventory</label>
         <div class="input-checkbox-wrapper">
           <input class="input-checkbox" type="checkbox" name="reset-collection-updates-inventory" value="0"
             id="reset-collection-updates-inventory" />
@@ -466,12 +473,15 @@
     </div>
     <div class="settings-container">
       <div class="input-container-noflex">
-        <button class="btn btn-default" data-text="menu.generate_route" href="javascript:void(0);" onclick="Routes.generatePath(true)">Generate route</button>
-        <button class="btn btn-default" data-text="menu.generate_route_clear" href="javascript:void(0);" onclick="Routes.clearPath()">Clear route</button>
+        <button class="btn btn-default" data-text="menu.generate_route" href="javascript:void(0);"
+          onclick="Routes.generatePath(true)">Generate route</button>
+        <button class="btn btn-default" data-text="menu.generate_route_clear" href="javascript:void(0);"
+          onclick="Routes.clearPath()">Clear route</button>
       </div>
       <hr class="menu-divider">
       <div class="input-container">
-        <label for="generate-route-use-pathfinder" data-text="menu.generate_route_use_pathfinder">Use path finder (slower)</label>
+        <label for="generate-route-use-pathfinder" data-text="menu.generate_route_use_pathfinder">Use path finder
+          (slower)</label>
         <div class="input-checkbox-wrapper">
           <input class="input-checkbox" type="checkbox" name="generate-route-use-pathfinder" value="1"
             id="generate-route-use-pathfinder" />
@@ -506,7 +516,8 @@
         </div>
       </div>
       <div class="input-container">
-        <label for="generate-route-allow-fasttravel" data-text="menu.generate_route_allow_fasttravel">Use fast travel in path finder</label>
+        <label for="generate-route-allow-fasttravel" data-text="menu.generate_route_allow_fasttravel">Use fast travel in
+          path finder</label>
         <div class="input-checkbox-wrapper">
           <input class="input-checkbox" type="checkbox" name="generate-route-allow-fasttravel" value="1"
             id="generate-route-allow-fasttravel" />
@@ -558,9 +569,11 @@
       </div>
       <hr class="menu-divider">
       <div class="input-container-noflex">
-        <button class="btn btn-default" data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
+        <button class="btn btn-default" data-text="menu.import_route" href="javascript:void(0);"
+          onclick="Routes.importCustomRoute()">Import
           route</button>
-        <button class="btn btn-default" data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export
+        <button class="btn btn-default" data-text="menu.export_route" href="javascript:void(0);"
+          onclick="Routes.exportCustomRoute()">Export
           route</button>
       </div>
     </div>

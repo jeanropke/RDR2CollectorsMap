@@ -906,3 +906,45 @@ a.no-style:visited {
 .loot-table-categories .loot-table-category, .loot-table-category-items, .loot-table-subcategory-items {
     padding: 0 20px;
 }
+
+/* Pathfinder styling */
+.pathfinder-control {
+	padding: 5px;
+	background: #fff
+}
+
+.pathfinder-btn {
+	display: inline-block;
+	padding: 0 10px;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	color: #000;
+}
+.pathfinder-btn:disabled {
+	color: #789;
+}
+
+.pathfinder-btn-before {
+	padding: 0;
+	width: 30px;
+	text-align: center;
+}
+.pathfinder-btn-after {
+	padding: 0;
+	width: 30px;
+	text-align: center;
+}
+
+.pathfinder-btn > small {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+	top: -0.5em;
+	left: 0.1em;
+	font-family: 'Courier New', Courier, monospace;
+	text-transform: uppercase;
+}

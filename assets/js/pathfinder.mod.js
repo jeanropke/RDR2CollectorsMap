@@ -307,10 +307,6 @@ class PathFinder {
 		PathFinder._drawing = false
 		PathFinder._redrawWhenFinished = false
 
-		
-		// Append stylesheet to head
-		$('head').append($('<link />').attr({'rel': 'stylesheet', 'href': 'assets/css/pathfinder.css'}))
-
 		// Load geojson
 		loadAllGeoJson()
 
