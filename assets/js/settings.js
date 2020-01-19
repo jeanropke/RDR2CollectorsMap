@@ -2,6 +2,7 @@ var Settings = {
     isMenuOpened: $.cookie('menu-opened') == '1',
     isCoordsEnabled: $.cookie('coords-enabled') == '1',
     isPopupsEnabled: $.cookie('enable-marker-popups') == '1',
+    isDoubleClickZoomEnabled: $.cookie('enable-dclick-zoom') == '1',
     isPinsPlacingEnabled: $.cookie('pins-place-enabled') == '1',
     isPinsEditingEnabled: $.cookie('pins-edit-enabled') == '1',
     markerCluster: $.cookie('marker-cluster') == '1',

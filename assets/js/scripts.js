@@ -114,6 +114,11 @@ function init() {
     $.cookie('enable-marker-popups', '1', { expires: 999 });
   }
 
+  if (typeof $.cookie('enable-dclick-zoom') === 'undefined') {
+    Settings.isDoubleClickZoomEnabled = true;
+    $.cookie('enable-dclick-zoom', '1', { expires: 999 });
+  }
+
   MapBase.init();
   Language.setMenuLanguage();
 
@@ -128,6 +133,7 @@ function init() {
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.markerCluster);
   $('#enable-marker-popups').prop("checked", Settings.isPopupsEnabled);
+  $('#enable-dclick-zoom').prop("checked", Settings.isDoubleClickZoomEnabled);
   $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
@@ -499,6 +505,17 @@ $('#enable-marker-popups').on("change", function () {
 
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
+});
+
+$('#enable-dclick-zoom').on("change", function () {
+  Settings.isDoubleClickZoomEnabled = $("#enable-dclick-zoom").prop('checked');
+  $.cookie('enable-dclick-zoom', Settings.isDoubleClickZoomEnabled ? '1' : '0', { expires: 999 });
+
+  if (Settings.isDoubleClickZoomEnabled) {
+    MapBase.map.doubleClickZoom.enable();
+  } else {
+    MapBase.map.doubleClickZoom.disable();
+  }
 });
 
 /**

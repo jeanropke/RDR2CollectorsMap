@@ -79,6 +79,12 @@ var MapBase = {
       MapBase.addCoordsOnMap(e);
     });
 
+    if (Settings.isDoubleClickZoomEnabled) {
+      MapBase.map.doubleClickZoom.enable();
+    } else {
+      MapBase.map.doubleClickZoom.disable();
+    }
+
     var southWest = L.latLng(-160, -50),
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);

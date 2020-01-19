@@ -170,6 +170,7 @@
 	{"key": "map.same_cycle_yesterday", "value": "This item has the same cycle as yesterday. In this case, there is a 24 hour delay to respawn the item."},
 	{"key": "menu.enable_marker_popups", "value": "Marker popups enabled"},
 	{"key": "menu.user_pins_place_new", "value": "Create new pin now"},
+	{"key": "menu.enable_dclick_zoom", "value": "Double-click to zoom in"},
 
 	{"key": "menu.loot_table.category_arrowheads", "value": "Arrowheads"},
 	{"key": "menu.loot_table.category_arrowheads_common", "value": "Arrowheads (Common)"},
