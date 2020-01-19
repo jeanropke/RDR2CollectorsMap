@@ -12,7 +12,7 @@ var Cycles = {
                 Cycles.setLocaleDate();
                 Cycles.checkForUpdate();
             });
-        console.log('cycles loaded');
+        console.info('%c[Cycles] Loaded!', 'color: #bada55');
     },
 
     setCustomCycles: function () {
