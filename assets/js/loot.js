@@ -6,8 +6,7 @@ var Loot = {
             .done(function (data) {
                 Loot.lootTable = data;
             });
-
-        console.log('Random spots loottable loaded.');
+        console.info('%c[Random Spots Loottable] Loaded!', 'color: #bada55');
     },
 
     generateTable: function (table = null) {
