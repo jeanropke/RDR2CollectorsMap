@@ -7,6 +7,7 @@ var Settings = {
     isPinsEditingEnabled: $.cookie('pins-edit-enabled') == '1',
     markerCluster: $.cookie('marker-cluster') == '1',
     showAllMarkers: false,
+    showHelp: $.cookie('show-help') == '1',
     resetMarkersDaily: $.cookie('remove-markers-daily') == '1',
     toolType: $.cookie('tools') ? $.cookie('tools') : '3',
     language: $.cookie('language') ? $.cookie('language') : navigator.language.toLowerCase()

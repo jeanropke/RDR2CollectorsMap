@@ -62,7 +62,7 @@ input, textarea, select, .btn {
 }
 #main-header {
     display: flex;
-    margin: 0 10px 10px 10px;
+    margin: 10px;
 }
 
 #main-header::after {
@@ -438,7 +438,6 @@ input, textarea, select, .btn {
     height: 100vh;
     color: #eee;
     z-index: 1000;
-    padding-top: 10px;
     scrollbar-width: thin;
 }
 
@@ -905,6 +904,20 @@ a.no-style:visited {
 
 .loot-table-categories .loot-table-category, .loot-table-category-items, .loot-table-subcategory-items {
     padding: 0 20px;
+}
+
+/* Tutorial styling */
+#help-container {
+    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    min-height: 100px;
+    background-image: url(../../assets/images/help_text_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 15px 25px;
 }
 
 /* Pathfinder styling */

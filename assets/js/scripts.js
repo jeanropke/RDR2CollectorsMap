@@ -119,6 +119,11 @@ function init() {
     $.cookie('enable-dclick-zoom', '1', { expires: 999 });
   }
 
+  if (typeof $.cookie('show-help') === 'undefined') {
+    Settings.showHelp = true;
+    $.cookie('show-help', '1', { expires: 999 });
+  }
+
   MapBase.init();
   Language.setMenuLanguage();
 
@@ -136,7 +141,15 @@ function init() {
   $('#enable-dclick-zoom').prop("checked", Settings.isDoubleClickZoomEnabled);
   $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
+  $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
+
+
+  if (Settings.showHelp) {
+    $("#help-container").show();
+  } else {
+    $("#help-container").hide();
+  }
 
   Pins.addToMap();
   changeCursor();
@@ -813,6 +826,26 @@ $('#detailed-loot-modal').on('show.bs.modal', function (event) {
   if (table == 'unknown') table = null;
   modal.find('.modal-body').html(Loot.generateTable(table));
 })
+
+/**
+ * Tutorial logic
+ */
+$('[data-help]').hover(function (e) {
+  $('#help-container p').text(Language.get(`help.${$(this).data('help')}`));
+}, function () {
+  $('#help-container p').text(Language.get(`help.default`));
+});
+
+$('#show-help').on("change", function () {
+  Settings.showHelp = $("#show-help").prop('checked');
+  $.cookie('show-help', Settings.isHelpEnabled ? '1' : '0', { expires: 999 });
+
+  if (Settings.showHelp) {
+    $("#help-container").show();
+  } else {
+    $("#help-container").hide();
+  }
+});
 
 /**
  * Leaflet plugins
