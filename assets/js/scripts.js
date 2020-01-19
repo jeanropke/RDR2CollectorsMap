@@ -377,6 +377,7 @@ $("#language").on("change", function () {
 //Disable & enable collection category
 $('.clickable').on('click', function () {
   var menu = $(this);
+  if (typeof menu.data('type') === 'undefined') return;
 
   $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
   var isDisabled = menu.hasClass('disabled');
