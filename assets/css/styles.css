@@ -600,7 +600,7 @@ a.wiki-page:visited {
 }
 
 .highlightItems {
-    filter: drop-shadow(0 0 .5rem rgb(255, 0, 0)) drop-shadow(0 0 .25rem rgb(255, 0, 0));
+    filter: drop-shadow(0 0 .5rem #cc0000) drop-shadow(0 0 .25rem #cc0000);
 }
 
 .help-popup {
