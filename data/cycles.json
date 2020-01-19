@@ -177,7 +177,7 @@
             "card_pentacles"    : 5,
             "card_swords"       : 5,
             "card_wands"        : 5,
-            "random"            : 4
+            "random"            : 3
         },
         "12": {
             "american_flowers"  : 4,
@@ -194,7 +194,7 @@
             "card_pentacles"    : 1,
             "card_swords"       : 1,
             "card_wands"        : 1,
-            "random"            : 1
+            "random"            : -1
         },
         "13": {
             "american_flowers"  : 1,
@@ -228,7 +228,7 @@
             "card_pentacles"    : 4,
             "card_swords"       : 4,
             "card_wands"        : 4,
-            "random"            : 7
+            "random"            : 6
         },
         "15": {
             "american_flowers"  : 4,
@@ -245,7 +245,7 @@
             "card_pentacles"    : 1,
             "card_swords"       : 1,
             "card_wands"        : 1,
-            "random"            : 3
+            "random"            : 2
         },
         "16": {
             "american_flowers"  : 5,
@@ -262,7 +262,7 @@
             "card_pentacles"    : 4,
             "card_swords"       : 4,
             "card_wands"        : 4,
-            "random"            : 6
+            "random"            : 5
         },
         "17": {
             "american_flowers"  : 1,
@@ -279,7 +279,7 @@
             "card_pentacles"    : 2,
             "card_swords"       : 2,
             "card_wands"        : 2,
-            "random"            : 3
+            "random"            : 2
         },
         "18": {
             "american_flowers"  : 2,
@@ -296,7 +296,7 @@
             "card_pentacles"    : 4,
             "card_swords"       : 4,
             "card_wands"        : 4,
-            "random"            : 7
+            "random"            : 6
         },
         "19": {
             "american_flowers"  : 6,
@@ -313,7 +313,7 @@
             "card_pentacles"    : 5,
             "card_swords"       : 5,
             "card_wands"        : 5,
-            "random"            : 5
+            "random"            : 4
         },
         "20": {
             "american_flowers"  : 1,
@@ -330,7 +330,7 @@
             "card_pentacles"    : 6,
             "card_swords"       : 6,
             "card_wands"        : 6,
-            "random"            : 6
+            "random"            : 5
         },
         "21": {
             "american_flowers"  : 4,
@@ -347,7 +347,7 @@
             "card_pentacles"    : 2,
             "card_swords"       : 2,
             "card_wands"        : 2,
-            "random"            : 7
+            "random"            : 6
         },
         "22": {
             "american_flowers"  : 2,
@@ -364,7 +364,7 @@
             "card_pentacles"    : 4,
             "card_swords"       : 4,
             "card_wands"        : 4,
-            "random"            : 5
+            "random"            : 4
         },
         "23": {
             "american_flowers"  : 3,
@@ -381,7 +381,7 @@
             "card_pentacles"    : 2,
             "card_swords"       : 2,
             "card_wands"        : 2,
-            "random"            : 7
+            "random"            : 6
         },
         "24": {
             "american_flowers"  : 5,
@@ -398,7 +398,7 @@
             "card_pentacles"    : 5,
             "card_swords"       : 5,
             "card_wands"        : 5,
-            "random"            : 2
+            "random"            : 1
         },
         "25": {
             "american_flowers"  : 1,
@@ -415,7 +415,7 @@
             "card_pentacles"    : 3,
             "card_swords"       : 3,
             "card_wands"        : 3,
-            "random"            : 3
+            "random"            : 2
         },
         "26": {
             "american_flowers"  : 2,
@@ -432,7 +432,7 @@
             "card_pentacles"    : 6,
             "card_swords"       : 6,
             "card_wands"        : 6,
-            "random"            : 4
+            "random"            : 3
         },
         "27": {
             "american_flowers"  : 5,
@@ -449,7 +449,7 @@
             "card_pentacles"    : 6,
             "card_swords"       : 6,
             "card_wands"        : 6,
-            "random"            : 5
+            "random"            : 4
         },
 		"28": {
             "american_flowers"  : 4,
@@ -466,7 +466,7 @@
             "card_pentacles"    : 5,
             "card_swords"       : 5,
             "card_wands"        : 5,
-            "random"            : 2
+            "random"            : 1
         },
 		"29": {
             "american_flowers"  : 6,
@@ -483,7 +483,7 @@
             "card_pentacles"    : 1,
             "card_swords"       : 1,
             "card_wands"        : 1,
-            "random"            : 3
+            "random"            : 2
         },
 		"30": {
             "american_flowers"  : 3,
@@ -500,7 +500,7 @@
             "card_pentacles"    : 6,
             "card_swords"       : 6,
             "card_wands"        : 6,
-            "random"            : 4
+            "random"            : 3
         },
 		"31": {
             "american_flowers"  : 4,
@@ -517,7 +517,7 @@
             "card_pentacles"    : 3,
             "card_swords"       : 3,
             "card_wands"        : 3,
-            "random"            : 2
+            "random"            : 1
         },
 		"32": {
             "american_flowers"  : 6,
@@ -534,7 +534,7 @@
             "card_pentacles"    : 1,
             "card_swords"       : 1,
             "card_wands"        : 1,
-            "random"            : 6
+            "random"            : 5
         },
 		"33": {
             "american_flowers"  : 4,
@@ -551,7 +551,7 @@
             "card_pentacles"    : 2,
             "card_swords"       : 2,
             "card_wands"        : 2,
-            "random"            : 7
+            "random"            : 6
         },
 		"34": {
             "american_flowers"  : 3,
@@ -568,7 +568,7 @@
             "card_pentacles"    : 5,
             "card_swords"       : 5,
             "card_wands"        : 5,
-            "random"            : 3
+            "random"            : 2
         },
 		"35": {
             "american_flowers"  : 1,
@@ -585,7 +585,7 @@
             "card_pentacles"    : 4,
             "card_swords"       : 4,
             "card_wands"        : 4,
-            "random"            : 4
+            "random"            : 3
         },
 		"36": {
             "american_flowers"  : 6,
@@ -602,7 +602,7 @@
             "card_pentacles"    : 6,
             "card_swords"       : 6,
             "card_wands"        : 6,
-            "random"            : 6
+            "random"            : 5
         },
 		"37": {
             "american_flowers"  : 2,
@@ -619,7 +619,7 @@
             "card_pentacles"    : 2,
             "card_swords"       : 2,
             "card_wands"        : 2,
-            "random"            : 7
+            "random"            : 6
         }
     }
 }
