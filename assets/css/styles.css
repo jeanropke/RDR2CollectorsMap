@@ -11,11 +11,12 @@
 }
 
 ::-webkit-scrollbar {
-    width: 3px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #eee;
+    background: #aaa;
+    border-radius: 3px;
 }
 
 body {
