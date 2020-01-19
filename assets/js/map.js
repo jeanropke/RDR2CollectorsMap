@@ -98,7 +98,7 @@ var MapBase = {
       .done(function (data) {
         MapBase.overlays = data;
         MapBase.setOverlays();
-        console.info('%c[Overlays] Loaded!', 'color: #bada55');
+        console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
       });
   },
 
@@ -257,7 +257,7 @@ var MapBase = {
       .done(function (data) {
         weeklySetData = data;
       });
-    console.info('%c[Weekly Sets] Loaded!', 'color: #bada55');
+    console.info('%c[Weekly Sets] Loaded!', 'color: #bada55; background: #242424');
   },
 
   removeItemFromMap: function (day, text, subdata, category, skipInventory = false) {
@@ -532,7 +532,7 @@ MapBase.loadFastTravels = function () {
     .done(function (data) {
       fastTravelData = data;
     });
-  console.info('%c[Fast travels] Loaded!', 'color: #bada55');
+  console.info('%c[Fast travels] Loaded!', 'color: #bada55; background: #242424');
 };
 
 MapBase.addFastTravelMarker = function () {

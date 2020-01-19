@@ -8,7 +8,7 @@ var Treasures = {
         Treasures.data = data;
         Treasures.set();
       });
-    console.info('%c[Treasures] Loaded!', 'color: #bada55');
+    console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
   },
   set: function () {
     var treasureIcon = L.icon({
