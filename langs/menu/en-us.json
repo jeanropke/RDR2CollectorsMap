@@ -172,6 +172,7 @@
 	{"key": "menu.user_pins_place_new", "value": "Create new pin now"},
 	{"key": "menu.enable_dclick_zoom", "value": "Double-click to zoom in"},
 	{"key": "menu.show_help", "value": "Show help on hover"},
+	{"key": "map.mark_important", "value": "Mark as important"},
 
 	{"key": "menu.loot_table.category_arrowheads", "value": "Arrowheads"},
 	{"key": "menu.loot_table.category_arrowheads_common", "value": "Arrowheads (Common)"},
