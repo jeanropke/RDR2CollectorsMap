@@ -5,6 +5,7 @@ var Encounters = {
         .done(function (data) {
             Encounters.set(data);
     });
+    console.info('%c[Encouters] Loaded!', 'color: #bada55');
   },
   set: function(data){
     $.each(data, function(_category, _markers) {
