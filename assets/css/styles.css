@@ -5,7 +5,13 @@
     font-weight: 400;
     text-rendering: optimizeLegibility
 }
-
+@font-face {
+    font-family: RDRLino;
+    src: url(../fonts/RDRLino-Regular.woff2) format("woff2"), url(../fonts/RDRLino-Regular.woff) format("woff"), url(../fonts/RDRLino-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    text-rendering: optimizeLegibility
+}
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -78,7 +84,10 @@ input, textarea, select, .btn {
     background-size: auto 75px;
     padding: 6px 0;
 }
-
+#main-header-center > span {
+    font-family: RDRLino, serif;
+    font-weight: normal;
+}
 #main-header-left, #main-header-right {
     user-select: none;
     height: 75px;
