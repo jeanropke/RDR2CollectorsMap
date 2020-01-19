@@ -18,7 +18,7 @@ var Language = {
         else if (Language.data['en-us'][value])
             return Language.data['en-us'][value];
         else
-            return value;
+            return '';
     },
 
     setMenuLanguage: function () {
