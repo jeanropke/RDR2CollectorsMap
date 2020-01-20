@@ -4,7 +4,7 @@
 
 var Menu = {
   reorderMenu: function (menu) {
-    $(menu).children().sort(function (a, b) { 
+    $(menu).children().sort(function (a, b) {
       return a.textContent.toLowerCase().localeCompare(b.textContent.toLowerCase());
     }).appendTo(menu);
   },
@@ -132,7 +132,7 @@ Menu.refreshMenu = function () {
         if (!marker.canCollect)
           $(`[data-type=${marker.text}]`).addClass('disabled');
       }
-      
+
       // set green color of weekly collection items
       $.each(weeklyItems, function (key, weeklyItem) {
         if (`flower_${marker.subdata}` == weeklyItem.item || `egg_${marker.subdata}` == weeklyItem.item)
@@ -151,8 +151,9 @@ Menu.refreshMenu = function () {
 
     // if the cycle is the same as yesterday highlight category in menu;
     if (Cycles.isSameAsYesterday(category.data('type'))) {
-      if ($(`[data-text="menu.${category.data('type')}"]span span`).hasClass('same-cycle-warning-menu')) return;
-        $(`[data-text="menu.${category.data('type')}"]`).append(`<span class="same-cycle-warning-menu"> ! </span>`);
+      if ($(`[data-text="menu.${category.data('type')}"]span span`).hasClass('same-cycle-warning-menu'))
+        return;
+      $(`[data-text="menu.${category.data('type')}"]`).append(`<span class="same-cycle-warning-menu"> ! </span>`);
     }
     else {
       if ($(`[data-text="menu.${category.data('type')}"]span span`).hasClass('same-cycle-warning-menu'))
@@ -162,7 +163,7 @@ Menu.refreshMenu = function () {
     if (category.data('type').includes('card_')) return;
 
     var children = category.children('.collectible-wrapper');
-    
+
     children.sort(function (a, b) {
       return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
     }).appendTo(this);
@@ -186,7 +187,7 @@ Menu.showAll = function () {
   });
 
   enabledCategories = categories;
-  
+
   MapBase.addMarkers();
 };
 
