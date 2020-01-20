@@ -147,14 +147,14 @@ Menu.refreshMenu = function () {
   $('.menu-hidden[data-type]').each(function (key, value) {
     var category = $(this);
 
+    if (category.data('type') == 'treasure') return;
+
     // if the cycle is the same as yesterday highlight category in menu;
     if (Cycles.isSameAsYesterday(category.data('type'))) {
-      if (category.data('type') == 'treasure') return;
       $(`[data-text="menu.${category.data('type')}"]`).first().append(`<span class="same-cycle-warning-menu"> ! </span>`);
     }
 
     if (category.data('type').includes('card_')) return;
-    if (category.data('type') == 'treasure') return;
 
     var children = category.children('.collectible-wrapper');
     
