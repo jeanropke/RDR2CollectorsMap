@@ -151,7 +151,7 @@ Menu.refreshMenu = function () {
 
     // if the cycle is the same as yesterday highlight category in menu;
     if (Cycles.isSameAsYesterday(category.data('type'))) {
-      $(`[data-text="menu.${category.data('type')}"]`).first().append(`<span class="same-cycle-warning-menu"> ! </span>`);
+      $(`[data-text="menu.${category.data('type')}"]`).append(`<span class="same-cycle-warning-menu"> ! </span>`);
     }
 
     if (category.data('type').includes('card_')) return;
