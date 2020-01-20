@@ -151,7 +151,12 @@ Menu.refreshMenu = function () {
 
     // if the cycle is the same as yesterday highlight category in menu;
     if (Cycles.isSameAsYesterday(category.data('type'))) {
-      $(`[data-text="menu.${category.data('type')}"]`).append(`<span class="same-cycle-warning-menu"> ! </span>`);
+      if ($(`[data-text="menu.${category.data('type')}"]span span`).hasClass('same-cycle-warning-menu')) return;
+        $(`[data-text="menu.${category.data('type')}"]`).append(`<span class="same-cycle-warning-menu"> ! </span>`);
+    }
+    else {
+      if ($(`[data-text="menu.${category.data('type')}"]span span`).hasClass('same-cycle-warning-menu'))
+        $(`[data-text="menu.${category.data('type')}"]span`).find('span').remove();
     }
 
     if (category.data('type').includes('card_')) return;
