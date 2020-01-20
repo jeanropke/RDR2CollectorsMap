@@ -558,6 +558,12 @@ input, textarea, select, .btn {
     text-overflow: ellipsis;
 }
 
+.same-cycle-warning-menu {
+    font-size: 18px;
+    color: #f00;
+    font-weight: 900;
+}
+
 .lat-lng-container {
     position: absolute;
     bottom: 0;
