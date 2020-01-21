@@ -1,9 +1,7 @@
 var Cycles = {
     data: [],
     load: function () {
-        var date = new Date();
-        var dateString = (date.getUTCMonth() + 1) + '-' + date.getUTCDate() + '-' + date.getUTCFullYear();
-        $.getJSON(`data/cycles.json?nocache=${nocache}&date=${dateString}`)
+        $.getJSON(`data/cycles.json?nocache=${nocache}&date=${(new Date()).getTime()}`)
             .done(function (_data) {
                 Cycles.data = _data;
                 Cycles.setCustomCycles();
