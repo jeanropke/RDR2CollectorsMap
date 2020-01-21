@@ -227,11 +227,12 @@ var MapBase = {
   },
 
   addMarkers: function (refreshMenu = false) {
-
     if (Layers.itemMarkersLayer != null)
       Layers.itemMarkersLayer.clearLayers();
     if (Layers.miscLayer != null)
       Layers.miscLayer.clearLayers();
+
+    var opacity = Settings.markerOpacity ?? 1;
 
     $.each(MapBase.markers, function (key, marker) {
       //Set isVisible to false. addMarkerOnMap will set to true if needs
@@ -241,7 +242,7 @@ var MapBase = {
         if (categoriesDisabledByDefault.includes(marker.subdata))
           return;
 
-      MapBase.addMarkerOnMap(marker);
+      MapBase.addMarkerOnMap(marker, opacity);
     });
 
     Layers.itemMarkersLayer.addTo(MapBase.map);
@@ -426,7 +427,7 @@ var MapBase = {
         `;
   },
 
-  addMarkerOnMap: function (marker) {
+  addMarkerOnMap: function (marker, opacity = 1) {
     if (marker.day != Cycles.data.cycles[Cycles.data.current][marker.category] && !Settings.showAllMarkers) return;
 
     if (!uniqueSearchMarkers.includes(marker))
@@ -450,7 +451,7 @@ var MapBase = {
     }
 
     var tempMarker = L.marker([marker.lat, marker.lng], {
-      opacity: marker.canCollect ? 1 : .35,
+      opacity: marker.canCollect ? opacity : opacity / 3,
       icon: new L.Icon.DataMarkup({
         iconUrl: icon,
         iconSize: [35, 45],
