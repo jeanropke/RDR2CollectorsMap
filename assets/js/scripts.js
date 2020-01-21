@@ -261,15 +261,9 @@ setInterval(function () {
 }, 1000);
 
 // toggle timer and clock after click the container
-$('.timer-container').on('click', function () {
-  $(this).toggleClass("display-in-front");
-  $('.clock-container').toggleClass("display-in-front");
+$('.timer-container, .clock-container').on('click', function () {
+  $('.timer-container, .clock-container').toggleClass("display-in-front");
 });
-$('.clock-container').on('click', function () {
-  $(this).toggleClass("display-in-front");
-  $('.timer-container').toggleClass("display-in-front");
-});
-
 
 /**
  * jQuery triggers
