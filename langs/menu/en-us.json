@@ -268,5 +268,5 @@
 	{"key": "help.user_pins_import", "value": "Imports a pins file and displays all those pins on the map."},
 	{"key": "help.user_pins_place_mode", "value": "Toggles whether a new pin should be created when you click somewhere on the map."},
 	{"key": "help.marker_opacity", "value": "Allows you to change the opacity of the collectible markers on the map."},
-	{"key": "help.overlay_opacity", "value": "Allows you to change the opacity of the different overlays that appear near caves, buildings and more."}
+	{"key": "help.overlay_opacity", "value": "Allows you to change the opacity of the different overlays that appear where caves, buildings, etc. are located."}
 ]
