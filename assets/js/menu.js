@@ -152,7 +152,7 @@ Menu.refreshMenu = function () {
     // if the cycle is the same as yesterday highlight category in menu;
     var hasCycleWarning = $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).length;
     if (Cycles.isSameAsYesterday(category.data('type')) && !hasCycleWarning) {
-      $(`[data-text="menu.${category.data('type')}"]`).append(`<img class="same-cycle-warning-menu" src="/assets/images/same-cycle-alert.png" alt="Same cycle">`);
+      $(`[data-text="menu.${category.data('type')}"]`).append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
     } else if (hasCycleWarning) {
       $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).remove();
     }
