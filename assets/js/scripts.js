@@ -282,6 +282,11 @@ $('.timer-container, .clock-container').on('click', function () {
  * jQuery triggers
  */
 
+//Toggle debug container
+$("#toggle-debug").on("click", function () {
+  $("#debug-container").toggleClass('opened');
+});
+
 //Show all markers on map
 $("#show-all-markers").on("change", function () {
   Settings.showAllMarkers = $("#show-all-markers").prop('checked');

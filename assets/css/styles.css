@@ -504,13 +504,13 @@ input, textarea, select, .btn {
     transform: rotate(180deg);
 }
 
-.side-menu .menu-hidden {
+.side-menu .menu-hidden, #debug-container {
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-out;
 }
 
-.side-menu .menu-hidden.opened {
+.side-menu .menu-hidden.opened, #debug-container.opened {
     max-height: 2000px;
     transition: max-height 400ms linear;
 }
