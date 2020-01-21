@@ -128,7 +128,7 @@ Menu.refreshMenu = function () {
     var hasCycleWarning = $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).length;
     if (Cycles.isSameAsYesterday(category.data('type')) && !hasCycleWarning) {
       $(`[data-text="menu.${category.data('type')}"]`).append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
-    } else if (hasCycleWarning) {
+    } else if (!Cycles.isSameAsYesterday(category.data('type')) && hasCycleWarning) {
       $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).remove();
     }
 
