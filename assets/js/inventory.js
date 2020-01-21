@@ -68,6 +68,7 @@ var Inventory = {
       Routes.drawLines();
 
     MapBase.save();
+    Menu.refreshItemsCounter();
   },
 
   toggleMenuItemsDisabled: function () {
