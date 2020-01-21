@@ -218,7 +218,5 @@ Menu.liveUpdateDebugMarkersInputs = function (lat, lng) {
 }
 // Auto remove debug markers coordinates when "show coordinates on click" is disabled
 $('#show-coordinates').on('change', function () {
-  $('#debug-marker-lat').val('');
-  $('#debug-marker-lng').val('');
-  $('#debug-marker-name').val('');
+  $('#debug-marker-lat, #debug-marker-lng, #debug-marker-name').val('');
 });
