@@ -25,11 +25,11 @@ var MapBase = {
         noWrap: true,
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
       }),
-      L.tileLayer((isLocalHost() ? 'assets/maps/' : 'https://jeanropke.b-cdn.net/') + 'detailed/{z}/{x}_{y}.jpg', {
+      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
         noWrap: true,
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
       }),
-      L.tileLayer((isLocalHost() ? 'assets/maps/' : 'https://jeanropke.b-cdn.net/') + 'darkmode/{z}/{x}_{y}.jpg', {
+      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
         noWrap: true,
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
       })
