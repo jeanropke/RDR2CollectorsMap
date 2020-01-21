@@ -110,7 +110,7 @@ var MapBase = {
 
   setOverlays: function () {
     $.each(MapBase.overlays, function (key, value) {
-      L.imageOverlay(value.img, value.bounds).addTo(MapBase.map);
+      L.imageOverlay(value.img, value.bounds, { opacity: 0.5 }).addTo(MapBase.map);
     });
   },
 
