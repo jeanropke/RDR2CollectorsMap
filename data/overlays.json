@@ -11,6 +11,10 @@
 		"img": "./assets/overlays/build_03.png",
 		"bounds": [[-22.0547, 102.9063], [-22.2031, 103.0625]]
 	},
+	"build_04": {
+		"img": "./assets/overlays/build_04.png",
+		"bounds": [[-90.8906, 126.7578], [-91.2734, 127.25]]
+	},
 	"cave_01": {
 		"img": "./assets/overlays/cave_01.png",
 		"bounds": [[-53.3438, 68.8516], [-52.1172, 69.9453]]
