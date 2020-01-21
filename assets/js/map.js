@@ -262,6 +262,13 @@ var MapBase = {
     $.getJSON('data/weekly.json?nocache=' + nocache)
       .done(function (data) {
         weeklySetData = data;
+
+        var _weekly = getParameterByName('weekly');
+        if (_weekly != null) {
+          if (weeklySetData.sets[_weekly]) {
+            weeklySetData.current = _weekly;
+          }
+        }
       });
     console.info('%c[Weekly Sets] Loaded!', 'color: #bada55; background: #242424');
   },
@@ -390,7 +397,7 @@ var MapBase = {
     var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
     var lootText = marker.category == 'random' ? ` | <a href="javascript:void(0)" data-toggle="modal" data-target="#detailed-loot-modal" data-table="${marker.lootTable || 'unknown'}">${Language.get('menu.loot_table.view_loot')}</a>` : '';
     var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">' + Language.get('map.video') + '</a>' : '';
-    var importantItem = ((marker.subdata != 'agarita' && marker.subdata != 'blood_flower') ? ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}')">${Language.get('map.mark_important')}</a>` : '' );
+    var importantItem = ((marker.subdata != 'agarita' && marker.subdata != 'blood_flower') ? ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}')">${Language.get('map.mark_important')}</a>` : '');
 
     var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(lootText).append(videoText).append(importantItem);
 
@@ -520,7 +527,7 @@ var MapBase = {
     MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   },
 
-  highlightImportantItem (text) {
+  highlightImportantItem(text) {
     $(`[data-marker*=${text}]`).toggleClass('highlightItems');
   }
 };
