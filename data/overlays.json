@@ -43,6 +43,14 @@
 		"img": "./assets/overlays/cave_07.png",
 		"bounds": [[-61.5234, 77.8125], [-63.13, 79.05]]
 	},
+	"exterior_01": {
+		"img": "./assets/overlays/exterior_01.png",
+		"bounds": [[-86.7109, 148.9375], [-88.375, 155.1484]]
+	},
+	"exterior_02": {
+		"img": "./assets/overlays/exterior_02.png",
+		"bounds": [[-55.6875, 157.7188], [-56.1953, 158.1563]]
+	},
 	"mine_01": {
 		"img": "./assets/overlays/mine_01.png",
 		"bounds": [[-43.4766, 153.2891], [-41.505, 154.8438]]
