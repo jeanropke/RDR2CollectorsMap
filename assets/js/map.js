@@ -232,7 +232,7 @@ var MapBase = {
     if (Layers.miscLayer != null)
       Layers.miscLayer.clearLayers();
 
-    var opacity = Settings.markerOpacity ?? 1;
+    var opacity = Settings.markerOpacity;
 
     $.each(MapBase.markers, function (key, marker) {
       //Set isVisible to false. addMarkerOnMap will set to true if needs
