@@ -104,7 +104,7 @@
 
 	{"key": "cups_eight.name", "value": "Eight of Cups"},
 	{"key": "cups_eight_1.desc", "value": "On a barrel underneath an awning."},
-	{"key": "cups_eight_2.desc", "value": "On the right most shelf at the shootingrange."},
+	{"key": "cups_eight_2.desc", "value": "On the right most shelf at the shooting range."},
 	{"key": "cups_eight_3.desc", "value": "Inside the pit latrine."},
 	{"key": "cups_eight_4.desc", "value": "Front side of the house on a table."},
 	{"key": "cups_eight_5.desc", "value": "On a barrel underneath the covered section in the back."},
@@ -129,8 +129,8 @@
 	{"key": "cups_knight.name", "value": "Knight of Cups"},
 	{"key": "cups_knight_1.desc", "value": "Inside the eastern cabin."},
 	{"key": "cups_knight_2.desc", "value": "On a table underneath the awning in the back."},
-	{"key": "cups_knight_3.desc", "value": "On a crate under the awnining of the barn."},
-	{"key": "cups_knight_4.desc", "value": "On a box with a sheet haning next to it."},
+	{"key": "cups_knight_3.desc", "value": "On a crate under the awning of the barn."},
+	{"key": "cups_knight_4.desc", "value": "On a box with a sheet hanging next to it."},
 	{"key": "cups_knight_5.desc", "value": "On the fireplace."},
 	{"key": "cups_knight_6.desc", "value": "On top of a crate on the second floor of the western bedroom in the back."},
 
@@ -204,7 +204,7 @@
 	{"key": "swords_six_3.desc", "value": "On top of the windmill tower."},
 	{"key": "swords_six_4.desc", "value": "On a window sill."},
 	{"key": "swords_six_5.desc", "value": "On a bed upstairs."},
-	{"key": "swords_six_6.desc", "value": "Upstairs in the southern corner room on the threeseater."},
+	{"key": "swords_six_6.desc", "value": "Upstairs in the southern corner room on the three-seater."},
 
 	{"key": "swords_seven.name", "value": "Seven of Swords"},
 	{"key": "swords_seven_1.desc", "value": "Next to a blue barrel on the south west dock."},
@@ -223,10 +223,10 @@
 	{"key": "swords_eight_6.desc", "value": "On the worktable in the shack."},
 
 	{"key": "swords_nine.name", "value": "Nine of Swords"},
-	{"key": "swords_nine_1.desc", "value": "On the back of the haywagon."},
+	{"key": "swords_nine_1.desc", "value": "On the back of the hay wagon."},
 	{"key": "swords_nine_2.desc", "value": "On top of the water tower. Need to climb ladder."},
 	{"key": "swords_nine_3.desc", "value": ""},
-	{"key": "swords_nine_4.desc", "value": "On a railing ontop of the house climb the ladder inside."},
+	{"key": "swords_nine_4.desc", "value": "On a railing on top of the house climb the ladder inside."},
 	{"key": "swords_nine_5.desc", "value": "On a barrel on the second floor of the northwestern tower."},
 	{"key": "swords_nine_6.desc", "value": "On the railing post on the second floor balcony. Use the stairs at the back of the house."},
 
@@ -272,7 +272,7 @@
 
 	{"key": "wands_ace.name", "value": "Ace of Wands"},
 	{"key": "wands_ace_1.desc", "value": "On top of piano in corner of room inside house on ground floor."},
-	{"key": "wands_ace_2.desc", "value": "Inside the house on the werstern table with a lot of bottles."},
+	{"key": "wands_ace_2.desc", "value": "Inside the house on the western table with a lot of bottles."},
 	{"key": "wands_ace_3.desc", "value": "Inside barn to the left."},
 	{"key": "wands_ace_4.desc", "value": "Upper floor of the barn, on a barrel."},
 	{"key": "wands_ace_5.desc", "value": "On the railing next to the entrance of the chapel."},
@@ -337,7 +337,7 @@
 	{"key": "wands_nine.name", "value": "Nine of Wands"},
 	{"key": "wands_nine_1.desc", "value": "Get on shorter roof. Card is on window sill."},
 	{"key": "wands_nine_2.desc", "value": "Inside the mine on a barrel next to a lantern."},
-	{"key": "wands_nine_3.desc", "value": "On the railing of the dam near one of the weels."},
+	{"key": "wands_nine_3.desc", "value": "On the railing of the dam near one of the wheels."},
 	{"key": "wands_nine_4.desc", "value": "On the water tank."},
 	{"key": "wands_nine_5.desc", "value": "Inside the house on the dinner table."},
 	{"key": "wands_nine_6.desc", "value": "On the second floor of the church on the windowsill of a broken window."},
@@ -431,7 +431,7 @@
 	{"key": "pentacles_six_6.desc", "value": "On a picnic table outside the house on the other side of the road."},
 
 	{"key": "pentacles_seven.name", "value": "Seven of Pentacles"},
-	{"key": "pentacles_seven_1.desc", "value": "Ontop of a blue barrel."},
+	{"key": "pentacles_seven_1.desc", "value": "On top of a blue barrel."},
 	{"key": "pentacles_seven_2.desc", "value": "In Alley. On top of two crates."},
 	{"key": "pentacles_seven_3.desc", "value": ""},
 	{"key": "pentacles_seven_4.desc", "value": "On some boxes in a alleyway."},
@@ -617,7 +617,7 @@
 	{"key": "bottle_tennesee_whiskey.name", "value": "Tennessee Whiskey Bottle"},
 	{"key": "bottle_tennesee_whiskey_1.desc", "value": "On the dinner table inside."},
 	{"key": "bottle_tennesee_whiskey_2.desc", "value": "Inside building in cabinet in far right corner."},
-	{"key": "bottle_tennesee_whiskey_3.desc", "value": "In a cabinet in the livingroom."},
+	{"key": "bottle_tennesee_whiskey_3.desc", "value": "In a cabinet in the living room."},
 	{"key": "bottle_tennesee_whiskey_4.desc", "value": "On the crate in the middle of the tunnel."},
 	{"key": "bottle_tennesee_whiskey_5.desc", "value": "Underneath the northeastern wall of the chapel."},
 	{"key": "bottle_tennesee_whiskey_6.desc", "value": "On a shelf at the below the bar in the saloon."},
@@ -747,7 +747,7 @@
 	{"key": "arrowhead_raw_2.desc", "value": "Behind the huts."},
 	{"key": "arrowhead_raw_3.desc", "value": "In front of a tree on the shoreline of a small stream."},
 	{"key": "arrowhead_raw_4.desc", "value": "At the base of the tree, next to a rock."},
-	{"key": "arrowhead_raw_5.desc", "value": "At the middle ledge, eachable from both above and below."},
+	{"key": "arrowhead_raw_5.desc", "value": "At the middle ledge, reachable from both above and below."},
 	{"key": "arrowhead_raw_6.desc", "value": "Next to the tree stump."},
 
 	{"key": "arrowhead_obsidian.name", "value": "Obsidian Arrowhead"},
