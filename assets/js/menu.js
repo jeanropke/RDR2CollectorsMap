@@ -125,10 +125,11 @@ Menu.refreshMenu = function () {
     if (category.data('type') == 'treasure') return;
 
     // if the cycle is the same as yesterday highlight category in menu;
-    var hasCycleWarning = $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).length;
-    if (Cycles.isSameAsYesterday(category.data('type')) && !hasCycleWarning) {
+    var isSameCycle = Cycles.isSameAsYesterday(category.data('type'));
+    var hasCycleWarning = $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).length > 0;
+    if (isSameCycle && !hasCycleWarning) {
       $(`[data-text="menu.${category.data('type')}"]`).append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
-    } else if (!Cycles.isSameAsYesterday(category.data('type')) && hasCycleWarning) {
+    } else if (!isSameCycle && hasCycleWarning) {
       $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).remove();
     }
 
