@@ -7,6 +7,7 @@ var Layers = {
   miscLayer: new L.LayerGroup(),
   encountersLayer: new L.LayerGroup(),
   pinsLayer: new L.LayerGroup(),
+  overlaysLayer: new L.LayerGroup(),
   oms: null
 };
 
@@ -103,15 +104,21 @@ var MapBase = {
     $.getJSON('data/overlays.json?nocache=' + nocache)
       .done(function (data) {
         MapBase.overlays = data;
-        MapBase.setOverlays();
+        MapBase.setOverlays(Settings.overlayOpacity);
         console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
       });
   },
 
-  setOverlays: function () {
+  setOverlays: function (opacity = 0.5) {
+    Layers.overlaysLayer.clearLayers();
+
+    if (opacity == 0) return;
+    
     $.each(MapBase.overlays, function (key, value) {
-      L.imageOverlay(value.img, value.bounds, { opacity: 0.5 }).addTo(MapBase.map);
+      Layers.overlaysLayer.addLayer(L.imageOverlay(value.img, value.bounds, { opacity: opacity }));
     });
+
+    Layers.overlaysLayer.addTo(MapBase.map);
   },
 
   devGameToMap: function (t) {
