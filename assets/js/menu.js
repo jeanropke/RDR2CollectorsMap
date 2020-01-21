@@ -150,14 +150,11 @@ Menu.refreshMenu = function () {
     if (category.data('type') == 'treasure') return;
 
     // if the cycle is the same as yesterday highlight category in menu;
-    if (Cycles.isSameAsYesterday(category.data('type'))) {
-      if ($(`[data-text="menu.${category.data('type')}"]span span`).hasClass('same-cycle-warning-menu'))
-        return;
-      $(`[data-text="menu.${category.data('type')}"]`).append(`<span class="same-cycle-warning-menu"> ! </span>`);
-    }
-    else {
-      if ($(`[data-text="menu.${category.data('type')}"]span span`).hasClass('same-cycle-warning-menu'))
-        $(`[data-text="menu.${category.data('type')}"]span`).find('span').remove();
+    var hasCycleWarning = $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).length;
+    if (Cycles.isSameAsYesterday(category.data('type')) && !hasCycleWarning) {
+      $(`[data-text="menu.${category.data('type')}"]`).append(`<img class="same-cycle-warning-menu" src="/assets/images/same-cycle-alert.png" alt="Same cycle">`);
+    } else if (hasCycleWarning) {
+      $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).remove();
     }
 
     if (category.data('type').includes('card_')) return;

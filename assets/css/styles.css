@@ -559,8 +559,9 @@ input, textarea, select, .btn {
 }
 
 .same-cycle-warning-menu {
-    color: #f00;
-    font-weight: 900;
+    margin-left: 4px;
+    height: 20px;
+    width: auto;
 }
 
 .lat-lng-container {
