@@ -177,10 +177,11 @@ Menu.hideAll = function () {
 };
 
 Menu.refreshItemsCounter = function () {
+  var _markers = MapBase.markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible);
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', MapBase.markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible && (item.isCollected || item.amount == 10)).length)
-    .replace('{max}', MapBase.markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible).length));
+    .replace('{count}', _markers.filter(item => item.isCollected || item.amount >= Inventory.stackSize).length)
+    .replace('{max}', _markers.length));
 };
 
 // Auto fill debug markers inputs, when "show coordinates on click" is enabled
@@ -188,7 +189,3 @@ Menu.liveUpdateDebugMarkersInputs = function (lat, lng) {
   $('#debug-marker-lat').val(lat);
   $('#debug-marker-lng').val(lng);
 }
-// Auto remove debug markers coordinates when "show coordinates on click" is disabled
-$('#show-coordinates').on('change', function () {
-  $('#debug-marker-lat, #debug-marker-lng, #debug-marker-name').val('');
-});
