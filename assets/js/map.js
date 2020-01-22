@@ -113,7 +113,7 @@ var MapBase = {
     Layers.overlaysLayer.clearLayers();
 
     if (opacity == 0) return;
-    
+
     $.each(MapBase.overlays, function (key, value) {
       Layers.overlaysLayer.addLayer(L.imageOverlay(value.img, value.bounds, { opacity: opacity }));
     });
@@ -169,15 +169,15 @@ var MapBase = {
       var markers = MapBase.markers;
 
       $.each(markers, function (key, value) {
-        if (inventory[value.text])
-          inventory[value.text].isCollected = false;
+        if (Inventory.items[value.text])
+          Inventory.items[value.text].isCollected = false;
 
         markers[key].isCollected = false;
         markers[key].canCollect = value.amount < Inventory.stackSize;
       });
 
       MapBase.markers = markers;
-      MapBase.save();
+      Inventory.save();
     }
 
     $.cookie('date', date, { expires: 999 });
@@ -506,28 +506,6 @@ var MapBase = {
       Layers.oms.addMarker(tempMarker);
   },
 
-  save: function () {
-    //Before saving, remove previous cookies peepoSmart
-    $.removeCookie('removed-items');
-    $.each($.cookie(), function (key, value) {
-      if (key.startsWith('removed-items')) {
-        $.removeCookie(key)
-      }
-    });
-    var temp = "";
-    $.each(MapBase.markers, function (key, marker) {
-      if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category] && (marker.amount > 0 || marker.isCollected))
-        temp += `${marker.text}:${marker.isCollected ? '1' : '0'}:${marker.amount};`;
-    });
-
-    var collectedItemsArray = temp.match(/.{1,2000}/g);
-
-    $.each(collectedItemsArray, function (key, value) {
-      $.cookie('removed-items-' + key, value, {
-        expires: 999
-      });
-    });
-  },
   gameToMap: function (lat, lng, name = "Debug Marker") {
     MapBase.debugMarker((0.01552 * lng + -63.6), (0.01552 * lat + 111.29), name);
   },
