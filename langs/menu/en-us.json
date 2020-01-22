@@ -186,6 +186,8 @@
 	{"key": "menu.overlay_opacity.75", "value": "75%"},
 	{"key": "menu.overlay_opacity.100", "value": "Opaque"},
 	{"key": "menu.toggle_debug", "value": "Toggle debug features"},
+	{"key": "map.random_spot.desc", "value": "This spot gives you a random item, you can view more detailed information {link}."},
+	{"key": "map.random_spot.link", "value": "on this Wiki page"},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
