@@ -18,10 +18,10 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=240" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=245" />
 
   <script>
-    var nocache = 240;
+    var nocache = 245;
   </script>
 </head>
 
@@ -263,7 +263,8 @@
       <div class="menu-option clickable" data-type="random" data-help="item_category">
         <img class="icon" src="./assets/images/icons/random.png" />
         <span data-text="menu.random_spots">Random Spots</span>
-        <input style="margin: auto 35px auto auto" class="input-day" type="number" min="1" max="7" name="random" data-help="item_manual_cycle">
+        <input style="margin: auto 48px auto auto" class="input-day" type="number" min="1" max="7" name="random"
+          data-help="item_manual_cycle">
       </div>
     </div>
     <h2 data-text="menu.utils">Utilities</h2>
@@ -378,6 +379,26 @@
           <option value="3" data-text="menu.tool_type.all" selected>All</option>
         </select>
       </div>
+      <div class="input-container" data-help="marker_opacity">
+        <label for="marker-opacity" data-text="menu.marker_opacity">Marker opacity</label>
+        <select class="input-day wide-select-menu" id="marker-opacity">
+          <option value="0.2" data-text="menu.marker_opacity.20">20%</option>
+          <option value="0.4" data-text="menu.marker_opacity.40">40%</option>
+          <option value="0.6" data-text="menu.marker_opacity.60">60%</option>
+          <option value="0.8" data-text="menu.marker_opacity.80" selected>80%</option>
+          <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
+        </select>
+      </div>
+      <div class="input-container" data-help="overlay_opacity">
+        <label for="overlay-opacity" data-text="menu.overlay_opacity">Overlay opacity</label>
+        <select class="input-day wide-select-menu" id="overlay-opacity">
+          <option value="0" data-text="menu.overlay_opacity.0">Disabled</option>
+          <option value="0.25" data-text="menu.overlay_opacity.25">25%</option>
+          <option value="0.5" data-text="menu.overlay_opacity.50">50%</option>
+          <option value="0.75" data-text="menu.overlay_opacity.75" selected>75%</option>
+          <option value="1" data-text="menu.overlay_opacity.100" selected>Opaque</option>
+        </select>
+      </div>
       <div class="input-container" data-help="marker_cluster">
         <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
         <div class="input-checkbox-wrapper">
@@ -392,7 +413,8 @@
           <label class="input-checkbox-label" for="reset-markers"></label>
         </div>
       </div>
-      <div class="input-container clickable" data-help="clear_markers" data-toggle="modal" data-target="#clear-markers-modal">
+      <div class="input-container clickable" data-help="clear_markers" data-toggle="modal"
+        data-target="#clear-markers-modal">
         <label data-text="menu.clear_markers">Reset markers now</label>
         <div class="input-action"></div>
       </div>
@@ -453,7 +475,8 @@
         <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
         <input id="inventory-stack" class="input-day narrow-select-menu" type="number" min="1" max="10" value="10">
       </div>
-      <div class="input-container clickable" data-help="clear_inventory" data-toggle="modal" data-target="#clear-inventory-modal">
+      <div class="input-container clickable" data-help="clear_inventory" data-toggle="modal"
+        data-target="#clear-inventory-modal">
         <label data-text="menu.clear_inventory">Clear inventory</label>
         <div class="input-action"></div>
       </div>
@@ -468,7 +491,8 @@
       <div class="input-container" data-help="enable_marker_popups">
         <label for="enable-marker-popups" data-text="menu.enable_marker_popups">Marker popups enabled</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-marker-popups" value="1" id="enable-marker-popups" />
+          <input class="input-checkbox" type="checkbox" name="enable-marker-popups" value="1"
+            id="enable-marker-popups" />
           <label class="input-checkbox-label" for="enable-marker-popups"></label>
         </div>
       </div>
@@ -498,10 +522,10 @@
     </div>
     <div class="settings-container">
       <div class="input-container-noflex">
-        <button class="btn btn-default" data-text="menu.generate_route" data-help="generate_route" href="javascript:void(0);"
-          onclick="Routes.generatePath(true)">Generate route</button>
-        <button class="btn btn-default" data-text="menu.generate_route_clear" data-help="generate_route_clear" href="javascript:void(0);"
-          onclick="Routes.clearPath()">Clear route</button>
+        <button class="btn btn-default" data-text="menu.generate_route" data-help="generate_route"
+          href="javascript:void(0);" onclick="Routes.generatePath(true)">Generate route</button>
+        <button class="btn btn-default" data-text="menu.generate_route_clear" data-help="generate_route_clear"
+          href="javascript:void(0);" onclick="Routes.clearPath()">Clear route</button>
       </div>
       <hr class="menu-divider">
       <div class="input-container" data-help="generate_route_use_pathfinder">
@@ -588,17 +612,18 @@
           <label class="input-checkbox-label" for="custom-routes"></label>
         </div>
       </div>
-      <div class="input-container clickable" data-help="clear_custom_routes" data-toggle="modal" data-target="#clear-routes-modal">
+      <div class="input-container clickable" data-help="clear_custom_routes" data-toggle="modal"
+        data-target="#clear-routes-modal">
         <label data-text="menu.clear_custom_routes">Clear custom route</label>
         <div class="input-action"></div>
       </div>
       <hr class="menu-divider">
       <div class="input-container-noflex">
-        <button class="btn btn-default" data-text="menu.import_route" data-help="import_route" href="javascript:void(0);"
-          onclick="Routes.importCustomRoute()">Import
+        <button class="btn btn-default" data-text="menu.import_route" data-help="import_route"
+          href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
           route</button>
-        <button class="btn btn-default" data-text="menu.export_route" data-help="export_route" href="javascript:void(0);"
-          onclick="Routes.exportCustomRoute()">Export
+        <button class="btn btn-default" data-text="menu.export_route" data-help="export_route"
+          href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export
           route</button>
       </div>
     </div>
@@ -646,36 +671,44 @@
       </div>
     </div>
 
-    <div class="header">
-      <span class="header-border"></span>
-      <h2 class="header-title">Debug</h2>
-      <span class="header-border"></span>
-    </div>
-    <div class="settings-container">
-      <div class="input-container-noflex">
-        <p class="explain-text">
-          These settings will not be saved. These settings are for development purposes and should not be used by
-          regular users.
-        </p>
+    <div id="debug-container">
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title">Debug</h2>
+        <span class="header-border"></span>
       </div>
-      <div class="input-container">
-        <label for="show-all-markers">Show all markers</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="show-all-markers" value="1" id="show-all-markers" />
-          <label class="input-checkbox-label" for="show-all-markers"></label>
+      <div class="settings-container">
+        <div class="input-container-noflex">
+          <p class="explain-text">
+            These settings will not be saved. These settings are for development purposes and should not be used by
+            regular users.
+          </p>
         </div>
-      </div>
-      <div class="input-container-noflex">
-        <input id="debug-marker-lat" placeholder="Lat." type="text" name="debug-marker-lat" class="input-day" value="">
-        <input id="debug-marker-lng" placeholder="Long." type="text" name="debug-marker-lng" class="input-day" value="">
-      </div>
-      <div class="input-container-noflex">
-        <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search"
-          autocomplete="off">
-      </div>
-      <div class="input-container-noflex">
-        <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
-          onclick="MapBase.submitDebugForm()">Place</button>
+        <div class="input-container">
+          <label for="show-all-markers">Show all markers</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="show-all-markers" value="1" id="show-all-markers" />
+            <label class="input-checkbox-label" for="show-all-markers"></label>
+          </div>
+        </div>
+        <div class="input-container-noflex">
+          <input id="debug-marker-lat" placeholder="Lat." type="text" name="debug-marker-lat" class="input-day"
+            value="">
+          <input id="debug-marker-lng" placeholder="Long." type="text" name="debug-marker-lng" class="input-day"
+            value="">
+        </div>
+        <div class="input-container-noflex">
+          <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search"
+            autocomplete="off">
+        </div>
+        <div class="input-container-noflex">
+          <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
+            onclick="MapBase.submitDebugForm()">Place</button>
+        </div>
+        <div class="input-container-noflex">
+          <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu"
+            onclick="Language.getLanguageJson()">Generate langs</button>
+        </div>
       </div>
     </div>
 
@@ -711,8 +744,13 @@
           <div class="input-action external"></div>
         </div>
       </a>
+      <div id="toggle-debug" class="input-container clickable" data-help="toggle_debug">
+        <label data-text="menu.toggle_debug">Toggle debug features</label>
+        <div class="input-action"></div>
+      </div>
       <hr class="menu-divider">
-      <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post"
+        target="_blank">
         <input type="hidden" name="cmd" value="_donations" />
         <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
         <select class="input-day" name="currency_code">
@@ -748,7 +786,9 @@
       </form>
     </div>
 
-    <div id="help-container"><p data-text="help.default">Hover over any setting to get an explanation about it.</p></div>
+    <div id="help-container">
+      <p data-text="help.default">Hover over any setting to get an explanation about it.</p>
+    </div>
   </div>
   <div class="menu-toggle">></div>
 
@@ -854,20 +894,20 @@
   <script src="assets/js/lib/jquery.cookie.js"></script>
   <script src="assets/js/lib/leaflet.js"></script>
   <script src="assets/js/lib/oms.min.js"></script>
-  <script src="assets/js/settings.js?nocache=240"></script>
-  <script src="assets/js/cycles.js?nocache=240"></script>
-  <script src="assets/js/marker.js?nocache=240"></script>
-  <script src="assets/js/inventory.js?nocache=240"></script>
-  <script src="assets/js/treasures.js?nocache=240"></script>
-  <script src="assets/js/encounters.js?nocache=240"></script>
-  <script src="assets/js/pins.js?nocache=240"></script>
-  <script src="assets/js/map.js?nocache=240"></script>
-  <script src="assets/js/language.js?nocache=240"></script>
-  <script src="assets/js/menu.js?nocache=240"></script>
-  <script src="assets/js/routes.js?nocache=240"></script>
-  <script src="assets/js/pathfinder.js?nocache=240"></script>
-  <script src="assets/js/loot.js?nocache=240"></script>
-  <script src="assets/js/scripts.js?nocache=240"></script>
+  <script src="assets/js/settings.js?nocache=245"></script>
+  <script src="assets/js/cycles.js?nocache=245"></script>
+  <script src="assets/js/marker.js?nocache=245"></script>
+  <script src="assets/js/inventory.js?nocache=245"></script>
+  <script src="assets/js/treasures.js?nocache=245"></script>
+  <script src="assets/js/encounters.js?nocache=245"></script>
+  <script src="assets/js/pins.js?nocache=245"></script>
+  <script src="assets/js/map.js?nocache=245"></script>
+  <script src="assets/js/language.js?nocache=245"></script>
+  <script src="assets/js/menu.js?nocache=245"></script>
+  <script src="assets/js/routes.js?nocache=245"></script>
+  <script src="assets/js/pathfinder.js?nocache=245"></script>
+  <script src="assets/js/loot.js?nocache=245"></script>
+  <script src="assets/js/scripts.js?nocache=245"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>

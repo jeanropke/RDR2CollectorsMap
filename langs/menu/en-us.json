@@ -173,6 +173,19 @@
 	{"key": "menu.enable_dclick_zoom", "value": "Double-click to zoom in"},
 	{"key": "menu.show_help", "value": "Show help on hover"},
 	{"key": "map.mark_important", "value": "Mark as important"},
+	{"key": "menu.marker_opacity", "value": "Marker opacity"},
+	{"key": "menu.marker_opacity.20", "value": "20%"},
+	{"key": "menu.marker_opacity.40", "value": "40%"},
+	{"key": "menu.marker_opacity.60", "value": "60%"},
+	{"key": "menu.marker_opacity.80", "value": "80%"},
+	{"key": "menu.marker_opacity.100", "value": "Opaque"},
+	{"key": "menu.overlay_opacity", "value": "Overlay opacity"},
+	{"key": "menu.overlay_opacity.0", "value": "Disabled"},
+	{"key": "menu.overlay_opacity.25", "value": "25%"},
+	{"key": "menu.overlay_opacity.50", "value": "50%"},
+	{"key": "menu.overlay_opacity.75", "value": "75%"},
+	{"key": "menu.overlay_opacity.100", "value": "Opaque"},
+	{"key": "menu.toggle_debug", "value": "Toggle debug features"},
 
 	{"key": "menu.loot_table.category_arrowheads", "value": "Arrowheads"},
 	{"key": "menu.loot_table.category_arrowheads_common", "value": "Arrowheads (Common)"},
@@ -254,5 +267,8 @@
 	{"key": "help.user_pins_edit_mode", "value": "Toggles whether pins should be editable, movable and removable."},
 	{"key": "help.user_pins_export", "value": "Exports your pins to a file."},
 	{"key": "help.user_pins_import", "value": "Imports a pins file and displays all those pins on the map."},
-	{"key": "help.user_pins_place_mode", "value": "Toggles whether a new pin should be created when you click somewhere on the map."}
+	{"key": "help.user_pins_place_mode", "value": "Toggles whether a new pin should be created when you click somewhere on the map."},
+	{"key": "help.marker_opacity", "value": "Allows you to change the opacity of the collectible markers on the map."},
+	{"key": "help.overlay_opacity", "value": "Allows you to change the opacity of the different overlays that appear where caves, buildings, etc. are located."},
+	{"key": "help.toggle_debug", "value": "Opens the debug settings which enables certain developer functionality. Using them isn't recommended for regular users."}
 ]

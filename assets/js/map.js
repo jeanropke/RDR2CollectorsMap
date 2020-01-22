@@ -7,6 +7,7 @@ var Layers = {
   miscLayer: new L.LayerGroup(),
   encountersLayer: new L.LayerGroup(),
   pinsLayer: new L.LayerGroup(),
+  overlaysLayer: new L.LayerGroup(),
   oms: null
 };
 
@@ -103,15 +104,21 @@ var MapBase = {
     $.getJSON('data/overlays.json?nocache=' + nocache)
       .done(function (data) {
         MapBase.overlays = data;
-        MapBase.setOverlays();
+        MapBase.setOverlays(Settings.overlayOpacity);
         console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
       });
   },
 
-  setOverlays: function () {
+  setOverlays: function (opacity = 0.5) {
+    Layers.overlaysLayer.clearLayers();
+
+    if (opacity == 0) return;
+    
     $.each(MapBase.overlays, function (key, value) {
-      L.imageOverlay(value.img, value.bounds, { opacity: 0.5 }).addTo(MapBase.map);
+      Layers.overlaysLayer.addLayer(L.imageOverlay(value.img, value.bounds, { opacity: opacity }));
     });
+
+    Layers.overlaysLayer.addTo(MapBase.map);
   },
 
   devGameToMap: function (t) {
@@ -220,11 +227,12 @@ var MapBase = {
   },
 
   addMarkers: function (refreshMenu = false) {
-
     if (Layers.itemMarkersLayer != null)
       Layers.itemMarkersLayer.clearLayers();
     if (Layers.miscLayer != null)
       Layers.miscLayer.clearLayers();
+
+    var opacity = Settings.markerOpacity;
 
     $.each(MapBase.markers, function (key, marker) {
       //Set isVisible to false. addMarkerOnMap will set to true if needs
@@ -234,7 +242,7 @@ var MapBase = {
         if (categoriesDisabledByDefault.includes(marker.subdata))
           return;
 
-      MapBase.addMarkerOnMap(marker);
+      MapBase.addMarkerOnMap(marker, opacity);
     });
 
     Layers.itemMarkersLayer.addTo(MapBase.map);
@@ -419,7 +427,7 @@ var MapBase = {
         `;
   },
 
-  addMarkerOnMap: function (marker) {
+  addMarkerOnMap: function (marker, opacity = 1) {
     if (marker.day != Cycles.data.cycles[Cycles.data.current][marker.category] && !Settings.showAllMarkers) return;
 
     if (!uniqueSearchMarkers.includes(marker))
@@ -443,7 +451,7 @@ var MapBase = {
     }
 
     var tempMarker = L.marker([marker.lat, marker.lng], {
-      opacity: marker.canCollect ? 1 : .35,
+      opacity: marker.canCollect ? opacity : opacity / 3,
       icon: new L.Icon.DataMarkup({
         iconUrl: icon,
         iconSize: [35, 45],
