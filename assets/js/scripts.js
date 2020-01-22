@@ -833,20 +833,6 @@ $('#generate-route-allow-fasttravel').on("change", function () {
 });
 
 /**
- * Loot table modal
- */
-$('#detailed-loot-modal').on('show.bs.modal', function (event) {
-  var button = $(event.relatedTarget);
-  var table = button.data('table');
-
-  var modal = $(this)
-  modal.find('.modal-title').text(Language.get('menu.loot_table.table_' + table));
-
-  if (table == 'unknown') table = null;
-  modal.find('.modal-body').html(Loot.generateTable(table));
-})
-
-/**
  * Tutorial logic
  */
 $('[data-help]').hover(function (e) {
@@ -899,6 +885,5 @@ window.addEventListener("DOMContentLoaded", MapBase.loadFastTravels());
 window.addEventListener("DOMContentLoaded", MadamNazar.loadMadamNazar());
 window.addEventListener("DOMContentLoaded", Treasures.load());
 window.addEventListener("DOMContentLoaded", Encounters.load());
-window.addEventListener("DOMContentLoaded", Loot.load());
 window.addEventListener("DOMContentLoaded", MapBase.loadMarkers());
 window.addEventListener("DOMContentLoaded", Routes.init());
