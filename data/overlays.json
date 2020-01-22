@@ -55,6 +55,10 @@
 		"img": "./assets/overlays/exterior_03.png",
 		"bounds": [[-81.8281, 97.9297], [-82.6406, 98.5156]]
 	},
+	"exterior_04": {
+		"img": "./assets/overlays/exterior_04.png",
+		"bounds": [[-98.9609, 90.0547], [-99.4922, 90.3281]]
+	},
 	"mine_01": {
 		"img": "./assets/overlays/mine_01.png",
 		"bounds": [[-43.4766, 153.2891], [-41.505, 154.8438]]
