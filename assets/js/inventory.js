@@ -67,9 +67,12 @@ var Inventory = {
           _m.amount = 0;
       }
 
-      _m.canCollect = _m.amount < Inventory.stackSize && !_m.isCollected;
+      if (Inventory.isEnabled)
+        _m.canCollect = _m.amount < Inventory.stackSize && !_m.isCollected;
+      else
+        _m.canCollect = !_m.isCollected;
 
-      if ((_m.isCollected || _m.amount >= Inventory.stackSize) && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]) {
+      if ((_m.isCollected || (Inventory.isEnabled && _m.amount >= Inventory.stackSize)) && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]) {
         $(`[data-marker=${_m.text}]`).css('opacity', Settings.markerOpacity / 3);
         $(`[data-type=${_m.subdata || _m.text}]`).addClass('disabled');
       } else if (_m.day == Cycles.data.cycles[Cycles.data.current][_m.category]) {

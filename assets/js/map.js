@@ -173,7 +173,11 @@ var MapBase = {
           Inventory.items[value.text].isCollected = false;
 
         markers[key].isCollected = false;
-        markers[key].canCollect = value.amount < Inventory.stackSize;
+
+        if (Inventory.isEnabled)
+          markers[key].canCollect = value.amount < Inventory.stackSize;
+        else
+          markers[key].canCollect = true;
       });
 
       MapBase.markers = markers;

@@ -86,7 +86,7 @@ Menu.refreshMenu = function () {
     if (marker.lat.length == 0 || marker.tool == -1)
       collectibleElement.addClass('not-found');
 
-    if (marker.amount >= Inventory.stackSize)
+    if (Inventory.isEnabled && marker.amount >= Inventory.stackSize)
       collectibleElement.addClass('disabled');
 
     if (marker.subdata) {
@@ -195,7 +195,7 @@ Menu.refreshItemsCounter = function () {
   var _markers = MapBase.markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible);
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', _markers.filter(item => item.isCollected || item.amount >= Inventory.stackSize).length)
+    .replace('{count}', _markers.filter(item => item.isCollected || (Inventory.isEnabled && item.amount >= Inventory.stackSize)).length)
     .replace('{max}', _markers.length));
 };
 
