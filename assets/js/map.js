@@ -52,7 +52,7 @@ var MapBase = {
 
     MapBase.map.addControl(
       L.control.attribution({
-        position: 'bottomright',
+        position: 'bottomleft',
         prefix: '<span data-text="map.attribution_prefix">Tiles provided by</span>'
       })
     );

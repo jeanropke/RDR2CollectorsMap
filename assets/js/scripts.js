@@ -167,18 +167,15 @@ function setMapBackground(mapIndex) {
   switch (parseInt(mapIndex)) {
     default:
     case 0:
-      $('#map').css('background-color', '#d2b790');
-      $('.leaflet-pane.leaflet-overlay-pane').removeClass('dark-mode');
+      $('#map').removeClass('leaflet-dark-mode').css('background-color', '#d2b790');
       break;
 
     case 1:
-      $('#map').css('background-color', '#d2b790');
-      $('.leaflet-pane.leaflet-overlay-pane').removeClass('dark-mode');
+      $('#map').removeClass('leaflet-dark-mode').css('background-color', '#d2b790');
       break;
 
     case 2:
-      $('#map').css('background-color', '#3d3d3d');
-      $('.leaflet-pane.leaflet-overlay-pane').addClass('dark-mode');
+      $('#map').addClass('leaflet-dark-mode').css('background-color', '#3d3d3d');
       break;
   }
 

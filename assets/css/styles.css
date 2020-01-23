@@ -802,13 +802,22 @@ a.no-style:visited {
     text-decoration: none;
 }
 
-.leaflet-overlay-pane.dark-mode {
+.leaflet-dark-mode .leaflet-overlay-pane {
     filter: grayscale(1) invert(1);
 }
 
-.leaflet-container .leaflet-control-attribution {
+.leaflet-control-attribution {
     background: white;
-    color: black;
+    color: #333;
+}
+
+.leaflet-dark-mode .leaflet-control-attribution {
+    background: #333;
+    color: white;
+}
+
+.leaflet-dark-mode .leaflet-control-attribution a {
+    color: white !important;
 }
 
 /* Bootstrap modal styling */
