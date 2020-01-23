@@ -17,6 +17,7 @@ var MapBase = {
   map: null,
   overlays: [],
   markers: [],
+  itemsMarkedAsImportant: [],
 
   init: function () {
 
@@ -534,25 +535,24 @@ var MapBase = {
 
   highlightImportantItem(text) {
     $(`[data-marker*=${text}]`).toggleClass('highlight-items');
+
     if ($(`[data-marker*=${text}].highlight-items`).length)
-      itemsMarkedAsImportant.push(text);
+      MapBase.itemsMarkedAsImportant.push(text);
     else
-      itemsMarkedAsImportant.splice(itemsMarkedAsImportant.indexOf(text), 1);
-    
+      MapBase.itemsMarkedAsImportant.splice(MapBase.itemsMarkedAsImportant.indexOf(text), 1);
+
     $.each(localStorage, function (key) {
-      if (key.startsWith('important-items')) {
-        localStorage.removeItem(key);
-      }
+      localStorage.removeItem('importantItems');
     });
-    
-    $.each(itemsMarkedAsImportant, function (key, value) {
-      localStorage.setItem('important-items-' + key, value);
-    });
+
+    localStorage.setItem('importantItems', JSON.stringify(MapBase.itemsMarkedAsImportant));
   },
 
   loadImportantItems() {
-    $.each(itemsMarkedAsImportant, function (key, value) {
-        $(`[data-marker*=${value}]`).addClass('highlight-items');
+    MapBase.itemsMarkedAsImportant = JSON.parse(localStorage.importantItems) || [];
+
+    $.each(MapBase.itemsMarkedAsImportant, function (key, value) {
+      $(`[data-marker*=${value}]`).addClass('highlight-items');
     });
   }
 };

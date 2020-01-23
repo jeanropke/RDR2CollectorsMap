@@ -28,7 +28,6 @@ var date;
 var wikiLanguage = [];
 
 var tempInventory = [];
-var itemsMarkedAsImportant = [];
 
 var debugMarkersArray = [];
 var tempCollectedMarkers = "";
@@ -65,11 +64,6 @@ function init() {
   tempInventory = tempInventory.split(';');
 
   Inventory.load();
-
-  $.each(localStorage, function (key, value) {
-    if (key.startsWith('important-items'))
-      itemsMarkedAsImportant.push(value);
-  });
 
   if (typeof $.cookie('alert-closed-1') == 'undefined') {
     $('.map-alert').show();
