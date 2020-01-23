@@ -249,6 +249,6 @@
 	{"key": "help.item_category_same_cycle", "value": "Toggles whether this set should be visible on the map. Note that this set is on the same cycle as yesterday and there is a 24 hour respawn delay."},
 	{"key": "help.item", "value": "Toggles whether this item should be visible on the map."},
 	{"key": "help.item_night_only", "value": "Toggles whether this item should be visible on the map. Note that this item only appears between 10:00 PM and 5:00 AM."},
-	{"key": "help.item_weekly", "value": "Toggles whether this item should be visible on the map. This item is part of the currently active weekly collection."},
+	{"key": "help.item_weekly", "value": "Toggles whether this item should be visible on the map. This item is part of the {collection} weekly collection."},
 	{"key": "help.item_unavailable", "value": "Toggles whether this item should be visible on the map. Note that this item is unavailable due to a game bug or being undiscovered."}
 ]

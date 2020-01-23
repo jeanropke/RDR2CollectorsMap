@@ -122,7 +122,13 @@ Menu.refreshMenu = function () {
     }
 
     collectibleElement.hover(function (e) {
-      $('#help-container p').text(Language.get(`help.${$(this).data('help')}`));
+      var language = Language.get(`help.${$(this).data('help')}`);
+
+      if (language.indexOf('{collection}') !== -1) {
+        language = language.replace('{collection}', Language.get('weekly.desc.' + weeklySetData.current))
+      }
+
+      $('#help-container p').text(language);
     }, function () {
       $('#help-container p').text(Language.get(`help.default`));
     });
