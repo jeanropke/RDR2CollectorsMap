@@ -664,13 +664,21 @@ $('#inventory-stack').on("change", function () {
 $('#cookie-export').on("click", function () {
   try {
     var cookies = $.cookie();
+    var storage = localStorage;
 
-    // Google Analytics cookie isn't relevant.
-    delete cookies._ga;
+    // Remove irrelevant properties.
+    delete cookies['_ga'];
+    delete storage['randid'];
+    delete storage['pinned-items'];
 
-    var cookiesJson = JSON.stringify(cookies, null, 4);
+    var settings = {
+      'cookies': cookies,
+      'local': storage
+    };
 
-    downloadAsFile("collectible-map-settings.json", cookiesJson);
+    var settingsJson = JSON.stringify(settings, null, 4);
+
+    downloadAsFile("collectible-map-settings.json", settingsJson);
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
@@ -687,25 +695,37 @@ $('#cookie-import').on('click', function () {
     }
 
     file.text().then(function (res) {
-      var json = null;
+      var settings = null;
 
       try {
-        json = JSON.parse(res);
+        settings = JSON.parse(res);
       } catch (error) {
         alert(Language.get('alerts.file_not_valid'));
         return;
       }
 
-      // Remove all current cookies.
-      var currentCookies = $.cookie();
+      // Remove all current settings.
+      $.each($.cookie(), function (key, value) {
+        $.removeCookie(key);
+      })
 
-      Object.keys(currentCookies).forEach(cookie => {
-        $.removeCookie(cookie);
+      $.each(localStorage, function (key, value) {
+        localStorage.removeItem(key);
+      })
+
+      // Import all the settings from the file.
+      if (typeof settings.cookies === 'undefined' && typeof settings.local === 'undefined') {
+        $.each(settings, function (key, value) {
+          $.cookie(key, value, { expires: 999 });
+        });
+      }
+
+      $.each(settings.cookies, function (key, value) {
+        $.cookie(key, value, { expires: 999 });
       });
 
-      // Import all the cookies from the file.
-      Object.keys(json).forEach(key => {
-        $.cookie(key, json[key], { expires: 999 });
+      $.each(settings.local, function (key, value) {
+        localStorage.setItem(key, value);
       });
 
       // Do this for now, maybe look into refreshing the menu completely (from init) later.
