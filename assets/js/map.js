@@ -549,6 +549,9 @@ var MapBase = {
   },
 
   loadImportantItems() {
+    if (typeof localStorage.importantItems === 'undefined')
+      localStorage.importantItems = "[]";
+
     MapBase.itemsMarkedAsImportant = JSON.parse(localStorage.importantItems) || [];
 
     $.each(MapBase.itemsMarkedAsImportant, function (key, value) {
