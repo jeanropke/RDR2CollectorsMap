@@ -165,6 +165,7 @@ Menu.refreshMenu = function () {
   });
 
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
+  MapBase.loadImportantItems();
 };
 
 Menu.showAll = function () {

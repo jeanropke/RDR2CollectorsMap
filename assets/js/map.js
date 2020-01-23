@@ -279,6 +279,8 @@ var MapBase = {
 
     if (Routes.generateOnVisit)
       Routes.generatePath(true);
+
+    MapBase.loadImportantItems();
   },
 
   loadWeeklySet: function () {
@@ -519,6 +521,8 @@ var MapBase = {
     Layers.itemMarkersLayer.addLayer(tempMarker);
     if (Settings.markerCluster)
       Layers.oms.addMarker(tempMarker);
+
+    MapBase.loadImportantItems();
   },
 
   gameToMap: function (lat, lng, name = "Debug Marker") {
@@ -529,7 +533,27 @@ var MapBase = {
   },
 
   highlightImportantItem(text) {
-    $(`[data-marker*=${text}]`).toggleClass('highlightItems');
+    $(`[data-marker*=${text}]`).toggleClass('highlight-items');
+    if ($(`[data-marker*=${text}].highlight-items`).length)
+      itemsMarkedAsImportant.push(text);
+    else
+      itemsMarkedAsImportant.splice(itemsMarkedAsImportant.indexOf(text), 1);
+    
+    $.each(localStorage, function (key) {
+      if (key.startsWith('important-items')) {
+        localStorage.removeItem(key);
+      }
+    });
+    
+    $.each(itemsMarkedAsImportant, function (key, value) {
+      localStorage.setItem('important-items-' + key, value);
+    });
+  },
+
+  loadImportantItems() {
+    $.each(itemsMarkedAsImportant, function (key, value) {
+        $(`[data-marker*=${value}]`).addClass('highlight-items');
+    });
   }
 };
 
