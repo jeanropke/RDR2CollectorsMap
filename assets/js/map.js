@@ -518,8 +518,8 @@ var MapBase = {
   },
 
   highlightImportantItem(text) {
-    $(`[data-marker*=${text}]`).toggleClass('highlightItems');
-    if ($(`[data-marker*=${text}].highlightItems`).length)
+    $(`[data-marker*=${text}]`).toggleClass('highlight-items');
+    if ($(`[data-marker*=${text}].highlight-items`).length)
       itemsMarkedAsImportant.push(text);
     else
       itemsMarkedAsImportant.splice(itemsMarkedAsImportant.indexOf(text), 1);
@@ -540,7 +540,7 @@ var MapBase = {
 
   loadImportantItems() {
     $.each(itemsMarkedAsImportant, function (key, value) {
-        $(`[data-marker*=${value}]`).addClass('highlightItems');
+        $(`[data-marker*=${value}]`).addClass('highlight-items');
     });
   }
 };
