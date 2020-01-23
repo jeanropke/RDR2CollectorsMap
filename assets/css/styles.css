@@ -5,6 +5,7 @@
     font-weight: 400;
     text-rendering: optimizeLegibility
 }
+
 @font-face {
     font-family: RDRLino;
     src: url(../fonts/RDRLino-Regular.woff2) format("woff2"), url(../fonts/RDRLino-Regular.woff) format("woff"), url(../fonts/RDRLino-Regular.ttf) format("truetype");
@@ -12,6 +13,7 @@
     font-weight: 400;
     text-rendering: optimizeLegibility
 }
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -59,14 +61,17 @@ p {
 input, textarea, select, .btn {
     outline: none;
 }
+
 .cycle-table {
     color: white;
     background: black;
 }
+
 .cycle-table td, .cycle-table th {
     padding: 2px;
     border: 1px solid black;
 }
+
 #main-header {
     display: flex;
     margin: 10px;
@@ -84,10 +89,12 @@ input, textarea, select, .btn {
     background-size: auto 75px;
     padding: 6px 0;
 }
-#main-header-center > span {
+
+#main-header-center>span {
     font-family: RDRLino, serif;
     font-weight: normal;
 }
+
 #main-header-left, #main-header-right {
     user-select: none;
     height: 75px;
@@ -795,6 +802,10 @@ a.no-style:visited {
     text-decoration: none;
 }
 
+.leaflet-overlay-pane.dark-mode {
+    filter: grayscale(1) invert(1);
+}
+
 /* Bootstrap modal styling */
 
 .modal-content {
@@ -902,31 +913,8 @@ a.no-style:visited {
     }
 }
 
-/* Loot table styling */
-
-.loot-table-table-title {
-    text-align: left;
-    margin: 0;
-}
-
-.loot-table-category-title, .loot-table-category-rate, .loot-table-subcategory-title, .loot-table-subcategory-rate {
-    font-size: 20px;
-}
-
-.loot-table-item-title, .loot-table-item-rate {
-    font-size: 16px;
-}
-
-.loot-table-category-header, .loot-table-subcategory-header, .loot-table-item {
-    display: flex;
-    justify-content: space-between;
-}
-
-.loot-table-categories .loot-table-category, .loot-table-category-items, .loot-table-subcategory-items {
-    padding: 0 20px;
-}
-
 /* Tutorial styling */
+
 #help-container {
     position: relative;
     position: -webkit-sticky;
@@ -941,43 +929,46 @@ a.no-style:visited {
 }
 
 /* Pathfinder styling */
+
 .pathfinder-control {
-	padding: 5px;
-	background: #fff
+    padding: 5px;
+    background: #fff
 }
 
 .pathfinder-btn {
-	display: inline-block;
-	padding: 0 10px;
-	height: 30px;
-	line-height: 30px;
-	background: transparent;
-	border: none;
-	cursor: pointer;
-	color: #000;
+    display: inline-block;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #000;
 }
+
 .pathfinder-btn:disabled {
-	color: #789;
+    color: #789;
 }
 
 .pathfinder-btn-before {
-	padding: 0;
-	width: 30px;
-	text-align: center;
-}
-.pathfinder-btn-after {
-	padding: 0;
-	width: 30px;
-	text-align: center;
+    padding: 0;
+    width: 30px;
+    text-align: center;
 }
 
-.pathfinder-btn > small {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-	top: -0.5em;
-	left: 0.1em;
-	font-family: 'Courier New', Courier, monospace;
-	text-transform: uppercase;
+.pathfinder-btn-after {
+    padding: 0;
+    width: 30px;
+    text-align: center;
+}
+
+.pathfinder-btn>small {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5em;
+    left: 0.1em;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
 }
