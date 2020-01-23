@@ -65,13 +65,11 @@ function init() {
   tempInventory = tempInventory.split(';');
 
   Inventory.load();
+
   $.each(localStorage, function (key, value) {
-    if (key.startsWith('important-items')) {
+    if (key.startsWith('important-items'))
       itemsMarkedAsImportant.push(value);
-    }
-})
-
-
+  });
 
   if (typeof $.cookie('alert-closed-1') == 'undefined') {
     $('.map-alert').show();
