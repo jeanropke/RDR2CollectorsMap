@@ -47,9 +47,6 @@ function init() {
     if (key.startsWith('removed-items')) {
       cookiesList.push(key);
     }
-    if (key.startsWith('important-items')) {
-      itemsMarkedAsImportant.push(value);
-    }
   });
   cookiesList.sort();
   $.each(cookiesList, function (key, value) {
@@ -68,6 +65,12 @@ function init() {
   tempInventory = tempInventory.split(';');
 
   Inventory.load();
+  $.each(localStorage, function (key, value) {
+    if (key.startsWith('important-items')) {
+      itemsMarkedAsImportant.push(value);
+    }
+})
+
 
 
   if (typeof $.cookie('alert-closed-1') == 'undefined') {

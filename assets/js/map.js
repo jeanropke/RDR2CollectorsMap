@@ -524,17 +524,14 @@ var MapBase = {
     else
       itemsMarkedAsImportant.splice(itemsMarkedAsImportant.indexOf(text), 1);
     
-    $.removeCookie('important-items');
-    $.each($.cookie(), function (key, value) {
+    $.each(localStorage, function (key) {
       if (key.startsWith('important-items')) {
-        $.removeCookie(key);
+        localStorage.removeItem(key);
       }
     });
     
     $.each(itemsMarkedAsImportant, function (key, value) {
-      $.cookie('important-items-' + key, value, {
-        expires: 999
-      });
+      localStorage.setItem('important-items-' + key, value);
     });
   },
 
