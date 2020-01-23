@@ -265,7 +265,7 @@ var MapBase = {
     if (Routes.generateOnVisit)
       Routes.generatePath(true);
 
-      MapBase.loadImportantItems()
+    MapBase.loadImportantItems();
   },
 
   loadWeeklySet: function () {
