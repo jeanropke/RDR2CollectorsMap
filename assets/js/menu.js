@@ -60,7 +60,7 @@ Menu.refreshMenu = function () {
     if (marker.category != 'random')
       collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${collectibleKey}.png`).addClass('collectible-icon');
 
-    var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', collectibleText);
+    var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', collectibleText);
     var collectibleTextWrapperElement = $('<span>').addClass('collectible-text');
     var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
 
@@ -83,13 +83,16 @@ Menu.refreshMenu = function () {
     if (!Inventory.isEnabled)
       collectibleCountElement.hide();
 
-    if (marker.lat.length == 0)
+    if (marker.lat.length == 0 || marker.tool == -1)
       collectibleElement.addClass('not-found');
 
-    if (marker.amount >= Inventory.stackSize)
+    if (Inventory.isEnabled && marker.amount >= Inventory.stackSize)
       collectibleElement.addClass('disabled');
 
     if (marker.subdata) {
+      if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
+        collectibleElement.attr('data-help', 'item_night_only');
+
       var currentSubdataMarkers = MapBase.markers.filter(function (_marker) {
         if (marker.subdata != _marker.subdata)
           return false;
@@ -107,16 +110,24 @@ Menu.refreshMenu = function () {
         collectibleElement.addClass('disabled');
     }
 
-    $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
-
-    // set green color of weekly collection items
     $.each(weeklyItems, function (key, weeklyItem) {
-      if (`flower_${marker.subdata}` == weeklyItem.item || `egg_${marker.subdata}` == weeklyItem.item)
-        $(`[data-type=${marker.subdata}]`).addClass('weekly-item');
-      // All other items
-      if (marker.text == weeklyItem.item)
-        $(`[data-type=${marker.text}]`).addClass('weekly-item');
+      if (`flower_${marker.subdata}` == weeklyItem.item || `egg_${marker.subdata}` == weeklyItem.item || marker.text == weeklyItem.item) {
+        collectibleElement.attr('data-help', 'item_weekly');
+        collectibleElement.addClass('weekly-item');
+      }
     });
+
+    if (marker.tool == -1) {
+      collectibleElement.attr('data-help', 'item_unavailable');
+    }
+
+    collectibleElement.hover(function (e) {
+      $('#help-container p').text(Language.get(`help.${$(this).data('help')}`));
+    }, function () {
+      $('#help-container p').text(Language.get(`help.default`));
+    });
+
+    $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
   });
 
   $('.menu-hidden[data-type]').each(function (key, value) {
@@ -127,10 +138,13 @@ Menu.refreshMenu = function () {
     // if the cycle is the same as yesterday highlight category in menu;
     var isSameCycle = Cycles.isSameAsYesterday(category.data('type'));
     var hasCycleWarning = $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).length > 0;
+    var element = $(`[data-text="menu.${category.data('type')}"]`);
     if (isSameCycle && !hasCycleWarning) {
-      $(`[data-text="menu.${category.data('type')}"]`).append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
+      element.parent().attr('data-help', 'item_category_same_cycle');
+      element.append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
     } else if (!isSameCycle && hasCycleWarning) {
-      $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).remove();
+      element.parent().attr('data-help', 'item_category');
+      element.children('.same-cycle-warning-menu').remove();
     }
 
     if (category.data('type').includes('card_')) return;
@@ -151,6 +165,7 @@ Menu.refreshMenu = function () {
   });
 
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
+  MapBase.loadImportantItems();
 };
 
 Menu.showAll = function () {
@@ -181,7 +196,7 @@ Menu.refreshItemsCounter = function () {
   var _markers = MapBase.markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible);
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', _markers.filter(item => item.isCollected || item.amount >= Inventory.stackSize).length)
+    .replace('{count}', _markers.filter(item => item.isCollected || (Inventory.isEnabled && item.amount >= Inventory.stackSize)).length)
     .replace('{max}', _markers.length));
 };
 

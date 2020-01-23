@@ -621,7 +621,7 @@ a.wiki-page:visited {
     text-decoration: none;
 }
 
-.highlightItems {
+.highlight-items {
     filter: drop-shadow(0 0 .5rem #cc0000) drop-shadow(0 0 .4rem #cc0000);
 }
 
@@ -804,6 +804,11 @@ a.no-style:visited {
 
 .leaflet-overlay-pane.dark-mode {
     filter: grayscale(1) invert(1);
+}
+
+.leaflet-container .leaflet-control-attribution {
+    background: white;
+    color: black;
 }
 
 /* Bootstrap modal styling */

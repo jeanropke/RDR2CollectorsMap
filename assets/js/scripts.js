@@ -28,6 +28,7 @@ var date;
 var wikiLanguage = [];
 
 var tempInventory = [];
+
 var debugMarkersArray = [];
 var tempCollectedMarkers = "";
 
@@ -63,7 +64,6 @@ function init() {
   tempInventory = tempInventory.split(';');
 
   Inventory.load();
-
 
   if (typeof $.cookie('alert-closed-1') == 'undefined') {
     $('.map-alert').show();
@@ -331,7 +331,11 @@ $("#clear-markers").on("click", function () {
       Inventory.items[value.text].isCollected = false;
 
     value.isCollected = false;
-    value.canCollect = value.amount < Inventory.stackSize;
+
+    if (Inventory.isEnabled)
+      value.canCollect = value.amount < Inventory.stackSize;
+    else
+      value.canCollect = true;
   });
 
   Inventory.save();
@@ -350,7 +354,11 @@ $("#clear-inventory").on("click", function () {
         Inventory.items[marker.text].amount = 0;
 
       marker.amount = 0;
-      marker.canCollect = marker.amount < Inventory.stackSize && !marker.isCollected;
+
+      if (Inventory.isEnabled)
+        marker.canCollect = marker.amount < Inventory.stackSize && !marker.isCollected;
+      else
+        marker.canCollect = !marker.isCollected;
     }
   });
 

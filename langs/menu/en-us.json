@@ -188,6 +188,7 @@
 	{"key": "menu.toggle_debug", "value": "Toggle debug features"},
 	{"key": "map.random_spot.desc", "value": "This spot gives you a random item, you can view more detailed information {link}."},
 	{"key": "map.random_spot.link", "value": "on this Wiki page"},
+	{"key": "map.attribution_prefix", "value": "Tiles provided by"},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
@@ -244,5 +245,10 @@
 	{"key": "help.user_pins_place_mode", "value": "Toggles whether a new pin should be created when you click somewhere on the map."},
 	{"key": "help.marker_opacity", "value": "Allows you to change the opacity of the collectible markers on the map."},
 	{"key": "help.overlay_opacity", "value": "Allows you to change the opacity of the different overlays that appear where caves, buildings, etc. are located."},
-	{"key": "help.toggle_debug", "value": "Opens the debug settings which enables certain developer functionality. Using them isn't recommended for regular users."}
+	{"key": "help.toggle_debug", "value": "Opens the debug settings which enables certain developer functionality. Using them isn't recommended for regular users."},
+	{"key": "help.item_category_same_cycle", "value": "Toggles whether this set should be visible on the map. Note that this set is on the same cycle as yesterday and there is a 24 hour respawn delay."},
+	{"key": "help.item", "value": "Toggles whether this item should be visible on the map."},
+	{"key": "help.item_night_only", "value": "Toggles whether this item should be visible on the map. Note that this item only appears between 10:00 PM and 5:00 AM."},
+	{"key": "help.item_weekly", "value": "Toggles whether this item should be visible on the map. This item is part of the currently active weekly collection."},
+	{"key": "help.item_unavailable", "value": "Toggles whether this item should be visible on the map. Note that this item is unavailable due to a game bug or being undiscovered."}
 ]
