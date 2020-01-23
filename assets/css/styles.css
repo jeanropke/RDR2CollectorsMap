@@ -806,6 +806,11 @@ a.no-style:visited {
     filter: grayscale(1) invert(1);
 }
 
+.leaflet-container .leaflet-control-attribution {
+    background: white;
+    color: black;
+}
+
 /* Bootstrap modal styling */
 
 .modal-content {

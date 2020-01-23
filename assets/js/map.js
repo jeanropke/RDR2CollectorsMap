@@ -24,19 +24,23 @@ var MapBase = {
     var mapLayers = [
       L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
         noWrap: true,
-        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
+        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        attribution: '<a href="https://www.rockstargames.com/" target="_blank">Rockstar Games</a>'
       }),
       L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
         noWrap: true,
-        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
+        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        attribution: '<a href="https://rdr2map.com/" target="_blank">RDR2Map</a>'
       }),
       L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
         noWrap: true,
-        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176))
+        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
+        attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
       })
     ];
 
     MapBase.map = L.map('map', {
+      attributionControl: false,
       preferCanvas: true,
       minZoom: this.minZoom,
       maxZoom: this.maxZoom,
@@ -44,6 +48,13 @@ var MapBase = {
       crs: L.CRS.Simple,
       layers: [mapLayers[parseInt($.cookie('map-layer'))]]
     }).setView([-70, 111.75], 3);
+
+    MapBase.map.addControl(
+      L.control.attribution({
+        position: 'bottomright',
+        prefix: '<span data-text="map.attribution_prefix">Tiles provided by</span>'
+      })
+    );
 
     L.control.zoom({
       position: 'bottomright'
