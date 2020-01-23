@@ -110,6 +110,13 @@ Menu.refreshMenu = function () {
         collectibleElement.addClass('disabled');
     }
 
+    $.each(weeklyItems, function (key, weeklyItem) {
+      if (`flower_${marker.subdata}` == weeklyItem.item || `egg_${marker.subdata}` == weeklyItem.item || marker.text == weeklyItem.item) {
+        collectibleElement.attr('data-help', 'item_weekly');
+        collectibleElement.addClass('weekly-item');
+      }
+    });
+
     if (marker.tool == -1) {
       collectibleElement.attr('data-help', 'item_unavailable');
     }
@@ -121,15 +128,6 @@ Menu.refreshMenu = function () {
     });
 
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
-
-    // set green color of weekly collection items
-    $.each(weeklyItems, function (key, weeklyItem) {
-      if (`flower_${marker.subdata}` == weeklyItem.item || `egg_${marker.subdata}` == weeklyItem.item)
-        $(`[data-type=${marker.subdata}]`).addClass('weekly-item');
-      // All other items
-      if (marker.text == weeklyItem.item)
-        $(`[data-type=${marker.text}]`).addClass('weekly-item');
-    });
   });
 
   $('.menu-hidden[data-type]').each(function (key, value) {
