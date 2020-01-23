@@ -28,6 +28,8 @@ var date;
 var wikiLanguage = [];
 
 var tempInventory = [];
+var itemsMarkedAsImportant = [];
+
 var debugMarkersArray = [];
 var tempCollectedMarkers = "";
 
@@ -44,6 +46,9 @@ function init() {
   $.each($.cookie(), function (key, value) {
     if (key.startsWith('removed-items')) {
       cookiesList.push(key);
+    }
+    if (key.startsWith('important-items')) {
+      itemsMarkedAsImportant.push(value);
     }
   });
   cookiesList.sort();
