@@ -197,7 +197,7 @@
 	{"key": "help.cookie_import", "value": "Importa de um arquivo as configurações e redefine todas as configurações para essas configurações."},
 	{"key": "help.cookie_import_file", "value": "Abre uma caixa de diálogo onde você pode selecionar um arquivo de configurações."},
 	{"key": "help.donate", "value": "Doações são apreciadas e ajudam a manter o mapa e seu desenvolvimento acontecendo!"},
-	{"key": "help.enable_custom_route", "value": "Enables the creation mode for custom routes. Click a marker then click another one to draw a line between them."},
+	{"key": "help.enable_custom_route", "value": "Ativa o modo para criar rotas personalizadas. Clique em um marcador e depois em outro para criar uma linha entre eles."},
 	{"key": "help.enable_dclick_zoom", "value": "Toggles whether the map should zoom when you double-click anywhere on it."},
 	{"key": "help.enable_inventory", "value": "Toggles whether the inventory feature should be enabled or disabled."},
 	{"key": "help.enable_inventory_menu_update", "value": "Toggles whether the inventory should update when you click an item in the menu. Adds or removes the items currently on the map to the inventory if enabled."},
