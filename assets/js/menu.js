@@ -60,7 +60,7 @@ Menu.refreshMenu = function () {
     if (marker.category != 'random')
       collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${collectibleKey}.png`).addClass('collectible-icon');
 
-    var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', collectibleText);
+    var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', collectibleText);
     var collectibleTextWrapperElement = $('<span>').addClass('collectible-text');
     var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
 
@@ -83,13 +83,16 @@ Menu.refreshMenu = function () {
     if (!Inventory.isEnabled)
       collectibleCountElement.hide();
 
-    if (marker.lat.length == 0)
+    if (marker.lat.length == 0 || marker.tool == -1)
       collectibleElement.addClass('not-found');
 
     if (marker.amount >= Inventory.stackSize)
       collectibleElement.addClass('disabled');
 
     if (marker.subdata) {
+      if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
+        collectibleElement.attr('data-help', 'item_night_only');
+
       var currentSubdataMarkers = MapBase.markers.filter(function (_marker) {
         if (marker.subdata != _marker.subdata)
           return false;
@@ -106,6 +109,16 @@ Menu.refreshMenu = function () {
       if (!marker.canCollect)
         collectibleElement.addClass('disabled');
     }
+
+    if (marker.tool == -1) {
+      collectibleElement.attr('data-help', 'item_unavailable');
+    }
+
+    collectibleElement.hover(function (e) {
+      $('#help-container p').text(Language.get(`help.${$(this).data('help')}`));
+    }, function () {
+      $('#help-container p').text(Language.get(`help.default`));
+    });
 
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
 
