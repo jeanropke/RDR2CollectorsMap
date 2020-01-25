@@ -265,7 +265,7 @@
 	{"key": "swords_king.name", "value": "Król mieczy"},
 	{"key": "swords_king_1.desc", "value": "Na półce w sklepie Algernon Wasp."},
 	{"key": "swords_king_2.desc", "value": "Na studni."},
-	{"key": "swords_king_3.desc", "value": "W środku za ogrodzeniem na niebieskiej beczce."},
+	{"key": "swords_king_3.desc", "value": "Za ogrodzeniem na niebieskiej beczce, na zewnątrz domu."},
 	{"key": "swords_king_4.desc", "value": "Wewnątrz chaty na stole po prawej stronie."},
 	{"key": "swords_king_5.desc", "value": "Na rozporze starego młyna."},
 	{"key": "swords_king_6.desc", "value": "Mniej więcej w połowie drogi w jaskini nad „A” w Annesburg na mapie, na skrzyni."},
@@ -1115,7 +1115,7 @@
 	{"key": "earring_duchess_emerald_2.desc", "value": "W skrytce przy wejściu wśród skał przy rzece."},
 	{"key": "earring_duchess_emerald_3.desc", "value": "Przy kilku skałach i małym drzewie."},
 	{"key": "earring_duchess_emerald_4.desc", "value": "Przy drzewie ze skałą na płn-zach od jego pnia."},
-	{"key": "earring_duchess_emerald_5.desc", "value": ""},
+	{"key": "earring_duchess_emerald_5.desc", "value": "Nie można podnieść tego przedmiotu"},
 	{"key": "earring_duchess_emerald_6.desc", "value": "Pomiędzy pniem a dużym drzewem."},
 
 	{"key": "earring_beauchene_ruby.name", "value": "Rubinowe kolczyki Beauchéne"},

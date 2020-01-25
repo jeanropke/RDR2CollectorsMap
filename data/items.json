@@ -1605,7 +1605,7 @@
         "5": [
             { "text": "random_item_7", "tool": "1", "lat": "-99.1797", "lng": "39.2344" },
             { "text": "random_item_16", "tool": "1", "lat": "-113.4609", "lng": "68.1563" },
-            { "text": "random_item_19", "tool": "1", "lat": "-101.25", "lng": "83.2656" },
+            { "text": "random_item_19", "tool": "1", "lat": "-101.1563", "lng": "83.1016" },
             { "text": "random_item_22", "tool": "1", "lat": "-86.7969", "lng": "96.2031" },
             { "text": "random_item_32", "tool": "1", "lat": "-67.9844", "lng": "106.1719" },
             { "text": "random_item_37", "tool": "1", "lat": "-70.3281", "lng": "150.4531" },
