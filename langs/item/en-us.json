@@ -788,7 +788,7 @@
 	{"key": "heirlooms_jade_hairpin_3.desc", "value": "In the middle of the wagon circle."},
 	{"key": "heirlooms_jade_hairpin_4.desc", "value": "On top of the fireplace second floor first room to the left."},
 	{"key": "heirlooms_jade_hairpin_5.desc", "value": "Between a bunch of crates and a wooden structure at the side of the shack."},
-	{"key": "heirlooms_jade_hairpin_6.desc", "value": ""},
+	{"key": "heirlooms_jade_hairpin_6.desc", "value": "Near the north-west side of the house."},
 
 	{"key": "heirlooms_cherrywood_comb.name", "value": "Cherrywood Comb Heirloom"},
 	{"key": "heirlooms_cherrywood_comb_1.desc", "value": "In the backroom of the house inside the chest on the ground floor."},
@@ -796,7 +796,7 @@
 	{"key": "heirlooms_cherrywood_comb_3.desc", "value": "Upstairs in the northeast room in a chest at the foot of the bed."},
 	{"key": "heirlooms_cherrywood_comb_4.desc", "value": "On a table in the backyard."},
 	{"key": "heirlooms_cherrywood_comb_5.desc", "value": "On a bench on the porch."},
-	{"key": "heirlooms_cherrywood_comb_6.desc", "value": ""},
+	{"key": "heirlooms_cherrywood_comb_6.desc", "value": "Upstairs on the table in room 2C."},
 
 	{"key": "heirlooms_ebony_hairbrush.name", "value": "Ebony Hairbrush Heirloom"},
 	{"key": "heirlooms_ebony_hairbrush_1.desc", "value": "On a window sill at the south side of the house."},
@@ -804,7 +804,7 @@
 	{"key": "heirlooms_ebony_hairbrush_3.desc", "value": "Inside house in tall wardrobe."},
 	{"key": "heirlooms_ebony_hairbrush_4.desc", "value": "Inside the big wardrobe by the dunk bed."},
 	{"key": "heirlooms_ebony_hairbrush_5.desc", "value": "On the table on the front porch."},
-	{"key": "heirlooms_ebony_hairbrush_6.desc", "value": ""},
+	{"key": "heirlooms_ebony_hairbrush_6.desc", "value": "On the bench near the back porch."},
 
 	{"key": "heirlooms_metal_hairpin.name", "value": "Metal Hairpin Heirloom"},
 	{"key": "heirlooms_metal_hairpin_1.desc", "value": "Beside broken down wagon."},
@@ -812,7 +812,7 @@
 	{"key": "heirlooms_metal_hairpin_3.desc", "value": "In front of the burned down house."},
 	{"key": "heirlooms_metal_hairpin_4.desc", "value": "By the broken wagon on its side."},
 	{"key": "heirlooms_metal_hairpin_5.desc", "value": "At the northwestern side of the ruined house."},
-	{"key": "heirlooms_metal_hairpin_6.desc", "value": ""},
+	{"key": "heirlooms_metal_hairpin_6.desc", "value": "In front of the wagon wheel hanging on the tree."},
 
 	{"key": "heirlooms_carved_wooden.name", "value": "Carved Wooden Hairpin Heirloom"},
 	{"key": "heirlooms_carved_wooden_1.desc", "value": "Between cabin and fence."},
@@ -820,7 +820,7 @@
 	{"key": "heirlooms_carved_wooden_3.desc", "value": "In between the two dead trees."},
 	{"key": "heirlooms_carved_wooden_4.desc", "value": "In the yard to the left of the entrance by two bix boxes."},
 	{"key": "heirlooms_carved_wooden_5.desc", "value": "Between the wooden foundation and a small wagon."},
-	{"key": "heirlooms_carved_wooden_6.desc", "value": ""},
+	{"key": "heirlooms_carved_wooden_6.desc", "value": "In a pile of trash."},
 
 	{"key": "heirlooms_boxwood_comb.name", "value": "Boxwood Comb Heirloom"},
 	{"key": "heirlooms_boxwood_comb_1.desc", "value": "Inside in a chest at the foot end of a bed."},
@@ -828,7 +828,7 @@
 	{"key": "heirlooms_boxwood_comb_3.desc", "value": "Upstairs on the dresser in room 2B."},
 	{"key": "heirlooms_boxwood_comb_4.desc", "value": "Inside the chest by the big bed on the second floor."},
 	{"key": "heirlooms_boxwood_comb_5.desc", "value": "On the shelf next to the door."},
-	{"key": "heirlooms_boxwood_comb_6.desc", "value": ""},
+	{"key": "heirlooms_boxwood_comb_6.desc", "value": "In the big chest near the statue."},
 
 	{"key": "heirlooms_goat_hair_brush.name", "value": "Goat Hairbrush Heirloom"},
 	{"key": "heirlooms_goat_hair_brush_1.desc", "value": "Upstairs on top of the fireplace."},
@@ -836,7 +836,7 @@
 	{"key": "heirlooms_goat_hair_brush_3.desc", "value": "In a chest on the lower deck of the ship."},
 	{"key": "heirlooms_goat_hair_brush_4.desc", "value": "In the western shack, L-shaped. In the back on a bench."},
 	{"key": "heirlooms_goat_hair_brush_5.desc", "value": "In the chest in one of the bedrooms on the ground floor."},
-	{"key": "heirlooms_goat_hair_brush_6.desc", "value": ""},
+	{"key": "heirlooms_goat_hair_brush_6.desc", "value": "On the table on the front porch."},
 
 	{"key": "heirlooms_ebony_hairpin.name", "value": "Ebony Hairpin Heirloom"},
 	{"key": "heirlooms_ebony_hairpin_1.desc", "value": "Beside the barrel."},
@@ -844,7 +844,7 @@
 	{"key": "heirlooms_ebony_hairpin_3.desc", "value": "On a three-seater bench inside and to the right."},
 	{"key": "heirlooms_ebony_hairpin_4.desc", "value": "Inside the broken/burnt down house."},
 	{"key": "heirlooms_ebony_hairpin_5.desc", "value": "In the green wardrobe in the corner."},
-	{"key": "heirlooms_ebony_hairpin_6.desc", "value": ""},
+	{"key": "heirlooms_ebony_hairpin_6.desc", "value": "Near the broken wagon."},
 
 	{"key": "heirlooms_ivory_hairpin.name", "value": "Ivory Hairpin Heirloom"},
 	{"key": "heirlooms_ivory_hairpin_1.desc", "value": "On a white table with a chess board."},
@@ -852,7 +852,7 @@
 	{"key": "heirlooms_ivory_hairpin_3.desc", "value": "In the backyard next to the shed."},
 	{"key": "heirlooms_ivory_hairpin_4.desc", "value": "On a table at the other side of the brick wall with the gate."},
 	{"key": "heirlooms_ivory_hairpin_5.desc", "value": "Next to the campfire with a cooking pot."},
-	{"key": "heirlooms_ivory_hairpin_6.desc", "value": ""},
+	{"key": "heirlooms_ivory_hairpin_6.desc", "value": "In the wardrobe in the east bedroom."},
 
 	{"key": "heirlooms_rosewood_hairbrush.name", "value": "Rosewood Hairbrush Heirloom"},
 	{"key": "heirlooms_rosewood_hairbrush_1.desc", "value": "Inside a chest in the first room."},
@@ -860,7 +860,7 @@
 	{"key": "heirlooms_rosewood_hairbrush_3.desc", "value": "Inside house in large wardrobe in the bedroom."},
 	{"key": "heirlooms_rosewood_hairbrush_4.desc", "value": "Inside the room to the right of the fireplace on a table."},
 	{"key": "heirlooms_rosewood_hairbrush_5.desc", "value": "On the red loveseat in the cabin."},
-	{"key": "heirlooms_rosewood_hairbrush_6.desc", "value": ""},
+	{"key": "heirlooms_rosewood_hairbrush_6.desc", "value": "In the chest on the railway platform."},
 
 	{"key": "heirlooms_tortoiseshell_comb.name", "value": "Tortoiseshell Comb Heirloom"},
 	{"key": "heirlooms_tortoiseshell_comb_1.desc", "value": "Inside tall wardrobe."},
@@ -868,7 +868,7 @@
 	{"key": "heirlooms_tortoiseshell_comb_3.desc", "value": "In the house on the wash table."},
 	{"key": "heirlooms_tortoiseshell_comb_4.desc", "value": "Inside a chest in a tent."},
 	{"key": "heirlooms_tortoiseshell_comb_5.desc", "value": "On a shelf in the corner of the cabin, next to the fireplace."},
-	{"key": "heirlooms_tortoiseshell_comb_6.desc", "value": ""},
+	{"key": "heirlooms_tortoiseshell_comb_6.desc", "value": "On the bench in the alley."},
 
 	{"key": "heirlooms_ivory_comb.name", "value": "Ivory Comb Heirloom"},
 	{"key": "heirlooms_ivory_comb_1.desc", "value": "Beside the sink inside the boat."},
@@ -876,7 +876,7 @@
 	{"key": "heirlooms_ivory_comb_3.desc", "value": "Inside on the table in the back."},
 	{"key": "heirlooms_ivory_comb_4.desc", "value": "In the room to the right on a table by a mirror."},
 	{"key": "heirlooms_ivory_comb_5.desc", "value": "On a bench on the south-side porch."},
-	{"key": "heirlooms_ivory_comb_6.desc", "value": ""},
+	{"key": "heirlooms_ivory_comb_6.desc", "value": "In the chest in front of the photo studio."},
 
 	{"key": "heirlooms_horse_hair_brush.name", "value": "Horse Hairbrush Heirloom"},
 	{"key": "heirlooms_horse_hair_brush_1.desc", "value": "On a table on the deck."},
@@ -884,7 +884,7 @@
 	{"key": "heirlooms_horse_hair_brush_3.desc", "value": "In the green cabinet next to the fireplace."},
 	{"key": "heirlooms_horse_hair_brush_4.desc", "value": "Inside the tall cabinet."},
 	{"key": "heirlooms_horse_hair_brush_5.desc", "value": "In the wardrobe in the basement."},
-	{"key": "heirlooms_horse_hair_brush_6.desc", "value": ""},
+	{"key": "heirlooms_horse_hair_brush_6.desc", "value": "In the chest next to the south corner of the house."},
 
 	{"key": "heirlooms_boar_bristle_brush.name", "value": "Boar Bristle Hairbrush Heirloom"},
 	{"key": "heirlooms_boar_bristle_brush_1.desc", "value": "Inside house on a table."},
@@ -892,7 +892,7 @@
 	{"key": "heirlooms_boar_bristle_brush_3.desc", "value": "Inside chest left of house entrance."},
 	{"key": "heirlooms_boar_bristle_brush_4.desc", "value": "On a bench on the left side of the house."},
 	{"key": "heirlooms_boar_bristle_brush_5.desc", "value": "In the green wardrobe in the bedroom in the back."},
-	{"key": "heirlooms_boar_bristle_brush_6.desc", "value": ""},
+	{"key": "heirlooms_boar_bristle_brush_6.desc", "value": "In the chest next to the south entrance of the house."},
 
 	{"key": "heirlooms_new_guinea_rosewood.name", "value": "New Guinea Rosewood Hairbrush Heirloom"},
 	{"key": "heirlooms_new_guinea_rosewood_1.desc", "value": "On a chair in the room on the ground floor."},
@@ -900,7 +900,7 @@
 	{"key": "heirlooms_new_guinea_rosewood_3.desc", "value": "On the back porch of the mansion on the table."},
 	{"key": "heirlooms_new_guinea_rosewood_4.desc", "value": "In a chest in the bedroom."},
 	{"key": "heirlooms_new_guinea_rosewood_5.desc", "value": "On the white bench."},
-	{"key": "heirlooms_new_guinea_rosewood_6.desc", "value": ""},
+	{"key": "heirlooms_new_guinea_rosewood_6.desc", "value": "Inside the wardrobe in the bedroom."},
 
 	{"key": "ring_harland_coral.name", "value": "Harland Coral Ring"},
 	{"key": "ring_harland_coral_1.desc", "value": "Next to the dead tree."},
