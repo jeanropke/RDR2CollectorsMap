@@ -103,7 +103,7 @@
 	{"key": "menu.month.october", "value": "Outubro"},
 	{"key": "menu.month.november", "value": "Novembro"},
 	{"key": "menu.month.december", "value": "Dezembro"},
-	{"key": "menu.date", "value": "{day} de {month}"},	,
+	{"key": "menu.date", "value": "{day} de {month}"},
 	{"key": "map.layers.default", "value": "Padrão"},
 	{"key": "map.layers.detailed", "value": "Detalhado"},
 	{"key": "map.layers.dark", "value": "Escuro"},

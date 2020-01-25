@@ -1,6 +1,6 @@
 {
-    "updated_at": "january 23",
-    "current": "41",
+    "updated_at": "january 25",
+    "current": "43",
     "cycles": {
         "1": {
             "american_flowers"  : 5,
@@ -451,7 +451,7 @@
             "card_wands"        : 6,
             "random"            : 4
         },
-		"28": {
+        "28": {
             "american_flowers"  : 4,
             "antique_bottles"   : 4,
             "arrowhead"         : 5,
@@ -468,7 +468,7 @@
             "card_wands"        : 5,
             "random"            : 1
         },
-		"29": {
+        "29": {
             "american_flowers"  : 6,
             "antique_bottles"   : 3,
             "arrowhead"         : 4,
@@ -485,7 +485,7 @@
             "card_wands"        : 1,
             "random"            : 2
         },
-		"30": {
+        "30": {
             "american_flowers"  : 3,
             "antique_bottles"   : 4,
             "arrowhead"         : 6,
@@ -502,7 +502,7 @@
             "card_wands"        : 6,
             "random"            : 3
         },
-		"31": {
+        "31": {
             "american_flowers"  : 4,
             "antique_bottles"   : 1,
             "arrowhead"         : 1,
@@ -519,7 +519,7 @@
             "card_wands"        : 3,
             "random"            : 1
         },
-		"32": {
+        "32": {
             "american_flowers"  : 6,
             "antique_bottles"   : 5,
             "arrowhead"         : 3,
@@ -536,7 +536,7 @@
             "card_wands"        : 1,
             "random"            : 5
         },
-		"33": {
+        "33": {
             "american_flowers"  : 4,
             "antique_bottles"   : 1,
             "arrowhead"         : 2,
@@ -553,7 +553,7 @@
             "card_wands"        : 2,
             "random"            : 6
         },
-		"34": {
+        "34": {
             "american_flowers"  : 3,
             "antique_bottles"   : 5,
             "arrowhead"         : 3,
@@ -570,7 +570,7 @@
             "card_wands"        : 5,
             "random"            : 2
         },
-		"35": {
+        "35": {
             "american_flowers"  : 1,
             "antique_bottles"   : 1,
             "arrowhead"         : 2,
@@ -587,7 +587,7 @@
             "card_wands"        : 4,
             "random"            : 3
         },
-		"36": {
+        "36": {
             "american_flowers"  : 6,
             "antique_bottles"   : 5,
             "arrowhead"         : 5,
@@ -604,7 +604,7 @@
             "card_wands"        : 6,
             "random"            : 5
         },
-		"37": {
+        "37": {
             "american_flowers"  : 2,
             "antique_bottles"   : 1,
             "arrowhead"         : 4,
@@ -621,7 +621,7 @@
             "card_wands"        : 2,
             "random"            : 6
         },
-		"38": {
+        "38": {
             "american_flowers"  : 4,
             "antique_bottles"   : 5,
             "arrowhead"         : 6,
@@ -638,7 +638,7 @@
             "card_wands"        : 5,
             "random"            : 5
         },
-		"39": {
+        "39": {
             "american_flowers"  : 3,
             "antique_bottles"   : 6,
             "arrowhead"         : 3,
@@ -655,7 +655,7 @@
             "card_wands"        : 3,
             "random"            : 4
         },
-	"40": {
+        "40": {
             "american_flowers"  : 6,
             "antique_bottles"   : 4,
             "arrowhead"         : 2,
@@ -672,7 +672,7 @@
             "card_wands"        : 6,
             "random"            : 1
         },
-	"41": {
+        "41": {
             "american_flowers"  : 4,
             "antique_bottles"   : 2,
             "arrowhead"         : 1,
@@ -688,6 +688,40 @@
             "card_swords"       : 4,
             "card_wands"        : 4,
             "random"            : 3
+        },
+        "42": {
+            "american_flowers"  : 1,
+            "antique_bottles"   : 3,
+            "arrowhead"         : 3,
+            "bird_eggs"         : 4,
+            "coin"              : 1,
+            "family_heirlooms"  : 6,
+            "lost_bracelet"     : 1,
+            "lost_earrings"     : 1,
+            "lost_necklaces"    : 1,
+            "lost_ring"         : 1,
+            "card_cups"         : 5,
+            "card_pentacles"    : 5,
+            "card_swords"       : 5,
+            "card_wands"        : 5,
+            "random"            : 4
+        },
+        "43": {
+            "american_flowers"  : 5,
+            "antique_bottles"   : 5,
+            "arrowhead"         : 5,
+            "bird_eggs"         : 6,
+            "coin"              : 5,
+            "family_heirlooms"  : 4,
+            "lost_bracelet"     : 5,
+            "lost_earrings"     : 5,
+            "lost_necklaces"    : 5,
+            "lost_ring"         : 5,
+            "card_cups"         : 3,
+            "card_pentacles"    : 3,
+            "card_swords"       : 3,
+            "card_wands"        : 3,
+            "random"            : 5
         }
     }
 }
