@@ -117,7 +117,7 @@ Menu.refreshMenu = function () {
     }
 
     $.each(weeklyItems, function (key, weeklyItem) {
-      if (`flower_${marker.subdata}` == weeklyItem.item || `egg_${marker.subdata}` == weeklyItem.item || marker.text == weeklyItem.item) {
+      if (collectibleKey == weeklyItem.item) {
         collectibleElement.attr('data-help', 'item_weekly');
         collectibleElement.addClass('weekly-item');
       }
