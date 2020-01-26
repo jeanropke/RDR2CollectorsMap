@@ -38,12 +38,15 @@ Menu.refreshMenu = function () {
     var collectibleText = null;
     var collectibleTitle = null;
 
-    if (marker.category == 'american_flowers') {
-      collectibleKey = `flower_${marker.subdata}`;
-    } else if (marker.category == 'bird_eggs') {
-      collectibleKey = `egg_${marker.subdata}`;
-    } else {
-      collectibleKey = marker.text;
+    switch (marker.category) {
+      case 'american_flowers':
+        collectibleKey = `flower_${marker.subdata}`;
+        break;
+      case 'bird_eggs':
+        collectibleKey = `egg_${marker.subdata}`;
+        break;
+      default:
+        collectibleKey = marker.text;
     }
 
     if (marker.subdata) {
@@ -131,7 +134,7 @@ Menu.refreshMenu = function () {
       var language = Language.get(`help.${$(this).data('help')}`);
 
       if (language.indexOf('{collection}') !== -1) {
-        language = language.replace('{collection}', Language.get('weekly.desc.' + weeklySetData.current))
+        language = language.replace('{collection}', Language.get('weekly.desc.' + weeklySetData.current));
       }
 
       $('#help-container p').text(language);
