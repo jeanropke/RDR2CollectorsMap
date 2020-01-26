@@ -788,7 +788,7 @@
 	{"key": "heirlooms_jade_hairpin_3.desc", "value": "Между сломанных повозок."},
 	{"key": "heirlooms_jade_hairpin_4.desc", "value": "On top of the fireplace secound floor first room to the left."},
 	{"key": "heirlooms_jade_hairpin_5.desc", "value": ""},
-	{"key": "heirlooms_jade_hairpin_6.desc", "value": ""},
+	{"key": "heirlooms_jade_hairpin_6.desc", "value": "Возле крыльца на северо-западной стороне дома."},
  
 	{"key": "heirlooms_cherrywood_comb.name", "value": "Гребень из вишни"},
 	{"key": "heirlooms_cherrywood_comb_1.desc", "value": "В открытом сундуке в доме."},
@@ -796,7 +796,7 @@
 	{"key": "heirlooms_cherrywood_comb_3.desc", "value": "В сундуке на втором этаже."},
 	{"key": "heirlooms_cherrywood_comb_4.desc", "value": "On a table in the backyard."},
 	{"key": "heirlooms_cherrywood_comb_5.desc", "value": ""},
-	{"key": "heirlooms_cherrywood_comb_6.desc", "value": ""},
+	{"key": "heirlooms_cherrywood_comb_6.desc", "value": "На столике в комнате 2C (второй этаж)."},
  
 	{"key": "heirlooms_ebony_hairbrush.name", "value": "Щетка для волос из черного дерева"},
 	{"key": "heirlooms_ebony_hairbrush_1.desc", "value": "На окне."},
@@ -804,7 +804,7 @@
 	{"key": "heirlooms_ebony_hairbrush_3.desc", "value": "В шкафу."},
 	{"key": "heirlooms_ebony_hairbrush_4.desc", "value": "Inside the big wardrobe by the dunk bed."},
 	{"key": "heirlooms_ebony_hairbrush_5.desc", "value": ""},
-	{"key": "heirlooms_ebony_hairbrush_6.desc", "value": ""},
+	{"key": "heirlooms_ebony_hairbrush_6.desc", "value": "За домом, на скамейке рядом с лестницей."},
  
 	{"key": "heirlooms_metal_hairpin.name", "value": "Металлическая шпилька для волос"},
 	{"key": "heirlooms_metal_hairpin_1.desc", "value": "Возле телеги."},
@@ -812,7 +812,7 @@
 	{"key": "heirlooms_metal_hairpin_3.desc", "value": "Возле разрушенного дома."},
 	{"key": "heirlooms_metal_hairpin_4.desc", "value": "By the broken wagon on its side."},
 	{"key": "heirlooms_metal_hairpin_5.desc", "value": ""},
-	{"key": "heirlooms_metal_hairpin_6.desc", "value": ""},
+	{"key": "heirlooms_metal_hairpin_6.desc", "value": "Во дворике, перед висящим на дереве колесом."},
  
 	{"key": "heirlooms_carved_wooden.name", "value": "Резная деревянная шпилька для волос"},
 	{"key": "heirlooms_carved_wooden_1.desc", "value": "Возле дома."},
@@ -820,7 +820,7 @@
 	{"key": "heirlooms_carved_wooden_3.desc", "value": "Возле разрушенного дома."},
 	{"key": "heirlooms_carved_wooden_4.desc", "value": "In the yard to the left of the entrance by two bix boxes."},
 	{"key": "heirlooms_carved_wooden_5.desc", "value": ""},
-	{"key": "heirlooms_carved_wooden_6.desc", "value": ""},
+	{"key": "heirlooms_carved_wooden_6.desc", "value": "В куче мусора."},
  
 	{"key": "heirlooms_boxwood_comb.name", "value": "Гребень из самшита"},
 	{"key": "heirlooms_boxwood_comb_1.desc", "value": "В сундуке в доме."},
@@ -828,7 +828,7 @@
 	{"key": "heirlooms_boxwood_comb_3.desc", "value": "На комоде на втором этаже."},
 	{"key": "heirlooms_boxwood_comb_4.desc", "value": "Inside the chest by the big bed on the secound floor."},
 	{"key": "heirlooms_boxwood_comb_5.desc", "value": ""},
-	{"key": "heirlooms_boxwood_comb_6.desc", "value": ""},
+	{"key": "heirlooms_boxwood_comb_6.desc", "value": "В сундуке недалеко от статуи."},
  
 	{"key": "heirlooms_goat_hair_brush.name", "value": "Щетка для волос из козьей щетины"},
 	{"key": "heirlooms_goat_hair_brush_1.desc", "value": "На камине на втором этаже."},
@@ -836,7 +836,7 @@
 	{"key": "heirlooms_goat_hair_brush_3.desc", "value": "В сундуке в трюме корабля."},
 	{"key": "heirlooms_goat_hair_brush_4.desc", "value": ""},
 	{"key": "heirlooms_goat_hair_brush_5.desc", "value": ""},
-	{"key": "heirlooms_goat_hair_brush_6.desc", "value": ""},
+	{"key": "heirlooms_goat_hair_brush_6.desc", "value": "На столе на парадном крыльце."},
  
 	{"key": "heirlooms_ebony_hairpin.name", "value": "Шпилька для волос из черного дерева"},
 	{"key": "heirlooms_ebony_hairpin_1.desc", "value": "За амбаром."},
@@ -844,7 +844,7 @@
 	{"key": "heirlooms_ebony_hairpin_3.desc", "value": "На диване на первом этаже."},
 	{"key": "heirlooms_ebony_hairpin_4.desc", "value": "Inside the broken/burnt down house."},
 	{"key": "heirlooms_ebony_hairpin_5.desc", "value": ""},
-	{"key": "heirlooms_ebony_hairpin_6.desc", "value": ""},
+	{"key": "heirlooms_ebony_hairpin_6.desc", "value": "Возле разбитой повозки."},
  
 	{"key": "heirlooms_ivory_hairpin.name", "value": "Шпилька для волос из слоновой кости"},
 	{"key": "heirlooms_ivory_hairpin_1.desc", "value": "На столе."},
@@ -852,7 +852,7 @@
 	{"key": "heirlooms_ivory_hairpin_3.desc", "value": "Возле дома."},
 	{"key": "heirlooms_ivory_hairpin_4.desc", "value": "On a table otherside of the brick wall with the gate."},
 	{"key": "heirlooms_ivory_hairpin_5.desc", "value": ""},
-	{"key": "heirlooms_ivory_hairpin_6.desc", "value": ""},
+	{"key": "heirlooms_ivory_hairpin_6.desc", "value": "В шкафу в восточной спальне."},
  
 	{"key": "heirlooms_rosewood_hairbrush.name", "value": "Щетка для волос из Палисандра"},
 	{"key": "heirlooms_rosewood_hairbrush_1.desc", "value": "В сундуке напротив ванной комнаты."},
@@ -860,7 +860,7 @@
 	{"key": "heirlooms_rosewood_hairbrush_3.desc", "value": "В шкафу в дальней комнате."},
 	{"key": "heirlooms_rosewood_hairbrush_4.desc", "value": "Inside the room too the right of the fireplace on a table."},
 	{"key": "heirlooms_rosewood_hairbrush_5.desc", "value": ""},
-	{"key": "heirlooms_rosewood_hairbrush_6.desc", "value": ""},
+	{"key": "heirlooms_rosewood_hairbrush_6.desc", "value": "В сундуке на ж/д платформе."},
  
 	{"key": "heirlooms_tortoiseshell_comb.name", "value": "Черепаховый гребень"},
 	{"key": "heirlooms_tortoiseshell_comb_1.desc", "value": "В шкафу."},
@@ -868,7 +868,7 @@
 	{"key": "heirlooms_tortoiseshell_comb_3.desc", "value": "На умывальнике."},
 	{"key": "heirlooms_tortoiseshell_comb_4.desc", "value": "Inside a chest in a tent."},
 	{"key": "heirlooms_tortoiseshell_comb_5.desc", "value": ""},
-	{"key": "heirlooms_tortoiseshell_comb_6.desc", "value": ""},
+	{"key": "heirlooms_tortoiseshell_comb_6.desc", "value": "На скамейке в переулке."},
  
 	{"key": "heirlooms_ivory_comb.name", "value": "Гребень из слоновой кости"},
 	{"key": "heirlooms_ivory_comb_1.desc", "value": "На корабле."},
@@ -876,7 +876,7 @@
 	{"key": "heirlooms_ivory_comb_3.desc", "value": "На столе."},
 	{"key": "heirlooms_ivory_comb_4.desc", "value": "In the room to the right on a table by a mirror."},
 	{"key": "heirlooms_ivory_comb_5.desc", "value": ""},
-	{"key": "heirlooms_ivory_comb_6.desc", "value": ""},
+	{"key": "heirlooms_ivory_comb_6.desc", "value": "В сундуке напротив фотостудии."},
  
 	{"key": "heirlooms_horse_hair_brush.name", "value": "Щетка для волос из конского волоса"},
 	{"key": "heirlooms_horse_hair_brush_1.desc", "value": "На столе возле дома."},
@@ -884,7 +884,7 @@
 	{"key": "heirlooms_horse_hair_brush_3.desc", "value": "В шкафу."},
 	{"key": "heirlooms_horse_hair_brush_4.desc", "value": "Inside the tall cabinet."},
 	{"key": "heirlooms_horse_hair_brush_5.desc", "value": ""},
-	{"key": "heirlooms_horse_hair_brush_6.desc", "value": ""},
+	{"key": "heirlooms_horse_hair_brush_6.desc", "value": "В сундуке на южном углу дома."},
  
 	{"key": "heirlooms_boar_bristle_brush.name", "value": "Щетка для волос из щетины кабана"},
 	{"key": "heirlooms_boar_bristle_brush_1.desc", "value": "В доме на столе."},
@@ -892,7 +892,7 @@
 	{"key": "heirlooms_boar_bristle_brush_3.desc", "value": "В сундуке."},
 	{"key": "heirlooms_boar_bristle_brush_4.desc", "value": "On a bench on the left side of the house."},
 	{"key": "heirlooms_boar_bristle_brush_5.desc", "value": ""},
-	{"key": "heirlooms_boar_bristle_brush_6.desc", "value": ""},
+	{"key": "heirlooms_boar_bristle_brush_6.desc", "value": "В сундуке рядом с южным входом в дом."},
  
 	{"key": "heirlooms_new_guinea_rosewood.name", "value": "Щетка для волос из индийского сандала"},
 	{"key": "heirlooms_new_guinea_rosewood_1.desc", "value": "В доме на стуле."},
@@ -900,7 +900,7 @@
 	{"key": "heirlooms_new_guinea_rosewood_3.desc", "value": "На столике на веранде (1 этаж)."},
 	{"key": "heirlooms_new_guinea_rosewood_4.desc", "value": "In a chest in the bedroom."},
 	{"key": "heirlooms_new_guinea_rosewood_5.desc", "value": ""},
-	{"key": "heirlooms_new_guinea_rosewood_6.desc", "value": ""},
+	{"key": "heirlooms_new_guinea_rosewood_6.desc", "value": "В шкафу в спальне."},
 
 	{"key": "ring_harland_coral.name", "value": "Кольцо с кораллом Гарланд"},
 	{"key": "ring_harland_coral_1.desc", "value": "Возле заросшего мхом бревна."},
