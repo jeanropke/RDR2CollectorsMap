@@ -78,6 +78,12 @@ Menu.refreshMenu = function () {
       Inventory.changeMarkerAmount(collectibleText, 1)
     });
 
+    collectibleElement.on('contextmenu', function (event) {
+      event.preventDefault();
+      if (marker.subdata != 'agarita' && marker.subdata != 'blood_flower')
+        MapBase.highlightImportantItem(marker.subdata || marker.text);
+    });
+
     var collectibleCountElement = $('<span>').addClass('counter').append(collectibleCountDecreaseElement).append(collectibleCountTextElement).append(collectibleCountIncreaseElement);
 
     if (!Inventory.isEnabled)
@@ -111,7 +117,7 @@ Menu.refreshMenu = function () {
     }
 
     $.each(weeklyItems, function (key, weeklyItem) {
-      if (`flower_${marker.subdata}` == weeklyItem.item || `egg_${marker.subdata}` == weeklyItem.item || marker.text == weeklyItem.item) {
+      if (collectibleKey == weeklyItem.item) {
         collectibleElement.attr('data-help', 'item_weekly');
         collectibleElement.addClass('weekly-item');
       }

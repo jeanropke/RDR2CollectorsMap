@@ -535,6 +535,7 @@ var MapBase = {
 
   highlightImportantItem(text) {
     $(`[data-marker*=${text}]`).toggleClass('highlight-items');
+    $(`[data-type=${text}]`).toggleClass('highlight-important-items-menu');
 
     if ($(`[data-marker*=${text}].highlight-items`).length)
       MapBase.itemsMarkedAsImportant.push(text);
@@ -556,6 +557,7 @@ var MapBase = {
 
     $.each(MapBase.itemsMarkedAsImportant, function (key, value) {
       $(`[data-marker*=${value}]`).addClass('highlight-items');
+      $(`[data-type=${value}]`).addClass('highlight-important-items-menu');
     });
   }
 };
