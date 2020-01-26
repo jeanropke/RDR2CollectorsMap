@@ -625,6 +625,12 @@ a.wiki-page:visited {
     filter: drop-shadow(0 0 .5rem #cc0000) drop-shadow(0 0 .4rem #cc0000);
 }
 
+.highlight-important-items-menu {
+    text-decoration: underline;
+    text-decoration-color: #cc0000;
+    text-decoration-thickness: 2px;
+}
+
 .help-popup {
     position: fixed;
     width: 100%;
