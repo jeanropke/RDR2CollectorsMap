@@ -794,6 +794,16 @@ a.wiki-page:visited {
     background-image: url(../images/action_indicator_external.png) !important;
 }
 
+.input-action-copy {
+    width: 30px;
+    background-image: url(../images/action_indicator_copy.png);
+    background-size: auto 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
 a.no-style {
     color: #fff;
     text-decoration: none;

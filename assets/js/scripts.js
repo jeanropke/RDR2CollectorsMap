@@ -299,14 +299,11 @@ $('.menu-option.clickable input').on('change', function (e) {
 
 //Search system on menu
 $("#search").on("input", function () {
-  searchTerms = [];
-  $.each($('#search').val().split(';'), function (key, value) {
-    if ($.inArray(value.trim(), searchTerms) == -1) {
-      if (value.length > 0)
-        searchTerms.push(value.trim());
-    }
-  });
-  MapBase.onSearch();
+  MapBase.onSearch($('#search').val());
+});
+
+$("#copy-search-link").on("click", function () {
+  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${$('#search').val()}`)
 });
 
 //Change & save tool type

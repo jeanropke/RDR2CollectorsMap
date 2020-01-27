@@ -200,8 +200,20 @@ var MapBase = {
 
     MapBase.addMarkers(true);
 
-    //if a marker is passed on url, check if is valid
-    if (goTo = MapBase.markers.filter(_m => _m.text == getParameterByName('m') && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category])[0]) {
+    // Do search via URL.
+    var searchParam = getParameterByName('search');
+    if (searchParam != null && searchParam) {
+      $('#search').val(searchParam)
+      MapBase.onSearch(searchParam);
+    }
+
+    // Navigate to marker via URL.
+    var markerParam = getParameterByName('m');
+    if (markerParam != null && markerParam != '') {
+      var goTo = MapBase.markers.filter(_m => _m.text == markerParam && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category])[0];
+      
+      //if a marker is passed on url, check if is valid
+      if (typeof goTo == 'undefined' || goTo == null) return;
 
       //set map view with marker lat & lng
       MapBase.map.setView([goTo.lat, goTo.lng], 6);
@@ -218,7 +230,15 @@ var MapBase = {
     }
   },
 
-  onSearch: function () {
+  onSearch: function (searchString) {
+    searchTerms = [];
+    $.each(searchString.split(';'), function (key, value) {
+      if ($.inArray(value.trim(), searchTerms) == -1) {
+        if (value.length > 0)
+          searchTerms.push(value.trim());
+      }
+    });
+
     if (searchTerms.length == 0) {
       uniqueSearchMarkers = MapBase.markers;
     } else {
@@ -583,12 +603,12 @@ var MapBase = {
   highlightImportantItem(text, category) {
     if (category === 'american_flowers' || category === 'bird_eggs')
       text = text.replace(/(egg_|flower_)(\w+)(_\d)/, '$2');
-    
+
     $(`[data-type=${text}]`).toggleClass('highlight-important-items-menu');
 
     if (text === 'eagle') // prevent from highlight eagle coins and eggs together
       text = 'egg_eagle';
-  
+
     $(`[data-marker*=${text}]`).toggleClass('highlight-items');
 
     if ($(`[data-marker*=${text}].highlight-items`).length)
