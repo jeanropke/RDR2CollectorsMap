@@ -12,5 +12,6 @@ var Settings = {
     showHelp: $.cookie('show-help') == '1',
     resetMarkersDaily: $.cookie('remove-markers-daily') == '1',
     toolType: $.cookie('tools') ? $.cookie('tools') : '3',
-    language: $.cookie('language') ? $.cookie('language') : navigator.language.toLowerCase()
+    language: $.cookie('language') ? $.cookie('language') : navigator.language.toLowerCase(),
+    sortItemsAlphabetically: $.cookie('sort-items-alphabetically') == '1',
  }
