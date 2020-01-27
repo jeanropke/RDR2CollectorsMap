@@ -864,7 +864,7 @@ $('#generate-route-allow-fasttravel').on("change", function () {
  * Tutorial logic
  */
 $('[data-help]').hover(function (e) {
-  $('#help-container p').text(Language.get(`help.${$(this).data('help')}`));
+  $('#help-container p').text(Language.get(`help.${$(this).attr('data-help')}`));
 }, function () {
   $('#help-container p').text(Language.get(`help.default`));
 });
