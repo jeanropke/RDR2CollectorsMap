@@ -73,12 +73,12 @@ Menu.refreshMenu = function () {
 
     collectibleCountDecreaseElement.on('click', function (e) {
       e.stopPropagation();
-      Inventory.changeMarkerAmount(collectibleText, -1)
+      Inventory.changeMarkerAmount(collectibleText, -1);
     });
 
     collectibleCountIncreaseElement.on('click', function (e) {
       e.stopPropagation();
-      Inventory.changeMarkerAmount(collectibleText, 1)
+      Inventory.changeMarkerAmount(collectibleText, 1);
     });
 
     collectibleElement.on('contextmenu', function (event) {
