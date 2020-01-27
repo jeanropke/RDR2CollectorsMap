@@ -448,7 +448,8 @@ var MapBase = {
 
     var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
     var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">' + Language.get('map.video') + '</a>' : '';
-    var importantItem = ((marker.subdata != 'agarita' && marker.subdata != 'blood_flower') ? ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}')">${Language.get('map.mark_important')}</a>` : '');
+    var importantItem = ((marker.subdata != 'agarita' && marker.subdata != 'blood_flower') ? ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>` : '');
+
 
     var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(videoText).append(importantItem);
 
@@ -578,9 +579,17 @@ var MapBase = {
     MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   },
 
-  highlightImportantItem(text) {
-    $(`[data-marker*=${text}]`).toggleClass('highlight-items');
+
+  highlightImportantItem(text, category) {
+    if (category === 'american_flowers' || category === 'bird_eggs')
+      text = text.replace(/(egg_|flower_)(\w+)(_\d)/, '$2');
+    
     $(`[data-type=${text}]`).toggleClass('highlight-important-items-menu');
+
+    if (text === 'eagle') // prevent from highlight eagle coins and eggs together
+      text = 'egg_eagle';
+  
+    $(`[data-marker*=${text}]`).toggleClass('highlight-items');
 
     if ($(`[data-marker*=${text}].highlight-items`).length)
       MapBase.itemsMarkedAsImportant.push(text);
