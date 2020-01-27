@@ -164,9 +164,9 @@ Menu.refreshMenu = function () {
       element.children('.same-cycle-warning-menu').remove();
     }
 
-    if (category.data('type').includes('card_')) return;
+    // if (category.data('type').includes('card_')) return;
 
-    var children = category.children('.collectible-wrapper');
+    // var children = category.children('.collectible-wrapper');
 
     // children.sort(function (a, b) {
     //   return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
