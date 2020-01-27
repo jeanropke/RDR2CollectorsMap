@@ -143,7 +143,6 @@
 	{"key": "map.user_pins.icon.treasure", "value": "Treasure"},
 	{"key": "menu.clear_custom_routes", "value": "Clear custom route"},
 	{"key": "menu.clear_markers", "value": "Reset markers now"},
-	{"key": "menu.clear_important_items", "value": "Remove highlight from important markers"},
 	{"key": "menu.information_links", "value": "Links/Information"},
 	{"key": "menu.modal_clear_inventory_body", "value": "This will clear your inventory. This action cannot be undone."},
 	{"key": "menu.modal_clear_inventory_title", "value": "Clear inventory?"},
@@ -151,8 +150,6 @@
 	{"key": "menu.modal_clear_markers_title", "value": "Reset markers?"},
 	{"key": "menu.modal_clear_routes_body", "value": "This will remove all custom routes currently on the map. Unsaved progress will be lost. This action cannot be undone."},
 	{"key": "menu.modal_clear_routes_title", "value": "Remove custom routes?"},
-	{"key": "menu.modal_clear-important-items_body", "value": "This will remove highlight from all items marked as important. This action cannot be undone."},
-	{"key": "menu.modal_clear-important-items_title", "value": "Remove highlights?"},
 	{"key": "menu.pins_import_export_explanation", "value": "This will import or export your pins. Importing pins will replace all current pins."},
 	{"key": "menu.pins_import_export_title", "value": "User Pins"},
 	{"key": "menu.read_wiki", "value": "Read this map's Wiki"},
@@ -192,6 +189,9 @@
 	{"key": "map.random_spot.desc", "value": "This spot gives you a random item, you can view more detailed information {link}."},
 	{"key": "map.random_spot.link", "value": "on this Wiki page"},
 	{"key": "map.attribution_prefix", "value": "Tiles provided by"},
+	{"key": "menu.clear_important_items", "value": "Clear important markers"},
+	{"key": "menu.modal_clear_important_items_body", "value": "This will clear the highlight from all markers marked as important. This action cannot be undone."},
+	{"key": "menu.modal_clear_important_items_title", "value": "Clear important markers?"},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
@@ -253,5 +253,6 @@
 	{"key": "help.item", "value": "Toggles whether this item should be visible on the map."},
 	{"key": "help.item_night_only", "value": "Toggles whether this item should be visible on the map. Note that this item only appears between 10:00 PM and 5:00 AM. Click the timer in the upper left corner of the map to view the in-game time."},
 	{"key": "help.item_weekly", "value": "Toggles whether this item should be visible on the map. This item is part of the {collection} weekly collection."},
-	{"key": "help.item_unavailable", "value": "Toggles whether this item should be visible on the map. Note that this item is unavailable due to a game bug or being undiscovered."}
+	{"key": "help.item_unavailable", "value": "Toggles whether this item should be visible on the map. Note that this item is unavailable due to a game bug or being undiscovered."},
+	{"key": "help.clear_important_items", "value": "Clears the highlight from all markers marked as important."}
 ]
