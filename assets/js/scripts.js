@@ -148,6 +148,7 @@ function init() {
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
+  $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
 
   if (Settings.showHelp) {
     $("#help-container").show();
@@ -553,6 +554,12 @@ $('#enable-dclick-zoom').on("change", function () {
   } else {
     MapBase.map.doubleClickZoom.disable();
   }
+});
+
+$('#sort-items-alphabetically').on("change", function () {
+  Settings.sortItemsAlphabetically = $("#sort-items-alphabetically").prop('checked');
+  $.cookie('sort-items-alphabetically', Settings.sortItemsAlphabetically ? '1' : '0', { expires: 999 });
+  Menu.refreshMenu();
 });
 
 /**
