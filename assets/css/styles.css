@@ -992,3 +992,42 @@ a.no-style:visited {
     font-family: 'Courier New', Courier, monospace;
     text-transform: uppercase;
 }
+
+/* Leaflet Marker styling */
+
+.leaflet-div-icon {
+    width: 36px;
+    height: 45px;
+    background-color: transparent;
+    border: none;
+}
+
+.leaflet-div-icon .overlay, .leaflet-div-icon .icon, .leaflet-div-icon .background, .leaflet-div-icon .shadow {
+    position: absolute;
+    text-align: center;
+}
+
+.leaflet-div-icon .overlay {
+    z-index: 4;
+    width: 100%;
+    height: auto;
+}
+
+.leaflet-div-icon .icon {
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    padding-top: 6px;
+}
+
+.leaflet-div-icon .background {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.leaflet-div-icon .shadow {
+    z-index: 1;
+    bottom: -2px;
+    left: 9px;
+}

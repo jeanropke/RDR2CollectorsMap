@@ -1,4 +1,4 @@
-var Marker = function (text, lat, lng, tool, day, category, subdata, video) {
+var Marker = function (text, lat, lng, tool, day, category, subdata, video, height) {
   this.text = text;
   this.lat = lat;
   this.lng = lng;
@@ -8,6 +8,7 @@ var Marker = function (text, lat, lng, tool, day, category, subdata, video) {
   this.category = category;
   this.subdata = subdata;
   this.video = video;
+  this.height = height;
   this.description = (this.subdata == 'agarita' || this.subdata == 'blood_flower' ? Language.get('map.flower_type.night_only') : '') + Language.get(`${text}_${this.day}.desc`);
   this.isVisible = enabledCategories.includes(category);
   this.amount = Inventory.items[text] == null ? 0 : Inventory.items[text].amount;

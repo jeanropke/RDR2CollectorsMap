@@ -165,7 +165,7 @@ var MapBase = {
     $.each(data, function (_category, _cycles) {
       $.each(_cycles, function (day, _markers) {
         $.each(_markers, function (key, marker) {
-          MapBase.markers.push(new Marker(marker.text, marker.lat, marker.lng, marker.tool, day, _category, marker.subdata, marker.video));
+          MapBase.markers.push(new Marker(marker.text, marker.lat, marker.lng, marker.tool, day, _category, marker.subdata, marker.video, marker.height));
         });
       });
     });
@@ -407,6 +407,31 @@ var MapBase = {
     }
   },
 
+  getToolName: function (type) {
+    switch (type) {
+      default:
+      case '0':
+        return 'random';
+      case '1':
+        return 'shovel';
+      case '2':
+        return 'magnet';
+    }
+  },
+
+  getToolIcon: function (type) {
+    switch (type) {
+      case '-1':
+        return '<img class="tool-type" src="assets/images/cross.png">';
+      default:
+      case '0':
+        return '';
+      case '1':
+        return '<img class="tool-type" src="assets/images/shovel.png">';
+      case '2':
+        return '<img class="tool-type" src="assets/images/magnet.png">';
+    }
+  },
 
   updateMarkerContent: function (marker) {
     var popupContent = '';
@@ -459,24 +484,44 @@ var MapBase = {
       return weekly.item === (marker.text).replace(/_\d+/, "");
     }).length > 0;
 
-    var icon = '';
+    var overlay = '';
+    var icon = `./assets/images/icons/${marker.category}.png`;
+    var background = `./assets/images/icons/marker_${MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)}.png`;
+    var shadow = './assets/images/markers-shadow.png';
+
+    // Random items override
+    if (marker.category == 'random') {
+      icon = `./assets/images/icons/${MapBase.getToolName(marker.tool)}.png`;
+      background = './assets/images/icons/marker_lightgray.png';
+    }
+
+    // Height overlays
+    if (marker.height == '1') {
+      overlay = '<img class="overlay" src="./assets/images/icons/overlay_high.png" alt="Overlay">'
+    }
+
+    if (marker.height == '-1') {
+      overlay = '<img class="overlay" src="./assets/images/icons/overlay_low.png" alt="Overlay">'
+    }
+
+    // Timed flower overlay override
     if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower') {
-      icon = `./assets/images/icons/${marker.category}_timed_${MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)}.png`;
-    } else if (marker.category == 'random') {
-      icon = `./assets/images/icons/${marker.category}_lightgray_${marker.tool}.png`;
-    } else {
-      icon = `./assets/images/icons/${marker.category}_${MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)}.png`;
+      overlay = '<img class="overlay" src="./assets/images/icons/overlay_time.png" alt="Overlay">'
     }
 
     var tempMarker = L.marker([marker.lat, marker.lng], {
       opacity: marker.canCollect ? opacity : opacity / 3,
-      icon: new L.Icon.DataMarkup({
-        iconUrl: icon,
+      icon: new L.DivIcon.DataMarkup({
         iconSize: [35, 45],
         iconAnchor: [17, 42],
         popupAnchor: [1, -32],
         shadowAnchor: [10, 12],
-        shadowUrl: './assets/images/markers-shadow.png',
+        html: `
+          ${overlay}
+          <img class="icon" src="${icon}" alt="Icon">
+          <img class="background" src="${background}" alt="Background">
+          <img class="shadow" src="${shadow}" alt="Shadow">
+        `,
         marker: marker.text
       })
     });
@@ -559,20 +604,6 @@ var MapBase = {
       $(`[data-marker*=${value}]`).addClass('highlight-items');
       $(`[data-type=${value}]`).addClass('highlight-important-items-menu');
     });
-  }
-};
-
-MapBase.getToolIcon = function (type) {
-  switch (type) {
-    case '-1':
-      return '<img class="tool-type" src="assets/images/cross.png">';
-    default:
-    case '0':
-      return '';
-    case '1':
-      return '<img class="tool-type" src="assets/images/shovel.png">';
-    case '2':
-      return '<img class="tool-type" src="assets/images/magnet.png">';
   }
 };
 

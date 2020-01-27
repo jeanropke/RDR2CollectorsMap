@@ -883,12 +883,11 @@ $('#show-help').on("change", function () {
 /**
  * Leaflet plugins
  */
-L.Icon.DataMarkup = L.Icon.extend({
+L.DivIcon.DataMarkup = L.DivIcon.extend({
   _setIconStyles: function (img, name) {
-    L.Icon.prototype._setIconStyles.call(this, img, name);
-    if (this.options.marker) {
+    L.DivIcon.prototype._setIconStyles.call(this, img, name);
+    if (this.options.marker)
       img.dataset.marker = this.options.marker;
-    }
   }
 });
 
