@@ -168,9 +168,9 @@ Menu.refreshMenu = function () {
 
     var children = category.children('.collectible-wrapper');
 
-    children.sort(function (a, b) {
-      return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
-    }).appendTo(this);
+    // children.sort(function (a, b) {
+    //   return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
+    // }).appendTo(this);
   })
 
   Menu.refreshTreasures();
