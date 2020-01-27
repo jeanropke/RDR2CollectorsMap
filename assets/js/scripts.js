@@ -864,9 +864,10 @@ $('#generate-route-allow-fasttravel').on("change", function () {
  * Tutorial logic
  */
 $('[data-help]').hover(function (e) {
-  $('#help-container p').text(Language.get(`help.${$(this).attr('data-help')}`));
+  var attr = $(this).attr('data-help');
+  $('#help-container p').attr('data-text', `help.${attr}`).text(Language.get(`help.${attr}`));
 }, function () {
-  $('#help-container p').text(Language.get(`help.default`));
+  $('#help-container p').attr('data-text', `help.default`).text(Language.get(`help.default`));
 });
 
 $('#show-help').on("change", function () {
