@@ -536,10 +536,8 @@ var MapBase = {
 
 
   highlightImportantItem(text, category) {
-    
-    if (category === 'american_flowers' || category === 'bird_eggs') {
+    if (category === 'american_flowers' || category === 'bird_eggs')
       text = text.replace(/(egg_|flower_)(\w+)(_\d)/, '$2');
-    }
     
     $(`[data-type=${text}]`).toggleClass('highlight-important-items-menu');
 
