@@ -220,3 +220,11 @@ Menu.liveUpdateDebugMarkersInputs = function (lat, lng) {
   $('#debug-marker-lat').val(lat);
   $('#debug-marker-lng').val(lng);
 }
+
+// Remove highlight from all important items
+$('#clear_highlights').on('click', function () {
+  var tempArray = MapBase.itemsMarkedAsImportant;
+  $.each(tempArray, function () {
+    MapBase.highlightImportantItem(tempArray[0]);
+  });
+});
