@@ -92,8 +92,10 @@ Menu.refreshMenu = function () {
     if (!Inventory.isEnabled)
       collectibleCountElement.hide();
 
-    if (marker.lat.length == 0 || marker.tool == -1)
+    if (marker.lat.length == 0 || marker.tool == -1) {
       collectibleElement.addClass('not-found');
+      $(`.menu-option[data-type=${marker.category}]`).attr('data-help', 'item_category_unavailable_items').addClass('not-found');
+    }
 
     if (Inventory.isEnabled && marker.amount >= Inventory.stackSize)
       collectibleElement.addClass('disabled');
