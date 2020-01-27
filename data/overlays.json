@@ -1,78 +1,78 @@
 {
 	"build_01": {
-		"img": "./assets/overlays/build_01.png?nocache=1",
+		"img": "build_01.png?nocache=1",
 		"bounds": [[-86.3984, 147.8516], [-86.0703, 148.2586]]
 	},
 	"build_02": {
-		"img": "./assets/overlays/build_02.png?nocache=1",
+		"img": "build_02.png?nocache=1",
 		"bounds": [[-41.7344, 155.9219], [-42.3594, 157.3203]]
 	},
 	"build_03": {
-		"img": "./assets/overlays/build_03.png?nocache=1",
+		"img": "build_03.png?nocache=1",
 		"bounds": [[-22.0547, 102.9063], [-22.2031, 103.0625]]
 	},
 	"build_04": {
-		"img": "./assets/overlays/build_04.png?nocache=1",
+		"img": "build_04.png?nocache=1",
 		"bounds": [[-90.8906, 126.7578], [-91.2734, 127.25]]
 	},
 	"cave_01": {
-		"img": "./assets/overlays/cave_01.png?nocache=1",
+		"img": "cave_01.png?nocache=1",
 		"bounds": [[-53.3438, 68.8516], [-52.1172, 69.9453]]
 	},
 	"cave_02": {
-		"img": "./assets/overlays/cave_02.png?nocache=1",
+		"img": "cave_02.png?nocache=1",
 		"bounds": [[-45.594, 88.7656], [-44.5625, 89.8459]]
 	},
 	"cave_03": {
-		"img": "./assets/overlays/cave_03.png?nocache=1",
+		"img": "cave_03.png?nocache=1",
 		"bounds": [[-47.9844, 146.29], [-44.9844, 147.8984]]
 	},
 	"cave_04": {
-		"img": "./assets/overlays/cave_04.png?nocache=1",
+		"img": "cave_04.png?nocache=1",
 		"bounds": [[-33.35, 124.3516], [-33.8828, 123.8]]
 	},
 	"cave_05": {
-		"img": "./assets/overlays/cave_05.png?nocache=1",
+		"img": "cave_05.png?nocache=1",
 		"bounds": [[-42.0469, 146.335], [-40.2625, 148.0781]]
 	},
 	"cave_06": {
-		"img": "./assets/overlays/cave_06.png?nocache=1",
+		"img": "cave_06.png?nocache=1",
 		"bounds": [[-52.345, 87.6172], [-51.985, 87.8203]]
 	},
 	"cave_07": {
-		"img": "./assets/overlays/cave_07.png?nocache=1",
+		"img": "cave_07.png?nocache=1",
 		"bounds": [[-61.5234, 77.8125], [-63.13, 79.05]]
 	},
 	"exterior_01": {
-		"img": "./assets/overlays/exterior_01.png?nocache=1",
+		"img": "exterior_01.png?nocache=1",
 		"bounds": [[-86.7109, 148.9375], [-88.375, 155.1484]]
 	},
 	"exterior_02": {
-		"img": "./assets/overlays/exterior_02.png?nocache=1",
+		"img": "exterior_02.png?nocache=1",
 		"bounds": [[-55.6875, 157.7188], [-56.1953, 158.1563]]
 	},
 	"exterior_03": {
-		"img": "./assets/overlays/exterior_03.png?nocache=1",
+		"img": "exterior_03.png?nocache=1",
 		"bounds": [[-81.8281, 97.9297], [-82.6406, 98.5156]]
 	},
 	"exterior_04": {
-		"img": "./assets/overlays/exterior_04.png?nocache=1",
+		"img": "exterior_04.png?nocache=1",
 		"bounds": [[-98.9609, 90.0547], [-99.4922, 90.3281]]
 	},
 	"mine_01": {
-		"img": "./assets/overlays/mine_01.png?nocache=1",
+		"img": "mine_01.png?nocache=1",
 		"bounds": [[-43.4766, 153.2891], [-41.505, 154.8438]]
 	},
 	"mine_02": {
-		"img": "./assets/overlays/mine_02.png?nocache=1",
+		"img": "mine_02.png?nocache=1",
 		"bounds": [[-62.125, 75.24], [-61.4656, 74.3625]]
 	},
 	"mine_03": {
-		"img": "./assets/overlays/mine_03.png?nocache=1",
+		"img": "mine_03.png?nocache=1",
 		"bounds": [[-112.5266, 18.3672], [-113.2813, 18.8438]]
 	},
 	"tunnel_01": {
-		"img": "./assets/overlays/tunnel_01.png?nocache=1",
+		"img": "tunnel_01.png?nocache=1",
 		"bounds": [[-87.2422, 147.115], [-86.6234, 147.8281]]
 	}
 }

@@ -18,6 +18,7 @@ var MapBase = {
   overlays: [],
   markers: [],
   itemsMarkedAsImportant: [],
+  isDarkMode: false,
 
   init: function () {
 
@@ -127,7 +128,8 @@ var MapBase = {
     if (opacity == 0) return;
 
     $.each(MapBase.overlays, function (key, value) {
-      Layers.overlaysLayer.addLayer(L.imageOverlay(value.img, value.bounds, { opacity: opacity }));
+      Layers.overlaysLayer.addLayer(
+        L.imageOverlay(`assets\\overlays\\${(MapBase.isDarkMode ? 'dark' : 'normal')}\\${value.img}`, value.bounds, { opacity: opacity }));
     });
 
     Layers.overlaysLayer.addTo(MapBase.map);

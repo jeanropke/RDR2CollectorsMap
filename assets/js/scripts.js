@@ -168,18 +168,21 @@ function setMapBackground(mapIndex) {
   switch (parseInt(mapIndex)) {
     default:
     case 0:
-      $('#map').removeClass('leaflet-dark-mode').css('background-color', '#d2b790');
+      $('#map').css('background-color', '#d2b790');
+      MapBase.isDarkMode = false;
       break;
 
     case 1:
-      $('#map').removeClass('leaflet-dark-mode').css('background-color', '#d2b790');
+      $('#map').css('background-color', '#d2b790');
+      MapBase.isDarkMode = false;
       break;
 
     case 2:
-      $('#map').addClass('leaflet-dark-mode').css('background-color', '#3d3d3d');
+      $('#map').css('background-color', '#3d3d3d');
+      MapBase.isDarkMode = true;
       break;
   }
-
+  MapBase.setOverlays();
   $.cookie('map-layer', mapIndex, { expires: 999 });
 }
 
@@ -908,7 +911,8 @@ L.LayerGroup.include({
 
 // Disable annoying menu on right mouse click
 $('*').on('contextmenu', function (event) {
-  event.preventDefault();
+  if($.cookie('right-click') == null)
+    event.preventDefault();
 });
 
 /**
