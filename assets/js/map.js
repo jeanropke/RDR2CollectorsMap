@@ -649,13 +649,16 @@ MapBase.addFastTravelMarker = function () {
     $.each(fastTravelData, function (key, value) {
 
       var marker = L.marker([value.x, value.y], {
-        icon: L.icon({
-          iconUrl: './assets/images/icons/fast_travel_gray.png',
+        icon: L.divIcon({
           iconSize: [35, 45],
           iconAnchor: [17, 42],
           popupAnchor: [1, -32],
           shadowAnchor: [10, 12],
-          shadowUrl: './assets/images/markers-shadow.png'
+          html: `
+            <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Icon">
+            <img class="background" src="./assets/images/icons/marker_gray.png" alt="Background">
+            <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+          `
         })
       });
 
@@ -675,13 +678,16 @@ MapBase.submitDebugForm = function () {
 
 MapBase.debugMarker = function (lat, long, name = 'Debug Marker') {
   var marker = L.marker([lat, long], {
-    icon: L.icon({
-      iconUrl: './assets/images/icons/random_lightred.png',
+    icon: L.divIcon({
       iconSize: [35, 45],
       iconAnchor: [17, 42],
       popupAnchor: [1, -32],
       shadowAnchor: [10, 12],
-      shadowUrl: './assets/images/markers-shadow.png'
+      html: `
+        <img class="icon" src="./assets/images/icons/random.png" alt="Icon">
+        <img class="background" src="./assets/images/icons/marker_darkblue.png" alt="Background">
+        <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+      `
     })
   });
   var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
@@ -751,13 +757,16 @@ var MadamNazar = {
 
     if (enabledCategories.includes('nazar')) {
       var marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
-        icon: L.icon({
-          iconUrl: './assets/images/icons/nazar_red.png',
+        icon: L.divIcon({
           iconSize: [35, 45],
           iconAnchor: [17, 42],
           popupAnchor: [1, -32],
           shadowAnchor: [10, 12],
-          shadowUrl: './assets/images/markers-shadow.png'
+          html: `
+            <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
+            <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
+            <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+          `
         })
       });
       marker.bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1><p style="text-align: center;">${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}</p>`, { minWidth: 300 });

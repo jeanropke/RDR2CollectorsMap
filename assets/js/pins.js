@@ -19,13 +19,16 @@ var Pins = {
             desc: desc == null ? Language.get('map.user_pins.default_desc') : desc,
             icon_name: icon,
             draggable: Settings.isPinsEditingEnabled,
-            icon: L.icon({
-                iconUrl: `./assets/images/icons/${icon}_red.png`,
+            icon: L.divIcon({
                 iconSize: [35, 45],
                 iconAnchor: [17, 42],
                 popupAnchor: [1, -32],
                 shadowAnchor: [10, 12],
-                shadowUrl: './assets/images/markers-shadow.png'
+                html: `
+                    <img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
+                    <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
+                    <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+                `
             })
         });
 
@@ -107,7 +110,7 @@ var Pins = {
         var markerIconSelect = "";
 
         if (Settings.isPinsEditingEnabled) {
-            var markerIcons = ["pin", "random", "spade", "metal_detector", "american_flowers", "antique_bottles", "arrowhead", "bird_eggs", "card_cups", "card_pentacles", "card_swords", "card_wands", "coin", "family_heirlooms", "fast_travel", "hide", "lost_bracelet", "lost_earrings", "lost_necklaces", "lost_ring", "nazar", "treasure"];
+            var markerIcons = ["pin", "random", "shovel", "magnet", "american_flowers", "antique_bottles", "arrowhead", "bird_eggs", "card_cups", "card_pentacles", "card_swords", "card_wands", "coin", "family_heirlooms", "fast_travel", "hide", "lost_bracelet", "lost_earrings", "lost_necklaces", "lost_ring", "nazar", "treasure"];
             markerIconSelect = $('<select>').attr('id', `${markerId}_icon`).addClass('marker-popup-pin-input-icon');
 
             markerIcons.forEach(icon => {

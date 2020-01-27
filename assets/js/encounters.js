@@ -25,13 +25,16 @@ var Encounters = {
         return;
 
       var tempMarker = L.marker([marker.lat, marker.lng], {
-        icon: L.icon({
-          iconUrl: './assets/images/icons/' + marker.category + '_lightred.png',
+        icon: L.divIcon({
           iconSize: [35,45],
           iconAnchor: [17,42],
           popupAnchor: [1,-32],
           shadowAnchor: [10,12],
-          shadowUrl: './assets/images/markers-shadow.png'
+          html: `
+            <img class="icon" src="./assets/images/icons/${marker.category}.png" alt="Icon">
+            <img class="background" src="./assets/images/icons/marker_lightred.png" alt="Background">
+            <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+          `
         })
       });
       
