@@ -1,12 +1,12 @@
 [
 	{"key": "menu.collectables", "value":		"Коллекции"},
 	{"key": "menu.collectables_counter", "value": 	"Собрано {count} из {max}"},
-	{"key": "menu.search_placeholder", "value": 	"поиск"},
+	{"key": "menu.search_placeholder", "value": 	"Поиск предметов."},
 	{"key": "menu.hide_all", "value": 		"Скрыть все"},
 	{"key": "menu.show_all", "value": 		"Показать все"},
 	
 	{"key": "map.layers.default", "value": 		"Обычная"},
-	{"key": "map.layers.detailed", "value": 	"Подробная"},
+	{"key": "map.layers.detailed", "value": 	"Детальная"},
 	{"key": "map.layers.dark", "value": 		"Темная"},
 	
 	{"key": "menu.date", "value": 			"{day} {month}"},
@@ -39,7 +39,7 @@
 	{"key": "menu.coin", "value": 			"Монеты"},
 	{"key": "menu.random_spots", "value": 		"Случайные предметы"},
 	
-	{"key": "map.same_cycle_yesterday", "value": "Этот предмет имеет тот же цикл, что был вчера. В этом случае имеется 24-часовая задержка до повторного появления предмета."},
+	{"key": "map.same_cycle_yesterday", "value": "Этот предмет имеет такой же цикл, который был вчера. Необходимо подождать 24 часа до повторного появления предмета."},
 
 	{"key": "menu.collectables_value", "value": "Стоимость"},
 	{"key": "menu.reset", "value": "Сброс отмеч."},
@@ -60,6 +60,8 @@
 	
 	{"key": "menu.settings", "value": "Настройки"},
 	{"key": "menu.language", "value": "Язык"},
+	{"key": "menu.yes", "value": "Да"},
+	{"key": "menu.no", "value": "Нет"},
 	{"key": "menu.marker_opacity", "value": "Видимость меток"},
 	{"key": "menu.marker_opacity.20", "value": "20%"},
 	{"key": "menu.marker_opacity.40", "value": "40%"},
@@ -77,11 +79,15 @@
 	{"key": "menu.tool_type.shovel", "value": "Лопата"},
 	{"key": "menu.tool_type.metal_detector", "value": "Металлоискатель"},
 	{"key": "menu.tool_type.all", "value": "Все типы"},
-	{"key": "menu.marker_cluster", "value": "Объединение маркеров"},
+	{"key": "menu.sort_items_alphabetically", "value": "Сортировка предметов по алфавиту"},
+	{"key": "menu.marker_cluster", "value": "Сдвиг близкостоящих маркеров"},
 	{"key": "menu.reset_markers_daily","value": "Ежедневный сброс маркеров"},
-	{"key": "menu.clear_markers", "value": "Сбросить скрытые метки"},
+	{"key": "menu.clear_markers", "value": "Сброс скрытых меток"},
 	{"key": "menu.modal_clear_markers_title", "value": "Сбросить метки?"},
-	{"key": "menu.modal_clear_markers_body", "value": "Эта функция позволит сбросить все метки, которые вы скрыли на карте. Это действие не может быть отменено."},
+	{"key": "menu.modal_clear_markers_body", "value": "Эта функция позволит сбросить все метки, которые вы скрыли на карте."},
+	{"key": "menu.clear_important_items", "value": "Сброс важных меток"},
+	{"key": "menu.modal_clear_important_items_title", "value": "Сбросить важные метки?"},
+	{"key": "menu.modal_clear_important_items_body", "value": "Эта функция позволит сбросить все метки, отмеченные как важные."},
 	{"key": "menu.user_pins_place_mode", "value": "Создать пользоват. метку по клику"},
 	{"key": "menu.user_pins_edit_mode", "value": "Разрешить редактирование меток"},
 	{"key": "menu.user_pins_place_new", "value": "Создать метку на карте"},
@@ -90,11 +96,11 @@
 	{"key": "menu.enable_inventory", "value": "Включить инвентарь"},
 	{"key": "menu.enable_inventory_popups", "value": "Функции инвентаря на метках"},
 	{"key": "menu.enable_inventory_menu_update", "value": "Обновление инвентаря в меню"},
-	{"key": "menu.reset_button_updates_inventory", "value": "Обнов. инвентаря после сброса"},
+	{"key": "menu.reset_button_updates_inventory", "value": "Обновление инвентаря после сброса"},
 	{"key": "menu.inventory_stack", "value": "Макс. кол-во предметов в слоте"},
 	{"key": "menu.clear_inventory", "value": "Очистить инвентарь"},
-	{"key": "menu.modal_clear_inventory_title", "value": "Очистить инвентарь?"},
-	{"key": "menu.modal_clear_inventory_body", "value": "Эта функция очистит содержимое вашего инвентаря. Это действие не может быть отменено."},
+	{"key": "menu.modal_clear_inventory_title", "value": "Очистить содержимое инвентаря?"},
+	{"key": "menu.modal_clear_inventory_body", "value": "Эта функция очистит содержимое вашего инвентаря."},
 	
 	
 	{"key": "menu.route_generator", "value": "Генератор маршрутов"},
@@ -129,8 +135,8 @@
 	{"key": "menu.modal_clear_routes_body", "value": "Эта функция приведет к удалению всех пользовательских маршрутов, находящихся в данный момент на карте. Несохраненный прогресс будет потерян. Это действие не может быть отменено."},
 
 	{"key": "menu.enable_dclick_zoom", "value": "Приближение через двойной клик"},
-	{"key": "menu.enable_marker_popups", "value": "Показывать информ. о маркере"},
-	{"key": "menu.show_help", "value": "Показать подсказку при наведении"},
+	{"key": "menu.enable_marker_popups", "value": "Показывать информацию о маркере"},
+	{"key": "menu.show_help", "value": "Показать подсказку в меню"},
 	{"key": "menu.show_coords", "value": "Показать координаты на карте"},
 	
 	
@@ -185,19 +191,19 @@
 	{"key": "menu.return_legacy", "value": "Вернуться на версию legacy"},
 	{"key": "menu.toggle_debug", "value": "Функция отладки (eng)"},
 	
-	
+	{"key": "menu.day", "value": "Цикл"},
 	{"key": "map.remove_add", "value": "Показать/Скрыть"},
 	{"key": "map.copy_link", "value": "Скопировать ссылку метки"},
 	{"key": "map.video", "value": "Видео"},
 	{"key": "map.mark_important", "value": "Отметить важной"},
 	{"key": "map.flower_type.night_only", "value": "Растет ночью - с 22:00 до 05:00"},
-	{"key": "map.flower_type.bush", "value": ""},
+	{"key": "map.flower_type.bush", "value": "Это растение является кустарником."},
 	{"key": "map.egg_type.tree", "value": "На дереве. Яйцо можно сбить с ветки, используя винтовку \"Варминт\" или лук со стрелами для мелкой дичи."},
 	{"key": "map.egg_type.stump", "value": "Внутри пня."},
 	{"key": "map.egg_type.ground", "value": "В гнезде на земле. Не наступайте на него."},
 	{"key": "map.item.unable", "value": "Этот предмет пока невозможно получить."},
 	{"key": "map.madam_nazar.desc", "value": "Информация по местоположению: {link}."},
-	{"key": "map.random_spot.desc", "value": "Тут вы можете получить случайный предмет. Более подробно о метке можно узнать в этом {link}."},
+	{"key": "map.random_spot.desc", "value": "Здесь можно получить случайный предмет. Более подробно о метке можно узнать в этом {link} (eng)."},
 	{"key": "map.random_spot.link", "value": "руководстве"},
 	
 	
