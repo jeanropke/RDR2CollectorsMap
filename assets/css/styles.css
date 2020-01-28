@@ -553,8 +553,11 @@ input, textarea, select, .btn {
     margin-top: 1px;
 }
 .side-menu .menu-hidden .collectible-icon.random-encounter {    
-    margin-top: 6px;
-    margin-right: 5px;
+    width: 32px;
+    height: auto;
+    margin-top: 5px;
+    margin-right: 3px;
+    margin-bottom: -3px;
 }
 
 .side-menu .menu-hidden .collectible-text {
