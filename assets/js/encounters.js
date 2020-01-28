@@ -24,6 +24,7 @@ var Encounters = {
       if(!enabledCategories.includes(marker.category))
         return;
 
+      var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
       var tempMarker = L.marker([marker.lat, marker.lng], {
         icon: L.divIcon({
           iconSize: [35,45],
@@ -33,7 +34,7 @@ var Encounters = {
           html: `
             <img class="icon" src="./assets/images/icons/${marker.category}.png" alt="Icon">
             <img class="background" src="./assets/images/icons/marker_lightred.png" alt="Background">
-            <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+            ${shadow}
           `
         })
       });
