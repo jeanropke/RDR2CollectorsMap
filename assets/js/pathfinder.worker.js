@@ -265,7 +265,6 @@ class PathFinder {
 	 * @param {Array<Marker>} markers
 	 */
 	static generateChunks(markers) {
-		// console.log('[pathfinder.worker] Sorting markers into chunks')
 		Chunk.clearChunks()
 	
 		for(var i = 0; i < markers.length; i++) {
@@ -282,7 +281,6 @@ class PathFinder {
 		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = PathFinder._pathfinderFT
 		if(PathFinder._PathFinder !== null && PathFinder._pathfinderFT == allowFastTravel) return
 
-		// console.log('[pathfinder.worker] Creating geojson path finder ' + (allowFastTravel ? 'with' : 'without') + ' fasttravel')
 		PathFinder._PathFinder = new GeoJSONPathFinder(allowFastTravel ? PathFinder._geoJsonFT : PathFinder._geoJson, {
 			precision: 0.04,
 			weightFn: function(a, b, props) {
@@ -518,8 +516,6 @@ class PathFinder {
 			await PathFinder.routegenCancel()
 		}
 
-		// console.log('[pathfinder.worker] Starting route generation')
-
 		PathFinder._running = true
 		PathFinder._currentChunk = null
 
@@ -559,12 +555,8 @@ class PathFinder {
 			console.error('[pathfinder.worker]', e)
 		}
 	
-		var endTime = new Date().getTime();
-
 		var canceled = PathFinder._cancel
-		// if(canceled) console.log(`[pathfinder.worker] Pathfinding was canceled`)
 
-		// console.log(`[pathfinder.worker] ${(endTime - startTime) / 1000} seconds for ${markersNum} items`)
 		PathFinder._running = false
 
 		return !canceled

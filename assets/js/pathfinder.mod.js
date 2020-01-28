@@ -8,7 +8,6 @@ function loadGeoJsonData(path) {
 	return new Promise((res) => {
 		$.getJSON(path + '?nocache=' + nocache)
 			.done(function(data){
-				// console.log('[pathfinder] geojson ' + path.substr(path.lastIndexOf('/')+1) + ' loaded')
 				res(data)
 			})
 			.fail(function(){
@@ -319,7 +318,6 @@ class PathFinder {
 	 * @param {Array<Marker>} markers
 	 */
 	static generateChunks(markers) {
-		// console.log('[pathfinder] Sorting markers into chunks')
 		Chunk.clearChunks()
 	
 		for(var i = 0; i < markers.length; i++) {
@@ -336,7 +334,6 @@ class PathFinder {
 		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = PathFinder._pathfinderFT
 		if(PathFinder._PathFinder !== null && PathFinder._pathfinderFT == allowFastTravel) return
 
-		// console.log('[pathfinder] Creating geojson path finder ' + (allowFastTravel ? 'with' : 'without') + ' fasttravel')
 		PathFinder._PathFinder = new GeoJSONPathFinder(allowFastTravel ? PathFinder._geoJsonFT : PathFinder._geoJson, {
 			precision: 0.04,
 			weightFn: function(a, b, props) {
@@ -658,7 +655,6 @@ class PathFinder {
 	 * @returns {Promise}
 	 */
 	static async findHoles() {
-		// console.log('[pathfinder] Searching for holes')
 		PathFinder.createPathFinder(false)
 
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
@@ -677,10 +673,8 @@ class PathFinder {
 			})
 			if(path == null) {
 				L.circle([PathFinder._points.features[i].geometry.coordinates[1], PathFinder._points.features[i].geometry.coordinates[0]], { radius: 0.04 }).addTo(PathFinder._layerGroup)
-				// console.log('[pathfinder] No path found to ', sourcePoint, PathFinder._points.features[i])
 			}
 		}
-		// console.log('[pathfinder] Done finding holes')
 	}
 
 	/**
@@ -693,7 +687,6 @@ class PathFinder {
 	 */
 	static async routegenStart(startingMarker, markers, allowFastTravel) {
 		if(PathFinder._geoJson === null) {
-			// console.log('[pathfinder] geojson not fully loaded yet; we\'ll wait...')
 			await new Promise(async (res) => {
 				while(PathFinder._geoJson === null && PathFinder._geoJsonFT === null) {
 					await new Promise((r) => { setTimeout(() => { r() }, 100) })
@@ -704,8 +697,6 @@ class PathFinder {
 
 		// Clear layers and cancel if running
 		await PathFinder.routegenClear()
-
-		// console.log('[pathfinder] Starting route generation')
 
 		PathFinder._running = true
 		PathFinder._currentChunk = null
@@ -784,13 +775,9 @@ class PathFinder {
 			console.error('[pathfinder]', e)
 		}
 	
-		var endTime = new Date().getTime();
-
 		var canceled = PathFinder._cancel
 		if (!canceled) window.setTimeout(function(){ PathFinder._layerControl.selectPath(1, true) }, 100)
-		// else console.log(`[pathfinder] Pathfinding was canceled`)
 
-		// console.log(`[pathfinder] ${(endTime - startTime) / 1000} seconds for ${markersNum} items`)
 		PathFinder._running = false
 
 		return !canceled
