@@ -121,5 +121,19 @@
 		{ "text": "wounded_animal_18", "x": "-55.6765", "y": "103.2590" },
 		{ "text": "wounded_animal_19", "x": "-55.1201", "y": "138.8473" },
 		{ "text": "wounded_animal_20", "x": "-90.2230", "y": "136.3147" }
+	],
+	"moonshiner_camp": [
+		{ "text": "moonshiner_camp_01", "x": "-69.0468", "y": "145.5685" },
+		{ "text": "moonshiner_camp_02", "x": "-74.8935", "y": "138.2005" },
+		{ "text": "moonshiner_camp_03", "x": "-57.0547", "y": "79.8128" },
+		{ "text": "moonshiner_camp_04", "x": "-44.3101", "y": "114.9964" },
+		{ "text": "moonshiner_camp_05", "x": "-43.3475", "y": "121.316" },
+		{ "text": "moonshiner_camp_06", "x": "-50.7012", "y": "118.1028" },
+		{ "text": "moonshiner_camp_07", "x": "-57.491", "y": "102.8198" },
+		{ "text": "moonshiner_camp_08", "x": "-47.1128", "y": "127.0796" },
+		{ "text": "moonshiner_camp_09", "x": "-67.4592", "y": "145.8408" },
+		{ "text": "moonshiner_camp_10", "x": "-64.7034", "y": "151.1282" },
+		{ "text": "moonshiner_camp_11", "x": "-97.6927", "y": "132.8484" },
+		{ "text": "moonshiner_camp_12", "x": "-78.9189", "y": "125.3652" }
 	]
 }
