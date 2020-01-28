@@ -223,7 +223,7 @@
 	{"key": "help.import_route", "value": "Importuje własną trasę, którą wcześniej skopiowałeś."},
 	{"key": "help.inventory_stack", "value": "Pozwala wybrać maksymalną ilość przedmiotów, jaką chcesz mieć w ekwipunku (domyślnie 10 - tak samo jak w grze)."},
 	{"key": "help.item_category", "value": "Pozwala włączyć/ wyłączyć pokazywanie znaczników tej kategorii na mapie."},
-	{"key": "help.item_category_encouters", "value": "Otwiera listę ze wszystkimi zdarzeniami losowymi."},
+	{"key": "help.item_category_encounters", "value": "Otwiera listę ze wszystkimi zdarzeniami losowymi."},
 	{"key": "help.item_manual_cycle", "value": "Pozwala na samodzielną zmianę cyklu przedmiotów na mapie (nie jest to zalecane, gdyż mapa jest aktualizowana codziennie)."},
 	{"key": "help.item_reset", "value": "Resetuje wszystkie przedmioty w tej kategorii i oznacza je jako \"niezebrane\"."},
 	{"key": "help.item_sell", "value": "Sprzedawanie kolekcji - usuwa dokładnie jedną sztukę każdego przedmiotu z ekwipuknu w tej kategorii."},

@@ -218,7 +218,7 @@
 	{"key": "help.import_route", "value": "Importa uma rota personalizada para o mapa."},
 	{"key": "help.inventory_stack", "value": "Permite definir a quantidade máxima de itens no inventário. O padrão é 10, que é o mesmo que no jogo."},
 	{"key": "help.item_category", "value": "Alterna se esta coleção deve estar visível no mapa."},
-	{"key": "help.item_category_encouters", "value": "Opens a list with all random encounters."},
+	{"key": "help.item_category_encounters", "value": "Opens a list with all random encounters."},
 	{"key": "help.item_manual_cycle", "value": "Allows you to manually set the cycle that's displayed on the map."},
 	{"key": "help.item_reset", "value": "Resets all items in this category to be uncollected."},
 	{"key": "help.item_sell", "value": "Removes 1 from every item in the current category, useful when you've just sold this set."},

@@ -241,7 +241,7 @@
 	{"key": "help.import_route", "value": "Imports a custom route to the map."},
 	{"key": "help.inventory_stack", "value": "Allows you to set the maximum size of any item stack. The default is 10 which is the same as in-game."},
 	{"key": "help.item_category", "value": "Toggles whether this set should be visible on the map."},
-	{"key": "help.item_category_encouters", "value": "Opens a list with all random encounters."},
+	{"key": "help.item_category_encounters", "value": "Opens a list with all random encounters."},
 	{"key": "help.item_manual_cycle", "value": "Allows you to manually set the cycle that's displayed on the map."},
 	{"key": "help.item_reset", "value": "Resets all items in this category to be uncollected."},
 	{"key": "help.item_sell", "value": "Removes 1 from every item in the current category, useful when you've just sold this set."},
