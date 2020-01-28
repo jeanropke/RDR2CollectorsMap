@@ -818,10 +818,6 @@ a.no-style:visited {
     text-decoration: none;
 }
 
-.leaflet-dark-mode .leaflet-overlay-pane {
-    filter: grayscale(1) invert(1);
-}
-
 .leaflet-control-attribution {
     background: white;
     color: #333;

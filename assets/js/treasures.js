@@ -11,6 +11,7 @@ var Treasures = {
     console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
   },
   set: function () {
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     var treasureIcon = L.divIcon({
       iconSize: [35, 45],
       iconAnchor: [17, 42],
@@ -19,7 +20,7 @@ var Treasures = {
       html: `
         <img class="icon" src="./assets/images/icons/treasure.png" alt="Icon">
         <img class="background" src="./assets/images/icons/marker_beige.png" alt="Background">
-        <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+        ${shadow}
       `
     });
     var crossIcon = L.icon({

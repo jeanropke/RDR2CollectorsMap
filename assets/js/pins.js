@@ -13,6 +13,7 @@ var Pins = {
         if (pinAtPositionExists) return;
 
         var icon = icon == null ? 'pin' : icon;
+        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         var marker = L.marker([lat, lng], {
             id: id == null ? this.generatePinHash(`${lat}_${lng}_${Date.now()}`) : id,
             name: name == null ? Language.get('map.user_pins.default_title') : name,
@@ -27,7 +28,7 @@ var Pins = {
                 html: `
                     <img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
                     <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
-                    <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+                    ${shadow}
                 `
             })
         });

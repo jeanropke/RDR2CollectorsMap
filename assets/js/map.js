@@ -463,7 +463,7 @@ var MapBase = {
     var overlay = '';
     var icon = `./assets/images/icons/${marker.category}.png`;
     var background = `./assets/images/icons/marker_${MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)}.png`;
-    var shadow = './assets/images/markers-shadow.png';
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override
     if (marker.category == 'random') {
@@ -496,7 +496,7 @@ var MapBase = {
           ${overlay}
           <img class="icon" src="${icon}" alt="Icon">
           <img class="background" src="${background}" alt="Background">
-          <img class="shadow" src="${shadow}" alt="Shadow">
+          ${shadow}
         `,
         marker: marker.text
       })
@@ -602,7 +602,7 @@ var MapBase = {
   addFastTravelMarker: function () {
     if (enabledCategories.includes('fast_travel')) {
       $.each(fastTravelData, function (key, value) {
-
+        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         var marker = L.marker([value.x, value.y], {
           icon: L.divIcon({
             iconSize: [35, 45],
@@ -612,7 +612,7 @@ var MapBase = {
             html: `
               <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Icon">
               <img class="background" src="./assets/images/icons/marker_gray.png" alt="Background">
-              <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+              ${shadow}
             `
           })
         });
@@ -632,6 +632,7 @@ var MapBase = {
   },
 
   debugMarker: function (lat, long, name = 'Debug Marker') {
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     var marker = L.marker([lat, long], {
       icon: L.divIcon({
         iconSize: [35, 45],
@@ -641,7 +642,7 @@ var MapBase = {
         html: `
           <img class="icon" src="./assets/images/icons/random.png" alt="Icon">
           <img class="background" src="./assets/images/icons/marker_darkblue.png" alt="Background">
-          <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+          ${shadow}
         `
       })
     });

@@ -103,6 +103,11 @@ function init() {
     $.cookie('enable-marker-popups', '1', { expires: 999 });
   }
 
+  if (typeof $.cookie('enable-marker-shadows') === 'undefined') {
+    Settings.isShadowsEnabled = true;
+    $.cookie('enable-marker-shadows', '1', { expires: 999 });
+  }
+
   if (typeof $.cookie('enable-dclick-zoom') === 'undefined') {
     Settings.isDoubleClickZoomEnabled = true;
     $.cookie('enable-dclick-zoom', '1', { expires: 999 });
@@ -141,6 +146,7 @@ function init() {
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.markerCluster);
   $('#enable-marker-popups').prop("checked", Settings.isPopupsEnabled);
+  $('#enable-marker-shadows').prop("checked", Settings.isShadowsEnabled);
   $('#enable-dclick-zoom').prop("checked", Settings.isDoubleClickZoomEnabled);
   $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
@@ -546,6 +552,14 @@ $('#enable-marker-popups').on("change", function () {
   MapBase.addMarkers();
 });
 
+$('#enable-marker-shadows').on("change", function () {
+  Settings.isShadowsEnabled = $("#enable-marker-shadows").prop('checked');
+  $.cookie('enable-marker-shadows', Settings.isShadowsEnabled ? '1' : '0', { expires: 999 });
+
+  MapBase.map.removeLayer(Layers.itemMarkersLayer);
+  MapBase.addMarkers();
+});
+
 $('#enable-dclick-zoom').on("change", function () {
   Settings.isDoubleClickZoomEnabled = $("#enable-dclick-zoom").prop('checked');
   $.cookie('enable-dclick-zoom', Settings.isDoubleClickZoomEnabled ? '1' : '0', { expires: 999 });
@@ -909,7 +923,7 @@ L.LayerGroup.include({
 
 // Disable annoying menu on right mouse click
 $('*').on('contextmenu', function (event) {
-  if($.cookie('right-click') == null)
+  if ($.cookie('right-click') == null)
     event.preventDefault();
 });
 

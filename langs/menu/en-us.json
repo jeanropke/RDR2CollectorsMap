@@ -193,6 +193,7 @@
 	{"key": "menu.modal_clear_important_items_body", "value": "This will clear the highlight from all markers marked as important. This action cannot be undone."},
 	{"key": "menu.modal_clear_important_items_title", "value": "Clear important markers?"},
 	{"key": "menu.sort_items_alphabetically", "value": "Sort items alphabetically"},
+	{"key": "menu.enable_marker_shadows", "value": "Marker shadows enabled"},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
@@ -258,5 +259,6 @@
 	{"key": "help.clear_important_items", "value": "Clears the highlight from all markers marked as important."},
 	{"key": "help.item_category_unavailable_items", "value": "Toggles whether this set should be visible on the map. Note that this set contains one or more items that are unavailable due to a game bug or being undiscovered."},
 	{"key": "help.search_copy_link", "value": "Copies the current search link to your clipboard so you can browse to the map with that search query."},
-	{"key": "help.sort_items_alphabetically", "value": "Whether items should be sorted alphabetically or using the in-game order."}
+	{"key": "help.sort_items_alphabetically", "value": "Whether items should be sorted alphabetically or using the in-game order."},
+	{"key": "menu.enable_marker_shadows", "value": "Toggles whether a marker should have a shadow or not. Disabling the shadows could improve performance somewhat."}
 ]

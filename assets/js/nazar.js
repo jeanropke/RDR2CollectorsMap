@@ -25,6 +25,7 @@ var MadamNazar = {
       return;
 
     if (enabledCategories.includes('nazar')) {
+      var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
       var marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
         icon: L.divIcon({
           iconSize: [35, 45],
@@ -34,7 +35,7 @@ var MadamNazar = {
           html: `
               <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
               <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
-              <img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">
+              ${shadow}
             `
         })
       });
