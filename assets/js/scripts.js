@@ -923,8 +923,9 @@ L.LayerGroup.include({
 
 // Disable annoying menu on right mouse click
 $('*').on('contextmenu', function (event) {
-  if ($.cookie('right-click') == null)
-    event.preventDefault();
+  if ($.cookie('right-click') != null)
+    return;
+  event.preventDefault();
 });
 
 /**

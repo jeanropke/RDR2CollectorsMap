@@ -550,6 +550,11 @@ input, textarea, select, .btn {
     float: left;
     height: 30px;
     margin-right: 10px;
+    margin-top: 1px;
+}
+.side-menu .menu-hidden .collectible-icon.random-encouter {    
+    margin-top: 6px;
+    margin-right: 5px;
 }
 
 .side-menu .menu-hidden .collectible-text {

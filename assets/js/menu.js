@@ -82,9 +82,13 @@ Menu.refreshMenu = function () {
     });
 
     collectibleElement.on('contextmenu', function (event) {
+      if ($.cookie('right-click') != null)
+        return;
+
       event.preventDefault();
       if (marker.subdata != 'agarita' && marker.subdata != 'blood_flower')
         MapBase.highlightImportantItem(marker.subdata || marker.text);
+
     });
 
     var collectibleCountElement = $('<span>').addClass('counter').append(collectibleCountDecreaseElement).append(collectibleCountTextElement).append(collectibleCountIncreaseElement);
