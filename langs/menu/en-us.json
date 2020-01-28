@@ -260,5 +260,5 @@
 	{"key": "help.item_category_unavailable_items", "value": "Toggles whether this set should be visible on the map. Note that this set contains one or more items that are unavailable due to a game bug or being undiscovered."},
 	{"key": "help.search_copy_link", "value": "Copies the current search link to your clipboard so you can browse to the map with that search query."},
 	{"key": "help.sort_items_alphabetically", "value": "Whether items should be sorted alphabetically or using the in-game order."},
-	{"key": "menu.enable_marker_shadows", "value": "Toggles whether a marker should have a shadow or not. Disabling the shadows could improve performance somewhat."}
+	{"key": "help.enable_marker_shadows", "value": "Toggles whether a marker should have a shadow or not. Disabling the shadows could improve performance somewhat."}
 ]
