@@ -768,10 +768,10 @@
             "lost_earrings"     : 2,
             "lost_necklaces"    : 2,
             "lost_ring"         : 2,
-            "card_cups"         : 1,
-            "card_pentacles"    : 1,
-            "card_swords"       : 1,
-            "card_wands"        : 1,
+            "card_cups"         : 2,
+            "card_pentacles"    : 2,
+            "card_swords"       : 2,
+            "card_wands"        : 2,
             "random"            : 3
         }
     }
