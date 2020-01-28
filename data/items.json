@@ -76,7 +76,7 @@
             { "text": "arrowhead_crude", "height": "0", "tool": "2", "lat": "-44.6593", "lng": "156.4635" },
             { "text": "arrowhead_chipped", "height": "0", "tool": "2", "lat": "-40.7556", "lng": "115.5329" },
             { "text": "arrowhead_feldspar", "height": "0", "tool": "2", "lat": "-120.5789", "lng": "12.1543" },
-            { "text": "arrowhead_slate", "height": "0", "tool": "2", "lat": "-36.2149", "lng": "148.6727" },
+            { "text": "arrowhead_slate", "height": "-1", "tool": "2", "lat": "-36.2149", "lng": "148.6727" },
             { "text": "arrowhead_bone", "height": "0", "tool": "2", "lat": "-29.7456", "lng": "117.9929" },
             { "text": "arrowhead_raw", "height": "0", "tool": "2", "lat": "-69.1443", "lng": "133.8203" },
             { "text": "arrowhead_obsidian", "height": "0", "tool": "2", "lat": "-53.6824", "lng": "123.1782" },

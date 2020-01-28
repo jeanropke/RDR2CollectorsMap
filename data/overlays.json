@@ -43,6 +43,10 @@
 		"img": "cave_07.png?nocache=1",
 		"bounds": [[-61.5234, 77.8125], [-63.13, 79.05]]
 	},
+	"cave_08": {
+		"img": "./assets/overlays/cave_08.png?nocache=1",
+		"bounds": [[-35.9537, 148.5386], [-36.6721, 149.0418]]
+	},
 	"exterior_01": {
 		"img": "exterior_01.png?nocache=1",
 		"bounds": [[-86.7109, 148.9375], [-88.375, 155.1484]]
