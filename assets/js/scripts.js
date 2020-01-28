@@ -33,12 +33,10 @@ var debugMarkersArray = [];
 var tempCollectedMarkers = "";
 
 function init() {
-
   wikiLanguage['de-de'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)';
   wikiLanguage['en-us'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)';
   wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
   wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
-
 
   //sometimes, cookies are saved in the wrong order
   var cookiesList = [];
@@ -918,7 +916,7 @@ $('*').on('contextmenu', function (event) {
 /**
  * Event listeners
  */
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", init());
 window.addEventListener("DOMContentLoaded", Cycles.load());
 window.addEventListener("DOMContentLoaded", Inventory.init());
 window.addEventListener("DOMContentLoaded", MapBase.loadWeeklySet());
