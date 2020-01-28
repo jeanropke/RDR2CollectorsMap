@@ -930,13 +930,16 @@ $('*').on('contextmenu', function (event) {
 /**
  * Event listeners
  */
-window.addEventListener("DOMContentLoaded", init());
-window.addEventListener("DOMContentLoaded", Cycles.load());
-window.addEventListener("DOMContentLoaded", Inventory.init());
-window.addEventListener("DOMContentLoaded", MapBase.loadWeeklySet());
-window.addEventListener("DOMContentLoaded", MapBase.loadFastTravels());
-window.addEventListener("DOMContentLoaded", MadamNazar.loadMadamNazar());
-window.addEventListener("DOMContentLoaded", Treasures.load());
-window.addEventListener("DOMContentLoaded", Encounters.load());
-window.addEventListener("DOMContentLoaded", MapBase.loadMarkers());
-window.addEventListener("DOMContentLoaded", Routes.init());
+
+$(function () {
+  init();
+  Cycles.load();
+  Inventory.init();
+  MapBase.loadWeeklySet();
+  MapBase.loadFastTravels();
+  MadamNazar.loadMadamNazar();
+  Treasures.load();
+  Encounters.load();
+  MapBase.loadMarkers();
+  Routes.init();
+});
