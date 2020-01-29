@@ -175,7 +175,7 @@
 	{"key": "menu.marker_opacity.80", "value": "80%"},
 	{"key": "menu.marker_opacity.100", "value": "undurchsichtig"},
 	{"key": "menu.overlay_opacity", "value": "Transparenz d. Karten-Overlay"},
-	{"key": "menu.overlay_opacity.0", "value": "keine"},
+	{"key": "menu.overlay_opacity.0", "value": "deaktiviert"},
 	{"key": "menu.overlay_opacity.25", "value": "25%"},
 	{"key": "menu.overlay_opacity.50", "value": "50%"},
 	{"key": "menu.overlay_opacity.75", "value": "75%"},
