@@ -119,8 +119,8 @@ var MapBase = {
     if (opacity == 0) return;
 
     $.each(MapBase.overlays, function (key, value) {
-      Layers.overlaysLayer.addLayer(
-        L.imageOverlay(`assets\\overlays\\${(MapBase.isDarkMode ? 'dark' : 'normal')}\\${value.img}`, value.bounds, { opacity: opacity }));
+      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${key}.png?nocache=${nocache}`;
+      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, value, { opacity: opacity }));
     });
 
     Layers.overlaysLayer.addTo(MapBase.map);
