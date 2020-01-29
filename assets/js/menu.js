@@ -27,6 +27,7 @@ var Menu = {
 Menu.refreshMenu = function () {
   $('.menu-hidden[data-type]').children('.collectible-wrapper').remove();
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
+  var anyUnavailableCategories = [];
 
   $.each(MapBase.markers, function (_key, marker) {
     if (marker.day != Cycles.data.cycles[Cycles.data.current][marker.category]) return;
@@ -96,10 +97,17 @@ Menu.refreshMenu = function () {
     if (!Inventory.isEnabled)
       collectibleCountElement.hide();
 
+    var collectibleCategory = $(`.menu-option[data-type=${marker.category}]`);
     if (marker.lat.length == 0 || marker.tool == -1) {
-      collectibleElement.addClass('not-found');
-      $(`.menu-option[data-type=${marker.category}]`).attr('data-help', 'item_category_unavailable_items').addClass('not-found');
+      if (!anyUnavailableCategories.includes(marker.category))
+        anyUnavailableCategories.push(marker.category);
+
+      collectibleElement.attr('data-help', 'item_unavailable').addClass('not-found');
+      collectibleCategory.attr('data-help', 'item_category_unavailable_items').addClass('not-found');
     }
+
+    if (collectibleCategory.hasClass('not-found') && !anyUnavailableCategories.includes(marker.category))
+      collectibleCategory.attr('data-help', 'item_category').removeClass('not-found');
 
     if (Inventory.isEnabled && marker.amount >= Inventory.stackSize)
       collectibleElement.addClass('disabled');
@@ -131,10 +139,6 @@ Menu.refreshMenu = function () {
         collectibleElement.addClass('weekly-item');
       }
     });
-
-    if (marker.tool == -1) {
-      collectibleElement.attr('data-help', 'item_unavailable');
-    }
 
     collectibleElement.hover(function (e) {
       var language = Language.get(`help.${$(this).data('help')}`);
