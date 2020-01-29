@@ -27,6 +27,7 @@ var Menu = {
 Menu.refreshMenu = function () {
   $('.menu-hidden[data-type]').children('.collectible-wrapper').remove();
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
+  categoriesWithBuggedItems = [];
 
   $.each(MapBase.markers, function (_key, marker) {
     if (marker.day != Cycles.data.cycles[Cycles.data.current][marker.category]) return;
@@ -98,7 +99,8 @@ Menu.refreshMenu = function () {
 
     if (marker.lat.length == 0 || marker.tool == -1) {
       collectibleElement.addClass('not-found');
-      $(`.menu-option[data-type=${marker.category}]`).attr('data-help', 'item_category_unavailable_items').addClass('not-found');
+      if (!categoriesWithBuggedItems.includes(marker.category)) 
+        categoriesWithBuggedItems.push(marker.category);
     }
 
     if (Inventory.isEnabled && marker.amount >= Inventory.stackSize)
@@ -151,6 +153,11 @@ Menu.refreshMenu = function () {
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
   });
 
+  // prevent from highlighting on red categories without bugged/ missing items
+  $.each(categoryButtons, function (key, categoryButton) {
+    $(categoryButton).attr('data-help', 'item_category').removeClass('not-found');
+  });
+
   $('.menu-hidden[data-type]').each(function (key, value) {
     var category = $(this);
 
@@ -178,6 +185,11 @@ Menu.refreshMenu = function () {
     }).appendTo(this);
   })
 
+  // highlight on red only categories with bugged/ missing items
+  $.each(categoriesWithBuggedItems, function (key, category) {
+    $(`.menu-option[data-type=${category}]`).attr('data-help', 'item_category_unavailable_items').addClass('not-found');
+  });
+  
   Menu.refreshTreasures();
 
   $.each(categoriesDisabledByDefault, function (key, value) {
