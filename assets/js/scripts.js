@@ -153,6 +153,7 @@ function init() {
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
   $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
+  $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
 
   if (Settings.showHelp) {
     $("#help-container").show();
@@ -290,6 +291,15 @@ $("#toggle-debug").on("click", function () {
 $("#show-all-markers").on("change", function () {
   Settings.showAllMarkers = $("#show-all-markers").prop('checked');
   MapBase.addMarkers();
+});
+
+// Give me back my right-click
+$('#enable-right-click').on("change", function () {
+  if ($("#enable-right-click").prop('checked')) {
+    $.cookie('right-click', '1', { expires: 999 });
+  } else {
+    $.removeCookie('right-click');
+  }
 });
 
 //Disable menu category when click on input
@@ -923,8 +933,9 @@ L.LayerGroup.include({
 
 // Disable annoying menu on right mouse click
 $('*').on('contextmenu', function (event) {
-  if ($.cookie('right-click') == null)
-    event.preventDefault();
+  if ($.cookie('right-click') != null)
+    return;
+  event.preventDefault();
 });
 
 /**

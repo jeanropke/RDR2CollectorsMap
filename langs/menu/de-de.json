@@ -218,7 +218,7 @@
 	{"key": "help.import_route", "value": "Import eine eigene Route und zeigt sie auf der Karte."},
 	{"key": "help.inventory_stack", "value": "Erlaubt es die maximale Inventar-Größe zu setzen. Der Standard ist 10 wie das auf im Spiel der Fall ist."},
 	{"key": "help.item_category", "value": "Anklicken um entsprechende Elemente auf der Karte anzuzeigen/auszublenden."},
-	{"key": "help.item_category_encouters", "value": "Öffnet eine Liste aller möglichen Zufallsevents."},
+	{"key": "help.item_category_encounters", "value": "Öffnet eine Liste aller möglichen Zufallsevents."},
 	{"key": "help.item_manual_cycle", "value": "Erlaubt es den Zyklus der auf der Karte gezeigt wird manuell umzustellen."},
 	{"key": "help.item_reset", "value": "Setzt alle Gegenstände dieser Kategorie auf ungesammelt."},
 	{"key": "help.item_sell", "value": "Entfernt jeden Gegenstand dieser Kategorie einmal aus dem Inventar, nützlich wenn du die komplette Set verkaufst."},

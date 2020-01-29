@@ -203,7 +203,7 @@
 	{"key": "help.import_route", "value": "将自定义路线导入地图。"},
 	{"key": "help.inventory_stack", "value": "允许您设置任何项目堆栈的最大大小。 默认值为10，与游戏中的默认值相同。"},
 	{"key": "help.item_category", "value": "切换此设置是否应在地图上可见。"},
-	{"key": "help.item_category_encouters", "value": "打开一个包含所有随机遭遇的列表。"},
+	{"key": "help.item_category_encounters", "value": "打开一个包含所有随机遭遇的列表。"},
 	{"key": "help.item_manual_cycle", "value": "允许您手动设置地图上显示的周期。"},
 	{"key": "help.item_reset", "value": "将此类别中的所有项目重置为未收集。"},
 	{"key": "help.item_sell", "value": "从当前类别的每个项目中删除1，在您刚刚售出此套装时很有用。"},
