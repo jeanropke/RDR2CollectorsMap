@@ -173,13 +173,13 @@
 	{"key": "menu.marker_opacity.40", "value": "40%"},
 	{"key": "menu.marker_opacity.60", "value": "60%"},
 	{"key": "menu.marker_opacity.80", "value": "80%"},
-	{"key": "menu.marker_opacity.100", "value": "durchsichtig"},
+	{"key": "menu.marker_opacity.100", "value": "undurchsichtig"},
 	{"key": "menu.overlay_opacity", "value": "Transparenz d. Karten-Overlay"},
-	{"key": "menu.overlay_opacity.0", "value": "deaktiviert"},
+	{"key": "menu.overlay_opacity.0", "value": "keine"},
 	{"key": "menu.overlay_opacity.25", "value": "25%"},
 	{"key": "menu.overlay_opacity.50", "value": "50%"},
 	{"key": "menu.overlay_opacity.75", "value": "75%"},
-	{"key": "menu.overlay_opacity.100", "value": "durchsichtig"},
+	{"key": "menu.overlay_opacity.100", "value": "undurchsichtig"},
 	{"key": "menu.toggle_debug", "value": "Zeige Debug-Optionen"},
 	{"key": "map.random_spot.desc", "value": "Dieser Ort gibt einen zufälligen Gegenstand mehr Informationen findest du {link}."},
 	{"key": "map.random_spot.link", "value": "auf dieser Wiki-Seite"},
@@ -188,6 +188,7 @@
 	{"key": "menu.modal_clear_important_items_body", "value": "Ist es gewünscht das die wichtigen Markierung entfernt werden? Diese Änderung kann nicht rückgängig gemacht werden."},
 	{"key": "menu.modal_clear_important_items_title", "value": "Entferne wichtige Markierungen?"},
 	{"key": "menu.sort_items_alphabetically", "value": "Sortiere Gegenstände alphabetisch"},
+	{"key": "menu.enable_marker_shadows", "value": "Markierungs-Schatten aktivieren"},
 
 	{"key": "help.default", "value": "Fahre mit der Maus oder drücke lange (Mobile-Ansicht) auf einem Option um weitere Informatione zu erhalten."},
 	{"key": "help.clear_custom_routes", "value": "Lösche alle benutzerdefinierten Routen auf der Karte."},
@@ -253,5 +254,6 @@
 	{"key": "help.clear_important_items", "value": "Entferne alle Hervorhebungen der als wichtig markierten Gegenstände von der Karte."},
 	{"key": "help.item_category_unavailable_items", "value": "Anklicken um entsprechende Elemente auf der Karte anzuzeigen/auszublenden. Es ist zu beachten das ein o. mehrere Gegenstände aus diesem Set nicht aufgesammelt werden kann, da ein Bug existiert oder da er noch nicht entdeckt wurde."},
 	{"key": "help.search_copy_link", "value": "Kopiert den aktuellen Such-Link in die Zwischenablage, so dass die Seite direkt mit Suche aufgerufen werden kann."},
-	{"key": "help.sort_items_alphabetically", "value": "Stellt ein ob die Gegenstände alphabetisch oder wie im Spiel sortiert werden sollen."}
+	{"key": "help.sort_items_alphabetically", "value": "Stellt ein ob die Gegenstände alphabetisch oder wie im Spiel sortiert werden sollen."},
+	{"key": "help.enable_marker_shadows", "value": "Stellt ein ob die Markierungen Schatten haben oder nicht. Das Deaktivieren der Schatten kann sich positiv auf die Performance auswirken."}
 ]
