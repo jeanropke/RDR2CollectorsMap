@@ -1,7 +1,7 @@
 [
 	{"key": "menu.collectables", "value":		"Коллекции"},
 	{"key": "menu.collectables_counter", "value": 	"Собрано {count} из {max}"},
-	{"key": "menu.search_placeholder", "value": 	"Поиск предметов."},
+	{"key": "menu.search_placeholder", "value": 	"Поиск предметов"},
 	{"key": "menu.hide_all", "value": 		"Скрыть все"},
 	{"key": "menu.show_all", "value": 		"Показать все"},
 	
@@ -39,7 +39,7 @@
 	{"key": "menu.coin", "value": 			"Монеты"},
 	{"key": "menu.random_spots", "value": 		"Случайные предметы"},
 	
-	{"key": "map.same_cycle_yesterday", "value": "Этот предмет имеет такой же цикл, который был вчера. Необходимо подождать 24 часа до повторного появления предмета."},
+	{"key": "map.same_cycle_yesterday", "value": "Этот предмет имеет тот же цикл, что был вчера. Необходимо подождать 24 часа до повторного появления предмета."},
 
 	{"key": "menu.collectables_value", "value": "Стоимость"},
 	{"key": "menu.reset", "value": "Сброс отмеч."},
@@ -79,8 +79,6 @@
 	{"key": "menu.tool_type.shovel", "value": "Лопата"},
 	{"key": "menu.tool_type.metal_detector", "value": "Металлоискатель"},
 	{"key": "menu.tool_type.all", "value": "Все типы"},
-	{"key": "menu.sort_items_alphabetically", "value": "Сортировка предметов по алфавиту"},
-	{"key": "menu.marker_cluster", "value": "Сдвиг близкостоящих маркеров"},
 	{"key": "menu.reset_markers_daily","value": "Ежедневный сброс маркеров"},
 	{"key": "menu.clear_markers", "value": "Сброс скрытых меток"},
 	{"key": "menu.modal_clear_markers_title", "value": "Сбросить метки?"},
@@ -101,6 +99,14 @@
 	{"key": "menu.clear_inventory", "value": "Очистить инвентарь"},
 	{"key": "menu.modal_clear_inventory_title", "value": "Очистить содержимое инвентаря?"},
 	{"key": "menu.modal_clear_inventory_body", "value": "Эта функция очистит содержимое вашего инвентаря."},
+	
+	{"key": "menu.sort_items_alphabetically", "value": "Сортировка предметов по алфавиту"},
+	{"key": "menu.marker_cluster", "value": "Сдвиг близкостоящих маркеров"},
+	{"key": "menu.enable_marker_shadows", "value": "Тень на маркерах"},
+	{"key": "menu.enable_dclick_zoom", "value": "Приближение через двойной клик"},
+	{"key": "menu.enable_marker_popups", "value": "Показывать информацию о маркере"},
+	{"key": "menu.show_help", "value": "Показать подсказку в меню"},
+	{"key": "menu.show_coords", "value": "Показать координаты на карте"},
 	
 	
 	{"key": "menu.route_generator", "value": "Генератор маршрутов"},
@@ -133,11 +139,6 @@
 	{"key": "menu.clear_custom_routes", "value": "Удалить маршрут"},
 	{"key": "menu.modal_clear_routes_title", "value": "Удалить пользовательский маршрут?"},
 	{"key": "menu.modal_clear_routes_body", "value": "Эта функция приведет к удалению всех пользовательских маршрутов, находящихся в данный момент на карте. Несохраненный прогресс будет потерян. Это действие не может быть отменено."},
-
-	{"key": "menu.enable_dclick_zoom", "value": "Приближение через двойной клик"},
-	{"key": "menu.enable_marker_popups", "value": "Показывать информацию о маркере"},
-	{"key": "menu.show_help", "value": "Показать подсказку в меню"},
-	{"key": "menu.show_coords", "value": "Показать координаты на карте"},
 	
 	
 	{"key": "menu.import_export_title", "value": "Импорт/Экспорт"},
