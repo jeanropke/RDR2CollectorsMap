@@ -815,10 +815,7 @@
 	
 	{"key": "dog_encounter.name","value":"狗狗遭遇随机点"},
 	{"key": "dog_encounter.desc","value":"这是一个随机遭遇点，地图上以白点显示，狗狗会随机给你收藏品或者好东西、也有可能给你带来埋伏."},
-	
-	{"key": "fame_seeker.name","value":"追求名誉者事件"},
-	{"key": "fame_seeker.desc","value":"随机遭遇事件，和其他事件一样小地图闪白点标记NPC。基本上是个二货NPC，要求你给他和贼凶猛的猛兽/贼胆小的食草动物拍合影，拍完合影还能顺手打猎。"},
-	
+
 	{"key": "wounded_animal.name","value":"受伤的动物事件"},
 	{"key": "wounded_animal.desc","value":"随机遭遇事件，小地图有动物图标（一个兽爪）闪烁。过去用枪终结动物的痛苦，能获取击杀和“给个痛快”经验，还白捞个箭头收藏品，甚至能顺个猎物。"}
 

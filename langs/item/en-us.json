@@ -1255,9 +1255,6 @@
     {"key": "dog_encounter.name","value":"Dog Encounter"},
     {"key": "dog_encounter.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Follow the dog to either an ambush or a metal box containing a collectible."},
 
-    {"key": "fame_seeker.name","value":"Fame Seeker Encounter"},
-    {"key": "fame_seeker.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."},
-
     {"key": "wounded_animal.name","value":"Wounded Animal Encounter"},
     {"key": "wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Kill the animal or wait for it to die, then walk over it to collect an arrowhead."},
 

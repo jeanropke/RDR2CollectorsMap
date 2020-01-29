@@ -68,7 +68,6 @@
 	{"key": "menu.condor_egg", "value": "Kondor Ei"},
 	{"key": "menu.dog_encounter", "value": "Hunde Begegnungen"},
 	{"key": "menu.auto_refresh", "value": "Zyklus automatisch anpassen"},
-	{"key": "menu.fame_seeker", "value": "Ruhmsuchende"},
 	{"key": "menu.wounded_animal", "value": "Verwundete Tiere"},
 	{"key": "menu.clear_inventory", "value": "Inventar leeren"},
 	{"key": "menu.modal_clear_inventory_title", "value": "Inventar leeren?"},

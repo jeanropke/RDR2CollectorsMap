@@ -1248,8 +1248,6 @@
 	{"key": "condor_egg.desc", "value": "To jest wydarzenie trybu swobodnego. Zaproszenie do gry poinformuje o jego starcie. Skieruj się do jaja kondora i podnieś je, aby zdobyć przedmiot o wartości 1000 $"},
 	{"key": "dog_encounter.name", "value": "Spotkanie z psem (zdarzenie)"},
 	{"key": "dog_encounter.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje."},
-	{"key": "fame_seeker.name", "value": "Poszukiwaczka sławy (zdarzenie)"},
-	{"key": "fame_seeker.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje."},
 	{"key": "wounded_animal.name", "value": "Zranione zwierze (zdarzenie)"},
 	{"key": "wounded_animal.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje."},
 	{"key": "weekly.desc", "value": "Ten przedmiot jest częścią kolekcji {collection}."},

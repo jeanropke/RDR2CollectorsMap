@@ -815,10 +815,7 @@
 	
 	{"key": "dog_encounter.name","value":"개 인카운터 이벤트"},
 	{"key": "dog_encounter.desc","value":"이것은 랜덤 인카운터입니다. 미니맵에 하얀색의 반짝이는 점으로 지시될것입니다."},
-	
-	{"key": "fame_seeker.name","value":"명예 추구자 이벤트"},
-	{"key": "fame_seeker.desc","value":"이것은 랜덤 인카운터입니다. 미니맵에 하얀색의 반짝이는 점으로 지시될것입니다."},
-	
+
 	{"key": "wounded_animal.name","value":"다친 동물 이벤트"},
 	{"key": "wounded_animal.desc","value":"이것은 랜덤 인카운터입니다. 미니맵에 하얀색의 반짝이는 점으로 지시될것입니다."}
 ]

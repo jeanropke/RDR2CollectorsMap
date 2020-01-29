@@ -815,10 +815,7 @@
 	
 	{"key": "dog_encounter.name","value":"Evenement Chien"},
 	{"key": "dog_encounter.desc","value":"Ceci est un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenement."},
-	
-	{"key": "fame_seeker.name","value":"Chasseuse de Gloire"},
-	{"key": "fame_seeker.desc","value":"Ceci est un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenement."},
-	
+
 	{"key": "wounded_animal.name","value":"Animal Bléssé"},
 	{"key": "wounded_animal.desc","value":"Ceci est un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenement."}
 ]

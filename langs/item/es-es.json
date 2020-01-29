@@ -815,10 +815,7 @@
 	
 	{"key": "dog_encounter.name","value":"Evento de encuentro de perro"},
 	{"key": "dog_encounter.desc","value":"Es un encuentro aleatorio. Un punto blanco en el minimapa indicará el encuentro."},
-	
-	{"key": "fame_seeker.name","value":"Evento de buscafama"},
-	{"key": "fame_seeker.desc","value":"Es un encuentro aleatorio. Un punto blanco en el minimapa indicará el encuentro."},
-	
+
 	{"key": "wounded_animal.name","value":"Evento de animal herido"},
 	{"key": "wounded_animal.desc","value":"Es un encuentro aleatorio. Un punto blanco en el minimapa indicará el encuentro."}
 ]

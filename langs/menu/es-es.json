@@ -65,7 +65,6 @@
 	{"key": "menu.condor_egg", "value": "Huevo de cóndor"},
 	{"key": "menu.dog_encounter", "value": "Encuentro de perro"},
 	{"key": "menu.auto_refresh", "value": "Cambiar ciclo automáticamente"},
-	{"key": "menu.fame_seeker", "value": "Buscafama"},
 	{"key": "menu.wounded_animal", "value": "Animal herido"},
 	{"key": "menu.clear_inventory", "value": "Borrar inventario"},
 	{"key": "menu.sell", "value": "Vender"},

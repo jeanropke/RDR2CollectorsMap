@@ -831,10 +831,7 @@
 	
 	{"key": "dog_encounter.name","value":"Encontro com Cachorro"},
 	{"key": "dog_encounter.desc","value":"São Encontros Aleatórios. m ponto branco vai aparecer no mini mapa indicando o encontro."},
-	
-	{"key": "fame_seeker.name","value":"Evento Caçador de Fama"},
-	{"key": "fame_seeker.desc","value":"São Encontros Aleatórios. m ponto branco vai aparecer no mini mapa indicando o encontro."},
-	
+
 	{"key": "wounded_animal.name","value":"Evento Animal Ferido"},
 	{"key": "wounded_animal.desc","value":"São Encontros Aleatórios. m ponto branco vai aparecer no mini mapa indicando o encontro."}
 ]

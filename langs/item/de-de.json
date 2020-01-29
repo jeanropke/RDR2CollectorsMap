@@ -1253,10 +1253,7 @@
 	
 	{"key": "dog_encounter.name","value":"Hundebegegnungen"},
 	{"key": "dog_encounter.desc","value":"Zufällige Ereignisse. Ein weißes Blinken auf der Karte weißt auf das Ereignis hin. Folge dem Hund zu einen Sammelgegenstand oder Hinterhalt."},
-	
-	{"key": "fame_seeker.name","value":"Ruhmsuchende"},
-	{"key": "fame_seeker.desc","value":"Zufällige Ereignisse. Ein weißes Blinken auf der Karte weißt auf das Ereignis hin. Sprich mit dem Ruhmsuchenden um eine kleine Mission zu starten, oftmals wird ein Trupp benötigt."},
-	
+
 	{"key": "wounded_animal.name","value":"Verwundetes Tier"},
 	{"key": "wounded_animal.desc","value":"Zufällige Ereignisse. Ein weißes Blinken auf der Karte weißt auf das Ereignis hin. Töte das Tier um eine zufällige Pfeilspitze zu erhalten."},
 	

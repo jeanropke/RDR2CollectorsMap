@@ -815,10 +815,7 @@
 	
 	{"key": "dog_encounter.name","value":"Dog Encounter Event"},
 	{"key": "dog_encounter.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."},
-	
-	{"key": "fame_seeker.name","value":"Fame Seeker Event"},
-	{"key": "fame_seeker.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."},
-	
+
 	{"key": "wounded_animal.name","value":"Wounded Animal Event"},
 	{"key": "wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."}
 ]

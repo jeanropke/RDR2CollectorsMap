@@ -61,7 +61,6 @@
 	{"key": "menu.condor_egg", "value": "Oeuf de Condor"},
 	{"key": "menu.dog_encounter", "value": "Chien"},
 	{"key": "menu.auto_refresh", "value": "Changement de Cycle Automatique"},
-	{"key": "menu.fame_seeker", "value": "Chasseuse de Gloire"},
 	{"key": "menu.wounded_animal", "value": "Animal Bléssé"},
 	{"key": "menu.clear_inventory", "value": "Vider l'inventaire"},
 	{"key": "menu.sell", "value": "Vendre"},

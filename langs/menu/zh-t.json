@@ -67,7 +67,6 @@
 	{"key": "menu.condor_egg", "value": "神鷲蛋大致位置"},
 	{"key": "menu.dog_encounter", "value": "狗狗遭遇隨機點"},
 	{"key": "menu.auto_refresh", "value": "自動更改周期"},
-	{"key": "menu.fame_seeker", "value": "追求名譽者隨機點"},
 	{"key": "menu.wounded_animal", "value": "受傷的動物隨機點"},
 	{"key": "menu.clear_inventory", "value": "清除物品數量"},
 	{"key": "menu.sell", "value": "已有物品數量"},

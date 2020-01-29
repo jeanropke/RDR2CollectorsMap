@@ -88,18 +88,6 @@
 		{ "text": "dog_encounter_14", "x": "-121.1298", "y": "38.8272" },
 		{ "text": "dog_encounter_15", "x": "-108.3583", "y": "30.6716" }
 	],
-	"fame_seeker": [
-		{ "text": "fame_seeker_01", "x": "-62.6675", "y": "118.5641" },
-		{ "text": "fame_seeker_02", "x": "-61.2088", "y": "104.9468" },
-		{ "text": "fame_seeker_03", "x": "-84.5262", "y": "81.3418" },
-		{ "text": "fame_seeker_04", "x": "-97.0943", "y": "80.1888" },
-		{ "text": "fame_seeker_05", "x": "-62.0872", "y": "91.5451" },
-		{ "text": "fame_seeker_06", "x": "-69.1792", "y": "74.8046" },
-		{ "text": "fame_seeker_07", "x": "-58.8466", "y": "84.3355" },
-		{ "text": "fame_seeker_08", "x": "-116.3663", "y": "34.2410" },
-		{ "text": "fame_seeker_09", "x": "-106.7297", "y": "77.2577" },
-		{ "text": "fame_seeker_10", "x": "-105.5263", "y": "39.8489" }
-	],
 	"wounded_animal": [
 		{ "text": "wounded_animal_01", "x": "-96.4921", "y": "81.4087" },
 		{ "text": "wounded_animal_02", "x": "-63.0515", "y": "113.4053" },
