@@ -10,6 +10,7 @@ var Routes = {
     $('#generate-route-generate-on-visit').prop("checked", Routes.generateOnVisit);
     $('#generate-route-ignore-collected').prop("checked", Routes.ignoreCollected);
     $('#generate-route-allow-fasttravel').prop("checked", Routes.allowFasttravel);
+    $('#generate-route-allow-railroad').prop("checked", Routes.allowRailroad);
     $('#generate-route-auto-update').prop("checked", Routes.autoUpdatePath);
     $('#generate-route-distance').val(Routes.maxDistance);
     $('#generate-route-start-lat').val(Routes.startMarkerLat);
@@ -20,10 +21,12 @@ var Routes = {
       $('#generate-route-distance').parent().hide();
       $('#generate-route-auto-update').parent().parent().hide();
       $('#generate-route-allow-fasttravel').parent().parent().show();
+      $('#generate-route-allow-railroad').parent().parent().show();
     } else {
       $('#generate-route-distance').parent().show();
       $('#generate-route-auto-update').parent().parent().show();
       $('#generate-route-allow-fasttravel').parent().parent().hide();
+      $('#generate-route-allow-railroad').parent().parent().hide();
     }
 
     // Route starts at
@@ -146,6 +149,7 @@ var Routes = {
   // Path finder options
   usePathfinder: $.cookie('generator-path-use-pathfinder') == '1',
   allowFasttravel: $.cookie('generator-path-allow-fasttravel') == '1',
+  allowRailroad: $.cookie('generator-path-allow-railroad') == '1',
 
   // Needed to keep track of the previously drawn path so we can remove it later.
   lastPolyline: null,
@@ -292,7 +296,7 @@ var Routes = {
 
     // Use path finder when enabled
     if (Routes.usePathfinder) {
-      PathFinder.routegenStart(last, newMarkers, Routes.allowFasttravel)
+      PathFinder.routegenStart(last, newMarkers, Routes.allowFasttravel, Routes.allowRailroad)
       return
     }
 
