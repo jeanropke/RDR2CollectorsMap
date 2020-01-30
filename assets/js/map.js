@@ -33,8 +33,8 @@ var MapBase = {
     ];
 
     MapBase.map = L.map('map', {
-      attributionControl: false,
       preferCanvas: true,
+      attributionControl: false,
       minZoom: this.minZoom,
       maxZoom: this.maxZoom,
       zoomControl: false,
