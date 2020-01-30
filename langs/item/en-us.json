@@ -1261,6 +1261,9 @@
     {"key": "moonshiner_camp.name","value":"Moonshiner Camp Encounter"},
     {"key": "moonshiner_camp.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Kill the moonshiners then loot the camp for a chance for Antique Alcohol Bottles or a Moonshiner recipe."},
 
+    {"key": "rival_collector.name","value":"Rival Collector Encounter"},
+    {"key": "rival_collector.desc","value":"This is a Random Encounter. A rival collector with fancy-looking clothes and saddlebags can spawn here. Kill them and loot their body for a chance to get a collectible."},
+
     {"key": "weekly.desc", "value": "This item is part of the {collection} weekly collection."},
     {"key": "weekly.desc.1800_coins_set", "value": "1800s Coins"},
     {"key": "weekly.desc.ancient_tools_set", "value": "Ancient Tools"},
