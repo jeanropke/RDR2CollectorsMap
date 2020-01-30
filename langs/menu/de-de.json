@@ -188,6 +188,7 @@
 	{"key": "menu.modal_clear_important_items_title", "value": "Entferne wichtige Markierungen?"},
 	{"key": "menu.sort_items_alphabetically", "value": "Sortiere Gegenstände alphabetisch"},
 	{"key": "menu.enable_marker_shadows", "value": "Markierungs-Schatten aktivieren"},
+	{"key": "menu.moonshiner_camp", "value": "Moonshiner Lager"},
 
 	{"key": "help.default", "value": "Fahre mit der Maus oder drücke lange (Mobile-Ansicht) auf einem Option um weitere Informatione zu erhalten."},
 	{"key": "help.clear_custom_routes", "value": "Lösche alle benutzerdefinierten Routen auf der Karte."},
