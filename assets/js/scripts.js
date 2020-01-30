@@ -128,6 +128,11 @@ function init() {
     $.cookie('overlay-opacity', '0.5', { expires: 999 });
   }
 
+  if (typeof $.cookie('clock-or-timer') === 'undefined') {
+    Settings.displayClockHideTimer = false;
+    $.cookie('clock-or-timer', 'false', { expires: 999 });
+  }
+
   MapBase.init();
   MapBase.setOverlays(Settings.overlayOpacity);
 
@@ -159,6 +164,15 @@ function init() {
     $("#help-container").show();
   } else {
     $("#help-container").hide();
+  }
+
+  if (Settings.displayClockHideTimer) {
+    $('.clock-container').removeClass('turn-off');
+    $('.timer-container').addClass('turn-off');
+  }
+  else {
+    $('.clock-container').addClass('turn-off');
+    $('.timer-container').removeClass('turn-off');
   }
 
   Pins.addToMap();
@@ -275,7 +289,9 @@ setInterval(function () {
 
 // toggle timer and clock after click the container
 $('.timer-container, .clock-container').on('click', function () {
-  $('.timer-container, .clock-container').toggleClass("display-in-front");
+  $('.timer-container, .clock-container').toggleClass('turn-off');
+  Settings.displayClockHideTimer = !Settings.displayClockHideTimer;
+  $.cookie('clock-or-timer', Settings.displayClockHideTimer, { expires: 999 });
 });
 
 /**

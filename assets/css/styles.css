@@ -232,8 +232,8 @@ input, textarea, select, .btn {
     cursor: pointer;
 }
 
-.display-in-front {
-    z-index: 1020;
+.turn-off {
+    display: none;
 }
 
 #am-pm-time {
