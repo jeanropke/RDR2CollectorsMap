@@ -162,15 +162,8 @@ Menu.refreshMenu = function () {
 
     // if the cycle is the same as yesterday highlight category in menu;
     var isSameCycle = Cycles.isSameAsYesterday(category.data('type'));
-    var hasCycleWarning = $(`[data-text="menu.${category.data('type')}"] .same-cycle-warning-menu`).length > 0;
-    var element = $(`[data-text="menu.${category.data('type')}"]`);
-    if (isSameCycle && !hasCycleWarning) {
-      element.parent().attr('data-help', 'item_category_same_cycle');
-      element.append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
-    } else if (!isSameCycle && hasCycleWarning) {
-      element.parent().attr('data-help', 'item_category');
-      element.children('.same-cycle-warning-menu').remove();
-    }
+    var element = `[data-text="menu.${category.data('type')}"]`;
+    addCycleWarning(element, isSameCycle);
 
     if (!Settings.sortItemsAlphabetically) return;
     if (category.data('type').includes('card_')) return;
@@ -181,6 +174,21 @@ Menu.refreshMenu = function () {
       return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
     }).appendTo(this);
   })
+
+  // Check cycle warning for random spots
+  addCycleWarning('[data-text="menu.random_spots"]', Cycles.isSameAsYesterday('random'));
+
+  function addCycleWarning(element, isSameCycle) {
+    var hasCycleWarning = $(`${element} .same-cycle-warning-menu`).length > 0;
+    var item = $(element);
+    if (isSameCycle && !hasCycleWarning) {
+      item.parent().attr('data-help', 'item_category_same_cycle');
+      item.append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
+    } else if (!isSameCycle && hasCycleWarning) {
+      item.parent().attr('data-help', 'item_category');
+      item.children('.same-cycle-warning-menu').remove();
+    }
+  }
 
   Menu.refreshTreasures();
 
