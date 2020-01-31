@@ -51,6 +51,7 @@
 	{"key": "menu.random_encounters", "value": "Случайные события"},
 	{"key": "menu.egg_encounter", "value": "Птичьи гнезда"},
 	{"key": "menu.grave_robber", "value": "Ограбления могил"},
+	{"key": "menu.moonshiner_camp", "value": "Лагерь самогонщиков"},
 	{"key": "menu.dog_encounter", "value": "Встреча с собакой"},
 	{"key": "menu.treasure_hunter", "value": "Охотники за сокровищем"},
 	{"key": "menu.wounded_animal", "value": "Раненое животное"},
