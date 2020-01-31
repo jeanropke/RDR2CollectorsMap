@@ -200,6 +200,8 @@ Menu.refreshMenu = function () {
 
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
   MapBase.loadImportantItems();
+  
+  $('.map-cycle-alert span').html(Language.get('map.refresh_for_updates_alert'));
 };
 
 Menu.showAll = function () {
