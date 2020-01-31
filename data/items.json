@@ -878,7 +878,7 @@
         "4": [
             { "text": "ring_harland_coral", "height": "0", "tool": "2", "lat": "-56.1018", "lng": "91.4675" },
             { "text": "ring_magnate_turquoise", "height": "0", "tool": "2", "lat": "-53.2246", "lng": "117.9571" },
-            { "text": "ring_pilgrim_moonstone", "height": "0", "tool": "2", "lat": "-58.5262", "lng": "92.8484" },
+            { "text": "ring_pilgrim_moonstone", "height": "-1", "tool": "2", "lat": "-58.5262", "lng": "92.8484" },
             { "text": "ring_bonnard_pearl", "height": "0", "tool": "2", "lat": "-45.1627", "lng": "142.0366" },
             { "text": "ring_banais_topaz", "height": "0", "tool": "0", "lat": "-80.0100", "lng": "153.5905" },
             { "text": "ring_beaulieux_diamond", "height": "0", "tool": "0", "lat": "-36.4406", "lng": "104.9234" },
