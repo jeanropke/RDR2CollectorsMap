@@ -192,6 +192,7 @@
 	{"key": "map.random_spot.link", "value": "Tabela randomowych przedmiotów"},
 	{"key": "map.attribution_prefix", "value": "Części mapy dostarczone przez:"},
 	{"key": "menu.sort_items_alphabetically", "value": "Sortuj przedmioty alfabetycznie"},
+	{"key": "menu.enable_marker_shadows", "value": "Włącz cień znacznków"},
 
 	{"key": "help.default", "value": "Najedź lub przytrzymaj opcję menu na telefonie, aby wyświetlić podpowiedzi."},
 	{"key": "help.clear_custom_routes", "value": "Usuwa wszystkie własne trasy na mapie."},
@@ -253,5 +254,10 @@
 	{"key": "help.item", "value": "Włącza/ wyłącza dany znacznik na mapie."},
 	{"key": "help.item_night_only", "value": "Włącza/ wyłącza dany znacznik na mapie. Ten przedmiot pojawia sie tylko między godz. 22:00 a 5:00 rano czasu w grze (kliknij na zegarek w lewym górnym rogu mapy, aby poznać godzinę w grze)."},
 	{"key": "help.item_weekly", "value": "Włącza/ wyłącza dany znacznik na mapie. Ten przedmiot jest częścią specjalnej tygodnoiwej kolekcji: \"{collection}\"."},
-	{"key": "help.item_unavailable", "value": "Włącza/ wyłącza dany znacznik na mapie. Ten przedmiot jest niemożliwy do zebrania, ponieważ jest zbugowany lub nie został jeszcze odnaleziony."}
+	{"key": "help.item_unavailable", "value": "Włącza/ wyłącza dany znacznik na mapie. Ten przedmiot jest niemożliwy do zebrania, ponieważ jest zbugowany lub nie został jeszcze odnaleziony."},
+	{"key": "help.clear_important_items", "value": "Usuwa podświetlenie ze wszystkich znacników oznaczonych jako wazne."},
+	{"key": "help.item_category_unavailable_items", "value": "Włącza/ wyłącza znaczniki kolekcji na mapie. Ta kolekcja zawiera conajmniej jeden przedmot, którego nie da się zebrac z powodu błędu gry, lub nie został jeszcze odnaleziony."},
+	{"key": "help.search_copy_link", "value": "Kopiuje link do mapy z kategoriami wyszukiwania, które można wkleić do paska adresu."},
+	{"key": "help.sort_items_alphabetically", "value": "Określa czy przedmioty maja być sortowane alfabetycznie czy według klejności w grze."},
+	{"key": "help.enable_marker_shadows", "value": "Określa czy znaczniki bedą miały cień. Wyłączenie tej pocji może poprawić wydajność."}
 ]
