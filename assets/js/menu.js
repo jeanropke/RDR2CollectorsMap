@@ -180,13 +180,13 @@ Menu.refreshMenu = function () {
 
   function addCycleWarning(element, isSameCycle) {
     var hasCycleWarning = $(`${element} .same-cycle-warning-menu`).length > 0;
-    var item = $(element);
+    var category = $(element);
     if (isSameCycle && !hasCycleWarning) {
-      item.parent().attr('data-help', 'item_category_same_cycle');
-      item.append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
+      category.parent().attr('data-help', 'item_category_same_cycle');
+      category.append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
     } else if (!isSameCycle && hasCycleWarning) {
-      item.parent().attr('data-help', 'item_category');
-      item.children('.same-cycle-warning-menu').remove();
+      category.parent().attr('data-help', 'item_category');
+      category.children('.same-cycle-warning-menu').remove();
     }
   }
 
