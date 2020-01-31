@@ -93,6 +93,7 @@
 	{"key": "menu.generate_route_start_lng", "value": "Startpunkt long."},
 	{"key": "menu.generate_route_use_pathfinder", "value": "Nutze Wegfindung für die Route (Berechnung sehr langsam)"},
 	{"key": "menu.generate_route_allow_fasttravel", "value": "Wegfindung darf Schnellreise-Posten verwenden"},
+	{"key": "menu.generate_route_allow_railroad", "value": "Wegfindung darf Schienennetz verwenden"},
 	{"key": "menu.user_pins", "value": "Eigene Markierungen"},
 	{"key": "menu.user_pins_place_mode", "value": "Eigene Markierungen beim Klick setzen"},
 	{"key": "menu.user_pins_edit_mode", "value": "Edit-Modus für eigene Markierungen aktivieren"},
@@ -189,6 +190,7 @@
 	{"key": "menu.sort_items_alphabetically", "value": "Sortiere Gegenstände alphabetisch"},
 	{"key": "menu.enable_marker_shadows", "value": "Markierungs-Schatten aktivieren"},
 	{"key": "menu.moonshiner_camp", "value": "Moonshiner Lager"},
+	{"key": "menu.rival_collector", "value": "Rivalisierende Sammler"},
 
 	{"key": "help.default", "value": "Fahre mit der Maus oder drücke lange (Mobile-Ansicht) auf einem Option um weitere Informatione zu erhalten."},
 	{"key": "help.clear_custom_routes", "value": "Lösche alle benutzerdefinierten Routen auf der Karte."},
@@ -215,6 +217,7 @@
 	{"key": "help.generate_route_start", "value": "Erlaubt es zu setzen von wo aus die Route startet."},
 	{"key": "help.generate_route_start_custom", "value": "Erlaubt es eigene Koordinaten zu setzen von denen aus die Route startet."},
 	{"key": "help.generate_route_use_pathfinder", "value": "Nutze die verwendbaren Straßen und Wege zur Routen-Berechnung. Diese Option macht die Routenberechnung sehr langsam."},
+	{"key": "help.generate_route_allow_railroad", "value": "Bezieht das Schienen-Netz bei der Routen-Berechnung mit ein."},
 	{"key": "help.hide_all", "value": "Entfernt alle Markierungen von der Karten."},
 	{"key": "help.import_route", "value": "Import eine eigene Route und zeigt sie auf der Karte."},
 	{"key": "help.inventory_stack", "value": "Erlaubt es die maximale Inventar-Größe zu setzen. Der Standard ist 10 wie das auf im Spiel der Fall ist."},

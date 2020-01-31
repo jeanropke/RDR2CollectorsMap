@@ -886,10 +886,12 @@ $('#generate-route-use-pathfinder').on("change", function () {
     $('#generate-route-distance').parent().hide();
     $('#generate-route-auto-update').parent().parent().hide();
     $('#generate-route-allow-fasttravel').parent().parent().show();
+    $('#generate-route-allow-railroad').parent().parent().show();
   } else {
     $('#generate-route-distance').parent().show();
     $('#generate-route-auto-update').parent().parent().show();
     $('#generate-route-allow-fasttravel').parent().parent().hide();
+    $('#generate-route-allow-railroad').parent().parent().hide();
   }
 
   // Prevent both routes being stuck on screen.
@@ -901,6 +903,13 @@ $('#generate-route-use-pathfinder').on("change", function () {
 $('#generate-route-allow-fasttravel').on("change", function () {
   Routes.allowFasttravel = $("#generate-route-allow-fasttravel").prop('checked');
   $.cookie('generator-path-allow-fasttravel', Routes.allowFasttravel ? '1' : '0', { expires: 999 });
+
+  Routes.generatePath();
+});
+
+$('#generate-route-allow-railroad').on("change", function () {
+  Routes.allowRailroad = $("#generate-route-allow-railroad").prop('checked');
+  $.cookie('generator-path-allow-railroad', Routes.allowRailroad ? '1' : '0', { expires: 999 });
 
   Routes.generatePath();
 });

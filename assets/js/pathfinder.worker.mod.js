@@ -251,9 +251,14 @@ class PathFinder {
 		PathFinder._running = false
 		PathFinder._geoJson = null
 		PathFinder._geoJsonFT = null
+		PathFinder._geoJsonRR = null
+		PathFinder._geoJsonFTRR = null
 		PathFinder._nodeCache = {}
 		PathFinder._cancel = false
 		PathFinder._pathfinderFT = false
+		PathFinder._pathfinderRR = false
+		PathFinder._pathfinderFTWeight = 0.9
+		PathFinder._pathfinderRRWeight = 1.1
 
 		return PathFinder
 	}
@@ -275,22 +280,39 @@ class PathFinder {
 	 * Creating the GeoJSON Path Finder object from geojson data and extracting all nodes
 	 * @static
 	 * @param {Boolean} allowFastTravel Wether or not to include fast travel nodes
+	 * @param {Boolean} allowRailroads Wether or not to include rail roades nodes
+	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
+	 * @param {Number} railroadWeight Multiplier for rail road weights
 	 */
-	static createPathFinder(allowFastTravel) {
+	static createPathFinder(allowFastTravel, allowRailroads, fastTravelWeight, railroadWeight) {
 		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = PathFinder._pathfinderFT
-		if(PathFinder._PathFinder !== null && PathFinder._pathfinderFT == allowFastTravel) return
+		if(typeof(allowRailroads) !== 'boolean') allowRailroads = PathFinder._pathfinderRR
+		if(typeof(fastTravelWeight) !== 'number') fastTravelWeight = PathFinder._pathfinderFTWeight
+		if(typeof(railroadWeight) !== 'number') railroadWeight = PathFinder._pathfinderRRWeight
 
-		PathFinder._PathFinder = new GeoJSONPathFinder(allowFastTravel ? PathFinder._geoJsonFT : PathFinder._geoJson, {
+		if(
+			PathFinder._PathFinder !== null &&
+			PathFinder._pathfinderFT == allowFastTravel && PathFinder._pathfinderRR == allowRailroads &&
+			PathFinder._pathfinderFTWeight == fastTravelWeight && PathFinder._pathfinderRRWeight == railroadWeight
+		) return
+
+		let gjData = allowFastTravel ? (allowRailroads ? PathFinder._geoJsonFTRR : PathFinder._geoJsonFT) : (allowRailroads ? PathFinder._geoJsonRR : PathFinder._geoJson)
+
+		PathFinder._PathFinder = new GeoJSONPathFinder(gjData, {
 			precision: 0.04,
 			weightFn: function(a, b, props) {
 				var dx = a[0] - b[0];
 				var dy = a[1] - b[1];
 				var r = Math.sqrt(dx * dx + dy * dy);
-				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * 0.5
+				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * PathFinder._pathfinderFTWeight
+				if(typeof(props.type) === 'string' && props.type == 'railroad') r = r * PathFinder._pathfinderRRWeight
 				return r
 			}
 		})
 		PathFinder._pathfinderFT = allowFastTravel
+		PathFinder._pathfinderRR = allowRailroads
+		PathFinder._pathfinderFTWeight = fastTravelWeight
+		PathFinder._pathfinderRRWeight = railroadWeight
 		var _vertices = PathFinder._PathFinder._graph.vertices;
 		PathFinder._points = featurecollection(
 			Object
@@ -501,10 +523,13 @@ class PathFinder {
 	 * @static
 	 * @param {Marker} startingMarker Where to start
 	 * @param {Array<Marker>} markers Contains markers a route should be generated for. Must contain startingMarker.
-	 * @param {Boolean} [allowFastTravel=false]
+	 * @param {Boolean} allowFastTravel Wether or not to include fast travel nodes
+	 * @param {Boolean} allowRailroads Wether or not to include rail roades nodes
+	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
+	 * @param {Number} railroadWeight Multiplier for rail road weights
 	 * @returns {Promise<Boolean>} false if geojson isn't fully loaded or route generation was canceled
 	 */
-	static async routegenStart(startingMarker, markers, allowFastTravel) {
+	static async routegenStart(startingMarker, markers, allowFastTravel, allowRailroads, fastTravelWeight, railroadWeight) {
 		if(PathFinder._geoJson === null) {
 			console.error('[pathfinder.worker] geojson not fully loaded yet')
 			return false
@@ -521,8 +546,7 @@ class PathFinder {
 		var startTime = new Date().getTime()
 
 		// Create GeoJSON path finder object (function will check if already created)
-		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = false
-		PathFinder.createPathFinder(allowFastTravel)
+		PathFinder.createPathFinder(allowFastTravel, allowRailroads, fastTravelWeight, railroadWeight)
 
 		// Generate Chunks
 		PathFinder.generateChunks(markers)
@@ -570,9 +594,11 @@ self.addEventListener('message', function(e){
 		case 'data':
 			PathFinder._geoJson = data.geojson
 			PathFinder._geoJsonFT = data.geojsonFT
+			PathFinder._geoJsonRR = data.geojsonRR
+			PathFinder._geoJsonFTRR = data.geojsonFTRR
 			break
 		case 'start':
-			PathFinder.routegenStart(data.startingMarker, data.markers, data.allowFastTravel).then((result) => {
+			PathFinder.routegenStart(data.startingMarker, data.markers, data.allowFastTravel, data.allowRailroads, data.fastTravelWeight, data.railroadWeight).then((result) => {
 				self.postMessage({ res: 'route-done', result: result })
 			})
 			break
