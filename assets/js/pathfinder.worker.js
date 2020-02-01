@@ -3,54 +3,91 @@ var GeoJSONPathFinder = require('geojson-path-finder')
 var point = require('turf-point')
 var featurecollection = require('turf-featurecollection')
 
+var ambarino = null, lemoyne = null, newAustin = null, newHanover = null, westElizabeth = null, fasttravel = null, railroads = null
 
-class LatLng {
-	
+function loadGeoJsonData(path) {
+	return new Promise((res) => {
+		$.getJSON(path + '?nocache=' + nocache)
+			.done(function(data){
+				res(data)
+			})
+			.fail(function(){
+				console.error('[pathfinder] failed to load geojson ' + path.substr(path.lastIndexOf('/')+1))
+				// resolve to empty featurecollection so the rest doesn't break
+				res({"type":"FeatureCollection","features":[]})
+			})
+	})
+}
+
+async function loadAllGeoJson() {
+	ambarino = await loadGeoJsonData('data/geojson/ambarino.json')
+	lemoyne = await loadGeoJsonData('data/geojson/lemoyne.json')
+	newAustin = await loadGeoJsonData('data/geojson/new-austin.json')
+	newHanover = await loadGeoJsonData('data/geojson/new-hanover.json')
+	westElizabeth = await loadGeoJsonData('data/geojson/west-elizabeth.json')
+
+	fasttravel = await loadGeoJsonData('data/geojson/fasttravel.json')
+	railroads = await loadGeoJsonData('data/geojson/railroads.json')
+
+	var completeGeoJson = {"type":"FeatureCollection","features":[]}
+	completeGeoJson.features = completeGeoJson.features.concat(ambarino.features)
+	completeGeoJson.features = completeGeoJson.features.concat(lemoyne.features)
+	completeGeoJson.features = completeGeoJson.features.concat(newAustin.features)
+	completeGeoJson.features = completeGeoJson.features.concat(newHanover.features)
+	completeGeoJson.features = completeGeoJson.features.concat(westElizabeth.features)
+	completeGeoJson.features = completeGeoJson.features.concat(fasttravel.features)
+	completeGeoJson.features = completeGeoJson.features.concat(railroads.features)
+
+	PathFinder._geoJson = completeGeoJson
+}
+
+
+class WorkerLatLng {
 	constructor(lat, lng) {
 		this.lat = parseFloat(lat)
 		this.lng = parseFloat(lng)
 	}
+}
+
+class WorkerLatLngBounds {
+
+		constructor(pointA, pointB) {
+			pointA.lat = parseFloat(pointA.lat)
+			pointB.lat = parseFloat(pointB.lat)
+			pointA.lng = parseFloat(pointA.lng)
+			pointB.lng = parseFloat(pointB.lng)
+
+			this.pointA = pointA
+			this.pointB = pointB
+
+			this.southEast = L.latLng(
+				(pointA.lat < pointB.lat ? pointA.lat : pointB.lat),
+				(pointA.lng < pointB.lng ? pointA.lng : pointB.lng)
+			)
+			this.northWest = L.latLng(
+				(pointA.lat > pointB.lat ? pointA.lat : pointB.lat),
+				(pointA.lng > pointB.lng ? pointA.lng : pointB.lng)
+			)
+		}
+
+		getCenter() {
+			return L.latLng(
+				this.southEast.lat + ((this.northWest.lat - this.southEast.lat) / 2),
+				this.southEast.lng + ((this.northWest.lng - this.southEast.lng) / 2)
+			)
+		}
+
+		contains(latLng) {
+			return (
+				latLng.lat >= this.southEast.lat && latLng.lat <= this.northWest.lat &&
+				latLng.lng >= this.southEast.lng && latLng.lng <= this.northWest.lng
+			)
+		}
 
 }
 
-class LatLngBounds {
 
-	constructor(pointA, pointB) {
-		pointA.lat = parseFloat(pointA.lat)
-		pointB.lat = parseFloat(pointB.lat)
-		pointA.lng = parseFloat(pointA.lng)
-		pointB.lng = parseFloat(pointB.lng)
-
-		this.pointA = pointA
-		this.pointB = pointB
-
-		this.southEast = L.latLng(
-			(pointA.lat < pointB.lat ? pointA.lat : pointB.lat),
-			(pointA.lng < pointB.lng ? pointA.lng : pointB.lng)
-		)
-		this.northWest = L.latLng(
-			(pointA.lat > pointB.lat ? pointA.lat : pointB.lat),
-			(pointA.lng > pointB.lng ? pointA.lng : pointB.lng)
-		)
-	}
-
-	getCenter() {
-		return new LatLng(
-			this.southEast.lat + ((this.northWest.lat - this.southEast.lat) / 2),
-			this.southEast.lng + ((this.northWest.lng - this.southEast.lng) / 2)
-		)
-	}
-
-	contains(latLng) {
-		return (
-			latLng.lat >= this.southEast.lat && latLng.lat <= this.northWest.lat &&
-			latLng.lng >= this.southEast.lng && latLng.lng <= this.northWest.lng
-		)
-	}
-
-}
-
-class L {
+class WorkerL {
 
 	static latLngBounds(pointA, pointB) {
 		if(Array.isArray(pointA)) {
@@ -58,12 +95,12 @@ class L {
 				pointB = pointA[0]
 				pointA = pointA[1]
 			}
-			pointA = new LatLng(pointA[0], pointA[1])
+			pointA = new WorkerLatLng(pointA[0], pointA[1])
 		}
 		if(Array.isArray(pointB)) {
-			pointB = new LatLng(pointB[0], pointB[1])
+			pointB = new WorkerLatLng(pointB[0], pointB[1])
 		}
-		return new LatLngBounds(pointA, pointB)
+		return new WorkerLatLngBounds(pointA, pointB)
 	}
 
 	static latLng(lat, lng) {
@@ -71,7 +108,7 @@ class L {
 			lng = lat[1]
 			lat = lat[0]
 		}
-		return new LatLng(lat, lng)
+		return new WorkerLatLng(lat, lng)
 	}
 
 	static distance(pointA, pointB) {
@@ -82,6 +119,9 @@ class L {
 	}
 
 }
+const L = (typeof(window) === 'undefined' ? WorkerL : window.L)
+
+const reqAnimFrame = (typeof(window) === 'undefined' ? function(cb) { cb() } : window.requestAnimationFrame)
 
 /**
  * Helping class to hold markers, that are nearby
@@ -122,7 +162,7 @@ class Chunk {
 	 */
 	_canAdd(marker) {
 		if(this.bounds == null) return true
-		var d = L.distance(marker, this.bounds.getCenter())
+		var d = WorkerL.distance(marker, this.bounds.getCenter())
 		return d < 10
 	}
 
@@ -232,6 +272,100 @@ class Chunk {
 
 }
 
+if(typeof(window) !== 'undefined') {
+	/**
+	 * Leaflet control class for the path finder
+	 */
+	class RouteControl extends L.Control {
+
+		constructor() {
+			super({ position: 'topright' })
+
+			this._element = null
+
+			this._beforeButton = null
+			this._currentButton = null
+			this._afterButton = null
+
+			this.currentPath = 0
+			this._paths = []
+		}
+
+		onAdd() {
+			this._element = L.DomUtil.create('div', 'leaflet-bar pathfinder-control');
+
+			this._beforeButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-before', this._element);
+			this._currentButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-current', this._element);
+			this._afterButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-after', this._element);
+			
+			this._beforeButton.innerHTML = '&lt;<small>j</small>'
+			this._beforeButton.setAttribute('disabled', true)
+			L.DomEvent.on(this._beforeButton, 'click', () => { this.selectPath(-1) })
+
+			this._currentButton.style.fontWeight =  'bold'
+			this._currentButton.innerHTML = '0 / 0 <small>k</small>'
+			L.DomEvent.on(this._currentButton, 'click', () => { this.selectPath(0) })
+
+			this._afterButton.innerHTML = '&gt;<small>l</small>'
+			this._afterButton.setAttribute('disabled', true)
+			L.DomEvent.on(this._afterButton, 'click', () => { this.selectPath(1) })
+
+			const self = this
+			this.onKeyPress = (e) => {
+				// press on J
+				if(e.originalEvent.keyCode == 74) {
+					self.selectPath(-1)
+					
+				// press on K
+				} else if(e.originalEvent.keyCode == 75) {
+					self.selectPath(0)
+					
+				// press on L
+				} else if(e.originalEvent.keyCode == 76) {
+					self.selectPath(1)
+				}
+			}
+			MapBase.map.on('keydown', this.onKeyPress)
+
+			return this._element;
+		}
+
+		onRemove() {
+			delete this._element;
+			MapBase.map.off('keydown', this.onKeyPress)
+		}
+
+		addPath(path) {
+			this._paths.push(path)
+			this.updateButtons()
+		}
+
+		updateButtons() {
+			this._currentButton.innerHTML = this.currentPath + ' / ' + this._paths.length + ' <small>k</small>'
+
+			if(this.currentPath == 1) this._beforeButton.setAttribute('disabled', true)
+			else this._beforeButton.removeAttribute('disabled', false)
+
+			if(this.currentPath == this._paths.length) this._afterButton.setAttribute('disabled', true)
+			else this._afterButton.removeAttribute('disabled', false)
+		}
+
+		selectPath(offset, absolute) {
+			if(typeof(absolute) !== 'boolean') absolute = false
+			var newindex = offset
+			if(!absolute) newindex = this.currentPath + offset
+			if(newindex >= 1 && newindex <= this._paths.length) {
+				this.currentPath = newindex
+				this.updateButtons()
+				PathFinder.highlightPath(this._paths[(this.currentPath-1)])
+			}
+		}
+
+	}
+
+	window.RouteControl = RouteControl
+}
+
 /**
  * Main path finder class; all properties are static
  */
@@ -251,15 +385,18 @@ class PathFinder {
 		PathFinder._currentPath = null
 		PathFinder._running = false
 		PathFinder._geoJson = null
-		PathFinder._geoJsonFT = null
-		PathFinder._geoJsonRR = null
-		PathFinder._geoJsonFTRR = null
 		PathFinder._nodeCache = {}
 		PathFinder._cancel = false
-		PathFinder._pathfinderFT = false
-		PathFinder._pathfinderRR = false
 		PathFinder._pathfinderFTWeight = 0.9
 		PathFinder._pathfinderRRWeight = 1.1
+		PathFinder._worker = null
+		PathFinder._drawing = false
+		PathFinder._redrawWhenFinished = false
+
+		if(typeof($) !== 'undefined') {
+			// Load geojson
+			loadAllGeoJson()
+		}
 
 		return PathFinder
 	}
@@ -280,38 +417,29 @@ class PathFinder {
 	/**
 	 * Creating the GeoJSON Path Finder object from geojson data and extracting all nodes
 	 * @static
-	 * @param {Boolean} allowFastTravel Wether or not to include fast travel nodes
-	 * @param {Boolean} allowRailroads Wether or not to include rail roades nodes
-	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
-	 * @param {Number} railroadWeight Multiplier for rail road weights
+	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights - set to Infinity to disable
+	 * @param {Number} railroadWeight Multiplier for rail road weights - set to Infinity to disable
 	 */
-	static createPathFinder(allowFastTravel, allowRailroads, fastTravelWeight, railroadWeight) {
-		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = PathFinder._pathfinderFT
-		if(typeof(allowRailroads) !== 'boolean') allowRailroads = PathFinder._pathfinderRR
+	static createPathFinder(fastTravelWeight, railroadWeight) {
 		if(typeof(fastTravelWeight) !== 'number') fastTravelWeight = PathFinder._pathfinderFTWeight
 		if(typeof(railroadWeight) !== 'number') railroadWeight = PathFinder._pathfinderRRWeight
 
 		if(
 			PathFinder._PathFinder !== null &&
-			PathFinder._pathfinderFT == allowFastTravel && PathFinder._pathfinderRR == allowRailroads &&
 			PathFinder._pathfinderFTWeight == fastTravelWeight && PathFinder._pathfinderRRWeight == railroadWeight
 		) return
 
-		let gjData = allowFastTravel ? (allowRailroads ? PathFinder._geoJsonFTRR : PathFinder._geoJsonFT) : (allowRailroads ? PathFinder._geoJsonRR : PathFinder._geoJson)
-
-		PathFinder._PathFinder = new GeoJSONPathFinder(gjData, {
+		PathFinder._PathFinder = new GeoJSONPathFinder(PathFinder._geoJson, {
 			precision: 0.04,
 			weightFn: function(a, b, props) {
 				var dx = a[0] - b[0];
 				var dy = a[1] - b[1];
 				var r = Math.sqrt(dx * dx + dy * dy);
-				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * PathFinder._pathfinderFTWeight
-				if(typeof(props.type) === 'string' && props.type == 'railroad') r = r * PathFinder._pathfinderRRWeight
+				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * fastTravelWeight
+				if(typeof(props.type) === 'string' && props.type == 'railroad') r = r * railroadWeight
 				return r
 			}
 		})
-		PathFinder._pathfinderFT = allowFastTravel
-		PathFinder._pathfinderRR = allowRailroads
 		PathFinder._pathfinderFTWeight = fastTravelWeight
 		PathFinder._pathfinderRRWeight = railroadWeight
 		var _vertices = PathFinder._PathFinder._graph.vertices;
@@ -328,6 +456,91 @@ class PathFinder {
 		);
 
 		PathFinder._nodeCache = {}
+	}
+	
+	/**
+	 * Draw a path to the path finder layer group
+	 * @static
+	 * @param {Array<[Number, Number]>} path 
+	 * @param {String} color 
+	 * @param {Number} weight
+	 * @param {Number} opacity Between 0 and 1
+	 * @returns {Polyline}
+	 */
+	static drawPath(path, color, weight, opacity, layer) {
+		if(typeof(MapBase) === 'undefined') return
+		if(typeof(color) === 'undefined') color = '#0000ff'
+
+		if(typeof(weight) !== 'number') weight = 5
+		if(typeof(opacity) !== 'number') opacity = 1
+		if(typeof(layer) === 'undefined') layer = PathFinder._layerGroup
+
+		let pathGroup = L.layerGroup().addTo(layer)
+		let last = path[0]
+		let pathBuffer = [last]
+		for(let i = 1; i < path.length; i++) {
+			if(MapBase.map.distance(last, path[i]) > 10) {
+				if(pathBuffer.length > 1) {
+					L.polyline(pathBuffer, {color: color, opacity: opacity, weight: weight }).addTo(pathGroup)
+					pathBuffer = []
+				}
+				L.polyline([last, path[i]], {color: color, opacity: opacity, weight: weight, dashArray: '10 10' }).addTo(pathGroup)
+			}
+			pathBuffer.push(path[i])
+			last = path[i]
+		}
+		if(pathBuffer.length > 1) {
+			L.polyline(pathBuffer, {color: color, opacity: opacity, weight: weight }).addTo(pathGroup)
+		}
+	
+		return L.polyline(path, { stroke: false })
+	}
+
+	/**
+	 * Draw a fancy path to the path finder layer group and removes the fancy path that was drawn before
+	 * @static
+	 * @param {Array<[Number, Number]>} path 
+	 */
+	static highlightPath(path) {
+		if(typeof(window) === 'undefined') return
+		window.requestAnimationFrame(function(){
+			if(PathFinder._currentPath !== null) {
+				MapBase.map.removeLayer(PathFinder._currentPath)
+			}
+			PathFinder._currentPath = L.layerGroup().addTo(MapBase.map)
+		
+
+			var line = PathFinder.drawPath(path, '#000000', 9, 0.5, PathFinder._currentPath)
+			PathFinder.drawPath(path, '#ffffff', 7, 1, PathFinder._currentPath)
+			PathFinder.drawPath(path, '#00bb00', 3, 1, PathFinder._currentPath)
+			MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
+		})
+	}
+
+	/**
+	 * Draw an entire route/multiple paths
+	 * @static
+	 * @param {Array<Array<[Number, Number]>>} paths 
+	 */
+	static drawRoute(paths) {
+		if(typeof(MapBase) === 'undefined') return
+		if(PathFinder._drawing) {
+			PathFinder._redrawWhenFinished = paths
+		} else {
+			PathFinder._drawing = true
+			window.requestAnimationFrame(function(){
+				PathFinder._layerGroup.clearLayers()
+				PathFinder._currentPath = null
+				for(var i = 0; i < paths.length; i++) {
+					PathFinder.drawPath(paths[i], '#bb0000')
+				}
+				PathFinder._drawing = false
+				if(PathFinder._redrawWhenFinished !== false) {
+					PathFinder.drawRoute(PathFinder._redrawWhenFinished)
+					PathFinder._redrawWhenFinished = false
+				}
+			})
+		}
 	}
 
 	/**
@@ -385,7 +598,7 @@ class PathFinder {
 		})
 		var n = {distance: Number.MAX_SAFE_INTEGER, point: null}
 		for(let i = 0; i < filtered.length; i++) {
-			var distance = L.distance(
+			var distance = WorkerL.distance(
 				pointLatLng, 
 				PathFinder.pointToLatLng(filtered[i])
 			);
@@ -440,7 +653,7 @@ class PathFinder {
 		if(PathFinder._currentChunk === null) {
 			PathFinder._currentChunk = Chunk.getChunkByMarker(start)
 			if(PathFinder._currentChunk == null) {
-				console.error('[pathfinder.worker] Starting marker is not in chunk', start)
+				console.error('[pathfinder] Starting marker is not in chunk', start)
 				return null
 			}
 		}
@@ -454,21 +667,28 @@ class PathFinder {
 			if(PathFinder._currentChunk.isDone || availableInChunk.length <= 0) {
 				// mark this chunk as done to skip it when searching a new one
 				PathFinder._currentChunk.isDone = true
-				PathFinder._currentChunk = PathFinder.findNearestChunk(start, PathFinder._currentChunk)
+
+				PathFinder._currentChunk = await (new Promise((res) => { reqAnimFrame(() => {
+					res(PathFinder.findNearestChunk(start, PathFinder._currentChunk))
+				}) }))
+
 				if(PathFinder._currentChunk == null) return null
 				availableInChunk = PathFinder._currentChunk.markers.filter((m) => { return markers.includes(m) })
 			}
 	
 			for(let i = 0; i < availableInChunk.length; i++) {
-				var path = null
-				// Find the nearest road node to all the markers
-				var markerPoint = PathFinder.getNearestNode(availableInChunk[i])
-				if(markerPoint !== null) {
-					path = PathFinder._PathFinder.findPath(startPoint, markerPoint)
-				} else {
-					console.error('[pathfinder.worker] No node found to ', availableInChunk[i])
-				}
-				
+				// Request animation frame to unblock browser
+				var path = await (new Promise((res) => { reqAnimFrame(() => {
+					// Find the nearest road node to all the markers
+					var markerPoint = PathFinder.getNearestNode(availableInChunk[i])
+					if(markerPoint !== null) {
+						// Find path and resolve
+						res(PathFinder._PathFinder.findPath(startPoint, markerPoint))
+					} else {
+						console.error('[pathfinder] No node found to ', availableInChunk[i])
+						res(null)
+					}
+				}) }))
 				if(path !== null) {
 					if(path.weight < shortest.weight) {
 						shortest.weight = path.weight
@@ -496,12 +716,19 @@ class PathFinder {
 	static routegenCancel() {
 		return new Promise(async (res) => {
 			if(PathFinder._running) {
-				PathFinder._cancel = true
-				while(PathFinder._running) {
-					await new Promise((r) => { setTimeout(() => { r() }, 100) })
+				if(PathFinder._worker === null) {
+					PathFinder._cancel = true
+					while(PathFinder._running) {
+						await new Promise((r) => { window.setTimeout(() => { r() }, 100) })
+					}
+					PathFinder._cancel = false
+					res()
+				} else {
+					PathFinder._worker.terminate()
+					PathFinder._worker = null
+					PathFinder._running = false
+					res()
 				}
-				PathFinder._cancel = false
-				res()
 			} else {
 				res()
 			}
@@ -517,6 +744,39 @@ class PathFinder {
 		if(PathFinder._running) {
 			await PathFinder.routegenCancel()
 		}
+		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
+		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
+		if(PathFinder._currentPath !== null) MapBase.map.removeLayer(PathFinder._currentPath)
+	}
+
+	/**
+	 * Finds unreachable points in the roadmap and shows you on the map. It takes a random node and tries to find a way
+	 * to every other node in the map. If no path could be found a blue circle will be drawn around the node.
+	 * The starting node will be highlighted by a red circle.
+	 * @static
+	 * @returns {Promise}
+	 */
+	static async findHoles() {
+		PathFinder.createPathFinder(false)
+
+		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
+		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
+
+		PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map)
+		PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map)
+
+		var sourcePoint = PathFinder._points.features[Math.floor(Math.random() * PathFinder._points.features.length)]
+		L.circle([sourcePoint.geometry.coordinates[1], sourcePoint.geometry.coordinates[0]], { color: '#ff0000', radius: 0.5 }).addTo(PathFinder._layerGroup)
+		for(var i = 1; i < PathFinder._points.features.length; i++) {
+			var path = await new Promise(res => {
+				reqAnimFrame(function(){
+					res(PathFinder._PathFinder.findPath(sourcePoint, PathFinder._points.features[i]))
+				})
+			})
+			if(path == null) {
+				L.circle([PathFinder._points.features[i].geometry.coordinates[1], PathFinder._points.features[i].geometry.coordinates[0]], { radius: 0.04 }).addTo(PathFinder._layerGroup)
+			}
+		}
 	}
 
 	/**
@@ -524,30 +784,70 @@ class PathFinder {
 	 * @static
 	 * @param {Marker} startingMarker Where to start
 	 * @param {Array<Marker>} markers Contains markers a route should be generated for. Must contain startingMarker.
-	 * @param {Boolean} allowFastTravel Wether or not to include fast travel nodes
-	 * @param {Boolean} allowRailroads Wether or not to include rail roades nodes
 	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
 	 * @param {Number} railroadWeight Multiplier for rail road weights
+	 * @param {Boolean} [forceNoWorker=false] Forces to skip the worker (mainly used inside the worker)
 	 * @returns {Promise<Boolean>} false if geojson isn't fully loaded or route generation was canceled
 	 */
-	static async routegenStart(startingMarker, markers, allowFastTravel, allowRailroads, fastTravelWeight, railroadWeight) {
+	static async routegenStart(startingMarker, markers, fastTravelWeight, railroadWeight, forceNoWorker) {
+		
 		if(PathFinder._geoJson === null) {
-			console.error('[pathfinder.worker] geojson not fully loaded yet')
-			return false
+			await new Promise(async (res) => {
+				while(PathFinder._geoJson === null && PathFinder._geoJsonFT === null) {
+					await new Promise((r) => { setTimeout(() => { r() }, 100) })
+				}
+				res()
+			})
 		}
 
-		// Cancel current running route generation
-		if(PathFinder._running) {
-			await PathFinder.routegenCancel()
-		}
+		if(typeof(forceNoWorker) !== 'boolean') forceNoWorker = false
+
+		// Clear layers and cancel if running
+		await PathFinder.routegenClear()
 
 		PathFinder._running = true
 		PathFinder._currentChunk = null
 
 		var startTime = new Date().getTime()
 
+		if(typeof(MapBase) !== 'undefined') {
+			// Add controller and layer group to map
+			PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map)
+			PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map)
+		}
+
+		if(!forceNoWorker && typeof(Worker) !== 'undefined') {
+			var res = await new Promise((res) => {
+				var paths = []
+				PathFinder._worker = new Worker('assets/js/pathfinder.worker.js')
+				PathFinder._worker.postMessage({ cmd: 'data', geojson: PathFinder._geoJson })
+				PathFinder._worker.addEventListener('message', function(e) {
+					var data = e.data
+					switch(data.res) {
+						case 'route-progress':
+							PathFinder._layerControl.addPath(data.newPath)
+							paths.push(data.newPath)
+							PathFinder.drawRoute(paths)
+							break
+						case 'route-done':
+							var endTime = new Date().getTime();
+							
+							window.setTimeout(function(){
+								PathFinder._layerControl.selectPath(1, true)
+							}, 100)
+
+							PathFinder._running = false
+							res(data.result)
+							break
+					}
+				})
+				PathFinder._worker.postMessage({ cmd: 'start', startingMarker: startingMarker, markers: markers, fastTravelWeight: fastTravelWeight, railroadWeight: railroadWeight })
+			})
+			return res
+		}
+
 		// Create GeoJSON path finder object (function will check if already created)
-		PathFinder.createPathFinder(allowFastTravel, allowRailroads, fastTravelWeight, railroadWeight)
+		PathFinder.createPathFinder(fastTravelWeight, railroadWeight)
 
 		// Generate Chunks
 		PathFinder.generateChunks(markers)
@@ -557,6 +857,7 @@ class PathFinder {
 		markers = markers.filter((m) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
 
 		var last = current.marker
+		var paths = []
 
 		var markersNum = markers.length
 		try {
@@ -569,17 +870,25 @@ class PathFinder {
 				// remove found marker from markers array
 				markers = markers.filter((m) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
 				last = current.marker
-				
-				self.postMessage({ res: 'route-progress', newPath: current.path, val: i, max: markersNum })
+		
+				if(typeof(window) !== 'undefined') {
+					// add route to controller and draw the current route
+					PathFinder._layerControl.addPath(current.path)
+					paths.push(current.path)
+					PathFinder.drawRoute(paths)
+				} else {
+					self.postMessage({ res: 'route-progress', newPath: current.path, val: i, max: markersNum })
+				}
 
 				if(PathFinder._cancel) break
 			}
 		} catch(e) {
 			// catching all errors, just in case
-			console.error('[pathfinder.worker]', e)
+			console.error('[pathfinder]', e)
 		}
 	
 		var canceled = PathFinder._cancel
+		if (!canceled && typeof(window) !== 'undefined') window.setTimeout(function(){ PathFinder._layerControl.selectPath(1, true) }, 100)
 
 		PathFinder._running = false
 
@@ -588,24 +897,34 @@ class PathFinder {
 
 }
 
+if(typeof(window) !== 'undefined') {
+	// Make Pathfinder publicly accessible
+	window.PathFinder = PathFinder.init()
+} else {
+	module.exports = PathFinder
+}
+},{"geojson-path-finder":12,"turf-featurecollection":17,"turf-point":18}],2:[function(require,module,exports){
+var GeoJSONPathFinder = require('geojson-path-finder')
+var point = require('turf-point')
+var featurecollection = require('turf-featurecollection')
+
+const PathFinder = require('./pathfinder.mod')
+
 PathFinder.init()
 self.addEventListener('message', function(e){
 	var data = e.data
 	switch(data.cmd) {
 		case 'data':
 			PathFinder._geoJson = data.geojson
-			PathFinder._geoJsonFT = data.geojsonFT
-			PathFinder._geoJsonRR = data.geojsonRR
-			PathFinder._geoJsonFTRR = data.geojsonFTRR
 			break
 		case 'start':
-			PathFinder.routegenStart(data.startingMarker, data.markers, data.allowFastTravel, data.allowRailroads, data.fastTravelWeight, data.railroadWeight).then((result) => {
+			PathFinder.routegenStart(data.startingMarker, data.markers, data.fastTravelWeight, data.railroadWeight, true).then((result) => {
 				self.postMessage({ res: 'route-done', result: result })
 			})
 			break
 	}
 })
-},{"geojson-path-finder":11,"turf-featurecollection":16,"turf-point":17}],2:[function(require,module,exports){
+},{"./pathfinder.mod":1,"geojson-path-finder":12,"turf-featurecollection":17,"turf-point":18}],3:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var invariant_1 = require("@turf/invariant");
@@ -648,7 +967,7 @@ function distance(from, to, options) {
 }
 exports.default = distance;
 
-},{"@turf/helpers":5,"@turf/invariant":6}],3:[function(require,module,exports){
+},{"@turf/helpers":6,"@turf/invariant":7}],4:[function(require,module,exports){
 'use strict';
 
 var meta = require('@turf/meta');
@@ -688,7 +1007,7 @@ function explode(geojson) {
 module.exports = explode;
 module.exports.default = explode;
 
-},{"@turf/helpers":4,"@turf/meta":7}],4:[function(require,module,exports){
+},{"@turf/helpers":5,"@turf/meta":8}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -1481,7 +1800,7 @@ exports.radiansToDistance = radiansToDistance;
 exports.bearingToAngle = bearingToAngle;
 exports.convertDistance = convertDistance;
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
@@ -2216,7 +2535,7 @@ function convertDistance() {
 }
 exports.convertDistance = convertDistance;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var helpers_1 = require("@turf/helpers");
@@ -2429,7 +2748,7 @@ function getType(geojson, name) {
 }
 exports.getType = getType;
 
-},{"@turf/helpers":5}],7:[function(require,module,exports){
+},{"@turf/helpers":6}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -3556,9 +3875,9 @@ exports.lineReduce = lineReduce;
 exports.findSegment = findSegment;
 exports.findPoint = findPoint;
 
-},{"@turf/helpers":8}],8:[function(require,module,exports){
-arguments[4][4][0].apply(exports,arguments)
-},{"dup":4}],9:[function(require,module,exports){
+},{"@turf/helpers":9}],9:[function(require,module,exports){
+arguments[4][5][0].apply(exports,arguments)
+},{"dup":5}],10:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -3686,7 +4005,7 @@ function compactGraph(vertices, vertexCoords, edgeData, options) {
     }, {graph: {}, coordinates: {}, reducedEdges: {}});
 };
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 var Queue = require('tinyqueue');
 
 module.exports = function(graph, start, end) {
@@ -3717,7 +4036,7 @@ module.exports = function(graph, start, end) {
 
     return null;
 }
-},{"tinyqueue":15}],11:[function(require,module,exports){
+},{"tinyqueue":16}],12:[function(require,module,exports){
 'use strict';
 
 var findPath = require('./dijkstra'),
@@ -3844,7 +4163,7 @@ PathFinder.prototype = {
     }
 };
 
-},{"./compactor":9,"./dijkstra":10,"./preprocessor":12,"./round-coord":13}],12:[function(require,module,exports){
+},{"./compactor":10,"./dijkstra":11,"./preprocessor":13,"./round-coord":14}],13:[function(require,module,exports){
 'use strict';
 
 var topology = require('./topology'),
@@ -3924,7 +4243,7 @@ module.exports = function preprocess(graph, options) {
     };
 };
 
-},{"./compactor":9,"./round-coord":13,"./topology":14,"@turf/distance":2,"turf-point":17}],13:[function(require,module,exports){
+},{"./compactor":10,"./round-coord":14,"./topology":15,"@turf/distance":3,"turf-point":18}],14:[function(require,module,exports){
 module.exports = function roundCoord(c, precision) {
     return [
         Math.round(c[0] / precision) * precision,
@@ -3932,7 +4251,7 @@ module.exports = function roundCoord(c, precision) {
     ];
 };
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 var explode = require('@turf/explode'),
@@ -4007,7 +4326,7 @@ function topology(geojson, options) {
     };
 }
 
-},{"./round-coord":13,"@turf/explode":3}],15:[function(require,module,exports){
+},{"./round-coord":14,"@turf/explode":4}],16:[function(require,module,exports){
 (function (global, factory) {
 typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 typeof define === 'function' && define.amd ? define(factory) :
@@ -4102,7 +4421,7 @@ return TinyQueue;
 
 }));
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /**
  * Takes one or more {@link Feature|Features} and creates a {@link FeatureCollection}
  *
@@ -4128,7 +4447,7 @@ module.exports = function(features){
   };
 };
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /**
  * Takes coordinates and properties (optional) and returns a new {@link Point} feature.
  *
@@ -4160,4 +4479,4 @@ module.exports = function(coordinates, properties) {
   };
 };
 
-},{}]},{},[1]);
+},{}]},{},[2]);

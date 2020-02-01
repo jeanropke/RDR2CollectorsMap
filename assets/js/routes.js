@@ -296,7 +296,7 @@ var Routes = {
 
     // Use path finder when enabled
     if (Routes.usePathfinder) {
-      PathFinder.routegenStart(last, newMarkers, Routes.allowFasttravel, Routes.allowRailroad)
+      PathFinder.routegenStart(last, newMarkers, Routes.allowFasttravel ? 0.9 : Infinity, Routes.allowRailroad ? 1.1 : Infinity)
       return
     }
 
