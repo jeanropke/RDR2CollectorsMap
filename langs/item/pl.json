@@ -81,8 +81,8 @@
 	{"key": "cups_five.name", "value": "Piątka kielichów"},
 	{"key": "cups_five_1.desc", "value": "Na stole obok wagi."},
 	{"key": "cups_five_2.desc", "value": "Wewnątrz podniszczonej chaty od strony wschodniej. Na stercie skrzyń."},
-	{"key": "cups_five_3.desc", "value": "Na dachu teatru po stronie restauracji"},
-	{"key": "cups_five_4.desc", "value": "Na skrzyni w połowie długości kopalni"},
+	{"key": "cups_five_3.desc", "value": "Na dachu teatru po stronie restauracji."},
+	{"key": "cups_five_4.desc", "value": "Na skrzyni w połowie długości kopalni."},
 	{"key": "cups_five_5.desc", "value": "Na ławce po południowo-wschodniej stronie budynku. W górnej części \"T\"."},
 	{"key": "cups_five_6.desc", "value": "Na lewo od drzwi, wewnątrz budynku."},
 
@@ -128,9 +128,9 @@
 	
 	{"key": "cups_knight.name", "value": "Rycerz kielichów"},
 	{"key": "cups_knight_1.desc", "value": "Po wschodniej stronie chaty."},
-	{"key": "cups_knight_2.desc", "value": "Na stole w tyle pod zadaszeniem."},
+	{"key": "cups_knight_2.desc", "value": "Na stole w tyle pod zadaszeniem"},
 	{"key": "cups_knight_3.desc", "value": "Na skrzyni w stodole pod zadaszeniem."},
-	{"key": "cups_knight_4.desc", "value": "Na pudełku obok wizącego prześcieradła"},
+	{"key": "cups_knight_4.desc", "value": "Na pudełku obok wizącego prześcieradła."},
 	{"key": "cups_knight_5.desc", "value": "Na kominku."},
 	{"key": "cups_knight_6.desc", "value": "W zachodniej sypialni z tyłu na pierwszym piętrze, na skrzyni."},
 	
@@ -241,7 +241,7 @@
 	{"key": "swords_knight.name", "value": "Rycerz mieczy"},
 	{"key": "swords_knight_1.desc", "value": "Na górze/dachu budynku."},
 	{"key": "swords_knight_2.desc", "value": "Na górnym piętrze tarasu. Na stoliku przy oknie."},
-	{"key": "swords_knight_3.desc", "value": "Wewnątrz łodzi"},
+	{"key": "swords_knight_3.desc", "value": "Wewnątrz łodzi."},
 	{"key": "swords_knight_4.desc", "value": "Na stole w szałasie."},
 	{"key": "swords_knight_5.desc", "value": "Na beczce na drugim piętrze balkonu stacji."},
 	{"key": "swords_knight_6.desc", "value": "Na palenisku pod daszkiem stodoły."},
@@ -288,7 +288,7 @@
 	
 	{"key": "wands_three.name", "value": "Trójka buław"},
 	{"key": "wands_three_1.desc", "value": "Na zewnątrz po lewej stronie komina."},
-	{"key": "wands_three_2.desc", "value": "W tyle cmentarza na grobie \"Samanthy Worth\""},
+	{"key": "wands_three_2.desc", "value": "W tyle cmentarza na grobie \"Samanthy Worth\"."},
 	{"key": "wands_three_3.desc", "value": "Na końcu molo."},
 	{"key": "wands_three_4.desc", "value": "Za domem (od strony północnej), na drewnianych skrzyniach."},
 	{"key": "wands_three_5.desc", "value": "Na parterze, na półce w pokoju we wschodnim rogu budynku."},
@@ -313,7 +313,7 @@
 	{"key": "wands_six.name", "value": "Szóstka buław"},
 	{"key": "wands_six_1.desc", "value": "Na zewnątrz na skrzyni."},
 	{"key": "wands_six_2.desc", "value": "W budynku na półce po prawej od kominka."},
-	{"key": "wands_six_3.desc", "value": "Na półce w pomieszczeniu z tyłu"},
+	{"key": "wands_six_3.desc", "value": "Na półce w pomieszczeniu z tyłu."},
 	{"key": "wands_six_4.desc", "value": "Parter, pokój 1A, na kominku."},
 	{"key": "wands_six_5.desc", "value": "Po północnej stronie dużej altany."},
 	{"key": "wands_six_6.desc", "value": "Na skrzyni przy torze dla wózków."},
@@ -328,7 +328,7 @@
 
 	{"key": "wands_eight.name", "value": "Ósemka buław"},
 	{"key": "wands_eight_1.desc", "value": "Na półce po płd. stronie saloonu."},
-	{"key": "wands_eight_2.desc", "value": "Na beczce na górnym piętrze stodoły"},
+	{"key": "wands_eight_2.desc", "value": "Na beczce na górnym piętrze stodoły."},
 	{"key": "wands_eight_3.desc", "value": "W szerokim domu. Po wejściu głównymi drzwiami (od drogi) od razu na prawo na regale z książkami."},
 	{"key": "wands_eight_4.desc", "value": "Na deskach przy stacji kolejowej."},
 	{"key": "wands_eight_5.desc", "value": "Na kilku skrzyniach obok budy."},
@@ -407,7 +407,7 @@
 	{"key": "pentacles_three_6.desc", "value": "Na półce bezpośrednio po lewej stronie drzwi."},
 
 	{"key": "pentacles_four.name", "value": "Czwórka monet"},
-	{"key": "pentacles_four_1.desc", "value": "Na studni. Uwaga na niedźwiedzie!"},
+	{"key": "pentacles_four_1.desc", "value": "Na studni. Uwaga na niedźwiedzie."},
 	{"key": "pentacles_four_2.desc", "value": "W piwnicy, wejście przez zniszczony dom. (Patrzysz w kierunku karty schodząc po drabinie)."},
 	{"key": "pentacles_four_3.desc", "value": "Na kamiennej ławce."},
 	{"key": "pentacles_four_4.desc", "value": "Wewnątrz domu, na parapecie po prawej stronie."},
@@ -482,7 +482,7 @@
 	{"key": "pentacles_queen_1.desc", "value": "W więzieniu na ławce między celami."},
 	{"key": "pentacles_queen_2.desc", "value": "W środku na małym stole przy wejściu. Uwaga na pumy!"},
 	{"key": "pentacles_queen_3.desc", "value": "W spalonym budynku na ognisku."},
-	{"key": "pentacles_queen_4.desc", "value": "Na deskach na rusztowaniu"},
+	{"key": "pentacles_queen_4.desc", "value": "Na deskach na rusztowaniu."},
 	{"key": "pentacles_queen_5.desc", "value": "Wewnątrz chaty."},
 	{"key": "pentacles_queen_6.desc", "value": "Na balustradzie drugiego piętra platformy na placu budowy. Wejdź po drewnianym płocie."},
 
@@ -922,7 +922,7 @@
 	{"key": "ring_pilgrim_moonstone_1.desc", "value": "Po wschodniej stronie domu."},
 	{"key": "ring_pilgrim_moonstone_2.desc", "value": "W domu, wejdź po drzewie do środka. Uwaga na wilki."},
 	{"key": "ring_pilgrim_moonstone_3.desc", "value": "W kraterze, obok meteorytu na środku."},
-	{"key": "ring_pilgrim_moonstone_4.desc", "value": "Pod zwisem."},
+	{"key": "ring_pilgrim_moonstone_4.desc", "value": "Pod zwisem skalnym."},
 	{"key": "ring_pilgrim_moonstone_5.desc", "value": "Obok wyrwanego drzewa."},
 	{"key": "ring_pilgrim_moonstone_6.desc", "value": "Na półce w budzie."},
 	
@@ -964,7 +964,7 @@
 	{"key": "ring_aubrey_onyx_3.desc", "value": "Na wysypisku śmieci. W pobliżu zepsutych kół wozu."},
 	{"key": "ring_aubrey_onyx_4.desc", "value": "Obok dużej skały z krzakiem i powalonym drzewem."},
 	{"key": "ring_aubrey_onyx_5.desc", "value": "U podstawy drzewa."},
-	{"key": "ring_aubrey_onyx_6.desc", "value": "W kominie"},
+	{"key": "ring_aubrey_onyx_6.desc", "value": "W kominie."},
 	
 	{"key": "ring_bosque_emerald.name", "value": "Pierścionek ze szmaragdem Bosque"},
 	{"key": "ring_bosque_emerald_1.desc", "value": "Między krzakami na małym placu."},
@@ -1080,7 +1080,7 @@
 	
 	{"key": "earring_calumet_turquoise.name", "value": "Turkusowe kolczyki Calumet"},
 	{"key": "earring_calumet_turquoise_1.desc", "value": "Na brzegu przy drzewie."},
-	{"key": "earring_calumet_turquoise_2.desc", "value": "Po prawej stronie grobu \"Dorothy Hewitt\""},
+	{"key": "earring_calumet_turquoise_2.desc", "value": "Po prawej stronie grobu \"Dorothy Hewitt\"."},
 	{"key": "earring_calumet_turquoise_3.desc", "value": "Pod oknem domu, obok beczki z czerwoną pokrywą."},
 	{"key": "earring_calumet_turquoise_4.desc", "value": "Wewnątrz martwego drzewa przy skale."},
 	{"key": "earring_calumet_turquoise_5.desc", "value": "Pod markizą."},
@@ -1115,7 +1115,7 @@
 	{"key": "earring_duchess_emerald_2.desc", "value": "W skrytce przy wejściu wśród skał przy rzece."},
 	{"key": "earring_duchess_emerald_3.desc", "value": "Przy kilku skałach i małym drzewie."},
 	{"key": "earring_duchess_emerald_4.desc", "value": "Przy drzewie ze skałą na płn-zach od jego pnia."},
-	{"key": "earring_duchess_emerald_5.desc", "value": "Nie można podnieść tego przedmiotu"},
+	{"key": "earring_duchess_emerald_5.desc", "value": "Nie można podnieść tego przedmiotu."},
 	{"key": "earring_duchess_emerald_6.desc", "value": "Pomiędzy pniem a dużym drzewem."},
 
 	{"key": "earring_beauchene_ruby.name", "value": "Rubinowe kolczyki Beauchéne"},
@@ -1236,22 +1236,35 @@
 	
 	{"key": "random_item.name", "value": "Losowy przedmiot"},
 	{"key": "random_item.desc", "value": "Losowy przedmiot resetuje się co 24 godziny o 00:00 UTC (01:00 w nocy) czasu rzeczywistego."},
+	
 	{"key": "tree_map.name", "value": "Mapa skarbów przyczepiona do drzewa (zdarzenie)"},
 	{"key": "tree_map.desc", "value": "Mapy na drzewie są przypadkowymi zdarzeniami. Pojawiają się na drzewach głównie w nocy. Wypatruj światła latarni."},
+	
 	{"key": "treasure_hunter.name", "value": "Łowca skarbów (zdarzenie)"},
 	{"key": "treasure_hunter.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje. Możesz zaatakować Łowcę Skarbów i ograbić go, aby uzyskać mapę skarbów."},
+	
 	{"key": "egg_encounter.name", "value": "Gniazdo ptasich jaj (zdarzenie)"},
 	{"key": "egg_encounter.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje. Musisz dotrzeć do gniazda jaj, zanim drapieżnik zje jaja."},
+	
 	{"key": "grave_robber.name", "value": "Hiena cmentarna (zdarzenie)"},
 	{"key": "grave_robber.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje. Podejdź do grabieżcy aby aktywować misję. Masz ograniczony czas by przeszukać (maksymalnie) 7 miejsc i znaleźć przedmiot kolekcjonerski, zanim przyjdzie stróż prawa."},
+	
 	{"key": "condor_egg.name", "value": "Jajo kondora (zdarzenie)"},
 	{"key": "condor_egg.desc", "value": "To jest wydarzenie trybu swobodnego. Zaproszenie do gry poinformuje o jego starcie. Skieruj się do jaja kondora i podnieś je, aby zdobyć przedmiot o wartości 1000 $"},
+	
 	{"key": "dog_encounter.name", "value": "Spotkanie z psem (zdarzenie)"},
 	{"key": "dog_encounter.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje."},
+	
 	{"key": "wounded_animal.name", "value": "Zranione zwierze (zdarzenie)"},
 	{"key": "wounded_animal.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje."},
-	{"key": "weekly.desc", "value": "Ten przedmiot jest częścią kolekcji {collection}."},
 	
+	{"key": "moonshiner_camp.name","value":"Obóz bimbrowniczy (zdarzenie)"},
+    {"key": "moonshiner_camp.desc","value":"To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje. Zabij bimbrowników i przeszukaj obóz, aby znaleźć kolekcjonerskie alkohole lub przepis na bimber."},
+
+    {"key": "rival_collector.name","value":"Konkurencyjny kolekcjoner"},
+    {"key": "rival_collector.desc","value":"To jest Przypadkowe zdarzenie. Konkurencyjny kolekcjoner z niecodziennie wyglądającymi ubraniami i torbami kolekcjonera. Zabij go i ograb zwłoki, aby dostać przedmiot/y kolekcjonerski/e."},
+
+	{"key": "weekly.desc", "value": "Ten przedmiot jest częścią kolekcji {collection}."},
 	{"key": "weekly.desc.sacred_set", "value": "Sacred"},
 	{"key": "weekly.desc.veteran_set", "value": "Veteran's"},
 	{"key": "weekly.desc.herbalist_set", "value": "Herbalists"},
@@ -1260,7 +1273,7 @@
 	{"key": "weekly.desc.gambler_set", "value": "Gambler's Choice"},
 	{"key": "weekly.desc.naturalist_set", "value": "Naturalists"},
 	{"key": "weekly.desc.poacher_set", "value": "Poachers"},
-	{"key": "weekly.desc.hunter_set", "value": "Hunter's"},
+	{"key": "weekly.desc.hunter_set", "value": "Łowcy"},
 	{"key": "weekly.desc.precious_stones_set", "value": "Precious Stones"},
 	{"key": "weekly.desc.hairdresser_set", "value": "Hairdresser's"},
 	{"key": "weekly.desc.whiskey_set", "value": "Whiskey"},
@@ -1269,7 +1282,7 @@
 	{"key": "weekly.desc.gentleman_set", "value": "Gentleman's Effects"},
 	{"key": "weekly.desc.belle_set", "value": "Braithwaite Belle"},
 	{"key": "weekly.desc.looter_set", "value": "Looter's Lot"},
-	{"key": "weekly.desc.ancient_tools_set", "value": "Ancient Tools"},
+	{"key": "weekly.desc.ancient_tools_set", "value": "Starożytne narzędzia"},
 	{"key": "weekly.desc.exotics_set", "value": "Exotics"},
 	{"key": "weekly.desc.1800_coins_set", "value": "1800's Coin"},
 	{"key": "weekly.desc.warrior_tokens_set", "value": "Warrior's Tokens"},
@@ -1282,10 +1295,10 @@
 	{"key": "weekly.desc.witch_hunt_set", "value": "Witch Hunt"},
 	{"key": "weekly.desc.night_watch_set", "value": "Night Watch"},
 	{"key": "weekly.desc.foundation_set", "value": "Foundation"},
-	{"key": "weekly.desc.jeweler_set", "value": "Semi Precious Stones"},
-	{"key": "weekly.desc.penny_set", "value": "Kolekcja pensów"},
+	{"key": "weekly.desc.jeweler_set", "value": "Kamieni półszlachetnych"},
+	{"key": "weekly.desc.penny_set", "value": "Pensów"},
 	{"key": "weekly.desc.festive_feast_set", "value": "Festive Feast"},
-	{"key": "weekly.desc.new_year_set", "value": "New Year"},
-	{"key": "weekly.desc.lovers_set", "value": "Lovers"},
+	{"key": "weekly.desc.new_year_set", "value": "Nowego roku"},
+	{"key": "weekly.desc.lovers_set", "value": "Zakochanych"},
 	{"key": "weekly.desc.egg_hunt_set", "value": "Egg Hunt"}
 ]
