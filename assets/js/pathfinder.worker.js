@@ -290,6 +290,8 @@ if(typeof(window) !== 'undefined') {
 
 			this.currentPath = 0
 			this._paths = []
+
+			this._openItem = ''
 		}
 
 		onAdd() {
@@ -301,15 +303,15 @@ if(typeof(window) !== 'undefined') {
 			
 			this._beforeButton.innerHTML = '&lt;<small>j</small>'
 			this._beforeButton.setAttribute('disabled', true)
-			L.DomEvent.on(this._beforeButton, 'click', () => { this.selectPath(-1) })
+			L.DomEvent.on(this._beforeButton, 'mouseup', () => { this.selectPath(-1) })
 
 			this._currentButton.style.fontWeight =  'bold'
 			this._currentButton.innerHTML = '0 / 0 <small>k</small>'
-			L.DomEvent.on(this._currentButton, 'click', () => { this.selectPath(0) })
+			L.DomEvent.on(this._currentButton, 'mouseup', () => { this.selectPath(0) })
 
 			this._afterButton.innerHTML = '&gt;<small>l</small>'
 			this._afterButton.setAttribute('disabled', true)
-			L.DomEvent.on(this._afterButton, 'click', () => { this.selectPath(1) })
+			L.DomEvent.on(this._afterButton, 'mouseup', () => { this.selectPath(1) })
 
 			const self = this
 			this.onKeyPress = (e) => {
@@ -358,7 +360,19 @@ if(typeof(window) !== 'undefined') {
 			if(newindex >= 1 && newindex <= this._paths.length) {
 				this.currentPath = newindex
 				this.updateButtons()
-				PathFinder.highlightPath(this._paths[(this.currentPath-1)])
+
+				var hlpath = this._paths[(this.currentPath-1)]
+				var lastpoint = hlpath[hlpath.length-1]
+				PathFinder.highlightPath(hlpath)
+
+				var goTo = MapBase.markers.filter(_m => _m.lng == lastpoint[1] && _m.lat == lastpoint[0]);
+				if(goTo.length > 0) {
+					this._openItem = goTo[0].text
+					// Wait for the camera to move
+					setTimeout(() => {
+						Layers.itemMarkersLayer.getLayerById(this._openItem).openPopup();
+					}, 300)
+				}
 			}
 		}
 
@@ -436,9 +450,8 @@ class PathFinder {
 				var dx = a[0] - b[0];
 				var dy = a[1] - b[1];
 				var r = Math.sqrt(dx * dx + dy * dy);
-				console.log(props)
 				if(typeof(props.type) === 'string' && props.type == 'railroad') r = r * railroadWeight
-				else if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * fastTravelWeight
+				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * fastTravelWeight
 				return r
 			}
 		})
@@ -515,7 +528,7 @@ class PathFinder {
 			var line = PathFinder.drawPath(path, '#000000', 9, 0.5, PathFinder._currentPath)
 			PathFinder.drawPath(path, '#ffffff', 7, 1, PathFinder._currentPath)
 			PathFinder.drawPath(path, '#00bb00', 3, 1, PathFinder._currentPath)
-			MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
+			MapBase.map.fitBounds(line.getBounds(), { padding: [100, 100], maxZoom: 7 })
 		})
 	}
 
@@ -708,6 +721,12 @@ class PathFinder {
 		}
 		
 		return shortest
+	}
+
+	static wasRemovedFromMap(marker) {
+		if(PathFinder._layerControl._openItem == marker.text) {
+			PathFinder._layerControl.selectPath(1)
+		}
 	}
 
 	/**
