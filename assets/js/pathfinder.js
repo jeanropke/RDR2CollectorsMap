@@ -36,21 +36,93 @@ async function loadAllGeoJson() {
 	completeGeoJson.features = completeGeoJson.features.concat(newHanover.features)
 	completeGeoJson.features = completeGeoJson.features.concat(westElizabeth.features)
 
+	completeGeoJson.features = completeGeoJson.features.concat(fasttravel.features)
+	completeGeoJson.features = completeGeoJson.features.concat(railroads.features)
+
 	PathFinder._geoJson = completeGeoJson
-	var completeGeoJsonFT = Object.assign({}, completeGeoJson)
-	completeGeoJsonFT.features = completeGeoJson.features.concat(fasttravel.features)
-	PathFinder._geoJsonFT = completeGeoJsonFT
-
-	var completeGeoJsonRR = Object.assign({}, completeGeoJson)
-	completeGeoJsonRR.features = completeGeoJson.features.concat(railroads.features)
-	PathFinder._geoJsonRR = completeGeoJsonRR
-
-	var completeGeoJsonFTRR = Object.assign({}, completeGeoJson)
-	completeGeoJsonFTRR.features = completeGeoJson.features.concat(fasttravel.features)
-	completeGeoJsonFTRR.features = completeGeoJsonFTRR.features.concat(railroads.features)
-	PathFinder._geoJsonFTRR = completeGeoJsonFTRR
 }
 
+
+class WorkerLatLng {
+	constructor(lat, lng) {
+		this.lat = parseFloat(lat)
+		this.lng = parseFloat(lng)
+	}
+}
+
+class WorkerLatLngBounds {
+
+		constructor(pointA, pointB) {
+			pointA.lat = parseFloat(pointA.lat)
+			pointB.lat = parseFloat(pointB.lat)
+			pointA.lng = parseFloat(pointA.lng)
+			pointB.lng = parseFloat(pointB.lng)
+
+			this.pointA = pointA
+			this.pointB = pointB
+
+			this.southEast = L.latLng(
+				(pointA.lat < pointB.lat ? pointA.lat : pointB.lat),
+				(pointA.lng < pointB.lng ? pointA.lng : pointB.lng)
+			)
+			this.northWest = L.latLng(
+				(pointA.lat > pointB.lat ? pointA.lat : pointB.lat),
+				(pointA.lng > pointB.lng ? pointA.lng : pointB.lng)
+			)
+		}
+
+		getCenter() {
+			return L.latLng(
+				this.southEast.lat + ((this.northWest.lat - this.southEast.lat) / 2),
+				this.southEast.lng + ((this.northWest.lng - this.southEast.lng) / 2)
+			)
+		}
+
+		contains(latLng) {
+			return (
+				latLng.lat >= this.southEast.lat && latLng.lat <= this.northWest.lat &&
+				latLng.lng >= this.southEast.lng && latLng.lng <= this.northWest.lng
+			)
+		}
+
+}
+
+
+class WorkerL {
+
+	static latLngBounds(pointA, pointB) {
+		if(Array.isArray(pointA)) {
+			if(Array.isArray(pointA[0])) {
+				pointB = pointA[0]
+				pointA = pointA[1]
+			}
+			pointA = new WorkerLatLng(pointA[0], pointA[1])
+		}
+		if(Array.isArray(pointB)) {
+			pointB = new WorkerLatLng(pointB[0], pointB[1])
+		}
+		return new WorkerLatLngBounds(pointA, pointB)
+	}
+
+	static latLng(lat, lng) {
+		if(Array.isArray(lat)) {
+			lng = lat[1]
+			lat = lat[0]
+		}
+		return new WorkerLatLng(lat, lng)
+	}
+
+	static distance(pointA, pointB) {
+		var dx = pointB.lng - pointA.lng,
+			dy = pointB.lat - pointA.lat;
+
+		return Math.sqrt(dx * dx + dy * dy);
+	}
+
+}
+const L = (typeof(window) === 'undefined' ? WorkerL : window.L)
+
+const reqAnimFrame = (typeof(window) === 'undefined' ? function(cb) { cb() } : window.requestAnimationFrame)
 
 /**
  * Helping class to hold markers, that are nearby
@@ -91,7 +163,7 @@ class Chunk {
 	 */
 	_canAdd(marker) {
 		if(this.bounds == null) return true
-		var d = MapBase.map.distance(marker, this.bounds.getCenter())
+		var d = WorkerL.distance(marker, this.bounds.getCenter())
 		return d < 10
 	}
 
@@ -201,94 +273,112 @@ class Chunk {
 
 }
 
-/**
- * Leaflet control class for the path finder
- */
-class RouteControl extends L.Control {
+if(typeof(window) !== 'undefined') {
+	/**
+	 * Leaflet control class for the path finder
+	 */
+	class RouteControl extends L.Control {
 
-	constructor() {
-		super({ position: 'topright' })
+		constructor() {
+			super({ position: 'topright' })
 
-		this._element = null
+			this._element = null
 
-		this._beforeButton = null
-		this._currentButton = null
-		this._afterButton = null
+			this._beforeButton = null
+			this._currentButton = null
+			this._afterButton = null
 
-		this.currentPath = 0
-		this._paths = []
-	}
+			this.currentPath = 0
+			this._paths = []
 
-	onAdd() {
-		this._element = L.DomUtil.create('div', 'leaflet-bar pathfinder-control');
+			this._openItem = ''
+		}
 
-		this._beforeButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-before', this._element);
-		this._currentButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-current', this._element);
-		this._afterButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-after', this._element);
-		
-		this._beforeButton.innerHTML = '&lt;<small>j</small>'
-		this._beforeButton.setAttribute('disabled', true)
-		L.DomEvent.on(this._beforeButton, 'click', () => { this.selectPath(-1) })
+		onAdd() {
+			this._element = L.DomUtil.create('div', 'leaflet-bar pathfinder-control');
 
-		this._currentButton.style.fontWeight =  'bold'
-		this._currentButton.innerHTML = '0 / 0 <small>k</small>'
-		L.DomEvent.on(this._currentButton, 'click', () => { this.selectPath(0) })
+			this._beforeButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-before', this._element);
+			this._currentButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-current', this._element);
+			this._afterButton = L.DomUtil.create('button', 'pathfinder-btn pathfinder-btn-after', this._element);
+			
+			this._beforeButton.innerHTML = '&lt;<small>j</small>'
+			this._beforeButton.setAttribute('disabled', true)
+			L.DomEvent.on(this._beforeButton, 'mouseup', () => { this.selectPath(-1) })
 
-		this._afterButton.innerHTML = '&gt;<small>l</small>'
-		this._afterButton.setAttribute('disabled', true)
-		L.DomEvent.on(this._afterButton, 'click', () => { this.selectPath(1) })
+			this._currentButton.style.fontWeight =  'bold'
+			this._currentButton.innerHTML = '0 / 0 <small>k</small>'
+			L.DomEvent.on(this._currentButton, 'mouseup', () => { this.selectPath(0) })
 
-		const self = this
-		this.onKeyPress = (e) => {
-			// press on J
-			if(e.originalEvent.keyCode == 74) {
-				self.selectPath(-1)
-				
-			// press on K
-			} else if(e.originalEvent.keyCode == 75) {
-				self.selectPath(0)
-				
-			// press on L
-			} else if(e.originalEvent.keyCode == 76) {
-				self.selectPath(1)
+			this._afterButton.innerHTML = '&gt;<small>l</small>'
+			this._afterButton.setAttribute('disabled', true)
+			L.DomEvent.on(this._afterButton, 'mouseup', () => { this.selectPath(1) })
+
+			const self = this
+			this.onKeyPress = (e) => {
+				// press on J
+				if(e.originalEvent.keyCode == 74) {
+					self.selectPath(-1)
+					
+				// press on K
+				} else if(e.originalEvent.keyCode == 75) {
+					self.selectPath(0)
+					
+				// press on L
+				} else if(e.originalEvent.keyCode == 76) {
+					self.selectPath(1)
+				}
+			}
+			MapBase.map.on('keydown', this.onKeyPress)
+
+			return this._element;
+		}
+
+		onRemove() {
+			delete this._element;
+			MapBase.map.off('keydown', this.onKeyPress)
+		}
+
+		addPath(path) {
+			this._paths.push(path)
+			this.updateButtons()
+		}
+
+		updateButtons() {
+			this._currentButton.innerHTML = this.currentPath + ' / ' + this._paths.length + ' <small>k</small>'
+
+			if(this.currentPath == 1) this._beforeButton.setAttribute('disabled', true)
+			else this._beforeButton.removeAttribute('disabled', false)
+
+			if(this.currentPath == this._paths.length) this._afterButton.setAttribute('disabled', true)
+			else this._afterButton.removeAttribute('disabled', false)
+		}
+
+		selectPath(offset, absolute) {
+			if(typeof(absolute) !== 'boolean') absolute = false
+			var newindex = offset
+			if(!absolute) newindex = this.currentPath + offset
+			if(newindex >= 1 && newindex <= this._paths.length) {
+				this.currentPath = newindex
+				this.updateButtons()
+
+				var hlpath = this._paths[(this.currentPath-1)]
+				var lastpoint = hlpath[hlpath.length-1]
+				PathFinder.highlightPath(hlpath)
+
+				var goTo = MapBase.markers.filter(_m => _m.lng == lastpoint[1] && _m.lat == lastpoint[0]);
+				if(goTo.length > 0) {
+					this._openItem = goTo[0].text
+					// Wait for the camera to move
+					setTimeout(() => {
+						Layers.itemMarkersLayer.getLayerById(this._openItem).openPopup();
+					}, 300)
+				}
 			}
 		}
-		MapBase.map.on('keydown', this.onKeyPress)
 
-		return this._element;
 	}
 
-	onRemove() {
-		delete this._element;
-		MapBase.map.off('keydown', this.onKeyPress)
-	}
-
-	addPath(path) {
-		this._paths.push(path)
-		this.updateButtons()
-	}
-
-	updateButtons() {
-		this._currentButton.innerHTML = this.currentPath + ' / ' + this._paths.length + ' <small>k</small>'
-
-		if(this.currentPath == 1) this._beforeButton.setAttribute('disabled', true)
-		else this._beforeButton.removeAttribute('disabled', false)
-
-		if(this.currentPath == this._paths.length) this._afterButton.setAttribute('disabled', true)
-		else this._afterButton.removeAttribute('disabled', false)
-	}
-
-	selectPath(offset, absolute) {
-		if(typeof(absolute) !== 'boolean') absolute = false
-		var newindex = offset
-		if(!absolute) newindex = this.currentPath + offset
-		if(newindex >= 1 && newindex <= this._paths.length) {
-			this.currentPath = newindex
-			this.updateButtons()
-			PathFinder.highlightPath(this._paths[(this.currentPath-1)])
-		}
-	}
-
+	window.RouteControl = RouteControl
 }
 
 /**
@@ -310,21 +400,18 @@ class PathFinder {
 		PathFinder._currentPath = null
 		PathFinder._running = false
 		PathFinder._geoJson = null
-		PathFinder._geoJsonFT = null
-		PathFinder._geoJsonRR = null
-		PathFinder._geoJsonFTRR = null
 		PathFinder._nodeCache = {}
 		PathFinder._cancel = false
-		PathFinder._pathfinderFT = false
-		PathFinder._pathfinderRR = false
 		PathFinder._pathfinderFTWeight = 0.9
 		PathFinder._pathfinderRRWeight = 1.1
 		PathFinder._worker = null
 		PathFinder._drawing = false
 		PathFinder._redrawWhenFinished = false
 
-		// Load geojson
-		loadAllGeoJson()
+		if(typeof($) !== 'undefined') {
+			// Load geojson
+			loadAllGeoJson()
+		}
 
 		return PathFinder
 	}
@@ -345,38 +432,29 @@ class PathFinder {
 	/**
 	 * Creating the GeoJSON Path Finder object from geojson data and extracting all nodes
 	 * @static
-	 * @param {Boolean} allowFastTravel Wether or not to include fast travel nodes
-	 * @param {Boolean} allowRailroads Wether or not to include rail roades nodes
 	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
 	 * @param {Number} railroadWeight Multiplier for rail road weights
 	 */
-	static createPathFinder(allowFastTravel, allowRailroads, fastTravelWeight, railroadWeight) {
-		if(typeof(allowFastTravel) !== 'boolean') allowFastTravel = PathFinder._pathfinderFT
-		if(typeof(allowRailroads) !== 'boolean') allowRailroads = PathFinder._pathfinderRR
+	static createPathFinder(fastTravelWeight, railroadWeight) {
 		if(typeof(fastTravelWeight) !== 'number') fastTravelWeight = PathFinder._pathfinderFTWeight
 		if(typeof(railroadWeight) !== 'number') railroadWeight = PathFinder._pathfinderRRWeight
 
 		if(
 			PathFinder._PathFinder !== null &&
-			PathFinder._pathfinderFT == allowFastTravel && PathFinder._pathfinderRR == allowRailroads &&
 			PathFinder._pathfinderFTWeight == fastTravelWeight && PathFinder._pathfinderRRWeight == railroadWeight
 		) return
 
-		let gjData = allowFastTravel ? (allowRailroads ? PathFinder._geoJsonFTRR : PathFinder._geoJsonFT) : (allowRailroads ? PathFinder._geoJsonRR : PathFinder._geoJson)
-
-		PathFinder._PathFinder = new GeoJSONPathFinder(gjData, {
+		PathFinder._PathFinder = new GeoJSONPathFinder(PathFinder._geoJson, {
 			precision: 0.04,
 			weightFn: function(a, b, props) {
 				var dx = a[0] - b[0];
 				var dy = a[1] - b[1];
 				var r = Math.sqrt(dx * dx + dy * dy);
-				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * PathFinder._pathfinderFTWeight
-				if(typeof(props.type) === 'string' && props.type == 'railroad') r = r * PathFinder._pathfinderRRWeight
+				if(typeof(props.type) === 'string' && props.type == 'railroad') r = r * railroadWeight
+				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * fastTravelWeight
 				return r
 			}
 		})
-		PathFinder._pathfinderFT = allowFastTravel
-		PathFinder._pathfinderRR = allowRailroads
 		PathFinder._pathfinderFTWeight = fastTravelWeight
 		PathFinder._pathfinderRRWeight = railroadWeight
 		var _vertices = PathFinder._PathFinder._graph.vertices;
@@ -405,6 +483,7 @@ class PathFinder {
 	 * @returns {Polyline}
 	 */
 	static drawPath(path, color, weight, opacity, layer) {
+		if(typeof(MapBase) === 'undefined') return
 		if(typeof(color) === 'undefined') color = '#0000ff'
 
 		if(typeof(weight) !== 'number') weight = 5
@@ -438,6 +517,7 @@ class PathFinder {
 	 * @param {Array<[Number, Number]>} path 
 	 */
 	static highlightPath(path) {
+		if(typeof(window) === 'undefined') return
 		window.requestAnimationFrame(function(){
 			if(PathFinder._currentPath !== null) {
 				MapBase.map.removeLayer(PathFinder._currentPath)
@@ -448,7 +528,7 @@ class PathFinder {
 			var line = PathFinder.drawPath(path, '#000000', 9, 0.5, PathFinder._currentPath)
 			PathFinder.drawPath(path, '#ffffff', 7, 1, PathFinder._currentPath)
 			PathFinder.drawPath(path, '#00bb00', 3, 1, PathFinder._currentPath)
-			MapBase.map.fitBounds(line.getBounds(), { padding: [30, 30], maxZoom: 7 })
+			MapBase.map.fitBounds(line.getBounds(), { padding: [100, 100], maxZoom: 7 })
 		})
 	}
 
@@ -458,6 +538,7 @@ class PathFinder {
 	 * @param {Array<Array<[Number, Number]>>} paths 
 	 */
 	static drawRoute(paths) {
+		if(typeof(MapBase) === 'undefined') return
 		if(PathFinder._drawing) {
 			PathFinder._redrawWhenFinished = paths
 		} else {
@@ -532,7 +613,7 @@ class PathFinder {
 		})
 		var n = {distance: Number.MAX_SAFE_INTEGER, point: null}
 		for(let i = 0; i < filtered.length; i++) {
-			var distance = MapBase.map.distance(
+			var distance = WorkerL.distance(
 				pointLatLng, 
 				PathFinder.pointToLatLng(filtered[i])
 			);
@@ -601,16 +682,18 @@ class PathFinder {
 			if(PathFinder._currentChunk.isDone || availableInChunk.length <= 0) {
 				// mark this chunk as done to skip it when searching a new one
 				PathFinder._currentChunk.isDone = true
-				PathFinder._currentChunk = await (new Promise((res) => { window.requestAnimationFrame(() => {
+
+				PathFinder._currentChunk = await (new Promise((res) => { reqAnimFrame(() => {
 					res(PathFinder.findNearestChunk(start, PathFinder._currentChunk))
 				}) }))
+
 				if(PathFinder._currentChunk == null) return null
 				availableInChunk = PathFinder._currentChunk.markers.filter((m) => { return markers.includes(m) })
 			}
 	
 			for(let i = 0; i < availableInChunk.length; i++) {
 				// Request animation frame to unblock browser
-				var path = await (new Promise((res) => { window.requestAnimationFrame(() => {
+				var path = await (new Promise((res) => { reqAnimFrame(() => {
 					// Find the nearest road node to all the markers
 					var markerPoint = PathFinder.getNearestNode(availableInChunk[i])
 					if(markerPoint !== null) {
@@ -638,6 +721,12 @@ class PathFinder {
 		}
 		
 		return shortest
+	}
+
+	static wasRemovedFromMap(marker) {
+		if(PathFinder._layerControl && PathFinder._layerControl._openItem == marker.text) {
+			PathFinder._layerControl.selectPath(1)
+		}
 	}
 
 	/**
@@ -701,7 +790,7 @@ class PathFinder {
 		L.circle([sourcePoint.geometry.coordinates[1], sourcePoint.geometry.coordinates[0]], { color: '#ff0000', radius: 0.5 }).addTo(PathFinder._layerGroup)
 		for(var i = 1; i < PathFinder._points.features.length; i++) {
 			var path = await new Promise(res => {
-				window.requestAnimationFrame(function(){
+				reqAnimFrame(function(){
 					res(PathFinder._PathFinder.findPath(sourcePoint, PathFinder._points.features[i]))
 				})
 			})
@@ -716,13 +805,13 @@ class PathFinder {
 	 * @static
 	 * @param {Marker} startingMarker Where to start
 	 * @param {Array<Marker>} markers Contains markers a route should be generated for. Must contain startingMarker.
-	 * @param {Boolean} allowFastTravel Wether or not to include fast travel nodes
-	 * @param {Boolean} allowRailroads Wether or not to include rail roades nodes
 	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
 	 * @param {Number} railroadWeight Multiplier for rail road weights
+	 * @param {Boolean} [forceNoWorker=false] Forces to skip the worker (mainly used inside the worker)
 	 * @returns {Promise<Boolean>} false if geojson isn't fully loaded or route generation was canceled
 	 */
-	static async routegenStart(startingMarker, markers, allowFastTravel, allowRailroads, fastTravelWeight, railroadWeight) {
+	static async routegenStart(startingMarker, markers, fastTravelWeight, railroadWeight, forceNoWorker) {
+		
 		if(PathFinder._geoJson === null) {
 			await new Promise(async (res) => {
 				while(PathFinder._geoJson === null && PathFinder._geoJsonFT === null) {
@@ -732,6 +821,8 @@ class PathFinder {
 			})
 		}
 
+		if(typeof(forceNoWorker) !== 'boolean') forceNoWorker = false
+
 		// Clear layers and cancel if running
 		await PathFinder.routegenClear()
 
@@ -740,15 +831,17 @@ class PathFinder {
 
 		var startTime = new Date().getTime()
 
-		// Add controller and layer group to map
-		PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map)
-		PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map)
+		if(typeof(MapBase) !== 'undefined') {
+			// Add controller and layer group to map
+			PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map)
+			PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map)
+		}
 
-		if(typeof(Worker) !== 'undefined') {
+		if(!forceNoWorker && typeof(Worker) !== 'undefined') {
 			var res = await new Promise((res) => {
 				var paths = []
 				PathFinder._worker = new Worker('assets/js/pathfinder.worker.js')
-				PathFinder._worker.postMessage({ cmd: 'data', geojson: PathFinder._geoJson, geojsonFT: PathFinder._geoJsonFT, geojsonRR: PathFinder._geoJsonRR, geojsonFTRR: PathFinder._geoJsonFTRR })
+				PathFinder._worker.postMessage({ cmd: 'data', geojson: PathFinder._geoJson })
 				PathFinder._worker.addEventListener('message', function(e) {
 					var data = e.data
 					switch(data.res) {
@@ -769,13 +862,13 @@ class PathFinder {
 							break
 					}
 				})
-				PathFinder._worker.postMessage({ cmd: 'start', startingMarker: startingMarker, markers: markers, allowFastTravel: allowFastTravel, allowRailroads: allowRailroads, fastTravelWeight: fastTravelWeight, railroadWeight: railroadWeight })
+				PathFinder._worker.postMessage({ cmd: 'start', startingMarker: startingMarker, markers: markers, fastTravelWeight: fastTravelWeight, railroadWeight: railroadWeight })
 			})
 			return res
 		}
 
 		// Create GeoJSON path finder object (function will check if already created)
-		PathFinder.createPathFinder(allowFastTravel, allowRailroads, fastTravelWeight, railroadWeight)
+		PathFinder.createPathFinder(fastTravelWeight, railroadWeight)
 
 		// Generate Chunks
 		PathFinder.generateChunks(markers)
@@ -799,10 +892,14 @@ class PathFinder {
 				markers = markers.filter((m) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
 				last = current.marker
 		
-				// add route to controller and draw the current route
-				PathFinder._layerControl.addPath(current.path)
-				paths.push(current.path)
-				PathFinder.drawRoute(paths)
+				if(typeof(window) !== 'undefined') {
+					// add route to controller and draw the current route
+					PathFinder._layerControl.addPath(current.path)
+					paths.push(current.path)
+					PathFinder.drawRoute(paths)
+				} else {
+					self.postMessage({ res: 'route-progress', newPath: current.path, val: i, max: markersNum })
+				}
 
 				if(PathFinder._cancel) break
 			}
@@ -812,7 +909,7 @@ class PathFinder {
 		}
 	
 		var canceled = PathFinder._cancel
-		if (!canceled) window.setTimeout(function(){ PathFinder._layerControl.selectPath(1, true) }, 100)
+		if (!canceled && typeof(window) !== 'undefined') window.setTimeout(function(){ PathFinder._layerControl.selectPath(1, true) }, 100)
 
 		PathFinder._running = false
 
@@ -821,8 +918,12 @@ class PathFinder {
 
 }
 
-// Make Pathfinder publicly accessible
-window.PathFinder = PathFinder.init()
+if(typeof(window) !== 'undefined') {
+	// Make Pathfinder publicly accessible
+	window.PathFinder = PathFinder.init()
+} else {
+	module.exports = PathFinder
+}
 },{"geojson-path-finder":11,"turf-featurecollection":16,"turf-point":17}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });

@@ -18,10 +18,10 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=284" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=285" />
 
   <script>
-    var nocache = 284;
+    var nocache = 285;
   </script>
 </head>
 
@@ -591,23 +591,27 @@
           <label class="input-checkbox-label" for="generate-route-auto-update"></label>
         </div>
       </div>
-      <div class="input-container" data-help="generate_route_allow_fasttravel">
-        <label for="generate-route-allow-fasttravel" data-text="menu.generate_route_allow_fasttravel">Use fast travel in
-          path finder</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-allow-fasttravel" value="1"
-            id="generate-route-allow-fasttravel" />
-          <label class="input-checkbox-label" for="generate-route-allow-fasttravel"></label>
-        </div>
+      <div class="input-container" data-help="generate_route_fasttravel_weight">
+        <label for="generate-route-fasttravel-weight" data-text="menu.generate_route_fasttravel_weight">Fast travel
+          preference</label>
+        <select class="input-day wide-select-menu" id="generate-route-fasttravel-weight">
+          <option value="Infinity" data-text="menu.generate_route_weight.Infinity">Don't use</option>
+          <option value="1.5" data-text="menu.generate_route_weight.1.5">Very long distances</option>
+          <option value="1.1" data-text="menu.generate_route_weight.1.1">Long distances</option>
+          <option value="1" data-text="menu.generate_route_weight.1">Same as roads</option>
+        </select>
       </div>
-      <div class="input-container" data-help="generate_route_allow_railroad">
-        <label for="generate-route-allow-railroad" data-text="menu.generate_route_allow_railroad">Use rail roads in
-          path finder</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-allow-railroad" value="1"
-            id="generate-route-allow-railroad" />
-          <label class="input-checkbox-label" for="generate-route-allow-railroad"></label>
-        </div>
+      <div class="input-container" data-help="generate_route_railroad_weight">
+        <label for="generate-route-railroad-weight" data-text="menu.generate_route_railroad_weight">Railroads
+          preference</label>
+          <select class="input-day wide-select-menu" id="generate-route-railroad-weight">
+            <option value="2" data-text="menu.generate_route_weight.2">Only necessarily</option>
+            <option value="1.5" data-text="menu.generate_route_weight.1.5">Very long distances</option>
+            <option value="1.1" data-text="menu.generate_route_weight.1.1">Long distances</option>
+            <option value="1" data-text="menu.generate_route_weight.1">Same as roads</option>
+            <option value="0.9" data-text="menu.generate_route_weight.0.9">Prefer over roads</option>
+            <option value="0.5" data-text="menu.generate_route_weight.0.5">Highly prefer over roads</option>
+          </select>
       </div>
       <div class="input-container" data-help="generate_route_distance">
         <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
@@ -946,21 +950,21 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=284"></script>
-  <script src="assets/js/settings.js?nocache=284"></script>
-  <script src="assets/js/nazar.js?nocache=284"></script>
-  <script src="assets/js/cycles.js?nocache=284"></script>
-  <script src="assets/js/marker.js?nocache=284"></script>
-  <script src="assets/js/inventory.js?nocache=284"></script>
-  <script src="assets/js/treasures.js?nocache=284"></script>
-  <script src="assets/js/encounters.js?nocache=284"></script>
-  <script src="assets/js/pins.js?nocache=284"></script>
-  <script src="assets/js/map.js?nocache=284"></script>
-  <script src="assets/js/language.js?nocache=284"></script>
-  <script src="assets/js/menu.js?nocache=284"></script>
-  <script src="assets/js/routes.js?nocache=284"></script>
-  <script src="assets/js/pathfinder.js?nocache=284"></script>
-  <script src="assets/js/scripts.js?nocache=284"></script>
+  <script src="assets/js/layers.js?nocache=285"></script>
+  <script src="assets/js/settings.js?nocache=285"></script>
+  <script src="assets/js/nazar.js?nocache=285"></script>
+  <script src="assets/js/cycles.js?nocache=285"></script>
+  <script src="assets/js/marker.js?nocache=285"></script>
+  <script src="assets/js/inventory.js?nocache=285"></script>
+  <script src="assets/js/treasures.js?nocache=285"></script>
+  <script src="assets/js/encounters.js?nocache=285"></script>
+  <script src="assets/js/pins.js?nocache=285"></script>
+  <script src="assets/js/map.js?nocache=285"></script>
+  <script src="assets/js/language.js?nocache=285"></script>
+  <script src="assets/js/menu.js?nocache=285"></script>
+  <script src="assets/js/routes.js?nocache=285"></script>
+  <script src="assets/js/pathfinder.js?nocache=285"></script>
+  <script src="assets/js/scripts.js?nocache=285"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
