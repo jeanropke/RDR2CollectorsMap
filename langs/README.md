@@ -34,6 +34,7 @@ korean (ko.json)
   - pb29
   
 polish (pl.json)
+  - Michal__d
   - githb123
   - yeradd12
   
