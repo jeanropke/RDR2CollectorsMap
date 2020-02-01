@@ -591,23 +591,27 @@
           <label class="input-checkbox-label" for="generate-route-auto-update"></label>
         </div>
       </div>
-      <div class="input-container" data-help="generate_route_allow_fasttravel">
-        <label for="generate-route-allow-fasttravel" data-text="menu.generate_route_allow_fasttravel">Use fast travel in
-          path finder</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-allow-fasttravel" value="1"
-            id="generate-route-allow-fasttravel" />
-          <label class="input-checkbox-label" for="generate-route-allow-fasttravel"></label>
-        </div>
+      <div class="input-container" data-help="generate_route_fasttravel_weight">
+        <label for="generate-route-fasttravel-weight" data-text="menu.generate_route_fasttravel_weight">Fast travel
+          preference</label>
+        <select class="input-day wide-select-menu" id="generate-route-fasttravel-weight">
+          <option value="Infinity" data-text="menu.generate_route_weight.Infinity">Don't use</option>
+          <option value="1.5" data-text="menu.generate_route_weight.1.5">Very long distances</option>
+          <option value="1.1" data-text="menu.generate_route_weight.1.1">Long distances</option>
+          <option value="1" data-text="menu.generate_route_weight.1">Same as roads</option>
+        </select>
       </div>
-      <div class="input-container" data-help="generate_route_allow_railroad">
-        <label for="generate-route-allow-railroad" data-text="menu.generate_route_allow_railroad">Use rail roads in
-          path finder</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-allow-railroad" value="1"
-            id="generate-route-allow-railroad" />
-          <label class="input-checkbox-label" for="generate-route-allow-railroad"></label>
-        </div>
+      <div class="input-container" data-help="generate_route_railroad_weight">
+        <label for="generate-route-railroad-weight" data-text="menu.generate_route_railroad_weight">Railroads
+          preference</label>
+          <select class="input-day wide-select-menu" id="generate-route-railroad-weight">
+            <option value="2" data-text="menu.generate_route_weight.2">Only necessarily</option>
+            <option value="1.5" data-text="menu.generate_route_weight.1.5">Very long distances</option>
+            <option value="1.1" data-text="menu.generate_route_weight.1.1">Long distances</option>
+            <option value="1" data-text="menu.generate_route_weight.1">Same as roads</option>
+            <option value="0.9" data-text="menu.generate_route_weight.0.9">Prefer over roads</option>
+            <option value="0.5" data-text="menu.generate_route_weight.0.5">Highly prefer over roads</option>
+          </select>
       </div>
       <div class="input-container" data-help="generate_route_distance">
         <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>

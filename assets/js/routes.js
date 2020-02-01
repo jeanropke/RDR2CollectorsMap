@@ -9,24 +9,25 @@ var Routes = {
     $('#generate-route-use-pathfinder').prop("checked", Routes.usePathfinder);
     $('#generate-route-generate-on-visit').prop("checked", Routes.generateOnVisit);
     $('#generate-route-ignore-collected').prop("checked", Routes.ignoreCollected);
-    $('#generate-route-allow-fasttravel').prop("checked", Routes.allowFasttravel);
-    $('#generate-route-allow-railroad').prop("checked", Routes.allowRailroad);
     $('#generate-route-auto-update').prop("checked", Routes.autoUpdatePath);
     $('#generate-route-distance').val(Routes.maxDistance);
     $('#generate-route-start-lat').val(Routes.startMarkerLat);
     $('#generate-route-start-lng').val(Routes.startMarkerLng);
 
+    $('#generate-route-fasttravel-weight').val(Routes.fasttravelWeight);
+    $('#generate-route-railroad-weight').val(Routes.railroadWeight);
+
     // Pathfinder / Generator toggle
     if (Routes.usePathfinder) {
       $('#generate-route-distance').parent().hide();
       $('#generate-route-auto-update').parent().parent().hide();
-      $('#generate-route-allow-fasttravel').parent().parent().show();
-      $('#generate-route-allow-railroad').parent().parent().show();
+      $('#generate-route-fasttravel-weight').parent().show();
+      $('#generate-route-railroad-weight').parent().show();
     } else {
       $('#generate-route-distance').parent().show();
       $('#generate-route-auto-update').parent().parent().show();
-      $('#generate-route-allow-fasttravel').parent().parent().hide();
-      $('#generate-route-allow-railroad').parent().parent().hide();
+      $('#generate-route-fasttravel-weight').parent().hide();
+      $('#generate-route-railroad-weight').parent().hide();
     }
 
     // Route starts at
@@ -150,6 +151,8 @@ var Routes = {
   usePathfinder: $.cookie('generator-path-use-pathfinder') == '1',
   allowFasttravel: $.cookie('generator-path-allow-fasttravel') == '1',
   allowRailroad: $.cookie('generator-path-allow-railroad') == '1',
+  fasttravelWeight: parseFloat($.cookie('generator-path-fasttravel-weight')) ? parseFloat($.cookie('generator-path-fasttravel-weight')) : ($.cookie('generator-path-allow-fasttravel') == '1' ? 1 : Infinity),
+  railroadWeight: parseFloat($.cookie('generator-path-railroad-weight')) ? parseFloat($.cookie('generator-path-railroad-weight')) : ($.cookie('generator-path-allow-railroad') == '1' ? 1 : 2),
 
   // Needed to keep track of the previously drawn path so we can remove it later.
   lastPolyline: null,
@@ -296,7 +299,7 @@ var Routes = {
 
     // Use path finder when enabled
     if (Routes.usePathfinder) {
-      PathFinder.routegenStart(last, newMarkers, Routes.allowFasttravel ? 0.9 : Infinity, Routes.allowRailroad ? 1.1 : Infinity)
+      PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight, true)
       return
     }
 

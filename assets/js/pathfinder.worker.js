@@ -35,6 +35,7 @@ async function loadAllGeoJson() {
 	completeGeoJson.features = completeGeoJson.features.concat(newAustin.features)
 	completeGeoJson.features = completeGeoJson.features.concat(newHanover.features)
 	completeGeoJson.features = completeGeoJson.features.concat(westElizabeth.features)
+
 	completeGeoJson.features = completeGeoJson.features.concat(fasttravel.features)
 	completeGeoJson.features = completeGeoJson.features.concat(railroads.features)
 
@@ -417,8 +418,8 @@ class PathFinder {
 	/**
 	 * Creating the GeoJSON Path Finder object from geojson data and extracting all nodes
 	 * @static
-	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights - set to Infinity to disable
-	 * @param {Number} railroadWeight Multiplier for rail road weights - set to Infinity to disable
+	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
+	 * @param {Number} railroadWeight Multiplier for rail road weights
 	 */
 	static createPathFinder(fastTravelWeight, railroadWeight) {
 		if(typeof(fastTravelWeight) !== 'number') fastTravelWeight = PathFinder._pathfinderFTWeight
@@ -435,8 +436,9 @@ class PathFinder {
 				var dx = a[0] - b[0];
 				var dy = a[1] - b[1];
 				var r = Math.sqrt(dx * dx + dy * dy);
-				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * fastTravelWeight
+				console.log(props)
 				if(typeof(props.type) === 'string' && props.type == 'railroad') r = r * railroadWeight
+				else if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * fastTravelWeight
 				return r
 			}
 		})
@@ -904,10 +906,6 @@ if(typeof(window) !== 'undefined') {
 	module.exports = PathFinder
 }
 },{"geojson-path-finder":12,"turf-featurecollection":17,"turf-point":18}],2:[function(require,module,exports){
-var GeoJSONPathFinder = require('geojson-path-finder')
-var point = require('turf-point')
-var featurecollection = require('turf-featurecollection')
-
 const PathFinder = require('./pathfinder.mod')
 
 PathFinder.init()
@@ -918,13 +916,14 @@ self.addEventListener('message', function(e){
 			PathFinder._geoJson = data.geojson
 			break
 		case 'start':
+			console.log(data.fastTravelWeight, data.railroadWeight)
 			PathFinder.routegenStart(data.startingMarker, data.markers, data.fastTravelWeight, data.railroadWeight, true).then((result) => {
 				self.postMessage({ res: 'route-done', result: result })
 			})
 			break
 	}
 })
-},{"./pathfinder.mod":1,"geojson-path-finder":12,"turf-featurecollection":17,"turf-point":18}],3:[function(require,module,exports){
+},{"./pathfinder.mod":1}],3:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var invariant_1 = require("@turf/invariant");

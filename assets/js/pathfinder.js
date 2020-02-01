@@ -35,6 +35,7 @@ async function loadAllGeoJson() {
 	completeGeoJson.features = completeGeoJson.features.concat(newAustin.features)
 	completeGeoJson.features = completeGeoJson.features.concat(newHanover.features)
 	completeGeoJson.features = completeGeoJson.features.concat(westElizabeth.features)
+
 	completeGeoJson.features = completeGeoJson.features.concat(fasttravel.features)
 	completeGeoJson.features = completeGeoJson.features.concat(railroads.features)
 
@@ -417,8 +418,8 @@ class PathFinder {
 	/**
 	 * Creating the GeoJSON Path Finder object from geojson data and extracting all nodes
 	 * @static
-	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights - set to Infinity to disable
-	 * @param {Number} railroadWeight Multiplier for rail road weights - set to Infinity to disable
+	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
+	 * @param {Number} railroadWeight Multiplier for rail road weights
 	 */
 	static createPathFinder(fastTravelWeight, railroadWeight) {
 		if(typeof(fastTravelWeight) !== 'number') fastTravelWeight = PathFinder._pathfinderFTWeight
@@ -435,8 +436,8 @@ class PathFinder {
 				var dx = a[0] - b[0];
 				var dy = a[1] - b[1];
 				var r = Math.sqrt(dx * dx + dy * dy);
-				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * fastTravelWeight
 				if(typeof(props.type) === 'string' && props.type == 'railroad') r = r * railroadWeight
+				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * fastTravelWeight
 				return r
 			}
 		})
