@@ -128,7 +128,7 @@
 	
 	{"key": "cups_knight.name", "value": "Rycerz kielichów"},
 	{"key": "cups_knight_1.desc", "value": "Po wschodniej stronie chaty."},
-	{"key": "cups_knight_2.desc", "value": "Na stole w tyle pod zadaszeniem"},
+	{"key": "cups_knight_2.desc", "value": "Na stole w tyle pod zadaszeniem."},
 	{"key": "cups_knight_3.desc", "value": "Na skrzyni w stodole pod zadaszeniem."},
 	{"key": "cups_knight_4.desc", "value": "Na pudełku obok wizącego prześcieradła."},
 	{"key": "cups_knight_5.desc", "value": "Na kominku."},
@@ -1258,11 +1258,11 @@
 	{"key": "wounded_animal.name", "value": "Zranione zwierze (zdarzenie)"},
 	{"key": "wounded_animal.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje."},
 	
-	{"key": "moonshiner_camp.name","value":"Obóz bimbrowniczy (zdarzenie)"},
-    {"key": "moonshiner_camp.desc","value":"To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje. Zabij bimbrowników i przeszukaj obóz, aby znaleźć kolekcjonerskie alkohole lub przepis na bimber."},
+	{"key": "moonshiner_camp.name", "value": "Obóz bimbrowniczy (zdarzenie)"},
+	{"key": "moonshiner_camp.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje. Zabij bimbrowników i przeszukaj obóz, aby znaleźć kolekcjonerskie alkohole lub przepis na bimber."},
 
-    {"key": "rival_collector.name","value":"Konkurencyjny kolekcjoner"},
-    {"key": "rival_collector.desc","value":"To jest Przypadkowe zdarzenie. Konkurencyjny kolekcjoner z niecodziennie wyglądającymi ubraniami i torbami kolekcjonera. Zabij go i ograb zwłoki, aby dostać przedmiot/y kolekcjonerski/e."},
+	{"key": "rival_collector.name", "value": "Konkurencyjny kolekcjoner (zdarzenie)"},
+	{"key": "rival_collector.desc", "value": "To jest Przypadkowe zdarzenie. Konkurencyjny kolekcjoner, ubrany w niecodziennie wyglądające ubrania, posiadający charakterystyczne torby kolekcjonera. Zabij go i ograb zwłoki, aby dostać przedmiot/y kolekcjonerski/e."},
 
 	{"key": "weekly.desc", "value": "Ten przedmiot jest częścią kolekcji {collection}."},
 	{"key": "weekly.desc.sacred_set", "value": "Sacred"},
