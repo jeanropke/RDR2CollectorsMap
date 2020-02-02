@@ -299,7 +299,7 @@ var Routes = {
 
     // Use path finder when enabled
     if (Routes.usePathfinder) {
-      PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight, true)
+      PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight)
       return
     }
 
