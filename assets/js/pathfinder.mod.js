@@ -723,7 +723,7 @@ class PathFinder {
 	}
 
 	static wasRemovedFromMap(marker) {
-		if(PathFinder._layerControl._openItem == marker.text) {
+		if(PathFinder._layerControl && PathFinder._layerControl._openItem == marker.text) {
 			PathFinder._layerControl.selectPath(1)
 		}
 	}
