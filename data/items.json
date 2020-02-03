@@ -1652,14 +1652,12 @@
             { "text": "random_item_72", "height": "0", "tool": "2", "lat": "-106.3125", "lng": "65.2969" },
             { "text": "random_item_78", "height": "0", "tool": "2", "lat": "-103.0469", "lng": "86.7969" },
             { "text": "random_item_84", "height": "0", "tool": "2", "lat": "-88.0625", "lng": "74.2813" },
-            { "text": "random_item_88", "height": "0", "tool": "1", "lat": "-60.9609", "lng": "116.9375" },
             { "text": "random_item_93", "height": "0", "tool": "2", "lat": "-81.5625", "lng": "90.2344" },
             { "text": "random_item_94", "height": "0", "tool": "2", "lat": "-75", "lng": "97.6719" },
             { "text": "random_item_98", "height": "0", "tool": "2", "lat": "-71.5469", "lng": "82.7188" },
             { "text": "random_item_106", "height": "0", "tool": "2", "lat": "-61.5156", "lng": "83.4531" },
             { "text": "random_item_111", "height": "0", "tool": "2", "lat": "-66.75", "lng": "97.3438" },
             { "text": "random_item_120", "height": "0", "tool": "2", "lat": "-41.9609", "lng": "141.1406" },
-            { "text": "random_item_123", "height": "0", "tool": "2", "lat": "-45.2891", "lng": "127.7969" },
             { "text": "random_item_125", "height": "0", "tool": "2", "lat": "-45.2969", "lng": "117.0156" },
             { "text": "random_item_132", "height": "0", "tool": "2", "lat": "-64.3594", "lng": "111.9219" },
             { "text": "random_item_143", "height": "0", "tool": "2", "lat": "-55.25", "lng": "117.4844" },
@@ -1674,7 +1672,9 @@
             { "text": "random_item_198", "height": "0", "tool": "2", "lat": "-72.3128", "lng": "137.6875" }
         ],
         "7": [
-            { "text": "random_item_119", "height": "0", "tool": "2", "lat": "-42.5859", "lng": "137.2266" },
+            { "text": "random_item_88", "height": "0", "tool": "1", "lat": "-60.9609", "lng": "116.9375" },
+			{ "text": "random_item_119", "height": "0", "tool": "2", "lat": "-42.5859", "lng": "137.2266" },
+            { "text": "random_item_123", "height": "0", "tool": "2", "lat": "-45.2891", "lng": "127.7969" },
             { "text": "random_item_124", "height": "0", "tool": "2", "lat": "-41.0469", "lng": "112.3906" },
             { "text": "random_item_167", "height": "0", "tool": "2", "lat": "-39.125", "lng": "152.4375" },
             { "text": "random_item_168", "height": "0", "tool": "2", "lat": "-39.0625", "lng": "154.3594" }
