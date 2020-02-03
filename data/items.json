@@ -434,7 +434,7 @@
             { "text": "bottle_tennesee_whiskey", "height": "0", "tool": "0", "lat": "-57.8681", "lng": "133.8036" },
             { "text": "bottle_irish_whiskey", "height": "0", "tool": "0", "lat": "-89.1662", "lng": "144.7118" },
             { "text": "bottle_scotch_whisky", "height": "0", "tool": "0", "lat": "-96.1270", "lng": "30.5869" },
-            { "text": "bottle_absinthe", "height": "0", "tool": "0", "lat": "-120.4882", "lng": "27.5852" },
+            { "text": "bottle_absinthe", "height": "-1", "tool": "0", "lat": "-120.4882", "lng": "27.5852" },
             { "text": "bottle_gran_corazon_madeira", "height": "0", "tool": "0", "lat": "-69.8990", "lng": "83.2391" },
             { "text": "bottle_old_tom_gin", "height": "0", "tool": "0", "lat": "-49.2354", "lng": "100.1138" },
             { "text": "bottle_caribbean_rum", "height": "0", "tool": "0", "lat": "-56.1660", "lng": "157.9319" },
