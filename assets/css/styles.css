@@ -216,6 +216,12 @@ input, textarea, select, .btn {
     margin: auto auto auto 2px;
 }
 
+.day-cycle {
+    width: 16px;
+    height: 16px;
+    margin: auto 4px;
+}
+
 .timer-container, .clock-container {
     position: fixed;
     z-index: 1010;
@@ -224,7 +230,7 @@ input, textarea, select, .btn {
     color: #eee;
     left: 40px;
     top: 5px;
-    width: 95px;
+    min-width: 95px;
     height: 30px;
     transition: all 200ms ease-out;
     padding-left: 8px;
@@ -234,19 +240,6 @@ input, textarea, select, .btn {
 
 .turn-off {
     display: none;
-}
-
-#am-pm-time {
-    margin: auto 12px auto auto;
-    font-size: 16px;
-    line-height: 1.7;
-    user-select: none;
-}
-
-#day-cycle {
-    width: 16px;
-    height: 16px;
-    margin: auto 4px auto auto;
 }
 
 .counter-container {
