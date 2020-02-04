@@ -423,7 +423,7 @@
 	{"key": "pentacles_five_6.desc", "value": "В доме на камине."},
  
 	{"key": "pentacles_six.name", "value": "Шестерка пентаклей"},
-	{"key": "pentacles_six_1.desc", "value": "На офисном столе внутри фабрики."},
+	{"key": "pentacles_six_1.desc", "value": "На втором этаже внутри фабрики, на офисном столе.."},
 	{"key": "pentacles_six_2.desc", "value": "На телеге с бочками."},
 	{"key": "pentacles_six_3.desc", "value": "На ящике возле механизма."},
 	{"key": "pentacles_six_4.desc", "value": "На столе внутри дома."},
@@ -660,7 +660,7 @@
 	{"key": "bottle_old_tom_gin_3.desc", "value": "Под мойкой."},
 	{"key": "bottle_old_tom_gin_4.desc", "value": "В сарае, на ящике."},
 	{"key": "bottle_old_tom_gin_5.desc", "value": "В сундуке между двумя казармами."},
-	{"key": "bottle_old_tom_gin_6.desc", "value": "В разбитой лодке."},
+	{"key": "bottle_old_tom_gin_6.desc", "value": "На железнодорожном мосту."},
  
 	{"key": "bottle_caribbean_rum.name", "value": "Карибский ром"},
 	{"key": "bottle_caribbean_rum_1.desc", "value": "В столе слева от входа."},
