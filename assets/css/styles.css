@@ -211,9 +211,14 @@ input, textarea, select, .btn {
 
 #countdown, #item-counter, #time-in-game {
     font-size: 16px;
-    line-height: 1.7;
     user-select: none;
-    margin: auto auto auto 2px;
+    margin: 0;
+}
+
+.day-cycle {
+    width: 16px;
+    height: 16px;
+    margin: auto 0 auto 8px;
 }
 
 .timer-container, .clock-container {
@@ -224,29 +229,17 @@ input, textarea, select, .btn {
     color: #eee;
     left: 40px;
     top: 5px;
-    width: 95px;
+    min-width: 95px;
     height: 30px;
     transition: all 200ms ease-out;
-    padding-left: 8px;
+    padding: 0 8px;
     display: inline-flex;
     cursor: pointer;
+    line-height: 28px;
 }
 
 .turn-off {
     display: none;
-}
-
-#am-pm-time {
-    margin: auto 12px auto auto;
-    font-size: 16px;
-    line-height: 1.7;
-    user-select: none;
-}
-
-#day-cycle {
-    width: 16px;
-    height: 16px;
-    margin: auto 4px auto auto;
 }
 
 .counter-container {

@@ -189,7 +189,6 @@
 	{"key": "menu.read_wiki", "value": "Руководство по карте"},
 	{"key": "menu.rdo_map", "value": "RDO Map"},
 	{"key": "menu.report_issues", "value": "Связаться с разработчиком"},
-	{"key": "menu.return_legacy", "value": "Вернуться на версию legacy"},
 	{"key": "menu.toggle_debug", "value": "Функция отладки (eng)"},
 	
 	{"key": "menu.day", "value": "Цикл"},
@@ -256,7 +255,6 @@
 	{"key": "help.report_issues", "value": "Opens a new tab to the GitHub page, where you can report issues or suggest new features."},
 	{"key": "help.reset_button_updates_inventory", "value": "Toggles whether the reset button in sets remove items from the inventory too."},
 	{"key": "help.reset_markers_daily", "value": "Toggles whether the map should automatically reset all markers for you when the day switches."},
-	{"key": "help.return_legacy", "value": "Opens a new tab with the legacy version of this map. Note that this version is no longer updated and has a high chance of being incorrect."},
 	{"key": "help.search", "value": "Allows you to search for items you want to display. All other items will be hidden."},
 	{"key": "help.show_all", "value": "Shows all markers on the map."},
 	{"key": "help.show_coords", "value": "Toggles whether the coordinates should be displayed when you click somewhere on the map."},

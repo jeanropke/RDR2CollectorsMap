@@ -35,7 +35,6 @@
 	{"key": "menu.reset", "value": "إعادة تعيين"},
 	{"key": "menu.issues", "value": "مشاكل"},
 	{"key": "menu.report_issues", "value": "الإبلاغ عن المشكلات هنا"},
-	{"key": "menu.return_legacy", "value": "العودة إلى الإصدار القديم"},
 	{"key": "menu.utils", "value": "الخدمات"},
 	{"key": "menu.fast_travel", "value": "السفر السريع"},
 	{"key": "menu.search_placeholder", "value": "البحث عن العناصر (افصل بينها بـ ;)"},
