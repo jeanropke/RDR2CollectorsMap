@@ -35,7 +35,6 @@
 	{"key": "menu.reset", "value": "Réinitialiser"},
 	{"key": "menu.issues", "value": "Problèmes"},
 	{"key": "menu.report_issues", "value": "Remonter un problème ici"},
-	{"key": "menu.return_legacy", "value": "Retour vers la version originale"},
 	{"key": "menu.utils", "value": "Utilitaires"},
 	{"key": "menu.fast_travel", "value": "Voyage Rapide"},
 	{"key": "menu.search_placeholder", "value": "Recherche d'objet. Séparés par des ;"},
