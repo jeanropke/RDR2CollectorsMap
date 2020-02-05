@@ -15,5 +15,6 @@ var Settings = {
     toolType: $.cookie('tools') ? $.cookie('tools') : '3',
     language: $.cookie('language') ? $.cookie('language') : navigator.language.toLowerCase(),
     sortItemsAlphabetically: $.cookie('sort-items-alphabetically') == '1',
-    displayClockHideTimer: $.cookie('clock-or-timer') == 'true'
+    displayClockHideTimer: $.cookie('clock-or-timer') == 'true',
+    cycleForUnknownCycles: 7
 }
