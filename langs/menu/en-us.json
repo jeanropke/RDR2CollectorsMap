@@ -191,7 +191,6 @@
 	{"key": "menu.overlay_opacity.50", "value": "50%"},
 	{"key": "menu.overlay_opacity.75", "value": "75%"},
 	{"key": "menu.overlay_opacity.100", "value": "Opaque"},
-	{"key": "menu.delete_all_settings", "value": "Delete all saved settings"},
 	{"key": "menu.toggle_debug", "value": "Toggle debug features"},
 	{"key": "map.random_spot.desc", "value": "This spot gives you a random item, you can view more detailed information {link}."},
 	{"key": "map.random_spot.link", "value": "on this Wiki page"},
@@ -199,13 +198,14 @@
 	{"key": "menu.clear_important_items", "value": "Clear important markers"},
 	{"key": "menu.modal_clear_important_items_body", "value": "This will clear the highlight from all markers marked as important. This action cannot be undone."},
 	{"key": "menu.modal_clear_important_items_title", "value": "Clear important markers?"},
-	{"key": "menu.modal_delete_all_settings_title", "value": "Delete all saved settings?"},
-	{"key": "menu.modal_delete_all_settings_body", "value": "This will remove all saved settings and reload the page."},
 	{"key": "menu.sort_items_alphabetically", "value": "Sort items alphabetically"},
 	{"key": "menu.enable_marker_shadows", "value": "Marker shadows enabled"},
 	{"key": "map.refresh_for_updates_alert", "value": "Today's cycles haven't been updated yet. Please refresh to check for updates."},
 	{"key": "map.unknown_cycle_description", "value": "This item is in unknown cycle, if you find something here, report it on: {GitHub} or {Discord}."},
 	{"key": "map.unknown_cycle", "value": "unknown"},
+	{"key": "menu.delete_all_settings", "value": "Reset all settings"},
+	{"key": "menu.modal_delete_all_settings_title", "value": "Reset all settings?"},
+	{"key": "menu.modal_delete_all_settings_body", "value": "This will reset all settings, pins, and inventory items to their default values and reload the page."},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
@@ -272,5 +272,6 @@
 	{"key": "help.item_category_unavailable_items", "value": "Toggles whether this set should be visible on the map. Note that this set contains one or more items that are unavailable due to a game bug or being undiscovered."},
 	{"key": "help.search_copy_link", "value": "Copies the current search link to your clipboard so you can browse to the map with that search query."},
 	{"key": "help.sort_items_alphabetically", "value": "Whether items should be sorted alphabetically or using the in-game order."},
-	{"key": "help.enable_marker_shadows", "value": "Toggles whether a marker should have a shadow or not. Disabling the shadows could improve performance somewhat."}
+	{"key": "help.enable_marker_shadows", "value": "Toggles whether a marker should have a shadow or not. Disabling the shadows could improve performance somewhat."},
+	{"key": "help.delete_all_settings", "value": "Resets all settings, user pins, and inventory items to their default values."}
 ]
