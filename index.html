@@ -709,8 +709,12 @@
         <button id="pins-export" type="button" class="btn btn-default narrow-select-menu"
           data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
       </div>
+      <div class="input-container clickable" data-help="delete_all_settings" data-toggle="modal"
+        data-target="#delete_all_settings-modal">
+        <label data-text="menu.delete_all_settings">Delete all saved settings</label>
+        <div class="input-action"></div>
+      </div>
     </div>
-
     <div id="debug-container">
       <div class="header">
         <span class="header-border"></span>
@@ -934,6 +938,25 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="delete_all_settings-modal" tabindex="-1" role="dialog" aria-labelledby="delete_all_settings-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="delete_all_settings-title" data-text="menu.modal_delete_all_settings_title">Delete all saved settings?</h4>
+        </div>
+        <div class="modal-body" data-text="menu.modal_delete_all_settings_body">
+          This will remove all saved settings and reload the page.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
+          <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>

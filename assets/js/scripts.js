@@ -965,6 +965,21 @@ $('*').on('contextmenu', function (event) {
   event.preventDefault();
 });
 
+// reset all settings & cookies
+$('#delete-all-settings').on('click', function () {
+  var cookies = $.cookie();
+  for (var cookie in cookies) {
+    $.removeCookie(cookie);
+  }
+
+  $.each(localStorage, function (key) {
+    localStorage.removeItem(key);
+  });
+
+  location.reload(true);
+});
+
+
 /**
  * Event listeners
  */
