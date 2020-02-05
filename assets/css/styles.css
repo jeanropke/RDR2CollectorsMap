@@ -833,6 +833,10 @@ a.no-style:visited {
     color: white !important;
 }
 
+.text-danger {
+    color: #f95050 !important
+}
+
 /* Bootstrap modal styling */
 
 .modal-content {
