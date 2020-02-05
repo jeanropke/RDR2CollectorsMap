@@ -416,6 +416,9 @@ var MapBase = {
 
     var warningText = Cycles.isSameAsYesterday(marker.category) ? `<span class="marker-warning-wrapper"><div><img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert"></div><p>${Language.get("map.same_cycle_yesterday")}</p></span>` : '';
 
+    if (marker.day == Settings.cycleForUnknownCycles)
+      warningText = `<span class="marker-warning-wrapper"><div><img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert"></div><p>${Language.get("map.unknown_cycle_description").replace('{GitHub}', '<a href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">GitHub</a>').replace('{Discord}', '<a href="https://discord.gg/WWru8cP" target="_blank">Discord</a>')}</p></span>`;
+
     if (marker.category != 'random') {
       var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
       popupContent += (marker.tool == '-1' ? Language.get('map.item.unable') : '') + ' ' + marker.description + ' ' + weeklyText;
@@ -423,7 +426,7 @@ var MapBase = {
       // Todo: Maybe make this link translatable on the Wiki?
       popupContent += Language.get('map.random_spot.desc').replace('{link}', `<a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/Random-Item-Possible-Loot" target="_blank">${Language.get('map.random_spot.link')}</a>`);
     }
-
+    
     var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
     var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">' + Language.get('map.video') + '</a>' : '';
     var importantItem = ((marker.subdata != 'agarita' && marker.subdata != 'blood_flower') ? ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>` : '');
@@ -437,7 +440,7 @@ var MapBase = {
     <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
     </div>`;
 
-    return `<h1>${marker.title} - ${Language.get("menu.day")} ${marker.day}</h1>
+    return `<h1>${marker.title} - ${Language.get("menu.day")} ${(marker.day != Settings.cycleForUnknownCycles ? marker.day : Language.get('map.unknown_cycle'))}</h1>
         ${warningText}
         <span class="marker-content-wrapper">
         <div>${MapBase.getToolIcon(marker.tool)}</div>
@@ -473,6 +476,10 @@ var MapBase = {
       icon = `./assets/images/icons/${MapBase.getToolName(marker.tool)}.png`;
       background = './assets/images/icons/marker_lightgray.png';
     }
+
+    // highlight unknown cycles markers on red
+    if (marker.day == Settings.cycleForUnknownCycles)
+      background = './assets/images/icons/marker_red.png';
 
     // Height overlays
     if (marker.height == '1') {
@@ -511,11 +518,11 @@ var MapBase = {
     marker.weeklyCollection = isWeekly ? weeklySetData.current : null;
 
     if (marker.category == 'random')
-      marker.title = `${Language.get("random_item.name")} #${marker.text.split('_').pop()}`
+      marker.title = `${Language.get("random_item.name")} #${marker.text.split('_').pop()}`;
     else if (marker.category == 'american_flowers')
-      marker.title = `${Language.get(`flower_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`
+      marker.title = `${Language.get(`flower_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`;
     else if (marker.category == 'bird_eggs' && (marker.subdata == 'eagle' || marker.subdata == 'hawk'))
-      marker.title = `${Language.get(`egg_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`
+      marker.title = `${Language.get(`egg_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`;
     else
       marker.title = Language.get(`${marker.text}.name`);
 

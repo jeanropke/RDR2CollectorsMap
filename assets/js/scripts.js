@@ -89,8 +89,8 @@ function init() {
     Settings.language = 'en-us';
 
   if (typeof $.cookie('remove-markers-daily') === 'undefined') {
-    Settings.resetMarkersDaily = true;
-    $.cookie('remove-markers-daily', '1', { expires: 999 });
+    Settings.resetMarkersDaily = false;
+    $.cookie('remove-markers-daily', '0', { expires: 999 });
   }
 
   if (typeof $.cookie('marker-cluster') === 'undefined') {
@@ -964,6 +964,21 @@ $('*').on('contextmenu', function (event) {
     return;
   event.preventDefault();
 });
+
+// reset all settings & cookies
+$('#delete-all-settings').on('click', function () {
+  var cookies = $.cookie();
+  for (var cookie in cookies) {
+    $.removeCookie(cookie);
+  }
+
+  $.each(localStorage, function (key) {
+    localStorage.removeItem(key);
+  });
+
+  location.reload(true);
+});
+
 
 /**
  * Event listeners
