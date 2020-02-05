@@ -205,6 +205,7 @@
 	{"key": "menu.enable_marker_shadows", "value": "Włącz cień znacznków"},
 	{"key": "map.refresh_for_updates_alert", "value": "Dzisiejsze cykle nie zostały jeszcze zaktualizowane, odśwież stronę, aby sprawdzić aktualizacje."},
 	{"key": "map.unknown_cycle_description", "value": "Ten przedmiot jest w nieznanym cyklu, jeżeli coś tutaj znajdziesz zgłoś to na: {GitHub}-ie lub {Discord}-zie."},
+	{"key": "map.unknown_cycle", "value": "nieznany"},
 
 	{"key": "help.default", "value": "Najedź lub przytrzymaj opcję menu na telefonie, aby wyświetlić podpowiedzi."},
 	{"key": "help.clear_custom_routes", "value": "Usuwa wszystkie własne trasy na mapie."},
