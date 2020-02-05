@@ -566,6 +566,10 @@ input, textarea, select, .btn {
     text-overflow: ellipsis;
 }
 
+.side-menu .menu-hidden .collectible, .input-container label {
+    line-height: 26px;
+}
+
 .same-cycle-warning-menu {
     margin-left: 4px;
     height: 20px;
