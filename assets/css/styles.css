@@ -534,27 +534,25 @@ input, textarea, select, .btn {
 }
 
 .side-menu .menu-hidden .collectible-wrapper {
-    padding: 5px 12px;
+    padding: 6px 12px;
     cursor: pointer;
     user-select: none;
 }
 
 .side-menu .menu-hidden .collectible-icon {
     float: left;
-    height: 30px;
+    height: 28px;
     margin-right: 10px;
-    margin-top: 1px;
 }
 .side-menu .menu-hidden .collectible-icon.random-encounter {    
     width: 32px;
     height: auto;
-    margin-top: 5px;
+    margin-top: 1px;
     margin-right: 3px;
     margin-bottom: -3px;
 }
 
 .side-menu .menu-hidden .collectible-text {
-    padding: 5px 0;
     display: flex;
     justify-content: space-between;
     font-size: 15px;
@@ -567,7 +565,7 @@ input, textarea, select, .btn {
 }
 
 .side-menu .menu-hidden .collectible, .input-container label {
-    line-height: 26px;
+    line-height: 24px;
 }
 
 .same-cycle-warning-menu {
@@ -705,6 +703,7 @@ a.wiki-page:visited {
     line-height: 12px;
     white-space: nowrap;
     margin-left: 6px;
+    padding: 3px 0;
 }
 
 .counter-number {
