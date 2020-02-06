@@ -979,7 +979,6 @@ $('#delete-all-settings').on('click', function () {
   location.reload(true);
 });
 
-
 /**
  * Event listeners
  */
