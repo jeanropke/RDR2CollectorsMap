@@ -1429,7 +1429,7 @@
             { "text": "flower_wild_rhubarb_3", "subdata": "wild_rhubarb", "height": "0", "tool": "0", "lat": "-110.3560", "lng": "38.8723" },
             { "text": "flower_wild_rhubarb_4", "subdata": "wild_rhubarb", "height": "0", "tool": "0", "lat": "-107.6969", "lng": "63.6471" },
             { "text": "flower_wild_rhubarb_5", "subdata": "wild_rhubarb", "height": "0", "tool": "0", "lat": "-105.8152", "lng": "52.0114" },
-            { "text": "flower_wild_rhubarb_6", "subdata": "wild_rhubarb", "height": "0", "tool": "0", "lat": "-92.1225", "lng": "143.1658" },
+            { "text": "flower_wild_rhubarb_6", "subdata": "wild_rhubarb", "height": "0", "tool": "-1", "lat": "-92.1225", "lng": "143.1658" },
             { "text": "flower_wild_rhubarb_7", "subdata": "wild_rhubarb", "height": "0", "tool": "0", "lat": "-105.3398", "lng": "55.5376" },
             { "text": "flower_wild_rhubarb_8", "subdata": "wild_rhubarb", "height": "0", "tool": "0", "lat": "-105.1634", "lng": "60.5706" },
             { "text": "flower_wild_rhubarb_9", "subdata": "wild_rhubarb", "height": "0", "tool": "0", "lat": "-103.6266", "lng": "69.6797" },
