@@ -544,7 +544,8 @@ input, textarea, select, .btn {
     height: 28px;
     margin-right: 10px;
 }
-.side-menu .menu-hidden .collectible-icon.random-encounter {    
+
+.side-menu .menu-hidden .collectible-icon.random-encounter {
     width: 32px;
     height: auto;
     margin-top: 1px;
@@ -681,14 +682,6 @@ a.wiki-page:visited {
 .explain-text {
     margin-bottom: 12px !important;
     font-size: 14px;
-}
-
-.donate-form {
-    text-align: center;
-}
-
-.donate-form .input-day {
-    margin-bottom: 8px;
 }
 
 .no-margin-top {
@@ -1044,4 +1037,20 @@ a.no-style:visited {
     z-index: 1;
     bottom: -2px;
     left: 9px;
+}
+
+/* Donate form */
+
+.donate-form {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(../images/menu_donate.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+.donate-form .input-day {
+    margin: auto 0 auto auto;
 }
