@@ -94,13 +94,13 @@ var Inventory = {
     Inventory.save();
     Menu.refreshItemsCounter();
   },
-  
+
   save: function () {
     //Remove cookies from removed items
     $.removeCookie('removed-items');
     $.each($.cookie(), function (key, value) {
       if (key.startsWith('removed-items')) {
-        $.removeCookie(key)
+        $.removeCookie(key);
       }
     });
 
@@ -111,7 +111,7 @@ var Inventory = {
     });
 
     localStorage.setItem("inventory-items", temp);
-   
+
   },
 
   toggleMenuItemsDisabled: function () {
@@ -129,4 +129,4 @@ var Inventory = {
       $('[data-target="#clear-inventory-modal"]').show();
     }
   }
-}
+};

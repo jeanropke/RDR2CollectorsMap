@@ -173,7 +173,7 @@ Menu.refreshMenu = function () {
     children.sort(function (a, b) {
       return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
     }).appendTo(this);
-  })
+  });
 
   // Check cycle warning for random spots
   addCycleWarning('[data-text="menu.random_spots"]', Cycles.isSameAsYesterday('random'));
@@ -200,7 +200,7 @@ Menu.refreshMenu = function () {
 
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
   MapBase.loadImportantItems();
-  
+
   $('.map-cycle-alert span').html(Language.get('map.refresh_for_updates_alert'));
 };
 
@@ -240,7 +240,7 @@ Menu.refreshItemsCounter = function () {
 Menu.liveUpdateDebugMarkersInputs = function (lat, lng) {
   $('#debug-marker-lat').val(lat);
   $('#debug-marker-lng').val(lng);
-}
+};
 
 // Remove highlight from all important items
 $('#clear_highlights').on('click', function () {

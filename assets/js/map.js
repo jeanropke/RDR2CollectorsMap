@@ -134,7 +134,9 @@ var MapBase = {
   },
 
   setMarkers: function (data) {
-    console.log(`Categories disabled: ${categoriesDisabledByDefault}`);
+    if (Settings.isDebugEnabled)
+      console.log(`Categories disabled: ${categoriesDisabledByDefault}`);
+
     $.each(data, function (_category, _cycles) {
       $.each(_cycles, function (day, _markers) {
         $.each(_markers, function (key, marker) {
@@ -176,7 +178,7 @@ var MapBase = {
     // Do search via URL.
     var searchParam = getParameterByName('search');
     if (searchParam != null && searchParam) {
-      $('#search').val(searchParam)
+      $('#search').val(searchParam);
       MapBase.onSearch(searchParam);
     }
 
@@ -222,7 +224,7 @@ var MapBase = {
 
         searchMarkers = searchMarkers.concat(MapBase.markers.filter(function (_marker) {
           if (_marker.title != null)
-            return _marker.title.toLowerCase().includes(term.toLowerCase())
+            return _marker.title.toLowerCase().includes(term.toLowerCase());
         }));
 
         $.each(searchMarkers, function (i, el) {
@@ -336,8 +338,8 @@ var MapBase = {
 
           marker.canCollect = true;
         }
-        if(typeof(PathFinder) !== 'undefined') {
-          PathFinder.wasRemovedFromMap(marker)
+        if (typeof (PathFinder) !== 'undefined') {
+          PathFinder.wasRemovedFromMap(marker);
         }
       });
 
@@ -360,28 +362,20 @@ var MapBase = {
     switch (value) {
       case "day_1":
         return "blue";
-        break;
       case "day_2":
         return "orange";
-        break;
       case "day_3":
         return "purple";
-        break;
       case "day_4":
         return "darkpurple";
-        break;
       case "day_5":
         return "darkred";
-        break;
       case "day_6":
         return "darkblue";
-        break;
       case "weekly":
         return "green";
-        break;
       default:
         return "lightred";
-        break;
     }
   },
 
@@ -426,13 +420,13 @@ var MapBase = {
       // Todo: Maybe make this link translatable on the Wiki?
       popupContent += Language.get('map.random_spot.desc').replace('{link}', `<a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/Random-Item-Possible-Loot" target="_blank">${Language.get('map.random_spot.link')}</a>`);
     }
-    
+
     var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
     var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">' + Language.get('map.video') + '</a>' : '';
     var importantItem = ((marker.subdata != 'agarita' && marker.subdata != 'blood_flower') ? ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>` : '');
 
-
     var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(videoText).append(importantItem);
+    var debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
 
     var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
     <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
@@ -447,6 +441,7 @@ var MapBase = {
         <p>${popupContent}</p>
         </span>
         ${linksElement.prop('outerHTML')}
+        ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
         ${(Inventory.isEnabled && Inventory.isPopupEnabled) ? buttons : ''}
         <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.day || ''}', '${marker.text || ''}', '${marker.subdata || ''}', '${marker.category || ''}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>
         `;
@@ -483,16 +478,16 @@ var MapBase = {
 
     // Height overlays
     if (marker.height == '1') {
-      overlay = '<img class="overlay" src="./assets/images/icons/overlay_high.png" alt="Overlay">'
+      overlay = '<img class="overlay" src="./assets/images/icons/overlay_high.png" alt="Overlay">';
     }
 
     if (marker.height == '-1') {
-      overlay = '<img class="overlay" src="./assets/images/icons/overlay_low.png" alt="Overlay">'
+      overlay = '<img class="overlay" src="./assets/images/icons/overlay_low.png" alt="Overlay">';
     }
 
     // Timed flower overlay override
     if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower') {
-      overlay = '<img class="overlay" src="./assets/images/icons/overlay_time.png" alt="Overlay">'
+      overlay = '<img class="overlay" src="./assets/images/icons/overlay_time.png" alt="Overlay">';
     }
 
     var tempMarker = L.marker([marker.lat, marker.lng], {

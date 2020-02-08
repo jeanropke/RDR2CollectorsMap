@@ -56,4 +56,4 @@ var MadamNazar = {
       Layers.itemMarkersLayer.addLayer(marker);
     }
   }
-}
+};

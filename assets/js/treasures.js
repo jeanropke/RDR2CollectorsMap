@@ -76,9 +76,9 @@ var Treasures = {
     Menu.refreshTreasures();
   },
   save: function () {
-    $.cookie('treasures-enabled', Treasures.enabledTreasures.join(';'), { expires: 999 })
+    $.cookie('treasures-enabled', Treasures.enabledTreasures.join(';'), { expires: 999 });
   },
-  showHideAll: function(isToHide) {
+  showHideAll: function (isToHide) {
     if (isToHide) {
       Treasures.enabledTreasures = [];
     } else {
@@ -87,5 +87,4 @@ var Treasures = {
     Treasures.addToMap();
     Treasures.save();
   }
-
-}
+};

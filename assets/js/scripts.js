@@ -159,6 +159,7 @@ function init() {
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
   $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
   $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
+  $("#enable-debug").prop('checked', $.cookie('debug') != null);
 
   if (Settings.showHelp) {
     $("#help-container").show();
@@ -234,7 +235,7 @@ function setClipboardText(text) {
   document.body.appendChild(el);
   el.select();
   document.execCommand('copy');
-  document.body.removeChild(el)
+  document.body.removeChild(el);
 }
 
 // Simple download function
@@ -320,6 +321,17 @@ $('#enable-right-click').on("change", function () {
   }
 });
 
+// :-)
+$('#enable-debug').on("change", function () {
+  if ($("#enable-debug").prop('checked')) {
+    Settings.isDebugEnabled = true;
+    $.cookie('debug', '1', { expires: 999 });
+  } else {
+    Settings.isDebugEnabled = false;
+    $.removeCookie('debug');
+  }
+});
+
 //Disable menu category when click on input
 $('.menu-option.clickable input').on('click', function (e) {
   e.stopPropagation();
@@ -339,7 +351,7 @@ $("#search").on("input", function () {
 });
 
 $("#copy-search-link").on("click", function () {
-  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${$('#search').val()}`)
+  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${$('#search').val()}`);
 });
 
 //Change & save tool type
@@ -373,7 +385,7 @@ $("#clear-markers").on("click", function () {
 
   Menu.refreshItemsCounter();
   MapBase.addMarkers();
-})
+});
 
 //Clear inventory on menu
 $("#clear-inventory").on("click", function () {
@@ -623,7 +635,7 @@ $('#pins-edit-mode').on("change", function () {
 
 $('#pins-place-new').on("click", function () {
   Pins.addPinToCenter();
-})
+});
 
 $('#pins-export').on("click", function () {
   try {
@@ -645,7 +657,7 @@ $('#pins-import').on('click', function () {
 
     file.text().then(function (text) {
       Pins.importPins(text);
-    })
+    });
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
@@ -751,11 +763,11 @@ $('#cookie-import').on('click', function () {
       // Remove all current settings.
       $.each($.cookie(), function (key, value) {
         $.removeCookie(key);
-      })
+      });
 
       $.each(localStorage, function (key, value) {
         localStorage.removeItem(key);
-      })
+      });
 
       // Import all the settings from the file.
       if (typeof settings.cookies === 'undefined' && typeof settings.local === 'undefined') {
@@ -774,7 +786,7 @@ $('#cookie-import').on('click', function () {
 
       // Do this for now, maybe look into refreshing the menu completely (from init) later.
       location.reload();
-    })
+    });
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
