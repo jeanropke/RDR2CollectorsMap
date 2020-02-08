@@ -25,7 +25,7 @@
             { "text": "arrowhead_raw", "height": "0", "tool": "1", "lat": "-86.9239", "lng": "69.5697", "video": "https://www.youtube.com/watch?v=EJYsStXzjX0&t=795s" },
             { "text": "arrowhead_obsidian", "height": "0", "tool": "2", "lat": "-56.3809", "lng": "129.0077", "video": "https://www.youtube.com/watch?v=EJYsStXzjX0&t=830s" },
             { "text": "arrowhead_quartz", "height": "0", "tool": "2", "lat": "-28.6270", "lng": "155.4751", "video": "https://www.youtube.com/watch?v=EJYsStXzjX0&t=868s" },
-            { "text": "arrowhead_flint", "height": "0", "tool": "1", "lat": "-36.9540", "lng": "116.3335", "video": "https://www.youtube.com/watch?v=EJYsStXzjX0&t=905s" },
+            { "text": "arrowhead_flint", "height": "-1", "tool": "1", "lat": "-36.9540", "lng": "116.3335", "video": "https://www.youtube.com/watch?v=EJYsStXzjX0&t=905s" },
             { "text": "arrowhead_agate", "height": "0", "tool": "2", "lat": "-85.9495", "lng": "86.0545", "video": "https://www.youtube.com/watch?v=EJYsStXzjX0&t=961s" }
         ],
         "3": [
