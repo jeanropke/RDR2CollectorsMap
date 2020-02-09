@@ -1676,8 +1676,8 @@
             { "text": "random_item_198", "height": "0", "tool": "2", "lat": "-72.3128", "lng": "137.6875" }
         ],
         "7": [
-            { "text": "random_item_88", "height": "0", "tool": "1", "lat": "-60.9609", "lng": "116.9375", "comment": "not cycle 1, 6" },
-            { "text": "random_item_123", "height": "0", "tool": "2", "lat": "-45.2891", "lng": "127.7969", "comment": "not cycle 1, 5, 6" }
+            { "text": "random_item_88", "height": "0", "tool": "1", "lat": "-60.9609", "lng": "116.9375", "comment": "not cycle 1, 2, 6" },
+            { "text": "random_item_123", "height": "0", "tool": "2", "lat": "-45.2891", "lng": "127.7969", "comment": "not cycle 1, 2, 5, 6" }
         ]
     }
 }
