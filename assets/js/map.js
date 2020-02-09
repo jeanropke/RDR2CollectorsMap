@@ -545,6 +545,10 @@ var MapBase = {
       if (Routes.customRouteEnabled) e.target.closePopup();
     });
 
+    tempMarker.on('mouseover', function (e) {
+      this.openPopup();
+    });
+
     Layers.itemMarkersLayer.addLayer(tempMarker);
     if (Settings.markerCluster)
       Layers.oms.addMarker(tempMarker);
