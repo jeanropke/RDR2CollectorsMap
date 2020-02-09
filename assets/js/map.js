@@ -64,7 +64,16 @@ var MapBase = {
 
         this.on('mouseout', function (e) {
           if (!Settings.isPopupsHoverEnabled) return;
-          this.closePopup();
+
+          var that = this;
+          var timeout = setTimeout(function () {
+            that.closePopup();
+          }, 100);
+
+          $('.leaflet-popup').on('mouseover', function (e) {
+            clearTimeout(timeout);
+            $('.leaflet-popup').off('mouseover');
+          });
         });
 
         return this;
@@ -535,7 +544,7 @@ var MapBase = {
       icon: new L.DivIcon.DataMarkup({
         iconSize: [35, 45],
         iconAnchor: [17, 42],
-        popupAnchor: [1, -32],
+        popupAnchor: [0, -28],
         shadowAnchor: [10, 12],
         html: `
           ${overlay}
@@ -652,7 +661,7 @@ var MapBase = {
           icon: L.divIcon({
             iconSize: [35, 45],
             iconAnchor: [17, 42],
-            popupAnchor: [1, -32],
+            popupAnchor: [0, -28],
             shadowAnchor: [10, 12],
             html: `
               <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Icon">
@@ -682,7 +691,7 @@ var MapBase = {
       icon: L.divIcon({
         iconSize: [35, 45],
         iconAnchor: [17, 42],
-        popupAnchor: [1, -32],
+        popupAnchor: [0, -28],
         shadowAnchor: [10, 12],
         html: `
           <img class="icon" src="./assets/images/icons/random.png" alt="Icon">
