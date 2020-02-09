@@ -126,7 +126,7 @@
             { "text": "egg_goose", "subdata": "goose", "height": "0", "tool": "0", "lat": "-75.4266", "lng": "114.0113", "video": "https://www.youtube.com/watch?v=zibVEhjsFg8&t=1290s" }
         ],
         "4": [
-            { "text": "egg_spoonbill", "subdata": "spoonbill", "height": "0", "tool": "0", "lat": "-90.3507", "lng": "142.3995" },
+            { "text": "egg_spoonbill", "subdata": "spoonbill", "height": "0", "tool": "0", "lat": "-90.5625", "lng": "142.3516" },
             { "text": "egg_heron", "subdata": "heron", "height": "0", "tool": "0", "lat": "-81.2943", "lng": "146.0536" },
             { "text": "egg_loon", "subdata": "loon", "height": "0", "tool": "0", "lat": "-73.9008", "lng": "118.3273" },
             { "text": "egg_eagle_1", "subdata": "eagle", "height": "0", "tool": "0", "lat": "-31.1138", "lng": "92.9217" },
@@ -144,7 +144,7 @@
             { "text": "egg_loon", "subdata": "loon", "height": "0", "tool": "0", "lat": "-54.4755", "lng": "97.9010" },
             { "text": "egg_eagle_1", "subdata": "eagle", "height": "0", "tool": "0", "lat": "-44.3483", "lng": "81.3252" },
             { "text": "egg_eagle_2", "subdata": "eagle", "height": "0", "tool": "0", "lat": "-67.3433", "lng": "82.1836" },
-            { "text": "egg_vulture", "subdata": "vulture", "height": "0", "tool": "0", "lat": "-29.8439", "lng": "153.5091" },
+            { "text": "egg_vulture", "subdata": "vulture", "height": "0", "tool": "0", "lat": "-29.8439", "lng": "153.5134" },
             { "text": "egg_hawk_1", "subdata": "hawk", "height": "0", "tool": "0", "lat": "-38.3643", "lng": "118.3023" },
             { "text": "egg_hawk_2", "subdata": "hawk", "height": "0", "tool": "0", "lat": "-32.5453", "lng": "90.5557" },
             { "text": "egg_egret", "subdata": "egret", "height": "0", "tool": "0", "lat": "-81.3133", "lng": "141.1659" },
@@ -1063,7 +1063,7 @@
             { "text": "necklace_richelieu_amethyst", "height": "0", "tool": "0", "lat": "-84.7187", "lng": "85.8689", "video": "https://www.youtube.com/watch?v=mzkwrsCqNTc&t=88s" },
             { "text": "necklace_pelle_pearl", "height": "0", "tool": "2", "lat": "-58.7992", "lng": "116.3213", "video": "https://www.youtube.com/watch?v=mzkwrsCqNTc&t=119s" },
             { "text": "necklace_ainsworth_cross", "height": "0", "tool": "0", "lat": "-75.0648", "lng": "148.8046", "video": "https://www.youtube.com/watch?v=mzkwrsCqNTc&t=161s" },
-            { "text": "necklace_braxton_amethyst", "height": "0", "tool": "0", "lat": "-46.203125", "lng": "134.3203125", "video": "https://www.youtube.com/watch?v=mzkwrsCqNTc&t=186s" },
+            { "text": "necklace_braxton_amethyst", "height": "0", "tool": "0", "lat": "-46.2031", "lng": "134.3203", "video": "https://www.youtube.com/watch?v=mzkwrsCqNTc&t=186s" },
             { "text": "necklace_rou_pearl", "height": "0", "tool": "0", "lat": "-90.3315", "lng": "134.0399", "video": "https://www.youtube.com/watch?v=mzkwrsCqNTc&t=223s" },
             { "text": "necklace_gosselin_white_gold", "height": "0", "tool": "2", "lat": "-122.9080", "lng": "18.2928", "video": "https://www.youtube.com/watch?v=mzkwrsCqNTc&t=249s" },
             { "text": "necklace_dane_topaz", "height": "0", "tool": "0", "lat": "-120.5299", "lng": "27.5202", "video": "https://www.youtube.com/watch?v=mzkwrsCqNTc&t=289s" },
@@ -1558,7 +1558,7 @@
             { "text": "random_item_112", "height": "0", "tool": "2", "lat": "-62.9063", "lng": "103.2813" },
             { "text": "random_item_114", "height": "0", "tool": "2", "lat": "-43.7188", "lng": "106.5" },
             { "text": "random_item_122", "height": "0", "tool": "2", "lat": "-46.125", "lng": "142.4844" },
-            { "text": "random_item_133", "height": "0", "tool": "2", "lat": "-69.875", "lng": "110.5156" },
+            { "text": "random_item_133", "height": "0", "tool": "2", "lat": "-70.0156", "lng": "110.3359" },
             { "text": "random_item_138", "height": "0", "tool": "2", "lat": "-63.9688", "lng": "117.2031" },
             { "text": "random_item_146", "height": "0", "tool": "2", "lat": "-59.5781", "lng": "133.6719" },
             { "text": "random_item_154", "height": "0", "tool": "2", "lat": "-58.4453", "lng": "144.0625" },
@@ -1591,15 +1591,15 @@
             { "text": "random_item_97", "height": "0", "tool": "2", "lat": "-75.4219", "lng": "78.6875" },
             { "text": "random_item_104", "height": "0", "tool": "2", "lat": "-56.7969", "lng": "87.4375" },
             { "text": "random_item_113", "height": "0", "tool": "2", "lat": "-52.7578", "lng": "99.4297" },
-            { "text": "random_item_117", "height": "0", "tool": "2", "lat": "-33.6797", "lng": "143.2266" },
+            { "text": "random_item_117", "height": "0", "tool": "2", "lat": "-33.4063", "lng": "143.3594" },
             { "text": "random_item_118", "height": "0", "tool": "2", "lat": "-40.4766", "lng": "138.0938" },
             { "text": "random_item_124", "height": "0", "tool": "2", "lat": "-41.0469", "lng": "112.3906" },
             { "text": "random_item_153", "height": "0", "tool": "2", "lat": "-53.5313", "lng": "145.5156" },
-            { "text": "random_item_165", "height": "0", "tool": "2", "lat": "-39.4063", "lng": "146.2813" },
+            { "text": "random_item_165", "height": "0", "tool": "2", "lat": "-39.5313", "lng": "146.375" },
             { "text": "random_item_170", "height": "0", "tool": "2", "lat": "-34.9375", "lng": "153.9844" },
             { "text": "random_item_172", "height": "0", "tool": "2", "lat": "-63.125", "lng": "154.8125" },
             { "text": "random_item_175", "height": "0", "tool": "2", "lat": "-68.125", "lng": "143.9219" },
-            { "text": "random_item_178", "height": "0", "tool": "2", "lat": "-69.1484", "lng": "136.7109" },
+            { "text": "random_item_178", "height": "0", "tool": "2", "lat": "-69.0859", "lng": "136.4688" },
             { "text": "random_item_180", "height": "0", "tool": "2", "lat": "-68.9922", "lng": "128.75" },
             { "text": "random_item_187", "height": "0", "tool": "2", "lat": "-80.4534", "lng": "135.3812" },
             { "text": "random_item_197", "height": "0", "tool": "2", "lat": "-44.1188", "lng": "153.0078" }
@@ -1676,8 +1676,8 @@
             { "text": "random_item_198", "height": "0", "tool": "2", "lat": "-72.3128", "lng": "137.6875" }
         ],
         "7": [
-            { "text": "random_item_88", "height": "0", "tool": "1", "lat": "-60.9609", "lng": "116.9375", "comment": "not cycle 1, 6" },
-            { "text": "random_item_123", "height": "0", "tool": "2", "lat": "-45.2891", "lng": "127.7969", "comment": "not cycle 1, 5, 6" }
+            { "text": "random_item_88", "height": "0", "tool": "1", "lat": "-60.9609", "lng": "116.9375", "comment": "not cycle 1, 2, 6, (probably bugged)" },
+            { "text": "random_item_123", "height": "0", "tool": "2", "lat": "-45.2891", "lng": "127.7969", "comment": "not cycle 1, 2, 5, 6, (probably bugged)" }
         ]
     }
 }

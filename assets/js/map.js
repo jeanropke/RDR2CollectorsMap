@@ -433,6 +433,7 @@ var MapBase = {
     <small data-item="${marker.text}">${marker.amount}</small>
     <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
     </div>`;
+    
 
     return `<h1>${marker.title} - ${Language.get("menu.day")} ${(marker.day != Settings.cycleForUnknownCycles ? marker.day : Language.get('map.unknown_cycle'))}</h1>
         ${warningText}
