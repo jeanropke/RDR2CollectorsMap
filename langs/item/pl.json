@@ -1257,9 +1257,6 @@
 	
 	{"key": "wounded_animal.name", "value": "Zranione zwierze (zdarzenie)"},
 	{"key": "wounded_animal.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje."},
-	
-	{"key": "moonshiner_camp.name", "value": "Obóz bimbrowniczy (zdarzenie)"},
-	{"key": "moonshiner_camp.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje. Zabij bimbrowników i przeszukaj obóz, aby znaleźć kolekcjonerskie alkohole lub przepis na bimber."},
 
 	{"key": "rival_collector.name", "value": "Konkurencyjny kolekcjoner (zdarzenie)"},
 	{"key": "rival_collector.desc", "value": "To jest Przypadkowe zdarzenie. Konkurencyjny kolekcjoner, ubrany w niecodziennie wyglądające ubrania, posiadający charakterystyczne torby kolekcjonera. Zabij go i ograb zwłoki, aby dostać przedmiot/y kolekcjonerski/e."},
