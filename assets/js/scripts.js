@@ -341,7 +341,7 @@ $('.menu-option.clickable input').on('click', function (e) {
 //change cycle by collection
 $('.menu-option.clickable input').on('change', function (e) {
   var el = $(e.target);
-  Cycles.data.cycles[Cycles.data.current][el.attr("name")] = parseInt(el.val());
+  Cycles.categories[el.attr("name")] = parseInt(el.val());
   MapBase.addMarkers();
   Menu.refreshMenu();
 });
@@ -392,7 +392,7 @@ $("#clear-markers").on("click", function () {
 $("#clear-inventory").on("click", function () {
 
   $.each(MapBase.markers, function (key, marker) {
-    if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category] && (marker.amount > 0 || marker.isCollected)) {
+    if (marker.day == Cycles.categories[marker.category] && (marker.amount > 0 || marker.isCollected)) {
       if (Inventory.items[marker.text])
         Inventory.items[marker.text].amount = 0;
 
@@ -514,7 +514,7 @@ $('.submenu-only').on('click', function (e) {
 //Sell collections on menu
 $('.collection-sell').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]);
+  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
   $.each(getMarkers, function (key, value) {
     if (value.subdata) {
@@ -530,7 +530,7 @@ $('.collection-sell').on('click', function (e) {
 // Reset collections on menu
 $('.collection-reset').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]);
+  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
   $.each(getMarkers, function (key, value) {
     if (value.canCollect)
@@ -558,7 +558,7 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
   var collectible = $(this).data('type');
   var category = $(this).parent().data('type');
 
-  MapBase.removeItemFromMap(Cycles.data.cycles[Cycles.data.current][category], collectible, collectible, category, true);
+  MapBase.removeItemFromMap(Cycles.categories[category], collectible, collectible, category, true);
 });
 
 //Open & close side menu
@@ -1003,9 +1003,9 @@ $('#delete-all-settings').on('click', function () {
 
 $(function () {
   init();
+  MapBase.loadWeeklySet();
   Cycles.load();
   Inventory.init();
-  MapBase.loadWeeklySet();
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();
   Treasures.load();

@@ -233,7 +233,7 @@ var MapBase = {
     // Navigate to marker via URL.
     var markerParam = getParameterByName('m');
     if (markerParam != null && markerParam != '') {
-      var goTo = MapBase.markers.filter(_m => _m.text == markerParam && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category])[0];
+      var goTo = MapBase.markers.filter(_m => _m.text == markerParam && _m.day == Cycles.categories[_m.category])[0];
 
       //if a marker is passed on url, check if is valid
       if (typeof goTo == 'undefined' || goTo == null) return;
@@ -314,8 +314,9 @@ var MapBase = {
     Encounters.addToMap();
     MadamNazar.addMadamNazar();
 
-    if (refreshMenu)
+    if (refreshMenu) {
       Menu.refreshMenu();
+    }
     else {
       Routes.generatePath();
       return;
@@ -370,7 +371,7 @@ var MapBase = {
           return;
 
         if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
-          if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
+          if (marker.day == Cycles.categories[marker.category]) {
             marker.isCollected = true;
 
             Inventory.changeMarkerAmount(marker.subdata || marker.text, 1, skipInventory);
@@ -378,7 +379,7 @@ var MapBase = {
 
           marker.canCollect = false;
         } else {
-          if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
+          if (marker.day == Cycles.categories[marker.category]) {
             marker.isCollected = false;
 
             Inventory.changeMarkerAmount(marker.subdata || marker.text, -1, skipInventory);
@@ -391,7 +392,7 @@ var MapBase = {
         }
       });
 
-      if (subdata != '' && day != null && day == Cycles.data.cycles[Cycles.data.current][category]) {
+      if (subdata != '' && day != null && day == Cycles.categories[category]) {
         if ((_marker.length == 1 && !_marker[0].canCollect) || _marker.every(function (marker) { return !marker.canCollect; })) {
           $(`[data-type=${subdata}]`).addClass('disabled');
         } else {
@@ -497,7 +498,7 @@ var MapBase = {
   },
 
   addMarkerOnMap: function (marker, opacity = 1) {
-    if (marker.day != Cycles.data.cycles[Cycles.data.current][marker.category] && !Settings.showAllMarkers) return;
+    if (marker.day != Cycles.categories[marker.category] && !Settings.showAllMarkers) return;
 
     if (!uniqueSearchMarkers.includes(marker))
       return;
@@ -732,6 +733,6 @@ var MapBase = {
     var _day = date.split('/')[2];
     var _month = monthNames[date.split('/')[1] - 1];
     var _year = date.split('/')[0];
-    return `${_month} ${_day}, ${_year}`;
+    return `${_month} ${_day} ${_year}`;
   }
 };
