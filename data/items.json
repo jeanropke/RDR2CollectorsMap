@@ -259,7 +259,7 @@
             { "text": "coin_new_yorke_token", "height": "0", "tool": "2", "lat": "-32.5474", "lng": "147.0817" },
             { "text": "coin_five_dollar_bechtler", "height": "0", "tool": "2", "lat": "-46.9959", "lng": "117.0663" },
             { "text": "coin_quarter", "height": "0", "tool": "2", "lat": "-90.2591", "lng": "85.6957" },
-            { "text": "coin_gold_dollar_coin", "height": "0", "tool": "-1", "lat": "-63.8431", "lng": "116.9711" },
+            { "text": "coin_gold_dollar_coin", "height": "-1", "tool": "-1", "lat": "-63.8431", "lng": "116.9711" },
             { "text": "coin_nickel_coin", "height": "0", "tool": "2", "lat": "-104.0146", "lng": "43.9031" },
             { "text": "coin_halfpenny", "height": "0", "tool": "2", "lat": "-103.4945", "lng": "55.0293" },
             { "text": "coin_half_eagle", "height": "0", "tool": "2", "lat": "-48.9660", "lng": "134.4496" },

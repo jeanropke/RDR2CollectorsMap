@@ -9,12 +9,12 @@ var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
   'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'wounded_animal', 'moonshiner_camp', 'rival_collector', 'user_pins'
+  'wounded_animal', 'rival_collector', 'user_pins'
 ];
 
 var categoriesDisabledByDefault = [
   'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'wounded_animal', 'moonshiner_camp', 'rival_collector'
+  'wounded_animal', 'rival_collector'
 ]
 
 var enabledCategories = categories;
@@ -151,6 +151,7 @@ function init() {
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.markerCluster);
   $('#enable-marker-popups').prop("checked", Settings.isPopupsEnabled);
+  $('#enable-marker-popups-hover').prop("checked", Settings.isPopupsHoverEnabled);
   $('#enable-marker-shadows').prop("checked", Settings.isShadowsEnabled);
   $('#enable-dclick-zoom').prop("checked", Settings.isDoubleClickZoomEnabled);
   $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
@@ -340,7 +341,7 @@ $('.menu-option.clickable input').on('click', function (e) {
 //change cycle by collection
 $('.menu-option.clickable input').on('change', function (e) {
   var el = $(e.target);
-  Cycles.data.cycles[Cycles.data.current][el.attr("name")] = parseInt(el.val());
+  Cycles.categories[el.attr("name")] = parseInt(el.val());
   MapBase.addMarkers();
   Menu.refreshMenu();
 });
@@ -391,7 +392,7 @@ $("#clear-markers").on("click", function () {
 $("#clear-inventory").on("click", function () {
 
   $.each(MapBase.markers, function (key, marker) {
-    if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category] && (marker.amount > 0 || marker.isCollected)) {
+    if (marker.day == Cycles.categories[marker.category] && (marker.amount > 0 || marker.isCollected)) {
       if (Inventory.items[marker.text])
         Inventory.items[marker.text].amount = 0;
 
@@ -513,7 +514,7 @@ $('.submenu-only').on('click', function (e) {
 //Sell collections on menu
 $('.collection-sell').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]);
+  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
   $.each(getMarkers, function (key, value) {
     if (value.subdata) {
@@ -529,7 +530,7 @@ $('.collection-sell').on('click', function (e) {
 // Reset collections on menu
 $('.collection-reset').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]);
+  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
   $.each(getMarkers, function (key, value) {
     if (value.canCollect)
@@ -557,7 +558,7 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
   var collectible = $(this).data('type');
   var category = $(this).parent().data('type');
 
-  MapBase.removeItemFromMap(Cycles.data.cycles[Cycles.data.current][category], collectible, collectible, category, true);
+  MapBase.removeItemFromMap(Cycles.categories[category], collectible, collectible, category, true);
 });
 
 //Open & close side menu
@@ -590,6 +591,11 @@ $('#enable-marker-popups').on("change", function () {
 
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
+});
+
+$('#enable-marker-popups-hover').on("change", function () {
+  Settings.isPopupsHoverEnabled = $("#enable-marker-popups-hover").prop('checked');
+  $.cookie('enable-marker-popups-hover', Settings.isPopupsHoverEnabled ? '1' : '0', { expires: 999 });
 });
 
 $('#enable-marker-shadows').on("change", function () {
@@ -997,9 +1003,9 @@ $('#delete-all-settings').on('click', function () {
 
 $(function () {
   init();
+  MapBase.loadWeeklySet();
   Cycles.load();
   Inventory.init();
-  MapBase.loadWeeklySet();
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();
   Treasures.load();

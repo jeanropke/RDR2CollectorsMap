@@ -30,7 +30,7 @@ Menu.refreshMenu = function () {
   var anyUnavailableCategories = [];
 
   $.each(MapBase.markers, function (_key, marker) {
-    if (marker.day != Cycles.data.cycles[Cycles.data.current][marker.category]) return;
+    if (marker.day != Cycles.categories[marker.category]) return;
 
     // Only add subdata markers once.
     if (marker.subdata && $(`.menu-hidden[data-type=${marker.category}]`).children(`[data-type=${marker.subdata}]`).length > 0) return;
@@ -120,7 +120,7 @@ Menu.refreshMenu = function () {
         if (marker.subdata != _marker.subdata)
           return false;
 
-        if (_marker.day != Cycles.data.cycles[Cycles.data.current][_marker.category])
+        if (_marker.day != Cycles.categories[_marker.category])
           return false;
 
         return true;
@@ -229,7 +229,7 @@ Menu.hideAll = function () {
 };
 
 Menu.refreshItemsCounter = function () {
-  var _markers = MapBase.markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible);
+  var _markers = MapBase.markers.filter(item => item.day == Cycles.categories[item.category] && item.isVisible);
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
     .replace('{count}', _markers.filter(item => item.isCollected || (Inventory.isEnabled && item.amount >= Inventory.stackSize)).length)

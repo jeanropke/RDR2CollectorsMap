@@ -195,7 +195,6 @@
 	{"key": "menu.modal_clear_important_items_title", "value": "Entferne wichtige Markierungen?"},
 	{"key": "menu.sort_items_alphabetically", "value": "Sortiere Gegenstände alphabetisch"},
 	{"key": "menu.enable_marker_shadows", "value": "Markierungs-Schatten aktivieren"},
-	{"key": "menu.moonshiner_camp", "value": "Moonshiner Lager"},
 	{"key": "menu.rival_collector", "value": "Rivalisierende Sammler"},
 	{"key": "map.refresh_for_updates_alert", "value": "Die heutigen Zyklus wurden noch nicht aktualisiert. Bitte aktualisiere diese Seite um zu prüfen ob Aktualisierungen vorhanden sind."},
 

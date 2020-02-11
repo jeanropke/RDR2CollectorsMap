@@ -43,7 +43,7 @@ var MadamNazar = {
         icon: L.divIcon({
           iconSize: [35, 45],
           iconAnchor: [17, 42],
-          popupAnchor: [1, -32],
+          popupAnchor: [0, -28],
           shadowAnchor: [10, 12],
           html: `
               <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">

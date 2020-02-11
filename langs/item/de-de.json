@@ -1256,10 +1256,7 @@
 
 	{"key": "wounded_animal.name","value":"Verwundetes Tier"},
 	{"key": "wounded_animal.desc","value":"Zufällige Ereignisse. Ein weißes Blinken auf der Karte weißt auf das Ereignis hin. Töte das Tier um eine zufällige Pfeilspitze zu erhalten."},
-	
-	{"key": "moonshiner_camp.name","value":"Moonshiner Lager"},
-	{"key": "moonshiner_camp.desc","value":"Zufällige Ereignisse. Ein weißes Blinken auf der Karte weißt auf das Ereignis hin. Töte die Moonshiner und plündere dann das Lager, für die Chance auf eine antike Schnapsflasche oder ein Moonshine-Rezept."},
-	
+
 	{"key": "rival_collector.name","value":"Rivalisierender Sammler"},
 	{"key": "rival_collector.desc","value":"Zufällige Ereignisse. Ein rivalisierender Sammler mit schick aussehender Kleidung und großen Satteltaschen kann hier auftauchen. Töte ihn und durchsuche seinen toten Körper um einen Sammelgegenstand zu erhalten."},
 	

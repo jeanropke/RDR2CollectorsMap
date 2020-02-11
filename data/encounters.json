@@ -110,20 +110,6 @@
 		{ "text": "wounded_animal", "x": "-55.1201", "y": "138.8473" },
 		{ "text": "wounded_animal", "x": "-90.2230", "y": "136.3147" }
 	],
-	"moonshiner_camp": [
-		{ "text": "moonshiner_camp", "x": "-69.0468", "y": "145.5685" },
-		{ "text": "moonshiner_camp", "x": "-74.8935", "y": "138.2005" },
-		{ "text": "moonshiner_camp", "x": "-57.0547", "y": "79.8128" },
-		{ "text": "moonshiner_camp", "x": "-44.3101", "y": "114.9964" },
-		{ "text": "moonshiner_camp", "x": "-43.3475", "y": "121.316" },
-		{ "text": "moonshiner_camp", "x": "-50.7012", "y": "118.1028" },
-		{ "text": "moonshiner_camp", "x": "-57.491", "y": "102.8198" },
-		{ "text": "moonshiner_camp", "x": "-47.1128", "y": "127.0796" },
-		{ "text": "moonshiner_camp", "x": "-67.4592", "y": "145.8408" },
-		{ "text": "moonshiner_camp", "x": "-64.7034", "y": "151.1282" },
-		{ "text": "moonshiner_camp", "x": "-97.6927", "y": "132.8484" },
-		{ "text": "moonshiner_camp", "x": "-78.9189", "y": "125.3652" }
-	],
 	"rival_collector": [
 		{ "text": "rival_collector", "x": "-89.9082", "y": "133.8289" },
 		{ "text": "rival_collector", "x": "-68.6286", "y": "129.3483" },

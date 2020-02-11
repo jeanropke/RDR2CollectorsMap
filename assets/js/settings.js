@@ -3,6 +3,7 @@ var Settings = {
   isMenuOpened: $.cookie('menu-opened') == '1',
   isCoordsEnabled: $.cookie('coords-enabled') == '1',
   isPopupsEnabled: $.cookie('enable-marker-popups') == '1',
+  isPopupsHoverEnabled: $.cookie('enable-marker-popups-hover') == '1',
   isShadowsEnabled: $.cookie('enable-marker-shadows') == '1',
   isDoubleClickZoomEnabled: $.cookie('enable-dclick-zoom') == '1',
   isPinsPlacingEnabled: $.cookie('pins-place-enabled') == '1',
