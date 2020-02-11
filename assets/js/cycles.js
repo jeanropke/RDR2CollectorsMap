@@ -11,9 +11,13 @@ var Cycles = {
   },
   getTodayCycle: function () {
     var utcDate = new Date();
-    console.log(`${utcDate.getUTCMonth() + 1}/${utcDate.getUTCDate()}/${utcDate.getUTCFullYear()}`);
 
     var _data = Cycles.data.filter(_c => { return _c.date === MapBase.formatDate(`${utcDate.getUTCFullYear()}/${(utcDate.getUTCMonth() + 1)}/${utcDate.getUTCDate()}`).toLowerCase() })[0];
+    
+    if (_data == null) {
+      console.error('[Cycles] Cycle not found: ' + MapBase.formatDate(`${utcDate.getUTCFullYear()}/${(utcDate.getUTCMonth() + 1)}/${utcDate.getUTCDate()}`).toLowerCase());
+      return;
+    }
 
     Cycles.categories.date = _data.date;
     Cycles.categories.american_flowers = _data.american_flowers;
