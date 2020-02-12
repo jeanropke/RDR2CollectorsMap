@@ -140,7 +140,9 @@ Menu.refreshMenu = function () {
       }
     });
 
+    var defaultHelpTimeout;
     collectibleElement.hover(function (e) {
+      clearTimeout(defaultHelpTimeout);
       var language = Language.get(`help.${$(this).data('help')}`);
 
       if (language.indexOf('{collection}') !== -1) {
@@ -149,7 +151,9 @@ Menu.refreshMenu = function () {
 
       $('#help-container p').text(language);
     }, function () {
-      $('#help-container p').text(Language.get(`help.default`));
+      defaultHelpTimeout = setTimeout(function () {
+        $('#help-container p').text(Language.get(`help.default`));
+      }, 100);
     });
 
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));

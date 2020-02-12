@@ -962,11 +962,15 @@ $('#generate-route-railroad-weight').on("change", function () {
 /**
  * Tutorial logic
  */
+var defaultHelpTimeout;
 $('[data-help]').hover(function (e) {
   var attr = $(this).attr('data-help');
+  clearTimeout(defaultHelpTimeout);
   $('#help-container p').attr('data-text', `help.${attr}`).text(Language.get(`help.${attr}`));
 }, function () {
-  $('#help-container p').attr('data-text', `help.default`).text(Language.get(`help.default`));
+  defaultHelpTimeout = setTimeout(function () {
+    $('#help-container p').attr('data-text', `help.default`).text(Language.get(`help.default`));
+  }, 100);
 });
 
 $('#show-help').on("change", function () {
