@@ -38,13 +38,12 @@ var MadamNazar = {
       return;
 
     if (enabledCategories.includes('nazar')) {
-      var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+      var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
       var marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
         icon: L.divIcon({
-          iconSize: [35, 45],
-          iconAnchor: [17, 42],
-          popupAnchor: [0, -28],
-          shadowAnchor: [10, 12],
+          iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+          iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+          popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
           html: `
               <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
               <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">

@@ -19,6 +19,7 @@ var Settings = {
   sortItemsAlphabetically: $.cookie('sort-items-alphabetically') == '1',
   displayClockHideTimer: $.cookie('clock-or-timer') == 'true',
   cycleForUnknownCycles: 7,
-  cyclesOffsetMaxForward: 7,
+  cyclesOffsetMaxForward: 1,
   cyclesOffsetMaxBackward: 7,
+  markerSize: parseFloat($.cookie('marker-size')) ? parseFloat($.cookie('marker-size')) : 1
 };

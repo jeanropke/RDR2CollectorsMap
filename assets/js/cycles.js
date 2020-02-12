@@ -13,8 +13,8 @@ var Cycles = {
   getTodayCycle: function () {
     var utcDate = new Date();
     var utcYesterdayDate = new Date();
-    utcDate.setDate(utcDate.getUTCDate() + Cycles.offset);
-    utcYesterdayDate.setDate(utcYesterdayDate.getUTCDate() - 1 + Cycles.offset);
+    utcDate.setUTCDate(utcDate.getUTCDate() + Cycles.offset);
+    utcYesterdayDate.setUTCDate(utcYesterdayDate.getUTCDate() - 1 + Cycles.offset);
 
     var yesterday_data = Cycles.data.filter(_c => { return _c.date === MapBase.formatDate(`${utcYesterdayDate.getUTCFullYear()}/${(utcYesterdayDate.getUTCMonth() + 1)}/${utcYesterdayDate.getUTCDate()}`).toLowerCase() })[0];
     var _data = Cycles.data.filter(_c => { return _c.date === MapBase.formatDate(`${utcDate.getUTCFullYear()}/${(utcDate.getUTCMonth() + 1)}/${utcDate.getUTCDate()}`).toLowerCase() })[0];

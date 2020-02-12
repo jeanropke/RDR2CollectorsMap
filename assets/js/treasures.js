@@ -11,12 +11,12 @@ var Treasures = {
     console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
   },
   set: function () {
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    Treasures.markers = [];
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     var treasureIcon = L.divIcon({
-      iconSize: [35, 45],
-      iconAnchor: [17, 42],
-      popupAnchor: [0, -28],
-      shadowAnchor: [10, 12],
+      iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+      iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+      popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
       html: `
         <img class="icon" src="./assets/images/icons/treasure.png" alt="Icon">
         <img class="background" src="./assets/images/icons/marker_beige.png" alt="Background">
@@ -58,7 +58,7 @@ var Treasures = {
   addToMap: function () {
 
     Layers.miscLayer.clearLayers();
-
+    
     if (!enabledCategories.includes('treasure'))
       return;
 

@@ -42,10 +42,10 @@ var Encounters = {
       var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
       var tempMarker = L.marker([marker.lat, marker.lng], {
         icon: L.divIcon({
-          iconSize: [35, 45],
-          iconAnchor: [17, 42],
-          popupAnchor: [0, -28],
-          shadowAnchor: [10, 12],
+          iconSize: [35*Settings.markerSize, 45*Settings.markerSize],
+          iconAnchor: [17*Settings.markerSize, 42*Settings.markerSize],
+          popupAnchor: [0*Settings.markerSize, -28*Settings.markerSize],
+          shadowAnchor: [10*Settings.markerSize, 12*Settings.markerSize],
           html: `
             <img class="icon" src="./assets/images/icons/${marker.category}.png" alt="Icon">
             <img class="background" src="./assets/images/icons/marker_lightred.png" alt="Background">

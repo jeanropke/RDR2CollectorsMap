@@ -123,6 +123,11 @@ function init() {
     $.cookie('marker-opacity', '1', { expires: 999 });
   }
 
+  if (typeof $.cookie('marker-size') === 'undefined') {
+    Settings.markerSize = 1;
+    $.cookie('marker-size', '1', { expires: 999 });
+  }
+
   if (typeof $.cookie('overlay-opacity') === 'undefined') {
     Settings.overlayOpacity = 0.5;
     $.cookie('overlay-opacity', '0.5', { expires: 999 });
@@ -146,6 +151,7 @@ function init() {
   $('#tools').val(Settings.toolType);
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
+  $('#marker-size').val(Settings.markerSize);
   $('#overlay-opacity').val(Settings.overlayOpacity);
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
@@ -465,6 +471,15 @@ $("#overlay-opacity").on("change", function () {
   Settings.overlayOpacity = parsed ? parsed : 0.5;
   $.cookie('overlay-opacity', Settings.overlayOpacity, { expires: 999 });
   MapBase.setOverlays(parsed);
+});
+
+//Change & save marker size
+$("#marker-size").on("change", function () {
+  var parsed = parseFloat($("#marker-size").val());
+  Settings.markerSize = parsed ? parsed : 1;
+  $.cookie('marker-size', Settings.markerSize, { expires: 999 });
+  MapBase.addMarkers();
+  Treasures.set();
 });
 
 //Disable & enable collection category

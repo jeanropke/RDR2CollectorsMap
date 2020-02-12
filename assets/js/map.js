@@ -482,7 +482,7 @@ var MapBase = {
     <small data-item="${marker.text}">${marker.amount}</small>
     <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
     </div>`;
-    
+
 
 
     return `<h1>${marker.title} - ${Language.get("menu.day")} ${(marker.day != Settings.cycleForUnknownCycles ? marker.day : Language.get('map.unknown_cycle'))}</h1>
@@ -515,7 +515,7 @@ var MapBase = {
     var overlay = '';
     var icon = `./assets/images/icons/${marker.category}.png`;
     var background = `./assets/images/icons/marker_${MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)}.png`;
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override
     if (marker.category == 'random') {
@@ -544,10 +544,9 @@ var MapBase = {
     var tempMarker = L.marker([marker.lat, marker.lng], {
       opacity: marker.canCollect ? opacity : opacity / 3,
       icon: new L.DivIcon.DataMarkup({
-        iconSize: [35, 45],
-        iconAnchor: [17, 42],
-        popupAnchor: [0, -28],
-        shadowAnchor: [10, 12],
+        iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+        iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+        popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
         html: `
           ${overlay}
           <img class="icon" src="${icon}" alt="Icon">
@@ -658,13 +657,12 @@ var MapBase = {
   addFastTravelMarker: function () {
     if (enabledCategories.includes('fast_travel')) {
       $.each(fastTravelData, function (key, value) {
-        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         var marker = L.marker([value.x, value.y], {
           icon: L.divIcon({
-            iconSize: [35, 45],
-            iconAnchor: [17, 42],
-            popupAnchor: [0, -28],
-            shadowAnchor: [10, 12],
+            iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+            iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+            popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
             html: `
               <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Icon">
               <img class="background" src="./assets/images/icons/marker_gray.png" alt="Background">
@@ -688,13 +686,12 @@ var MapBase = {
   },
 
   debugMarker: function (lat, long, name = 'Debug Marker') {
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     var marker = L.marker([lat, long], {
       icon: L.divIcon({
-        iconSize: [35, 45],
-        iconAnchor: [17, 42],
-        popupAnchor: [0, -28],
-        shadowAnchor: [10, 12],
+        iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+        iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+        popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
         html: `
           <img class="icon" src="./assets/images/icons/random.png" alt="Icon">
           <img class="background" src="./assets/images/icons/marker_darkblue.png" alt="Background">
