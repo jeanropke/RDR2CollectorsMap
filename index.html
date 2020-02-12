@@ -18,10 +18,10 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=301" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=302" />
 
   <script>
-    var nocache = 301;
+    var nocache = 302;
   </script>
 </head>
 
@@ -45,10 +45,10 @@
         <div id="copy-search-link" class="input-action-copy" data-help="search_copy_link"></div>
       </div>
     </div>
-    <div id='cycle-changer-container' class="collection-value cycle-changer turn-off">
-      <span id="change-cycle-backward" class="clickable"><img src="assets/images/change-day-arrow.png" alt="arrow"></span>
+    <div id='cycle-changer-container' class="collection-value cycle-changer hidden">
+      <div id="cycle-prev" class="input-selection-arrow"><img src="assets/images/selection_left.png" alt="arrow"></div>
       <span class="cycle-data">¯\_(ツ)_/¯</span>
-      <span id="change-cycle-forward" class="clickable"><img src="assets/images/change-day-arrow.png" alt="arrow"></span>
+      <div id="cycle-next" class="input-selection-arrow"><img src="assets/images/selection_right.png" alt="arrow"></div>
     </div>
     <div class="links-container">
       <a data-text="menu.hide_all" data-help="hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
@@ -388,16 +388,6 @@
           <option value="3" data-text="menu.tool_type.all" selected>All</option>
         </select>
       </div>
-      <div class="input-container" data-help="marker_opacity">
-        <label for="marker-opacity" data-text="menu.marker_opacity">Marker opacity</label>
-        <select class="input-day wide-select-menu" id="marker-opacity">
-          <option value="0.2" data-text="menu.marker_opacity.20">20%</option>
-          <option value="0.4" data-text="menu.marker_opacity.40">40%</option>
-          <option value="0.6" data-text="menu.marker_opacity.60">60%</option>
-          <option value="0.8" data-text="menu.marker_opacity.80" selected>80%</option>
-          <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
-        </select>
-      </div>
       <div class="input-container" data-help="marker_size">
         <label for="marker-size" data-text="menu.marker_size">Marker size</label>
         <select class="input-day wide-select-menu" id="marker-size">
@@ -407,6 +397,16 @@
           <option value="1.5" data-text="menu.marker_size.150">150%</option>
           <option value="1.75" data-text="menu.marker_size.175">175%</option>
           <option value="2" data-text="menu.marker_size.200">200%</option>
+        </select>
+      </div>
+      <div class="input-container" data-help="marker_opacity">
+        <label for="marker-opacity" data-text="menu.marker_opacity">Marker opacity</label>
+        <select class="input-day wide-select-menu" id="marker-opacity">
+          <option value="0.2" data-text="menu.marker_opacity.20">20%</option>
+          <option value="0.4" data-text="menu.marker_opacity.40">40%</option>
+          <option value="0.6" data-text="menu.marker_opacity.60">60%</option>
+          <option value="0.8" data-text="menu.marker_opacity.80" selected>80%</option>
+          <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
         </select>
       </div>
       <div class="input-container" data-help="overlay_opacity">
@@ -867,7 +867,7 @@
     <div id="countdown">--:--:--</div>
     <div class="day-cycle"></div>
   </div>
-  <div class="clock-container turn-off">
+  <div class="clock-container hidden">
     <div id="time-in-game">--:-- --</div>
     <div class="day-cycle"></div>
   </div>
@@ -994,21 +994,21 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=301"></script>
-  <script src="assets/js/settings.js?nocache=301"></script>
-  <script src="assets/js/nazar.js?nocache=301"></script>
-  <script src="assets/js/cycles.js?nocache=301"></script>
-  <script src="assets/js/marker.js?nocache=301"></script>
-  <script src="assets/js/inventory.js?nocache=301"></script>
-  <script src="assets/js/treasures.js?nocache=301"></script>
-  <script src="assets/js/encounters.js?nocache=301"></script>
-  <script src="assets/js/pins.js?nocache=301"></script>
-  <script src="assets/js/map.js?nocache=301"></script>
-  <script src="assets/js/language.js?nocache=301"></script>
-  <script src="assets/js/menu.js?nocache=301"></script>
-  <script src="assets/js/routes.js?nocache=301"></script>
-  <script src="assets/js/pathfinder.js?nocache=301"></script>
-  <script src="assets/js/scripts.js?nocache=301"></script>
+  <script src="assets/js/layers.js?nocache=302"></script>
+  <script src="assets/js/settings.js?nocache=302"></script>
+  <script src="assets/js/nazar.js?nocache=302"></script>
+  <script src="assets/js/cycles.js?nocache=302"></script>
+  <script src="assets/js/marker.js?nocache=302"></script>
+  <script src="assets/js/inventory.js?nocache=302"></script>
+  <script src="assets/js/treasures.js?nocache=302"></script>
+  <script src="assets/js/encounters.js?nocache=302"></script>
+  <script src="assets/js/pins.js?nocache=302"></script>
+  <script src="assets/js/map.js?nocache=302"></script>
+  <script src="assets/js/language.js?nocache=302"></script>
+  <script src="assets/js/menu.js?nocache=302"></script>
+  <script src="assets/js/routes.js?nocache=302"></script>
+  <script src="assets/js/pathfinder.js?nocache=302"></script>
+  <script src="assets/js/scripts.js?nocache=302"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
