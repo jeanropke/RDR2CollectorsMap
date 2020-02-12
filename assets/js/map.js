@@ -730,10 +730,11 @@ var MapBase = {
   },
 
   formatDate: function (date) {
+    var pad = (e, s) => (1e3 + e + '').slice(-s);
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var _day = date.split('/')[2];
     var _month = monthNames[date.split('/')[1] - 1];
     var _year = date.split('/')[0];
-    return `${_month} ${_day} ${_year}`;
+    return `${_month} ${pad(_day, 2)} ${_year}`;
   }
 };

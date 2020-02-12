@@ -249,3 +249,23 @@ $('#clear_highlights').on('click', function () {
     MapBase.highlightImportantItem(tempArray[0]);
   });
 });
+
+// change cycles from menu (if debug options are enabled)
+$('#change-cycle-backward').on('click', function () {
+  Cycles.offset--
+  if (Cycles.offset < -Settings.cyclesOffsetMaxBackward) {
+    Cycles.offset = -Settings.cyclesOffsetMaxBackward;
+    return;
+  }
+  Inventory.save();
+  Cycles.load();
+});
+$('#change-cycle-forward').on('click', function () {
+  Cycles.offset++
+  if (Cycles.offset > Settings.cyclesOffsetMaxForward) {
+    Cycles.offset = Settings.cyclesOffsetMaxForward;
+    return;
+  }
+  Inventory.save();
+  Cycles.load();
+});

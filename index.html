@@ -45,6 +45,11 @@
         <div id="copy-search-link" class="input-action-copy" data-help="search_copy_link"></div>
       </div>
     </div>
+    <div id='cycle-changer-container' class="collection-value cycle-changer turn-off">
+      <span id="change-cycle-backward" class="clickable"><img src="assets/images/change-day-arrow.png" alt="arrow"></span>
+      <span class="cycle-data">¯\_(ツ)_/¯</span>
+      <span id="change-cycle-forward" class="clickable"><img src="assets/images/change-day-arrow.png" alt="arrow"></span>
+    </div>
     <div class="links-container">
       <a data-text="menu.hide_all" data-help="hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
       <a data-text="menu.show_all" data-help="show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
@@ -865,10 +870,12 @@
     <p></p><button id="lat-lng-container-close-button">×</button>
   </div>
 
+  <!--
   <div class="map-cycle-alert hidden">
     <span>Today's cycles haven't been updated yet. Please refresh to check for updates.</span>
     <button class="close-button">×</button>
   </div>
+  -->
 
   <!-- Modals -->
   <div class="modal fade" id="clear-markers-modal" tabindex="-1" role="dialog" aria-labelledby="clear-markers-title">
