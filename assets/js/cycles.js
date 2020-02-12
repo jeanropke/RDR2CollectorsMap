@@ -2,6 +2,10 @@ var Cycles = {
   categories: [],
   data: [],
   offset: 0,
+  unknownCycleNumber: 7,
+  forwardMaxOffset: 1,
+  backwardMaxOffset: 7,
+
   load: function () {
     $.getJSON('data/cycles.json?nocache=' + nocache)
       .done(function (_data) {
@@ -232,6 +236,29 @@ var Cycles = {
     }
     return color;
   },
+
+  nextCycle: function () {
+    Cycles.offset--;
+    if (Cycles.offset < -Cycles.backwardMaxOffset) {
+      Cycles.offset = -Cycles.backwardMaxOffset;
+      return;
+    }
+
+    Inventory.save();
+    Cycles.load();
+  },
+
+  prevCycle: function () {
+    Cycles.offset++;
+    if (Cycles.offset > Cycles.forwardMaxOffset) {
+      Cycles.offset = Cycles.forwardMaxOffset;
+      return;
+    }
+
+    Inventory.save();
+    Cycles.load();
+  },
+
   exportTable: function (inGameCycles = false, toPrint = false) {
     var _tempTable = {};
     $.each(Cycles.data.cycles, function (key, value) {

@@ -255,23 +255,5 @@ $('#clear_highlights').on('click', function () {
 });
 
 // change cycles from menu (if debug options are enabled)
-$('#cycle-prev').on('click', function () {
-  Cycles.offset--;
-  if (Cycles.offset < -Settings.cyclesOffsetMaxBackward) {
-    Cycles.offset = -Settings.cyclesOffsetMaxBackward;
-    return;
-  }
-
-  Inventory.save();
-  Cycles.load();
-});
-$('#cycle-next').on('click', function () {
-  Cycles.offset++;
-  if (Cycles.offset > Settings.cyclesOffsetMaxForward) {
-    Cycles.offset = Settings.cyclesOffsetMaxForward;
-    return;
-  }
-
-  Inventory.save();
-  Cycles.load();
-});
+$('#cycle-prev').on('click', Cycles.nextCycle);
+$('#cycle-next').on('click', Cycles.prevCycle);
