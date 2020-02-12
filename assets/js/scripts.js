@@ -305,6 +305,7 @@ $('.timer-container, .clock-container').on('click', function () {
 //Toggle debug container
 $("#toggle-debug").on("click", function () {
   $("#debug-container").toggleClass('opened');
+  $('div#cycle-changer-container').toggleClass('turn-off');
 });
 
 //Show all markers on map

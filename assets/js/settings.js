@@ -18,5 +18,7 @@ var Settings = {
   language: $.cookie('language') ? $.cookie('language') : navigator.language.toLowerCase(),
   sortItemsAlphabetically: $.cookie('sort-items-alphabetically') == '1',
   displayClockHideTimer: $.cookie('clock-or-timer') == 'true',
-  cycleForUnknownCycles: 7
+  cycleForUnknownCycles: 7,
+  cyclesOffsetMaxForward: 7,
+  cyclesOffsetMaxBackward: 7,
 };

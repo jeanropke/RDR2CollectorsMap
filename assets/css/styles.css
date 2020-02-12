@@ -238,10 +238,6 @@ input, textarea, select, .btn {
     line-height: 28px;
 }
 
-.turn-off {
-    display: none;
-}
-
 .counter-container {
     position: fixed;
     z-index: 1010;
@@ -717,6 +713,33 @@ a.wiki-page:visited {
     border-radius: 50%;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
+.cycle-changer {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+}
+
+span.cycle-data {
+    text-align: center;
+}
+
+div>span.cycle-data {
+    min-width: 100px;
+    margin: 0 20px;
+}
+
+#change-cycle-backward {
+    transform: rotate(180deg) translate(0, -4px);
+}
+
+#cycle-changer-container {
+    margin: 10px 0;
+}
+
 .marker-content-wrapper {
     display: flex;
     align-items: center;
@@ -831,6 +854,10 @@ a.no-style:visited {
 
 .text-danger {
     color: #f95050 !important
+}
+
+.turn-off {
+    display: none !important;
 }
 
 /* Bootstrap modal styling */
