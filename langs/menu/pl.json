@@ -191,7 +191,7 @@
 	{"key": "menu.overlay_opacity.50", "value": "50%"},
 	{"key": "menu.overlay_opacity.75", "value": "75%"},
 	{"key": "menu.overlay_opacity.100", "value": "Nieprzezroczyste"},
-	{"key": "menu.marker_size", "value": "Marker size"},
+	{"key": "menu.marker_size", "value": "Wielkość znacznika"},
 	{"key": "menu.marker_size.75", "value": "75%"},
 	{"key": "menu.marker_size.100", "value": "100%"},
 	{"key": "menu.marker_size.125", "value": "125%"},
