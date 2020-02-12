@@ -725,6 +725,9 @@ a.wiki-page:visited {
 
 span.cycle-data {
     text-align: center;
+}
+
+div>span.cycle-data {
     min-width: 100px;
     margin: 0 20px;
 }
