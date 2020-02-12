@@ -723,21 +723,14 @@ a.wiki-page:visited {
     justify-content: center;
 }
 
-span.cycle-data {
-    text-align: center;
-}
-
-div>span.cycle-data {
-    min-width: 100px;
-    margin: 0 20px;
-}
-
-#change-cycle-backward {
-    transform: rotate(180deg) translate(0, -4px);
-}
-
 #cycle-changer-container {
     margin: 10px 0;
+}
+
+#cycle-changer-container .cycle-data {
+    text-align: center;
+    min-width: 100px;
+    margin: 0 6px;
 }
 
 .marker-content-wrapper {
@@ -824,6 +817,15 @@ div>span.cycle-data {
     cursor: pointer;
 }
 
+.input-selection-arrow {
+    cursor: pointer;
+}
+
+.input-selection-arrow img {
+    height: 16px;
+    width: auto;
+}
+
 a.no-style {
     color: #fff;
     text-decoration: none;
@@ -856,7 +858,7 @@ a.no-style:visited {
     color: #f95050 !important
 }
 
-.turn-off {
+.hidden {
     display: none !important;
 }
 
