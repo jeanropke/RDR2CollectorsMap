@@ -283,5 +283,6 @@
 	{"key": "help.sort_items_alphabetically", "value": "Whether items should be sorted alphabetically or using the in-game order."},
 	{"key": "help.enable_marker_shadows", "value": "Toggles whether a marker should have a shadow or not. Disabling the shadows could improve performance somewhat."},
 	{"key": "help.delete_all_settings", "value": "Resets all settings, user pins, and inventory items to their default values."},
-	{"key": "help.enable_marker_popups_hover", "value": "Toggles whether the popups should open when you hover over a marker or when you click a marker. Doesn't work well on touchscreens."}
+	{"key": "help.enable_marker_popups_hover", "value": "Toggles whether the popups should open when you hover over a marker or when you click a marker. Doesn't work well on touchscreens."},
+	{"key": "help.marker_size", "value": "Allows you to change the size of the collectible markers on the map."}
 ]
