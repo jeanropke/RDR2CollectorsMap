@@ -175,12 +175,18 @@ function init() {
   }
 
   if (Settings.displayClockHideTimer) {
-    $('.clock-container').removeClass('turn-off');
-    $('.timer-container').addClass('turn-off');
+    $('.clock-container').removeClass('hidden');
+    $('.timer-container').addClass('hidden');
   }
   else {
-    $('.clock-container').addClass('turn-off');
-    $('.timer-container').removeClass('turn-off');
+    $('.clock-container').addClass('hidden');
+    $('.timer-container').removeClass('hidden');
+  }
+
+  if (Settings.isDebugEnabled) {
+    $('#cycle-changer-container').removeClass('hidden');
+  } else {
+    $('#cycle-changer-container').addClass('hidden');
   }
 
   Pins.addToMap();
@@ -299,7 +305,7 @@ setInterval(function () {
 
 // toggle timer and clock after click the container
 $('.timer-container, .clock-container').on('click', function () {
-  $('.timer-container, .clock-container').toggleClass('turn-off');
+  $('.timer-container, .clock-container').toggleClass('hidden');
   Settings.displayClockHideTimer = !Settings.displayClockHideTimer;
   $.cookie('clock-or-timer', Settings.displayClockHideTimer, { expires: 999 });
 });
@@ -311,7 +317,6 @@ $('.timer-container, .clock-container').on('click', function () {
 //Toggle debug container
 $("#toggle-debug").on("click", function () {
   $("#debug-container").toggleClass('opened');
-  $('div#cycle-changer-container').toggleClass('turn-off');
 });
 
 //Show all markers on map
@@ -334,9 +339,13 @@ $('#enable-debug').on("change", function () {
   if ($("#enable-debug").prop('checked')) {
     Settings.isDebugEnabled = true;
     $.cookie('debug', '1', { expires: 999 });
+
+    $('#cycle-changer-container').removeClass('hidden');
   } else {
     Settings.isDebugEnabled = false;
     $.removeCookie('debug');
+
+    $('#cycle-changer-container').addClass('hidden');
   }
 });
 

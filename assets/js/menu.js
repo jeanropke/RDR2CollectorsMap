@@ -251,21 +251,23 @@ $('#clear_highlights').on('click', function () {
 });
 
 // change cycles from menu (if debug options are enabled)
-$('#change-cycle-backward').on('click', function () {
-  Cycles.offset--
+$('#cycle-prev').on('click', function () {
+  Cycles.offset--;
   if (Cycles.offset < -Settings.cyclesOffsetMaxBackward) {
     Cycles.offset = -Settings.cyclesOffsetMaxBackward;
     return;
   }
+
   Inventory.save();
   Cycles.load();
 });
-$('#change-cycle-forward').on('click', function () {
-  Cycles.offset++
+$('#cycle-next').on('click', function () {
+  Cycles.offset++;
   if (Cycles.offset > Settings.cyclesOffsetMaxForward) {
     Cycles.offset = Settings.cyclesOffsetMaxForward;
     return;
   }
+
   Inventory.save();
   Cycles.load();
 });

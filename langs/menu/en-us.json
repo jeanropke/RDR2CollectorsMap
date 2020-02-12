@@ -196,7 +196,7 @@
 	{"key": "menu.marker_size.100", "value": "100%"},
 	{"key": "menu.marker_size.125", "value": "125%"},
 	{"key": "menu.marker_size.150", "value": "150%"},
-	{"key": "menu.marker_size.175", "value": "125%"},
+	{"key": "menu.marker_size.175", "value": "175%"},
 	{"key": "menu.marker_size.200", "value": "200%"},	
 	{"key": "menu.toggle_debug", "value": "Toggle debug features"},
 	{"key": "map.random_spot.desc", "value": "This spot gives you a random item, you can view more detailed information {link}."},
