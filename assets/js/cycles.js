@@ -107,8 +107,8 @@ var Cycles = {
   checkForUpdate: function () {
     var day = new Date();
     day.setUTCDate(day.getUTCDate() + Cycles.offset);
-    var cycleDate = day.getUTCDate();
-    if (cycleDate != Cycles.setLocaleDate())
+
+    if (day.getUTCDate() != Cycles.setLocaleDate())
       Cycles.getTodayCycle();
   },
 
