@@ -16,6 +16,11 @@ var Cycles = {
     utcDate.setUTCDate(utcDate.getUTCDate() + Cycles.offset);
     utcYesterdayDate.setUTCDate(utcYesterdayDate.getUTCDate() - 1 + Cycles.offset);
 
+    if (Cycles.offset !== 0)
+      $('div>span.cycle-data').addClass('highlight-important-items-menu');
+    else
+      $('div>span.cycle-data').removeClass('highlight-important-items-menu');
+
     var yesterday_data = Cycles.data.filter(_c => { return _c.date === MapBase.formatDate(`${utcYesterdayDate.getUTCFullYear()}/${(utcYesterdayDate.getUTCMonth() + 1)}/${utcYesterdayDate.getUTCDate()}`).toLowerCase() })[0];
     var _data = Cycles.data.filter(_c => { return _c.date === MapBase.formatDate(`${utcDate.getUTCFullYear()}/${(utcDate.getUTCMonth() + 1)}/${utcDate.getUTCDate()}`).toLowerCase() })[0];
 
@@ -79,7 +84,6 @@ var Cycles = {
         console.warn('Cycles parameters invalid');
       }
     }
-
   },
 
   setCycles: function () {
@@ -99,13 +103,15 @@ var Cycles = {
     );
     return _date[1];
   },
+
   checkForUpdate: function () {
-    var day = new Date().getUTCDate();
+    var day = new Date();
+    day.setUTCDate(day.getUTCDate() + Cycles.offset);
 
-    if (day != Cycles.setLocaleDate())
+    if (day.getUTCDate() != Cycles.setLocaleDate())
       Cycles.getTodayCycle();
-
   },
+
   isSameAsYesterday: function (category) {
     if (!Cycles.categories.yesterday)
       return;
