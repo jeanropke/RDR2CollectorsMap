@@ -459,7 +459,7 @@ var MapBase = {
 
     var warningText = Cycles.isSameAsYesterday(marker.category) ? `<span class="marker-warning-wrapper"><div><img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert"></div><p>${Language.get("map.same_cycle_yesterday")}</p></span>` : '';
 
-    if (marker.day == Settings.cycleForUnknownCycles)
+    if (marker.day == Cycles.unknownCycleNumber)
       warningText = `<span class="marker-warning-wrapper"><div><img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert"></div><p>${Language.get("map.unknown_cycle_description").replace('{GitHub}', '<a href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">GitHub</a>').replace('{Discord}', '<a href="https://discord.gg/WWru8cP" target="_blank">Discord</a>')}</p></span>`;
 
     if (marker.category != 'random') {
@@ -485,7 +485,7 @@ var MapBase = {
 
 
 
-    return `<h1>${marker.title} - ${Language.get("menu.day")} ${(marker.day != Settings.cycleForUnknownCycles ? marker.day : Language.get('map.unknown_cycle'))}</h1>
+    return `<h1>${marker.title} - ${Language.get("menu.day")} ${(marker.day != Cycles.unknownCycleNumber ? marker.day : Language.get('map.unknown_cycle'))}</h1>
         ${warningText}
         <span class="marker-content-wrapper">
         <div>${MapBase.getToolIcon(marker.tool)}</div>
@@ -524,7 +524,7 @@ var MapBase = {
     }
 
     // highlight unknown cycles markers on red
-    if (marker.day == Settings.cycleForUnknownCycles)
+    if (marker.day == Cycles.unknownCycleNumber)
       background = './assets/images/icons/marker_red.png';
 
     // Height overlays
