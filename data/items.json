@@ -598,7 +598,7 @@
             { "text": "pentacles_five", "height": "0", "tool": "0", "lat": "-69.2429", "lng": "136.5205" },
             { "text": "pentacles_six", "height": "0", "tool": "0", "lat": "-65.8063", "lng": "145.9811" },
             { "text": "pentacles_seven", "height": "0", "tool": "0", "lat": "-86.2126", "lng": "150.7305" },
-            { "text": "pentacles_eight", "height": "0", "tool": "0", "lat": "-42.0487", "lng": "156.7741" },
+            { "text": "pentacles_eight", "height": "1", "tool": "0", "lat": "-42.0487", "lng": "156.7741" },
             { "text": "pentacles_nine", "height": "0", "tool": "0", "lat": "-82.9836", "lng": "132.3549" },
             { "text": "pentacles_ten", "height": "0", "tool": "0", "lat": "-94.4240", "lng": "128.6360" },
             { "text": "pentacles_page", "height": "0", "tool": "0", "lat": "-53.3744", "lng": "83.1269" },
