@@ -25,7 +25,11 @@ var Menu = {
 };
 
 Menu.refreshMenu = function () {
+  if (weeklySetData.current == null)
+    return;
+    
   $('.menu-hidden[data-type]').children('.collectible-wrapper').remove();
+
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
   var anyUnavailableCategories = [];
 
