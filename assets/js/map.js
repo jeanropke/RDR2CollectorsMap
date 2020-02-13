@@ -483,8 +483,6 @@ var MapBase = {
     <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
     </div>`;
 
-
-
     return `<h1>${marker.title} - ${Language.get("menu.day")} ${(marker.day != Cycles.unknownCycleNumber ? marker.day : Language.get('map.unknown_cycle'))}</h1>
         ${warningText}
         <span class="marker-content-wrapper">
@@ -556,7 +554,6 @@ var MapBase = {
         marker: marker.text
       })
     });
-
 
     tempMarker.id = marker.text;
     marker.isVisible = true;
