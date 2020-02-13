@@ -27,7 +27,7 @@ var Menu = {
 Menu.refreshMenu = function () {
   if (weeklySetData.current == null)
     return;
-    
+
   $('.menu-hidden[data-type]').children('.collectible-wrapper').remove();
 
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
@@ -242,12 +242,6 @@ Menu.refreshItemsCounter = function () {
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
     .replace('{count}', _markers.filter(item => item.isCollected || (Inventory.isEnabled && item.amount >= Inventory.stackSize)).length)
     .replace('{max}', _markers.length));
-};
-
-// Auto fill debug markers inputs, when "show coordinates on click" is enabled
-Menu.liveUpdateDebugMarkersInputs = function (lat, lng) {
-  $('#debug-marker-lat').val(lat);
-  $('#debug-marker-lng').val(lng);
 };
 
 // Remove highlight from all important items

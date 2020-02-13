@@ -7,7 +7,6 @@
  * @see {@link https://lovasoa.github.io/salesman.js/|demo}
  **/
 
-
 /**
  * @private
  */

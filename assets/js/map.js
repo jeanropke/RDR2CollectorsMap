@@ -610,7 +610,6 @@ var MapBase = {
     MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   },
 
-
   highlightImportantItem(text, category) {
     if (category === 'american_flowers' || category === 'bird_eggs')
       text = text.replace(/(egg_|flower_)(\w+)(_\d)/, '$2');
@@ -678,13 +677,6 @@ var MapBase = {
     }
   },
 
-  submitDebugForm: function () {
-    var lat = $('input[name=debug-marker-lat]').val();
-    var lng = $('input[name=debug-marker-lng]').val();
-    if (!isNaN(lat) && !isNaN(lng))
-      MapBase.debugMarker(lat, lng);
-  },
-
   debugMarker: function (lat, long, name = 'Debug Marker') {
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     var marker = L.marker([lat, long], {
@@ -717,9 +709,6 @@ var MapBase = {
       $('#lat-lng-container-close-button').click(function () {
         $('.lat-lng-container').css('display', 'none');
       });
-
-      // Auto fill debug markers inputs
-      Menu.liveUpdateDebugMarkersInputs(coords.latlng.lat, coords.latlng.lng);
     }
 
     if (Settings.isPinsPlacingEnabled)

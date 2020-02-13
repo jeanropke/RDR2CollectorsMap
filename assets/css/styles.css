@@ -684,10 +684,6 @@ a.wiki-page:visited {
     margin-top: 0 !important;
 }
 
-#debug-marker-lat, #debug-marker-lng {
-    width: calc(50% - 4px);
-}
-
 .counter {
     line-height: 12px;
     white-space: nowrap;

@@ -114,7 +114,6 @@ var Routes = {
     }
   },
 
-
   routesData: [],
   polylines: null,
 
