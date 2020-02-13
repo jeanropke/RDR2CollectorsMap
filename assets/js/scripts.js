@@ -840,6 +840,13 @@ $('#generate-route-ignore-collected').on("change", function () {
   Routes.generatePath();
 });
 
+$('#generate-route-important-only').on("change", function () {
+  Routes.importantOnly = $("#generate-route-important-only").prop('checked');
+  $.cookie('generator-path-important-only', Routes.importantOnly ? '1' : '0', { expires: 999 });
+
+  Routes.generatePath();
+});
+
 $('#generate-route-auto-update').on("change", function () {
   Routes.autoUpdatePath = $("#generate-route-auto-update").prop('checked');
   $.cookie('generator-path-auto-update', Routes.autoUpdatePath ? '1' : '0', { expires: 999 });

@@ -9,6 +9,7 @@ var Routes = {
     $('#generate-route-use-pathfinder').prop("checked", Routes.usePathfinder);
     $('#generate-route-generate-on-visit').prop("checked", Routes.generateOnVisit);
     $('#generate-route-ignore-collected').prop("checked", Routes.ignoreCollected);
+    $("#generate-route-important-only").prop("checked", Routes.importantOnly);
     $('#generate-route-auto-update').prop("checked", Routes.autoUpdatePath);
     $('#generate-route-distance').val(Routes.maxDistance);
     $('#generate-route-start-lat').val(Routes.startMarkerLat);
@@ -114,6 +115,7 @@ var Routes = {
     }
   },
 
+
   routesData: [],
   polylines: null,
 
@@ -128,6 +130,9 @@ var Routes = {
 
   // Whether collected items should be ignored or not when pathing.
   ignoreCollected: $.cookie('generator-path-ignore-collected') == '1',
+
+  // Wether to only use important or all items when pathing.
+  importantOnly: $.cookie('generator-path-important-only') == '1',
 
   // Whether to automatically update the path.
   autoUpdatePath: $.cookie('generator-path-auto-update') == '1',
@@ -283,6 +288,21 @@ var Routes = {
 
     if (Inventory.isEnabled) {
       newMarkers = newMarkers.filter((marker) => { return marker.amount < Inventory.stackSize; });
+    }
+
+    if(Routes.importantOnly) {
+      newMarkersImp = newMarkers.filter((marker) => { return MapBase.itemsMarkedAsImportant.indexOf(marker.text) >= 0; });
+      if(newMarkers.length > 0 && newMarkersImp.length == 0) {
+        if(!confirm(Language.get('dialog.generate_route_important_only_ignore'))) {
+          return;
+        }
+      } else {
+        newMarkers = newMarkersImp;
+      }
+    }
+
+    if(newMarkers.length <= 1) {
+      return;
     }
 
     var polylines = [];
