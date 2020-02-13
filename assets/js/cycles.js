@@ -25,11 +25,12 @@ var Cycles = {
     else
       $('div>span.cycle-data').removeClass('highlight-important-items-menu');
 
-    var yesterday_data = Cycles.data.filter(_c => { return _c.date === MapBase.formatDate(`${utcYesterdayDate.getUTCFullYear()}/${(utcYesterdayDate.getUTCMonth() + 1)}/${utcYesterdayDate.getUTCDate()}`).toLowerCase(); })[0];
-    var _data = Cycles.data.filter(_c => { return _c.date === MapBase.formatDate(`${utcDate.getUTCFullYear()}/${(utcDate.getUTCMonth() + 1)}/${utcDate.getUTCDate()}`).toLowerCase() })[0];
+    var yesterday_data = Cycles.data.filter(_c => { return _c.date === utcYesterdayDate.toISOString().split('T')[0] })[0];
+
+    var _data = Cycles.data.filter(_c => { return _c.date === utcDate.toISOString().split('T')[0]})[0];
 
     if (_data == null) {
-      console.error('[Cycles] Cycle not found: ' + MapBase.formatDate(`${utcDate.getUTCFullYear()}/${(utcDate.getUTCMonth() + 1)}/${utcDate.getUTCDate()}`).toLowerCase());
+      console.error('[Cycles] Cycle not found: ' + utcDate.toISOString().split('T')[0]);
       return;
     }
 
@@ -98,14 +99,14 @@ var Cycles = {
     MapBase.addMarkers(true);
   },
   setLocaleDate: function () {
-    var _date = Cycles.categories.date.split(' ');
+    var _date = Cycles.categories.date.split('-');
 
     $('.cycle-data').text(
       Language.get('menu.date')
-        .replace('{month}', Language.get(`menu.month.${_date[0]}`))
-        .replace('{day}', _date[1])
+        .replace('{month}', Language.get(`menu.month.${_date[1]}`))
+        .replace('{day}', _date[2])
     );
-    return _date[1];
+    return _date[2];
   },
 
   checkForUpdate: function () {
