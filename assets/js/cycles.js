@@ -25,7 +25,7 @@ var Cycles = {
     else
       $('div>span.cycle-data').removeClass('highlight-important-items-menu');
 
-    var yesterday_data = Cycles.data.filter(_c => { return _c.date === MapBase.formatDate(`${utcYesterdayDate.getUTCFullYear()}/${(utcYesterdayDate.getUTCMonth() + 1)}/${utcYesterdayDate.getUTCDate()}`).toLowerCase() })[0];
+    var yesterday_data = Cycles.data.filter(_c => { return _c.date === MapBase.formatDate(`${utcYesterdayDate.getUTCFullYear()}/${(utcYesterdayDate.getUTCMonth() + 1)}/${utcYesterdayDate.getUTCDate()}`).toLowerCase(); })[0];
     var _data = Cycles.data.filter(_c => { return _c.date === MapBase.formatDate(`${utcDate.getUTCFullYear()}/${(utcDate.getUTCMonth() + 1)}/${utcDate.getUTCDate()}`).toLowerCase() })[0];
 
     if (_data == null) {
@@ -93,7 +93,7 @@ var Cycles = {
   setCycles: function () {
     for (var category in Cycles.categories) {
       $(`input[name=${category}]`).val(Cycles.categories[category]);
-    };
+    }
 
     MapBase.addMarkers(true);
   },
@@ -133,18 +133,13 @@ var Cycles = {
       case "card_swords":
       case "card_wands":
         return "tarot_cards";
-        break;
-
       case "lost_bracelet":
       case "lost_earrings":
       case "lost_necklaces":
       case "lost_ring":
         return "lost_jewelry";
-        break;
-
       default:
         return category;
-        break;
     }
   },
 
@@ -257,40 +252,6 @@ var Cycles = {
 
     Inventory.save();
     Cycles.load();
-  },
-
-  exportTable: function (inGameCycles = false, toPrint = false) {
-    var _tempTable = {};
-    $.each(Cycles.data.cycles, function (key, value) {
-      _tempTable[key] = {};
-      $.each(value, function (_k, _c) {
-        if (_k == "card_pentacles" || _k == "card_swords" || _k == "card_wands" ||
-          _k == "lost_bracelet" || _k == "lost_earrings" || _k == "lost_necklaces")
-          return;
-        _tempTable[key][[_k]] = inGameCycles ? Cycles.getInGameCycle(_k)[_c] : _c;
-      });
-    });
-
-    if (toPrint) {
-      $('body').empty();
-      var cols = [];
-      for (var k in _tempTable) {
-        for (var c in _tempTable[k]) {
-          if (cols.indexOf(c) === -1) cols.push(c);
-        }
-      }
-      var html = '<table class="cycle-table"><thead><tr><th></th>' +
-        cols.map(function (c) { return '<th>' + c + '</th>'; }).join('') +
-        '</tr></thead><tbody>';
-      for (var l in _tempTable) {
-        html += '<tr><th>' + l + '</th>' + cols.map(function (c) { return '<td bgcolor="' + Cycles.getCycleColor(_tempTable[l][c]) + '">' + (_tempTable[l][c] || '') + '</td>'; }).join('') + '</tr>';
-      }
-      html += '</tbody></table>';
-      $('body').append(html);
-    }
-    else {
-      console.table(_tempTable);
-    }
   }
 };
 
