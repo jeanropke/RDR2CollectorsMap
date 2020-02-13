@@ -35,7 +35,6 @@
 	{"key": "menu.reset", "value": "Reiniciar"},
 	{"key": "menu.issues", "value": "Incidencias"},
 	{"key": "menu.report_issues", "value": "Reporta tu incidencia aquí"},
-	{"key": "menu.return_legacy", "value": "Volver a la versión anterior"},
 	{"key": "menu.utils", "value": "Utilidades"},
 	{"key": "menu.fast_travel", "value": "Viaje rápido"},
 	{"key": "menu.search_placeholder", "value": "Buscar artículos. Separados por ;"},

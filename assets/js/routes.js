@@ -49,7 +49,7 @@ var Routes = {
       input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
 
       $.each(input, function (key, value) {
-        var _marker = MapBase.markers.filter(marker => marker.text == value && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category])[0];
+        var _marker = MapBase.markers.filter(marker => marker.text == value && marker.day == Cycles.categories[marker.category])[0];
         if (_marker == null) {
           console.log(`Item not found on map: '${value}'`);
         } else {
@@ -75,8 +75,8 @@ var Routes = {
     if (Routes.customRouteEnabled) {
       if (Routes.customRouteConnections.includes(value)) {
         Routes.customRouteConnections = Routes.customRouteConnections.filter(function (item) {
-          return item !== value
-        })
+          return item !== value;
+        });
       } else {
         Routes.customRouteConnections.push(value);
       }
@@ -84,7 +84,7 @@ var Routes = {
       var connections = [];
 
       $.each(Routes.customRouteConnections, function (key, item) {
-        var _marker = MapBase.markers.filter(marker => marker.text == item && marker.day == Cycles.data.cycles[Cycles.data.current][marker.category])[0];
+        var _marker = MapBase.markers.filter(marker => marker.text == item && marker.day == Cycles.categories[marker.category])[0];
         connections.push([_marker.lat, _marker.lng]);
       });
 
@@ -167,13 +167,13 @@ var Routes = {
 
   // Simple utility to check whether the two given markers are the same.
   isSameMarker: function (marker1, marker2) {
-    return marker1.lat == marker2.lat && marker1.lng == marker2.lng
+    return marker1.lat == marker2.lat && marker1.lng == marker2.lng;
   },
 
   // Simple utility to clear the given polyline from Leaflet.
   clearPath: function (starting) {
     if ((typeof (starting) !== 'boolean' || !starting) && Routes.usePathfinder) {
-      PathFinder.routegenClear()
+      PathFinder.routegenClear();
     }
 
     if (!Routes.lastPolyline) return;
@@ -257,7 +257,7 @@ var Routes = {
       index: resIndex,
       marker: resMarker,
       distance: resDistance,
-    }
+    };
   },
 
   // Generate a path using a nearest neighbor algorithm.
@@ -299,8 +299,8 @@ var Routes = {
 
     // Use path finder when enabled
     if (Routes.usePathfinder) {
-      PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight)
-      return
+      PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight);
+      return;
     }
 
     // Loop through all markers and pick the nearest neighbor to that marker.

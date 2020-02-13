@@ -14,4 +14,4 @@ var Marker = function (text, lat, lng, tool, day, category, subdata, video, heig
   this.amount = Inventory.items[text] == null ? 0 : Inventory.items[text].amount;
   this.isCollected = Inventory.items[text] == null ? false : (Inventory.items[text].isCollected);//collectedItems.includes(text);
   this.canCollect = Inventory.isEnabled ? (this.amount < Inventory.stackSize && !this.isCollected) : !this.isCollected;
-}
+};

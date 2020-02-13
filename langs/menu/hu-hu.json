@@ -35,7 +35,6 @@
 	{"key": "menu.reset", "value": "Visszaállítás"},
 	{"key": "menu.issues", "value": "Problémák"},
 	{"key": "menu.report_issues", "value": "Problémák bejelentése itt"},
-	{"key": "menu.return_legacy", "value": "Visszatérés az előző verzióhoz"},
 	{"key": "menu.utils", "value": "Hasznosság"},
 	{"key": "menu.fast_travel", "value": "Gyorsutazás"},
 	{"key": "menu.search_placeholder", "value": "Tárgyak keresése"},

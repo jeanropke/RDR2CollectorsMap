@@ -1,9 +1,18 @@
 var MadamNazar = {
   possibleLocations: [
-    { "x": "-40.5625", "y": "109.078125" }, { "x": "-43", "y": "132.828125" }, { "x": "-36.75", "y": "153.6875" }, 
-    { "x": "-56.171875", "y": "78.59375" }, { "x": "-63.6640625", "y": "105.671875" }, { "x": "-60.421875", "y": "130.640625" }, 
-    { "x": "-66.0156", "y": "150.5" }, { "x": "-84.4375", "y": "82.03125" }, { "x": "-90.53125", "y": "135.65625" }, 
-    { "x": "-100.140625", "y": "48.8125" }, { "x": "-105.0703125", "y": "84.9765625" }, { "x": "-124.03125", "y": "34.171875" }],
+    { "x": "-40.5625", "y": "109.078125" },
+    { "x": "-43", "y": "132.828125" },
+    { "x": "-36.75", "y": "153.6875" },
+    { "x": "-56.171875", "y": "78.59375" },
+    { "x": "-63.6640625", "y": "105.671875" },
+    { "x": "-60.421875", "y": "130.640625" },
+    { "x": "-66.0156", "y": "150.5" },
+    { "x": "-84.4375", "y": "82.03125" },
+    { "x": "-90.53125", "y": "135.65625" },
+    { "x": "-100.140625", "y": "48.8125" },
+    { "x": "-105.0703125", "y": "84.9765625" },
+    { "x": "-123.8438", "y": "34.7656" }
+  ],
   currentLocation: null,
   currentDate: null,
 
@@ -29,13 +38,12 @@ var MadamNazar = {
       return;
 
     if (enabledCategories.includes('nazar')) {
-      var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+      var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
       var marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
         icon: L.divIcon({
-          iconSize: [35, 45],
-          iconAnchor: [17, 42],
-          popupAnchor: [1, -32],
-          shadowAnchor: [10, 12],
+          iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+          iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+          popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
           html: `
               <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
               <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
@@ -47,4 +55,4 @@ var MadamNazar = {
       Layers.itemMarkersLayer.addLayer(marker);
     }
   }
-}
+};

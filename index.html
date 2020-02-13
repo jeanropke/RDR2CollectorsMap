@@ -18,10 +18,10 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=285" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=304" />
 
   <script>
-    var nocache = 285;
+    var nocache = 304;
   </script>
 </head>
 
@@ -44,6 +44,11 @@
           autocomplete="off" data-help="search">
         <div id="copy-search-link" class="input-action-copy" data-help="search_copy_link"></div>
       </div>
+    </div>
+    <div id='cycle-changer-container' class="collection-value cycle-changer hidden">
+      <div id="cycle-prev" class="input-selection-arrow"><img src="assets/images/selection_left.png" alt="arrow"></div>
+      <span class="cycle-data">¯\_(ツ)_/¯</span>
+      <div id="cycle-next" class="input-selection-arrow"><img src="assets/images/selection_right.png" alt="arrow"></div>
     </div>
     <div class="links-container">
       <a data-text="menu.hide_all" data-help="hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
@@ -88,7 +93,7 @@
       </div>
       <div class="menu-hidden" data-type="card_swords">
         <div class="collection-value">
-          <span data-help="item_value"><span data-text="menu.collectables_value">Value</span>: $286.00</span>
+          <span data-help="item_value"><span data-text="menu.collectables_value">Value</span>: $287.00</span>
           <span class="collection-reset" data-text="menu.reset" data-help="item_reset">Reset</span>
           <span class="collection-sell" data-text="menu.sell" data-help="item_sell">Sell</span>
         </div>
@@ -288,6 +293,9 @@
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
       <div class="menu-hidden">
+        <div class="collection-value">
+          <a data-text="menu.more_encounters_link" href="https://jeanropke.github.io/RDOMap/">Visit RDO Map for more encounters.</a>
+        </div>
         <div class="collectible-wrapper clickable" data-type="dog_encounter" data-help="item_category">
           <img src="./assets/images/icons/dog_encounter.png" class="collectible-icon random-encounter" />
           <span class="collectible-text">
@@ -304,12 +312,6 @@
           <img src="./assets/images/icons/grave_robber.png" class="collectible-icon random-encounter" />
           <span class="collectible-text">
             <p class="collectible" data-text="menu.grave_robber">Grave Robber</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="moonshiner_camp" data-help="item_category">
-          <img src="./assets/images/icons/moonshiner_camp.png" class="collectible-icon random-encounter" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.moonshiner_camp">Moonshiner Camp</p>
           </span>
         </div>
         <div class="collectible-wrapper clickable" data-type="rival_collector" data-help="item_category">
@@ -384,6 +386,17 @@
           <option value="1" data-text="menu.tool_type.shovel">Shovel</option>
           <option value="2" data-text="menu.tool_type.metal_detector">Metal detector</option>
           <option value="3" data-text="menu.tool_type.all" selected>All</option>
+        </select>
+      </div>
+      <div class="input-container" data-help="marker_size">
+        <label for="marker-size" data-text="menu.marker_size">Marker size</label>
+        <select class="input-day wide-select-menu" id="marker-size">
+          <option value="0.75" data-text="menu.marker_size.75">75%</option>
+          <option value="1" data-text="menu.marker_size.100" selected>100%</option>
+          <option value="1.25" data-text="menu.marker_size.125">125%</option>
+          <option value="1.5" data-text="menu.marker_size.150">150%</option>
+          <option value="1.75" data-text="menu.marker_size.175">175%</option>
+          <option value="2" data-text="menu.marker_size.200">200%</option>
         </select>
       </div>
       <div class="input-container" data-help="marker_opacity">
@@ -514,6 +527,14 @@
           <input class="input-checkbox" type="checkbox" name="enable-marker-popups" value="1"
             id="enable-marker-popups" />
           <label class="input-checkbox-label" for="enable-marker-popups"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="enable_marker_popups_hover">
+        <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on hover</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1"
+            id="enable-marker-popups-hover" />
+          <label class="input-checkbox-label" for="enable-marker-popups-hover"></label>
         </div>
       </div>
       <div class="input-container" data-help="enable_dclick_zoom">
@@ -710,7 +731,6 @@
           data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
       </div>
     </div>
-
     <div id="debug-container">
       <div class="header">
         <span class="header-border"></span>
@@ -725,17 +745,24 @@
           </p>
         </div>
         <div class="input-container">
+          <label for="enable-debug">Enable debug features</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-debug" value="1" id="enable-debug" />
+            <label class="input-checkbox-label" for="enable-debug"></label>
+          </div>
+        </div>
+        <div class="input-container">
+          <label for="enable-right-click">Enable context menus</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-right-click" value="1" id="enable-right-click" />
+            <label class="input-checkbox-label" for="enable-right-click"></label>
+          </div>
+        </div>
+        <div class="input-container">
           <label for="show-all-markers">Show all markers</label>
           <div class="input-checkbox-wrapper">
             <input class="input-checkbox" type="checkbox" name="show-all-markers" value="1" id="show-all-markers" />
             <label class="input-checkbox-label" for="show-all-markers"></label>
-          </div>
-        </div>
-        <div class="input-container">
-          <label for="enable-right-click">Give me back my right-click</label>
-          <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-right-click" value="1" id="enable-right-click" />
-            <label class="input-checkbox-label" for="enable-right-click"></label>
           </div>
         </div>
         <div class="input-container-noflex">
@@ -765,17 +792,17 @@
       <span class="header-border"></span>
     </div>
     <div class="settings-container">
+      <a class="no-style" href="https://jeanropke.github.io/RDOMap/">
+        <div class="input-container clickable" data-help="rdo_map">
+          <label data-text="menu.rdo_map">RDO Map</label>
+          <div class="input-action external"></div>
+        </div>
+      </a>
       <a class="no-style wiki-page"
         href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
         target="_blank">
         <div class="input-container clickable" data-help="read_wiki">
           <label data-text="menu.read_wiki">Read this map's Wiki</label>
-          <div class="input-action external"></div>
-        </div>
-      </a>
-      <a class="no-style" href="https://jeanropke.github.io/RDOMap/" target="_blank">
-        <div class="input-container clickable" data-help="rdo_map">
-          <label data-text="menu.rdo_map">RDO Map</label>
           <div class="input-action external"></div>
         </div>
       </a>
@@ -785,21 +812,13 @@
           <div class="input-action external"></div>
         </div>
       </a>
-      <a class="no-style" href="./index-legacy.html" target="_blank">
-        <div class="input-container clickable" data-help="return_legacy">
-          <label data-text="menu.return_legacy">Return to legacy version</label>
-          <div class="input-action external"></div>
-        </div>
-      </a>
-      <div id="toggle-debug" class="input-container clickable" data-help="toggle_debug">
-        <label data-text="menu.toggle_debug">Toggle debug features</label>
-        <div class="input-action"></div>
-      </div>
-      <hr class="menu-divider">
       <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post"
         target="_blank">
         <input type="hidden" name="cmd" value="_donations" />
         <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
+        <input type="hidden" name="lc" value="en_US" />
+
+        <input type="image" src="./assets/images/donate.png" border="0" name="submit" title="Donate with PayPal" alt="Donate with PayPal button" />
         <select class="input-day" name="currency_code">
           <option value="AUD">AUD $</option>
           <option value="BRL">BRL R$</option>
@@ -826,11 +845,16 @@
           <option value="TWD">TWD $</option>
           <option value="USD" selected>USD $</option>
         </select>
-        <br>
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit"
-          title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
         <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
       </form>
+      <div class="input-container clickable text-danger" data-help="delete_all_settings" data-toggle="modal" data-target="#delete_all_settings-modal">
+        <label data-text="menu.delete_all_settings">Reset all settings</label>
+        <div class="input-action"></div>
+      </div>
+      <div id="toggle-debug" class="input-container clickable" data-help="toggle_debug">
+        <label data-text="menu.toggle_debug">Toggle debug features</label>
+        <div class="input-action"></div>
+      </div>
     </div>
 
     <div id="help-container">
@@ -841,11 +865,11 @@
 
   <div class="timer-container">
     <div id="countdown">--:--:--</div>
-    <div id="day-cycle"></div>
+    <div class="day-cycle"></div>
   </div>
-  <div class="clock-container turn-off">
-    <div id="time-in-game">--:--</div>
-    <div id="am-pm-time"></div>
+  <div class="clock-container hidden">
+    <div id="time-in-game">--:-- --</div>
+    <div class="day-cycle"></div>
   </div>
   <div class="counter-container">
     <p id="item-counter">-- of --</p>
@@ -857,10 +881,12 @@
     <p></p><button id="lat-lng-container-close-button">×</button>
   </div>
 
+  <!--
   <div class="map-cycle-alert hidden">
     <span>Today's cycles haven't been updated yet. Please refresh to check for updates.</span>
     <button class="close-button">×</button>
   </div>
+  -->
 
   <!-- Modals -->
   <div class="modal fade" id="clear-markers-modal" tabindex="-1" role="dialog" aria-labelledby="clear-markers-title">
@@ -941,6 +967,24 @@
     </div>
   </div>
 
+  <div class="modal fade" id="delete_all_settings-modal" tabindex="-1" role="dialog" aria-labelledby="delete_all_settings-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="delete_all_settings-title" data-text="menu.modal_delete_all_settings_title">Reset all settings?</h4>
+        </div>
+        <div class="modal-body" data-text="menu.modal_delete_all_settings_body">
+          This will reset all settings to their default values and reload the page.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
+          <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
@@ -950,21 +994,21 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=285"></script>
-  <script src="assets/js/settings.js?nocache=285"></script>
-  <script src="assets/js/nazar.js?nocache=285"></script>
-  <script src="assets/js/cycles.js?nocache=285"></script>
-  <script src="assets/js/marker.js?nocache=285"></script>
-  <script src="assets/js/inventory.js?nocache=285"></script>
-  <script src="assets/js/treasures.js?nocache=285"></script>
-  <script src="assets/js/encounters.js?nocache=285"></script>
-  <script src="assets/js/pins.js?nocache=285"></script>
-  <script src="assets/js/map.js?nocache=285"></script>
-  <script src="assets/js/language.js?nocache=285"></script>
-  <script src="assets/js/menu.js?nocache=285"></script>
-  <script src="assets/js/routes.js?nocache=285"></script>
-  <script src="assets/js/pathfinder.js?nocache=285"></script>
-  <script src="assets/js/scripts.js?nocache=285"></script>
+  <script src="assets/js/layers.js?nocache=304"></script>
+  <script src="assets/js/settings.js?nocache=304"></script>
+  <script src="assets/js/nazar.js?nocache=304"></script>
+  <script src="assets/js/cycles.js?nocache=304"></script>
+  <script src="assets/js/marker.js?nocache=304"></script>
+  <script src="assets/js/inventory.js?nocache=304"></script>
+  <script src="assets/js/treasures.js?nocache=304"></script>
+  <script src="assets/js/encounters.js?nocache=304"></script>
+  <script src="assets/js/pins.js?nocache=304"></script>
+  <script src="assets/js/map.js?nocache=304"></script>
+  <script src="assets/js/language.js?nocache=304"></script>
+  <script src="assets/js/menu.js?nocache=304"></script>
+  <script src="assets/js/routes.js?nocache=304"></script>
+  <script src="assets/js/pathfinder.js?nocache=304"></script>
+  <script src="assets/js/scripts.js?nocache=304"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>

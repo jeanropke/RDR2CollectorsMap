@@ -72,10 +72,10 @@ var Inventory = {
       else
         _m.canCollect = !_m.isCollected;
 
-      if ((_m.isCollected || (Inventory.isEnabled && _m.amount >= Inventory.stackSize)) && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category]) {
+      if ((_m.isCollected || (Inventory.isEnabled && _m.amount >= Inventory.stackSize)) && _m.day == Cycles.categories[_m.category]) {
         $(`[data-marker=${_m.text}]`).css('opacity', Settings.markerOpacity / 3);
         $(`[data-type=${_m.subdata || _m.text}]`).addClass('disabled');
-      } else if (_m.day == Cycles.data.cycles[Cycles.data.current][_m.category]) {
+      } else if (_m.day == Cycles.categories[_m.category]) {
         $(`[data-marker=${_m.text}]`).css('opacity', Settings.markerOpacity);
         $(`[data-type=${_m.subdata || _m.text}]`).removeClass('disabled');
       }
@@ -84,7 +84,7 @@ var Inventory = {
       $(`[data-type=${name}] .counter-number`).text(marker[0].amount);
 
       //If the category is disabled, no needs to update popup
-      if (Settings.isPopupsEnabled && Layers.itemMarkersLayer.getLayerById(_m.text) != null && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category])
+      if (Settings.isPopupsEnabled && Layers.itemMarkersLayer.getLayerById(_m.text) != null && _m.day == Cycles.categories[_m.category])
         Layers.itemMarkersLayer.getLayerById(_m.text)._popup.setContent(MapBase.updateMarkerContent(_m));
     });
 
@@ -94,24 +94,24 @@ var Inventory = {
     Inventory.save();
     Menu.refreshItemsCounter();
   },
-  
+
   save: function () {
     //Remove cookies from removed items
     $.removeCookie('removed-items');
     $.each($.cookie(), function (key, value) {
       if (key.startsWith('removed-items')) {
-        $.removeCookie(key)
+        $.removeCookie(key);
       }
     });
 
     var temp = "";
     $.each(MapBase.markers, function (key, marker) {
-      if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category] && (marker.amount > 0 || marker.isCollected))
+      if (marker.day == Cycles.categories[marker.category] && (marker.amount > 0 || marker.isCollected))
         temp += `${marker.text}:${marker.isCollected ? '1' : '0'}:${marker.amount};`;
     });
 
     localStorage.setItem("inventory-items", temp);
-   
+
   },
 
   toggleMenuItemsDisabled: function () {
@@ -129,4 +129,4 @@ var Inventory = {
       $('[data-target="#clear-inventory-modal"]').show();
     }
   }
-}
+};

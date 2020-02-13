@@ -25,12 +25,16 @@ var Menu = {
 };
 
 Menu.refreshMenu = function () {
+  if (weeklySetData.current == null)
+    return;
+    
   $('.menu-hidden[data-type]').children('.collectible-wrapper').remove();
+
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
   var anyUnavailableCategories = [];
 
   $.each(MapBase.markers, function (_key, marker) {
-    if (marker.day != Cycles.data.cycles[Cycles.data.current][marker.category]) return;
+    if (marker.day != Cycles.categories[marker.category]) return;
 
     // Only add subdata markers once.
     if (marker.subdata && $(`.menu-hidden[data-type=${marker.category}]`).children(`[data-type=${marker.subdata}]`).length > 0) return;
@@ -120,7 +124,7 @@ Menu.refreshMenu = function () {
         if (marker.subdata != _marker.subdata)
           return false;
 
-        if (_marker.day != Cycles.data.cycles[Cycles.data.current][_marker.category])
+        if (_marker.day != Cycles.categories[_marker.category])
           return false;
 
         return true;
@@ -140,7 +144,9 @@ Menu.refreshMenu = function () {
       }
     });
 
+    var defaultHelpTimeout;
     collectibleElement.hover(function (e) {
+      clearTimeout(defaultHelpTimeout);
       var language = Language.get(`help.${$(this).data('help')}`);
 
       if (language.indexOf('{collection}') !== -1) {
@@ -149,7 +155,9 @@ Menu.refreshMenu = function () {
 
       $('#help-container p').text(language);
     }, function () {
-      $('#help-container p').text(Language.get(`help.default`));
+      defaultHelpTimeout = setTimeout(function () {
+        $('#help-container p').text(Language.get(`help.default`));
+      }, 100);
     });
 
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
@@ -173,7 +181,7 @@ Menu.refreshMenu = function () {
     children.sort(function (a, b) {
       return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
     }).appendTo(this);
-  })
+  });
 
   // Check cycle warning for random spots
   addCycleWarning('[data-text="menu.random_spots"]', Cycles.isSameAsYesterday('random'));
@@ -200,7 +208,7 @@ Menu.refreshMenu = function () {
 
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
   MapBase.loadImportantItems();
-  
+
   $('.map-cycle-alert span').html(Language.get('map.refresh_for_updates_alert'));
 };
 
@@ -229,7 +237,7 @@ Menu.hideAll = function () {
 };
 
 Menu.refreshItemsCounter = function () {
-  var _markers = MapBase.markers.filter(item => item.day == Cycles.data.cycles[Cycles.data.current][item.category] && item.isVisible);
+  var _markers = MapBase.markers.filter(item => item.day == Cycles.categories[item.category] && item.isVisible);
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
     .replace('{count}', _markers.filter(item => item.isCollected || (Inventory.isEnabled && item.amount >= Inventory.stackSize)).length)
@@ -240,7 +248,7 @@ Menu.refreshItemsCounter = function () {
 Menu.liveUpdateDebugMarkersInputs = function (lat, lng) {
   $('#debug-marker-lat').val(lat);
   $('#debug-marker-lng').val(lng);
-}
+};
 
 // Remove highlight from all important items
 $('#clear_highlights').on('click', function () {
@@ -249,3 +257,7 @@ $('#clear_highlights').on('click', function () {
     MapBase.highlightImportantItem(tempArray[0]);
   });
 });
+
+// change cycles from menu (if debug options are enabled)
+$('#cycle-prev').on('click', Cycles.nextCycle);
+$('#cycle-next').on('click', Cycles.prevCycle);

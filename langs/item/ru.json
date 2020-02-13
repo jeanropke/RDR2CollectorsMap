@@ -423,7 +423,7 @@
 	{"key": "pentacles_five_6.desc", "value": "В доме на камине."},
  
 	{"key": "pentacles_six.name", "value": "Шестерка пентаклей"},
-	{"key": "pentacles_six_1.desc", "value": "На офисном столе внутри фабрики."},
+	{"key": "pentacles_six_1.desc", "value": "На втором этаже внутри фабрики, на офисном столе.."},
 	{"key": "pentacles_six_2.desc", "value": "На телеге с бочками."},
 	{"key": "pentacles_six_3.desc", "value": "На ящике возле механизма."},
 	{"key": "pentacles_six_4.desc", "value": "На столе внутри дома."},
@@ -660,7 +660,7 @@
 	{"key": "bottle_old_tom_gin_3.desc", "value": "Под мойкой."},
 	{"key": "bottle_old_tom_gin_4.desc", "value": "В сарае, на ящике."},
 	{"key": "bottle_old_tom_gin_5.desc", "value": "В сундуке между двумя казармами."},
-	{"key": "bottle_old_tom_gin_6.desc", "value": "В разбитой лодке."},
+	{"key": "bottle_old_tom_gin_6.desc", "value": "На железнодорожном мосту."},
  
 	{"key": "bottle_caribbean_rum.name", "value": "Карибский ром"},
 	{"key": "bottle_caribbean_rum_1.desc", "value": "В столе слева от входа."},
@@ -1240,7 +1240,7 @@
 	{"key": "tree_map.desc","value":"Карту сокровищ можно найти на этом месте случайным образом. Карта появляется ночью. Она будет прибита ножом к дереву и освещена светом фонаря."},
 
 	{"key": "treasure_hunter.name","value":"Охотник за сокровищем"},
-	{"key": "treasure_hunter.desc","value":"Охотника можно найти на этом месте случайным образом."},
+	{"key": "treasure_hunter.desc","value":"Охотника можно найти на этом месте случайным образом. Вы можете выкупить или отобрать карту сокровищ у этого охотника."},
 	
 	{"key": "egg_encounter.name","value":"Птичье гнездо"},
 	{"key": "egg_encounter.desc","value":"Это событие появляется случайным образом. Белая метка на мини-карте укажет место события. Вы должны взять яйцо до того, как до него доберется хищник."},
@@ -1252,16 +1252,13 @@
 	{"key": "condor_egg.desc","value":"Это событие свободного режима для роли коллекционера. Красными метками отмечены возможные места, на которых может оказаться яйцо кондора."},
 	
 	{"key": "dog_encounter.name","value":"Встреча с собакой"},
-	{"key": "dog_encounter.desc","value":"Это событие появляется случайным образом. Белая метка на мини-карте укажет место события."},
+	{"key": "dog_encounter.desc","value":"Это событие появляется случайным образом. Белая метка на мини-карте укажет место события. Следуйте за собакой к металлическому ящику, содержащему коллекционный предмет. Есть вероятность наткнуться на засаду."},
 
 	{"key": "wounded_animal.name","value":"Раненое животное"},
-	{"key": "wounded_animal.desc","value":"Это событие появляется случайным образом. Белая метка на мини-карте укажет место события."},
+	{"key": "wounded_animal.desc","value":"Это событие появляется случайным образом. Белая метка на мини-карте укажет место события. Добейте животное или позвольте ему умереть, и подберите наконечник стрелы для коллекции."},
 
-	{"key": "moonshiner_camp.name","value":"Лагерь самогонщиков"},
-	{"key": "moonshiner_camp.desc","value":"Этот лагерь появляется случайным образом. Убейте всех самогонщиков и осмотрите лагерь. В этом лагере можно случайно найти старинную бутылку алкоголя или рецепт для самогоноварения."},
-	
-	{"key": "rival_collector.name","value":"Rival Collector Encounter"},
-   	{"key": "rival_collector.desc","value":"This is a Random Encounter. A rival collector with fancy-looking clothes and saddlebags can spawn here. Kill them and loot their body for a chance to get a collectible."},
+	{"key": "rival_collector.name","value":"Коллекционер-соперник"},
+   	{"key": "rival_collector.desc","value":"Это событие появляется случайным образом. Белая метка на мини-карте укажет место события. Спасите человека, попавшего в беду, и получите награду."},
 
 	{"key": "weekly.desc", "value": "Этот предмет является частью еженедельной коллекции - {collection}."},
 	{"key": "weekly.desc.sacred_set", "value": "Sacred"},
@@ -1278,6 +1275,7 @@
 	{"key": "weekly.desc.whiskey_set", "value": "Whiskey"},
 	{"key": "weekly.desc.cheater_set", "value": "Cheaters Suit"},
 	{"key": "weekly.desc.loser_set", "value": "Losers Hand"},
+	{"key": "weekly.desc.lovers_set", "value": "Влюбленные"},
 	{"key": "weekly.desc.gentleman_set", "value": "Gentleman's Effects"},
 	{"key": "weekly.desc.belle_set", "value": "Braithwaite Belle"},
 	{"key": "weekly.desc.looter_set", "value": "Looter's Lot"},
@@ -1285,7 +1283,7 @@
 	{"key": "weekly.desc.exotics_set", "value": "Exotics"},
 	{"key": "weekly.desc.1800_coins_set", "value": "1800's Coin"},
 	{"key": "weekly.desc.warrior_tokens_set", "value": "Warrior's Tokens"},
-	{"key": "weekly.desc.squire_set", "value": "Squires Journey"},
+	{"key": "weekly.desc.squire_set", "value": "Скитания оруженосца"},
 	{"key": "weekly.desc.saint_denis_set", "value": "Saint Denis"},
 	{"key": "weekly.desc.fortune_teller_set", "value": "Fortune Teller's"},
 	{"key": "weekly.desc.guarma_set", "value": "Guarma"},
