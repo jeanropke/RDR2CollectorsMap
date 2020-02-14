@@ -52,10 +52,10 @@ russian (ru.json)
   - Klinorin
   - Kiddamned
   
-chinese simplified (zh-s.json)
+chinese simplified (zh-hans.json)
   - yamazakitouma
   - qiexia
   
-chinese traditional (zh-t.json)
+chinese traditional (zh-hant.json)
   - yamazakitouma
   - qiexia
