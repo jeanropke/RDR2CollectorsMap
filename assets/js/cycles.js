@@ -5,6 +5,7 @@ var Cycles = {
   unknownCycleNumber: 7,
   forwardMaxOffset: 1,
   backwardMaxOffset: 7,
+  yesterday: [],
 
   load: function () {
     $.getJSON('data/cycles.json?nocache=' + nocache)
@@ -14,27 +15,32 @@ var Cycles = {
       });
     console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
   },
+  getFreshSelectedDay: function () {
+    'use strict';
+    const now = new Date();
+    return new Date(Date.UTC(
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate() + Cycles.offset
+    ));
+  },
   getTodayCycle: function () {
-    var utcDate = new Date();
-    var utcYesterdayDate = new Date();
-    utcDate.setUTCDate(utcDate.getUTCDate() + Cycles.offset);
-    utcYesterdayDate.setUTCDate(utcYesterdayDate.getUTCDate() - 1 + Cycles.offset);
+    'use strict';
+    const selectedDay = Cycles.getFreshSelectedDay();
+    const selectedDayStr = selectedDay.toISOString().split('T')[0];
+    const cycleIndex = Cycles.data.findIndex(element => element.date === selectedDayStr);
 
-    if (Cycles.offset !== 0)
-      $('div>span.cycle-data').addClass('highlight-important-items-menu');
-    else
-      $('div>span.cycle-data').removeClass('highlight-important-items-menu');
+    $('div>span.cycle-data').toggleClass('highlight-important-items-menu', Cycles.offset !== 0);
 
-    var yesterday_data = Cycles.data.filter(_c => { return _c.date === utcYesterdayDate.toISOString().split('T')[0] })[0];
-
-    var _data = Cycles.data.filter(_c => { return _c.date === utcDate.toISOString().split('T')[0]})[0];
-
-    if (_data == null) {
-      console.error('[Cycles] Cycle not found: ' + utcDate.toISOString().split('T')[0]);
+    if (cycleIndex < 1) {
+      // either -1 (not found) or 0 (first day) for which there is no yesterday
+      console.error('[Cycles] Cycle not found: ' + selectedDayStr);
       return;
     }
 
-    Cycles.categories.date = _data.date;
+    const _data = Cycles.data[cycleIndex];
+    Cycles.yesterday = Cycles.data[cycleIndex - 1];
+    Cycles.selectedDay = selectedDay;
     Cycles.categories.american_flowers = _data.american_flowers;
     Cycles.categories.card_cups = _data.tarot_cards;
     Cycles.categories.card_pentacles = _data.tarot_cards;
@@ -50,7 +56,6 @@ var Cycles = {
     Cycles.categories.family_heirlooms = _data.family_heirlooms;
     Cycles.categories.coin = _data.coin;
     Cycles.categories.random = _data.random;
-    Cycles.categories.yesterday = yesterday_data;
     Cycles.setCustomCycles();
     Cycles.setCycles();
     Cycles.setLocaleDate();
@@ -99,30 +104,25 @@ var Cycles = {
     MapBase.addMarkers(true);
   },
   setLocaleDate: function () {
-    var _date = Cycles.categories.date.split('-');
-
-    $('.cycle-data').text(
-      Language.get('menu.date')
-        .replace('{month}', Language.get(`menu.month.${_date[1]}`))
-        .replace('{day}', _date[2])
-    );
-    return _date[2];
+    'use strict';
+    const locale = Settings.language;
+    const options = {timeZone: "UTC", day: "2-digit", month: "long"};
+    $('.cycle-data').text(Cycles.selectedDay.toLocaleString(locale, options));
   },
 
   checkForUpdate: function () {
-    var day = new Date();
-    day.setUTCDate(day.getUTCDate() + Cycles.offset);
-
-    if (day.getUTCDate() != Cycles.setLocaleDate())
+    'use strict';
+    if (Cycles.getFreshSelectedDay().valueOf() !== Cycles.selectedDay.valueOf()) {
       Cycles.getTodayCycle();
+    }
   },
 
   isSameAsYesterday: function (category) {
-    if (!Cycles.categories.yesterday)
+    if (!Cycles.yesterday)
       return;
 
     var todayCycle = Cycles.categories[category];
-    var yesterdayCycle = Cycles.categories.yesterday[Cycles.getCyclesMainCategory(category)];
+    var yesterdayCycle = Cycles.yesterday[Cycles.getCyclesMainCategory(category)];
 
     return todayCycle == yesterdayCycle;
   },
