@@ -67,7 +67,7 @@ var Language = {
             try {
                 // Menu language strings.
                 $.ajax({
-                    url: `/langs/menu/${language}.json`,
+                    url: `./langs/menu/${language}.json`,
                     dataType: 'json',
                     async: false,
                     success: function (json) {
@@ -84,7 +84,7 @@ var Language = {
 
                 // Item language strings.
                 $.ajax({
-                    url: `/langs/item/${language}.json`,
+                    url: `./langs/item/${language}.json`,
                     dataType: 'json',
                     async: false,
                     success: function (json) {
