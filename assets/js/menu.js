@@ -66,7 +66,7 @@ Menu.refreshMenu = function () {
 
     // Prevents 404 errors. If doing the if-statement the other way round, jQuery tries to load the images.
     if (marker.category != 'random')
-      collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${collectibleKey}.png`).addClass('collectible-icon');
+      collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${collectibleKey}.png`).attr('alt', 'Set icon').addClass('collectible-icon');
 
     const collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', collectibleText);
     const collectibleTextWrapperElement = $('<span>').addClass('collectible-text');

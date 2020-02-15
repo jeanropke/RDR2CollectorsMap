@@ -841,6 +841,10 @@ a.no-style:visited {
     color: #333;
 }
 
+.leaflet-control-attribution a {
+    color: #333 !important;
+}
+
 .leaflet-dark-mode .leaflet-control-attribution {
     background: #333;
     color: white;
