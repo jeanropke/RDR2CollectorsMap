@@ -297,16 +297,22 @@ var MapBase = {
 
     var opacity = Settings.markerOpacity;
 
-    $.each(MapBase.markers, function (key, marker) {
-      //Set isVisible to false. addMarkerOnMap will set to true if needs
-      marker.isVisible = false;
+    MapBase.yieldingLoop(
+      MapBase.markers.length,
+      25,
+      (i) => {
+        var marker = MapBase.markers[i];
+        //Set isVisible to false. addMarkerOnMap will set to true if needs
+        marker.isVisible = false;
 
-      if (marker.subdata != null)
-        if (categoriesDisabledByDefault.includes(marker.subdata))
-          return;
+        if (marker.subdata != null)
+          if (categoriesDisabledByDefault.includes(marker.subdata))
+            return;
 
-      MapBase.addMarkerOnMap(marker, opacity);
-    });
+        MapBase.addMarkerOnMap(marker, opacity);
+      },
+      () => { }
+    );
 
     Layers.itemMarkersLayer.addTo(MapBase.map);
     Layers.pinsLayer.addTo(MapBase.map);
@@ -733,5 +739,20 @@ var MapBase = {
     var _month = monthNames[date.split('/')[1] - 1];
     var _year = date.split('/')[0];
     return `${_month} ${pad(_day, 2)} ${_year}`;
+  },
+
+  yieldingLoop: function (count, chunksize, callback, finished) {
+    var i = 0;
+    (function chunk() {
+      var end = Math.min(i + chunksize, count);
+      for (; i < end; ++i) {
+        callback.call(null, i);
+      }
+      if (i < count) {
+        setTimeout(chunk, 0);
+      } else {
+        finished.call(null);
+      }
+    })();
   }
 };
