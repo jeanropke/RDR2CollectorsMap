@@ -49,7 +49,7 @@ const Routes = {
 
       input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
 
-      $.each(input, function (), value) {
+      $.each(input, function (_, value) {
         const marker = MapBase.markers.filter(marker => marker.text == value && marker.day == Cycles.categories[marker.category])[0];
         if (marker == null) {
           console.log(`Item not found on map: '${value}'`);
