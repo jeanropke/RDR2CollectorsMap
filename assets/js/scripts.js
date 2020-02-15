@@ -167,6 +167,7 @@ function init() {
   $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
   $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
   $("#enable-debug").prop('checked', $.cookie('debug') != null);
+  $("#enable-cycle-changer").prop('checked', $.cookie('cycle-changer-enabled') != null);
 
   if (Settings.showHelp) {
     $("#help-container").show();
@@ -183,7 +184,7 @@ function init() {
     $('.timer-container').removeClass('hidden');
   }
 
-  if (Settings.isDebugEnabled) {
+  if (Settings.isCycleChangerEnabled) {
     $('#cycle-changer-container').removeClass('hidden');
   } else {
     $('#cycle-changer-container').addClass('hidden');
@@ -342,13 +343,24 @@ $('#enable-debug').on("change", function () {
   if ($("#enable-debug").prop('checked')) {
     Settings.isDebugEnabled = true;
     $.cookie('debug', '1', { expires: 999 });
-
-    $('#cycle-changer-container').removeClass('hidden');
   } else {
     Settings.isDebugEnabled = false;
     $.removeCookie('debug');
+  }
+});
+
+$('#enable-cycle-changer').on("change", function () {
+  if ($("#enable-cycle-changer").prop('checked')) {
+    Settings.isCycleChangerEnabled = true;
+    $.cookie('cycle-changer-enabled', '1', { expires: 999 });
+
+    $('#cycle-changer-container').removeClass('hidden');
+  } else {
+    Settings.isCycleChangerEnabled = false;
+    $.removeCookie('cycle-changer-enabled');
 
     $('#cycle-changer-container').addClass('hidden');
+    Cycles.resetCycle();
   }
 });
 

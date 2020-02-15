@@ -104,7 +104,7 @@ var Cycles = {
   },
   setLocaleDate: function () {
     var locale = Settings.language;
-    var options = { timeZone: "UTC", day: "2-digit", month: "long" };
+    var options = { timeZone: "UTC", month: 'long', day: 'numeric' };
     $('.cycle-data').text(Cycles.selectedDay.toLocaleString(locale, options));
   },
 
@@ -249,6 +249,12 @@ var Cycles = {
       return;
     }
 
+    Inventory.save();
+    Cycles.getTodayCycle();
+  },
+
+  resetCycle: function () {
+    Cycles.offset = 0;
     Inventory.save();
     Cycles.getTodayCycle();
   }
