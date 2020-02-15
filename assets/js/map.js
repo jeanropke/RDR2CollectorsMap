@@ -598,14 +598,14 @@ const MapBase = {
       tempMarker.bindPopup(MapBase.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 });
     }
 
-    tempMarker.on("click", (e) => {
+    tempMarker.on("click", function (e) {
       if (!Settings.isPopupsEnabled) MapBase.removeItemFromMap(marker.day || '', marker.text || '', marker.subdata || '', marker.category || '');
 
       Routes.addMarkerOnCustomRoute(marker.text);
       if (Routes.customRouteEnabled) e.target.closePopup();
     });
 
-    tempMarker.on("contextmenu", (e) => {
+    tempMarker.on("contextmenu", function (e) {
       MapBase.removeItemFromMap(marker.day || '', marker.text || '', marker.subdata || '', marker.category || '');
     });
 
@@ -717,7 +717,7 @@ const MapBase = {
 
       $('.lat-lng-container p').html(`Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}<br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}`);
 
-      $('#lat-lng-container-close-button').click(() => {
+      $('#lat-lng-container-close-button').click(function () {
         $('.lat-lng-container').css('display', 'none');
       });
     }
