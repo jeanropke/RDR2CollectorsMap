@@ -1,4 +1,4 @@
-var MadamNazar = {
+const MadamNazar = {
   possibleLocations: [
     { "x": "-40.5625", "y": "109.078125" },
     { "x": "-43", "y": "132.828125" },
@@ -17,9 +17,9 @@ var MadamNazar = {
   currentDate: null,
 
   loadMadamNazar: function () {
-    var _nazarParam = getParameterByName('nazar');
-    if (_nazarParam < MadamNazar.possibleLocations.length && _nazarParam) {
-      MadamNazar.currentLocation = _nazarParam;
+    const nazarParam = getParameterByName('nazar');
+    if (nazarParam < MadamNazar.possibleLocations.length && nazarParam) {
+      MadamNazar.currentLocation = nazarParam;
       MadamNazar.currentDate = '';
       MadamNazar.addMadamNazar();
     } else {
@@ -38,8 +38,8 @@ var MadamNazar = {
       return;
 
     if (enabledCategories.includes('nazar')) {
-      var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-      var marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
+      const shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+      const marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
         icon: L.divIcon({
           iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
           iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],

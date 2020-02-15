@@ -2,7 +2,7 @@
  * Created by Jean on 2019-10-09.
  */
 
-var MapBase = {
+const MapBase = {
   minZoom: 2,
   maxZoom: 7,
   map: null,
@@ -14,7 +14,7 @@ var MapBase = {
   init: function () {
 
     //Please, do not use the GitHub map tiles. Thanks
-    var mapLayers = [
+    const mapLayers = [
       L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
         noWrap: true,
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
@@ -65,8 +65,8 @@ var MapBase = {
         this.on('mouseout', function (e) {
           if (!Settings.isPopupsHoverEnabled) return;
 
-          var that = this;
-          var timeout = setTimeout(function () {
+          const that = this;
+          const timeout = setTimeout(function () {
             that.closePopup();
           }, 100);
 
@@ -101,7 +101,7 @@ var MapBase = {
       position: 'bottomright'
     }).addTo(MapBase.map);
 
-    var baseMapsLayers = {
+    const baseMapsLayers = {
       'map.layers.default': mapLayers[0],
       'map.layers.detailed': mapLayers[1],
       'map.layers.dark': mapLayers[2]
@@ -110,7 +110,7 @@ var MapBase = {
     L.control.layers(baseMapsLayers).addTo(MapBase.map);
 
     MapBase.map.on('baselayerchange', function (e) {
-      var mapIndex;
+      let mapIndex;
 
       switch (e.name) {
         case 'map.layers.default':
@@ -138,13 +138,13 @@ var MapBase = {
       MapBase.map.doubleClickZoom.disable();
     }
 
-    var southWest = L.latLng(-160, -50),
+    const southWest = L.latLng(-160, -50),
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
 
     Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map, { keepSpiderfied: true });
-    Layers.oms.addListener('spiderfy', function (markers) {
+    Layers.oms.addListener('spiderfy', function (_) {
       MapBase.map.closePopup();
     });
 
@@ -167,7 +167,7 @@ var MapBase = {
     if (opacity == 0) return;
 
     $.each(MapBase.overlays, function (key, value) {
-      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${key}.png?nocache=${nocache}`;
+      const overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${key}.png?nocache=${nocache}`;
       Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, value, { opacity: opacity }));
     });
 
@@ -185,23 +185,23 @@ var MapBase = {
     if (Settings.isDebugEnabled)
       console.log(`Categories disabled: ${categoriesDisabledByDefault}`);
 
-    $.each(data, function (_category, _cycles) {
-      $.each(_cycles, function (day, _markers) {
-        $.each(_markers, function (key, marker) {
-          MapBase.markers.push(new Marker(marker.text, marker.lat, marker.lng, marker.tool, day, _category, marker.subdata, marker.video, marker.height));
+    $.each(data, function (category, cycles) {
+      $.each(cycles, function (day, markers) {
+        $.each(markers, function (_, marker) {
+          MapBase.markers.push(new Marker(marker.text, marker.lat, marker.lng, marker.tool, day, category, marker.subdata, marker.video, marker.height));
         });
       });
     });
     uniqueSearchMarkers = MapBase.markers;
 
     // Reset markers daily.
-    var curDate = new Date();
+    const curDate = new Date();
     date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
 
     if (date != $.cookie('date') && Settings.resetMarkersDaily) {
       console.log('New day, resetting markers...');
 
-      var markers = MapBase.markers;
+      const markers = MapBase.markers;
 
       $.each(markers, function (key, value) {
         if (Inventory.items[value.text])
@@ -224,16 +224,16 @@ var MapBase = {
     MapBase.addMarkers(true);
 
     // Do search via URL.
-    var searchParam = getParameterByName('search');
+    const searchParam = getParameterByName('search');
     if (searchParam != null && searchParam) {
       $('#search').val(searchParam);
       MapBase.onSearch(searchParam);
     }
 
     // Navigate to marker via URL.
-    var markerParam = getParameterByName('m');
+    const markerParam = getParameterByName('m');
     if (markerParam != null && markerParam != '') {
-      var goTo = MapBase.markers.filter(_m => _m.text == markerParam && _m.day == Cycles.categories[_m.category])[0];
+      const goTo = MapBase.markers.filter(marker => marker.text == markerParam && marker.day == Cycles.categories[marker.category])[0];
 
       //if a marker is passed on url, check if is valid
       if (typeof goTo == 'undefined' || goTo == null) return;
@@ -255,7 +255,7 @@ var MapBase = {
 
   onSearch: function (searchString) {
     searchTerms = [];
-    $.each(searchString.split(';'), function (key, value) {
+    $.each(searchString.split(';'), function (_, value) {
       if ($.inArray(value.trim(), searchTerms) == -1) {
         if (value.length > 0)
           searchTerms.push(value.trim());
@@ -266,16 +266,16 @@ var MapBase = {
       uniqueSearchMarkers = MapBase.markers;
     } else {
       Layers.itemMarkersLayer.clearLayers();
-      var searchMarkers = [];
+      let searchMarkers = [];
       uniqueSearchMarkers = [];
-      $.each(searchTerms, function (id, term) {
+      $.each(searchTerms, function (_, term) {
 
-        searchMarkers = searchMarkers.concat(MapBase.markers.filter(function (_marker) {
-          if (_marker.title != null)
-            return _marker.title.toLowerCase().includes(term.toLowerCase());
+        searchMarkers = searchMarkers.concat(MapBase.markers.filter(function (marker) {
+          if (marker.title != null)
+            return marker.title.toLowerCase().includes(term.toLowerCase());
         }));
 
-        $.each(searchMarkers, function (i, el) {
+        $.each(searchMarkers, function (_, el) {
           if ($.inArray(el, uniqueSearchMarkers) === -1) uniqueSearchMarkers.push(el);
         });
       });
@@ -291,13 +291,13 @@ var MapBase = {
     if (Layers.miscLayer != null)
       Layers.miscLayer.clearLayers();
 
-    var opacity = Settings.markerOpacity;
+    const opacity = Settings.markerOpacity;
 
     MapBase.yieldingLoop(
       MapBase.markers.length,
       25,
       (i) => {
-        var marker = MapBase.markers[i];
+        const marker = MapBase.markers[i];
         //Set isVisible to false. addMarkerOnMap will set to true if needs
         marker.isVisible = false;
 
@@ -339,10 +339,10 @@ var MapBase = {
       .done(function (data) {
         weeklySetData = data;
 
-        var _weekly = getParameterByName('weekly');
-        if (_weekly != null) {
-          if (weeklySetData.sets[_weekly]) {
-            weeklySetData.current = _weekly;
+        const weekly = getParameterByName('weekly');
+        if (weekly != null) {
+          if (weeklySetData.sets[weekly]) {
+            weeklySetData.current = weekly;
           }
         }
       });
@@ -363,16 +363,16 @@ var MapBase = {
       Treasures.addToMap();
       Treasures.save();
     } else {
-      var _marker = MapBase.markers.filter(function (marker) {
+      const marker = MapBase.markers.filter(function (marker) {
         return marker.day == day && (marker.text == text || marker.subdata == subdata);
       });
 
-      if (_marker == null)
+      if (marker == null)
         return;
 
-      var subdataCategoryIsDisabled = (text == subdata && !$(`[data-type=${subdata}]`).hasClass('disabled'));
+      const subdataCategoryIsDisabled = (text == subdata && !$(`[data-type=${subdata}]`).hasClass('disabled'));
 
-      $.each(_marker, function (key, marker) {
+      $.each(marker, function (_, marker) {
         if (text != subdata && marker.text != text)
           return;
 
@@ -404,7 +404,7 @@ var MapBase = {
       });
 
       if (subdata != '' && day != null && day == Cycles.categories[category]) {
-        if ((_marker.length == 1 && !_marker[0].canCollect) || _marker.every(function (marker) { return !marker.canCollect; })) {
+        if ((marker.length == 1 && !marker[0].canCollect) || marker.every(function (marker) { return !marker.canCollect; })) {
           $(`[data-type=${subdata}]`).addClass('disabled');
         } else {
           $(`[data-type=${subdata}]`).removeClass('disabled');
@@ -466,29 +466,28 @@ var MapBase = {
   },
 
   updateMarkerContent: function (marker) {
-    var popupContent = '';
-
-    var warningText = Cycles.isSameAsYesterday(marker.category) ? `<span class="marker-warning-wrapper"><div><img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert"></div><p>${Language.get("map.same_cycle_yesterday")}</p></span>` : '';
+    let popupContent = '';
+    let warningText = Cycles.isSameAsYesterday(marker.category) ? `<span class="marker-warning-wrapper"><div><img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert"></div><p>${Language.get("map.same_cycle_yesterday")}</p></span>` : '';
 
     if (marker.day == Cycles.unknownCycleNumber)
       warningText = `<span class="marker-warning-wrapper"><div><img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert"></div><p>${Language.get("map.unknown_cycle_description").replace('{GitHub}', '<a href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">GitHub</a>').replace('{Discord}', '<a href="https://discord.gg/WWru8cP" target="_blank">Discord</a>')}</p></span>`;
 
     if (marker.category != 'random') {
-      var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
+      const weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
       popupContent += (marker.tool == '-1' ? Language.get('map.item.unable') : '') + ' ' + marker.description + ' ' + weeklyText;
     } else {
       // Todo: Maybe make this link translatable on the Wiki?
       popupContent += Language.get('map.random_spot.desc').replace('{link}', `<a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/Random-Item-Possible-Loot" target="_blank">${Language.get('map.random_spot.link')}</a>`);
     }
 
-    var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
-    var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">' + Language.get('map.video') + '</a>' : '';
-    var importantItem = ((marker.subdata != 'agarita' && marker.subdata != 'blood_flower') ? ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>` : '');
+    const shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
+    const videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">' + Language.get('map.video') + '</a>' : '';
+    const importantItem = ((marker.subdata != 'agarita' && marker.subdata != 'blood_flower') ? ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>` : '');
 
-    var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(videoText).append(importantItem);
-    var debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
+    const linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(videoText).append(importantItem);
+    const debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
 
-    var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
+    const buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
     <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
     <small data-item="${marker.text}">${marker.amount}</small>
     <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
@@ -517,14 +516,14 @@ var MapBase = {
 
     if (parseInt(Settings.toolType) < parseInt(marker.tool)) return;
 
-    var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
+    const isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
       return weekly.item === (marker.text).replace(/_\d+/, "");
     }).length > 0;
 
-    var overlay = '';
-    var icon = `./assets/images/icons/${marker.category}.png`;
-    var background = `./assets/images/icons/marker_${MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)}.png`;
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    let overlay = '';
+    let icon = `./assets/images/icons/${marker.category}.png`;
+    let background = `./assets/images/icons/marker_${MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)}.png`;
+    const shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override
     if (marker.category == 'random') {
@@ -550,7 +549,7 @@ var MapBase = {
       overlay = '<img class="overlay" src="./assets/images/icons/overlay_time.png" alt="Overlay">';
     }
 
-    var tempMarker = L.marker([marker.lat, marker.lng], {
+    const tempMarker = L.marker([marker.lat, marker.lng], {
       opacity: marker.canCollect ? opacity : opacity / 3,
       icon: new L.DivIcon.DataMarkup({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -667,9 +666,9 @@ var MapBase = {
 
   addFastTravelMarker: function () {
     if (enabledCategories.includes('fast_travel')) {
-      $.each(fastTravelData, function (key, value) {
-        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-        var marker = L.marker([value.x, value.y], {
+      $.each(fastTravelData, function (_, value) {
+        const shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+        const marker = L.marker([value.x, value.y], {
           icon: L.divIcon({
             iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
             iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
@@ -690,8 +689,8 @@ var MapBase = {
   },
 
   debugMarker: function (lat, long, name = 'Debug Marker') {
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    var marker = L.marker([lat, long], {
+    const shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    const marker = L.marker([lat, long], {
       icon: L.divIcon({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
         iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
@@ -703,10 +702,10 @@ var MapBase = {
         `
       })
     });
-    var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
+    const customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
     marker.bindPopup(`<h1>${customMarkerName}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, { minWidth: 300 });
     Layers.itemMarkersLayer.addLayer(marker);
-    var tempArray = [];
+    const tempArray = [];
     tempArray.push(lat || 0, long || 0, customMarkerName);
     debugMarkersArray.push(tempArray);
   },
@@ -728,18 +727,18 @@ var MapBase = {
   },
 
   formatDate: function (date) {
-    var pad = (e, s) => (1e3 + e + '').slice(-s);
-    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var _day = date.split('/')[2];
-    var _month = monthNames[date.split('/')[1] - 1];
-    var _year = date.split('/')[0];
-    return `${_month} ${pad(_day, 2)} ${_year}`;
+    const pad = (e, s) => (1e3 + e + '').slice(-s);
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const day = date.split('/')[2];
+    const month = monthNames[date.split('/')[1] - 1];
+    const year = date.split('/')[0];
+    return `${month} ${pad(day, 2)} ${year}`;
   },
 
   yieldingLoop: function (count, chunksize, callback, finished) {
-    var i = 0;
+    let i = 0;
     (function chunk() {
-      var end = Math.min(i + chunksize, count);
+      const end = Math.min(i + chunksize, count);
       for (; i < end; ++i) {
         callback.call(null, i);
       }

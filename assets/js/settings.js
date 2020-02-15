@@ -1,4 +1,4 @@
-var Settings = {
+const Settings = {
   displayClockHideTimer: $.cookie('clock-or-timer') == 'true',
   isCoordsEnabled: $.cookie('coords-enabled') == '1',
   isCycleChangerEnabled: $.cookie('cycle-changer-enabled') == '1',

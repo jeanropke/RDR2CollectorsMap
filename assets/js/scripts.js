@@ -2,35 +2,35 @@
 //Instead of 1 cycle for each collection in the day, each collection has your own cycle.
 //Eg: Coins can be on cycle 1, Eggs on cycle 3, Flowers on 5... and so on
 
-var searchTerms = [];
-var uniqueSearchMarkers = [];
+const searchTerms = [];
+let uniqueSearchMarkers = [];
 
-var categories = [
+const categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
   'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
   'wounded_animal', 'rival_collector', 'user_pins'
 ];
 
-var categoriesDisabledByDefault = [
+let categoriesDisabledByDefault = [
   'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
   'wounded_animal', 'rival_collector'
 ]
 
-var enabledCategories = categories;
-var categoryButtons = $(".clickable[data-type]");
+let enabledCategories = categories;
+const categoryButtons = $(".clickable[data-type]");
 
-var fastTravelData;
+let fastTravelData;
 
-var weeklySetData = [];
-var date;
+let weeklySetData = [];
+let date;
 
-var wikiLanguage = [];
+const wikiLanguage = [];
 
-var tempInventory = [];
+const debugMarkersArray = [];
 
-var debugMarkersArray = [];
-var tempCollectedMarkers = "";
+let tempInventory = [];
+let tempCollectedMarkers = "";
 
 function init() {
   wikiLanguage['de-de'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)';
@@ -39,7 +39,7 @@ function init() {
   wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
 
   //sometimes, cookies are saved in the wrong order
-  var cookiesList = [];
+  const cookiesList = [];
   $.each($.cookie(), function (key, value) {
     if (key.startsWith('removed-items')) {
       cookiesList.push(key);
@@ -238,7 +238,7 @@ function addZeroToNumber(number) {
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, '\\$&');
-  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+  const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
     results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return '';
@@ -247,7 +247,7 @@ function getParameterByName(name, url) {
 
 //Copy text to clipboard
 function setClipboardText(text) {
-  var el = document.createElement('textarea');
+  const el = document.createElement('textarea');
   el.value = text;
   document.body.appendChild(el);
   el.select();
@@ -257,7 +257,7 @@ function setClipboardText(text) {
 
 // Simple download function
 function downloadAsFile(filename, text) {
-  var element = document.createElement('a');
+  const element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
   element.setAttribute('download', filename);
 
@@ -272,7 +272,7 @@ function downloadAsFile(filename, text) {
 setInterval(function () {
 
   // Clock in game created by Michal__d
-  var display_24 = false,
+  const display_24 = false,
     newDate = new Date(),
     startTime = newDate.valueOf(),
     factor = 30,
@@ -293,10 +293,10 @@ setInterval(function () {
   }
 
   //Countdown for the next cycle
-  var nextGMTMidnight = new Date();
-  var hours = 23 - nextGMTMidnight.getUTCHours();
-  var minutes = 59 - nextGMTMidnight.getUTCMinutes();
-  var seconds = 59 - nextGMTMidnight.getUTCSeconds();
+  const nextGMTMidnight = new Date();
+  const hours = 23 - nextGMTMidnight.getUTCHours();
+  const minutes = 59 - nextGMTMidnight.getUTCMinutes();
+  const seconds = 59 - nextGMTMidnight.getUTCSeconds();
   $('#countdown').text(addZeroToNumber(hours) + ':' + addZeroToNumber(minutes) + ':' + addZeroToNumber(seconds));
 
   if (correctTime.getHours() >= 22 || correctTime.getHours() < 5) {
@@ -371,7 +371,7 @@ $('.menu-option.clickable input').on('click', function (e) {
 
 //change cycle by collection
 $('.menu-option.clickable input').on('change', function (e) {
-  var el = $(e.target);
+  const el = $(e.target);
   Cycles.categories[el.attr("name")] = parseInt(el.val());
   MapBase.addMarkers();
   Menu.refreshMenu();
@@ -400,7 +400,7 @@ $("#reset-markers").on("change", function () {
 });
 
 $("#clear-markers").on("click", function () {
-  $.each(MapBase.markers, function (key, value) {
+  $.each(MapBase.markers, function (_, value) {
     if (Inventory.items[value.text])
       Inventory.items[value.text].isCollected = false;
 
@@ -422,7 +422,7 @@ $("#clear-markers").on("click", function () {
 //Clear inventory on menu
 $("#clear-inventory").on("click", function () {
 
-  $.each(MapBase.markers, function (key, marker) {
+  $.each(MapBase.markers, function (_, marker) {
     if (marker.day == Cycles.categories[marker.category] && (marker.amount > 0 || marker.isCollected)) {
       if (Inventory.items[marker.text])
         Inventory.items[marker.text].amount = 0;
@@ -484,14 +484,14 @@ $("#language").on("change", function () {
 
 //Change & save overlay opacity
 $("#marker-opacity").on("change", function () {
-  var parsed = parseFloat($("#marker-opacity").val());
+  const parsed = parseFloat($("#marker-opacity").val());
   Settings.markerOpacity = parsed ? parsed : 1;
   $.cookie('marker-opacity', Settings.markerOpacity, { expires: 999 });
   MapBase.addMarkers();
 });
 
 $("#overlay-opacity").on("change", function () {
-  var parsed = parseFloat($("#overlay-opacity").val());
+  const parsed = parseFloat($("#overlay-opacity").val());
   Settings.overlayOpacity = parsed ? parsed : 0.5;
   $.cookie('overlay-opacity', Settings.overlayOpacity, { expires: 999 });
   MapBase.setOverlays(parsed);
@@ -499,7 +499,7 @@ $("#overlay-opacity").on("change", function () {
 
 //Change & save marker size
 $("#marker-size").on("change", function () {
-  var parsed = parseFloat($("#marker-size").val());
+  const parsed = parseFloat($("#marker-size").val());
   Settings.markerSize = parsed ? parsed : 1;
   $.cookie('marker-size', Settings.markerSize, { expires: 999 });
   MapBase.addMarkers();
@@ -508,11 +508,11 @@ $("#marker-size").on("change", function () {
 
 //Disable & enable collection category
 $('.clickable').on('click', function () {
-  var menu = $(this);
+  const menu = $(this);
   if (typeof menu.data('type') === 'undefined') return;
 
   $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
-  var isDisabled = menu.hasClass('disabled');
+  const isDisabled = menu.hasClass('disabled');
 
   if (isDisabled) {
     enabledCategories = $.grep(enabledCategories, function (value) {
@@ -552,9 +552,9 @@ $('.submenu-only').on('click', function (e) {
 });
 
 //Sell collections on menu
-$('.collection-sell').on('click', function (e) {
-  var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+$('.collection-sell').on('click', function () {
+  const collectionType = $(this).parent().parent().data('type');
+  const getMarkers = MapBase.markers.filter(marker => marker.category == collectionType && marker.day == Cycles.categories[marker.category]);
 
   $.each(getMarkers, function (key, value) {
     if (value.subdata) {
@@ -568,9 +568,9 @@ $('.collection-sell').on('click', function (e) {
 });
 
 // Reset collections on menu
-$('.collection-reset').on('click', function (e) {
-  var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+$('.collection-reset').on('click', function () {
+  const collectionType = $(this).parent().parent().data('type');
+  const getMarkers = MapBase.markers.filter(marker => marker.category == collectionType && marker.day == Cycles.categories[marker.category]);
 
   $.each(getMarkers, function (key, value) {
     if (value.canCollect)
@@ -595,8 +595,8 @@ $('.collection-reset').on('click', function (e) {
 
 //Remove item from map when using the menu
 $(document).on('click', '.collectible-wrapper[data-type]', function () {
-  var collectible = $(this).data('type');
-  var category = $(this).parent().data('type');
+  const collectible = $(this).data('type');
+  const category = $(this).parent().data('type');
 
   MapBase.removeItemFromMap(Cycles.categories[category], collectible, collectible, category, true);
 });
@@ -694,7 +694,7 @@ $('#pins-export').on("click", function () {
 
 $('#pins-import').on('click', function () {
   try {
-    var file = $('#pins-import-file').prop('files')[0];
+    const file = $('#pins-import-file').prop('files')[0];
 
     if (!file) {
       alert(Language.get('alerts.file_not_found'));
@@ -753,7 +753,7 @@ else
 
 //Enable & disable inventory on menu
 $('#inventory-stack').on("change", function () {
-  var inputValue = parseInt($('#inventory-stack').val());
+  let inputValue = parseInt($('#inventory-stack').val());
   inputValue = !isNaN(inputValue) ? inputValue : 10;
   $.cookie('inventory-stack', inputValue, { expires: 999 });
   Inventory.stackSize = inputValue;
@@ -765,20 +765,20 @@ $('#inventory-stack').on("change", function () {
 
 $('#cookie-export').on("click", function () {
   try {
-    var cookies = $.cookie();
-    var storage = localStorage;
+    const cookies = $.cookie();
+    const storage = localStorage;
 
     // Remove irrelevant properties.
-    delete cookies['_ga'];
-    delete storage['randid'];
-    delete storage['pinned-items'];
+    delete cookies._ga;
+    delete storage.randid;
+    delete storage.pinnedItems;
 
-    var settings = {
+    const settings = {
       'cookies': cookies,
       'local': storage
     };
 
-    var settingsJson = JSON.stringify(settings, null, 4);
+    const settingsJson = JSON.stringify(settings, null, 4);
 
     downloadAsFile("collectible-map-settings.json", settingsJson);
   } catch (error) {
@@ -789,7 +789,7 @@ $('#cookie-export').on("click", function () {
 
 $('#cookie-import').on('click', function () {
   try {
-    var file = $('#cookie-import-file').prop('files')[0];
+    const file = $('#cookie-import-file').prop('files')[0];
 
     if (!file) {
       alert(Language.get('alerts.file_not_found'));
@@ -797,7 +797,7 @@ $('#cookie-import').on('click', function () {
     }
 
     file.text().then(function (res) {
-      var settings = null;
+      let settings = null;
 
       try {
         settings = JSON.parse(res);
@@ -807,11 +807,11 @@ $('#cookie-import').on('click', function () {
       }
 
       // Remove all current settings.
-      $.each($.cookie(), function (key, value) {
+      $.each($.cookie(), function (key) {
         $.removeCookie(key);
       });
 
-      $.each(localStorage, function (key, value) {
+      $.each(localStorage, function (key) {
         localStorage.removeItem(key);
       });
 
@@ -868,7 +868,7 @@ $('#generate-route-auto-update').on("change", function () {
 });
 
 $('#generate-route-distance').on("change", function () {
-  var inputValue = parseInt($('#generate-route-distance').val());
+  let inputValue = parseInt($('#generate-route-distance').val());
   inputValue = !isNaN(inputValue) && inputValue > 0 ? inputValue : 25;
   $.cookie('generator-path-distance', inputValue, { expires: 999 });
   Routes.maxDistance = inputValue;
@@ -877,11 +877,11 @@ $('#generate-route-distance').on("change", function () {
 });
 
 $('#generate-route-start').on("change", function () {
-  var inputValue = $('#generate-route-start').val();
+  const inputValue = $('#generate-route-start').val();
   $.cookie('generator-path-start', inputValue, { expires: 999 });
 
-  var startLat = null;
-  var startLng = null;
+  let startLat = null;
+  let startLng = null;
 
   $('#generate-route-start-lat').parent().hide();
   $('#generate-route-start-lng').parent().hide();
@@ -927,7 +927,7 @@ $('#generate-route-start').on("change", function () {
 });
 
 $('#generate-route-start-lat').on("change", function () {
-  var inputValue = parseFloat($('#generate-route-start-lat').val());
+  let inputValue = parseFloat($('#generate-route-start-lat').val());
   inputValue = !isNaN(inputValue) ? inputValue : -119.9063;
   $.cookie('generator-path-start-lat', inputValue, { expires: 999 });
   Routes.startMarkerLat = inputValue;
@@ -936,7 +936,7 @@ $('#generate-route-start-lat').on("change", function () {
 });
 
 $('#generate-route-start-lng').on("change", function () {
-  var inputValue = parseFloat($('#generate-route-start-lng').val());
+  let inputValue = parseFloat($('#generate-route-start-lng').val());
   inputValue = !isNaN(inputValue) ? inputValue : 8.0313;
   $.cookie('generator-path-start-lng', inputValue, { expires: 999 });
   Routes.startMarkerLng = inputValue;
@@ -984,9 +984,9 @@ $('#generate-route-railroad-weight').on("change", function () {
 /**
  * Tutorial logic
  */
-var defaultHelpTimeout;
+let defaultHelpTimeout;
 $('[data-help]').hover(function (e) {
-  var attr = $(this).attr('data-help');
+  const attr = $(this).attr('data-help');
   clearTimeout(defaultHelpTimeout);
   $('#help-container p').attr('data-text', `help.${attr}`).text(Language.get(`help.${attr}`));
 }, function () {
@@ -1019,7 +1019,7 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
 
 L.LayerGroup.include({
   getLayerById: function (id) {
-    for (var i in this._layers) {
+    for (let i in this._layers) {
       if (this._layers[i].id == id) {
         return this._layers[i];
       }
@@ -1035,8 +1035,8 @@ $('*').on('contextmenu', function (e) {
 
 // reset all settings & cookies
 $('#delete-all-settings').on('click', function () {
-  var cookies = $.cookie();
-  for (var cookie in cookies) {
+  const cookies = $.cookie();
+  for (let cookie in cookies) {
     $.removeCookie(cookie);
   }
 
