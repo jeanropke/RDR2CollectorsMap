@@ -1275,7 +1275,6 @@
 	{"key": "weekly.desc.whiskey_set", "value": "Whiskey"},
 	{"key": "weekly.desc.cheater_set", "value": "Cheaters Suit"},
 	{"key": "weekly.desc.loser_set", "value": "Losers Hand"},
-	{"key": "weekly.desc.lovers_set", "value": "Влюбленные"},
 	{"key": "weekly.desc.gentleman_set", "value": "Gentleman's Effects"},
 	{"key": "weekly.desc.belle_set", "value": "Braithwaite Belle"},
 	{"key": "weekly.desc.looter_set", "value": "Looter's Lot"},
@@ -1296,6 +1295,6 @@
 	{"key": "weekly.desc.penny_set", "value": "Penny"},
 	{"key": "weekly.desc.festive_feast_set", "value": "Festive Feast"},
 	{"key": "weekly.desc.new_year_set", "value": "New Year"},
-	{"key": "weekly.desc.lovers_set", "value": "Lovers"},
+	{"key": "weekly.desc.lovers_set", "value": "Влюбленные"},
 	{"key": "weekly.desc.egg_hunt_set", "value": "Egg Hunt"}
 ]
