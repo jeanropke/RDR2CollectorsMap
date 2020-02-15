@@ -216,9 +216,12 @@ function setMapBackground(mapIndex) {
 function changeCursor() {
   if (Settings.isCoordsEnabled || Routes.customRouteEnabled)
     $('.leaflet-grab').css('cursor', 'pointer');
-  else
+  else {
     $('.leaflet-grab').css('cursor', 'grab');
+    $('.lat-lng-container').css('display', 'none');
+  }
 }
+
 function addZeroToNumber(number) {
   if (number < 10)
     number = '0' + number;
