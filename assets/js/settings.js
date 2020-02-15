@@ -2,6 +2,7 @@ const Settings = {
   displayClockHideTimer: $.cookie('clock-or-timer') == 'true',
   isCoordsEnabled: $.cookie('coords-enabled') == '1',
   isCycleChangerEnabled: $.cookie('cycle-changer-enabled') == '1',
+  isCycleInputEnabled: $.cookie('cycle-input-enabled') == '1',
   isDebugEnabled: $.cookie('debug') == '1',
   isDoubleClickZoomEnabled: $.cookie('enable-dclick-zoom') == '1',
   isMenuOpened: $.cookie('menu-opened') == '1',

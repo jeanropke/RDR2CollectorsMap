@@ -133,6 +133,11 @@ function init() {
     $.cookie('overlay-opacity', '0.5', { expires: 999 });
   }
 
+  if (typeof $.cookie('cycle-input-enabled') === 'undefined') {
+    Settings.isCycleInputEnabled = 1;
+    $.cookie('cycle-input-enabled', '1', { expires: 999 });
+  }
+
   if (typeof $.cookie('clock-or-timer') === 'undefined') {
     Settings.displayClockHideTimer = false;
     $.cookie('clock-or-timer', 'false', { expires: 999 });
@@ -165,15 +170,15 @@ function init() {
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
   $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
+  $('#enable-cycle-input').prop("checked", Settings.isCycleInputEnabled);
   $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
   $("#enable-debug").prop('checked', $.cookie('debug') != null);
   $("#enable-cycle-changer").prop('checked', $.cookie('cycle-changer-enabled') != null);
 
-  if (Settings.showHelp) {
+  if (Settings.showHelp)
     $("#help-container").show();
-  } else {
+  else
     $("#help-container").hide();
-  }
 
   if (Settings.displayClockHideTimer) {
     $('.clock-container').removeClass('hidden');
@@ -184,11 +189,15 @@ function init() {
     $('.timer-container').removeClass('hidden');
   }
 
-  if (Settings.isCycleChangerEnabled) {
+  if (Settings.isCycleInputEnabled)
+    $('.input-cycle').removeClass('hidden');
+  else
+    $('.input-cycle').addClass('hidden');
+
+  if (Settings.isCycleChangerEnabled)
     $('#cycle-changer-container').removeClass('hidden');
-  } else {
+  else
     $('#cycle-changer-container').addClass('hidden');
-  }
 
   Pins.addToMap();
   changeCursor();
@@ -504,6 +513,17 @@ $("#marker-size").on("change", function () {
   $.cookie('marker-size', Settings.markerSize, { expires: 999 });
   MapBase.addMarkers();
   Treasures.set();
+});
+
+//Enable cycle input
+$("#enable-cycle-input").on("change", function () {
+  Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
+  $.cookie('cycle-input-enabled', Settings.isCycleInputEnabled ? '1' : '0', { expires: 999 });
+
+  if (Settings.isCycleInputEnabled)
+    $('.input-cycle').removeClass('hidden');
+  else
+    $('.input-cycle').addClass('hidden');
 });
 
 //Disable & enable collection category
@@ -997,7 +1017,7 @@ $('[data-help]').hover(function (e) {
 
 $('#show-help').on("change", function () {
   Settings.showHelp = $("#show-help").prop('checked');
-  $.cookie('show-help', Settings.isHelpEnabled ? '1' : '0', { expires: 999 });
+  $.cookie('show-help', Settings.showHelp ? '1' : '0', { expires: 999 });
 
   if (Settings.showHelp) {
     $("#help-container").show();

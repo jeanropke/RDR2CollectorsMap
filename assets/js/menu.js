@@ -142,9 +142,7 @@ Menu.refreshMenu = function () {
       }
     });
 
-    let defaultHelpTimeout;
-    collectibleElement.hover(() => {
-      clearTimeout(defaultHelpTimeout);
+    collectibleElement.hover(function () {
       let language = Language.get(`help.${$(this).data('help')}`);
 
       if (language.indexOf('{collection}') !== -1) {
@@ -153,9 +151,7 @@ Menu.refreshMenu = function () {
 
       $('#help-container p').text(language);
     }, function () {
-      defaultHelpTimeout = setTimeout(function () {
-        $('#help-container p').text(Language.get(`help.default`));
-      }, 100);
+      $('#help-container p').text(Language.get(`help.default`));
     });
 
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
