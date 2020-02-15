@@ -603,6 +603,10 @@ var MapBase = {
       if (Routes.customRouteEnabled) e.target.closePopup();
     });
 
+    tempMarker.on("contextmenu", function (e) {
+      MapBase.removeItemFromMap(marker.day || '', marker.text || '', marker.subdata || '', marker.category || '');
+    });
+
     Layers.itemMarkersLayer.addLayer(tempMarker);
     if (Settings.markerCluster)
       Layers.oms.addMarker(tempMarker);
