@@ -15,6 +15,7 @@ var Cycles = {
       });
     console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
   },
+
   getFreshSelectedDay: function () {
     var now = new Date();
     return new Date(Date.UTC(
@@ -23,10 +24,11 @@ var Cycles = {
       now.getUTCDate() + Cycles.offset
     ));
   },
+
   getTodayCycle: function () {
     var selectedDay = Cycles.getFreshSelectedDay();
     var selectedDayStr = selectedDay.toISOString().split('T')[0];
-    var cycleIndex = Cycles.data.findIndex(element => element.date === selectedDayStr);
+    var cycleIndex = Cycles.data.findIndex((element) => element.date === selectedDayStr);
 
     $('div>span.cycle-data').toggleClass('highlight-important-items-menu', Cycles.offset !== 0);
 
@@ -60,7 +62,6 @@ var Cycles = {
   },
 
   setCustomCycles: function () {
-
     if (getParameterByName('cycles') == null)
       return;
 
@@ -109,7 +110,7 @@ var Cycles = {
 
   checkForUpdate: function () {
     if (Cycles.getFreshSelectedDay().valueOf() !== Cycles.selectedDay.valueOf()) {
-      Cycles.getTodayCycle();
+      Cycles.load();
     }
   },
 
@@ -204,6 +205,7 @@ var Cycles = {
     }
     return _cycles;
   },
+
   getCycleColor: function (cycle) {
     var color = "";
     switch (cycle) {
@@ -237,7 +239,7 @@ var Cycles = {
     }
 
     Inventory.save();
-    Cycles.load();
+    Cycles.getTodayCycle();
   },
 
   prevCycle: function () {
@@ -248,7 +250,7 @@ var Cycles = {
     }
 
     Inventory.save();
-    Cycles.load();
+    Cycles.getTodayCycle();
   }
 };
 
