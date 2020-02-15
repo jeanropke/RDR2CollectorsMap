@@ -54,8 +54,8 @@ const Pins = {
     const markerIndex = this.pinsList.findIndex((marker) => { return marker.options.id == id; });
 
     const marker = this.pinsList[markerIndex];
-    marker.options.name = name.replace(/[\:\;\<\>\"]/gi, '');
-    marker.options.desc = desc.replace(/[\:\;\<\>\"]/gi, '');
+    marker.options.name = name.replace(/[\:\;<\>\"]/gi, '');
+    marker.options.desc = desc.replace(/[\:\;<\>\"]/gi, '');
     marker.options.icon_name = icon;
 
     this.updatePopup(marker);
