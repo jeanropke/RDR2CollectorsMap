@@ -10,6 +10,8 @@ const MapBase = {
   markers: [],
   itemsMarkedAsImportant: [],
   isDarkMode: false,
+  updateLoopAvailable: true,
+  requestLoopCancel: false,
 
   init: function () {
 
@@ -286,6 +288,14 @@ const MapBase = {
   },
 
   addMarkers: function (refreshMenu = false) {
+    if (!MapBase.updateLoopAvailable) {
+      MapBase.requestLoopCancel = true;
+      setTimeout(() => {
+        MapBase.addMarkers(refreshMenu);
+      }, 0);
+      return;
+    }
+
     if (Layers.itemMarkersLayer != null)
       Layers.itemMarkersLayer.clearLayers();
     if (Layers.miscLayer != null)
@@ -293,12 +303,16 @@ const MapBase = {
 
     const opacity = Settings.markerOpacity;
 
+    MapBase.updateLoopAvailable = false;
     MapBase.yieldingLoop(
       MapBase.markers.length,
       25,
       (i) => {
+        if (MapBase.requestLoopCancel) return;
+
         const marker = MapBase.markers[i];
-        //Set isVisible to false. addMarkerOnMap will set to true if needs
+
+        // Set isVisible to false. addMarkerOnMap will set to true if needs
         marker.isVisible = false;
 
         if (marker.subdata != null)
@@ -307,7 +321,10 @@ const MapBase = {
 
         MapBase.addMarkerOnMap(marker, opacity);
       },
-      () => { }
+      () => {
+        MapBase.updateLoopAvailable = true;
+        MapBase.requestLoopCancel = false;
+      }
     );
 
     Layers.itemMarkersLayer.addTo(MapBase.map);
