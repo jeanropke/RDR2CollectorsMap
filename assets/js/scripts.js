@@ -1028,10 +1028,9 @@ L.LayerGroup.include({
 });
 
 // Disable annoying menu on right mouse click
-$('*').on('contextmenu', function (event) {
-  if ($.cookie('right-click') != null)
-    return;
-  event.preventDefault();
+$('*').on('contextmenu', function (e) {
+  if ($.cookie('right-click') == null)
+    e.preventDefault();
 });
 
 // reset all settings & cookies
