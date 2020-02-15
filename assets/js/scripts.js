@@ -243,7 +243,7 @@ function getParameterByName(name, url) {
 
 //Copy text to clipboard
 function setClipboardText(text) {
-  const el = document.createElement('textarea');
+  var el = document.createElement('textarea');
   el.value = text;
   document.body.appendChild(el);
   el.select();

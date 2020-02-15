@@ -387,8 +387,13 @@ var MapBase = {
 
           marker.canCollect = true;
         }
-        if (typeof (PathFinder) !== 'undefined') {
-          PathFinder.wasRemovedFromMap(marker);
+
+        try {
+          if (typeof (PathFinder) !== 'undefined') {
+            PathFinder.wasRemovedFromMap(marker);
+          }
+        } catch (error) {
+          console.error(error);
         }
       });
 

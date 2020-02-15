@@ -16,8 +16,7 @@ var Cycles = {
     console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
   },
   getFreshSelectedDay: function () {
-    'use strict';
-    const now = new Date();
+    var now = new Date();
     return new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -25,10 +24,9 @@ var Cycles = {
     ));
   },
   getTodayCycle: function () {
-    'use strict';
-    const selectedDay = Cycles.getFreshSelectedDay();
-    const selectedDayStr = selectedDay.toISOString().split('T')[0];
-    const cycleIndex = Cycles.data.findIndex(element => element.date === selectedDayStr);
+    var selectedDay = Cycles.getFreshSelectedDay();
+    var selectedDayStr = selectedDay.toISOString().split('T')[0];
+    var cycleIndex = Cycles.data.findIndex(element => element.date === selectedDayStr);
 
     $('div>span.cycle-data').toggleClass('highlight-important-items-menu', Cycles.offset !== 0);
 
@@ -38,7 +36,7 @@ var Cycles = {
       return;
     }
 
-    const _data = Cycles.data[cycleIndex];
+    var _data = Cycles.data[cycleIndex];
     Cycles.yesterday = Cycles.data[cycleIndex - 1];
     Cycles.selectedDay = selectedDay;
     Cycles.categories.american_flowers = _data.american_flowers;
@@ -104,14 +102,12 @@ var Cycles = {
     MapBase.addMarkers(true);
   },
   setLocaleDate: function () {
-    'use strict';
-    const locale = Settings.language;
-    const options = {timeZone: "UTC", day: "2-digit", month: "long"};
+    var locale = Settings.language;
+    var options = { timeZone: "UTC", day: "2-digit", month: "long" };
     $('.cycle-data').text(Cycles.selectedDay.toLocaleString(locale, options));
   },
 
   checkForUpdate: function () {
-    'use strict';
     if (Cycles.getFreshSelectedDay().valueOf() !== Cycles.selectedDay.valueOf()) {
       Cycles.getTodayCycle();
     }
