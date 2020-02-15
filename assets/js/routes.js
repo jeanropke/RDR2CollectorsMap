@@ -176,11 +176,13 @@ const Routes = {
 
   // Simple utility to clear the given polyline from Leaflet.
   clearPath: function (starting) {
+    // This will crash on slightly older browsers due to ES8.
     try {
       if ((typeof (starting) !== 'boolean' || !starting) && Routes.usePathfinder) {
         PathFinder.routegenClear();
       }
     } catch (error) {
+      alert(Language.get('alerts.feature_not_supported'));
       console.error(error);
     }
 
@@ -321,12 +323,14 @@ const Routes = {
     let last = first.marker;
 
     // Use path finder when enabled
+    // This will crash on slightly older browsers due to ES8.
     try {
       if (Routes.usePathfinder) {
         PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight);
         return;
       }
     } catch (error) {
+      alert(Language.get('alerts.feature_not_supported'));
       console.error(error);
     }
 

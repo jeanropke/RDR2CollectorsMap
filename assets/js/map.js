@@ -394,11 +394,13 @@ const MapBase = {
           marker.canCollect = true;
         }
 
+        // This will crash on slightly older browsers due to ES8.
         try {
           if (typeof (PathFinder) !== 'undefined') {
             PathFinder.wasRemovedFromMap(marker);
           }
         } catch (error) {
+          alert(Language.get('alerts.feature_not_supported'));
           console.error(error);
         }
       });
