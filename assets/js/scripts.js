@@ -40,19 +40,19 @@ function init() {
 
   //sometimes, cookies are saved in the wrong order
   const cookiesList = [];
-  $.each($.cookie(), function (key, value) {
+  $.each($.cookie(), (key, value) => {
     if (key.startsWith('removed-items')) {
       cookiesList.push(key);
     }
   });
   cookiesList.sort();
-  $.each(cookiesList, function (key, value) {
+  $.each(cookiesList, (key, value) => {
     tempCollectedMarkers += $.cookie(value);
   });
 
   //If the collect markers does not contains ':', need be converted to inventory system
   if (!tempCollectedMarkers.includes(':')) {
-    $.each(tempCollectedMarkers.split(';'), function (key, value) {
+    $.each(tempCollectedMarkers.split(';'), (key, value) => {
       tempInventory += `${value}:1:1;`;
     });
   } else {
@@ -73,12 +73,12 @@ function init() {
   if (typeof $.cookie('disabled-categories') !== 'undefined')
     categoriesDisabledByDefault = $.cookie('disabled-categories').split(',');
 
-  categoriesDisabledByDefault = categoriesDisabledByDefault.filter(function (item) {
+  categoriesDisabledByDefault = categoriesDisabledByDefault.filter((item) => {
     return ['texas_bluebonnet', 'bitterweed', 'agarita', 'wild_rhubarb', 'cardinal',
       'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'].indexOf(item) === -1;
   });
 
-  enabledCategories = enabledCategories.filter(function (item) {
+  enabledCategories = enabledCategories.filter((item) => {
     return categoriesDisabledByDefault.indexOf(item) === -1;
   });
 
@@ -269,7 +269,7 @@ function downloadAsFile(filename, text) {
   document.body.removeChild(element);
 }
 
-setInterval(function () {
+setInterval(() => {
 
   // Clock in game created by Michal__d
   const display_24 = false,
@@ -308,7 +308,7 @@ setInterval(function () {
 }, 1000);
 
 // toggle timer and clock after click the container
-$('.timer-container, .clock-container').on('click', function () {
+$('.timer-container, .clock-container').on('click', () => {
   $('.timer-container, .clock-container').toggleClass('hidden');
   Settings.displayClockHideTimer = !Settings.displayClockHideTimer;
   $.cookie('clock-or-timer', Settings.displayClockHideTimer, { expires: 999 });
@@ -400,7 +400,7 @@ $("#reset-markers").on("change", function () {
 });
 
 $("#clear-markers").on("click", function () {
-  $.each(MapBase.markers, function (_, value) {
+  $.each(MapBase.markers, (_, value) => {
     if (Inventory.items[value.text])
       Inventory.items[value.text].isCollected = false;
 
@@ -422,7 +422,7 @@ $("#clear-markers").on("click", function () {
 //Clear inventory on menu
 $("#clear-inventory").on("click", function () {
 
-  $.each(MapBase.markers, function (_, marker) {
+  $.each(MapBase.markers, (_, marker) => {
     if (marker.day == Cycles.categories[marker.category] && (marker.amount > 0 || marker.isCollected)) {
       if (Inventory.items[marker.text])
         Inventory.items[marker.text].amount = 0;
@@ -515,7 +515,7 @@ $('.clickable').on('click', function () {
   const isDisabled = menu.hasClass('disabled');
 
   if (isDisabled) {
-    enabledCategories = $.grep(enabledCategories, function (value) {
+    enabledCategories = $.grep(enabledCategories, (value) => {
       return value != menu.data('type');
     });
 
@@ -523,7 +523,7 @@ $('.clickable').on('click', function () {
   } else {
     enabledCategories.push(menu.data('type'));
 
-    categoriesDisabledByDefault = $.grep(categoriesDisabledByDefault, function (value) {
+    categoriesDisabledByDefault = $.grep(categoriesDisabledByDefault, (value) => {
       return value != menu.data('type');
     });
   }
@@ -556,7 +556,7 @@ $('.collection-sell').on('click', function () {
   const collectionType = $(this).parent().parent().data('type');
   const getMarkers = MapBase.markers.filter(marker => marker.category == collectionType && marker.day == Cycles.categories[marker.category]);
 
-  $.each(getMarkers, function (key, value) {
+  $.each(getMarkers, (_, value) => {
     if (value.subdata) {
       if (value.text.endsWith('_1') || !value.text.match('[0-9]$'))
         Inventory.changeMarkerAmount(value.subdata, -1);
@@ -572,7 +572,7 @@ $('.collection-reset').on('click', function () {
   const collectionType = $(this).parent().parent().data('type');
   const getMarkers = MapBase.markers.filter(marker => marker.category == collectionType && marker.day == Cycles.categories[marker.category]);
 
-  $.each(getMarkers, function (key, value) {
+  $.each(getMarkers, (_, value) => {
     if (value.canCollect)
       return;
 
@@ -701,7 +701,7 @@ $('#pins-import').on('click', function () {
       return;
     }
 
-    file.text().then(function (text) {
+    file.text().then((text) => {
       Pins.importPins(text);
     });
   } catch (error) {
@@ -796,7 +796,7 @@ $('#cookie-import').on('click', function () {
       return;
     }
 
-    file.text().then(function (res) {
+    file.text().then((res) => {
       let settings = null;
 
       try {
@@ -807,26 +807,26 @@ $('#cookie-import').on('click', function () {
       }
 
       // Remove all current settings.
-      $.each($.cookie(), function (key) {
+      $.each($.cookie(), (key) => {
         $.removeCookie(key);
       });
 
-      $.each(localStorage, function (key) {
+      $.each(localStorage, (key) => {
         localStorage.removeItem(key);
       });
 
       // Import all the settings from the file.
       if (typeof settings.cookies === 'undefined' && typeof settings.local === 'undefined') {
-        $.each(settings, function (key, value) {
+        $.each(settings, (key, value) => {
           $.cookie(key, value, { expires: 999 });
         });
       }
 
-      $.each(settings.cookies, function (key, value) {
+      $.each(settings.cookies, (key, value) => {
         $.cookie(key, value, { expires: 999 });
       });
 
-      $.each(settings.local, function (key, value) {
+      $.each(settings.local, (key, value) => {
         localStorage.setItem(key, value);
       });
 
@@ -1040,7 +1040,7 @@ $('#delete-all-settings').on('click', function () {
     $.removeCookie(cookie);
   }
 
-  $.each(localStorage, function (key) {
+  $.each(localStorage, (key) => {
     localStorage.removeItem(key);
   });
 
@@ -1051,7 +1051,7 @@ $('#delete-all-settings').on('click', function () {
  * Event listeners
  */
 
-$(function () {
+$(() => {
   init();
   MapBase.loadWeeklySet();
   Cycles.load();

@@ -4,7 +4,7 @@ const Treasures = {
   markers: [],
   load: function () {
     $.getJSON('data/treasures.json?nocache=' + nocache)
-      .done(function (data) {
+      .done((data) => {
         Treasures.data = data;
         Treasures.set();
       });
@@ -29,7 +29,7 @@ const Treasures = {
       iconAnchor: [8, 8]
     });
 
-    $.each(Treasures.data, function (_, value) {
+    $.each(Treasures.data, (_, value) => {
       const circle = L.circle([value.x, value.y], {
         color: "#fff79900",
         fillColor: "#fff799",
@@ -41,7 +41,7 @@ const Treasures = {
       });
 
       const treasuresCross = [];
-      $.each(value.treasures, function (_, value) {
+      $.each(value.treasures, (_, value) => {
         treasuresCross.push(L.marker([value.x, value.y], {
           icon: crossIcon
         }));
@@ -61,11 +61,11 @@ const Treasures = {
     if (!enabledCategories.includes('treasure'))
       return;
 
-    $.each(Treasures.markers, function (key, value) {
+    $.each(Treasures.markers, (_, value) => {
       if (Treasures.enabledTreasures.includes(value.treasure)) {
         Layers.miscLayer.addLayer(value.marker);
         Layers.miscLayer.addLayer(value.circle);
-        $.each(value.treasuresCross, function (_, value) {
+        $.each(value.treasuresCross, (_, value) => {
           Layers.miscLayer.addLayer(value);
         });
       }

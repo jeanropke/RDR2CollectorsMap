@@ -98,14 +98,14 @@ const Inventory = {
   save: function () {
     //Remove cookies from removed items
     $.removeCookie('removed-items');
-    $.each($.cookie(), function (key, _) {
+    $.each($.cookie(), (key, _) => {
       if (key.startsWith('removed-items')) {
         $.removeCookie(key);
       }
     });
 
     let temp = "";
-    $.each(MapBase.markers, function (_, marker) {
+    $.each(MapBase.markers, (_, marker) => {
       if (marker.day == Cycles.categories[marker.category] && (marker.amount > 0 || marker.isCollected))
         temp += `${marker.text}:${marker.isCollected ? '1' : '0'}:${marker.amount};`;
     });

@@ -24,7 +24,7 @@ const MadamNazar = {
       MadamNazar.addMadamNazar();
     } else {
       $.getJSON('https://pepegapi.jeanropke.net/rdo/nazar')
-        .done(function (nazar) {
+        .done((nazar) => {
           MadamNazar.currentLocation = nazar.nazar_id - 1;
           MadamNazar.currentDate = MapBase.formatDate(nazar.date);
           MadamNazar.addMadamNazar();
@@ -45,10 +45,10 @@ const MadamNazar = {
           iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
           popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
           html: `
-              <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
-              <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
-              ${shadow}
-            `
+            <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
+            <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
+            ${shadow}
+          `
         })
       });
       marker.bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1><p style="text-align: center;">${Language.get('map.madam_nazar.desc').replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}</p>`, { minWidth: 300 });

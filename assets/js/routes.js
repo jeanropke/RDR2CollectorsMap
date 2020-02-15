@@ -49,7 +49,7 @@ const Routes = {
 
       input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
 
-      $.each(input, function (_, value) {
+      $.each(input, (_, value) => {
         const marker = MapBase.markers.filter(marker => marker.text == value && marker.day == Cycles.categories[marker.category])[0];
         if (marker == null) {
           console.log(`Item not found on map: '${value}'`);
@@ -75,7 +75,7 @@ const Routes = {
   addMarkerOnCustomRoute: function (value) {
     if (Routes.customRouteEnabled) {
       if (Routes.customRouteConnections.includes(value)) {
-        Routes.customRouteConnections = Routes.customRouteConnections.filter(function (item) {
+        Routes.customRouteConnections = Routes.customRouteConnections.filter((item) => {
           return item !== value;
         });
       } else {
@@ -84,8 +84,8 @@ const Routes = {
 
       const connections = [];
 
-      $.each(Routes.customRouteConnections, function (_, item) {
-        const marker = MapBase.markers.filter(marker => marker.text == item && marker.day == Cycles.categories[marker.category])[0];
+      $.each(Routes.customRouteConnections, (_, item) => {
+        const marker = MapBase.markers.filter((marker) => marker.text == item && marker.day == Cycles.categories[marker.category])[0];
         connections.push([marker.lat, marker.lng]);
       });
 

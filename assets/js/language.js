@@ -27,7 +27,7 @@ const Language = {
         else
             $('.wiki-page').attr('href', wikiLanguage['en-us']);
 
-        $.each($('[data-text]'), function (key, value) {
+        $.each($('[data-text]'), (key, value) => {
             const temp = $(value);
             const string = Language.get(temp.data('text'));
 
@@ -39,7 +39,7 @@ const Language = {
         // Special cases:
         $('#search').attr("placeholder", Language.get('menu.search_placeholder'));
 
-        $('.leaflet-control-layers-list span').each(function (key, value) {
+        $('.leaflet-control-layers-list span').each((key, value) => {
             const element = $(value);
 
             switch (key) {
@@ -70,7 +70,7 @@ const Language = {
                     url: `./langs/menu/${language}.json`,
                     dataType: 'json',
                     async: false,
-                    success: function (json) {
+                    success: (json) => {
                         // Convert from object to property.
                         const langObject = {};
 
@@ -87,7 +87,7 @@ const Language = {
                     url: `./langs/item/${language}.json`,
                     dataType: 'json',
                     async: false,
-                    success: function (json) {
+                    success: (json) => {
                         // Convert from object to property.
                         const langObject = {};
 

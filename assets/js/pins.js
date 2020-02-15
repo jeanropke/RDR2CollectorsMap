@@ -9,7 +9,7 @@ const Pins = {
   },
 
   addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true) {
-    const pinAtPositionExists = this.pinsList.some(function (marker) { return marker._latlng.lat == lat && marker._latlng.lng == lng; });
+    const pinAtPositionExists = this.pinsList.some((marker) => { return marker._latlng.lat == lat && marker._latlng.lng == lng; });
     if (pinAtPositionExists) return;
 
     icon = icon == null ? 'pin' : icon;
@@ -26,10 +26,10 @@ const Pins = {
         popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
         shadowAnchor: [10 * Settings.markerSize, 12 * Settings.markerSize],
         html: `
-                    <img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
-                    <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
-                    ${shadow}
-                `
+          <img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
+          <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
+          ${shadow}
+        `
       })
     });
 
@@ -51,7 +51,7 @@ const Pins = {
   },
 
   savePin: function (id, name, desc, icon) {
-    const markerIndex = this.pinsList.findIndex(function (marker) { return marker.options.id == id; });
+    const markerIndex = this.pinsList.findIndex((marker) => { return marker.options.id == id; });
 
     const marker = this.pinsList[markerIndex];
     marker.options.name = name.replace(/[\:\;\<\>\"]/gi, '');
@@ -63,12 +63,12 @@ const Pins = {
   },
 
   removePin: function (id, doSave = true) {
-    const markerIndex = this.pinsList.findIndex(function (marker) { return marker.options.id == id; });
+    const markerIndex = this.pinsList.findIndex((marker) => { return marker.options.id == id; });
 
     const marker = this.pinsList[markerIndex];
     Layers.pinsLayer.removeLayer(marker);
 
-    this.pinsList = this.pinsList.filter(function (marker) { return marker.options.id != id; });
+    this.pinsList = this.pinsList.filter((marker) => { return marker.options.id != id; });
     if (doSave) this.saveAllPins();
   },
 

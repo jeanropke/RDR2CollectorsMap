@@ -9,7 +9,7 @@ const Cycles = {
 
   load: function () {
     $.getJSON('data/cycles.json?nocache=' + nocache)
-      .done(function (data) {
+      .done((data) => {
         Cycles.data = data;
         Cycles.getTodayCycle();
       });
@@ -261,6 +261,6 @@ const Cycles = {
 };
 
 // update to the next cycle
-setInterval(function () {
+setInterval(() => {
   Cycles.checkForUpdate();
 }, 1000 * 10);

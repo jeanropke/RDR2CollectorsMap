@@ -4,7 +4,7 @@
 
 const Menu = {
   reorderMenu: function (menu) {
-    $(menu).children().sort(function (a, b) {
+    $(menu).children().sort((a, b) => {
       return a.textContent.toLowerCase().localeCompare(b.textContent.toLowerCase());
     }).appendTo(menu);
   },
@@ -12,7 +12,7 @@ const Menu = {
   refreshTreasures: function () {
     $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
 
-    Treasures.data.filter(function (item) {
+    Treasures.data.filter((item) => {
       const collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-type', item.text);
       const collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(item.text));
 
@@ -33,7 +33,7 @@ Menu.refreshMenu = function () {
   const weeklyItems = weeklySetData.sets[weeklySetData.current];
   const anyUnavailableCategories = [];
 
-  $.each(MapBase.markers, function (_, marker) {
+  $.each(MapBase.markers, (_, marker) => {
     if (marker.day != Cycles.categories[marker.category]) return;
 
     // Only add subdata markers once.
@@ -118,7 +118,7 @@ Menu.refreshMenu = function () {
       if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
         collectibleElement.attr('data-help', 'item_night_only');
 
-      const currentSubdataMarkers = MapBase.markers.filter(function (marker) {
+      const currentSubdataMarkers = MapBase.markers.filter((marker) => {
         if (marker.subdata != marker.subdata)
           return false;
 
@@ -128,14 +128,14 @@ Menu.refreshMenu = function () {
         return true;
       });
 
-      if (currentSubdataMarkers.every(function (marker) { return !marker.canCollect; }))
+      if (currentSubdataMarkers.every((marker) => { return !marker.canCollect; }))
         collectibleElement.addClass('disabled');
     } else {
       if (!marker.canCollect)
         collectibleElement.addClass('disabled');
     }
 
-    $.each(weeklyItems, function (_, weeklyItem) {
+    $.each(weeklyItems, (_, weeklyItem) => {
       if (collectibleKey == weeklyItem.item) {
         collectibleElement.attr('data-help', 'item_weekly');
         collectibleElement.addClass('weekly-item');
@@ -143,7 +143,7 @@ Menu.refreshMenu = function () {
     });
 
     let defaultHelpTimeout;
-    collectibleElement.hover(function (e) {
+    collectibleElement.hover(() => {
       clearTimeout(defaultHelpTimeout);
       let language = Language.get(`help.${$(this).data('help')}`);
 
@@ -161,7 +161,7 @@ Menu.refreshMenu = function () {
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
   });
 
-  $('.menu-hidden[data-type]').each(function () {
+  $('.menu-hidden[data-type]').each(() => {
     const category = $(this);
 
     if (category.data('type') == 'treasure') return;
@@ -176,7 +176,7 @@ Menu.refreshMenu = function () {
 
     const children = category.children('.collectible-wrapper');
 
-    children.sort(function (a, b) {
+    children.sort((a, b) => {
       return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
     }).appendTo(this);
   });
@@ -198,7 +198,7 @@ Menu.refreshMenu = function () {
 
   Menu.refreshTreasures();
 
-  $.each(categoriesDisabledByDefault, function (_, value) {
+  $.each(categoriesDisabledByDefault, (_, value) => {
     if (value.length > 0) {
       $('[data-type=' + value + ']').addClass('disabled');
     }
@@ -211,7 +211,7 @@ Menu.refreshMenu = function () {
 };
 
 Menu.showAll = function () {
-  $.each(categoryButtons, function (_, value) {
+  $.each(categoryButtons, (_, value) => {
     $(value).removeClass("disabled");
     $(`.menu-hidden[data-type=${$(value).attr('data-type')}]`).removeClass("disabled");
   });
@@ -222,7 +222,7 @@ Menu.showAll = function () {
 };
 
 Menu.hideAll = function () {
-  $.each(categoryButtons, function (_, value) {
+  $.each(categoryButtons, (_, value) => {
     $(value).addClass("disabled");
     $(`.menu-hidden[data-type=${$(value).attr('data-type')}]`).addClass("disabled");
   });
@@ -245,7 +245,7 @@ Menu.refreshItemsCounter = function () {
 // Remove highlight from all important items
 $('#clear_highlights').on('click', function () {
   const tempArray = MapBase.itemsMarkedAsImportant;
-  $.each(tempArray, function () {
+  $.each(tempArray, () => {
     MapBase.highlightImportantItem(tempArray[0]);
   });
 });

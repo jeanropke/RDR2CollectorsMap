@@ -2,14 +2,14 @@ const Encounters = {
   markers: [],
   load: function () {
     $.getJSON('data/encounters.json?nocache=' + nocache)
-      .done(function (data) {
+      .done((data) => {
         Encounters.set(data);
       });
     console.info('%c[Encounters] Loaded!', 'color: #bada55; background: #242424');
   },
   set: function (data) {
-    $.each(data, function (category, markers) {
-      $.each(markers, function (_, marker) {
+    $.each(data, (category, markers) => {
+      $.each(markers, (_, marker) => {
         Encounters.markers.push(new Marker(marker.text, marker.x, marker.y, null, null, category, null, null, true));
       });
     });
@@ -34,7 +34,7 @@ const Encounters = {
 
   addToMap: function () {
     Layers.encountersLayer.clearLayers();
-    $.each(Encounters.markers, function (_, marker) {
+    $.each(Encounters.markers, (_, marker) => {
 
       if (!enabledCategories.includes(marker.category))
         return;
