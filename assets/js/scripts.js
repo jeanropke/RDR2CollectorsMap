@@ -15,7 +15,7 @@ const categories = [
 let categoriesDisabledByDefault = [
   'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
   'wounded_animal', 'rival_collector'
-]
+];
 
 let enabledCategories = categories;
 const categoryButtons = $(".clickable[data-type]");
