@@ -52,11 +52,11 @@ const Inventory = {
   },
 
   changeMarkerAmount: function (name, amount, skipInventory = false) {
-    const marker = MapBase.markers.filter(marker => {
+    const markers = MapBase.markers.filter(marker => {
       return (marker.text == name || marker.subdata == name);
     });
 
-    $.each(marker, function (key, marker) {
+    $.each(markers, (_, marker) => {
       if (Inventory.isEnabled && (!skipInventory || skipInventory && Inventory.isMenuUpdateEnabled)) {
         marker.amount = parseInt(marker.amount) + amount;
 
@@ -80,8 +80,8 @@ const Inventory = {
         $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
       }
 
-      $(`small[data-item=${name}]`).text(marker[0].amount);
-      $(`[data-type=${name}] .counter-number`).text(marker[0].amount);
+      $(`small[data-item=${name}]`).text(markers[0].amount);
+      $(`[data-type=${name}] .counter-number`).text(markers[0].amount);
 
       //If the category is disabled, no needs to update popup
       if (Settings.isPopupsEnabled && Layers.itemMarkersLayer.getLayerById(marker.text) != null && marker.day == Cycles.categories[marker.category])
