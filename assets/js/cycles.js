@@ -142,6 +142,7 @@ var Cycles = {
     if (nextDayCycle === -1 && Cycles.forwardMaxOffset > 0) {  // protect function, otherwise with no data function can loop to -infinity
       Cycles.forwardMaxOffset--;
       Cycles.nextDayDataExists();
+      return;
     }
     if (Cycles.forwardMaxOffset === 0 && Cycles.offset === 0)
       $('#cycle-next').addClass('disable-cycle-changer-arrow');
