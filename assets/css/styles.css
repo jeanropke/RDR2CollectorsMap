@@ -229,7 +229,7 @@ input, textarea, select, .btn {
     color: #eee;
     left: 40px;
     top: 5px;
-    min-width: 95px;
+    min-width: 80px;
     height: 30px;
     transition: all 200ms ease-out;
     padding: 0 8px;

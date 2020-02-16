@@ -1,4 +1,4 @@
-[	
+[
     {"key": "fasttravel.tumbleweed.name", 	"value": "Tumbleweed"},
     {"key": "fasttravel.armadillo.name", 	"value": "Armadillo"},
     {"key": "fasttravel.macfarlanes.name", 	"value": "MacFarlane's Ranch"},
@@ -513,10 +513,10 @@
     {"key": "coin_one_cent_token.name", "value": "1787 One Cent Token Coin"},
     {"key": "coin_one_cent_token_1.desc", "value": "Besides the eastern tree."},
     {"key": "coin_one_cent_token_2.desc", "value": "Near the crates next to the tree."},
-    {"key": "coin_one_cent_token_3.desc", "value": "At the edge of the cliff, follow the natural path downward from the top of the cliff."},	
-    {"key": "coin_one_cent_token_4.desc", "value": "Between several trees."},	
-    {"key": "coin_one_cent_token_5.desc", "value": "Below the clothesline."},	
-    {"key": "coin_one_cent_token_6.desc", "value": "By the broken wagon."},	
+    {"key": "coin_one_cent_token_3.desc", "value": "At the edge of the cliff, follow the natural path downward from the top of the cliff."},
+    {"key": "coin_one_cent_token_4.desc", "value": "Between several trees."},
+    {"key": "coin_one_cent_token_5.desc", "value": "Below the clothesline."},
+    {"key": "coin_one_cent_token_6.desc", "value": "By the broken wagon."},
 
     {"key": "coin_silver_dollar.name", "value": "1794 Silver Dollar Coin"},
     {"key": "coin_silver_dollar_1.desc", "value": "Next to the chimney."},
