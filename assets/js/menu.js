@@ -59,9 +59,9 @@ Menu.refreshMenu = function () {
       collectibleTitle = Language.get(`${collectibleKey}.name`);
     } else {
       collectibleText = marker.text;
-      collectibleTitle = marker.title;
+      collectibleTitle = Language.get(`${collectibleKey}.name`);
     }
-
+    
     let collectibleImage = null;
 
     // Prevents 404 errors. If doing the if-statement the other way round, jQuery tries to load the images.
@@ -204,6 +204,8 @@ Menu.refreshMenu = function () {
   MapBase.loadImportantItems();
 
   $('.map-cycle-alert span').html(Language.get('map.refresh_for_updates_alert'));
+
+
 };
 
 Menu.showAll = function () {
