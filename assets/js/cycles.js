@@ -256,7 +256,7 @@ var Cycles = {
     return color;
   },
 
-  nextCycle: function () {
+  prevCycle: function () {
     Cycles.offset--;
     $('#cycle-next').removeClass('disable-cycle-changer-arrow');
 
@@ -272,7 +272,7 @@ var Cycles = {
     Cycles.load();
   },
 
-  prevCycle: function () {
+  nextCycle: function () {
     Cycles.offset++;
     $('#cycle-prev').removeClass('disable-cycle-changer-arrow');
 
