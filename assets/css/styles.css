@@ -748,7 +748,6 @@ a.wiki-page:visited {
 }
 
 .disable-cycle-changer-arrow {
-    user-select: none;
     cursor: default !important;
     opacity: .3;
 }
