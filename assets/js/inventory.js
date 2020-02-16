@@ -7,17 +7,17 @@ var Inventory = {
   items: [],
 
   init: function () {
-    if (typeof $.cookie('inventory-popups-enabled') === 'undefined') {
+    if ($.cookie('inventory-popups-enabled') === undefined) {
       Inventory.isPopupEnabled = true;
       $.cookie('inventory-popups-enabled', '1', { expires: 999 });
     }
 
-    if (typeof $.cookie('inventory-menu-update-enabled') === 'undefined') {
+    if ($.cookie('inventory-menu-update-enabled') === undefined) {
       Inventory.isMenuUpdateEnabled = true;
       $.cookie('inventory-menu-update-enabled', '1', { expires: 999 });
     }
 
-    if (typeof $.cookie('reset-updates-inventory-enabled') === 'undefined') {
+    if ($.cookie('reset-updates-inventory-enabled') === undefined) {
       Inventory.resetButtonUpdatesInventory = false;
       $.cookie('reset-updates-inventory-enabled', '0', { expires: 999 });
     }

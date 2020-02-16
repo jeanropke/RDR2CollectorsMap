@@ -65,7 +65,7 @@ function init() {
 
   $('.map-alert').toggle($.cookie('alert-closed-1') === undefined);
 
-  if (typeof $.cookie('disabled-categories') !== 'undefined')
+  if ($.cookie('disabled-categories') !== undefined)
     categoriesDisabledByDefault = $.cookie('disabled-categories').split(',');
 
   categoriesDisabledByDefault = categoriesDisabledByDefault.filter(function (item) {
@@ -77,58 +77,58 @@ function init() {
     return categoriesDisabledByDefault.indexOf(item) === -1;
   });
 
-  if (typeof $.cookie('map-layer') === 'undefined' || isNaN(parseInt($.cookie('map-layer'))))
+  if ($.cookie('map-layer') === undefined || isNaN(parseInt($.cookie('map-layer'))))
     $.cookie('map-layer', 0, { expires: 999 });
 
   if (!Language.availableLanguages.includes(Settings.language))
     Settings.language = 'en-us';
 
-  if (typeof $.cookie('remove-markers-daily') === 'undefined') {
+  if ($.cookie('remove-markers-daily') === undefined) {
     Settings.resetMarkersDaily = true;
     $.cookie('remove-markers-daily', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('marker-cluster') === 'undefined') {
+  if ($.cookie('marker-cluster') === undefined) {
     Settings.markerCluster = true;
     $.cookie('marker-cluster', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('enable-marker-popups') === 'undefined') {
+  if ($.cookie('enable-marker-popups') === undefined) {
     Settings.isPopupsEnabled = true;
     $.cookie('enable-marker-popups', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('enable-marker-shadows') === 'undefined') {
+  if ($.cookie('enable-marker-shadows') === undefined) {
     Settings.isShadowsEnabled = true;
     $.cookie('enable-marker-shadows', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('enable-dclick-zoom') === 'undefined') {
+  if ($.cookie('enable-dclick-zoom') === undefined) {
     Settings.isDoubleClickZoomEnabled = true;
     $.cookie('enable-dclick-zoom', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('show-help') === 'undefined') {
+  if ($.cookie('show-help') === undefined) {
     Settings.showHelp = true;
     $.cookie('show-help', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('marker-opacity') === 'undefined') {
+  if ($.cookie('marker-opacity') === undefined) {
     Settings.markerOpacity = 1;
     $.cookie('marker-opacity', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('marker-size') === 'undefined') {
+  if ($.cookie('marker-size') === undefined) {
     Settings.markerSize = 1;
     $.cookie('marker-size', '1', { expires: 999 });
   }
 
-  if (typeof $.cookie('overlay-opacity') === 'undefined') {
+  if ($.cookie('overlay-opacity') === undefined) {
     Settings.overlayOpacity = 0.5;
     $.cookie('overlay-opacity', '0.5', { expires: 999 });
   }
 
-  if (typeof $.cookie('clock-or-timer') === 'undefined') {
+  if ($.cookie('clock-or-timer') === undefined) {
     Settings.displayClockHideTimer = false;
     $.cookie('clock-or-timer', 'false', { expires: 999 });
   }
@@ -475,7 +475,7 @@ $("#marker-size").on("change", function () {
 //Disable & enable collection category
 $('.clickable').on('click', function () {
   var menu = $(this);
-  if (typeof menu.data('type') === 'undefined') return;
+  if (menu.data('type') === undefined) return;
 
   $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
   var isDisabled = menu.hasClass('disabled');
@@ -776,7 +776,7 @@ $('#cookie-import').on('click', function () {
       });
 
       // Import all the settings from the file.
-      if (typeof settings.cookies === 'undefined' && typeof settings.local === 'undefined') {
+      if (settings.cookies === undefined && settings.local === undefined) {
         $.each(settings, function (key, value) {
           $.cookie(key, value, { expires: 999 });
         });
