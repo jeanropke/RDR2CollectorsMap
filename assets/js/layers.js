@@ -1,4 +1,4 @@
-const Layers = {
+var Layers = {
   itemMarkersLayer: new L.LayerGroup(),
   miscLayer: new L.LayerGroup(),
   encountersLayer: new L.LayerGroup(),

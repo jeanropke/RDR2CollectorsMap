@@ -1,4 +1,4 @@
-const Inventory = {
+var Inventory = {
   isEnabled: $.cookie('inventory-enabled') == '1',
   isPopupEnabled: $.cookie('inventory-popups-enabled') == '1',
   isMenuUpdateEnabled: $.cookie('inventory-menu-update-enabled') == '1',
@@ -32,15 +32,15 @@ const Inventory = {
   },
 
   load: function () {
-    const items = localStorage.getItem("inventory-items") || tempCollectedMarkers;
+    var _items = localStorage.getItem("inventory-items") || tempCollectedMarkers;
 
-    if (items == null)
+    if (_items == null)
       return;
 
-    items.split(';').forEach(item => {
+    _items.split(';').forEach(item => {
       if (item == '') return;
 
-      const properties = item.split(':');
+      var properties = item.split(':');
 
       Inventory.items[properties[0]] = {
         'isCollected': properties[1] == '1',
@@ -52,40 +52,40 @@ const Inventory = {
   },
 
   changeMarkerAmount: function (name, amount, skipInventory = false) {
-    const markers = MapBase.markers.filter(marker => {
-      return (marker.text == name || marker.subdata == name);
+    var marker = MapBase.markers.filter(_m => {
+      return (_m.text == name || _m.subdata == name);
     });
 
-    $.each(markers, (_, marker) => {
+    $.each(marker, function (key, _m) {
       if (Inventory.isEnabled && (!skipInventory || skipInventory && Inventory.isMenuUpdateEnabled)) {
-        marker.amount = parseInt(marker.amount) + amount;
+        _m.amount = parseInt(_m.amount) + amount;
 
-        if (marker.amount >= Inventory.stackSize)
-          marker.amount = Inventory.stackSize;
+        if (_m.amount >= Inventory.stackSize)
+          _m.amount = Inventory.stackSize;
 
-        if (marker.amount < 0)
-          marker.amount = 0;
+        if (_m.amount < 0)
+          _m.amount = 0;
       }
 
       if (Inventory.isEnabled)
-        marker.canCollect = marker.amount < Inventory.stackSize && !marker.isCollected;
+        _m.canCollect = _m.amount < Inventory.stackSize && !_m.isCollected;
       else
-        marker.canCollect = !marker.isCollected;
+        _m.canCollect = !_m.isCollected;
 
-      if ((marker.isCollected || (Inventory.isEnabled && marker.amount >= Inventory.stackSize)) && marker.day == Cycles.categories[marker.category]) {
-        $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
-        $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
-      } else if (marker.day == Cycles.categories[marker.category]) {
-        $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
-        $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
+      if ((_m.isCollected || (Inventory.isEnabled && _m.amount >= Inventory.stackSize)) && _m.day == Cycles.categories[_m.category]) {
+        $(`[data-marker=${_m.text}]`).css('opacity', Settings.markerOpacity / 3);
+        $(`[data-type=${_m.subdata || _m.text}]`).addClass('disabled');
+      } else if (_m.day == Cycles.categories[_m.category]) {
+        $(`[data-marker=${_m.text}]`).css('opacity', Settings.markerOpacity);
+        $(`[data-type=${_m.subdata || _m.text}]`).removeClass('disabled');
       }
 
-      $(`small[data-item=${name}]`).text(markers[0].amount);
-      $(`[data-type=${name}] .counter-number`).text(markers[0].amount);
+      $(`small[data-item=${name}]`).text(marker[0].amount);
+      $(`[data-type=${name}] .counter-number`).text(marker[0].amount);
 
       //If the category is disabled, no needs to update popup
-      if (Settings.isPopupsEnabled && Layers.itemMarkersLayer.getLayerById(marker.text) != null && marker.day == Cycles.categories[marker.category])
-        Layers.itemMarkersLayer.getLayerById(marker.text)._popup.setContent(MapBase.updateMarkerContent(marker));
+      if (Settings.isPopupsEnabled && Layers.itemMarkersLayer.getLayerById(_m.text) != null && _m.day == Cycles.categories[_m.category])
+        Layers.itemMarkersLayer.getLayerById(_m.text)._popup.setContent(MapBase.updateMarkerContent(_m));
     });
 
     if ($("#routes").val() == 1)
@@ -98,14 +98,14 @@ const Inventory = {
   save: function () {
     //Remove cookies from removed items
     $.removeCookie('removed-items');
-    $.each($.cookie(), (key, _) => {
+    $.each($.cookie(), function (key, value) {
       if (key.startsWith('removed-items')) {
         $.removeCookie(key);
       }
     });
 
-    let temp = "";
-    $.each(MapBase.markers, (_, marker) => {
+    var temp = "";
+    $.each(MapBase.markers, function (key, marker) {
       if (marker.day == Cycles.categories[marker.category] && (marker.amount > 0 || marker.isCollected))
         temp += `${marker.text}:${marker.isCollected ? '1' : '0'}:${marker.amount};`;
     });

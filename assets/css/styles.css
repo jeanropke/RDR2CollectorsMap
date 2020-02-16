@@ -391,7 +391,7 @@ input, textarea, select, .btn {
     border: 1px solid #999;
 }
 
-.input-text {
+.input-day {
     background: #383838;
     border: none;
     padding: 4px 10px;
@@ -402,16 +402,12 @@ input, textarea, select, .btn {
     margin-left: 6px;
 }
 
-.input-container-noflex .input-text {
+.input-container-noflex .input-day {
     margin-left: 0;
 }
 
-.input-text:disabled {
+.input-day:disabled {
     cursor: not-allowed;
-}
-
-.input-text.input-cycle.random {
-    margin-right: 48px;
 }
 
 .issues-container a {
@@ -461,7 +457,6 @@ input, textarea, select, .btn {
 
 .side-menu .menu-option {
     display: flex;
-    justify-content: space-between;
     align-items: start;
     padding: 0 5px;
     user-select: none;
@@ -477,9 +472,6 @@ input, textarea, select, .btn {
 
 .side-menu .disabled {
     opacity: .5;
-}
-
-.side-menu .disabled .menu-option-text, .side-menu .disabled .collectible-text {
     text-decoration: line-through;
 }
 
@@ -849,10 +841,6 @@ a.no-style:visited {
     color: #333;
 }
 
-.leaflet-control-attribution a {
-    color: #333 !important;
-}
-
 .leaflet-dark-mode .leaflet-control-attribution {
     background: #333;
     color: white;
@@ -1088,6 +1076,6 @@ a.no-style:visited {
     padding: 10px;
 }
 
-.donate-form .input-text {
+.donate-form .input-day {
     margin: auto 0 auto auto;
 }

@@ -1,10 +1,10 @@
-const Treasures = {
+var Treasures = {
   enabledTreasures: $.cookie('treasures-enabled') ? $.cookie('treasures-enabled').split(';') : [],
   data: [],
   markers: [],
   load: function () {
     $.getJSON('data/treasures.json?nocache=' + nocache)
-      .done((data) => {
+      .done(function (data) {
         Treasures.data = data;
         Treasures.set();
       });
@@ -12,8 +12,8 @@ const Treasures = {
   },
   set: function () {
     Treasures.markers = [];
-    const shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    const treasureIcon = L.divIcon({
+    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    var treasureIcon = L.divIcon({
       iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
       iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
       popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
@@ -23,26 +23,26 @@ const Treasures = {
         ${shadow}
       `
     });
-    const crossIcon = L.icon({
+    var crossIcon = L.icon({
       iconUrl: './assets/images/icons/cross.png',
       iconSize: [16, 16],
       iconAnchor: [8, 8]
     });
 
-    $.each(Treasures.data, (_, value) => {
-      const circle = L.circle([value.x, value.y], {
+    $.each(Treasures.data, function (key, value) {
+      var circle = L.circle([value.x, value.y], {
         color: "#fff79900",
         fillColor: "#fff799",
         fillOpacity: 0.5,
         radius: value.radius
       });
-      const marker = L.marker([value.x, value.y], {
+      var marker = L.marker([value.x, value.y], {
         icon: treasureIcon
       });
 
-      const treasuresCross = [];
-      $.each(value.treasures, (_, value) => {
-        treasuresCross.push(L.marker([value.x, value.y], {
+      var treasuresCross = [];
+      $.each(value.treasures, function (crossKey, crossValue) {
+        treasuresCross.push(L.marker([crossValue.x, crossValue.y], {
           icon: crossIcon
         }));
       });
@@ -61,12 +61,12 @@ const Treasures = {
     if (!enabledCategories.includes('treasure'))
       return;
 
-    $.each(Treasures.markers, (_, value) => {
+    $.each(Treasures.markers, function (key, value) {
       if (Treasures.enabledTreasures.includes(value.treasure)) {
         Layers.miscLayer.addLayer(value.marker);
         Layers.miscLayer.addLayer(value.circle);
-        $.each(value.treasuresCross, (_, value) => {
-          Layers.miscLayer.addLayer(value);
+        $.each(value.treasuresCross, function (crossKey, crossValue) {
+          Layers.miscLayer.addLayer(crossValue);
         });
       }
     });
@@ -81,7 +81,7 @@ const Treasures = {
     if (isToHide) {
       Treasures.enabledTreasures = [];
     } else {
-      Treasures.enabledTreasures = Treasures.data.map(treasure => treasure.text);
+      Treasures.enabledTreasures = Treasures.data.map(_treasure => _treasure.text);
     }
     Treasures.addToMap();
     Treasures.save();

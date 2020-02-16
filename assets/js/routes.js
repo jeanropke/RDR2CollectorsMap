@@ -2,7 +2,7 @@
  * Created by Jean on 2019-10-09.
  */
 
-const Routes = {
+var Routes = {
   init: function () {
     $('#custom-routes').prop("checked", Routes.customRouteEnabled);
 
@@ -32,7 +32,7 @@ const Routes = {
     }
 
     // Route starts at
-    let genPathStart = $.cookie('generator-path-start');
+    var genPathStart = $.cookie('generator-path-start');
     if (!genPathStart) genPathStart = "SW";
 
     $('#generate-route-start').val(genPathStart);
@@ -45,16 +45,16 @@ const Routes = {
 
   loadCustomRoute: function (input) {
     try {
-      const connections = [];
+      var connections = [];
 
       input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
 
-      $.each(input, (_, value) => {
-        const marker = MapBase.markers.filter(marker => marker.text == value && marker.day == Cycles.categories[marker.category])[0];
-        if (marker == null) {
+      $.each(input, function (key, value) {
+        var _marker = MapBase.markers.filter(marker => marker.text == value && marker.day == Cycles.categories[marker.category])[0];
+        if (_marker == null) {
           console.log(`Item not found on map: '${value}'`);
         } else {
-          connections.push([marker.lat, marker.lng]);
+          connections.push([_marker.lat, _marker.lng]);
         }
       });
 
@@ -75,18 +75,18 @@ const Routes = {
   addMarkerOnCustomRoute: function (value) {
     if (Routes.customRouteEnabled) {
       if (Routes.customRouteConnections.includes(value)) {
-        Routes.customRouteConnections = Routes.customRouteConnections.filter((item) => {
+        Routes.customRouteConnections = Routes.customRouteConnections.filter(function (item) {
           return item !== value;
         });
       } else {
         Routes.customRouteConnections.push(value);
       }
 
-      const connections = [];
+      var connections = [];
 
-      $.each(Routes.customRouteConnections, (_, item) => {
-        const marker = MapBase.markers.filter((marker) => marker.text == item && marker.day == Cycles.categories[marker.category])[0];
-        connections.push([marker.lat, marker.lng]);
+      $.each(Routes.customRouteConnections, function (key, item) {
+        var _marker = MapBase.markers.filter(marker => marker.text == item && marker.day == Cycles.categories[marker.category])[0];
+        connections.push([_marker.lat, _marker.lng]);
       });
 
       if (Routes.polylines instanceof L.Polyline) {
@@ -106,7 +106,7 @@ const Routes = {
   },
 
   importCustomRoute: function () {
-    const input = prompt(Language.get('routes.import_prompt'), "");
+    var input = prompt(Language.get('routes.import_prompt'), "");
 
     if (input == null || input == "") {
       alert(Language.get('routes.empty'));
@@ -163,8 +163,8 @@ const Routes = {
 
   // Simple utility to get the distance between two markers in Leaflet.
   getDistance: function (marker1, marker2) {
-    const latlng1 = L.latLng([marker1.lat, marker1.lng]);
-    const latlng2 = L.latLng([marker2.lat, marker2.lng]);
+    var latlng1 = L.latLng([marker1.lat, marker1.lng]);
+    var latlng2 = L.latLng([marker2.lat, marker2.lng]);
 
     return MapBase.map.distance(latlng1, latlng2);
   },
@@ -176,14 +176,8 @@ const Routes = {
 
   // Simple utility to clear the given polyline from Leaflet.
   clearPath: function (starting) {
-    // This will crash on slightly older browsers due to ES8.
-    try {
-      if ((typeof (starting) !== 'boolean' || !starting) && Routes.usePathfinder) {
-        PathFinder.routegenClear();
-      }
-    } catch (error) {
-      alert(Language.get('alerts.feature_not_supported'));
-      console.error(error);
+    if ((typeof (starting) !== 'boolean' || !starting) && Routes.usePathfinder) {
+      PathFinder.routegenClear();
     }
 
     if (!Routes.lastPolyline) return;
@@ -195,12 +189,12 @@ const Routes = {
   // Find the nearest neighbor to the given marker.
   // Needs to have an array of the possible markers and currently chosen paths and the maximum distance a path can be.
   nearestNeighborTo: function (marker, possibleNeighbors, polylines, maxDistance) {
-    let resDistance = null;
-    for (let i = 0; i < possibleNeighbors.length; i++) {
-      const element = possibleNeighbors[i];
+    var resDistance = null;
+    for (var i = 0; i < possibleNeighbors.length; i++) {
+      var element = possibleNeighbors[i];
 
       // Calculate closest path.
-      const distance = Routes.getDistance(marker, element);
+      var distance = Routes.getDistance(marker, element);
 
       // Skip any distance over maxDistance.
       if (maxDistance != -1 && distance > maxDistance) continue;
@@ -209,9 +203,9 @@ const Routes = {
       if (Routes.isSameMarker(marker, element)) continue;
 
       // Skip existing paths in polylines.
-      let pathExists = false;
-      let markerNodeCount = 0;
-      let elementNodeCount = 0;
+      var pathExists = false;
+      var markerNodeCount = 0;
+      var elementNodeCount = 0;
 
       polylines.forEach((polyline) => {
         // Check if the path is already drawn to prevent looping paths.
@@ -285,7 +279,7 @@ const Routes = {
     Routes.clearPath(true);
 
     // Setup variables.
-    let newMarkers = MapBase.markers.filter((marker) => { return marker.isVisible; });
+    var newMarkers = MapBase.markers.filter((marker) => { return marker.isVisible; });
 
     // Optionally ignore the already collected markers.
     if (Routes.ignoreCollected) {
@@ -296,10 +290,10 @@ const Routes = {
       newMarkers = newMarkers.filter((marker) => { return marker.amount < Inventory.stackSize; });
     }
 
-    if (Routes.importantOnly) {
+    if(Routes.importantOnly) {
       newMarkersImp = newMarkers.filter((marker) => { return MapBase.itemsMarkedAsImportant.indexOf(marker.text) >= 0; });
-      if (newMarkers.length > 0 && newMarkersImp.length == 0) {
-        if (!confirm(Language.get('dialog.generate_route_important_only_ignore'))) {
+      if(newMarkers.length > 0 && newMarkersImp.length == 0) {
+        if(!confirm(Language.get('dialog.generate_route_important_only_ignore'))) {
           return;
         }
       } else {
@@ -307,36 +301,30 @@ const Routes = {
       }
     }
 
-    if (newMarkers.length <= 1) {
+    if(newMarkers.length <= 1) {
       return;
     }
 
-    const polylines = [];
+    var polylines = [];
 
     // The starting point of the path.
-    let first = null;
+    var first = null;
 
     // Grab the nearest marker to the start of the path.
     first = Routes.nearestNeighborTo(Routes.startMarker(), newMarkers, polylines, -1);
 
     // The last marker from the loop.
-    let last = first.marker;
+    var last = first.marker;
 
     // Use path finder when enabled
-    // This will crash on slightly older browsers due to ES8.
-    try {
-      if (Routes.usePathfinder) {
-        PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight);
-        return;
-      }
-    } catch (error) {
-      alert(Language.get('alerts.feature_not_supported'));
-      console.error(error);
+    if (Routes.usePathfinder) {
+      PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight);
+      return;
     }
 
     // Loop through all markers and pick the nearest neighbor to that marker.
-    for (let i = 0; i < newMarkers.length; i++) {
-      let current = Routes.nearestNeighborTo(last, newMarkers, polylines, Routes.maxDistance);
+    for (var i = 0; i < newMarkers.length; i++) {
+      var current = Routes.nearestNeighborTo(last, newMarkers, polylines, Routes.maxDistance);
       if (!current) break;
       current = current.marker;
 

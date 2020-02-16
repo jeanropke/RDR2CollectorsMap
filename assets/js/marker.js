@@ -1,4 +1,4 @@
-const Marker = function (text, lat, lng, tool, day, category, subdata, video, height) {
+var Marker = function (text, lat, lng, tool, day, category, subdata, video, height) {
   this.text = text;
   this.lat = lat;
   this.lng = lng;
