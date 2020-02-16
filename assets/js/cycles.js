@@ -145,7 +145,7 @@ var Cycles = {
     }
     if (Cycles.forwardMaxOffset === 0 && Cycles.offset === 0)
       $('#cycle-next').addClass('disable-cycle-changer-arrow');
-    else
+    else if (Cycles.offset === 0)
       $('#cycle-next').removeClass('disable-cycle-changer-arrow');
   },
 
