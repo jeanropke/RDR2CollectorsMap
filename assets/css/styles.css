@@ -747,6 +747,12 @@ a.wiki-page:visited {
     margin-right: 5px;
 }
 
+.disable-cycle-changer-arrow {
+    user-select: none;
+    cursor: default !important;
+    opacity: .3;
+}
+
 /* Custom checkbox styling */
 
 .input-checkbox-wrapper {
