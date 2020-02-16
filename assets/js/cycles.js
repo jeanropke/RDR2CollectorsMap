@@ -269,7 +269,7 @@ var Cycles = {
     }
 
     Inventory.save();
-    Cycles.load();
+    Cycles.getTodayCycle();
   },
 
   nextCycle: function () {
@@ -285,7 +285,7 @@ var Cycles = {
     }
 
     Inventory.save();
-    Cycles.load();
+    Cycles.getTodayCycle();
   }
 };
 
