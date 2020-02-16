@@ -56,6 +56,8 @@ const Language = {
                     break;
             }
         });
+
+        
     },
 
     // A helper function to "compile" all language files into a single JSON file.
