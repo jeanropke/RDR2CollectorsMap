@@ -727,5 +727,5 @@ var MapBase = {
     var _month = monthNames[date.split('/')[1] - 1];
     var _year = date.split('/')[0];
     return `${_month} ${pad(_day, 2)} ${_year}`;
-  },
+  }
 };
