@@ -236,7 +236,7 @@ var MapBase = {
       var goTo = MapBase.markers.filter(_m => _m.text == markerParam && _m.day == Cycles.categories[_m.category])[0];
 
       //if a marker is passed on url, check if is valid
-      if (typeof goTo == 'undefined' || goTo == null) return;
+      if (goTo === undefined || goTo === null) return;
 
       //set map view with marker lat & lng
       MapBase.map.setView([goTo.lat, goTo.lng], 6);
@@ -387,7 +387,7 @@ var MapBase = {
 
           marker.canCollect = true;
         }
-        if (typeof (PathFinder) !== 'undefined') {
+        if (PathFinder !== undefined) {
           PathFinder.wasRemovedFromMap(marker);
         }
       });
@@ -631,7 +631,7 @@ var MapBase = {
   },
 
   loadImportantItems() {
-    if (typeof localStorage.importantItems === 'undefined')
+    if (localStorage.importantItems === undefined)
       localStorage.importantItems = "[]";
 
     MapBase.itemsMarkedAsImportant = JSON.parse(localStorage.importantItems) || [];
