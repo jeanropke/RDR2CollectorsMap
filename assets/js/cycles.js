@@ -30,7 +30,7 @@ var Cycles = {
     const selectedDayStr = selectedDay.toISOString().split('T')[0];
     const cycleIndex = Cycles.data.findIndex(element => element.date === selectedDayStr);
 
-    $('div>span.cycle-data').toggleClass('highlight-important-items-menu', Cycles.offset !== 0);
+    $('div>span.cycle-data').toggleClass('not-found', Cycles.offset !== 0);
 
     if (cycleIndex < 1) {
       // either -1 (not found) or 0 (first day) for which there is no yesterday
@@ -59,6 +59,7 @@ var Cycles = {
     Cycles.setCustomCycles();
     Cycles.setCycles();
     Cycles.setLocaleDate();
+    Cycles.nextDayDataExists();
   },
 
   setCustomCycles: function () {
@@ -113,7 +114,14 @@ var Cycles = {
   checkForUpdate: function () {
     'use strict';
     if (Cycles.getFreshSelectedDay().valueOf() !== Cycles.selectedDay.valueOf()) {
-      Cycles.getTodayCycle();
+      if (Cycles.offset !== 1) {
+        Cycles.offset = 0;
+        Cycles.getTodayCycle();
+      }
+      else {
+        Cycles.offset = 0;
+        $('div>span.cycle-data').removeClass('not-found');
+      }
     }
   },
 
@@ -125,6 +133,21 @@ var Cycles = {
     var yesterdayCycle = Cycles.yesterday[Cycles.getCyclesMainCategory(category)];
 
     return todayCycle == yesterdayCycle;
+  },
+
+  nextDayDataExists: function () {
+    var newDate = new Date();
+    newDate.setUTCDate(newDate.getUTCDate() + Cycles.forwardMaxOffset);
+    var nextDayCycle = Cycles.data.findIndex(element => element.date === newDate.toISOString().split('T')[0]);
+    if (nextDayCycle === -1 && Cycles.forwardMaxOffset > 0) {  // protect function, otherwise with no data function can loop to -infinity
+      Cycles.forwardMaxOffset--;
+      Cycles.nextDayDataExists();
+      return;
+    }
+    if (Cycles.forwardMaxOffset === 0 && Cycles.offset === 0)
+      $('#cycle-next').addClass('disable-cycle-changer-arrow');
+    else if (Cycles.offset === 0)
+      $('#cycle-next').removeClass('disable-cycle-changer-arrow');
   },
 
   getCyclesMainCategory: function (category) {
@@ -233,30 +256,38 @@ var Cycles = {
     return color;
   },
 
-  nextCycle: function () {
+  prevCycle: function () {
     Cycles.offset--;
+    $('#cycle-next').removeClass('disable-cycle-changer-arrow');
+
+    if (Cycles.offset <= -Cycles.backwardMaxOffset)
+      $('#cycle-prev').addClass('disable-cycle-changer-arrow');
+
     if (Cycles.offset < -Cycles.backwardMaxOffset) {
       Cycles.offset = -Cycles.backwardMaxOffset;
       return;
     }
 
     Inventory.save();
-    Cycles.load();
+    Cycles.getTodayCycle();
   },
 
-  prevCycle: function () {
+  nextCycle: function () {
     Cycles.offset++;
+    $('#cycle-prev').removeClass('disable-cycle-changer-arrow');
+
+    if (Cycles.offset >= Cycles.forwardMaxOffset)
+      $('#cycle-next').addClass('disable-cycle-changer-arrow');
+
     if (Cycles.offset > Cycles.forwardMaxOffset) {
       Cycles.offset = Cycles.forwardMaxOffset;
       return;
     }
 
     Inventory.save();
-    Cycles.load();
+    Cycles.getTodayCycle();
   }
 };
 
 // update to the next cycle
-setInterval(function () {
-  Cycles.checkForUpdate();
-}, 1000 * 10);
+setInterval(Cycles.checkForUpdate, 1000 * 10);

@@ -253,5 +253,5 @@ $('#clear_highlights').on('click', function () {
 });
 
 // change cycles from menu (if debug options are enabled)
-$('#cycle-prev').on('click', Cycles.nextCycle);
-$('#cycle-next').on('click', Cycles.prevCycle);
+$('#cycle-prev').on('click', Cycles.prevCycle);
+$('#cycle-next').on('click', Cycles.nextCycle);

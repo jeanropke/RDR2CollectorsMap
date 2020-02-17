@@ -138,6 +138,11 @@ function init() {
     $.cookie('clock-or-timer', 'false', { expires: 999 });
   }
 
+  if (typeof $.cookie('timestamps-24') === 'undefined') {
+    Settings.display24HoursTimestamps = false;
+    $.cookie('timestamps-24', 'false', { expires: 999 });
+  }
+
   MapBase.init();
   MapBase.setOverlays(Settings.overlayOpacity);
 
@@ -164,6 +169,7 @@ function init() {
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
+  $('#timestamps-24').prop("checked", Settings.display24HoursTimestamps);
   $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
   $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
   $("#enable-debug").prop('checked', $.cookie('debug') != null);
@@ -268,7 +274,7 @@ function downloadAsFile(filename, text) {
 setInterval(function () {
 
   // Clock in game created by Michal__d
-  var display_24 = false,
+  var display_24 = Settings.display24HoursTimestamps,
     newDate = new Date(),
     startTime = newDate.valueOf(),
     factor = 30,
@@ -455,6 +461,11 @@ $('#show-coordinates').on('change', function () {
   $.cookie('coords-enabled', Settings.isCoordsEnabled ? '1' : '0', { expires: 999 });
 
   changeCursor();
+});
+
+$('#timestamps-24').on('change', function () {
+  Settings.display24HoursTimestamps = $("#timestamps-24").prop('checked');
+  $.cookie('timestamps-24', Settings.display24HoursTimestamps ? '1' : '0', { expires: 999 });
 });
 
 //Change & save language option

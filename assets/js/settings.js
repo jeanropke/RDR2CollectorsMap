@@ -18,5 +18,6 @@ var Settings = {
   language: $.cookie('language') ? $.cookie('language') : navigator.language.toLowerCase(),
   sortItemsAlphabetically: $.cookie('sort-items-alphabetically') == '1',
   displayClockHideTimer: $.cookie('clock-or-timer') == 'true',
-  markerSize: parseFloat($.cookie('marker-size')) ? parseFloat($.cookie('marker-size')) : 1
+  markerSize: parseFloat($.cookie('marker-size')) ? parseFloat($.cookie('marker-size')) : 1,
+  display24HoursTimestamps: $.cookie('timestamps-24') == '1'
 };
