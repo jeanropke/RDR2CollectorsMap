@@ -997,64 +997,64 @@
     },
     "lost_bracelet": {
         "1": [
-            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "0", "lat": "-53.8999", "lng": "97.8753", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=312s" },
-            { "text": "bracelet_ojeda_rose_gold", "height": "0", "tool": "0", "lat": "-116.5733", "lng": "19.6350", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=98s" },
-            { "text": "bracelet_infanta_turquoise", "height": "0", "tool": "0", "lat": "-107.1518", "lng": "86.6720", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=229s" },
+            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "0", "lat": "-55.4436", "lng": "101.7513", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=45s" },
             { "text": "bracelet_abello_ruby_bangle", "height": "0", "tool": "0", "lat": "-49.9068", "lng": "148.2672", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=71s" },
-            { "text": "bracelet_elliston_carved", "height": "0", "tool": "2", "lat": "-52.3345", "lng": "86.9492", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=276s" },
+            { "text": "bracelet_ojeda_rose_gold", "height": "0", "tool": "0", "lat": "-116.5733", "lng": "19.6350", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=98s" },
             { "text": "bracelet_helena_sapphire", "height": "0", "tool": "0", "lat": "-92.1170", "lng": "59.8846", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=160s" },
             { "text": "bracelet_durant_pearl", "height": "0", "tool": "0", "lat": "-42.5037", "lng": "109.8522", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=195s" },
-            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "0", "lat": "-55.4436", "lng": "101.7513", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=45s" }
+            { "text": "bracelet_infanta_turquoise", "height": "0", "tool": "0", "lat": "-107.1518", "lng": "86.6720", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=229s" },
+            { "text": "bracelet_elliston_carved", "height": "0", "tool": "2", "lat": "-52.3345", "lng": "86.9492", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=276s" },
+            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "0", "lat": "-53.8999", "lng": "97.8753", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=312s" }
         ],
         "2": [
+            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "2", "lat": "-89.4320", "lng": "77.3877", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=349s" },
             { "text": "bracelet_abello_ruby_bangle", "height": "0", "tool": "2", "lat": "-93.5165", "lng": "94.6874", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=388s" },
             { "text": "bracelet_ojeda_rose_gold", "height": "0", "tool": "0", "lat": "-83.0449", "lng": "122.1707", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=442s" },
             { "text": "bracelet_helena_sapphire", "height": "0", "tool": "0", "lat": "-57.0509", "lng": "95.0618", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=469s" },
             { "text": "bracelet_durant_pearl", "height": "0", "tool": "0", "lat": "-76.8175", "lng": "143.3208", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=503s" },
             { "text": "bracelet_infanta_turquoise", "height": "0", "tool": "2", "lat": "-35.2336", "lng": "132.4816", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=530s" },
             { "text": "bracelet_elliston_carved", "height": "0", "tool": "2", "lat": "-61.0610", "lng": "143.8592", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=559s" },
-            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "2", "lat": "-75.9708", "lng": "143.2137", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=597s" },
-            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "2", "lat": "-89.4320", "lng": "77.3877", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=349s" }
+            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "2", "lat": "-75.9708", "lng": "143.2137", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=597s" }
         ],
         "3": [
+            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "2", "lat": "-46.6677", "lng": "118.5636", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=641s" },
             { "text": "bracelet_abello_ruby_bangle", "height": "0", "tool": "0", "lat": "-90.9860", "lng": "83.3726", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=674s" },
             { "text": "bracelet_ojeda_rose_gold", "height": "0", "tool": "2", "lat": "-57.9835", "lng": "113.7418", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=722s" },
             { "text": "bracelet_helena_sapphire", "height": "0", "tool": "0", "lat": "-49.7712", "lng": "76.6619", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=774s" },
             { "text": "bracelet_durant_pearl", "height": "0", "tool": "0", "lat": "-40.5128", "lng": "136.4270", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=810s" },
             { "text": "bracelet_infanta_turquoise", "height": "0", "tool": "2", "lat": "-78.8746", "lng": "133.0606", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=843s" },
             { "text": "bracelet_elliston_carved", "height": "0", "tool": "2", "lat": "-107.9360", "lng": "59.3706", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=882s" },
-            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "0", "lat": "-78.0037", "lng": "90.2373", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=921s" },
-            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "2", "lat": "-46.6677", "lng": "118.5636", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=641s" }
+            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "0", "lat": "-78.0037", "lng": "90.2373", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=921s" }
         ],
         "4": [
+            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "2", "lat": "-73.3124", "lng": "91.3280" },
             { "text": "bracelet_abello_ruby_bangle", "height": "0", "tool": "2", "lat": "-69.2165", "lng": "105.3861" },
             { "text": "bracelet_ojeda_rose_gold", "height": "0", "tool": "2", "lat": "-38.3373", "lng": "136.0123" },
             { "text": "bracelet_helena_sapphire", "height": "0", "tool": "2", "lat": "-107.8976", "lng": "73.2005" },
             { "text": "bracelet_durant_pearl", "height": "0", "tool": "2", "lat": "-95.0953", "lng": "124.9236" },
             { "text": "bracelet_infanta_turquoise", "height": "0", "tool": "2", "lat": "-111.3898", "lng": "43.3115" },
             { "text": "bracelet_elliston_carved", "height": "0", "tool": "2", "lat": "-67.5650", "lng": "77.5697" },
-            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "2", "lat": "-117.8611", "lng": "43.9193" },
-            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "2", "lat": "-73.3124", "lng": "91.3280" }
+            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "2", "lat": "-117.8611", "lng": "43.9193" }
         ],
         "5": [
+            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "0", "lat": "-73.9406", "lng": "116.6360" },
             { "text": "bracelet_abello_ruby_bangle", "height": "0", "tool": "0", "lat": "-81.8280", "lng": "152.0034" },
             { "text": "bracelet_ojeda_rose_gold", "height": "0", "tool": "2", "lat": "-64.4409", "lng": "69.1757" },
             { "text": "bracelet_helena_sapphire", "height": "0", "tool": "2", "lat": "-54.3363", "lng": "137.9727" },
             { "text": "bracelet_durant_pearl", "height": "0", "tool": "2", "lat": "-109.4001", "lng": "23.8665" },
             { "text": "bracelet_infanta_turquoise", "height": "0", "tool": "2", "lat": "-57.5547", "lng": "126.1390" },
             { "text": "bracelet_elliston_carved", "height": "0", "tool": "0", "lat": "-117.4694", "lng": "57.2275" },
-            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "2", "lat": "-105.1723", "lng": "79.1401" },
-            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "0", "lat": "-73.9406", "lng": "116.6360" }
+            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "2", "lat": "-105.1723", "lng": "79.1401" }
         ],
         "6": [
+            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "2", "lat": "-56.7912", "lng": "157.2982" },
             { "text": "bracelet_abello_ruby_bangle", "height": "0", "tool": "2", "lat": "-107.8306", "lng": "59.9837" },
             { "text": "bracelet_ojeda_rose_gold", "height": "0", "tool": "0", "lat": "-36.6618", "lng": "105.0989" },
             { "text": "bracelet_helena_sapphire", "height": "0", "tool": "2", "lat": "-46.3946", "lng": "110.7151" },
             { "text": "bracelet_durant_pearl", "height": "0", "tool": "0", "lat": "-76.9431", "lng": "148.1143" },
             { "text": "bracelet_infanta_turquoise", "height": "0", "tool": "2", "lat": "-52.7348", "lng": "142.3590" },
             { "text": "bracelet_elliston_carved", "height": "0", "tool": "2", "lat": "-100.2322", "lng": "74.2739" },
-            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "2", "lat": "-55.8723", "lng": "108.7367" },
-            { "text": "bracelet_greco_sapphire", "height": "0", "tool": "2", "lat": "-56.7912", "lng": "157.2982" }
+            { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "2", "lat": "-55.8723", "lng": "108.7367" }
         ]
     },
     "lost_necklaces": {
