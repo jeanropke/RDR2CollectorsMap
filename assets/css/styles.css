@@ -400,6 +400,7 @@ input, textarea, select, .btn {
     height: 100%;
     border-radius: 3px;
     margin-left: 6px;
+    width: 45px;
 }
 
 .input-container-noflex .input-day {
@@ -490,7 +491,7 @@ input, textarea, select, .btn {
 }
 
 .side-menu .open-submenu {
-    min-width: 38px;
+    min-width: 26px;
     height: 38px;
     background: url(../images/arrow.png) center no-repeat;
     margin: auto 0;
