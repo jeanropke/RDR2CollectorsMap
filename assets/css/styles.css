@@ -490,7 +490,7 @@ input, textarea, select, .btn {
 }
 
 .side-menu .open-submenu {
-    min-width: 38px;
+    min-width: 32px;
     height: 38px;
     background: url(../images/arrow.png) center no-repeat;
     margin: auto 0;
@@ -955,15 +955,15 @@ a.no-style:visited {
 
 @media (min-width: 1025px) {
     .side-menu {
-        width: 380px;
-        left: -380px;
+        width: 390px;
+        left: -390px;
         top: 0;
     }
     .menu-opened {
         left: 0;
     }
     .timer-menu-opened {
-        left: 385px;
+        left: 395px;
     }
     .counter-menu-opened {
         left: 410px;
