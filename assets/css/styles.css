@@ -212,13 +212,7 @@ input, textarea, select, .btn {
 #countdown, #item-counter, #time-in-game {
     font-size: 16px;
     user-select: none;
-    margin: 0;
-}
-
-.day-cycle {
-    width: 16px;
-    height: 16px;
-    margin: auto 0 auto 8px;
+    margin: auto 8px auto 0;
 }
 
 .timer-container, .clock-container {
@@ -229,13 +223,19 @@ input, textarea, select, .btn {
     color: #eee;
     left: 40px;
     top: 5px;
-    min-width: 80px;
+    min-width: 50px;
     height: 30px;
     transition: all 200ms ease-out;
     padding: 0 8px;
     display: inline-flex;
     cursor: pointer;
     line-height: 28px;
+}
+
+.day-cycle {
+    width: 16px;
+    height: 16px;
+    margin: auto 0 auto auto;
 }
 
 .counter-container {
@@ -490,7 +490,7 @@ input, textarea, select, .btn {
 }
 
 .side-menu .open-submenu {
-    min-width: 38px;
+    min-width: 32px;
     height: 38px;
     background: url(../images/arrow.png) center no-repeat;
     margin: auto 0;
@@ -955,15 +955,15 @@ a.no-style:visited {
 
 @media (min-width: 1025px) {
     .side-menu {
-        width: 380px;
-        left: -380px;
+        width: 390px;
+        left: -390px;
         top: 0;
     }
     .menu-opened {
         left: 0;
     }
     .timer-menu-opened {
-        left: 385px;
+        left: 395px;
     }
     .counter-menu-opened {
         left: 410px;
