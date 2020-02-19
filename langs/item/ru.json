@@ -1263,7 +1263,7 @@
 	{"key": "weekly.desc", "value": "Этот предмет является частью еженедельной коллекции - {collection}."},
 	{"key": "weekly.desc.sacred_set", "value": "Sacred"},
 	{"key": "weekly.desc.veteran_set", "value": "Veteran's"},
-	{"key": "weekly.desc.herbalist_set", "value": "Herbalists"},
+	{"key": "weekly.desc.herbalist_set", "value": "Предметы травника"},
 	{"key": "weekly.desc.gold_panner_set", "value": "Gold Panners' Dream"},
 	{"key": "weekly.desc.pearls_set", "value": "Pearls of the Sea"},
 	{"key": "weekly.desc.gambler_set", "value": "Gambler's Choice"},
