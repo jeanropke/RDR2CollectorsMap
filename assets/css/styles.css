@@ -877,6 +877,10 @@ a.no-style:visited {
 
 /* Bootstrap modal styling */
 
+.modal {
+    user-select: none;
+}
+
 .modal-content {
     background: url(../images/modal_bg_long.png);
     background-size: 100% 100% !important;

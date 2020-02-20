@@ -120,13 +120,13 @@ var Inventory = {
       $('#enable-inventory-menu-update').parent().parent().hide();
       $('#reset-collection-updates-inventory').parent().parent().hide();
       $('#inventory-stack').parent().hide();
-      $('[data-target="#clear-inventory-modal"]').hide();
+      $('#open-clear-inventory-modal').hide();
     } else {
       $('#enable-inventory-popups').parent().parent().show();
       $('#enable-inventory-menu-update').parent().parent().show();
       $('#reset-collection-updates-inventory').parent().parent().show();
       $('#inventory-stack').parent().show();
-      $('[data-target="#clear-inventory-modal"]').show();
+      $('#open-clear-inventory-modal').show();
     }
   }
 };

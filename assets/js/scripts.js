@@ -1081,6 +1081,29 @@ $('#delete-all-settings').on('click', function () {
 });
 
 /**
+ * Modals
+ */
+$('#open-clear-markers-modal').on('click', function () {
+  $('#clear-markers-modal').modal();
+});
+
+$('#open-clear-important-items-modal').on('click', function () {
+  $('#clear-important-items-modal').modal();
+});
+
+$('#open-clear-inventory-modal').on('click', function () {
+  $('#clear-inventory-modal').modal();
+});
+
+$('#open-clear-routes-modal').on('click', function () {
+  $('#clear-routes-modal').modal();
+});
+
+$('#open-delete-all-settings-modal').on('click', function () {
+  $('#delete-all-settings-modal').modal();
+});
+
+/**
  * Event listeners
  */
 
