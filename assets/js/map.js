@@ -328,6 +328,7 @@ var MapBase = {
       function () {
         MapBase.updateLoopAvailable = true;
         MapBase.requestLoopCancel = false;
+        Menu.refreshItemsCounter();
       }
     );
 
@@ -336,7 +337,6 @@ var MapBase = {
 
     MapBase.addFastTravelMarker();
 
-    Menu.refreshItemsCounter();
     Treasures.addToMap();
     Encounters.addToMap();
     MadamNazar.addMadamNazar();
