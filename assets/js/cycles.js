@@ -286,6 +286,12 @@ var Cycles = {
 
     Inventory.save();
     Cycles.getTodayCycle();
+  },
+
+  resetCycle: function () {
+    Cycles.offset = 0;
+    Inventory.save();
+    Cycles.getTodayCycle();
   }
 };
 
