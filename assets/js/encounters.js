@@ -1,5 +1,8 @@
 var Encounters = {
   markers: [],
+  updateLoopAvailable: true,
+  requestLoopCancel: false,
+
   load: function () {
     $.getJSON('data/encounters.json?nocache=' + nocache)
       .done(function (data) {
@@ -33,33 +36,54 @@ var Encounters = {
   },
 
   addToMap: function () {
+    if (!Encounters.updateLoopAvailable) {
+      Encounters.requestLoopCancel = true;
+      setTimeout(function () {
+        Encounters.addToMap();
+      }, 0);
+      return;
+    }
+
     Layers.encountersLayer.clearLayers();
-    $.each(Encounters.markers, function (key, marker) {
 
-      if (!enabledCategories.includes(marker.category))
-        return;
+    Encounters.updateLoopAvailable = false;
+    MapBase.yieldingLoop(
+      Encounters.markers.length,
+      25,
+      function (i) {
+        if (Encounters.requestLoopCancel) return;
 
-      var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-      var tempMarker = L.marker([marker.lat, marker.lng], {
-        icon: L.divIcon({
-          iconSize: [35*Settings.markerSize, 45*Settings.markerSize],
-          iconAnchor: [17*Settings.markerSize, 42*Settings.markerSize],
-          popupAnchor: [0*Settings.markerSize, -28*Settings.markerSize],
-          shadowAnchor: [10*Settings.markerSize, 12*Settings.markerSize],
-          html: `
-            <img class="icon" src="./assets/images/icons/${marker.category}.png" alt="Icon">
-            <img class="background" src="./assets/images/icons/marker_lightred.png" alt="Background">
-            ${shadow}
-          `
-        })
-      });
+        var marker = Encounters.markers[i];
 
-      marker.title = Language.get(`${marker.category}.name`);
-      marker.description = Language.get(`${marker.category}.desc`);
+        if (!enabledCategories.includes(marker.category)) return;
 
-      tempMarker.bindPopup(Encounters.updateMarkerContent(marker), { minWidth: 300 });
-      Layers.encountersLayer.addLayer(tempMarker);
-    });
+        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+        var tempMarker = L.marker([marker.lat, marker.lng], {
+          icon: L.divIcon({
+            iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
+            iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
+            popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
+            shadowAnchor: [10 * Settings.markerSize, 12 * Settings.markerSize],
+            html: `
+              <img class="icon" src="./assets/images/icons/${marker.category}.png" alt="Icon">
+              <img class="background" src="./assets/images/icons/marker_lightred.png" alt="Background">
+              ${shadow}
+            `
+          })
+        });
+
+        marker.title = Language.get(`${marker.category}.name`);
+        marker.description = Language.get(`${marker.category}.desc`);
+
+        tempMarker.bindPopup(Encounters.updateMarkerContent(marker), { minWidth: 300 });
+        Layers.encountersLayer.addLayer(tempMarker);
+      },
+      function () {
+        Encounters.updateLoopAvailable = true;
+        Encounters.requestLoopCancel = false;
+      }
+    );
+
     Layers.encountersLayer.addTo(MapBase.map);
   }
 };
