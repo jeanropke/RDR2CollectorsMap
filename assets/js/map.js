@@ -198,23 +198,19 @@ var MapBase = {
     var curDate = new Date();
     date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
 
-    if (date != $.cookie('date')) {
+    if (date != $.cookie('date') && Settings.resetMarkersDaily) {
+      console.log('New day, resetting markers...');
       var markers = MapBase.markers;
       $.each(markers, function (key, value) {
+        if (Inventory.items[value.text])
+          Inventory.items[value.text].isCollected = false;
 
-        if (Settings.resetMarkersDaily) {
-          console.log('New day, resetting markers...');
+        markers[key].isCollected = false;
 
-          if (Inventory.items[value.text])
-            Inventory.items[value.text].isCollected = false;
-
-          markers[key].isCollected = false;
-
-          if (Inventory.isEnabled)
-            markers[key].canCollect = value.amount < Inventory.stackSize;
-          else
-            markers[key].canCollect = true;
-        }
+        if (Inventory.isEnabled)
+          markers[key].canCollect = value.amount < Inventory.stackSize;
+        else
+          markers[key].canCollect = true;
 
         // reset all random spots at cycle change
         if (value.category == 'random') {
@@ -395,7 +391,7 @@ var MapBase = {
 
           marker.canCollect = true;
         }
-        
+
         try {
           if (PathFinder !== undefined) {
             PathFinder.wasRemovedFromMap(marker);
