@@ -802,6 +802,26 @@ $('#cookie-export').on("click", function () {
   }
 });
 
+function setSettings(settings) {
+     // Import all the settings from the file.
+     if (settings.cookies === undefined && settings.local === undefined) {
+      $.each(settings, function (key, value) {
+        $.cookie(key, value, { expires: 999 });
+      });
+    }
+
+    $.each(settings.cookies, function (key, value) {
+      $.cookie(key, value, { expires: 999 });
+    });
+
+    $.each(settings.local, function (key, value) {
+      localStorage.setItem(key, value);
+    });
+
+    // Do this for now, maybe look into refreshing the menu completely (from init) later.
+    location.reload();
+}
+
 $('#cookie-import').on('click', function () {
   try {
     var settings = null;
@@ -815,8 +835,11 @@ $('#cookie-import').on('click', function () {
 
     try {
       file.text().then((text) => {
-        try {
+        try {  
           settings = JSON.parse(text);
+
+          setSettings(settings);
+
         } catch (error) {
           alert(Language.get('alerts.file_not_valid'));
           return;
@@ -825,7 +848,7 @@ $('#cookie-import').on('click', function () {
     } catch (error) {
       fallback = true;
     }
-
+   
     if (fallback) {
       var reader = new FileReader();
 
@@ -834,6 +857,7 @@ $('#cookie-import').on('click', function () {
 
         try {
           settings = JSON.parse(text);
+          setSettings(settings);
         } catch (error) {
           alert(Language.get('alerts.file_not_valid'));
           return;
@@ -851,24 +875,6 @@ $('#cookie-import').on('click', function () {
     $.each(localStorage, function (key, value) {
       localStorage.removeItem(key);
     });
-
-    // Import all the settings from the file.
-    if (settings.cookies === undefined && settings.local === undefined) {
-      $.each(settings, function (key, value) {
-        $.cookie(key, value, { expires: 999 });
-      });
-    }
-
-    $.each(settings.cookies, function (key, value) {
-      $.cookie(key, value, { expires: 999 });
-    });
-
-    $.each(settings.local, function (key, value) {
-      localStorage.setItem(key, value);
-    });
-
-    // Do this for now, maybe look into refreshing the menu completely (from init) later.
-    location.reload();
 
   } catch (error) {
     console.error(error);
