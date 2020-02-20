@@ -128,7 +128,7 @@ function init() {
     $.cookie('overlay-opacity', '0.5', { expires: 999 });
   }
 
-  if (typeof $.cookie('cycle-input-enabled') === 'undefined') {
+  if ($.cookie('cycle-input-enabled') === undefined) {
     Settings.isCycleInputEnabled = 1;
     $.cookie('cycle-input-enabled', '1', { expires: 999 });
   }
@@ -138,7 +138,7 @@ function init() {
     $.cookie('clock-or-timer', 'false', { expires: 999 });
   }
 
-  if (typeof $.cookie('timestamps-24') === 'undefined') {
+  if ($.cookie('timestamps-24') === undefined) {
     Settings.display24HoursTimestamps = false;
     $.cookie('timestamps-24', 'false', { expires: 999 });
   }
