@@ -9,6 +9,8 @@ var Pins = {
   },
 
   addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true) {
+    if (lat === null || lat === undefined || lng === null || lng === undefined) return;
+    
     var pinAtPositionExists = this.pinsList.some(function (marker) { return marker._latlng.lat == lat && marker._latlng.lng == lng; });
     if (pinAtPositionExists) return;
 

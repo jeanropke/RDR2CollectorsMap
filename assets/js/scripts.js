@@ -700,15 +700,31 @@ $('#pins-export').on("click", function () {
 $('#pins-import').on('click', function () {
   try {
     var file = $('#pins-import-file').prop('files')[0];
+    var fallback = false;
 
     if (!file) {
       alert(Language.get('alerts.file_not_found'));
       return;
     }
 
-    file.text().then(function (text) {
-      Pins.importPins(text);
-    });
+    try {
+      file.text().then((text) => {
+        Pins.importPins(text);
+      });
+    } catch (error) {
+      fallback = true;
+    }
+
+    if (fallback) {
+      var reader = new FileReader();
+
+      reader.addEventListener('loadend', (e) => {
+        var text = e.srcElement.result;
+        Pins.importPins(text);
+      });
+
+      reader.readAsText(file);
+    }
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
@@ -788,50 +804,72 @@ $('#cookie-export').on("click", function () {
 
 $('#cookie-import').on('click', function () {
   try {
+    var settings = null;
     var file = $('#cookie-import-file').prop('files')[0];
+    var fallback = false;
 
     if (!file) {
       alert(Language.get('alerts.file_not_found'));
       return;
     }
 
-    file.text().then(function (res) {
-      var settings = null;
+    try {
+      file.text().then((text) => {
+        try {
+          settings = JSON.parse(text);
+        } catch (error) {
+          alert(Language.get('alerts.file_not_valid'));
+          return;
+        }
+      });
+    } catch (error) {
+      fallback = true;
+    }
 
-      try {
-        settings = JSON.parse(res);
-      } catch (error) {
-        alert(Language.get('alerts.file_not_valid'));
-        return;
-      }
+    if (fallback) {
+      var reader = new FileReader();
 
-      // Remove all current settings.
-      $.each($.cookie(), function (key, value) {
-        $.removeCookie(key);
+      reader.addEventListener('loadend', (e) => {
+        var text = e.srcElement.result;
+
+        try {
+          settings = JSON.parse(text);
+        } catch (error) {
+          alert(Language.get('alerts.file_not_valid'));
+          return;
+        }
       });
 
-      $.each(localStorage, function (key, value) {
-        localStorage.removeItem(key);
-      });
+      reader.readAsText(file);
+    }
 
-      // Import all the settings from the file.
-      if (settings.cookies === undefined && settings.local === undefined) {
-        $.each(settings, function (key, value) {
-          $.cookie(key, value, { expires: 999 });
-        });
-      }
+    // Remove all current settings.
+    $.each($.cookie(), function (key, value) {
+      $.removeCookie(key);
+    });
 
-      $.each(settings.cookies, function (key, value) {
+    $.each(localStorage, function (key, value) {
+      localStorage.removeItem(key);
+    });
+
+    // Import all the settings from the file.
+    if (settings.cookies === undefined && settings.local === undefined) {
+      $.each(settings, function (key, value) {
         $.cookie(key, value, { expires: 999 });
       });
+    }
 
-      $.each(settings.local, function (key, value) {
-        localStorage.setItem(key, value);
-      });
-
-      // Do this for now, maybe look into refreshing the menu completely (from init) later.
-      location.reload();
+    $.each(settings.cookies, function (key, value) {
+      $.cookie(key, value, { expires: 999 });
     });
+
+    $.each(settings.local, function (key, value) {
+      localStorage.setItem(key, value);
+    });
+
+    // Do this for now, maybe look into refreshing the menu completely (from init) later.
+    location.reload();
+
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
