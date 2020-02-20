@@ -395,8 +395,14 @@ var MapBase = {
 
           marker.canCollect = true;
         }
-        if (PathFinder !== undefined) {
-          PathFinder.wasRemovedFromMap(marker);
+        
+        try {
+          if (PathFinder !== undefined) {
+            PathFinder.wasRemovedFromMap(marker);
+          }
+        } catch (error) {
+          alert(Language.get('alerts.feature_not_supported'));
+          console.error(error);
         }
       });
 

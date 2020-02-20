@@ -175,9 +175,14 @@ var Routes = {
   },
 
   // Simple utility to clear the given polyline from Leaflet.
-  clearPath: function (starting) {
-    if ((typeof (starting) !== 'boolean' || !starting) && Routes.usePathfinder) {
-      PathFinder.routegenClear();
+  clearPath: function (starting = false) {
+    try {
+      if (!starting && Routes.usePathfinder) {
+        PathFinder.routegenClear();
+      }
+    } catch (error) {
+      alert(Language.get('alerts.feature_not_supported'));
+      console.error(error);
     }
 
     if (!Routes.lastPolyline) return;
@@ -290,10 +295,10 @@ var Routes = {
       newMarkers = newMarkers.filter((marker) => { return marker.amount < Inventory.stackSize; });
     }
 
-    if(Routes.importantOnly) {
+    if (Routes.importantOnly) {
       newMarkersImp = newMarkers.filter((marker) => { return MapBase.itemsMarkedAsImportant.indexOf(marker.text) >= 0; });
-      if(newMarkers.length > 0 && newMarkersImp.length == 0) {
-        if(!confirm(Language.get('dialog.generate_route_important_only_ignore'))) {
+      if (newMarkers.length > 0 && newMarkersImp.length == 0) {
+        if (!confirm(Language.get('dialog.generate_route_important_only_ignore'))) {
           return;
         }
       } else {
@@ -301,7 +306,7 @@ var Routes = {
       }
     }
 
-    if(newMarkers.length <= 1) {
+    if (newMarkers.length <= 1) {
       return;
     }
 
@@ -317,9 +322,14 @@ var Routes = {
     var last = first.marker;
 
     // Use path finder when enabled
-    if (Routes.usePathfinder) {
-      PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight);
-      return;
+    try {
+      if (Routes.usePathfinder) {
+        PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight);
+        return;
+      }
+    } catch (error) {
+      alert(Language.get('alerts.feature_not_supported'));
+      console.error(error);
     }
 
     // Loop through all markers and pick the nearest neighbor to that marker.
