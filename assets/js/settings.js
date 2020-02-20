@@ -1,4 +1,6 @@
 var Settings = {
+  isCycleChangerEnabled: $.cookie('cycle-changer-enabled') == '1',
+  isCycleInputEnabled: $.cookie('cycle-input-enabled') == '1',
   isDebugEnabled: $.cookie('debug') == '1',
   isMenuOpened: $.cookie('menu-opened') == '1',
   isCoordsEnabled: $.cookie('coords-enabled') == '1',
