@@ -743,13 +743,12 @@ $('#enable-inventory').on("change", function () {
   MapBase.addMarkers();
   Inventory.toggleMenuItemsDisabled();
 
-  if (Inventory.isEnabled)
-    $('#items-value').text(` / ${ItemsValue.finalValue.toFixed(2)}$`);
-  else
-    $('#items-value').text('');
+  $('#items-value').toggleClass('hidden', !Inventory.isEnabled);
 
   $('.collection-sell, .counter').toggle(Inventory.isEnabled);
 });
+
+$('#items-value').toggleClass('hidden', !Inventory.isEnabled);
 
 $('#enable-inventory-popups').on("change", function () {
   Inventory.isPopupEnabled = $("#enable-inventory-popups").prop('checked');
