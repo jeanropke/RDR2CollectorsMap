@@ -52,8 +52,11 @@ var ItemsValue = {
     var sepItems = _items.split(';');
 
     $.each(sepItems, function (key, item) {
-      if (item == '' || item.match(/random_item_\d+/)) {
+      if (item == '') {
         ItemsValue.finalValue = 0;
+        return
+      }
+      else if (item.match(/random_item_\d+/)) {
         ItemsValue.updateValue();
         return;
       }
