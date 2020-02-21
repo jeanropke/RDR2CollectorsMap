@@ -54,10 +54,10 @@ var ItemsValue = {
     $.each(sepItems, function (key, item) {
       if (item == '') {
         ItemsValue.finalValue = 0;
+        ItemsValue.updateValue();
         return
       }
       else if (item.match(/random_item_\d+/)) {
-        ItemsValue.updateValue();
         return;
       }
 
