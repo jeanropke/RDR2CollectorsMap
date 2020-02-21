@@ -741,8 +741,12 @@ $('#enable-inventory').on("change", function () {
   $.cookie('inventory-enabled', Inventory.isEnabled ? '1' : '0', { expires: 999 });
 
   MapBase.addMarkers();
-
   Inventory.toggleMenuItemsDisabled();
+
+  if (Inventory.isEnabled)
+    $('#items-value').text(` / ${ItemsValue.finalValue}$`);
+  else
+    $('#items-value').text('');
 
   $('.collection-sell, .counter').toggle(Inventory.isEnabled);
 });
