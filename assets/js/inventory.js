@@ -48,7 +48,7 @@ var Inventory = {
       };
 
     });
-
+    ItemsValue.load();
   },
 
   changeMarkerAmount: function (name, amount, skipInventory = false) {
@@ -93,6 +93,7 @@ var Inventory = {
 
     Inventory.save();
     Menu.refreshItemsCounter();
+    ItemsValue.reloadInventoryItems();
   },
 
   save: function () {

@@ -52,7 +52,11 @@ var ItemsValue = {
     var sepItems = _items.split(';');
 
     $.each(sepItems, function (key, item) {
-      if (item == '' || item.match(/random_item_\d+/)) return;
+      if (item == '' || item.match(/random_item_\d+/)) {
+        ItemsValue.finalValue = 0;
+        ItemsValue.updateValue();
+        return;
+      }
 
       var itemProperty = item.split(":");
       var itemName = itemProperty[0];
@@ -115,7 +119,7 @@ var ItemsValue = {
   },
 
   updateValue: function () {
-    $('#items-value').text(` / ${ItemsValue.finalValue}$`);
+    $('#items-value').text(` / ${ItemsValue.finalValue.toFixed(2)}$`);
   }
 
 }

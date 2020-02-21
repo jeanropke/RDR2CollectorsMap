@@ -744,7 +744,7 @@ $('#enable-inventory').on("change", function () {
   Inventory.toggleMenuItemsDisabled();
 
   if (Inventory.isEnabled)
-    $('#items-value').text(` / ${ItemsValue.finalValue}$`);
+    $('#items-value').text(` / ${ItemsValue.finalValue.toFixed(2)}$`);
   else
     $('#items-value').text('');
 
