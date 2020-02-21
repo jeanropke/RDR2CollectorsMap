@@ -741,11 +741,14 @@ $('#enable-inventory').on("change", function () {
   $.cookie('inventory-enabled', Inventory.isEnabled ? '1' : '0', { expires: 999 });
 
   MapBase.addMarkers();
-
   Inventory.toggleMenuItemsDisabled();
+
+  $('#items-value').toggleClass('hidden', !Inventory.isEnabled);
 
   $('.collection-sell, .counter').toggle(Inventory.isEnabled);
 });
+
+$('#items-value').toggleClass('hidden', !Inventory.isEnabled);
 
 $('#enable-inventory-popups').on("change", function () {
   Inventory.isPopupEnabled = $("#enable-inventory-popups").prop('checked');
