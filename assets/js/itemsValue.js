@@ -1,32 +1,32 @@
 var ItemsValue = {
   //!-- ITEMS --//
   arrowhead: [],
-  arrowhead_amount: [],
   egg: [],
-  egg_amount: [],
   coin: [],
-  coin_amount: [],
   heirlooms: [],
-  heirlooms_amount: [],
   bottle: [],
-  bottle_amount: [],
   cups: [],
-  cups_amount: [],
   pentacles: [],
-  pentacles_amount: [],
   swords: [],
-  swords_amount: [],
   wands: [],
-  wands_amount: [],
   ring: [],
-  ring_amount: [],
   earring: [],
-  earring_amount: [],
   bracelet: [],
-  bracelet_amount: [],
   necklace: [],
-  necklace_amount: [],
   flower: [],
+  arrowhead_amount: [],
+  egg_amount: [],
+  coin_amount: [],
+  heirlooms_amount: [],
+  bottle_amount: [],
+  cups_amount: [],
+  pentacles_amount: [],
+  swords_amount: [],
+  wands_amount: [],
+  ring_amount: [],
+  earring_amount: [],
+  bracelet_amount: [],
+  necklace_amount: [],
   flower_amount: [],
   //!-- ITEMS --//
 
@@ -43,7 +43,7 @@ var ItemsValue = {
 
   reloadInventoryItems: function () {
     ItemsValue.finalValue = 0;
-    for (i = 0; i < 28; i++) {
+    for (i = 0; i < 14; i++) {
       ItemsValue[Object.keys(ItemsValue)[i]] = [];
       ItemsValue[`${Object.keys(ItemsValue)[i]}_amount`] = [];
     }
