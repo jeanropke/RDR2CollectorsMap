@@ -72,6 +72,7 @@ var ItemsValue = {
         ItemsValue[`${tempCategory}_amount`].push(itemAmount);
       }
     });
+
     ItemsValue.checkArrLength();
   },
 
@@ -91,6 +92,7 @@ var ItemsValue = {
 
       ItemsValue.finalValue += itemValue * multiplier;
     });
+
     ItemsValue.updateValue();
   },
 
@@ -125,4 +127,4 @@ var ItemsValue = {
     $('#items-value').text(` / ${ItemsValue.finalValue.toFixed(2)}$`);
   }
 
-}
+};
