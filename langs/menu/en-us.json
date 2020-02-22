@@ -163,6 +163,7 @@
 	{"key": "alerts.file_not_valid", "value": "The file you selected was not valid. Please select a different file."},
 	{"key": "alerts.file_not_found", "value": "Please select a file in the field above the import button, then try again."},
 	{"key": "alerts.feature_not_supported", "value": "This feature is not supported by your browser."},
+	{"key": "alerts.nothing_to_export", "value": "There was nothing to export."},
 	{"key": "menu.enable_inventory_menu_update", "value": "Toggling menu items updates inventory"},
 	{"key": "menu.reset_button_updates_inventory", "value": "Collection reset updates inventory"},
 	{"key": "map.same_cycle_yesterday", "value": "This item has the same cycle as yesterday. In this case, there is a 24 hour delay before you can pick up the item again."},
