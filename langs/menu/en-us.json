@@ -208,6 +208,13 @@
 	{"key": "menu.modal_delete_all_settings_body", "value": "This will reset all settings, pins, and inventory items to their default values and reload the page."},
 	{"key": "menu.enable_marker_popups_hover", "value": "Open marker popups on hover"},
 	{"key": "menu.more_encounters_link", "value": "Visit RDO Map for more encounters."},
+	{"key": "menu.customization_title", "value": "Customization"},
+	{"key": "menu.show_utilities", "value": "Show utility settings"},
+	{"key": "menu.show_customization", "value": "Show customization settings"},
+	{"key": "menu.show_routes", "value": "Show routes settings"},
+	{"key": "menu.show_import_export", "value": "Show import/export settings"},
+	{"key": "menu.show_debug", "value": "Show debug settings"},
+	{"key": "menu.enable_cycle_input", "value": "Enable manual cycle input"},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
@@ -257,7 +264,7 @@
 	{"key": "help.search", "value": "Allows you to search for items you want to display. All other items will be hidden."},
 	{"key": "help.show_all", "value": "Shows all markers on the map."},
 	{"key": "help.show_coords", "value": "Toggles whether the coordinates should be displayed when you click somewhere on the map."},
-	{"key": "help.timestamps_24", "value": "Toggle clock to 12/24-hour format."},
+	{"key": "help.timestamps_24", "value": "Toggle whether the clock should be displayed in a 12-hour or 24-hour format."},
 	{"key": "help.show_help", "value": "Toggles whether this help dialog should appear when you hover over or long-press (touchscreens) a setting."},
 	{"key": "help.tool_type", "value": "Allows you to filter items based on the tools you have."},
 	{"key": "help.user_pins_edit_mode", "value": "Toggles whether pins should be editable, movable and removable."},
@@ -279,5 +286,11 @@
 	{"key": "help.enable_marker_shadows", "value": "Toggles whether a marker should have a shadow or not. Disabling the shadows could improve performance somewhat."},
 	{"key": "help.delete_all_settings", "value": "Resets all settings, user pins, and inventory items to their default values."},
 	{"key": "help.enable_marker_popups_hover", "value": "Toggles whether the popups should open when you hover over a marker or when you click a marker. Doesn't work well on touchscreens."},
-	{"key": "help.marker_size", "value": "Allows you to change the size of the collectible markers on the map."}
+	{"key": "help.marker_size", "value": "Allows you to change the size of the collectible markers on the map."},
+	{"key": "help.show_utilities", "value": "Toggles whether the utilities settings should be visible in the menu."},
+	{"key": "help.show_customization", "value": "Toggles whether the customization settings should be visible in the menu."},
+	{"key": "help.show_routes", "value": "Toggles whether the routes settings should be visible in the menu."},
+	{"key": "help.show_import_export", "value": "Toggles whether the import/export settings should be visible in the menu."},
+	{"key": "help.show_debug", "value": "Toggles whether the debug settings should be visible in the menu."},
+	{"key": "help.enable_cycle_input", "value": "Toggles whether the manual cycle inputs should be visible in the menu."}
 ]

@@ -25,10 +25,10 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=322" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=323" />
 
   <script>
-    var nocache = 322;
+    var nocache = 323;
   </script>
 </head>
 
@@ -307,93 +307,96 @@
         <input class="input-text input-cycle random" type="number" min="1" max="7" name="random" data-help="item_manual_cycle">
       </div>
     </div>
-    <h2 data-text="menu.utils">Utilities</h2>
-    <div class="menu-option clickable" data-type="nazar" data-help="item_category">
-      <span>
-        <img class="icon" src="./assets/images/icons/nazar.png" alt="Category icon" />
-        <span class="menu-option-text" data-text="menu.madam_nazar">Madam Nazar</span>
-      </span>
-    </div>
-    <div class="menu-option clickable" data-type="fast_travel" data-help="item_category">
-      <span>
-        <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Category icon" />
-        <span class="menu-option-text" data-text="menu.fast_travel">Fast Travel</span>
-      </span>
-    </div>
-    <div class="menu-option clickable" data-type="user_pins" data-help="item_category">
-      <span>
-        <img class="icon" src="./assets/images/icons/pins.png" alt="Category icon" />
-        <span class="menu-option-text" data-text="menu.user_pins">User Pins</span>
-      </span>
-    </div>
-    <div>
-      <div class="menu-option submenu-only" data-help="item_category_encounters">
+
+    <div id="utilities-container">
+      <h2 data-text="menu.utils">Utilities</h2>
+      <div class="menu-option clickable" data-type="nazar" data-help="item_category">
         <span>
-          <img class="icon" src="./assets/images/icons/random_encounter.png" alt=" Category icon" />
-          <span class="menu-option-text" data-text="menu.random_encounters">Random Encounters</span>
+          <img class="icon" src="./assets/images/icons/nazar.png" alt="Category icon" />
+          <span class="menu-option-text" data-text="menu.madam_nazar">Madam Nazar</span>
         </span>
-        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
-      <div class="menu-hidden">
-        <div class="collection-value">
-          <a data-text="menu.more_encounters_link" href="https://jeanropke.github.io/RDOMap/">Visit RDO Map for more encounters.</a>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="dog_encounter" data-help="item_category">
-          <img src="./assets/images/icons/dog_encounter.png" class="collectible-icon random-encounter" alt="Set icon" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.dog_encounter">Dog Encounter</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="egg_encounter" data-help="item_category">
-          <img src="./assets/images/icons/egg_encounter.png" class="collectible-icon random-encounter" alt="Set icon" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.egg_encounter">Egg Encounter</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="grave_robber" data-help="item_category">
-          <img src="./assets/images/icons/grave_robber.png" class="collectible-icon random-encounter" alt="Set icon" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.grave_robber">Grave Robber</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="rival_collector" data-help="item_category">
-          <img src="./assets/images/icons/rival_collector.png" class="collectible-icon random-encounter" alt="Set icon" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.rival_collector">Rival Collector</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="treasure_hunter" data-help="item_category">
-          <img src="./assets/images/icons/treasure_hunter.png" class="collectible-icon random-encounter" alt="Set icon" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.treasure_hunter">Treasure Hunter</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="tree_map" data-help="item_category">
-          <img src="./assets/images/icons/tree_map.png" class="collectible-icon random-encounter" alt="Set icon" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.tree_map">Treasure Map</p>
-          </span>
-        </div>
-        <div class="collectible-wrapper clickable" data-type="wounded_animal" data-help="item_category">
-          <img src="./assets/images/icons/wounded_animal.png" class="collectible-icon random-encounter" alt="Set icon" />
-          <span class="collectible-text">
-            <p class="collectible" data-text="menu.wounded_animal">Wounded Animal</p>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="menu-option clickable" data-type="treasure" data-help="item_category">
+      <div class="menu-option clickable" data-type="fast_travel" data-help="item_category">
         <span>
-          <img class="icon" src="./assets/images/icons/treasure.png" alt="Category icon" />
-          <span class="menu-option-text" data-text="menu.treasures">Treasures</span>
+          <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Category icon" />
+          <span class="menu-option-text" data-text="menu.fast_travel">Fast Travel</span>
         </span>
-        <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
-      <div class="menu-hidden" data-type="treasure">
-        <div class="collection-value">
-          <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Treasures.showHideAll(true)">Hide all</a>
-          <a data-text="menu.show_all" href="javascript:void(0);" onclick="Treasures.showHideAll(false)">Show all</a>
+      <div class="menu-option clickable" data-type="user_pins" data-help="item_category">
+        <span>
+          <img class="icon" src="./assets/images/icons/pins.png" alt="Category icon" />
+          <span class="menu-option-text" data-text="menu.user_pins">User Pins</span>
+        </span>
+      </div>
+      <div>
+        <div class="menu-option submenu-only" data-help="item_category_encounters">
+          <span>
+            <img class="icon" src="./assets/images/icons/random_encounter.png" alt=" Category icon" />
+            <span class="menu-option-text" data-text="menu.random_encounters">Random Encounters</span>
+          </span>
+          <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+        </div>
+        <div class="menu-hidden">
+          <div class="collection-value">
+            <a data-text="menu.more_encounters_link" href="https://jeanropke.github.io/RDOMap/">Visit RDO Map for more encounters.</a>
+          </div>
+          <div class="collectible-wrapper clickable" data-type="dog_encounter" data-help="item_category">
+            <img src="./assets/images/icons/dog_encounter.png" class="collectible-icon random-encounter" alt="Set icon" />
+            <span class="collectible-text">
+              <p class="collectible" data-text="menu.dog_encounter">Dog Encounter</p>
+            </span>
+          </div>
+          <div class="collectible-wrapper clickable" data-type="egg_encounter" data-help="item_category">
+            <img src="./assets/images/icons/egg_encounter.png" class="collectible-icon random-encounter" alt="Set icon" />
+            <span class="collectible-text">
+              <p class="collectible" data-text="menu.egg_encounter">Egg Encounter</p>
+            </span>
+          </div>
+          <div class="collectible-wrapper clickable" data-type="grave_robber" data-help="item_category">
+            <img src="./assets/images/icons/grave_robber.png" class="collectible-icon random-encounter" alt="Set icon" />
+            <span class="collectible-text">
+              <p class="collectible" data-text="menu.grave_robber">Grave Robber</p>
+            </span>
+          </div>
+          <div class="collectible-wrapper clickable" data-type="rival_collector" data-help="item_category">
+            <img src="./assets/images/icons/rival_collector.png" class="collectible-icon random-encounter" alt="Set icon" />
+            <span class="collectible-text">
+              <p class="collectible" data-text="menu.rival_collector">Rival Collector</p>
+            </span>
+          </div>
+          <div class="collectible-wrapper clickable" data-type="treasure_hunter" data-help="item_category">
+            <img src="./assets/images/icons/treasure_hunter.png" class="collectible-icon random-encounter" alt="Set icon" />
+            <span class="collectible-text">
+              <p class="collectible" data-text="menu.treasure_hunter">Treasure Hunter</p>
+            </span>
+          </div>
+          <div class="collectible-wrapper clickable" data-type="tree_map" data-help="item_category">
+            <img src="./assets/images/icons/tree_map.png" class="collectible-icon random-encounter" alt="Set icon" />
+            <span class="collectible-text">
+              <p class="collectible" data-text="menu.tree_map">Treasure Map</p>
+            </span>
+          </div>
+          <div class="collectible-wrapper clickable" data-type="wounded_animal" data-help="item_category">
+            <img src="./assets/images/icons/wounded_animal.png" class="collectible-icon random-encounter" alt="Set icon" />
+            <span class="collectible-text">
+              <p class="collectible" data-text="menu.wounded_animal">Wounded Animal</p>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-option clickable" data-type="treasure" data-help="item_category">
+          <span>
+            <img class="icon" src="./assets/images/icons/treasure.png" alt="Category icon" />
+            <span class="menu-option-text" data-text="menu.treasures">Treasures</span>
+          </span>
+          <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
+        </div>
+        <div class="menu-hidden" data-type="treasure">
+          <div class="collection-value">
+            <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Treasures.showHideAll(true)">Hide all</a>
+            <a data-text="menu.show_all" href="javascript:void(0);" onclick="Treasures.showHideAll(false)">Show all</a>
+          </div>
         </div>
       </div>
     </div>
@@ -435,37 +438,6 @@
           <option value="-2" data-text="menu.tool_type.metal_detector_only">Metal detector only</option>
         </select>
       </div>
-      <div class="input-container" data-help="marker_size">
-        <label for="marker-size" data-text="menu.marker_size">Marker size</label>
-        <select class="input-text wide-select-menu" id="marker-size">
-          <option value="0.75" data-text="menu.marker_size.75">75%</option>
-          <option value="1" data-text="menu.marker_size.100" selected>100%</option>
-          <option value="1.25" data-text="menu.marker_size.125">125%</option>
-          <option value="1.5" data-text="menu.marker_size.150">150%</option>
-          <option value="1.75" data-text="menu.marker_size.175">175%</option>
-          <option value="2" data-text="menu.marker_size.200">200%</option>
-        </select>
-      </div>
-      <div class="input-container" data-help="marker_opacity">
-        <label for="marker-opacity" data-text="menu.marker_opacity">Marker opacity</label>
-        <select class="input-text wide-select-menu" id="marker-opacity">
-          <option value="0.2" data-text="menu.marker_opacity.20">20%</option>
-          <option value="0.4" data-text="menu.marker_opacity.40">40%</option>
-          <option value="0.6" data-text="menu.marker_opacity.60">60%</option>
-          <option value="0.8" data-text="menu.marker_opacity.80" selected>80%</option>
-          <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
-        </select>
-      </div>
-      <div class="input-container" data-help="overlay_opacity">
-        <label for="overlay-opacity" data-text="menu.overlay_opacity">Overlay opacity</label>
-        <select class="input-text wide-select-menu" id="overlay-opacity">
-          <option value="0" data-text="menu.overlay_opacity.0">Disabled</option>
-          <option value="0.25" data-text="menu.overlay_opacity.25">25%</option>
-          <option value="0.5" data-text="menu.overlay_opacity.50">50%</option>
-          <option value="0.75" data-text="menu.overlay_opacity.75" selected>75%</option>
-          <option value="1" data-text="menu.overlay_opacity.100" selected>Opaque</option>
-        </select>
-      </div>
       <div class="input-container" data-help="reset_markers_daily">
         <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>
         <div class="input-checkbox-wrapper">
@@ -475,10 +447,6 @@
       </div>
       <div id="open-clear-markers-modal" class="input-container clickable" data-help="clear_markers">
         <label data-text="menu.clear_markers">Reset markers now</label>
-        <div class="input-action"></div>
-      </div>
-      <div id="open-clear-important-items-modal" class="input-container clickable" data-help="clear_important_items">
-        <label data-text="menu.clear_important_items">Clear important markers</label>
         <div class="input-action"></div>
       </div>
       <hr class="menu-divider">
@@ -538,227 +506,324 @@
         <div class="input-action"></div>
       </div>
       <hr class="menu-divider">
-      <div class="input-container" data-help="sort_items_alphabetically">
-        <label for="sort-items-alphabetically" data-text="menu.sort_items_alphabetically">Sort items alphabetically</label>
+      <div class="input-container" data-help="show_utilities">
+        <label for="show-utilities" data-text="menu.show_utilities">Show utility settings</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="sort-items-alphabetically" value="1" id="sort-items-alphabetically" />
-          <label class="input-checkbox-label" for="sort-items-alphabetically"></label>
+          <input class="input-checkbox" type="checkbox" name="show-utilities" value="1" id="show-utilities" />
+          <label class="input-checkbox-label" for="show-utilities"></label>
         </div>
       </div>
-      <div class="input-container" data-help="marker_cluster">
-        <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
+      <div class="input-container" data-help="show_customization">
+        <label for="show-customization" data-text="menu.show_customization">Show customization settings</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="marker-cluster" value="1" id="marker-cluster" />
-          <label class="input-checkbox-label" for="marker-cluster"></label>
+          <input class="input-checkbox" type="checkbox" name="show-customization" value="1" id="show-customization" />
+          <label class="input-checkbox-label" for="show-customization"></label>
         </div>
       </div>
-      <div class="input-container" data-help="enable_marker_shadows">
-        <label for="enable-marker-shadows" data-text="menu.enable_marker_shadows">Marker shadows enabled</label>
+      <div class="input-container" data-help="show_routes">
+        <label for="show-routes" data-text="menu.show_routes">Show routes settings</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1" id="enable-marker-shadows" />
-          <label class="input-checkbox-label" for="enable-marker-shadows"></label>
+          <input class="input-checkbox" type="checkbox" name="show-routes" value="1" id="show-routes" />
+          <label class="input-checkbox-label" for="show-routes"></label>
         </div>
       </div>
-      <div class="input-container" data-help="enable_marker_popups">
-        <label for="enable-marker-popups" data-text="menu.enable_marker_popups">Marker popups enabled</label>
+      <div class="input-container" data-help="show_import_export">
+        <label for="show-import-export" data-text="menu.show_import_export">Show import/export settings</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-marker-popups" value="1" id="enable-marker-popups" />
-          <label class="input-checkbox-label" for="enable-marker-popups"></label>
+          <input class="input-checkbox" type="checkbox" name="show-import-export" value="1" id="show-import-export" />
+          <label class="input-checkbox-label" for="show-import-export"></label>
         </div>
       </div>
-      <div class="input-container" data-help="enable_marker_popups_hover">
-        <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on hover</label>
+      <div class="input-container" data-help="show_debug">
+        <label for="show-debug" data-text="menu.show_debug">Show debug settings</label>
         <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1" id="enable-marker-popups-hover" />
-          <label class="input-checkbox-label" for="enable-marker-popups-hover"></label>
+          <input class="input-checkbox" type="checkbox" name="show-debug" value="1" id="show-debug" />
+          <label class="input-checkbox-label" for="show-debug"></label>
         </div>
-      </div>
-      <div class="input-container" data-help="enable_dclick_zoom">
-        <label for="enable-dclick-zoom" data-text="menu.enable_dclick_zoom">Double-click to zoom in</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-dclick-zoom" value="1" id="enable-dclick-zoom" />
-          <label class="input-checkbox-label" for="enable-dclick-zoom"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="show_help">
-        <label for="show-help" data-text="menu.show_help">Show help on hover</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="show-help" value="1" id="show-help" />
-          <label class="input-checkbox-label" for="show-help"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="show_coords">
-        <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="show-coordinates" value="1" id="show-coordinates" />
-          <label class="input-checkbox-label" for="show-coordinates"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="timestamps_24">
-        <label for="timestamps-24" data-text="menu.timestamps_24">Clock in 24-hour format</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="timestamps-24" value="0" id="timestamps-24" />
-          <label class="input-checkbox-label" for="timestamps-24"></label>
-        </div>
-      </div>
-    </div>
-
-    <div class="header">
-      <span class="header-border"></span>
-      <h2 class="header-title">
-        <span data-text="menu.route_generator">Route generator</span>
-        <span class="help-button">[Beta]</span>
-      </h2>
-      <span class="header-border"></span>
-    </div>
-    <div class="settings-container">
-      <div class="input-container-noflex">
-        <button class="btn btn-default" onclick="Routes.generatePath(true)" data-text="menu.generate_route" data-help="generate_route">Generate route</button>
-        <button class="btn btn-default" onclick="Routes.clearPath()" data-text="menu.generate_route_clear" data-help="generate_route_clear">Clear route</button>
       </div>
       <hr class="menu-divider">
-      <div class="input-container" data-help="generate_route_use_pathfinder">
-        <label for="generate-route-use-pathfinder" data-text="menu.generate_route_use_pathfinder">Use path finder (slower)</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-use-pathfinder" value="1" id="generate-route-use-pathfinder" />
-          <label class="input-checkbox-label" for="generate-route-use-pathfinder"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="generate_route_generate_on_visit">
-        <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route on page visit</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-generate-on-visit" value="1" id="generate-route-generate-on-visit" />
-          <label class="input-checkbox-label" for="generate-route-generate-on-visit"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="generate_route_ignore_collected">
-        <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected items</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-ignore-collected" value="1" id="generate-route-ignore-collected" />
-          <label class="input-checkbox-label" for="generate-route-ignore-collected"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="generate_route_important_only">
-        <label for="generate-route-important-only" data-text="menu.generate_route_important_only">Only items marked
-          as important</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-important-only" value="1" id="generate-route-important-only" />
-          <label class="input-checkbox-label" for="generate-route-important-only"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="generate_route_auto_update">
-        <label for="generate-route-auto-update" data-text="menu.generate_route_auto_update">Automatically update route</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="generate-route-auto-update" value="1" id="generate-route-auto-update" />
-          <label class="input-checkbox-label" for="generate-route-auto-update"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="generate_route_fasttravel_weight">
-        <label for="generate-route-fasttravel-weight" data-text="menu.generate_route_fasttravel_weight">Fast travel preference</label>
-        <select class="input-text wide-select-menu" id="generate-route-fasttravel-weight">
-          <option value="Infinity" data-text="menu.generate_route_weight.Infinity">Don't use</option>
-          <option value="1.5" data-text="menu.generate_route_weight.1.5">Very long distances</option>
-          <option value="1.1" data-text="menu.generate_route_weight.1.1">Long distances</option>
-          <option value="1" data-text="menu.generate_route_weight.1">Same as roads</option>
-        </select>
-      </div>
-      <div class="input-container" data-help="generate_route_railroad_weight">
-        <label for="generate-route-railroad-weight" data-text="menu.generate_route_railroad_weight">Railroads preference</label>
-        <select class="input-text wide-select-menu" id="generate-route-railroad-weight">
-          <option value="2" data-text="menu.generate_route_weight.2">Only necessarily</option>
-          <option value="1.5" data-text="menu.generate_route_weight.1.5">Very long distances</option>
-          <option value="1.1" data-text="menu.generate_route_weight.1.1">Long distances</option>
-          <option value="1" data-text="menu.generate_route_weight.1">Same as roads</option>
-          <option value="0.9" data-text="menu.generate_route_weight.0.9">Prefer over roads</option>
-          <option value="0.5" data-text="menu.generate_route_weight.0.5">Highly prefer over roads</option>
-        </select>
-      </div>
-      <div class="input-container" data-help="generate_route_distance">
-        <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
-        <input id="generate-route-distance" class="input-text narrow-select-menu" type="number" min="1" max="200" value="25">
-      </div>
-      <div class="input-container" data-help="generate_route_start">
-        <label for="generate-route-start" data-text="menu.generate_route_start">Route starts at</label>
-        <select class="input-text wide-select-menu" id="generate-route-start">
-          <option value="SW" data-text="menu.generate_route_start.sw">Southwest (↙)</option>
-          <option value="NE" data-text="menu.generate_route_start.ne">Northeast (↗)</option>
-          <option value="N" data-text="menu.generate_route_start.n">North (↑)</option>
-          <option value="SE" data-text="menu.generate_route_start.se">Southeast (↘)</option>
-          <option value="Custom" data-text="menu.generate_route_start.custom">Custom</option>
-        </select>
-      </div>
-      <div class="input-container" data-help="generate_route_start_custom">
-        <label for="generate-route-start-lat" data-text="menu.generate_route_start_lat">Route start lat.</label>
-        <input id="generate-route-start-lat" class="input-text wide-select-menu" type="number" step="any" value="-119.9063">
-      </div>
-      <div class="input-container" data-help="generate_route_start_custom">
-        <label for="generate-route-start-lng" data-text="menu.generate_route_start_lng">Route start long.</label>
-        <input id="generate-route-start-lng" class="input-text wide-select-menu" type="number" step="any" value="8.0313">
-      </div>
-    </div>
-
-    <div class="header">
-      <span class="header-border"></span>
-      <h2 class="header-title" data-text="menu.custom_routes">Custom routes</h2>
-      <span class="header-border"></span>
-    </div>
-    <div class="settings-container">
-      <div class="input-container" data-help="enable_custom_route">
-        <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="custom-routes" value="1" id="custom-routes" />
-          <label class="input-checkbox-label" for="custom-routes"></label>
-        </div>
-      </div>
-      <div id="open-clear-routes-modal" class="input-container clickable" data-help="clear_custom_routes">
-        <label data-text="menu.clear_custom_routes">Clear custom route</label>
+      <div id="open-clear-important-items-modal" class="input-container clickable" data-help="clear_important_items">
+        <label data-text="menu.clear_important_items">Clear important markers</label>
         <div class="input-action"></div>
       </div>
-      <hr class="menu-divider">
-      <div class="input-container-noflex">
-        <button class="btn btn-default" data-text="menu.import_route" data-help="import_route" onclick="Routes.importCustomRoute()">Import route</button>
-        <button class="btn btn-default" data-text="menu.export_route" data-help="export_route" onclick="Routes.exportCustomRoute()">Export route</button>
+      <div id="open-delete-all-settings-modal" class="input-container clickable text-danger" data-help="delete_all_settings">
+        <label data-text="menu.delete_all_settings">Reset all settings</label>
+        <div class="input-action"></div>
       </div>
     </div>
 
-    <div class="header">
-      <span class="header-border"></span>
-      <h2 class="header-title" data-text="menu.import_export_title">Import/Export</h2>
-      <span class="header-border"></span>
+    <div id="customization-container">
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title" data-text="menu.customization_title">Customization</h2>
+        <span class="header-border"></span>
+      </div>
+      <div class="settings-container">
+        <div class="input-container" data-help="overlay_opacity">
+          <label for="overlay-opacity" data-text="menu.overlay_opacity">Overlay opacity</label>
+          <select class="input-text wide-select-menu" id="overlay-opacity">
+            <option value="0" data-text="menu.overlay_opacity.0">Disabled</option>
+            <option value="0.25" data-text="menu.overlay_opacity.25">25%</option>
+            <option value="0.5" data-text="menu.overlay_opacity.50">50%</option>
+            <option value="0.75" data-text="menu.overlay_opacity.75" selected>75%</option>
+            <option value="1" data-text="menu.overlay_opacity.100" selected>Opaque</option>
+          </select>
+        </div>
+        <div class="input-container" data-help="marker_size">
+          <label for="marker-size" data-text="menu.marker_size">Marker size</label>
+          <select class="input-text wide-select-menu" id="marker-size">
+            <option value="0.75" data-text="menu.marker_size.75">75%</option>
+            <option value="1" data-text="menu.marker_size.100" selected>100%</option>
+            <option value="1.25" data-text="menu.marker_size.125">125%</option>
+            <option value="1.5" data-text="menu.marker_size.150">150%</option>
+            <option value="1.75" data-text="menu.marker_size.175">175%</option>
+            <option value="2" data-text="menu.marker_size.200">200%</option>
+          </select>
+        </div>
+        <div class="input-container" data-help="marker_opacity">
+          <label for="marker-opacity" data-text="menu.marker_opacity">Marker opacity</label>
+          <select class="input-text wide-select-menu" id="marker-opacity">
+            <option value="0.2" data-text="menu.marker_opacity.20">20%</option>
+            <option value="0.4" data-text="menu.marker_opacity.40">40%</option>
+            <option value="0.6" data-text="menu.marker_opacity.60">60%</option>
+            <option value="0.8" data-text="menu.marker_opacity.80" selected>80%</option>
+            <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
+          </select>
+        </div>
+        <div class="input-container" data-help="marker_cluster">
+          <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="marker-cluster" value="1" id="marker-cluster" />
+            <label class="input-checkbox-label" for="marker-cluster"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="enable_marker_shadows">
+          <label for="enable-marker-shadows" data-text="menu.enable_marker_shadows">Marker shadows enabled</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1" id="enable-marker-shadows" />
+            <label class="input-checkbox-label" for="enable-marker-shadows"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="enable_marker_popups">
+          <label for="enable-marker-popups" data-text="menu.enable_marker_popups">Marker popups enabled</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-marker-popups" value="1" id="enable-marker-popups" />
+            <label class="input-checkbox-label" for="enable-marker-popups"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="enable_marker_popups_hover">
+          <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on hover</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1" id="enable-marker-popups-hover" />
+            <label class="input-checkbox-label" for="enable-marker-popups-hover"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="sort_items_alphabetically">
+          <label for="sort-items-alphabetically" data-text="menu.sort_items_alphabetically">Sort items alphabetically</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="sort-items-alphabetically" value="1" id="sort-items-alphabetically" />
+            <label class="input-checkbox-label" for="sort-items-alphabetically"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="enable_dclick_zoom">
+          <label for="enable-dclick-zoom" data-text="menu.enable_dclick_zoom">Double-click to zoom in</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-dclick-zoom" value="1" id="enable-dclick-zoom" />
+            <label class="input-checkbox-label" for="enable-dclick-zoom"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="timestamps_24">
+          <label for="timestamps-24" data-text="menu.timestamps_24">Clock in 24-hour format</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="timestamps-24" value="0" id="timestamps-24" />
+            <label class="input-checkbox-label" for="timestamps-24"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="show_help">
+          <label for="show-help" data-text="menu.show_help">Show help on hover</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="show-help" value="1" id="show-help" />
+            <label class="input-checkbox-label" for="show-help"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="show_coords">
+          <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="show-coordinates" value="1" id="show-coordinates" />
+            <label class="input-checkbox-label" for="show-coordinates"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="enable_cycle_input">
+          <label for="enable-cycle-input" data-text="menu.enable_cycle_input">Enable manual cycle input</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-cycle-input" value="1" id="enable-cycle-input" />
+            <label class="input-checkbox-label" for="enable-cycle-input"></label>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="settings-container">
-      <div class="input-container-noflex">
-        <h4 class="no-margin-top" data-text="menu.settings_import_export_title">Settings</h4>
+
+    <div id="routes-container">
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title">
+          <span data-text="menu.route_generator">Route generator</span>
+          <span class="help-button">[Beta]</span>
+        </h2>
+        <span class="header-border"></span>
       </div>
-      <div class="input-container-noflex">
-        <p class="explain-text" data-text="menu.import_export_explanation">
-          This will import or export your settings. Importing settings will replace all current settings and reload the
-          page. This feature does not include pins.
-        </p>
+      <div class="settings-container">
+        <div class="input-container-noflex">
+          <button class="btn btn-default" onclick="Routes.generatePath(true)" data-text="menu.generate_route" data-help="generate_route">Generate route</button>
+          <button class="btn btn-default" onclick="Routes.clearPath()" data-text="menu.generate_route_clear" data-help="generate_route_clear">Clear route</button>
+        </div>
+        <hr class="menu-divider">
+        <div class="input-container" data-help="generate_route_use_pathfinder">
+          <label for="generate-route-use-pathfinder" data-text="menu.generate_route_use_pathfinder">Use path finder (slower)</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="generate-route-use-pathfinder" value="1" id="generate-route-use-pathfinder" />
+            <label class="input-checkbox-label" for="generate-route-use-pathfinder"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="generate_route_generate_on_visit">
+          <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route on page visit</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="generate-route-generate-on-visit" value="1" id="generate-route-generate-on-visit" />
+            <label class="input-checkbox-label" for="generate-route-generate-on-visit"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="generate_route_ignore_collected">
+          <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected items</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="generate-route-ignore-collected" value="1" id="generate-route-ignore-collected" />
+            <label class="input-checkbox-label" for="generate-route-ignore-collected"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="generate_route_important_only">
+          <label for="generate-route-important-only" data-text="menu.generate_route_important_only">Only items marked
+            as important</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="generate-route-important-only" value="1" id="generate-route-important-only" />
+            <label class="input-checkbox-label" for="generate-route-important-only"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="generate_route_auto_update">
+          <label for="generate-route-auto-update" data-text="menu.generate_route_auto_update">Automatically update route</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="generate-route-auto-update" value="1" id="generate-route-auto-update" />
+            <label class="input-checkbox-label" for="generate-route-auto-update"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="generate_route_fasttravel_weight">
+          <label for="generate-route-fasttravel-weight" data-text="menu.generate_route_fasttravel_weight">Fast travel preference</label>
+          <select class="input-text wide-select-menu" id="generate-route-fasttravel-weight">
+            <option value="Infinity" data-text="menu.generate_route_weight.Infinity">Don't use</option>
+            <option value="1.5" data-text="menu.generate_route_weight.1.5">Very long distances</option>
+            <option value="1.1" data-text="menu.generate_route_weight.1.1">Long distances</option>
+            <option value="1" data-text="menu.generate_route_weight.1">Same as roads</option>
+          </select>
+        </div>
+        <div class="input-container" data-help="generate_route_railroad_weight">
+          <label for="generate-route-railroad-weight" data-text="menu.generate_route_railroad_weight">Railroads preference</label>
+          <select class="input-text wide-select-menu" id="generate-route-railroad-weight">
+            <option value="2" data-text="menu.generate_route_weight.2">Only necessarily</option>
+            <option value="1.5" data-text="menu.generate_route_weight.1.5">Very long distances</option>
+            <option value="1.1" data-text="menu.generate_route_weight.1.1">Long distances</option>
+            <option value="1" data-text="menu.generate_route_weight.1">Same as roads</option>
+            <option value="0.9" data-text="menu.generate_route_weight.0.9">Prefer over roads</option>
+            <option value="0.5" data-text="menu.generate_route_weight.0.5">Highly prefer over roads</option>
+          </select>
+        </div>
+        <div class="input-container" data-help="generate_route_distance">
+          <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
+          <input id="generate-route-distance" class="input-text narrow-select-menu" type="number" min="1" max="200" value="25">
+        </div>
+        <div class="input-container" data-help="generate_route_start">
+          <label for="generate-route-start" data-text="menu.generate_route_start">Route starts at</label>
+          <select class="input-text wide-select-menu" id="generate-route-start">
+            <option value="SW" data-text="menu.generate_route_start.sw">Southwest (↙)</option>
+            <option value="NE" data-text="menu.generate_route_start.ne">Northeast (↗)</option>
+            <option value="N" data-text="menu.generate_route_start.n">North (↑)</option>
+            <option value="SE" data-text="menu.generate_route_start.se">Southeast (↘)</option>
+            <option value="Custom" data-text="menu.generate_route_start.custom">Custom</option>
+          </select>
+        </div>
+        <div class="input-container" data-help="generate_route_start_custom">
+          <label for="generate-route-start-lat" data-text="menu.generate_route_start_lat">Route start lat.</label>
+          <input id="generate-route-start-lat" class="input-text wide-select-menu" type="number" step="any" value="-119.9063">
+        </div>
+        <div class="input-container" data-help="generate_route_start_custom">
+          <label for="generate-route-start-lng" data-text="menu.generate_route_start_lng">Route start long.</label>
+          <input id="generate-route-start-lng" class="input-text wide-select-menu" type="number" step="any" value="8.0313">
+        </div>
       </div>
-      <div class="input-container-noflex" data-help="cookie_import_file">
-        <input id="cookie-import-file" type="file" class="input-file" autocomplete="off">
+
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title" data-text="menu.custom_routes">Custom routes</h2>
+        <span class="header-border"></span>
       </div>
-      <div class="input-container-noflex">
-        <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.import_button" data-help="cookie_import">Import</button>
-        <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.export_button" data-help="cookie_export">Export</button>
-      </div>
-      <div class="input-container-noflex">
-        <h4 data-text="menu.pins_import_export_title">User Pins</h4>
-      </div>
-      <div class="input-container-noflex">
-        <p class="explain-text" data-text="menu.pins_import_export_explanation">
-          This will import or export your pins. Importing pins will replace all current pins.
-        </p>
-      </div>
-      <div class="input-container-noflex" data-help="pins_import_file">
-        <input id="pins-import-file" type="file" class="input-file" autocomplete="off">
-      </div>
-      <div class="input-container-noflex">
-        <button id="pins-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
-        <button id="pins-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
+      <div class="settings-container">
+        <div class="input-container" data-help="enable_custom_route">
+          <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="custom-routes" value="1" id="custom-routes" />
+            <label class="input-checkbox-label" for="custom-routes"></label>
+          </div>
+        </div>
+        <div id="open-clear-routes-modal" class="input-container clickable" data-help="clear_custom_routes">
+          <label data-text="menu.clear_custom_routes">Clear custom route</label>
+          <div class="input-action"></div>
+        </div>
+        <hr class="menu-divider">
+        <div class="input-container-noflex">
+          <button class="btn btn-default" data-text="menu.import_route" data-help="import_route" onclick="Routes.importCustomRoute()">Import route</button>
+          <button class="btn btn-default" data-text="menu.export_route" data-help="export_route" onclick="Routes.exportCustomRoute()">Export route</button>
+        </div>
       </div>
     </div>
+
+    <div id="import-export-container">
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title" data-text="menu.import_export_title">Import/Export</h2>
+        <span class="header-border"></span>
+      </div>
+      <div class="settings-container">
+        <div class="input-container-noflex">
+          <h4 class="no-margin-top" data-text="menu.settings_import_export_title">Settings</h4>
+        </div>
+        <div class="input-container-noflex">
+          <p class="explain-text" data-text="menu.import_export_explanation">
+            This will import or export your settings. Importing settings will replace all current settings and reload the
+            page. This feature does not include pins.
+          </p>
+        </div>
+        <div class="input-container-noflex" data-help="cookie_import_file">
+          <input id="cookie-import-file" type="file" class="input-file" autocomplete="off">
+        </div>
+        <div class="input-container-noflex">
+          <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.import_button" data-help="cookie_import">Import</button>
+          <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.export_button" data-help="cookie_export">Export</button>
+        </div>
+        <div class="input-container-noflex">
+          <h4 data-text="menu.pins_import_export_title">User Pins</h4>
+        </div>
+        <div class="input-container-noflex">
+          <p class="explain-text" data-text="menu.pins_import_export_explanation">
+            This will import or export your pins. Importing pins will replace all current pins.
+          </p>
+        </div>
+        <div class="input-container-noflex" data-help="pins_import_file">
+          <input id="pins-import-file" type="file" class="input-file" autocomplete="off">
+        </div>
+        <div class="input-container-noflex">
+          <button id="pins-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
+          <button id="pins-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
+        </div>
+      </div>
+    </div>
+
     <div id="debug-container">
       <div class="header">
         <span class="header-border"></span>
@@ -784,13 +849,6 @@
           <div class="input-checkbox-wrapper">
             <input class="input-checkbox" type="checkbox" name="enable-cycle-changer" value="1" id="enable-cycle-changer" />
             <label class="input-checkbox-label" for="enable-cycle-changer"></label>
-          </div>
-        </div>
-        <div class="input-container">
-          <label for="enable-cycle-input" data-text="menu.enable_cycle_input">Enable manual cycle input per set</label>
-          <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-cycle-input" value="1" id="enable-cycle-input" />
-            <label class="input-checkbox-label" for="enable-cycle-input"></label>
           </div>
         </div>
         <div class="input-container">
@@ -871,14 +929,6 @@
         </select>
         <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
       </form>
-      <div id="open-delete-all-settings-modal" class="input-container clickable text-danger" data-help="delete_all_settings">
-        <label data-text="menu.delete_all_settings">Reset all settings</label>
-        <div class="input-action"></div>
-      </div>
-      <div id="toggle-debug" class="input-container clickable" data-help="toggle_debug">
-        <label data-text="menu.toggle_debug">Toggle debug features</label>
-        <div class="input-action"></div>
-      </div>
     </div>
 
     <div id="help-container">
@@ -1021,22 +1071,22 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=322"></script>
-  <script src="assets/js/settings.js?nocache=322"></script>
-  <script src="assets/js/nazar.js?nocache=322"></script>
-  <script src="assets/js/cycles.js?nocache=322"></script>
-  <script src="assets/js/marker.js?nocache=322"></script>
-  <script src="assets/js/inventory.js?nocache=322"></script>
-  <script src="assets/js/treasures.js?nocache=322"></script>
-  <script src="assets/js/encounters.js?nocache=322"></script>
-  <script src="assets/js/pins.js?nocache=322"></script>
-  <script src="assets/js/map.js?nocache=322"></script>
-  <script src="assets/js/language.js?nocache=322"></script>
-  <script src="assets/js/menu.js?nocache=322"></script>
-  <script src="assets/js/itemsValue.js?nocache=322"></script>
-  <script src="assets/js/routes.js?nocache=322"></script>
-  <script src="assets/js/pathfinder.js?nocache=322"></script>
-  <script src="assets/js/scripts.js?nocache=322"></script>
+  <script src="assets/js/layers.js?nocache=323"></script>
+  <script src="assets/js/settings.js?nocache=323"></script>
+  <script src="assets/js/nazar.js?nocache=323"></script>
+  <script src="assets/js/cycles.js?nocache=323"></script>
+  <script src="assets/js/marker.js?nocache=323"></script>
+  <script src="assets/js/inventory.js?nocache=323"></script>
+  <script src="assets/js/treasures.js?nocache=323"></script>
+  <script src="assets/js/encounters.js?nocache=323"></script>
+  <script src="assets/js/pins.js?nocache=323"></script>
+  <script src="assets/js/map.js?nocache=323"></script>
+  <script src="assets/js/language.js?nocache=323"></script>
+  <script src="assets/js/menu.js?nocache=323"></script>
+  <script src="assets/js/itemsValue.js?nocache=323"></script>
+  <script src="assets/js/routes.js?nocache=323"></script>
+  <script src="assets/js/pathfinder.js?nocache=323"></script>
+  <script src="assets/js/scripts.js?nocache=323"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>

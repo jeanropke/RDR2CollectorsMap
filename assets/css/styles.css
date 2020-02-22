@@ -508,13 +508,13 @@ input, textarea, select, .btn {
     transform: rotate(180deg);
 }
 
-.side-menu .menu-hidden, #debug-container {
+.side-menu .menu-hidden, #utilities-container, #customization-container, #routes-container, #import-export-container, #debug-container {
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-out;
 }
 
-.side-menu .menu-hidden.opened, #debug-container.opened {
+.side-menu .menu-hidden.opened, #utilities-container.opened, #customization-container.opened, #routes-container.opened, #import-export-container.opened, #debug-container.opened {
     max-height: 2000px;
     transition: max-height 400ms linear;
 }

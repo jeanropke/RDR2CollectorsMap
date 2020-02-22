@@ -21,5 +21,11 @@ var Settings = {
   showAllMarkers: false,
   showHelp: $.cookie('show-help') == '1',
   sortItemsAlphabetically: $.cookie('sort-items-alphabetically') == '1',
-  toolType: $.cookie('tools') ? $.cookie('tools') : '3'
+  toolType: $.cookie('tools') ? $.cookie('tools') : '3',
+
+  showUtilitiesSettings: $.cookie('show-utilities') == '1',
+  showCustomizationSettings: $.cookie('show-customization') == '1',
+  showRoutesSettings: $.cookie('show-routes') == '1',
+  showImportExportSettings: $.cookie('show-import-export') == '1',
+  showDebugSettings: $.cookie('show-debug') == '1',
 };

@@ -128,11 +128,6 @@ function init() {
     $.cookie('overlay-opacity', '0.5', { expires: 999 });
   }
 
-  if ($.cookie('cycle-input-enabled') === undefined) {
-    Settings.isCycleInputEnabled = 1;
-    $.cookie('cycle-input-enabled', '1', { expires: 999 });
-  }
-
   if ($.cookie('clock-or-timer') === undefined) {
     Settings.displayClockHideTimer = false;
     $.cookie('clock-or-timer', 'false', { expires: 999 });
@@ -141,6 +136,26 @@ function init() {
   if ($.cookie('timestamps-24') === undefined) {
     Settings.display24HoursTimestamps = false;
     $.cookie('timestamps-24', 'false', { expires: 999 });
+  }
+
+  if ($.cookie('show-utilities') === undefined) {
+    Settings.showUtilitiesSettings = 1;
+    $.cookie('show-utilities', '1', { expires: 999 });
+  }
+
+  if ($.cookie('show-customization') === undefined) {
+    Settings.showCustomizationSettings = 1;
+    $.cookie('show-customization', '1', { expires: 999 });
+  }
+
+  if ($.cookie('show-routes') === undefined) {
+    Settings.showRoutesSettings = 1;
+    $.cookie('show-routes', '1', { expires: 999 });
+  }
+
+  if ($.cookie('show-import-export') === undefined) {
+    Settings.showImportExportSettings = 1;
+    $.cookie('show-import-export', '1', { expires: 999 });
   }
 
   MapBase.init();
@@ -176,12 +191,24 @@ function init() {
   $("#enable-debug").prop('checked', $.cookie('debug') != null);
   $("#enable-cycle-changer").prop('checked', $.cookie('cycle-changer-enabled') != null);
 
+  $("#show-utilities").prop('checked', Settings.showUtilitiesSettings);
+  $("#show-customization").prop('checked', Settings.showCustomizationSettings);
+  $("#show-routes").prop('checked', Settings.showRoutesSettings);
+  $("#show-import-export").prop('checked', Settings.showImportExportSettings);
+  $("#show-debug").prop('checked', Settings.showDebugSettings);
+
   $("#help-container").toggle(Settings.showHelp);
 
   $('.timer-container').toggleClass('hidden', Settings.displayClockHideTimer);
   $('.clock-container').toggleClass('hidden', !(Settings.displayClockHideTimer));
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
   $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
+
+  $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
+  $("#customization-container").toggleClass('opened', Settings.showCustomizationSettings);
+  $("#routes-container").toggleClass('opened', Settings.showRoutesSettings);
+  $("#import-export-container").toggleClass('opened', Settings.showImportExportSettings);
+  $("#debug-container").toggleClass('opened', Settings.showDebugSettings);
 
   Pins.addToMap();
   changeCursor();
@@ -312,11 +339,6 @@ $('.timer-container, .clock-container').on('click', function () {
  * jQuery triggers
  */
 
-//Toggle debug container
-$("#toggle-debug").on("click", function () {
-  $("#debug-container").toggleClass('opened');
-});
-
 //Show all markers on map
 $("#show-all-markers").on("change", function () {
   Settings.showAllMarkers = $("#show-all-markers").prop('checked');
@@ -330,6 +352,42 @@ $('#enable-right-click').on("change", function () {
   } else {
     $.removeCookie('right-click');
   }
+});
+
+//Toggle settings containers
+$("#show-utilities").on("change", function () {
+  Settings.showUtilitiesSettings = $("#show-utilities").prop('checked');
+  $.cookie('show-utilities', Settings.showUtilitiesSettings ? '1' : '0', { expires: 999 });
+
+  $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
+});
+
+$("#show-customization").on("change", function () {
+  Settings.showCustomizationSettings = $("#show-customization").prop('checked');
+  $.cookie('show-customization', Settings.showCustomizationSettings ? '1' : '0', { expires: 999 });
+
+  $("#customization-container").toggleClass('opened', Settings.showCustomizationSettings);
+});
+
+$("#show-routes").on("change", function () {
+  Settings.showRoutesSettings = $("#show-routes").prop('checked');
+  $.cookie('show-routes', Settings.showRoutesSettings ? '1' : '0', { expires: 999 });
+
+  $("#routes-container").toggleClass('opened', Settings.showRoutesSettings);
+});
+
+$("#show-import-export").on("change", function () {
+  Settings.showImportExportSettings = $("#show-import-export").prop('checked');
+  $.cookie('show-import-export', Settings.showImportExportSettings ? '1' : '0', { expires: 999 });
+
+  $("#import-export-container").toggleClass('opened', Settings.showImportExportSettings);
+});
+
+$("#show-debug").on("change", function () {
+  Settings.showDebugSettings = $("#show-debug").prop('checked');
+  $.cookie('show-debug', Settings.showDebugSettings ? '1' : '0', { expires: 999 });
+
+  $("#debug-container").toggleClass('opened', Settings.showDebugSettings);
 });
 
 // :-)
