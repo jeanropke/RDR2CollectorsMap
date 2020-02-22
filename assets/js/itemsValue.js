@@ -43,7 +43,7 @@ var ItemsValue = {
 
   reloadInventoryItems: function () {
     ItemsValue.finalValue = 0;
-    for (i = 0; i < 14; i++) {
+    for (var i = 0; i < 14; i++) {
       ItemsValue[Object.keys(ItemsValue)[i]] = [];
       ItemsValue[`${Object.keys(ItemsValue)[i]}_amount`] = [];
     }
