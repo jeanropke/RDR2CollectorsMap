@@ -438,7 +438,7 @@ input, textarea, select, .btn {
 
 .side-menu {
     width: 100%;
-    background: #000 url(../images/bg.jpg);
+    background: #000;
     box-shadow: 1px 0 2px 0 rgba(85, 85, 85, 0.85);
     position: fixed;
     top: -1800px;
@@ -508,13 +508,13 @@ input, textarea, select, .btn {
     transform: rotate(180deg);
 }
 
-.side-menu .menu-hidden, #debug-container {
+.side-menu .menu-hidden, #utilities-container, #customization-container, #routes-container, #import-export-container, #debug-container {
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-out;
 }
 
-.side-menu .menu-hidden.opened, #debug-container.opened {
+.side-menu .menu-hidden.opened, #utilities-container.opened, #customization-container.opened, #routes-container.opened, #import-export-container.opened, #debug-container.opened {
     max-height: 2000px;
     transition: max-height 400ms linear;
 }
@@ -653,7 +653,7 @@ a.wiki-page:visited {
 .help-container {
     height: 100%;
     padding: 25px;
-    background: #000 url(../images/bg.jpg);
+    background: #000;
     border: 1px solid #eee;
     box-shadow: 0 0 10px 0 black;
 }
@@ -735,6 +735,14 @@ a.wiki-page:visited {
     text-align: center;
     min-width: 100px;
     margin: 0 6px;
+}
+
+.cycle-icon {
+    margin: auto 6px auto auto;
+}
+
+.cycle-icon.random {
+    margin-right: 38px;
 }
 
 .marker-content-wrapper {

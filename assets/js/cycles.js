@@ -99,7 +99,9 @@ var Cycles = {
 
   setCycles: function () {
     for (var category in Cycles.categories) {
-      $(`input[name=${category}]`).val(Cycles.categories[category]);
+      var cycle = Cycles.categories[category];
+      $(`input[name=${category}]`).val(cycle);
+      $(`.cycle-icon[data-type=${category}]`).attr("src", `./assets/images/cycle_${cycle}.png`).attr("alt", `Cycle ${cycle}`);
     }
 
     MapBase.addMarkers(true);
