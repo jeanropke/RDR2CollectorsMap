@@ -537,7 +537,14 @@ var MapBase = {
 
     if (!enabledCategories.includes(marker.category)) return;
 
-    if (parseInt(Settings.toolType) < parseInt(marker.tool)) return;
+    var toolType = parseInt(Settings.toolType);
+    var markerTool = parseInt(marker.tool);
+    if (toolType > 0) {
+      if (toolType < markerTool) return;
+    } else {
+      if (toolType == -1 && markerTool != 1) return;
+      if (toolType == -2 && markerTool != 2) return;
+    }
 
     var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
       return weekly.item === (marker.text).replace(/_\d+/, "");
