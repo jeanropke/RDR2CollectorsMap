@@ -8,7 +8,10 @@ var Cycles = {
   yesterday: [],
 
   load: function () {
-    $.getJSON('data/cycles.json?nocache=' + nocache)
+    var date = new Date();
+    var dateString = (date.getUTCMonth() + 1) + '-' + date.getUTCDate() + '-' + date.getUTCFullYear();
+
+    $.getJSON(`data/cycles.json?nocache=${nocache}&date=${dateString}`)
       .done(function (_data) {
         Cycles.data = _data;
         Cycles.getTodayCycle();
