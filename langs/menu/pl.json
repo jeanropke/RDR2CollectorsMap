@@ -296,5 +296,5 @@
 	{"key": "help.show_debug", "value": "Włącza/ wyłącza menu narzędzi debugowania mapy (Używanie tych ustawień jest niezalecane)."},
 	{"key": "help.enable_cycle_input", "value": "Pozwala na włączenie pola własnoręcznej zmiany każdego cyklu."},
 	{"key": "help.show_all_cycles_markers", "value": "Włącza/ wyłącza wszystkie znaczniki każdego cyklu."},
-	{"key": "help.enable_context_menu", "value": "Włącza/ wyłącza contextmenu (kliknięcie prawym klawiszem myszy)."}
+	{"key": "help.enable_context_menu", "value": "Włącza/ wyłącza contextmenu (kliknięcie prawym przyciskiem myszy)."}
 ]
