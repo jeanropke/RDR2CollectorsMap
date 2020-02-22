@@ -55,9 +55,9 @@ var ItemsValue = {
       if (item == '') {
         ItemsValue.finalValue = 0;
         ItemsValue.updateValue();
-        return
+        return;
       }
-      else if (item.match(/random_item_\d+/)) {
+      else if (/random_item_\d+/.test(item)) {
         return;
       }
 
