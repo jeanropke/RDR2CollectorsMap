@@ -262,8 +262,7 @@ function downloadAsFile(filename, text) {
   document.body.removeChild(element);
 }
 
-setInterval(function () {
-
+function clockTick() {
   // Clock in game created by Michal__d
   var display_24 = Settings.display24HoursTimestamps,
     newDate = new Date(),
@@ -298,7 +297,9 @@ setInterval(function () {
   else {
     $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'none');
   }
-}, 1000);
+}
+
+setInterval(clockTick, 1000);
 
 // toggle timer and clock after click the container
 $('.timer-container, .clock-container').on('click', function () {
@@ -468,6 +469,7 @@ $('#show-coordinates').on('change', function () {
 $('#timestamps-24').on('change', function () {
   Settings.display24HoursTimestamps = $("#timestamps-24").prop('checked');
   $.cookie('timestamps-24', Settings.display24HoursTimestamps ? '1' : '0', { expires: 999 });
+  clockTick();
 });
 
 //Change & save language option
@@ -806,23 +808,23 @@ $('#cookie-export').on("click", function () {
 });
 
 function setSettings(settings) {
-     // Import all the settings from the file.
-     if (settings.cookies === undefined && settings.local === undefined) {
-      $.each(settings, function (key, value) {
-        $.cookie(key, value, { expires: 999 });
-      });
-    }
-
-    $.each(settings.cookies, function (key, value) {
+  // Import all the settings from the file.
+  if (settings.cookies === undefined && settings.local === undefined) {
+    $.each(settings, function (key, value) {
       $.cookie(key, value, { expires: 999 });
     });
+  }
 
-    $.each(settings.local, function (key, value) {
-      localStorage.setItem(key, value);
-    });
+  $.each(settings.cookies, function (key, value) {
+    $.cookie(key, value, { expires: 999 });
+  });
 
-    // Do this for now, maybe look into refreshing the menu completely (from init) later.
-    location.reload();
+  $.each(settings.local, function (key, value) {
+    localStorage.setItem(key, value);
+  });
+
+  // Do this for now, maybe look into refreshing the menu completely (from init) later.
+  location.reload();
 }
 
 $('#cookie-import').on('click', function () {
@@ -838,7 +840,7 @@ $('#cookie-import').on('click', function () {
 
     try {
       file.text().then((text) => {
-        try {  
+        try {
           settings = JSON.parse(text);
 
           setSettings(settings);
@@ -851,7 +853,7 @@ $('#cookie-import').on('click', function () {
     } catch (error) {
       fallback = true;
     }
-   
+
     if (fallback) {
       var reader = new FileReader();
 
