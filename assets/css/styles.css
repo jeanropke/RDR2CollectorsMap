@@ -438,7 +438,7 @@ input, textarea, select, .btn {
 
 .side-menu {
     width: 100%;
-    background: #000 url(../images/bg.jpg);
+    background: #000;
     box-shadow: 1px 0 2px 0 rgba(85, 85, 85, 0.85);
     position: fixed;
     top: -1800px;
@@ -653,7 +653,7 @@ a.wiki-page:visited {
 .help-container {
     height: 100%;
     padding: 25px;
-    background: #000 url(../images/bg.jpg);
+    background: #000;
     border: 1px solid #eee;
     box-shadow: 0 0 10px 0 black;
 }
