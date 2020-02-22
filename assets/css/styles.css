@@ -737,6 +737,14 @@ a.wiki-page:visited {
     margin: 0 6px;
 }
 
+.cycle-icon {
+    margin: auto 6px auto auto;
+}
+
+.cycle-icon.random {
+    margin-right: 38px;
+}
+
 .marker-content-wrapper {
     display: flex;
     align-items: center;

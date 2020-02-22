@@ -202,6 +202,7 @@ function init() {
   $('.timer-container').toggleClass('hidden', Settings.displayClockHideTimer);
   $('.clock-container').toggleClass('hidden', !(Settings.displayClockHideTimer));
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
+  $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
   $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
 
   $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
@@ -569,6 +570,7 @@ $("#enable-cycle-input").on("change", function () {
   Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
   $.cookie('cycle-input-enabled', Settings.isCycleInputEnabled ? '1' : '0', { expires: 999 });
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
+  $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
 });
 
 //Disable & enable collection category
