@@ -90,8 +90,8 @@ var ItemsValue = {
       var itemValue = ItemsValue.data.items[itemName];
 
       ItemsValue.finalValue += itemValue * multiplier;
-      ItemsValue.updateValue();
     });
+    ItemsValue.updateValue();
   },
 
   checkArrLength: function () {
