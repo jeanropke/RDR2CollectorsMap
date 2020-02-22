@@ -163,6 +163,7 @@
 	{"key": "alerts.file_not_valid", "value": "Plik, który wybrałeś jest nieprawidłowy. Proszę wybierz inny plik."},
 	{"key": "alerts.file_not_found", "value": "Proszę wybierz inny plik w polu (nad napisem Importuj) i spróbuj ponownie."},
 	{"key": "alerts.feature_not_supported", "value": "Ta funkcja nie jest wspierana przez Twoją przeglądarkę."},
+	{"key": "alerts.nothing_to_export", "value": "Nie znaleziono ustawień do wyeksportowania."},
 	{"key": "menu.enable_inventory_menu_update", "value": "Przełączanie przedm. w menu aktual. ekwip."},
 	{"key": "menu.reset_button_updates_inventory", "value": "Reset znaczników aktualizuje ekwipunek"},
 	{"key": "map.same_cycle_yesterday", "value": "Ten przedmiot jest w tym samym cyklu co wczoraj. W tym przypadku przedmiot pojawi się ponownie z 24 godzinnym opóźnieniem."},
@@ -207,6 +208,15 @@
 	{"key": "menu.modal_delete_all_settings_body", "value": "Ta opcja usunie wszystkie zapisane dane i przeładuje stronę."},
 	{"key": "menu.enable_marker_popups_hover", "value": "Pokaż okno interakcji po najechaniu na znacznik"},
 	{"key": "menu.more_encounters_link", "value": "Zajrzyj na mapę RDO po więcej zdarzeń"},
+	{"key": "menu.customization_title", "value": "Ustawienia mapy"},
+	{"key": "menu.show_utilities", "value": "Pokaż menu innych znaczników"},
+	{"key": "menu.show_customization", "value": "Pokaż ustawienia mapy"},
+	{"key": "menu.show_routes", "value": "Pokaż ustawienia generatora trasy"},
+	{"key": "menu.show_import_export", "value": "Pokaż ustawienia import./ eksport."},
+	{"key": "menu.show_debug", "value": "Pokaz narzędzia debugowania"},
+	{"key": "menu.enable_cycle_input", "value": "Pokaż narzędzie do zmiany cykli"},
+	{"key": "menu.show_all_cycles_markers", "value": "Pokaż znaczniki wszystkich cykli"},
+	{"key": "menu.enable_context_menu", "value": "Włącz contexmenu"},
 
 	{"key": "help.default", "value": "Najedź lub przytrzymaj opcję menu na urz. mobilnym, aby wyświetlić podpowiedzi."},
 	{"key": "help.clear_custom_routes", "value": "Usuwa wszystkie własne trasy na mapie."},
@@ -278,5 +288,13 @@
 	{"key": "help.enable_marker_shadows", "value": "Określa czy znaczniki bedą miały cień. Wyłączenie tej pocji może poprawić wydajność."},
 	{"key": "help.delete_all_settings", "value": "Zresetuj wszystkie pinezki i ustawienia strony do domyślnych wartości."},
 	{"key": "help.enable_marker_popups_hover", "value": "Ustala czy okna powiadomień znaczników mają się pokazywać po najechaniu na znacznik, czy po jego kliknięciu (ta opcja nie działa na ekranach dotykowych)."},
-	{"key": "help.marker_size", "value": "Pozwala na zmianę domyślnej wielkości wszystkich znaczników."}
+	{"key": "help.marker_size", "value": "Pozwala na zmianę domyślnej wielkości wszystkich znaczników."},
+	{"key": "help.show_utilities", "value": "Włącza/ wyłącza menu przypadkowych zdarzeń, madam Nazar, szybkiej podróży itp."},
+	{"key": "help.show_customization", "value": "Włącza/ wyłącza menu najistotniejszych ustawień mapy."},
+	{"key": "help.show_routes", "value": "Włącza/ wyłącza menu automatycznego generatora trasy."},
+	{"key": "help.show_import_export", "value": "Włącza/ wyłącza menu importowania i eksportowania ustawień/ znaczników użytkownika."},
+	{"key": "help.show_debug", "value": "Włącza/ wyłącza menu narzędzi debugowania mapy (Używanie tych ustawień jest niezalecane)."},
+	{"key": "help.enable_cycle_input", "value": "Pozwala na włączenie pola własnoręcznej zmiany każdego cyklu."},
+	{"key": "help.show_all_cycles_markers", "value": "Włącza/ wyłącza wszystkie znaczniki każdego cyklu."},
+	{"key": "help.enable_context_menu", "value": "Włącza/ wyłącza contextmenu (kliknięcie prawym przyciskiem myszy)."}
 ]

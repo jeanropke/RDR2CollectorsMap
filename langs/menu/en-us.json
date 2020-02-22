@@ -215,6 +215,8 @@
 	{"key": "menu.show_import_export", "value": "Show import/export settings"},
 	{"key": "menu.show_debug", "value": "Show debug settings"},
 	{"key": "menu.enable_cycle_input", "value": "Enable manual cycle input"},
+	{"key": "menu.show_all_cycles_markers", "value": "Show all markers"},
+	{"key": "menu.enable_context_menu", "value": "Enable context menu"},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
@@ -292,5 +294,7 @@
 	{"key": "help.show_routes", "value": "Toggles whether the routes settings should be visible in the menu."},
 	{"key": "help.show_import_export", "value": "Toggles whether the import/export settings should be visible in the menu."},
 	{"key": "help.show_debug", "value": "Toggles whether the debug settings should be visible in the menu."},
-	{"key": "help.enable_cycle_input", "value": "Toggles whether the manual cycle inputs should be visible in the menu."}
+	{"key": "help.enable_cycle_input", "value": "Toggles whether the manual cycle inputs should be visible in the menu."},
+	{"key": "help.show_all_cycles_markers", "value": "Toggles whether all markers from each cycle should be visible."},
+	{"key": "help.enable_context_menu", "value": "Toggles whether context menu (right-click) is enabled."}
 ]
