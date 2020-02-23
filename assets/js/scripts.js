@@ -292,18 +292,19 @@ function downloadAsFile(filename, text) {
 
 function clockTick() {
   // Clock in game created by Michal__d
-  var display_24 = Settings.display24HoursTimestamps,
-    newDate = new Date(),
-    startTime = newDate.valueOf(),
-    factor = 30,
-    correctTime = new Date(startTime * factor);
+  var display_24 = Settings.display24HoursTimestamps;
+  var newDate = new Date();
+  var startTime = newDate.valueOf();
+  var factor = 30;
+  var correctTime = new Date(startTime * factor);
+
   correctTime.setHours(correctTime.getUTCHours());
   correctTime.setMinutes(correctTime.getUTCMinutes() - 3); //for some reason time in game is 3 sec. delayed to normal time
 
   if (display_24) {
     $('#time-in-game').text(addZeroToNumber(correctTime.getHours()) + ":" + addZeroToNumber(correctTime.getMinutes()));
   } else {
-    $('#time-in-game').text(addZeroToNumber(correctTime.getHours() % 12) + ":" + addZeroToNumber(correctTime.getMinutes()) + " " + ((correctTime.getHours() < 12) ? "AM" : "PM"));
+    $('#time-in-game').text((addZeroToNumber(correctTime.getHours() % 12) == '00' ? '12' : addZeroToNumber(correctTime.getHours() % 12)) + ":" + addZeroToNumber(correctTime.getMinutes()) + " " + ((correctTime.getHours() < 12) ? "AM" : "PM"));
   }
 
   if (correctTime.getHours() >= 22 || correctTime.getHours() < 5) {
