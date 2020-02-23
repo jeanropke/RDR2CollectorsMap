@@ -236,6 +236,9 @@ Menu.refreshItemsCounter = function () {
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
     .replace('{count}', _markers.filter(item => item.isCollected || (Inventory.isEnabled && item.amount >= Inventory.stackSize)).length)
     .replace('{max}', _markers.length));
+
+  // refresh items value counter
+  ItemsValue.reloadInventoryItems();
 };
 
 // Remove highlight from all important items

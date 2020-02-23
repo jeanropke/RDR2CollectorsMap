@@ -43,11 +43,7 @@ var ItemsValue = {
   },
 
   reloadInventoryItems: function () {
-    ItemsValue.finalValue = 0;
-
-    $.each(ItemsValue.collectedItemsData, function (key, item) {
-      ItemsValue.collectedItemsData[key] = [];
-    });
+    ItemsValue.resetItemsData();
 
     var _items = localStorage.getItem("inventory-items") || tempCollectedMarkers;
     var sepItems = _items.split(';');
@@ -57,14 +53,15 @@ var ItemsValue = {
         ItemsValue.finalValue = 0;
         ItemsValue.updateValue();
         return;
-      } else if (/random_item_\d+/.test(item)) {
+      }
+      else if (/random_item_\d+/.test(item)) {
         return;
       }
 
       var itemProperty = item.split(":");
       var itemName = itemProperty[0];
       itemName = itemName.replace(/_\d/, '');
-      var itemAmount = itemProperty[2];
+      var itemAmount = (Inventory.isEnabled ? itemProperty[2] : itemProperty[1]);
       var tempCategory = itemProperty[0].split("_")[0];
 
       if (ItemsValue.collectedItemsData[tempCategory].indexOf(itemName) == -1) {
@@ -121,6 +118,13 @@ var ItemsValue = {
       ItemsValue.notFullCollectionsCount(collectionsLength[key][0]);
     });
 
+  },
+
+  resetItemsData: function () {
+    ItemsValue.finalValue = 0;
+    $.each(ItemsValue.collectedItemsData, function (key, item) {
+      ItemsValue.collectedItemsData[key] = [];
+    });
   },
 
   updateValue: function () {

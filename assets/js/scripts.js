@@ -804,13 +804,9 @@ $('#enable-inventory').on("change", function () {
 
   MapBase.addMarkers();
   Inventory.toggleMenuItemsDisabled();
-
-  $('#items-value').toggleClass('hidden', !Inventory.isEnabled);
-
+  ItemsValue.reloadInventoryItems();
   $('.collection-sell, .counter').toggle(Inventory.isEnabled);
 });
-
-$('#items-value').toggleClass('hidden', !Inventory.isEnabled);
 
 $('#enable-inventory-popups').on("change", function () {
   Inventory.isPopupEnabled = $("#enable-inventory-popups").prop('checked');
