@@ -1,37 +1,38 @@
 var ItemsValue = {
-  //!-- ITEMS --//
-  arrowhead: [],
-  egg: [],
-  coin: [],
-  heirlooms: [],
-  bottle: [],
-  cups: [],
-  pentacles: [],
-  swords: [],
-  wands: [],
-  ring: [],
-  earring: [],
-  bracelet: [],
-  necklace: [],
-  flower: [],
-  arrowhead_amount: [],
-  egg_amount: [],
-  coin_amount: [],
-  heirlooms_amount: [],
-  bottle_amount: [],
-  cups_amount: [],
-  pentacles_amount: [],
-  swords_amount: [],
-  wands_amount: [],
-  ring_amount: [],
-  earring_amount: [],
-  bracelet_amount: [],
-  necklace_amount: [],
-  flower_amount: [],
-  //!-- ITEMS --//
-
   data: [],
   finalValue: 0,
+
+  collectedItemsData: {
+    flower: [],
+    cups: [],
+    swords: [],
+    wands: [],
+    pentacles: [],
+    bracelet: [],
+    earring: [],
+    necklace: [],
+    ring: [],
+    bottle: [],
+    egg: [],
+    arrowhead: [],
+    heirlooms: [],
+    coin: [],
+
+    flower_amount: [],
+    cups_amount: [],
+    swords_amount: [],
+    wands_amount: [],
+    pentacles_amount: [],
+    bracelet_amount: [],
+    earring_amount: [],
+    necklace_amount: [],
+    ring_amount: [],
+    bottle_amount: [],
+    egg_amount: [],
+    arrowhead_amount: [],
+    heirlooms_amount: [],
+    coin_amount: []
+  },
 
   load: function () {
     $.getJSON('data/items_value.json?nocache=' + nocache)
@@ -42,11 +43,8 @@ var ItemsValue = {
   },
 
   reloadInventoryItems: function () {
-    ItemsValue.finalValue = 0;
-    for (var i = 0; i < 14; i++) {
-      ItemsValue[Object.keys(ItemsValue)[i]] = [];
-      ItemsValue[`${Object.keys(ItemsValue)[i]}_amount`] = [];
-    }
+
+    ItemsValue.resetItemsData();
 
     var _items = localStorage.getItem("inventory-items") || tempCollectedMarkers;
     var sepItems = _items.split(';');
@@ -64,12 +62,12 @@ var ItemsValue = {
       var itemProperty = item.split(":");
       var itemName = itemProperty[0];
       itemName = itemName.replace(/_\d/, '');
-      var itemAmount = itemProperty[2];
+      var itemAmount = (Inventory.isEnabled ? itemProperty[2] : itemProperty[1]);
       var tempCategory = itemProperty[0].split("_")[0];
 
-      if (ItemsValue[tempCategory].indexOf(itemName) == -1) {
-        ItemsValue[tempCategory].push(itemName);
-        ItemsValue[`${tempCategory}_amount`].push(itemAmount);
+      if (ItemsValue.collectedItemsData[tempCategory].indexOf(itemName) == -1) {
+        ItemsValue.collectedItemsData[tempCategory].push(itemName);
+        ItemsValue.collectedItemsData[`${tempCategory}_amount`].push(itemAmount);
       }
     });
 
@@ -77,17 +75,17 @@ var ItemsValue = {
   },
 
   fullCollectionsCount: function (category) {
-    var tempArr = ItemsValue[`${category}_amount`].slice();
+    var tempArr = ItemsValue.collectedItemsData[`${category}_amount`].slice();
     var collections = tempArr.sort((a, b) => a - b)[0];
-    ItemsValue[`${category}_amount`] = ItemsValue[`${category}_amount`].map(item => item - collections);
+    ItemsValue.collectedItemsData[`${category}_amount`] = ItemsValue.collectedItemsData[`${category}_amount`].map(item => item - collections);
 
     ItemsValue.finalValue += ItemsValue.data.full[category] * collections;
   },
 
   notFullCollectionsCount: function (category) {
-    $.each(ItemsValue[category], function (key, item) {
-      var multiplier = ItemsValue[`${category}_amount`][key];
-      var itemName = ItemsValue[category][key];
+    $.each(ItemsValue.collectedItemsData[category], function (key, item) {
+      var multiplier = ItemsValue.collectedItemsData[`${category}_amount`][key];
+      var itemName = ItemsValue.collectedItemsData[category][key];
       var itemValue = ItemsValue.data.items[itemName];
 
       ItemsValue.finalValue += itemValue * multiplier;
@@ -98,29 +96,36 @@ var ItemsValue = {
 
   checkArrLength: function () {
     var collectionsLength = [
-      ['arrowhead', 12],
-      ['egg', 9],
-      ['coin', 15],
-      ['heirlooms', 15],
-      ['bottle', 9],
+      ['flower', 9],
       ['cups', 14],
-      ['pentacles', 14],
       ['swords', 14],
       ['wands', 14],
-      ['ring', 11],
-      ['earring', 11],
+      ['pentacles', 14],
       ['bracelet', 8],
+      ['earring', 11],
       ['necklace', 9],
-      ['flower', 9]
+      ['ring', 11],
+      ['bottle', 9],
+      ['egg', 9],
+      ['arrowhead', 12],
+      ['heirlooms', 15],
+      ['coin', 15],
     ];
 
     $.each(collectionsLength, function (key, value) {
-      if (ItemsValue[collectionsLength[key][0]].length === collectionsLength[key][1])
+      if (ItemsValue.collectedItemsData[collectionsLength[key][0]].length === collectionsLength[key][1])
         ItemsValue.fullCollectionsCount(collectionsLength[key][0]);
 
       ItemsValue.notFullCollectionsCount(collectionsLength[key][0]);
     });
 
+  },
+
+  resetItemsData: function () {
+    ItemsValue.finalValue = 0;
+    $.each(ItemsValue.collectedItemsData, function (key, item) {
+      ItemsValue.collectedItemsData[key] = [];
+    });
   },
 
   updateValue: function () {
