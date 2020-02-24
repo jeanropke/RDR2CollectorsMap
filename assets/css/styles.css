@@ -976,15 +976,15 @@ a.no-style:visited {
         display: none;
     }
     .side-menu .menu-hidden .collectible-icon {
-        margin-top: 6px;
+        margin-top: 7px;
     }
     .counter-button {
-        height: 26px;
-        width: 26px;
-        line-height: 1.25;
+        height: 32px;
+        width: 32px;
+        line-height: 1.5;
     }
     .side-menu .menu-hidden .collectible, .input-container label {
-        line-height: 35px;
+        line-height: 38px;
     }
 }
 
