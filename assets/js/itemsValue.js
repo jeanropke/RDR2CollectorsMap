@@ -50,7 +50,7 @@ var ItemsValue = {
       var itemAmount = (Inventory.isEnabled ? itemProperty[2] : itemProperty[1]);
       var tempCategory = itemProperty[0].split("_")[0];
 
-      if (ItemsValue.collectedItemsData[tempCategory].indexOf(itemName) == -1) {
+      if (ItemsValue.collectedItemsData[tempCategory].indexOf(itemName) === -1) {
         ItemsValue.collectedItemsData[tempCategory].push(itemName);
         ItemsValue.collectedItemsData[`${tempCategory}_amount`].push(itemAmount);
       }
