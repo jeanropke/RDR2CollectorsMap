@@ -29,6 +29,8 @@ var ItemsValue = {
   },
 
   reloadInventoryItems: function () {
+    return;
+    
     this.resetItemsData();
 
     var inventoryItems = localStorage.getItem("inventory-items") || tempCollectedMarkers;
