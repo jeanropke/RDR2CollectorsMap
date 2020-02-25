@@ -17,7 +17,7 @@ var ItemsValue = {
     ['egg', 9],
     ['arrowhead', 12],
     ['heirlooms', 15],
-    ['coin', 15],
+    ['coin', 15]
   ],
 
   load: function () {
