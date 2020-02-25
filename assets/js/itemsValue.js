@@ -43,8 +43,7 @@ var ItemsValue = {
   },
 
   reloadInventoryItems: function () {
-
-    ItemsValue.resetItemsData();
+    this.resetItemsData();
 
     var _items = localStorage.getItem("inventory-items") || tempCollectedMarkers;
     var sepItems = _items.split(';');
@@ -71,19 +70,19 @@ var ItemsValue = {
       }
     });
 
-    ItemsValue.checkArrLength();
+    this.checkArrLength();
   },
 
   fullCollectionsCount: function (category) {
     var tempArr = ItemsValue.collectedItemsData[`${category}_amount`].slice();
     var collections = tempArr.sort((a, b) => a - b)[0];
-    ItemsValue.collectedItemsData[`${category}_amount`] = ItemsValue.collectedItemsData[`${category}_amount`].map(item => item - collections);
+    this.collectedItemsData[`${category}_amount`] = this.collectedItemsData[`${category}_amount`].map(item => item - collections);
 
-    ItemsValue.finalValue += ItemsValue.data.full[category] * collections;
+    this.finalValue += this.data.full[category] * collections;
   },
 
   notFullCollectionsCount: function (category) {
-    $.each(ItemsValue.collectedItemsData[category], function (key, item) {
+    $.each(this.collectedItemsData[category], function (key, item) {
       var multiplier = ItemsValue.collectedItemsData[`${category}_amount`][key];
       var itemName = ItemsValue.collectedItemsData[category][key];
       var itemValue = ItemsValue.data.items[itemName];
@@ -91,7 +90,7 @@ var ItemsValue = {
       ItemsValue.finalValue += itemValue * multiplier;
     });
 
-    ItemsValue.updateValue();
+    this.updateValue();
   },
 
   checkArrLength: function () {
@@ -122,14 +121,14 @@ var ItemsValue = {
   },
 
   resetItemsData: function () {
-    ItemsValue.finalValue = 0;
+    this.finalValue = 0;
     $.each(ItemsValue.collectedItemsData, function (key, item) {
       ItemsValue.collectedItemsData[key] = [];
     });
   },
 
   updateValue: function () {
-    $('#items-value').text(` / ${ItemsValue.finalValue.toFixed(2)}$`);
+    $('#items-value').text(` / ${this.finalValue.toFixed(2)}$`);
   }
 
 };
