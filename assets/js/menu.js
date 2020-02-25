@@ -243,7 +243,7 @@ Menu.refreshItemsCounter = function () {
 
 // Remove highlight from all important items
 $('#clear_highlights').on('click', function () {
-  var tempArray = MapBase.itemsMarkedAsImportant;
+  var tempArray = MapBase.importantItems;
   $.each(tempArray, function () {
     MapBase.highlightImportantItem(tempArray[0]);
   });

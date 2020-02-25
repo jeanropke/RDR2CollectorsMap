@@ -44,9 +44,11 @@ var ItemsValue = {
 
   reloadInventoryItems: function () {
 
+    return;
+    
     ItemsValue.resetItemsData();
 
-    var _items = localStorage.getItem("inventory-items") || tempCollectedMarkers;
+    var _items = localStorage.getItem("inventory-items");
     var sepItems = _items.split(';');
 
     $.each(sepItems, function (key, item) {

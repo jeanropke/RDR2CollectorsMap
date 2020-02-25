@@ -27,10 +27,7 @@ var date;
 
 var wikiLanguage = [];
 
-var tempInventory = [];
-
 var debugMarkersArray = [];
-var tempCollectedMarkers = "";
 
 function init() {
   wikiLanguage['de-de'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)';
@@ -38,29 +35,7 @@ function init() {
   wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
   wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
 
-  //sometimes, cookies are saved in the wrong order
-  var cookiesList = [];
-  $.each($.cookie(), function (key, value) {
-    if (key.startsWith('removed-items')) {
-      cookiesList.push(key);
-    }
-  });
-  cookiesList.sort();
-  $.each(cookiesList, function (key, value) {
-    tempCollectedMarkers += $.cookie(value);
-  });
-
-  //If the collect markers does not contains ':', need be converted to inventory system
-  if (!tempCollectedMarkers.includes(':')) {
-    $.each(tempCollectedMarkers.split(';'), function (key, value) {
-      tempInventory += `${value}:1:1;`;
-    });
-  } else {
-    tempInventory = tempCollectedMarkers;
-  }
-
-  tempInventory = tempInventory.split(';');
-
+  MapBase.loadCollectedItems();
   Inventory.load();
 
   $('.map-alert').toggle($.cookie('alert-closed-1') === undefined);
