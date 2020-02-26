@@ -43,8 +43,14 @@ function init() {
     _items.split(';').forEach(item => {
       if (item == '') return;
       var properties = item.split(':');
-      Inventory.items[properties[0]] = parseInt(properties[2]);
-      MapBase.collectedItems[properties[0]] = properties[2] == '1';
+      
+      var inventoryName = properties[0];
+      inventoryName = inventoryName.replace('flower_', 'american_flowers_');
+      inventoryName = inventoryName.replace('egg_', 'bird_eggs_');
+      inventoryName = inventoryName.replace(/(_\d)/g, '');
+
+      Inventory.items[inventoryName] = parseInt(properties[2]);
+      MapBase.collectedItems[properties[0]] = properties[1] == '1';
     });
 
     localStorage.clear("inventory-items");
