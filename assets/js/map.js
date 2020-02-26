@@ -490,7 +490,7 @@ var MapBase = {
       case "family_heirlooms":
         return "purple";
       case "coin":
-        return "copper";
+        return "orange";
       case "weekly":
         return "green";
       default:
