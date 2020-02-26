@@ -11,7 +11,7 @@ var Marker = function (text, lat, lng, tool, day, category, subdata, video, heig
   this.height = height;
   this.description = (this.subdata == 'agarita' || this.subdata == 'blood_flower' ? Language.get('map.flower_type.night_only') : '') + Language.get(`${this.text}_${this.day}.desc`);
   this.isVisible = enabledCategories.includes(this.category);
-  this.amount = (this.subdata ? Inventory.items[`${this.category}_${this.subdata}`] : Inventory.items[this.text]) || 0;
+  this.amount = Inventory.items[this.text.replace(/_\d/, '')] || 0;
   this.isCollected = MapBase.collectedItems[this.text] || false;
   this.canCollect = !this.isCollected;
 };

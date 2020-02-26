@@ -29,28 +29,21 @@ var ItemsValue = {
   },
 
   reloadInventoryItems: function () {
-    return;
-    
     this.resetItemsData();
 
-    var inventoryItems = localStorage.getItem("inventory-items") || tempCollectedMarkers;
-    var itemsArray = inventoryItems.split(';');
+    var inventoryItems = [];
+    if (Inventory.isEnabled) {
+      inventoryItems = Inventory.items;
+    } else {
+      inventoryItems = MapBase.collectedItems.filter(function (marker) { return marker.indexOf('random_item') === 0; });
+    }
 
-    $.each(itemsArray, function (key, item) {
-      if (item == '') {
-        ItemsValue.finalValue = 0;
-        ItemsValue.updateValue();
-        return;
-      }
-      else if (/random_item_\d+/.test(item)) {
-        return;
-      }
-
-      var itemProperty = item.split(":");
-      var itemName = itemProperty[0];
+    $.each(inventoryItems, function (key, value) {
+      var itemName = key;
       itemName = itemName.replace(/_\d/, '');
-      var itemAmount = (Inventory.isEnabled ? itemProperty[2] : itemProperty[1]);
-      var tempCategory = itemProperty[0].split("_")[0];
+
+      var itemAmount = (Inventory.isEnabled ? value : value ? 1 : 0);
+      var tempCategory = itemName.split("_")[0];
 
       if (ItemsValue.collectedItemsData[tempCategory].indexOf(itemName) === -1) {
         ItemsValue.collectedItemsData[tempCategory].push(itemName);

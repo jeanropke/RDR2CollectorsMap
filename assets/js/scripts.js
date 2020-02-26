@@ -42,14 +42,13 @@ function init() {
 
     _items.split(';').forEach(item => {
       if (item == '') return;
-      var properties = item.split(':');
-      
-      var inventoryName = properties[0];
-      inventoryName = inventoryName.replace('flower_', 'american_flowers_');
-      inventoryName = inventoryName.replace('egg_', 'bird_eggs_');
-      inventoryName = inventoryName.replace(/(_\d)/g, '');
 
-      Inventory.items[inventoryName] = parseInt(properties[2]);
+      var properties = item.split(':');
+
+      if (Inventory.items[properties[0].replace(/_\d/, '')] === undefined)
+        Inventory.items[properties[0].replace(/_\d/, '')] = 0;
+
+      Inventory.items[properties[0].replace(/_\d/, '')]++;
       MapBase.collectedItems[properties[0]] = properties[1] == '1';
     });
 
