@@ -35,6 +35,24 @@ function init() {
   wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
   wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
 
+  if (localStorage.getItem("inventory-items") !== null) {
+    var _items = localStorage.getItem("inventory-items");
+
+    if (_items == null) return;
+
+    _items.split(';').forEach(item => {
+      if (item == '') return;
+      var properties = item.split(':');
+      Inventory.items[properties[0]] = parseInt(properties[2]);
+      MapBase.collectedItems[properties[0]] = properties[2] == '1';
+    });
+
+    localStorage.clear("inventory-items");
+
+    MapBase.saveCollectedItems();
+    Inventory.save();
+  }
+
   MapBase.loadCollectedItems();
   Inventory.load();
 

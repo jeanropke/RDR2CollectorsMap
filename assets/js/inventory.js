@@ -32,25 +32,23 @@ var Inventory = {
   },
 
   load: function () {
-    if (localStorage.getItem("inventory-items") !== null) {
-      var _items = localStorage.getItem("inventory-items");
-
-      if (_items == null) return;
-
-      _items.split(';').forEach(item => {
-        if (item == '') return;
-        var properties = item.split(':');
-        Inventory.items[properties[0]] = parseInt(properties[2]);
-      });
-
-      localStorage.clear("inventory-items");
-      localStorage.setItem("inventory", JSON.stringify(Inventory.items));
-    }
-
     Inventory.items = JSON.parse(localStorage.getItem("inventory"));
     if (Inventory.items === null) Inventory.items = {};
 
     ItemsValue.load();
+  },
+
+  save: function () {
+    $.each(MapBase.markers, function (key, marker) {
+      if (marker.category == 'random') return;
+
+      if (marker.subdata)
+        Inventory.items[`${marker.category}_${marker.subdata}`] = marker.amount;
+      else
+        Inventory.items[marker.text] = marker.amount;
+    });
+
+    localStorage.setItem("inventory", JSON.stringify(Inventory.items));
   },
 
   changeMarkerAmount: function (name, amount, skipInventory = false) {
@@ -92,19 +90,6 @@ var Inventory = {
 
   stackHasSpace: function (marker) {
     return marker.amount < Inventory.stackSize;
-  },
-
-  save: function () {
-    $.each(MapBase.markers, function (key, marker) {
-      if (marker.category == 'random') return;
-
-      if (marker.subdata)
-        Inventory.items[`${marker.category}_${marker.subdata}`] = marker.amount;
-      else
-        Inventory.items[marker.text] = marker.amount;
-    });
-
-    localStorage.setItem("inventory", JSON.stringify(Inventory.items));
   },
 
   toggleMenuItemsDisabled: function () {
