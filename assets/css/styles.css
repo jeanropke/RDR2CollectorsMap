@@ -131,7 +131,7 @@ input, textarea, select, .btn {
 .header-border {
     -webkit-box-flex: 1;
     flex: 1 0 auto;
-    min-width: 40px;
+    min-width: 12px;
     position: relative;
 }
 
