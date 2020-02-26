@@ -82,8 +82,6 @@ var Pins = {
     });
 
     localStorage.setItem("pinned-items", pinnedItems);
-    console.log("Saved all pins!");
-
     this.loadAllPins();
   },
 

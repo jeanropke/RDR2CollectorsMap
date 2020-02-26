@@ -231,7 +231,7 @@ var Cycles = {
         break;
 
       default:
-        console.log(`Category '${category}' invalid`);
+        console.error(`Category '${category}' invalid.`);
         break;
     }
     return _cycles;
