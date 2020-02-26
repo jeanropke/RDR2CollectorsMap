@@ -588,7 +588,10 @@ var MapBase = {
     }).length > 0;
 
     var overlay = '';
-    var markerBackgroundColor = (Settings.markersCustomColor === 7 ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category) : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + (Settings.markersCustomColor === 0 ? marker.day : Settings.markersCustomColor)));
+    var markerBackgroundColor = (Settings.markersCustomColor === 7
+      ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
+      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + (Settings.markersCustomColor === 0 ? marker.day : Settings.markersCustomColor)));
+
     var icon = `./assets/images/icons/${marker.category}.png`;
     var background = `./assets/images/icons/marker_${markerBackgroundColor}.png`;
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
