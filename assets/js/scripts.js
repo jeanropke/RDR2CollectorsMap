@@ -133,6 +133,11 @@ function init() {
     $.cookie('show-import-export', '1', { expires: 999 });
   }
 
+  if ($.cookie('custom-markers-color') === undefined) {
+    Settings.markersCustomColor = 0;
+    $.cookie('custom-markers-color', '0', { expires: 999 });
+  }
+
   MapBase.init();
   MapBase.setOverlays(Settings.overlayOpacity);
 
@@ -148,6 +153,7 @@ function init() {
   $('#marker-opacity').val(Settings.markerOpacity);
   $('#marker-size').val(Settings.markerSize);
   $('#overlay-opacity').val(Settings.overlayOpacity);
+  $('#custom-marker-color').val(Settings.markersCustomColor);
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.markerCluster);
@@ -548,6 +554,13 @@ $("#enable-cycle-input").on("change", function () {
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
 });
+
+$('#custom-marker-color').on("change", function () {
+  var parsed = parseFloat($("#custom-marker-color").val());
+  Settings.markersCustomColor = parsed ? parsed : 0;
+  $.cookie('custom-markers-color', Settings.markersCustomColor, { expires: 999 });
+  MapBase.addMarkers();
+})
 
 //Disable & enable collection category
 $('.clickable').on('click', function () {

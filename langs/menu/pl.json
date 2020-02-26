@@ -217,6 +217,15 @@
 	{"key": "menu.enable_cycle_input", "value": "Pokaż narzędzie do zmiany cykli"},
 	{"key": "menu.show_all_cycles_markers", "value": "Pokaż znaczniki wszystkich cykli"},
 	{"key": "menu.enable_context_menu", "value": "Włącz contexmenu"},
+	{"key": "menu.custom_marker_color", "value": "Kolor markerów"},
+	{"key": "menu.custom_marker_default", "value": "Domyślny kolor"},
+	{"key": "menu.custom_marker_blue", "value": "Niebieski"},
+	{"key": "menu.custom_marker_orange", "value": "Pomarańczowy"},
+	{"key": "menu.custom_marker_pink", "value": "Różowy"},
+	{"key": "menu.custom_marker_purple", "value": "Fioletowy"},
+	{"key": "menu.custom_marker_dark_red", "value": "Ciemnoczerwony"},
+	{"key": "menu.custom_marker_dark_blue", "value": "Ciemnoniebieski"},
+	{"key": "menu.custom_marker_fixed_colors", "value": "Zawsze takie same kolory"},
 
 	{"key": "help.default", "value": "Najedź lub przytrzymaj opcję menu na urz. mobilnym, aby wyświetlić podpowiedzi."},
 	{"key": "help.clear_custom_routes", "value": "Usuwa wszystkie własne trasy na mapie."},
@@ -296,5 +305,6 @@
 	{"key": "help.show_debug", "value": "Włącza/ wyłącza menu narzędzi debugowania mapy (Używanie tych ustawień jest niezalecane)."},
 	{"key": "help.enable_cycle_input", "value": "Pozwala na włączenie pola własnoręcznej zmiany każdego cyklu."},
 	{"key": "help.show_all_cycles_markers", "value": "Włącza/ wyłącza wszystkie znaczniki każdego cyklu."},
-	{"key": "help.enable_context_menu", "value": "Włącza/ wyłącza contextmenu (kliknięcie prawym przyciskiem myszy)."}
+	{"key": "help.enable_context_menu", "value": "Włącza/ wyłącza contextmenu (kliknięcie prawym przyciskiem myszy)."},
+	{"key": "help.custom_marker_color", "value": "Pozwala na ustawienie jednego koloru dla wszystkich znaczników rzedmiotów, lub ustawienie różnych domyślnych kolorów dla każdej karegorii znaczników."}
 ]

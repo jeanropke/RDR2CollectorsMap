@@ -486,6 +486,43 @@ var MapBase = {
     }
   },
 
+  getFixedIconColorPerCategory: function (markerCategory) {
+    switch (markerCategory) {
+      case "american_flowers":
+        return "darkred";
+      case "card_cups":
+        return "blue";
+      case "card_swords":
+        return "blue";
+      case "card_wands":
+        return "blue";
+      case "card_pentacles":
+        return "blue";
+      case "lost_bracelet":
+        return "orange";
+      case "lost_necklaces":
+        return "orange";
+      case "lost_ring":
+        return "orange";
+      case "lost_earrings":
+        return "orange";
+      case "antique_bottles":
+        return "cadetblue";
+      case "bird_eggs":
+        return "white";
+      case "arrowhead":
+        return "darkpurple";
+      case "family_heirlooms":
+        return "purple";
+      case "coin":
+        return "orange";
+      case "weekly":
+        return "green";
+      default:
+        return "lightred";
+    }
+  },
+
   getToolName: function (type) {
     switch (type) {
       default:
@@ -576,8 +613,12 @@ var MapBase = {
     }).length > 0;
 
     var overlay = '';
+    var markerBackgroundColor = (Settings.markersCustomColor === 7
+      ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
+      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + (Settings.markersCustomColor === 0 ? marker.day : Settings.markersCustomColor)));
+
     var icon = `./assets/images/icons/${marker.category}.png`;
-    var background = `./assets/images/icons/marker_${MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)}.png`;
+    var background = `./assets/images/icons/marker_${markerBackgroundColor}.png`;
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override
