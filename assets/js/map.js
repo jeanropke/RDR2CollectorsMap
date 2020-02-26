@@ -387,9 +387,7 @@ var MapBase = {
             changeAmount = -1;
           }
 
-          if (Inventory.isEnabled) {
-            Inventory.changeMarkerAmount(marker.subdata || marker.text, changeAmount, skipInventory);
-          }
+          Inventory.changeMarkerAmount(marker.subdata || marker.text, changeAmount, skipInventory);
         }
 
         if (marker.canCollect) {
@@ -422,8 +420,8 @@ var MapBase = {
     if (Routes.ignoreCollected)
       Routes.generatePath();
 
-    Menu.refreshItemsCounter();
     MapBase.saveCollectedItems();
+    Menu.refreshItemsCounter();
   },
 
   loadCollectedItems: function () {

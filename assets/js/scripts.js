@@ -784,6 +784,7 @@ $('#enable-inventory').on("change", function () {
   MapBase.addMarkers();
   Inventory.toggleMenuItemsDisabled();
   ItemsValue.reloadInventoryItems();
+
   $('.collection-sell, .counter').toggle(Inventory.isEnabled);
 });
 

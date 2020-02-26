@@ -53,8 +53,6 @@ var Inventory = {
   },
 
   changeMarkerAmount: function (name, amount, skipInventory = false) {
-    if (!Inventory.isEnabled) return;
-
     var marker = MapBase.markers.filter(marker => {
       return (marker.text == name || marker.subdata == name);
     });
@@ -83,7 +81,6 @@ var Inventory = {
 
     Inventory.save();
     Menu.refreshItemsCounter();
-    ItemsValue.reloadInventoryItems();
   },
 
   toggleMenuItemsDisabled: function () {
