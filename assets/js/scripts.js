@@ -27,10 +27,7 @@ var date;
 
 var wikiLanguage = [];
 
-var tempInventory = [];
-
 var debugMarkersArray = [];
-var tempCollectedMarkers = "";
 
 function init() {
   wikiLanguage['de-de'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)';
@@ -38,29 +35,30 @@ function init() {
   wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
   wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
 
-  //sometimes, cookies are saved in the wrong order
-  var cookiesList = [];
-  $.each($.cookie(), function (key, value) {
-    if (key.startsWith('removed-items')) {
-      cookiesList.push(key);
-    }
-  });
-  cookiesList.sort();
-  $.each(cookiesList, function (key, value) {
-    tempCollectedMarkers += $.cookie(value);
-  });
+  if (localStorage.getItem("inventory-items") !== null) {
+    var _items = localStorage.getItem("inventory-items");
 
-  //If the collect markers does not contains ':', need be converted to inventory system
-  if (!tempCollectedMarkers.includes(':')) {
-    $.each(tempCollectedMarkers.split(';'), function (key, value) {
-      tempInventory += `${value}:1:1;`;
+    if (_items == null) return;
+
+    _items.split(';').forEach(item => {
+      if (item == '') return;
+
+      var properties = item.split(':');
+
+      if (Inventory.items[properties[0].replace(/_\d/, '')] === undefined)
+        Inventory.items[properties[0].replace(/_\d/, '')] = 0;
+
+      Inventory.items[properties[0].replace(/_\d/, '')]++;
+      MapBase.collectedItems[properties[0]] = properties[1] == '1';
     });
-  } else {
-    tempInventory = tempCollectedMarkers;
+
+    localStorage.clear("inventory-items");
+
+    MapBase.saveCollectedItems();
+    Inventory.save();
   }
 
-  tempInventory = tempInventory.split(';');
-
+  MapBase.loadCollectedItems();
   Inventory.load();
 
   $('.map-alert').toggle($.cookie('alert-closed-1') === undefined);
@@ -651,27 +649,13 @@ $('.collection-sell').on('click', function (e) {
 // Reset collections on menu
 $('.collection-reset').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+  var getMarkers = MapBase.markers.filter(_m => !_m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
-  $.each(getMarkers, function (key, value) {
-    if (value.canCollect)
-      return;
-
-    if (Inventory.items[value.text])
-      Inventory.items[value.text].isCollected = false;
-
-    value.isCollected = false;
-    value.canCollect = true;
-
-    // .changeMarkerAmount() must run to check whether to remove "disabled" class
-    if (value.subdata)
-      Inventory.changeMarkerAmount(value.subdata, (Inventory.resetButtonUpdatesInventory ? -1 : 0));
-    else
-      Inventory.changeMarkerAmount(value.text, (Inventory.resetButtonUpdatesInventory ? -1 : 0));
-
-    $(this).removeClass('disabled');
+  $.each(getMarkers, function (key, marker) {
+    MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category);
   });
-  Inventory.save();
+
+  $(this).removeClass('disabled');
 });
 
 //Remove item from map when using the menu

@@ -111,8 +111,7 @@ Menu.refreshMenu = function () {
     if (collectibleCategory.hasClass('not-found') && !anyUnavailableCategories.includes(marker.category))
       collectibleCategory.attr('data-help', 'item_category').removeClass('not-found');
 
-    if (Inventory.isEnabled && marker.amount >= Inventory.stackSize)
-      collectibleElement.addClass('disabled');
+    collectibleCountTextElement.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
 
     if (marker.subdata) {
       if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
@@ -231,10 +230,10 @@ Menu.hideAll = function () {
 };
 
 Menu.refreshItemsCounter = function () {
-  var _markers = MapBase.markers.filter(item => item.day == Cycles.categories[item.category] && item.isVisible);
+  var _markers = MapBase.markers.filter(marker => marker.day == Cycles.categories[marker.category] && marker.isVisible);
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', _markers.filter(item => item.isCollected || (Inventory.isEnabled && item.amount >= Inventory.stackSize)).length)
+    .replace('{count}', _markers.filter(marker => marker.isCollected).length)
     .replace('{max}', _markers.length));
 
   // refresh items value counter
@@ -243,7 +242,7 @@ Menu.refreshItemsCounter = function () {
 
 // Remove highlight from all important items
 $('#clear_highlights').on('click', function () {
-  var tempArray = MapBase.itemsMarkedAsImportant;
+  var tempArray = MapBase.importantItems;
   $.each(tempArray, function () {
     MapBase.highlightImportantItem(tempArray[0]);
   });
