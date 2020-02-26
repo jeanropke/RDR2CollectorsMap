@@ -1297,5 +1297,11 @@
     {"key": "weekly.desc.veteran_set", "value": "Veteran"},
     {"key": "weekly.desc.warrior_tokens_set", "value": "Warrior's Tokens"},
     {"key": "weekly.desc.whiskey_set", "value": "Whiskey"},
-    {"key": "weekly.desc.witch_hunt_set", "value": "Witch Hunt"}
+    {"key": "weekly.desc.witch_hunt_set", "value": "Witch Hunt"},
+
+    {"key": "item_pocket_watch_gold.name", "value": "Gold Pocket Watch"},
+    {"key": "item_carcass_squirrel_perfect.name", "value": "Perfect Squirrel Carcass"},
+    {"key": "item_gold_tooth.name", "value": "Gold Tooth"},
+    {"key": "item_cooked_plump_bird_thyme.name", "value": "Cooked Plump Bird (Thyme)"},
+    {"key": "item_pocket_watch_platinum.name", "value": "Platinum Pocket Watch"}
 ]

@@ -25,10 +25,10 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1346" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1347" />
 
   <script>
-    var nocache = 1346;
+    var nocache = 1347;
   </script>
 </head>
 
@@ -50,11 +50,23 @@
         <div id="copy-search-link" class="input-action-copy" data-help="search_copy_link"></div>
       </div>
     </div>
-    <div id='cycle-changer-container' class="collection-value cycle-changer hidden">
+    <div id="cycle-changer-container" class="collection-value cycle-changer hidden">
       <div id="cycle-prev" class="input-selection-arrow"><img src="assets/images/selection_left.png" alt="arrow"></div>
       <span class="cycle-data">¯\_(ツ)_/¯</span>
       <div id="cycle-next" class="input-selection-arrow"><img src="assets/images/selection_right.png" alt="arrow"></div>
     </div>
+
+    <div id="weekly-container">
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title weekly-item-title">Weekly Collection</h2>
+        <span class="header-border"></span>
+      </div>
+      <div class="weekly-item-listings">
+        <p data-text="menu.weekly_item_description">This week's collection consists of these items. Collect them all and send them to Madam Nazar for an XP and RDO$ bonus.</p>
+      </div>
+    </div>
+
     <div class="links-container">
       <a data-text="menu.hide_all" data-help="hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
       <a data-text="menu.show_all" data-help="show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
@@ -521,6 +533,13 @@
         <div class="input-action"></div>
       </div>
       <hr class="menu-divider">
+      <div class="input-container" data-help="show_weekly">
+        <label for="show-weekly" data-text="menu.show_weekly">Show weekly collection</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="show-weekly" value="1" id="show-weekly" />
+          <label class="input-checkbox-label" for="show-weekly"></label>
+        </div>
+      </div>
       <div class="input-container" data-help="show_utilities">
         <label for="show-utilities" data-text="menu.show_utilities">Show utility settings</label>
         <div class="input-checkbox-wrapper">
@@ -1099,22 +1118,22 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1346"></script>
-  <script src="assets/js/settings.js?nocache=1346"></script>
-  <script src="assets/js/nazar.js?nocache=1346"></script>
-  <script src="assets/js/cycles.js?nocache=1346"></script>
-  <script src="assets/js/marker.js?nocache=1346"></script>
-  <script src="assets/js/inventory.js?nocache=1346"></script>
-  <script src="assets/js/treasures.js?nocache=1346"></script>
-  <script src="assets/js/encounters.js?nocache=1346"></script>
-  <script src="assets/js/pins.js?nocache=1346"></script>
-  <script src="assets/js/map.js?nocache=1346"></script>
-  <script src="assets/js/language.js?nocache=1346"></script>
-  <script src="assets/js/menu.js?nocache=1346"></script>
-  <script src="assets/js/itemsValue.js?nocache=1346"></script>
-  <script src="assets/js/routes.js?nocache=1346"></script>
-  <script src="assets/js/pathfinder.js?nocache=1346"></script>
-  <script src="assets/js/scripts.js?nocache=1346"></script>
+  <script src="assets/js/layers.js?nocache=1347"></script>
+  <script src="assets/js/settings.js?nocache=1347"></script>
+  <script src="assets/js/nazar.js?nocache=1347"></script>
+  <script src="assets/js/cycles.js?nocache=1347"></script>
+  <script src="assets/js/marker.js?nocache=1347"></script>
+  <script src="assets/js/inventory.js?nocache=1347"></script>
+  <script src="assets/js/treasures.js?nocache=1347"></script>
+  <script src="assets/js/encounters.js?nocache=1347"></script>
+  <script src="assets/js/pins.js?nocache=1347"></script>
+  <script src="assets/js/map.js?nocache=1347"></script>
+  <script src="assets/js/language.js?nocache=1347"></script>
+  <script src="assets/js/menu.js?nocache=1347"></script>
+  <script src="assets/js/itemsValue.js?nocache=1347"></script>
+  <script src="assets/js/routes.js?nocache=1347"></script>
+  <script src="assets/js/pathfinder.js?nocache=1347"></script>
+  <script src="assets/js/scripts.js?nocache=1347"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>

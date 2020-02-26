@@ -24,6 +24,18 @@ var Menu = {
   }
 };
 
+Menu.addCycleWarning = function (element, isSameCycle) {
+  var hasCycleWarning = $(`${element} .same-cycle-warning-menu`).length > 0;
+  var category = $(element);
+  if (isSameCycle && !hasCycleWarning) {
+    category.parent().attr('data-help', 'item_category_same_cycle');
+    category.append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
+  } else if (!isSameCycle && hasCycleWarning) {
+    category.parent().attr('data-help', 'item_category');
+    category.children('.same-cycle-warning-menu').remove();
+  }
+};
+
 Menu.refreshMenu = function () {
   if (weeklySetData.current == null)
     return;
@@ -156,6 +168,20 @@ Menu.refreshMenu = function () {
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
   });
 
+  $('#weekly-container .weekly-item-listings').children('.weekly-item-listing').remove();
+  $('#weekly-container .weekly-item-title').text(Language.get('weekly.desc.' + weeklySetData.current));
+
+  $.each(weeklyItems, function (key, value) {
+    var element = `
+      <div class="weekly-item-listing">
+        <img class="icon" src="./assets/images/icons/game/${value.item}.png" alt="Weekly item icon" />
+        <span>${Language.get(value.item + '.name')}</span>
+      </div>
+    `;
+
+    $('#weekly-container .weekly-item-listings').append(element);
+  });
+
   $('.menu-hidden[data-type]').each(function (key, value) {
     var category = $(this);
 
@@ -164,7 +190,7 @@ Menu.refreshMenu = function () {
     // if the cycle is the same as yesterday highlight category in menu;
     var isSameCycle = Cycles.isSameAsYesterday(category.data('type'));
     var element = `[data-text="menu.${category.data('type')}"]`;
-    addCycleWarning(element, isSameCycle);
+    Menu.addCycleWarning(element, isSameCycle);
 
     if (!Settings.sortItemsAlphabetically) return;
     if (category.data('type').includes('card_')) return;
@@ -177,19 +203,7 @@ Menu.refreshMenu = function () {
   });
 
   // Check cycle warning for random spots
-  addCycleWarning('[data-text="menu.random_spots"]', Cycles.isSameAsYesterday('random'));
-
-  function addCycleWarning(element, isSameCycle) {
-    var hasCycleWarning = $(`${element} .same-cycle-warning-menu`).length > 0;
-    var category = $(element);
-    if (isSameCycle && !hasCycleWarning) {
-      category.parent().attr('data-help', 'item_category_same_cycle');
-      category.append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
-    } else if (!isSameCycle && hasCycleWarning) {
-      category.parent().attr('data-help', 'item_category');
-      category.children('.same-cycle-warning-menu').remove();
-    }
-  }
+  Menu.addCycleWarning('[data-text="menu.random_spots"]', Cycles.isSameAsYesterday('random'));
 
   Menu.refreshTreasures();
 

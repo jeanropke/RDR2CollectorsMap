@@ -226,7 +226,8 @@
 	{"key": "menu.custom_marker_dark_red", "value": "Dark red"},
 	{"key": "menu.custom_marker_dark_blue", "value": "Dark blue"},
 	{"key": "menu.custom_marker_fixed_colors", "value": "Fixed colors"},
-
+	{"key": "menu.weekly_item_description", "value": "This week's collection consists of these items. Collect them all and send them to Madam Nazar for an XP and RDO$ bonus."},
+	{"key": "menu.show_weekly", "value": "Show weekly collection"},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
@@ -307,5 +308,6 @@
 	{"key": "help.enable_cycle_input", "value": "Toggles whether the manual cycle inputs should be visible in the menu."},
 	{"key": "help.show_all_cycles_markers", "value": "Toggles whether all markers from each cycle should be visible."},
 	{"key": "help.enable_context_menu", "value": "Toggles whether context menu (right-click) is enabled."},
-	{"key": "help.custom_marker_color", "value": "Allows you to set one color for all items markers, or set default different color for each marker category."}
+	{"key": "help.custom_marker_color", "value": "Allows you to set one color for all items markers, or set default different color for each marker category."},
+	{"key": "help.show_weekly", "value": "Toggles whether the weekly collection should be visible in the menu."}
 ]

@@ -123,6 +123,9 @@ input, textarea, select, .btn {
     line-height: normal;
     margin: 0 12px;
     text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .header-border {
@@ -508,13 +511,13 @@ input, textarea, select, .btn {
     transform: rotate(180deg);
 }
 
-.side-menu .menu-hidden, #utilities-container, #customization-container, #routes-container, #import-export-container, #debug-container {
+.side-menu .menu-hidden, #weekly-container, #utilities-container, #customization-container, #routes-container, #import-export-container, #debug-container {
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-out;
 }
 
-.side-menu .menu-hidden.opened, #utilities-container.opened, #customization-container.opened, #routes-container.opened, #import-export-container.opened, #debug-container.opened {
+.side-menu .menu-hidden.opened, #weekly-container.opened, #utilities-container.opened, #customization-container.opened, #routes-container.opened, #import-export-container.opened, #debug-container.opened {
     max-height: 2000px;
     transition: max-height 400ms linear;
 }
@@ -881,6 +884,28 @@ a.no-style:visited {
 
 .hidden {
     display: none !important;
+}
+
+#weekly-container {
+    user-select: none;
+}
+
+.weekly-item-listings p {
+    text-align: center;
+    font-size: 14px;
+    margin: 0 12px 14px 12px !important;
+}
+
+.weekly-item-listing {
+    cursor: default;
+    display: flex;
+    justify-content: start;
+    padding: 2px 12px;
+}
+
+.weekly-item-listing .icon {
+    height: 28px;
+    margin-right: 10px;
 }
 
 /* Bootstrap modal styling */

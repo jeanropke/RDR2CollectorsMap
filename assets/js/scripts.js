@@ -136,6 +136,11 @@ function init() {
     $.cookie('timestamps-24', 'false', { expires: 999 });
   }
 
+  if ($.cookie('show-weekly') === undefined) {
+    Settings.showWeeklySettings = 1;
+    $.cookie('show-weekly', '1', { expires: 999 });
+  }
+
   if ($.cookie('show-utilities') === undefined) {
     Settings.showUtilitiesSettings = 1;
     $.cookie('show-utilities', '1', { expires: 999 });
@@ -195,6 +200,7 @@ function init() {
   $("#enable-debug").prop('checked', $.cookie('debug') != null);
   $("#enable-cycle-changer").prop('checked', $.cookie('cycle-changer-enabled') != null);
 
+  $("#show-weekly").prop('checked', Settings.showWeeklySettings);
   $("#show-utilities").prop('checked', Settings.showUtilitiesSettings);
   $("#show-customization").prop('checked', Settings.showCustomizationSettings);
   $("#show-routes").prop('checked', Settings.showRoutesSettings);
@@ -209,6 +215,7 @@ function init() {
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
   $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
 
+  $("#weekly-container").toggleClass('opened', Settings.showWeeklySettings);
   $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
   $("#customization-container").toggleClass('opened', Settings.showCustomizationSettings);
   $("#routes-container").toggleClass('opened', Settings.showRoutesSettings);
@@ -361,6 +368,13 @@ $('#enable-right-click').on("change", function () {
 });
 
 //Toggle settings containers
+$("#show-weekly").on("change", function () {
+  Settings.showWeeklySettings = $("#show-weekly").prop('checked');
+  $.cookie('show-weekly', Settings.showWeeklySettings ? '1' : '0', { expires: 999 });
+
+  $("#weekly-container").toggleClass('opened', Settings.showWeeklySettings);
+});
+
 $("#show-utilities").on("change", function () {
   Settings.showUtilitiesSettings = $("#show-utilities").prop('checked');
   $.cookie('show-utilities', Settings.showUtilitiesSettings ? '1' : '0', { expires: 999 });

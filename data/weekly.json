@@ -18,7 +18,8 @@
 		],	
 		"gold_panner_set": [
 			{"item": "bracelet_ojeda_rose_gold"},
-			{"item": "coin_gold_eagle"}
+			{"item": "coin_gold_eagle"},
+			{"item": "item_pocket_watch_gold"}
 		],
 		"pearls_set": [
 			{"item": "bracelet_durant_pearl"},
@@ -42,7 +43,8 @@
 		],
 		"hunter_set": [
 			{"item": "arrowhead_slate"},
-			{"item": "egg_duck"}
+			{"item": "egg_duck"},
+			{"item": "item_carcass_squirrel_perfect"}
 		],
 		"precious_stones_set": [
 			{"item": "ring_banais_topaz"},
@@ -81,7 +83,8 @@
 		],
 		"looter_set": [
 			{"item": "arrowhead_crude"},
-			{"item": "coin_nickel_coin"}
+			{"item": "coin_nickel_coin"},
+			{"item": "item_gold_tooth"}
 		],
 		"ancient_tools_set": [
 			{"item": "arrowhead_obsidian"},
@@ -160,11 +163,13 @@
 		],
 		"festive_feast_set": [
 			{"item": "egg_goose"},
-			{"item": "bottle_cognac_bottle"}
+			{"item": "bottle_cognac_bottle"},
+			{"item": "item_cooked_plump_bird_thyme"}
 		],
 		"new_year_set": [
 			{"item": "wands_ace"},
-			{"item": "bottle_scotch_whisky"}
+			{"item": "bottle_scotch_whisky"},
+			{"item": "item_pocket_watch_platinum"}
 		],
 		"lovers_set": [
 			{"item": "flower_chocolate_daisy"},
