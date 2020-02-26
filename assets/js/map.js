@@ -316,14 +316,6 @@ var MapBase = {
         if (MapBase.requestLoopCancel) return;
 
         var marker = MapBase.markers[i];
-
-        // Set isVisible to false. addMarkerOnMap will set to true if needs
-        marker.isVisible = false;
-
-        if (marker.subdata != null)
-          if (categoriesDisabledByDefault.includes(marker.subdata))
-            return;
-
         MapBase.addMarkerOnMap(marker, opacity);
       },
       function () {
@@ -598,11 +590,11 @@ var MapBase = {
 
   addMarkerOnMap: function (marker, opacity = 1) {
     if (marker.day != Cycles.categories[marker.category] && !Settings.showAllMarkers) return;
-
-    if (!uniqueSearchMarkers.includes(marker))
-      return;
-
+    if (!uniqueSearchMarkers.includes(marker)) return;
     if (!enabledCategories.includes(marker.category)) return;
+    if (marker.subdata != null && categoriesDisabledByDefault.includes(marker.subdata)) return;
+
+    marker.isVisible = true;
 
     var toolType = parseInt(Settings.toolType);
     var markerTool = parseInt(marker.tool);
@@ -667,7 +659,6 @@ var MapBase = {
     });
 
     tempMarker.id = marker.text;
-    marker.isVisible = true;
     marker.weeklyCollection = isWeekly ? weeklySetData.current : null;
 
     if (marker.category == 'random')

@@ -230,10 +230,10 @@ Menu.hideAll = function () {
 };
 
 Menu.refreshItemsCounter = function () {
-  var _markers = MapBase.markers.filter(item => item.day == Cycles.categories[item.category] && item.isVisible);
+  var _markers = MapBase.markers.filter(marker => marker.day == Cycles.categories[marker.category] && marker.isVisible);
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', _markers.filter(item => item.isCollected || (Inventory.isEnabled && item.amount >= Inventory.stackSize)).length)
+    .replace('{count}', _markers.filter(marker => marker.isCollected || (Inventory.isEnabled && marker.amount >= Inventory.stackSize)).length)
     .replace('{max}', _markers.length));
 
   // refresh items value counter

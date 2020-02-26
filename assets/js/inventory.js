@@ -78,7 +78,7 @@ var Inventory = {
       cntnm.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
 
       //If the category is disabled, no needs to update popup
-      if (Settings.isPopupsEnabled && Layers.itemMarkersLayer.getLayerById(marker.text) != null && marker.day == Cycles.categories[marker.category])
+      if (Settings.isPopupsEnabled && marker.day == Cycles.categories[marker.category] && Layers.itemMarkersLayer.getLayerById(marker.text) != null)
         Layers.itemMarkersLayer.getLayerById(marker.text)._popup.setContent(MapBase.updateMarkerContent(marker));
     });
 
