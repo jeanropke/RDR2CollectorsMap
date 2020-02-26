@@ -403,7 +403,6 @@ var MapBase = {
 
           if (Inventory.isEnabled) {
             Inventory.changeMarkerAmount(marker.subdata || marker.text, changeAmount, skipInventory);
-            marker.canCollect = marker.canCollect && Inventory.stackHasSpace(marker);
           }
         }
 

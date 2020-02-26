@@ -233,7 +233,7 @@ Menu.refreshItemsCounter = function () {
   var _markers = MapBase.markers.filter(marker => marker.day == Cycles.categories[marker.category] && marker.isVisible);
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', _markers.filter(marker => marker.isCollected || (Inventory.isEnabled && marker.amount >= Inventory.stackSize)).length)
+    .replace('{count}', _markers.filter(marker => marker.isCollected).length)
     .replace('{max}', _markers.length));
 
   // refresh items value counter
