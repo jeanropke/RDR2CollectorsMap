@@ -572,11 +572,16 @@ var MapBase = {
     var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(videoText).append(importantItem);
     var debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
 
-    var buttons = marker.category == 'random' ? '' : `<div class="marker-popup-buttons">
-    <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
-    <small data-item="${marker.text}">${marker.amount}</small>
-    <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
-    </div>`;
+    var inventoryCount = $(`<small data-item="${marker.text}">${marker.amount}</small>`);
+    inventoryCount.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
+
+    var buttons = marker.category == 'random' ? '' : `
+      <div class="marker-popup-buttons">
+        <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
+        ${inventoryCount.prop('outerHTML')}
+        <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
+      </div>
+    `;
 
     return `<h1>${marker.title} - ${Language.get("menu.day")} ${(marker.day != Cycles.unknownCycleNumber ? marker.day : Language.get('map.unknown_cycle'))}</h1>
         ${warningText}

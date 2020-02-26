@@ -111,8 +111,7 @@ Menu.refreshMenu = function () {
     if (collectibleCategory.hasClass('not-found') && !anyUnavailableCategories.includes(marker.category))
       collectibleCategory.attr('data-help', 'item_category').removeClass('not-found');
 
-    if (Inventory.isEnabled && marker.amount >= Inventory.stackSize)
-      collectibleElement.addClass('disabled');
+    collectibleCountTextElement.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
 
     if (marker.subdata) {
       if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')

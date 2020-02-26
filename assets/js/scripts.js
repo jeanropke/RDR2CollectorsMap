@@ -626,27 +626,13 @@ $('.collection-sell').on('click', function (e) {
 // Reset collections on menu
 $('.collection-reset').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+  var getMarkers = MapBase.markers.filter(_m => !_m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
-  $.each(getMarkers, function (key, value) {
-    if (value.canCollect)
-      return;
-
-    if (Inventory.items[value.text])
-      Inventory.items[value.text].isCollected = false;
-
-    value.isCollected = false;
-    value.canCollect = true;
-
-    // .changeMarkerAmount() must run to check whether to remove "disabled" class
-    if (value.subdata)
-      Inventory.changeMarkerAmount(value.subdata, (Inventory.resetButtonUpdatesInventory ? -1 : 0));
-    else
-      Inventory.changeMarkerAmount(value.text, (Inventory.resetButtonUpdatesInventory ? -1 : 0));
-
-    $(this).removeClass('disabled');
+  $.each(getMarkers, function (key, marker) {
+    MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category);
   });
-  Inventory.save();
+
+  $(this).removeClass('disabled');
 });
 
 //Remove item from map when using the menu

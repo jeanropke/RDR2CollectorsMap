@@ -71,26 +71,15 @@ var Inventory = {
           marker.amount = 0;
       }
 
-      $(`small[data-item=${name}]`).text(marker.amount);
-      $(`[data-type=${name}] .counter-number`).text(marker.amount);
+      var small = $(`small[data-item=${name}]`).text(marker.amount);
+      var cntnm = $(`[data-type=${name}] .counter-number`).text(marker.amount);
+
+      small.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
+      cntnm.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
 
       //If the category is disabled, no needs to update popup
       if (Settings.isPopupsEnabled && Layers.itemMarkersLayer.getLayerById(marker.text) != null && marker.day == Cycles.categories[marker.category])
         Layers.itemMarkersLayer.getLayerById(marker.text)._popup.setContent(MapBase.updateMarkerContent(marker));
-
-      // Update marker according to the stacksize.
-      marker.canCollect = Inventory.isEnabled ? (marker.amount < Inventory.stackSize && !marker.isCollected) : !marker.isCollected;
-
-      // If the marker is already collected, don't change.
-      if (!marker.isCollected) {
-        if (marker.canCollect) {
-          $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
-          $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
-        } else {
-          $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
-          $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
-        }
-      }
     });
 
     if ($("#routes").val() == 1)
