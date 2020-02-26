@@ -484,7 +484,7 @@ var MapBase = {
       case "antique_bottles":
         return "cadetblue";
       case "bird_eggs":
-        return "cadetblue";
+        return "white";
       case "arrowhead":
         return "darkpurple";
       case "family_heirlooms":
