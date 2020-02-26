@@ -307,5 +307,5 @@
 	{"key": "help.enable_cycle_input", "value": "Toggles whether the manual cycle inputs should be visible in the menu."},
 	{"key": "help.show_all_cycles_markers", "value": "Toggles whether all markers from each cycle should be visible."},
 	{"key": "help.enable_context_menu", "value": "Toggles whether context menu (right-click) is enabled."},
-	{"key": "help.custom_marker_color", "value": "Allows you to set one color for all items markers."}
+	{"key": "help.custom_marker_color", "value": "Allows you to set one color for all items markers, or set default different color for each marker category."}
 ]

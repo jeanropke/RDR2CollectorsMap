@@ -306,5 +306,5 @@
 	{"key": "help.enable_cycle_input", "value": "Pozwala na włączenie pola własnoręcznej zmiany każdego cyklu."},
 	{"key": "help.show_all_cycles_markers", "value": "Włącza/ wyłącza wszystkie znaczniki każdego cyklu."},
 	{"key": "help.enable_context_menu", "value": "Włącza/ wyłącza contextmenu (kliknięcie prawym przyciskiem myszy)."},
-	{"key": "help.custom_marker_color", "value": "Pozwala na ustawienie jednego koloru dla wszystkich znaczników rzedmiotów."}
+	{"key": "help.custom_marker_color", "value": "Pozwala na ustawienie jednego koloru dla wszystkich znaczników rzedmiotów, lub ustawienie różnych domyślnych kolorów dla każdej karegorii znaczników."}
 ]
