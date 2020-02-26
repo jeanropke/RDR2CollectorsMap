@@ -93,7 +93,7 @@ var ItemsValue = {
   },
 
   updateValue: function () {
-    $('#items-value').text(` - $${this.finalValue.toFixed(2)}`);
+    $('#items-value').text(`$${this.finalValue.toFixed(2)}`);
   }
 
 };
