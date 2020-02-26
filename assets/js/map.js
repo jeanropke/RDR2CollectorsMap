@@ -201,28 +201,15 @@ var MapBase = {
     var curDate = new Date();
     date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
 
-    if (date != $.cookie('date') && Settings.resetMarkersDaily) {
-      console.log('New day, resetting markers...');
+    if (Settings.resetMarkersDaily && date != $.cookie('date')) {
       var markers = MapBase.markers;
       $.each(markers, function (key, value) {
-        if (Inventory.items[value.text])
-          Inventory.items[value.text].isCollected = false;
-
         markers[key].isCollected = false;
-
-        if (Inventory.isEnabled)
-          markers[key].canCollect = value.amount < Inventory.stackSize;
-        else
-          markers[key].canCollect = true;
-
-        // reset all random spots at cycle change
-        if (value.category == 'random') {
-          value.isCollected = false;
-          value.canCollect = true;
-        }
+        markers[key].canCollect = true;
       });
 
       MapBase.markers = markers;
+      MapBase.saveCollectedItems();
       Inventory.save();
     }
 
