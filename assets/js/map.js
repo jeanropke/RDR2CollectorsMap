@@ -482,15 +482,15 @@ var MapBase = {
       case "lost_earrings":
         return "orange";
       case "antique_bottles":
-        return "darkblue";
+        return "cadetblue";
       case "bird_eggs":
-        return "darkblue";
+        return "cadetblue";
       case "arrowhead":
         return "darkpurple";
       case "family_heirlooms":
         return "purple";
       case "coin":
-        return "orange";
+        return "copper";
       case "weekly":
         return "green";
       default:
