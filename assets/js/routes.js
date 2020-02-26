@@ -291,10 +291,6 @@ var Routes = {
       newMarkers = newMarkers.filter((marker) => { return marker.canCollect && !marker.isCollected; });
     }
 
-    if (Inventory.isEnabled) {
-      newMarkers = newMarkers.filter((marker) => { return marker.amount < Inventory.stackSize; });
-    }
-
     if (Routes.importantOnly) {
       newMarkersImp = newMarkers.filter((marker) => { return MapBase.itemsMarkedAsImportant.indexOf(marker.text) >= 0; });
       if (newMarkers.length > 0 && newMarkersImp.length == 0) {

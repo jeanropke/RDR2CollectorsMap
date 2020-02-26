@@ -86,10 +86,6 @@ var Inventory = {
     ItemsValue.reloadInventoryItems();
   },
 
-  stackHasSpace: function (marker) {
-    return marker.amount < Inventory.stackSize;
-  },
-
   toggleMenuItemsDisabled: function () {
     if (!Inventory.isEnabled) {
       $('#enable-inventory-popups').parent().parent().hide();

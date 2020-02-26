@@ -210,7 +210,6 @@ var MapBase = {
 
       MapBase.markers = markers;
       MapBase.saveCollectedItems();
-      Inventory.save();
     }
 
     $.cookie('date', date, { expires: 999 });

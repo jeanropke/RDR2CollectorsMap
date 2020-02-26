@@ -458,45 +458,26 @@ $("#reset-markers").on("change", function () {
 });
 
 $("#clear-markers").on("click", function () {
-  $.each(MapBase.markers, function (key, value) {
-    if (Inventory.items[value.text])
-      Inventory.items[value.text].isCollected = false;
-
-    value.isCollected = false;
-
-    if (Inventory.isEnabled)
-      value.canCollect = value.amount < Inventory.stackSize;
-    else
-      value.canCollect = true;
+  $.each(MapBase.markers, function (key, marker) {
+    marker.isCollected = false;
+    marker.canCollect = true;
   });
 
-  Inventory.save();
+  MapBase.saveCollectedItems();
   Menu.refreshMenu();
-
   Menu.refreshItemsCounter();
   MapBase.addMarkers();
 });
 
 //Clear inventory on menu
 $("#clear-inventory").on("click", function () {
-
   $.each(MapBase.markers, function (key, marker) {
-    if (marker.day == Cycles.categories[marker.category] && (marker.amount > 0 || marker.isCollected)) {
-      if (Inventory.items[marker.text])
-        Inventory.items[marker.text].amount = 0;
-
-      marker.amount = 0;
-
-      if (Inventory.isEnabled)
-        marker.canCollect = marker.amount < Inventory.stackSize && !marker.isCollected;
-      else
-        marker.canCollect = !marker.isCollected;
-    }
+    marker.amount = 0;
   });
 
   Inventory.save();
-  MapBase.addMarkers();
   Menu.refreshMenu();
+  MapBase.addMarkers();
 });
 
 //Enable & disable custom routes on menu
