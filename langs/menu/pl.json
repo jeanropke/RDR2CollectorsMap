@@ -225,6 +225,7 @@
 	{"key": "menu.custom_marker_purple", "value": "Fioletowy"},
 	{"key": "menu.custom_marker_dark_red", "value": "Ciemnoczerwony"},
 	{"key": "menu.custom_marker_dark_blue", "value": "Ciemnoniebieski"},
+	{"key": "menu.custom_marker_fixed_colors", "value": "Zawsze takie same kolory"},
 
 	{"key": "help.default", "value": "Najedź lub przytrzymaj opcję menu na urz. mobilnym, aby wyświetlić podpowiedzi."},
 	{"key": "help.clear_custom_routes", "value": "Usuwa wszystkie własne trasy na mapie."},
