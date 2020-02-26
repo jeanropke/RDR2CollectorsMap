@@ -572,6 +572,8 @@ var MapBase = {
   },
 
   addMarkerOnMap: function (marker, opacity = 1) {
+    marker.isVisible = false;
+
     if (marker.day != Cycles.categories[marker.category] && !Settings.showAllMarkers) return;
     if (!uniqueSearchMarkers.includes(marker)) return;
     if (!enabledCategories.includes(marker.category)) return;
