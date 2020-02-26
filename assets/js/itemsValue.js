@@ -32,16 +32,15 @@ var ItemsValue = {
     this.resetItemsData();
 
     var inventoryItems = [];
-    if (Inventory.isEnabled) {
+    if (Inventory.isEnabled)
       inventoryItems = Inventory.items;
-    } else {
-      inventoryItems = MapBase.collectedItems.filter(function (marker) { return marker.indexOf('random_item') === 0; });
-    }
+    else
+      inventoryItems = MapBase.collectedItems;
 
     $.each(inventoryItems, function (key, value) {
-      var itemName = key;
-      itemName = itemName.replace(/_\d/, '');
+      if (key.indexOf('random_item') !== -1) return;
 
+      var itemName = key.replace(/_\d/, '');
       var itemAmount = (Inventory.isEnabled ? value : value ? 1 : 0);
       var tempCategory = itemName.split("_")[0];
 
