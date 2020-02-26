@@ -217,6 +217,14 @@
 	{"key": "menu.enable_cycle_input", "value": "Enable manual cycle input"},
 	{"key": "menu.show_all_cycles_markers", "value": "Show all markers"},
 	{"key": "menu.enable_context_menu", "value": "Enable context menu"},
+	{"key": "menu.custom_marker_color", "value": "Custom markers color"},
+	{"key": "menu.custom_marker_default", "value": "Default colors"},
+	{"key": "menu.custom_marker_blue", "value": "Blue"},
+	{"key": "menu.custom_marker_orange", "value": "Orange"},
+	{"key": "menu.custom_marker_pink", "value": "Pink"},
+	{"key": "menu.custom_marker_purple", "value": "Purple"},
+	{"key": "menu.custom_marker_dark_red", "value": "Dark red"},
+	{"key": "menu.custom_marker_dark_blue", "value": "Dark blue"},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
@@ -296,5 +304,6 @@
 	{"key": "help.show_debug", "value": "Toggles whether the debug settings should be visible in the menu."},
 	{"key": "help.enable_cycle_input", "value": "Toggles whether the manual cycle inputs should be visible in the menu."},
 	{"key": "help.show_all_cycles_markers", "value": "Toggles whether all markers from each cycle should be visible."},
-	{"key": "help.enable_context_menu", "value": "Toggles whether context menu (right-click) is enabled."}
+	{"key": "help.enable_context_menu", "value": "Toggles whether context menu (right-click) is enabled."},
+	{"key": "help.custom_marker_color", "value": "Allows you to set one color for all items markers."}
 ]
