@@ -61,9 +61,16 @@ var Inventory = {
       if (!skipInventory || skipInventory && Inventory.isMenuUpdateEnabled) {
         marker.amount = parseInt(marker.amount) + amount;
 
+        if (marker.amount >= Inventory.stackSize)
+          marker.amount = Inventory.stackSize;
+
         if (marker.amount < 0)
           marker.amount = 0;
       }
+
+      if (!Inventory.isEnabled) return;
+
+      marker.canCollect = marker.amount < Inventory.stackSize && !marker.isCollected;
 
       var small = $(`small[data-item=${name}]`).text(marker.amount);
       var cntnm = $(`[data-type=${name}] .counter-number`).text(marker.amount);
@@ -71,9 +78,19 @@ var Inventory = {
       small.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
       cntnm.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
 
-      //If the category is disabled, no needs to update popup
+      // If the category is disabled, no needs to update popup
       if (Settings.isPopupsEnabled && marker.day == Cycles.categories[marker.category] && Layers.itemMarkersLayer.getLayerById(marker.text) != null)
         Layers.itemMarkersLayer.getLayerById(marker.text)._popup.setContent(MapBase.updateMarkerContent(marker));
+
+      if ((marker.isCollected || (Inventory.isEnabled && marker.amount >= Inventory.stackSize)) && marker.day == Cycles.categories[marker.category]) {
+        $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
+        $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
+      } else {
+        $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
+        $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
+      }
+
+      MapBase.toggleCollectibleMenu(marker.day, marker.text, marker.subdata, marker.category);
     });
 
     if ($("#routes").val() == 1)

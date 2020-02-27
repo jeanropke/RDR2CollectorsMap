@@ -13,5 +13,5 @@ var Marker = function (text, lat, lng, tool, day, category, subdata, video, heig
   this.isVisible = enabledCategories.includes(this.category);
   this.amount = Inventory.items[this.text.replace(/_\d/, '')] || 0;
   this.isCollected = MapBase.collectedItems[this.text] || false;
-  this.canCollect = !this.isCollected;
+  this.canCollect = Inventory.isEnabled ? (this.amount < Inventory.stackSize && !this.isCollected) : !this.isCollected;
 };

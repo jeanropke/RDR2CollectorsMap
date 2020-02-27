@@ -371,28 +371,36 @@ var MapBase = {
       $.each(markers, function (key, marker) {
         if (text != subdata && marker.text != text) return;
 
-        if (marker.day == Cycles.categories[marker.category]) {
-          var changeAmount = 0;
+        var changeAmount = 0;
 
-          if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
+        if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
+          if (marker.day == Cycles.categories[marker.category]) {
             marker.isCollected = true;
-            marker.canCollect = false;
             changeAmount = 1;
-          } else {
+          }
+
+          marker.canCollect = false;
+        } else {
+          if (marker.day == Cycles.categories[marker.category]) {
             marker.isCollected = false;
-            marker.canCollect = true;
             changeAmount = -1;
           }
 
-          Inventory.changeMarkerAmount(marker.subdata || marker.text, changeAmount, skipInventory);
+          marker.canCollect = true;
         }
 
-        if (marker.canCollect) {
-          $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
-          $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
-        } else {
-          $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
-          $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
+        Inventory.changeMarkerAmount(marker.subdata || marker.text, changeAmount, skipInventory);
+
+        if (!Inventory.isEnabled) {
+          if (marker.isCollected && marker.day == Cycles.categories[marker.category]) {
+            $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
+            $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
+          } else {
+            $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
+            $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
+          }
+
+          MapBase.toggleCollectibleMenu(marker.day, marker.text, marker.subdata, marker.category, markers);
         }
 
         try {
@@ -404,14 +412,6 @@ var MapBase = {
           console.error(error);
         }
       });
-
-      if (subdata != '' && day != null && day == Cycles.categories[category]) {
-        if ((markers.length == 1 && !markers[0].canCollect) || markers.every(function (marker) { return !marker.canCollect; })) {
-          $(`[data-type=${subdata}]`).addClass('disabled');
-        } else {
-          $(`[data-type=${subdata}]`).removeClass('disabled');
-        }
-      }
     }
 
     if (Routes.ignoreCollected)
@@ -419,6 +419,22 @@ var MapBase = {
 
     MapBase.saveCollectedItems();
     Menu.refreshItemsCounter();
+  },
+
+  toggleCollectibleMenu: function (day, text, subdata, category, markers = null) {
+    if (markers === null) {
+      markers = MapBase.markers.filter(function (marker) {
+        return marker.day == day && (marker.text == text || marker.subdata == subdata);
+      });
+    }
+
+    if (subdata != '' && day != null && day == Cycles.categories[category]) {
+      if ((markers.length == 1 && !markers[0].canCollect) || markers.every(function (marker) { return !marker.canCollect; })) {
+        $(`[data-type=${subdata}]`).addClass('disabled');
+      } else {
+        $(`[data-type=${subdata}]`).removeClass('disabled');
+      }
+    }
   },
 
   loadCollectedItems: function () {
