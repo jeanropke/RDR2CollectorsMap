@@ -1296,5 +1296,11 @@
 	{"key": "weekly.desc.festive_feast_set", "value": "Festive Feast"},
 	{"key": "weekly.desc.new_year_set", "value": "New Year"},
 	{"key": "weekly.desc.lovers_set", "value": "Влюбленные"},
-	{"key": "weekly.desc.egg_hunt_set", "value": "Egg Hunt"}
+	{"key": "weekly.desc.egg_hunt_set", "value": "Egg Hunt"},
+	
+	{"key": "item_pocket_watch_gold.name", "value": "Золотые карманные часы"},
+    	{"key": "item_carcass_squirrel_perfect.name", "value": "Perfect Squirrel Carcass"},
+    	{"key": "item_gold_tooth.name", "value": "Gold Tooth"},
+    	{"key": "item_cooked_plump_bird_thyme.name", "value": "Cooked Plump Bird (Thyme)"},
+   	 {"key": "item_pocket_watch_platinum.name", "value": "Platinum Pocket Watch"}
 ]
