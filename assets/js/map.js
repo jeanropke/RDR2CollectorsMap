@@ -792,12 +792,9 @@ var MapBase = {
         `
       })
     });
-    var customMarkerName = ($('#debug-marker-name').val() != '' ? $('#debug-marker-name').val() : name);
-    marker.bindPopup(`<h1>${customMarkerName}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, { minWidth: 300 });
+
+    marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, { minWidth: 300 });
     Layers.itemMarkersLayer.addLayer(marker);
-    var tempArray = [];
-    tempArray.push(lat || 0, long || 0, customMarkerName);
-    debugMarkersArray.push(tempArray);
   },
 
   addCoordsOnMap: function (coords) {
