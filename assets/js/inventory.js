@@ -85,7 +85,7 @@ var Inventory = {
       if ((marker.isCollected || (Inventory.isEnabled && marker.amount >= Inventory.stackSize)) && marker.day == Cycles.categories[marker.category]) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
         $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
-      } else {
+      } else if (marker.day == Cycles.categories[marker.category]) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
         $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
       }
