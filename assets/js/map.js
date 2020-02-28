@@ -444,7 +444,6 @@ var MapBase = {
 
   saveCollectedItems: function () {
     $.each(MapBase.markers, function (key, marker) {
-      if (marker.category == 'random') return;
       if (marker.day != Cycles.categories[marker.category]) return;
 
       MapBase.collectedItems[marker.text] = marker.isCollected;
