@@ -184,7 +184,7 @@ var MapBase = {
     $.getJSON('data/overlays_beta.json?nocache=' + nocache)
       .done(function (data) {
         MapBase.overlays = data;
-        MapBase.setOverlays(Settings.overlayOpacity);
+        MapBase.setOverlaysBeta(Settings.overlayOpacity);
         console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
       });
   },
