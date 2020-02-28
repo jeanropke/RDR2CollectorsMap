@@ -445,7 +445,7 @@
     "card_cups": {
         "1": [
             { "text": "cups_ace", "height": "0", "tool": "0", "lat": "-26.3921", "lng": "90.5991", "video": "https://www.youtube.com/watch?v=PBpwf3ILgkM&t=45s" },
-            { "text": "cups_two", "height": "0", "tool": "0", "lat": "-94.8970", "lng": "126.5156", "video": "https://www.youtube.com/watch?v=PBpwf3ILgkM&t=78s" },
+            { "text": "cups_two", "height": "-1", "tool": "0", "lat": "-94.8970", "lng": "126.5156", "video": "https://www.youtube.com/watch?v=PBpwf3ILgkM&t=78s" },
             { "text": "cups_three", "height": "0", "tool": "0", "lat": "-105.6271", "lng": "37.3121", "video": "https://www.youtube.com/watch?v=PBpwf3ILgkM&t=107s" },
 			{ "text": "cups_four", "height": "0", "tool": "0", "lat": "-54.6936", "lng": "157.4696", "video": "https://www.youtube.com/watch?v=PBpwf3ILgkM&t=137s" },
             { "text": "cups_five", "height": "0", "tool": "0", "lat": "-72.4538", "lng": "94.3003", "video": "https://www.youtube.com/watch?v=PBpwf3ILgkM&t=170s" },
