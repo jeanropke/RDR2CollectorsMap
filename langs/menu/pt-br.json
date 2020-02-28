@@ -200,7 +200,7 @@
 	{"key": "menu.modal_clear_important_items_title", "value": "Limpar marcadores importantes?"},
 	{"key": "menu.sort_items_alphabetically", "value": "Orderar itens alfabeticamente"},
 	{"key": "menu.enable_marker_shadows", "value": "Ativar sombra dos marcadores"},
-	{"key": "map.refresh_for_updates_alert", "value": "Os ciclos de hoje ainda não foram atualizados. Atualize a página para ver se houve atualização."},
+	{"key": "map.refresh_for_updates_alert", "value": "Os ciclos de hoje ainda não foram definidos. Por favor, atualize a página para conferir se teve atualização."},
 	{"key": "map.unknown_cycle_description", "value": "Esse item não tem um ciclo definido, se você encontrar alguma coisa aqui, reporte no: {GitHub} ou {Discord}."},
 	{"key": "map.unknown_cycle", "value": "desconhecido"},
 	{"key": "menu.delete_all_settings", "value": "Redefinir todas configurações"},
