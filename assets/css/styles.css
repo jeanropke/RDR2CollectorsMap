@@ -181,7 +181,40 @@ input, textarea, select, .btn {
     text-align: center;
 }
 
-.map-alert .close-button, .map-cycle-alert .close-button {
+@media (max-width: 1024px) {
+    .filter-alert {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        z-index: 990;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1025px) {
+    .filter-alert {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: 20px;
+        z-index: 990;
+        text-align: center;
+    }
+}
+
+.filter-alert span {
+    background-image: url(../images/menu_hover.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 10px 25px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.map-alert .close-button, .map-cycle-alert .close-button, .filter-alert .close-button {
     position: absolute;
     top: 0;
     right: 15px;

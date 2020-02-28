@@ -278,6 +278,14 @@ var MapBase = {
   },
 
   onSearch: function (searchString) {
+    if (searchString) {
+      Menu.hasSearchFilters = true;
+    } else {
+      Menu.hasSearchFilters = false;
+    }
+
+    Menu.updateHasFilters();
+
     searchTerms = [];
     $.each(searchString.split(';'), function (key, value) {
       if ($.inArray(value.trim(), searchTerms) == -1) {
@@ -317,6 +325,14 @@ var MapBase = {
       }, 0);
       return;
     }
+
+    if (parseInt(Settings.toolType) !== 3) {
+      Menu.hasToolFilters = true;
+    } else {
+      Menu.hasToolFilters = false;
+    }
+
+    Menu.updateHasFilters();
 
     if (Layers.itemMarkersLayer != null)
       Layers.itemMarkersLayer.clearLayers();
@@ -629,7 +645,7 @@ var MapBase = {
 
     var toolType = parseInt(Settings.toolType);
     var markerTool = parseInt(marker.tool);
-    if (toolType > 0) {
+    if (toolType >= 0) {
       if (toolType < markerTool) return;
     } else {
       if (toolType == -1 && markerTool != 1) return;

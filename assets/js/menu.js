@@ -3,6 +3,24 @@
  */
 
 var Menu = {
+  hasSearchFilters: false,
+  hasToolFilters: false,
+
+  updateHasFilters: function () {
+    if (Menu.hasSearchFilters && Menu.hasToolFilters) {
+      $('.filter-alert span').html(Language.get('map.has_multi_filter_alert'));
+      $('.filter-alert').removeClass('hidden');
+    } else if (Menu.hasSearchFilters) {
+      $('.filter-alert span').html(Language.get('map.has_search_filter_alert'));
+      $('.filter-alert').removeClass('hidden');
+    } else if (Menu.hasToolFilters) {
+      $('.filter-alert span').html(Language.get('map.has_tool_filter_alert'));
+      $('.filter-alert').removeClass('hidden');
+    } else {
+      $('.filter-alert').addClass('hidden');
+    }
+  },
+
   reorderMenu: function (menu) {
     $(menu).children().sort(function (a, b) {
       return a.textContent.toLowerCase().localeCompare(b.textContent.toLowerCase());
