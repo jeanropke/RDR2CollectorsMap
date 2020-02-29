@@ -66,6 +66,7 @@
 	{"key": "menu.tree_map", "value": "Treasure Map on Tree"},
 	{"key": "menu.egg_encounter", "value": "Bird Egg Nest"},
 	{"key": "menu.grave_robber", "value": "Grave Robber"},
+	{"key": "menu.rival_collector", "value": "Rival Collector"},
 	{"key": "menu.condor_egg", "value": "Condor Egg"},
 	{"key": "menu.dog_encounter", "value": "Dog Encounter"},
 	{"key": "menu.auto_refresh", "value": "Change cycle automatically"},
