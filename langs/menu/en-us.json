@@ -66,6 +66,7 @@
 	{"key": "menu.tree_map", "value": "Treasure Map on Tree"},
 	{"key": "menu.egg_encounter", "value": "Bird Egg Nest"},
 	{"key": "menu.grave_robber", "value": "Grave Robber"},
+	{"key": "menu.rival_collector", "value": "Rival Collector"},
 	{"key": "menu.condor_egg", "value": "Condor Egg"},
 	{"key": "menu.dog_encounter", "value": "Dog Encounter"},
 	{"key": "menu.auto_refresh", "value": "Change cycle automatically"},
@@ -228,6 +229,9 @@
 	{"key": "menu.custom_marker_fixed_colors", "value": "Fixed colors"},
 	{"key": "menu.weekly_item_description", "value": "This week's collection consists of these items. Collect them all and send them to Madam Nazar for an XP and RDO$ bonus."},
 	{"key": "menu.show_weekly", "value": "Show weekly collection"},
+	{"key": "map.has_multi_filter_alert", "value": "Some markers are being hidden by your \"Tool type\" setting and search query."},
+	{"key": "map.has_search_filter_alert", "value": "Some markers are being hidden by your search query."},
+	{"key": "map.has_tool_filter_alert", "value": "Some markers are being hidden by your \"Tool type\" setting."},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
