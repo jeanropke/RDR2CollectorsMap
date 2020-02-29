@@ -791,7 +791,7 @@ var MapBase = {
     MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
 
     $.each(MapBase.importantItems, function (key, value) {
-      $(`[data-marker$=${value}]`).addClass('highlight-items');
+      $(`[data-marker*=${value}]`).addClass('highlight-items');
       $(`[data-type=${value}]`).addClass('highlight-important-items-menu');
     });
   },
