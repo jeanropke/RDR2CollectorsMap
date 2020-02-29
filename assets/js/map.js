@@ -536,7 +536,7 @@ var MapBase = {
       case "card_pentacles":
         return "blue";
       case "lost_bracelet":
-        return "orange";
+        return "beige";
       case "lost_necklaces":
         return "orange";
       case "lost_ring":
@@ -552,9 +552,9 @@ var MapBase = {
       case "family_heirlooms":
         return "purple";
       case "coin":
-        return "orange";
-      case "weekly":
         return "green";
+      case "weekly":
+        return "lightgreen";
       default:
         return "lightred";
     }
@@ -657,18 +657,19 @@ var MapBase = {
     }).length > 0;
 
     var overlay = '';
-    var markerBackgroundColor = (Settings.markersCustomColor === 7
+    var markerBackgroundColor = (Settings.markersCustomColor === 1
       ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
-      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + (Settings.markersCustomColor === 0 ? marker.day : Settings.markersCustomColor)));
+      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day));
 
     var icon = `./assets/images/icons/${marker.category}.png`;
     var background = `./assets/images/icons/marker_${markerBackgroundColor}.png`;
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override
-    if (marker.category == 'random') {
+    if (marker.category === 'random') {
+      var color = (Settings.markersCustomColor == 1 ? (marker.tool == 2 ? "black" : "lightgray") : "lightgray");
       icon = `./assets/images/icons/${MapBase.getToolName(marker.tool)}.png`;
-      background = './assets/images/icons/marker_lightgray.png';
+      background = `./assets/images/icons/marker_${color}.png`;
     }
 
     // highlight unknown cycles markers on red
