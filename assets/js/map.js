@@ -552,9 +552,9 @@ var MapBase = {
       case "family_heirlooms":
         return "purple";
       case "coin":
-        return "green";
+        return "lightred";
       case "weekly":
-        return "lightgreen";
+        return "green";
       default:
         return "lightred";
     }
@@ -667,7 +667,7 @@ var MapBase = {
 
     // Random items override
     if (marker.category === 'random') {
-      var color = (Settings.markersCustomColor == 1 ? (marker.tool == 2 ? "gray" : "lightgray") : "lightgray");
+      var color = (Settings.markersCustomColor == 1 ? (marker.tool == 2 ? "black" : "lightgray") : "lightgray");
       icon = `./assets/images/icons/${MapBase.getToolName(marker.tool)}.png`;
       background = `./assets/images/icons/marker_${color}.png`;
     }
@@ -885,5 +885,12 @@ var MapBase = {
         finished.call(null);
       }
     })();
+  },
+
+  showOnlyImportantItems: function () {
+    MapBase.markers.filter(function (item) {
+      item.hasClass()
+    })
   }
+
 };
