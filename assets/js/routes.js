@@ -344,5 +344,23 @@ var Routes = {
 
     // Draw all paths on the map, and save the instance of the polyline to be able to clean it up later.
     Routes.lastPolyline = L.polyline(polylines).addTo(MapBase.map);
+  },
+
+  setCustomRouteStart: function (lat, lng) {
+    lat = parseFloat(lat) ? parseFloat(lat) : -119.9063;
+    lng = parseFloat(lng) ? parseFloat(lng) : 8.0313;
+
+    $('#generate-route-start').val("Custom");
+    $('#generate-route-start-lat').val(lat);
+    $('#generate-route-start-lat').parent().show();
+    $('#generate-route-start-lng').val(lng);
+    $('#generate-route-start-lng').parent().show();
+
+    $.cookie('generator-path-start', 'Custom', { expires: 999 });
+    $.cookie('generator-path-start-lat', lat, { expires: 999 });
+    $.cookie('generator-path-start-lng', lng, { expires: 999 });
+
+    Routes.startMarkerLat = lat;
+    Routes.startMarkerLng = lng;
   }
 };

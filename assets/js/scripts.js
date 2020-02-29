@@ -626,7 +626,7 @@ $('.submenu-only').on('click', function (e) {
 });
 
 //Sell collections on menu
-$('.collection-sell').on('click', function (e) {
+$('.menu-hidden .collection-sell').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
   var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
@@ -637,6 +637,18 @@ $('.collection-sell').on('click', function (e) {
     }
     else {
       Inventory.changeMarkerAmount(value.text, -1);
+    }
+  });
+});
+
+$('.weekly-item-listings .collection-sell').on('click', function (e) {
+  var weeklyItems = weeklySetData.sets[weeklySetData.current];
+
+  $.each(weeklyItems, function (key, value) {
+    var amount = Inventory.items[value.item];
+
+    if (amount !== undefined) {
+      Inventory.changeMarkerAmount(value.item, -1);
     }
   });
 });
@@ -796,10 +808,11 @@ $('#enable-inventory').on("change", function () {
   $.cookie('inventory-enabled', Inventory.isEnabled ? '1' : '0', { expires: 999 });
 
   MapBase.addMarkers();
+  Menu.refreshWeeklyItems();
   Inventory.toggleMenuItemsDisabled();
   ItemsValue.reloadInventoryItems();
 
-  $('.collection-sell, .counter').toggle(Inventory.isEnabled);
+  $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(Inventory.isEnabled);
 });
 
 $('#enable-inventory-popups').on("change", function () {
@@ -819,7 +832,7 @@ $('#reset-collection-updates-inventory').on("change", function () {
   $.cookie('reset-updates-inventory-enabled', Inventory.resetButtonUpdatesInventory ? '1' : '0', { expires: 999 });
 });
 
-$('.collection-sell, .counter').toggle(Inventory.isEnabled);
+$('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(Inventory.isEnabled);
 
 //Enable & disable inventory on menu
 $('#inventory-stack').on("change", function () {

@@ -98,6 +98,7 @@ var Inventory = {
 
     Inventory.save();
     Menu.refreshItemsCounter();
+    Menu.refreshWeeklyItems();
   },
 
   toggleMenuItemsDisabled: function () {

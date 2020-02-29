@@ -186,20 +186,6 @@ Menu.refreshMenu = function () {
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
   });
 
-  $('#weekly-container .weekly-item-listings').children('.weekly-item-listing').remove();
-  $('#weekly-container .weekly-item-title').text(Language.get('weekly.desc.' + weeklySetData.current));
-
-  $.each(weeklyItems, function (key, value) {
-    var element = `
-      <div class="weekly-item-listing">
-        <img class="icon" src="./assets/images/icons/game/${value.item}.png" alt="Weekly item icon" />
-        <span>${Language.get(value.item + '.name')}</span>
-      </div>
-    `;
-
-    $('#weekly-container .weekly-item-listings').append(element);
-  });
-
   $('.menu-hidden[data-type]').each(function (key, value) {
     var category = $(this);
 
@@ -232,6 +218,7 @@ Menu.refreshMenu = function () {
   });
 
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
+  Menu.refreshWeeklyItems();
   MapBase.loadImportantItems();
 
   $('.map-cycle-alert span').html(Language.get('map.refresh_for_updates_alert'));
@@ -271,6 +258,39 @@ Menu.refreshItemsCounter = function () {
   // refresh items value counter
   ItemsValue.reloadInventoryItems();
 };
+
+Menu.refreshWeeklyItems = function () {
+  var weeklyItems = weeklySetData.sets[weeklySetData.current];
+
+  $('#weekly-container .weekly-item-listings').children('.weekly-item-listing').remove();
+  $('#weekly-container .weekly-item-title').text(Language.get('weekly.desc.' + weeklySetData.current));
+
+  $.each(weeklyItems, function (key, value) {
+    var inventoryCount = '';
+
+    if (Inventory.isEnabled) {
+      var amount = Inventory.items[value.item];
+
+      if (amount !== undefined) {
+        inventoryCount = $(`<small class="counter-number">${amount}</small>`);
+        inventoryCount.toggleClass('text-danger', amount >= Inventory.stackSize);
+        inventoryCount = inventoryCount.prop('outerHTML');
+      }
+    }
+
+    var element = `
+      <div class="weekly-item-listing">
+        <span>
+          <img class="icon" src="./assets/images/icons/game/${value.item}.png" alt="Weekly item icon" />
+          <span>${Language.get(value.item + '.name')}</span>
+        </span>
+        ${inventoryCount}
+      </div>
+    `;
+
+    $('#weekly-container .weekly-item-listings').append(element);
+  });
+}
 
 // Remove highlight from all important items
 $('#clear_highlights').on('click', function () {
