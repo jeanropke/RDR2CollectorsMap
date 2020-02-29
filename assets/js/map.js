@@ -667,7 +667,7 @@ var MapBase = {
 
     // Random items override
     if (marker.category === 'random') {
-      var color = (Settings.markersCustomColor == 1 ? (marker.tool == 2 ? "black" : "lightgray") : "lightgray");
+      var color = (Settings.markersCustomColor == 1 ? (marker.tool == 2 ? "gray" : "lightgray") : "lightgray");
       icon = `./assets/images/icons/${MapBase.getToolName(marker.tool)}.png`;
       background = `./assets/images/icons/marker_${color}.png`;
     }
