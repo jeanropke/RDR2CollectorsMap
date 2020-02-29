@@ -885,12 +885,6 @@ var MapBase = {
         finished.call(null);
       }
     })();
-  },
-
-  showOnlyImportantItems: function () {
-    MapBase.markers.filter(function (item) {
-      item.hasClass()
-    })
   }
 
 };
