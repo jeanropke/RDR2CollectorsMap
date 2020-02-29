@@ -555,7 +555,7 @@ input, textarea, select, .btn {
     transition: max-height 400ms linear;
 }
 
-.side-menu .menu-hidden .collection-value {
+.side-menu .collection-value {
     text-align: center;
     border-top: 1px white solid;
     border-bottom: 1px white solid;
@@ -564,28 +564,32 @@ input, textarea, select, .btn {
     justify-content: space-around;
 }
 
-.side-menu .menu-hidden .collection-value a {
+.side-menu .weekly-item-listings .collection-value {
+    margin-bottom: 6px;
+}
+
+.side-menu .collection-value a {
     color: #fff;
 }
 
-.side-menu .menu-hidden .collection-sell, .collection-reset {
+.side-menu .collection-sell, .collection-reset {
     cursor: pointer;
     user-select: none;
 }
 
-.side-menu .menu-hidden .collectible-wrapper {
+.side-menu .collectible-wrapper {
     padding: 6px 12px;
     cursor: pointer;
     user-select: none;
 }
 
-.side-menu .menu-hidden .collectible-icon {
+.side-menu .collectible-icon {
     float: left;
     height: 28px;
     margin-right: 10px;
 }
 
-.side-menu .menu-hidden .collectible-icon.random-encounter {
+.side-menu .collectible-icon.random-encounter {
     width: 32px;
     height: auto;
     margin-top: 1px;
@@ -593,19 +597,19 @@ input, textarea, select, .btn {
     margin-bottom: -3px;
 }
 
-.side-menu .menu-hidden .collectible-text {
+.side-menu .collectible-text {
     display: flex;
     justify-content: space-between;
     font-size: 15px;
 }
 
-.side-menu .menu-hidden .collectible, .input-container label, .menu-option span {
+.side-menu .collectible, .input-container label, .menu-option span {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.side-menu .menu-hidden .collectible, .input-container label {
+.side-menu .collectible, .input-container label {
     line-height: 24px;
 }
 
@@ -629,6 +633,10 @@ input, textarea, select, .btn {
     padding: 14px 8px;
     border-radius: 3px;
     display: none;
+}
+
+.lat-lng-container a {
+    color: #fff;
 }
 
 .lat-lng-container #lat-lng-container-close-button {
@@ -740,6 +748,7 @@ a.wiki-page:visited {
     min-width: 12px;
     display: inline-block;
     text-align: center;
+    font-size: 15px;
 }
 
 .counter-button {
@@ -932,7 +941,7 @@ a.no-style:visited {
 .weekly-item-listing {
     cursor: default;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     padding: 2px 12px;
 }
 

@@ -852,7 +852,9 @@ var MapBase = {
     if (Settings.isCoordsEnabled) {
       $('.lat-lng-container').css('display', 'block');
 
-      $('.lat-lng-container p').html(`Latitude: ${parseFloat(coords.latlng.lat.toFixed(4))}<br>Longitude: ${parseFloat(coords.latlng.lng.toFixed(4))}`);
+      var lat = parseFloat(coords.latlng.lat.toFixed(4));
+      var lng = parseFloat(coords.latlng.lng.toFixed(4));
+      $('.lat-lng-container p').html(`Latitude: ${lat}<br>Longitude: ${lng}<br><a href="javascript:void(0)" onclick="Routes.setCustomRouteStart('${lat}', '${lng}')">Set as route start</a>`);
 
       $('#lat-lng-container-close-button').click(function () {
         $('.lat-lng-container').css('display', 'none');
@@ -886,5 +888,4 @@ var MapBase = {
       }
     })();
   }
-
 };
