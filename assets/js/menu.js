@@ -226,7 +226,6 @@ Menu.refreshMenu = function () {
 
   Menu.reorderMenu('.menu-hidden[data-type=treasure]');
   Menu.refreshWeeklyItems();
-  MapBase.loadImportantItems();
 
   $('.map-cycle-alert span').html(Language.get('map.refresh_for_updates_alert'));
 };

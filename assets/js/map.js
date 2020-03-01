@@ -378,7 +378,6 @@ var MapBase = {
     if (Routes.generateOnVisit)
       Routes.generatePath(true);
 
-    MapBase.loadImportantItems();
   },
 
   loadWeeklySet: function () {
@@ -762,16 +761,15 @@ var MapBase = {
   },
 
   highlightImportantItem: function (text, category = '') {
-
     if (category == 'american_flowers' || category == 'bird_eggs')
         text = text.replace(/(_\d+)/, '');
 
-    var textMenu = text.replace(/egg_|flower_(\w+)/, '$1');
-    
+    var textMenu = text.replace(/egg_|flower_/, '');
+
     $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
 
     $.each($(`[data-marker*=${text}]`), function (key, marker) {
-      if (category !== 'random')
+      if (category !== 'random' && category !== '')
         var markerData = $(this).data('marker').replace(/_\d/, '');
       else
         var markerData = $(this).data('marker');
@@ -792,15 +790,20 @@ var MapBase = {
     localStorage.setItem('importantItems', JSON.stringify(MapBase.importantItems));
   },
 
-  loadImportantItems() {
+  loadImportantItems: function () {
     if (typeof localStorage.importantItems === 'undefined')
       localStorage.importantItems = "[]";
 
-    MapBase.itemsMarkedAsImportant = JSON.parse(localStorage.importantItems) || [];
+      MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
 
-    $.each(MapBase.itemsMarkedAsImportant, function (key, value) {
-      $(`[data-marker*=${value}]`).addClass('highlight-items');
-      $(`[data-type=${value}]`).addClass('highlight-important-items-menu');
+    $.each(MapBase.importantItems, function (key, value) {
+      if (/random_item_\d+/.test(value))
+        $(`[data-marker=${value}]`).addClass('highlight-items');
+      else
+        $(`[data-marker*=${value}]`).addClass('highlight-items');
+
+      var textMenu = value.replace(/egg_|flower_/, '');
+      $(`[data-type=${textMenu}]`).addClass('highlight-important-items-menu');
     });
   },
 
