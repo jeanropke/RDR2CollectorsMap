@@ -761,14 +761,14 @@ var MapBase = {
     MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   },
 
-  highlightImportantItem(text, category = '') {
-    if (category === 'american_flowers' || category === 'bird_eggs')
-      text = text.replace(/_\d/, '');
+  highlightImportantItem: function (text, category = '') {
 
-    $(`[data-type=${text}]`).toggleClass('highlight-important-items-menu');
+    if (category == 'american_flowers' || category == 'bird_eggs')
+        text = text.replace(/(_\d+)/, '');
 
-    if (text === 'eagle') // prevent from highlight eagle coins and eggs together
-      text = 'egg_eagle';
+    var textMenu = text.replace(/egg_|flower_(\w+)/, '$1');
+    
+    $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
 
     $.each($(`[data-marker*=${text}]`), function (key, marker) {
       if (category !== 'random')
@@ -793,12 +793,12 @@ var MapBase = {
   },
 
   loadImportantItems() {
-    if (localStorage.importantItems === undefined)
+    if (typeof localStorage.importantItems === 'undefined')
       localStorage.importantItems = "[]";
 
-    MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
+    MapBase.itemsMarkedAsImportant = JSON.parse(localStorage.importantItems) || [];
 
-    $.each(MapBase.importantItems, function (key, value) {
+    $.each(MapBase.itemsMarkedAsImportant, function (key, value) {
       $(`[data-marker*=${value}]`).addClass('highlight-items');
       $(`[data-type=${value}]`).addClass('highlight-important-items-menu');
     });

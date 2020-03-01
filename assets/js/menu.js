@@ -120,8 +120,15 @@ Menu.refreshMenu = function () {
       if ($.cookie('right-click') == null)
         e.preventDefault();
 
-      if (marker.subdata != 'agarita' && marker.subdata != 'blood_flower')
-        MapBase.highlightImportantItem(marker.subdata || marker.text);
+      if (marker.subdata !== 'agarita' && marker.subdata !== 'blood_flower') {
+        var prefix = '';
+        if (marker.category === 'american_flowers')
+          prefix = 'flower_';
+
+        else if (marker.category === 'bird_eggs')
+          prefix = 'egg_';
+        MapBase.highlightImportantItem(prefix + (marker.subdata || marker.text), marker.category);
+      }
     });
 
     var collectibleCountElement = $('<span>').addClass('counter').append(collectibleCountDecreaseElement).append(collectibleCountTextElement).append(collectibleCountIncreaseElement);
