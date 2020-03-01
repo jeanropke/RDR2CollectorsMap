@@ -45,7 +45,7 @@ var Inventory = {
     
     $('#inventory-stack').val(Inventory.stackSize);
 
-    this.toggleMenuItemsDisabled();    
+    this.toggleMenuItemsDisabled();
   },
 
   load: function () {
@@ -57,7 +57,7 @@ var Inventory = {
       marker.amount = Inventory.items[marker.text.replace(/_\d/, '')];
     });
 
-    ItemsValue.load();    
+    ItemsValue.load();
   },
 
   save: function () {
