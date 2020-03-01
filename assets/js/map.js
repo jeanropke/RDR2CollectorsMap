@@ -236,7 +236,7 @@ var MapBase = {
       var markers = MapBase.markers;
       $.each(markers, function (key, value) {
         markers[key].isCollected = false;
-        markers[key].canCollect = true;
+        markers[key].canCollect = markers[key].amount < Inventory.stackSize;
       });
 
       MapBase.markers = markers;

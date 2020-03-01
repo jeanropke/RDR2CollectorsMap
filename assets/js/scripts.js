@@ -474,7 +474,7 @@ $("#reset-markers").on("change", function () {
 $("#clear-markers").on("click", function () {
   $.each(MapBase.markers, function (key, marker) {
     marker.isCollected = false;
-    marker.canCollect = true;
+    marker.canCollect = marker.amount < Inventory.stackSize;
   });
 
   MapBase.saveCollectedItems();
