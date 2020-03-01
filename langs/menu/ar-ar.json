@@ -66,5 +66,7 @@
 	{"key": "menu.inventory", "value": "Inventory"},
 	{"key": "menu.enable_inventory", "value": "Enable inventory"},
 	{"key": "menu.inventory_stack", "value": "Item stack size"},
+	{"key": "menu.highlight_low_amount_items", "value": "Highlight low amount items"},
+	{"key": "menu.animate_highlights", "value": "Animate low amount highlights"},
 	{"key": "menu.marker_cluster", "value": "Markers cluster"}
 ]

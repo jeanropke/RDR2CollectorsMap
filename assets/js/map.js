@@ -355,6 +355,7 @@ var MapBase = {
         MapBase.updateLoopAvailable = true;
         MapBase.requestLoopCancel = false;
         Menu.refreshItemsCounter();
+        Inventory.updateLowAmountItems();
       }
     );
 
@@ -503,6 +504,11 @@ var MapBase = {
   },
 
   getIconColor: function (value) {
+    // use the same color if we want to highlight items with low amount
+    if (Inventory.highlightLowAmountItems) {
+      return "darkblue";
+    }
+
     switch (value) {
       case "day_1":
         return "blue";
@@ -663,6 +669,7 @@ var MapBase = {
 
     var icon = `./assets/images/icons/${marker.category}.png`;
     var background = `./assets/images/icons/marker_${markerBackgroundColor}.png`;
+    var backgroundGlow = `./assets/images/icons/background-glow-contour.png`;
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override
@@ -698,6 +705,7 @@ var MapBase = {
         popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
         html: `
           ${overlay}
+          <img class="background-glow" src="${backgroundGlow}" alt="BackgroundGlow">
           <img class="icon" src="${icon}" alt="Icon">
           <img class="background" src="${background}" alt="Background">
           ${shadow}

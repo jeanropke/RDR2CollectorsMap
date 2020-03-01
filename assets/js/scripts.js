@@ -810,6 +810,7 @@ $('#enable-inventory').on("change", function () {
   MapBase.addMarkers();
   Menu.refreshWeeklyItems();
   Inventory.toggleMenuItemsDisabled();
+  Inventory.toggleHighlightLowAmountItems();
   ItemsValue.reloadInventoryItems();
 
   $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(Inventory.isEnabled);
@@ -819,6 +820,22 @@ $('#enable-inventory-popups').on("change", function () {
   Inventory.isPopupEnabled = $("#enable-inventory-popups").prop('checked');
   $.cookie('inventory-popups-enabled', Inventory.isPopupEnabled ? '1' : '0', { expires: 999 });
 
+  MapBase.addMarkers();
+});
+
+$('#highlight_low_amount_items').on("change", function () {
+  Inventory.highlightLowAmountItems = $('#highlight_low_amount_items').prop("checked");
+  $.cookie('highlight_low_amount_items', Inventory.highlightLowAmountItems ? '1' : '0', { expires: 999 });
+
+  Inventory.toggleHighlightLowAmountItems();
+  
+  MapBase.addMarkers();
+});
+
+$('#animated_highlights').on("change", function () {
+  Inventory.animatedHighlights = $('#animated_highlights').prop("checked");
+  $.cookie('animated_highlights', Inventory.animatedHighlights ? '1' : '0', { expires: 999 });
+  
   MapBase.addMarkers();
 });
 
