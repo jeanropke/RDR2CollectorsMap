@@ -761,16 +761,24 @@ var MapBase = {
     MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   },
 
-  highlightImportantItem(text, category) {
+  highlightImportantItem(text, category = '') {
     if (category === 'american_flowers' || category === 'bird_eggs')
-      text = text.replace(/(egg_|flower_)(\w+)(_\d)/, '$2');
+      text = text.replace(/_\d/, '');
 
     $(`[data-type=${text}]`).toggleClass('highlight-important-items-menu');
 
     if (text === 'eagle') // prevent from highlight eagle coins and eggs together
       text = 'egg_eagle';
 
-    $(`[data-marker*=${text}]`).toggleClass('highlight-items');
+    $.each($(`[data-marker*=${text}]`), function (key, marker) {
+      if (category !== 'random')
+        var markerData = $(this).data('marker').replace(/_\d/, '');
+      else
+        var markerData = $(this).data('marker');
+
+      if (markerData === text)
+        $(this).toggleClass('highlight-items');
+    });
 
     if ($(`[data-marker*=${text}].highlight-items`).length)
       MapBase.importantItems.push(text);
