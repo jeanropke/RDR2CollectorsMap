@@ -224,7 +224,7 @@
 	{"key": "menu.custom_marker_default", "value": "Domyślny kolor"},
 	{"key": "menu.custom_marker_fixed_colors", "value": "Zawsze takie same kolory"},
 	{"key": "menu.weekly_item_description", "value": "Obecna kolekcja tygodniowa zawiera te przedmioty. Zbierz je wszystkie i sprzedaj madam Nazar, aby otrzymać dodatkową gotówkę i XP."},
-	{"key": "menu.show_weekly", "value": "Pokaż kolekcje tygodniową"},
+	{"key": "menu.show_weekly", "value": "Pokaż kolekcję tygodniową"},
 	{"key": "map.has_multi_filter_alert", "value": "Niektóre znaczniki nie są widoczne przez ustawienie \"Narzędzia\" oraz pasek wyszukiwania."},
 	{"key": "map.has_search_filter_alert", "value": "Widoczne są tylko znczniki pasujące do frazy wpisanej w pasek wyszukiwania."},
 	{"key": "map.has_tool_filter_alert", "value": "Niektóre znaczniki nie są widoczne przez ustawienie \"Narzędzia\"."},
