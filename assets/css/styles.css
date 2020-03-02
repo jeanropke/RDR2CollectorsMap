@@ -1148,7 +1148,7 @@ a.no-style:visited {
     border: none;
 }
 
-.leaflet-div-icon .overlay, .leaflet-div-icon .icon, .leaflet-div-icon .background, .leaflet-div-icon .background-glow, .leaflet-div-icon .shadow {
+.leaflet-div-icon .overlay, .leaflet-div-icon .icon, .leaflet-div-icon .background, .leaflet-div-icon .marker-contour, .leaflet-div-icon .shadow {
     position: absolute;
     text-align: center;
 }
@@ -1172,7 +1172,7 @@ a.no-style:visited {
     height: 100%;
 }
 
-.leaflet-div-icon .background-glow {
+.leaflet-div-icon .marker-contour {
     z-index: 1;
     width: 120%;
     height: 120%;
@@ -1180,7 +1180,7 @@ a.no-style:visited {
     bottom: -10%;       
 }
 
-.background-glow {
+.marker-contour {
     opacity: 0.0;
 }
 

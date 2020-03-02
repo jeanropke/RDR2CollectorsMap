@@ -250,6 +250,26 @@ function setMapBackground(mapIndex) {
   }
   MapBase.setOverlays();
   $.cookie('map-layer', mapIndex, { expires: 999 });
+
+  if (Inventory.highlightLowAmountItems) {
+    updateMarkerSources();    
+  }
+}
+
+function updateMarkerSources() {
+  var markerSrc = '';
+  var markerContourSrc = '';
+  
+  if (MapBase.isDarkMode) {
+    markerContourSrc = './assets/images/icons/marker_contour_orange.png';
+    markerSrc = './assets/images/icons/marker_darkblue.png';
+  } else {
+    markerContourSrc = './assets/images/icons/marker_contour_blue.png';
+    markerSrc = './assets/images/icons/marker_orange.png';
+  }
+
+  $('img.background').attr('src', markerSrc);
+  $('img.marker-contour').attr('src', markerContourSrc);    
 }
 
 function changeCursor() {

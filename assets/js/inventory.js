@@ -136,11 +136,11 @@ var Inventory = {
   // update the markers of a specified item category
   updateLowItemMarkersForCategory: function (category) {
     // remove all highlight classes at first
-    $(`[data-marker*=${category}] > img.background-glow`).removeClass(function (index, className) {
+    $(`[data-marker*=${category}] > img.marker-contour`).removeClass(function (index, className) {
       return (className.match (/highlight-low-amount-items-\S+/gm) || []).join(' ');
     });
-    $(`[data-marker*=${category}] > img.background-glow`).css('--animation-target-opacity', 0.0);    
-    $(`[data-marker*=${category}] > img.background-glow`).css("opacity", 0.0);    
+    $(`[data-marker*=${category}] > img.marker-contour`).css('--animation-target-opacity', 0.0);    
+    $(`[data-marker*=${category}] > img.marker-contour`).css("opacity", 0.0);
     
     if (Inventory.categories[category] == undefined) {
       Inventory.categories[category] == {min: 0, max: 0, avg: 0, numElements: 0};
@@ -165,12 +165,12 @@ var Inventory = {
       // set new highlight-low-amount-items class based on current value
       if (weight < 0.02) {
         // no highlights
-        $(`[data-marker=${_m.text ||_m.subdata}] > img.background-glow`).css('opacity', 0.0);
+        $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('opacity', 0.0);
       } else if ((weight < 0.3) || (!Inventory.animatedHighlights)){ // just static highlights for small differences or if animation is disabled
-        $(`[data-marker=${_m.text ||_m.subdata}] > img.background-glow`).css('opacity', scaledWeight);
+        $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('opacity', scaledWeight);
       } else { // animated or static highlights for larger differences according to user settings
-          $(`[data-marker=${_m.text ||_m.subdata}] > img.background-glow`).css('--animation-target-opacity', scaledWeight);
-          $(`[data-marker=${_m.text ||_m.subdata}] > img.background-glow`).addClass(`highlight-low-amount-items-animated`);
+          $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('--animation-target-opacity', scaledWeight);
+          $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).addClass(`highlight-low-amount-items-animated`);
       }
     });
   },
