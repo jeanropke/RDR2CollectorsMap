@@ -762,7 +762,7 @@ var MapBase = {
 
   highlightImportantItem: function (text, category = '') {
     if (category == 'american_flowers' || category == 'bird_eggs')
-        text = text.replace(/(_\d+)/, '');
+      text = text.replace(/(_\d+)/, '');
 
     var textMenu = text.replace(/egg_|flower_/, '');
 
@@ -794,7 +794,7 @@ var MapBase = {
     if (localStorage.importantItems === undefined)
       localStorage.importantItems = "[]";
 
-      MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
+    MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
 
     $.each(MapBase.importantItems, function (key, value) {
       if (/random_item_\d+/.test(value))
