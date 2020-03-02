@@ -355,6 +355,7 @@ var MapBase = {
         MapBase.updateLoopAvailable = true;
         MapBase.requestLoopCancel = false;
         Menu.refreshItemsCounter();
+        MapBase.loadImportantItems();
         Inventory.updateLowAmountItems();
       }
     );
@@ -379,7 +380,6 @@ var MapBase = {
     if (Routes.generateOnVisit)
       Routes.generatePath(true);
 
-    MapBase.loadImportantItems();
   },
 
   loadWeeklySet: function () {
@@ -757,8 +757,6 @@ var MapBase = {
     Layers.itemMarkersLayer.addLayer(tempMarker);
     if (Settings.markerCluster)
       Layers.oms.addMarker(tempMarker);
-
-    MapBase.loadImportantItems();
   },
 
   gameToMap: function (lat, lng, name = "Debug Marker") {
@@ -769,16 +767,23 @@ var MapBase = {
     MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   },
 
-  highlightImportantItem(text, category) {
-    if (category === 'american_flowers' || category === 'bird_eggs')
-      text = text.replace(/(egg_|flower_)(\w+)(_\d)/, '$2');
+  highlightImportantItem: function (text, category = '') {
+    if (category == 'american_flowers' || category == 'bird_eggs')
+      text = text.replace(/(_\d+)/, '');
 
-    $(`[data-type=${text}]`).toggleClass('highlight-important-items-menu');
+    var textMenu = text.replace(/egg_|flower_/, '');
 
-    if (text === 'eagle') // prevent from highlight eagle coins and eggs together
-      text = 'egg_eagle';
+    $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
 
-    $(`[data-marker*=${text}]`).toggleClass('highlight-items');
+    $.each($(`[data-marker*=${text}]`), function (key, marker) {
+      if (category !== 'random' && category !== '')
+        var markerData = $(this).data('marker').replace(/_\d/, '');
+      else
+        var markerData = $(this).data('marker');
+
+      if (markerData === text)
+        $(this).toggleClass('highlight-items');
+    });
 
     if ($(`[data-marker*=${text}].highlight-items`).length)
       MapBase.importantItems.push(text);
@@ -792,15 +797,20 @@ var MapBase = {
     localStorage.setItem('importantItems', JSON.stringify(MapBase.importantItems));
   },
 
-  loadImportantItems() {
+  loadImportantItems: function () {
     if (localStorage.importantItems === undefined)
       localStorage.importantItems = "[]";
 
     MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
 
     $.each(MapBase.importantItems, function (key, value) {
-      $(`[data-marker*=${value}]`).addClass('highlight-items');
-      $(`[data-type=${value}]`).addClass('highlight-important-items-menu');
+      if (/random_item_\d+/.test(value))
+        $(`[data-marker=${value}]`).addClass('highlight-items');
+      else
+        $(`[data-marker*=${value}]`).addClass('highlight-items');
+
+      var textMenu = value.replace(/egg_|flower_/, '');
+      $(`[data-type=${textMenu}]`).addClass('highlight-important-items-menu');
     });
   },
 
@@ -896,4 +906,5 @@ var MapBase = {
       }
     })();
   }
+
 };
