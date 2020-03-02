@@ -6,9 +6,6 @@ var Language = {
     availableLanguages: ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'th-th', 'zh-hans', 'zh-hant'],
 
     get: function (value) {
-        if (Settings.language == null)
-            Settings.language = 'en-us';
-
         if (Language.data[Settings.language][value])
             return Language.data[Settings.language][value];
         else if (Language.data['en-us'][value])
@@ -20,10 +17,15 @@ var Language = {
     },
 
     setMenuLanguage: function () {
-        if (wikiLanguage[Settings.language] != null)
-            $('.wiki-page').attr('href', wikiLanguage[Settings.language]);
-        else
-            $('.wiki-page').attr('href', wikiLanguage['en-us']);
+        const wikiBase = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/';
+        const wikiPages = {
+            'de-de': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)',
+            'en-us': 'RDO-Collectors-Map-User-Guide-(English)',
+            'fr-fr': 'RDO-Collectors-Map-Guide-d\'Utilisateur-(French)',
+            'pt-br': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',
+        };
+        const wikiLang = Settings.language in wikiPages ? Settings.language : 'en-us';
+        $('.wiki-page').attr('href', wikiBase + wikiPages[wikiLang]);
 
         $.each($('[data-text]'), function (key, value) {
             var temp = $(value);
