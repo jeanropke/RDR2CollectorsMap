@@ -791,7 +791,7 @@ var MapBase = {
   },
 
   loadImportantItems: function () {
-    if (typeof localStorage.importantItems === 'undefined')
+    if (localStorage.importantItems === undefined)
       localStorage.importantItems = "[]";
 
       MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
