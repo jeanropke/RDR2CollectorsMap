@@ -32,7 +32,7 @@ var Inventory = {
     }
 
     if ($.cookie('animated_highlights') === undefined) {
-      Inventory.animatedHighlights = true;
+      Inventory.animatedHighlights = false;
       $.cookie('animated_highlights', '1', { expires: 999 });
     }
 
