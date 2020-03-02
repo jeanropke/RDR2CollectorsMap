@@ -66,5 +66,7 @@
 	{"key": "menu.inventory", "value": "Inventaire"},
 	{"key": "menu.enable_inventory", "value": "Activer l'Inventaire"},
 	{"key": "menu.inventory_stack", "value": "Taille de la Pile d'Objet"},
+	{"key": "menu.highlight_low_amount_items", "value": "Highlight low amount items"},
+	{"key": "menu.animate_highlights", "value": "Animate low amount highlights"},
 	{"key": "menu.marker_cluster", "value": "Markers cluster"}
 ]

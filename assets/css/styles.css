@@ -677,6 +677,13 @@ a.wiki-page:visited {
     filter: drop-shadow(0 0 .5rem #cc0000) drop-shadow(0 0 .4rem #cc0000);
 }
 
+.highlight-low-amount-items-animated { animation: highlight-low-amount-items-animation 1s infinite alternate;}
+
+@keyframes highlight-low-amount-items-animation {
+    from { opacity: 0.0;}
+    to { opacity: var(--animation-target-opacity);}
+}
+
 .highlight-important-items-menu {
     text-decoration: underline;
     text-decoration-color: #cc0000;
@@ -1141,7 +1148,7 @@ a.no-style:visited {
     border: none;
 }
 
-.leaflet-div-icon .overlay, .leaflet-div-icon .icon, .leaflet-div-icon .background, .leaflet-div-icon .shadow {
+.leaflet-div-icon .overlay, .leaflet-div-icon .icon, .leaflet-div-icon .background, .leaflet-div-icon .marker-contour, .leaflet-div-icon .shadow {
     position: absolute;
     text-align: center;
 }
@@ -1163,6 +1170,18 @@ a.no-style:visited {
     z-index: 2;
     width: 100%;
     height: 100%;
+}
+
+.leaflet-div-icon .marker-contour {
+    z-index: 1;
+    width: 120%;
+    height: 120%;
+    left: -10%;
+    bottom: -10%;       
+}
+
+.marker-contour {
+    opacity: 0.0;
 }
 
 .leaflet-div-icon .shadow {
