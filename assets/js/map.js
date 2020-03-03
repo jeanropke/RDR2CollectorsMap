@@ -232,12 +232,24 @@ var MapBase = {
     var curDate = new Date();
     date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
 
-    if (Settings.resetMarkersDaily && date != $.cookie('date')) {
-      var markers = MapBase.markers;
-      $.each(markers, function (key, value) {
-        markers[key].isCollected = false;
-        markers[key].canCollect = markers[key].amount < Inventory.stackSize;
-      });
+    if (date != $.cookie('date')) {
+      if (Settings.resetMarkersDaily) {
+        var markers = MapBase.markers;
+        $.each(markers, function (key, value) {
+          markers[key].isCollected = false;
+          markers[key].canCollect = markers[key].amount < Inventory.stackSize;
+        });
+      }
+      else {
+        var markers = MapBase.markers;
+        $.each(markers, function (key, value) {
+          console.log(value.category);
+          if (value.category === 'random') {
+            markers[key].isCollected = false;
+            markers[key].canCollect = true;
+          }
+        });
+      }
 
       MapBase.markers = markers;
       MapBase.saveCollectedItems();
@@ -505,7 +517,7 @@ var MapBase = {
 
   getIconColor: function (value) {
     // use the same color if we want to highlight items with low amount
-    if (Inventory.highlightLowAmountItems) {
+    if (Inventory.highlightLowAmountItems && Inventory.isEnabled) {
       return MapBase.isDarkMode ? "darkblue" : "orange";
     }
 
