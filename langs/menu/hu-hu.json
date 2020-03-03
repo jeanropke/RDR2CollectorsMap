@@ -67,6 +67,6 @@
 	{"key": "menu.enable_inventory", "value": "Leltár engedélyezése"},
 	{"key": "menu.inventory_stack", "value": "Gyűjtött tételek mennyisége"},
 	{"key": "menu.highlight_low_amount_items", "value": "Highlight low amount items"},
-	{"key": "menu.animate_highlights", "value": "Animate low amount highlights"},
+	{"key": "menu.animated_highlights", "value": "Animate low amount highlights"},
 	{"key": "menu.marker_cluster", "value": "Markers cluster"}
 ]

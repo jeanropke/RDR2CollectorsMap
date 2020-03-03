@@ -77,7 +77,7 @@
  	{"key": "menu.enable_inventory", "value": "Włącz ekwipunek"},
 	{"key": "menu.inventory_stack", "value": "Rozmiar stosu przedmiotów"},
 	{"key": "menu.highlight_low_amount_items", "value": "Podświetlaj niewielkie ilości przedm."},
-	{"key": "menu.animate_highlights", "value": "Animuj podświetlenie przedmiotów"},
+	{"key": "menu.animated_highlights", "value": "Animuj podświetlenie przedmiotów"},
  	{"key": "menu.marker_cluster", "value": "Grupowanie znaczników"},
  	{"key": "menu.route_generator", "value": "Generator trasy"},
  	{"key": "menu.generate_route", "value": "Wygeneruj trasę"},
