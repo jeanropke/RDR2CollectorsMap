@@ -1286,7 +1286,7 @@
 	{"key": "weekly.desc.saint_denis_set", "value": "Saint Denis"},
 	{"key": "weekly.desc.fortune_teller_set", "value": "Fortune Teller's"},
 	{"key": "weekly.desc.guarma_set", "value": "Guarma"},
-	{"key": "weekly.desc.bowman_set", "value": "Bowman's"},
+	{"key": "weekly.desc.bowman_set", "value": "Предметы лучника"},
 	{"key": "weekly.desc.royal_set", "value": "Royal"},
 	{"key": "weekly.desc.witch_hunt_set", "value": "Witch Hunt"},
 	{"key": "weekly.desc.night_watch_set", "value": "Night Watch"},
