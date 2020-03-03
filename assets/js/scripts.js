@@ -679,7 +679,7 @@ $('.collection-reset').on('click', function (e) {
   var getMarkers = MapBase.markers.filter(_m => !_m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
   $.each(getMarkers, function (key, marker) {
-    MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category);
+    MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category, !Inventory.resetButtonUpdatesInventory);
   });
 
   $(this).removeClass('disabled');
