@@ -28,12 +28,12 @@ var Inventory = {
 
     if ($.cookie('highlight_low_amount_items') === undefined) {
       Inventory.highlightLowAmountItems = false;
-      $.cookie('highlight_low_amount_items', '1', { expires: 999 });
+      $.cookie('highlight_low_amount_items', '0', { expires: 999 });
     }
 
     if ($.cookie('animated_highlights') === undefined) {
       Inventory.animatedHighlights = false;
-      $.cookie('animated_highlights', '1', { expires: 999 });
+      $.cookie('animated_highlights', '0', { expires: 999 });
     }
 
     $('#enable-inventory').prop("checked", Inventory.isEnabled);
