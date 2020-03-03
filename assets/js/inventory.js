@@ -8,7 +8,7 @@ var Inventory = {
   changedItems: [],
   categories: {},
   highlightLowAmountItems: $.cookie('highlight_low_amount_items') == '1',
-  animatedHighlights: $.cookie('animated_highlights') == '1',  
+  animatedHighlights: $.cookie('animated_highlights') == '1',
 
   init: function () {
     if ($.cookie('inventory-popups-enabled') === undefined) {
@@ -28,12 +28,12 @@ var Inventory = {
 
     if ($.cookie('highlight_low_amount_items') === undefined) {
       Inventory.highlightLowAmountItems = false;
-      $.cookie('highlight_low_amount_items', '1', { expires: 999 });
+      $.cookie('highlight_low_amount_items', '0', { expires: 999 });
     }
 
     if ($.cookie('animated_highlights') === undefined) {
       Inventory.animatedHighlights = false;
-      $.cookie('animated_highlights', '1', { expires: 999 });
+      $.cookie('animated_highlights', '0', { expires: 999 });
     }
 
     $('#enable-inventory').prop("checked", Inventory.isEnabled);
@@ -42,7 +42,6 @@ var Inventory = {
     $('#reset-collection-updates-inventory').prop("checked", Inventory.resetButtonUpdatesInventory);
     $('#highlight_low_amount_items').prop("checked", Inventory.highlightLowAmountItems);
     $('#animated_highlights').prop("checked", Inventory.animatedHighlights);
-    
     $('#inventory-stack').val(Inventory.stackSize);
 
     this.toggleMenuItemsDisabled();
@@ -66,45 +65,44 @@ var Inventory = {
       Inventory.items[marker.text.replace(/_\d/, '')] = marker.amount;
     });
 
-    localStorage.setItem("inventory", JSON.stringify(Inventory.items));    
-    
-    ItemsValue.load();    
+    localStorage.setItem("inventory", JSON.stringify(Inventory.items));
+
+    ItemsValue.load();
     Inventory.updateLowAmountItems();
   },
 
-  getMovingAverage: function (currentAvg, newVal, numElements) {    
+  getMovingAverage: function (currentAvg, newVal, numElements) {
     return (currentAvg * numElements + newVal) / (numElements + 1.0);
   },
 
-  updateLowAmountItems: function () {    
-    if (!Inventory.isEnabled || !Inventory.highlightLowAmountItems) {      
+  updateLowAmountItems: function () {
+    if (!Inventory.isEnabled || !Inventory.highlightLowAmountItems) {
       return;
     }
-        
+
     // reset category values
     if (Inventory.categories == undefined){
       Inventory.categories = {};
     }
-    
+
     var changedCategories = [];
-        
-    if (this.changedItems.length == 0) {      
+
+    if (this.changedItems.length == 0) {
       this.changedItems = Object.keys(Inventory.items);
-    }       
+    }
 
     // build a unique list of categories whose item amounts have changed
-	  this.changedItems.forEach(itemName => {      
+	  this.changedItems.forEach(itemName => {
       var category = itemName.split("_")[0];
       if (changedCategories.indexOf(category) == -1) {
         changedCategories.push(category);
       }
-    });    
-        
-    // walk through all categories and update the corresponding markers	  
-    changedCategories.forEach( category => {            
+    });
 
-      Inventory.categories[category] = {max: 0, min: 0, avg: 0.0, numElements: 0};      
-      var itemsInThisCategory = Object.keys(Inventory.items).filter(itemName => itemName.startsWith(category));      
+    // walk through all categories and update the corresponding markers
+    changedCategories.forEach( category => {
+      Inventory.categories[category] = {max: 0, min: 0, avg: 0.0, numElements: 0};
+      var itemsInThisCategory = Object.keys(Inventory.items).filter(itemName => itemName.startsWith(category));
 
       itemsInThisCategory.forEach(itemName => {
         var itemAmount = Inventory.items[itemName];
@@ -114,17 +112,16 @@ var Inventory = {
           max: Math.max(Inventory.categories[category].max, itemAmount),
           min: Math.min(Inventory.categories[category].min, itemAmount),
           avg: Inventory.getMovingAverage(Inventory.categories[category].avg, parseFloat(itemAmount), Inventory.categories[category].numElements),
-          numElements: Inventory.categories[category].numElements + 1          
+          numElements: Inventory.categories[category].numElements + 1
         };
-      });      
-                
-      // since items with amount 0 have not been considered before: adjust the average amount with the missing "0" values      
+      });
+
+      // since items with amount 0 have not been considered before: adjust the average amount with the missing "0" values
       var numItemsInCategory = ItemsValue.collectionsLength.find(c => c[0] == category)[1];
       if (Inventory.categories[category].numElements < numItemsInCategory) {
-        Inventory.categories[category].avg = (Inventory.categories[category].avg * Inventory.categories[category].numElements) / numItemsInCategory;        
-        Inventory.categories[category].numElements = numItemsInCategory;                
-      }           
-      
+        Inventory.categories[category].avg = (Inventory.categories[category].avg * Inventory.categories[category].numElements) / numItemsInCategory;
+        Inventory.categories[category].numElements = numItemsInCategory;
+      }
       // update the category markers
       Inventory.updateLowItemMarkersForCategory(category);
     });
@@ -139,47 +136,49 @@ var Inventory = {
     $(`[data-marker*=${category}] > img.marker-contour`).removeClass(function (index, className) {
       return (className.match (/highlight-low-amount-items-\S+/gm) || []).join(' ');
     });
-    $(`[data-marker*=${category}] > img.marker-contour`).css('--animation-target-opacity', 0.0);    
+    $(`[data-marker*=${category}] > img.marker-contour`).css('--animation-target-opacity', 0.0);
     $(`[data-marker*=${category}] > img.marker-contour`).css("opacity", 0.0);
-    
+
     if (Inventory.categories[category] == undefined) {
       Inventory.categories[category] == {min: 0, max: 0, avg: 0, numElements: 0};
     }
-                
+
     // get all markers which should be highlighted
     var markers = MapBase.markers.filter(_m => {
-      return _m.text.startsWith(category) && 
-              enabledCategories.includes(_m.category) &&
-              _m.canCollect && 
-              !_m.isCollected &&              
-              _m.day == Cycles.categories[_m.category];              
+      return _m.text.startsWith(category) &&
+        enabledCategories.includes(_m.category) &&
+        _m.canCollect &&
+        !_m.isCollected &&
+        _m.day == Cycles.categories[_m.category];
     });
 
     // for each marker: calculate the value used for coloring and add/remove the appropriate css class
-    markers.map(_m => {                  
-      var weight = (Inventory.categories[category].avg - parseFloat(_m.amount)) / Inventory.stackSize;      
-      weight = Math.max(weight, 0.0);                                                    
+    markers.map(_m => {
+      var weight = (Inventory.categories[category].avg - parseFloat(_m.amount)) / Inventory.stackSize;
+      weight = Math.max(weight, 0.0);
 
       var scaledWeight = Math.min(weight * 2, 1.0);
-                              
+
       // set new highlight-low-amount-items class based on current value
       if (weight < 0.02) {
         // no highlights
         $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('opacity', 0.0);
-      } else if ((weight < 0.3) || (!Inventory.animatedHighlights)){ // just static highlights for small differences or if animation is disabled
+      }
+      else if ((weight < 0.3) || (!Inventory.animatedHighlights)) { // just static highlights for small differences or if animation is disabled
         $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('opacity', scaledWeight);
-      } else { // animated or static highlights for larger differences according to user settings
+      }
+      else { // animated or static highlights for larger differences according to user settings
           $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('--animation-target-opacity', scaledWeight);
           $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).addClass(`highlight-low-amount-items-animated`);
       }
     });
   },
-      
+
   changeMarkerAmount: function (name, amount, skipInventory = false) {
     var marker = MapBase.markers.filter(marker => {
       return (marker.text == name || marker.subdata == name);
     });
-    
+
     Inventory.changedItems.push(marker[0].text);
 
     $.each(marker, function (key, marker) {
@@ -210,7 +209,8 @@ var Inventory = {
       if ((marker.isCollected || (Inventory.isEnabled && marker.amount >= Inventory.stackSize)) && marker.day == Cycles.categories[marker.category]) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
         $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
-      } else if (marker.day == Cycles.categories[marker.category]) {
+      }
+      else if (marker.day == Cycles.categories[marker.category]) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
         $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
       }
@@ -236,7 +236,8 @@ var Inventory = {
       $('#highlight_low_amount_items').parent().parent().hide();
       $('#animated_highlights').parent().parent().hide();
       $('#open-clear-inventory-modal').hide();
-    } else {
+    }
+    else {
       $('#enable-inventory-popups').parent().parent().show();
       $('#enable-inventory-menu-update').parent().parent().show();
       $('#reset-collection-updates-inventory').parent().parent().show();
@@ -249,10 +250,9 @@ var Inventory = {
   },
 
   toggleHighlightLowAmountItems: function () {
-    if (Inventory.highlightLowAmountItems) {      
-      $('#animated_highlights').parent().parent().show();      
-    } else {      
-      $('#animated_highlights').parent().parent().hide();      
-    }
+    if (Inventory.highlightLowAmountItems)
+      $('#animated_highlights').parent().parent().show();
+    else
+      $('#animated_highlights').parent().parent().hide();
   }
 };
