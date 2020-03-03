@@ -243,7 +243,6 @@ var MapBase = {
       else {
         var markers = MapBase.markers;
         $.each(markers, function (key, value) {
-          console.log(value.category);
           if (value.category === 'random') {
             markers[key].isCollected = false;
             markers[key].canCollect = true;
