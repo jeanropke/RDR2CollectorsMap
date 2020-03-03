@@ -233,15 +233,15 @@ var MapBase = {
     date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
 
     if (date != $.cookie('date')) {
+      var markers = MapBase.markers;
+
       if (Settings.resetMarkersDaily) {
-        var markers = MapBase.markers;
         $.each(markers, function (key, value) {
           markers[key].isCollected = false;
           markers[key].canCollect = markers[key].amount < Inventory.stackSize;
         });
       }
       else {
-        var markers = MapBase.markers;
         $.each(markers, function (key, value) {
           if (value.category === 'random') {
             markers[key].isCollected = false;
