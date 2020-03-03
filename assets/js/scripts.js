@@ -372,6 +372,12 @@ $('.timer-container, .clock-container').on('click', function () {
  * jQuery triggers
  */
 
+ /*
+  Hide warning bar
+ */
+$('.update-warning').on('click', function() {
+  $(this).hide();
+});
 //Show all markers on map
 $("#show-all-markers").on("change", function () {
   Settings.showAllMarkers = $("#show-all-markers").prop('checked');
