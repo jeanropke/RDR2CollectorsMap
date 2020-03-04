@@ -185,12 +185,6 @@ var Inventory = {
       return weekly.item === (marker.text).replace(/_\d+/, "");
     }).length > 0;
 
-    // Set the correct marker colors depending on the map background.
-    // Do this only affected collectible item markers and exclude, e.g. fast travel points or madam nazar
-    if (isWeekly) {
-      return;
-    }
-
     var markerSrc = '';
     var markerContourSrc = '';
     
@@ -201,9 +195,16 @@ var Inventory = {
       markerContourSrc = './assets/images/icons/marker_contour_blue.png';
       markerSrc = './assets/images/icons/marker_orange.png';
     }
+
+    // update the contour color
+    $(`[data-marker=${marker.text || marker.subdata}] > img.marker-contour`).attr('src', markerContourSrc);
     
+    if (isWeekly) {
+      return;
+    }
+
+    // update the marker background, only if the marker is not a weekly item
     $(`[data-marker=${marker.text || marker.subdata}] > img.background`).attr('src', markerSrc);
-    $(`[data-marker=${marker.text || marker.subdata}] > img.marker-contour`).attr('src', markerContourSrc);    
   },
   
   changeMarkerAmount: function (name, amount, skipInventory = false) {
