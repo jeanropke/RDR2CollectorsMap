@@ -358,7 +358,7 @@ input, textarea, select, .btn {
     border-top: 1px solid #B0B0B0;
     border-bottom: 1px solid #B0B0B0;
     padding: 10px 0;
-    margin: 15px 0;
+    margin: 5px 0 15px 0;
 }
 
 .links-container a {
@@ -785,7 +785,7 @@ a.wiki-page:visited {
 
 #cycle-changer-container .cycle-data {
     text-align: center;
-    min-width: 100px;
+    min-width: 170px;
     margin: 0 6px;
 }
 
