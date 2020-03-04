@@ -203,6 +203,13 @@ Menu.refreshMenu = function () {
     var element = `[data-text="menu.${category.data('type')}"]`;
     Menu.addCycleWarning(element, isSameCycle);
 
+
+    //Dunno where to place this on menu
+    if (Inventory.isEnabled) {
+      var collectiblesElement = $(`.menu-hidden[data-type="${category.data('type')}"]`);
+      console.log(`${category.data('type')}: ${collectiblesElement.find('.disabled').length}/${collectiblesElement.find('.collectible-wrapper').length}`);
+    }
+
     if (!Settings.sortItemsAlphabetically) return;
     if (category.data('type').includes('card_')) return;
 

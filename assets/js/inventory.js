@@ -149,13 +149,20 @@ var Inventory = {
     var markers = MapBase.markers.filter(_m => {
       return _m.text.startsWith(category) &&
         enabledCategories.includes(_m.category) &&
-        _m.canCollect &&
-        !_m.isCollected &&
         _m.day == Cycles.categories[_m.category];
     });
 
     // for each marker: calculate the value used for coloring and add/remove the appropriate css class
     markers.map(_m => {
+      // Set the correct marker colors depending on the map background.
+      // Do this only affected collectible item markers and exclude, e.g. fast travel points or madam nazar
+      Inventory.updateMarkerSources(_m);      
+
+      // further highlighting should only be done for enabled markers
+      if (!_m.canCollect || _m.isCollected) {
+        return;
+      }
+  
       var weight = (Inventory.categories[category].avg - parseFloat(_m.amount)) / Inventory.stackSize;
       weight = Math.max(weight, 0.0);
 
@@ -176,6 +183,33 @@ var Inventory = {
     });
   },
 
+  updateMarkerSources: function (marker) {
+    var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
+      return weekly.item === (marker.text).replace(/_\d+/, "");
+    }).length > 0;
+
+    var markerSrc = '';
+    var markerContourSrc = '';
+    
+    if (MapBase.isDarkMode) {
+      markerContourSrc = './assets/images/icons/marker_contour_orange.png';
+      markerSrc = './assets/images/icons/marker_darkblue.png';
+    } else {
+      markerContourSrc = './assets/images/icons/marker_contour_blue.png';
+      markerSrc = './assets/images/icons/marker_orange.png';
+    }
+
+    // update the contour color
+    $(`[data-marker=${marker.text || marker.subdata}] > img.marker-contour`).attr('src', markerContourSrc);
+    
+    if (isWeekly) {
+      return;
+    }
+
+    // update the marker background, only if the marker is not a weekly item
+    $(`[data-marker=${marker.text || marker.subdata}] > img.background`).attr('src', markerSrc);
+  },
+  
   changeMarkerAmount: function (name, amount, skipInventory = false) {
     var marker = MapBase.markers.filter(marker => {
       return (marker.text == name || marker.subdata == name);
