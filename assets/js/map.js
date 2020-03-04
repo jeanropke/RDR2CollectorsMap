@@ -235,20 +235,18 @@ var MapBase = {
     if (date != $.cookie('date')) {
       var markers = MapBase.markers;
 
-      if (Settings.resetMarkersDaily) {
-        $.each(markers, function (key, value) {
+      $.each(markers, function (key, value) {
+        if (Settings.resetMarkersDaily) {
           markers[key].isCollected = false;
           markers[key].canCollect = markers[key].amount < Inventory.stackSize;
-        });
-      }
-      else {
-        $.each(markers, function (key, value) {
+        }
+        else {
           if (value.category === 'random') {
             markers[key].isCollected = false;
             markers[key].canCollect = true;
           }
-        });
-      }
+        }
+      });
 
       MapBase.markers = markers;
       MapBase.saveCollectedItems();
