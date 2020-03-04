@@ -516,7 +516,7 @@ var MapBase = {
 
   getIconColor: function (value) {
     // use the same color if we want to highlight items with low amount
-    if (Inventory.highlightLowAmountItems && Inventory.isEnabled) {
+    if (Inventory.highlightLowAmountItems && Inventory.isEnabled && value !== 'weekly') {
       return MapBase.isDarkMode ? "darkblue" : "orange";
     }
 
