@@ -27,8 +27,8 @@ var Inventory = {
     }
 
     if ($.cookie('highlight_low_amount_items') === undefined) {
-      Inventory.highlightLowAmountItems = false;
-      $.cookie('highlight_low_amount_items', '0', { expires: 999 });
+      Inventory.highlightLowAmountItems = true;
+      $.cookie('highlight_low_amount_items', '1', { expires: 999 });
     }
 
     if ($.cookie('animated_highlights') === undefined) {
