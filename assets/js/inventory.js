@@ -149,13 +149,20 @@ var Inventory = {
     var markers = MapBase.markers.filter(_m => {
       return _m.text.startsWith(category) &&
         enabledCategories.includes(_m.category) &&
-        _m.canCollect &&
-        !_m.isCollected &&
         _m.day == Cycles.categories[_m.category];
     });
 
     // for each marker: calculate the value used for coloring and add/remove the appropriate css class
     markers.map(_m => {
+      // Set the correct marker colors depending on the map background.
+      // Do this only affected collectible item markers and exclude, e.g. fast travel points or madam nazar
+      Inventory.updateMarkerSources(_m);      
+
+      // further highlighting should only be done for enabled markers
+      if (!_m.canCollect || _m.isCollected) {
+        return;
+      }
+  
       var weight = (Inventory.categories[category].avg - parseFloat(_m.amount)) / Inventory.stackSize;
       weight = Math.max(weight, 0.0);
 
@@ -173,10 +180,6 @@ var Inventory = {
           $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('--animation-target-opacity', scaledWeight);
           $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).addClass(`highlight-low-amount-items-animated`);
       }
-
-      // Set the correct marker colors depending on the map background.
-      // Do this only affected collectible item markers and exclude, e.g. fast travel points or madam nazar
-      Inventory.updateMarkerSources(_m);      
     });
   },
 
