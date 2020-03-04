@@ -251,9 +251,8 @@ function setMapBackground(mapIndex) {
   MapBase.setOverlays();
   $.cookie('map-layer', mapIndex, { expires: 999 });
 
-  if (Inventory.highlightLowAmountItems) {
-    MapBase.loadMarkers();
-  }
+  // Update the highlighted markers to show the appropriate marker colors
+  Inventory.updateLowAmountItems();  
 }
 
 function changeCursor() {
@@ -596,6 +595,10 @@ $('.clickable').on('click', function () {
   if (menu.data('type') === undefined) return;
 
   $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
+  console.log(menu.data('type'));
+  console.log($('[data-type=' + menu.data('type') + ']'))
+
+
   var isDisabled = menu.hasClass('disabled');
 
   if (isDisabled) {

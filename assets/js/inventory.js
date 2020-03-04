@@ -173,9 +173,39 @@ var Inventory = {
           $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('--animation-target-opacity', scaledWeight);
           $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).addClass(`highlight-low-amount-items-animated`);
       }
+
+      // Set the correct marker colors depending on the map background.
+      // Do this only affected collectible item markers and exclude, e.g. fast travel points or madam nazar
+      Inventory.updateMarkerSources(_m);      
     });
   },
 
+  updateMarkerSources: function (marker) {
+    var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
+      return weekly.item === (marker.text).replace(/_\d+/, "");
+    }).length > 0;
+
+    // Set the correct marker colors depending on the map background.
+    // Do this only affected collectible item markers and exclude, e.g. fast travel points or madam nazar
+    if (isWeekly) {
+      return;
+    }
+
+    var markerSrc = '';
+    var markerContourSrc = '';
+    
+    if (MapBase.isDarkMode) {
+      markerContourSrc = './assets/images/icons/marker_contour_orange.png';
+      markerSrc = './assets/images/icons/marker_darkblue.png';
+    } else {
+      markerContourSrc = './assets/images/icons/marker_contour_blue.png';
+      markerSrc = './assets/images/icons/marker_orange.png';
+    }
+    
+    $(`[data-marker=${marker.text || marker.subdata}] > img.background`).attr('src', markerSrc);
+    $(`[data-marker=${marker.text || marker.subdata}] > img.marker-contour`).attr('src', markerContourSrc);    
+  },
+  
   changeMarkerAmount: function (name, amount, skipInventory = false) {
     var marker = MapBase.markers.filter(marker => {
       return (marker.text == name || marker.subdata == name);
