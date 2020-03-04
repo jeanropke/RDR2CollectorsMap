@@ -61,6 +61,7 @@
 	{"key": "routes.invalid", "value": "Rota inválida"},
 	{"key": "menu.random_spots", "value": "Locais Aleatórios"},
 	{"key": "menu.collectables_counter", "value": "Coletou {count} de {max}"},
+	{"key": "menu.collection_counter", "value": "{count} de {max}"},
 	{"key": "menu.rdo_map", "value": "Mapa do RDO"},
 	{"key": "menu.treasure_hunter", "value": "Caçador de Tesouro"},
 	{"key": "menu.tree_map", "value": "Mapa de Tesouro na Árvore"},
@@ -315,5 +316,6 @@
 	{"key": "help.show_all_cycles_markers", "value": "Alterna se todos os marcadores de todos os ciclos devem aparecer no mapa. Não recomendado"},
 	{"key": "help.enable_context_menu", "value": "Alterna se o menu de contexto (clique direito) está ativado."},
 	{"key": "help.custom_marker_color", "value": "Permite definir uma cor para todos os marcadores de itens, ou definir uma cor padrão para cada categoria de marcador."},
-	{"key": "help.show_weekly", "value": "Alterna se a coleção semanal deve aparecer no menu."}
+	{"key": "help.show_weekly", "value": "Alterna se a coleção semanal deve aparecer no menu."},
+	{"key": "help.collection_collected", "value": "Número de itens coletados dessa coleção."}
 ]

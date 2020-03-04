@@ -823,7 +823,7 @@ $('#enable-inventory').on("change", function () {
   Inventory.toggleHighlightLowAmountItems();
   ItemsValue.reloadInventoryItems();
 
-  $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(Inventory.isEnabled);
+  $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number, .collection-collected').toggle(Inventory.isEnabled);
 });
 
 $('#enable-inventory-popups').on("change", function () {
