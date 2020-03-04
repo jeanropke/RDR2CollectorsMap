@@ -116,6 +116,8 @@ var Inventory = {
         };
       });
 
+      
+      if(category == "random") return;
       // since items with amount 0 have not been considered before: adjust the average amount with the missing "0" values
       var numItemsInCategory = ItemsValue.collectionsLength.find(c => c[0] == category)[1];
       if (Inventory.categories[category].numElements < numItemsInCategory) {

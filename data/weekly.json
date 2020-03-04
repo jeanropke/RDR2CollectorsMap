@@ -1,5 +1,5 @@
 {
-    "current": "gold_panner_set",
+    "current": "bowman_set",
     "sets": {
         "sacred_set": [
             { "item": "egg_eagle" },
@@ -125,7 +125,7 @@
             { "item": "necklace_tuamotu_pearl" },
             { "item": "bracelet_infanta_turquoise" }
         ],
-        "bowmans_set": [
+        "bowman_set": [
             { "item": "arrowhead_flint" },
             { "item": "arrowhead_raw" },
             { "item": "arrowhead_agate" }

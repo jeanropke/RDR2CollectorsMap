@@ -71,7 +71,16 @@ input, textarea, select, .btn {
     padding: 2px;
     border: 1px solid black;
 }
-
+.update-warning {
+    width: 100%;
+    background: #800000;
+    color: #eee;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    z-index: 9909;
+    display: none; /* When the time comes, you gotta run and change this to block. This is a warning. */
+}
 #main-header {
     display: flex;
     margin: 10px;
