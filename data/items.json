@@ -352,7 +352,7 @@
             { "text": "heirlooms_rosewood_hairbrush", "height": "0", "tool": "0", "lat": "-79.2137", "lng": "137.8262" },
             { "text": "heirlooms_tortoiseshell_comb", "height": "0", "tool": "0", "lat": "-30.1251", "lng": "80.8274" },
             { "text": "heirlooms_ivory_comb", "height": "0", "tool": "0", "lat": "-77.8702", "lng": "150.9863" },
-            { "text": "heirlooms_horse_hair_brush", "height": "0", "tool": "0", "lat": "-65.1471", "lng": "129.6583" },
+            { "text": "heirlooms_horse_hair_brush", "height": "-1", "tool": "0", "lat": "-65.1471", "lng": "129.6583" },
             { "text": "heirlooms_boar_bristle_brush", "height": "0", "tool": "0", "lat": "-75.9122", "lng": "146.3140" },
             { "text": "heirlooms_new_guinea_rosewood", "height": "0", "tool": "0", "lat": "-82.2140", "lng": "147.5697" }
         ],
