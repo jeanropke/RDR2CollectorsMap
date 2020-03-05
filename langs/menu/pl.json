@@ -60,7 +60,8 @@
  	{"key": "routes.empty", "value": "Pusta trasa"},
  	{"key": "routes.invalid", "value": "Nieprawidłowa trasa. Sprawdź konsolę, aby uzyskać więcej informacji (F12)"},
  	{"key": "menu.random_spots", "value": "Losowe przedmioty"},
- 	{"key": "menu.collectables_counter", "value": "Zebrano {count} z {max}"},
+	{"key": "menu.collectables_counter", "value": "Zebrano {count} z {max}"},
+	{"key": "menu.collection_counter", "value": "{count} z {max}"},
  	{"key": "menu.rdo_map", "value": "Mapa RDO"},
  	{"key": "menu.treasure_hunter", "value": "Łowca skarbów"},
  	{"key": "menu.tree_map", "value": "Mapa skarbów na drzewie"},
@@ -311,5 +312,6 @@
 	{"key": "help.custom_marker_color", "value": "Pozwala na ustawienie jednego koloru dla wszystkich znaczników rzedmiotów, lub ustawienie różnych domyślnych kolorów dla każdej karegorii znaczników."},
 	{"key": "help.show_weekly", "value": "Włącza/ wyłącza pokazywanie kolekcji tygodniowej na górze menu."},
 	{"key": "help.highlight_low_amount_items", "value": "Włącza/ wyłącza podświetlanie przedmiotów których jest najmniej w ekwipynku (relatywnie do kolekcji)."},
-	{"key": "help.animated_highlights", "value": "Włącza/ wyłącza animację dla podświetlania najmniejszej ilości przedmiotów w ekwipunku."}
+	{"key": "help.animated_highlights", "value": "Włącza/ wyłącza animację dla podświetlania najmniejszej ilości przedmiotów w ekwipunku."},
+	{"key": "help.collection_collected", "value": "Ilość przedmiotów zebranych z tej kolekcji."}
 ]
