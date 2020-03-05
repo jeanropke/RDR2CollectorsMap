@@ -595,9 +595,6 @@ $('.clickable').on('click', function () {
   if (menu.data('type') === undefined) return;
 
   $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
-  console.log(menu.data('type'));
-  console.log($('[data-type=' + menu.data('type') + ']'))
-
 
   var isDisabled = menu.hasClass('disabled');
 
@@ -826,7 +823,7 @@ $('#enable-inventory').on("change", function () {
   Inventory.toggleHighlightLowAmountItems();
   ItemsValue.reloadInventoryItems();
 
-  $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(Inventory.isEnabled);
+  $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number, .collection-collected').toggle(Inventory.isEnabled);
 });
 
 $('#enable-inventory-popups').on("change", function () {

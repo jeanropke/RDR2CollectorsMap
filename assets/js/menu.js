@@ -207,7 +207,9 @@ Menu.refreshMenu = function () {
     //Dunno where to place this on menu
     if (Inventory.isEnabled) {
       var collectiblesElement = $(`.menu-hidden[data-type="${category.data('type')}"]`);
-      console.log(`${category.data('type')}: ${collectiblesElement.find('.disabled').length}/${collectiblesElement.find('.collectible-wrapper').length}`);
+      collectiblesElement.find('.collection-collected').text(Language.get('menu.collection_counter')
+        .replace('{count}', collectiblesElement.find('.disabled').length)
+        .replace('{max}', collectiblesElement.find('.collectible-wrapper').length));
     }
 
     if (!Settings.sortItemsAlphabetically) return;
