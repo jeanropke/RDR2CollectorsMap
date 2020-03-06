@@ -305,7 +305,7 @@ Menu.refreshWeeklyItems = function () {
 
     $('#weekly-container .weekly-item-listings').append(element);
   });
-}
+};
 
 // Remove highlight from all important items
 $('#clear_highlights').on('click', function () {

@@ -15,7 +15,7 @@ var categories = [
 var categoriesDisabledByDefault = [
   'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
   'wounded_animal', 'rival_collector'
-]
+];
 
 var enabledCategories = categories;
 var categoryButtons = $(".clickable[data-type]");
@@ -572,7 +572,7 @@ $('#custom-marker-color').on("change", function () {
   Settings.markersCustomColor = parsed ? parsed : 0;
   $.cookie('custom-markers-color', Settings.markersCustomColor, { expires: 999 });
   MapBase.addMarkers();
-})
+});
 
 //Disable & enable collection category
 $('.clickable').on('click', function () {
@@ -864,8 +864,8 @@ $('#cookie-export').on("click", function () {
     var storage = localStorage;
 
     // Remove irrelevant properties.
-    delete cookies['_ga'];
-    delete storage['randid'];
+    delete cookies._ga;
+    delete storage.randid;
     delete storage['pinned-items'];
 
     var settings = {

@@ -142,7 +142,7 @@ var Inventory = {
     $(`[data-marker*=${category}] > img.marker-contour`).css("opacity", 0.0);
 
     if (Inventory.categories[category] == undefined) {
-      Inventory.categories[category] == { min: 0, max: 0, avg: 0, numElements: 0 };
+      Inventory.categories[category] = { min: 0, max: 0, avg: 0, numElements: 0 };
     }
 
     // get all markers which should be highlighted
