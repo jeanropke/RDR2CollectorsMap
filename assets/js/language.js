@@ -19,7 +19,7 @@ var Language = {
     setMenuLanguage: function () {
         const wikiBase = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/';
         const wikiPages = {
-            'de-de': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)',
+            'de-de': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(German)',
             'en-us': 'RDO-Collectors-Map-User-Guide-(English)',
             'fr-fr': 'RDO-Collectors-Map-Guide-d\'Utilisateur-(French)',
             'pt-br': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',

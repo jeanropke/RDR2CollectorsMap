@@ -345,8 +345,6 @@ var MapBase = {
     if (Layers.miscLayer != null)
       Layers.miscLayer.clearLayers();
 
-    var opacity = Settings.markerOpacity;
-
     MapBase.updateLoopAvailable = false;
     MapBase.yieldingLoop(
       MapBase.markers.length,
@@ -354,8 +352,7 @@ var MapBase = {
       function (i) {
         if (MapBase.requestLoopCancel) return;
 
-        var marker = MapBase.markers[i];
-        MapBase.addMarkerOnMap(marker, opacity);
+        MapBase.addMarkerOnMap(MapBase.markers[i], Settings.markerOpacity);
       },
       function () {
         MapBase.updateLoopAvailable = true;

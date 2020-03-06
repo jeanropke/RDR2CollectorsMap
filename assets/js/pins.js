@@ -108,11 +108,12 @@ var Pins = {
 
   updatePopup: function (marker) {
     var markerId = marker.options.id;
-    var markerIconSelect = "";
+    var markerContent = `<h1 id="${markerId}_name">${marker.options.name}</h1>
+      <p id="${markerId}_desc">${marker.options.desc}</p>`;
 
     if (Settings.isPinsEditingEnabled) {
       var markerIcons = ["pin", "random", "shovel", "magnet", "american_flowers", "antique_bottles", "arrowhead", "bird_eggs", "card_cups", "card_pentacles", "card_swords", "card_wands", "coin", "family_heirlooms", "fast_travel", "hide", "lost_bracelet", "lost_earrings", "lost_necklaces", "lost_ring", "nazar", "treasure"];
-      markerIconSelect = $('<select>').attr('id', `${markerId}_icon`).addClass('marker-popup-pin-input-icon');
+      var markerIconSelect = $('<select>').attr('id', `${markerId}_icon`).addClass('marker-popup-pin-input-icon');
 
       markerIcons.forEach(icon => {
         var option = $('<option></option>').attr('value', icon).attr('data-text', `map.user_pins.icon.${icon}`).text(Language.get(`map.user_pins.icon.${icon}`));
@@ -120,16 +121,24 @@ var Pins = {
         markerIconSelect.append(option);
       });
 
-      markerIconSelect = markerIconSelect.prop('outerHTML');
+      markerContent = `<h1><input id="${markerId}_name" class="marker-popup-pin-input-name"
+          type="text" value="${marker.options.name}"
+          placeholder="${Language.get('map.user_pins.placeholder_title')}"></h1>
+        <p><textarea id="${markerId}_desc" class="marker-popup-pin-input-desc"
+          rows="5" value="${marker.options.desc}"
+          placeholder="${Language.get('map.user_pins.placeholder_desc')}">${marker.options.desc}</textarea></p>
+        <hr class="marker-popup-pin-input-divider">
+        <label for="${markerId}_icon" class="marker-popup-pin-label"
+          data-text="map.user_pins.icon">${Language.get('map.user_pins.icon')}</label>
+        ${markerIconSelect.prop('outerHTML')}
+        <button type="button" class="btn btn-info save-button"
+          onclick="Pins.savePin(${markerId}, $('#${markerId}_name').val(),
+                                $('#${markerId}_desc').val(), $('#${markerId}_icon').val())"
+          data-text="map.user_pins.save">${Language.get('map.user_pins.save')}</button>
+        <button type="button" class="btn btn-danger remove-button"
+          onclick="Pins.removePin(${markerId})"
+          data-text="map.user_pins.remove">${Language.get('map.user_pins.remove')}</button>`;
     }
-
-    var markerTitle = Settings.isPinsEditingEnabled ? `<h1><input type="text" id="${markerId}_name" class="marker-popup-pin-input-name" value="${marker.options.name}" placeholder="${Language.get('map.user_pins.placeholder_title')}"></h1>` : `<h1 id="${markerId}_name">${marker.options.name}</h1>`;
-    var markerDesc = Settings.isPinsEditingEnabled ? `<p><textarea id="${markerId}_desc" class="marker-popup-pin-input-desc" rows="5" value="${marker.options.desc}" placeholder="${Language.get('map.user_pins.placeholder_desc')}">${marker.options.desc}</textarea></p>` : `<p id="${markerId}_desc">${marker.options.desc}</p>`;
-    var markerDivider = Settings.isPinsEditingEnabled ? `<hr class="marker-popup-pin-input-divider">` : '';
-    var markerIconLabel = Settings.isPinsEditingEnabled ? `<label for="${markerId}_icon" class="marker-popup-pin-label" data-text="map.user_pins.icon">${Language.get('map.user_pins.icon')}</label>` : '';
-    var markerSaveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-info save-button" onclick="Pins.savePin(${markerId}, $('#${markerId}_name').val(), $('#${markerId}_desc').val(), $('#${markerId}_icon').val())" data-text="map.user_pins.save">${Language.get('map.user_pins.save')}</button>` : '';
-    var markerRemoveButton = Settings.isPinsEditingEnabled ? `<button type="button" class="btn btn-danger remove-button" onclick="Pins.removePin(${markerId})" data-text="map.user_pins.remove">${Language.get('map.user_pins.remove')}</button>` : '';
-    var markerContent = markerTitle + markerDesc + markerDivider + markerIconLabel + markerIconSelect + markerSaveButton + markerRemoveButton;
 
     marker.bindPopup(markerContent, { minWidth: 300, maxWidth: 300 });
   },
