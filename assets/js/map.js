@@ -513,11 +513,6 @@ var MapBase = {
   },
 
   getIconColor: function (value) {
-    // use the same color if we want to highlight items with low amount
-    if (Inventory.highlightLowAmountItems && Inventory.isEnabled && value !== 'weekly') {
-      return MapBase.isDarkMode ? "darkblue" : "orange";
-    }
-
     switch (value) {
       case "day_1":
         return "blue";
@@ -678,7 +673,7 @@ var MapBase = {
 
     var icon = `./assets/images/icons/${marker.category}.png`;
     var background = `./assets/images/icons/marker_${markerBackgroundColor}.png`;
-    var markerContour = MapBase.isDarkMode ? './assets/images/icons/marker_contour_orange.png' : './assets/images/icons/marker_contour_blue.png';
+    var markerContour = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png`;
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override
@@ -707,7 +702,7 @@ var MapBase = {
     }
 
     if (marker.tool == '-1') {
-      overlay = '<img class="overlay" src="./assets/images/icons/cross_overlay.png" alt="Overlay">';
+      overlay = '<img class="overlay" src="./assets/images/icons/overlay_cross.png" alt="Overlay">';
     }
 
     var tempMarker = L.marker([marker.lat, marker.lng], {

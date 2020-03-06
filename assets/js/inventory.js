@@ -81,7 +81,7 @@ var Inventory = {
     }
 
     // reset category values
-    if (Inventory.categories == undefined){
+    if (Inventory.categories == undefined) {
       Inventory.categories = {};
     }
 
@@ -92,7 +92,7 @@ var Inventory = {
     }
 
     // build a unique list of categories whose item amounts have changed
-	  this.changedItems.forEach(itemName => {
+    this.changedItems.forEach(itemName => {
       var category = itemName.split("_")[0];
       if (changedCategories.indexOf(category) == -1) {
         changedCategories.push(category);
@@ -100,8 +100,8 @@ var Inventory = {
     });
 
     // walk through all categories and update the corresponding markers
-    changedCategories.forEach( category => {
-      Inventory.categories[category] = {max: 0, min: 0, avg: 0.0, numElements: 0};
+    changedCategories.forEach(category => {
+      Inventory.categories[category] = { max: 0, min: 0, avg: 0.0, numElements: 0 };
       var itemsInThisCategory = Object.keys(Inventory.items).filter(itemName => itemName.startsWith(category));
 
       itemsInThisCategory.forEach(itemName => {
@@ -116,8 +116,8 @@ var Inventory = {
         };
       });
 
-      
-      if(category == "random") return;
+      if (category == "random") return;
+
       // since items with amount 0 have not been considered before: adjust the average amount with the missing "0" values
       var numItemsInCategory = ItemsValue.collectionsLength.find(c => c[0] == category)[1];
       if (Inventory.categories[category].numElements < numItemsInCategory) {
@@ -136,13 +136,13 @@ var Inventory = {
   updateLowItemMarkersForCategory: function (category) {
     // remove all highlight classes at first
     $(`[data-marker*=${category}] > img.marker-contour`).removeClass(function (index, className) {
-      return (className.match (/highlight-low-amount-items-\S+/gm) || []).join(' ');
+      return (className.match(/highlight-low-amount-items-\S+/gm) || []).join(' ');
     });
     $(`[data-marker*=${category}] > img.marker-contour`).css('--animation-target-opacity', 0.0);
     $(`[data-marker*=${category}] > img.marker-contour`).css("opacity", 0.0);
 
     if (Inventory.categories[category] == undefined) {
-      Inventory.categories[category] == {min: 0, max: 0, avg: 0, numElements: 0};
+      Inventory.categories[category] == { min: 0, max: 0, avg: 0, numElements: 0 };
     }
 
     // get all markers which should be highlighted
@@ -156,13 +156,13 @@ var Inventory = {
     markers.map(_m => {
       // Set the correct marker colors depending on the map background.
       // Do this only affected collectible item markers and exclude, e.g. fast travel points or madam nazar
-      Inventory.updateMarkerSources(_m);      
+      Inventory.updateMarkerSources(_m);
 
       // further highlighting should only be done for enabled markers
       if (!_m.canCollect || _m.isCollected) {
         return;
       }
-  
+
       var weight = (Inventory.categories[category].avg - parseFloat(_m.amount)) / Inventory.stackSize;
       weight = Math.max(weight, 0.0);
 
@@ -171,14 +171,14 @@ var Inventory = {
       // set new highlight-low-amount-items class based on current value
       if (weight < 0.02) {
         // no highlights
-        $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('opacity', 0.0);
+        $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('opacity', 0.0);
       }
       else if ((weight < 0.3) || (!Inventory.animatedHighlights)) { // just static highlights for small differences or if animation is disabled
-        $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('opacity', scaledWeight);
+        $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('opacity', scaledWeight);
       }
       else { // animated or static highlights for larger differences according to user settings
-          $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).css('--animation-target-opacity', scaledWeight);
-          $(`[data-marker=${_m.text ||_m.subdata}] > img.marker-contour`).addClass(`highlight-low-amount-items-animated`);
+        $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('--animation-target-opacity', scaledWeight);
+        $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).addClass(`highlight-low-amount-items-animated`);
       }
     });
   },
@@ -188,28 +188,18 @@ var Inventory = {
       return weekly.item === (marker.text).replace(/_\d+/, "");
     }).length > 0;
 
-    var markerSrc = '';
-    var markerContourSrc = '';
-    
-    if (MapBase.isDarkMode) {
-      markerContourSrc = './assets/images/icons/marker_contour_orange.png';
-      markerSrc = './assets/images/icons/marker_darkblue.png';
-    } else {
-      markerContourSrc = './assets/images/icons/marker_contour_blue.png';
-      markerSrc = './assets/images/icons/marker_orange.png';
-    }
+    var markerBackgroundColor = (Settings.markersCustomColor === 1
+      ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
+      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day));
+
+    var markerContourSrc = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png`;
+    var markerSrc = `./assets/images/icons/marker_${markerBackgroundColor}.png`;
 
     // update the contour color
     $(`[data-marker=${marker.text || marker.subdata}] > img.marker-contour`).attr('src', markerContourSrc);
-    
-    if (isWeekly) {
-      return;
-    }
-
-    // update the marker background, only if the marker is not a weekly item
     $(`[data-marker=${marker.text || marker.subdata}] > img.background`).attr('src', markerSrc);
   },
-  
+
   changeMarkerAmount: function (name, amount, skipInventory = false) {
     var marker = MapBase.markers.filter(marker => {
       return (marker.text == name || marker.subdata == name);
