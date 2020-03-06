@@ -211,9 +211,6 @@ var Inventory = {
       if (!skipInventory || skipInventory && Inventory.isMenuUpdateEnabled) {
         marker.amount = parseInt(marker.amount) + amount;
 
-        if (marker.amount >= Inventory.stackSize)
-          marker.amount = Inventory.stackSize;
-
         if (marker.amount < 0)
           marker.amount = 0;
       }
