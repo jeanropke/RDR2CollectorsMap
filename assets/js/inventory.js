@@ -190,7 +190,7 @@ var Inventory = {
 
     var markerBackgroundColor = (Settings.markersCustomColor === 1
       ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
-      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day));
+      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + (Settings.markersCustomColor === 0 || Settings.markersCustomColor === 1 ? marker.day : Settings.markersCustomColor - 1)));
 
     var markerContourSrc = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png?v=${nocache}`;
     var markerSrc = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;

@@ -669,7 +669,7 @@ var MapBase = {
     var overlay = '';
     var markerBackgroundColor = (Settings.markersCustomColor === 1
       ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
-      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day));
+      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + (Settings.markersCustomColor === 0 || Settings.markersCustomColor === 1 ? marker.day : Settings.markersCustomColor - 1)));
 
     var icon = `./assets/images/icons/${marker.category}.png?v=${nocache}`;
     var background = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;
@@ -784,10 +784,12 @@ var MapBase = {
     $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
 
     $.each($(`[data-marker*=${text}]`), function (key, marker) {
+      var markerdata = null;
+
       if (category !== 'random' && category !== '')
-        var markerData = $(this).data('marker').replace(/_\d/, '');
+        markerData = $(this).data('marker').replace(/_\d/, '');
       else
-        var markerData = $(this).data('marker');
+        markerData = $(this).data('marker');
 
       if (markerData === text)
         $(this).toggleClass('highlight-items');
