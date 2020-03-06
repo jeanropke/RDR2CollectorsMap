@@ -671,9 +671,9 @@ var MapBase = {
       ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
       : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day));
 
-    var icon = `./assets/images/icons/${marker.category}.png`;
-    var background = `./assets/images/icons/marker_${markerBackgroundColor}.png`;
-    var markerContour = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png`;
+    var icon = `./assets/images/icons/${marker.category}.png?v=${nocache}`;
+    var background = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;
+    var markerContour = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png?v=${nocache}`;
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override

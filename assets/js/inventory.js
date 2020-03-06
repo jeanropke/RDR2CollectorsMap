@@ -192,8 +192,8 @@ var Inventory = {
       ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
       : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day));
 
-    var markerContourSrc = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png`;
-    var markerSrc = `./assets/images/icons/marker_${markerBackgroundColor}.png`;
+    var markerContourSrc = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png?v=${nocache}`;
+    var markerSrc = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;
 
     // update the contour color
     $(`[data-marker=${marker.text || marker.subdata}] > img.marker-contour`).attr('src', markerContourSrc);
