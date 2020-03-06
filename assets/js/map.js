@@ -494,7 +494,7 @@ var MapBase = {
       } else {
         $(`[data-type=${subdata}]`).removeClass('disabled');
       }
-    }
+    }    
   },
 
   loadCollectedItems: function () {

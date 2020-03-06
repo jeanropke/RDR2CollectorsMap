@@ -242,6 +242,7 @@ var Inventory = {
       }
 
       MapBase.toggleCollectibleMenu(marker.day, marker.text, marker.subdata, marker.category);
+      Menu.refreshCollectionCounter(marker.category);
     });
 
     if ($("#routes").val() == 1)

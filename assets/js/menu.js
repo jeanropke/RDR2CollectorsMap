@@ -201,16 +201,9 @@ Menu.refreshMenu = function () {
     // if the cycle is the same as yesterday highlight category in menu;
     var isSameCycle = Cycles.isSameAsYesterday(category.data('type'));
     var element = `[data-text="menu.${category.data('type')}"]`;
+
     Menu.addCycleWarning(element, isSameCycle);
-
-
-    //Dunno where to place this on menu
-    if (Inventory.isEnabled) {
-      var collectiblesElement = $(`.menu-hidden[data-type="${category.data('type')}"]`);
-      collectiblesElement.find('.collection-collected').text(Language.get('menu.collection_counter')
-        .replace('{count}', collectiblesElement.find('.disabled').length)
-        .replace('{max}', collectiblesElement.find('.collectible-wrapper').length));
-    }
+    Menu.refreshCollectionCounter(category.data('type'));    
 
     if (!Settings.sortItemsAlphabetically) return;
     if (category.data('type').includes('card_')) return;
@@ -237,6 +230,15 @@ Menu.refreshMenu = function () {
   Menu.refreshWeeklyItems();
 
   $('.map-cycle-alert span').html(Language.get('map.refresh_for_updates_alert'));
+};
+
+Menu.refreshCollectionCounter = function(_category) {
+  if (Inventory.isEnabled) {
+    var collectiblesElement = $(`.menu-hidden[data-type="${_category}"]`);
+    collectiblesElement.find('.collection-collected').text(Language.get('menu.collection_counter')
+      .replace('{count}', collectiblesElement.find('.disabled').length)
+      .replace('{max}', collectiblesElement.find('.collectible-wrapper').length));
+  }
 };
 
 Menu.showAll = function () {
@@ -272,6 +274,7 @@ Menu.refreshItemsCounter = function () {
 
   // refresh items value counter
   ItemsValue.reloadInventoryItems();
+  Menu.refreshCollectionCounter();
 };
 
 Menu.refreshWeeklyItems = function () {
