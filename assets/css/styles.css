@@ -1172,7 +1172,7 @@ a.no-style:visited {
 }
 
 .leaflet-div-icon .overlay {
-    z-index: 4;
+    z-index: 5;
     width: 100%;
     height: auto;
 }
