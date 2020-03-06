@@ -203,7 +203,7 @@ Menu.refreshMenu = function () {
     var element = `[data-text="menu.${category.data('type')}"]`;
 
     Menu.addCycleWarning(element, isSameCycle);
-    Menu.refreshCollectionCounter(category.data('type'));    
+    Menu.refreshCollectionCounter(category.data('type'));
 
     if (!Settings.sortItemsAlphabetically) return;
     if (category.data('type').includes('card_')) return;
@@ -232,13 +232,11 @@ Menu.refreshMenu = function () {
   $('.map-cycle-alert span').html(Language.get('map.refresh_for_updates_alert'));
 };
 
-Menu.refreshCollectionCounter = function(_category) {
-  if (Inventory.isEnabled) {
-    var collectiblesElement = $(`.menu-hidden[data-type="${_category}"]`);
-    collectiblesElement.find('.collection-collected').text(Language.get('menu.collection_counter')
-      .replace('{count}', collectiblesElement.find('.disabled').length)
-      .replace('{max}', collectiblesElement.find('.collectible-wrapper').length));
-  }
+Menu.refreshCollectionCounter = function (category) {
+  var collectiblesElement = $(`.menu-hidden[data-type="${category}"]`);
+  collectiblesElement.find('.collection-collected').text(Language.get('menu.collection_counter')
+    .replace('{count}', collectiblesElement.find('.disabled').length)
+    .replace('{max}', collectiblesElement.find('.collectible-wrapper').length));
 };
 
 Menu.showAll = function () {
@@ -274,7 +272,11 @@ Menu.refreshItemsCounter = function () {
 
   // refresh items value counter
   ItemsValue.reloadInventoryItems();
-  Menu.refreshCollectionCounter();
+
+  $.each($(".menu-hidden[data-type]"), function (key, value) {
+    var category = $(value).attr('data-type');
+    Menu.refreshCollectionCounter(category);
+  });
 };
 
 Menu.refreshWeeklyItems = function () {
