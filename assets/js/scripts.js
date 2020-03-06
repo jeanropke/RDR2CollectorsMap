@@ -126,16 +126,6 @@ function init() {
     $.cookie('overlay-opacity', '0.5', { expires: 999 });
   }
 
-  if ($.cookie('clock-or-timer') === undefined) {
-    Settings.displayClockHideTimer = false;
-    $.cookie('clock-or-timer', 'false', { expires: 999 });
-  }
-
-  if ($.cookie('timestamps-24') === undefined) {
-    Settings.display24HoursTimestamps = false;
-    $.cookie('timestamps-24', 'false', { expires: 999 });
-  }
-
   if ($.cookie('show-weekly') === undefined) {
     Settings.showWeeklySettings = 1;
     $.cookie('show-weekly', '1', { expires: 999 });
@@ -159,11 +149,6 @@ function init() {
   if ($.cookie('show-import-export') === undefined) {
     Settings.showImportExportSettings = 1;
     $.cookie('show-import-export', '1', { expires: 999 });
-  }
-
-  if ($.cookie('custom-markers-color') === undefined) {
-    Settings.markersCustomColor = 0;
-    $.cookie('custom-markers-color', '0', { expires: 999 });
   }
 
   MapBase.init();
