@@ -166,7 +166,7 @@ var Inventory = {
       var weight = (Inventory.categories[category].avg - parseFloat(_m.amount)) / Inventory.stackSize;
       weight = Math.max(weight, 0.0);
 
-      var scaledWeight = Math.min(weight * 2, 1.0);
+      var scaledWeight = Math.min(weight * 2.4, 1.0);
 
       // set new highlight-low-amount-items class based on current value
       if (weight < 0.02) {
