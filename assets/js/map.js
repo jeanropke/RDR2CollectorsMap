@@ -707,7 +707,7 @@ var MapBase = {
     }
 
     if (marker.tool == '-1') {
-      overlay = '<img class="overlay" src="./assets/images/cross_overlay.png" alt="Overlay">';
+      overlay = '<img class="overlay" src="./assets/images/icons/cross_overlay.png" alt="Overlay">';
     }
 
     var tempMarker = L.marker([marker.lat, marker.lng], {
