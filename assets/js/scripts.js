@@ -826,9 +826,10 @@ $('#highlight_low_amount_items').on("change", function () {
   MapBase.addMarkers();
 });
 
-$('#animated_highlights').on("change", function () {
-  Inventory.animatedHighlights = $('#animated_highlights').prop("checked");
-  $.cookie('animated_highlights', Inventory.animatedHighlights ? '1' : '0', { expires: 999 });
+$('#highlight_style').on("change", function () {
+  var parsed = parseFloat($("#highlight_style").val());
+  Inventory.highlightStyle = parsed ? parsed : Inventory.highlightStyles.ANIMATED_RECOMMENDED;
+  $.cookie('highlight_style', Inventory.highlightStyle, { expires: 999 });
   
   MapBase.addMarkers();
 });

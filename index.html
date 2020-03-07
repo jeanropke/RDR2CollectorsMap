@@ -558,13 +558,21 @@
           <label class="input-checkbox-label" for="highlight_low_amount_items"></label>
         </div>
       </div>
-      <div class="input-container" data-help="animated_highlights">
-        <label for="animated_highlights" data-text="menu.animated_highlights">Animated highlights</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="animated_highlights" value="0" id="animated_highlights" />
-          <label class="input-checkbox-label" for="animated_highlights"></label>
-        </div>
+      
+      <div class="input-container" data-help="highlight_style">
+        <label for="highlight-style" data-text="menu.highlight_style">Highlight style</label>
+        <select class="input-text wide-select-menu" id="highlight_style">
+          <option disabled>-- Static --</option>
+          <option value="0" data-text="menu.highlight_style_static_recommended">Recommended colors</option>
+          <option value="1" data-text="menu.highlight_style_static_default">Default colors</option>
+          <option value="2" data-text="menu.highlight_style_static_custom">Custom colors</option>
+          <option disabled>-- Animated --</option>
+          <option value="3" data-text="menu.highlight_style_animated_recommended">Recommended colors</option>
+          <option value="4" data-text="menu.highlight_style_animated_default">Default colors</option>
+          <option value="5" data-text="menu.highlight_style_animated_custom">Custom colors</option>
+        </select>
       </div>
+
       <hr class="menu-divider">
       <div class="input-container" data-help="show_weekly">
         <label for="show-weekly" data-text="menu.show_weekly">Show weekly collection</label>
