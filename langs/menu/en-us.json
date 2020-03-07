@@ -61,6 +61,7 @@
 	{"key": "routes.invalid", "value": "Invalid route. Check console for more information (F12)"},
 	{"key": "menu.random_spots", "value": "Random Spots"},
 	{"key": "menu.collectables_counter", "value": "Collected {count} of {max}"},
+	{"key": "menu.collection_counter", "value": "{count} of {max}"},
 	{"key": "menu.rdo_map", "value": "RDO Map"},
 	{"key": "menu.treasure_hunter", "value": "Treasure Hunter"},
 	{"key": "menu.tree_map", "value": "Treasure Map on Tree"},
@@ -228,6 +229,12 @@
 	{"key": "map.has_multi_filter_alert", "value": "Some markers are being hidden by your \"Tool type\" setting and search query."},
 	{"key": "map.has_search_filter_alert", "value": "Some markers are being hidden by your search query."},
 	{"key": "map.has_tool_filter_alert", "value": "Some markers are being hidden by your \"Tool type\" setting."},
+	{"key": "menu.custom_marker_blue", "value": "Blue"},
+	{"key": "menu.custom_marker_orange", "value": "Orange"},
+	{"key": "menu.custom_marker_pink", "value": "Pink"},
+	{"key": "menu.custom_marker_purple", "value": "Purple"},
+	{"key": "menu.custom_marker_dark_red", "value": "Dark red"},
+	{"key": "menu.custom_marker_dark_blue", "value": "Dark blue"},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
@@ -311,5 +318,6 @@
 	{"key": "help.custom_marker_color", "value": "Allows you to set one color for all items markers, or set default different color for each marker category."},
 	{"key": "help.show_weekly", "value": "Toggles whether the weekly collection should be visible in the menu."},
 	{"key": "help.highlight_low_amount_items", "value": "Toggles whether the items with lowest amount in your inventory is highlighted on the map."},
-	{"key": "help.animated_highlights", "value": "Toggles the animation of the smallest amount of items."}
+	{"key": "help.animated_highlights", "value": "Toggles the animation of the smallest amount of items."},
+	{"key": "help.collection_collected", "value": "Amount of items collected for this collection."}
 ]

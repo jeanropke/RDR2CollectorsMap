@@ -494,7 +494,7 @@ var MapBase = {
       } else {
         $(`[data-type=${subdata}]`).removeClass('disabled');
       }
-    }
+    }    
   },
 
   loadCollectedItems: function () {
@@ -513,11 +513,6 @@ var MapBase = {
   },
 
   getIconColor: function (value) {
-    // use the same color if we want to highlight items with low amount
-    if (Inventory.highlightLowAmountItems && Inventory.isEnabled && value !== 'weekly') {
-      return MapBase.isDarkMode ? "darkblue" : "orange";
-    }
-
     switch (value) {
       case "day_1":
         return "blue";
@@ -674,11 +669,11 @@ var MapBase = {
     var overlay = '';
     var markerBackgroundColor = (Settings.markersCustomColor === 1
       ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
-      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day));
+      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + (Settings.markersCustomColor === 0 || Settings.markersCustomColor === 1 ? marker.day : Settings.markersCustomColor - 1)));
 
-    var icon = `./assets/images/icons/${marker.category}.png`;
-    var background = `./assets/images/icons/marker_${markerBackgroundColor}.png`;    
-    var markerContour = MapBase.isDarkMode ? './assets/images/icons/marker_contour_orange.png' : './assets/images/icons/marker_contour_blue.png';
+    var icon = `./assets/images/icons/${marker.category}.png?v=${nocache}`;
+    var background = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;
+    var markerContour = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png?v=${nocache}`;
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override
@@ -704,6 +699,10 @@ var MapBase = {
     // Timed flower overlay override
     if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower') {
       overlay = '<img class="overlay" src="./assets/images/icons/overlay_time.png" alt="Overlay">';
+    }
+
+    if (marker.tool == '-1') {
+      overlay = '<img class="overlay" src="./assets/images/icons/overlay_cross.png" alt="Overlay">';
     }
 
     var tempMarker = L.marker([marker.lat, marker.lng], {
@@ -785,10 +784,12 @@ var MapBase = {
     $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
 
     $.each($(`[data-marker*=${text}]`), function (key, marker) {
+      var markerdata = null;
+
       if (category !== 'random' && category !== '')
-        var markerData = $(this).data('marker').replace(/_\d/, '');
+        markerData = $(this).data('marker').replace(/_\d/, '');
       else
-        var markerData = $(this).data('marker');
+        markerData = $(this).data('marker');
 
       if (markerData === text)
         $(this).toggleClass('highlight-items');

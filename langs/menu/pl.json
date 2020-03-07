@@ -60,7 +60,8 @@
  	{"key": "routes.empty", "value": "Pusta trasa"},
  	{"key": "routes.invalid", "value": "Nieprawidłowa trasa. Sprawdź konsolę, aby uzyskać więcej informacji (F12)"},
  	{"key": "menu.random_spots", "value": "Losowe przedmioty"},
- 	{"key": "menu.collectables_counter", "value": "Zebrano {count} z {max}"},
+	{"key": "menu.collectables_counter", "value": "Zebrano {count} z {max}"},
+	{"key": "menu.collection_counter", "value": "{count} z {max}"},
  	{"key": "menu.rdo_map", "value": "Mapa RDO"},
  	{"key": "menu.treasure_hunter", "value": "Łowca skarbów"},
  	{"key": "menu.tree_map", "value": "Mapa skarbów na drzewie"},
@@ -228,6 +229,12 @@
 	{"key": "map.has_multi_filter_alert", "value": "Niektóre znaczniki nie są widoczne przez ustawienie \"Narzędzia\" oraz pasek wyszukiwania."},
 	{"key": "map.has_search_filter_alert", "value": "Widoczne są tylko znczniki pasujące do frazy wpisanej w pasek wyszukiwania."},
 	{"key": "map.has_tool_filter_alert", "value": "Niektóre znaczniki nie są widoczne przez ustawienie \"Narzędzia\"."},
+	{"key": "menu.custom_marker_blue", "value": "Niebieski"},
+	{"key": "menu.custom_marker_orange", "value": "Pomarańczowy"},
+	{"key": "menu.custom_marker_pink", "value": "Różowy"},
+	{"key": "menu.custom_marker_purple", "value": "Fioletowy"},
+	{"key": "menu.custom_marker_dark_red", "value": "Ciemnoczerwony"},
+	{"key": "menu.custom_marker_dark_blue", "value": "Ciemnoniebieski"},
 
 	{"key": "help.default", "value": "Najedź lub przytrzymaj opcję menu na urz. mobilnym, aby wyświetlić podpowiedzi."},
 	{"key": "help.clear_custom_routes", "value": "Usuwa wszystkie własne trasy na mapie."},
@@ -311,5 +318,6 @@
 	{"key": "help.custom_marker_color", "value": "Pozwala na ustawienie jednego koloru dla wszystkich znaczników rzedmiotów, lub ustawienie różnych domyślnych kolorów dla każdej karegorii znaczników."},
 	{"key": "help.show_weekly", "value": "Włącza/ wyłącza pokazywanie kolekcji tygodniowej na górze menu."},
 	{"key": "help.highlight_low_amount_items", "value": "Włącza/ wyłącza podświetlanie przedmiotów których jest najmniej w ekwipynku (relatywnie do kolekcji)."},
-	{"key": "help.animated_highlights", "value": "Włącza/ wyłącza animację dla podświetlania najmniejszej ilości przedmiotów w ekwipunku."}
+	{"key": "help.animated_highlights", "value": "Włącza/ wyłącza animację dla podświetlania najmniejszej ilości przedmiotów w ekwipunku."},
+	{"key": "help.collection_collected", "value": "Ilość przedmiotów zebranych z tej kolekcji."}
 ]

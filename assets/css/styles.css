@@ -71,6 +71,7 @@ input, textarea, select, .btn {
     padding: 2px;
     border: 1px solid black;
 }
+
 .update-warning {
     width: 100%;
     background: #800000;
@@ -79,8 +80,10 @@ input, textarea, select, .btn {
     padding: 10px;
     position: fixed;
     z-index: 9909;
-    display: none; /* When the time comes, you gotta run and change this to block. This is a warning. */
+    display: none;
+    /* When the time comes, you gotta run and change this to block. This is a warning. */
 }
+
 #main-header {
     display: flex;
     margin: 10px;
@@ -686,11 +689,17 @@ a.wiki-page:visited {
     filter: drop-shadow(0 0 .5rem #cc0000) drop-shadow(0 0 .4rem #cc0000);
 }
 
-.highlight-low-amount-items-animated { animation: highlight-low-amount-items-animation 1s infinite alternate;}
+.highlight-low-amount-items-animated {
+    animation: highlight-low-amount-items-animation 1s infinite alternate;
+}
 
 @keyframes highlight-low-amount-items-animation {
-    from { opacity: 0.0;}
-    to { opacity: var(--animation-target-opacity);}
+    from {
+        opacity: 0.0;
+    }
+    to {
+        opacity: var(--animation-target-opacity);
+    }
 }
 
 .highlight-important-items-menu {
@@ -1163,30 +1172,30 @@ a.no-style:visited {
 }
 
 .leaflet-div-icon .overlay {
-    z-index: 4;
+    z-index: 5;
     width: 100%;
     height: auto;
 }
 
 .leaflet-div-icon .icon {
-    z-index: 3;
+    z-index: 4;
     width: 100%;
     height: auto;
     padding-top: 6px;
 }
 
 .leaflet-div-icon .background {
-    z-index: 2;
+    z-index: 3;
     width: 100%;
     height: 100%;
 }
 
 .leaflet-div-icon .marker-contour {
-    z-index: 1;
-    width: 120%;
-    height: 120%;
-    left: -10%;
-    bottom: -10%;
+    z-index: 2;
+    width: 130%;
+    height: 130%;
+    left: -15%;
+    bottom: -15%;
 }
 
 .marker-contour {
