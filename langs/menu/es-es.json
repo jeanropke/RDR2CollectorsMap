@@ -71,7 +71,7 @@
 	{"key": "menu.enable_inventory", "value": "Activar inventario"},
 	{"key": "menu.inventory_stack", "value": "Tamaño de pila de artículos"},
 	{"key": "menu.highlight_low_amount_items", "value": "Highlight low amount items"},
-	{"key": "menu.animated_highlights", "value": "Animate low amount highlights"},
+	{"key": "menu.highlight_style", "value": "Highlight style"},
 	{"key": "menu.marker_cluster", "value": "Grupo de marcadores"},
 	{"key": "menu.route_generator", "value": "Generador de ruta"},
 	{"key": "menu.generate_route", "value": "Generar ruta"},

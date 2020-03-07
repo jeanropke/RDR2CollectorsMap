@@ -76,7 +76,7 @@
 	{"key": "menu.enable_inventory", "value": "是否启用数量功能"},
 	{"key": "menu.inventory_stack", "value": "物品数量大小"},
 	{"key": "menu.highlight_low_amount_items", "value": "Highlight low amount items"},
-	{"key": "menu.animated_highlights", "value": "Animate low amount highlights"},
+	{"key": "menu.highlight_style", "value": "Highlight style"},
 	{"key": "menu.marker_cluster", "value": "收藏品重叠是否展开"},
 	{"key": "menu.route_generator", "value": "路线生成器"},
 	{"key": "menu.generate_route", "value": "生成路线"},

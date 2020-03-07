@@ -78,7 +78,7 @@
  	{"key": "menu.enable_inventory", "value": "Włącz ekwipunek"},
 	{"key": "menu.inventory_stack", "value": "Rozmiar stosu przedmiotów"},
 	{"key": "menu.highlight_low_amount_items", "value": "Podświetlaj niewielkie ilości przedm."},
-	{"key": "menu.animated_highlights", "value": "Animuj podświetlenie przedmiotów"},
+	{"key": "menu.highlight_style", "value": "Highlight style"},
  	{"key": "menu.marker_cluster", "value": "Grupowanie znaczników"},
  	{"key": "menu.route_generator", "value": "Generator trasy"},
  	{"key": "menu.generate_route", "value": "Wygeneruj trasę"},
@@ -318,6 +318,5 @@
 	{"key": "help.custom_marker_color", "value": "Pozwala na ustawienie jednego koloru dla wszystkich znaczników rzedmiotów, lub ustawienie różnych domyślnych kolorów dla każdej karegorii znaczników."},
 	{"key": "help.show_weekly", "value": "Włącza/ wyłącza pokazywanie kolekcji tygodniowej na górze menu."},
 	{"key": "help.highlight_low_amount_items", "value": "Włącza/ wyłącza podświetlanie przedmiotów których jest najmniej w ekwipynku (relatywnie do kolekcji)."},
-	{"key": "help.animated_highlights", "value": "Włącza/ wyłącza animację dla podświetlania najmniejszej ilości przedmiotów w ekwipunku."},
 	{"key": "help.collection_collected", "value": "Ilość przedmiotów zebranych z tej kolekcji."}
 ]

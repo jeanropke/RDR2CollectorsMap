@@ -76,7 +76,7 @@
 	{"key": "menu.enable_inventory", "value": "Inventar verwenden"},
 	{"key": "menu.inventory_stack", "value": "Inventar Größe"},
 	{"key": "menu.highlight_low_amount_items", "value": "Wenige Items hervorheben"},
-	{"key": "menu.animated_highlights", "value": "Hervorhebung animieren"},
+	{"key": "menu.highlight_style", "value": "Hervorhebungsstil"},
 	{"key": "menu.marker_cluster", "value": "Anhäufungen markieren"},
 	{"key": "menu.route_generator", "value": "Routen-Navigator"},
 	{"key": "menu.generate_route", "value": "Route berechnen"},
