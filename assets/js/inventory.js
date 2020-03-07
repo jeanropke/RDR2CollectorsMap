@@ -8,8 +8,8 @@ var Inventory = {
   changedItems: [],
   categories: {},
   highlightLowAmountItems: $.cookie('highlight_low_amount_items') == '1',  
-  highlightStyles: { STATIC_RECOMMENDED: 0, STATIC_DEFAULT: 1, STATIC_CUSTOM: 2, ANIMATED_RECOMMENDED: 3, ANIMATED_DEFAULT: 4, ANIMATED_CUSTOM: 5 },
-  highlightStyle: parseInt($.cookie('highlight_style')) ? parseInt($.cookie('highlight_style')) : Inventory.highlightStyles.ANIMATED_RECOMMENDED,
+  highlightStyles: { STATIC_RECOMMENDED: 0, STATIC_DEFAULT: 1, ANIMATED_RECOMMENDED: 2, ANIMATED_DEFAULT: 3 },
+  highlightStyle: !isNaN(parseInt($.cookie('highlight_style'))) ? parseInt($.cookie('highlight_style')) : 2,
 
   init: function () {
     if ($.cookie('inventory-popups-enabled') === undefined) {
@@ -175,7 +175,7 @@ var Inventory = {
         // no highlights
         $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('opacity', 0.0);
       }
-      else if ((weight < 0.3) || (Inventory.highlightStyle < 3)) { // just static highlights for small differences or if animation is disabled
+      else if ((weight < 0.3) || (Inventory.highlightStyle < Inventory.highlightStyles.ANIMATED_RECOMMENDED)) { // just static highlights for small differences or if animation is disabled
         $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('opacity', scaledWeight);
       }
       else { // animated or static highlights for larger differences according to user settings
@@ -187,9 +187,10 @@ var Inventory = {
 
   updateMarkerSources: function (marker) {
     var markerBackgroundColor = MapBase.getIconColor(marker);
+    var markerContourColor = MapBase.getContourColor(markerBackgroundColor);
 
-    var markerContourSrc = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png?v=${nocache}`;
     var markerSrc = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;
+    var markerContourSrc = `./assets/images/icons/contours/contour_marker_${markerContourColor}.png?v=${nocache}`;
 
     // update the contour color
     $(`[data-marker=${marker.text || marker.subdata}] > img.marker-contour`).attr('src', markerContourSrc);
@@ -253,7 +254,8 @@ var Inventory = {
       $('#reset-collection-updates-inventory').parent().parent().hide();
       $('#inventory-stack').parent().hide();
       $('[data-target="#clear-inventory-modal"]').hide();
-      $('#highlight_low_amount_items').parent().parent().hide();      
+      $('#highlight_low_amount_items').parent().parent().hide();
+      $('#highlight_style').parent().hide();
       $('#open-clear-inventory-modal').hide();
     }
     else {
@@ -262,7 +264,7 @@ var Inventory = {
       $('#reset-collection-updates-inventory').parent().parent().show();
       $('#inventory-stack').parent().show();
       $('[data-target="#clear-inventory-modal"]').show();
-      $('#highlight_low_amount_items').parent().parent().show();            
+      $('#highlight_low_amount_items').parent().parent().show();
       $('#open-clear-inventory-modal').show();
 
       Inventory.toggleHighlightLowAmountItems();
@@ -271,8 +273,8 @@ var Inventory = {
 
   toggleHighlightLowAmountItems: function () {
     if (Inventory.highlightLowAmountItems)
-      $('#highlight_style').parent().parent().show();
+      $('#highlight_style').parent().show();
     else
-      $('#highlight_style').parent().parent().hide();
+      $('#highlight_style').parent().hide();
   }
 };

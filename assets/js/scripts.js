@@ -678,8 +678,9 @@ $('#highlight_low_amount_items').on("change", function () {
 });
 
 $('#highlight_style').on("change", function () {
-  var parsed = parseFloat($("#highlight_style").val());
-  Inventory.highlightStyle = parsed ? parsed : Inventory.highlightStyles.ANIMATED_RECOMMENDED;
+  var parsed = parseInt($("#highlight_style").val());
+
+  Inventory.highlightStyle = !isNaN(parsed) ? parsed : Inventory.highlightStyles.ANIMATED_RECOMMENDED;
   $.cookie('highlight_style', Inventory.highlightStyle, { expires: 999 });
   
   MapBase.addMarkers();

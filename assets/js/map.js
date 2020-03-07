@@ -515,7 +515,9 @@ var MapBase = {
       return "green";
     }
 
-    if (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED || Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED) {
+    if (Inventory.highlightLowAmountItems && 
+      (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED 
+        || Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
       return MapBase.isDarkMode ? "darkblue" : "orange";
     }
 
@@ -525,6 +527,32 @@ var MapBase = {
 
     var dailyColor = Settings.markersCustomColor === 0 || Settings.markersCustomColor === 1 ? marker.day : Settings.markersCustomColor - 1;
     return MapBase.getDailyIconColor(dailyColor);
+  },
+
+  getContourColor: function (baseColor) {
+    var contourColors = {
+      beige: "darkblue",
+      black: "white",
+      blue: "orange",
+      cadetblue: "lightred",
+      darkblue: "red",
+      darkgreen: "purple",
+      darkpurple: "green",
+      darkred: "blue",
+      green: "pink",
+      lightred: "cadetblue",
+      orange: "lightblue",
+      purple: "lightgreen",
+      white: "gray"      
+    };
+
+    if (Inventory.highlightLowAmountItems && 
+      (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED || 
+        Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
+          return MapBase.isDarkMode ? "orange" : "darkblue";      
+    }
+
+    return contourColors[baseColor] || "darkblue";
   },
 
   getDailyIconColor: function (day) {
@@ -651,7 +679,8 @@ var MapBase = {
     var markerBackgroundColor = MapBase.getIconColor(marker);
     var icon = `./assets/images/icons/${marker.category}.png?v=${nocache}`;
     var background = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;
-    var markerContour = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png?v=${nocache}`;
+    var markerContourColor = MapBase.getContourColor(markerBackgroundColor);
+    var markerContour = `./assets/images/icons/contours/contour_marker_${markerContourColor}.png?v=${nocache}`;
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override
