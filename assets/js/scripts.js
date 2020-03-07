@@ -25,16 +25,9 @@ var fastTravelData;
 var weeklySetData = [];
 var date;
 
-var wikiLanguage = [];
-
 var debugMarkersArray = [];
 
 function init() {
-  wikiLanguage['de-de'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Sammler-Landkarte-Benutzerhandbuch-(Deutsch)';
-  wikiLanguage['en-us'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)';
-  wikiLanguage['fr-fr'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-Guide-d\'Utilisateur-(French)';
-  wikiLanguage['pt-br'] = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)';
-
   if (localStorage.getItem("inventory-items") !== null) {
     var _items = localStorage.getItem("inventory-items");
 
@@ -78,78 +71,10 @@ function init() {
   if ($.cookie('map-layer') === undefined || isNaN(parseInt($.cookie('map-layer'))))
     $.cookie('map-layer', 0, { expires: 999 });
 
-  if (!Language.availableLanguages.includes(Settings.language))
-    Settings.language = 'en-us';
-
-  if ($.cookie('remove-markers-daily') === undefined) {
-    Settings.resetMarkersDaily = true;
-    $.cookie('remove-markers-daily', '1', { expires: 999 });
-  }
-
-  if ($.cookie('marker-cluster') === undefined) {
-    Settings.markerCluster = true;
-    $.cookie('marker-cluster', '1', { expires: 999 });
-  }
-
-  if ($.cookie('enable-marker-popups') === undefined) {
-    Settings.isPopupsEnabled = true;
-    $.cookie('enable-marker-popups', '1', { expires: 999 });
-  }
-
-  if ($.cookie('enable-marker-shadows') === undefined) {
-    Settings.isShadowsEnabled = true;
-    $.cookie('enable-marker-shadows', '1', { expires: 999 });
-  }
-
-  if ($.cookie('enable-dclick-zoom') === undefined) {
-    Settings.isDoubleClickZoomEnabled = true;
-    $.cookie('enable-dclick-zoom', '1', { expires: 999 });
-  }
-
-  if ($.cookie('show-help') === undefined) {
-    Settings.showHelp = true;
-    $.cookie('show-help', '1', { expires: 999 });
-  }
-
-  if ($.cookie('marker-opacity') === undefined) {
-    Settings.markerOpacity = 1;
-    $.cookie('marker-opacity', '1', { expires: 999 });
-  }
-
-  if ($.cookie('marker-size') === undefined) {
-    Settings.markerSize = 1;
-    $.cookie('marker-size', '1', { expires: 999 });
-  }
-
-  if ($.cookie('overlay-opacity') === undefined) {
-    Settings.overlayOpacity = 0.5;
-    $.cookie('overlay-opacity', '0.5', { expires: 999 });
-  }
-
-  if ($.cookie('show-weekly') === undefined) {
-    Settings.showWeeklySettings = 1;
-    $.cookie('show-weekly', '1', { expires: 999 });
-  }
-
-  if ($.cookie('show-utilities') === undefined) {
-    Settings.showUtilitiesSettings = 1;
-    $.cookie('show-utilities', '1', { expires: 999 });
-  }
-
-  if ($.cookie('show-customization') === undefined) {
-    Settings.showCustomizationSettings = 1;
-    $.cookie('show-customization', '1', { expires: 999 });
-  }
-
-  if ($.cookie('show-routes') === undefined) {
-    Settings.showRoutesSettings = 1;
-    $.cookie('show-routes', '1', { expires: 999 });
-  }
-
-  if ($.cookie('show-import-export') === undefined) {
-    Settings.showImportExportSettings = 1;
-    $.cookie('show-import-export', '1', { expires: 999 });
-  }
+  const navLang = navigator.language.toLowerCase();
+  CookieProxy.addCookie(Settings, 'language', {
+    default: Language.availableLanguages.includes(navLang) ? navLang : 'en-us',
+  })
 
   MapBase.init();
   MapBase.setOverlays(Settings.overlayOpacity);
@@ -182,8 +107,8 @@ function init() {
   $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
   $('#enable-cycle-input').prop("checked", Settings.isCycleInputEnabled);
   $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
-  $("#enable-debug").prop('checked', $.cookie('debug') != null);
-  $("#enable-cycle-changer").prop('checked', $.cookie('cycle-changer-enabled') != null);
+  $("#enable-debug").prop('checked', Settings.isDebugEnabled);
+  $("#enable-cycle-changer").prop('checked', Settings.isCycleChangerEnabled);
 
   $("#show-weekly").prop('checked', Settings.showWeeklySettings);
   $("#show-utilities").prop('checked', Settings.showUtilitiesSettings);
@@ -291,7 +216,6 @@ function downloadAsFile(filename, text) {
 
 function clockTick() {
   // Clock in game created by Michal__d
-  var display_24 = Settings.display24HoursTimestamps;
   var newDate = new Date();
   var startTime = newDate.valueOf();
   var factor = 30;
@@ -300,7 +224,7 @@ function clockTick() {
   correctTime.setHours(correctTime.getUTCHours());
   correctTime.setMinutes(correctTime.getUTCMinutes() - 3); //for some reason time in game is 3 sec. delayed to normal time
 
-  if (display_24) {
+  if (Settings.display24HoursTimestamps) {
     $('#time-in-game').text(addZeroToNumber(correctTime.getHours()) + ":" + addZeroToNumber(correctTime.getMinutes()));
   } else {
     $('#time-in-game').text((addZeroToNumber(correctTime.getHours() % 12) == '00' ? '12' : addZeroToNumber(correctTime.getHours() % 12)) + ":" + addZeroToNumber(correctTime.getMinutes()) + " " + ((correctTime.getHours() < 12) ? "AM" : "PM"));
@@ -329,11 +253,9 @@ function clockTick() {
 
 setInterval(clockTick, 1000);
 
-// toggle timer and clock after click the container
 $('.timer-container, .clock-container').on('click', function () {
   $('.timer-container, .clock-container').toggleClass('hidden');
   Settings.displayClockHideTimer = !Settings.displayClockHideTimer;
-  $.cookie('clock-or-timer', Settings.displayClockHideTimer, { expires: 999 });
 });
 
 /**
@@ -346,9 +268,9 @@ $('.timer-container, .clock-container').on('click', function () {
 $('.update-warning').on('click', function() {
   $(this).hide();
 });
-//Show all markers on map
+
 $("#show-all-markers").on("change", function () {
-  Settings.showAllMarkers = $("#show-all-markers").prop('checked');
+  MapBase.showAllMarkers = $("#show-all-markers").prop('checked');
   MapBase.addMarkers();
 });
 
@@ -361,71 +283,44 @@ $('#enable-right-click').on("change", function () {
   }
 });
 
-//Toggle settings containers
 $("#show-weekly").on("change", function () {
   Settings.showWeeklySettings = $("#show-weekly").prop('checked');
-  $.cookie('show-weekly', Settings.showWeeklySettings ? '1' : '0', { expires: 999 });
-
   $("#weekly-container").toggleClass('opened', Settings.showWeeklySettings);
 });
 
 $("#show-utilities").on("change", function () {
   Settings.showUtilitiesSettings = $("#show-utilities").prop('checked');
-  $.cookie('show-utilities', Settings.showUtilitiesSettings ? '1' : '0', { expires: 999 });
-
   $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
 });
 
 $("#show-customization").on("change", function () {
   Settings.showCustomizationSettings = $("#show-customization").prop('checked');
-  $.cookie('show-customization', Settings.showCustomizationSettings ? '1' : '0', { expires: 999 });
-
   $("#customization-container").toggleClass('opened', Settings.showCustomizationSettings);
 });
 
 $("#show-routes").on("change", function () {
   Settings.showRoutesSettings = $("#show-routes").prop('checked');
-  $.cookie('show-routes', Settings.showRoutesSettings ? '1' : '0', { expires: 999 });
-
   $("#routes-container").toggleClass('opened', Settings.showRoutesSettings);
 });
 
 $("#show-import-export").on("change", function () {
   Settings.showImportExportSettings = $("#show-import-export").prop('checked');
-  $.cookie('show-import-export', Settings.showImportExportSettings ? '1' : '0', { expires: 999 });
-
   $("#import-export-container").toggleClass('opened', Settings.showImportExportSettings);
 });
 
 $("#show-debug").on("change", function () {
   Settings.showDebugSettings = $("#show-debug").prop('checked');
-  $.cookie('show-debug', Settings.showDebugSettings ? '1' : '0', { expires: 999 });
-
   $("#debug-container").toggleClass('opened', Settings.showDebugSettings);
 });
 
-// :-)
 $('#enable-debug').on("change", function () {
-  if ($("#enable-debug").prop('checked')) {
-    Settings.isDebugEnabled = true;
-    $.cookie('debug', '1', { expires: 999 });
-  } else {
-    Settings.isDebugEnabled = false;
-    $.removeCookie('debug');
-  }
+  Settings.isDebugEnabled = $("#enable-debug").prop('checked');
 });
 
 $('#enable-cycle-changer').on("change", function () {
-  if ($("#enable-cycle-changer").prop('checked')) {
-    Settings.isCycleChangerEnabled = true;
-    $.cookie('cycle-changer-enabled', '1', { expires: 999 });
-
-    $('#cycle-changer-container').removeClass('hidden');
-  } else {
-    Settings.isCycleChangerEnabled = false;
-    $.removeCookie('cycle-changer-enabled');
-
-    $('#cycle-changer-container').addClass('hidden');
+  Settings.isCycleChangerEnabled = $("#enable-cycle-changer").prop('checked');
+  $('#cycle-changer-container').toggleClass('hidden', !Settings.isCycleChangerEnabled);
+  if (!Settings.isCycleChangerEnabled) {
     Cycles.resetCycle();
   }
 });
@@ -452,17 +347,13 @@ $("#copy-search-link").on("click", function () {
   setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${$('#search').val()}`);
 });
 
-//Change & save tool type
 $("#tools").on("change", function () {
-  Settings.toolType = $("#tools").val();
-  $.cookie('tools', Settings.toolType, { expires: 999 });
+  Settings.toolType = Number($("#tools").val());
   MapBase.addMarkers();
 });
 
-//Change & save markers reset daily or manually
 $("#reset-markers").on("change", function () {
   Settings.resetMarkersDaily = $("#reset-markers").prop('checked');
-  $.cookie('remove-markers-daily', Settings.resetMarkersDaily ? '1' : '0', { expires: 999 });
 });
 
 $("#clear-markers").on("click", function () {
@@ -511,66 +402,48 @@ $('.map-cycle-alert').on('click', function () {
   $('.map-cycle-alert').hide();
 });
 
-//Enable & disable show coordinates on menu
 $('#show-coordinates').on('change', function () {
   Settings.isCoordsEnabled = $("#show-coordinates").prop('checked');
-  $.cookie('coords-enabled', Settings.isCoordsEnabled ? '1' : '0', { expires: 999 });
-
   changeCursor();
 });
 
 $('#timestamps-24').on('change', function () {
   Settings.display24HoursTimestamps = $("#timestamps-24").prop('checked');
-  $.cookie('timestamps-24', Settings.display24HoursTimestamps ? '1' : '0', { expires: 999 });
   clockTick();
 });
 
-//Change & save language option
 $("#language").on("change", function () {
   Settings.language = $("#language").val();
-  $.cookie('language', Settings.language, { expires: 999 });
   Language.setMenuLanguage();
   MapBase.addMarkers();
   Menu.refreshMenu();
   Cycles.setLocaleDate();
 });
 
-//Change & save overlay opacity
 $("#marker-opacity").on("change", function () {
-  var parsed = parseFloat($("#marker-opacity").val());
-  Settings.markerOpacity = parsed ? parsed : 1;
-  $.cookie('marker-opacity', Settings.markerOpacity, { expires: 999 });
+  Settings.markerOpacity = Number($("#marker-opacity").val());
   MapBase.addMarkers();
 });
 
 $("#overlay-opacity").on("change", function () {
-  var parsed = parseFloat($("#overlay-opacity").val());
-  Settings.overlayOpacity = parsed ? parsed : 0.5;
-  $.cookie('overlay-opacity', Settings.overlayOpacity, { expires: 999 });
-  MapBase.setOverlays(parsed);
+  Settings.overlayOpacity = Number($("#overlay-opacity").val());
+  MapBase.setOverlays(Settings.overlayOpacity);
 });
 
-//Change & save marker size
 $("#marker-size").on("change", function () {
-  var parsed = parseFloat($("#marker-size").val());
-  Settings.markerSize = parsed ? parsed : 1;
-  $.cookie('marker-size', Settings.markerSize, { expires: 999 });
+  Settings.markerSize = Number($("#marker-size").val());
   MapBase.addMarkers();
   Treasures.set();
 });
 
-//Enable cycle input
 $("#enable-cycle-input").on("change", function () {
   Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
-  $.cookie('cycle-input-enabled', Settings.isCycleInputEnabled ? '1' : '0', { expires: 999 });
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
 });
 
 $('#custom-marker-color').on("change", function () {
-  var parsed = parseFloat($("#custom-marker-color").val());
-  Settings.markersCustomColor = parsed ? parsed : 0;
-  $.cookie('custom-markers-color', Settings.markersCustomColor, { expires: 999 });
+  Settings.markersCustomColor = Number($("#custom-marker-color").val());
   MapBase.addMarkers();
 });
 
@@ -667,55 +540,41 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
   MapBase.removeItemFromMap(Cycles.categories[category], collectible, collectible, category, true);
 });
 
-//Open & close side menu
 $('.menu-toggle').on('click', function () {
-  $('.side-menu').toggleClass('menu-opened');
+  const menu = $('.side-menu').toggleClass('menu-opened');
+  Settings.isMenuOpened = menu.hasClass('menu-opened');
 
-  if ($('.side-menu').hasClass('menu-opened')) {
-    $('.menu-toggle').text('X');
-    $.cookie('menu-opened', '1');
-  } else {
-    $('.menu-toggle').text('>');
-    $.cookie('menu-opened', '0');
-  }
+  $('.menu-toggle').text(Settings.isMenuOpened ? 'X' : '>');
+
   $('.timer-container').toggleClass('timer-menu-opened');
   $('.counter-container').toggleClass('counter-menu-opened');
   $('.clock-container').toggleClass('timer-menu-opened');
 });
-//Enable & disable markers cluster
+
 $('#marker-cluster').on("change", function () {
   Settings.markerCluster = $("#marker-cluster").prop('checked');
-  $.cookie('marker-cluster', Settings.markerCluster ? '1' : '0', { expires: 999 });
-
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
 });
 
 $('#enable-marker-popups').on("change", function () {
   Settings.isPopupsEnabled = $("#enable-marker-popups").prop('checked');
-  $.cookie('enable-marker-popups', Settings.isPopupsEnabled ? '1' : '0', { expires: 999 });
-
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
 });
 
 $('#enable-marker-popups-hover').on("change", function () {
   Settings.isPopupsHoverEnabled = $("#enable-marker-popups-hover").prop('checked');
-  $.cookie('enable-marker-popups-hover', Settings.isPopupsHoverEnabled ? '1' : '0', { expires: 999 });
 });
 
 $('#enable-marker-shadows').on("change", function () {
   Settings.isShadowsEnabled = $("#enable-marker-shadows").prop('checked');
-  $.cookie('enable-marker-shadows', Settings.isShadowsEnabled ? '1' : '0', { expires: 999 });
-
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
 });
 
 $('#enable-dclick-zoom').on("change", function () {
   Settings.isDoubleClickZoomEnabled = $("#enable-dclick-zoom").prop('checked');
-  $.cookie('enable-dclick-zoom', Settings.isDoubleClickZoomEnabled ? '1' : '0', { expires: 999 });
-
   if (Settings.isDoubleClickZoomEnabled) {
     MapBase.map.doubleClickZoom.enable();
   } else {
@@ -725,23 +584,15 @@ $('#enable-dclick-zoom').on("change", function () {
 
 $('#sort-items-alphabetically').on("change", function () {
   Settings.sortItemsAlphabetically = $("#sort-items-alphabetically").prop('checked');
-  $.cookie('sort-items-alphabetically', Settings.sortItemsAlphabetically ? '1' : '0', { expires: 999 });
   Menu.refreshMenu();
 });
 
-/**
- * User Pins
- */
-
 $('#pins-place-mode').on("change", function () {
   Settings.isPinsPlacingEnabled = $("#pins-place-mode").prop('checked');
-  $.cookie('pins-place-enabled', Settings.isPinsPlacingEnabled ? '1' : '0', { expires: 999 });
 });
 
 $('#pins-edit-mode').on("change", function () {
   Settings.isPinsEditingEnabled = $("#pins-edit-mode").prop('checked');
-  $.cookie('pins-edit-enabled', Settings.isPinsEditingEnabled ? '1' : '0', { expires: 999 });
-
   Pins.addToMap();
 });
 
@@ -1120,8 +971,6 @@ $('[data-help]').hover(function (e) {
 
 $('#show-help').on("change", function () {
   Settings.showHelp = $("#show-help").prop('checked');
-  $.cookie('show-help', Settings.showHelp ? '1' : '0', { expires: 999 });
-
   $("#help-container").toggle(Settings.showHelp);
 });
 

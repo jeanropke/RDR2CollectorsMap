@@ -14,6 +14,7 @@ var MapBase = {
   isDarkMode: false,
   updateLoopAvailable: true,
   requestLoopCancel: false,
+  showAllMarkers: false,
 
   init: function () {
 
@@ -335,11 +336,7 @@ var MapBase = {
       return;
     }
 
-    if (parseInt(Settings.toolType) !== 3) {
-      Menu.hasToolFilters = true;
-    } else {
-      Menu.hasToolFilters = false;
-    }
+    Menu.hasToolFilters = Settings.toolType !== 3 ? true : false;
 
     Menu.updateHasFilters();
 
@@ -348,8 +345,6 @@ var MapBase = {
     if (Layers.miscLayer != null)
       Layers.miscLayer.clearLayers();
 
-    var opacity = Settings.markerOpacity;
-
     MapBase.updateLoopAvailable = false;
     MapBase.yieldingLoop(
       MapBase.markers.length,
@@ -357,8 +352,7 @@ var MapBase = {
       function (i) {
         if (MapBase.requestLoopCancel) return;
 
-        var marker = MapBase.markers[i];
-        MapBase.addMarkerOnMap(marker, opacity);
+        MapBase.addMarkerOnMap(MapBase.markers[i], Settings.markerOpacity);
       },
       function () {
         MapBase.updateLoopAvailable = true;
@@ -663,14 +657,14 @@ var MapBase = {
   addMarkerOnMap: function (marker, opacity = 1) {
     marker.isVisible = false;
 
-    if (marker.day != Cycles.categories[marker.category] && !Settings.showAllMarkers) return;
+    if (marker.day != Cycles.categories[marker.category] && !MapBase.showAllMarkers) return;
     if (!uniqueSearchMarkers.includes(marker)) return;
     if (!enabledCategories.includes(marker.category)) return;
     if (marker.subdata != null && categoriesDisabledByDefault.includes(marker.subdata)) return;
 
     marker.isVisible = true;
 
-    var toolType = parseInt(Settings.toolType);
+    var toolType = Settings.toolType;
     var markerTool = parseInt(marker.tool);
     if (toolType >= 0) {
       if (toolType < markerTool) return;
@@ -689,7 +683,7 @@ var MapBase = {
 
     // Random items override
     if (marker.category === 'random') {
-      var color = (Settings.markersCustomColor == 1 ? (marker.tool == 2 ? "black" : "lightgray") : "lightgray");
+      var color = (Settings.markersCustomColor === 1 ? (marker.tool == 2 ? "black" : "lightgray") : "lightgray");
       icon = `./assets/images/icons/${MapBase.getToolName(marker.tool)}.png`;
       background = `./assets/images/icons/marker_${color}.png`;
     }
