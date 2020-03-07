@@ -112,9 +112,8 @@ var Cycles = {
   },
   setLocaleDate: function () {
     'use strict';
-    const locale = Settings.language;
     const options = { timeZone: "UTC", day: "2-digit", month: "long" };
-    $('.cycle-data').text(Cycles.selectedDay.toLocaleString(locale, options));
+    $('.cycle-data').text(Cycles.selectedDay.toLocaleString(Settings.language, options));
   },
 
   checkForUpdate: function () {
