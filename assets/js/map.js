@@ -528,57 +528,30 @@ var MapBase = {
   },
 
   getDailyIconColor: function (day) {
-    switch (day) {
-      case 1: // day_1
-        return "blue";
-      case 2: // day_2
-        return "orange";
-      case 3: // day_3
-        return "purple";
-      case 4: // day_4
-        return "darkpurple";
-      case 5: // day_5
-        return "darkred";
-      case 6: // day_6
-        return "darkblue";
-      default:
-        return "lightred";
-    }
+    // Array order defines correspondence to week days (0-5 and default "lightred")
+    var dailyColors = ["blue", "orange", "purple", "darkpurple", "darkred", "darkblue"];
+    return dailyColors[day - 1] || "lightred";
   },
 
   getCategoryIconColor: function (markerCategory) {
-    switch (markerCategory) {
-      case "american_flowers":
-        return "darkred";
-      case "card_cups":
-        return "blue";
-      case "card_swords":
-        return "blue";
-      case "card_wands":
-        return "blue";
-      case "card_pentacles":
-        return "blue";
-      case "lost_bracelet":
-        return "beige";
-      case "lost_necklaces":
-        return "orange";
-      case "lost_ring":
-        return "orange";
-      case "lost_earrings":
-        return "orange";
-      case "antique_bottles":
-        return "cadetblue";
-      case "bird_eggs":
-        return "white";
-      case "arrowhead":
-        return "darkpurple";
-      case "family_heirlooms":
-        return "purple";
-      case "coin":
-        return "lightred";
-      default:
-        return "lightred";
-    }
+    // object with category colors for fast lookup
+    var categoryColors = {
+      american_flowers: "darkred",
+      card_cups: "blue",
+      card_swords: "blue",
+      card_wands: "blue",
+      card_pentacles: "blue",
+      lost_bracelet: "beige",
+      lost_necklaces: "orange",
+      lost_ring: "orange",
+      lost_earrings: "orange",
+      antique_bottles: "cadetblue",
+      bird_eggs: "white",
+      arrowhead: "darkpurple",
+      family_heirlooms: "purple",
+      coin: "lightred"
+    };
+    return categoryColors[markerCategory] || "lightred";
   },
 
   getToolName: function (type) {
