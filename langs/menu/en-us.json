@@ -78,7 +78,11 @@
 	{"key": "menu.enable_inventory", "value": "Enable inventory"},
 	{"key": "menu.inventory_stack", "value": "Item stack size"},
 	{"key": "menu.highlight_low_amount_items", "value": "Highlight low amount items"},
-	{"key": "menu.animated_highlights", "value": "Animate low amount highlights"},
+	{"key": "menu.highlight_style", "value": "Highlight style"},
+	{"key": "menu.highlight_style_recommended", "value": "Recommended colors"},
+	{"key": "menu.highlight_style_default", "value": "Default colors"},
+	{"key": "menu.highlight_style_static", "value": "-- Static --"},
+	{"key": "menu.highlight_style_animated", "value": "-- Animated --"},
 	{"key": "menu.marker_cluster", "value": "Markers cluster"},
 	{"key": "menu.route_generator", "value": "Route generator"},
 	{"key": "menu.generate_route", "value": "Generate route"},
@@ -318,6 +322,6 @@
 	{"key": "help.custom_marker_color", "value": "Allows you to set one color for all items markers, or set default different color for each marker category."},
 	{"key": "help.show_weekly", "value": "Toggles whether the weekly collection should be visible in the menu."},
 	{"key": "help.highlight_low_amount_items", "value": "Toggles whether the items with lowest amount in your inventory is highlighted on the map."},
-	{"key": "help.animated_highlights", "value": "Toggles the animation of the smallest amount of items."},
+	{"key": "help.highlight_style", "value": "Allows you to set the style how small item amounts are highlighted (static or animated highlights, recommended or default color theme)"},
 	{"key": "help.collection_collected", "value": "Amount of items collected for this collection."}
 ]

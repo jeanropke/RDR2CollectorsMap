@@ -7,8 +7,9 @@ var Inventory = {
   items: {},
   changedItems: [],
   categories: {},
-  highlightLowAmountItems: $.cookie('highlight_low_amount_items') == '1',
-  animatedHighlights: $.cookie('animated_highlights') == '1',
+  highlightLowAmountItems: $.cookie('highlight_low_amount_items') == '1',  
+  highlightStyles: { STATIC_RECOMMENDED: 0, STATIC_DEFAULT: 1, ANIMATED_RECOMMENDED: 2, ANIMATED_DEFAULT: 3 },
+  highlightStyle: !isNaN(parseInt($.cookie('highlight_style'))) ? parseInt($.cookie('highlight_style')) : 2,
 
   init: function () {
     if ($.cookie('inventory-popups-enabled') === undefined) {
@@ -31,9 +32,9 @@ var Inventory = {
       $.cookie('highlight_low_amount_items', '0', { expires: 999 });
     }
 
-    if ($.cookie('animated_highlights') === undefined) {
-      Inventory.animatedHighlights = false;
-      $.cookie('animated_highlights', '0', { expires: 999 });
+    if ($.cookie('highlight_style') === undefined) {
+      Inventory.highlightStyle = Inventory.highlightStyles.ANIMATED_RECOMMENDED;
+      $.cookie('highlight_style', Inventory.highlightStyles.ANIMATED_RECOMMENDED, { expires: 999 });
     }
 
     $('#enable-inventory').prop("checked", Inventory.isEnabled);
@@ -41,7 +42,8 @@ var Inventory = {
     $('#enable-inventory-menu-update').prop("checked", Inventory.isMenuUpdateEnabled);
     $('#reset-collection-updates-inventory').prop("checked", Inventory.resetButtonUpdatesInventory);
     $('#highlight_low_amount_items').prop("checked", Inventory.highlightLowAmountItems);
-    $('#animated_highlights').prop("checked", Inventory.animatedHighlights);
+    $('#highlight_style').val(Inventory.highlightStyle);
+
     $('#inventory-stack').val(Inventory.stackSize);
 
     this.toggleMenuItemsDisabled();
@@ -173,7 +175,7 @@ var Inventory = {
         // no highlights
         $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('opacity', 0.0);
       }
-      else if ((weight < 0.3) || (!Inventory.animatedHighlights)) { // just static highlights for small differences or if animation is disabled
+      else if ((weight < 0.3) || (Inventory.highlightStyle < Inventory.highlightStyles.ANIMATED_RECOMMENDED)) { // just static highlights for small differences or if animation is disabled
         $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('opacity', scaledWeight);
       }
       else { // animated or static highlights for larger differences according to user settings
@@ -184,16 +186,11 @@ var Inventory = {
   },
 
   updateMarkerSources: function (marker) {
-    var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
-      return weekly.item === (marker.text).replace(/_\d+/, "");
-    }).length > 0;
+    var markerBackgroundColor = MapBase.getIconColor(marker);
+    var markerContourColor = MapBase.getContourColor(markerBackgroundColor);
 
-    var markerBackgroundColor = (Settings.markersCustomColor === 1
-      ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
-      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + (Settings.markersCustomColor === 0 || Settings.markersCustomColor === 1 ? marker.day : Settings.markersCustomColor - 1)));
-
-    var markerContourSrc = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png?v=${nocache}`;
     var markerSrc = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;
+    var markerContourSrc = `./assets/images/icons/contours/contour_marker_${markerContourColor}.png?v=${nocache}`;
 
     // update the contour color
     $(`[data-marker=${marker.text || marker.subdata}] > img.marker-contour`).attr('src', markerContourSrc);
@@ -258,7 +255,7 @@ var Inventory = {
       $('#inventory-stack').parent().hide();
       $('[data-target="#clear-inventory-modal"]').hide();
       $('#highlight_low_amount_items').parent().parent().hide();
-      $('#animated_highlights').parent().parent().hide();
+      $('#highlight_style').parent().hide();
       $('#open-clear-inventory-modal').hide();
     }
     else {
@@ -268,15 +265,16 @@ var Inventory = {
       $('#inventory-stack').parent().show();
       $('[data-target="#clear-inventory-modal"]').show();
       $('#highlight_low_amount_items').parent().parent().show();
-      $('#animated_highlights').parent().parent().show();
       $('#open-clear-inventory-modal').show();
-    }
+
+      Inventory.toggleHighlightLowAmountItems();
+    }    
   },
 
   toggleHighlightLowAmountItems: function () {
     if (Inventory.highlightLowAmountItems)
-      $('#animated_highlights').parent().parent().show();
+      $('#highlight_style').parent().show();
     else
-      $('#animated_highlights').parent().parent().hide();
+      $('#highlight_style').parent().hide();
   }
 };
