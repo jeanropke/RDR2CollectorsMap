@@ -162,7 +162,7 @@ function setMapBackground(mapIndex) {
   $.cookie('map-layer', mapIndex, { expires: 999 });
 
   // Update the highlighted markers to show the appropriate marker colors
-  Inventory.updateLowAmountItems();  
+  Inventory.updateLowAmountItems();
 }
 
 function changeCursor() {

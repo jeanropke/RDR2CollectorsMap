@@ -376,6 +376,7 @@ input, textarea, select, .btn {
 .links-container a {
     color: #eee;
     text-decoration: none;
+    user-select: none;
 }
 
 .settings-container {
