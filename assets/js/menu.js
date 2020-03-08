@@ -39,6 +39,7 @@ var Menu = {
 
       $('.menu-hidden[data-type=treasure]').append(collectibleElement.append(collectibleTextElement));
     });
+    Menu.reorderMenu('.menu-hidden[data-type=treasure]');
   }
 };
 
@@ -226,7 +227,6 @@ Menu.refreshMenu = function () {
     }
   });
 
-  Menu.reorderMenu('.menu-hidden[data-type=treasure]');
   Menu.refreshWeeklyItems();
 
   $('.map-cycle-alert span').html(Language.get('map.refresh_for_updates_alert'));
