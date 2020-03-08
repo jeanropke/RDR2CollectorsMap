@@ -174,12 +174,6 @@ function changeCursor() {
   }
 }
 
-function addZeroToNumber(number) {
-  if (number < 10)
-    number = '0' + number;
-  return number;
-}
-
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, '\\$&');
@@ -215,40 +209,25 @@ function downloadAsFile(filename, text) {
 }
 
 function clockTick() {
-  // Clock in game created by Michal__d
-  var newDate = new Date();
-  var startTime = newDate.valueOf();
-  var factor = 30;
-  var correctTime = new Date(startTime * factor);
+  'use strict';
+  const now = new Date();
+  const gameTime = new Date(now * 30);
+  const gameHour = gameTime.getUTCHours();
+  const nightTime = gameHour >= 22 || gameHour < 5;
+  const clockFormat = {timeZone: 'UTC', hour: 'numeric', minute: '2-digit',
+                  hour12: !Settings.display24HoursTimestamps}
 
-  correctTime.setHours(correctTime.getUTCHours());
-  correctTime.setMinutes(correctTime.getUTCMinutes() - 3); //for some reason time in game is 3 sec. delayed to normal time
+  $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
+  $('.day-cycle').css('background', `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`);
 
-  if (Settings.display24HoursTimestamps) {
-    $('#time-in-game').text(addZeroToNumber(correctTime.getHours()) + ":" + addZeroToNumber(correctTime.getMinutes()));
-  } else {
-    $('#time-in-game').text((addZeroToNumber(correctTime.getHours() % 12) == '00' ? '12' : addZeroToNumber(correctTime.getHours() % 12)) + ":" + addZeroToNumber(correctTime.getMinutes()) + " " + ((correctTime.getHours() < 12) ? "AM" : "PM"));
-  }
+  const cycleResetTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
+  const delta = new Date(cycleResetTime - now);
+  const deltaFormat = {timeZone: 'UTC', hour: '2-digit', minute: '2-digit', second: '2-digit',
+                       hourCycle: 'h24'}
+  $('#countdown').text(`−${delta.toLocaleString([], deltaFormat)}`);
 
-  if (correctTime.getHours() >= 22 || correctTime.getHours() < 5) {
-    $('.day-cycle').css('background', 'url(assets/images/moon.png)');
-  } else {
-    $('.day-cycle').css('background', 'url(assets/images/sun.png)');
-  }
-
-  //Countdown for the next cycle
-  var nextGMTMidnight = new Date();
-  var hours = 23 - nextGMTMidnight.getUTCHours();
-  var minutes = 59 - nextGMTMidnight.getUTCMinutes();
-  var seconds = 59 - nextGMTMidnight.getUTCSeconds();
-  $('#countdown').text(addZeroToNumber(hours) + ':' + addZeroToNumber(minutes) + ':' + addZeroToNumber(seconds));
-
-  if (correctTime.getHours() >= 22 || correctTime.getHours() < 5) {
-    $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
-  }
-  else {
-    $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'none');
-  }
+  $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter',
+    nightTime ? 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)' : 'none');
 }
 
 setInterval(clockTick, 1000);
