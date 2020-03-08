@@ -255,7 +255,7 @@ setInterval(clockTick, 1000);
 
 $('.timer-container, .clock-container').on('click', function () {
   $('.timer-container, .clock-container').toggleClass('hidden');
-  Settings.displayClockHideTimer = !Settings.displayClockHideTimer;
+  Settings.displayClockHideTimer = $('.timer-container').hasClass('hidden');
 });
 
 /**
