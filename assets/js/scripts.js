@@ -162,7 +162,7 @@ function setMapBackground(mapIndex) {
   $.cookie('map-layer', mapIndex, { expires: 999 });
 
   // Update the highlighted markers to show the appropriate marker colors
-  Inventory.updateLowAmountItems();  
+  Inventory.updateLowAmountItems();
 }
 
 function changeCursor() {
@@ -255,7 +255,7 @@ setInterval(clockTick, 1000);
 
 $('.timer-container, .clock-container').on('click', function () {
   $('.timer-container, .clock-container').toggleClass('hidden');
-  Settings.displayClockHideTimer = !Settings.displayClockHideTimer;
+  Settings.displayClockHideTimer = $('.timer-container').hasClass('hidden');
 });
 
 /**
