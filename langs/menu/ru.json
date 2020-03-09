@@ -102,7 +102,7 @@
 	{"key": "menu.reset_button_updates_inventory", "value": "Обновление инвентаря после сброса"},
 	{"key": "menu.inventory_stack", "value": "Макс. кол-во предметов в слоте"},
 	{"key": "menu.highlight_low_amount_items", "value": "Highlight low amount items"},
-	{"key": "menu.animated_highlights", "value": "Animate low amount highlights"},
+	{"key": "menu.highlight_style", "value": "Highlight style"},
 	{"key": "menu.clear_inventory", "value": "Очистить инвентарь"},
 	{"key": "menu.modal_clear_inventory_title", "value": "Очистить содержимое инвентаря?"},
 	{"key": "menu.modal_clear_inventory_body", "value": "Эта функция очистит содержимое вашего инвентаря."},

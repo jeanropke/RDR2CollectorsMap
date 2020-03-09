@@ -506,62 +506,80 @@ var MapBase = {
     localStorage.setItem("collected-items", JSON.stringify(MapBase.collectedItems));
   },
 
-  getIconColor: function (value) {
-    switch (value) {
-      case "day_1":
-        return "blue";
-      case "day_2":
-        return "orange";
-      case "day_3":
-        return "purple";
-      case "day_4":
-        return "darkpurple";
-      case "day_5":
-        return "darkred";
-      case "day_6":
-        return "darkblue";
-      case "weekly":
-        return "green";
-      default:
-        return "lightred";
+  getIconColor: function (marker) {    
+    var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
+      return weekly.item === (marker.text).replace(/_\d+/, "");
+    }).length > 0;
+
+    if (isWeekly) {
+      return "green";
     }
+
+    if (Inventory.highlightLowAmountItems && 
+      (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED 
+        || Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
+      return MapBase.isDarkMode ? "darkblue" : "orange";
+    }
+
+    if (Settings.markersCustomColor === 1) {
+      return MapBase.getCategoryIconColor(marker.category);
+    }
+
+    var dailyColor = Settings.markersCustomColor === 0 || Settings.markersCustomColor === 1 ? marker.day : Settings.markersCustomColor - 1;
+    return MapBase.getDailyIconColor(dailyColor);
   },
 
-  getFixedIconColorPerCategory: function (markerCategory) {
-    switch (markerCategory) {
-      case "american_flowers":
-        return "darkred";
-      case "card_cups":
-        return "blue";
-      case "card_swords":
-        return "blue";
-      case "card_wands":
-        return "blue";
-      case "card_pentacles":
-        return "blue";
-      case "lost_bracelet":
-        return "beige";
-      case "lost_necklaces":
-        return "orange";
-      case "lost_ring":
-        return "orange";
-      case "lost_earrings":
-        return "orange";
-      case "antique_bottles":
-        return "cadetblue";
-      case "bird_eggs":
-        return "white";
-      case "arrowhead":
-        return "darkpurple";
-      case "family_heirlooms":
-        return "purple";
-      case "coin":
-        return "lightred";
-      case "weekly":
-        return "green";
-      default:
-        return "lightred";
+  getContourColor: function (baseColor) {
+    var contourColors = {
+      beige: "darkblue",
+      black: "white",
+      blue: "orange",
+      cadetblue: "lightred",
+      darkblue: "red",
+      darkgreen: "purple",
+      darkpurple: "green",
+      darkred: "blue",
+      green: "pink",
+      lightred: "cadetblue",
+      orange: "lightblue",
+      purple: "lightgreen",
+      white: "gray"      
+    };
+
+    if (Inventory.highlightLowAmountItems && 
+      (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED || 
+        Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
+          return MapBase.isDarkMode ? "orange" : "darkblue";      
     }
+
+    return contourColors[baseColor] || "darkblue";
+  },
+
+  getDailyIconColor: function (day) {
+    // Array order defines correspondence to week days (0-5 and default "lightred")
+    var dailyColors = ["blue", "orange", "purple", "darkpurple", "darkred", "darkblue"];
+    return dailyColors[day - 1] || "lightred";
+  },
+
+  getCategoryIconColor: function (markerCategory) {
+    // object with category colors for fast lookup
+    var categoryColors = {
+      american_flowers: "darkred",
+      card_cups: "blue",
+      card_swords: "blue",
+      card_wands: "blue",
+      card_pentacles: "blue",
+      lost_bracelet: "beige",
+      lost_necklaces: "orange",
+      lost_ring: "orange",
+      lost_earrings: "orange",
+      antique_bottles: "cadetblue",
+      bird_eggs: "white",
+      arrowhead: "darkpurple",
+      family_heirlooms: "purple",
+      coin: "lightred"
+    };
+    return categoryColors[markerCategory] || "lightred";
   },
 
   getToolName: function (type) {
@@ -656,18 +674,13 @@ var MapBase = {
       if (toolType == -2 && markerTool != 2) return;
     }
 
-    var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
-      return weekly.item === (marker.text).replace(/_\d+/, "");
-    }).length > 0;
-
     var overlay = '';
-    var markerBackgroundColor = (Settings.markersCustomColor === 1
-      ? MapBase.getFixedIconColorPerCategory(isWeekly ? 'weekly' : marker.category)
-      : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + (Settings.markersCustomColor === 0 || Settings.markersCustomColor === 1 ? marker.day : Settings.markersCustomColor - 1)));
 
+    var markerBackgroundColor = MapBase.getIconColor(marker);
     var icon = `./assets/images/icons/${marker.category}.png?v=${nocache}`;
     var background = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;
-    var markerContour = `./assets/images/icons/contours/contour_marker_${markerBackgroundColor}.png?v=${nocache}`;
+    var markerContourColor = MapBase.getContourColor(markerBackgroundColor);
+    var markerContour = `./assets/images/icons/contours/contour_marker_${markerContourColor}.png?v=${nocache}`;
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
 
     // Random items override
@@ -715,6 +728,10 @@ var MapBase = {
         marker: marker.text
       })
     });
+
+    var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
+      return weekly.item === (marker.text).replace(/_\d+/, "");
+    }).length > 0;
 
     tempMarker.id = marker.text;
     marker.weeklyCollection = isWeekly ? weeklySetData.current : null;

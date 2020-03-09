@@ -67,6 +67,6 @@
 	{"key": "menu.enable_inventory", "value": "인벤토리 사용"},
 	{"key": "menu.inventory_stack", "value": "아이템 쌓기 개수"},
 	{"key": "menu.highlight_low_amount_items", "value": "Highlight low amount items"},
-	{"key": "menu.animated_highlights", "value": "Animate low amount highlights"},
+	{"key": "menu.highlight_style", "value": "Highlight style"},
 	{"key": "menu.marker_cluster", "value": "Markers cluster"}
 ]

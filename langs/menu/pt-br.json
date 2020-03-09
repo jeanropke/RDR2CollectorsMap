@@ -78,7 +78,7 @@
 	{"key": "menu.enable_inventory", "value": "Ativar inventário"},
 	{"key": "menu.inventory_stack", "value": "Quant. máx. de itens"},
 	{"key": "menu.highlight_low_amount_items", "value": "Destacar com baixa quantidade"},
-	{"key": "menu.animated_highlights", "value": "Animar destaque com baixa quantidade"},
+	{"key": "menu.highlight_style", "value": "Highlight style"},
 	{"key": "menu.marker_cluster", "value": "Juntar marcadores"},
 	{"key": "menu.route_generator", "value": "Gerador de rotas"},
 	{"key": "menu.generate_route", "value": "Gerar rota"},

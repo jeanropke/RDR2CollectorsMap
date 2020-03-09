@@ -453,7 +453,6 @@ $('.clickable').on('click', function () {
   if (menu.data('type') === undefined) return;
 
   $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
-
   var isDisabled = menu.hasClass('disabled');
 
   if (isDisabled) {
@@ -678,9 +677,11 @@ $('#highlight_low_amount_items').on("change", function () {
   MapBase.addMarkers();
 });
 
-$('#animated_highlights').on("change", function () {
-  Inventory.animatedHighlights = $('#animated_highlights').prop("checked");
-  $.cookie('animated_highlights', Inventory.animatedHighlights ? '1' : '0', { expires: 999 });
+$('#highlight_style').on("change", function () {
+  var parsed = parseInt($("#highlight_style").val());
+
+  Inventory.highlightStyle = !isNaN(parsed) ? parsed : Inventory.highlightStyles.ANIMATED_RECOMMENDED;
+  $.cookie('highlight_style', Inventory.highlightStyle, { expires: 999 });
   
   MapBase.addMarkers();
 });
