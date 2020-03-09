@@ -547,6 +547,13 @@
         <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
         <input id="inventory-stack" class="input-text narrow-select-menu" type="number" min="1" max="10" value="10">
       </div>
+      <div class="input-container" data-help="reset_inventory_daily">
+        <label for="reset-inventory-daily" data-text="menu.reset_inventory_daily">Reset inventory daily</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="reset-inventory-daily" value="0" id="reset-inventory-daily" />
+          <label class="input-checkbox-label" for="reset-inventory-daily"></label>
+        </div>
+      </div>
       <div id="open-clear-inventory-modal" class="input-container clickable" data-help="clear_inventory">
         <label data-text="menu.clear_inventory">Clear inventory</label>
         <div class="input-action"></div>
@@ -558,7 +565,7 @@
           <label class="input-checkbox-label" for="highlight_low_amount_items"></label>
         </div>
       </div>
-      
+
       <div class="input-container" data-help="highlight_style">
         <label for="highlight-style" data-text="menu.highlight_style">Highlight style</label>
         <select class="input-text wide-select-menu" id="highlight_style">

@@ -668,12 +668,17 @@ $('#enable-inventory-popups').on("change", function () {
   MapBase.addMarkers();
 });
 
+$('#reset-inventory-daily').on("change", function () {
+  Inventory.resetInventoryDaily = $("#reset-inventory-daily").prop('checked');
+  $.cookie('reset-inventory-daily', Inventory.resetInventoryDaily ? '1' : '0', { expires: 999 });
+});
+
 $('#highlight_low_amount_items').on("change", function () {
   Inventory.highlightLowAmountItems = $('#highlight_low_amount_items').prop("checked");
   $.cookie('highlight_low_amount_items', Inventory.highlightLowAmountItems ? '1' : '0', { expires: 999 });
 
   Inventory.toggleHighlightLowAmountItems();
-  
+
   MapBase.addMarkers();
 });
 
@@ -682,7 +687,7 @@ $('#highlight_style').on("change", function () {
 
   Inventory.highlightStyle = !isNaN(parsed) ? parsed : Inventory.highlightStyles.ANIMATED_RECOMMENDED;
   $.cookie('highlight_style', Inventory.highlightStyle, { expires: 999 });
-  
+
   MapBase.addMarkers();
 });
 
