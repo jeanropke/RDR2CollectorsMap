@@ -237,6 +237,7 @@ var MapBase = {
       var markers = MapBase.markers;
 
       $.each(markers, function (key, value) {
+
         if (Settings.resetMarkersDaily) {
           markers[key].isCollected = false;
           markers[key].canCollect = markers[key].amount < Inventory.stackSize;
@@ -247,9 +248,17 @@ var MapBase = {
             markers[key].canCollect = true;
           }
         }
+
+        if (Inventory.resetInventoryDaily) {
+          markers[key].amount = 0;
+          // markers[key].isCollected = false;
+          // markers[key].canCollect = true;
+        }
       });
 
       MapBase.markers = markers;
+      Inventory.save();
+      Menu.refreshMenu();
       MapBase.saveCollectedItems();
     }
 

@@ -235,6 +235,7 @@
 	{"key": "menu.custom_marker_purple", "value": "Fioletowy"},
 	{"key": "menu.custom_marker_dark_red", "value": "Ciemnoczerwony"},
 	{"key": "menu.custom_marker_dark_blue", "value": "Ciemnoniebieski"},
+	{"key": "menu.reset_inventory_daily", "value": "Resetuj ekwipunek co 24 godziny"},
 
 	{"key": "help.default", "value": "Najedź lub przytrzymaj opcję menu na urz. mobilnym, aby wyświetlić podpowiedzi."},
 	{"key": "help.clear_custom_routes", "value": "Usuwa wszystkie własne trasy na mapie."},
@@ -318,5 +319,6 @@
 	{"key": "help.custom_marker_color", "value": "Pozwala na ustawienie jednego koloru dla wszystkich znaczników rzedmiotów, lub ustawienie różnych domyślnych kolorów dla każdej karegorii znaczników."},
 	{"key": "help.show_weekly", "value": "Włącza/ wyłącza pokazywanie kolekcji tygodniowej na górze menu."},
 	{"key": "help.highlight_low_amount_items", "value": "Włącza/ wyłącza podświetlanie przedmiotów których jest najmniej w ekwipynku (relatywnie do kolekcji)."},
-	{"key": "help.collection_collected", "value": "Ilość przedmiotów zebranych z tej kolekcji."}
+	{"key": "help.collection_collected", "value": "Ilość przedmiotów zebranych z tej kolekcji."},
+	{"key": "help.reset_inventory_daily", "value": "Włącza/ wyłącza resetowanie ekwipunku co 24 godziny."}
 ]

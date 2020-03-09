@@ -4,6 +4,7 @@ var Inventory = {
   isMenuUpdateEnabled: $.cookie('inventory-menu-update-enabled') == '1',
   stackSize: parseInt($.cookie('inventory-stack')) ? parseInt($.cookie('inventory-stack')) : 10,
   resetButtonUpdatesInventory: $.cookie('reset-updates-inventory-enabled') == '1',
+  resetInventoryDaily: $.cookie('reset-inventory-daily') == '1',
   items: {},
   changedItems: [],
   categories: {},
@@ -27,6 +28,11 @@ var Inventory = {
       $.cookie('reset-updates-inventory-enabled', '0', { expires: 999 });
     }
 
+    if ($.cookie('reset-inventory-daily') === undefined) {
+      Inventory.resetInventoryDaily = false;
+      $.cookie('reset-inventory-daily', '0', { expires: 999 });
+    }
+
     if ($.cookie('highlight_low_amount_items') === undefined) {
       Inventory.highlightLowAmountItems = false;
       $.cookie('highlight_low_amount_items', '0', { expires: 999 });
@@ -41,6 +47,7 @@ var Inventory = {
     $('#enable-inventory-popups').prop("checked", Inventory.isPopupEnabled);
     $('#enable-inventory-menu-update').prop("checked", Inventory.isMenuUpdateEnabled);
     $('#reset-collection-updates-inventory').prop("checked", Inventory.resetButtonUpdatesInventory);
+    $('#reset-inventory-daily').prop("checked", Inventory.resetInventoryDaily);
     $('#highlight_low_amount_items').prop("checked", Inventory.highlightLowAmountItems);
     $('#highlight_style').val(Inventory.highlightStyle);
 
@@ -254,6 +261,7 @@ var Inventory = {
       $('#reset-collection-updates-inventory').parent().parent().hide();
       $('#inventory-stack').parent().hide();
       $('[data-target="#clear-inventory-modal"]').hide();
+      $('#reset-inventory-daily').parent().parent().hide();
       $('#highlight_low_amount_items').parent().parent().hide();
       $('#highlight_style').parent().hide();
       $('#open-clear-inventory-modal').hide();
@@ -264,11 +272,12 @@ var Inventory = {
       $('#reset-collection-updates-inventory').parent().parent().show();
       $('#inventory-stack').parent().show();
       $('[data-target="#clear-inventory-modal"]').show();
+      $('#reset-inventory-daily').parent().parent().show();
       $('#highlight_low_amount_items').parent().parent().show();
       $('#open-clear-inventory-modal').show();
 
       Inventory.toggleHighlightLowAmountItems();
-    }    
+    }
   },
 
   toggleHighlightLowAmountItems: function () {

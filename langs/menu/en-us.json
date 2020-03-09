@@ -239,6 +239,7 @@
 	{"key": "menu.custom_marker_purple", "value": "Purple"},
 	{"key": "menu.custom_marker_dark_red", "value": "Dark red"},
 	{"key": "menu.custom_marker_dark_blue", "value": "Dark blue"},
+	{"key": "menu.reset_inventory_daily", "value": "Reset inventory daily"},
 
 	{"key": "help.default", "value": "Hover over or long-press (mobile) any setting to get information about it."},
 	{"key": "help.clear_custom_routes", "value": "Clears all the custom routes currently on the map."},
@@ -323,5 +324,6 @@
 	{"key": "help.show_weekly", "value": "Toggles whether the weekly collection should be visible in the menu."},
 	{"key": "help.highlight_low_amount_items", "value": "Toggles whether the items with lowest amount in your inventory is highlighted on the map."},
 	{"key": "help.highlight_style", "value": "Allows you to set the style how small item amounts are highlighted (static or animated highlights, recommended or default color theme)"},
-	{"key": "help.collection_collected", "value": "Amount of items collected for this collection."}
+	{"key": "help.collection_collected", "value": "Amount of items collected for this collection."},
+	{"key": "help.reset_inventory_daily", "value": "Toggles whether the inventory should be reset every 24 hours."}
 ]

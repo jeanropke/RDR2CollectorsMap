@@ -33,7 +33,7 @@ CookieProxy.addCookie(Settings, 'day', {type: (str) => new Date(str), default: n
 // string is understood by `new Date()`
 // without default type() is used
 // ...and `new Date(undefined)` is a Date() object which calls itself invalid
- */
+*/
 
 const CookieProxy = function () {
   'use strict';
