@@ -262,10 +262,10 @@ $('.timer-container, .clock-container').on('click', function () {
  * jQuery triggers
  */
 
- /*
-  Hide warning bar
- */
-$('.update-warning').on('click', function() {
+/*
+ Hide warning bar
+*/
+$('.update-warning').on('click', function () {
   $(this).hide();
 });
 
@@ -1049,14 +1049,22 @@ $('#open-delete-all-settings-modal').on('click', function () {
  */
 
 $(function () {
-  init();
-  MapBase.loadWeeklySet();
-  Cycles.load();
-  Inventory.init();
-  MapBase.loadFastTravels();
-  MadamNazar.loadMadamNazar();
-  Treasures.load();
-  Encounters.load();
-  MapBase.loadMarkers();
-  Routes.init();
+  try {
+    init();
+    MapBase.loadWeeklySet();
+    Cycles.load();
+    Inventory.init();
+    MapBase.loadFastTravels();
+    MadamNazar.loadMadamNazar();
+    Treasures.load();
+    Encounters.load();
+    MapBase.loadMarkers();
+    Routes.init();
+  }
+  catch (e) {
+    if (getParameterByName('show-alert') == '1') {
+      alert(e);
+    }
+    console.error(e);
+  }
 });
