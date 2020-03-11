@@ -190,7 +190,7 @@ var Pins = {
 
     if (str.length == 0) return hash;
 
-    for (i = 0, l = str.length; i < l; i++) {
+    for (var i = 0, l = str.length; i < l; i++) {
       char = str.charCodeAt(i);
       hash = ((hash << 5) - hash) + char;
       hash |= 0;
@@ -203,7 +203,7 @@ var Pins = {
     var numChunks = Math.ceil(str.length / size);
     var chunks = new Array(numChunks);
 
-    for (i = 0, o = 0; i < numChunks; ++i, o += size) {
+    for (var i = 0, o = 0; i < numChunks; ++i, o += size) {
       chunks[i] = str.substr(o, size);
     }
 
