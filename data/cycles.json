@@ -999,5 +999,16 @@
 		"random": 5,
 		"tarot_cards": 4,
 		"date": "2020-03-13"
+	}, {
+		"american_flowers": 4,
+		"antique_bottles": 1,
+		"arrowhead": 1,
+		"bird_eggs": 2,
+		"coin": 5,
+		"family_heirlooms": 4,
+		"lost_jewelry": 4,
+		"random": 2,
+		"tarot_cards": 1,
+		"date": "2020-03-14"
 	}
 ]
