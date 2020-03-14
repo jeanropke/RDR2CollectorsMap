@@ -68,20 +68,14 @@ function init() {
     return categoriesDisabledByDefault.indexOf(item) === -1;
   });
 
-  if ($.cookie('map-layer') === undefined || isNaN(parseInt($.cookie('map-layer'))))
-    $.cookie('map-layer', 0, { expires: 999 });
-
   const navLang = navigator.language.toLowerCase();
   CookieProxy.addCookie(Settings, 'language', {
     default: Language.availableLanguages.includes(navLang) ? navLang : 'en-us',
   });
 
   MapBase.init();
-  MapBase.setOverlays(Settings.overlayOpacity);
 
   Language.setMenuLanguage();
-
-  setMapBackground($.cookie('map-layer'));
 
   if (Settings.isMenuOpened)
     $('.menu-toggle').click();
@@ -90,7 +84,6 @@ function init() {
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
   $('#marker-size').val(Settings.markerSize);
-  $('#overlay-opacity').val(Settings.overlayOpacity);
   $('#custom-marker-color').val(Settings.markersCustomColor);
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
@@ -138,31 +131,6 @@ function init() {
 
 function isLocalHost() {
   return location.hostname === "localhost" || location.hostname === "127.0.0.1";
-}
-
-function setMapBackground(mapIndex) {
-  switch (parseInt(mapIndex)) {
-    default:
-    case 0:
-      $('#map').css('background-color', '#d2b790');
-      MapBase.isDarkMode = false;
-      break;
-
-    case 1:
-      $('#map').css('background-color', '#d2b790');
-      MapBase.isDarkMode = false;
-      break;
-
-    case 2:
-      $('#map').css('background-color', '#3d3d3d');
-      MapBase.isDarkMode = true;
-      break;
-  }
-  MapBase.setOverlays();
-  $.cookie('map-layer', mapIndex, { expires: 999 });
-
-  // Update the highlighted markers to show the appropriate marker colors
-  Inventory.updateLowAmountItems();
 }
 
 function changeCursor() {
@@ -402,11 +370,6 @@ $("#language").on("change", function () {
 $("#marker-opacity").on("change", function () {
   Settings.markerOpacity = Number($("#marker-opacity").val());
   MapBase.addMarkers();
-});
-
-$("#overlay-opacity").on("change", function () {
-  Settings.overlayOpacity = Number($("#overlay-opacity").val());
-  MapBase.setOverlays(Settings.overlayOpacity);
 });
 
 $("#marker-size").on("change", function () {

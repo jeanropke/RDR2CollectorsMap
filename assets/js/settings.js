@@ -76,6 +76,7 @@ const CookieProxy = function () {
         $.cookie(config.cookieName, JSON.stringify(value), { expires: 999 });
       }
       config.value = value;
+      return true;
     },
   };
 
@@ -128,7 +129,6 @@ Object.entries({
   markerSize: { default: 1 },
   markerOpacity: { default: 1 },
   markersCustomColor: { default: 0 },
-  overlayOpacity: { default: 0.5 },
   resetMarkersDaily: { default: true },
   showHelp: { default: true },
   showWeeklySettings: { default: true },

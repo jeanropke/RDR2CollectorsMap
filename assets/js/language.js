@@ -34,24 +34,6 @@ var Language = {
 
         // Special cases:
         $('#search').attr("placeholder", Language.get('menu.search_placeholder'));
-
-        $('.leaflet-control-layers-list span').each(function (key, value) {
-            var element = $(value);
-
-            switch (key) {
-                case 0:
-                    element.text(' ' + Language.get('map.layers.default'));
-                    break;
-                case 1:
-                    element.text(' ' + Language.get('map.layers.detailed'));
-                    break;
-                case 2:
-                    element.text(' ' + Language.get('map.layers.dark'));
-                    break;
-                default:
-                    break;
-            }
-        });
     },
 
     // A helper function to "compile" all language files into a single JSON file.
