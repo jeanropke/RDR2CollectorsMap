@@ -74,7 +74,7 @@ function init() {
   const navLang = navigator.language.toLowerCase();
   CookieProxy.addCookie(Settings, 'language', {
     default: Language.availableLanguages.includes(navLang) ? navLang : 'en-us',
-  })
+  });
 
   MapBase.init();
   MapBase.setOverlays(Settings.overlayOpacity);
@@ -654,11 +654,10 @@ $('#enable-inventory').on("change", function () {
 
   MapBase.addMarkers();
   Menu.refreshWeeklyItems();
-  Inventory.toggleMenuItemsDisabled();
-  Inventory.toggleHighlightLowAmountItems();
   ItemsValue.reloadInventoryItems();
 
   $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(Inventory.isEnabled);
+  $('#inventory-container').toggleClass("opened", Inventory.isEnabled);
 });
 
 $('#enable-inventory-popups').on("change", function () {

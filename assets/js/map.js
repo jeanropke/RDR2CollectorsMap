@@ -251,8 +251,6 @@ var MapBase = {
 
         if (Inventory.resetInventoryDaily) {
           markers[key].amount = 0;
-          // markers[key].isCollected = false;
-          // markers[key].canCollect = true;
         }
       });
 
@@ -391,7 +389,6 @@ var MapBase = {
 
     if (Routes.generateOnVisit)
       Routes.generatePath(true);
-
   },
 
   loadWeeklySet: function () {
@@ -497,7 +494,7 @@ var MapBase = {
       } else {
         $(`[data-type=${subdata}]`).removeClass('disabled');
       }
-    }    
+    }
   },
 
   loadCollectedItems: function () {
@@ -515,7 +512,7 @@ var MapBase = {
     localStorage.setItem("collected-items", JSON.stringify(MapBase.collectedItems));
   },
 
-  getIconColor: function (marker) {    
+  getIconColor: function (marker) {
     var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
       return weekly.item === (marker.text).replace(/_\d+/, "");
     }).length > 0;
@@ -524,9 +521,8 @@ var MapBase = {
       return "green";
     }
 
-    if (Inventory.highlightLowAmountItems && 
-      (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED 
-        || Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
+    if (Inventory.isEnabled && Inventory.highlightLowAmountItems &&
+      (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED || Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
       return MapBase.isDarkMode ? "darkblue" : "orange";
     }
 
@@ -552,13 +548,13 @@ var MapBase = {
       lightred: "cadetblue",
       orange: "lightblue",
       purple: "lightgreen",
-      white: "gray"      
+      white: "gray"
     };
 
-    if (Inventory.highlightLowAmountItems && 
-      (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED || 
+    if (Inventory.highlightLowAmountItems &&
+      (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED ||
         Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
-          return MapBase.isDarkMode ? "orange" : "darkblue";      
+      return MapBase.isDarkMode ? "orange" : "darkblue";
     }
 
     return contourColors[baseColor] || "darkblue";

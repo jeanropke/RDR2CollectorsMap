@@ -284,7 +284,20 @@ var Routes = {
     Routes.clearPath(true);
 
     // Setup variables.
-    var newMarkers = MapBase.markers.filter((marker) => { return marker.isVisible; });
+    var newMarkers = MapBase.markers.filter((marker) => {
+      if (!marker.isVisible) return false;
+
+      var toolType = Settings.toolType;
+      var markerTool = parseInt(marker.tool);
+      if (toolType >= 0) {
+        if (toolType < markerTool) return false;
+      } else {
+        if (toolType == -1 && markerTool != 1) return false;
+        if (toolType == -2 && markerTool != 2) return false;
+      }
+
+      return true;
+    });
 
     // Optionally ignore the already collected markers.
     if (Routes.ignoreCollected) {

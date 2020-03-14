@@ -40,22 +40,21 @@ const CookieProxy = function () {
   const _domain = Symbol('domain');
   const _proxyConfig = Symbol('proxyConfig');
   const cookieHandler = {
-    _checkAndGetCookieConfig: function(proxyConfig, name, errorType) {
+    _checkAndGetCookieConfig: function (proxyConfig, name, errorType) {
       if (!proxyConfig.has(name)) {
         throw new errorType(`"${name}" is not configured as cookie-persisted setting.`);
       } else {
         return proxyConfig.get(name);
       }
     },
-    get: function(proxyConfig, name) {
-      if (name === _proxyConfig) {
-        return proxyConfig;
-      }
+    get: function (proxyConfig, name) {
+      if (name === _proxyConfig) return proxyConfig;
+
       const config = cookieHandler._checkAndGetCookieConfig(proxyConfig, name, ReferenceError);
-      if ('value' in config) {
-        return config.value;
-      }
+      if ('value' in config) return config.value;
+
       let value = $.cookie(config.cookieName);
+
       try {
         value = config.type(JSON.parse(value));
       }
@@ -63,10 +62,13 @@ const CookieProxy = function () {
         // JSON.parse might raise SyntaxError, bc the cookie is malformed or undefined
         value = config.default;
       }
+
       value = config.filter(value) ? value : config.default;
-      return config.value = value;
+      config.value = value;
+
+      return config.value;
     },
-    set: function(proxyConfig, name, value) {
+    set: function (proxyConfig, name, value) {
       const config = cookieHandler._checkAndGetCookieConfig(proxyConfig, name, TypeError);
       if (value === config.default) {
         $.removeCookie(config.cookieName);
@@ -93,20 +95,19 @@ const CookieProxy = function () {
       }
       if (!('type' in config)) {
         const defaultType = typeof config.default;
-        const basicTypes = {'boolean': Boolean, 'string': String, 'number': Number};
+        const basicTypes = { 'boolean': Boolean, 'string': String, 'number': Number };
         config.type = defaultType in basicTypes ? basicTypes[defaultType] : x => x;
       }
       if (!('filter' in config)) {
         config.filter = x => true;
       }
       if (!('cookieName' in config)) {
-        config.cookieName = `${proxyConfig.get(_domain)}.${name}`
+        config.cookieName = `${proxyConfig.get(_domain)}.${name}`;
       }
       proxyConfig.set(name, config);
     },
   };
 }();
-
 
 const Settings = CookieProxy.createCookieProxy('main');
 Object.entries({
@@ -116,26 +117,26 @@ Object.entries({
   isCycleChangerEnabled: {},
   isCycleInputEnabled: {},
   isDebugEnabled: {},
-  isDoubleClickZoomEnabled: {default: true},
+  isDoubleClickZoomEnabled: { default: true },
   isMenuOpened: {},
   isPinsPlacingEnabled: {},
   isPinsEditingEnabled: {},
-  isPopupsEnabled: {default: true},
+  isPopupsEnabled: { default: true },
   isPopupsHoverEnabled: {},
-  isShadowsEnabled: {default: true},
-  markerCluster: {default: true},
-  markerSize: {default: 1},
-  markerOpacity: {default: 1},
-  markersCustomColor: {default: 0},
-  overlayOpacity: {default: .5},
-  resetMarkersDaily: {default: true},
-  showHelp: {default: true},
-  showWeeklySettings: {default: true},
-  showUtilitiesSettings: {default: true},
-  showCustomizationSettings: {default: true},
-  showRoutesSettings: {default: true},
-  showImportExportSettings: {default: true},
+  isShadowsEnabled: { default: true },
+  markerCluster: { default: true },
+  markerSize: { default: 1 },
+  markerOpacity: { default: 1 },
+  markersCustomColor: { default: 0 },
+  overlayOpacity: { default: 0.5 },
+  resetMarkersDaily: { default: true },
+  showHelp: { default: true },
+  showWeeklySettings: { default: true },
+  showUtilitiesSettings: { default: true },
+  showCustomizationSettings: { default: true },
+  showRoutesSettings: { default: true },
+  showImportExportSettings: { default: true },
   showDebugSettings: {},
   sortItemsAlphabetically: {},
-  toolType: {default: 3},
+  toolType: { default: 3 },
 }).forEach(([name, config]) => CookieProxy.addCookie(Settings, name, config));
