@@ -8,7 +8,7 @@ var Inventory = {
   items: {},
   changedItems: [],
   categories: {},
-  highlightLowAmountItems: $.cookie('highlight_low_amount_items') == '1',  
+  highlightLowAmountItems: $.cookie('highlight_low_amount_items') == '1',
   highlightStyles: { STATIC_RECOMMENDED: 0, STATIC_DEFAULT: 1, ANIMATED_RECOMMENDED: 2, ANIMATED_DEFAULT: 3 },
   highlightStyle: !isNaN(parseInt($.cookie('highlight_style'))) ? parseInt($.cookie('highlight_style')) : 2,
 

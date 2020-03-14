@@ -74,7 +74,7 @@ function init() {
   const navLang = navigator.language.toLowerCase();
   CookieProxy.addCookie(Settings, 'language', {
     default: Language.availableLanguages.includes(navLang) ? navLang : 'en-us',
-  })
+  });
 
   MapBase.init();
   MapBase.setOverlays(Settings.overlayOpacity);
