@@ -26,10 +26,10 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1366" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1367" />
 
   <script>
-    var nocache = 1366;
+    var nocache = 1367;
   </script>
 </head>
 
@@ -522,62 +522,62 @@
           <label class="input-checkbox-label" for="enable-inventory"></label>
         </div>
       </div>
-      <div class="input-container" data-help="enable_inventory_popups">
-        <label for="enable-inventory-popups" data-text="menu.enable_inventory_popups">Enable inventory in popups</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-inventory-popups" value="1" id="enable-inventory-popups" />
-          <label class="input-checkbox-label" for="enable-inventory-popups"></label>
+      <div id="inventory-container">
+        <div class="input-container" data-help="enable_inventory_popups">
+          <label for="enable-inventory-popups" data-text="menu.enable_inventory_popups">Enable inventory in popups</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-inventory-popups" value="1" id="enable-inventory-popups" />
+            <label class="input-checkbox-label" for="enable-inventory-popups"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="enable_inventory_menu_update">
+          <label for="enable-inventory-menu-update" data-text="menu.enable_inventory_menu_update">Toggling menu items updates inventory</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-inventory-menu-update" value="1" id="enable-inventory-menu-update" />
+            <label class="input-checkbox-label" for="enable-inventory-menu-update"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="reset_button_updates_inventory">
+          <label for="reset-collection-updates-inventory" data-text="menu.reset_button_updates_inventory">Collection reset updates inventory</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="reset-collection-updates-inventory" value="0" id="reset-collection-updates-inventory" />
+            <label class="input-checkbox-label" for="reset-collection-updates-inventory"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="inventory_stack">
+          <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
+          <input id="inventory-stack" class="input-text narrow-select-menu" type="number" min="1" max="10" value="10">
+        </div>
+        <div class="input-container" data-help="reset_inventory_daily">
+          <label for="reset-inventory-daily" data-text="menu.reset_inventory_daily">Reset inventory daily</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="reset-inventory-daily" value="0" id="reset-inventory-daily" />
+            <label class="input-checkbox-label" for="reset-inventory-daily"></label>
+          </div>
+        </div>
+        <div id="open-clear-inventory-modal" class="input-container clickable" data-help="clear_inventory">
+          <label data-text="menu.clear_inventory">Clear inventory</label>
+          <div class="input-action"></div>
+        </div>
+        <div class="input-container" data-help="highlight_low_amount_items">
+          <label for="highlight_low_amount_items" data-text="menu.highlight_low_amount_items">Highlight low amount items</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="highlight_low_amount_items" value="0" id="highlight_low_amount_items" />
+            <label class="input-checkbox-label" for="highlight_low_amount_items"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="highlight_style">
+          <label for="highlight_style" data-text="menu.highlight_style">Highlight style</label>
+          <select class="input-text wide-select-menu" id="highlight_style">
+            <option disabled data-text="menu.highlight_style_static">-- Static --</option>
+            <option value="0" data-text="menu.highlight_style_recommended">Recommended colors</option>
+            <option value="1" data-text="menu.highlight_style_default">Default colors</option>
+            <option disabled data-text="menu.highlight_style_animated">-- Animated --</option>
+            <option value="2" data-text="menu.highlight_style_recommended">Recommended colors</option>
+            <option value="3" data-text="menu.highlight_style_default">Default colors</option>
+          </select>
         </div>
       </div>
-      <div class="input-container" data-help="enable_inventory_menu_update">
-        <label for="enable-inventory-menu-update" data-text="menu.enable_inventory_menu_update">Toggling menu items updates inventory</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="enable-inventory-menu-update" value="1" id="enable-inventory-menu-update" />
-          <label class="input-checkbox-label" for="enable-inventory-menu-update"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="reset_button_updates_inventory">
-        <label for="reset-collection-updates-inventory" data-text="menu.reset_button_updates_inventory">Collection reset updates inventory</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="reset-collection-updates-inventory" value="0" id="reset-collection-updates-inventory" />
-          <label class="input-checkbox-label" for="reset-collection-updates-inventory"></label>
-        </div>
-      </div>
-      <div class="input-container" data-help="inventory_stack">
-        <label for="inventory-stack" data-text="menu.inventory_stack">Item stack size</label>
-        <input id="inventory-stack" class="input-text narrow-select-menu" type="number" min="1" max="10" value="10">
-      </div>
-      <div class="input-container" data-help="reset_inventory_daily">
-        <label for="reset-inventory-daily" data-text="menu.reset_inventory_daily">Reset inventory daily</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="reset-inventory-daily" value="0" id="reset-inventory-daily" />
-          <label class="input-checkbox-label" for="reset-inventory-daily"></label>
-        </div>
-      </div>
-      <div id="open-clear-inventory-modal" class="input-container clickable" data-help="clear_inventory">
-        <label data-text="menu.clear_inventory">Clear inventory</label>
-        <div class="input-action"></div>
-      </div>
-      <div class="input-container" data-help="highlight_low_amount_items">
-        <label for="highlight_low_amount_items" data-text="menu.highlight_low_amount_items">Highlight low amount items</label>
-        <div class="input-checkbox-wrapper">
-          <input class="input-checkbox" type="checkbox" name="highlight_low_amount_items" value="0" id="highlight_low_amount_items" />
-          <label class="input-checkbox-label" for="highlight_low_amount_items"></label>
-        </div>
-      </div>
-
-      <div class="input-container" data-help="highlight_style">
-        <label for="highlight-style" data-text="menu.highlight_style">Highlight style</label>
-        <select class="input-text wide-select-menu" id="highlight_style">
-          <option disabled data-text="menu.highlight_style_static">-- Static --</option>
-          <option value="0" data-text="menu.highlight_style_recommended">Recommended colors</option>
-          <option value="1" data-text="menu.highlight_style_default">Default colors</option>
-          <option disabled data-text="menu.highlight_style_animated">-- Animated --</option>
-          <option value="2" data-text="menu.highlight_style_recommended">Recommended colors</option>
-          <option value="3" data-text="menu.highlight_style_default">Default colors</option>
-        </select>
-      </div>
-
       <hr class="menu-divider">
       <div class="input-container" data-help="show_weekly">
         <label for="show-weekly" data-text="menu.show_weekly">Show weekly collection</label>
@@ -1167,23 +1167,23 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1366"></script>
-  <script src="assets/js/settings.js?nocache=1366"></script>
-  <script src="assets/js/nazar.js?nocache=1366"></script>
-  <script src="assets/js/cycles.js?nocache=1366"></script>
-  <script src="assets/js/marker.js?nocache=1366"></script>
-  <script src="assets/js/inventory.js?nocache=1366"></script>
-  <script src="assets/js/treasures.js?nocache=1366"></script>
-  <script src="assets/js/encounters.js?nocache=1366"></script>
-  <script src="assets/js/pins.js?nocache=1366"></script>
-  <script src="assets/js/map.js?nocache=1366"></script>  
-  <script src="assets/js/language.js?nocache=1366"></script>
-  <script src="assets/js/language.data.min.js?nocache=1366"></script>
-  <script src="assets/js/menu.js?nocache=1366"></script>
-  <script src="assets/js/itemsValue.js?nocache=1366"></script>
-  <script src="assets/js/routes.js?nocache=1366"></script>
-  <script src="assets/js/pathfinder.js?nocache=1366"></script>
-  <script src="assets/js/scripts.js?nocache=1366"></script>
+  <script src="assets/js/layers.js?nocache=1367"></script>
+  <script src="assets/js/settings.js?nocache=1367"></script>
+  <script src="assets/js/nazar.js?nocache=1367"></script>
+  <script src="assets/js/cycles.js?nocache=1367"></script>
+  <script src="assets/js/marker.js?nocache=1367"></script>
+  <script src="assets/js/inventory.js?nocache=1367"></script>
+  <script src="assets/js/treasures.js?nocache=1367"></script>
+  <script src="assets/js/encounters.js?nocache=1367"></script>
+  <script src="assets/js/pins.js?nocache=1367"></script>
+  <script src="assets/js/map.js?nocache=1367"></script>
+  <script src="assets/js/language.js?nocache=1367"></script>
+  <script src="assets/js/language.data.min.js?nocache=1367"></script>
+  <script src="assets/js/menu.js?nocache=1367"></script>
+  <script src="assets/js/itemsValue.js?nocache=1367"></script>
+  <script src="assets/js/routes.js?nocache=1367"></script>
+  <script src="assets/js/pathfinder.js?nocache=1367"></script>
+  <script src="assets/js/scripts.js?nocache=1367"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>

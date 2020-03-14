@@ -53,7 +53,7 @@ var Inventory = {
 
     $('#inventory-stack').val(Inventory.stackSize);
 
-    this.toggleMenuItemsDisabled();
+    $('#inventory-container').toggleClass("opened", Inventory.isEnabled);
   },
 
   load: function () {
@@ -252,38 +252,5 @@ var Inventory = {
     Inventory.save();
     Menu.refreshItemsCounter();
     Menu.refreshWeeklyItems();
-  },
-
-  toggleMenuItemsDisabled: function () {
-    if (!Inventory.isEnabled) {
-      $('#enable-inventory-popups').parent().parent().hide();
-      $('#enable-inventory-menu-update').parent().parent().hide();
-      $('#reset-collection-updates-inventory').parent().parent().hide();
-      $('#inventory-stack').parent().hide();
-      $('[data-target="#clear-inventory-modal"]').hide();
-      $('#reset-inventory-daily').parent().parent().hide();
-      $('#highlight_low_amount_items').parent().parent().hide();
-      $('#highlight_style').parent().hide();
-      $('#open-clear-inventory-modal').hide();
-    }
-    else {
-      $('#enable-inventory-popups').parent().parent().show();
-      $('#enable-inventory-menu-update').parent().parent().show();
-      $('#reset-collection-updates-inventory').parent().parent().show();
-      $('#inventory-stack').parent().show();
-      $('[data-target="#clear-inventory-modal"]').show();
-      $('#reset-inventory-daily').parent().parent().show();
-      $('#highlight_low_amount_items').parent().parent().show();
-      $('#open-clear-inventory-modal').show();
-
-      Inventory.toggleHighlightLowAmountItems();
-    }
-  },
-
-  toggleHighlightLowAmountItems: function () {
-    if (Inventory.highlightLowAmountItems)
-      $('#highlight_style').parent().show();
-    else
-      $('#highlight_style').parent().hide();
   }
 };

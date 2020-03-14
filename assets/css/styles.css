@@ -557,13 +557,13 @@ input, textarea, select, .btn {
     transform: rotate(180deg);
 }
 
-.side-menu .menu-hidden, #weekly-container, #utilities-container, #customization-container, #routes-container, #import-export-container, #debug-container {
+.side-menu .menu-hidden, #weekly-container, #utilities-container, #customization-container, #routes-container, #import-export-container, #debug-container, #inventory-container {
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-out;
 }
 
-.side-menu .menu-hidden.opened, #weekly-container.opened, #utilities-container.opened, #customization-container.opened, #routes-container.opened, #import-export-container.opened, #debug-container.opened {
+.side-menu .menu-hidden.opened, #weekly-container.opened, #utilities-container.opened, #customization-container.opened, #routes-container.opened, #import-export-container.opened, #debug-container.opened, #inventory-container.opened {
     max-height: 2000px;
     transition: max-height 400ms linear;
 }

@@ -654,11 +654,10 @@ $('#enable-inventory').on("change", function () {
 
   MapBase.addMarkers();
   Menu.refreshWeeklyItems();
-  Inventory.toggleMenuItemsDisabled();
-  Inventory.toggleHighlightLowAmountItems();
   ItemsValue.reloadInventoryItems();
 
   $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(Inventory.isEnabled);
+  $('#inventory-container').toggleClass("opened", Inventory.isEnabled);
 });
 
 $('#enable-inventory-popups').on("change", function () {

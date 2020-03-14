@@ -251,8 +251,6 @@ var MapBase = {
 
         if (Inventory.resetInventoryDaily) {
           markers[key].amount = 0;
-          // markers[key].isCollected = false;
-          // markers[key].canCollect = true;
         }
       });
 
@@ -391,7 +389,6 @@ var MapBase = {
 
     if (Routes.generateOnVisit)
       Routes.generatePath(true);
-
   },
 
   loadWeeklySet: function () {
@@ -524,7 +521,7 @@ var MapBase = {
       return "green";
     }
 
-    if (Inventory.highlightLowAmountItems &&
+    if (Inventory.isEnabled && Inventory.highlightLowAmountItems &&
       (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED || Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
       return MapBase.isDarkMode ? "darkblue" : "orange";
     }
