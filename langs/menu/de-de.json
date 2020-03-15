@@ -218,7 +218,7 @@
 	"menu.show_all_cycles_markers": "",
 	"menu.enable_context_menu": "",
 	"menu.custom_marker_color": "",
-	"menu.custom_marker_default": "",
+	"menu.custom_marker_default": "Standardfarben",
 	"menu.custom_marker_fixed_colors": "",
 	"menu.weekly_item_description": "",
 	"menu.show_weekly": "",

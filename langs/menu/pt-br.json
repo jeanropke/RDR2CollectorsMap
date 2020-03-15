@@ -73,7 +73,7 @@
 	"menu.highlight_low_amount_items": "Destacar com baixa quantidade",
 	"menu.highlight_style": "",
 	"menu.highlight_style_recommended": "",
-	"menu.highlight_style_default": "",
+	"menu.highlight_style_default": "Cores padrão",
 	"menu.highlight_style_static": "",
 	"menu.highlight_style_animated": "",
 	"menu.marker_cluster": "Juntar marcadores",
