@@ -324,6 +324,7 @@
 	{"key": "help.custom_marker_color", "value": "Pozwala na ustawienie jednego koloru dla wszystkich znaczników rzedmiotów, lub ustawienie różnych domyślnych kolorów dla każdej karegorii znaczników."},
 	{"key": "help.show_weekly", "value": "Włącza/ wyłącza pokazywanie kolekcji tygodniowej na górze menu."},
 	{"key": "help.highlight_low_amount_items", "value": "Włącza/ wyłącza podświetlanie przedmiotów których jest najmniej w ekwipynku (relatywnie do kolekcji)."},
+	{"key": "help.highlight_style", "value": "Pozwala wybrać styl oznaczenia najmniejszej ilości przedmiotów (statyczny lub animowane podświetlenie, oraz kolor znaczników współgrający z wybranym trybem podświetlenia)."},
 	{"key": "help.collection_collected", "value": "Ilość przedmiotów zebranych z tej kolekcji."},
 	{"key": "help.reset_inventory_daily", "value": "Włącza/ wyłącza resetowanie ekwipunku co 24 godziny."}
 ]
