@@ -2,6 +2,7 @@ var Treasures = {
   enabledTreasures: $.cookie('treasures-enabled') ? $.cookie('treasures-enabled').split(';') : [],
   data: [],
   markers: [],
+
   load: function () {
     $.getJSON('data/treasures.json?nocache=' + nocache)
       .done(function (data) {
@@ -10,6 +11,7 @@ var Treasures = {
       });
     console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
   },
+
   set: function () {
     Treasures.markers = [];
     var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
@@ -60,7 +62,6 @@ var Treasures = {
   },
 
   addToMap: function () {
-
     Layers.miscLayer.clearLayers();
 
     if (!enabledCategories.includes('treasure'))
@@ -79,9 +80,11 @@ var Treasures = {
     Layers.miscLayer.addTo(MapBase.map);
     Menu.refreshTreasures();
   },
+
   save: function () {
     $.cookie('treasures-enabled', Treasures.enabledTreasures.join(';'), { expires: 999 });
   },
+
   showHideAll: function (isToHide) {
     if (isToHide) {
       Treasures.enabledTreasures = [];
