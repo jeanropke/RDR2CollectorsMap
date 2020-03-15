@@ -80,7 +80,6 @@ var ItemsValue = {
 
       ItemsValue.notFullCollectionsCount(ItemsValue.collectionsLength[key][0]);
     });
-
   },
 
   resetItemsData: function () {
@@ -94,5 +93,4 @@ var ItemsValue = {
   updateValue: function () {
     $('#items-value').text(`$${this.finalValue.toFixed(2)}`);
   }
-
 };

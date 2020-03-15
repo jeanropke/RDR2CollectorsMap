@@ -49,7 +49,12 @@ var Treasures = {
 
       marker.bindPopup(`<h1>${Language.get(value.text)}</h1><button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${value.text}', '${value.text}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>`, { minWidth: 300 });
 
-      Treasures.markers.push({ treasure: value.text, marker: marker, circle: circle, treasuresCross: treasuresCross });
+      Treasures.markers.push({
+        treasure: value.text,
+        marker: marker,
+        circle: circle,
+        treasuresCross: treasuresCross
+      });
     });
     Treasures.addToMap();
   },
