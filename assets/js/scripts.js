@@ -676,8 +676,6 @@ $('#highlight_low_amount_items').on("change", function () {
   Inventory.highlightLowAmountItems = $('#highlight_low_amount_items').prop("checked");
   $.cookie('highlight_low_amount_items', Inventory.highlightLowAmountItems ? '1' : '0', { expires: 999 });
 
-  Inventory.toggleHighlightLowAmountItems();
-
   MapBase.addMarkers();
 });
 
