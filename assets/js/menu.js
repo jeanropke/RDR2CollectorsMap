@@ -260,7 +260,6 @@ Menu.hideAll = function () {
 
   MapBase.addMarkers();
   Treasures.addToMap();
-  Encounters.addToMap();
 };
 
 Menu.refreshItemsCounter = function () {

@@ -7,7 +7,8 @@ var MapBase = {
   maxZoom: 7,
   map: null,
   overlays: [],
-  overlaysBeta: [],
+  // see building interiors in overlays; might not be rotated right
+  interiors: false,
   markers: [],
   importantItems: [],
   collectedItems: {},
@@ -17,25 +18,34 @@ var MapBase = {
   showAllMarkers: false,
 
   init: function () {
+    'use strict';
+    Object.entries({
+      overlayOpacity: { default: 0.5 },
+      baseLayer: { default: 'map.layers.default' },
+    }).forEach(([name, config]) => CookieProxy.addCookie(Settings, name, config));
 
+    const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
     //Please, do not use the GitHub map tiles. Thanks
-    var mapLayers = [
-      L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
-        noWrap: true,
-        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
-        attribution: '<a href="https://www.rockstargames.com/" target="_blank">Rockstar Games</a>'
-      }),
-      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
-        noWrap: true,
-        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
-        attribution: '<a href="https://rdr2map.com/" target="_blank">RDR2Map</a>'
-      }),
-      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
-        noWrap: true,
-        bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
-        attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
-      })
-    ];
+    const mapLayers = {
+      'map.layers.default':
+        L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
+          noWrap: true,
+          bounds: mapBoundary,
+          attribution: '<a href="https://www.rockstargames.com/" target="_blank">Rockstar Games</a>'
+        }),
+      'map.layers.detailed':
+        L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
+          noWrap: true,
+          bounds: mapBoundary,
+          attribution: '<a href="https://rdr2map.com/" target="_blank">RDR2Map</a>'
+        }),
+      'map.layers.dark':
+        L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
+          noWrap: true,
+          bounds: mapBoundary,
+          attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
+        }),
+    };
 
     // Override bindPopup to include mouseover and mouseout logic.
     L.Layer.include({
@@ -92,7 +102,7 @@ var MapBase = {
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
-      layers: [mapLayers[parseInt($.cookie('map-layer'))]]
+      layers: [mapLayers[Settings.baseLayer]],
     }).setView([-70, 111.75], 3);
 
     MapBase.map.addControl(
@@ -106,42 +116,32 @@ var MapBase = {
       position: 'bottomright'
     }).addTo(MapBase.map);
 
-    var baseMapsLayers = {
-      'map.layers.default': mapLayers[0],
-      'map.layers.detailed': mapLayers[1],
-      'map.layers.dark': mapLayers[2]
-    };
+    L.control.layers(mapLayers).addTo(MapBase.map);
 
-    L.control.layers(baseMapsLayers).addTo(MapBase.map);
+    // Leaflet leaves the layer names here, with a space in front of them.
+    $('.leaflet-control-layers-list span').each(function (index, node) {
+      // Move the layer name (which is chosen to be our language key) into a
+      // new tightly fitted span for use with our localization.
+      const langKey = node.textContent.trim();
+      $(node).html([' ', $('<span>').attr('data-text', langKey).text(langKey)]);
+    });
 
     MapBase.map.on('baselayerchange', function (e) {
-      var mapIndex;
+      Settings.baseLayer = e.name;
+      MapBase.setMapBackground();
+    });
 
-      switch (e.name) {
-        case 'map.layers.default':
-          mapIndex = 0;
-          break;
-        case 'map.layers.dark':
-          mapIndex = 2;
-          break;
-        case 'map.layers.detailed':
-        default:
-          mapIndex = 1;
-          break;
-      }
-
-      setMapBackground(mapIndex);
+    $('#overlay-opacity').val(Settings.overlayOpacity);
+    $("#overlay-opacity").on("change", function () {
+      Settings.overlayOpacity = Number($("#overlay-opacity").val());
+      MapBase.setOverlays();
     });
 
     MapBase.map.on('click', function (e) {
       MapBase.addCoordsOnMap(e);
     });
 
-    if (Settings.isDoubleClickZoomEnabled) {
-      MapBase.map.doubleClickZoom.enable();
-    } else {
-      MapBase.map.doubleClickZoom.disable();
-    }
+    MapBase.map.doubleClickZoom[Settings.isDoubleClickZoomEnabled ? 'enable' : 'disable']();
 
     var southWest = L.latLng(-160, -50),
       northEast = L.latLng(25, 250),
@@ -153,62 +153,47 @@ var MapBase = {
       MapBase.map.closePopup();
     });
 
-    MapBase.loadOverlays();
-
-    // Enable this and disable the above to see cool stuff.
-    // MapBase.loadOverlaysBeta();
-  },
-
-  loadOverlays: function () {
-    $.getJSON('data/overlays.json?nocache=' + nocache)
+    $.getJSON(`data/overlays${MapBase.interiors ? '_beta' : ''}.json?nocache=${nocache}`)
       .done(function (data) {
         MapBase.overlays = data;
-        MapBase.setOverlays(Settings.overlayOpacity);
+        MapBase.setMapBackground();
         console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
       });
   },
 
-  setOverlays: function (opacity = 0.5) {
-    Layers.overlaysLayer.clearLayers();
-
-    if (opacity == 0) return;
-
-    $.each(MapBase.overlays, function (key, value) {
-      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/${key}.png?nocache=${nocache}`;
-      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, value, { opacity: opacity }));
-    });
-
-    Layers.overlaysLayer.addTo(MapBase.map);
+  setMapBackground: function () {
+    'use strict';
+    MapBase.isDarkMode = Settings.baseLayer === 'map.layers.dark' ? true : false;
+    $('#map').css('background-color', MapBase.isDarkMode ? '#3d3d3d' : '#d2b790');
+    MapBase.setOverlays();
+    // Update the highlighted markers to show the appropriate marker colors
+    Inventory.updateLowAmountItems();
   },
 
-  loadOverlaysBeta: function () {
-    $.getJSON('data/overlays_beta.json?nocache=' + nocache)
-      .done(function (data) {
-        MapBase.overlaysBeta = data;
-        MapBase.setOverlaysBeta(Settings.overlayOpacity);
-        console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
-      });
-  },
-
-  setOverlaysBeta: function (opacity = 0.5) {
+  setOverlays: function () {
+    'use strict';
     Layers.overlaysLayer.clearLayers();
 
-    if (opacity == 0) return;
+    if (Settings.overlayOpacity === 0) return;
 
-    $.each(MapBase.overlaysBeta, function (key, value) {
-      var overlay = `assets/overlays/${(MapBase.isDarkMode ? 'dark' : 'normal')}/game/${value.name}.png?nocache=${nocache}`;
+    let subDir = MapBase.isDarkMode ? 'dark' : 'normal';
+    if (MapBase.interiors) {
+      subDir += '/game';
+    }
+    const addOverlay = function (key, value) {
+      const file = MapBase.interiors ? value.name : key;
+      const overlay = `assets/overlays/${subDir}/${file}.png?nocache=${nocache}`;
+      let bounds = value;
+      if (MapBase.interiors) {
+        const scale = 0.00076;
+        const x = (value.width / 2) * scale;
+        const y = (value.height / 2) * scale;
+        bounds = [[(value.lat + y), (value.lng - x)], [(value.lat - y), (value.lng + x)]];
+      }
+      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, bounds, { opacity: Settings.overlayOpacity }));
+    };
 
-      var x = (value.width / 2);
-      var y = (value.height / 2);
-      var scaleX = 0.00076;
-      var scaleY = scaleX;
-
-      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, [
-        [(value.lat + (y * scaleY)), (value.lng - (x * scaleX))],
-        [(value.lat - (y * scaleY)), (value.lng + (x * scaleX))]
-      ], { opacity: opacity }));
-    });
-
+    $.each(MapBase.overlays, addOverlay);
     Layers.overlaysLayer.addTo(MapBase.map);
   },
 
@@ -376,7 +361,6 @@ var MapBase = {
     MapBase.addFastTravelMarker();
 
     Treasures.addToMap();
-    Encounters.addToMap();
     MadamNazar.addMadamNazar();
 
     if (refreshMenu) {
