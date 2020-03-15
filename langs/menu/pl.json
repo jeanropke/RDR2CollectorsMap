@@ -79,7 +79,7 @@
  	{"key": "menu.enable_inventory", "value": "Włącz ekwipunek"},
 	{"key": "menu.inventory_stack", "value": "Rozmiar stosu przedmiotów"},
 	{"key": "menu.highlight_low_amount_items", "value": "Podświetlaj niewielkie ilości przedm."},
-	{"key": "menu.highlight_style", "value": "Highlight style"},
+	{"key": "menu.highlight_style", "value": "Styl podświetlenia"},
 	{"key": "menu.highlight_style_recommended", "value": "Zalecane kolory"},
 	{"key": "menu.highlight_style_default", "value": "Domyślne kolory"},
 	{"key": "menu.highlight_style_static", "value": "-- Statyczne --"},
