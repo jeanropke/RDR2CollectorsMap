@@ -796,26 +796,5 @@
 	{"key": "flower_wild_rhubarb.name", "value": "Wild Rhubarb Flower"},
 	{"key": "flower_wisteria.name", "value": "Wisteria Flower"},
 
-	{"key": "random_item.name", "value": "Random Item"},
-
-	{"key": "tree_map.name","value":"Treasure Map stuck on Tree"},
-	{"key": "tree_map.desc","value":"Tree Maps are Random Encounters. They spawn on trees mainly at night. Look for lantern light."},
-
-	{"key": "treasure_hunter.name","value":"Treasure Hunter"},
-	{"key": "treasure_hunter.desc","value":"Treasure Hunter are Random Encounters."},
-	
-	{"key": "egg_encounter.name","value":"Bird Egg Nest Encounter"},
-	{"key": "egg_encounter.desc","value":"These are Random Encounters. A white blip on the mini map will indicate the encounter. You must get to the egg nest before the predator eats the eggs."},
-
-	{"key": "grave_robber.name","value":"Grave Robber Encounter"},
-	{"key": "grave_robber.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter. Approach the grave robber to accept the mission. You have limited time to search up to 7 locations for a collectable item before the lawmen come."},
-	
-	{"key": "condor_egg.name","value":"Condor Egg Event"},
-	{"key": "condor_egg.desc","value":"This is an event"},
-	
-	{"key": "dog_encounter.name","value":"Dog Encounter Event"},
-	{"key": "dog_encounter.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."},
-
-	{"key": "wounded_animal.name","value":"Wounded Animal Event"},
-	{"key": "wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."}
+	{"key": "random_item.name", "value": "Random Item"}
 ]

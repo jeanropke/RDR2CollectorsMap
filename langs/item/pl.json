@@ -1237,30 +1237,6 @@
 	{"key": "random_item.name", "value": "Losowy przedmiot"},
 	{"key": "random_item.desc", "value": "Losowy przedmiot resetuje się co 24 godziny o 00:00 UTC (01:00 w nocy) czasu rzeczywistego."},
 
-	{"key": "tree_map.name", "value": "Mapa skarbów przyczepiona do drzewa (zdarzenie)"},
-	{"key": "tree_map.desc", "value": "Mapy na drzewie są przypadkowymi zdarzeniami. Pojawiają się na drzewach głównie w nocy. Wypatruj światła latarni."},
-
-	{"key": "treasure_hunter.name", "value": "Łowca skarbów (zdarzenie)"},
-	{"key": "treasure_hunter.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje. Możesz zaatakować Łowcę Skarbów i ograbić go, aby uzyskać mapę skarbów."},
-
-	{"key": "egg_encounter.name", "value": "Gniazdo ptasich jaj (zdarzenie)"},
-	{"key": "egg_encounter.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje. Musisz dotrzeć do gniazda jaj, zanim drapieżnik zje jaja."},
-
-	{"key": "grave_robber.name", "value": "Hiena cmentarna (zdarzenie)"},
-	{"key": "grave_robber.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje. Podejdź do grabieżcy aby aktywować misję. Masz ograniczony czas by przeszukać (maksymalnie) 7 miejsc i znaleźć przedmiot kolekcjonerski, zanim przyjdzie stróż prawa."},
-
-	{"key": "condor_egg.name", "value": "Jajo kondora (zdarzenie)"},
-	{"key": "condor_egg.desc", "value": "To jest wydarzenie trybu swobodnego. Zaproszenie do gry poinformuje o jego starcie. Skieruj się do jaja kondora i podnieś je, aby zdobyć przedmiot o wartości 1000 $"},
-
-	{"key": "dog_encounter.name", "value": "Spotkanie z psem (zdarzenie)"},
-	{"key": "dog_encounter.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje."},
-
-	{"key": "wounded_animal.name", "value": "Zranione zwierze (zdarzenie)"},
-	{"key": "wounded_animal.desc", "value": "To jest Przypadkowe zdarzenie. Biały punkt na mini mapie o tym informuje."},
-
-	{"key": "rival_collector.name", "value": "Konkurencyjny kolekcjoner (zdarzenie)"},
-	{"key": "rival_collector.desc", "value": "To jest Przypadkowe zdarzenie. Konkurencyjny kolekcjoner, ubrany w niecodziennie wyglądające ubrania, posiadający charakterystyczne torby kolekcjonera. Zabij go i ograb zwłoki, aby dostać przedmiot/y kolekcjonerski/e."},
-
 	{"key": "weekly.desc", "value": "Ten przedmiot jest częścią kolekcji {collection}."},
 	{"key": "weekly.desc.sacred_set", "value": "Sacred"},
 	{"key": "weekly.desc.veteran_set", "value": "Veteran's"},

@@ -796,26 +796,5 @@
 	{"key": "flower_wild_rhubarb.name", "value": "야생 대황"},
 	{"key": "flower_wisteria.name", "value": "등나무"},
 
-	{"key": "random_item.name", "value": "랜덤 아이템"},
-
-	{"key": "tree_map.name","value":"나무 위 보물지도"},
-	{"key": "tree_map.desc","value":"나무 위 보물지도는 랜덤 인카운터입니다. 그것들은 주로 밤에 나무 위에서 스폰됩니다. 랜턴을 찾으십시오."},
-
-	{"key": "treasure_hunter.name","value":"보물 사냥꾼"},
-	{"key": "treasure_hunter.desc","value":"보물  사냥꾼들은 랜덤 인카운터입니다."},
-	
-	{"key": "egg_encounter.name","value":"새알 둥지 인카운터"},
-	{"key": "egg_encounter.desc","value":"이것들은 랜덤 인카운터입니다. 미니맵에 하얀색의 반짝이는 점으로 지시될것입니다. 당신은 포식자들이 알을 해치우기 전에 다가가야만 합니다."},
-
-	{"key": "grave_robber.name","value":"무덤 도굴꾼 인카운터"},
-	{"key": "grave_robber.desc","value":"이것은 랜덤 인카운터입니다. 미니맵에 하얀색의 반짝이는 점으로 지시될것입니다. 도굴꾼에게 다가가는것으로 임무를 수락할 수 있습니다. 당신은 보안관들이 오기 전까지 7가지 장소를 찾아야만 합니다."},
-	
-	{"key": "condor_egg.name","value":"콘도르 알 이벤트"},
-	{"key": "condor_egg.desc","value":"이것은 이벤트입니다."},
-	
-	{"key": "dog_encounter.name","value":"개 인카운터 이벤트"},
-	{"key": "dog_encounter.desc","value":"이것은 랜덤 인카운터입니다. 미니맵에 하얀색의 반짝이는 점으로 지시될것입니다."},
-
-	{"key": "wounded_animal.name","value":"다친 동물 이벤트"},
-	{"key": "wounded_animal.desc","value":"이것은 랜덤 인카운터입니다. 미니맵에 하얀색의 반짝이는 점으로 지시될것입니다."}
+	{"key": "random_item.name", "value": "랜덤 아이템"}
 ]

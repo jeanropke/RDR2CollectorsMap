@@ -112,7 +112,7 @@ var Pins = {
       <p id="${markerId}_desc">${marker.options.desc}</p>`;
 
     if (Settings.isPinsEditingEnabled) {
-      var markerIcons = ["pin", "random", "shovel", "magnet", "american_flowers", "antique_bottles", "arrowhead", "bird_eggs", "card_cups", "card_pentacles", "card_swords", "card_wands", "coin", "family_heirlooms", "fast_travel", "hide", "lost_bracelet", "lost_earrings", "lost_necklaces", "lost_ring", "nazar", "treasure"];
+      var markerIcons = ["pin", "random", "shovel", "magnet", "american_flowers", "antique_bottles", "arrowhead", "bird_eggs", "card_cups", "card_pentacles", "card_swords", "card_wands", "coin", "family_heirlooms", "fast_travel", "lost_bracelet", "lost_earrings", "lost_necklaces", "lost_ring", "nazar", "treasure"];
       var markerIconSelect = $('<select>').attr('id', `${markerId}_icon`).addClass('marker-popup-pin-input-icon');
 
       markerIcons.forEach(icon => {

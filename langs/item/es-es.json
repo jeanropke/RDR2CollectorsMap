@@ -796,26 +796,5 @@
 	{"key": "flower_wild_rhubarb.name", "value": "Ruibarbo salvaje"},
 	{"key": "flower_wisteria.name", "value": "Glicinia"},
 
-	{"key": "random_item.name", "value": "Artículo aleatorio"},
-
-	{"key": "tree_map.name","value":"Mapa del tesoro clavado en árbol"},
-	{"key": "tree_map.desc","value":"Los mapas de árboles son encuentros aleatorios. Aparecen en los árboles principalmente de noche. Busque la luz de la linterna."},
-
-	{"key": "treasure_hunter.name","value":"Cazatesoros"},
-	{"key": "treasure_hunter.desc","value":"Cazatesoros son encuentros aleatorios."},
-	
-	{"key": "egg_encounter.name","value":"Encuentro de nido de huevo de pájaro"},
-	{"key": "egg_encounter.desc","value":"Son encuentros aleatorios. Un punto blanco en el minimapa indicará el encuentro. Debes recoger el nido de huevo antes de que el depredador coma los huevos."},
-
-	{"key": "grave_robber.name","value":"Encuentro de ladón de tumbas"},
-	{"key": "grave_robber.desc","value":"Es un encuentro aleatorio. Un punto blanco en el minimapa indicará el encuentro. Acércate al ladrón de tumbas para aceptar la misión. Tienes un tiempo limitado ara encontrar hasta en las 7 ubicaciones para el coleccionable antes de que las autoridades lleguen."},
-	
-	{"key": "condor_egg.name","value":"Evento de huevo de cóndor"},
-	{"key": "condor_egg.desc","value":"Esto es un evento"},
-	
-	{"key": "dog_encounter.name","value":"Evento de encuentro de perro"},
-	{"key": "dog_encounter.desc","value":"Es un encuentro aleatorio. Un punto blanco en el minimapa indicará el encuentro."},
-
-	{"key": "wounded_animal.name","value":"Evento de animal herido"},
-	{"key": "wounded_animal.desc","value":"Es un encuentro aleatorio. Un punto blanco en el minimapa indicará el encuentro."}
+	{"key": "random_item.name", "value": "Artículo aleatorio"}
 ]

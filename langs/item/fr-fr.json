@@ -796,26 +796,5 @@
 	{"key": "flower_wild_rhubarb.name", "value": "Petite Bardane"},
 	{"key": "flower_wisteria.name", "value": "Glycine"},
 
-	{"key": "random_item.name", "value": "Objet Aléatoire"},
-
-	{"key": "tree_map.name","value":"Carte au Trésor Accrochée à un Arbre"},
-	{"key": "tree_map.desc","value":"Les cartes aux trésors accrochées à un Arbre sont des évenements aléatoires. Elles apparaissent sur les arbres, la plupart du temps, de nuit. Elle sont éclairées par une lanterne."},
-
-	{"key": "treasure_hunter.name","value":"Chasseur de Trésor"},
-	{"key": "treasure_hunter.desc","value":"Les Chasseurs de Trésors sont des évenements aléatoires."},
-	
-	{"key": "egg_encounter.name","value":"Nid"},
-	{"key": "egg_encounter.desc","value":"Ceux sont des évenements aléatoires. Un point blanc clignotant sur la carte indique l'évenement. Vous devez rammasser les oeufs avant que le prédateur de les mangent."},
-
-    {"key": "grave_robber.name","value":"Pilleur de Tombe"},
-	{"key": "grave_robber.desc","value":"C'est un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenement. Approchez vous du pilleur de tombe pour accepter la mission. Vous avez un temps limité pour chercher un objet de collection, dans l'une des 7 localisations maximum, avant l'arrivé des forces de l'ordre."},
-	
-	{"key": "condor_egg.name","value":"Evenement Oeuf de Condor"},
-	{"key": "condor_egg.desc","value":"Ceci est un évenement"},
-	
-	{"key": "dog_encounter.name","value":"Evenement Chien"},
-	{"key": "dog_encounter.desc","value":"Ceci est un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenement."},
-
-	{"key": "wounded_animal.name","value":"Animal Bléssé"},
-	{"key": "wounded_animal.desc","value":"Ceci est un évenement aléatoire. Un point blanc clignotant sur la carte indique l'évenement."}
+	{"key": "random_item.name", "value": "Objet Aléatoire"}
 ]

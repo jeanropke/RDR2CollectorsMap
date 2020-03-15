@@ -20,8 +20,8 @@ var MapBase = {
   init: function () {
     'use strict';
     Object.entries({
-      overlayOpacity: {default: .5},
-      baseLayer: {default: 'map.layers.default'},
+      overlayOpacity: { default: 0.5 },
+      baseLayer: { default: 'map.layers.default' },
     }).forEach(([name, config]) => CookieProxy.addCookie(Settings, name, config));
 
     const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
@@ -122,7 +122,7 @@ var MapBase = {
     $('.leaflet-control-layers-list span').each(function (index, node) {
       // Move the layer name (which is chosen to be our language key) into a
       // new tightly fitted span for use with our localization.
-      const langKey = node.textContent.trim()
+      const langKey = node.textContent.trim();
       $(node).html([' ', $('<span>').attr('data-text', langKey).text(langKey)]);
     });
 
@@ -361,7 +361,6 @@ var MapBase = {
     MapBase.addFastTravelMarker();
 
     Treasures.addToMap();
-    Encounters.addToMap();
     MadamNazar.addMadamNazar();
 
     if (refreshMenu) {

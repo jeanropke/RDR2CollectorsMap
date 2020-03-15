@@ -8,14 +8,10 @@ var uniqueSearchMarkers = [];
 var categories = [
   'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
   'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
-  'fast_travel', 'treasure', 'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'wounded_animal', 'rival_collector', 'user_pins'
+  'fast_travel', 'treasure', 'random', 'user_pins'
 ];
 
-var categoriesDisabledByDefault = [
-  'random', 'treasure_hunter', 'tree_map', 'egg_encounter', 'dog_encounter', 'grave_robber',
-  'wounded_animal', 'rival_collector'
-];
+var categoriesDisabledByDefault = ['random'];
 
 var enabledCategories = categories;
 var categoryButtons = $(".clickable[data-type]");
@@ -182,16 +178,21 @@ function clockTick() {
   const gameTime = new Date(now * 30);
   const gameHour = gameTime.getUTCHours();
   const nightTime = gameHour >= 22 || gameHour < 5;
-  const clockFormat = {timeZone: 'UTC', hour: 'numeric', minute: '2-digit',
-                  hour12: !Settings.display24HoursTimestamps}
+  const clockFormat = {
+    timeZone: 'UTC', hour: 'numeric', minute: '2-digit',
+    hour12: !Settings.display24HoursTimestamps
+  };
 
   $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
   $('.day-cycle').css('background', `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`);
 
   const cycleResetTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
   const delta = new Date(cycleResetTime - now);
-  const deltaFormat = {timeZone: 'UTC', hour: '2-digit', minute: '2-digit', second: '2-digit',
-                       hourCycle: 'h24'}
+  const deltaFormat = {
+    timeZone: 'UTC', hour: '2-digit', minute: '2-digit', second: '2-digit',
+    hourCycle: 'h24'
+  };
+
   $('#countdown').text(`−${delta.toLocaleString([], deltaFormat)}`);
 
   $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter',
@@ -996,7 +997,6 @@ $(function () {
     MapBase.loadFastTravels();
     MadamNazar.loadMadamNazar();
     Treasures.load();
-    Encounters.load();
     MapBase.loadMarkers();
     Routes.init();
   }

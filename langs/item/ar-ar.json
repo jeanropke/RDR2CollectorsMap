@@ -796,26 +796,5 @@
 	{"key": "flower_wild_rhubarb.name", "value": "Wild Rhubarb Flower"},
 	{"key": "flower_wisteria.name", "value": "Wisteria Flower"},
 
-	{"key": "random_item.name", "value": "عنصر عشوائي"},
-
-	{"key": "tree_map.name","value":"خريطة الكنز معلقة على شجرة."},
-	{"key": "tree_map.desc","value":"خرائط شجرة هي أماكن عشوائية. أنها تنتج على الأشجار في الليل. ابحث عن ضوء فانوس."},
-
-	{"key": "treasure_hunter.name","value":"Treasure Hunter"},
-	{"key": "treasure_hunter.desc","value":"صائد الكنوز عبارة عن أماكن غير متوقعة."},
-	
-	{"key": "egg_encounter.name","value":"أماكن أعشاش الطيور"},
-	{"key": "egg_encounter.desc","value":"أماكن عشوائية. تشير النقطة البيضاء على الخريطة المصغرة إلى المكان. يجب أن تصل إلى عش البيض قبل أن يسرق البيض."},
-
-	{"key": "grave_robber.name","value":"مكان Grave Robber"},
-	{"key": "grave_robber.desc","value":"أماكن عشوائية. تشير النقطة البيضاء على الخريطة المصغرة إلى المكان. اقترب من grave robber لقبول المهمة. لديك وقت محدود للبحث عن ما يصل إلى 7 مواقع لعنصر يمكن تحصيله قبل وصول الشريف."},
-	
-	{"key": "condor_egg.name","value":"Condor Egg Event"},
-	{"key": "condor_egg.desc","value":"This is an event"},
-	
-	{"key": "dog_encounter.name","value":"Dog Encounter Event"},
-	{"key": "dog_encounter.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."},
-
-	{"key": "wounded_animal.name","value":"Wounded Animal Event"},
-	{"key": "wounded_animal.desc","value":"This is a Random Encounter. A white blip on the mini map will indicate the encounter."}
+	{"key": "random_item.name", "value": "عنصر عشوائي"}
 ]

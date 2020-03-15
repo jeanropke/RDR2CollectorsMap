@@ -796,27 +796,5 @@
 	{"key": "flower_wild_rhubarb.name", "value": "野大黄"},
 	{"key": "flower_wisteria.name", "value": "紫藤花"},
 
-	{"key": "random_item.name", "value": "收藏品随机点"},
-
-	{"key": "tree_map.name","value":"插在树上的藏宝图"},
-	{"key": "tree_map.desc","value":"这个是随机点，不是每个点都有，晚上的话你会发现有的树旁会有提灯亮光，一把刀子插在树上，插着一张藏宝图"},
-
-	{"key": "treasure_hunter.name","value":"宝藏猎人"},
-	{"key": "treasure_hunter.desc","value":"宝藏猎人是所有点中随机遇到的"},
-	
-	{"key": "egg_encounter.name","value":"神鹫蛋任务随机开启点"},
-	{"key": "egg_encounter.desc","value":"这些都是一些随机的任务，地图上会以小白点显示，你必须在狩猎者吃掉鸟蛋之前到达"},
-
-	{"key": "grave_robber.name","value":"愚人金活动"},
-	{"key": "grave_robber.desc","value":"这是一个很无聊的对抗活动，意思就是活动中会有绿帽子，带上之后可以加强防御，带上绿帽子击杀其他玩家可获得分数，或者普通玩家击杀带绿帽的玩家也可以获取分数，总之，超级无聊！"},
-	
-	{"key": "condor_egg.name","value":"神鹫蛋大致位置"},
-	{"key": "condor_egg.desc","value":"图中的红色叉叉都是神鹫蛋大概所在的位置，是不是很刘濞！"},
-	
-	{"key": "dog_encounter.name","value":"狗狗遭遇随机点"},
-	{"key": "dog_encounter.desc","value":"这是一个随机遭遇点，地图上以白点显示，狗狗会随机给你收藏品或者好东西、也有可能给你带来埋伏."},
-
-	{"key": "wounded_animal.name","value":"受伤的动物事件"},
-	{"key": "wounded_animal.desc","value":"随机遭遇事件，小地图有动物图标（一个兽爪）闪烁。过去用枪终结动物的痛苦，能获取击杀和“给个痛快”经验，还白捞个箭头收藏品，甚至能顺个猎物。"}
-
+	{"key": "random_item.name", "value": "收藏品随机点"}
 ]

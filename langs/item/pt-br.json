@@ -813,30 +813,6 @@
 	{"key": "flower_wisteria.name", "value": "Glicínia"},
 	
 	{"key": "random_item.name", "value": "Item Aleatório"},
-	
-	{"key": "tree_map.name","value":"Mapa do Tesouro na Árvore"},
-	{"key": "tree_map.desc","value":"Tesouro em Árvore é um Encontro Aleatório. Eles aparecem geralmente a noite. Facilmente encontrado pela luz da lanterna."},
-	
-	{"key": "treasure_hunter.name","value":"Caçador de Tesouro"},
-	{"key": "treasure_hunter.desc","value":"É um Encontro Aleatório. Um ponto branco no mini mapa vai indicar o encontro. Você pode lutar o Caçador de Tesouro e saquear ele para conseguir um mapa do tesouro."},
-	
-	{"key": "egg_encounter.name","value":"Ninho de Pássaro"},
-	{"key": "egg_encounter.desc","value":"São Encontros Aleatórios. Um ponto branco vai aparecer no mini mapa indicando o encontro. Você precisa chegar até ao ninho antes que o predador coma os ovos."},
-	
-	{"key": "grave_robber.name","value":"Ladrão de Sepultura"},
-	{"key": "grave_robber.desc","value":"São Encontros Aleatórios. Um ponto branco vai aparecer no mini mapa indicando o encontro. Aproxime-se do ladrão para começar a missão. Você tem um tempo limitado para cavar 7 locais e conseguir um item coletável antes da polícia aparecer."},
-	
-	{"key": "condor_egg.name","value":"Evento Ovo de Condor"},
-	{"key": "condor_egg.desc","value":"É um evento do modo livre para a profissão de coletor. Marcas vermelhas indicam possíveis locais onde o ovo condor pode estar."},
-	
-	{"key": "dog_encounter.name","value":"Encontro com Cachorro"},
-	{"key": "dog_encounter.desc","value":"É um Encontro Aleatório. Um ponto branco no mini mapa vai indicar o encontro. Siga o cachorro até uma emboscada ou uma caixa contendo um coletável."},
-	
-	{"key": "wounded_animal.name","value":"Evento Animal Ferido"},
-	{"key": "wounded_animal.desc","value":"É um Encontro Aleatório. Um ponto branco no mini mapa vai indicar o encontro. Mate o animal ou espere ele morrer, se aproxime dele para coletar uma ponta de flecha."},
-	
-	{"key": "rival_collector.name","value":"Encontro com Colecionador Rival"},
-    {"key": "rival_collector.desc","value":"É um Encontro Aleatório. Um colecionador rival usando roupas elegantes e alforjes aparece aqui. Mate-o e saqueie seu corpo para ter uma chance de conseguir um colecionável."},
 
     {"key": "weekly.desc", "value": "Esse item faz parte da coleção semanal {collection}."},
     {"key": "weekly.desc.1800_coins_set", "value": "Moedas do Século XIX"},
