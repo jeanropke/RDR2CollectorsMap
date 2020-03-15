@@ -754,6 +754,7 @@ a.wiki-page:visited {
 }
 
 .explain-text {
+    text-align: center;
     margin-bottom: 12px !important;
     font-size: 14px;
 }
