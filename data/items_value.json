@@ -9,7 +9,6 @@
     "flower_blood_flower": 10.25,
     "flower_chocolate_daisy": 7.25,
     "flower_wisteria": 8.25,
-
     "egg_spoonbill": 12.75,
     "egg_heron": 12.75,
     "egg_loon": 3.50,
@@ -19,7 +18,6 @@
     "egg_egret": 12.50,
     "egg_duck": 2.25,
     "egg_goose": 3.00,
-
     "bottle_tennesee_whiskey": 7.25,
     "bottle_irish_whiskey": 10.25,
     "bottle_scotch_whisky": 10.50,
@@ -29,7 +27,6 @@
     "bottle_caribbean_rum": 7.75,
     "bottle_cognac_bottle": 8.75,
     "bottle_london_dry_gin": 7.25,
-
     "cups_ace": 12.00,
     "cups_two": 7.75,
     "cups_three": 7.75,
@@ -44,7 +41,6 @@
     "cups_knight": 9.00,
     "cups_queen": 10.00,
     "cups_king": 11.00,
-
     "swords_ace": 14.50,
     "swords_two": 9.50,
     "swords_three": 9.25,
@@ -59,7 +55,6 @@
     "swords_knight": 11.00,
     "swords_queen": 12.00,
     "swords_king": 13.25,
-
     "wands_ace": 12.00,
     "wands_two": 7.50,
     "wands_three": 7.50,
@@ -74,7 +69,6 @@
     "wands_knight": 9.00,
     "wands_queen": 10.00,
     "wands_king": 11.00,
-
     "pentacles_ace": 14.50,
     "pentacles_two": 9.00,
     "pentacles_three": 9.50,
@@ -89,7 +83,6 @@
     "pentacles_knight": 11.00,
     "pentacles_queen": 12.00,
     "pentacles_king": 13.25,
-
     "bracelet_abello_ruby_bangle": 17.00,
     "bracelet_ojeda_rose_gold": 17.00,
     "bracelet_helena_sapphire": 17.75,
@@ -98,7 +91,6 @@
     "bracelet_elliston_carved": 16.50,
     "bracelet_hajnal_garnet_bangle": 16.25,
     "bracelet_greco_sapphire": 18.00,
-
     "earring_ursula_citrine": 15.50,
     "earring_royal_victoria": 17.25,
     "earring_calumet_turquoise": 15.75,
@@ -110,7 +102,6 @@
     "earring_endicott_diamond": 19.25,
     "earring_josephine_pearl": 16.00,
     "earring_emmeline_coral": 16.25,
-
     "necklace_blakely_miniatue": 18.75,
     "necklace_richelieu_amethyst": 17.75,
     "necklace_pelle_pearl": 18.25,
@@ -120,7 +111,6 @@
     "necklace_gosselin_white_gold": 19.50,
     "necklace_dane_topaz": 18.75,
     "necklace_tuamotu_pearl": 20.75,
-
     "ring_harland_coral": 16.75,
     "ring_magnate_turquoise": 16.50,
     "ring_pilgrim_moonstone": 16.75,
@@ -132,7 +122,6 @@
     "ring_bosque_emerald": 16.50,
     "ring_sackville_diamond": 19.25,
     "ring_thorburn_turquoise": 16.75,
-
     "coin_gold_quarter": 21.00,
     "coin_draped_bust_silver_dollar": 18.25,
     "coin_one_cent_token": 18.00,
@@ -148,7 +137,6 @@
     "coin_liberty_quarter": 20.75,
     "coin_half_dime": 18.50,
     "coin_penny": 14.75,
-
     "heirlooms_jade_hairpin": 11.75,
     "heirlooms_cherrywood_comb": 8.75,
     "heirlooms_ebony_hairbrush": 9.00,
@@ -164,7 +152,6 @@
     "heirlooms_horse_hair_brush": 9.25,
     "heirlooms_boar_bristle_brush": 9.00,
     "heirlooms_new_guinea_rosewood": 9.50,
-
     "arrowhead_rough": 11.75,
     "arrowhead_splintered": 8.75,
     "arrowhead_crude": 9.50,
