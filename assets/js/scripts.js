@@ -68,20 +68,14 @@ function init() {
     return categoriesDisabledByDefault.indexOf(item) === -1;
   });
 
-  if ($.cookie('map-layer') === undefined || isNaN(parseInt($.cookie('map-layer'))))
-    $.cookie('map-layer', 0, { expires: 999 });
-
   const navLang = navigator.language.toLowerCase();
   CookieProxy.addCookie(Settings, 'language', {
     default: Language.availableLanguages.includes(navLang) ? navLang : 'en-us',
   });
 
   MapBase.init();
-  MapBase.setOverlays(Settings.overlayOpacity);
 
   Language.setMenuLanguage();
-
-  setMapBackground($.cookie('map-layer'));
 
   if (Settings.isMenuOpened)
     $('.menu-toggle').click();
@@ -90,7 +84,6 @@ function init() {
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
   $('#marker-size').val(Settings.markerSize);
-  $('#overlay-opacity').val(Settings.overlayOpacity);
   $('#custom-marker-color').val(Settings.markersCustomColor);
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
@@ -140,31 +133,6 @@ function isLocalHost() {
   return location.hostname === "localhost" || location.hostname === "127.0.0.1";
 }
 
-function setMapBackground(mapIndex) {
-  switch (parseInt(mapIndex)) {
-    default:
-    case 0:
-      $('#map').css('background-color', '#d2b790');
-      MapBase.isDarkMode = false;
-      break;
-
-    case 1:
-      $('#map').css('background-color', '#d2b790');
-      MapBase.isDarkMode = false;
-      break;
-
-    case 2:
-      $('#map').css('background-color', '#3d3d3d');
-      MapBase.isDarkMode = true;
-      break;
-  }
-  MapBase.setOverlays();
-  $.cookie('map-layer', mapIndex, { expires: 999 });
-
-  // Update the highlighted markers to show the appropriate marker colors
-  Inventory.updateLowAmountItems();
-}
-
 function changeCursor() {
   if (Settings.isCoordsEnabled || Routes.customRouteEnabled)
     $('.leaflet-grab').css('cursor', 'pointer');
@@ -172,12 +140,6 @@ function changeCursor() {
     $('.leaflet-grab').css('cursor', 'grab');
     $('.lat-lng-container').css('display', 'none');
   }
-}
-
-function addZeroToNumber(number) {
-  if (number < 10)
-    number = '0' + number;
-  return number;
 }
 
 function getParameterByName(name, url) {
@@ -215,40 +177,25 @@ function downloadAsFile(filename, text) {
 }
 
 function clockTick() {
-  // Clock in game created by Michal__d
-  var newDate = new Date();
-  var startTime = newDate.valueOf();
-  var factor = 30;
-  var correctTime = new Date(startTime * factor);
+  'use strict';
+  const now = new Date();
+  const gameTime = new Date(now * 30);
+  const gameHour = gameTime.getUTCHours();
+  const nightTime = gameHour >= 22 || gameHour < 5;
+  const clockFormat = {timeZone: 'UTC', hour: 'numeric', minute: '2-digit',
+                  hour12: !Settings.display24HoursTimestamps}
 
-  correctTime.setHours(correctTime.getUTCHours());
-  correctTime.setMinutes(correctTime.getUTCMinutes() - 3); //for some reason time in game is 3 sec. delayed to normal time
+  $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
+  $('.day-cycle').css('background', `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`);
 
-  if (Settings.display24HoursTimestamps) {
-    $('#time-in-game').text(addZeroToNumber(correctTime.getHours()) + ":" + addZeroToNumber(correctTime.getMinutes()));
-  } else {
-    $('#time-in-game').text((addZeroToNumber(correctTime.getHours() % 12) == '00' ? '12' : addZeroToNumber(correctTime.getHours() % 12)) + ":" + addZeroToNumber(correctTime.getMinutes()) + " " + ((correctTime.getHours() < 12) ? "AM" : "PM"));
-  }
+  const cycleResetTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
+  const delta = new Date(cycleResetTime - now);
+  const deltaFormat = {timeZone: 'UTC', hour: '2-digit', minute: '2-digit', second: '2-digit',
+                       hourCycle: 'h24'}
+  $('#countdown').text(`−${delta.toLocaleString([], deltaFormat)}`);
 
-  if (correctTime.getHours() >= 22 || correctTime.getHours() < 5) {
-    $('.day-cycle').css('background', 'url(assets/images/moon.png)');
-  } else {
-    $('.day-cycle').css('background', 'url(assets/images/sun.png)');
-  }
-
-  //Countdown for the next cycle
-  var nextGMTMidnight = new Date();
-  var hours = 23 - nextGMTMidnight.getUTCHours();
-  var minutes = 59 - nextGMTMidnight.getUTCMinutes();
-  var seconds = 59 - nextGMTMidnight.getUTCSeconds();
-  $('#countdown').text(addZeroToNumber(hours) + ':' + addZeroToNumber(minutes) + ':' + addZeroToNumber(seconds));
-
-  if (correctTime.getHours() >= 22 || correctTime.getHours() < 5) {
-    $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
-  }
-  else {
-    $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', 'none');
-  }
+  $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter',
+    nightTime ? 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)' : 'none');
 }
 
 setInterval(clockTick, 1000);
@@ -423,11 +370,6 @@ $("#language").on("change", function () {
 $("#marker-opacity").on("change", function () {
   Settings.markerOpacity = Number($("#marker-opacity").val());
   MapBase.addMarkers();
-});
-
-$("#overlay-opacity").on("change", function () {
-  Settings.overlayOpacity = Number($("#overlay-opacity").val());
-  MapBase.setOverlays(Settings.overlayOpacity);
 });
 
 $("#marker-size").on("change", function () {
