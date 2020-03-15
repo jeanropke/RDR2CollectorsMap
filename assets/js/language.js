@@ -49,14 +49,7 @@ var Language = {
                     dataType: 'json',
                     async: false,
                     success: function (json) {
-                        // Convert from object to property.
-                        var langObject = {};
-
-                        json.forEach(element => {
-                            langObject[element.key] = element.value;
-                        });
-
-                        object[language] = langObject;
+                        object[language] = json;
                     }
                 });
 
@@ -66,14 +59,7 @@ var Language = {
                     dataType: 'json',
                     async: false,
                     success: function (json) {
-                        // Convert from object to property.
-                        var langObject = {};
-
-                        json.forEach(element => {
-                            langObject[element.key] = element.value;
-                        });
-
-                        $.extend(object[language], langObject);
+                        $.extend(object[language], json);
                     }
                 });
             } catch (error) {
