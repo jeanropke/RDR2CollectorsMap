@@ -1087,7 +1087,7 @@
     "random_item.name": "Losowy przedmiot",
     "random_item.desc": "Losowy przedmiot resetuje się co 24 godziny o 00:00 UTC (01:00 w nocy) czasu rzeczywistego.",
     "weekly.desc": "Ten przedmiot jest częścią kolekcji {collection}.",
-    "weekly.desc.1800_coins_set": "1800's Coin",
+    "weekly.desc.1800_coins_set": "1800 monet",
     "weekly.desc.ancient_tools_set": "Starożytne narzędzia",
     "weekly.desc.belle_set": "",
     "weekly.desc.bowman_set": "Łucznika",
@@ -1126,6 +1126,6 @@
     "item_pocket_watch_gold.name": "Złoty zegarek kieszonkowy",
     "item_carcass_squirrel_perfect.name": "Wiewiórka",
     "item_gold_tooth.name": "Złoty ząb",
-    "item_cooked_plump_bird_thyme.name": "",
+    "item_cooked_plump_bird_thyme.name": "Bażant",
     "item_pocket_watch_platinum.name": "Platynowy zegarek kieszonkowy"
 }
