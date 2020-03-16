@@ -167,7 +167,9 @@ Menu.refreshMenu = function () {
 
       if (currentSubdataMarkers.every(function (marker) { return !marker.canCollect; }))
         collectibleElement.addClass('disabled');
-    } else {
+      
+    }
+    else {
       if (!marker.canCollect)
         collectibleElement.addClass('disabled');
     }
