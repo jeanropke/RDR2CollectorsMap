@@ -165,11 +165,11 @@ Menu.refreshMenu = function () {
         return true;
       });
 
-      if (currentSubdataMarkers.every(function (marker) {
-        return !marker.canCollect;
-      }));
+      if (currentSubdataMarkers.every(function (marker) { return !marker.canCollect; }))
         collectibleElement.addClass('disabled');
-    } else {
+      
+    }
+    else {
       if (!marker.canCollect)
         collectibleElement.addClass('disabled');
     }

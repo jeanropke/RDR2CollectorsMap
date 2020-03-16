@@ -199,7 +199,7 @@ function clockTick() {
     hourCycle: 'h24'
   };
 
-  $('#countdown').text(`${delta.toLocaleString([], deltaFormat)}`);
+  $('#countdown').text(delta.toLocaleString([], deltaFormat));
 
   $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter',
     nightTime ? 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)' : 'none');
