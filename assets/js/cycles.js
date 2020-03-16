@@ -79,13 +79,13 @@ var Cycles = {
         }
         else {
           Cycles.categories.american_flowers = _cycles[0];
-          Cycles.categories.card_cups = _cycles[1];
-          Cycles.categories.card_pentacles = _cycles[1];
-          Cycles.categories.card_swords = _cycles[1];
+          Cycles.categories.card_cups,
+          Cycles.categories.card_pentacles,
+          Cycles.categories.card_swords,
           Cycles.categories.card_wands = _cycles[1];
-          Cycles.categories.lost_bracelet = _cycles[2];
-          Cycles.categories.lost_earrings = _cycles[2];
-          Cycles.categories.lost_necklaces = _cycles[2];
+          Cycles.categories.lost_bracelet,
+          Cycles.categories.lost_earrings,
+          Cycles.categories.lost_necklaces,
           Cycles.categories.lost_ring = _cycles[2];
           Cycles.categories.antique_bottles = _cycles[3];
           Cycles.categories.bird_eggs = _cycles[4];

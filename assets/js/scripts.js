@@ -57,7 +57,8 @@ function init() {
 
   categoriesDisabledByDefault = categoriesDisabledByDefault.filter(function (item) {
     return ['texas_bluebonnet', 'bitterweed', 'agarita', 'wild_rhubarb', 'cardinal',
-      'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'].indexOf(item) === -1;
+      'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'
+    ].indexOf(item) === -1;
   });
 
   enabledCategories = enabledCategories.filter(function (item) {
@@ -179,7 +180,9 @@ function clockTick() {
   const gameHour = gameTime.getUTCHours();
   const nightTime = gameHour >= 22 || gameHour < 5;
   const clockFormat = {
-    timeZone: 'UTC', hour: 'numeric', minute: '2-digit',
+    timeZone: 'UTC',
+    hour: 'numeric',
+    minute: '2-digit',
     hour12: !Settings.display24HoursTimestamps
   };
 
@@ -189,11 +192,14 @@ function clockTick() {
   const cycleResetTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
   const delta = new Date(cycleResetTime - now);
   const deltaFormat = {
-    timeZone: 'UTC', hour: '2-digit', minute: '2-digit', second: '2-digit',
+    timeZone: 'UTC',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
     hourCycle: 'h24'
   };
 
-  $('#countdown').text(`−${delta.toLocaleString([], deltaFormat)}`);
+  $('#countdown').text(`${delta.toLocaleString([], deltaFormat)}`);
 
   $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter',
     nightTime ? 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)' : 'none');

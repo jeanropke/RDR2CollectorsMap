@@ -280,11 +280,8 @@ var MapBase = {
   },
 
   onSearch: function (searchString) {
-    if (searchString) {
-      Menu.hasSearchFilters = true;
-    } else {
-      Menu.hasSearchFilters = false;
-    }
+
+    Menu.hasSearchFilters = !!searchString;
 
     Menu.updateHasFilters();
 
@@ -784,7 +781,7 @@ var MapBase = {
     $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
 
     $.each($(`[data-marker*=${text}]`), function (key, marker) {
-      var markerdata = null;
+      var markerData = null;
 
       if (category !== 'random' && category !== '')
         markerData = $(this).data('marker').replace(/_\d/, '');

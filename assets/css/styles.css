@@ -14,7 +14,9 @@
     text-rendering: optimizeLegibility
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
@@ -55,10 +57,13 @@ h4 {
 }
 
 p {
-    margin: 0!important;
+    margin: 0 !important;
 }
 
-input, textarea, select, .btn {
+input,
+textarea,
+select,
+.btn {
     outline: none;
 }
 
@@ -67,7 +72,8 @@ input, textarea, select, .btn {
     background: black;
 }
 
-.cycle-table td, .cycle-table th {
+.cycle-table td,
+.cycle-table th {
     padding: 2px;
     border: 1px solid black;
 }
@@ -107,7 +113,8 @@ input, textarea, select, .btn {
     font-weight: normal;
 }
 
-#main-header-left, #main-header-right {
+#main-header-left,
+#main-header-right {
     user-select: none;
     height: 75px;
 }
@@ -226,7 +233,9 @@ input, textarea, select, .btn {
     white-space: nowrap;
 }
 
-.map-alert .close-button, .map-cycle-alert .close-button, .filter-alert .close-button {
+.map-alert .close-button,
+.map-cycle-alert .close-button,
+.filter-alert .close-button {
     position: absolute;
     top: 0;
     right: 15px;
@@ -257,13 +266,16 @@ input, textarea, select, .btn {
     margin-right: 5px;
 }
 
-#countdown, #item-counter, #time-in-game {
+#countdown,
+#item-counter,
+#time-in-game {
     font-size: 16px;
     user-select: none;
     margin: auto 8px auto 0;
 }
 
-.timer-container, .clock-container {
+.timer-container,
+.clock-container {
     position: fixed;
     z-index: 1010;
     background: #111;
@@ -308,7 +320,8 @@ input, textarea, select, .btn {
     background-size: auto 3px;
 }
 
-.save-button, .remove-button {
+.save-button,
+.remove-button {
     text-align: center;
     font-size: 14px;
     cursor: pointer;
@@ -332,7 +345,8 @@ input, textarea, select, .btn {
     line-height: 33px;
 }
 
-.marker-popup-pin-input-name, .marker-popup-pin-input-desc {
+.marker-popup-pin-input-name,
+.marker-popup-pin-input-desc {
     border: none;
     width: 100%;
 }
@@ -504,7 +518,8 @@ input, textarea, select, .btn {
     top: 0;
 }
 
-.side-menu, .menu-toggle {
+.side-menu,
+.menu-toggle {
     transition: all 200ms ease-out;
 }
 
@@ -518,7 +533,8 @@ input, textarea, select, .btn {
     line-height: 36px;
 }
 
-.side-menu .menu-option:hover, .side-menu .menu-hidden .collectible-wrapper:hover {
+.side-menu .menu-option:hover,
+.side-menu .menu-hidden .collectible-wrapper:hover {
     background-image: url(../images/menu_hover.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -528,7 +544,8 @@ input, textarea, select, .btn {
     opacity: .5;
 }
 
-.side-menu .disabled .menu-option-text, .side-menu .disabled .collectible-text {
+.side-menu .disabled .menu-option-text,
+.side-menu .disabled .collectible-text {
     text-decoration: line-through;
 }
 
@@ -557,13 +574,27 @@ input, textarea, select, .btn {
     transform: rotate(180deg);
 }
 
-.side-menu .menu-hidden, #weekly-container, #utilities-container, #customization-container, #routes-container, #import-export-container, #debug-container, #inventory-container {
+.side-menu .menu-hidden,
+#weekly-container,
+#utilities-container,
+#customization-container,
+#routes-container,
+#import-export-container,
+#debug-container,
+#inventory-container {
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-out;
 }
 
-.side-menu .menu-hidden.opened, #weekly-container.opened, #utilities-container.opened, #customization-container.opened, #routes-container.opened, #import-export-container.opened, #debug-container.opened, #inventory-container.opened {
+.side-menu .menu-hidden.opened,
+#weekly-container.opened,
+#utilities-container.opened,
+#customization-container.opened,
+#routes-container.opened,
+#import-export-container.opened,
+#debug-container.opened,
+#inventory-container.opened {
     max-height: 2000px;
     transition: max-height 400ms linear;
 }
@@ -585,7 +616,8 @@ input, textarea, select, .btn {
     color: #fff;
 }
 
-.side-menu .collection-sell, .collection-reset {
+.side-menu .collection-sell,
+.collection-reset {
     cursor: pointer;
     user-select: none;
 }
@@ -616,13 +648,16 @@ input, textarea, select, .btn {
     font-size: 15px;
 }
 
-.side-menu .collectible, .input-container label, .menu-option span {
+.side-menu .collectible,
+.input-container label,
+.menu-option span {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.side-menu .collectible, .input-container label {
+.side-menu .collectible,
+.input-container label {
     line-height: 24px;
 }
 
@@ -698,6 +733,7 @@ a.wiki-page:visited {
     from {
         opacity: 0.0;
     }
+
     to {
         opacity: var(--animation-target-opacity);
     }
@@ -874,11 +910,13 @@ a.wiki-page:visited {
 
 /* Custom action button styling */
 
-.input-container.clickable, .input-container.clickable label {
+.input-container.clickable,
+.input-container.clickable label {
     cursor: pointer !important;
 }
 
-.input-container.clickable.disabled, .input-container.clickable.disabled label {
+.input-container.clickable.disabled,
+.input-container.clickable.disabled label {
     cursor: not-allowed !important;
 }
 
@@ -1000,14 +1038,17 @@ a.no-style:visited {
     border: none !important;
 }
 
-.modal-header, .modal-body, .modal-footer {
+.modal-header,
+.modal-body,
+.modal-footer {
     padding-left: 40px;
     padding-right: 40px;
     text-align: center;
     border: none;
 }
 
-.modal-header, .modal-body {
+.modal-header,
+.modal-body {
     color: #fff;
 }
 
@@ -1026,8 +1067,9 @@ a.no-style:visited {
 @media (min-width: 768px) {
     .modal {
         text-align: center;
-        padding: 0!important;
+        padding: 0 !important;
     }
+
     .modal:before {
         content: '';
         display: inline-block;
@@ -1036,11 +1078,13 @@ a.no-style:visited {
         margin-right: -4px;
         /* Adjusts for spacing */
     }
+
     .modal-dialog {
         display: inline-block;
         text-align: left;
         vertical-align: middle;
     }
+
     .modal-sm {
         width: 450px;
     }
@@ -1048,7 +1092,8 @@ a.no-style:visited {
 
 /* Fix buttons showing on top of sidebar on mobile menu */
 
-.leaflet-top, .leaflet-bottom {
+.leaflet-top,
+.leaflet-bottom {
     z-index: 910;
 }
 
@@ -1066,18 +1111,23 @@ a.no-style:visited {
     .timer-menu-opened {
         display: none;
     }
+
     .counter-menu-opened {
         display: none;
     }
+
     .side-menu .menu-hidden .collectible-icon {
         margin-top: 7px;
     }
+
     .counter-button {
         height: 32px;
         width: 32px;
         line-height: 1.5;
     }
-    .side-menu .menu-hidden .collectible, .input-container label {
+
+    .side-menu .menu-hidden .collectible,
+    .input-container label {
         line-height: 38px;
     }
 }
@@ -1088,12 +1138,15 @@ a.no-style:visited {
         left: -390px;
         top: 0;
     }
+
     .menu-opened {
         left: 0;
     }
+
     .timer-menu-opened {
         left: 395px;
     }
+
     .counter-menu-opened {
         left: 410px;
     }
@@ -1168,7 +1221,11 @@ a.no-style:visited {
     border: none;
 }
 
-.leaflet-div-icon .overlay, .leaflet-div-icon .icon, .leaflet-div-icon .background, .leaflet-div-icon .marker-contour, .leaflet-div-icon .shadow {
+.leaflet-div-icon .overlay,
+.leaflet-div-icon .icon,
+.leaflet-div-icon .background,
+.leaflet-div-icon .marker-contour,
+.leaflet-div-icon .shadow {
     position: absolute;
     text-align: center;
 }
