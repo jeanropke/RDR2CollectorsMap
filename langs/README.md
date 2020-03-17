@@ -1,6 +1,6 @@
 # Localisation contributors
 
-Feel free to contribute! You can contribute by translating on our [Crowdin project](https://crowdin.com/project/rdr2collectorsmap/settings#members).
+Feel free to contribute! You can contribute by translating on our [Crowdin project](https://crowdin.com/project/rdr2collectorsmap).
 
 english (en-en.json)
   - jeanropke
