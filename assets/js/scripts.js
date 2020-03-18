@@ -464,7 +464,7 @@ $('.weekly-item-listings .collection-sell').on('click', function (e) {
     var amount = Inventory.items[value.item];
 
     if (amount !== undefined) {
-      Inventory.changeMarkerAmount(value.item, -1);
+      Inventory.changeMarkerAmount(value.item.replace(/flower_/, ''), -1);
     }
   });
 });
