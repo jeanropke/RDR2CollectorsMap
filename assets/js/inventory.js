@@ -1,59 +1,19 @@
 var Inventory = {
-  isEnabled: $.cookie('inventory-enabled') == '1',
-  isPopupEnabled: $.cookie('inventory-popups-enabled') == '1',
-  isMenuUpdateEnabled: $.cookie('inventory-menu-update-enabled') == '1',
-  stackSize: parseInt($.cookie('inventory-stack')) ? parseInt($.cookie('inventory-stack')) : 10,
-  resetButtonUpdatesInventory: $.cookie('reset-updates-inventory-enabled') == '1',
-  resetInventoryDaily: $.cookie('reset-inventory-daily') == '1',
   items: {},
   changedItems: [],
   categories: {},
-  highlightLowAmountItems: $.cookie('highlight_low_amount_items') == '1',
   highlightStyles: { STATIC_RECOMMENDED: 0, STATIC_DEFAULT: 1, ANIMATED_RECOMMENDED: 2, ANIMATED_DEFAULT: 3 },
-  highlightStyle: !isNaN(parseInt($.cookie('highlight_style'))) ? parseInt($.cookie('highlight_style')) : 2,
 
   init: function () {
-    if ($.cookie('inventory-popups-enabled') === undefined) {
-      Inventory.isPopupEnabled = true;
-      $.cookie('inventory-popups-enabled', '1', { expires: 999 });
-    }
-
-    if ($.cookie('inventory-menu-update-enabled') === undefined) {
-      Inventory.isMenuUpdateEnabled = true;
-      $.cookie('inventory-menu-update-enabled', '1', { expires: 999 });
-    }
-
-    if ($.cookie('reset-updates-inventory-enabled') === undefined) {
-      Inventory.resetButtonUpdatesInventory = false;
-      $.cookie('reset-updates-inventory-enabled', '0', { expires: 999 });
-    }
-
-    if ($.cookie('reset-inventory-daily') === undefined) {
-      Inventory.resetInventoryDaily = false;
-      $.cookie('reset-inventory-daily', '0', { expires: 999 });
-    }
-
-    if ($.cookie('highlight_low_amount_items') === undefined) {
-      Inventory.highlightLowAmountItems = false;
-      $.cookie('highlight_low_amount_items', '0', { expires: 999 });
-    }
-
-    if ($.cookie('highlight_style') === undefined) {
-      Inventory.highlightStyle = Inventory.highlightStyles.ANIMATED_RECOMMENDED;
-      $.cookie('highlight_style', Inventory.highlightStyles.ANIMATED_RECOMMENDED, { expires: 999 });
-    }
-
-    $('#enable-inventory').prop("checked", Inventory.isEnabled);
-    $('#enable-inventory-popups').prop("checked", Inventory.isPopupEnabled);
-    $('#enable-inventory-menu-update').prop("checked", Inventory.isMenuUpdateEnabled);
-    $('#reset-collection-updates-inventory').prop("checked", Inventory.resetButtonUpdatesInventory);
-    $('#reset-inventory-daily').prop("checked", Inventory.resetInventoryDaily);
-    $('#highlight_low_amount_items').prop("checked", Inventory.highlightLowAmountItems);
-    $('#highlight_style').val(Inventory.highlightStyle);
-
-    $('#inventory-stack').val(Inventory.stackSize);
-
-    $('#inventory-container').toggleClass("opened", Inventory.isEnabled);
+    $('#enable-inventory-menu-update').prop("checked", InventorySettings.isMenuUpdateEnabled);
+    $('#enable-inventory-popups').prop("checked", InventorySettings.isPopupsEnabled);
+    $('#enable-inventory').prop("checked", InventorySettings.isEnabled);
+    $('#highlight_low_amount_items').prop("checked", InventorySettings.highlightLowAmountItems);
+    $('#highlight_style').val(InventorySettings.highlightStyle);
+    $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
+    $('#inventory-stack').val(InventorySettings.stackSize);
+    $('#reset-collection-updates-inventory').prop("checked", InventorySettings.resetButtonUpdatesInventory);
+    $('#reset-inventory-daily').prop("checked", InventorySettings.resetInventoryDaily);
   },
 
   load: function () {
@@ -85,7 +45,7 @@ var Inventory = {
   },
 
   updateLowAmountItems: function () {
-    if (!Inventory.isEnabled || !Inventory.highlightLowAmountItems) {
+    if (!InventorySettings.isEnabled || !InventorySettings.highlightLowAmountItems) {
       return;
     }
 
@@ -172,7 +132,7 @@ var Inventory = {
         return;
       }
 
-      var weight = (Inventory.categories[category].avg - parseFloat(_m.amount)) / Inventory.stackSize;
+      var weight = (Inventory.categories[category].avg - parseFloat(_m.amount)) / InventorySettings.stackSize;
       weight = Math.max(weight, 0.0);
 
       var scaledWeight = Math.min(weight * 2.4, 1.0);
@@ -182,7 +142,7 @@ var Inventory = {
         // no highlights
         $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('opacity', 0.0);
       }
-      else if ((weight < 0.3) || (Inventory.highlightStyle < Inventory.highlightStyles.ANIMATED_RECOMMENDED)) { // just static highlights for small differences or if animation is disabled
+      else if ((weight < 0.3) || (InventorySettings.highlightStyle < InventorySettings.highlightStyles.ANIMATED_RECOMMENDED)) { // just static highlights for small differences or if animation is disabled
         $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('opacity', scaledWeight);
       }
       else { // animated or static highlights for larger differences according to user settings
@@ -212,28 +172,28 @@ var Inventory = {
     Inventory.changedItems.push(marker[0].text);
 
     $.each(marker, function (key, marker) {
-      if (!skipInventory || skipInventory && Inventory.isMenuUpdateEnabled) {
+      if (!skipInventory || skipInventory && InventorySettings.isMenuUpdateEnabled) {
         marker.amount = parseInt(marker.amount) + amount;
 
         if (marker.amount < 0)
           marker.amount = 0;
       }
 
-      if (!Inventory.isEnabled) return;
+      if (!InventorySettings.isEnabled) return;
 
-      marker.canCollect = marker.amount < Inventory.stackSize && !marker.isCollected;
+      marker.canCollect = marker.amount < InventorySettings.stackSize && !marker.isCollected;
 
       var small = $(`small[data-item=${name}]`).text(marker.amount);
       var cntnm = $(`[data-type=${name}] .counter-number`).text(marker.amount);
 
-      small.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
-      cntnm.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
+      small.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
+      cntnm.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
 
       // If the category is disabled, no needs to update popup
       if (Settings.isPopupsEnabled && marker.day == Cycles.categories[marker.category] && Layers.itemMarkersLayer.getLayerById(marker.text) != null)
         Layers.itemMarkersLayer.getLayerById(marker.text)._popup.setContent(MapBase.updateMarkerContent(marker));
 
-      if ((marker.isCollected || (Inventory.isEnabled && marker.amount >= Inventory.stackSize)) && marker.day == Cycles.categories[marker.category]) {
+      if ((marker.isCollected || (InventorySettings.isEnabled && marker.amount >= InventorySettings.stackSize)) && marker.day == Cycles.categories[marker.category]) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
         $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
       }

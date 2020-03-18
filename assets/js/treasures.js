@@ -1,14 +1,18 @@
 var Treasures = {
-  enabledTreasures: $.cookie('treasures-enabled') ? $.cookie('treasures-enabled').split(';') : [],
+  enabledTreasures: [],
   data: [],
   markers: [],
 
   load: function () {
+    Treasures.enabledTreasures = JSON.parse(localStorage.getItem("treasures-enabled"));
+    if (Treasures.enabledTreasures === null) Treasures.enabledTreasures = [];
+
     $.getJSON('data/treasures.json?nocache=' + nocache)
       .done(function (data) {
         Treasures.data = data;
         Treasures.set();
       });
+
     console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
   },
 
@@ -82,7 +86,7 @@ var Treasures = {
   },
 
   save: function () {
-    $.cookie('treasures-enabled', Treasures.enabledTreasures.join(';'), { expires: 999 });
+    localStorage.setItem("treasures-enabled", JSON.stringify(Treasures.enabledTreasures));
   },
 
   showHideAll: function (isToHide) {

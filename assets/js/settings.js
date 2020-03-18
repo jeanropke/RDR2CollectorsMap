@@ -1,48 +1,48 @@
 /*
 How to use
 
-// domain name ('main') is to enable multiple simultaneous CookieProxies
-PersistedSettings = CookieProxy.createCookieProxy('main');
+// domain name ('main') is to enable multiple simultaneous SettingProxies
+PersistedSettings = SettingProxy.createSettingProxy('main');
 // one of the following 4 equivalent lines:
 const configObject = {default: false, type: Boolean}; // type is any function
 const configObject = {default: false};  // type determined from default if possible
 const configObject = {};  // if no type, default default is false
-const configObject = {cookieName: "main.isSuperHero"} // please don’t set name for no reason
-CookieProxy.addCookie(PersistedSettings, 'isSuperHero', configObject)
-// now it is automatically persisted (read/write) as Cookie; use like this...
+const configObject = {settingName: "main.isSuperHero"} // please don’t set name for no reason
+SettingProxy.addSetting(PersistedSettings, 'isSuperHero', configObject)
+// now it is automatically persisted (read/write) as Setting; use like this...
 if (PersistedSettings.isSuperHero) { console.log('yes!') };
 PersistedSettings.isSuperHero = true;
 
 Details
 
-- cookie is consulted on first read and cached
-- cookie is written on set if not default value via: JSON.stringify()
-- empty config object means {type: Boolean, default: false, cookieName: "domain.propertyname"}
-- cookie read is: type(JSON.parse($.cookie(cookieName)))
+- setting is consulted on first read and cached
+- setting is written on set if not default value via: JSON.stringify()
+- empty config object means {type: Boolean, default: false, settingName: "domain.propertyname"}
+- setting read is: type(JSON.parse(localStorage.getItem(settingName)))
 - returns default on error
 - if you want to persist “complicated” objects, implement methods to support JSON.stringify()
 - ...and use own type function to construct on read
 - default has a default as well: call the type function without argument
-- we could do without “cookie registration”
+- we could do without “setting registration”
 - ...but I prefer an exception on misspelled PersistedSettings.isSuprHero
 
 Example for more complex object
 
-CookieProxy.addCookie(Settings, 'day', {type: (str) => new Date(str), default: new Date(0)});
+SettingProxy.addSetting(Settings, 'day', {type: (str) => new Date(str), default: new Date(0)});
 // Date is already stringify()able (as UTC string representation)
 // string is understood by `new Date()`
 // without default type() is used
 // ...and `new Date(undefined)` is a Date() object which calls itself invalid
 */
 
-const CookieProxy = function () {
+const SettingProxy = function () {
   'use strict';
   const _domain = Symbol('domain');
   const _proxyConfig = Symbol('proxyConfig');
-  const cookieHandler = {
-    _checkAndGetCookieConfig: function (proxyConfig, name, errorType) {
+  const settingHandler = {
+    _checkAndGetSettingConfig: function (proxyConfig, name, errorType) {
       if (!proxyConfig.has(name)) {
-        throw new errorType(`"${name}" is not configured as cookie-persisted setting.`);
+        throw new errorType(`"${name}" is not configured as a persisted setting.`);
       } else {
         return proxyConfig.get(name);
       }
@@ -50,44 +50,47 @@ const CookieProxy = function () {
     get: function (proxyConfig, name) {
       if (name === _proxyConfig) return proxyConfig;
 
-      const config = cookieHandler._checkAndGetCookieConfig(proxyConfig, name, ReferenceError);
+      const config = settingHandler._checkAndGetSettingConfig(proxyConfig, name, ReferenceError);
       if ('value' in config) return config.value;
 
-      let value = $.cookie(config.cookieName);
+      if (localStorage.getItem(config.settingName) === null) {
+        localStorage.setItem(config.settingName, JSON.stringify(config.default));
+      }
+
+      let value = localStorage.getItem(config.settingName);
 
       try {
         value = config.type(JSON.parse(value));
       }
       catch (e) {
-        // JSON.parse might raise SyntaxError, bc the cookie is malformed or undefined
+        // JSON.parse might raise SyntaxError, bc the setting is malformed or undefined
         value = config.default;
       }
 
       value = config.filter(value) ? value : config.default;
+      if (value === null || value === "null") value = config.default;
+
       config.value = value;
 
       return config.value;
     },
     set: function (proxyConfig, name, value) {
-      const config = cookieHandler._checkAndGetCookieConfig(proxyConfig, name, TypeError);
-      if (value === config.default) {
-        $.removeCookie(config.cookieName);
-      } else {
-        $.cookie(config.cookieName, JSON.stringify(value), { expires: 999 });
-      }
+      const config = settingHandler._checkAndGetSettingConfig(proxyConfig, name, TypeError);
+      localStorage.setItem(config.settingName, JSON.stringify(value));
+
       config.value = value;
       return true;
     },
   };
 
   return {
-    createCookieProxy: function (domain) {
-      return new Proxy(new Map([[_domain, domain]]), cookieHandler);
+    createSettingProxy: function (domain) {
+      return new Proxy(new Map([[_domain, domain]]), settingHandler);
     },
-    addCookie: function (cookieProxy, name, config = {}) {
-      const proxyConfig = cookieProxy[_proxyConfig];
+    addSetting: function (settingProxy, name, config = {}) {
+      const proxyConfig = settingProxy[_proxyConfig];
       if (proxyConfig.has(name)) {
-        throw new TypeError(`A Cookie was already registered as ${name}.`);
+        throw new TypeError(`A setting was already registered as ${name}.`);
       }
       config = Object.assign(Object.create(null), config);
       delete config.value;
@@ -102,41 +105,80 @@ const CookieProxy = function () {
       if (!('filter' in config)) {
         config.filter = x => true;
       }
-      if (!('cookieName' in config)) {
-        config.cookieName = `${proxyConfig.get(_domain)}.${name}`;
+      if (!('settingName' in config)) {
+        config.settingName = `${proxyConfig.get(_domain)}.${name}`;
       }
       proxyConfig.set(name, config);
     },
   };
 }();
 
-const Settings = CookieProxy.createCookieProxy('main');
+// General settings
+const Settings = SettingProxy.createSettingProxy('main');
 Object.entries({
-  displayClockHideTimer: {},
-  display24HoursTimestamps: {},
-  isCoordsEnabled: {},
-  isCycleChangerEnabled: {},
-  isCycleInputEnabled: {},
-  isDebugEnabled: {},
+  alertClosed: { default: false },
+  baseLayer: { default: 'map.layers.default' },
+  date: {},
+  isClock24Hour: { default: false },
+  isClockVisible: { default: false },
+  isCoordsOnClickEnabled: { default: false },
+  isCycleChangerEnabled: { default: false },
+  isCycleInputEnabled: { default: false },
+  isDebugEnabled: { default: false },
   isDoubleClickZoomEnabled: { default: true },
-  isMenuOpened: {},
-  isPinsPlacingEnabled: {},
-  isPinsEditingEnabled: {},
+  isMarkerClusterEnabled: { default: true },
+  isMenuOpened: { default: false },
+  isPinsEditingEnabled: { default: true },
+  isPinsPlacingEnabled: { default: false },
   isPopupsEnabled: { default: true },
-  isPopupsHoverEnabled: {},
+  isPopupsHoverEnabled: { default: true },
+  isRightClickEnabled: { default: false },
   isShadowsEnabled: { default: true },
-  markerCluster: { default: true },
-  markerSize: { default: 1 },
+  markerCustomColor: { default: 0 },
   markerOpacity: { default: 1 },
-  markersCustomColor: { default: 0 },
+  markerSize: { default: 1 },
+  overlayOpacity: { default: 0.5 },
   resetMarkersDaily: { default: true },
-  showHelp: { default: true },
-  showWeeklySettings: { default: true },
-  showUtilitiesSettings: { default: true },
   showCustomizationSettings: { default: true },
-  showRoutesSettings: { default: true },
+  showDebugSettings: { default: false },
+  showHelp: { default: true },
   showImportExportSettings: { default: true },
-  showDebugSettings: {},
-  sortItemsAlphabetically: {},
+  showRoutesSettings: { default: true },
+  showUtilitiesSettings: { default: true },
+  showWeeklySettings: { default: true },
+  sortItemsAlphabetically: { default: false },
   toolType: { default: 3 },
-}).forEach(([name, config]) => CookieProxy.addCookie(Settings, name, config));
+}).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
+
+// Inventory settings
+const InventorySettings = SettingProxy.createSettingProxy('inventory');
+Object.entries({
+  highlightLowAmountItems: { default: false },
+  highlightStyle: { default: 2 },
+  isEnabled: { default: false },
+  isMenuUpdateEnabled: { default: true },
+  isPopupsEnabled: { default: true },
+  resetButtonUpdatesInventory: { default: false },
+  resetInventoryDaily: { default: false },
+  stackSize: { default: 10 },
+}).forEach(([name, config]) => SettingProxy.addSetting(InventorySettings, name, config));
+
+// Route settings
+const RouteSettings = SettingProxy.createSettingProxy('routes');
+Object.entries({
+  allowFasttravel: { default: false },
+  allowRailroad: { default: false },
+  autoUpdatePath: { default: false },
+  customRouteEnabled: { default: false },
+  fasttravelWeight: { default: 1 },
+  generateOnVisit: { default: false },
+  genPathStart: { default: 'SW' },
+  ignoreCollected: { default: true },
+  importantOnly: { default: false },
+  maxDistance: { default: 25 },
+  railroadWeight: { default: 1 },
+  runOnStart: { default: false },
+  startMarkerLat: { default: -119.9063 },
+  startMarkerLng: { default: 8.0313 },
+  usePathfinder: { default: false },
+}).forEach(([name, config]) => SettingProxy.addSetting(RouteSettings, name, config));

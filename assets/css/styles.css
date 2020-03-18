@@ -512,6 +512,7 @@ select,
     color: #eee;
     z-index: 1000;
     scrollbar-width: thin;
+    user-select: none;
 }
 
 .menu-opened {

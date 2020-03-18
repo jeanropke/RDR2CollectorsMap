@@ -24,12 +24,17 @@ var date;
 var debugMarkersArray = [];
 
 function init() {
+  var cookies = $.cookie();
+  for (var cookie in cookies) {
+    $.removeCookie(cookie);
+  }
+
   if (localStorage.getItem("inventory-items") !== null) {
-    var _items = localStorage.getItem("inventory-items");
+    var items = localStorage.getItem("inventory-items");
 
-    if (_items == null) return;
+    if (items == null) return;
 
-    _items.split(';').forEach(item => {
+    items.split(';').forEach(item => {
       if (item == '') return;
 
       var properties = item.split(':');
@@ -50,23 +55,17 @@ function init() {
   MapBase.loadCollectedItems();
   Inventory.load();
 
-  $('.map-alert').toggle($.cookie('alert-closed-1') === undefined);
+  $('.map-alert').toggle(!Settings.alertClosed);
 
-  if ($.cookie('disabled-categories') !== undefined)
-    categoriesDisabledByDefault = $.cookie('disabled-categories').split(',');
-
-  categoriesDisabledByDefault = categoriesDisabledByDefault.filter(function (item) {
-    return ['texas_bluebonnet', 'bitterweed', 'agarita', 'wild_rhubarb', 'cardinal',
-      'creek_plum', 'blood_flower', 'chocolate_daisy', 'wisteria'
-    ].indexOf(item) === -1;
-  });
+  categoriesDisabledByDefault = JSON.parse(localStorage.getItem("disabled-categories"));
+  if (categoriesDisabledByDefault === null) categoriesDisabledByDefault = ['random'];
 
   enabledCategories = enabledCategories.filter(function (item) {
     return categoriesDisabledByDefault.indexOf(item) === -1;
   });
 
   const navLang = navigator.language.toLowerCase();
-  CookieProxy.addCookie(Settings, 'language', {
+  SettingProxy.addSetting(Settings, 'language', {
     default: Language.availableLanguages.includes(navLang) ? navLang : 'en-us',
   });
 
@@ -81,10 +80,10 @@ function init() {
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
   $('#marker-size').val(Settings.markerSize);
-  $('#custom-marker-color').val(Settings.markersCustomColor);
+  $('#custom-marker-color').val(Settings.markerCustomColor);
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
-  $('#marker-cluster').prop("checked", Settings.markerCluster);
+  $('#marker-cluster').prop("checked", Settings.isMarkerClusterEnabled);
   $('#enable-marker-popups').prop("checked", Settings.isPopupsEnabled);
   $('#enable-marker-popups-hover').prop("checked", Settings.isPopupsHoverEnabled);
   $('#enable-marker-shadows').prop("checked", Settings.isShadowsEnabled);
@@ -92,11 +91,11 @@ function init() {
   $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-help').prop("checked", Settings.showHelp);
-  $('#show-coordinates').prop("checked", Settings.isCoordsEnabled);
-  $('#timestamps-24').prop("checked", Settings.display24HoursTimestamps);
+  $('#show-coordinates').prop("checked", Settings.isCoordsOnClickEnabled);
+  $('#timestamps-24').prop("checked", Settings.isClock24Hour);
   $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
   $('#enable-cycle-input').prop("checked", Settings.isCycleInputEnabled);
-  $("#enable-right-click").prop('checked', $.cookie('right-click') != null);
+  $("#enable-right-click").prop('checked', Settings.isRightClickEnabled);
   $("#enable-debug").prop('checked', Settings.isDebugEnabled);
   $("#enable-cycle-changer").prop('checked', Settings.isCycleChangerEnabled);
 
@@ -109,8 +108,8 @@ function init() {
 
   $("#help-container").toggle(Settings.showHelp);
 
-  $('.timer-container').toggleClass('hidden', Settings.displayClockHideTimer);
-  $('.clock-container').toggleClass('hidden', !(Settings.displayClockHideTimer));
+  $('.timer-container').toggleClass('hidden', Settings.isClockVisible);
+  $('.clock-container').toggleClass('hidden', !(Settings.isClockVisible));
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
   $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
@@ -131,7 +130,7 @@ function isLocalHost() {
 }
 
 function changeCursor() {
-  if (Settings.isCoordsEnabled || Routes.customRouteEnabled)
+  if (Settings.isCoordsOnClickEnabled || RouteSettings.customRouteEnabled)
     $('.leaflet-grab').css('cursor', 'pointer');
   else {
     $('.leaflet-grab').css('cursor', 'grab');
@@ -183,7 +182,7 @@ function clockTick() {
     timeZone: 'UTC',
     hour: 'numeric',
     minute: '2-digit',
-    hour12: !Settings.display24HoursTimestamps
+    hour12: !Settings.isClock24Hour
   };
 
   $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
@@ -209,7 +208,7 @@ setInterval(clockTick, 1000);
 
 $('.timer-container, .clock-container').on('click', function () {
   $('.timer-container, .clock-container').toggleClass('hidden');
-  Settings.displayClockHideTimer = $('.timer-container').hasClass('hidden');
+  Settings.isClockVisible = $('.timer-container').hasClass('hidden');
 });
 
 /**
@@ -230,11 +229,7 @@ $("#show-all-markers").on("change", function () {
 
 // Give me back my right-click
 $('#enable-right-click').on("change", function () {
-  if ($("#enable-right-click").prop('checked')) {
-    $.cookie('right-click', '1', { expires: 999 });
-  } else {
-    $.removeCookie('right-click');
-  }
+  Settings.isRightClickEnabled = $("#enable-right-click").prop('checked');
 });
 
 $("#show-weekly").on("change", function () {
@@ -313,7 +308,7 @@ $("#reset-markers").on("change", function () {
 $("#clear-markers").on("click", function () {
   $.each(MapBase.markers, function (key, marker) {
     marker.isCollected = false;
-    marker.canCollect = marker.amount < Inventory.stackSize;
+    marker.canCollect = marker.amount < InventorySettings.stackSize;
   });
 
   MapBase.saveCollectedItems();
@@ -335,9 +330,7 @@ $("#clear-inventory").on("click", function () {
 
 //Enable & disable custom routes on menu
 $("#custom-routes").on("change", function () {
-  Routes.customRouteEnabled = $("#custom-routes").prop('checked');
-  $.cookie('custom-routes-enabled', Routes.customRouteEnabled ? '1' : '0', { expires: 999 });
-
+  RouteSettings.customRouteEnabled = $("#custom-routes").prop('checked');
   changeCursor();
 });
 
@@ -348,7 +341,7 @@ $("#clear-custom-routes").on("click", function () {
 
 //When map-alert is clicked
 $('.map-alert').on('click', function () {
-  $.cookie('alert-closed-1', 'true', { expires: 999 });
+  Settings.alertClosed = true;
   $('.map-alert').hide();
 });
 
@@ -357,12 +350,12 @@ $('.map-cycle-alert').on('click', function () {
 });
 
 $('#show-coordinates').on('change', function () {
-  Settings.isCoordsEnabled = $("#show-coordinates").prop('checked');
+  Settings.isCoordsOnClickEnabled = $("#show-coordinates").prop('checked');
   changeCursor();
 });
 
 $('#timestamps-24').on('change', function () {
-  Settings.display24HoursTimestamps = $("#timestamps-24").prop('checked');
+  Settings.isClock24Hour = $("#timestamps-24").prop('checked');
   clockTick();
 });
 
@@ -392,7 +385,7 @@ $("#enable-cycle-input").on("change", function () {
 });
 
 $('#custom-marker-color').on("change", function () {
-  Settings.markersCustomColor = Number($("#custom-marker-color").val());
+  Settings.markerCustomColor = Number($("#custom-marker-color").val());
   MapBase.addMarkers();
 });
 
@@ -418,7 +411,7 @@ $('.clickable').on('click', function () {
     });
   }
 
-  $.cookie('disabled-categories', categoriesDisabledByDefault.join(','), { expires: 999 });
+  localStorage.setItem("disabled-categories", JSON.stringify(categoriesDisabledByDefault));
 
   if (menu.data('type') == 'treasure')
     Treasures.addToMap();
@@ -475,7 +468,7 @@ $('.collection-reset').on('click', function (e) {
   var getMarkers = MapBase.markers.filter(_m => !_m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
   $.each(getMarkers, function (key, marker) {
-    MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category, !Inventory.resetButtonUpdatesInventory);
+    MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category, !InventorySettings.resetButtonUpdatesInventory);
   });
 
   $(this).removeClass('disabled');
@@ -501,7 +494,7 @@ $('.menu-toggle').on('click', function () {
 });
 
 $('#marker-cluster').on("change", function () {
-  Settings.markerCluster = $("#marker-cluster").prop('checked');
+  Settings.isMarkerClusterEnabled = $("#marker-cluster").prop('checked');
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
 });
@@ -598,32 +591,28 @@ $('#pins-import').on('click', function () {
 
 //Enable & disable inventory on menu
 $('#enable-inventory').on("change", function () {
-  Inventory.isEnabled = $("#enable-inventory").prop('checked');
-  $.cookie('inventory-enabled', Inventory.isEnabled ? '1' : '0', { expires: 999 });
+  InventorySettings.isEnabled = $("#enable-inventory").prop('checked');
 
   MapBase.addMarkers();
   Menu.refreshWeeklyItems();
   ItemsValue.reloadInventoryItems();
 
-  $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(Inventory.isEnabled);
-  $('#inventory-container').toggleClass("opened", Inventory.isEnabled);
+  $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(InventorySettings.isEnabled);
+  $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
 });
 
 $('#enable-inventory-popups').on("change", function () {
-  Inventory.isPopupEnabled = $("#enable-inventory-popups").prop('checked');
-  $.cookie('inventory-popups-enabled', Inventory.isPopupEnabled ? '1' : '0', { expires: 999 });
+  InventorySettings.isPopupsEnabled = $("#enable-inventory-popups").prop('checked');
 
   MapBase.addMarkers();
 });
 
 $('#reset-inventory-daily').on("change", function () {
-  Inventory.resetInventoryDaily = $("#reset-inventory-daily").prop('checked');
-  $.cookie('reset-inventory-daily', Inventory.resetInventoryDaily ? '1' : '0', { expires: 999 });
+  InventorySettings.resetInventoryDaily = $("#reset-inventory-daily").prop('checked');
 });
 
 $('#highlight_low_amount_items').on("change", function () {
-  Inventory.highlightLowAmountItems = $('#highlight_low_amount_items').prop("checked");
-  $.cookie('highlight_low_amount_items', Inventory.highlightLowAmountItems ? '1' : '0', { expires: 999 });
+  InventorySettings.highlightLowAmountItems = $('#highlight_low_amount_items').prop("checked");
 
   MapBase.addMarkers();
 });
@@ -631,30 +620,26 @@ $('#highlight_low_amount_items').on("change", function () {
 $('#highlight_style').on("change", function () {
   var parsed = parseInt($("#highlight_style").val());
 
-  Inventory.highlightStyle = !isNaN(parsed) ? parsed : Inventory.highlightStyles.ANIMATED_RECOMMENDED;
-  $.cookie('highlight_style', Inventory.highlightStyle, { expires: 999 });
+  InventorySettings.highlightStyle = !isNaN(parsed) ? parsed : InventorySettings.highlightStyles.ANIMATED_RECOMMENDED;
 
   MapBase.addMarkers();
 });
 
 $('#enable-inventory-menu-update').on("change", function () {
-  Inventory.isMenuUpdateEnabled = $("#enable-inventory-menu-update").prop('checked');
-  $.cookie('inventory-menu-update-enabled', Inventory.isMenuUpdateEnabled ? '1' : '0', { expires: 999 });
+  InventorySettings.isMenuUpdateEnabled = $("#enable-inventory-menu-update").prop('checked');
 });
 
 $('#reset-collection-updates-inventory').on("change", function () {
-  Inventory.resetButtonUpdatesInventory = $('#reset-collection-updates-inventory').prop('checked');
-  $.cookie('reset-updates-inventory-enabled', Inventory.resetButtonUpdatesInventory ? '1' : '0', { expires: 999 });
+  InventorySettings.resetButtonUpdatesInventory = $('#reset-collection-updates-inventory').prop('checked');
 });
 
-$('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(Inventory.isEnabled);
+$('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(InventorySettings.isEnabled);
 
 //Enable & disable inventory on menu
 $('#inventory-stack').on("change", function () {
   var inputValue = parseInt($('#inventory-stack').val());
   inputValue = !isNaN(inputValue) ? inputValue : 10;
-  $.cookie('inventory-stack', inputValue, { expires: 999 });
-  Inventory.stackSize = inputValue;
+  InventorySettings.stackSize = inputValue;
 });
 
 /**
@@ -663,18 +648,14 @@ $('#inventory-stack').on("change", function () {
 
 $('#cookie-export').on("click", function () {
   try {
-    var cookies = $.cookie();
-    var storage = localStorage;
+    var settings = localStorage;
 
     // Remove irrelevant properties.
-    delete cookies._ga;
-    delete storage.randid;
-    delete storage['pinned-items'];
+    delete settings.randid;
+    delete settings['pinned-items'];
 
-    var settings = {
-      'cookies': cookies,
-      'local': storage
-    };
+    // Set file version
+    settings.version = 2;
 
     var settingsJson = JSON.stringify(settings, null, 4);
 
@@ -686,16 +667,13 @@ $('#cookie-export').on("click", function () {
 });
 
 function setSettings(settings) {
-  // Import all the settings from the file.
-  if (settings.cookies === undefined && settings.local === undefined) {
-    $.each(settings, function (key, value) {
-      $.cookie(key, value, { expires: 999 });
-    });
+  // Sorry, old settings! :-(
+  if (settings.version === undefined) {
+    location.reload();
+    return;
   }
 
-  $.each(settings.cookies, function (key, value) {
-    $.cookie(key, value, { expires: 999 });
-  });
+  delete settings.version;
 
   $.each(settings.local, function (key, value) {
     localStorage.setItem(key, value);
@@ -751,14 +729,9 @@ $('#cookie-import').on('click', function () {
     }
 
     // Remove all current settings.
-    $.each($.cookie(), function (key, value) {
-      $.removeCookie(key);
-    });
-
     $.each(localStorage, function (key, value) {
       localStorage.removeItem(key);
     });
-
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
@@ -770,42 +743,32 @@ $('#cookie-import').on('click', function () {
  */
 
 $('#generate-route-generate-on-visit').on("change", function () {
-  Routes.runOnStart = $("#generate-route-generate-on-visit").prop('checked');
-  $.cookie('generator-path-generate-on-visit', Routes.runOnStart ? '1' : '0', { expires: 999 });
+  RouteSettings.runOnStart = $("#generate-route-generate-on-visit").prop('checked');
 });
 
 $('#generate-route-ignore-collected').on("change", function () {
-  Routes.ignoreCollected = $("#generate-route-ignore-collected").prop('checked');
-  $.cookie('generator-path-ignore-collected', Routes.ignoreCollected ? '1' : '0', { expires: 999 });
-
+  RouteSettings.ignoreCollected = $("#generate-route-ignore-collected").prop('checked');
   Routes.generatePath();
 });
 
 $('#generate-route-important-only').on("change", function () {
-  Routes.importantOnly = $("#generate-route-important-only").prop('checked');
-  $.cookie('generator-path-important-only', Routes.importantOnly ? '1' : '0', { expires: 999 });
-
+  RouteSettings.importantOnly = $("#generate-route-important-only").prop('checked');
   Routes.generatePath();
 });
 
 $('#generate-route-auto-update').on("change", function () {
-  Routes.autoUpdatePath = $("#generate-route-auto-update").prop('checked');
-  $.cookie('generator-path-auto-update', Routes.autoUpdatePath ? '1' : '0', { expires: 999 });
+  RouteSettings.autoUpdatePath = $("#generate-route-auto-update").prop('checked');
 });
 
 $('#generate-route-distance').on("change", function () {
   var inputValue = parseInt($('#generate-route-distance').val());
   inputValue = !isNaN(inputValue) && inputValue > 0 ? inputValue : 25;
-  $.cookie('generator-path-distance', inputValue, { expires: 999 });
-  Routes.maxDistance = inputValue;
-
+  RouteSettings.maxDistance = inputValue;
   Routes.generatePath();
 });
 
 $('#generate-route-start').on("change", function () {
   var inputValue = $('#generate-route-start').val();
-  $.cookie('generator-path-start', inputValue, { expires: 999 });
-
   var startLat = null;
   var startLng = null;
 
@@ -843,11 +806,9 @@ $('#generate-route-start').on("change", function () {
   $('#generate-route-start-lat').val(startLat);
   $('#generate-route-start-lng').val(startLng);
 
-  $.cookie('generator-path-start-lat', startLat, { expires: 999 });
-  $.cookie('generator-path-start-lng', startLng, { expires: 999 });
-
-  Routes.startMarkerLat = startLat;
-  Routes.startMarkerLng = startLng;
+  RouteSettings.genPathStart = inputValue;
+  RouteSettings.startMarkerLat = startLat;
+  RouteSettings.startMarkerLng = startLng;
 
   Routes.generatePath();
 });
@@ -855,27 +816,22 @@ $('#generate-route-start').on("change", function () {
 $('#generate-route-start-lat').on("change", function () {
   var inputValue = parseFloat($('#generate-route-start-lat').val());
   inputValue = !isNaN(inputValue) ? inputValue : -119.9063;
-  $.cookie('generator-path-start-lat', inputValue, { expires: 999 });
-  Routes.startMarkerLat = inputValue;
-
+  RouteSettings.startMarkerLat = inputValue;
   Routes.generatePath();
 });
 
 $('#generate-route-start-lng').on("change", function () {
   var inputValue = parseFloat($('#generate-route-start-lng').val());
   inputValue = !isNaN(inputValue) ? inputValue : 8.0313;
-  $.cookie('generator-path-start-lng', inputValue, { expires: 999 });
-  Routes.startMarkerLng = inputValue;
-
+  RouteSettings.startMarkerLng = inputValue;
   Routes.generatePath();
 });
 
 $('#generate-route-use-pathfinder').on("change", function () {
-  Routes.usePathfinder = $("#generate-route-use-pathfinder").prop('checked');
-  $.cookie('generator-path-use-pathfinder', Routes.usePathfinder ? '1' : '0', { expires: 999 });
+  RouteSettings.usePathfinder = $("#generate-route-use-pathfinder").prop('checked');
 
   // Hide incompatible options.
-  if (Routes.usePathfinder) {
+  if (RouteSettings.usePathfinder) {
     $('#generate-route-distance').parent().hide();
     $('#generate-route-auto-update').parent().parent().hide();
     $('#generate-route-fasttravel-weight').parent().show();
@@ -894,16 +850,12 @@ $('#generate-route-use-pathfinder').on("change", function () {
 });
 
 $('#generate-route-fasttravel-weight').on("change", function () {
-  Routes.fasttravelWeight = parseFloat($("#generate-route-fasttravel-weight").val());
-  $.cookie('generator-path-fasttravel-weight', Routes.fasttravelWeight.toString(), { expires: 999 });
-
+  RouteSettings.fasttravelWeight = parseFloat($("#generate-route-fasttravel-weight").val());
   Routes.generatePath();
 });
 
 $('#generate-route-railroad-weight').on("change", function () {
-  Routes.railroadWeight = parseFloat($("#generate-route-railroad-weight").val());
-  $.cookie('generator-path-railroad-weight', Routes.railroadWeight.toString(), { expires: 999 });
-
+  RouteSettings.railroadWeight = parseFloat($("#generate-route-railroad-weight").val());
   Routes.generatePath();
 });
 
@@ -949,17 +901,12 @@ L.LayerGroup.include({
 
 // Disable annoying menu on right mouse click
 $('*').on('contextmenu', function (e) {
-  if ($.cookie('right-click') == null)
+  if (!Settings.isRightClickEnabled)
     e.preventDefault();
 });
 
 // reset all settings & cookies
 $('#delete-all-settings').on('click', function () {
-  var cookies = $.cookie();
-  for (var cookie in cookies) {
-    $.removeCookie(cookie);
-  }
-
   $.each(localStorage, function (key) {
     localStorage.removeItem(key);
   });

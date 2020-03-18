@@ -4,22 +4,22 @@
 
 var Routes = {
   init: function () {
-    $('#custom-routes').prop("checked", Routes.customRouteEnabled);
+    $('#custom-routes').prop("checked", RouteSettings.customRouteEnabled);
 
-    $('#generate-route-use-pathfinder').prop("checked", Routes.usePathfinder);
-    $('#generate-route-generate-on-visit').prop("checked", Routes.generateOnVisit);
-    $('#generate-route-ignore-collected').prop("checked", Routes.ignoreCollected);
-    $("#generate-route-important-only").prop("checked", Routes.importantOnly);
-    $('#generate-route-auto-update').prop("checked", Routes.autoUpdatePath);
-    $('#generate-route-distance').val(Routes.maxDistance);
-    $('#generate-route-start-lat').val(Routes.startMarkerLat);
-    $('#generate-route-start-lng').val(Routes.startMarkerLng);
+    $('#generate-route-use-pathfinder').prop("checked", RouteSettings.usePathfinder);
+    $('#generate-route-generate-on-visit').prop("checked", RouteSettings.generateOnVisit);
+    $('#generate-route-ignore-collected').prop("checked", RouteSettings.ignoreCollected);
+    $("#generate-route-important-only").prop("checked", RouteSettings.importantOnly);
+    $('#generate-route-auto-update').prop("checked", RouteSettings.autoUpdatePath);
+    $('#generate-route-distance').val(RouteSettings.maxDistance);
+    $('#generate-route-start-lat').val(RouteSettings.startMarkerLat);
+    $('#generate-route-start-lng').val(RouteSettings.startMarkerLng);
 
-    $('#generate-route-fasttravel-weight').val(Routes.fasttravelWeight);
-    $('#generate-route-railroad-weight').val(Routes.railroadWeight);
+    $('#generate-route-fasttravel-weight').val(RouteSettings.fasttravelWeight);
+    $('#generate-route-railroad-weight').val(RouteSettings.railroadWeight);
 
     // Pathfinder / Generator toggle
-    if (Routes.usePathfinder) {
+    if (RouteSettings.usePathfinder) {
       $('#generate-route-distance').parent().hide();
       $('#generate-route-auto-update').parent().parent().hide();
       $('#generate-route-fasttravel-weight').parent().show();
@@ -32,12 +32,9 @@ var Routes = {
     }
 
     // Route starts at
-    var genPathStart = $.cookie('generator-path-start');
-    if (!genPathStart) genPathStart = "SW";
+    $('#generate-route-start').val(RouteSettings.genPathStart);
 
-    $('#generate-route-start').val(genPathStart);
-
-    if (genPathStart != "Custom") {
+    if (RouteSettings.genPathStart != "Custom") {
       $('#generate-route-start-lat').parent().hide();
       $('#generate-route-start-lng').parent().hide();
     }
@@ -73,7 +70,7 @@ var Routes = {
   },
 
   addMarkerOnCustomRoute: function (value) {
-    if (Routes.customRouteEnabled) {
+    if (RouteSettings.customRouteEnabled) {
       if (Routes.customRouteConnections.includes(value)) {
         Routes.customRouteConnections = Routes.customRouteConnections.filter(function (item) {
           return item !== value;
@@ -118,45 +115,15 @@ var Routes = {
 
   routesData: [],
   polylines: null,
-
-  customRouteEnabled: $.cookie('custom-routes-enabled') == '1',
   customRouteConnections: [],
 
   /**
    * Path generator by Senexis
    */
-  // Whether the route should be generated when the map is loaded.
-  generateOnVisit: $.cookie('generator-path-generate-on-visit') == '1',
-
-  // Whether collected items should be ignored or not when pathing.
-  ignoreCollected: $.cookie('generator-path-ignore-collected') == '1',
-
-  // Wether to only use important or all items when pathing.
-  importantOnly: $.cookie('generator-path-important-only') == '1',
-
-  // Whether to automatically update the path.
-  autoUpdatePath: $.cookie('generator-path-auto-update') == '1',
-
-  // The maximum distance a path can be in points.
-  // - This number might need to be tweaked depending on how many markers there are.
-  // - 25 seems optimal for everything, a higher number is needed for less markers.
-  // - If the number is too low, the path will end prematurely.
-  // - If the number is too high, undesirable paths might be drawn (across Iron Lake for example).
-  maxDistance: parseInt($.cookie('generator-path-distance')) ? parseInt($.cookie('generator-path-distance')) : 25,
-
   // The point to start the path generator from, default is SW edge.
-  startMarkerLat: parseFloat($.cookie('generator-path-start-lat')) ? parseFloat($.cookie('generator-path-start-lat')) : -119.9063,
-  startMarkerLng: parseFloat($.cookie('generator-path-start-lng')) ? parseFloat($.cookie('generator-path-start-lng')) : 8.0313,
   startMarker: function () {
-    return { lat: Routes.startMarkerLat, lng: Routes.startMarkerLng };
+    return { lat: RouteSettings.startMarkerLat, lng: RouteSettings.startMarkerLng };
   },
-
-  // Path finder options
-  usePathfinder: $.cookie('generator-path-use-pathfinder') == '1',
-  allowFasttravel: $.cookie('generator-path-allow-fasttravel') == '1',
-  allowRailroad: $.cookie('generator-path-allow-railroad') == '1',
-  fasttravelWeight: parseFloat($.cookie('generator-path-fasttravel-weight')) ? parseFloat($.cookie('generator-path-fasttravel-weight')) : ($.cookie('generator-path-allow-fasttravel') == '1' ? 1 : Infinity),
-  railroadWeight: parseFloat($.cookie('generator-path-railroad-weight')) ? parseFloat($.cookie('generator-path-railroad-weight')) : ($.cookie('generator-path-allow-railroad') == '1' ? 1 : 2),
 
   // Needed to keep track of the previously drawn path so we can remove it later.
   lastPolyline: null,
@@ -177,7 +144,7 @@ var Routes = {
   // Simple utility to clear the given polyline from Leaflet.
   clearPath: function (starting = false) {
     try {
-      if (!starting && Routes.usePathfinder) {
+      if (!starting && RouteSettings.usePathfinder) {
         PathFinder.routegenClear();
       }
     } catch (error) {
@@ -277,7 +244,7 @@ var Routes = {
       if (Routes.lastPolyline == null) return;
 
       // Only run when the autoUpdatePath option is selected.
-      if (!Routes.autoUpdatePath) return;
+      if (!RouteSettings.autoUpdatePath) return;
     }
 
     // Clean up before generating.
@@ -300,11 +267,11 @@ var Routes = {
     });
 
     // Optionally ignore the already collected markers.
-    if (Routes.ignoreCollected) {
+    if (RouteSettings.ignoreCollected) {
       newMarkers = newMarkers.filter((marker) => { return marker.canCollect && !marker.isCollected; });
     }
 
-    if (Routes.importantOnly) {
+    if (RouteSettings.importantOnly) {
       newMarkersImp = newMarkers.filter((marker) => { return MapBase.importantItems.indexOf(marker.text) >= 0; });
       if (newMarkers.length > 0 && newMarkersImp.length == 0) {
         if (!confirm(Language.get('dialog.generate_route_important_only_ignore'))) {
@@ -332,8 +299,8 @@ var Routes = {
 
     // Use path finder when enabled
     try {
-      if (Routes.usePathfinder) {
-        PathFinder.routegenStart(last, newMarkers, Routes.fasttravelWeight, Routes.railroadWeight);
+      if (RouteSettings.usePathfinder) {
+        PathFinder.routegenStart(last, newMarkers, RouteSettings.fasttravelWeight, RouteSettings.railroadWeight);
         return;
       }
     } catch (error) {
@@ -343,12 +310,12 @@ var Routes = {
 
     // Loop through all markers and pick the nearest neighbor to that marker.
     for (var i = 0; i < newMarkers.length; i++) {
-      var current = Routes.nearestNeighborTo(last, newMarkers, polylines, Routes.maxDistance);
+      var current = Routes.nearestNeighborTo(last, newMarkers, polylines, RouteSettings.maxDistance);
       if (!current) break;
       current = current.marker;
 
       // A last fallback to not draw paths that are too long.
-      if (Routes.getDistance(last, current) < Routes.maxDistance) {
+      if (Routes.getDistance(last, current) < RouteSettings.maxDistance) {
         polylines.push([{ lat: last.lat, lng: last.lng }, { lat: current.lat, lng: current.lng }]);
       }
 
@@ -369,11 +336,8 @@ var Routes = {
     $('#generate-route-start-lng').val(lng);
     $('#generate-route-start-lng').parent().show();
 
-    $.cookie('generator-path-start', 'Custom', { expires: 999 });
-    $.cookie('generator-path-start-lat', lat, { expires: 999 });
-    $.cookie('generator-path-start-lng', lng, { expires: 999 });
-
-    Routes.startMarkerLat = lat;
-    Routes.startMarkerLng = lng;
+    RouteSettings.genPathStart = 'Custom';
+    RouteSettings.startMarkerLat = lat;
+    RouteSettings.startMarkerLng = lng;
   }
 };

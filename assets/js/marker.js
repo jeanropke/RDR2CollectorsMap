@@ -14,7 +14,7 @@ class Marker {
     this.isVisible = enabledCategories.includes(this.category);
     this.amount = Inventory.items[this.text.replace(/_\d/, '')] || 0;
     this.isCollected = MapBase.collectedItems[this.text] || false;
-    this.canCollect = Inventory.isEnabled ? (this.amount < Inventory.stackSize && !this.isCollected) : !this.isCollected;
+    this.canCollect = InventorySettings.isEnabled ? (this.amount < InventorySettings.stackSize && !this.isCollected) : !this.isCollected;
   }
 }
 
