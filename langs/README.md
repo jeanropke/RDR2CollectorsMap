@@ -1,6 +1,6 @@
 # Localisation contributors
 
-feel free to contribute
+Feel free to contribute! You can contribute by translating on our [Crowdin project](https://crowdin.com/project/rdr2collectorsmap).
 
 english (en-en.json)
   - jeanropke
@@ -19,10 +19,12 @@ german (de-de.json)
   
 spanish (es-es.json)
   - glaseca
+  - tomyloly.11
   
 french (fr-fr.json)
   - Nopitch
   - Gromino
+  - lguilleml126
   
 italian (it-it.json)
   - Raffox97
@@ -55,6 +57,7 @@ russian (ru.json)
 chinese simplified (zh-hans.json)
   - yamazakitouma
   - qiexia
+  - peanutslinger
   
 chinese traditional (zh-hant.json)
   - yamazakitouma
