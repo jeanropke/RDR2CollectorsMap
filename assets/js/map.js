@@ -19,10 +19,6 @@ var MapBase = {
 
   init: function () {
     'use strict';
-    Object.entries({
-      overlayOpacity: { default: 0.5 },
-      baseLayer: { default: 'map.layers.default' },
-    }).forEach(([name, config]) => CookieProxy.addCookie(Settings, name, config));
 
     const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
     //Please, do not use the GitHub map tiles. Thanks
@@ -218,14 +214,14 @@ var MapBase = {
     var curDate = new Date();
     date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
 
-    if (date != $.cookie('date')) {
+    if (date != Settings.date) {
       var markers = MapBase.markers;
 
       $.each(markers, function (key, value) {
 
         if (Settings.resetMarkersDaily) {
           markers[key].isCollected = false;
-          markers[key].canCollect = markers[key].amount < Inventory.stackSize;
+          markers[key].canCollect = markers[key].amount < InventorySettings.stackSize;
         }
         else {
           if (value.category === 'random') {
@@ -234,7 +230,7 @@ var MapBase = {
           }
         }
 
-        if (Inventory.resetInventoryDaily) {
+        if (InventorySettings.resetInventoryDaily) {
           markers[key].amount = 0;
         }
       });
@@ -245,7 +241,7 @@ var MapBase = {
       MapBase.saveCollectedItems();
     }
 
-    $.cookie('date', date, { expires: 999 });
+    Settings.date = date;
 
     MapBase.addMarkers(true);
 
@@ -368,7 +364,7 @@ var MapBase = {
       return;
     }
 
-    if (Routes.generateOnVisit)
+    if (RouteSettings.generateOnVisit)
       Routes.generatePath(true);
   },
 
@@ -432,7 +428,7 @@ var MapBase = {
 
         Inventory.changeMarkerAmount(marker.subdata || marker.text, changeAmount, skipInventory);
 
-        if (!Inventory.isEnabled) {
+        if (!InventorySettings.isEnabled) {
           if (marker.isCollected && marker.day == Cycles.categories[marker.category]) {
             $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
             $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
@@ -455,7 +451,7 @@ var MapBase = {
       });
     }
 
-    if (Routes.ignoreCollected)
+    if (RouteSettings.ignoreCollected)
       Routes.generatePath();
 
     MapBase.saveCollectedItems();
@@ -502,16 +498,16 @@ var MapBase = {
       return "green";
     }
 
-    if (Inventory.isEnabled && Inventory.highlightLowAmountItems &&
-      (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED || Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
+    if (InventorySettings.isEnabled && InventorySettings.highlightLowAmountItems &&
+      (InventorySettings.highlightStyle === InventorySettings.highlightStyles.STATIC_RECOMMENDED || InventorySettings.highlightStyle === InventorySettings.highlightStyles.ANIMATED_RECOMMENDED)) {
       return MapBase.isDarkMode ? "darkblue" : "orange";
     }
 
-    if (Settings.markersCustomColor === 1) {
+    if (Settings.markerCustomColor === 1) {
       return MapBase.getCategoryIconColor(marker.category);
     }
 
-    var dailyColor = Settings.markersCustomColor === 0 || Settings.markersCustomColor === 1 ? marker.day : Settings.markersCustomColor - 1;
+    var dailyColor = Settings.markerCustomColor === 0 || Settings.markerCustomColor === 1 ? marker.day : Settings.markerCustomColor - 1;
     return MapBase.getDailyIconColor(dailyColor);
   },
 
@@ -532,9 +528,9 @@ var MapBase = {
       white: "gray"
     };
 
-    if (Inventory.highlightLowAmountItems &&
-      (Inventory.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED ||
-        Inventory.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
+    if (InventorySettings.highlightLowAmountItems &&
+      (InventorySettings.highlightStyle === InventorySettings.highlightStyles.STATIC_RECOMMENDED ||
+        InventorySettings.highlightStyle === InventorySettings.highlightStyles.ANIMATED_RECOMMENDED)) {
       return MapBase.isDarkMode ? "orange" : "darkblue";
     }
 
@@ -618,7 +614,7 @@ var MapBase = {
     var debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
 
     var inventoryCount = $(`<small data-item="${marker.text}">${marker.amount}</small>`);
-    inventoryCount.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
+    inventoryCount.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
 
     var buttons = marker.category == 'random' ? '' : `
       <div class="marker-popup-buttons">
@@ -636,7 +632,7 @@ var MapBase = {
         </span>
         ${linksElement.prop('outerHTML')}
         ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
-        ${(Inventory.isEnabled && Inventory.isPopupEnabled) ? buttons : ''}
+        ${(InventorySettings.isEnabled && InventorySettings.isPopupsEnabled) ? buttons : ''}
         <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.day || ''}', '${marker.text || ''}', '${marker.subdata || ''}', '${marker.category || ''}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>
         `;
   },
@@ -671,7 +667,7 @@ var MapBase = {
 
     // Random items override
     if (marker.category === 'random') {
-      var color = (Settings.markersCustomColor === 1 ? (marker.tool == 2 ? "black" : "lightgray") : "lightgray");
+      var color = (Settings.markerCustomColor === 1 ? (marker.tool == 2 ? "black" : "lightgray") : "lightgray");
       icon = `./assets/images/icons/${MapBase.getToolName(marker.tool)}.png`;
       background = `./assets/images/icons/marker_${color}.png`;
     }
@@ -752,7 +748,7 @@ var MapBase = {
       if (!Settings.isPopupsEnabled) MapBase.removeItemFromMap(marker.day || '', marker.text || '', marker.subdata || '', marker.category || '');
 
       Routes.addMarkerOnCustomRoute(marker.text);
-      if (Routes.customRouteEnabled) e.target.closePopup();
+      if (RouteSettings.customRouteEnabled) e.target.closePopup();
     });
 
     tempMarker.on("contextmenu", function (e) {
@@ -760,7 +756,7 @@ var MapBase = {
     });
 
     Layers.itemMarkersLayer.addLayer(tempMarker);
-    if (Settings.markerCluster)
+    if (Settings.isMarkerClusterEnabled)
       Layers.oms.addMarker(tempMarker);
   },
 
@@ -874,7 +870,7 @@ var MapBase = {
 
   addCoordsOnMap: function (coords) {
     // Show clicked coordinates (like google maps)
-    if (Settings.isCoordsEnabled) {
+    if (Settings.isCoordsOnClickEnabled) {
       $('.lat-lng-container').css('display', 'block');
 
       var lat = parseFloat(coords.latlng.lat.toFixed(4));

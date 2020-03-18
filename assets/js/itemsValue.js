@@ -32,7 +32,7 @@ var ItemsValue = {
     this.resetItemsData();
 
     var inventoryItems = [];
-    if (Inventory.isEnabled)
+    if (InventorySettings.isEnabled)
       inventoryItems = Inventory.items;
     else
       inventoryItems = MapBase.collectedItems;
@@ -41,7 +41,7 @@ var ItemsValue = {
       if (key.indexOf('random_item') !== -1) return;
 
       var itemName = key.replace(/_\d/, '');
-      var itemAmount = (Inventory.isEnabled ? value : value ? 1 : 0);
+      var itemAmount = (InventorySettings.isEnabled ? value : value ? 1 : 0);
       var tempCategory = itemName.split("_")[0];
 
       if (ItemsValue.collectedItemsData[tempCategory].indexOf(itemName) === -1) {

@@ -118,7 +118,7 @@ Menu.refreshMenu = function () {
     });
 
     collectibleElement.on('contextmenu', function (e) {
-      if ($.cookie('right-click') == null)
+      if (!Settings.isRightClickEnabled)
         e.preventDefault();
 
       if (marker.subdata !== 'agarita' && marker.subdata !== 'blood_flower') {
@@ -134,7 +134,7 @@ Menu.refreshMenu = function () {
 
     var collectibleCountElement = $('<span>').addClass('counter').append(collectibleCountDecreaseElement).append(collectibleCountTextElement).append(collectibleCountIncreaseElement);
 
-    if (!Inventory.isEnabled)
+    if (!InventorySettings.isEnabled)
       collectibleCountElement.hide();
 
     var collectibleCategory = $(`.menu-option[data-type=${marker.category}]`);
@@ -149,7 +149,7 @@ Menu.refreshMenu = function () {
     if (collectibleCategory.hasClass('not-found') && !anyUnavailableCategories.includes(marker.category))
       collectibleCategory.attr('data-help', 'item_category').removeClass('not-found');
 
-    collectibleCountTextElement.toggleClass('text-danger', marker.amount >= Inventory.stackSize);
+    collectibleCountTextElement.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
 
     if (marker.subdata) {
       if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
@@ -289,12 +289,12 @@ Menu.refreshWeeklyItems = function () {
   $.each(weeklyItems, function (key, value) {
     var inventoryCount = '';
 
-    if (Inventory.isEnabled) {
+    if (InventorySettings.isEnabled) {
       var amount = Inventory.items[value.item];
 
       if (amount !== undefined) {
         inventoryCount = $(`<small class="counter-number">${amount}</small>`);
-        inventoryCount.toggleClass('text-danger', amount >= Inventory.stackSize);
+        inventoryCount.toggleClass('text-danger', amount >= InventorySettings.stackSize);
         inventoryCount = inventoryCount.prop('outerHTML');
       }
     }
