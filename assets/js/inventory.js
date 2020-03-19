@@ -142,7 +142,7 @@ var Inventory = {
         // no highlights
         $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('opacity', 0.0);
       }
-      else if ((weight < 0.3) || (InventorySettings.highlightStyle < InventorySettings.highlightStyles.ANIMATED_RECOMMENDED)) { // just static highlights for small differences or if animation is disabled
+      else if ((weight < 0.3) || (InventorySettings.highlightStyle < Inventory.highlightStyles.ANIMATED_RECOMMENDED)) { // just static highlights for small differences or if animation is disabled
         $(`[data-marker=${_m.text || _m.subdata}] > img.marker-contour`).css('opacity', scaledWeight);
       }
       else { // animated or static highlights for larger differences according to user settings

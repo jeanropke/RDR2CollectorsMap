@@ -499,7 +499,7 @@ var MapBase = {
     }
 
     if (InventorySettings.isEnabled && InventorySettings.highlightLowAmountItems &&
-      (InventorySettings.highlightStyle === InventorySettings.highlightStyles.STATIC_RECOMMENDED || InventorySettings.highlightStyle === InventorySettings.highlightStyles.ANIMATED_RECOMMENDED)) {
+      (InventorySettings.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED || InventorySettings.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
       return MapBase.isDarkMode ? "darkblue" : "orange";
     }
 
@@ -529,8 +529,8 @@ var MapBase = {
     };
 
     if (InventorySettings.highlightLowAmountItems &&
-      (InventorySettings.highlightStyle === InventorySettings.highlightStyles.STATIC_RECOMMENDED ||
-        InventorySettings.highlightStyle === InventorySettings.highlightStyles.ANIMATED_RECOMMENDED)) {
+      (InventorySettings.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED ||
+        InventorySettings.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
       return MapBase.isDarkMode ? "orange" : "darkblue";
     }
 

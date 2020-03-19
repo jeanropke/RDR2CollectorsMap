@@ -597,7 +597,7 @@ $('#highlight_low_amount_items').on("change", function () {
 $('#highlight_style').on("change", function () {
   var parsed = parseInt($("#highlight_style").val());
 
-  InventorySettings.highlightStyle = !isNaN(parsed) ? parsed : InventorySettings.highlightStyles.ANIMATED_RECOMMENDED;
+  InventorySettings.highlightStyle = !isNaN(parsed) ? parsed : Inventory.highlightStyles.ANIMATED_RECOMMENDED;
 
   MapBase.addMarkers();
 });
