@@ -798,6 +798,7 @@ var MapBase = {
 
   clearImportantItems: function () {
     $('.highlight-items').removeClass('highlight-items');
+    $('.highlight-important-items-menu').removeClass('highlight-important-items-menu');
     MapBase.importantItems = [];
     localStorage.setItem('importantItems', JSON.stringify(MapBase.importantItems));
   },
