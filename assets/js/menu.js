@@ -56,12 +56,13 @@ Menu.addCycleWarning = function (element, isSameCycle) {
 };
 
 Menu.refreshMenu = function () {
-  if (weeklySetData.current == null)
-    return;
-
   $('.menu-hidden[data-type]').children('.collectible-wrapper').remove();
 
-  var weeklyItems = weeklySetData.sets[weeklySetData.current];
+  var weeklyItems = [];
+  if (weeklySetData.current !== null) {
+    weeklyItems = weeklySetData.sets[weeklySetData.current];
+  }
+
   var anyUnavailableCategories = [];
 
   $.each(MapBase.markers, function (_key, marker) {
@@ -184,8 +185,11 @@ Menu.refreshMenu = function () {
     collectibleElement.hover(function () {
       let language = Language.get(`help.${$(this).data('help')}`);
 
-      if (language.indexOf('{collection}') !== -1) {
-        language = language.replace('{collection}', Language.get('weekly.desc.' + weeklySetData.current));
+      if (weeklySetData.current !== null) {
+        // Just let "{collection}" be visible so at least stuff doesn't break too hard.
+        if (language.indexOf('{collection}') !== -1) {
+          language = language.replace('{collection}', Language.get('weekly.desc.' + weeklySetData.current));
+        }
       }
 
       $('#help-container p').text(language);
