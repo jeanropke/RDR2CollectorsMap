@@ -223,11 +223,9 @@ var MapBase = {
           markers[key].isCollected = false;
           markers[key].canCollect = markers[key].amount < InventorySettings.stackSize;
         }
-        else {
-          if (value.category === 'random') {
-            markers[key].isCollected = false;
-            markers[key].canCollect = true;
-          }
+        else if (value.category === 'random') {
+          markers[key].isCollected = false;
+          markers[key].canCollect = true;
         }
 
         if (InventorySettings.resetInventoryDaily) {
