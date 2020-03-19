@@ -652,7 +652,7 @@ function setSettings(settings) {
 
   delete settings.version;
 
-  $.each(settings.local, function (key, value) {
+  $.each(settings, function (key, value) {
     localStorage.setItem(key, value);
   });
 
