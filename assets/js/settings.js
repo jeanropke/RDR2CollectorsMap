@@ -130,7 +130,7 @@ Object.entries({
   isPinsEditingEnabled: { default: true },
   isPinsPlacingEnabled: { default: false },
   isPopupsEnabled: { default: true },
-  isPopupsHoverEnabled: { default: true },
+  isPopupsHoverEnabled: { default: false },
   isRightClickEnabled: { default: false },
   isShadowsEnabled: { default: true },
   markerCustomColor: { default: 0 },
