@@ -73,7 +73,6 @@ Menu.refreshMenu = function () {
 
     var collectibleKey = null;
     var collectibleText = null;
-    var collectibleTitle = null;
 
     switch (marker.category) {
       case 'american_flowers':
@@ -88,12 +87,11 @@ Menu.refreshMenu = function () {
 
     if (marker.subdata) {
       collectibleText = marker.subdata;
-      collectibleTitle = Language.get(`${collectibleKey}.name`);
     } else {
       collectibleText = marker.text;
-      collectibleTitle = marker.title;
     }
-
+    
+    var collectibleTitle = Language.get(`${collectibleKey}.name`);
     var collectibleImage = null;
 
     // Prevents 404 errors. If doing the if-statement the other way round, jQuery tries to load the images.
@@ -168,11 +166,8 @@ Menu.refreshMenu = function () {
 
       if (currentSubdataMarkers.every(function (marker) { return !marker.canCollect; }))
         collectibleElement.addClass('disabled');
-
-    }
-    else {
-      if (!marker.canCollect)
-        collectibleElement.addClass('disabled');
+    } else {
+      if (!marker.canCollect) collectibleElement.addClass('disabled');
     }
 
     $.each(weeklyItems, function (key, weeklyItem) {

@@ -339,9 +339,9 @@ $('#timestamps-24').on('change', function () {
 $("#language").on("change", function () {
   Settings.language = $("#language").val();
   Language.setMenuLanguage();
-  MapBase.addMarkers();
   Menu.refreshMenu();
   Cycles.setLocaleDate();
+  MapBase.addMarkers();
 });
 
 $("#marker-opacity").on("change", function () {
