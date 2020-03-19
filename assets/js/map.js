@@ -793,18 +793,20 @@ var MapBase = {
     else
       MapBase.importantItems.splice(MapBase.importantItems.indexOf(text), 1);
 
-    $.each(localStorage, function (key) {
-      localStorage.removeItem('importantItems');
-    });
+    localStorage.setItem('importantItems', JSON.stringify(MapBase.importantItems));
+  },
 
+  clearImportantItems: function () {
+    $('.highlight-items').removeClass('highlight-items');
+    MapBase.importantItems = [];
     localStorage.setItem('importantItems', JSON.stringify(MapBase.importantItems));
   },
 
   loadImportantItems: function () {
-    if (localStorage.importantItems === undefined)
-      localStorage.importantItems = "[]";
-
-    MapBase.importantItems = JSON.parse(localStorage.importantItems) || [];
+    if (localStorage.getItem('importantItems') === undefined)
+      MapBase.importantItems = [];
+    else
+      MapBase.importantItems = JSON.parse(localStorage.getItem('importantItems')) || [];
 
     $.each(MapBase.importantItems, function (key, value) {
       if (/random_item_\d+/.test(value))

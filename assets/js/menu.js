@@ -315,10 +315,7 @@ Menu.refreshWeeklyItems = function () {
 
 // Remove highlight from all important items
 $('#clear_highlights').on('click', function () {
-  var tempArray = MapBase.importantItems;
-  $.each(tempArray, function () {
-    MapBase.highlightImportantItem(tempArray[0]);
-  });
+  MapBase.clearImportantItems();
 });
 
 // change cycles from menu (if debug options are enabled)
