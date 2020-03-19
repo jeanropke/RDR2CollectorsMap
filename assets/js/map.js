@@ -212,7 +212,7 @@ var MapBase = {
 
     // Reset markers daily.
     var curDate = new Date();
-    date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
+    date = curDate.toISOString().split('T')[0];
 
     if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
       var markers = MapBase.markers;
