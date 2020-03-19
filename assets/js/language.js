@@ -46,20 +46,26 @@ var Language = {
                 // Menu language strings.
                 $.ajax({
                     url: `./langs/menu/${language}.json`,
-                    dataType: 'json',
                     async: false,
-                    success: function (json) {
-                        object[language] = json;
+                    success: function (data) {
+                        try {
+                            object[language] = JSON.parse(data);
+                        } catch (error) {
+                            alert(`Format error in ${language} JSON, please fix.`);
+                        }
                     }
                 });
 
                 // Item language strings.
                 $.ajax({
                     url: `./langs/item/${language}.json`,
-                    dataType: 'json',
                     async: false,
-                    success: function (json) {
-                        $.extend(object[language], json);
+                    success: function (data) {
+                        try {
+                            $.extend(object[language], JSON.parse(data));
+                        } catch (error) {
+                            alert(`Format error in ${language} JSON, please fix.`);
+                        }
                     }
                 });
             } catch (error) {
