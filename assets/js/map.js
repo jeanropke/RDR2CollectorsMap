@@ -214,7 +214,7 @@ var MapBase = {
     var curDate = new Date();
     date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
 
-    if (date != Settings.date) {
+    if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
       var markers = MapBase.markers;
 
       $.each(markers, function (key, value) {
@@ -241,7 +241,7 @@ var MapBase = {
       MapBase.saveCollectedItems();
     }
 
-    Settings.date = date;
+    localStorage.setItem('main.date', date);
 
     MapBase.addMarkers(true);
 

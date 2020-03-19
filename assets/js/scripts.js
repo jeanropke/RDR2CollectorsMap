@@ -29,29 +29,6 @@ function init() {
     $.removeCookie(cookie);
   }
 
-  if (localStorage.getItem("inventory-items") !== null) {
-    var items = localStorage.getItem("inventory-items");
-
-    if (items == null) return;
-
-    items.split(';').forEach(item => {
-      if (item == '') return;
-
-      var properties = item.split(':');
-
-      if (Inventory.items[properties[0].replace(/_\d/, '')] === undefined)
-        Inventory.items[properties[0].replace(/_\d/, '')] = 0;
-
-      Inventory.items[properties[0].replace(/_\d/, '')]++;
-      MapBase.collectedItems[properties[0]] = properties[1] == '1';
-    });
-
-    localStorage.clear("inventory-items");
-
-    MapBase.saveCollectedItems();
-    Inventory.save();
-  }
-
   MapBase.loadCollectedItems();
   Inventory.load();
 

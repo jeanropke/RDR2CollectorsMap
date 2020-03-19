@@ -118,7 +118,6 @@ const Settings = SettingProxy.createSettingProxy('main');
 Object.entries({
   alertClosed: { default: false },
   baseLayer: { default: 'map.layers.default' },
-  date: {},
   isClock24Hour: { default: false },
   isClockVisible: { default: false },
   isCoordsOnClickEnabled: { default: false },
