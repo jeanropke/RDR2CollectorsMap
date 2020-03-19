@@ -232,6 +232,7 @@
 	"menu.custom_marker_dark_red": "Dark red",
 	"menu.custom_marker_dark_blue": "Dark blue",
 	"menu.reset_inventory_daily": "Reset inventory daily",
+	"menu.soft_flowers_inventory_stack": "Flowers soft item stack size",
 	"help.default": "Hover over or long-press (mobile) any setting to get information about it.",
 	"help.clear_custom_routes": "Clears all the custom routes currently on the map.",
 	"help.clear_inventory": "Clears all the items in the inventory.",
@@ -315,5 +316,6 @@
 	"help.highlight_low_amount_items": "Toggles whether the items with lowest amount in your inventory is highlighted on the map.",
 	"help.highlight_style": "Allows you to set the style how small item amounts are highlighted (static or animated highlights, recommended or default color theme)",
 	"help.collection_collected": "Amount of items collected for this collection.",
-	"help.reset_inventory_daily": "Toggles whether the inventory should be reset every 24 hours."
+	"help.reset_inventory_daily": "Toggles whether the inventory should be reset every 24 hours.",
+	"help.soft_flowers_inventory_stack": "Allows you to set \"soft\" limit of flowers in your inventory. When the limit is reached, flowers will be disabled from the map and in menu, but you can still add more flowers up to main stack size limit."
 }

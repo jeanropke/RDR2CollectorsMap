@@ -619,6 +619,13 @@ $('#inventory-stack').on("change", function () {
   InventorySettings.stackSize = inputValue;
 });
 
+// Flowers soft item stack size
+$('#soft-flowers-inventory-stack').on("change", function () {
+  var inputValue = parseInt($('#soft-flowers-inventory-stack').val());
+  inputValue = !isNaN(inputValue) ? inputValue : 10;
+  InventorySettings.flowersSoftStackSize = inputValue;
+});
+
 /**
  * Cookie import/exporting
  */
