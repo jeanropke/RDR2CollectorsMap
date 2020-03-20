@@ -193,6 +193,7 @@
 	"menu.marker_size.125": "125%",
 	"menu.marker_size.150": "150%",
 	"menu.marker_size.175": "175%",
+	"menu.marker_size.200": "200%",
 	"menu.toggle_debug": "Toggle debug features",
 	"map.random_spot.desc": "This spot gives you a random item, you can view more detailed information {link}.",
 	"map.random_spot.link": "on this Wiki page",
