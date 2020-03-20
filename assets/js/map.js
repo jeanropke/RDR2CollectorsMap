@@ -211,8 +211,7 @@ var MapBase = {
     uniqueSearchMarkers = MapBase.markers;
 
     // Reset markers daily.
-    var curDate = new Date();
-    date = curDate.getUTCFullYear() + '-' + (curDate.getUTCMonth() + 1) + '-' + curDate.getUTCDate();
+    var date = new Date().toISOString().split('T')[0];
 
     if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
       var markers = MapBase.markers;
@@ -223,11 +222,9 @@ var MapBase = {
           markers[key].isCollected = false;
           markers[key].canCollect = markers[key].amount < InventorySettings.stackSize;
         }
-        else {
-          if (value.category === 'random') {
-            markers[key].isCollected = false;
-            markers[key].canCollect = true;
-          }
+        else if (value.category === 'random') {
+          markers[key].isCollected = false;
+          markers[key].canCollect = true;
         }
 
         if (InventorySettings.resetInventoryDaily) {

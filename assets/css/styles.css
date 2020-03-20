@@ -877,6 +877,10 @@ a.wiki-page:visited {
     opacity: .3;
 }
 
+.collection-collected {
+    min-width: 5.5rem;
+}
+
 /* Custom checkbox styling */
 
 .input-checkbox-wrapper {

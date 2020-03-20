@@ -160,6 +160,7 @@ Object.entries({
   resetButtonUpdatesInventory: { default: false },
   resetInventoryDaily: { default: false },
   stackSize: { default: 10 },
+  flowersSoftStackSize: { default: 10 },
 }).forEach(([name, config]) => SettingProxy.addSetting(InventorySettings, name, config));
 
 // Route settings
