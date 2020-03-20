@@ -211,8 +211,7 @@ var MapBase = {
     uniqueSearchMarkers = MapBase.markers;
 
     // Reset markers daily.
-    var curDate = new Date();
-    var date = curDate.toISOString().split('T')[0];
+    var date = new Date().toISOString().split('T')[0];
 
     if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
       var markers = MapBase.markers;
