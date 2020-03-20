@@ -232,7 +232,7 @@
 	"menu.custom_marker_dark_red": "Dark red",
 	"menu.custom_marker_dark_blue": "Dark blue",
 	"menu.reset_inventory_daily": "Reset inventory daily",
-	"menu.soft_flowers_inventory_stack": "Flowers soft item stack size",
+	"menu.soft_flowers_inventory_stack": "Flowers soft stack size",
 	"help.default": "Hover over or long-press (mobile) any setting to get information about it.",
 	"help.clear_custom_routes": "Clears all the custom routes currently on the map.",
 	"help.clear_inventory": "Clears all the items in the inventory.",
