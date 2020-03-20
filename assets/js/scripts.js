@@ -2,6 +2,10 @@
 //Instead of 1 cycle for each collection in the day, each collection has your own cycle.
 //Eg: Coins can be on cycle 1, Eggs on cycle 3, Flowers on 5... and so on
 
+Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
+  value: function() { return this.toISOString().split('T')[0] },
+});
+
 var searchTerms = [];
 var uniqueSearchMarkers = [];
 

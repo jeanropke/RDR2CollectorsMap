@@ -30,7 +30,7 @@ var Cycles = {
   getTodayCycle: function () {
     'use strict';
     const selectedDay = Cycles.getFreshSelectedDay();
-    const selectedDayStr = selectedDay.toISOString().split('T')[0];
+    const selectedDayStr = selectedDay.toISOUTCDateString();
     const cycleIndex = Cycles.data.findIndex(element => element.date === selectedDayStr);
 
     $('div>span.cycle-data').toggleClass('not-found', Cycles.offset !== 0);
@@ -143,7 +143,7 @@ var Cycles = {
   nextDayDataExists: function () {
     var newDate = new Date();
     newDate.setUTCDate(newDate.getUTCDate() + Cycles.forwardMaxOffset);
-    var nextDayCycle = Cycles.data.findIndex(element => element.date === newDate.toISOString().split('T')[0]);
+    var nextDayCycle = Cycles.data.findIndex(element => element.date === newDate.toISOUTCDateString());
     if (nextDayCycle === -1 && Cycles.forwardMaxOffset > 0) {  // protect function, otherwise with no data function can loop to -infinity
       Cycles.forwardMaxOffset--;
       Cycles.nextDayDataExists();
