@@ -198,9 +198,7 @@ var MapBase = {
 
   loadMarkers: function () {
     $.getJSON('data/items.json?nocache=' + nocache)
-      .done(function (data) {
-        MapBase.setMarkers(data);
-      });
+      .done(MapBase.setMarkers);
   },
 
   setMarkers: function (data) {
@@ -246,15 +244,15 @@ var MapBase = {
     MapBase.addMarkers(true);
 
     // Do search via URL.
-    var searchParam = getParameterByName('search');
-    if (searchParam != null && searchParam) {
+    const searchParam = getParameterByName('search');
+    if (searchParam) {
       $('#search').val(searchParam);
       MapBase.onSearch(searchParam);
     }
 
     // Navigate to marker via URL.
-    var markerParam = getParameterByName('m');
-    if (markerParam != null && markerParam != '') {
+    const markerParam = getParameterByName('m');
+    if (markerParam) {
       var goTo = MapBase.markers.filter(_m => _m.text == markerParam && _m.day == Cycles.categories[_m.category])[0];
 
       //if a marker is passed on url, check if is valid
