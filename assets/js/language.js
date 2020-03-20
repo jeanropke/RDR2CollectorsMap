@@ -1,18 +1,41 @@
 var Language = {
     availableLanguages: ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'sv-se', 'th-th', 'zh-hans', 'zh-hant'],
 
-    get: function (value) {
-        if (Language.data[Settings.language][value])
-            return Language.data[Settings.language][value];
-        else if (Language.data['en-us'][value])
-            return Language.data['en-us'][value];
-        else if (Settings.isDebugEnabled)
-            return value;
-        else
-            return '';
+    get: function (transKey, optional) {
+        'use strict';
+        let translation = false;
+        if (transKey === 'GitHub') {
+            translation = '<a href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">GitHub</a>';
+        } else if (transKey === 'Discord') {
+            translation = '<a href="https://discord.gg/WWru8cP" target="_blank">Discord</a>';
+        } else if (transKey === 'int.random_spot.link') {
+            translation = '<a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/Random-Item-Possible-Loot" target="_blank">';
+        } else if (transKey === 'int.end.link') {
+            translation = '</a>';
+        } else if (transKey === 'collection') {
+            transKey = `weekly.desc.${weeklySetData.current}`;
+        }
+        translation =
+            translation ||
+            Language.data[Settings.language][transKey] ||
+            Language.data['en-us'][transKey] ||
+            (optional ? '' : transKey);
+
+        return translation.replace(/\{([\w.]+)\}/g,
+            (full, key) => this.get(key, true) || `{${key}}`);
+    },
+
+    translateDom: function (context) {
+        'use strict';
+        $('[data-text]', context).html(function () {
+            const $this = $(this);
+            return Language.get($this.attr('data-text'), $this.data('text-optional'));
+        });
+        return context;
     },
 
     setMenuLanguage: function () {
+        'use strict';
         const wikiBase = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/';
         const wikiPages = {
             'de-de': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(German)',
@@ -23,16 +46,8 @@ var Language = {
         const wikiLang = Settings.language in wikiPages ? Settings.language : 'en-us';
         $('.wiki-page').attr('href', wikiBase + wikiPages[wikiLang]);
 
-        $.each($('[data-text]'), function (key, value) {
-            var temp = $(value);
-            var string = Language.get(temp.data('text'));
+        this.translateDom();
 
-            if (string == '') return;
-
-            $(temp).text(string);
-        });
-
-        // Special cases:
         $('#search').attr("placeholder", Language.get('menu.search_placeholder'));
     },
 

@@ -178,19 +178,10 @@ Menu.refreshMenu = function () {
     });
 
     collectibleElement.hover(function () {
-      let language = Language.get(`help.${$(this).data('help')}`);
-
-      if (weeklySetData.current !== null) {
-        // Just let "{collection}" be visible so at least stuff doesn't break too hard.
-        if (language.indexOf('{collection}') !== -1) {
-          language = language.replace('{collection}', Language.get('weekly.desc.' + weeklySetData.current));
-        }
-      }
-
-      $('#help-container p').text(language);
-    }, function () {
-      $('#help-container p').text(Language.get(`help.default`));
-    });
+        $('#help-container p').text(Language.get(`help.${$(this).data('help')}`));
+      }, function () {
+        $('#help-container p').text(Language.get(`help.default`));
+      });
 
     $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
   });
@@ -283,7 +274,7 @@ Menu.refreshWeeklyItems = function () {
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
 
   $('#weekly-container .weekly-item-listings').children('.weekly-item-listing').remove();
-  $('#weekly-container .weekly-item-title').text(Language.get('weekly.desc.' + weeklySetData.current));
+  $('#weekly-container .weekly-item-title').text(Language.get('collection'));
 
   $.each(weeklyItems, function (key, value) {
     var inventoryCount = '';

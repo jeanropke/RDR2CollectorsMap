@@ -1115,6 +1115,10 @@ a.no-style:visited {
 .leaflet-popup-content {
     font-size: 14px;
     margin: 8px;
+}
+
+.leaflet-popup-content > div {
+    width: 100%;
     display: inline-grid;
 }
 

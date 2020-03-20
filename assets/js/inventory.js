@@ -32,7 +32,7 @@ var Inventory = {
 
     $.each(MapBase.markers, function (key, marker) {
       if (marker.category == 'random') return;
-      marker.amount = Inventory.items[marker.text.replace(/_\d/, '')];
+      marker.amount = Inventory.items[marker.itemId];
     });
 
     ItemsValue.load();
@@ -41,7 +41,7 @@ var Inventory = {
   save: function () {
     $.each(MapBase.markers, function (key, marker) {
       if (marker.category == 'random') return;
-      Inventory.items[marker.text.replace(/_\d/, '')] = marker.amount;
+      Inventory.items[marker.itemId] = marker.amount;
     });
 
     localStorage.setItem("inventory", JSON.stringify(Inventory.items));
@@ -200,7 +200,7 @@ var Inventory = {
 
       // If the category is disabled, no needs to update popup
       if (Settings.isPopupsEnabled && marker.day == Cycles.categories[marker.category] && Layers.itemMarkersLayer.getLayerById(marker.text) != null)
-        Layers.itemMarkersLayer.getLayerById(marker.text)._popup.setContent(MapBase.updateMarkerContent(marker));
+        Layers.itemMarkersLayer.getLayerById(marker.text)._popup.setContent(marker.popupContent());
 
       if ((marker.isCollected || (InventorySettings.isEnabled && marker.amount >= InventorySettings.stackSize)) && marker.day == Cycles.categories[marker.category] ||
         // flowers soft stack size:
