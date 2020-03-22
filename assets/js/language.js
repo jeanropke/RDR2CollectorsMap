@@ -47,25 +47,19 @@ var Language = {
                 $.ajax({
                     url: `./langs/menu/${language}.json`,
                     async: false,
-                    success: function (data) {
-                        try {
-                            object[language] = JSON.parse(data);
-                        } catch (error) {
-                            alert(`Format error in ${language} JSON, please fix.`);
-                        }
+                    dataType: 'json',
+                    success: function (json) {
+                        object[language] = json;
                     }
                 });
-
+                
                 // Item language strings.
                 $.ajax({
                     url: `./langs/item/${language}.json`,
                     async: false,
-                    success: function (data) {
-                        try {
-                            $.extend(object[language], JSON.parse(data));
-                        } catch (error) {
-                            alert(`Format error in ${language} JSON, please fix.`);
-                        }
+                    dataType: 'json',
+                    success: function (json) {
+                        $.extend(object[language], json);
                     }
                 });
             } catch (error) {
