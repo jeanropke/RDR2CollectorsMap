@@ -898,6 +898,11 @@ $('#delete-all-settings').on('click', function () {
   location.reload(true);
 });
 
+// reload map from menu (useful on bugged iOS)
+$('#reload-map').on('click', function () {
+  location.reload(true);
+});
+
 /**
  * Modals
  */

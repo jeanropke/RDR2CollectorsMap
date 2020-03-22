@@ -452,6 +452,10 @@
         <label data-text="menu.clear_markers">Reset markers now</label>
         <div class="input-action"></div>
       </div>
+      <div id="open-clear-important-items-modal" class="input-container clickable" data-help="clear_important_items">
+        <label data-text="menu.clear_important_items">Clear important markers</label>
+        <div class="input-action"></div>
+      </div>
       <hr class="menu-divider">
       <div class="input-container" data-help="user_pins_place_mode">
         <label for="pins-place-mode" data-text="menu.user_pins_place_mode">Create new pin on click</label>
@@ -527,7 +531,7 @@
             <label class="input-checkbox-label" for="highlight_low_amount_items"></label>
           </div>
         </div>
-        <div class="input-container" data-help="highlight_style">
+        <div class="input-container clickable disabled" data-help="highlight_style">
           <label for="highlight_style" data-text="menu.highlight_style">Highlight style</label>
           <select class="input-text wide-select-menu" id="highlight_style">
             <option disabled data-text="menu.highlight_style_static">-- Static --</option>
@@ -583,8 +587,8 @@
         </div>
       </div>
       <hr class="menu-divider">
-      <div id="open-clear-important-items-modal" class="input-container clickable" data-help="clear_important_items">
-        <label data-text="menu.clear_important_items">Clear important markers</label>
+      <div id="reload-map" class="input-container clickable" data-help="reload_map">
+        <label data-text="menu.reload_map">Reload the map now</label>
         <div class="input-action"></div>
       </div>
       <div id="open-delete-all-settings-modal" class="input-container clickable text-danger" data-help="delete_all_settings">
@@ -703,18 +707,18 @@
             <label class="input-checkbox-label" for="show-help"></label>
           </div>
         </div>
-        <div class="input-container" data-help="show_coords">
-          <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
-          <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="show-coordinates" value="1" id="show-coordinates" />
-            <label class="input-checkbox-label" for="show-coordinates"></label>
-          </div>
-        </div>
         <div class="input-container" data-help="enable_cycle_input">
           <label for="enable-cycle-input" data-text="menu.enable_cycle_input">Enable manual cycle input</label>
           <div class="input-checkbox-wrapper">
             <input class="input-checkbox" type="checkbox" name="enable-cycle-input" value="1" id="enable-cycle-input" />
             <label class="input-checkbox-label" for="enable-cycle-input"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="show_coords">
+          <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="show-coordinates" value="1" id="show-coordinates" />
+            <label class="input-checkbox-label" for="show-coordinates"></label>
           </div>
         </div>
       </div>
