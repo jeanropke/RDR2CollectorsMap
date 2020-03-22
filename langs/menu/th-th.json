@@ -192,6 +192,8 @@
 	"menu.marker_size.100": "",
 	"menu.marker_size.125": "",
 	"menu.marker_size.150": "",
+	"menu.marker_size.175": "",
+	"menu.marker_size.200": "",
 	"menu.toggle_debug": "",
 	"map.random_spot.desc": "",
 	"map.random_spot.link": "",
@@ -232,6 +234,8 @@
 	"menu.custom_marker_dark_red": "",
 	"menu.custom_marker_dark_blue": "",
 	"menu.reset_inventory_daily": "",
+	"menu.soft_flowers_inventory_stack": "",
+	"menu.reload_map": "",
 	"help.default": "",
 	"help.clear_custom_routes": "",
 	"help.clear_inventory": "",
@@ -315,5 +319,7 @@
 	"help.highlight_low_amount_items": "",
 	"help.highlight_style": "",
 	"help.collection_collected": "",
-	"help.reset_inventory_daily": ""
+	"help.reset_inventory_daily": "",
+	"help.soft_flowers_inventory_stack": "",
+	"help.reload_map": ""
 }

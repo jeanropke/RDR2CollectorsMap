@@ -192,6 +192,8 @@
 	"menu.marker_size.100": "100%",
 	"menu.marker_size.125": "125 %",
 	"menu.marker_size.150": "150 %",
+	"menu.marker_size.175": "",
+	"menu.marker_size.200": "",
 	"menu.toggle_debug": "Activer/désactiver les fonctionnalités de débogage",
 	"map.random_spot.desc": "Ce spot vous donne un objet aléatoire, vous pouvez voir plus d'informations détaillées {link}.",
 	"map.random_spot.link": "sur cette page Wiki",
@@ -232,6 +234,8 @@
 	"menu.custom_marker_dark_red": "Rouge foncé",
 	"menu.custom_marker_dark_blue": "Bleu foncé",
 	"menu.reset_inventory_daily": "Réinitialiser l'inventaire quotidiennement",
+	"menu.soft_flowers_inventory_stack": "",
+	"menu.reload_map": "",
 	"help.default": "Survolez ou appuyez longuement (mobile) n'importe quel paramètre pour obtenir des informations à ce sujet.",
 	"help.clear_custom_routes": "Efface tous les itinéraires personnalisés actuellement sur la carte.",
 	"help.clear_inventory": "Il n'y a aucun article dans l'inventaire.",
@@ -315,5 +319,7 @@
 	"help.highlight_low_amount_items": "Active/Désactive si les objets avec le montant le plus bas de votre inventaire sont surlignés sur la carte.",
 	"help.highlight_style": "Vous permet de définir le style de la mise en surbrillance des petites quantités d'articles (surlignements statiques ou animées, thème de couleur recommandé ou par défaut)",
 	"help.collection_collected": "Quantité d'objets collectés pour cette collection.",
-	"help.reset_inventory_daily": "Active/Désactive la réinitialisation de l'inventaire toutes les 24 heures."
+	"help.reset_inventory_daily": "Active/Désactive la réinitialisation de l'inventaire toutes les 24 heures.",
+	"help.soft_flowers_inventory_stack": "",
+	"help.reload_map": ""
 }
