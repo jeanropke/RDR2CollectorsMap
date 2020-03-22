@@ -17,7 +17,7 @@ var Inventory = {
     $('#reset-inventory-daily').prop("checked", InventorySettings.resetInventoryDaily);
 
     // disable dropdown menu if highlight low amount items is disabled:
-    $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems)
+    $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);
     $('#highlight_low_amount_items').on('change', function () {
       $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);
     });
@@ -44,7 +44,6 @@ var Inventory = {
 
     localStorage.setItem("inventory", JSON.stringify(Inventory.items));
 
-    ItemsValue.load();
     Inventory.updateLowAmountItems();
   },
 
