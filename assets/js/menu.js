@@ -59,7 +59,7 @@ Menu.refreshMenu = function () {
   $('.menu-hidden[data-type]').children('.collectible-wrapper').remove();
 
   var weeklyItems = [];
-  if (weeklySetData.current !== null) {
+  if (weeklySetData.sets !== null) {
     weeklyItems = weeklySetData.sets[weeklySetData.current];
   }
 
