@@ -2,23 +2,7 @@ var ItemsValue = {
   data: [],
   collectedItemsData: {},
   finalValue: 0,
-
-  collectionsLength: [
-    ['flower', 9],
-    ['cups', 14],
-    ['swords', 14],
-    ['wands', 14],
-    ['pentacles', 14],
-    ['bracelet', 8],
-    ['earring', 11],
-    ['necklace', 9],
-    ['ring', 11],
-    ['bottle', 9],
-    ['egg', 9],
-    ['arrowhead', 12],
-    ['heirlooms', 15],
-    ['coin', 15]
-  ],
+  collectionsNames: ['flower', 'cups', 'swords', 'wands', 'pentacles', 'bracelet', 'earring', 'necklace', 'ring', 'bottle', 'egg', 'arrowhead', 'heirlooms', 'coin'],
 
   load: function () {
     $.getJSON('data/items_value.json?nocache=' + nocache)
@@ -31,14 +15,11 @@ var ItemsValue = {
   reloadInventoryItems: function () {
     this.resetItemsData();
 
-    var inventoryItems = [];
-    if (InventorySettings.isEnabled)
-      inventoryItems = Inventory.items;
-    else
-      inventoryItems = MapBase.collectedItems;
+    var inventoryItems = InventorySettings.isEnabled ? Inventory.items : MapBase.collectedItems;
 
     $.each(inventoryItems, function (key, value) {
-      if (key.indexOf('random_item') !== -1) return;
+      if (key.indexOf('random_item') !== -1)
+        return;
 
       var itemName = key.replace(/_\d/, '');
       var itemAmount = (InventorySettings.isEnabled ? value : value ? 1 : 0);
@@ -50,18 +31,18 @@ var ItemsValue = {
       }
     });
 
-    this.checkArrLength();
+    $.each(this.collectionsNames, function (key, name) {
+      ItemsValue.collectionsCount(name);
+    });
   },
 
-  fullCollectionsCount: function (category) {
-    var tempArr = ItemsValue.collectedItemsData[`${category}_amount`].slice();
+  collectionsCount: function (category) {
+    var tempArr = this.collectedItemsData[`${category}_amount`].slice();
     var collections = tempArr.sort((a, b) => a - b)[0];
     this.collectedItemsData[`${category}_amount`] = this.collectedItemsData[`${category}_amount`].map(item => item - collections);
 
     this.finalValue += this.data.full[category] * collections;
-  },
 
-  notFullCollectionsCount: function (category) {
     $.each(this.collectedItemsData[category], function (key, item) {
       var multiplier = ItemsValue.collectedItemsData[`${category}_amount`][key];
       var itemName = ItemsValue.collectedItemsData[category][key];
@@ -73,20 +54,11 @@ var ItemsValue = {
     this.updateValue();
   },
 
-  checkArrLength: function () {
-    $.each(this.collectionsLength, function (key, value) {
-      if (ItemsValue.collectedItemsData[ItemsValue.collectionsLength[key][0]].length === ItemsValue.collectionsLength[key][1])
-        ItemsValue.fullCollectionsCount(ItemsValue.collectionsLength[key][0]);
-
-      ItemsValue.notFullCollectionsCount(ItemsValue.collectionsLength[key][0]);
-    });
-  },
-
   resetItemsData: function () {
     this.finalValue = 0;
-    $.each(this.collectionsLength, function (key, collection) {
-      ItemsValue.collectedItemsData[collection[0]] = [];
-      ItemsValue.collectedItemsData[`${collection[0]}_amount`] = [];
+    $.each(this.collectionsNames, function (key, collection) {
+      ItemsValue.collectedItemsData[collection] = [];
+      ItemsValue.collectedItemsData[`${collection}_amount`] = [];
     });
   },
 
