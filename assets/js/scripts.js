@@ -434,7 +434,7 @@ $('.menu-hidden .collection-collect-all').on('click', function (e) {
 
   $.each(getMarkers, function (key, value) {
     if (value.subdata) {
-      if (/_\d+/.test(value.text))
+      if (value.text.endsWith('_1') || !value.text.match('[0-9]$'))
         Inventory.changeMarkerAmount(value.subdata, 1);
     }
     else
