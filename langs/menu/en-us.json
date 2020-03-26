@@ -236,6 +236,9 @@
 	"menu.reset_inventory_daily": "Reset inventory daily",
 	"menu.soft_flowers_inventory_stack": "Flowers soft stack size",
 	"menu.reload_map": "Reload the map now",
+	"menu.disable_collected_items": "Disable collected",
+	"menu.collection_collect_all": "Collect all",
+	"menu.enable_additional_inventory_options": "Enable advanced inventory options",
 	"help.default": "Hover over or long-press (mobile) any setting to get information about it.",
 	"help.clear_custom_routes": "Clears all the custom routes currently on the map.",
 	"help.clear_inventory": "Clears all the items in the inventory.",
@@ -321,5 +324,8 @@
 	"help.collection_collected": "Amount of items collected for this collection.",
 	"help.reset_inventory_daily": "Toggles whether the inventory should be reset every 24 hours.",
 	"help.soft_flowers_inventory_stack": "Allows you to set \"soft\" limit of flowers in your inventory. When the limit is reached, flowers will be disabled from the map and in menu, but you can still add more flowers up to main stack size limit.",
-	"help.reload_map": "Allows you to reload the map if anything is wrong with the website."
+	"help.reload_map": "Allows you to reload the map if anything is wrong with the website.",
+	"help.disable_collected_items": "Allows you to disable all items which you already have in your inventory.",
+	"help.collection_collect_all": "Allows you to add every item from this category to your inventory.",
+	"help.enable_additional_inventory_options": "Allows you to turn on more options to manage your inventory."
 }

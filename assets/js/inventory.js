@@ -15,13 +15,15 @@ var Inventory = {
     $('#soft-flowers-inventory-stack').val(InventorySettings.flowersSoftStackSize);
     $('#reset-collection-updates-inventory').prop("checked", InventorySettings.resetButtonUpdatesInventory);
     $('#reset-inventory-daily').prop("checked", InventorySettings.resetInventoryDaily);
+    $('#enable-additional-inventory-options').prop("checked", InventorySettings.enableAdvancedInventoryOptions);
+
 
     // disable dropdown menu if highlight low amount items is disabled:
     $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);
     $('#highlight_low_amount_items').on('change', function () {
       $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);
     });
-
+    $('.collection-value-bottom').toggleClass('hidden', !InventorySettings.enableAdvancedInventoryOptions);
   },
 
   load: function () {

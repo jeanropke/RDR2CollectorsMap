@@ -609,6 +609,14 @@ select,
     justify-content: space-around;
 }
 
+.side-menu .collection-value-bottom {
+    text-align: center;
+    border-bottom: 1px white solid;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
 .side-menu .weekly-item-listings .collection-value {
     margin-bottom: 6px;
 }
@@ -618,6 +626,8 @@ select,
 }
 
 .side-menu .collection-sell,
+.disable-collected-items,
+.collection-collect-all,
 .collection-reset {
     cursor: pointer;
     user-select: none;

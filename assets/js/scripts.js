@@ -427,6 +427,21 @@ $('.menu-hidden .collection-sell').on('click', function (e) {
   });
 });
 
+// collect all (add every item to the inventory from category)
+$('.menu-hidden .collection-collect-all').on('click', function (e) {
+  var collectionType = $(this).parent().parent().data('type');
+  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+
+  $.each(getMarkers, function (key, value) {
+    if (value.subdata) {
+      if (/_\d+/.test(value.text))
+        Inventory.changeMarkerAmount(value.subdata, 1);
+    }
+    else
+      Inventory.changeMarkerAmount(value.text, 1);
+  });
+});
+
 $('.weekly-item-listings .collection-sell').on('click', function (e) {
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
 
@@ -449,6 +464,20 @@ $('.collection-reset').on('click', function (e) {
   });
 
   $(this).removeClass('disabled');
+});
+
+// disable only collected items (one or more in the inventory)
+$('.disable-collected-items').on('click', function (e) {
+  var collectionType = $(this).parent().parent().data('type');
+  var getMarkers = MapBase.markers.filter(_m => _m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+
+  $.each(getMarkers, function (key, marker) {
+    if (marker.amount > 0) {
+      var textMenu = marker.text.replace(/egg_|flower_(\w+)_\d/, '$1');
+      $(`[data-type=${textMenu}]`).addClass('disabled');
+      MapBase.removeItemFromMap(Cycles.categories[marker.category], marker.text, marker.subdata, marker.category, true);
+    };
+  });
 });
 
 //Remove item from map when using the menu
@@ -576,6 +605,7 @@ $('#enable-inventory').on("change", function () {
 
   $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(InventorySettings.isEnabled);
   $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
+  $('.collection-value-bottom').toggleClass('hidden', !InventorySettings.isEnabled);
 });
 
 $('#enable-inventory-popups').on("change", function () {
@@ -586,6 +616,11 @@ $('#enable-inventory-popups').on("change", function () {
 
 $('#reset-inventory-daily').on("change", function () {
   InventorySettings.resetInventoryDaily = $("#reset-inventory-daily").prop('checked');
+});
+
+$('#enable-additional-inventory-options').on("change", function () {
+  InventorySettings.enableAdvancedInventoryOptions = $("#enable-additional-inventory-options").prop('checked');
+  $('.collection-value-bottom').toggleClass('hidden', !InventorySettings.enableAdvancedInventoryOptions);
 });
 
 $('#highlight_low_amount_items').on("change", function () {
