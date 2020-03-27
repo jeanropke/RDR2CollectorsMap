@@ -211,7 +211,7 @@ var MapBase = {
     uniqueSearchMarkers = MapBase.markers;
 
     // Reset markers daily.
-    var date = new Date().toISOString().split('T')[0];
+    var date = new Date().toISOUTCDateString();
 
     if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
       var markers = MapBase.markers;
@@ -294,10 +294,9 @@ var MapBase = {
       uniqueSearchMarkers = [];
       $.each(searchTerms, function (id, term) {
 
-        searchMarkers = searchMarkers.concat(MapBase.markers.filter(function (_marker) {
-          if (_marker.title != null)
-            return _marker.title.toLowerCase().includes(term.toLowerCase());
-        }));
+        searchMarkers = searchMarkers.concat(MapBase.markers.filter(_marker =>
+            Language.get(_marker.itemTranslationKey).toLowerCase().includes(term.toLowerCase())
+        ));
 
         $.each(searchMarkers, function (i, el) {
           if ($.inArray(el, uniqueSearchMarkers) === -1) uniqueSearchMarkers.push(el);
@@ -487,11 +486,7 @@ var MapBase = {
   },
 
   getIconColor: function (marker) {
-    var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
-      return weekly.item === (marker.text).replace(/_\d+/, "");
-    }).length > 0;
-
-    if (isWeekly) {
+    if (marker.isWeekly) {
       return "green";
     }
 
@@ -587,53 +582,6 @@ var MapBase = {
     }
   },
 
-  updateMarkerContent: function (marker) {
-    var popupContent = '';
-
-    var warningText = Cycles.isSameAsYesterday(marker.category) ? `<span class="marker-warning-wrapper"><div><img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert"></div><p>${Language.get("map.same_cycle_yesterday")}</p></span>` : '';
-
-    if (marker.day == Cycles.unknownCycleNumber)
-      warningText = `<span class="marker-warning-wrapper"><div><img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert"></div><p>${Language.get("map.unknown_cycle_description").replace('{GitHub}', '<a href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">GitHub</a>').replace('{Discord}', '<a href="https://discord.gg/WWru8cP" target="_blank">Discord</a>')}</p></span>`;
-
-    if (marker.category != 'random') {
-      var weeklyText = marker.weeklyCollection != null ? Language.get("weekly.desc").replace('{collection}', Language.get('weekly.desc.' + marker.weeklyCollection)) : '';
-      popupContent += (marker.tool == '-1' ? Language.get('map.item.unable') : '') + ' ' + marker.description + ' ' + weeklyText;
-    } else {
-      // Todo: Maybe make this link translatable on the Wiki?
-      popupContent += Language.get('map.random_spot.desc').replace('{link}', `<a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/Random-Item-Possible-Loot" target="_blank">${Language.get('map.random_spot.link')}</a>`);
-    }
-
-    var shareText = `<a href="javascript:void(0)" onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${marker.text}')">${Language.get('map.copy_link')}</a>`;
-    var videoText = marker.video != null ? ' | <a href="' + marker.video + '" target="_blank">' + Language.get('map.video') + '</a>' : '';
-    var importantItem = ((marker.subdata != 'agarita' && marker.subdata != 'blood_flower') ? ` | <a href="javascript:void(0)" onclick="MapBase.highlightImportantItem('${marker.text || marker.subdata}', '${marker.category}')">${Language.get('map.mark_important')}</a>` : '');
-
-    var linksElement = $('<p>').addClass('marker-popup-links').append(shareText).append(videoText).append(importantItem);
-    var debugDisplayLatLng = $('<small>').text(`Latitude: ${marker.lat} / Longitude: ${marker.lng}`);
-
-    var inventoryCount = $(`<small data-item="${marker.text}">${marker.amount}</small>`);
-    inventoryCount.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
-
-    var buttons = marker.category == 'random' ? '' : `
-      <div class="marker-popup-buttons">
-        <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', -1)">↓</button>
-        ${inventoryCount.prop('outerHTML')}
-        <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${marker.subdata || marker.text}', 1)">↑</button>
-      </div>
-    `;
-
-    return `<h1>${marker.title} - ${Language.get("menu.day")} ${(marker.day != Cycles.unknownCycleNumber ? marker.day : Language.get('map.unknown_cycle'))}</h1>
-        ${warningText}
-        <span class="marker-content-wrapper">
-        <div>${MapBase.getToolIcon(marker.tool)}</div>
-        <p>${popupContent}</p>
-        </span>
-        ${linksElement.prop('outerHTML')}
-        ${Settings.isDebugEnabled ? debugDisplayLatLng.prop('outerHTML') : ''}
-        ${(InventorySettings.isEnabled && InventorySettings.isPopupsEnabled) ? buttons : ''}
-        <button type="button" class="btn btn-info remove-button" onclick="MapBase.removeItemFromMap('${marker.day || ''}', '${marker.text || ''}', '${marker.subdata || ''}', '${marker.category || ''}')" data-item="${marker.text}">${Language.get("map.remove_add")}</button>
-        `;
-  },
-
   addMarkerOnMap: function (marker, opacity = 1) {
     marker.isVisible = false;
 
@@ -708,37 +656,10 @@ var MapBase = {
       })
     });
 
-    var isWeekly = weeklySetData.sets[weeklySetData.current].filter(weekly => {
-      return weekly.item === (marker.text).replace(/_\d+/, "");
-    }).length > 0;
-
     tempMarker.id = marker.text;
-    marker.weeklyCollection = isWeekly ? weeklySetData.current : null;
-
-    if (marker.category == 'random')
-      marker.title = `${Language.get("random_item.name")} #${marker.text.split('_').pop()}`;
-    else if (marker.category == 'american_flowers')
-      marker.title = `${Language.get(`flower_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`;
-    else if (marker.category == 'bird_eggs' && (marker.subdata == 'eagle' || marker.subdata == 'hawk'))
-      marker.title = `${Language.get(`egg_${marker.subdata}.name`)} #${marker.text.split('_').pop()}`;
-    else
-      marker.title = Language.get(`${marker.text}.name`);
-
-    if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
-      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.flower_type.night_only');
-    else if (marker.subdata == 'creek_plum')
-      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.flower_type.bush');
-    else if (marker.subdata == 'spoonbill' || marker.subdata == 'heron' || marker.subdata == 'eagle' || marker.subdata == 'hawk' || marker.subdata == 'egret')
-      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.tree');
-    else if (marker.subdata == 'vulture')
-      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.stump');
-    else if (marker.subdata == 'duck' || marker.subdata == 'goose' || marker.subdata == 'loon')
-      marker.description = Language.get(`${marker.text}_${marker.day}.desc`) + ' ' + Language.get('map.egg_type.ground');
-    else
-      marker.description = Language.get(`${marker.text}_${marker.day}.desc`);
 
     if (Settings.isPopupsEnabled) {
-      tempMarker.bindPopup(MapBase.updateMarkerContent(marker), { minWidth: 300, maxWidth: 400 });
+      tempMarker.bindPopup(marker.popupContent(), { minWidth: 300, maxWidth: 400 });
     }
 
     tempMarker.on("click", function (e) {
