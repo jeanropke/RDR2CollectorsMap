@@ -192,8 +192,8 @@
 	"menu.marker_size.100": "100%",
 	"menu.marker_size.125": "125%",
 	"menu.marker_size.150": "150%",
-	"menu.marker_size.175": "",
-	"menu.marker_size.200": "",
+	"menu.marker_size.175": "175%",
+	"menu.marker_size.200": "200%",
 	"menu.toggle_debug": "Włącz narzędzia debugowania",
 	"map.random_spot.desc": "To miejsce zapewnia losowy przedmot, więcej informacji tutaj: {link}.",
 	"map.random_spot.link": "Tabela losowych przedmiotów",
@@ -234,8 +234,8 @@
 	"menu.custom_marker_dark_red": "Ciemnoczerwony",
 	"menu.custom_marker_dark_blue": "Ciemnoniebieski",
 	"menu.reset_inventory_daily": "Resetuj ekwipunek co 24 godziny",
-	"menu.soft_flowers_inventory_stack": "",
-	"menu.reload_map": "",
+	"menu.soft_flowers_inventory_stack": "Łagodny rozmiar stosu kwiatów",
+	"menu.reload_map": "Przeładuj mapę",
 	"help.default": "Najedź lub przytrzymaj opcję menu na urz. mobilnym, aby wyświetlić podpowiedzi.",
 	"help.clear_custom_routes": "Usuwa wszystkie własne trasy na mapie.",
 	"help.clear_inventory": "Ustawia ilość wszystkich przedmiotów w ekwipunku na 0.",
@@ -320,6 +320,6 @@
 	"help.highlight_style": "Pozwala wybrać styl oznaczenia najmniejszej ilości przedmiotów (statyczny lub animowane podświetlenie, oraz kolor znaczników współgrający z wybranym trybem podświetlenia).",
 	"help.collection_collected": "Ilość przedmiotów zebranych z tej kolekcji.",
 	"help.reset_inventory_daily": "Włącza/ wyłącza resetowanie ekwipunku co 24 godziny.",
-	"help.soft_flowers_inventory_stack": "",
-	"help.reload_map": ""
+	"help.soft_flowers_inventory_stack": "Pozwala ustawić \"miękki\" limit kwiatów w twoim ekwipunku. Kiedy limit zostanie osiągnięty, kwiaty zostaną wyłączone z mapy i w menu, ale nadal możesz dodać więcej kwiatów do głównego limitu wielkości stosu.",
+	"help.reload_map": "Pozwala odświeżyć mapę, jeśli cokolwiek jest nie tak ze stroną internetową."
 }
