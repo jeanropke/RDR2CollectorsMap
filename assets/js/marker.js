@@ -14,7 +14,7 @@ class Marker {
     this.video = video;
     this.height = height;
     this.isVisible = enabledCategories.includes(this.category);
-    this.amount = Inventory.items[this.itemID] || 0;
+    this.amount = Inventory.items[this.itemId] || 0;
     this.isCollected = MapBase.collectedItems[this.text] || false;
     this.canCollect = InventorySettings.isEnabled ? (this.amount < InventorySettings.stackSize && !this.isCollected) : !this.isCollected;
     this.descriptionKey = (() => {
