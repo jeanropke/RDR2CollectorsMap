@@ -411,34 +411,27 @@ $('.submenu-only').on('click', function (e) {
   $(this).children('.open-submenu').toggleClass('rotate');
 });
 
-//Sell collections on menu
-$('.menu-hidden .collection-sell').on('click', function (e) {
+// Sell collections on menu && collect all (add every item to the inventory from category)
+$('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('click', function (event) {
   var collectionType = $(this).parent().parent().data('type');
   var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+
+  var changeAmount = 0;
+  var target = $(event.target);
+  if (target.is($(".menu-hidden .collection-sell")))
+    changeAmount = -1;
+
+  else if (target.is($(".menu-hidden .collection-collect-all")))
+    changeAmount = 1;
 
   $.each(getMarkers, function (key, value) {
     if (value.subdata) {
       if (value.text.endsWith('_1') || !value.text.match('[0-9]$'))
-        Inventory.changeMarkerAmount(value.subdata, -1);
+        Inventory.changeMarkerAmount(value.subdata, changeAmount);
     }
     else {
-      Inventory.changeMarkerAmount(value.text, -1);
+      Inventory.changeMarkerAmount(value.text, changeAmount);
     }
-  });
-});
-
-// collect all (add every item to the inventory from category)
-$('.menu-hidden .collection-collect-all').on('click', function (e) {
-  var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
-
-  $.each(getMarkers, function (key, value) {
-    if (value.subdata) {
-      if (value.text.endsWith('_1') || !value.text.match('[0-9]$'))
-        Inventory.changeMarkerAmount(value.subdata, 1);
-    }
-    else
-      Inventory.changeMarkerAmount(value.text, 1);
   });
 });
 
