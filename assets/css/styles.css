@@ -1115,11 +1115,12 @@ a.no-style:visited {
 .leaflet-popup-content {
     font-size: 14px;
     margin: 8px;
+    display: inline-grid;
 }
 
-.leaflet-popup-content > div {
-    width: 100%;
-    display: inline-grid;
+.leaflet-popup-content > div.handover-wrapper-with-no-influence {
+    display: inherit; /* fallback for Edge18 */
+    display: contents;
 }
 
 .leaflet-popup-content ::-webkit-scrollbar-thumb {

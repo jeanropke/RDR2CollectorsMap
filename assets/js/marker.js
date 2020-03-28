@@ -53,7 +53,7 @@ class Marker {
   popupContent() {
     // cycle names are strings or numbers and are called “day”, “number” or …
     const unknownCycle = this.day == Cycles.unknownCycleNumber;
-    const snippet = $(`<div>
+    const snippet = $(`<div class="handover-wrapper-with-no-influence">
       <h1>
         <span data-text="${this.itemTranslationKey}"></span>
         ${this.itemNumberStr} -
