@@ -85,7 +85,7 @@
             { "text": "arrowhead_agate", "height": "0", "tool": "2", "lat": "-71.1323", "lng": "79.4947" }
         ]
     },
-    "bird_eggs": {
+    "egg": {
         "1": [
             { "text": "egg_spoonbill", "subdata": "spoonbill", "height": "0", "tool": "0", "lat": "-74.3941", "lng": "154.8030", "video": "https://www.youtube.com/watch?v=zibVEhjsFg8&t=45s" },
             { "text": "egg_heron", "subdata": "heron", "height": "0", "tool": "0", "lat": "-79.0991", "lng": "138.0047", "video": "https://www.youtube.com/watch?v=zibVEhjsFg8&t=88s" },
@@ -269,7 +269,7 @@
             { "text": "coin_penny", "height": "0", "tool": "2", "lat": "-71.9659", "lng": "146.6802" }
         ]
     },
-    "family_heirlooms": {
+    "heirlooms": {
         "1": [
             { "text": "heirlooms_jade_hairpin", "height": "0", "tool": "0", "lat": "-83.5225", "lng": "96.7652", "video": "https://www.youtube.com/watch?v=I8ykdDAooOI&t=45s" },
             { "text": "heirlooms_cherrywood_comb", "height": "0", "tool": "0", "lat": "-50.4885", "lng": "123.3074", "video": "https://www.youtube.com/watch?v=I8ykdDAooOI&t=74s" },
@@ -374,7 +374,7 @@
             { "text": "heirlooms_new_guinea_rosewood", "height": "0", "tool": "0", "lat": "-45.0126", "lng": "142.0964" }
         ]
     },
-    "antique_bottles": {
+    "bottle": {
         "1": [
             { "text": "bottle_tennesee_whiskey", "height": "0", "tool": "0", "lat": "-48.2976", "lng": "114.7679", "video": "https://www.youtube.com/watch?v=qfP3HwcG9Mc&t=45s" },
             { "text": "bottle_irish_whiskey", "height": "0", "tool": "0", "lat": "-81.7734", "lng": "153.0368", "video": "https://www.youtube.com/watch?v=qfP3HwcG9Mc&t=73s" },
@@ -442,7 +442,7 @@
             { "text": "bottle_london_dry_gin", "height": "0", "tool": "0", "lat": "-110.2699", "lng": "56.2219" }
         ]
     },
-    "card_cups": {
+    "cups": {
         "1": [
             { "text": "cups_ace", "height": "0", "tool": "0", "lat": "-26.3921", "lng": "90.5991", "video": "https://www.youtube.com/watch?v=PBpwf3ILgkM&t=45s" },
             { "text": "cups_two", "height": "-1", "tool": "0", "lat": "-94.8970", "lng": "126.5156", "video": "https://www.youtube.com/watch?v=PBpwf3ILgkM&t=78s" },
@@ -540,7 +540,7 @@
             { "text": "cups_king", "height": "0", "tool": "0", "lat": "-29.5848", "lng": "157.7144" }
         ]
     },
-    "card_pentacles": {
+    "pentacles": {
         "1": [
             { "text": "pentacles_ace", "height": "0", "tool": "0", "lat": "-113.0364", "lng": "20.3944", "video": "https://www.youtube.com/watch?v=NEzk9QyX8D4&t=45s" },
             { "text": "pentacles_two", "height": "0", "tool": "0", "lat": "-104.1132", "lng": "55.5686", "video": "https://www.youtube.com/watch?v=NEzk9QyX8D4&t=80s" },
@@ -639,7 +639,7 @@
             { "text": "pentacles_king", "height": "0", "tool": "0", "lat": "-48.2192", "lng": "114.3866" }
         ]
     },
-    "card_swords": {
+    "swords": {
         "1": [
             { "text": "swords_ace", "height": "0", "tool": "0", "lat": "-68.7226", "lng": "106.2906", "video": "https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=45s" },
             { "text": "swords_two", "height": "0", "tool": "0", "lat": "-85.6146", "lng": "97.6871", "video": "https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=92s" },
@@ -737,7 +737,7 @@
             { "text": "swords_king", "height": "-1", "tool": "0", "lat": "-41.0319", "lng": "147.1856" }
         ]
     },
-    "card_wands": {
+    "wands": {
         "1": [
             { "text": "wands_ace", "height": "0", "tool": "0", "lat": "-91.0681", "lng": "127.1561", "video": "https://www.youtube.com/watch?v=w5uJvlUcal0&t=45s" },
             { "text": "wands_two", "height": "0", "tool": "0", "lat": "-81.3631", "lng": "133.4033", "video": "https://www.youtube.com/watch?v=w5uJvlUcal0&t=79s" },
@@ -835,7 +835,7 @@
             { "text": "wands_king", "height": "0", "tool": "0", "lat": "-54.3137", "lng": "157.3863" }
         ]
     },
-    "lost_ring": {
+    "ring": {
         "1": [
             { "text": "ring_harland_coral", "height": "0", "tool": "2", "lat": "-52.4608", "lng": "151.1713", "video": "https://www.youtube.com/watch?v=6X_nrwO39aU&t=45s" },
             { "text": "ring_magnate_turquoise", "height": "0", "tool": "0", "lat": "-92.3819", "lng": "140.7718", "video": "https://www.youtube.com/watch?v=6X_nrwO39aU&t=80s" },
@@ -915,7 +915,7 @@
             { "text": "ring_thorburn_turquoise", "height": "0", "tool": "2", "lat": "-36.4884", "lng": "119.5731" }
         ]
     },
-    "lost_earrings": {
+    "earring": {
         "1": [
             { "text": "earring_ursula_citrine", "height": "0", "tool": "1", "lat": "-45.1987", "lng": "122.9572", "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=45s" },
             { "text": "earring_royal_victoria", "height": "0", "tool": "2", "lat": "-62.4224", "lng": "94.9543", "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=89s" },
@@ -995,7 +995,7 @@
 			{ "text": "earring_emmeline_coral", "height": "0", "tool": "2", "lat": "-70.3017", "lng": "68.2671" }
         ]
     },
-    "lost_bracelet": {
+    "bracelet": {
         "1": [
             { "text": "bracelet_greco_sapphire", "height": "0", "tool": "0", "lat": "-55.4436", "lng": "101.7513", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=45s" },
             { "text": "bracelet_abello_ruby_bangle", "height": "0", "tool": "0", "lat": "-49.9068", "lng": "148.2672", "video": "https://www.youtube.com/watch?v=rapMBFCyqnA&t=71s" },
@@ -1057,7 +1057,7 @@
             { "text": "bracelet_hajnal_garnet_bangle", "height": "0", "tool": "2", "lat": "-55.8723", "lng": "108.7367" }
         ]
     },
-    "lost_necklaces": {
+    "necklace": {
         "1": [
             { "text": "necklace_blakely_miniatue", "height": "0", "tool": "0", "lat": "-50.5077", "lng": "93.1624", "video": "https://www.youtube.com/watch?v=mzkwrsCqNTc&t=45s" },
             { "text": "necklace_richelieu_amethyst", "height": "0", "tool": "0", "lat": "-84.7187", "lng": "85.8689", "video": "https://www.youtube.com/watch?v=mzkwrsCqNTc&t=88s" },
@@ -1127,7 +1127,7 @@
             { "text": "necklace_tuamotu_pearl", "height": "0", "tool": "2", "lat": "-79.4889", "lng": "127.8447" }
         ]
     },
-    "american_flowers": {
+    "flower": {
         "1": [
             { "text": "flower_texas_bluebonnet_1", "subdata": "texas_bluebonnet", "height": "0", "tool": "0", "lat": "-118.5692", "lng": "38.7771" },
             { "text": "flower_texas_bluebonnet_2", "subdata": "texas_bluebonnet", "height": "0", "tool": "0", "lat": "-115.7012", "lng": "43.8227" },

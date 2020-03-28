@@ -538,19 +538,19 @@ var MapBase = {
   getCategoryIconColor: function (markerCategory) {
     // object with category colors for fast lookup
     var categoryColors = {
-      american_flowers: "darkred",
-      card_cups: "blue",
-      card_swords: "blue",
-      card_wands: "blue",
-      card_pentacles: "blue",
-      lost_bracelet: "beige",
-      lost_necklaces: "orange",
-      lost_ring: "orange",
-      lost_earrings: "orange",
-      antique_bottles: "cadetblue",
-      bird_eggs: "white",
+      flower: "darkred",
+      cups: "blue",
+      swords: "blue",
+      wands: "blue",
+      pentacles: "blue",
+      bracelet: "beige",
+      necklace: "orange",
+      ring: "orange",
+      earring: "orange",
+      bottle: "cadetblue",
+      egg: "white",
       arrowhead: "darkpurple",
-      family_heirlooms: "purple",
+      heirlooms: "purple",
       coin: "lightred"
     };
     return categoryColors[markerCategory] || "lightred";
@@ -687,7 +687,7 @@ var MapBase = {
   },
 
   highlightImportantItem: function (text, category = '') {
-    if (category == 'american_flowers' || category == 'bird_eggs')
+    if (category == 'flower' || category == 'egg')
       text = text.replace(/(_\d+)/, '');
 
     var textMenu = text.replace(/egg_|flower_/, '');

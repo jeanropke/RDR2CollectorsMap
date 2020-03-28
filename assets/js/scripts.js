@@ -10,8 +10,8 @@ var searchTerms = [];
 var uniqueSearchMarkers = [];
 
 var categories = [
-  'american_flowers', 'antique_bottles', 'arrowhead', 'bird_eggs', 'coin', 'family_heirlooms', 'lost_bracelet',
-  'lost_earrings', 'lost_necklaces', 'lost_ring', 'card_cups', 'card_pentacles', 'card_swords', 'card_wands', 'nazar',
+  'flower', 'bottle', 'arrowhead', 'egg', 'coin', 'heirlooms', 'bracelet',
+  'earring', 'necklace', 'ring', 'cups', 'pentacles', 'swords', 'wands', 'nazar',
   'fast_travel', 'treasure', 'random', 'user_pins'
 ];
 

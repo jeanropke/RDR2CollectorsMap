@@ -13,7 +13,7 @@ var newList = {};
 
 Object.keys(oldList).forEach(category => {
     if (category == "random") return;
-    if (category == "american_flowers") return;
+    if (category == "flower") return;
 
     Object.keys(oldList[category]).forEach(cycle => {
         console.log(category, cycle);
