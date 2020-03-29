@@ -289,7 +289,9 @@ $("#reset-markers").on("change", function () {
 $("#clear-markers").on("click", function () {
   $.each(MapBase.markers, function (key, marker) {
     marker.isCollected = false;
-    marker.canCollect = marker.amount < InventorySettings.stackSize;
+    marker.canCollect = ((marker.category !== 'flower' && marker.amount < InventorySettings.stackSize) ||
+      // Flowers soft stack size
+      (marker.category === 'flower' && marker.amount < InventorySettings.flowersSoftStackSize));
   });
 
   MapBase.saveCollectedItems();
