@@ -75,10 +75,10 @@ Menu.refreshMenu = function () {
     var collectibleText = null;
 
     switch (marker.category) {
-      case 'american_flowers':
+      case 'flower':
         collectibleKey = `flower_${marker.subdata}`;
         break;
-      case 'bird_eggs':
+      case 'egg':
         collectibleKey = `egg_${marker.subdata}`;
         break;
       default:
@@ -122,10 +122,10 @@ Menu.refreshMenu = function () {
 
       if (marker.subdata !== 'agarita' && marker.subdata !== 'blood_flower') {
         var prefix = '';
-        if (marker.category === 'american_flowers')
+        if (marker.category === 'flower')
           prefix = 'flower_';
 
-        else if (marker.category === 'bird_eggs')
+        else if (marker.category === 'egg')
           prefix = 'egg_';
         MapBase.highlightImportantItem(prefix + collectibleText, marker.category);
       }

@@ -19,7 +19,7 @@ Object.keys(items).forEach((catKey, catValue) => {
     }
 
     Object.keys(items[catKey]).forEach((itemKey, itemValue) => {
-        if (catKey == 'bird_eggs' && items[catKey][itemKey].length == 12) {
+        if (catKey == 'egg' && items[catKey][itemKey].length == 12) {
             for (var dayIndex = 0; dayIndex < 6; dayIndex++) {
                 var curItem1 = items[catKey][itemKey][0 + (dayIndex * 2)];
                 var curItem2 = items[catKey][itemKey][1 + (dayIndex * 2)];
@@ -42,7 +42,7 @@ Object.keys(items).forEach((catKey, catValue) => {
 
                 newItems[catKey][correctDay(catKey, dayIndex + 1)].push(itemFormatted2);
             }
-        } else if (catKey == 'american_flowers') {
+        } else if (catKey == 'flower') {
             for (var dayIndex = 0; dayIndex < 6; dayIndex++) {
                 if (items[catKey][itemKey].length == 18) {
                     var curItem1 = items[catKey][itemKey][0 + (dayIndex * 3)];
@@ -266,19 +266,19 @@ function correctDay(category, day) {
                 correctedDay = 6;
             }
 
-            if (category == 'antique_bottles') {
+            if (category == 'bottle') {
                 correctedDay = 6;
             }
             
-            if (category == 'lost_bracelet' || category == 'lost_earrings' || category == 'lost_necklaces' || category == 'lost_ring') {
+            if (category == 'bracelet' || category == 'earring' || category == 'necklace' || category == 'ring') {
                 correctedDay = 6;
             }
 
-            if (category == 'bird_eggs') {
+            if (category == 'egg') {
                 correctedDay = 6;
             }
 
-            if (category == 'family_heirlooms') {
+            if (category == 'heirlooms') {
                 correctedDay = 6;
             }
             break;
@@ -289,7 +289,7 @@ function correctDay(category, day) {
                 correctedDay = 4;
             }
             
-            if (category == 'antique_bottles') {
+            if (category == 'bottle') {
                 correctedDay = 4;
             }
 
@@ -297,7 +297,7 @@ function correctDay(category, day) {
                 correctedDay = 6;
             }
 
-            if (category == 'lost_bracelet' || category == 'lost_earrings' || category == 'lost_necklaces' || category == 'lost_ring') {
+            if (category == 'bracelet' || category == 'earring' || category == 'necklace' || category == 'ring') {
                 correctedDay = 4;
             }
 
@@ -309,15 +309,15 @@ function correctDay(category, day) {
                 correctedDay = 5;
             }
 
-            if (category == 'antique_bottles') {
+            if (category == 'bottle') {
                 correctedDay = 5;
             }
 
-            if (category == 'bird_eggs') {
+            if (category == 'egg') {
                 correctedDay = 4;
             }
 
-            if (category == 'family_heirlooms') {
+            if (category == 'heirlooms') {
                 correctedDay = 4;
             }
 
@@ -325,7 +325,7 @@ function correctDay(category, day) {
                 correctedDay = 5;
             }
 
-            if (category == 'lost_bracelet' || category == 'lost_earrings' || category == 'lost_necklaces' || category == 'lost_ring') {
+            if (category == 'bracelet' || category == 'earring' || category == 'necklace' || category == 'ring') {
                 correctedDay = 5;
             }
 

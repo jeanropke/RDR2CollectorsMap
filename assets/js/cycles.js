@@ -45,19 +45,19 @@ var Cycles = {
     const _data = Cycles.data[cycleIndex];
     Cycles.yesterday = Cycles.data[cycleIndex - 1];
     Cycles.selectedDay = selectedDay;
-    Cycles.categories.american_flowers = _data.american_flowers;
-    Cycles.categories.card_cups = _data.tarot_cards;
-    Cycles.categories.card_pentacles = _data.tarot_cards;
-    Cycles.categories.card_swords = _data.tarot_cards;
-    Cycles.categories.card_wands = _data.tarot_cards;
-    Cycles.categories.lost_bracelet = _data.lost_jewelry;
-    Cycles.categories.lost_earrings = _data.lost_jewelry;
-    Cycles.categories.lost_necklaces = _data.lost_jewelry;
-    Cycles.categories.lost_ring = _data.lost_jewelry;
-    Cycles.categories.antique_bottles = _data.antique_bottles;
-    Cycles.categories.bird_eggs = _data.bird_eggs;
+    Cycles.categories.flower = _data.flower;
+    Cycles.categories.cups = _data.tarot_cards;
+    Cycles.categories.pentacles = _data.tarot_cards;
+    Cycles.categories.swords = _data.tarot_cards;
+    Cycles.categories.wands = _data.tarot_cards;
+    Cycles.categories.bracelet = _data.lost_jewelry;
+    Cycles.categories.earring = _data.lost_jewelry;
+    Cycles.categories.necklace = _data.lost_jewelry;
+    Cycles.categories.ring = _data.lost_jewelry;
+    Cycles.categories.bottle = _data.bottle;
+    Cycles.categories.egg = _data.egg;
     Cycles.categories.arrowhead = _data.arrowhead;
-    Cycles.categories.family_heirlooms = _data.family_heirlooms;
+    Cycles.categories.heirlooms = _data.heirlooms;
     Cycles.categories.coin = _data.coin;
     Cycles.categories.random = _data.random;
     Cycles.setCustomCycles();
@@ -78,19 +78,19 @@ var Cycles = {
           console.warn('Cycles parameters invalid');
         }
         else {
-          Cycles.categories.american_flowers = _cycles[0];
-          Cycles.categories.card_cups,
-          Cycles.categories.card_pentacles,
-          Cycles.categories.card_swords,
-          Cycles.categories.card_wands = _cycles[1];
-          Cycles.categories.lost_bracelet,
-          Cycles.categories.lost_earrings,
-          Cycles.categories.lost_necklaces,
-          Cycles.categories.lost_ring = _cycles[2];
-          Cycles.categories.antique_bottles = _cycles[3];
-          Cycles.categories.bird_eggs = _cycles[4];
+          Cycles.categories.flower = _cycles[0];
+          Cycles.categories.cups,
+          Cycles.categories.pentacles,
+          Cycles.categories.swords,
+          Cycles.categories.wands = _cycles[1];
+          Cycles.categories.bracelet,
+          Cycles.categories.earring,
+          Cycles.categories.necklace,
+          Cycles.categories.ring = _cycles[2];
+          Cycles.categories.bottle = _cycles[3];
+          Cycles.categories.egg = _cycles[4];
           Cycles.categories.arrowhead = _cycles[5];
-          Cycles.categories.family_heirlooms = _cycles[6];
+          Cycles.categories.heirlooms = _cycles[6];
           Cycles.categories.coin = _cycles[7];
           Cycles.categories.random = _cycles[8];
         }
@@ -157,15 +157,15 @@ var Cycles = {
 
   getCyclesMainCategory: function (category) {
     switch (category) {
-      case "card_cups":
-      case "card_pentacles":
-      case "card_swords":
-      case "card_wands":
+      case "cups":
+      case "pentacles":
+      case "swords":
+      case "wands":
         return "tarot_cards";
-      case "lost_bracelet":
-      case "lost_earrings":
-      case "lost_necklaces":
-      case "lost_ring":
+      case "bracelet":
+      case "earring":
+      case "necklace":
+      case "ring":
         return "lost_jewelry";
       default:
         return category;
@@ -178,11 +178,11 @@ var Cycles = {
     //'old cycle': 'new cycle'
     switch (category) {
       case "arrowhead":
-      case "antique_bottles":
-      case "lost_bracelet":
-      case "lost_earrings":
-      case "lost_necklaces":
-      case "lost_ring":
+      case "bottle":
+      case "bracelet":
+      case "earring":
+      case "necklace":
+      case "ring":
         _cycles = {
           '2': 1,
           '3': 2,
@@ -193,8 +193,8 @@ var Cycles = {
         };
         break;
 
-      case "bird_eggs":
-      case "family_heirlooms":
+      case "egg":
+      case "heirlooms":
         _cycles = {
           '2': 1,
           '3': 2,
@@ -215,11 +215,11 @@ var Cycles = {
           '5': 6
         };
         break;
-      case "card_cups":
-      case "card_pentacles":
-      case "card_swords":
-      case "card_wands":
-      case "american_flowers":
+      case "cups":
+      case "pentacles":
+      case "swords":
+      case "wands":
+      case "flower":
         _cycles = {
           '2': 1,
           '3': 2,
