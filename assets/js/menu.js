@@ -47,10 +47,10 @@ Menu.addCycleWarning = function (element, isSameCycle) {
   var hasCycleWarning = $(`${element} .same-cycle-warning-menu`).length > 0;
   var category = $(element);
   if (isSameCycle && !hasCycleWarning) {
-    category.parent().attr('data-help', 'item_category_same_cycle');
+    category.parent().parent().attr('data-help', 'item_category_same_cycle');
     category.append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
   } else if (!isSameCycle && hasCycleWarning) {
-    category.parent().attr('data-help', 'item_category');
+    category.parent().parent().attr('data-help', 'item_category');
     category.children('.same-cycle-warning-menu').remove();
   }
 };
