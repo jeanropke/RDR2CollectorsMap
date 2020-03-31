@@ -90,7 +90,7 @@ Menu.refreshMenu = function () {
     } else {
       collectibleText = marker.text;
     }
-    
+
     var collectibleTitle = Language.get(`${collectibleKey}.name`);
     var collectibleImage = null;
 
@@ -189,7 +189,8 @@ Menu.refreshMenu = function () {
   $('.menu-hidden[data-type]').each(function (key, value) {
     var category = $(this);
 
-    if (category.data('type') == 'treasure') return;
+    if (category.data('type') == 'treasure')
+      return;
 
     // if the cycle is the same as yesterday highlight category in menu;
     var isSameCycle = Cycles.isSameAsYesterday(category.data('type'));
@@ -198,14 +199,19 @@ Menu.refreshMenu = function () {
     Menu.addCycleWarning(element, isSameCycle);
     Menu.refreshCollectionCounter(category.data('type'));
 
-    if (!Settings.sortItemsAlphabetically) return;
-    if (category.data('type').includes('card_')) return;
+    if (Settings.sortItemsAlphabetically) {
+      if (category.data('type').includes('cups') ||
+        category.data('type').includes('swords') ||
+        category.data('type').includes('wands') ||
+        category.data('type').includes('pentacles'))
+        return;
 
-    var children = category.children('.collectible-wrapper');
+      var children = category.children('.collectible-wrapper');
 
-    children.sort(function (a, b) {
-      return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
-    }).appendTo(this);
+      children.sort(function (a, b) {
+        return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
+      }).appendTo(this);
+    }
   });
 
   // Check cycle warning for random spots
