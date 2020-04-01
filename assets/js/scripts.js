@@ -18,10 +18,8 @@ var categories = [
 var categoriesDisabledByDefault =
   JSON.parse(localStorage.getItem("disabled-categories")) || ['random'];
 
-var fastTravelData;
 var enabledCategories = categories.filter(item => !categoriesDisabledByDefault.includes(item));
 
-var weeklySetData = [];
 var categoryButtons = $(".clickable[data-type]");
 
 var debugMarkersArray = [];

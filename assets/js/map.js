@@ -2,6 +2,9 @@
  * Created by Jean on 2019-10-09.
  */
 
+var fastTravelData;
+var weeklySetData = [];
+
 var MapBase = {
   minZoom: 2,
   maxZoom: 7,
