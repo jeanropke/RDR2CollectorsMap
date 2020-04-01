@@ -152,7 +152,7 @@ var Pins = {
     var text = localStorage.getItem("pinned-items");
     var filename = 'pinned-items.txt';
 
-    if (text === null || !text.includes(':') || !text.includes(';')) {
+    if (text === null || !text.includesOneOf(':', ';')) {
       alert(Language.get('alerts.nothing_to_export'));
       return;
     }
@@ -170,7 +170,7 @@ var Pins = {
   },
 
   importPins: function (text) {
-    if (!text.includes(':') || !text.includes(';')) {
+    if (!text.includesOneOf(':', ';')) {
       alert(Language.get('alerts.file_not_valid'));
     }
 

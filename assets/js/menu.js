@@ -200,10 +200,7 @@ Menu.refreshMenu = function () {
     Menu.refreshCollectionCounter(category.data('type'));
 
     if (Settings.sortItemsAlphabetically) {
-      if (category.data('type').includes('cups') ||
-        category.data('type').includes('swords') ||
-        category.data('type').includes('wands') ||
-        category.data('type').includes('pentacles'))
+      if (category.data('type').includesOneOf('cups', 'swords', 'wands', 'pentacles'))
         return;
 
       var children = category.children('.collectible-wrapper');
