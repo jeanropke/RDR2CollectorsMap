@@ -16,6 +16,15 @@ var MadamNazar = {
   currentLocation: null,
   currentDate: null,
 
+  formatDate: function (date) {
+    var pad = (e, s) => (1e3 + e + '').slice(-s);
+    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var _day = date.split('/')[2];
+    var _month = monthNames[date.split('/')[1] - 1];
+    var _year = date.split('/')[0];
+    return `${_month} ${pad(_day, 2)} ${_year}`;
+  },
+
   loadMadamNazar: function () {
     var _nazarParam = getParameterByName('nazar');
     if (_nazarParam < MadamNazar.possibleLocations.length && _nazarParam) {
@@ -26,7 +35,7 @@ var MadamNazar = {
       $.getJSON('https://pepegapi.jeanropke.net/rdo/nazar')
         .done(function (nazar) {
           MadamNazar.currentLocation = nazar.nazar_id - 1;
-          MadamNazar.currentDate = MapBase.formatDate(nazar.date);
+          MadamNazar.currentDate = MadamNazar.formatDate(nazar.date);
           MadamNazar.addMadamNazar();
           console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
         });
@@ -38,8 +47,15 @@ var MadamNazar = {
       return;
 
     if (enabledCategories.includes('nazar')) {
-      var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-      var marker = L.marker([MadamNazar.possibleLocations[MadamNazar.currentLocation].x, MadamNazar.possibleLocations[MadamNazar.currentLocation].y], {
+      var shadow = Settings.isShadowsEnabled ?
+        `<img class="shadow"
+          width="${35 * Settings.markerSize}"
+          height="${16 * Settings.markerSize}"
+          src="./assets/images/markers-shadow.png"
+          alt="Shadow">` :
+        '';
+      const cl = MadamNazar.possibleLocations[MadamNazar.currentLocation];
+      var marker = L.marker([cl.x, cl.y], {
         icon: L.divIcon({
           iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
           iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
@@ -51,9 +67,10 @@ var MadamNazar = {
             `
         })
       });
-
-      marker.bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1><p style="text-align: center;">${Language.get('map.madam_nazar.desc')
-        .replace('{link}', '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>')}</p>`, { minWidth: 300 });
+      const nazarLink = '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>';
+      marker.bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1>
+        <p style="text-align: center;">${Language.get('map.madam_nazar.desc')
+        .replace('{link}', nazarLink)}</p>`, { minWidth: 300 });
       Layers.itemMarkersLayer.addLayer(marker);
     }
   }
