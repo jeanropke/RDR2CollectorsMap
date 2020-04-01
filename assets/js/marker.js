@@ -1,18 +1,12 @@
 class Marker {
-  constructor(text, lat, lng, tool, day, category, subdata, video, height) {
-    this.text = text;
+  constructor(preliminaryMarker, cycleName, category) {
+    Object.assign(this, preliminaryMarker);
     const match = this.text.match(/^(.+?)(?:_(\d+))?$/);
     this.itemId = match[1];
     this.itemNumberStr = match[2] ? `#${match[2]}` : '';
     this.itemTranslationKey = `${this.itemId}.name`
-    this.lat = lat;
-    this.lng = lng;
-    this.tool = tool;
-    this.day = day;
+    this.day = cycleName;
     this.category = category;
-    this.subdata = subdata;
-    this.video = video;
-    this.height = height;
     this.isVisible = enabledCategories.includes(this.category);
     this.amount = Inventory.items[this.itemId] || 0;
     this.isCollected = MapBase.collectedItems[this.text] || false;

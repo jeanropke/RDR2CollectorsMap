@@ -202,10 +202,11 @@ var MapBase = {
   },
 
   setMarkers: function (data) {
+    'use strict';
     $.each(data, function (_category, _cycles) {
-      $.each(_cycles, function (day, _markers) {
-        $.each(_markers, function (key, marker) {
-          MapBase.markers.push(new Marker(marker.text, marker.lat, marker.lng, marker.tool, day, _category, marker.subdata, marker.video, marker.height));
+      $.each(_cycles, function (cycleName, _markers) {
+        $.each(_markers, function (index, marker) {
+          MapBase.markers.push(new Marker(marker, cycleName, _category));
         });
       });
     });
