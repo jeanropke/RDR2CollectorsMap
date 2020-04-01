@@ -2,6 +2,9 @@
  * Created by Jean on 2019-10-09.
  */
 
+var fastTravelData;
+var weeklySetData = [];
+
 var MapBase = {
   minZoom: 2,
   maxZoom: 7,
@@ -195,9 +198,7 @@ var MapBase = {
 
   loadMarkers: function () {
     $.getJSON('data/items.json?nocache=' + nocache)
-      .done(function (data) {
-        MapBase.setMarkers(data);
-      });
+      .done(MapBase.setMarkers);
   },
 
   setMarkers: function (data) {
@@ -243,15 +244,15 @@ var MapBase = {
     MapBase.addMarkers(true);
 
     // Do search via URL.
-    var searchParam = getParameterByName('search');
-    if (searchParam != null && searchParam) {
+    const searchParam = getParameterByName('search');
+    if (searchParam) {
       $('#search').val(searchParam);
       MapBase.onSearch(searchParam);
     }
 
     // Navigate to marker via URL.
-    var markerParam = getParameterByName('m');
-    if (markerParam != null && markerParam != '') {
+    const markerParam = getParameterByName('m');
+    if (markerParam) {
       var goTo = MapBase.markers.filter(_m => _m.text == markerParam && _m.day == Cycles.categories[_m.category])[0];
 
       //if a marker is passed on url, check if is valid
@@ -805,15 +806,6 @@ var MapBase = {
 
     if (Settings.isPinsPlacingEnabled)
       Pins.addPin(coords.latlng.lat, coords.latlng.lng);
-  },
-
-  formatDate: function (date) {
-    var pad = (e, s) => (1e3 + e + '').slice(-s);
-    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var _day = date.split('/')[2];
-    var _month = monthNames[date.split('/')[1] - 1];
-    var _year = date.split('/')[0];
-    return `${_month} ${pad(_day, 2)} ${_year}`;
   },
 
   yieldingLoop: function (count, chunksize, callback, finished) {

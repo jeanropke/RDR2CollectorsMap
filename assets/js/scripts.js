@@ -1,7 +1,7 @@
-//Since Moonshiners update, R* changed how cycles works.
-//Instead of 1 cycle for each collection in the day, each collection has your own cycle.
-//Eg: Coins can be on cycle 1, Eggs on cycle 3, Flowers on 5... and so on
-
+/*
+- these statements have no requirements
+- code at multiple places depend on these
+*/
 Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
   value: function() { return this.toISOString().split('T')[0] },
 });
@@ -28,47 +28,82 @@ var categories = [
   'fast_travel', 'treasure', 'random', 'user_pins'
 ];
 
-var categoriesDisabledByDefault = ['random'];
+var categoriesDisabledByDefault =
+  JSON.parse(localStorage.getItem("disabled-categories")) || ['random'];
 
-var enabledCategories = categories;
+var enabledCategories = categories.filter(item => !categoriesDisabledByDefault.includes(item));
+
 var categoryButtons = $(".clickable[data-type]");
-
-var fastTravelData;
-
-var weeklySetData = [];
-var date;
 
 var debugMarkersArray = [];
 
-function init() {
-  var cookies = $.cookie();
-  for (var cookie in cookies) {
-    $.removeCookie(cookie);
+/*
+- Leaflet extentions require Leaflet loaded
+- guaranteed by this script’s position in index.html
+*/
+L.DivIcon.DataMarkup = L.DivIcon.extend({
+  _setIconStyles: function (img, name) {
+    L.DivIcon.prototype._setIconStyles.call(this, img, name);
+    if (this.options.marker)
+      img.dataset.marker = this.options.marker;
   }
+});
 
-  MapBase.loadCollectedItems();
-  Inventory.load();
+L.LayerGroup.include({
+  getLayerById: function (id) {
+    for (var i in this._layers) {
+      if (this._layers[i].id == id) {
+        return this._layers[i];
+      }
+    }
+  }
+});
 
-  $('.map-alert').toggle(!Settings.alertClosed);
+/*
+- all <script> will be loaded and executed (because this <script> comes last)
+- DOM will be ready
+- everything in here will be executed
+- they can depend on their order here
+- unfortunately they do async data loading and no one checks if they finished
+- → NO GUARANTEE json data is available
+*/
+$(function () {
+  try {
+    init();
+  }
+  catch (e) {
+    if (getParameterByName('show-alert') == '1') {
+      alert(e);
+    }
+    console.error(e);
+  }
+});
 
-  categoriesDisabledByDefault = JSON.parse(localStorage.getItem("disabled-categories"));
-  if (categoriesDisabledByDefault === null) categoriesDisabledByDefault = ['random'];
-
-  enabledCategories = enabledCategories.filter(function (item) {
-    return categoriesDisabledByDefault.indexOf(item) === -1;
-  });
-
+function init() {
   const navLang = navigator.language.toLowerCase();
   SettingProxy.addSetting(Settings, 'language', {
     default: Language.availableLanguages.includes(navLang) ? navLang : 'en-us',
   });
 
+  MapBase.loadCollectedItems();
+  Inventory.load();
+  ItemsValue.load();
   MapBase.init();
-
   Language.setMenuLanguage();
+  Pins.addToMap();
+  changeCursor();
+  MapBase.loadWeeklySet();
+  Cycles.load();
+  Inventory.init();
+  MapBase.loadFastTravels();
+  MadamNazar.loadMadamNazar();
+  Treasures.load();
+  MapBase.loadMarkers();
+  Routes.init();
 
-  if (Settings.isMenuOpened)
-    $('.menu-toggle').click();
+  if (Settings.isMenuOpened) $('.menu-toggle').click();
+
+  $('.map-alert').toggle(!Settings.alertClosed);
 
   $('#tools').val(Settings.toolType);
   $('#language').val(Settings.language);
@@ -114,9 +149,6 @@ function init() {
   $("#routes-container").toggleClass('opened', Settings.showRoutesSettings);
   $("#import-export-container").toggleClass('opened', Settings.showImportExportSettings);
   $("#debug-container").toggleClass('opened', Settings.showDebugSettings);
-
-  Pins.addToMap();
-  changeCursor();
 }
 
 function isLocalHost() {
@@ -142,7 +174,6 @@ function getParameterByName(name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-//Copy text to clipboard
 function setClipboardText(text) {
   const el = document.createElement('textarea');
   el.value = text;
@@ -152,7 +183,6 @@ function setClipboardText(text) {
   document.body.removeChild(el);
 }
 
-// Simple download function
 function downloadAsFile(filename, text) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -198,20 +228,26 @@ function clockTick() {
     nightTime ? 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)' : 'none');
 }
 
+/*
+- clockTick() relies on DOM and jquery
+- guaranteed only by this script’s position at end of index.html
+*/
 setInterval(clockTick, 1000);
 
+/*
+- rest of file: event handler registrations (and some more functions)
+- registrations require DOM ready and jquery
+  - guaranteed only by this script’s position at end of index.html
+- some handlers require scripts to be initialized and data loaded
+  - NOT GUARANTEED
+  - only hope: user does not do anything until that happens
+- please move them out of here to their respective owners
+*/
 $('.timer-container, .clock-container').on('click', function () {
   $('.timer-container, .clock-container').toggleClass('hidden');
   Settings.isClockVisible = $('.timer-container').hasClass('hidden');
 });
 
-/**
- * jQuery triggers
- */
-
-/*
- Hide warning bar
-*/
 $('.update-warning').on('click', function () {
   $(this).hide();
 });
@@ -221,7 +257,6 @@ $("#show-all-markers").on("change", function () {
   MapBase.addMarkers();
 });
 
-// Give me back my right-click
 $('#enable-right-click').on("change", function () {
   Settings.isRightClickEnabled = $("#enable-right-click").prop('checked');
 });
@@ -268,12 +303,12 @@ $('#enable-cycle-changer').on("change", function () {
   }
 });
 
-//Disable menu category when click on input
+// ignore menu functions if clicks hit input fields embedded in active areas
 $('.menu-option.clickable input').on('click', function (e) {
   e.stopPropagation();
 });
 
-//change cycle by collection
+// change collection cycles
 $('.menu-option.clickable input').on('change', function (e) {
   var el = $(e.target);
   Cycles.categories[el.attr("name")] = parseInt(el.val());
@@ -281,7 +316,6 @@ $('.menu-option.clickable input').on('change', function (e) {
   Menu.refreshMenu();
 });
 
-//Search system on menu
 $("#search").on("input", function () {
   MapBase.onSearch($('#search').val());
 });
@@ -313,7 +347,6 @@ $("#clear-markers").on("click", function () {
   MapBase.addMarkers();
 });
 
-//Clear inventory on menu
 $("#clear-inventory").on("click", function () {
   $.each(MapBase.markers, function (key, marker) {
     marker.amount = 0;
@@ -324,7 +357,6 @@ $("#clear-inventory").on("click", function () {
   MapBase.addMarkers();
 });
 
-//Enable & disable custom routes on menu
 $("#custom-routes").on("change", function () {
   RouteSettings.customRouteEnabled = $("#custom-routes").prop('checked');
   changeCursor();
@@ -335,7 +367,6 @@ $("#clear-custom-routes").on("click", function () {
   MapBase.map.removeLayer(Routes.polylines);
 });
 
-//When map-alert is clicked
 $('.map-alert').on('click', function () {
   Settings.alertClosed = true;
   $('.map-alert').hide();
@@ -603,11 +634,6 @@ $('#pins-import').on('click', function () {
   }
 });
 
-/**
- * Inventory
- */
-
-//Enable & disable inventory on menu
 $('#enable-inventory').on("change", function () {
   InventorySettings.isEnabled = $("#enable-inventory").prop('checked');
 
@@ -659,23 +685,17 @@ $('#reset-collection-updates-inventory').on("change", function () {
 
 $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(InventorySettings.isEnabled);
 
-//Enable & disable inventory on menu
 $('#inventory-stack').on("change", function () {
   var inputValue = parseInt($('#inventory-stack').val());
   inputValue = !isNaN(inputValue) ? inputValue : 10;
   InventorySettings.stackSize = inputValue;
 });
 
-// Flowers soft item stack size
 $('#soft-flowers-inventory-stack').on("change", function () {
   var inputValue = parseInt($('#soft-flowers-inventory-stack').val());
   inputValue = !isNaN(inputValue) ? inputValue : 10;
   InventorySettings.flowersSoftStackSize = inputValue;
 });
-
-/**
- * Cookie import/exporting
- */
 
 $('#cookie-export').on("click", function () {
   try {
@@ -759,7 +779,6 @@ $('#cookie-import').on('click', function () {
       reader.readAsText(file);
     }
 
-    // Remove all current settings.
     $.each(localStorage, function (key, value) {
       localStorage.removeItem(key);
     });
@@ -768,10 +787,6 @@ $('#cookie-import').on('click', function () {
     alert(Language.get('alerts.feature_not_supported'));
   }
 });
-
-/**
- * Path generator by Senexis
- */
 
 $('#generate-route-generate-on-visit').on("change", function () {
   RouteSettings.runOnStart = $("#generate-route-generate-on-visit").prop('checked');
@@ -890,9 +905,6 @@ $('#generate-route-railroad-weight').on("change", function () {
   Routes.generatePath();
 });
 
-/**
- * Tutorial logic
- */
 var defaultHelpTimeout;
 $('[data-help]').hover(function (e) {
   var attr = $(this).attr('data-help');
@@ -909,34 +921,12 @@ $('#show-help').on("change", function () {
   $("#help-container").toggle(Settings.showHelp);
 });
 
-/**
- * Leaflet plugins
- */
-L.DivIcon.DataMarkup = L.DivIcon.extend({
-  _setIconStyles: function (img, name) {
-    L.DivIcon.prototype._setIconStyles.call(this, img, name);
-    if (this.options.marker)
-      img.dataset.marker = this.options.marker;
-  }
-});
-
-L.LayerGroup.include({
-  getLayerById: function (id) {
-    for (var i in this._layers) {
-      if (this._layers[i].id == id) {
-        return this._layers[i];
-      }
-    }
-  }
-});
-
 // Disable annoying menu on right mouse click
 $('*').on('contextmenu', function (e) {
   if (!Settings.isRightClickEnabled)
     e.preventDefault();
 });
 
-// reset all settings & cookies
 $('#delete-all-settings').on('click', function () {
   $.each(localStorage, function (key) {
     localStorage.removeItem(key);
@@ -945,14 +935,15 @@ $('#delete-all-settings').on('click', function () {
   location.reload(true);
 });
 
-// reload map from menu (useful on bugged iOS)
+/*
+Reload convenience shortcut requested by @Adam Norton#6811.
+Map’s tile area is reduced to a smaller area after lock-unlock cycle on iOS
+if opened via iOS homescreen bookmarks. (Which has no reload button.)
+*/
 $('#reload-map').on('click', function () {
   location.reload(true);
 });
 
-/**
- * Modals
- */
 $('#open-clear-markers-modal').on('click', function () {
   $('#clear-markers-modal').modal();
 });
@@ -971,28 +962,4 @@ $('#open-clear-routes-modal').on('click', function () {
 
 $('#open-delete-all-settings-modal').on('click', function () {
   $('#delete-all-settings-modal').modal();
-});
-
-/**
- * Event listeners
- */
-
-$(function () {
-  try {
-    init();
-    MapBase.loadWeeklySet();
-    Cycles.load();
-    Inventory.init();
-    MapBase.loadFastTravels();
-    MadamNazar.loadMadamNazar();
-    Treasures.load();
-    MapBase.loadMarkers();
-    Routes.init();
-  }
-  catch (e) {
-    if (getParameterByName('show-alert') == '1') {
-      alert(e);
-    }
-    console.error(e);
-  }
 });

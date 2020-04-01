@@ -15,6 +15,7 @@ var Cycles = {
       .done(function (_data) {
         Cycles.data = _data;
         Cycles.getTodayCycle();
+        setInterval(Cycles.checkForUpdate, 1000 * 10);
       });
     console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
   },
@@ -144,7 +145,8 @@ var Cycles = {
     var newDate = new Date();
     newDate.setUTCDate(newDate.getUTCDate() + Cycles.forwardMaxOffset);
     var nextDayCycle = Cycles.data.findIndex(element => element.date === newDate.toISOUTCDateString());
-    if (nextDayCycle === -1 && Cycles.forwardMaxOffset > 0) {  // protect function, otherwise with no data function can loop to -infinity
+    // protect function, otherwise with no data function can loop to -infinity
+    if (nextDayCycle === -1 && Cycles.forwardMaxOffset > 0) {
       Cycles.forwardMaxOffset--;
       Cycles.nextDayDataExists();
       return;
@@ -298,6 +300,3 @@ var Cycles = {
     Cycles.getTodayCycle();
   }
 };
-
-// update to the next cycle
-setInterval(Cycles.checkForUpdate, 1000 * 10);
