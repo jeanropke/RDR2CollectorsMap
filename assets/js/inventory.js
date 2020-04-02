@@ -137,7 +137,7 @@ var Inventory = {
       Inventory.updateMarkerSources(_m);
 
       // further highlighting should only be done for enabled markers
-      if (!_m.canCollect || _m.isCollected) {
+      if (!_m.canCollect) {
         return;
       }
 
@@ -189,8 +189,6 @@ var Inventory = {
       }
 
       if (!InventorySettings.isEnabled) return;
-
-      marker.canCollect = marker.amount < InventorySettings.stackSize && !marker.isCollected;
 
       var small = $(`small[data-item=${name}]`).text(marker.amount);
       var cntnm = $(`[data-type=${name}] .counter-number`).text(marker.amount);

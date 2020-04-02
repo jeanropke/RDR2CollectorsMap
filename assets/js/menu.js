@@ -164,7 +164,7 @@ Menu.refreshMenu = function () {
         return true;
       });
 
-      if (currentSubdataMarkers.every(function (marker) { return !marker.canCollect; }))
+      if (currentSubdataMarkers.every(marker => !marker.canCollect))
         collectibleElement.addClass('disabled');
     } else {
       if (!marker.canCollect) collectibleElement.addClass('disabled');

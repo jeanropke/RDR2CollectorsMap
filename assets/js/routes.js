@@ -268,11 +268,11 @@ var Routes = {
 
     // Optionally ignore the already collected markers.
     if (RouteSettings.ignoreCollected) {
-      newMarkers = newMarkers.filter((marker) => { return marker.canCollect && !marker.isCollected; });
+      newMarkers = newMarkers.filter(marker => marker.canCollect);
     }
 
     if (RouteSettings.importantOnly) {
-      newMarkersImp = newMarkers.filter((marker) => { return MapBase.importantItems.indexOf(marker.text) >= 0; });
+      newMarkersImp = newMarkers.filter(marker => MapBase.importantItems.includes(marker.text));
       if (newMarkers.length > 0 && newMarkersImp.length == 0) {
         if (!confirm(Language.get('dialog.generate_route_important_only_ignore'))) {
           return;
