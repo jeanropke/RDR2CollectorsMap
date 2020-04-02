@@ -137,7 +137,7 @@ var Inventory = {
       Inventory.updateMarkerSources(_m);
 
       // further highlighting should only be done for enabled markers
-      if (!_m.canCollect || _m.isCollected) {
+      if (!_m.canCollect) {
         return;
       }
 
@@ -190,17 +190,11 @@ var Inventory = {
 
       if (!InventorySettings.isEnabled) return;
 
-      marker.canCollect = marker.amount < InventorySettings.stackSize && !marker.isCollected;
-
       var small = $(`small[data-item=${name}]`).text(marker.amount);
       var cntnm = $(`[data-type=${name}] .counter-number`).text(marker.amount);
 
       small.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
       cntnm.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
-
-      // If the category is disabled, no needs to update popup
-      if (Settings.isPopupsEnabled && marker.day == Cycles.categories[marker.category] && Layers.itemMarkersLayer.getLayerById(marker.text) != null)
-        Layers.itemMarkersLayer.getLayerById(marker.text)._popup.setContent(marker.popupContent());
 
       if ((marker.isCollected || (InventorySettings.isEnabled && marker.amount >= InventorySettings.stackSize)) && marker.day == Cycles.categories[marker.category] ||
         // flowers soft stack size:

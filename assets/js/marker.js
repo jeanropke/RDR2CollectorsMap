@@ -1,22 +1,15 @@
 class Marker {
-  constructor(text, lat, lng, tool, day, category, subdata, video, height) {
-    this.text = text;
+  constructor(preliminaryMarker, cycleName, category) {
+    Object.assign(this, preliminaryMarker);
     const match = this.text.match(/^(.+?)(?:_(\d+))?$/);
     this.itemId = match[1];
     this.itemNumberStr = match[2] ? `#${match[2]}` : '';
     this.itemTranslationKey = `${this.itemId}.name`
-    this.lat = lat;
-    this.lng = lng;
-    this.tool = tool;
-    this.day = day;
+    this.day = cycleName;
     this.category = category;
-    this.subdata = subdata;
-    this.video = video;
-    this.height = height;
     this.isVisible = enabledCategories.includes(this.category);
     this.amount = Inventory.items[this.itemId] || 0;
-    this.isCollected = MapBase.collectedItems[this.text] || false;
-    this.canCollect = InventorySettings.isEnabled ? (this.amount < InventorySettings.stackSize && !this.isCollected) : !this.isCollected;
+    this._collectedKey = `collected.${this.text}`;
     this.descriptionKey = (() => {
       switch (this.subdata) {
         case 'agarita':
@@ -45,7 +38,26 @@ class Marker {
       }
     })();
   }
-
+  get isCollected() {
+    return !!localStorage.getItem(this._collectedKey);
+  }
+  set isCollected(value) {
+    if (value) {
+      localStorage.setItem(this._collectedKey, "true");
+    } else {
+      localStorage.removeItem(this._collectedKey);
+    }
+  }
+  get canCollect() {
+    if (this.isCollected) {
+      return false;
+    } else if (InventorySettings.isEnabled) {
+      const stackName = (this.category === 'flower') ? 'flowersSoftStackSize' : 'stackSize';
+      return this.amount < InventorySettings[stackName];
+    } else {
+      return true;
+    }
+  }
   get isWeekly() {
     return weeklySetData.sets[weeklySetData.current].map(item => item.item).includes(this.itemId);
   }

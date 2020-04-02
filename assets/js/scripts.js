@@ -85,7 +85,6 @@ function init() {
     default: Language.availableLanguages.includes(navLang) ? navLang : 'en-us',
   });
 
-  MapBase.loadCollectedItems();
   Inventory.load();
   ItemsValue.load();
   MapBase.init();
@@ -336,12 +335,8 @@ $("#reset-markers").on("change", function () {
 $("#clear-markers").on("click", function () {
   $.each(MapBase.markers, function (key, marker) {
     marker.isCollected = false;
-    marker.canCollect = ((marker.category !== 'flower' && marker.amount < InventorySettings.stackSize) ||
-      // Flowers soft stack size
-      (marker.category === 'flower' && marker.amount < InventorySettings.flowersSoftStackSize));
   });
 
-  MapBase.saveCollectedItems();
   Menu.refreshMenu();
   Menu.refreshItemsCounter();
   MapBase.addMarkers();
@@ -500,10 +495,12 @@ $('.weekly-item-listings .collection-sell').on('click', function (e) {
 // Reset collections on menu
 $('.collection-reset').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => !_m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+  var getMarkers = MapBase.markers.filter(_m => !_m.canCollect &&
+      _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
   $.each(getMarkers, function (key, marker) {
-    MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category, !InventorySettings.resetButtonUpdatesInventory);
+    MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category,
+      !InventorySettings.resetButtonUpdatesInventory);
   });
 
   $(this).removeClass('disabled');
@@ -512,13 +509,15 @@ $('.collection-reset').on('click', function (e) {
 // disable only collected items (one or more in the inventory)
 $('.disable-collected-items').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+  var getMarkers = MapBase.markers.filter(_m => _m.canCollect &&
+    _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
   $.each(getMarkers, function (key, marker) {
     if (marker.amount > 0) {
       var textMenu = marker.text.replace(/egg_|flower_(\w+)_\d/, '$1');
       $(`[data-type=${textMenu}]`).addClass('disabled');
-      MapBase.removeItemFromMap(Cycles.categories[marker.category], marker.text, marker.subdata, marker.category, true);
+      MapBase.removeItemFromMap(Cycles.categories[marker.category],
+        marker.text, marker.subdata, marker.category, true);
     };
   });
 });
