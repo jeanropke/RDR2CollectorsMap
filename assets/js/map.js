@@ -634,7 +634,7 @@ var MapBase = {
     tempMarker.id = marker.text;
 
     if (Settings.isPopupsEnabled) {
-      tempMarker.bindPopup(marker.popupContent(), { minWidth: 300, maxWidth: 400 });
+      tempMarker.bindPopup(marker.popupContent.bind(marker), { minWidth: 300, maxWidth: 400 });
     }
 
     tempMarker.on("click", function (e) {

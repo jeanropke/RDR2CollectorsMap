@@ -196,10 +196,6 @@ var Inventory = {
       small.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
       cntnm.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
 
-      // If the category is disabled, no needs to update popup
-      if (Settings.isPopupsEnabled && marker.day == Cycles.categories[marker.category] && Layers.itemMarkersLayer.getLayerById(marker.text) != null)
-        Layers.itemMarkersLayer.getLayerById(marker.text)._popup.setContent(marker.popupContent());
-
       if ((marker.isCollected || (InventorySettings.isEnabled && marker.amount >= InventorySettings.stackSize)) && marker.day == Cycles.categories[marker.category] ||
         // flowers soft stack size:
         (marker.category === 'flower' && marker.amount >= InventorySettings.flowersSoftStackSize)) {
