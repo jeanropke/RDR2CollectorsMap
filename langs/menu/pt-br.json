@@ -54,7 +54,7 @@
 	"menu.custom_routes": "Rotas personalizadas",
 	"menu.import_route": "Importar rota",
 	"menu.export_route": "Exportar rota",
-	"menu.treasures": "Tesouros",
+	"menu.treasures": "Mapas de Tesouro",
 	"routes.exported": "Rota copiada para a área de transferência!",
 	"routes.import_prompt": "Coloque o código da rota",
 	"routes.empty": "Rota vazia",
@@ -235,6 +235,9 @@
 	"menu.reset_inventory_daily": "Redefinir inventário diariamente",
 	"menu.soft_flowers_inventory_stack": "",
 	"menu.reload_map": "",
+	"menu.disable_collected_items": "",
+	"menu.collection_collect_all": "",
+	"menu.enable_additional_inventory_options": "",
 	"help.default": "Passe o cursor por cima ou segure (mobile) em qualquer configuração para receber informações sobre.",
 	"help.clear_custom_routes": "Limpa todas as rotas personalizadas no mapa.",
 	"help.clear_inventory": "Limpa todos os itens do inventário.",
@@ -320,5 +323,8 @@
 	"help.collection_collected": "Número de itens coletados dessa coleção.",
 	"help.reset_inventory_daily": "Alterna se o inventário deve ser redefinido a cada 24 horas.",
 	"help.soft_flowers_inventory_stack": "",
-	"help.reload_map": ""
+	"help.reload_map": "",
+	"help.disable_collected_items": "",
+	"help.collection_collect_all": "",
+	"help.enable_additional_inventory_options": ""
 }

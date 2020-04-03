@@ -54,7 +54,7 @@
 	"menu.custom_routes": "Ваш маршрут",
 	"menu.import_route": "Загрузить маршрут",
 	"menu.export_route": "Сохранить маршрут",
-	"menu.treasures": "Сокровища",
+	"menu.treasures": "Карты сокровищ",
 	"routes.exported": "Код маршрута скопирован в буфер.",
 	"routes.import_prompt": "Введите код маршрута",
 	"routes.empty": "Пустой код маршрута",
@@ -161,7 +161,7 @@
 	"map.user_pins.default_title": "Ваша метка",
 	"map.user_pins.placeholder_desc": "Описание",
 	"map.user_pins.default_desc": "Это ваша пользовательская метка. На ней можно изменить имя и описание. Не забудьте сохранить её.",
-	"alerts.file_not_valid": "Выбранный вами файл недействителен. Пожалуйста, выберите другой файл.",
+	"alerts.file_not_valid": "Неправильный формат файла. Пожалуйста, выберите другой файл.",
 	"alerts.file_not_found": "Пожалуйста, выберите файл в поле над кнопкой загрузки, а затем повторите попытку.",
 	"alerts.feature_not_supported": "Эта функция не поддерживается вашим браузером.",
 	"alerts.nothing_to_export": "Нет ничего для экспорта.",
@@ -235,6 +235,9 @@
 	"menu.reset_inventory_daily": "",
 	"menu.soft_flowers_inventory_stack": "",
 	"menu.reload_map": "",
+	"menu.disable_collected_items": "",
+	"menu.collection_collect_all": "",
+	"menu.enable_additional_inventory_options": "",
 	"help.default": "",
 	"help.clear_custom_routes": "",
 	"help.clear_inventory": "",
@@ -320,5 +323,8 @@
 	"help.collection_collected": "",
 	"help.reset_inventory_daily": "",
 	"help.soft_flowers_inventory_stack": "",
-	"help.reload_map": ""
+	"help.reload_map": "",
+	"help.disable_collected_items": "",
+	"help.collection_collect_all": "",
+	"help.enable_additional_inventory_options": ""
 }
