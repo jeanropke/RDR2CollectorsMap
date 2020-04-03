@@ -235,9 +235,9 @@
 	"menu.reset_inventory_daily": "Resetuj ekwipunek co 24 godziny",
 	"menu.soft_flowers_inventory_stack": "Łagodny rozmiar stosu kwiatów",
 	"menu.reload_map": "Przeładuj mapę",
-	"menu.disable_collected_items": "",
-	"menu.collection_collect_all": "",
-	"menu.enable_additional_inventory_options": "",
+	"menu.disable_collected_items": "Wyłącz zebrane",
+	"menu.collection_collect_all": "Zbierz wszystko",
+	"menu.enable_additional_inventory_options": "Włącz zaawansowane opcje ekwipunku",
 	"help.default": "Najedź kursorem na dowolne ustawienie lub naciśnij długo (urz. mobilne), aby uzyskać informacje na jego temat.",
 	"help.clear_custom_routes": "Usuwa wszystkie własne trasy na mapie.",
 	"help.clear_inventory": "Ustawia ilość wszystkich przedmiotów w ekwipunku na 0.",
@@ -324,7 +324,7 @@
 	"help.reset_inventory_daily": "Włącza/ wyłącza resetowanie ekwipunku co 24 godziny.",
 	"help.soft_flowers_inventory_stack": "Pozwala ustawić \"miękki\" limit kwiatów w twoim ekwipunku. Kiedy limit zostanie osiągnięty, kwiaty zostaną wyłączone z mapy i w menu, ale nadal możesz dodać więcej kwiatów do głównego limitu wielkości stosu.",
 	"help.reload_map": "Pozwala odświeżyć mapę, jeśli cokolwiek jest nie tak ze stroną internetową.",
-	"help.disable_collected_items": "",
-	"help.collection_collect_all": "",
-	"help.enable_additional_inventory_options": ""
+	"help.disable_collected_items": "Pozwala wyłączyć wszystkie przedmioty, które już posiadasz w ekwipunku.",
+	"help.collection_collect_all": "Pozwala na dodanie każdego przedmiotu z tej kategorii do Twojego ekwipunku.",
+	"help.enable_additional_inventory_options": "Pozwala włączyć więcej opcji do zarządzania ekwipunkiem."
 }
