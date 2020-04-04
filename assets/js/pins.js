@@ -121,23 +121,25 @@ var Pins = {
         markerIconSelect.append(option);
       });
 
-      markerContent = `<h1><input id="${markerId}_name" class="marker-popup-pin-input-name"
-          type="text" value="${marker.options.name}"
-          placeholder="${Language.get('map.user_pins.placeholder_title')}"></h1>
+      markerContent =
+        `<h1><input id="${markerId}_name" class="marker-popup-pin-input-name"
+            type="text" value="${marker.options.name}"
+            placeholder="${Language.get('map.user_pins.placeholder_title')}"></h1>
         <p><textarea id="${markerId}_desc" class="marker-popup-pin-input-desc"
-          rows="5" value="${marker.options.desc}"
-          placeholder="${Language.get('map.user_pins.placeholder_desc')}">${marker.options.desc}</textarea></p>
+            rows="5" value="${marker.options.desc}"
+            placeholder="${Language.get('map.user_pins.placeholder_desc')}">${marker.options.desc}</textarea></p>
         <hr class="marker-popup-pin-input-divider">
         <label for="${markerId}_icon" class="marker-popup-pin-label"
-          data-text="map.user_pins.icon">${Language.get('map.user_pins.icon')}</label>
+            data-text="map.user_pins.icon">${Language.get('map.user_pins.icon')}</label>
         ${markerIconSelect.prop('outerHTML')}
+        <small class="popupContentDebug">Latitude: ${marker._latlng.lat.toFixed(4)} / Longitude: ${marker._latlng.lng.toFixed(4)}</small>
         <button type="button" class="btn btn-info save-button"
-          onclick="Pins.savePin(${markerId}, $('#${markerId}_name').val(),
-                                $('#${markerId}_desc').val(), $('#${markerId}_icon').val())"
-          data-text="map.user_pins.save">${Language.get('map.user_pins.save')}</button>
+            onclick="Pins.savePin(${markerId}, $('#${markerId}_name').val(),
+            $('#${markerId}_desc').val(), $('#${markerId}_icon').val())"
+            data-text="map.user_pins.save">${Language.get('map.user_pins.save')}</button>
         <button type="button" class="btn btn-danger remove-button"
-          onclick="Pins.removePin(${markerId})"
-          data-text="map.user_pins.remove">${Language.get('map.user_pins.remove')}</button>`;
+            onclick="Pins.removePin(${markerId})"
+            data-text="map.user_pins.remove">${Language.get('map.user_pins.remove')}</button>`;
     }
 
     marker.bindPopup(markerContent, { minWidth: 300, maxWidth: 300 });
