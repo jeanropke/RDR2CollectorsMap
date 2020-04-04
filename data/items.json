@@ -529,7 +529,7 @@
             { "text": "cups_three", "height": "0", "tool": "0", "lat": "-50.9972", "lng": "150.8700" },
             { "text": "cups_four", "height": "0", "tool": "0", "lat": "-83.8259", "lng": "131.4642" },
             { "text": "cups_five", "height": "0", "tool": "0", "lat": "-91.4298", "lng": "125.2710" },
-            { "text": "cups_six", "height": "0", "tool": "0", "lat": "-53.6172", "lng": "120.4616" },
+            { "text": "cups_six", "height": "1", "tool": "0", "lat": "-53.6172", "lng": "120.4616" },
             { "text": "cups_seven", "height": "0", "tool": "0", "lat": "-104.9031", "lng": "36.1813" },
             { "text": "cups_eight", "height": "0", "tool": "0", "lat": "-56.8901", "lng": "158.3834" },
             { "text": "cups_nine", "height": "0", "tool": "0", "lat": "-78.8054", "lng": "128.9760" },
