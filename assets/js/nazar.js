@@ -16,26 +16,20 @@ var MadamNazar = {
   currentLocation: null,
   currentDate: null,
 
-  formatDate: function (date) {
-    var pad = (e, s) => (1e3 + e + '').slice(-s);
-    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    var _day = date.split('/')[2];
-    var _month = monthNames[date.split('/')[1] - 1];
-    var _year = date.split('/')[0];
-    return `${_month} ${pad(_day, 2)} ${_year}`;
-  },
-
   loadMadamNazar: function () {
     var _nazarParam = getParameterByName('nazar');
     if (_nazarParam < MadamNazar.possibleLocations.length && _nazarParam) {
       MadamNazar.currentLocation = _nazarParam;
       MadamNazar.currentDate = '';
       MadamNazar.addMadamNazar();
-    } else {
+    }
+    else {
       $.getJSON('https://pepegapi.jeanropke.net/rdo/nazar')
         .done(function (nazar) {
           MadamNazar.currentLocation = nazar.nazar_id - 1;
-          MadamNazar.currentDate = MadamNazar.formatDate(nazar.date);
+          MadamNazar.currentDate = new Date(nazar.date).toLocaleString(Settings.language, {
+            day: "2-digit", month: "long", year: "numeric"
+          });
           MadamNazar.addMadamNazar();
           console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
         });
