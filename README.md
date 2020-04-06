@@ -15,6 +15,8 @@ Detailed map by [RDR2Map](https://rdr2map.com/).
 
 Dark map by [TDLCTV](https://github.com/TDLCTV).
 
+Satellite map by [tkon99](https://github.com/tkon99) and [DuPz0r](https://www.twitch.tv/dupz0r).
+
 Thanks for the people over at [https://madamnazar.io/](https://madamnazar.io/) for the API.
 
 Discord for contributors and translators https://discord.gg/HkU6ugT.
