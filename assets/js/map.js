@@ -150,7 +150,9 @@ var MapBase = {
     Layers.oms.addListener('spiderfy', function (markers) {
       MapBase.map.closePopup();
     });
+  },
 
+  loadOverlays: function () {
     $.getJSON(`data/overlays${MapBase.interiors ? '_beta' : ''}.json?nocache=${nocache}`)
       .done(function (data) {
         MapBase.overlays = data;
@@ -373,8 +375,8 @@ var MapBase = {
             weeklySetData.current = _weekly;
           }
         }
+        console.info('%c[Weekly Sets] Loaded!', 'color: #bada55; background: #242424');
       });
-    console.info('%c[Weekly Sets] Loaded!', 'color: #bada55; background: #242424');
   },
 
   removeItemFromMap: function (day, text, subdata, category, skipInventory = false) {

@@ -87,11 +87,12 @@ function init() {
 
   Inventory.load();
   ItemsValue.load();
+  MapBase.loadWeeklySet();
+  MapBase.loadOverlays();
   MapBase.init();
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  MapBase.loadWeeklySet();
   Cycles.load();
   Inventory.init();
   MapBase.loadFastTravels();
