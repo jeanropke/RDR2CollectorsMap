@@ -128,9 +128,12 @@ class Marker {
     if (['agarita', 'blood_flower'].includes(this.subdata)) {
       snippet.find('[data-text="map.mark_important"]').parent().hide();
     }
-    if (!InventorySettings.isEnabled || !InventorySettings.isPopupsEnabled || this.category === 'random') {
-      snippet.find('.marker-popup-buttons small').toggleClass('text-danger', this.amount >= InventorySettings.stackSize);
-      snippet.find('.marker-popup-buttons').hide();
+    if (InventorySettings.isEnabled && InventorySettings.isPopupsEnabled &&
+      this.category !== 'random') {
+        snippet.find('.marker-popup-buttons small').toggleClass('text-danger',
+          this.amount >= InventorySettings.stackSize);
+    } else {
+        snippet.find('.marker-popup-buttons').hide();
     }
 
     return Language.translateDom(snippet)[0];
