@@ -43,6 +43,12 @@ var MapBase = {
           bounds: mapBoundary,
           attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
         }),
+      'map.layers.satellite':
+        L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/satellite/{z}/{x}_{y}.jpg', {
+          noWrap: true,
+          bounds: mapBoundary,
+          attribution: '<a href="https://github.com/tkon99" target="_blank">tkon99</a> & <a href="https://www.twitch.tv/dupz0r" target="_blank">dupz0r</a>'
+        }),
     };
 
     // Override bindPopup to include mouseover and mouseout logic.

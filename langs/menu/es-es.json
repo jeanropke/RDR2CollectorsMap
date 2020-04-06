@@ -106,6 +106,7 @@
 	"map.layers.default": "Predeterminado",
 	"map.layers.detailed": "Detallado",
 	"map.layers.dark": "Oscuro",
+	"map.layers.satellite": "Satélite",
 	"menu.import_export_title": "Importar/Exportar",
 	"menu.import_export_explanation": "Esto importará o exportará sus configuraciones. Importar configuraciones reemplazará todas las configuraciones actuales y recargará la página. Esta característica no incluye marcadores.",
 	"menu.import_button": "Importar",
