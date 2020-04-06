@@ -61,10 +61,10 @@ var Cycles = {
     Cycles.categories.heirlooms = _data.heirlooms;
     Cycles.categories.coin = _data.coin;
     Cycles.categories.random = _data.random;
-    Cycles.setCustomCycles();
-    Cycles.setCycles();
     Cycles.setLocaleDate();
     Cycles.nextDayDataExists();
+    Cycles.setCustomCycles();
+    Cycles.setCycles();
   },
 
   setCustomCycles: function () {
