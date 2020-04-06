@@ -190,11 +190,12 @@ var Inventory = {
 
       if (!InventorySettings.isEnabled) return;
 
-      var small = $(`small[data-item=${name}]`).text(marker.amount);
-      var cntnm = $(`[data-type=${name}] .counter-number`).text(marker.amount);
+      const popup = marker.lMarker && marker.lMarker.getPopup();
+      if (popup) popup.update();
 
-      small.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
-      cntnm.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
+      $(`[data-type=${name}] .counter-number`)
+        .text(marker.amount)
+        .toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
 
       if ((marker.isCollected || (InventorySettings.isEnabled && marker.amount >= InventorySettings.stackSize)) && marker.day == Cycles.categories[marker.category] ||
         // flowers soft stack size:

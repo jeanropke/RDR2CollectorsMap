@@ -614,7 +614,7 @@ var MapBase = {
       overlay = '<img class="overlay" src="./assets/images/icons/overlay_cross.png" alt="Overlay">';
     }
 
-    var tempMarker = L.marker([marker.lat, marker.lng], {
+    marker.lMarker = L.marker([marker.lat, marker.lng], {
       opacity: marker.canCollect ? opacity : opacity / 3,
       icon: new L.DivIcon.DataMarkup({
         iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
@@ -631,26 +631,26 @@ var MapBase = {
       })
     });
 
-    tempMarker.id = marker.text;
+    marker.lMarker.id = marker.text;
 
     if (Settings.isPopupsEnabled) {
-      tempMarker.bindPopup(marker.popupContent.bind(marker), { minWidth: 300, maxWidth: 400 });
+      marker.lMarker.bindPopup(marker.popupContent.bind(marker), { minWidth: 300, maxWidth: 400 });
     }
 
-    tempMarker.on("click", function (e) {
+    marker.lMarker.on("click", function (e) {
       if (!Settings.isPopupsEnabled) MapBase.removeItemFromMap(marker.day || '', marker.text || '', marker.subdata || '', marker.category || '');
 
       Routes.addMarkerOnCustomRoute(marker.text);
       if (RouteSettings.customRouteEnabled) e.target.closePopup();
     });
 
-    tempMarker.on("contextmenu", function (e) {
+    marker.lMarker.on("contextmenu", function (e) {
       MapBase.removeItemFromMap(marker.day || '', marker.text || '', marker.subdata || '', marker.category || '');
     });
 
-    Layers.itemMarkersLayer.addLayer(tempMarker);
+    Layers.itemMarkersLayer.addLayer(marker.lMarker);
     if (Settings.isMarkerClusterEnabled)
-      Layers.oms.addMarker(tempMarker);
+      Layers.oms.addMarker(marker.lMarker);
   },
 
   gameToMap: function (lat, lng, name = "Debug Marker") {
