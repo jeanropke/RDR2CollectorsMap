@@ -141,7 +141,7 @@ var MapBase = {
 
     MapBase.map.doubleClickZoom[Settings.isDoubleClickZoomEnabled ? 'enable' : 'disable']();
 
-    var southWest = L.latLng(-160, -50),
+    var southWest = L.latLng(-160, -120),
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
