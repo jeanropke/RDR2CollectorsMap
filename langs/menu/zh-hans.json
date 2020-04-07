@@ -63,7 +63,7 @@
 	"menu.random_spots": "随机收藏品地点",
 	"menu.collectables_counter": "已收集 {count} 共 {max}",
 	"menu.collection_counter": "{count} 的 {max}",
-	"menu.rdo_map": "RDO Map",
+	"menu.rdo_map": "动植物地图",
 	"menu.auto_refresh": "自动更改周期",
 	"menu.clear_inventory": "清除物品数量",
 	"menu.sell": "已有物品数量",
@@ -235,9 +235,9 @@
 	"menu.reset_inventory_daily": "每天重置物品栏",
 	"menu.soft_flowers_inventory_stack": "花软栈大小",
 	"menu.reload_map": "立即重载地图",
-	"menu.disable_collected_items": "",
-	"menu.collection_collect_all": "",
-	"menu.enable_additional_inventory_options": "",
+	"menu.disable_collected_items": "禁用已收集",
+	"menu.collection_collect_all": "收集全部",
+	"menu.enable_additional_inventory_options": "开启高级清单选项",
 	"help.default": "将鼠标悬停或长按（移动）任何操作即可获取有关此设置的信息。",
 	"help.clear_custom_routes": "清除地图上当前的所有自定义路线。",
 	"help.clear_inventory": "清除清单中的所有项目。",
@@ -324,7 +324,7 @@
 	"help.reset_inventory_daily": "切换是否每24小时重置库存。",
 	"help.soft_flowers_inventory_stack": "允许您设置“软”限制花在您的库存。当达到限制时，花将从地图和菜单中禁用，但您仍然可以添加更多的花到主堆栈大小限制。",
 	"help.reload_map": "允许你重新加载地图，如果网站出现什么错误。",
-	"help.disable_collected_items": "",
-	"help.collection_collect_all": "",
-	"help.enable_additional_inventory_options": ""
+	"help.disable_collected_items": "开关所有你已经拥有的物品",
+	"help.collection_collect_all": "从目录加入所有的物品到库存中",
+	"help.enable_additional_inventory_options": "启用更多的选项来管理库存"
 }
