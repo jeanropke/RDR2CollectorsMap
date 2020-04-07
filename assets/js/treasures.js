@@ -80,7 +80,7 @@ class Treasure {
   popupContent() {
     const snippet = $(`<div class="handover-wrapper-with-no-influence">
         <h1 data-text="${this.text}"></h1>
-        <button type="button" class="btn btn-info remove-button" data-text="map.remove_add">
+        <button type="button" class="btn btn-info remove-button" data-text="map.remove">
           </button>
       </div>`).translate();
     snippet.find('button').on('click', () => this.onMap = false);

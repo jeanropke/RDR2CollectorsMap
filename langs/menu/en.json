@@ -42,6 +42,7 @@
 	"menu.fast_travel": "Fast Travel",
 	"menu.search_placeholder": "Search items. Separated by ;",
 	"map.remove_add": "Remove/Add from map",
+	"map.remove": "Remove from map",
 	"map.copy_link": "Copy marker link",
 	"map.video": "Video",
 	"map.flower_type.night_only": "This flower only spawns at night (from 10:00 PM to 5:00 AM).",
