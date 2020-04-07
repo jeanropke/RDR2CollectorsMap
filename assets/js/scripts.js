@@ -97,7 +97,7 @@ function init() {
   Inventory.init();
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();
-  Treasures.load();
+  Treasure.init();
   MapBase.loadMarkers();
   Routes.init();
 
@@ -388,6 +388,7 @@ $("#language").on("change", function () {
   Menu.refreshMenu();
   Cycles.setLocaleDate();
   MapBase.addMarkers();
+  Treasure.onLanguageChanged();
 });
 
 $("#marker-opacity").on("change", function () {
@@ -398,7 +399,7 @@ $("#marker-opacity").on("change", function () {
 $("#marker-size").on("change", function () {
   Settings.markerSize = Number($("#marker-size").val());
   MapBase.addMarkers();
-  Treasures.set();
+  Treasure.onSettingsChanged();
 });
 
 $("#enable-cycle-input").on("change", function () {
@@ -437,7 +438,7 @@ $('.clickable').on('click', function () {
   localStorage.setItem("disabled-categories", JSON.stringify(categoriesDisabledByDefault));
 
   if (menu.data('type') == 'treasure')
-    Treasures.addToMap();
+    Treasure.toggleAll(!isDisabled);
   else if (menu.data('type') == 'user_pins')
     Pins.addToMap();
   else
@@ -560,6 +561,7 @@ $('#enable-marker-popups-hover').on("change", function () {
 
 $('#enable-marker-shadows').on("change", function () {
   Settings.isShadowsEnabled = $("#enable-marker-shadows").prop('checked');
+  Treasure.onSettingsChanged();
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
 });

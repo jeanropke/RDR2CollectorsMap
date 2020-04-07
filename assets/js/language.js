@@ -1,3 +1,7 @@
+jQuery.fn.translate = function () {
+    return Language.translateDom(this);
+}
+
 var Language = {
     availableLanguages: ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'sv-se', 'th-th', 'zh-hans', 'zh-hant'],
 

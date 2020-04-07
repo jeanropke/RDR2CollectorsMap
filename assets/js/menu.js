@@ -26,21 +26,6 @@ var Menu = {
       return a.textContent.toLowerCase().localeCompare(b.textContent.toLowerCase());
     }).appendTo(menu);
   },
-
-  refreshTreasures: function () {
-    $('.menu-hidden[data-type=treasure]').children('.collectible-wrapper').remove();
-
-    Treasures.data.filter(function (item) {
-      var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', item.text);
-      var collectibleTextElement = $('<p>').addClass('collectible').text(Language.get(item.text));
-
-      if (!Treasures.enabledTreasures.includes(item.text))
-        collectibleElement.addClass('disabled');
-
-      $('.menu-hidden[data-type=treasure]').append(collectibleElement.append(collectibleTextElement));
-    });
-    Menu.reorderMenu('.menu-hidden[data-type=treasure]');
-  }
 };
 
 Menu.addCycleWarning = function (element, isSameCycle) {
@@ -56,7 +41,8 @@ Menu.addCycleWarning = function (element, isSameCycle) {
 };
 
 Menu.refreshMenu = function () {
-  $('.menu-hidden[data-type]').children('.collectible-wrapper').remove();
+  $('.menu-hidden[data-type]:not([data-type=treasure])')
+    .children('.collectible-wrapper').remove();
 
   var weeklyItems = [];
   if (weeklySetData.sets !== null) {
@@ -214,8 +200,6 @@ Menu.refreshMenu = function () {
   // Check cycle warning for random spots
   Menu.addCycleWarning('[data-text="menu.random_spots"]', Cycles.isSameAsYesterday('random'));
 
-  Menu.refreshTreasures();
-
   $.each(categoriesDisabledByDefault, function (key, value) {
     if (value.length > 0) {
       $('[data-type=' + value + ']').addClass('disabled');
@@ -243,6 +227,7 @@ Menu.showAll = function () {
   enabledCategories = categories;
 
   MapBase.addMarkers();
+  Treasure.toggleAll(true);
 };
 
 Menu.hideAll = function () {
@@ -254,7 +239,7 @@ Menu.hideAll = function () {
   enabledCategories = [];
 
   MapBase.addMarkers();
-  Treasures.addToMap();
+  Treasure.toggleAll(false);
 };
 
 Menu.refreshItemsCounter = function () {
