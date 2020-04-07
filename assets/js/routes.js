@@ -300,7 +300,7 @@ var Routes = {
     // Use path finder when enabled
     try {
       if (RouteSettings.usePathfinder) {
-        PathFinder.routegenStart(last, newMarkers, RouteSettings.fasttravelWeight, RouteSettings.railroadWeight);
+        PathFinder.routegenStart(last, newMarkers, RouteSettings.fasttravelWeight, RouteSettings.railroadWeight, true);
         return;
       }
     } catch (error) {
