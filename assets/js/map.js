@@ -50,7 +50,7 @@ var MapBase = {
       bindPopup: function (content, options) {
         // TODO: Check if we can move this from here.
         if (content instanceof L.Popup) {
-          Util.setOptions(content, options);
+          L.Util.setOptions(content, options);
           this._popup = content;
           content._source = this;
         } else {
