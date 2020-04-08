@@ -5,6 +5,12 @@
 
 Savvy with a language that the language doesn't have yet? See something that isn't quite translated correctly? Feel free to contribute to the translation of any language by heading over to the [Crowdin project page](https://crowdin.com/project/rdr2collectorsmap) for the map.
 
+Also see our other map for general Red Dead Online content, such as animals and random encounters:
+- https://jeanropke.github.io/RDOMap
+- https://github.com/jeanropke/RDOMap
+
+Donations are always appreciated. Find the donations link at the bottom of the menu.
+
 ## Credits
 Lots of thanks to the community for contributing to the menu either by providing locations or working on developing the menu into something great.
 
