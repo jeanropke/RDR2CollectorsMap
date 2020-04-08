@@ -74,7 +74,7 @@ class Marker {
       </h1>
       <span class="marker-warning-wrapper">
         <div>
-          <img class="warning-icon" src="./assets/images/same-cycle-alert.png" alt="Alert">
+          <img class="warning-icon" height=32 width=32 src="./assets/images/same-cycle-alert.png" alt="Alert">
         </div>
         <p data-text="map.unknown_cycle_description"></p>
         <p data-text="map.same_cycle_yesterday"></p>
