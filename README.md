@@ -24,6 +24,7 @@ These are the people that worked on improving the map itself.
 ### Location credits
 These are the people that provided the locations of the different items on the map.
 
+- Special thanks to Ghost on the Discord for the speedy daily cycles.
 - Cycle 1-3 locations by [GTA Series Videos](https://www.youtube.com/user/GTASeriesVideos), [Gtax Barrett](https://twitter.com/gtaxbarrett), [IronJeff80](https://github.com/IronJeff80), [/r/RedDeadOnline](https://www.reddit.com/r/RedDeadOnline), and the Discord community.
 - Cycle 4-6 locations by [Tez2](https://twitter.com/TezFunz2), [Senexis](https://github.com/Senexis), [IronJeff80](https://github.com/IronJeff80), and the Discord community.
 - Random item locations by [IronJeff80](https://github.com/IronJeff80), [Senexis](https://github.com/Senexis), and the Discord community.
