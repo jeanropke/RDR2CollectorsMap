@@ -80,10 +80,12 @@ $(function () {
 });
 
 function init() {
-  const navLang = navigator.language.toLowerCase();
+  const navLang = navigator.language;
   SettingProxy.addSetting(Settings, 'language', {
-    default: Language.availableLanguages.includes(navLang) ? navLang : 'en-us',
+    default: Language.availableLanguages.includes(navLang) ? navLang : 'en-US',
   });
+
+  Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en-US';
 
   Inventory.load();
   ItemsValue.load();

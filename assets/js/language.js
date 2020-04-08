@@ -1,9 +1,10 @@
 var Language = {
-    availableLanguages: ['ar-ar', 'de-de', 'en-us', 'es-es', 'fr-fr', 'hu-hu', 'it-it', 'ko', 'pt-br', 'pl', 'ru', 'sv-se', 'th-th', 'zh-hans', 'zh-hant'],
+    availableLanguages: ['en-US', 'af-ZA', 'ar-SA', 'ca-ES', 'cs-CZ', 'da-DK', 'de-DE', 'el-GR', 'es-ES', 'fi-FI', 'fr-FR', 'he-IL', 'hu-HU', 'it-IT', 'ja-JP', 'ko-KR', 'no-NO', 'pl-PL', 'pt-BR', 'pt-PT', 'ro-RO', 'ru-RU', 'sr-SP', 'sv-SE', 'th-TH', 'tr-TR', 'uk-UA', 'vi-VN', 'zh-CN', 'zh-TW'],
 
     get: function (transKey, optional) {
         'use strict';
         let translation = false;
+
         if (transKey === 'GitHub') {
             translation = '<a href="https://github.com/jeanropke/RDR2CollectorsMap/issues" target="_blank">GitHub</a>';
         } else if (transKey === 'Discord') {
@@ -15,10 +16,11 @@ var Language = {
         } else if (transKey === 'collection') {
             transKey = `weekly.desc.${weeklySetData.current}`;
         }
+
         translation =
             translation ||
-            Language.data[Settings.language][transKey] ||
-            Language.data['en-us'][transKey] ||
+            (Language.data[Settings.language] !== undefined && Language.data[Settings.language][transKey]) ||
+            Language.data['en-US'][transKey] ||
             (optional ? '' : transKey);
 
         return translation.replace(/\{([\w.]+)\}/g,
@@ -36,12 +38,25 @@ var Language = {
 
     setMenuLanguage: function () {
         'use strict';
+        let hasUntranslated = false;
+
+        Language.availableLanguages.forEach(language => {
+            if (Language.data[language] === undefined || Language.data[language] === null || $.isEmptyObject(Language.data[language])) {
+                hasUntranslated = true;
+                $(`#language option[value="${language}"]`).attr('disabled', 'disabled').insertAfter($("#language option:last"));
+            }
+        });
+
+        if (hasUntranslated) {
+            $('<option>').text('-- Untranslated languages --').attr('disabled', 'disabled').insertAfter($("#language option:enabled:last"));
+        }
+
         const wikiBase = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/';
         const wikiPages = {
-            'de-de': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(German)',
-            'en-us': 'RDO-Collectors-Map-User-Guide-(English)',
-            'fr-fr': 'RDO-Collectors-Map-Guide-d\'Utilisateur-(French)',
-            'pt-br': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',
+            'de-DE': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(German)',
+            'en-US': 'RDO-Collectors-Map-User-Guide-(English)',
+            'fr-FR': 'RDO-Collectors-Map-Guide-d\'Utilisateur-(French)',
+            'pt-BR': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',
         };
         const wikiLang = Settings.language in wikiPages ? Settings.language : 'en-us';
         $('.wiki-page').attr('href', wikiBase + wikiPages[wikiLang]);
@@ -64,17 +79,41 @@ var Language = {
                     async: false,
                     dataType: 'json',
                     success: function (json) {
-                        object[language] = json;
+                        var result = {};
+
+                        for (var propName in json) {
+                            if (json[propName] !== "" && ($.isEmptyObject(object['en-US']) || object['en-US'][propName] !== json[propName])) {
+                                result[propName] = json[propName];
+                            }
+                        }
+
+                        if (!$.isEmptyObject(result)) {
+                            object[language] = result;
+                        }
                     }
                 });
-                
+
                 // Item language strings.
                 $.ajax({
                     url: `./langs/item/${language}.json`,
                     async: false,
                     dataType: 'json',
                     success: function (json) {
-                        $.extend(object[language], json);
+                        var result = {};
+
+                        for (var propName in json) {
+                            if (json[propName] !== "" && ($.isEmptyObject(object['en-US']) || object['en-US'][propName] !== json[propName])) {
+                                result[propName] = json[propName];
+                            }
+                        }
+
+                        if (!$.isEmptyObject(result)) {
+                            if (object[language] === null) {
+                                object[language] = result;
+                            } else {
+                                $.extend(object[language], result);
+                            }
+                        }
                     }
                 });
             } catch (error) {
