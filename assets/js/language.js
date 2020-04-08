@@ -47,7 +47,7 @@ var Language = {
             }
         });
 
-        if (hasUntranslated) {
+        if (hasUntranslated && $('#language option:contains(-- Untranslated languages --)').length === 0) {
             $('<option>').text('-- Untranslated languages --').attr('disabled', 'disabled').insertAfter($("#language option:enabled:last"));
         }
 
