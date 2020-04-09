@@ -551,7 +551,6 @@ var MapBase = {
     if (marker.day != Cycles.categories[marker.category] && !MapBase.showAllMarkers) return;
     if (!uniqueSearchMarkers.includes(marker)) return;
     if (!enabledCategories.includes(marker.category)) return;
-    if (marker.subdata != null && categoriesDisabledByDefault.includes(marker.subdata)) return;
 
     marker.isVisible = true;
 
