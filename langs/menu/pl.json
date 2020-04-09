@@ -110,7 +110,7 @@
 	"menu.import_export_explanation": "Spowoduje to zaimportowanie lub wyeksportowanie ustawień. Importowanie ustawień zastąpi wszystkie bieżące ustawienia i ponownie załaduje stronę. Ta funkcja nie obejmuje znaczników użytkownika.",
 	"menu.import_button": "Importuj",
 	"menu.export_button": "Eksportuj",
-	"menu.user_pins": "Znacznik użytkownika",
+	"menu.user_pins": "Znaczniki użytkownika",
 	"menu.user_pins_place_mode": "Stwórz znacznik klikając",
 	"menu.user_pins_edit_mode": "Włącz edycję znaczników",
 	"menu.user_pins_import": "Importuj",

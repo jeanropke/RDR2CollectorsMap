@@ -1,5 +1,5 @@
 var Language = {
-    availableLanguages: ['en-US', 'af-ZA', 'ar-SA', 'ca-ES', 'cs-CZ', 'da-DK', 'de-DE', 'el-GR', 'es-ES', 'fi-FI', 'fr-FR', 'he-IL', 'hu-HU', 'it-IT', 'ja-JP', 'ko-KR', 'no-NO', 'pl-PL', 'pt-BR', 'pt-PT', 'ro-RO', 'ru-RU', 'sr-SP', 'sv-SE', 'th-TH', 'tr-TR', 'uk-UA', 'vi-VN', 'zh-CN', 'zh-TW'],
+    availableLanguages: ['en', 'af', 'ar', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'fi', 'fr', 'he', 'hu', 'it', 'ja', 'ko', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sr', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-Hans', 'zh-Hant'],
 
     get: function (transKey, optional) {
         'use strict';
@@ -20,7 +20,7 @@ var Language = {
         translation =
             translation ||
             (Language.data[Settings.language] !== undefined && Language.data[Settings.language][transKey]) ||
-            Language.data['en-US'][transKey] ||
+            Language.data['en'][transKey] ||
             (optional ? '' : transKey);
 
         return translation.replace(/\{([\w.]+)\}/g,
@@ -53,12 +53,12 @@ var Language = {
 
         const wikiBase = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/';
         const wikiPages = {
-            'de-DE': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(German)',
-            'en-US': 'RDO-Collectors-Map-User-Guide-(English)',
-            'fr-FR': 'RDO-Collectors-Map-Guide-d\'Utilisateur-(French)',
-            'pt-BR': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',
+            'en': 'RDO-Collectors-Map-User-Guide-(English)',
+            'de': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(German)',
+            'fr': 'RDO-Collectors-Map-Guide-d\'Utilisateur-(French)',
+            'pt': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',
         };
-        const wikiLang = Settings.language in wikiPages ? Settings.language : 'en-us';
+        const wikiLang = Settings.language in wikiPages ? Settings.language : 'en';
         $('.wiki-page').attr('href', wikiBase + wikiPages[wikiLang]);
 
         this.translateDom();
@@ -75,14 +75,14 @@ var Language = {
             try {
                 // Menu language strings.
                 $.ajax({
-                    url: `./langs/menu/${language}.json`,
+                    url: `./langs/menu/${language.replace('-', '_')}.json`,
                     async: false,
                     dataType: 'json',
                     success: function (json) {
                         var result = {};
 
                         for (var propName in json) {
-                            if (json[propName] !== "" && ($.isEmptyObject(object['en-US']) || object['en-US'][propName] !== json[propName])) {
+                            if (json[propName] !== "" && ($.isEmptyObject(object['en']) || object['en'][propName] !== json[propName])) {
                                 result[propName] = json[propName];
                             }
                         }
@@ -95,14 +95,14 @@ var Language = {
 
                 // Item language strings.
                 $.ajax({
-                    url: `./langs/item/${language}.json`,
+                    url: `./langs/item/${language.replace('-', '_')}.json`,
                     async: false,
                     dataType: 'json',
                     success: function (json) {
                         var result = {};
 
                         for (var propName in json) {
-                            if (json[propName] !== "" && ($.isEmptyObject(object['en-US']) || object['en-US'][propName] !== json[propName])) {
+                            if (json[propName] !== "" && ($.isEmptyObject(object['en']) || object['en'][propName] !== json[propName])) {
                                 result[propName] = json[propName];
                             }
                         }

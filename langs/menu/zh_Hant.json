@@ -234,7 +234,7 @@
 	"menu.custom_marker_dark_blue": "深藍色",
 	"menu.reset_inventory_daily": "每日重置清單",
 	"menu.soft_flowers_inventory_stack": "花軟疊大小",
-	"menu.reload_map": "立即重新載入地圖",
+	"menu.reload_map": "重新載入地圖",
 	"menu.disable_collected_items": "禁用已收集",
 	"menu.collection_collect_all": "收集全部",
 	"menu.enable_additional_inventory_options": "開啓進階清單選項",
@@ -323,7 +323,7 @@
 	"help.collection_collected": "該收藏系列中已找到的收藏品數量。",
 	"help.reset_inventory_daily": "切換是否每24小時重置庫存。",
 	"help.soft_flowers_inventory_stack": "允許您設置“軟”限制美洲野花在您的庫存。當達到限制時，美洲野花將從地圖和菜單中禁用，但您仍然可以添加更多的花到主堆棧大小限制。",
-	"help.reload_map": "允許你重新加載地圖，如果網站出現錯誤。",
+	"help.reload_map": "重新載入地圖",
 	"help.disable_collected_items": "允許你關閉所有你已擁有的物品",
 	"help.collection_collect_all": "允許你從目錄加入所有物品到庫存",
 	"help.enable_additional_inventory_options": "允許你啓用更多選項去管理庫存"
