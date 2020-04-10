@@ -47,8 +47,7 @@ var Routes = {
   getCustomRoute: function () {
     var customRoute = JSON.parse(localStorage.getItem("routes.customRoute")) || '';
 
-    if (customRoute || customRoute !== '' || customRoute != null) {
-      console.log(customRoute);
+    if (customRoute !== '' || customRoute != null) {
       Routes.loadCustomRoute(customRoute);
       for (var item of customRoute.split(",")) {
         if (Routes.customRouteConnections.indexOf(item === -1)) {
