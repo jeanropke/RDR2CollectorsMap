@@ -5,6 +5,9 @@ class Treasure {
     this.treasures = [];
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
+    const pane = MapBase.map.createPane('treasureX');
+    pane.style.zIndex = 450;  // X-markers on top of circle, but behind “normal” markers/shadows
+    pane.style.pointerEvents = 'none';
     this.context = $('.menu-hidden[data-type=treasure]');
     this.crossIcon = L.icon({
       iconUrl: './assets/images/icons/cross.png',
@@ -18,7 +21,7 @@ class Treasure {
         this.onLanguageChanged();
         console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
       });
-    $('[data-type="treasure"] [data-text="menu.show_all"]').parent().click(e => {
+    $('.menu-hidden[data-type="treasure"] > *:first-child a').click(e => {
       e.preventDefault();
       Treasure.treasures.forEach(treasure =>
         treasure.onMap = ($(e.target).attr('data-text') === 'menu.show_all'));
@@ -66,14 +69,18 @@ class Treasure {
     this.marker.addLayer(L.marker([this.x, this.y], {icon: Treasure.mainIcon})
       .bindPopup(this.popupContent.bind(this), { minWidth: 300 })
     );
-    this.treasures.forEach(cross =>
-      this.marker.addLayer(L.marker([cross.x, cross.y], {icon: Treasure.crossIcon})));
+    this.locations.forEach(cross =>
+      this.marker.addLayer(L.marker([cross.x, cross.y], {
+        icon: Treasure.crossIcon,
+        pane: 'treasureX',
+      }))
+    );
     this.onMap = this.onMap;
   }
   popupContent() {
     const snippet = $(`<div class="handover-wrapper-with-no-influence">
         <h1 data-text="${this.text}"></h1>
-        <button type="button" class="btn btn-info remove-button" data-text="map.remove_add">
+        <button type="button" class="btn btn-info remove-button" data-text="map.remove">
           </button>
       </div>`).translate();
     snippet.find('button').on('click', () => this.onMap = false);
