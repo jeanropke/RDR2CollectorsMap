@@ -21,7 +21,7 @@ class Treasure {
         this.onLanguageChanged();
         console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
       });
-    $('[data-type="treasure"] [data-text="menu.show_all"]').parent().click(e => {
+    $('.menu-hidden[data-type="treasure"] > *:first-child a').click(e => {
       e.preventDefault();
       Treasure.treasures.forEach(treasure =>
         treasure.onMap = ($(e.target).attr('data-text') === 'menu.show_all'));
