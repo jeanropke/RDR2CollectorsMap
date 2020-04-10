@@ -50,7 +50,7 @@ var MapBase = {
       bindPopup: function (content, options) {
         // TODO: Check if we can move this from here.
         if (content instanceof L.Popup) {
-          Util.setOptions(content, options);
+          L.Util.setOptions(content, options);
           this._popup = content;
           content._source = this;
         } else {
@@ -141,7 +141,7 @@ var MapBase = {
 
     MapBase.map.doubleClickZoom[Settings.isDoubleClickZoomEnabled ? 'enable' : 'disable']();
 
-    var southWest = L.latLng(-160, -50),
+    var southWest = L.latLng(-160, -120),
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
@@ -323,8 +323,6 @@ var MapBase = {
 
     if (Layers.itemMarkersLayer != null)
       Layers.itemMarkersLayer.clearLayers();
-    if (Layers.miscLayer != null)
-      Layers.miscLayer.clearLayers();
 
     MapBase.updateLoopAvailable = false;
     MapBase.yieldingLoop(
@@ -349,7 +347,6 @@ var MapBase = {
 
     MapBase.addFastTravelMarker();
 
-    Treasures.addToMap();
     MadamNazar.addMadamNazar();
 
     if (refreshMenu) {
@@ -380,68 +377,56 @@ var MapBase = {
   },
 
   removeItemFromMap: function (day, text, subdata, category, skipInventory = false) {
-    if (text.endsWith('_treasure')) {
-      if (Treasures.enabledTreasures.includes(text))
-        Treasures.enabledTreasures = $.grep(Treasures.enabledTreasures, function (treasure) {
-          return treasure !== text;
-        });
-      else
-        Treasures.enabledTreasures.push(text);
+    var markers = MapBase.markers.filter(function (marker) {
+      return marker.day == day && (marker.text == text || marker.subdata == subdata);
+    });
 
-      $(`[data-type=${text}]`).toggleClass('disabled');
+    if (markers == null) return;
 
-      Treasures.addToMap();
-      Treasures.save();
-    } else {
-      var markers = MapBase.markers.filter(function (marker) {
-        return marker.day == day && (marker.text == text || marker.subdata == subdata);
-      });
+    var subdataCategoryIsDisabled =
+      (text == subdata && !$(`[data-type=${subdata}]`).hasClass('disabled'));
 
-      if (markers == null) return;
+    $.each(markers, function (key, marker) {
+      if (text != subdata && marker.text != text) return;
 
-      var subdataCategoryIsDisabled = (text == subdata && !$(`[data-type=${subdata}]`).hasClass('disabled'));
+      var changeAmount = 0;
 
-      $.each(markers, function (key, marker) {
-        if (text != subdata && marker.text != text) return;
+      if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
+        if (marker.day == Cycles.categories[marker.category]) {
+          marker.isCollected = true;
+          changeAmount = 1;
+        }
+      } else {
+        if (marker.day == Cycles.categories[marker.category]) {
+          marker.isCollected = false;
+          changeAmount = -1;
+        }
+      }
 
-        var changeAmount = 0;
+      Inventory.changeMarkerAmount(marker.subdata || marker.text, changeAmount, skipInventory);
 
-        if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
-          if (marker.day == Cycles.categories[marker.category]) {
-            marker.isCollected = true;
-            changeAmount = 1;
-          }
+      if (!InventorySettings.isEnabled) {
+        if (marker.isCollected && marker.day == Cycles.categories[marker.category]) {
+          $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
+          $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
         } else {
-          if (marker.day == Cycles.categories[marker.category]) {
-            marker.isCollected = false;
-            changeAmount = -1;
-          }
+          $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
+          $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
         }
 
-        Inventory.changeMarkerAmount(marker.subdata || marker.text, changeAmount, skipInventory);
+        MapBase.toggleCollectibleMenu(marker.day, marker.text, marker.subdata,
+          marker.category, markers);
+      }
 
-        if (!InventorySettings.isEnabled) {
-          if (marker.isCollected && marker.day == Cycles.categories[marker.category]) {
-            $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
-            $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
-          } else {
-            $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
-            $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
-          }
-
-          MapBase.toggleCollectibleMenu(marker.day, marker.text, marker.subdata, marker.category, markers);
+      try {
+        if (PathFinder !== undefined) {
+          PathFinder.wasRemovedFromMap(marker);
         }
-
-        try {
-          if (PathFinder !== undefined) {
-            PathFinder.wasRemovedFromMap(marker);
-          }
-        } catch (error) {
-          alert(Language.get('alerts.feature_not_supported'));
-          console.error(error);
-        }
-      });
-    }
+      } catch (error) {
+        alert(Language.get('alerts.feature_not_supported'));
+        console.error(error);
+      }
+    });
 
     if (RouteSettings.ignoreCollected)
       Routes.generatePath();
@@ -551,7 +536,6 @@ var MapBase = {
     if (marker.day != Cycles.categories[marker.category] && !MapBase.showAllMarkers) return;
     if (!uniqueSearchMarkers.includes(marker)) return;
     if (!enabledCategories.includes(marker.category)) return;
-    if (marker.subdata != null && categoriesDisabledByDefault.includes(marker.subdata)) return;
 
     marker.isVisible = true;
 
