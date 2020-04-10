@@ -35,8 +35,6 @@ var enabledCategories = categories.filter(item => !categoriesDisabledByDefault.i
 
 var categoryButtons = $(".clickable[data-type]");
 
-var debugMarkersArray = [];
-
 /*
 - Leaflet extentions require Leaflet loaded
 - guaranteed by this script’s position in index.html
