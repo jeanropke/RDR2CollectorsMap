@@ -5,6 +5,9 @@ class Treasure {
     this.treasures = [];
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
+    const pane = MapBase.map.createPane('treasureX');
+    pane.style.zIndex = 450;  // X-markers on top of circle, but behind “normal” markers/shadows
+    pane.style.pointerEvents = 'none';
     this.context = $('.menu-hidden[data-type=treasure]');
     this.crossIcon = L.icon({
       iconUrl: './assets/images/icons/cross.png',
@@ -67,7 +70,11 @@ class Treasure {
       .bindPopup(this.popupContent.bind(this), { minWidth: 300 })
     );
     this.treasures.forEach(cross =>
-      this.marker.addLayer(L.marker([cross.x, cross.y], {icon: Treasure.crossIcon})));
+      this.marker.addLayer(L.marker([cross.x, cross.y], {
+        icon: Treasure.crossIcon,
+        pane: 'treasureX',
+      }))
+    );
     this.onMap = this.onMap;
   }
   popupContent() {
