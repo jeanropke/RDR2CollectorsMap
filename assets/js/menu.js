@@ -225,7 +225,7 @@ Menu.toggleAll = function (enable) {
   enabledCategories = enable ? categories : [];
 
   MapBase.addMarkers();
-  Treasure.repaint();
+  Treasure.onCategoryToggle();
 };
 
 Menu.refreshItemsCounter = function () {

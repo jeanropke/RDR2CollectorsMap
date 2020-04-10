@@ -433,7 +433,7 @@ $('.clickable').on('click', function () {
   localStorage.setItem("enabled-categories", JSON.stringify(enabledCategories));
 
   if (menu.data('type') == 'treasure')
-    Treasure.toggleAll(!isDisabled);
+    Treasure.onCategoryToggle();
   else if (menu.data('type') == 'user_pins')
     Pins.addToMap();
   else

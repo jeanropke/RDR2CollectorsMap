@@ -18,6 +18,11 @@ class Treasure {
         this.onLanguageChanged();
         console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');
       });
+    $('[data-type="treasure"] [data-text="menu.show_all"]').parent().click(e => {
+      e.preventDefault();
+      Treasure.treasures.forEach(treasure =>
+        treasure.onMap = ($(e.target).attr('data-text') === 'menu.show_all'));
+    });
   }
   static onLanguageChanged () {
     Menu.reorderMenu(this.context);
@@ -76,7 +81,8 @@ class Treasure {
   }
   set onMap (state) {
     if (state) {
-      Treasure.layer.addLayer(this.marker);
+      const method = enabledCategories.includes('treasure') ? 'addLayer' : 'removeLayer';
+      Treasure.layer[method](this.marker);
       this.element.removeClass('disabled')
       localStorage.setItem(this._shownKey, 'true');
     } else {
@@ -88,7 +94,7 @@ class Treasure {
   get onMap () {
     return !!localStorage.getItem(this._shownKey);
   }
-  static toggleAll (enabled) {
-    Treasure.treasures.forEach(treasure => treasure.onMap = enabled);
+  static onCategoryToggle () {
+    Treasure.treasures.forEach(treasure => treasure.onMap = treasure.onMap);
   }
 }
