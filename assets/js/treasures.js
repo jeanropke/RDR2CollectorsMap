@@ -69,7 +69,7 @@ class Treasure {
     this.marker.addLayer(L.marker([this.x, this.y], {icon: Treasure.mainIcon})
       .bindPopup(this.popupContent.bind(this), { minWidth: 300 })
     );
-    this.treasures.forEach(cross =>
+    this.locations.forEach(cross =>
       this.marker.addLayer(L.marker([cross.x, cross.y], {
         icon: Treasure.crossIcon,
         pane: 'treasureX',
