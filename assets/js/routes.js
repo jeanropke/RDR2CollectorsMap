@@ -3,6 +3,10 @@
  */
 
 var Routes = {
+  routesData: [],
+  polylines: null,
+  customRouteConnections: [],
+
   init: function () {
     $('#custom-routes').prop("checked", RouteSettings.customRouteEnabled);
 
@@ -40,6 +44,20 @@ var Routes = {
     }
   },
 
+  getCustomRoute: function () {
+    var customRoute = JSON.parse(localStorage.getItem("routes.customRoute")) || '';
+
+    if (customRoute || customRoute !== '' || customRoute != null) {
+      console.log(customRoute);
+      Routes.loadCustomRoute(customRoute);
+      for (var item of customRoute.split(",")) {
+        if (Routes.customRouteConnections.indexOf(item === -1)) {
+          Routes.addMarkerOnCustomRoute(item);
+        }
+      }
+    }
+  },
+
   loadCustomRoute: function (input) {
     try {
       var connections = [];
@@ -48,11 +66,8 @@ var Routes = {
 
       $.each(input, function (key, value) {
         var _marker = MapBase.markers.filter(marker => marker.text == value && marker.day == Cycles.categories[marker.category])[0];
-        if (_marker == null) {
-          console.error(`Item not found on map: '${value}'`);
-        } else {
+        if (_marker != null)
           connections.push([_marker.lat, _marker.lng]);
-        }
       });
 
       if (Routes.polylines instanceof L.Polyline) {
@@ -111,11 +126,6 @@ var Routes = {
       Routes.loadCustomRoute(input);
     }
   },
-
-
-  routesData: [],
-  polylines: null,
-  customRouteConnections: [],
 
   /**
    * Path generator by Senexis
