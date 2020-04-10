@@ -233,6 +233,7 @@ var MapBase = {
         }
       });
 
+      RouteSettings.customRoute = '';
       MapBase.markers = markers;
       Inventory.save();
       Menu.refreshMenu();
@@ -341,6 +342,7 @@ var MapBase = {
         Menu.refreshItemsCounter();
         MapBase.loadImportantItems();
         Inventory.updateLowAmountItems();
+        Routes.getCustomRoute();
       }
     );
 

@@ -362,7 +362,13 @@ $("#custom-routes").on("change", function () {
 
 $("#clear-custom-routes").on("click", function () {
   Routes.customRouteConnections = [];
+  RouteSettings.customRoute = '';
   MapBase.map.removeLayer(Routes.polylines);
+});
+
+$('#custom-routes').on('change', function () {
+  var mapRoute = Routes.customRouteConnections.join(',');
+  RouteSettings.customRoute = mapRoute;
 });
 
 $('.map-alert').on('click', function () {

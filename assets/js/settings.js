@@ -182,4 +182,5 @@ Object.entries({
   startMarkerLat: { default: -119.9063 },
   startMarkerLng: { default: 8.0313 },
   usePathfinder: { default: false },
+  customRoute: {default: ''}
 }).forEach(([name, config]) => SettingProxy.addSetting(RouteSettings, name, config));
