@@ -113,12 +113,14 @@ var Cycles = {
   },
   setLocaleDate: function () {
     'use strict';
+    if (Cycles.selectedDay === undefined) return;
     const options = { timeZone: "UTC", day: "2-digit", month: "long" };
     $('.cycle-data').text(Cycles.selectedDay.toLocaleString(Settings.language, options));
   },
 
   checkForUpdate: function () {
     'use strict';
+    if (Cycles.selectedDay === undefined) return;
     if (Cycles.getFreshSelectedDay().valueOf() !== Cycles.selectedDay.valueOf()) {
       if (Cycles.offset !== 1) {
         Cycles.offset = 0;

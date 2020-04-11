@@ -1,5 +1,38 @@
+jQuery.fn.translate = function () {
+    return Language.translateDom(this);
+};
+
 var Language = {
+    data: {},
     availableLanguages: ['en', 'af', 'ar', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'fi', 'fr', 'he', 'hu', 'it', 'ja', 'ko', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sr', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-Hans', 'zh-Hant'],
+
+    init: function () {
+        'use strict';
+        let langs = ['en'];
+
+        if (Settings.language !== 'en') {
+            langs.push(Settings.language);
+        }
+
+        langs.forEach(language => {
+            $.ajax({
+                url: `./langs/${language.replace('-', '_')}.json?nocache=${nocache}`,
+                async: false,
+                dataType: 'json',
+                success: function (json) {
+                    let result = {};
+
+                    for (let propName in json) {
+                        if (json[propName] !== "" && ($.isEmptyObject(Language.data.en) || Language.data.en[propName] !== json[propName])) {
+                            result[propName] = json[propName];
+                        }
+                    }
+
+                    Language.data[language] = result;
+                }
+            });
+        });
+    },
 
     get: function (transKey, optional) {
         'use strict';
@@ -19,8 +52,8 @@ var Language = {
 
         translation =
             translation ||
-            (Language.data[Settings.language] !== undefined && Language.data[Settings.language][transKey]) ||
-            Language.data['en'][transKey] ||
+            Language.data[Settings.language][transKey] ||
+            Language.data.en[transKey] ||
             (optional ? '' : transKey);
 
         return translation.replace(/\{([\w.]+)\}/g,
@@ -38,17 +71,24 @@ var Language = {
 
     setMenuLanguage: function () {
         'use strict';
-        let hasUntranslated = false;
 
-        Language.availableLanguages.forEach(language => {
-            if (Language.data[language] === undefined || Language.data[language] === null || $.isEmptyObject(Language.data[language])) {
-                hasUntranslated = true;
-                $(`#language option[value="${language}"]`).attr('disabled', 'disabled').insertAfter($("#language option:last"));
-            }
-        });
+        if (Language.data[Settings.language] === undefined) {
+            $.ajax({
+                url: `./langs/${Settings.language.replace('-', '_')}.json?nocache=${nocache}`,
+                async: false,
+                dataType: 'json',
+                success: function (json) {
+                    let result = {};
 
-        if (hasUntranslated && $('#language option:contains(-- Untranslated languages --)').length === 0) {
-            $('<option>').text('-- Untranslated languages --').attr('disabled', 'disabled').insertAfter($("#language option:enabled:last"));
+                    for (let propName in json) {
+                        if (json[propName] !== "" && ($.isEmptyObject(Language.data.en) || Language.data.en[propName] !== json[propName])) {
+                            result[propName] = json[propName];
+                        }
+                    }
+
+                    Language.data[Settings.language] = result;
+                }
+            });
         }
 
         const wikiBase = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/';
@@ -64,74 +104,5 @@ var Language = {
         this.translateDom();
 
         $('#search').attr("placeholder", Language.get('menu.search_placeholder'));
-    },
-
-    // A helper function to "compile" all language files into a single JSON file.
-    getLanguageJson: function () {
-        var object = {};
-
-        // Loop through all available languages and try to retrieve both the `menu.json` and `item.json` files.
-        this.availableLanguages.forEach(language => {
-            try {
-                // Menu language strings.
-                $.ajax({
-                    url: `./langs/menu/${language.replace('-', '_')}.json`,
-                    async: false,
-                    dataType: 'json',
-                    success: function (json) {
-                        var result = {};
-
-                        for (var propName in json) {
-                            if (json[propName] !== "" && ($.isEmptyObject(object['en']) || object['en'][propName] !== json[propName])) {
-                                result[propName] = json[propName];
-                            }
-                        }
-
-                        if (!$.isEmptyObject(result)) {
-                            object[language] = result;
-                        }
-                    }
-                });
-
-                // Item language strings.
-                $.ajax({
-                    url: `./langs/item/${language.replace('-', '_')}.json`,
-                    async: false,
-                    dataType: 'json',
-                    success: function (json) {
-                        var result = {};
-
-                        for (var propName in json) {
-                            if (json[propName] !== "" && ($.isEmptyObject(object['en']) || object['en'][propName] !== json[propName])) {
-                                result[propName] = json[propName];
-                            }
-                        }
-
-                        if (!$.isEmptyObject(result)) {
-                            if (object[language] === null) {
-                                object[language] = result;
-                            } else {
-                                $.extend(object[language], result);
-                            }
-                        }
-                    }
-                });
-            } catch (error) {
-                // Do nothing for this language in case of a 404-error.
-                return;
-            }
-        });
-
-        // Download the object to a `language.json` file.
-        var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(object)));
-        element.setAttribute('download', 'language.json');
-
-        element.style.display = 'none';
-        document.body.appendChild(element);
-
-        element.click();
-
-        document.body.removeChild(element);
     }
 };
