@@ -89,6 +89,7 @@ function init() {
   MapBase.loadWeeklySet();
   MapBase.loadOverlays();
   MapBase.init();
+  Language.init();
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
