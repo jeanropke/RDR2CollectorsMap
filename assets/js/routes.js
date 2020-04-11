@@ -50,7 +50,7 @@ var Routes = {
     if (customRoute) {
       Routes.loadCustomRoute(customRoute);
       for (var item of customRoute.split(",")) {
-        if (Routes.customRouteConnections.indexOf(item === -1)) {
+        if (!Routes.customRouteConnections.includes(item)) {
           Routes.addMarkerOnCustomRoute(item);
         }
       }
