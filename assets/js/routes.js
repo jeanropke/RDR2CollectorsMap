@@ -49,9 +49,11 @@ var Routes = {
 
     if (customRoute) {
       Routes.loadCustomRoute(customRoute);
-      for (var item of customRoute.split(",")) {
+      var itemsArray = customRoute.split(",");
+
+      for (var item of itemsArray) {
         if (!Routes.customRouteConnections.includes(item)) {
-          Routes.addMarkerOnCustomRoute(item);
+          Routes.addMarkerOnCustomRoute(item, true);
         }
       }
     }
@@ -83,8 +85,8 @@ var Routes = {
     }
   },
 
-  addMarkerOnCustomRoute: function (value) {
-    if (RouteSettings.customRouteEnabled) {
+  addMarkerOnCustomRoute: function (value, autoLoad = false) {
+    if (RouteSettings.customRouteEnabled || autoLoad) {
       if (Routes.customRouteConnections.includes(value)) {
         Routes.customRouteConnections = Routes.customRouteConnections.filter(function (item) {
           return item !== value;
@@ -97,7 +99,8 @@ var Routes = {
 
       $.each(Routes.customRouteConnections, function (key, item) {
         var _marker = MapBase.markers.filter(marker => marker.text == item && marker.day == Cycles.categories[marker.category])[0];
-        connections.push([_marker.lat, _marker.lng]);
+        if (_marker != undefined)
+          connections.push([_marker.lat, _marker.lng]);
       });
 
       if (Routes.polylines instanceof L.Polyline) {
