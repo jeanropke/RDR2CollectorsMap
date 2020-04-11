@@ -97,9 +97,13 @@ function init() {
   Inventory.init();
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();
-  Treasure.init();
+  const treasureFinished = Treasure.init();
   MapBase.loadMarkers();
   Routes.init();
+  // depends on MapBase, Treasure, Pins
+  // via `promise.then()`, the Treasure dependency is _guaranteed_ to have finished
+  // the other two still need a little rewriting
+  treasureFinished.then(Menu.activateHandlers);
 
   if (Settings.isMenuOpened) $('.menu-toggle').click();
 
@@ -411,32 +415,6 @@ $("#enable-cycle-input").on("change", function () {
 $('#custom-marker-color').on("change", function () {
   Settings.markerCustomColor = Number($("#custom-marker-color").val());
   MapBase.addMarkers();
-});
-
-//Disable & enable collection category
-$('.clickable').on('click', function () {
-  var menu = $(this);
-  if (menu.data('type') === undefined) return;
-
-  $('[data-type=' + menu.data('type') + ']').toggleClass('disabled');
-  var isDisabled = menu.hasClass('disabled');
-
-  if (isDisabled) {
-    enabledCategories = $.grep(enabledCategories, function (value) {
-      return value != menu.data('type');
-    });
-  } else {
-    enabledCategories.push(menu.data('type'));
-  }
-
-  localStorage.setItem("enabled-categories", JSON.stringify(enabledCategories));
-
-  if (menu.data('type') == 'treasure')
-    Treasure.onCategoryToggle();
-  else if (menu.data('type') == 'user_pins')
-    Pins.addToMap();
-  else
-    MapBase.addMarkers();
 });
 
 //Open collection submenu
