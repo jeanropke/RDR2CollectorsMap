@@ -216,18 +216,6 @@ Menu.refreshCollectionCounter = function (category) {
     .replace('{max}', collectiblesElement.find('.collectible-wrapper').length));
 };
 
-Menu.toggleAll = function (enable) {
-  $(".clickable[data-type]").each(function (index, value) {
-    $(value).toggleClass("disabled", !enable);
-    $(`.menu-hidden[data-type=${$(value).attr('data-type')}]`).toggleClass("disabled", !enable);
-  });
-
-  enabledCategories = enable ? categories : [];
-
-  MapBase.addMarkers();
-  Treasure.onCategoryToggle();
-};
-
 Menu.refreshItemsCounter = function () {
   var _markers = MapBase.markers.filter(marker => marker.day == Cycles.categories[marker.category] && marker.isVisible);
 
@@ -277,7 +265,7 @@ Menu.refreshWeeklyItems = function () {
   });
 };
 
-// Remove highlight from all important items
+Menu.activateHandlers = function () {
 $('#clear_highlights').on('click', function () {
   MapBase.clearImportantItems();
 });
@@ -285,3 +273,40 @@ $('#clear_highlights').on('click', function () {
 // change cycles from menu (if debug options are enabled)
 $('#cycle-prev').on('click', Cycles.prevCycle);
 $('#cycle-next').on('click', Cycles.nextCycle);
+
+  //toggle one collection category or disable/enable all at once
+  $('.menu-option[data-type], .links-container a[data-text^="menu."][data-text$="_all"]')
+    .on('click', function () {
+      'use strict';
+      const $this = $(this);
+      const category = $this.attr('data-type');
+      const toEnable = category ? $this.hasClass('disabled') :
+        $this.attr('data-text') === 'menu.show_all';
+      const $allButtons = $('.menu-option[data-type], .menu-hidden[data-type]');
+      const $buttons = category ? $allButtons.filter(`[data-type="${category}"]`) :
+        $allButtons;
+
+      $buttons.toggleClass('disabled', !toEnable);
+
+      if (category && toEnable) {
+        enabledCategories.push(category);
+      } else if (category) {  // disable
+        enabledCategories = enabledCategories.filter(cat => cat !== category);
+      } else {
+        enabledCategories = toEnable ? categories : [];
+      }
+      localStorage.setItem("enabled-categories", JSON.stringify(enabledCategories));
+
+      if (!category) {
+        MapBase.addMarkers();
+        Treasure.onCategoryToggle();
+        Pins.addToMap();
+      } else if (category === 'user_pins') {
+        Pins.addToMap();
+      } else if (category === 'treasure') {
+        Treasure.onCategoryToggle();
+      } else {
+        MapBase.addMarkers();
+      }
+  });
+}
