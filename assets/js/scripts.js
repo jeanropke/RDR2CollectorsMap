@@ -705,6 +705,7 @@ $('#cookie-export').on("click", function () {
     // Remove irrelevant properties.
     delete settings.randid;
     delete settings['pinned-items'];
+    delete settings['routes.customRoute'];
 
     // Set file version
     settings.version = 2;
