@@ -5,3 +5,5 @@ assets/js/salesman.js
 rdo/
 desktop.ini
 crowdin.yml
+logs/
+update-langs.sh
