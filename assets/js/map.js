@@ -233,7 +233,6 @@ var MapBase = {
         }
       });
 
-      MapBase.map.removeLayer(Routes.polylines);
       RouteSettings.customRoute = '';
       MapBase.markers = markers;
       Inventory.save();
