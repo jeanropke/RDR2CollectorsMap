@@ -4,3 +4,4 @@ node_modules/
 assets/js/salesman.js
 rdo/
 desktop.ini
+crowdin.yml
