@@ -266,13 +266,13 @@ Menu.refreshWeeklyItems = function () {
 };
 
 Menu.activateHandlers = function () {
-$('#clear_highlights').on('click', function () {
-  MapBase.clearImportantItems();
-});
+  $('#clear_highlights').on('click', function () {
+    MapBase.clearImportantItems();
+  });
 
-// change cycles from menu (if debug options are enabled)
-$('#cycle-prev').on('click', Cycles.prevCycle);
-$('#cycle-next').on('click', Cycles.nextCycle);
+  // change cycles from menu (if debug options are enabled)
+  $('#cycle-prev').on('click', Cycles.prevCycle);
+  $('#cycle-next').on('click', Cycles.nextCycle);
 
   //toggle one collection category or disable/enable all at once
   $('.menu-option[data-type], .links-container a[data-text^="menu."][data-text$="_all"]')
