@@ -364,7 +364,13 @@ $("#custom-routes").on("change", function () {
 
 $("#clear-custom-routes").on("click", function () {
   Routes.customRouteConnections = [];
+  RouteSettings.customRoute = '';
   MapBase.map.removeLayer(Routes.polylines);
+});
+
+$('#custom-routes').on('change', function () {
+  var mapRoute = Routes.customRouteConnections.join(',');
+  RouteSettings.customRoute = mapRoute;
 });
 
 $('.map-alert').on('click', function () {
@@ -678,6 +684,7 @@ $('#cookie-export').on("click", function () {
     // Remove irrelevant properties.
     delete settings.randid;
     delete settings['pinned-items'];
+    delete settings['routes.customRoute'];
 
     // Set file version
     settings.version = 2;
