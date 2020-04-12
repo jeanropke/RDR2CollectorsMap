@@ -417,7 +417,7 @@
             { "text": "bottle_old_tom_gin", "height": "0", "tool": "0", "lat": "-113.9005", "lng": "18.7528" },
             { "text": "bottle_caribbean_rum", "height": "0", "tool": "0", "lat": "-82.5927", "lng": "98.0654" },
             { "text": "bottle_cognac_bottle", "height": "0", "tool": "0", "lat": "-101.0760", "lng": "43.4903" },
-            { "text": "bottle_london_dry_gin", "height": "0", "tool": "0", "lat": "-52.2030", "lng": "76.5559" }
+            { "text": "bottle_london_dry_gin", "height": "1", "tool": "0", "lat": "-52.2030", "lng": "76.5559" }
         ],
         "5": [
             { "text": "bottle_tennesee_whiskey", "height": "0", "tool": "0", "lat": "-104.6625", "lng": "55.4302" },
