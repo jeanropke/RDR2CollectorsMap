@@ -1329,5 +1329,16 @@
   "random": 6,
   "tarot_cards": 6,
   "date": "2020-04-12"
+ }, {
+  "flower": 5,
+  "bottle": 1,
+  "arrowhead": 3,
+  "egg": 5,
+  "coin": 6,
+  "heirlooms": 4,
+  "lost_jewelry": 5,
+  "random": 4,
+  "tarot_cards": 1,
+  "date": "2020-04-13"
  }
 ]
