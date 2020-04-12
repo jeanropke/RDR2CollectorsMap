@@ -57,63 +57,38 @@ Menu.refreshMenu = function () {
     // Only add subdata markers once.
     if (marker.subdata && $(`.menu-hidden[data-type=${marker.category}]`).children(`[data-type=${marker.subdata}]`).length > 0) return;
 
-    var collectibleKey = null;
-    var collectibleText = null;
 
-    switch (marker.category) {
-      case 'flower':
-        collectibleKey = `flower_${marker.subdata}`;
-        break;
-      case 'egg':
-        collectibleKey = `egg_${marker.subdata}`;
-        break;
-      default:
-        collectibleKey = marker.text;
-    }
-
-    if (marker.subdata) {
-      collectibleText = marker.subdata;
-    } else {
-      collectibleText = marker.text;
-    }
-
-    var collectibleTitle = Language.get(`${collectibleKey}.name`);
+    var collectibleTitle = Language.get(marker.itemTranslationKey);
     var collectibleImage = null;
 
     // Prevents 404 errors. If doing the if-statement the other way round, jQuery tries to load the images.
     if (marker.category !== 'random')
-      collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${collectibleKey}.png`).attr('alt', 'Set icon').addClass('collectible-icon');
+      collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${marker.itemId}.png`).attr('alt', 'Set icon').addClass('collectible-icon');
 
-    var collectibleElement = $('<div>').addClass('collectible-wrapper').attr('data-help', 'item').attr('data-type', collectibleText);
-    var collectibleTextWrapperElement = $('<span>').addClass('collectible-text');
-    var collectibleTextElement = $('<p>').addClass('collectible').text(collectibleTitle);
+    var collectibleElement = $(`<div class="collectible-wrapper" data-help="item"
+      data-type="${marker.legacyItemId}">`);
+    var collectibleTextWrapperElement = $('<span class="collectible-text">');
+    var collectibleTextElement = $('<p class="collectible">').text(collectibleTitle);
 
-    var collectibleCountDecreaseElement = $('<div>').addClass('counter-button').text('-');
-    var collectibleCountTextElement = $('<div>').addClass('counter-number').text(marker.amount);
-    var collectibleCountIncreaseElement = $('<div>').addClass('counter-button').text('+');
+    var collectibleCountDecreaseElement = $('<div class="counter-button">-</div>');
+    var collectibleCountTextElement = $('<div class="counter-number">').text(marker.amount);
+    var collectibleCountIncreaseElement = $('<div class="counter-button">+</div>');
 
     collectibleCountDecreaseElement.on('click', function (e) {
       e.stopPropagation();
-      Inventory.changeMarkerAmount(collectibleText, -1);
+      Inventory.changeMarkerAmount(marker.legacyItemId, -1);
     });
 
     collectibleCountIncreaseElement.on('click', function (e) {
       e.stopPropagation();
-      Inventory.changeMarkerAmount(collectibleText, 1);
+      Inventory.changeMarkerAmount(marker.legacyItemId, 1);
     });
 
     collectibleElement.on('contextmenu', function (e) {
-      if (!Settings.isRightClickEnabled)
-        e.preventDefault();
+      if (!Settings.isRightClickEnabled) e.preventDefault();
 
-      if (marker.subdata !== 'agarita' && marker.subdata !== 'blood_flower') {
-        var prefix = '';
-        if (marker.category === 'flower')
-          prefix = 'flower_';
-
-        else if (marker.category === 'egg')
-          prefix = 'egg_';
-        MapBase.highlightImportantItem(prefix + collectibleText, marker.category);
+      if (!['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
+        MapBase.highlightImportantItem(marker.itemId, marker.category);
       }
     });
 
@@ -136,28 +111,22 @@ Menu.refreshMenu = function () {
 
     collectibleCountTextElement.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
 
-    if (marker.subdata) {
-      if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower')
-        collectibleElement.attr('data-help', 'item_night_only');
+    if (['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
+      collectibleElement.attr('data-help', 'item_night_only');
+    }
 
-      var currentSubdataMarkers = MapBase.markers.filter(function (_marker) {
-        if (marker.subdata != _marker.subdata)
-          return false;
-
-        if (_marker.day != Cycles.categories[_marker.category])
-          return false;
-
-        return true;
-      });
-
-      if (currentSubdataMarkers.every(marker => !marker.canCollect))
-        collectibleElement.addClass('disabled');
-    } else {
-      if (!marker.canCollect) collectibleElement.addClass('disabled');
+    let multiMarkerItemMarkers = [marker];
+    if (['egg', 'flower'].includes(marker.category)) {
+      multiMarkerItemMarkers = MapBase.markers.filter(_marker =>
+        (marker.itemId === _marker.itemId &&
+          _marker.cycleName == Cycles.categories[_marker.category]));
+    }
+    if (multiMarkerItemMarkers.every(marker => !marker.canCollect)) {
+      collectibleElement.addClass('disabled');
     }
 
     $.each(weeklyItems, function (key, weeklyItem) {
-      if (collectibleKey == weeklyItem.item) {
+      if (marker.itemId == weeklyItem.item) {
         collectibleElement.attr('data-help', 'item_weekly');
         collectibleElement.addClass('weekly-item');
       }
@@ -169,7 +138,12 @@ Menu.refreshMenu = function () {
         $('#help-container p').text(Language.get(`help.default`));
       });
 
-    $(`.menu-hidden[data-type=${marker.category}]`).append(collectibleElement.append(collectibleImage).append(collectibleTextWrapperElement.append(collectibleTextElement).append(collectibleCountElement)));
+    $(`.menu-hidden[data-type=${marker.category}]`)
+      .append(collectibleElement
+        .append(collectibleImage)
+        .append(collectibleTextWrapperElement
+          .append(collectibleTextElement)
+          .append(collectibleCountElement)));
   });
 
   $('.menu-hidden[data-type]').each(function (key, value) {
@@ -217,7 +191,8 @@ Menu.refreshCollectionCounter = function (category) {
 };
 
 Menu.refreshItemsCounter = function () {
-  var _markers = MapBase.markers.filter(marker => marker.day == Cycles.categories[marker.category] && marker.isVisible);
+  var _markers = MapBase.markers.filter(marker =>
+    marker.cycleName == Cycles.categories[marker.category] && marker.isVisible);
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
     .replace('{count}', _markers.filter(marker => marker.isCollected).length)
