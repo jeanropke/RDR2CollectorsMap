@@ -51,13 +51,13 @@ Menu.refreshMenu = function () {
 
   var anyUnavailableCategories = [];
 
-  $.each(MapBase.markers, function (_key, marker) {
-    if (marker.day != Cycles.categories[marker.category]) return;
-
-    // Only add subdata markers once.
-    if (marker.subdata && $(`.menu-hidden[data-type=${marker.category}]`).children(`[data-type=${marker.subdata}]`).length > 0) return;
-
-
+  const currentItemMarkers = {}
+  MapBase.markers.forEach(marker => {
+    if (marker.cycleName != Cycles.categories[marker.category]) {
+      currentItemMarkers[marker.itemId] = marker;
+    }
+  });
+  Object.values(currentItemMarkers).forEach(marker => {
     var collectibleTitle = Language.get(marker.itemTranslationKey);
     var collectibleImage = null;
 
