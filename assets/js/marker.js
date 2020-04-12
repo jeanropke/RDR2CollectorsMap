@@ -9,6 +9,21 @@ class Marker {
     this.category = category;
     this.isVisible = enabledCategories.includes(this.category);
     this.amount = Inventory.items[this.itemId] || 0;
+    // “_collectedKey” is the key for the “isCollected” accessors
+    // - the data they represent are best described as “legacy non-sense”, if I’m allowed to say
+    // - it is not per-marker
+    // - it is not per-item
+    // - it is one marker per cycle
+    // - it covers an item for items available once per day/cycle
+    // - for items with several markers per day/cycle, it covers one of them
+    //   - and it covers the same share for tomorrow as well (and so forth)
+    // Dependings on the “reset marker daily” setting, the user will use this
+    // property either for visibility purposes (fade/unfade) (→do not reset daily),
+    // or actually for remembering what is collected (→reset daily).
+    // ...the property tries to do two jobs at once and is failing to do both any justice.
+    // There should be two properties, one for “collected” per marker (i.e. Marker class),
+    // and one for “visibility” per item (non-existing Item class).
+    // Both should drive how faded the marker is going to be.
     this._collectedKey = `collected.${this.text}`;
     this.descriptionKey = (() => {
       switch (this.subdata) {

@@ -14,7 +14,11 @@ var ItemsValue = {
 
   reloadInventoryItems: function () {
     'use strict';
-    this.resetItemsData();
+    this.finalValue = 0;
+    $.each(this.collectionsNames, function (key, collection) {
+      ItemsValue.collectedItemsData[collection] = [];
+      ItemsValue.collectedItemsData[`${collection}_amount`] = [];
+    });
 
     let inventoryItems = {};
     if (InventorySettings.isEnabled) {
@@ -57,18 +61,6 @@ var ItemsValue = {
       ItemsValue.finalValue += itemValue * multiplier;
     });
 
-    this.updateValue();
-  },
-
-  resetItemsData: function () {
-    this.finalValue = 0;
-    $.each(this.collectionsNames, function (key, collection) {
-      ItemsValue.collectedItemsData[collection] = [];
-      ItemsValue.collectedItemsData[`${collection}_amount`] = [];
-    });
-  },
-
-  updateValue: function () {
     $('#items-value').text(!isNaN(this.finalValue) ? `$${this.finalValue.toFixed(2)}` : '$0.00');
-  }
+  },
 };
