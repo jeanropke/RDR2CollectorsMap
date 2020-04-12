@@ -197,8 +197,9 @@ var Inventory = {
         .text(marker.amount)
         .toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
 
-      if ((marker.isCollected || (InventorySettings.isEnabled && marker.amount >= InventorySettings.stackSize)) && marker.day == Cycles.categories[marker.category] ||
-        // flowers soft stack size:
+      if ((marker.isCollected ||
+        (InventorySettings.isEnabled && marker.amount >= InventorySettings.stackSize)) &&
+        marker.day == Cycles.categories[marker.category] ||
         (marker.category === 'flower' && marker.amount >= InventorySettings.flowersSoftStackSize)) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
         $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
