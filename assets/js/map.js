@@ -233,7 +233,9 @@ var MapBase = {
         }
       });
 
-      RouteSettings.customRoute = '';
+      if (RouteSettings.customRoute !== '')
+        clearCustomRoutes();
+
       MapBase.markers = markers;
       Inventory.save();
       Menu.refreshMenu();

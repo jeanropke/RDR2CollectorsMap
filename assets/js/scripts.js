@@ -360,18 +360,17 @@ $("#clear-inventory").on("click", function () {
 $("#custom-routes").on("change", function () {
   RouteSettings.customRouteEnabled = $("#custom-routes").prop('checked');
   changeCursor();
-});
-
-$("#clear-custom-routes").on("click", function () {
-  Routes.customRouteConnections = [];
-  RouteSettings.customRoute = '';
-  MapBase.map.removeLayer(Routes.polylines);
-});
-
-$('#custom-routes').on('change', function () {
   var mapRoute = Routes.customRouteConnections.join(',');
   RouteSettings.customRoute = mapRoute;
 });
+
+// This have to work on key, and also on day (cycle) change:
+$("#clear-custom-routes").on("click", clearCustomRoutes);
+function clearCustomRoutes() {
+  Routes.customRouteConnections = [];
+  RouteSettings.customRoute = '';
+  MapBase.map.removeLayer(Routes.polylines);
+}
 
 $('.map-alert').on('click', function () {
   Settings.alertClosed = true;
