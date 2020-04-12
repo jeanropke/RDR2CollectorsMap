@@ -53,22 +53,21 @@ const SettingProxy = function () {
       const config = settingHandler._checkAndGetSettingConfig(proxyConfig, name, ReferenceError);
       if ('value' in config) return config.value;
 
-      if (localStorage.getItem(config.settingName) === null) {
-        localStorage.setItem(config.settingName, JSON.stringify(config.default));
-      }
-
       let value = localStorage.getItem(config.settingName);
 
-      try {
-        value = config.type(JSON.parse(value));
-      }
-      catch (e) {
-        // JSON.parse might raise SyntaxError, bc the setting is malformed or undefined
+      if (value === null) {
         value = config.default;
+      } else {
+        try {
+          // JSON.parse might raise SyntaxError, bc the setting is malformed
+          value = config.type(JSON.parse(value));
+        }
+        catch (e) {
+          value = config.default;
+        }
       }
 
       value = config.filter(value) ? value : config.default;
-      if (value === null || value === "null") value = config.default;
 
       config.value = value;
 
@@ -76,8 +75,11 @@ const SettingProxy = function () {
     },
     set: function (proxyConfig, name, value) {
       const config = settingHandler._checkAndGetSettingConfig(proxyConfig, name, TypeError);
-      localStorage.setItem(config.settingName, JSON.stringify(value));
-
+      if (value === config.default) {
+        localStorage.removeItem(config.settingName);
+      } else {
+        localStorage.setItem(config.settingName, JSON.stringify(value));
+      }
       config.value = value;
       return true;
     },
