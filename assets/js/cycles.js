@@ -130,6 +130,7 @@ var Cycles = {
         Cycles.offset = 0;
         $('div>span.cycle-data').removeClass('not-found');
       }
+      MapBase.updateOnDayChange();
     }
   },
 

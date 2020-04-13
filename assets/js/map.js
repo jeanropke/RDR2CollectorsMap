@@ -233,9 +233,6 @@ var MapBase = {
         }
       });
 
-      if (RouteSettings.customRoute !== '')
-        clearCustomRoutes();
-
       MapBase.markers = markers;
       Inventory.save();
       Menu.refreshMenu();
@@ -756,6 +753,11 @@ var MapBase = {
 
     if (Settings.isPinsPlacingEnabled)
       Pins.addPin(coords.latlng.lat, coords.latlng.lng);
+  },
+
+  updateOnDayChange: function () {
+    // put here all functions that needs to be executed on day change
+    Routes.clearCustomRoutes(true);
   },
 
   yieldingLoop: function (count, chunksize, callback, finished) {
