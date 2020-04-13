@@ -42,6 +42,8 @@ var ItemsValue = {
     });
 
     this.collectionsNames.forEach(name => this.collectionsCount(name));
+
+    $('#items-value').text(!isNaN(this.finalValue) ? `$${this.finalValue.toFixed(2)}` : '$0.00');
   },
 
   collectionsCount: function (category) {
@@ -58,7 +60,5 @@ var ItemsValue = {
 
       this.finalValue += itemValue * multiplier;
     });
-
-    $('#items-value').text(!isNaN(this.finalValue) ? `$${this.finalValue.toFixed(2)}` : '$0.00');
-  },
+  }
 };
