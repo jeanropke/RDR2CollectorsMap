@@ -134,27 +134,37 @@ class Marker {
           </p>
       </span>
       <p class='marker-popup-links'>
-        <a href="javascript:void(0)"
-          onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${this.text}')"
-          data-text="map.copy_link"></a>
+        <a href="" data-text="map.copy_link"></a>
         <span>| <a href="${this.video}" target="_blank" data-text="map.video"></a></span>
-        <span>| <a href="javascript:void(0)"
-                  onclick="MapBase.highlightImportantItem('${this.text}', '${this.category}')"
-                  data-text="map.mark_important"></a></span>
+        <span>| <a href="" data-text="map.mark_important"></a></span>
       </p>
       <small class="popupContentDebug">Latitude: ${this.lat} / Longitude: ${this.lng}</small>
       <div class="marker-popup-buttons">
-          <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${this.legacyItemId}', -1)">↓</button>
+          <button class="btn btn-danger">↓</button>
           <small data-item="${this.text}">${this.amount}</small>
-          <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${this.legacyItemId}', 1)">↑</button>
+          <button class="btn btn-success">↑</button>
       </div>
       <button type="button" class="btn btn-info remove-button" data-item="${this.text}"
-        data-text="map.remove_add" onclick="MapBase.removeItemFromMap(
-          '${this.cycleName}', '${this.text}', '${this.subdata || ''}', '${this.category}'
-        )">
+        data-text="map.remove_add">
       </button>
     </div>`);
 
+    snippet.find('.marker-popup-links')
+      .find('[data-text="map.copy_link"]')
+        .click((e) => {
+          e.preventDefault();
+          setClipboardText(`https://jeanropke.github.io/RDR2CollectorsMap/?m=${this.text}`);
+        })
+      .end()
+      .find('[data-text="map.mark_important"]')
+        .click((e) => {
+          e.preventDefault();
+          MapBase.highlightImportantItem(this.text, this.category);
+        });
+    snippet.find('.marker-popup-buttons button').click(e =>
+      Inventory.changeMarkerAmount(this.legacyItemId, $(e.target).hasClass('btn-danger') ? -1 : 1));
+    snippet.find('.remove-button').click(() =>
+      MapBase.removeItemFromMap(this.cycleName, this.text, this.subdata || '', this.category));
     if (!Cycles.isSameAsYesterday(this.category) && !unknownCycle) {
       snippet.find('.marker-warning-wrapper').hide();
     } else {
