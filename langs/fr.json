@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "Mise à jour automatique de la route",
     "menu.enable_inventory_popups": "Activer l'inventaire dans les popups",
     "menu.random_encounters": "Rencontre aléatoire",
-    "map.madam_nazar.desc": "Mauvaise localisation ? Suivez {link}.",
+    "map.madam_nazar.desc": "Mauvaise localisation ? Suivez {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Nom",
     "map.user_pins.default_title": "Épingles d'utilisateur",
     "map.user_pins.placeholder_desc": "Description",

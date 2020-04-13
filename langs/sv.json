@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "",
     "menu.enable_inventory_popups": "",
     "menu.random_encounters": "Slumpmässiga möten",
-    "map.madam_nazar.desc": "Felaktig plats? Följ {link}.",
+    "map.madam_nazar.desc": "Felaktig plats? Följ {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Namn",
     "map.user_pins.default_title": "Användarens markeringar",
     "map.user_pins.placeholder_desc": "Beskrivning",

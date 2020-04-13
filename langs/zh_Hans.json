@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "自动更新路线",
     "menu.enable_inventory_popups": "在弹出窗口中启用清单",
     "menu.random_encounters": "随机遭遇任务点",
-    "map.madam_nazar.desc": "位置错误？打开 {link}.",
+    "map.madam_nazar.desc": "位置错误？打开 {int.nazar.link}.",
     "map.user_pins.placeholder_title": "名称",
     "map.user_pins.default_title": "标点名(可修改，勾选“修改自定义标点描述后”)",
     "map.user_pins.placeholder_desc": "说明",

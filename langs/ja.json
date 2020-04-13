@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "経路の自動更新",
     "menu.enable_inventory_popups": "ポップアップでインベントリーを有効にする",
     "menu.random_encounters": "ランダム・エンカウンター",
-    "map.madam_nazar.desc": "場所が間違っていますか ? {link} をフォローします。",
+    "map.madam_nazar.desc": "場所が間違っていますか ? {int.nazar.link} をフォローします。",
     "map.user_pins.placeholder_title": "名称",
     "map.user_pins.default_title": "ユーザー・ピン",
     "map.user_pins.placeholder_desc": "解説",

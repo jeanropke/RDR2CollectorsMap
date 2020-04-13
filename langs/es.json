@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "Actualización automática de rutas",
     "menu.enable_inventory_popups": "Habilitar inventario en ventanas emergentes",
     "menu.random_encounters": "Encuentros aleatorios",
-    "map.madam_nazar.desc": "Ubicación incorrecta? Sigue a {link}.",
+    "map.madam_nazar.desc": "Ubicación incorrecta? Sigue a {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Nombre",
     "map.user_pins.default_title": "Marcador del usuario",
     "map.user_pins.placeholder_desc": "Descripción",

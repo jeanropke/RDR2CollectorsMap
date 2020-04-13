@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "تحديث المسار تلقائياً",
     "menu.enable_inventory_popups": "تمكين المخزون من النوافذ المنبثقة",
     "menu.random_encounters": "عدادات عشوائية",
-    "map.madam_nazar.desc": "موقع خاطئ؟ اتبع {link}.",
+    "map.madam_nazar.desc": "موقع خاطئ؟ اتبع {int.nazar.link}.",
     "map.user_pins.placeholder_title": "إسم",
     "map.user_pins.default_title": "دبوس المستخدم",
     "map.user_pins.placeholder_desc": "الوصف",
