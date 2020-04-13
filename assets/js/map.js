@@ -233,9 +233,6 @@ var MapBase = {
         }
       });
 
-      if (RouteSettings.customRoute !== '')
-        clearCustomRoutes();
-
       MapBase.markers = markers;
       Inventory.save();
       Menu.refreshMenu();
@@ -407,15 +404,15 @@ var MapBase = {
         }
       }
 
-      Inventory.changeMarkerAmount(marker.subdata || marker.text, changeAmount, skipInventory);
+      Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount, skipInventory);
 
       if (!InventorySettings.isEnabled) {
         if (marker.isCollected && marker.day == Cycles.categories[marker.category]) {
           $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
-          $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
+          $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
         } else {
           $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
-          $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
+          $(`[data-type=${marker.legacyItemId}]`).removeClass('disabled');
         }
 
         MapBase.toggleCollectibleMenu(marker.day, marker.text, marker.subdata,
@@ -582,7 +579,7 @@ var MapBase = {
     }
 
     // Timed flower overlay override
-    if (marker.subdata == 'agarita' || marker.subdata == 'blood_flower') {
+    if (['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
       overlay = '<img class="overlay" src="./assets/images/icons/overlay_time.png" alt="Overlay">';
     }
 
@@ -614,14 +611,16 @@ var MapBase = {
     }
 
     marker.lMarker.on("click", function (e) {
-      if (!Settings.isPopupsEnabled) MapBase.removeItemFromMap(marker.day || '', marker.text || '', marker.subdata || '', marker.category || '');
+      if (!Settings.isPopupsEnabled) {
+        MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata || '', marker.category);
+      }
 
       Routes.addMarkerOnCustomRoute(marker.text);
       if (RouteSettings.customRouteEnabled) e.target.closePopup();
     });
 
     marker.lMarker.on("contextmenu", function (e) {
-      MapBase.removeItemFromMap(marker.day || '', marker.text || '', marker.subdata || '', marker.category || '');
+      MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata || '', marker.category);
     });
 
     Layers.itemMarkersLayer.addLayer(marker.lMarker);
@@ -756,6 +755,11 @@ var MapBase = {
 
     if (Settings.isPinsPlacingEnabled)
       Pins.addPin(coords.latlng.lat, coords.latlng.lng);
+  },
+
+  updateOnDayChange: function () {
+    // put here all functions that needs to be executed on day change
+    Routes.clearCustomRoutes(true);
   },
 
   yieldingLoop: function (count, chunksize, callback, finished) {

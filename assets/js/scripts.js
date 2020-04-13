@@ -364,13 +364,7 @@ $("#custom-routes").on("change", function () {
   RouteSettings.customRoute = mapRoute;
 });
 
-// This have to work on key, and also on day (cycle) change:
-$("#clear-custom-routes").on("click", clearCustomRoutes);
-function clearCustomRoutes() {
-  Routes.customRouteConnections = [];
-  RouteSettings.customRoute = '';
-  MapBase.map.removeLayer(Routes.polylines);
-}
+$("#clear-custom-routes").on("click", Routes.clearCustomRoutes);
 
 $('.map-alert').on('click', function () {
   Settings.alertClosed = true;

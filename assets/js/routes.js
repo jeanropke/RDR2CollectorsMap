@@ -129,6 +129,15 @@ var Routes = {
     }
   },
 
+  clearCustomRoutes: function () {
+    Routes.customRouteConnections = [];
+    RouteSettings.customRoute = '';
+    //this needs to be in try catch because throw an error when is no route to remove
+    try {
+      MapBase.map.removeLayer(Routes.polylines);
+    } catch(e) {};
+  },
+
 
   /**
    * Path generator by Senexis

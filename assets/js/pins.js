@@ -11,7 +11,9 @@ var Pins = {
   addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true) {
     if (lat === null || lat === undefined || lng === null || lng === undefined) return;
 
-    var pinAtPositionExists = this.pinsList.some(function (marker) { return marker._latlng.lat == lat && marker._latlng.lng == lng; });
+    var pinAtPositionExists = this.pinsList.some(function (marker) {
+      return marker._latlng.lat == lat && marker._latlng.lng == lng;
+    });
     if (pinAtPositionExists) return;
 
     icon = icon == null ? 'pin' : icon;
@@ -27,11 +29,10 @@ var Pins = {
         iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
         popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
         shadowAnchor: [10 * Settings.markerSize, 12 * Settings.markerSize],
-        html: `
-                    <img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
-                    <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
-                    ${shadow}
-                `
+        html:
+            `<img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
+            <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
+            ${shadow}`
       })
     });
 
@@ -53,7 +54,9 @@ var Pins = {
   },
 
   savePin: function (id, name, desc, icon) {
-    var markerIndex = this.pinsList.findIndex(function (marker) { return marker.options.id == id; });
+    var markerIndex = this.pinsList.findIndex(function (marker) {
+      return marker.options.id == id;
+    });
 
     var marker = this.pinsList[markerIndex];
     marker.options.name = name.replace(/[\:\;<\>\"]/gi, '');
@@ -65,12 +68,16 @@ var Pins = {
   },
 
   removePin: function (id, doSave = true) {
-    var markerIndex = this.pinsList.findIndex(function (marker) { return marker.options.id == id; });
+    var markerIndex = this.pinsList.findIndex(function (marker) {
+      return marker.options.id == id;
+    });
 
     var marker = this.pinsList[markerIndex];
     Layers.pinsLayer.removeLayer(marker);
 
-    this.pinsList = this.pinsList.filter(function (marker) { return marker.options.id != id; });
+    this.pinsList = this.pinsList.filter(function (marker) {
+      return marker.options.id != id;
+    });
     if (doSave) this.saveAllPins();
   },
 
@@ -103,7 +110,9 @@ var Pins = {
 
   removeAllPins: function () {
     MapBase.map.closePopup();
-    this.pinsList.forEach(pin => { this.removePin(pin.options.id, false); });
+    this.pinsList.forEach(pin => {
+      this.removePin(pin.options.id, false);
+    });
   },
 
   updatePopup: function (marker) {
@@ -142,12 +151,17 @@ var Pins = {
             data-text="map.user_pins.remove">${Language.get('map.user_pins.remove')}</button>`;
     }
 
-    marker.bindPopup(markerContent, { minWidth: 300, maxWidth: 300 });
+    marker.bindPopup(markerContent, {
+      minWidth: 300,
+      maxWidth: 300
+    });
   },
 
   updateAllPopups: function () {
     MapBase.map.closePopup();
-    this.pinsList.forEach(pin => { this.updatePopup(pin); });
+    this.pinsList.forEach(pin => {
+      this.updatePopup(pin);
+    });
   },
 
   exportPins: function () {
