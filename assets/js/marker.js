@@ -9,8 +9,8 @@ class Marker {
       .cycleName: "2"
       .itemNumberStr: "#6"
       .legacyItemId: "wild_rhubarb"
-        is an item id sometimes unequal to `.itemId`, also unique
-        but internally incoherent (sometimes contains category, sometimes not)
+        is an item id, sometimes unequal to `.itemId`, but also unique of course
+        internally incoherent (sometimes contains category, sometimes not)
         use `.itemId` unless persistent storage with `.legacyItemId` data is involved
       .descriptionKey: "flower_wild_rhubarb_6_2.desc"
       .itemTranslationKey: "flower_wild_rhubarb.name"

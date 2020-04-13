@@ -61,10 +61,10 @@ var MadamNazar = {
             `
         })
       });
-      const nazarLink = '<a href="https://twitter.com/MadamNazarIO" target="_blank">@MadamNazarIO</a>';
-      marker.bindPopup(`<h1>${Language.get('menu.madam_nazar')} - ${MadamNazar.currentDate}</h1>
-        <p style="text-align: center;">${Language.get('map.madam_nazar.desc')
-        .replace('{link}', nazarLink)}</p>`, { minWidth: 300 });
+      marker.bindPopup($(`<div>
+          <h1><span data-text="menu.madam_nazar"></span> - ${MadamNazar.currentDate}</h1>
+          <p style="text-align: center;" data-text="map.madam_nazar.desc"></p>
+        </div>`).translate().html(), { minWidth: 300 });
       Layers.itemMarkersLayer.addLayer(marker);
     }
   }
