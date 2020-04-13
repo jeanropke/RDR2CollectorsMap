@@ -163,7 +163,7 @@ Object.entries({
   resetInventoryDaily: { default: false },
   stackSize: { default: 10 },
   flowersSoftStackSize: { default: 10 },
-  enableAdvancedInventoryOptions: { default: true },
+  enableAdvancedInventoryOptions: { default: false },
 }).forEach(([name, config]) => SettingProxy.addSetting(InventorySettings, name, config));
 
 // Route settings
@@ -184,5 +184,5 @@ Object.entries({
   startMarkerLat: { default: -119.9063 },
   startMarkerLng: { default: 8.0313 },
   usePathfinder: { default: false },
-  customRoute: {default: ''}
+  customRoute: { default: '' }
 }).forEach(([name, config]) => SettingProxy.addSetting(RouteSettings, name, config));
