@@ -123,12 +123,10 @@ var Inventory = {
       Inventory.categories[category] = { min: 0, max: 0, avg: 0, numElements: 0 };
     }
 
+    if (!enabledCategories.includes(category)) return;
+
     // get all markers which should be highlighted
-    var markers = MapBase.markers.filter(_m => {
-      return _m.text.startsWith(category) &&
-        enabledCategories.includes(_m.category) &&
-        _m.day == Cycles.categories[_m.category];
-    });
+    var markers = MapBase.markers.filter(_m => _m.category === category && _m.isCurrent);
 
     // for each marker: calculate the value used for coloring and add/remove the appropriate css class
     markers.map(_m => {
@@ -199,12 +197,12 @@ var Inventory = {
 
       if ((marker.isCollected ||
         (InventorySettings.isEnabled && marker.amount >= InventorySettings.stackSize)) &&
-        marker.day == Cycles.categories[marker.category] ||
+        marker.isCurrent ||
         (marker.category === 'flower' && marker.amount >= InventorySettings.flowersSoftStackSize)) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
         $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
       }
-      else if (marker.day == Cycles.categories[marker.category]) {
+      else if (marker.isCurrent) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
         $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
       }
