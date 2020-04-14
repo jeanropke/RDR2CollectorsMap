@@ -532,13 +532,7 @@ var MapBase = {
   },
 
   addMarkerOnMap: function (marker, opacity = 1) {
-    marker.isVisible = false;
-
-    if (marker.day != Cycles.categories[marker.category] && !MapBase.showAllMarkers) return;
-    if (!uniqueSearchMarkers.includes(marker)) return;
-    if (!enabledCategories.includes(marker.category)) return;
-
-    marker.isVisible = true;
+    if (!marker.isVisible) return;
 
     var toolType = Settings.toolType;
     var markerTool = parseInt(marker.tool);

@@ -35,7 +35,6 @@ class Marker {
     this.subdata = ['egg', 'flower'].includes(this.category) ?
       this.itemId.replace(`${this.category}_`, '') : undefined;
     this.legacyItemId = this.subdata || this.text;
-    this.isVisible = enabledCategories.includes(this.category);
     this.amount = Inventory.items[this.itemId] || 0;
     /*
     `._collectedKey` is the key for the `.isCollected` accessors
@@ -108,6 +107,11 @@ class Marker {
   get isCurrent() {
     // Cycles might serve numbers instead of strings
     return this.cycleName == Cycles.categories[this.category];
+  }
+  get isVisible() {
+    return (this.isCurrent || MapBase.showAllMarkers) &&
+      uniqueSearchMarkers.includes(this) &&
+      enabledCategories.includes(this.category);
   }
 
   popupContent() {
