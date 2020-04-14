@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "Automatycznie wytycz trasę",
     "menu.enable_inventory_popups": "Włącz ekwip. w okienkach przedmiotu",
     "menu.random_encounters": "Przypadkowe zdarzenia",
-    "map.madam_nazar.desc": "Zła lokalizacja? Zajrzyj tutaj: {link}.",
+    "map.madam_nazar.desc": "Zła lokalizacja? Zajrzyj tutaj: {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Nazwa",
     "map.user_pins.default_title": "Znacznik użytkownika",
     "map.user_pins.placeholder_desc": "Opis",

@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "Atualizar rotas autimaticamente",
     "menu.enable_inventory_popups": "Ativar inventário no popup",
     "menu.random_encounters": "Encontros Aleatórios",
-    "map.madam_nazar.desc": "Local errado? Siga {link}.",
+    "map.madam_nazar.desc": "Local errado? Siga {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Nome",
     "map.user_pins.default_title": "Marcador do usuário",
     "map.user_pins.placeholder_desc": "Descrição",

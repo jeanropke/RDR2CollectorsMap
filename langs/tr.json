@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "Rotayı otomatik olarak güncelle",
     "menu.enable_inventory_popups": "Beliren pencerelerde stoğu etkinleştir",
     "menu.random_encounters": "Rasgele Karşılaşmalar",
-    "map.madam_nazar.desc": "-Yanlış yer mi? {link} 'i takip edin.",
+    "map.madam_nazar.desc": "-Yanlış yer mi? {int.nazar.link} 'i takip edin.",
     "map.user_pins.placeholder_title": "Ad",
     "map.user_pins.default_title": "Kullanıcı pimi",
     "map.user_pins.placeholder_desc": "Açıklama",

@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "Route automatisch neu berechnen",
     "menu.enable_inventory_popups": "Inventar in Gegenstands-Popovern anzeigen",
     "menu.random_encounters": "Zufällige Ereignisse",
-    "map.madam_nazar.desc": "Falsche Position? Folge {link}.",
+    "map.madam_nazar.desc": "Falsche Position? Folge {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Name",
     "map.user_pins.default_title": "Eigene Makierung",
     "map.user_pins.placeholder_desc": "Beschreibung",
