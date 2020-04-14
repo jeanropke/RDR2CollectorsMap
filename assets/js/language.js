@@ -55,6 +55,8 @@ var Language = {
         'use strict';
         let translation = false;
 
+        if (Settings.isDebugEnabled) optional = false;
+
         if (Language._links.propertyIsEnumerable(transKey)) {
             translation = Language._externalLink(transKey);
         } else if (transKey === 'int.end.link') {

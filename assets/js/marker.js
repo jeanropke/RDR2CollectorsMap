@@ -1,33 +1,33 @@
 class Marker {
-  /*
-  example
-  use:
-    .markerId: "flower_wild_rhubarb_6_2"
-    .itemId: "flower_wild_rhubarb"
-    .category: "flower"
-    .cycleName: "2"
-    .itemNumberStr: "#6"
-    .legacyItemId: "wild_rhubarb"
-      is an item id, sometimes unequal to `.itemId`, but also unique of course
-      internally incoherent (sometimes contains category, sometimes not)
-      use `.itemId` unless persistent storage with `.legacyItemId` data is involved
-    .descriptionKey: "flower_wild_rhubarb_6_2.desc"
-    .itemTranslationKey: "flower_wild_rhubarb.name"
-  do not use:
-    .text
-    .subdata
-      if you want to check for egg&flower, use `['egg', 'flower'].includes(marker.category)`
-      if you need a unique item id, use `.itemId`
-      if you use `marker.subdata || marker.text` use `.legacyItemId` now and `.itemId` soon
-    .day
-      renamed to .cycleName, was and is a string
-  */
+  /**
+   * use:
+   *   .markerId: "flower_wild_rhubarb_6_2"
+   *   .itemId: "flower_wild_rhubarb"
+   *   .category: "flower"
+   *   .cycleName: "2"
+   *   .itemNumberStr: "#6"
+   *   .legacyItemId: "wild_rhubarb"
+   *     is an item id, sometimes unequal to `.itemId`, but also unique of course
+   *     internally incoherent (sometimes contains category, sometimes not)
+   *     use `.itemId` unless persistent storage with `.legacyItemId` data is involved
+   *   .descriptionKey: "flower_wild_rhubarb_6_2.desc"
+   *   .itemTranslationKey: "flower_wild_rhubarb.name"
+   * do not use:
+   *   .text
+   *   .subdata
+   *     if you want to check for egg&flower, use `['egg', 'flower'].includes(marker.category)`
+   *     if you need a unique item id, use `.itemId`
+   *     if you use `marker.subdata || marker.text` use `.legacyItemId` now and `.itemId` soon
+   *   .day
+   *     renamed to .cycleName, was and is a string
+   */
   constructor(preliminaryMarker, cycleName, category) {
     Object.assign(this, preliminaryMarker);
     const match = this.text.match(/^(.+?)(?:_(\d+))?$/);
     this.itemId = match[1];
-    this.itemNumberStr = match[2] ? `#${match[2]}` : '';
-    this.itemTranslationKey = `${this.itemId}.name`
+    this.itemNumber = match[2] ? match[2] : '';
+    this.itemNumberStr = this.itemNumber ? `#${this.itemNumber}` : '';
+    this.itemTranslationKey = `${this.itemId}.name`;
     this.cycleName = cycleName;
     this.day = this.cycleName;
     this.markerId = `${this.text}_${this.cycleName}`;
@@ -36,24 +36,49 @@ class Marker {
       this.itemId.replace(`${this.category}_`, '') : undefined;
     this.legacyItemId = this.subdata || this.text;
     this.amount = Inventory.items[this.itemId] || 0;
-    /*
-    `._collectedKey` is the key for the `.isCollected` accessors
-    - the data they represent are best described as “legacy non-sense”, if I’m allowed to say
-    - it is not per-marker (so it can’t properly represent “spot _is collected_”)
-    - it is not per-item (so it can’t properly show/hide an item)
-    - it is one marker per cycle
-    - it covers an item for items available once per day/cycle
-    - for items with several markers per day/cycle, it covers one of them
-      - and it covers the same share for tomorrow as well (and so forth)
-    Dependings on the “reset marker daily” setting, the user will use this
-    property either for visibility purposes (show/fade/hide) (→do not reset daily),
-    or actually for remembering what was collected (→reset daily).
-    There should be two properties, one for “collected” per marker (i.e. Marker class),
-    and one for “visibility” per item (in a new Item class).
-    Both should drive how faded the marker is going to be.
-    */
+
+    /**
+     * `._collectedKey` is the key for the `.isCollected` accessors
+     * - the data they represent are best described as “legacy non-sense”, if I’m allowed to say
+     * - it is not per-marker (so it can’t properly represent “spot _is collected_”)
+     * - it is not per-item (so it can’t properly show/hide an item)
+     * - it is one marker per cycle
+     * - it covers an item for items available once per day/cycle
+     * - for items with several markers per day/cycle, it covers one of them
+     *   - and it covers the same share for tomorrow as well (and so forth)
+     * Dependings on the “reset marker daily” setting, the user will use this
+     * property either for visibility purposes (show/fade/hide) (→do not reset daily),
+     * or actually for remembering what was collected (→reset daily).
+     * There should be two properties, one for “collected” per marker (i.e. Marker class),
+     * and one for “visibility” per item (in a new Item class).
+     * Both should drive how faded the marker is going to be.
+     */
     this._collectedKey = `collected.${this.text}`;
-    this.descriptionKey = (() => {
+
+    /**
+     * Used to display per-item descriptions.
+     * Kept in case we need to change this later.
+     * 
+     * @returns {string} The translatable key of the primary description.
+     */
+    this.primaryDescriptionKey = (() => {
+      if (this.category === 'random') {
+        return `${this.text}.desc`;
+      } else {
+        return `${this.markerId}.desc`;
+      }
+    })();
+
+    /**
+     * Used to display descriptions per category.
+     * 
+     * @returns {string} The translatable key of the secondary description.
+     */
+    this.secondaryDescriptionKey = (() => {
+      if (this.category === 'random') {
+        return 'map.random_spot.desc';
+      }
+
       switch (this.itemId) {
         case 'flower_agarita':
         case 'flower_blood_flower':
@@ -73,20 +98,17 @@ class Marker {
         case 'egg_loon':
           return 'map.egg_type.ground';
         default:
-          if (this.category === 'random') {
-            return "map.random_spot.desc";
-          } else {
-            return `${this.markerId}.desc`;
-          }
+          return '';
       }
     })();
   }
+
   get isCollected() {
     return !!localStorage.getItem(this._collectedKey);
   }
   set isCollected(value) {
     if (value) {
-      localStorage.setItem(this._collectedKey, "true");
+      localStorage.setItem(this._collectedKey, 'true');
     } else {
       localStorage.removeItem(this._collectedKey);
     }
@@ -136,7 +158,8 @@ class Marker {
           </div>
           <p>
             <span data-text="map.item.unable"></span>
-            <span data-text="${this.descriptionKey}" data-text-optional="true"></span>
+            <span data-text="${this.primaryDescriptionKey}" data-text-optional="true"></span>
+            <span data-text="${this.secondaryDescriptionKey}" data-text-optional="true"></span>
             <span data-text="weekly.desc"></span>
           </p>
       </span>
