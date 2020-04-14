@@ -487,7 +487,7 @@ $('.disable-collected-items').on('click', function (e) {
 
   $.each(getMarkers, function (key, marker) {
     if (marker.amount > 0) {
-      var textMenu = marker.text.replace(/egg_|flower_(\w+)_\d/, '$1');
+      var textMenu = marker.legacyItemId;
       $(`[data-type=${textMenu}]`).addClass('disabled');
       MapBase.removeItemFromMap(Cycles.categories[marker.category],
         marker.text, marker.subdata, marker.category, true);
