@@ -1,1759 +1,253 @@
 [
-	{
-		"name": "adl_barn_int",
-		"lat": -22.1616,
-		"lng": 102.9868,
-		"width": 196,
-		"height": 210
-	},
-	{
-		"name": "adl_cabin01_int",
-		"lat": -21.652751640624224,
-		"lng": 102.65530818359379,
-		"width": 121,
-		"height": 128
-	},
-	{
-		"name": "agu_hut01_int",
-		"lat": -172.3386975,
-		"lng": 132.76241257812578,
-		"width": 288,
-		"height": 146
-	},
-	{
-		"name": "agu_tower_int",
-		"lat": -169.1402134375,
-		"lng": 132.1568825,
-		"width": 175,
-		"height": 176
-	},
-	{
-		"name": "ann_depot_int",
-		"lat": -43.69186398437422,
-		"lng": 156.82525941406212,
-		"width": 242,
-		"height": 537
-	},
-	{
-		"name": "ann_gunsmith_int",
-		"lat": -43.136658339843166,
-		"lng": 157.04433921875,
-		"width": 286,
-		"height": 186
-	},
-	{
-		"name": "ann_jail_int",
-		"lat": -43.231155664062115,
-		"lng": 156.388695,
-		"width": 222,
-		"height": 168
-	},
-	{
-		"name": "ann_roomnbath_int",
-		"lat": -42.938789707031056,
-		"lng": 157.0574114843758,
-		"width": 188,
-		"height": 244
-	},
-	{
-		"name": "ann_setlrs_reg_int",
-		"lat": -42.763937734374224,
-		"lng": 156.6131173828121,
-		"width": 98,
-		"height": 178
-	},
-	{
-		"name": "ann_settlers_int",
-		"lat": -42.76393962890683,
-		"lng": 156.61311359375,
-		"width": 120,
-		"height": 238
-	},
-	{
-		"name": "arm_bank_int",
-		"lat": -104.41277652343788,
-		"lng": 54.40267523437423,
-		"width": 194,
-		"height": 371
-	},
-	{
-		"name": "arm_genstore_int",
-		"lat": -104.36621273437578,
-		"lng": 54.08221527343789,
-		"width": 241,
-		"height": 213
-	},
-	{
-		"name": "arm_saloon_int",
-		"lat": -103.8481796875,
-		"lng": 53.824835625000006,
-		"width": 272,
-		"height": 369
-	},
-	{
-		"name": "arm_sheriff_int",
-		"lat": -103.9979234375,
-		"lng": 55.09549773437423,
-		"width": 194,
-		"height": 179
-	},
-	{
-		"name": "arm_sheriff_int",
-		"lat": -103.9979234375,
-		"lng": 55.09549773437423,
-		"width": 194,
-		"height": 179
-	},
-	{
-		"name": "arm_trainstation_int",
-		"lat": -104.02313207031212,
-		"lng": 53.410353867187894,
-		"width": 162,
-		"height": 358
-	},
-	{
-		"name": "aur_shack01_int",
-		"lat": -85.04968009765683,
-		"lng": 71.27524929687422,
-		"width": 109,
-		"height": 145
-	},
-	{
-		"name": "bee_house_int",
-		"lat": -84.71522523437578,
-		"lng": 85.83066765625,
-		"width": 251,
-		"height": 349
-	},
-	{
-		"name": "bee_barn_int",
-		"lat": -85.52376380859317,
-		"lng": 86.43533951171895,
-		"width": 196,
-		"height": 252
-	},
-	{
-		"name": "ben_shack_int",
-		"lat": -117.77801625000001,
-		"lng": 30.51131757812422,
-		"width": 95,
-		"height": 171
-	},
-	{
-		"name": "ben_train_int",
-		"lat": -117.481378125,
-		"lng": 30.18213898437422,
-		"width": 165,
-		"height": 216
-	},
-	{
-		"name": "bla_bank_int",
-		"lat": -83.41247544921895,
-		"lng": 98.64520503906243,
-		"width": 272,
-		"height": 173
-	},
-	{
-		"name": "bla_barber_int",
-		"lat": -84.81583431640684,
-		"lng": 98.6256781054688,
-		"width": 295,
-		"height": 143
-	},
-	{
-		"name": "bla_carriagehouse_int",
-		"lat": -84.80325462890684,
-		"lng": 97.81345750976568,
-		"width": 486,
-		"height": 264
-	},
-	{
-		"name": "bla_fenceshop_int",
-		"lat": -83.60515306640684,
-		"lng": 97.77577717773433,
-		"width": 255,
-		"height": 181
-	},
-	{
-		"name": "bla_genstore_int",
-		"lat": -84.14848,
-		"lng": 99.14559905273433,
-		"width": 318,
-		"height": 165
-	},
-	{
-		"name": "bla_jail_int",
-		"lat": -83.30819666015684,
-		"lng": 99.4478336230469,
-		"width": 252,
-		"height": 244
-	},
-	{
-		"name": "bla_photo_int",
-		"lat": -84.92863849609317,
-		"lng": 98.65613269531242,
-		"width": 203,
-		"height": 137
-	},
-	{
-		"name": "bla_saloon_int",
-		"lat": -84.03983810546895,
-		"lng": 98.59464,
-		"width": 376,
-		"height": 327
-	},
-	{
-		"name": "bla_tailor_int",
-		"lat": -83.66798708984317,
-		"lng": 99.40859030273432,
-		"width": 242,
-		"height": 146
-	},
-	{
-		"name": "bla_theater_int",
-		"lat": -84.73824,
-		"lng": 99.21543905273433,
-		"width": 476,
-		"height": 196
-	},
-	{
-		"name": "bla_train_int",
-		"lat": -84.28807664062577,
-		"lng": 97.70667983398432,
-		"width": 190,
-		"height": 293
-	},
-	{
-		"name": "bpl_swampcabin_int",
-		"lat": -105.06130109375,
-		"lng": 89.36565457031212,
-		"width": 98,
-		"height": 142
-	},
-	{
-		"name": "bra_cornmill_int",
-		"lat": -95.02320873046895,
-		"lng": 126.49860442382811,
-		"width": 334,
-		"height": 400
-	},
-	{
-		"name": "bra_boathouse_int",
-		"lat": -75.64140665039068,
-		"lng": 142.65565666015684,
-		"width": 236,
-		"height": 230
-	},
-	{
-		"name": "bra_boathouse_int",
-		"lat": -91.38080000000001,
-		"lng": 125.3045581054688,
-		"width": 236,
-		"height": 230
-	},
-	{
-		"name": "bra_mansion_int",
-		"lat": -91.08592,
-		"lng": 126.98072,
-		"width": 467,
-		"height": 363
-	},
-	{
-		"name": "bra_stable_int",
-		"lat": -92.01417589843788,
-		"lng": 126.30175883789069,
-		"width": 170,
-		"height": 332
-	},
-	{
-		"name": "bra_tre_house_int",
-		"lat": -94.4537258984379,
-		"lng": 128.64136000000002,
-		"width": 159,
-		"height": 159
-	},
-	{
-		"name": "brb_dockhouse_int",
-		"lat": -110.67510789062578,
-		"lng": 79.88118970703107,
-		"width": 114,
-		"height": 88
-	},
-	{
-		"name": "bur_calaboose_int",
-		"lat": -65.94894499023432,
-		"lng": 106.223288359375,
-		"width": 226,
-		"height": 222
-	},
-	{
-		"name": "cal_carriage_house_int",
-		"lat": -84.44336378906212,
-		"lng": 140.54520000000002,
-		"width": 415,
-		"height": 484
-	},
-	{
-		"name": "but_shack_int",
-		"lat": -45.37492955078106,
-		"lng": 71.991905,
-		"width": 94,
-		"height": 97
-	},
-	{
-		"name": "but_shack_int",
-		"lat": -52.57875958984379,
-		"lng": 153.4611251171879,
-		"width": 94,
-		"height": 97
-	},
-	{
-		"name": "cal_tobacco_int",
-		"lat": -83.40351810546895,
-		"lng": 139.73816189453106,
-		"width": 285,
-		"height": 287
-	},
-	{
-		"name": "can_manor_int",
-		"lat": -70.1341426074219,
-		"lng": 150.055625625,
-		"width": 171,
-		"height": 128
-	},
-	{
-		"name": "car_barn_int",
-		"lat": -50.00077050781242,
-		"lng": 123.23186703125,
-		"width": 140,
-		"height": 210
-	},
-	{
-		"name": "cas_house_int",
-		"lat": -55.88558336914068,
-		"lng": 104.40059962890622,
-		"width": 129,
-		"height": 79
-	},
-	{
-		"name": "car_house_int",
-		"lat": -50.45766703125,
-		"lng": 123.35349404296879,
-		"width": 232,
-		"height": 199
-	},
-	{
-		"name": "cat_house_01_int",
-		"lat": -99.00112757812579,
-		"lng": 131.7608913671879,
-		"width": 353,
-		"height": 372
-	},
-	{
-		"name": "cat_shack01_int",
-		"lat": -99.21588406250001,
-		"lng": 132.03452798828107,
-		"width": 106,
-		"height": 119
-	},
-	{
-		"name": "che_barn_int",
-		"lat": -36.39505792968789,
-		"lng": 104.84874720703122,
-		"width": 195,
-		"height": 208
-	},
-	{
-		"name": "che_cabin1",
-		"lat": -36.75536367187422,
-		"lng": 105.11352736816406,
-		"width": 332,
-		"height": 326
-	},
-	{
-		"name": "che_shack1_int",
-		"lat": -36.65857775390683,
-		"lng": 104.72496279785163,
-		"width": 164,
-		"height": 121
-	},
-	{
-		"name": "cin_tor_int",
-		"lat": -168.2764360156258,
-		"lng": 126.7977641699219,
-		"width": 244,
-		"height": 428
-	},
-	{
-		"name": "civ_cellar_int",
-		"lat": -59.087294765625,
-		"lng": 149.24529671875,
-		"width": 154,
-		"height": 200
-	},
-	{
-		"name": "col_barn_int",
-		"lat": -26.369065937499997,
-		"lng": 90.47764589843788,
-		"width": 268,
-		"height": 214
-	},
-	{
-		"name": "col_bunkhouse_int",
-		"lat": -25.94962808593789,
-		"lng": 90.18365443359318,
-		"width": 91,
-		"height": 135
-	},
-	{
-		"name": "col_cabin_int",
-		"lat": -25.75843578125,
-		"lng": 90.27097148437423,
-		"width": 288,
-		"height": 273
-	},
-	{
-		"name": "col_school_int",
-		"lat": -25.753888906249998,
-		"lng": 90.78534050781212,
-		"width": 145,
-		"height": 265
-	},
-	{
-		"name": "com_farmhouse_int",
-		"lat": -69.93129609375,
-		"lng": 130.92318458984317,
-		"width": 366,
-		"height": 205
-	},
-	{
-		"name": "com_muleshed_int",
-		"lat": -70.42947066406258,
-		"lng": 130.49219199218788,
-		"width": 164,
-		"height": 234
-	},
-	{
-		"name": "cor_factoryb_int",
-		"lat": -53.04872364257811,
-		"lng": 118.74334690917975,
-		"width": 821,
-		"height": 325
-	},
-	{
-		"name": "cro_house_int",
-		"lat": -56.00611770996095,
-		"lng": 128.63968523437578,
-		"width": 257,
-		"height": 244
-	},
-	{
-		"name": "din_barn_int",
-		"lat": -48.288781132812424,
-		"lng": 114.3002690136719,
-		"width": 210,
-		"height": 194
-	},
-	{
-		"name": "dai_farmhouse01_int",
-		"lat": -77.14756278320311,
-		"lng": 132.56820039062578,
-		"width": 285,
-		"height": 213
-	},
-	{
-		"name": "din_house_int",
-		"lat": -48.299776992187425,
-		"lng": 114.74392347412116,
-		"width": 168,
-		"height": 222
-	},
-	{
-		"name": "dis_1rmchurch_int",
-		"lat": -75.0654056835938,
-		"lng": 148.78112140625,
-		"width": 80,
-		"height": 87
-	},
-	{
-		"name": "dis_grz_preskull_int",
-		"lat": -36.99785609375,
-		"lng": 116.34567978515622,
-		"width": 178,
-		"height": 254
-	},
-	{
-		"name": "dis_grz_statue_int",
-		"lat": -33.74339242187422,
-		"lng": 123.81695795898432,
-		"width": 744,
-		"height": 502
-	},
-	{
-		"name": "dis_stonehenge_int",
-		"lat": -37.31397189453106,
-		"lng": 148.2254743359379,
-		"width": 721,
-		"height": 610
-	},
-	{
-		"name": "dis_tradepost_int",
-		"lat": -70.00147616210931,
-		"lng": 114.25783246093758,
-		"width": 87,
-		"height": 61
-	},
-	{
-		"name": "dow_barn_int",
-		"lat": -58.35423952636716,
-		"lng": 97.92727905273432,
-		"width": 257,
-		"height": 317
-	},
-	{
-		"name": "dov_lab_int",
-		"lat": -28.109336874999997,
-		"lng": 150.2620499609379,
-		"width": 195,
-		"height": 380
-	},
-	{
-		"name": "dow_house_int",
-		"lat": -58.099956015625004,
-		"lng": 98.6074148242188,
-		"width": 205,
-		"height": 160
-	},
-	{
-		"name": "eme_barn_int",
-		"lat": -59.352630024414054,
-		"lng": 133.16949240234317,
-		"width": 212,
-		"height": 254
-	},
-	{
-		"name": "eme_genstore_int",
-		"lat": -57.73344,
-		"lng": 133.32840189453105,
-		"width": 187,
-		"height": 256
-	},
-	{
-		"name": "eme_depot_int",
-		"lat": -56.72464,
-		"lng": 134.90767367187578,
-		"width": 102,
-		"height": 108
-	},
-	{
-		"name": "eme_saloon_int",
-		"lat": -57.81104,
-		"lng": 133.76296189453106,
-		"width": 164,
-		"height": 198
-	},
-	{
-		"name": "gap_cartstop_int",
-		"lat": -114.18767871093789,
-		"lng": 17.45970992187422,
-		"width": 179,
-		"height": 271
-	},
-	{
-		"name": "grh_house_int",
-		"lat": -69.68888466308594,
-		"lng": 110.33530266174317,
-		"width": 129,
-		"height": 127
-	},
-	{
-		"name": "gri_g1_shack_int",
-		"lat": -37.34317419921894,
-		"lng": 95.42655369140684,
-		"width": 105,
-		"height": 191
-	},
-	{
-		"name": "gri_g2_shack_int",
-		"lat": -30.097329140624225,
-		"lng": 80.84705394531211,
-		"width": 119,
-		"height": 136
-	},
-	{
-		"name": "han_barn_int",
-		"lat": -52.2194570019531,
-		"lng": 76.86622320312424,
-		"width": 456,
-		"height": 394
-	},
-	{
-		"name": "han_house_int",
-		"lat": -52.44295580078121,
-		"lng": 77.50230070312423,
-		"width": 237,
-		"height": 362
-	},
-	{
-		"name": "ann_mine_int_main",
-		"lat": -42.54044177734317,
-		"lng": 153.90656730468788,
-		"width": 2004,
-		"height": 2680
-	},
-	{
-		"name": "bea_01_int",
-		"lat": -40.89180173828106,
-		"lng": 146.9280993359379,
-		"width": 2196,
-		"height": 2272
-	},
-	{
-		"name": "bgv_devilcave_int",
-		"lat": -52.89802599609379,
-		"lng": 69.91502132812423,
-		"width": 1450,
-		"height": 1446
-	},
-	{
-		"name": "hrs_02_shop01_int",
-		"lat": -51.25110240234379,
-		"lng": 157.29929007812578,
-		"width": 312,
-		"height": 311
-	},
-	{
-		"name": "shack_urr_int",
-		"lat": -65.1751452514648,
-		"lng": 129.6872625,
-		"width": 241,
-		"height": 113
-	},
-	{
-		"name": "new_saloon02_int",
-		"lat": -81.74517617187578,
-		"lng": 154.72727066406213,
-		"width": 221,
-		"height": 291
-	},
-	{
-		"name": "tum_gunsmith_int",
-		"lat": -109.62760261718789,
-		"lng": 25.811288671874223,
-		"width": 129,
-		"height": 188
-	},
-	{
-		"name": "van_farmhse01_int",
-		"lat": -55.30887668945311,
-		"lng": 154.4715165234379,
-		"width": 384,
-		"height": 375
-	},
-	{
-		"name": "val_res_01_f_int",
-		"lat": -52.173842373046895,
-		"lng": 107.25053777832026,
-		"width": 127,
-		"height": 138
-	},
-	{
-		"name": "new_traindepot_int",
-		"lat": -86.23938509765684,
-		"lng": 148.0304891796879,
-		"width": 549,
-		"height": 431
-	},
-	{
-		"name": "new_gang01_int",
-		"lat": -99.2540664453121,
-		"lng": 90.25860587890683,
-		"width": 123,
-		"height": 156
-	},
-	{
-		"name": "van_hotel_int",
-		"lat": -55.216680273437426,
-		"lng": 157.03309707031212,
-		"width": 437,
-		"height": 390
-	},
-	{
-		"name": "new_grocery_int",
-		"lat": -84.03300453125,
-		"lng": 155.1599437109379,
-		"width": 350,
-		"height": 165
-	},
-	{
-		"name": "van_fenceshop_int",
-		"lat": -54.907130917968786,
-		"lng": 156.81023199218788,
-		"width": 179,
-		"height": 272
-	},
-	{
-		"name": "van_roomnbath_int",
-		"lat": -54.70591275390621,
-		"lng": 157.574338125,
-		"width": 303,
-		"height": 140
-	},
-	{
-		"name": "str_res02_int_main",
-		"lat": -69.7869233398438,
-		"lng": 83.63507076171895,
-		"width": 232,
-		"height": 175
-	},
-	{
-		"name": "pro_mansion_int",
-		"lat": -58.17322890625,
-		"lng": 71.38155523437422,
-		"width": 497,
-		"height": 343
-	},
-	{
-		"name": "shack_b_c_int",
-		"lat": -56.41424142089837,
-		"lng": 138.98957576171895,
-		"width": 203,
-		"height": 211
-	},
-	{
-		"name": "rho_train_int",
-		"lat": -83.68419291015684,
-		"lng": 130.45191236328105,
-		"width": 454,
-		"height": 496
-	},
-	{
-		"name": "shack_hb_int",
-		"lat": -56.25904,
-		"lng": 74.5076,
-		"width": 111,
-		"height": 120
-	},
-	{
-		"name": "old_tower04_int",
-		"lat": -40.071740625000004,
-		"lng": 116.90767116699216,
-		"width": 190,
-		"height": 165
-	},
-	{
-		"name": "mfr_cottage01_int",
-		"lat": -100.72634078125,
-		"lng": 74.55580445312422,
-		"width": 102,
-		"height": 171
-	},
-	{
-		"name": "lon_mule_int",
-		"lat": -75.13438461914069,
-		"lng": 97.95222529296879,
-		"width": 194,
-		"height": 126
-	},
-	{
-		"name": "ora_house_01_int",
-		"lat": -76.81685719726569,
-		"lng": 143.3830259375,
-		"width": 194,
-		"height": 182
-	},
-	{
-		"name": "van_mansion_int",
-		"lat": -59.341051123046896,
-		"lng": 155.11467578125,
-		"width": 285,
-		"height": 224
-	},
-	{
-		"name": "old_storage_int",
-		"lat": -40.46272830078105,
-		"lng": 116.95760911621096,
-		"width": 169,
-		"height": 166
-	},
-	{
-		"name": "val_doctor_int",
-		"lat": -51.03932222656242,
-		"lng": 106.84800388183595,
-		"width": 239,
-		"height": 335
-	},
-	{
-		"name": "shack_rc_int",
-		"lat": -67.498058671875,
-		"lng": 77.54563242187423,
-		"width": 202,
-		"height": 147
-	},
-	{
-		"name": "pro_barn_int",
-		"lat": -57.39962027832026,
-		"lng": 71.7338812109379,
-		"width": 505,
-		"height": 445
-	},
-	{
-		"name": "ven_shack01_int",
-		"lat": -110.31346082031212,
-		"lng": 56.16027355468789,
-		"width": 203,
-		"height": 107
-	},
-	{
-		"name": "mfr_blacksmith01_int",
-		"lat": -100.5435071484379,
-		"lng": 74.08001945312424,
-		"width": 213,
-		"height": 215
-	},
-	{
-		"name": "shack_b_a_int",
-		"lat": -59.67503803710932,
-		"lng": 87.2155662109379,
-		"width": 227,
-		"height": 189
-	},
-	{
-		"name": "m05_mine_int",
-		"lat": -61.92580652343742,
-		"lng": 74.93328601562422,
-		"width": 1075,
-		"height": 631
-	},
-	{
-		"name": "gap_mine_int",
-		"lat": -112.33404660156211,
-		"lng": 18.54242695312422,
-		"width": 1813,
-		"height": 2208
-	},
-	{
-		"name": "vet_house_int",
-		"lat": -40.14507982421894,
-		"lng": 137.6879816406258,
-		"width": 157,
-		"height": 137
-	},
-	{
-		"name": "six_cabin_int",
-		"lat": -44.38888097656211,
-		"lng": 110.32156559326172,
-		"width": 255,
-		"height": 228
-	},
-	{
-		"name": "new_theater_int",
-		"lat": -83.74118988281211,
-		"lng": 150.80392,
-		"width": 474,
-		"height": 857
-	},
-	{
-		"name": "shack_sw_int",
-		"lat": -76.98739626953122,
-		"lng": 148.0837596093758,
-		"width": 183,
-		"height": 185
-	},
-	{
-		"name": "new_art_res",
-		"lat": -82.36521646484317,
-		"lng": 153.8103175390621,
-		"width": 89,
-		"height": 82
-	},
-	{
-		"name": "new_saloon01_int_main",
-		"lat": -82.64452720703106,
-		"lng": 152.1694033984379,
-		"width": 303,
-		"height": 302
-	},
-	{
-		"name": "new_carriagehouse_int",
-		"lat": -86.10795957031212,
-		"lng": 150.2165774218758,
-		"width": 368,
-		"height": 601
-	},
-	{
-		"name": "new_magic_es_int",
-		"lat": -84.62640203125,
-		"lng": 153.13424648437578,
-		"width": 437,
-		"height": 413
-	},
-	{
-		"name": "new_stairwell01_int",
-		"lat": -82.01528707031211,
-		"lng": 152.8496575781258,
-		"width": 237,
-		"height": 268
-	},
-	{
-		"name": "miy_fort_int",
-		"lat": -156.23438617187577,
-		"lng": 138.86045587890683,
-		"width": 286,
-		"height": 296
-	},
-	{
-		"name": "sha_mansion_int",
-		"lat": -92.51376,
-		"lng": 140.73144000000002,
-		"width": 475,
-		"height": 478
-	},
-	{
-		"name": "rho_gunsmith_int",
-		"lat": -84.11282113281212,
-		"lng": 131.8497259375,
-		"width": 239,
-		"height": 202
-	},
-	{
-		"name": "new_pie_tunnel_int",
-		"lat": -87.11526667968789,
-		"lng": 147.4108258984379,
-		"width": 831,
-		"height": 626
-	},
-	{
-		"name": "j_14_cave01_int",
-		"lat": -36.31231806640683,
-		"lng": 148.798263125,
-		"width": 579,
-		"height": 925
-	},
-	{
-		"name": "new_magic_int",
-		"lat": -84.62640771484317,
-		"lng": 153.13425406250002,
-		"width": 437,
-		"height": 413
-	},
-	{
-		"name": "van_hobo_int",
-		"lat": -55.86507412109379,
-		"lng": 157.4662816406258,
-		"width": 171,
-		"height": 244
-	},
-	{
-		"name": "maco_shack01_int",
-		"lat": -75.05415500976568,
-		"lng": 140.4260908203121,
-		"width": 124,
-		"height": 194
-	},
-	{
-		"name": "lof_outpost_int",
-		"lat": -33.42048851562423,
-		"lng": 141.32363826171894,
-		"width": 222,
-		"height": 239
-	},
-	{
-		"name": "van_depot_int",
-		"lat": -54.713185859375,
-		"lng": 157.57505046875002,
-		"width": 301,
-		"height": 142
-	},
-	{
-		"name": "new_art_int",
-		"lat": -82.224,
-		"lng": 153.16296,
-		"width": 383,
-		"height": 538
-	},
-	{
-		"name": "new_res_doctor_int",
-		"lat": -82.69580837890683,
-		"lng": 153.58976,
-		"width": 419,
-		"height": 291
-	},
-	{
-		"name": "new_trolleydepot",
-		"lat": -85.31532369140683,
-		"lng": 153.8083434375,
-		"width": 448,
-		"height": 257
-	},
-	{
-		"name": "new_man_gala_int",
-		"lat": -80.42270810546894,
-		"lng": 148.57349214843788,
-		"width": 608,
-		"height": 507
-	},
-	{
-		"name": "shack_cwb_int",
-		"lat": -45.101683203124225,
-		"lng": 142.06829134765684,
-		"width": 202,
-		"height": 120
-	},
-	{
-		"name": "new_com_bank_int",
-		"lat": -83.6726305859379,
-		"lng": 152.32036343750002,
-		"width": 491,
-		"height": 536
-	},
-	{
-		"name": "shack_it_01_int",
-		"lat": -37.42808140625,
-		"lng": 155.3069896484379,
-		"width": 202,
-		"height": 129
-	},
-	{
-		"name": "jum_horseshop_int",
-		"lat": -66.60650742187501,
-		"lng": 130.03518558593788,
-		"width": 256,
-		"height": 333
-	},
-	{
-		"name": "jum_horseshop_int",
-		"lat": -72.29234524414069,
-		"lng": 83.04448474609318,
-		"width": 256,
-		"height": 333
-	},
-	{
-		"name": "new_gamble_int",
-		"lat": -83.58976,
-		"lng": 153.45784,
-		"width": 312,
-		"height": 291
-	},
-	{
-		"name": "new_gunshop_int",
-		"lat": -83.5578068359379,
-		"lng": 153.4126819531258,
-		"width": 260,
-		"height": 207
-	},
-	{
-		"name": "met_house01_int",
-		"lat": -32.57916318359317,
-		"lng": 149.70567160156213,
-		"width": 165,
-		"height": 118
-	},
-	{
-		"name": "van_saloon_int",
-		"lat": -55.476991708984315,
-		"lng": 157.01848644531213,
-		"width": 289,
-		"height": 328
-	},
-	{
-		"name": "str_whore_int",
-		"lat": -69.34692887695311,
-		"lng": 83.11890572265683,
-		"width": 251,
-		"height": 202
-	},
-	{
-		"name": "shack_it_02_int",
-		"lat": -37.28019619140683,
-		"lng": 152.0342702734379,
-		"width": 203,
-		"height": 128
-	},
-	{
-		"name": "new_shady_shop_int",
-		"lat": -82.22157878906211,
-		"lng": 155.63173882812578,
-		"width": 172,
-		"height": 170
-	},
-	{
-		"name": "luc_serial_house_int",
-		"lat": -55.40544,
-		"lng": 101.76072,
-		"width": 273,
-		"height": 266
-	},
-	{
-		"name": "sod_house_int",
-		"lat": -54.520597285156214,
-		"lng": 140.2636347656258,
-		"width": 255,
-		"height": 219
-	},
-	{
-		"name": "rho_bank_int",
-		"lat": -83.82735126953105,
-		"lng": 131.29393298828106,
-		"width": 399,
-		"height": 474
-	},
-	{
-		"name": "sol_basement_int",
-		"lat": -120.54070128906211,
-		"lng": 27.546770234374222,
-		"width": 113,
-		"height": 285
-	},
-	{
-		"name": "rho_slum_player_int",
-		"lat": -81.18531945312577,
-		"lng": 131.40194021484317,
-		"width": 155,
-		"height": 176
-	},
-	{
-		"name": "new_pharmacy_int",
-		"lat": -82.70113769531211,
-		"lng": 153.4907896875,
-		"width": 180,
-		"height": 227
-	},
-	{
-		"name": "pho_houseboat_int",
-		"lat": -68.72870828125001,
-		"lng": 147.13407277343788,
-		"width": 142,
-		"height": 114
-	},
-	{
-		"name": "val_saloon_int",
-		"lat": -51.05307747070311,
-		"lng": 106.48949699707028,
-		"width": 325,
-		"height": 498
-	},
-	{
-		"name": "rho_saloon_int",
-		"lat": -84.93406064453106,
-		"lng": 132.12342697265683,
-		"width": 338,
-		"height": 513
-	},
-	{
-		"name": "rad_house_01_int",
-		"lat": -83.79589447265684,
-		"lng": 128.5784085156258,
-		"width": 268,
-		"height": 330
-	},
-	{
-		"name": "rho_genstore_int",
-		"lat": -83.64630228515684,
-		"lng": 131.8748815234379,
-		"width": 225,
-		"height": 162
-	},
-	{
-		"name": "new_police_int",
-		"lat": -83.91292535156211,
-		"lng": 150.12029734375,
-		"width": 473,
-		"height": 355
-	},
-	{
-		"name": "shack_b_b_int",
-		"lat": -88.0941330859379,
-		"lng": 133.87786332031212,
-		"width": 223,
-		"height": 207
-	},
-	{
-		"name": "val_hotel_int_main",
-		"lat": -51.69669141601568,
-		"lng": 106.2578247167969,
-		"width": 347,
-		"height": 409
-	},
-	{
-		"name": "ldj_shack01_int",
-		"lat": -114.89956019531212,
-		"lng": 58.51251597656211,
-		"width": 122,
-		"height": 148
-	},
-	{
-		"name": "str_nemi_int",
-		"lat": -70.30673724609379,
-		"lng": 83.85632738281211,
-		"width": 197,
-		"height": 207
-	},
-	{
-		"name": "lak_loveshack_int",
-		"lat": -75.73241993164069,
-		"lng": 146.4761096484379,
-		"width": 88,
-		"height": 99
-	},
-	{
-		"name": "val_saloon2_int",
-		"lat": -51.651051210937425,
-		"lng": 107.54062792968743,
-		"width": 284,
-		"height": 252
-	},
-	{
-		"name": "rho_sheriff_int",
-		"lat": -83.77778275390683,
-		"lng": 132.39420095703107,
-		"width": 231,
-		"height": 209
-	},
-	{
-		"name": "shack_hf_int",
-		"lat": -58.918268002929736,
-		"lng": 140.59839654296894,
-		"width": 113,
-		"height": 164
-	},
-	{
-		"name": "lnn_lonnie_shack_int",
-		"lat": -69.23376,
-		"lng": 136.46344000000002,
-		"width": 204,
-		"height": 154
-	},
-	{
-		"name": "shack_sk2_int",
-		"lat": -79.2038026953121,
-		"lng": 137.78861914062577,
-		"width": 127,
-		"height": 133
-	},
-	{
-		"name": "new_exotic_int",
-		"lat": -79.2691337109379,
-		"lng": 151.4655585156258,
-		"width": 164,
-		"height": 291
-	},
-	{
-		"name": "rho_graysecret_int",
-		"lat": -82.97272632812579,
-		"lng": 132.3445964453121,
-		"width": 139,
-		"height": 77
-	},
-	{
-		"name": "val_bank_int_main",
-		"lat": -51.61409837890621,
-		"lng": 106.53436044433596,
-		"width": 281,
-		"height": 406
-	},
-	{
-		"name": "tan_house_int",
-		"lat": -88.27243689453105,
-		"lng": 74.39661457031212,
-		"width": 119,
-		"height": 160
-	},
-	{
-		"name": "shack_rarefish_int",
-		"lat": -73.95263475585932,
-		"lng": 116.60009496582028,
-		"width": 180,
-		"height": 231
-	},
-	{
-		"name": "shack_pl_int",
-		"lat": -52.784235712890684,
-		"lng": 150.76142566406213,
-		"width": 145,
-		"height": 86
-	},
-	{
-		"name": "man_cabin01_int",
-		"lat": -89.49552542968789,
-		"lng": 80.57851740234318,
-		"width": 145,
-		"height": 163
-	},
-	{
-		"name": "lak_hideout_int",
-		"lat": -75.81347839843758,
-		"lng": 146.26347125,
-		"width": 220,
-		"height": 336
-	},
-	{
-		"name": "shack_dr_int",
-		"lat": -40.45592882812423,
-		"lng": 108.86385144042974,
-		"width": 151,
-		"height": 159
-	},
-	{
-		"name": "new_man_bronte",
-		"lat": -82.47232,
-		"lng": 148.10344,
-		"width": 568,
-		"height": 459
-	},
-	{
-		"name": "old_tower1_int",
-		"lat": -40.95755712890683,
-		"lng": 116.67447615722664,
-		"width": 101,
-		"height": 101
-	},
-	{
-		"name": "val_stable_int",
-		"lat": -51.40071921875,
-		"lng": 105.58403230957028,
-		"width": 331,
-		"height": 326
-	},
-	{
-		"name": "new_photo_int",
-		"lat": -80.94178503906211,
-		"lng": 153.7332972656258,
-		"width": 128,
-		"height": 177
-	},
-	{
-		"name": "rho_fenceshop_int",
-		"lat": -81.34822261718789,
-		"lng": 131.72335312500002,
-		"width": 134,
-		"height": 137
-	},
-	{
-		"name": "tum_roomnbath_int",
-		"lat": -109.72867585937578,
-		"lng": 25.692531875,
-		"width": 186,
-		"height": 122
-	},
-	{
-		"name": "val_magiclantern_int",
-		"lat": -52.801618984375,
-		"lng": 105.87445589843743,
-		"width": 237,
-		"height": 327
-	},
-	{
-		"name": "mic_hideout_int",
-		"lat": -44.21373535156211,
-		"lng": 88.14024333984318,
-		"width": 154,
-		"height": 152
-	},
-	{
-		"name": "old_tower03_int",
-		"lat": -40.15701726562422,
-		"lng": 116.274564765625,
-		"width": 99,
-		"height": 101
-	},
-	{
-		"name": "shack_lt_int",
-		"lat": -78.801574765625,
-		"lng": 128.89852177734318,
-		"width": 201,
-		"height": 144
-	},
-	{
-		"name": "the_ticketoffice_int",
-		"lat": -99.257381875,
-		"lng": 89.563636875,
-		"width": 146,
-		"height": 151
-	},
-	{
-		"name": "van_exoticgoods_int",
-		"lat": -54.88272461914069,
-		"lng": 158.22304835937578,
-		"width": 267,
-		"height": 220
-	},
-	{
-		"name": "lak_houseruined_int",
-		"lat": -75.42362459960933,
-		"lng": 146.3716035156258,
-		"width": 77,
-		"height": 115
-	},
-	{
-		"name": "mac_house01_int",
-		"lat": -65.85969764892575,
-		"lng": 145.99157191406212,
-		"width": 165,
-		"height": 107
-	},
-	{
-		"name": "val_genstore",
-		"lat": -51.15719711914068,
-		"lng": 106.26878410644527,
-		"width": 229,
-		"height": 284
-	},
-	{
-		"name": "shack_sp_int",
-		"lat": -95.91264000000001,
-		"lng": 132.84728,
-		"width": 192,
-		"height": 261
-	},
-	{
-		"name": "val_jail_int",
-		"lat": -51.068186357421894,
-		"lng": 107.01563058593743,
-		"width": 221,
-		"height": 226
-	},
-	{
-		"name": "new_tailor01_int_main",
-		"lat": -81.6704748046879,
-		"lng": 150.9069029296879,
-		"width": 248,
-		"height": 388
-	},
-	{
-		"name": "swc_shack01_int",
-		"lat": -100.74041335937578,
-		"lng": 83.18592287109317,
-		"width": 86,
-		"height": 100
-	},
-	{
-		"name": "van_lighthouse_int",
-		"lat": -56.89333853515621,
-		"lng": 158.40180117187577,
-		"width": 119,
-		"height": 127
-	},
-	{
-		"name": "l_07_cave_int",
-		"lat": -52.181315351562425,
-		"lng": 87.73699046875001,
-		"width": 272,
-		"height": 456
-	},
-	{
-		"name": "lak_dockhouse_int",
-		"lat": -75.5504,
-		"lng": 145.89960000000002,
-		"width": 306,
-		"height": 225
-	},
-	{
-		"name": "str_genst_int",
-		"lat": -69.60075675292974,
-		"lng": 83.48015304687422,
-		"width": 137,
-		"height": 185
-	},
-	{
-		"name": "swa_depot01_int",
-		"lat": -69.18370222167974,
-		"lng": 106.12981124023432,
-		"width": 313,
-		"height": 192
-	},
-	{
-		"name": "old_jailsmth_int",
-		"lat": -40.72494089843789,
-		"lng": 116.6315825488281,
-		"width": 202,
-		"height": 215
-	},
-	{
-		"name": "lar_house_int",
-		"lat": -59.545606503906214,
-		"lng": 125.28612147460933,
-		"width": 240,
-		"height": 159
-	},
-	{
-		"name": "pai_barn_int",
-		"lat": -64.60700433959961,
-		"lng": 101.5096519824219,
-		"width": 248,
-		"height": 422
-	},
-	{
-		"name": "new_hotel_3rd_floor_int",
-		"lat": -84.40078988281212,
-		"lng": 154.11881921875,
-		"width": 391,
-		"height": 314
-	},
-	{
-		"name": "new_barber_int",
-		"lat": -81.9136,
-		"lng": 152.49560000000002,
-		"width": 201,
-		"height": 139
-	},
-	{
-		"name": "qua_shack02_int",
-		"lat": -93.73032755859317,
-		"lng": 93.21271625,
-		"width": 90,
-		"height": 154
-	},
-	{
-		"name": "privatearmoured_int",
-		"lat": -43.173702109374226,
-		"lng": 105.17024395019527,
-		"width": 91,
-		"height": 292
-	},
-	{
-		"name": "wal_trainstation_int",
-		"lat": -57.46570863281242,
-		"lng": 91.06276808593789,
-		"width": 293,
-		"height": 207
-	},
-	{
-		"name": "val_carriagehouse_int",
-		"lat": -52.90737171875,
-		"lng": 107.04587630371095,
-		"width": 641,
-		"height": 288
-	},
-	{
-		"name": "val_res_a_int",
-		"lat": -50.15819279296879,
-		"lng": 106.79917518066407,
-		"width": 167,
-		"height": 129
-	},
-	{
-		"name": "tax_house_int",
-		"lat": -68.85673217773432,
-		"lng": 85.20427878906212,
-		"width": 303,
-		"height": 129
-	},
-	{
-		"name": "str_dressingroom_int",
-		"lat": -69.72176283203122,
-		"lng": 83.45262740234317,
-		"width": 102,
-		"height": 53
-	},
-	{
-		"name": "str_doctor_int",
-		"lat": -70.30464,
-		"lng": 83.27640000000001,
-		"width": 208,
-		"height": 225
-	},
-	{
-		"name": "pro_workshop_int",
-		"lat": -57.261118203125,
-		"lng": 71.04861789062423,
-		"width": 223,
-		"height": 218
-	},
-	{
-		"name": "pai_house_int",
-		"lat": -64.00893945465087,
-		"lng": 101.79476472656243,
-		"width": 224,
-		"height": 327
-	},
-	{
-		"name": "shack_sc_int",
-		"lat": -47.401695292968945,
-		"lng": 100.5809101367188,
-		"width": 188,
-		"height": 199
-	},
-	{
-		"name": "str_jailpost_int",
-		"lat": -69.04752,
-		"lng": 83.18328,
-		"width": 243,
-		"height": 265
-	},
-	{
-		"name": "pro_worker_house_int",
-		"lat": -56.50736,
-		"lng": 71.0156,
-		"width": 181,
-		"height": 226
-	},
-	{
-		"name": "str_mayorshouse_int",
-		"lat": -69.15828661132811,
-		"lng": 83.59089597656211,
-		"width": 139,
-		"height": 151
-	},
-	{
-		"name": "mil_shed_int",
-		"lat": -46.01833320312423,
-		"lng": 89.3305451171879,
-		"width": 146,
-		"height": 119
-	},
-	{
-		"name": "rig_station_int",
-		"lat": -72.52418850585931,
-		"lng": 94.29492365234317,
-		"width": 168,
-		"height": 168
-	},
-	{
-		"name": "val_gunsmith_int_main",
-		"lat": -51.4589296386719,
-		"lng": 106.9496469042969,
-		"width": 193,
-		"height": 174
-	},
-	{
-		"name": "shack_bv_int",
-		"lat": -50.544114492187425,
-		"lng": 73.11263769531212,
-		"width": 88,
-		"height": 102
-	},
-	{
-		"name": "rdl_house_01_int",
-		"lat": -117.4356327734379,
-		"lng": 57.215349375,
-		"width": 122,
-		"height": 116
-	},
-	{
-		"name": "qua_shack01_int",
-		"lat": -93.69134378906212,
-		"lng": 92.66772023437423,
-		"width": 106,
-		"height": 87
-	},
-	{
-		"name": "str_frt_int",
-		"lat": -69.54416047363284,
-		"lng": 83.8972,
-		"width": 202,
-		"height": 183
-	},
-	{
-		"name": "tum_jail_int",
-		"lat": -109.04007816406212,
-		"lng": 25.470545859374226,
-		"width": 147,
-		"height": 279
-	},
-	{
-		"name": "ple_house01_int",
-		"lat": -101.1044399609379,
-		"lng": 43.485476796874224,
-		"width": 121,
-		"height": 113
-	},
-	{
-		"name": "shack_ai_int",
-		"lat": -35.993028925781054,
-		"lng": 158.28285492187578,
-		"width": 204,
-		"height": 147
-	},
-	{
-		"name": "old_cptquarter_int",
-		"lat": -40.22876695312422,
-		"lng": 116.56182590820312,
-		"width": 182,
-		"height": 184
-	},
-	{
-		"name": "scr_shack_int",
-		"lat": -121.70550835937578,
-		"lng": 20.494119999999995,
-		"width": 188,
-		"height": 117
-	},
-	{
-		"name": "tum_barn_int",
-		"lat": -110.86680035156212,
-		"lng": 25.632391874999996,
-		"width": 338,
-		"height": 364
-	},
-	{
-		"name": "wat_cabin_int",
-		"lat": -53.38130576171879,
-		"lng": 83.07917171875,
-		"width": 132,
-		"height": 132
-	},
-	{
-		"name": "old_stable_int",
-		"lat": -40.23204449218789,
-		"lng": 116.83095259765622,
-		"width": 205,
-		"height": 249
-	},
-	{
-		"name": "old_tower02_int",
-		"lat": -40.72870722656211,
-		"lng": 116.98069066406258,
-		"width": 187,
-		"height": 161
-	},
-	{
-		"name": "val_trainstn_int",
-		"lat": -53.87595650390621,
-		"lng": 108.48340659423832,
-		"width": 418,
-		"height": 487
-	},
-	{
-		"name": "roc_house_int",
-		"lat": -29.605129921874223,
-		"lng": 157.7108125781258,
-		"width": 335,
-		"height": 321
-	},
-	{
-		"name": "tum_genstore_int",
-		"lat": -109.18643828125,
-		"lng": 26.1267584375,
-		"width": 258,
-		"height": 141
-	},
-	{
-		"name": "sil_house_int",
-		"lat": -100.82960789062578,
-		"lng": 25.10972101562423,
-		"width": 172,
-		"height": 110
-	},
-	{
-		"name": "twi_shack01_int",
-		"lat": -96.57432398437578,
-		"lng": 49.88070195312422,
-		"width": 301,
-		"height": 152
-	},
-	{
-		"name": "tum_saloon_int",
-		"lat": -108.80164382812578,
-		"lng": 25.738455312500008,
-		"width": 220,
-		"height": 320
-	},
-	{
-		"name": "l_14_cave",
-		"lat": -46.86380376953106,
-		"lng": 146.93394207031213,
-		"width": 2076,
-		"height": 3841
-	}
+	{ "name": "adl_barn_int", "lat": "-22.1616", "lng": "102.9868", "width": "196", "height": "210" },
+	{ "name": "adl_cabin01_int", "lat": "-21.6528", "lng": "102.6553", "width": "121", "height": "128" },
+	{ "name": "agu_hut01_int", "lat": "-172.3387", "lng": "132.7624", "width": "288", "height": "146" },
+	{ "name": "agu_tower_int", "lat": "-169.1402", "lng": "132.1569", "width": "175", "height": "176" },
+	{ "name": "ann_depot_int", "lat": "-43.6919", "lng": "156.8253", "width": "242", "height": "537" },
+	{ "name": "ann_gunsmith_int", "lat": "-43.1367", "lng": "157.0443", "width": "286", "height": "186" },
+	{ "name": "ann_jail_int", "lat": "-43.2312", "lng": "156.3887", "width": "222", "height": "168" },
+	{ "name": "ann_mine_int_main", "lat": "-42.5404", "lng": "153.9066", "width": "2004", "height": "2680" },
+	{ "name": "ann_roomnbath_int", "lat": "-42.9388", "lng": "157.0574", "width": "188", "height": "244" },
+	{ "name": "ann_setlrs_reg_int", "lat": "-42.7639", "lng": "156.6131", "width": "98", "height": "178" },
+	{ "name": "ann_settlers_int", "lat": "-42.7639", "lng": "156.6131", "width": "120", "height": "238" },
+	{ "name": "arm_bank_int", "lat": "-104.4128", "lng": "54.4027", "width": "194", "height": "371" },
+	{ "name": "arm_genstore_int", "lat": "-104.3662", "lng": "54.0822", "width": "241", "height": "213" },
+	{ "name": "arm_saloon_int", "lat": "-103.8482", "lng": "53.8248", "width": "272", "height": "369" },
+	{ "name": "arm_sheriff_int", "lat": "-103.9979", "lng": "55.0955", "width": "194", "height": "179" },
+	{ "name": "arm_sheriff_int", "lat": "-103.9979", "lng": "55.0955", "width": "194", "height": "179" },
+	{ "name": "arm_trainstation_int", "lat": "-104.0231", "lng": "53.4104", "width": "162", "height": "358" },
+	{ "name": "aur_shack01_int", "lat": "-85.0497", "lng": "71.2752", "width": "109", "height": "145" },
+	{ "name": "bea_01_int", "lat": "-40.8918", "lng": "146.9281", "width": "2196", "height": "2272" },
+	{ "name": "bee_barn_int", "lat": "-85.5238", "lng": "86.4353", "width": "196", "height": "252" },
+	{ "name": "bee_house_int", "lat": "-84.7152", "lng": "85.8307", "width": "251", "height": "349" },
+	{ "name": "ben_shack_int", "lat": "-117.7780", "lng": "30.5113", "width": "95", "height": "171" },
+	{ "name": "ben_train_int", "lat": "-117.4814", "lng": "30.1821", "width": "165", "height": "216" },
+	{ "name": "bgv_devilcave_int", "lat": "-52.8980", "lng": "69.9150", "width": "1450", "height": "1446" },
+	{ "name": "bla_bank_int", "lat": "-83.4125", "lng": "98.6452", "width": "272", "height": "173" },
+	{ "name": "bla_barber_int", "lat": "-84.8158", "lng": "98.6257", "width": "295", "height": "143" },
+	{ "name": "bla_carriagehouse_int", "lat": "-84.8033", "lng": "97.8135", "width": "486", "height": "264" },
+	{ "name": "bla_fenceshop_int", "lat": "-83.6052", "lng": "97.7758", "width": "255", "height": "181" },
+	{ "name": "bla_genstore_int", "lat": "-84.1485", "lng": "99.1456", "width": "318", "height": "165" },
+	{ "name": "bla_jail_int", "lat": "-83.3082", "lng": "99.4478", "width": "252", "height": "244" },
+	{ "name": "bla_photo_int", "lat": "-84.9286", "lng": "98.6561", "width": "203", "height": "137" },
+	{ "name": "bla_saloon_int", "lat": "-84.0398", "lng": "98.5946", "width": "376", "height": "327" },
+	{ "name": "bla_tailor_int", "lat": "-83.6680", "lng": "99.4086", "width": "242", "height": "146" },
+	{ "name": "bla_theater_int", "lat": "-84.7382", "lng": "99.2154", "width": "476", "height": "196" },
+	{ "name": "bla_train_int", "lat": "-84.2881", "lng": "97.7067", "width": "190", "height": "293" },
+	{ "name": "bpl_swampcabin_int", "lat": "-105.0613", "lng": "89.3657", "width": "98", "height": "142" },
+	{ "name": "bra_boathouse_int", "lat": "-75.6414", "lng": "142.6557", "width": "236", "height": "230" },
+	{ "name": "bra_boathouse_int", "lat": "-91.3808", "lng": "125.3046", "width": "236", "height": "230" },
+	{ "name": "bra_cornmill_int", "lat": "-95.0232", "lng": "126.4986", "width": "334", "height": "400" },
+	{ "name": "bra_mansion_int", "lat": "-91.0859", "lng": "126.9807", "width": "467", "height": "363" },
+	{ "name": "bra_stable_int", "lat": "-92.0142", "lng": "126.3018", "width": "170", "height": "332" },
+	{ "name": "bra_tre_house_int", "lat": "-94.4537", "lng": "128.6414", "width": "159", "height": "159" },
+	{ "name": "brb_dockhouse_int", "lat": "-110.6751", "lng": "79.8812", "width": "114", "height": "88" },
+	{ "name": "bur_calaboose_int", "lat": "-65.9489", "lng": "106.2233", "width": "226", "height": "222" },
+	{ "name": "but_shack_int", "lat": "-45.3749", "lng": "71.9919", "width": "94", "height": "97" },
+	{ "name": "but_shack_int", "lat": "-52.5788", "lng": "153.4611", "width": "94", "height": "97" },
+	{ "name": "cal_carriage_house_int", "lat": "-84.4434", "lng": "140.5452", "width": "415", "height": "484" },
+	{ "name": "cal_tobacco_int", "lat": "-83.4035", "lng": "139.7382", "width": "285", "height": "287" },
+	{ "name": "can_manor_int", "lat": "-70.1341", "lng": "150.0556", "width": "171", "height": "128" },
+	{ "name": "car_barn_int", "lat": "-50.0008", "lng": "123.2319", "width": "140", "height": "210" },
+	{ "name": "car_house_int", "lat": "-50.4577", "lng": "123.3535", "width": "232", "height": "199" },
+	{ "name": "cas_house_int", "lat": "-55.8856", "lng": "104.4006", "width": "129", "height": "79" },
+	{ "name": "cat_house_01_int", "lat": "-99.0011", "lng": "131.7609", "width": "353", "height": "372" },
+	{ "name": "cat_shack01_int", "lat": "-99.2159", "lng": "132.0345", "width": "106", "height": "119" },
+	{ "name": "che_barn_int", "lat": "-36.3951", "lng": "104.8487", "width": "195", "height": "208" },
+	{ "name": "che_cabin1", "lat": "-36.7554", "lng": "105.1135", "width": "332", "height": "326" },
+	{ "name": "che_shack1_int", "lat": "-36.6586", "lng": "104.7250", "width": "164", "height": "121" },
+	{ "name": "cin_tor_int", "lat": "-168.2764", "lng": "126.7978", "width": "244", "height": "428" },
+	{ "name": "civ_cellar_int", "lat": "-59.0873", "lng": "149.2453", "width": "154", "height": "200" },
+	{ "name": "col_barn_int", "lat": "-26.3691", "lng": "90.4776", "width": "268", "height": "214" },
+	{ "name": "col_bunkhouse_int", "lat": "-25.9496", "lng": "90.1837", "width": "91", "height": "135" },
+	{ "name": "col_cabin_int", "lat": "-25.7584", "lng": "90.2710", "width": "288", "height": "273" },
+	{ "name": "col_school_int", "lat": "-25.7539", "lng": "90.7853", "width": "145", "height": "265" },
+	{ "name": "com_farmhouse_int", "lat": "-69.9313", "lng": "130.9232", "width": "366", "height": "205" },
+	{ "name": "com_muleshed_int", "lat": "-70.4295", "lng": "130.4922", "width": "164", "height": "234" },
+	{ "name": "cor_factoryb_int", "lat": "-53.0487", "lng": "118.7433", "width": "821", "height": "325" },
+	{ "name": "cro_house_int", "lat": "-56.0061", "lng": "128.6397", "width": "257", "height": "244" },
+	{ "name": "dai_farmhouse01_int", "lat": "-77.1476", "lng": "132.5682", "width": "285", "height": "213" },
+	{ "name": "din_barn_int", "lat": "-48.2888", "lng": "114.3003", "width": "210", "height": "194" },
+	{ "name": "din_house_int", "lat": "-48.2998", "lng": "114.7439", "width": "168", "height": "222" },
+	{ "name": "dis_1rmchurch_int", "lat": "-75.0654", "lng": "148.7811", "width": "80", "height": "87" },
+	{ "name": "dis_grz_preskull_int", "lat": "-36.9979", "lng": "116.3457", "width": "178", "height": "254" },
+	{ "name": "dis_grz_statue_int", "lat": "-33.7434", "lng": "123.8170", "width": "744", "height": "502" },
+	{ "name": "dis_stonehenge_int", "lat": "-37.3140", "lng": "148.2255", "width": "721", "height": "610" },
+	{ "name": "dis_tradepost_int", "lat": "-70.0015", "lng": "114.2578", "width": "87", "height": "61" },
+	{ "name": "dov_lab_int", "lat": "-28.1093", "lng": "150.2620", "width": "195", "height": "380" },
+	{ "name": "dow_barn_int", "lat": "-58.3542", "lng": "97.9273", "width": "257", "height": "317" },
+	{ "name": "dow_house_int", "lat": "-58.1000", "lng": "98.6074", "width": "205", "height": "160" },
+	{ "name": "eme_barn_int", "lat": "-59.3526", "lng": "133.1695", "width": "212", "height": "254" },
+	{ "name": "eme_depot_int", "lat": "-56.7246", "lng": "134.9077", "width": "102", "height": "108" },
+	{ "name": "eme_genstore_int", "lat": "-57.7334", "lng": "133.3284", "width": "187", "height": "256" },
+	{ "name": "eme_saloon_int", "lat": "-57.8110", "lng": "133.7630", "width": "164", "height": "198" },
+	{ "name": "gap_cartstop_int", "lat": "-114.1877", "lng": "17.4597", "width": "179", "height": "271" },
+	{ "name": "gap_mine_int", "lat": "-112.3340", "lng": "18.5424", "width": "1813", "height": "2208" },
+	{ "name": "grh_house_int", "lat": "-69.6889", "lng": "110.3353", "width": "129", "height": "127" },
+	{ "name": "gri_g1_shack_int", "lat": "-37.3432", "lng": "95.4266", "width": "105", "height": "191" },
+	{ "name": "gri_g2_shack_int", "lat": "-30.0973", "lng": "80.8471", "width": "119", "height": "136" },
+	{ "name": "han_barn_int", "lat": "-52.2195", "lng": "76.8662", "width": "456", "height": "394" },
+	{ "name": "han_house_int", "lat": "-52.4430", "lng": "77.5023", "width": "237", "height": "362" },
+	{ "name": "hrs_02_shop01_int", "lat": "-51.2511", "lng": "157.2993", "width": "312", "height": "311" },
+	{ "name": "j_14_cave01_int", "lat": "-36.3123", "lng": "148.7983", "width": "579", "height": "925" },
+	{ "name": "jum_horseshop_int", "lat": "-66.6065", "lng": "130.0352", "width": "256", "height": "333" },
+	{ "name": "jum_horseshop_int", "lat": "-72.2923", "lng": "83.0445", "width": "256", "height": "333" },
+	{ "name": "l_07_cave_int", "lat": "-52.1813", "lng": "87.7370", "width": "272", "height": "456" },
+	{ "name": "l_14_cave", "lat": "-46.8638", "lng": "146.9339", "width": "2076", "height": "3841" },
+	{ "name": "lak_dockhouse_int", "lat": "-75.5504", "lng": "145.8996", "width": "306", "height": "225" },
+	{ "name": "lak_hideout_int", "lat": "-75.8135", "lng": "146.2635", "width": "220", "height": "336" },
+	{ "name": "lak_houseruined_int", "lat": "-75.4236", "lng": "146.3716", "width": "77", "height": "115" },
+	{ "name": "lak_loveshack_int", "lat": "-75.7324", "lng": "146.4761", "width": "88", "height": "99" },
+	{ "name": "lar_house_int", "lat": "-59.5456", "lng": "125.2861", "width": "240", "height": "159" },
+	{ "name": "ldj_shack01_int", "lat": "-114.8996", "lng": "58.5125", "width": "122", "height": "148" },
+	{ "name": "lnn_lonnie_shack_int", "lat": "-69.2338", "lng": "136.4634", "width": "204", "height": "154" },
+	{ "name": "lof_outpost_int", "lat": "-33.4205", "lng": "141.3236", "width": "222", "height": "239" },
+	{ "name": "lon_mule_int", "lat": "-75.1344", "lng": "97.9522", "width": "194", "height": "126" },
+	{ "name": "luc_serial_house_int", "lat": "-55.4054", "lng": "101.7607", "width": "273", "height": "266" },
+	{ "name": "m05_mine_int", "lat": "-61.9258", "lng": "74.9333", "width": "1075", "height": "631" },
+	{ "name": "mac_house01_int", "lat": "-65.8597", "lng": "145.9916", "width": "165", "height": "107" },
+	{ "name": "maco_shack01_int", "lat": "-75.0542", "lng": "140.4261", "width": "124", "height": "194" },
+	{ "name": "man_cabin01_int", "lat": "-89.4955", "lng": "80.5785", "width": "145", "height": "163" },
+	{ "name": "met_house01_int", "lat": "-32.5792", "lng": "149.7057", "width": "165", "height": "118" },
+	{ "name": "mfr_blacksmith01_int", "lat": "-100.5435", "lng": "74.0800", "width": "213", "height": "215" },
+	{ "name": "mfr_cottage01_int", "lat": "-100.7263", "lng": "74.5558", "width": "102", "height": "171" },
+	{ "name": "mic_hideout_int", "lat": "-44.2137", "lng": "88.1402", "width": "154", "height": "152" },
+	{ "name": "mil_shed_int", "lat": "-46.0183", "lng": "89.3305", "width": "146", "height": "119" },
+	{ "name": "miy_fort_int", "lat": "-156.2344", "lng": "138.8605", "width": "286", "height": "296" },
+	{ "name": "new_art_int", "lat": "-82.2240", "lng": "153.1630", "width": "383", "height": "538" },
+	{ "name": "new_art_res", "lat": "-82.3652", "lng": "153.8103", "width": "89", "height": "82" },
+	{ "name": "new_barber_int", "lat": "-81.9136", "lng": "152.4956", "width": "201", "height": "139" },
+	{ "name": "new_carriagehouse_int", "lat": "-86.1080", "lng": "150.2166", "width": "368", "height": "601" },
+	{ "name": "new_com_bank_int", "lat": "-83.6726", "lng": "152.3204", "width": "491", "height": "536" },
+	{ "name": "new_exotic_int", "lat": "-79.2691", "lng": "151.4656", "width": "164", "height": "291" },
+	{ "name": "new_gamble_int", "lat": "-83.5898", "lng": "153.4578", "width": "312", "height": "291" },
+	{ "name": "new_gang01_int", "lat": "-99.2541", "lng": "90.2586", "width": "123", "height": "156" },
+	{ "name": "new_grocery_int", "lat": "-84.0330", "lng": "155.1599", "width": "350", "height": "165" },
+	{ "name": "new_gunshop_int", "lat": "-83.5578", "lng": "153.4127", "width": "260", "height": "207" },
+	{ "name": "new_hotel_3rd_floor_int", "lat": "-84.4008", "lng": "154.1188", "width": "391", "height": "314" },
+	{ "name": "new_magic_es_int", "lat": "-84.6264", "lng": "153.1342", "width": "437", "height": "413" },
+	{ "name": "new_magic_int", "lat": "-84.6264", "lng": "153.1343", "width": "437", "height": "413" },
+	{ "name": "new_man_bronte", "lat": "-82.4723", "lng": "148.1034", "width": "568", "height": "459" },
+	{ "name": "new_man_gala_int", "lat": "-80.4227", "lng": "148.5735", "width": "608", "height": "507" },
+	{ "name": "new_pharmacy_int", "lat": "-82.7011", "lng": "153.4908", "width": "180", "height": "227" },
+	{ "name": "new_photo_int", "lat": "-80.9418", "lng": "153.7333", "width": "128", "height": "177" },
+	{ "name": "new_pie_tunnel_int", "lat": "-87.1153", "lng": "147.4108", "width": "831", "height": "626" },
+	{ "name": "new_police_int", "lat": "-83.9129", "lng": "150.1203", "width": "473", "height": "355" },
+	{ "name": "new_res_doctor_int", "lat": "-82.6958", "lng": "153.5898", "width": "419", "height": "291" },
+	{ "name": "new_saloon01_int_main", "lat": "-82.6445", "lng": "152.1694", "width": "303", "height": "302" },
+	{ "name": "new_saloon02_int", "lat": "-81.7452", "lng": "154.7273", "width": "221", "height": "291" },
+	{ "name": "new_shady_shop_int", "lat": "-82.2216", "lng": "155.6317", "width": "172", "height": "170" },
+	{ "name": "new_stairwell01_int", "lat": "-82.0153", "lng": "152.8497", "width": "237", "height": "268" },
+	{ "name": "new_tailor01_int_main", "lat": "-81.6705", "lng": "150.9069", "width": "248", "height": "388" },
+	{ "name": "new_theater_int", "lat": "-83.7412", "lng": "150.8039", "width": "474", "height": "857" },
+	{ "name": "new_traindepot_int", "lat": "-86.2394", "lng": "148.0305", "width": "549", "height": "431" },
+	{ "name": "new_trolleydepot", "lat": "-85.3153", "lng": "153.8083", "width": "448", "height": "257" },
+	{ "name": "old_cptquarter_int", "lat": "-40.2288", "lng": "116.5618", "width": "182", "height": "184" },
+	{ "name": "old_jailsmth_int", "lat": "-40.7249", "lng": "116.6316", "width": "202", "height": "215" },
+	{ "name": "old_stable_int", "lat": "-40.2320", "lng": "116.8310", "width": "205", "height": "249" },
+	{ "name": "old_storage_int", "lat": "-40.4627", "lng": "116.9576", "width": "169", "height": "166" },
+	{ "name": "old_tower02_int", "lat": "-40.7287", "lng": "116.9807", "width": "187", "height": "161" },
+	{ "name": "old_tower03_int", "lat": "-40.1570", "lng": "116.2746", "width": "99", "height": "101" },
+	{ "name": "old_tower04_int", "lat": "-40.0717", "lng": "116.9077", "width": "190", "height": "165" },
+	{ "name": "old_tower1_int", "lat": "-40.9576", "lng": "116.6745", "width": "101", "height": "101" },
+	{ "name": "ora_house_01_int", "lat": "-76.8169", "lng": "143.3830", "width": "194", "height": "182" },
+	{ "name": "pai_barn_int", "lat": "-64.6070", "lng": "101.5097", "width": "248", "height": "422" },
+	{ "name": "pai_house_int", "lat": "-64.0089", "lng": "101.7948", "width": "224", "height": "327" },
+	{ "name": "pho_houseboat_int", "lat": "-68.7287", "lng": "147.1341", "width": "142", "height": "114" },
+	{ "name": "ple_house01_int", "lat": "-101.1044", "lng": "43.4855", "width": "121", "height": "113" },
+	{ "name": "privatearmoured_int", "lat": "-43.1737", "lng": "105.1702", "width": "91", "height": "292" },
+	{ "name": "pro_barn_int", "lat": "-57.3996", "lng": "71.7339", "width": "505", "height": "445" },
+	{ "name": "pro_mansion_int", "lat": "-58.1732", "lng": "71.3816", "width": "497", "height": "343" },
+	{ "name": "pro_worker_house_int", "lat": "-56.5074", "lng": "71.0156", "width": "181", "height": "226" },
+	{ "name": "pro_workshop_int", "lat": "-57.2611", "lng": "71.0486", "width": "223", "height": "218" },
+	{ "name": "qua_shack01_int", "lat": "-93.6913", "lng": "92.6677", "width": "106", "height": "87" },
+	{ "name": "qua_shack02_int", "lat": "-93.7303", "lng": "93.2127", "width": "90", "height": "154" },
+	{ "name": "rad_house_01_int", "lat": "-83.7959", "lng": "128.5784", "width": "268", "height": "330" },
+	{ "name": "rdl_house_01_int", "lat": "-117.4356", "lng": "57.2153", "width": "122", "height": "116" },
+	{ "name": "rho_bank_int", "lat": "-83.8274", "lng": "131.2939", "width": "399", "height": "474" },
+	{ "name": "rho_fenceshop_int", "lat": "-81.3482", "lng": "131.7234", "width": "134", "height": "137" },
+	{ "name": "rho_genstore_int", "lat": "-83.6463", "lng": "131.8749", "width": "225", "height": "162" },
+	{ "name": "rho_graysecret_int", "lat": "-82.9727", "lng": "132.3446", "width": "139", "height": "77" },
+	{ "name": "rho_gunsmith_int", "lat": "-84.1128", "lng": "131.8497", "width": "239", "height": "202" },
+	{ "name": "rho_saloon_int", "lat": "-84.9341", "lng": "132.1234", "width": "338", "height": "513" },
+	{ "name": "rho_sheriff_int", "lat": "-83.7778", "lng": "132.3942", "width": "231", "height": "209" },
+	{ "name": "rho_slum_player_int", "lat": "-81.1853", "lng": "131.4019", "width": "155", "height": "176" },
+	{ "name": "rho_train_int", "lat": "-83.6842", "lng": "130.4519", "width": "454", "height": "496" },
+	{ "name": "rig_station_int", "lat": "-72.5242", "lng": "94.2949", "width": "168", "height": "168" },
+	{ "name": "roc_house_int", "lat": "-29.6051", "lng": "157.7108", "width": "335", "height": "321" },
+	{ "name": "scr_shack_int", "lat": "-121.7055", "lng": "20.4941", "width": "188", "height": "117" },
+	{ "name": "sha_mansion_int", "lat": "-92.5138", "lng": "140.7314", "width": "475", "height": "478" },
+	{ "name": "shack_ai_int", "lat": "-35.9930", "lng": "158.2829", "width": "204", "height": "147" },
+	{ "name": "shack_b_a_int", "lat": "-59.6750", "lng": "87.2156", "width": "227", "height": "189" },
+	{ "name": "shack_b_b_int", "lat": "-88.0941", "lng": "133.8779", "width": "223", "height": "207" },
+	{ "name": "shack_b_c_int", "lat": "-56.4142", "lng": "138.9896", "width": "203", "height": "211" },
+	{ "name": "shack_bv_int", "lat": "-50.5441", "lng": "73.1126", "width": "88", "height": "102" },
+	{ "name": "shack_cwb_int", "lat": "-45.1017", "lng": "142.0683", "width": "202", "height": "120" },
+	{ "name": "shack_dr_int", "lat": "-40.4559", "lng": "108.8639", "width": "151", "height": "159" },
+	{ "name": "shack_hb_int", "lat": "-56.2590", "lng": "74.5076", "width": "111", "height": "120" },
+	{ "name": "shack_hf_int", "lat": "-58.9183", "lng": "140.5984", "width": "113", "height": "164" },
+	{ "name": "shack_it_01_int", "lat": "-37.4281", "lng": "155.3070", "width": "202", "height": "129" },
+	{ "name": "shack_it_02_int", "lat": "-37.2802", "lng": "152.0343", "width": "203", "height": "128" },
+	{ "name": "shack_lt_int", "lat": "-78.8016", "lng": "128.8985", "width": "201", "height": "144" },
+	{ "name": "shack_pl_int", "lat": "-52.7842", "lng": "150.7614", "width": "145", "height": "86" },
+	{ "name": "shack_rarefish_int", "lat": "-73.9526", "lng": "116.6001", "width": "180", "height": "231" },
+	{ "name": "shack_rc_int", "lat": "-67.4981", "lng": "77.5456", "width": "202", "height": "147" },
+	{ "name": "shack_sc_int", "lat": "-47.4017", "lng": "100.5809", "width": "188", "height": "199" },
+	{ "name": "shack_sk2_int", "lat": "-79.2038", "lng": "137.7886", "width": "127", "height": "133" },
+	{ "name": "shack_sp_int", "lat": "-95.9126", "lng": "132.8473", "width": "192", "height": "261" },
+	{ "name": "shack_sw_int", "lat": "-76.9874", "lng": "148.0838", "width": "183", "height": "185" },
+	{ "name": "shack_urr_int", "lat": "-65.1751", "lng": "129.6873", "width": "241", "height": "113" },
+	{ "name": "sil_house_int", "lat": "-100.8296", "lng": "25.1097", "width": "172", "height": "110" },
+	{ "name": "six_cabin_int", "lat": "-44.3889", "lng": "110.3216", "width": "255", "height": "228" },
+	{ "name": "sod_house_int", "lat": "-54.5206", "lng": "140.2636", "width": "255", "height": "219" },
+	{ "name": "sol_basement_int", "lat": "-120.5407", "lng": "27.5468", "width": "113", "height": "285" },
+	{ "name": "str_doctor_int", "lat": "-70.3046", "lng": "83.2764", "width": "208", "height": "225" },
+	{ "name": "str_dressingroom_int", "lat": "-69.7218", "lng": "83.4526", "width": "102", "height": "53" },
+	{ "name": "str_frt_int", "lat": "-69.5442", "lng": "83.8972", "width": "202", "height": "183" },
+	{ "name": "str_genst_int", "lat": "-69.6008", "lng": "83.4802", "width": "137", "height": "185" },
+	{ "name": "str_jailpost_int", "lat": "-69.0475", "lng": "83.1833", "width": "243", "height": "265" },
+	{ "name": "str_mayorshouse_int", "lat": "-69.1583", "lng": "83.5909", "width": "139", "height": "151" },
+	{ "name": "str_nemi_int", "lat": "-70.3067", "lng": "83.8563", "width": "197", "height": "207" },
+	{ "name": "str_res02_int_main", "lat": "-69.7869", "lng": "83.6351", "width": "232", "height": "175" },
+	{ "name": "str_whore_int", "lat": "-69.3469", "lng": "83.1189", "width": "251", "height": "202" },
+	{ "name": "swa_depot01_int", "lat": "-69.1837", "lng": "106.1298", "width": "313", "height": "192" },
+	{ "name": "swc_shack01_int", "lat": "-100.7404", "lng": "83.1859", "width": "86", "height": "100" },
+	{ "name": "tan_house_int", "lat": "-88.2724", "lng": "74.3966", "width": "119", "height": "160" },
+	{ "name": "tax_house_int", "lat": "-68.8567", "lng": "85.2043", "width": "303", "height": "129" },
+	{ "name": "the_ticketoffice_int", "lat": "-99.2574", "lng": "89.5636", "width": "146", "height": "151" },
+	{ "name": "tum_barn_int", "lat": "-110.8668", "lng": "25.6324", "width": "338", "height": "364" },
+	{ "name": "tum_genstore_int", "lat": "-109.1864", "lng": "26.1268", "width": "258", "height": "141" },
+	{ "name": "tum_gunsmith_int", "lat": "-109.6276", "lng": "25.8113", "width": "129", "height": "188" },
+	{ "name": "tum_jail_int", "lat": "-109.0401", "lng": "25.4705", "width": "147", "height": "279" },
+	{ "name": "tum_roomnbath_int", "lat": "-109.7287", "lng": "25.6925", "width": "186", "height": "122" },
+	{ "name": "tum_saloon_int", "lat": "-108.8016", "lng": "25.7385", "width": "220", "height": "320" },
+	{ "name": "twi_shack01_int", "lat": "-96.5743", "lng": "49.8807", "width": "301", "height": "152" },
+	{ "name": "val_bank_int_main", "lat": "-51.6141", "lng": "106.5344", "width": "281", "height": "406" },
+	{ "name": "val_carriagehouse_int", "lat": "-52.9074", "lng": "107.0459", "width": "641", "height": "288" },
+	{ "name": "val_doctor_int", "lat": "-51.0393", "lng": "106.8480", "width": "239", "height": "335" },
+	{ "name": "val_genstore", "lat": "-51.1572", "lng": "106.2688", "width": "229", "height": "284" },
+	{ "name": "val_gunsmith_int_main", "lat": "-51.4589", "lng": "106.9496", "width": "193", "height": "174" },
+	{ "name": "val_hotel_int_main", "lat": "-51.6967", "lng": "106.2578", "width": "347", "height": "409" },
+	{ "name": "val_jail_int", "lat": "-51.0682", "lng": "107.0156", "width": "221", "height": "226" },
+	{ "name": "val_magiclantern_int", "lat": "-52.8016", "lng": "105.8745", "width": "237", "height": "327" },
+	{ "name": "val_res_01_f_int", "lat": "-52.1738", "lng": "107.2505", "width": "127", "height": "138" },
+	{ "name": "val_res_a_int", "lat": "-50.1582", "lng": "106.7992", "width": "167", "height": "129" },
+	{ "name": "val_saloon_int", "lat": "-51.0531", "lng": "106.4895", "width": "325", "height": "498" },
+	{ "name": "val_saloon2_int", "lat": "-51.6511", "lng": "107.5406", "width": "284", "height": "252" },
+	{ "name": "val_stable_int", "lat": "-51.4007", "lng": "105.5840", "width": "331", "height": "326" },
+	{ "name": "val_trainstn_int", "lat": "-53.8760", "lng": "108.4834", "width": "418", "height": "487" },
+	{ "name": "van_depot_int", "lat": "-54.7132", "lng": "157.5751", "width": "301", "height": "142" },
+	{ "name": "van_exoticgoods_int", "lat": "-54.8827", "lng": "158.2230", "width": "267", "height": "220" },
+	{ "name": "van_farmhse01_int", "lat": "-55.3089", "lng": "154.4715", "width": "384", "height": "375" },
+	{ "name": "van_fenceshop_int", "lat": "-54.9071", "lng": "156.8102", "width": "179", "height": "272" },
+	{ "name": "van_hobo_int", "lat": "-55.8651", "lng": "157.4663", "width": "171", "height": "244" },
+	{ "name": "van_hotel_int", "lat": "-55.2167", "lng": "157.0331", "width": "437", "height": "390" },
+	{ "name": "van_lighthouse_int", "lat": "-56.8933", "lng": "158.4018", "width": "119", "height": "127" },
+	{ "name": "van_mansion_int", "lat": "-59.3411", "lng": "155.1147", "width": "285", "height": "224" },
+	{ "name": "van_roomnbath_int", "lat": "-54.7059", "lng": "157.5743", "width": "303", "height": "140" },
+	{ "name": "van_saloon_int", "lat": "-55.4770", "lng": "157.0185", "width": "289", "height": "328" },
+	{ "name": "ven_shack01_int", "lat": "-110.3135", "lng": "56.1603", "width": "203", "height": "107" },
+	{ "name": "vet_house_int", "lat": "-40.1451", "lng": "137.6880", "width": "157", "height": "137" },
+	{ "name": "wal_trainstation_int", "lat": "-57.4657", "lng": "91.0628", "width": "293", "height": "207" },
+	{ "name": "wat_cabin_int", "lat": "-53.3813", "lng": "83.0792", "width": "132", "height": "132" }
 ]
