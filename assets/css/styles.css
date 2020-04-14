@@ -14,7 +14,9 @@
     text-rendering: optimizeLegibility
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
@@ -58,7 +60,10 @@ p {
     margin: 0 !important;
 }
 
-input, textarea, select, .btn {
+input,
+textarea,
+select,
+.btn {
     outline: none;
 }
 
@@ -67,7 +72,8 @@ input, textarea, select, .btn {
     background: black;
 }
 
-.cycle-table td, .cycle-table th {
+.cycle-table td,
+.cycle-table th {
     padding: 2px;
     border: 1px solid black;
 }
@@ -107,7 +113,8 @@ input, textarea, select, .btn {
     font-weight: normal;
 }
 
-#main-header-left, #main-header-right {
+#main-header-left,
+#main-header-right {
     user-select: none;
     height: 75px;
 }
@@ -180,7 +187,8 @@ input, textarea, select, .btn {
     text-align: center;
 }
 
-.map-cycle-alert, .filter-alert {
+.map-cycle-alert,
+.filter-alert {
     position: absolute;
     z-index: 990;
     text-align: center;
@@ -198,7 +206,8 @@ input, textarea, select, .btn {
 }
 
 @media (max-width: 1024px) {
-    .map-cycle-alert, .filter-alert {
+    .map-cycle-alert,
+    .filter-alert {
         left: 2px;
         right: 2px;
         bottom: 2px;
@@ -206,14 +215,17 @@ input, textarea, select, .btn {
 }
 
 @media (min-width: 1025px) {
-    .map-cycle-alert, .filter-alert {
+    .map-cycle-alert,
+    .filter-alert {
         left: 50%;
         transform: translate(-50%, -50%);
         bottom: 0;
     }
 }
 
-.map-alert .close-button, .map-cycle-alert .close-button, .filter-alert .close-button {
+.map-alert .close-button,
+.map-cycle-alert .close-button,
+.filter-alert .close-button {
     position: absolute;
     top: 0;
     right: 15px;
@@ -244,13 +256,16 @@ input, textarea, select, .btn {
     margin-right: 5px;
 }
 
-#countdown, #item-counter, #time-in-game {
+#countdown,
+#item-counter,
+#time-in-game {
     font-size: 16px;
     user-select: none;
     margin: auto 8px auto 0;
 }
 
-.timer-container, .clock-container {
+.timer-container,
+.clock-container {
     position: fixed;
     z-index: 1010;
     background: #111;
@@ -295,7 +310,8 @@ input, textarea, select, .btn {
     background-size: auto 3px;
 }
 
-.save-button, .remove-button {
+.save-button,
+.remove-button {
     text-align: center;
     font-size: 14px;
     cursor: pointer;
@@ -319,7 +335,8 @@ input, textarea, select, .btn {
     line-height: 33px;
 }
 
-.marker-popup-pin-input-name, .marker-popup-pin-input-desc {
+.marker-popup-pin-input-name,
+.marker-popup-pin-input-desc {
     border: none;
     width: 100%;
 }
@@ -492,7 +509,8 @@ input, textarea, select, .btn {
     top: 0;
 }
 
-.side-menu, .menu-toggle {
+.side-menu,
+.menu-toggle {
     transition: all 200ms ease-out;
 }
 
@@ -506,7 +524,8 @@ input, textarea, select, .btn {
     line-height: 36px;
 }
 
-.side-menu .menu-option:hover, .side-menu .menu-hidden .collectible-wrapper:hover {
+.side-menu .menu-option:hover,
+.side-menu .menu-hidden .collectible-wrapper:hover {
     background-image: url(../images/menu_hover.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -516,7 +535,8 @@ input, textarea, select, .btn {
     opacity: .5;
 }
 
-.side-menu .disabled .menu-option-text, .side-menu .disabled .collectible-text {
+.side-menu .disabled .menu-option-text,
+.side-menu .disabled .collectible-text {
     text-decoration: line-through;
 }
 
@@ -545,13 +565,27 @@ input, textarea, select, .btn {
     transform: rotate(180deg);
 }
 
-.side-menu .menu-hidden, #weekly-container, #utilities-container, #customization-container, #routes-container, #import-export-container, #debug-container, #inventory-container {
+.side-menu .menu-hidden,
+#weekly-container,
+#utilities-container,
+#customization-container,
+#routes-container,
+#import-export-container,
+#debug-container,
+#inventory-container {
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-out;
 }
 
-.side-menu .menu-hidden.opened, #weekly-container.opened, #utilities-container.opened, #customization-container.opened, #routes-container.opened, #import-export-container.opened, #debug-container.opened, #inventory-container.opened {
+.side-menu .menu-hidden.opened,
+#weekly-container.opened,
+#utilities-container.opened,
+#customization-container.opened,
+#routes-container.opened,
+#import-export-container.opened,
+#debug-container.opened,
+#inventory-container.opened {
     max-height: 2000px;
     transition: max-height 400ms linear;
 }
@@ -581,7 +615,10 @@ input, textarea, select, .btn {
     color: #fff;
 }
 
-.side-menu .collection-sell, .disable-collected-items, .collection-collect-all, .collection-reset {
+.side-menu .collection-sell,
+.disable-collected-items,
+.collection-collect-all,
+.collection-reset {
     cursor: pointer;
     user-select: none;
 }
@@ -612,13 +649,16 @@ input, textarea, select, .btn {
     font-size: 15px;
 }
 
-.side-menu .collectible, .input-container label, .menu-option span {
+.side-menu .collectible,
+.input-container label,
+.menu-option span {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.side-menu .collectible, .input-container label {
+.side-menu .collectible,
+.input-container label {
     line-height: 24px;
 }
 
@@ -857,6 +897,7 @@ a.wiki-page:visited {
     min-width: 5.5rem;
 }
 
+
 /* Custom checkbox styling */
 
 .input-checkbox-wrapper {
@@ -889,13 +930,16 @@ a.wiki-page:visited {
     cursor: not-allowed !important;
 }
 
+
 /* Custom action button styling */
 
-.input-container.clickable, .input-container.clickable label {
+.input-container.clickable,
+.input-container.clickable label {
     cursor: pointer !important;
 }
 
-.input-container.clickable.disabled, .input-container.clickable.disabled label {
+.input-container.clickable.disabled,
+.input-container.clickable.disabled label {
     cursor: not-allowed !important;
 }
 
@@ -913,7 +957,8 @@ a.wiki-page:visited {
     background-image: url(../images/action_indicator_external.png) !important;
 }
 
-.input-action-copy, .input-action-clear {
+.input-action-copy,
+.input-action-clear {
     width: 30px;
     background-size: auto 20px;
     background-repeat: no-repeat;
@@ -1007,6 +1052,7 @@ a.no-style:visited {
     text-overflow: ellipsis;
 }
 
+
 /* Bootstrap modal styling */
 
 .modal {
@@ -1030,14 +1076,17 @@ a.no-style:visited {
     border: none !important;
 }
 
-.modal-header, .modal-body, .modal-footer {
+.modal-header,
+.modal-body,
+.modal-footer {
     padding-left: 40px;
     padding-right: 40px;
     text-align: center;
     border: none;
 }
 
-.modal-header, .modal-body {
+.modal-header,
+.modal-body {
     color: #fff;
 }
 
@@ -1076,9 +1125,11 @@ a.no-style:visited {
     }
 }
 
+
 /* Fix buttons showing on top of sidebar on mobile menu */
 
-.leaflet-top, .leaflet-bottom {
+.leaflet-top,
+.leaflet-bottom {
     z-index: 910;
 }
 
@@ -1113,7 +1164,8 @@ a.no-style:visited {
         width: 32px;
         line-height: 1.5;
     }
-    .side-menu .menu-hidden .collectible, .input-container label {
+    .side-menu .menu-hidden .collectible,
+    .input-container label {
         line-height: 38px;
     }
 }
@@ -1135,6 +1187,7 @@ a.no-style:visited {
     }
 }
 
+
 /* Tutorial styling */
 
 #help-container {
@@ -1149,6 +1202,7 @@ a.no-style:visited {
     background-size: 100% 100%;
     padding: 15px 25px;
 }
+
 
 /* Pathfinder styling */
 
@@ -1195,6 +1249,7 @@ a.no-style:visited {
     text-transform: uppercase;
 }
 
+
 /* Leaflet Marker styling */
 
 .leaflet-div-icon {
@@ -1204,7 +1259,11 @@ a.no-style:visited {
     border: none;
 }
 
-.leaflet-div-icon .overlay, .leaflet-div-icon .icon, .leaflet-div-icon .background, .leaflet-div-icon .marker-contour, .leaflet-div-icon .shadow {
+.leaflet-div-icon .overlay,
+.leaflet-div-icon .icon,
+.leaflet-div-icon .background,
+.leaflet-div-icon .marker-contour,
+.leaflet-div-icon .shadow {
     position: absolute;
     text-align: center;
 }
@@ -1245,6 +1304,7 @@ a.no-style:visited {
     bottom: -2px;
     left: 9px;
 }
+
 
 /* Donate form */
 
