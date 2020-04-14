@@ -468,8 +468,9 @@ $('.weekly-item-listings .collection-sell').on('click', function (e) {
 // Reset collections on menu
 $('.collection-reset').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => !_m.canCollect &&
-      _m.category == collectionType && _m.isCurrent);
+
+  var getMarkers = MapBase.markers.filter(_m =>
+    !_m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
   $.each(getMarkers, function (key, marker) {
     MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category,
@@ -482,20 +483,20 @@ $('.collection-reset').on('click', function (e) {
 // disable only collected items (one or more in the inventory)
 $('.disable-collected-items').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.canCollect &&
-    _m.category == collectionType && _m.isCurrent);
+  
+  var getMarkers = MapBase.markers.filter(_m =>
+    _m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
   getMarkers.forEach(marker => {
     if (marker.amount > 0) {
-      var textMenu = marker.legacyItemId;
-      $(`[data-type=${textMenu}]`).addClass('disabled');
+      $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
       MapBase.removeItemFromMap(Cycles.categories[marker.category],
         marker.text, marker.subdata, marker.category, true);
     };
   });
 });
 
-//Remove item from map when using the menu
+// Remove item from map when using the menu
 $(document).on('click', '.collectible-wrapper[data-type]', function () {
   var collectible = $(this).data('type');
   var category = $(this).parent().data('type');
