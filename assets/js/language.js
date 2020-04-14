@@ -63,6 +63,8 @@ var Language = {
             translation = '</a>';
         } else if (transKey === 'collection') {
             transKey = `weekly.desc.${weeklySetData.current}`;
+        } else if (transKey === 'weekly_flavor') {
+            transKey = `weekly.flavor.${weeklySetData.current}`;
         }
 
         translation =

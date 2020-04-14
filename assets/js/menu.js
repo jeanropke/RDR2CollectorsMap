@@ -212,6 +212,7 @@ Menu.refreshWeeklyItems = function () {
 
   $('#weekly-container .weekly-item-listings').children('.weekly-item-listing').remove();
   $('#weekly-container .weekly-item-title').text(Language.get('collection'));
+  $('#weekly-container .weekly-flavor-text').text(Language.get('weekly_flavor'));
 
   $.each(weeklyItems, function (key, value) {
     var inventoryCount = '';
