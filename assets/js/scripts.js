@@ -328,6 +328,10 @@ $("#copy-search-link").on("click", function () {
   setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${$('#search').val()}`);
 });
 
+$("#clear-search").on("click", function () {
+  $("#search").val('').trigger("input");
+});
+
 $("#tools").on("change", function () {
   Settings.toolType = Number($("#tools").val());
   MapBase.addMarkers();

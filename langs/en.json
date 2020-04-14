@@ -1631,6 +1631,7 @@
     "help.item_unavailable": "Toggles whether this item should be visible on the map. Note that this item is unavailable due to a game bug or being undiscovered.",
     "help.clear_important_items": "Clears the highlight from all markers marked as important.",
     "help.item_category_unavailable_items": "Toggles whether this set should be visible on the map. Note that this set contains one or more items that are unavailable due to a game bug or being undiscovered.",
+    "help.search_clear": "Clears your current search query.",
     "help.search_copy_link": "Copies the current search link to your clipboard so you can browse to the map with that search query.",
     "help.sort_items_alphabetically": "Whether items should be sorted alphabetically or using the in-game order.",
     "help.enable_marker_shadows": "Toggles whether a marker should have a shadow or not. Disabling the shadows could improve performance somewhat.",

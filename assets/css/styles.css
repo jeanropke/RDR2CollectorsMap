@@ -755,7 +755,7 @@ a.wiki-page:visited {
     font-size: 14px;
 }
 
-.explain-text  a {
+.explain-text a {
     color: #fff !important;
     text-decoration: underline;
 }
@@ -913,14 +913,21 @@ a.wiki-page:visited {
     background-image: url(../images/action_indicator_external.png) !important;
 }
 
-.input-action-copy {
+.input-action-copy, .input-action-clear {
     width: 30px;
-    background-image: url(../images/action_indicator_copy.png);
     background-size: auto 20px;
     background-repeat: no-repeat;
     background-position: center;
     margin-left: 6px;
     cursor: pointer;
+}
+
+.input-action-copy {
+    background-image: url(../images/action_indicator_copy.png);
+}
+
+.input-action-clear {
+    background-image: url(../images/action_indicator_clear.png);
 }
 
 .input-selection-arrow {
