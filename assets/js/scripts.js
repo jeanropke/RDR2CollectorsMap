@@ -468,6 +468,7 @@ $('.weekly-item-listings .collection-sell').on('click', function (e) {
 // Reset collections on menu
 $('.collection-reset').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
+
   var getMarkers = MapBase.markers.filter(_m =>
     !_m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
@@ -482,10 +483,11 @@ $('.collection-reset').on('click', function (e) {
 // disable only collected items (one or more in the inventory)
 $('.disable-collected-items').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
+  
   var getMarkers = MapBase.markers.filter(_m =>
     _m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
 
-  $.each(getMarkers, function (key, marker) {
+  getMarkers.forEach(marker => {
     if (marker.amount > 0) {
       $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
       MapBase.removeItemFromMap(Cycles.categories[marker.category],

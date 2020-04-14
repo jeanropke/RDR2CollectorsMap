@@ -1286,7 +1286,7 @@
     "menu.generate_route_auto_update": "Automatically update route",
     "menu.enable_inventory_popups": "Enable inventory in popups",
     "menu.random_encounters": "Random Encounters",
-    "map.madam_nazar.desc": "Wrong location? Follow {link}.",
+    "map.madam_nazar.desc": "Wrong location? Follow {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Name",
     "map.user_pins.default_title": "User pin",
     "map.user_pins.placeholder_desc": "Description",

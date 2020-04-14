@@ -407,7 +407,7 @@ var MapBase = {
       Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount, skipInventory);
 
       if (!InventorySettings.isEnabled) {
-        if (marker.isCollected && marker.day == Cycles.categories[marker.category]) {
+        if (marker.isCollected && marker.isCurrent) {
           $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
           $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
         } else {
@@ -532,13 +532,7 @@ var MapBase = {
   },
 
   addMarkerOnMap: function (marker, opacity = 1) {
-    marker.isVisible = false;
-
-    if (marker.day != Cycles.categories[marker.category] && !MapBase.showAllMarkers) return;
-    if (!uniqueSearchMarkers.includes(marker)) return;
-    if (!enabledCategories.includes(marker.category)) return;
-
-    marker.isVisible = true;
+    if (!marker.isVisible) return;
 
     var toolType = Settings.toolType;
     var markerTool = parseInt(marker.tool);

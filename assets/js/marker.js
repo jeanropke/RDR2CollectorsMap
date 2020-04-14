@@ -1,29 +1,28 @@
 class Marker {
+  /*
+  example
+  use:
+    .markerId: "flower_wild_rhubarb_6_2"
+    .itemId: "flower_wild_rhubarb"
+    .category: "flower"
+    .cycleName: "2"
+    .itemNumberStr: "#6"
+    .legacyItemId: "wild_rhubarb"
+      is an item id, sometimes unequal to `.itemId`, but also unique of course
+      internally incoherent (sometimes contains category, sometimes not)
+      use `.itemId` unless persistent storage with `.legacyItemId` data is involved
+    .descriptionKey: "flower_wild_rhubarb_6_2.desc"
+    .itemTranslationKey: "flower_wild_rhubarb.name"
+  do not use:
+    .text
+    .subdata
+      if you want to check for egg&flower, use `['egg', 'flower'].includes(marker.category)`
+      if you need a unique item id, use `.itemId`
+      if you use `marker.subdata || marker.text` use `.legacyItemId` now and `.itemId` soon
+    .day
+      renamed to .cycleName, was and is a string
+  */
   constructor(preliminaryMarker, cycleName, category) {
-    /*
-    example
-    use:
-      .markerId: "flower_wild_rhubarb_6_2"
-      .itemId: "flower_wild_rhubarb"
-      .category: "flower"
-      .cycleName: "2"
-      .itemNumberStr: "#6"
-      .legacyItemId: "wild_rhubarb"
-        is an item id sometimes unequal to `.itemId`, also unique
-        but internally incoherent (sometimes contains category, sometimes not)
-        use `.itemId` unless persistent storage with `.legacyItemId` data is involved
-      .descriptionKey: "flower_wild_rhubarb_6_2.desc"
-      .itemTranslationKey: "flower_wild_rhubarb.name"
-    do not use:
-      .text
-      .subdata
-        if you want to check for egg&flower, use `['egg', 'flower'].includes(marker.category)`
-        if you need a unique item id, use `.itemId`
-        if you use `marker.subdata || marker.text` use `.legacyItemId` now and `.itemId` soon
-      .day
-        renamed to .cycleName, was and is a string
-
-    */
     Object.assign(this, preliminaryMarker);
     const match = this.text.match(/^(.+?)(?:_(\d+))?$/);
     this.itemId = match[1];
@@ -36,7 +35,6 @@ class Marker {
     this.subdata = ['egg', 'flower'].includes(this.category) ?
       this.itemId.replace(`${this.category}_`, '') : undefined;
     this.legacyItemId = this.subdata || this.text;
-    this.isVisible = enabledCategories.includes(this.category);
     this.amount = Inventory.items[this.itemId] || 0;
     /*
     `._collectedKey` is the key for the `.isCollected` accessors
@@ -53,7 +51,7 @@ class Marker {
     There should be two properties, one for “collected” per marker (i.e. Marker class),
     and one for “visibility” per item (in a new Item class).
     Both should drive how faded the marker is going to be.
-   */
+    */
     this._collectedKey = `collected.${this.text}`;
     this.descriptionKey = (() => {
       switch (this.itemId) {
@@ -106,6 +104,15 @@ class Marker {
   get isWeekly() {
     return weeklySetData.sets[weeklySetData.current].map(item => item.item).includes(this.itemId);
   }
+  get isCurrent() {
+    // Cycles might serve numbers instead of strings
+    return this.cycleName == Cycles.categories[this.category];
+  }
+  get isVisible() {
+    return (this.isCurrent || MapBase.showAllMarkers) &&
+      uniqueSearchMarkers.includes(this) &&
+      enabledCategories.includes(this.category);
+  }
 
   popupContent() {
     const unknownCycle = this.cycleName == Cycles.unknownCycleNumber;
@@ -134,27 +141,37 @@ class Marker {
           </p>
       </span>
       <p class='marker-popup-links'>
-        <a href="javascript:void(0)"
-          onclick="setClipboardText('https://jeanropke.github.io/RDR2CollectorsMap/?m=${this.text}')"
-          data-text="map.copy_link"></a>
+        <a href="" data-text="map.copy_link"></a>
         <span>| <a href="${this.video}" target="_blank" data-text="map.video"></a></span>
-        <span>| <a href="javascript:void(0)"
-                  onclick="MapBase.highlightImportantItem('${this.text}', '${this.category}')"
-                  data-text="map.mark_important"></a></span>
+        <span>| <a href="" data-text="map.mark_important"></a></span>
       </p>
       <small class="popupContentDebug">Latitude: ${this.lat} / Longitude: ${this.lng}</small>
       <div class="marker-popup-buttons">
-          <button class="btn btn-danger" onclick="Inventory.changeMarkerAmount('${this.legacyItemId}', -1)">↓</button>
+          <button class="btn btn-danger">↓</button>
           <small data-item="${this.text}">${this.amount}</small>
-          <button class="btn btn-success" onclick="Inventory.changeMarkerAmount('${this.legacyItemId}', 1)">↑</button>
+          <button class="btn btn-success">↑</button>
       </div>
       <button type="button" class="btn btn-info remove-button" data-item="${this.text}"
-        data-text="map.remove_add" onclick="MapBase.removeItemFromMap(
-          '${this.cycleName}', '${this.text}', '${this.subdata || ''}', '${this.category}'
-        )">
+        data-text="map.remove_add">
       </button>
     </div>`);
 
+    snippet.find('.marker-popup-links')
+      .find('[data-text="map.copy_link"]')
+        .click((e) => {
+          e.preventDefault();
+          setClipboardText(`https://jeanropke.github.io/RDR2CollectorsMap/?m=${this.text}`);
+        })
+      .end()
+      .find('[data-text="map.mark_important"]')
+        .click((e) => {
+          e.preventDefault();
+          MapBase.highlightImportantItem(this.text, this.category);
+        });
+    snippet.find('.marker-popup-buttons button').click(e =>
+      Inventory.changeMarkerAmount(this.legacyItemId, $(e.target).hasClass('btn-danger') ? -1 : 1));
+    snippet.find('.remove-button').click(() =>
+      MapBase.removeItemFromMap(this.cycleName, this.text, this.subdata || '', this.category));
     if (!Cycles.isSameAsYesterday(this.category) && !unknownCycle) {
       snippet.find('.marker-warning-wrapper').hide();
     } else {
