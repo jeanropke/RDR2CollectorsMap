@@ -368,11 +368,15 @@ $("#clear-custom-routes").on("click", Routes.clearCustomRoutes);
 
 $('.map-alert').on('click', function () {
   Settings.alertClosed = true;
-  $('.map-alert').hide();
+  $('.map-alert').addClass('hidden');
 });
 
 $('.map-cycle-alert').on('click', function () {
-  $('.map-cycle-alert').hide();
+  $('.map-cycle-alert').addClass('hidden');
+});
+
+$('.filter-alert').on('click', function () {
+  $('.filter-alert').addClass('hidden');
 });
 
 $('#show-coordinates').on('change', function () {

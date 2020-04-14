@@ -156,12 +156,12 @@ class Marker {
           <div>
             <img class="tool-type" height=32 width=32 src="assets/images/shovel.png">
           </div>
-          <p>
-            <span data-text="map.item.unable"></span>
-            <span data-text="${this.primaryDescriptionKey}" data-text-optional="true"></span>
-            <span data-text="${this.secondaryDescriptionKey}" data-text-optional="true"></span>
-            <span data-text="weekly.desc"></span>
-          </p>
+          <div>
+            <p class="unavailable-item" data-text="map.item.unable"></p>
+            <p class="primary-description" data-text="${this.primaryDescriptionKey}" data-text-optional="true"></p>
+            <p class="secondary-description" data-text="${this.secondaryDescriptionKey}" data-text-optional="true"></p>
+            <p class="weekly-item" data-text="weekly.desc"></p>
+          </div>
       </span>
       <p class='marker-popup-links'>
         <a href="" data-text="map.copy_link"></a>
