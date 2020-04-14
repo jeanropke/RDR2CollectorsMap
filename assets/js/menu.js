@@ -53,9 +53,8 @@ Menu.refreshMenu = function () {
 
   const currentItemMarkers = {}
   MapBase.markers.forEach(marker => {
-    if (marker.cycleName != Cycles.categories[marker.category]) {
-      currentItemMarkers[marker.itemId] = marker;
-    }
+    if (marker.cycleName != Cycles.categories[marker.category]) return;
+    currentItemMarkers[marker.itemId] = marker;
   });
   Object.values(currentItemMarkers).forEach(marker => {
     var collectibleTitle = Language.get(marker.itemTranslationKey);
@@ -98,6 +97,7 @@ Menu.refreshMenu = function () {
       collectibleCountElement.hide();
 
     var collectibleCategory = $(`.menu-option[data-type=${marker.category}]`);
+
     if (marker.lat.length == 0 || marker.tool == -1) {
       if (!anyUnavailableCategories.includes(marker.category))
         anyUnavailableCategories.push(marker.category);
