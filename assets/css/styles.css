@@ -1001,6 +1001,12 @@ a.no-style:visited {
     margin-right: 10px;
 }
 
+.weekly-item-listing span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* Bootstrap modal styling */
 
 .modal {
