@@ -469,7 +469,7 @@ $('.weekly-item-listings .collection-sell').on('click', function (e) {
 $('.collection-reset').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
   var getMarkers = MapBase.markers.filter(_m => !_m.canCollect &&
-      _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+      _m.category == collectionType && _m.isCurrent);
 
   $.each(getMarkers, function (key, marker) {
     MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category,
@@ -483,9 +483,9 @@ $('.collection-reset').on('click', function (e) {
 $('.disable-collected-items').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
   var getMarkers = MapBase.markers.filter(_m => _m.canCollect &&
-    _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+    _m.category == collectionType && _m.isCurrent);
 
-  $.each(getMarkers, function (key, marker) {
+  getMarkers.forEach(marker => {
     if (marker.amount > 0) {
       var textMenu = marker.legacyItemId;
       $(`[data-type=${textMenu}]`).addClass('disabled');

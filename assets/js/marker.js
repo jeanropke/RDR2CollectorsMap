@@ -1,29 +1,28 @@
 class Marker {
+  /*
+  example
+  use:
+    .markerId: "flower_wild_rhubarb_6_2"
+    .itemId: "flower_wild_rhubarb"
+    .category: "flower"
+    .cycleName: "2"
+    .itemNumberStr: "#6"
+    .legacyItemId: "wild_rhubarb"
+      is an item id, sometimes unequal to `.itemId`, but also unique of course
+      internally incoherent (sometimes contains category, sometimes not)
+      use `.itemId` unless persistent storage with `.legacyItemId` data is involved
+    .descriptionKey: "flower_wild_rhubarb_6_2.desc"
+    .itemTranslationKey: "flower_wild_rhubarb.name"
+  do not use:
+    .text
+    .subdata
+      if you want to check for egg&flower, use `['egg', 'flower'].includes(marker.category)`
+      if you need a unique item id, use `.itemId`
+      if you use `marker.subdata || marker.text` use `.legacyItemId` now and `.itemId` soon
+    .day
+      renamed to .cycleName, was and is a string
+  */
   constructor(preliminaryMarker, cycleName, category) {
-    /*
-    example
-    use:
-      .markerId: "flower_wild_rhubarb_6_2"
-      .itemId: "flower_wild_rhubarb"
-      .category: "flower"
-      .cycleName: "2"
-      .itemNumberStr: "#6"
-      .legacyItemId: "wild_rhubarb"
-        is an item id, sometimes unequal to `.itemId`, but also unique of course
-        internally incoherent (sometimes contains category, sometimes not)
-        use `.itemId` unless persistent storage with `.legacyItemId` data is involved
-      .descriptionKey: "flower_wild_rhubarb_6_2.desc"
-      .itemTranslationKey: "flower_wild_rhubarb.name"
-    do not use:
-      .text
-      .subdata
-        if you want to check for egg&flower, use `['egg', 'flower'].includes(marker.category)`
-        if you need a unique item id, use `.itemId`
-        if you use `marker.subdata || marker.text` use `.legacyItemId` now and `.itemId` soon
-      .day
-        renamed to .cycleName, was and is a string
-
-    */
     Object.assign(this, preliminaryMarker);
     const match = this.text.match(/^(.+?)(?:_(\d+))?$/);
     this.itemId = match[1];
@@ -53,7 +52,7 @@ class Marker {
     There should be two properties, one for “collected” per marker (i.e. Marker class),
     and one for “visibility” per item (in a new Item class).
     Both should drive how faded the marker is going to be.
-   */
+    */
     this._collectedKey = `collected.${this.text}`;
     this.descriptionKey = (() => {
       switch (this.itemId) {
@@ -105,6 +104,10 @@ class Marker {
   }
   get isWeekly() {
     return weeklySetData.sets[weeklySetData.current].map(item => item.item).includes(this.itemId);
+  }
+  get isCurrent() {
+    // Cycles might serve numbers instead of strings
+    return this.cycleName == Cycles.categories[this.category];
   }
 
   popupContent() {

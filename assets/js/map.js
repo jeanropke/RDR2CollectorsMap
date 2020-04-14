@@ -407,7 +407,7 @@ var MapBase = {
       Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount, skipInventory);
 
       if (!InventorySettings.isEnabled) {
-        if (marker.isCollected && marker.day == Cycles.categories[marker.category]) {
+        if (marker.isCollected && marker.isCurrent) {
           $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
           $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
         } else {
