@@ -290,7 +290,8 @@ var MapBase = {
       $.each(searchTerms, function (id, term) {
 
         searchMarkers = searchMarkers.concat(MapBase.markers.filter(_marker =>
-            Language.get(_marker.itemTranslationKey).toLowerCase().includes(term.toLowerCase())
+            Language.get(_marker.itemTranslationKey).toLowerCase().includes(term.toLowerCase()) ||
+            _marker.itemNumberStr === term
         ));
 
         $.each(searchMarkers, function (i, el) {
