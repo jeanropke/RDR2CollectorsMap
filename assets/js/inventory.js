@@ -173,13 +173,11 @@ var Inventory = {
   },
 
   changeMarkerAmount: function (name, amount, skipInventory = false) {
-    var marker = MapBase.markers.filter(marker => {
-      return (marker.text == name || marker.subdata == name);
-    });
+    var sameItemMarkers = MapBase.markers.filter(marker => marker.legacyItemId === name);
 
-    Inventory.changedItems.push(marker[0].text);
+    Inventory.changedItems.push(sameItemMarkers[0].text);
 
-    $.each(marker, function (key, marker) {
+    sameItemMarkers.forEach(marker => {
       if (!skipInventory || skipInventory && InventorySettings.isMenuUpdateEnabled) {
         marker.amount = parseInt(marker.amount) + amount;
 
@@ -201,14 +199,18 @@ var Inventory = {
         marker.isCurrent ||
         (marker.category === 'flower' && marker.amount >= InventorySettings.flowersSoftStackSize)) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
-        $(`[data-type=${marker.subdata || marker.text}]`).addClass('disabled');
+        $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
       }
       else if (marker.isCurrent) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
-        $(`[data-type=${marker.subdata || marker.text}]`).removeClass('disabled');
+        $(`[data-type=${marker.legacyItemId}]`).removeClass('disabled');
       }
 
-      MapBase.toggleCollectibleMenu(marker.day, marker.text, marker.subdata, marker.category);
+      if (marker.isCurrent && ['egg', 'flower'].includes(marker.category)) {
+        $(`[data-type=${marker.legacyItemId}]`).toggleClass('disabled',
+          sameItemMarkers.filter(m => m.cycleName === marker.cycleName).every(m => !m.canCollect));
+      }
+
       Menu.refreshCollectionCounter(marker.category);
     });
 
