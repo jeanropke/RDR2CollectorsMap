@@ -66,9 +66,9 @@ var Language = {
         } else if (transKey === 'weekly_flavor') {
             transKey = `weekly.flavor.${weeklySetData.current}`;
         } else if (transKey === 'count') {
-            return transKey = `{count}`;
+            return translation = `{count}`;
         } else if (transKey === 'max') {
-            return transKey = `{max}`;
+            return translation = `{max}`;
         }
 
         translation =
