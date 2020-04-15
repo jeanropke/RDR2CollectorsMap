@@ -252,22 +252,17 @@ var MapBase = {
     // Navigate to marker via URL.
     const markerParam = getParameterByName('m');
     if (markerParam) {
-      var goTo = MapBase.markers.filter(_m => _m.text == markerParam && _m.day == Cycles.categories[_m.category])[0];
-
-      //if a marker is passed on url, check if is valid
-      if (goTo === undefined || goTo === null) return;
-
-      //set map view with marker lat & lng
+      const goTo = MapBase.markers.find(_m => _m.text === markerParam && _m.isCurrent);
+      if (!goTo) return;
       MapBase.map.setView([goTo.lat, goTo.lng], 6);
 
       //check if marker category is enabled, if not, enable it
-      if (Layers.itemMarkersLayer.getLayerById(goTo.text) == null) {
+      if (!Layers.itemMarkersLayer.getLayerById(goTo.text)) {
         enabledCategories.push(goTo.category);
         MapBase.addMarkers();
         $(`[data-type="${goTo.category}"]`).removeClass('disabled');
       }
 
-      //open marker popup
       Layers.itemMarkersLayer.getLayerById(goTo.text).openPopup();
     }
   },
@@ -295,7 +290,8 @@ var MapBase = {
       $.each(searchTerms, function (id, term) {
 
         searchMarkers = searchMarkers.concat(MapBase.markers.filter(_marker =>
-            Language.get(_marker.itemTranslationKey).toLowerCase().includes(term.toLowerCase())
+            Language.get(_marker.itemTranslationKey).toLowerCase().includes(term.toLowerCase()) ||
+            _marker.itemNumberStr === term
         ));
 
         $.each(searchMarkers, function (i, el) {
@@ -392,15 +388,13 @@ var MapBase = {
 
       var changeAmount = 0;
 
-      if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
-        if (marker.day == Cycles.categories[marker.category]) {
-          marker.isCollected = true;
-          changeAmount = 1;
-        }
-      } else {
-        if (marker.day == Cycles.categories[marker.category]) {
-          marker.isCollected = false;
-          changeAmount = -1;
+      if (marker.isCurrent) {
+        if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
+            marker.isCollected = true;
+            changeAmount = 1;
+        } else {
+            marker.isCollected = false;
+            changeAmount = -1;
         }
       }
 

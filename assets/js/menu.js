@@ -53,8 +53,9 @@ Menu.refreshMenu = function () {
 
   const currentItemMarkers = {}
   MapBase.markers.forEach(marker => {
-    if (marker.cycleName != Cycles.categories[marker.category]) return;
-    currentItemMarkers[marker.itemId] = marker;
+    if (marker.isCurrent) {
+      currentItemMarkers[marker.itemId] = marker;
+    }
   });
   Object.values(currentItemMarkers).forEach(marker => {
     var collectibleTitle = Language.get(marker.itemTranslationKey);
@@ -118,8 +119,7 @@ Menu.refreshMenu = function () {
     let multiMarkerItemMarkers = [marker];
     if (['egg', 'flower'].includes(marker.category)) {
       multiMarkerItemMarkers = MapBase.markers.filter(_marker =>
-        (marker.itemId === _marker.itemId &&
-          _marker.cycleName == Cycles.categories[_marker.category]));
+        (marker.itemId === _marker.itemId && _marker.isCurrent));
     }
     if (multiMarkerItemMarkers.every(marker => !marker.canCollect)) {
       collectibleElement.addClass('disabled');
@@ -191,8 +191,7 @@ Menu.refreshCollectionCounter = function (category) {
 };
 
 Menu.refreshItemsCounter = function () {
-  var _markers = MapBase.markers.filter(marker =>
-    marker.cycleName == Cycles.categories[marker.category] && marker.isVisible);
+  var _markers = MapBase.markers.filter(marker => marker.isCurrent && marker.isVisible);
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
     .replace('{count}', _markers.filter(marker => marker.isCollected).length)
