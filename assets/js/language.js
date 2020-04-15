@@ -65,6 +65,10 @@ var Language = {
             transKey = `weekly.desc.${weeklySetData.current}`;
         } else if (transKey === 'weekly_flavor') {
             transKey = `weekly.flavor.${weeklySetData.current}`;
+        } else if (transKey === 'count') {
+            return transKey = `{count}`;
+        } else if (transKey === 'max') {
+            return transKey = `{max}`;
         }
 
         translation =
@@ -73,8 +77,8 @@ var Language = {
             Language.data.en[transKey] ||
             (optional ? '' : transKey);
 
-        return translation.replace(/\{([\w.]+)\}/g,
-            (full, key) => this.get(key, true) || `{${key}}`);
+        return translation.replace(/\{([\w.]+)\}/g, (full, key) =>
+            this.get(key, true) || `{${key}}`);
     },
 
     translateDom: function (context) {
