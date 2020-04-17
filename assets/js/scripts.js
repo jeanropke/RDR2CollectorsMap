@@ -458,6 +458,11 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
     else {
       Inventory.changeMarkerAmount(value.text, changeAmount);
     }
+
+    // Auto enable items with amount of 0 in the inventory
+    if (InventorySettings.autoEnableSoldItems && value.amount === 0 && value.isCollected) {
+      MapBase.removeItemFromMap(value.day, value.text, value.subdata, value.category, true);
+    }
   });
 });
 
@@ -663,6 +668,10 @@ $('#enable-inventory-menu-update').on("change", function () {
 
 $('#reset-collection-updates-inventory').on("change", function () {
   InventorySettings.resetButtonUpdatesInventory = $('#reset-collection-updates-inventory').prop('checked');
+});
+
+$('#auto-enable-sold-items').on("change", function () {
+  InventorySettings.autoEnableSoldItems = $('#auto-enable-sold-items').prop('checked');
 });
 
 $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(InventorySettings.isEnabled);

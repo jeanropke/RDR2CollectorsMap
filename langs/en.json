@@ -1405,6 +1405,7 @@
     "menu.utils": "Utilities",
     "menu.fast_travel": "Fast Travel",
     "menu.search_placeholder": "Search items. Separated by ;",
+    "menu.auto_enable_sold_items": "Automatically enable sold items",
     "map.remove_add": "Remove/Add from map",
     "map.remove": "Remove from map",
     "map.copy_link": "Copy marker link",
@@ -1692,5 +1693,6 @@
     "help.reload_map": "Allows you to reload the map if anything is wrong with the website.",
     "help.disable_collected_items": "Allows you to disable all items which you already have in your inventory.",
     "help.collection_collect_all": "Allows you to add every item from this category to your inventory.",
-    "help.enable_additional_inventory_options": "Allows you to turn on more options to manage your inventory."
+    "help.enable_additional_inventory_options": "Allows you to turn on more options to manage your inventory.",
+    "help.auto_enable_sold_items": "Automatically enables all items with amount of 0 in your inventory after selling the set."
 }
