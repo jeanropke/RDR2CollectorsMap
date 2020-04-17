@@ -438,30 +438,18 @@ $('.submenu-only').on('click', function (e) {
 });
 
 // Sell collections on menu && collect all (add every item to the inventory from category)
-$('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('click', function (event) {
-  var collectionType = $(this).parent().parent().data('type');
-  var getMarkers = MapBase.markers.filter(_m => _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+$('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('click', event => {
+  'use strict';
+  const $target = $(event.target);
+  const category = $target.parent().parent().attr('data-type');
+  const changeAmount = $target.is(".collection-sell") ? -1 : 1;
 
-  var changeAmount = 0;
-  var target = $(event.target);
-  if (target.is($(".menu-hidden .collection-sell")))
-    changeAmount = -1;
+  MapBase.markers.filter(m => m.category === category && m.isCurrent && m.itemNumber === 1)
+  .forEach(marker => {
+    Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount);
 
-  else if (target.is($(".menu-hidden .collection-collect-all")))
-    changeAmount = 1;
-
-  $.each(getMarkers, function (key, value) {
-    if (value.subdata) {
-      if (value.text.endsWith('_1') || !value.text.match('[0-9]$'))
-        Inventory.changeMarkerAmount(value.subdata, changeAmount);
-    }
-    else {
-      Inventory.changeMarkerAmount(value.text, changeAmount);
-    }
-
-    // Auto enable items with amount of 0 in the inventory
-    if (InventorySettings.autoEnableSoldItems && value.amount === 0 && value.isCollected) {
-      MapBase.removeItemFromMap(value.day, value.text, value.subdata, value.category, true);
+    if (InventorySettings.autoEnableSoldItems && marker.amount === 0 && marker.isCollected) {
+      MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category, true);
     }
   });
 });
@@ -498,12 +486,12 @@ $('.disable-collected-items').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
   
   var getMarkers = MapBase.markers.filter(_m =>
-    _m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
+    _m.canCollect && _m.category == collectionType && _m.isCurrent);
 
   getMarkers.forEach(marker => {
     if (marker.amount > 0) {
       $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
-      MapBase.removeItemFromMap(Cycles.categories[marker.category],
+      MapBase.removeItemFromMap(marker.cycleName,
         marker.text, marker.subdata, marker.category, true);
     };
   });
