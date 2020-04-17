@@ -408,9 +408,10 @@ var MapBase = {
           $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
           $(`[data-type=${marker.legacyItemId}]`).removeClass('disabled');
         }
-
-        MapBase.toggleCollectibleMenu(marker.day, marker.text, marker.subdata,
-          marker.category, markers);
+        if (marker.isCurrent && ['egg', 'flower'].includes(marker.category)) {
+          $(`[data-type=${marker.legacyItemId}]`).toggleClass('disabled',
+            markers.every(m => !m.canCollect));
+        }
       }
 
       try {
@@ -427,19 +428,6 @@ var MapBase = {
       Routes.generatePath();
 
     Menu.refreshItemsCounter();
-  },
-
-  toggleCollectibleMenu: function (day, text, subdata, category, markers = null) {
-    if (markers === null) {
-      markers = MapBase.markers.filter(function (marker) {
-        return marker.day == day && (marker.text == text || marker.subdata == subdata);
-      });
-    }
-
-    if (subdata != '' && day != null && day == Cycles.categories[category]) {
-      $(`[data-type=${subdata}]`).toggleClass('disabled',
-        markers.every(marker => !marker.canCollect));
-    }
   },
 
   getIconColor: function (marker) {
