@@ -5,7 +5,8 @@ class Marker {
    *   .itemId: "flower_wild_rhubarb"
    *   .category: "flower"
    *   .cycleName: "2"
-   *   .itemNumberStr: "#6"
+   *   .itemNumber: 6  (1 if available only once per cycle)
+   *   .itemNumberStr: "#6"  ("" if available only once per cycle)
    *   .legacyItemId: "wild_rhubarb"
    *     is an item id, sometimes unequal to `.itemId`, but also unique of course
    *     internally incoherent (sometimes contains category, sometimes not)
@@ -25,8 +26,8 @@ class Marker {
     Object.assign(this, preliminaryMarker);
     const match = this.text.match(/^(.+?)(?:_(\d+))?$/);
     this.itemId = match[1];
-    this.itemNumber = match[2] ? match[2] : '';
-    this.itemNumberStr = this.itemNumber ? `#${this.itemNumber}` : '';
+    this.itemNumber = match[2] ? +match[2] : 1;
+    this.itemNumberStr = match[2] ? `#${this.itemNumber}` : '';
     this.itemTranslationKey = `${this.itemId}.name`;
     this.cycleName = cycleName;
     this.day = this.cycleName;
