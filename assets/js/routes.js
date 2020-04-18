@@ -66,9 +66,8 @@ var Routes = {
       input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
 
       $.each(input, function (key, value) {
-        var _marker = MapBase.markers.filter(marker => marker.text == value && marker.day == Cycles.categories[marker.category])[0];
-        if (_marker != null)
-          connections.push([_marker.lat, _marker.lng]);
+        var _marker = MapBase.markers.find(marker => marker.text == value && marker.isCurrent);
+        if (_marker) connections.push([_marker.lat, _marker.lng]);
       });
 
       if (Routes.polylines instanceof L.Polyline) {
