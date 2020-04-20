@@ -30,11 +30,6 @@ var Inventory = {
   load: function () {
     Inventory.items = JSON.parse(localStorage.getItem("inventory"));
     if (Inventory.items === null) Inventory.items = {};
-
-    $.each(MapBase.markers, function (key, marker) {
-      if (marker.category == 'random') return;
-      marker.amount = Inventory.items[marker.itemId];
-    });
   },
 
   save: function () {
