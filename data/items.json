@@ -681,7 +681,7 @@
             { "text": "swords_six", "height": "0", "tool": "0", "lat": "-59.1234", "lng": "133.8428", "video": "https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1233s" },
             { "text": "swords_seven", "height": "0", "tool": "0", "lat": "-90.4241", "lng": "82.4471", "video": "https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1288s" },
             { "text": "swords_eight", "height": "0", "tool": "0", "lat": "-80.9801", "lng": "127.6297", "video": "https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1329s" },
-            { "text": "swords_nine", "height": "0", "tool": "0", "lat": "-42.1533", "lng": "156.0205", "video": "https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1363s" },
+            { "text": "swords_nine", "height": "1", "tool": "0", "lat": "-42.1533", "lng": "156.0205", "video": "https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1363s" },
             { "text": "swords_ten", "height": "-1", "tool": "0", "lat": "-59.0904", "lng": "149.2638", "video": "https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1406s" },
             { "text": "swords_page", "height": "0", "tool": "0", "lat": "-54.7829", "lng": "120.6113", "video": "https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1478s" },
             { "text": "swords_knight", "height": "0", "tool": "0", "lat": "-82.8102", "lng": "157.1000", "video": "https://www.youtube.com/watch?v=Hy5MdsmE4xw&t=1442s" },
