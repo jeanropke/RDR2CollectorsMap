@@ -96,7 +96,7 @@ var Inventory = {
       if (category == "random") return;
 
       // since items with amount 0 have not been considered before: adjust the average amount with the missing "0" values
-      var numItemsInCategory = ItemsValue.collectionsNames.find(c => c == category)[1];
+      var numItemsInCategory = Collection.collections[category].items.length;
       if (Inventory.categories[category].numElements < numItemsInCategory) {
         Inventory.categories[category].avg = (Inventory.categories[category].avg * Inventory.categories[category].numElements) / numItemsInCategory;
         Inventory.categories[category].numElements = numItemsInCategory;
