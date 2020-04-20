@@ -1,16 +1,31 @@
+class Collection {
+  constructor(preliminary) {
+    Object.assign(this, preliminary);
+  }
+}
+
+class Item {
+  constructor(preliminary) {
+    Object.assign(this, preliminary);
+  }
+  static init() {
+    this.items = Object.create(null);
+    Collection.collections = Object.create(null);
+    return $.getJSON('data/items_value.json?nocache=' + nocache)
+      .then(data => {
+        Object.entries(data.items).forEach(([itemId, value]) =>
+          this.items[itemId] = new Item({itemId, value}));
+        Object.entries(data.full).forEach(([category, value]) =>
+          Collection.collections[category] = new Collection({category, value}));
+        ItemsValue.reloadInventoryItems();
+      });
+  }
+}
+
 var ItemsValue = {
-  data: [],
   collectedItemsData: {},
   finalValue: 0,
   collectionsNames: ['flower', 'cups', 'swords', 'wands', 'pentacles', 'bracelet', 'earring', 'necklace', 'ring', 'bottle', 'egg', 'arrowhead', 'heirlooms', 'coin'],
-
-  load: function () {
-    $.getJSON('data/items_value.json?nocache=' + nocache)
-      .done(data => {
-        this.data = data;
-        this.reloadInventoryItems();
-      });
-  },
 
   reloadInventoryItems: function () {
     'use strict';
@@ -51,12 +66,12 @@ var ItemsValue = {
     var collections = tempArr.sort((a, b) => a - b)[0];
     this.collectedItemsData[`${category}_amount`] = this.collectedItemsData[`${category}_amount`].map(item => item - collections);
 
-    this.finalValue += this.data.full[category] * collections;
+    this.finalValue += Collection.collections[category].value * collections;
 
     $.each(this.collectedItemsData[category], (key, item) => {
       var multiplier = this.collectedItemsData[`${category}_amount`][key];
-      var itemName = this.collectedItemsData[category][key];
-      var itemValue = this.data.items[itemName];
+      var itemId = this.collectedItemsData[category][key];
+      var itemValue = Item.items[itemId].value;
 
       this.finalValue += itemValue * multiplier;
     });

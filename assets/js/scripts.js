@@ -85,15 +85,15 @@ function init() {
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
   Inventory.load();
-  ItemsValue.load();
+  const itemsAndCollections = Item.init();  // Item.items & Collection.collections promise
   MapBase.loadWeeklySet();
-  MapBase.loadOverlays();
+  itemsAndCollections.then(MapBase.loadOverlays);
   MapBase.init();
   Language.init();
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  Cycles.load();
+  itemsAndCollections.then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();

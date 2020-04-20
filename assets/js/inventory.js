@@ -35,8 +35,6 @@ var Inventory = {
       if (marker.category == 'random') return;
       marker.amount = Inventory.items[marker.itemId];
     });
-
-    ItemsValue.load();
   },
 
   save: function () {
