@@ -444,8 +444,7 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
   const category = $target.parent().parent().attr('data-type');
   const changeAmount = $target.is(".collection-sell") ? -1 : 1;
 
-  MapBase.markers.filter(m => m.category === category && m.isCurrent)
-  .forEach(marker => {
+  MapBase.markers.filter(m => m.category === category && m.isCurrent).forEach(marker => {
     if (marker.itemNumber === 1) Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount);
 
     if (InventorySettings.autoEnableSoldItems && marker.amount === 0 && marker.isCollected) {
@@ -457,11 +456,11 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
 $('.weekly-item-listings .collection-sell').on('click', function (e) {
   var weeklyItems = weeklySetData.sets[weeklySetData.current];
 
-  $.each(weeklyItems, function (key, value) {
-    var amount = Inventory.items[value.item];
+  $.each(weeklyItems, function (key, weeklyItem) {
+    var amount = Inventory.items[weeklyItem.item];
 
     if (amount !== undefined) {
-      Inventory.changeMarkerAmount(value.item.replace(/flower_/, ''), -1);
+      Inventory.changeMarkerAmount(weeklyItem.item.replace(/flower_|egg_/, ''), -1);
     }
   });
 });
@@ -484,7 +483,7 @@ $('.collection-reset').on('click', function (e) {
 // disable only collected items (one or more in the inventory)
 $('.disable-collected-items').on('click', function (e) {
   var collectionType = $(this).parent().parent().data('type');
-  
+
   var getMarkers = MapBase.markers.filter(_m =>
     _m.canCollect && _m.category == collectionType && _m.isCurrent);
 
