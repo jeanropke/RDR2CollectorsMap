@@ -206,7 +206,7 @@ var Inventory = {
         $(`[data-type=${marker.legacyItemId}]`).removeClass('disabled');
       }
 
-      if (marker.isCurrent && marker.category.includesOneOf('egg', 'flower')) {
+      if (marker.isCurrent && ['egg', 'flower'].includes(marker.category)) {
         $(`[data-type=${marker.legacyItemId}]`).toggleClass('disabled',
           sameItemMarkers.filter(m => m.cycleName === marker.cycleName).every(m => !m.canCollect));
       }
