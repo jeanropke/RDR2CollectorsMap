@@ -155,9 +155,9 @@ var MapBase = {
 
   loadOverlays: function () {
     return Loader.promises['overlays'].consumeJson(data => {
-        MapBase.overlays = data;
-        MapBase.setMapBackground();
-        console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
+      MapBase.overlays = data;
+      MapBase.setMapBackground();
+      console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
     });
   },
 
@@ -355,15 +355,15 @@ var MapBase = {
 
   loadWeeklySet: function () {
     return Loader.promises['weekly'].consumeJson(data => {
-        weeklySetData = data;
+      weeklySetData = data;
 
-        var _weekly = getParameterByName('weekly');
-        if (_weekly != null) {
-          if (weeklySetData.sets[_weekly]) {
-            weeklySetData.current = _weekly;
-          }
+      var _weekly = getParameterByName('weekly');
+      if (_weekly != null) {
+        if (weeklySetData.sets[_weekly]) {
+          weeklySetData.current = _weekly;
         }
-        console.info('%c[Weekly Sets] Loaded!', 'color: #bada55; background: #242424');
+      }
+      console.info('%c[Weekly Sets] Loaded!', 'color: #bada55; background: #242424');
     });
   },
 
