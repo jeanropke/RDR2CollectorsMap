@@ -22,17 +22,17 @@ var MadamNazar = {
       MadamNazar.currentLocation = _nazarParam;
       MadamNazar.currentDate = '';
       MadamNazar.addMadamNazar();
+      return Promise.resolve();
     }
     else {
-      $.getJSON('https://pepegapi.jeanropke.net/rdo/nazar')
-        .done(function (nazar) {
+      return Loader.promises['nazar'].consumeJson(nazar => {
           MadamNazar.currentLocation = nazar.nazar_id - 1;
           MadamNazar.currentDate = new Date(nazar.date).toLocaleString(Settings.language, {
             day: "2-digit", month: "long", year: "numeric"
           });
           MadamNazar.addMadamNazar();
           console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
-        });
+      });
     }
   },
 

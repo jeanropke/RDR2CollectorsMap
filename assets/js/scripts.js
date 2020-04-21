@@ -2,10 +2,6 @@
 - these statements have no requirements
 - code at multiple places depend on these
 */
-Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
-  value: function () { return this.toISOString().split('T')[0]; },
-});
-
 Object.defineProperty(String.prototype, 'includesOneOf', {
   value: function (...elements) {
     var include = false;
@@ -85,15 +81,15 @@ function init() {
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
   Inventory.load();
-  ItemsValue.load();
+  const itemsAndCollections = Item.init();  // Item.items & Collection.collections promise
   MapBase.loadWeeklySet();
-  MapBase.loadOverlays();
+  itemsAndCollections.then(MapBase.loadOverlays);
   MapBase.init();
   Language.init();
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  Cycles.load();
+  itemsAndCollections.then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();

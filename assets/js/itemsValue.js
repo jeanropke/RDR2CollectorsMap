@@ -1,21 +1,37 @@
+class Collection {
+  constructor(preliminary) {
+    Object.assign(this, preliminary);
+    this.items = Object.values(Item.items).filter(item => item.category === this.category);
+  }
+}
+
+class Item {
+  constructor(preliminary) {
+    Object.assign(this, preliminary);
+    this.category = this.itemId.split('_', 1)[0];
+  }
+  static init() {
+    this.items = Object.create(null);
+    Collection.collections = Object.create(null);
+    return Loader.promises['items_value'].consumeJson(data => {
+        Object.entries(data.items).forEach(([itemId, value]) =>
+          this.items[itemId] = new Item({itemId, value}));
+        Object.entries(data.full).forEach(([category, value]) =>
+          Collection.collections[category] = new Collection({category, value}));
+
+        ItemsValue.reloadInventoryItems();
+    });
+  }
+}
+
 var ItemsValue = {
-  data: [],
   collectedItemsData: {},
   finalValue: 0,
-  collectionsNames: ['flower', 'cups', 'swords', 'wands', 'pentacles', 'bracelet', 'earring', 'necklace', 'ring', 'bottle', 'egg', 'arrowhead', 'heirlooms', 'coin'],
-
-  load: function () {
-    $.getJSON('data/items_value.json?nocache=' + nocache)
-      .done(data => {
-        this.data = data;
-        this.reloadInventoryItems();
-      });
-  },
 
   reloadInventoryItems: function () {
     'use strict';
     this.finalValue = 0;
-    this.collectionsNames.forEach(collection => {
+    Object.keys(Collection.collections).forEach(collection => {
       this.collectedItemsData[collection] = [];
       this.collectedItemsData[`${collection}_amount`] = [];
     });
@@ -41,7 +57,7 @@ var ItemsValue = {
       }
     });
 
-    this.collectionsNames.forEach(name => this.collectionsCount(name));
+    Object.keys(Collection.collections).forEach(name => this.collectionsCount(name));
 
     $('#items-value').text(!isNaN(this.finalValue) ? `$${this.finalValue.toFixed(2)}` : '$0.00');
   },
@@ -51,12 +67,12 @@ var ItemsValue = {
     var collections = tempArr.sort((a, b) => a - b)[0];
     this.collectedItemsData[`${category}_amount`] = this.collectedItemsData[`${category}_amount`].map(item => item - collections);
 
-    this.finalValue += this.data.full[category] * collections;
+    this.finalValue += Collection.collections[category].value * collections;
 
     $.each(this.collectedItemsData[category], (key, item) => {
       var multiplier = this.collectedItemsData[`${category}_amount`][key];
-      var itemName = this.collectedItemsData[category][key];
-      var itemValue = this.data.items[itemName];
+      var itemId = this.collectedItemsData[category][key];
+      var itemValue = Item.items[itemId].value;
 
       this.finalValue += itemValue * multiplier;
     });
