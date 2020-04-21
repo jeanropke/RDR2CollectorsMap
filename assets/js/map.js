@@ -212,24 +212,15 @@ var MapBase = {
     var date = new Date().toISOUTCDateString();
 
     if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
-      var markers = MapBase.markers;
-
-      $.each(markers, function (key, value) {
-
-        if (Settings.resetMarkersDaily) {
-          markers[key].isCollected = false;
+      MapBase.markers.forEach(marker => {
+        if (Settings.resetMarkersDaily || marker.category === 'random') {
+          marker.isCollected = false;
         }
-        else if (value.category === 'random') {
-          markers[key].isCollected = false;
-        }
-
         if (InventorySettings.resetInventoryDaily) {
-          markers[key].amount = 0;
+          marker.amount = 0;
         }
       });
-
-      MapBase.markers = markers;
-      Inventory.save();
+      Item.overwriteAmountFromMarkers();
       Menu.refreshMenu();
     }
 

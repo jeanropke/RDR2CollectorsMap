@@ -27,22 +27,6 @@ var Inventory = {
     $('.collection-value-bottom').toggleClass('hidden', !InventorySettings.enableAdvancedInventoryOptions);
   },
 
-  load: function () {
-    Inventory.items = JSON.parse(localStorage.getItem("inventory"));
-    if (Inventory.items === null) Inventory.items = {};
-  },
-
-  save: function () {
-    $.each(MapBase.markers, function (key, marker) {
-      if (marker.category == 'random') return;
-      Inventory.items[marker.itemId] = marker.amount;
-    });
-
-    localStorage.setItem("inventory", JSON.stringify(Inventory.items));
-
-    Inventory.updateLowAmountItems();
-  },
-
   getMovingAverage: function (currentAvg, newVal, numElements) {
     return (currentAvg * numElements + newVal) / (numElements + 1.0);
   },
@@ -60,7 +44,7 @@ var Inventory = {
     var changedCategories = [];
 
     if (this.changedItems.length == 0) {
-      this.changedItems = Object.keys(Inventory.items);
+      this.changedItems = Object.keys(Item.items);
     }
 
     // build a unique list of categories whose item amounts have changed
@@ -74,16 +58,12 @@ var Inventory = {
     // walk through all categories and update the corresponding markers
     changedCategories.forEach(category => {
       Inventory.categories[category] = { max: 0, min: 0, avg: 0.0, numElements: 0 };
-      var itemsInThisCategory = Object.keys(Inventory.items).filter(itemName => itemName.startsWith(category));
-
-      itemsInThisCategory.forEach(itemName => {
-        var itemAmount = Inventory.items[itemName];
-
-        // compute all category values again
+      Collection.collections[category].items.forEach(item => {
         Inventory.categories[category] = {
-          max: Math.max(Inventory.categories[category].max, itemAmount),
-          min: Math.min(Inventory.categories[category].min, itemAmount),
-          avg: Inventory.getMovingAverage(Inventory.categories[category].avg, parseFloat(itemAmount), Inventory.categories[category].numElements),
+          max: Math.max(Inventory.categories[category].max, item.amount),
+          min: Math.min(Inventory.categories[category].min, item.amount),
+          avg: Inventory.getMovingAverage(Inventory.categories[category].avg, item.amount,
+            Inventory.categories[category].numElements),
           numElements: Inventory.categories[category].numElements + 1
         };
       });
@@ -210,7 +190,7 @@ var Inventory = {
     if ($("#routes").val() == 1)
       Routes.drawLines();
 
-    Inventory.save();
+    Item.overwriteAmountFromMarkers();
     Menu.refreshItemsCounter();
     Menu.refreshWeeklyItems();
   }

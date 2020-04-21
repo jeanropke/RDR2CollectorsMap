@@ -213,24 +213,21 @@ Menu.refreshWeeklyItems = function () {
   $('#weekly-container .weekly-item-title').text(Language.get('collection'));
   $('#weekly-container .weekly-flavor-text').text(Language.get('weekly_flavor'));
 
-  $.each(weeklyItems, function (key, value) {
+  weeklyItems.forEach(({item: weeklyItemId}) => {
     var inventoryCount = '';
 
     if (InventorySettings.isEnabled) {
-      var amount = Inventory.items[value.item];
-
-      if (amount !== undefined) {
-        inventoryCount = $(`<small class="counter-number">${amount}</small>`);
-        inventoryCount.toggleClass('text-danger', amount >= InventorySettings.stackSize);
-        inventoryCount = inventoryCount.prop('outerHTML');
-      }
+      const amount = Item.items[weeklyItemId].amount;
+      inventoryCount = $(`<small class="counter-number">${amount}</small>`);
+      inventoryCount.toggleClass('text-danger', amount >= InventorySettings.stackSize);
+      inventoryCount = inventoryCount.prop('outerHTML');
     }
 
     var element = `
       <div class="weekly-item-listing">
         <span>
-          <img class="icon" src="./assets/images/icons/game/${value.item}.png" alt="Weekly item icon" />
-          <span>${Language.get(value.item + '.name')}</span>
+          <img class="icon" src="./assets/images/icons/game/${weeklyItemId}.png" alt="Weekly item icon" />
+          <span>${Language.get(weeklyItemId + '.name')}</span>
         </span>
         ${inventoryCount}
       </div>

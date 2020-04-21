@@ -80,7 +80,6 @@ function init() {
 
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
-  Inventory.load();
   const itemsAndCollections = Item.init();  // Item.items & Collection.collections promise
   MapBase.loadWeeklySet();
   itemsAndCollections.then(MapBase.loadOverlays);
@@ -352,7 +351,7 @@ $("#clear-inventory").on("click", function () {
     marker.amount = 0;
   });
 
-  Inventory.save();
+  Item.overwriteAmountFromMarkers();
   Menu.refreshMenu();
   MapBase.addMarkers();
 });
@@ -450,14 +449,8 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
 });
 
 $('.weekly-item-listings .collection-sell').on('click', function (e) {
-  var weeklyItems = weeklySetData.sets[weeklySetData.current];
-
-  $.each(weeklyItems, function (key, weeklyItem) {
-    var amount = Inventory.items[weeklyItem.item];
-
-    if (amount !== undefined) {
-      Inventory.changeMarkerAmount(weeklyItem.item.replace(/flower_|egg_/, ''), -1);
-    }
+  weeklySetData.sets[weeklySetData.current].forEach(({item: weeklyItemId}) => {
+    Inventory.changeMarkerAmount(Item.items[weeklyItemId].legacyItemId, -1);
   });
 });
 
