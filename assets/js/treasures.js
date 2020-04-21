@@ -20,7 +20,7 @@ class Treasure {
       const showAll = $(e.target).attr('data-text') === 'menu.show_all';
       Treasure.treasures.forEach(treasure => treasure.onMap = showAll);
     });
-    return $.getJSON('data/treasures.json?nocache=' + nocache).then(data => {
+    return Loader.promises['treasures'].consumeJson(data => {
       data.forEach(item => this.treasures.push(new Treasure(item)));
       this.onLanguageChanged();
       console.info('%c[Treasures] Loaded!', 'color: #bada55; background: #242424');

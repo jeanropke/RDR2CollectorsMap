@@ -2,10 +2,6 @@
 - these statements have no requirements
 - code at multiple places depend on these
 */
-Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
-  value: function () { return this.toISOString().split('T')[0]; },
-});
-
 Object.defineProperty(String.prototype, 'includesOneOf', {
   value: function (...elements) {
     var include = false;

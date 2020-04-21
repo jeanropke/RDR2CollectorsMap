@@ -8,16 +8,12 @@ var Cycles = {
   yesterday: [],
 
   load: function () {
-    var date = new Date();
-    var dateString = (date.getUTCMonth() + 1) + '-' + date.getUTCDate() + '-' + date.getUTCFullYear();
-
-    $.getJSON(`data/cycles.json?nocache=${nocache}&date=${dateString}`)
-      .done(function (_data) {
+    return Loader.promises['cycles'].consumeJson(_data => {
         Cycles.data = _data;
         Cycles.getTodayCycle();
         setInterval(Cycles.checkForUpdate, 1000 * 10);
-      });
-    console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
+        console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
+    });
   },
   getFreshSelectedDay: function () {
     'use strict';

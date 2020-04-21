@@ -11,6 +11,7 @@ var MapBase = {
   map: null,
   overlays: [],
   // see building interiors in overlays; might not be rotated right
+  // (you also have to load overlays_beta.json instead of overlays.json in loader.js)
   interiors: false,
   markers: [],
   importantItems: [],
@@ -153,12 +154,11 @@ var MapBase = {
   },
 
   loadOverlays: function () {
-    $.getJSON(`data/overlays${MapBase.interiors ? '_beta' : ''}.json?nocache=${nocache}`)
-      .done(function (data) {
+    return Loader.promises['overlays'].consumeJson(data => {
         MapBase.overlays = data;
         MapBase.setMapBackground();
         console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
-      });
+    });
   },
 
   setMapBackground: function () {
@@ -197,12 +197,7 @@ var MapBase = {
     Layers.overlaysLayer.addTo(MapBase.map);
   },
 
-  loadMarkers: function () {
-    $.getJSON('data/items.json?nocache=' + nocache)
-      .done(MapBase.setMarkers);
-  },
-
-  setMarkers: function (data) {
+  loadMarkers: () => Loader.promises['items'].consumeJson(data => {
     'use strict';
     $.each(data, function (_category, _cycles) {
       $.each(_cycles, function (cycleName, _markers) {
@@ -265,7 +260,7 @@ var MapBase = {
 
       Layers.itemMarkersLayer.getLayerById(goTo.text).openPopup();
     }
-  },
+  }),
 
   onSearch: function (searchString) {
 
@@ -359,8 +354,7 @@ var MapBase = {
   },
 
   loadWeeklySet: function () {
-    $.getJSON('data/weekly.json?nocache=' + nocache)
-      .done(function (data) {
+    return Loader.promises['weekly'].consumeJson(data => {
         weeklySetData = data;
 
         var _weekly = getParameterByName('weekly');
@@ -370,7 +364,7 @@ var MapBase = {
           }
         }
         console.info('%c[Weekly Sets] Loaded!', 'color: #bada55; background: #242424');
-      });
+    });
   },
 
   removeItemFromMap: function (day, text, subdata, category, skipInventory = false) {
@@ -665,11 +659,10 @@ var MapBase = {
   },
 
   loadFastTravels: function () {
-    $.getJSON('data/fasttravels.json?nocache=' + nocache)
-      .done(function (data) {
-        fastTravelData = data;
-      });
-    console.info('%c[Fast travels] Loaded!', 'color: #bada55; background: #242424');
+    return Loader.promises['fasttravels'].consumeJson(data => {
+      fastTravelData = data;
+      console.info('%c[Fast travels] Loaded!', 'color: #bada55; background: #242424');
+    });
   },
 
   addFastTravelMarker: function () {

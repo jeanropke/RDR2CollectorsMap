@@ -13,15 +13,14 @@ class Item {
   static init() {
     this.items = Object.create(null);
     Collection.collections = Object.create(null);
-    return $.getJSON('data/items_value.json?nocache=' + nocache)
-      .then(data => {
+    return Loader.promises['items_value'].consumeJson(data => {
         Object.entries(data.items).forEach(([itemId, value]) =>
           this.items[itemId] = new Item({itemId, value}));
         Object.entries(data.full).forEach(([category, value]) =>
           Collection.collections[category] = new Collection({category, value}));
 
         ItemsValue.reloadInventoryItems();
-      });
+    });
   }
 }
 
