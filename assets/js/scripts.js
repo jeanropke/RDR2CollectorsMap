@@ -684,8 +684,9 @@ $('#cookie-export').on("click", function () {
     settings.version = 2;
 
     var settingsJson = JSON.stringify(settings, null, 4);
+    var exportDate = new Date().toISOUTCDateString();
 
-    downloadAsFile("collectible-map-settings.json", settingsJson);
+    downloadAsFile(`collectible-map-settings-(${exportDate}).json`, settingsJson);
   } catch (error) {
     console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
