@@ -449,7 +449,7 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
 });
 
 $('.weekly-item-listings .collection-sell').on('click', function (e) {
-  weeklySetData.sets[weeklySetData.current].forEach(({item: weeklyItemId}) => {
+  weeklySetData.sets[weeklySetData.current].forEach(weeklyItemId => {
     Inventory.changeMarkerAmount(Item.items[weeklyItemId].legacyItemId, -1);
   });
 });

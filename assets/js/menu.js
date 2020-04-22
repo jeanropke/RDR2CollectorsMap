@@ -125,8 +125,8 @@ Menu.refreshMenu = function () {
       collectibleElement.addClass('disabled');
     }
 
-    $.each(weeklyItems, function (key, weeklyItem) {
-      if (marker.itemId == weeklyItem.item) {
+    weeklyItems.forEach(weeklyItemId => {
+      if (marker.itemId === weeklyItemId) {
         collectibleElement.attr('data-help', 'item_weekly');
         collectibleElement.addClass('weekly-item');
       }
@@ -213,7 +213,7 @@ Menu.refreshWeeklyItems = function () {
   $('#weekly-container .weekly-item-title').text(Language.get('collection'));
   $('#weekly-container .weekly-flavor-text').text(Language.get('weekly_flavor'));
 
-  weeklyItems.forEach(({item: weeklyItemId}) => {
+  weeklyItems.forEach(weeklyItemId => {
     var inventoryCount = '';
 
     if (InventorySettings.isEnabled) {
