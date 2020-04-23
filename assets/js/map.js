@@ -164,8 +164,7 @@ var MapBase = {
     MapBase.isDarkMode = Settings.baseLayer === 'map.layers.dark' ? true : false;
     $('#map').css('background-color', MapBase.isDarkMode ? '#3d3d3d' : '#d2b790');
     MapBase.setOverlays();
-    // Update the highlighted markers to show the appropriate marker colors
-    Inventory.updateLowAmountItems();
+    Inventory.updateItemHighlights();
   },
 
   setOverlays: function () {
@@ -323,7 +322,7 @@ var MapBase = {
         MapBase.requestLoopCancel = false;
         Menu.refreshItemsCounter();
         MapBase.loadImportantItems();
-        Inventory.updateLowAmountItems();
+        Inventory.updateItemHighlights();
         Routes.getCustomRoute();
       }
     );

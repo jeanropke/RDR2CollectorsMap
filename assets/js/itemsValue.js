@@ -1,7 +1,14 @@
 class Collection {
+  // Collection.collections and more is constructed in `Item.init()`
   constructor(preliminary) {
     Object.assign(this, preliminary);
     this.items = Object.values(Item.items).filter(item => item.category === this.category);
+  }
+  averageAmount() {
+    return this.items.reduce((sum, item) => sum + item.amount, 0) / this.items.length;
+  }
+  effectiveAmount() {
+    return Math.min(...this.items.map(item => item.effectiveAmount()));
   }
   totalValue() {
     const collectionAmount = this.effectiveAmount();
@@ -9,9 +16,6 @@ class Collection {
       .map(item => (item.effectiveAmount() - collectionAmount) * item.price)
       .reduce((a, b) => a + b, 0)
       + collectionAmount * this.price;
-  }
-  effectiveAmount() {
-    return Math.min(...this.items.map(item => item.effectiveAmount()));
   }
   static totalValue() {
     return Object.values(this.collections)
@@ -79,6 +83,6 @@ class Item {
     MapBase.markers.forEach(marker => {
       if (marker.category !== 'random') Item.items[marker.itemId].amount = marker.amount;
     });
-    Inventory.updateLowAmountItems();
+    Inventory.updateItemHighlights();
   }
 }
