@@ -197,13 +197,16 @@ Menu.refreshItemsCounter = function () {
     .replace('{count}', _markers.filter(marker => marker.isCollected).length)
     .replace('{max}', _markers.length));
 
-  // refresh items value counter
-  ItemsValue.reloadInventoryItems();
+  Menu.refreshTotalInventoryValue();
 
   $.each($(".menu-hidden[data-type]"), function (key, value) {
     var category = $(value).attr('data-type');
     Menu.refreshCollectionCounter(category);
   });
+};
+
+Menu.refreshTotalInventoryValue = function () {
+  $('#items-value').text(`$${Collection.totalValue().toFixed(2)}`);
 };
 
 Menu.refreshWeeklyItems = function () {
