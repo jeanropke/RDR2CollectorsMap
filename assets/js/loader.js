@@ -25,11 +25,11 @@ class Loader {
 }
 
 const urls = [
-    'data/cycles.json',
     'data/items_value.json',
+    'data/weekly.json',
+    'data/cycles.json',
     'data/overlays.json',
     'data/items.json',
-    'data/weekly.json',
     'data/fasttravels.json',
     'https://pepegapi.jeanropke.net/rdo/nazar',
     'data/treasures.json',

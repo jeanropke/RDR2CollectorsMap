@@ -3,7 +3,6 @@
  */
 
 var fastTravelData;
-var weeklySetData = [];
 
 var MapBase = {
   minZoom: 2,
@@ -342,20 +341,6 @@ var MapBase = {
 
     if (RouteSettings.generateOnVisit)
       Routes.generatePath(true);
-  },
-
-  loadWeeklySet: function () {
-    return Loader.promises['weekly'].consumeJson(data => {
-      weeklySetData = data;
-
-      var _weekly = getParameterByName('weekly');
-      if (_weekly != null) {
-        if (weeklySetData.sets[_weekly]) {
-          weeklySetData.current = _weekly;
-        }
-      }
-      console.info('%c[Weekly Sets] Loaded!', 'color: #bada55; background: #242424');
-    });
   },
 
   removeItemFromMap: function (day, text, subdata, category, skipInventory = false) {

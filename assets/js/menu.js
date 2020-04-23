@@ -44,11 +44,6 @@ Menu.refreshMenu = function () {
   $('.menu-hidden[data-type]:not([data-type=treasure])')
     .children('.collectible-wrapper').remove();
 
-  var weeklyItems = [];
-  if (weeklySetData.sets !== null) {
-    weeklyItems = weeklySetData.sets[weeklySetData.current];
-  }
-
   var anyUnavailableCategories = [];
 
   const currentItemMarkers = {}
@@ -125,7 +120,7 @@ Menu.refreshMenu = function () {
       collectibleElement.addClass('disabled');
     }
 
-    weeklyItems.forEach(weeklyItemId => {
+    Collection.weeklyItems.forEach(weeklyItemId => {
       if (marker.itemId === weeklyItemId) {
         collectibleElement.attr('data-help', 'item_weekly');
         collectibleElement.addClass('weekly-item');
@@ -210,13 +205,11 @@ Menu.refreshTotalInventoryValue = function () {
 };
 
 Menu.refreshWeeklyItems = function () {
-  var weeklyItems = weeklySetData.sets[weeklySetData.current];
-
   $('#weekly-container .weekly-item-listings').children('.weekly-item-listing').remove();
   $('#weekly-container .weekly-item-title').text(Language.get('collection'));
   $('#weekly-container .weekly-flavor-text').text(Language.get('weekly_flavor'));
 
-  weeklyItems.forEach(weeklyItemId => {
+  Collection.weeklyItems.forEach(weeklyItemId => {
     var inventoryCount = '';
 
     if (InventorySettings.isEnabled) {

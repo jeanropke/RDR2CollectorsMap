@@ -80,15 +80,15 @@ function init() {
 
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
-  const itemsAndCollections = Item.init();  // Item.items & Collection.collections promise
-  MapBase.loadWeeklySet();
-  itemsAndCollections.then(MapBase.loadOverlays);
+  // Item.items, Collection.collections, Collection.weekly*
+  const itemsCollectionsWeekly = Item.init();
+  itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.init();
   Language.init();
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  itemsAndCollections.then(Cycles.load);
+  itemsCollectionsWeekly.then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();
@@ -449,7 +449,7 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
 });
 
 $('.weekly-item-listings .collection-sell').on('click', function (e) {
-  weeklySetData.sets[weeklySetData.current].forEach(weeklyItemId => {
+  Collection.weeklyItems.forEach(weeklyItemId => {
     Inventory.changeMarkerAmount(Item.items[weeklyItemId].legacyItemId, -1);
   });
 });

@@ -29,13 +29,21 @@ class Item {
   static init() {
     this.items = Object.create(null);
     Collection.collections = Object.create(null);
-    return Loader.promises['items_value'].consumeJson(data => {
+    const itemAndCollection = Loader.promises['items_value'].consumeJson(data => {
       Object.entries(data.items).forEach(([itemId, price]) =>
         this.items[itemId] = new Item({itemId, price}));
       Object.entries(data.full).forEach(([category, price]) =>
         Collection.collections[category] = new Collection({category, price}));
       this.compatInit();
     });
+    const weekly = Loader.promises['weekly'].consumeJson(data => {
+      const nameViaParam = getParameterByName('weekly');
+      const setViaParam = data.sets[nameViaParam];
+      Collection.weeklySetName = setViaParam ? nameViaParam : data.current;
+      Collection.weeklyItems = setViaParam || data.sets[Collection.weeklySetName];
+      console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
+    });
+    return Promise.all([itemAndCollection, weekly]);
   }
   // prefill whenever “new” inventory is empty and “old” inventory exists
   // avoids deleting old inventory for the moment

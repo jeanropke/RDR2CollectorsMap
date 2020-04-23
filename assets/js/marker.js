@@ -127,7 +127,7 @@ class Marker {
     }
   }
   get isWeekly() {
-    return weeklySetData.sets[weeklySetData.current].includes(this.itemId);
+    return Collection.weeklyItems.includes(this.itemId);
   }
   get isCurrent() {
     // Cycles might serve numbers instead of strings

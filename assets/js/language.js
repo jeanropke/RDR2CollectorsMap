@@ -62,9 +62,9 @@ var Language = {
         } else if (transKey === 'int.end.link') {
             translation = '</a>';
         } else if (transKey === 'collection') {
-            transKey = `weekly.desc.${weeklySetData.current}`;
+            transKey = `weekly.desc.${Collection.weeklySetName}`;
         } else if (transKey === 'weekly_flavor') {
-            transKey = `weekly.flavor.${weeklySetData.current}`;
+            transKey = `weekly.flavor.${Collection.weeklySetName}`;
         } else if (['count', 'max'].includes(transKey)) {
             return `{${transKey}}`;
         }
