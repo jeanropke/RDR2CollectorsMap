@@ -53,12 +53,10 @@ L.LayerGroup.include({
 });
 
 /*
-- all <script> will be loaded and executed (because this <script> comes last)
-- DOM will be ready
-- everything in here will be executed
+- DOM will be ready, all scripts will be loaded (all loaded via DOM script elements)
+- everything in this file here will be executed
 - they can depend on their order here
-- unfortunately they do async data loading and no one checks if they finished
-- → NO GUARANTEE json data is available
+- unfortunately some async dependencies are not properly taken care of (yet)
 */
 $(function () {
   try {
@@ -83,22 +81,21 @@ function init() {
   // Item.items, Collection.collections, Collection.weekly*
   const itemsCollectionsWeekly = Item.init();
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
-  MapBase.init();
+  MapBase.mapInit();  // MapBase.map
   Language.init();
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  itemsCollectionsWeekly.then(Cycles.load);
+  const markers = MapBase.loadMarkers();  // MapBase.markers
+  const cycles = Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();
   const treasureFinished = Treasure.init();
-  MapBase.loadMarkers();
+  Promise.all([cycles, markers]).then(MapBase.runOncePostLoad);
   Routes.init();
   // depends on MapBase, Treasure, Pins
-  // via `promise.then()`, the Treasure dependency is _guaranteed_ to have finished
-  // the other two still need a little rewriting
-  treasureFinished.then(Menu.activateHandlers);
+  Promise.all([treasureFinished, markers]).then(Menu.activateHandlers);
 
   if (Settings.isMenuOpened) $('.menu-toggle').click();
 

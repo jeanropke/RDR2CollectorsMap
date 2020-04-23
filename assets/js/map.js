@@ -12,14 +12,13 @@ var MapBase = {
   // see building interiors in overlays; might not be rotated right
   // (you also have to load overlays_beta.json instead of overlays.json in loader.js)
   interiors: false,
-  markers: [],
   importantItems: [],
   isDarkMode: false,
   updateLoopAvailable: true,
   requestLoopCancel: false,
   showAllMarkers: false,
 
-  init: function () {
+  mapInit: function () {
     'use strict';
 
     const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
@@ -196,15 +195,20 @@ var MapBase = {
     Layers.overlaysLayer.addTo(MapBase.map);
   },
 
-  loadMarkers: () => Loader.promises['items'].consumeJson(data => {
+  loadMarkers: function () {
     'use strict';
-    $.each(data, function (_category, _cycles) {
-      $.each(_cycles, function (cycleName, _markers) {
-        $.each(_markers, function (index, marker) {
-          MapBase.markers.push(new Marker(marker, cycleName, _category));
+    MapBase.markers = [];
+    return Loader.promises['items'].consumeJson(data => {
+      $.each(data, (category, allCycles) => {
+        $.each(allCycles, (cycleName, markers) => {
+          markers.forEach(marker => MapBase.markers.push(new Marker(marker, cycleName, category)));
         });
       });
     });
+  },
+
+  runOncePostLoad: function() {
+    'use strict';
     uniqueSearchMarkers = MapBase.markers;
 
     // Reset markers daily.
@@ -250,7 +254,7 @@ var MapBase = {
 
       Layers.itemMarkersLayer.getLayerById(goTo.text).openPopup();
     }
-  }),
+  },
 
   onSearch: function (searchString) {
 
