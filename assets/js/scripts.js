@@ -675,8 +675,11 @@ $('#cookie-export').on("click", function () {
   try {
     var settings = localStorage;
 
-    // Remove irrelevant properties.
+    // Remove irrelevant properties (permanently from localStorage):
     delete settings.randid;
+
+    // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
+    settings = $.extend(true, {}, localStorage);
     delete settings['pinned-items'];
     delete settings['routes.customRoute'];
 
