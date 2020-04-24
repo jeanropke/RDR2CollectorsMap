@@ -185,9 +185,14 @@ var MapBase = {
         const scale = 0.00076;
         const x = (value.width / 2) * scale;
         const y = (value.height / 2) * scale;
-        bounds = [[(value.lat + y), (value.lng - x)], [(value.lat - y), (value.lng + x)]];
+        bounds = [
+          [(value.lat + y), (value.lng - x)],
+          [(value.lat - y), (value.lng + x)]
+        ];
       }
-      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, bounds, { opacity: Settings.overlayOpacity }));
+      Layers.overlaysLayer.addLayer(L.imageOverlay(overlay, bounds, {
+        opacity: Settings.overlayOpacity
+      }));
     };
 
     $.each(MapBase.overlays, addOverlay);
@@ -206,7 +211,7 @@ var MapBase = {
     });
   },
 
-  runOncePostLoad: function() {
+  runOncePostLoad: function () {
     'use strict';
     uniqueSearchMarkers = MapBase.markers;
 
@@ -278,8 +283,8 @@ var MapBase = {
       $.each(searchTerms, function (id, term) {
 
         searchMarkers = searchMarkers.concat(MapBase.markers.filter(_marker =>
-            Language.get(_marker.itemTranslationKey).toLowerCase().includes(term.toLowerCase()) ||
-            _marker.itemNumberStr === term
+          Language.get(_marker.itemTranslationKey).toLowerCase().includes(term.toLowerCase()) ||
+          _marker.itemNumberStr === term
         ));
 
         $.each(searchMarkers, function (i, el) {
@@ -363,11 +368,11 @@ var MapBase = {
 
       if (marker.isCurrent) {
         if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
-            marker.isCollected = true;
-            changeAmount = 1;
+          marker.isCollected = true;
+          changeAmount = 1;
         } else {
-            marker.isCollected = false;
-            changeAmount = -1;
+          marker.isCollected = false;
+          changeAmount = -1;
         }
       }
 
