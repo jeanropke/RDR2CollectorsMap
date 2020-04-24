@@ -39,40 +39,39 @@ var Inventory = {
       return;
     }
     Object.entries(Collection.collections).forEach(([category, collection]) => {
-    // indentation to be adjusted in the following commit (more relevant diff in this one)
-    const contourImg = $(`[data-marker*=${category}] > img.marker-contour`);
-    contourImg.removeClass(function (index, className) {
-      return (className.match(/highlight-low-amount-items-\S+/gm) || []).join(' ');
-    });
-    contourImg.css('--animation-target-opacity', 0.0);
-    contourImg.css("opacity", 0.0);
+      const contourImg = $(`[data-marker*=${category}] > img.marker-contour`);
+      contourImg.removeClass(function (index, className) {
+        return (className.match(/highlight-low-amount-items-\S+/gm) || []).join(' ');
+      });
+      contourImg.css('--animation-target-opacity', 0.0);
+      contourImg.css("opacity", 0.0);
 
-    if (!enabledCategories.includes(category)) return;
+      if (!enabledCategories.includes(category)) return;
 
-    var markers = MapBase.markers.filter(_m => _m.category === category && _m.isCurrent);
+      var markers = MapBase.markers.filter(_m => _m.category === category && _m.isCurrent);
 
-    const collectionAverage = collection.averageAmount();
-    markers.map(_m => {
-      Inventory.updateMarkerColor(_m);
+      const collectionAverage = collection.averageAmount();
+      markers.map(_m => {
+        Inventory.updateMarkerColor(_m);
 
-      if (!_m.canCollect) return;
+        if (!_m.canCollect) return;
 
-      const weight = Math.max(0, ((collectionAverage - _m.amount) / InventorySettings.stackSize));
-      const scaledWeight = Math.min(1, weight * 2.4);
+        const weight = Math.max(0, ((collectionAverage - _m.amount) / InventorySettings.stackSize));
+        const scaledWeight = Math.min(1, weight * 2.4);
 
-      const contourImg = $(`[data-marker=${_m.text}] > img.marker-contour`);
-      if (weight < 0.02) {
-        contourImg.css('opacity', 0.0);
-      }
-      else if (weight < 0.3 ||
-        InventorySettings.highlightStyle < Inventory.highlightStyles.ANIMATED_RECOMMENDED) {
-          contourImg.css('opacity', scaledWeight);
-      }
-      else {
-        contourImg.css('--animation-target-opacity', scaledWeight);
-        contourImg.addClass(`highlight-low-amount-items-animated`);
-      }
-    });
+        const contourImg = $(`[data-marker=${_m.text}] > img.marker-contour`);
+        if (weight < 0.02) {
+          contourImg.css('opacity', 0.0);
+        }
+        else if (weight < 0.3 ||
+          InventorySettings.highlightStyle < Inventory.highlightStyles.ANIMATED_RECOMMENDED) {
+            contourImg.css('opacity', scaledWeight);
+        }
+        else {
+          contourImg.css('--animation-target-opacity', scaledWeight);
+          contourImg.addClass(`highlight-low-amount-items-animated`);
+        }
+      });
     });
   },
 
