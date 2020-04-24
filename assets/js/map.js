@@ -223,11 +223,11 @@ var MapBase = {
         if (Settings.resetMarkersDaily || marker.category === 'random') {
           marker.isCollected = false;
         }
-        if (InventorySettings.resetInventoryDaily) {
-          marker.amount = 0;
+        if (InventorySettings.resetInventoryDaily && marker.category !== 'random') {
+          marker.item.amount = 0;
         }
       });
-      Item.overwriteAmountFromMarkers();
+      Inventory.updateItemHighlights();
       Menu.refreshMenu();
     }
 

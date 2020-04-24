@@ -344,11 +344,8 @@ $("#clear-markers").on("click", function () {
 });
 
 $("#clear-inventory").on("click", function () {
-  $.each(MapBase.markers, function (key, marker) {
-    marker.amount = 0;
-  });
-
-  Item.overwriteAmountFromMarkers();
+  Object.values(Item.items).forEach(item => item.amount = 0);
+  Inventory.updateItemHighlights();
   Menu.refreshMenu();
   MapBase.addMarkers();
 });
@@ -439,7 +436,7 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
   MapBase.markers.filter(m => m.category === category && m.isCurrent).forEach(marker => {
     if (marker.itemNumber === 1) Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount);
 
-    if (InventorySettings.autoEnableSoldItems && marker.amount === 0 && marker.isCollected) {
+    if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected) {
       MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category, true);
     }
   });
@@ -468,13 +465,12 @@ $('.collection-reset').on('click', function (e) {
 
 // disable only collected items (one or more in the inventory)
 $('.disable-collected-items').on('click', function (e) {
-  var collectionType = $(this).parent().parent().data('type');
-
-  var getMarkers = MapBase.markers.filter(_m =>
-    _m.canCollect && _m.category == collectionType && _m.isCurrent);
-
-  getMarkers.forEach(marker => {
-    if (marker.amount > 0) {
+  'use strict';
+  const category = $(this).parent().parent().data('type');
+  MapBase.markers
+    .filter(m => m.category === category && m.isCurrent && m.canCollect)
+    .forEach(marker => {
+    if (marker.item && marker.item.amount > 0) {
       $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
       MapBase.removeItemFromMap(marker.cycleName,
         marker.text, marker.subdata, marker.category, true);

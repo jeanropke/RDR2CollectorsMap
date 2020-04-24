@@ -46,13 +46,9 @@ Menu.refreshMenu = function () {
 
   var anyUnavailableCategories = [];
 
-  const currentItemMarkers = {}
-  MapBase.markers.forEach(marker => {
-    if (marker.isCurrent) {
-      currentItemMarkers[marker.itemId] = marker;
-    }
-  });
-  Object.values(currentItemMarkers).forEach(marker => {
+  MapBase.markers
+    .filter(m => m.isCurrent && m.itemNumber === 1)
+    .forEach(marker => {
     var collectibleTitle = Language.get(marker.itemTranslationKey);
     var collectibleImage = null;
 
@@ -66,7 +62,8 @@ Menu.refreshMenu = function () {
     var collectibleTextElement = $('<p class="collectible">').text(collectibleTitle);
 
     var collectibleCountDecreaseElement = $('<div class="counter-button">-</div>');
-    var collectibleCountTextElement = $('<div class="counter-number">').text(marker.amount);
+    var collectibleCountTextElement = $('<div class="counter-number">')
+      .text(marker.item && marker.item.amount);
     var collectibleCountIncreaseElement = $('<div class="counter-button">+</div>');
 
     collectibleCountDecreaseElement.on('click', function (e) {
@@ -87,10 +84,12 @@ Menu.refreshMenu = function () {
       }
     });
 
-    var collectibleCountElement = $('<span>').addClass('counter').append(collectibleCountDecreaseElement).append(collectibleCountTextElement).append(collectibleCountIncreaseElement);
-
-    if (!InventorySettings.isEnabled)
-      collectibleCountElement.hide();
+    var collectibleCountElement = $('<span>')
+      .addClass('counter')
+      .append(collectibleCountDecreaseElement)
+      .append(collectibleCountTextElement)
+      .append(collectibleCountIncreaseElement)
+      .toggle(InventorySettings.isEnabled);
 
     var collectibleCategory = $(`.menu-option[data-type=${marker.category}]`);
 
@@ -105,7 +104,8 @@ Menu.refreshMenu = function () {
     if (collectibleCategory.hasClass('not-found') && !anyUnavailableCategories.includes(marker.category))
       collectibleCategory.attr('data-help', 'item_category').removeClass('not-found');
 
-    collectibleCountTextElement.toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
+    collectibleCountTextElement.toggleClass('text-danger',
+      marker.category !== 'random' && marker.item.amount >= InventorySettings.stackSize);
 
     if (['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
       collectibleElement.attr('data-help', 'item_night_only');

@@ -56,7 +56,8 @@ var Inventory = {
 
         if (!_m.canCollect) return;
 
-        const weight = Math.max(0, ((collectionAverage - _m.amount) / InventorySettings.stackSize));
+        const weight = Math.max(0, ((collectionAverage - _m.item.amount) /
+          InventorySettings.stackSize));
         const scaledWeight = Math.min(1, weight * 2.4);
 
         const contourImg = $(`[data-marker=${_m.text}] > img.marker-contour`);
@@ -86,30 +87,29 @@ var Inventory = {
     $(`[data-marker=${marker.text}] > img.background`).attr('src', markerSrc);
   },
 
-  changeMarkerAmount: function (name, amount, skipInventory = false) {
-    var sameItemMarkers = MapBase.markers.filter(marker => marker.legacyItemId === name);
+  changeMarkerAmount: function (legacyItemId, changeAmount, skipInventory = false) {
+    var sameItemMarkers = MapBase.markers.filter(marker => marker.legacyItemId === legacyItemId);
+
+    const item = sameItemMarkers[0].item;
+    if (item && (!skipInventory || skipInventory && InventorySettings.isMenuUpdateEnabled)) {
+      item.amount += changeAmount;
+    }
 
     sameItemMarkers.forEach(marker => {
-      if (!skipInventory || skipInventory && InventorySettings.isMenuUpdateEnabled) {
-        marker.amount = parseInt(marker.amount) + amount;
-
-        if (marker.amount < 0)
-          marker.amount = 0;
-      }
-
       if (!InventorySettings.isEnabled) return;
 
       const popup = marker.lMarker && marker.lMarker.getPopup();
       if (popup) popup.update();
 
-      $(`[data-type=${name}] .counter-number`)
-        .text(marker.amount)
-        .toggleClass('text-danger', marker.amount >= InventorySettings.stackSize);
+      const amount = marker.item && marker.item.amount;
+      $(`[data-type=${legacyItemId}] .counter-number`)
+        .text(amount)
+        .toggleClass('text-danger', amount >= InventorySettings.stackSize);
 
       if ((marker.isCollected ||
-        (InventorySettings.isEnabled && marker.amount >= InventorySettings.stackSize)) &&
+        (InventorySettings.isEnabled && amount >= InventorySettings.stackSize)) &&
         marker.isCurrent ||
-        (marker.category === 'flower' && marker.amount >= InventorySettings.flowersSoftStackSize)) {
+        (marker.category === 'flower' && amount >= InventorySettings.flowersSoftStackSize)) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
         $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
       }
@@ -129,7 +129,7 @@ var Inventory = {
     if ($("#routes").val() == 1)
       Routes.drawLines();
 
-    Item.overwriteAmountFromMarkers();
+    Inventory.updateItemHighlights();
     Menu.refreshItemsCounter();
     Menu.refreshWeeklyItems();
   }
