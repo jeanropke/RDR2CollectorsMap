@@ -2,183 +2,183 @@
     "current": "hairdresser_set",
     "sets": {
         "sacred_set": [
-            { "item": "egg_eagle" },
-            { "item": "arrowhead_bone" },
-            { "item": "heirlooms_boar_bristle_brush" }
+            "egg_eagle",
+            "arrowhead_bone",
+            "heirlooms_boar_bristle_brush"
         ],
         "veteran_set": [
-            { "item": "coin_quarter" },
-            { "item": "bottle_old_tom_gin" },
-            { "item": "ring_aubrey_onyx" }
+            "coin_quarter",
+            "bottle_old_tom_gin",
+            "ring_aubrey_onyx"
         ],
         "herbalist_set": [
-            { "item": "flower_blood_flower" },
-            { "item": "flower_chocolate_daisy" },
-            { "item": "flower_creek_plum" }
+            "flower_blood_flower",
+            "flower_chocolate_daisy",
+            "flower_creek_plum"
         ],
         "gold_panner_set": [
-            { "item": "bracelet_ojeda_rose_gold" },
-            { "item": "coin_gold_eagle" },
-            { "item": "item_pocket_watch_gold" }
+            "bracelet_ojeda_rose_gold",
+            "coin_gold_eagle",
+            "item_pocket_watch_gold"
         ],
         "pearls_set": [
-            { "item": "bracelet_durant_pearl" },
-            { "item": "necklace_pelle_pearl" },
-            { "item": "ring_bonnard_pearl" }
+            "bracelet_durant_pearl",
+            "necklace_pelle_pearl",
+            "ring_bonnard_pearl"
         ],
         "gamblers_choice_set": [
-            { "item": "swords_ace" },
-            { "item": "bottle_gran_corazon_madeira" },
-            { "item": "coin_gold_dollar_coin" }
+            "swords_ace",
+            "bottle_gran_corazon_madeira",
+            "coin_gold_dollar_coin"
         ],
         "naturalist_set": [
-            { "item": "heirlooms_cherrywood_comb" },
-            { "item": "egg_egret" },
-            { "item": "flower_bitterweed" }
+            "heirlooms_cherrywood_comb",
+            "egg_egret",
+            "flower_bitterweed"
         ],
         "poacher_set": [
-            { "item": "earring_sterling_tooth" },
-            { "item": "heirlooms_tortoiseshell_comb" },
-            { "item": "heirlooms_ivory_hairpin" }
+            "earring_sterling_tooth",
+            "heirlooms_tortoiseshell_comb",
+            "heirlooms_ivory_hairpin"
         ],
         "hunter_set": [
-            { "item": "arrowhead_slate" },
-            { "item": "egg_duck" },
-            { "item": "item_carcass_squirrel_perfect" }
+            "arrowhead_slate",
+            "egg_duck",
+            "item_carcass_squirrel_perfect"
         ],
         "precious_stones_set": [
-            { "item": "ring_banais_topaz" },
-            { "item": "earring_harford_garnet" },
-            { "item": "heirlooms_jade_hairpin" }
+            "ring_banais_topaz",
+            "earring_harford_garnet",
+            "heirlooms_jade_hairpin"
         ],
         "hairdresser_set": [
-            { "item": "heirlooms_rosewood_hairbrush" },
-            { "item": "heirlooms_ivory_comb" },
-            { "item": "heirlooms_ebony_hairpin" }
+            "heirlooms_rosewood_hairbrush",
+            "heirlooms_ivory_comb",
+            "heirlooms_ebony_hairpin"
         ],
         "whiskey_set": [
-            { "item": "bottle_tennesee_whiskey" },
-            { "item": "bottle_irish_whiskey" },
-            { "item": "bottle_scotch_whisky" }
+            "bottle_tennesee_whiskey",
+            "bottle_irish_whiskey",
+            "bottle_scotch_whisky"
         ],
         "cheater_set": [
-            { "item": "wands_queen" },
-            { "item": "cups_king" },
-            { "item": "pentacles_ace" }
+            "wands_queen",
+            "cups_king",
+            "pentacles_ace"
         ],
         "loser_set": [
-            { "item": "cups_two" },
-            { "item": "pentacles_two" },
-            { "item": "swords_two" }
+            "cups_two",
+            "pentacles_two",
+            "swords_two"
         ],
         "gentleman_set": [
-            { "item": "ring_bosque_emerald" },
-            { "item": "bottle_london_dry_gin" },
-            { "item": "coin_silver_dollar" }
+            "ring_bosque_emerald",
+            "bottle_london_dry_gin",
+            "coin_silver_dollar"
         ],
         "belle_set": [
-            { "item": "heirlooms_boxwood_comb" },
-            { "item": "necklace_blakely_miniatue" },
-            { "item": "earring_josephine_pearl" }
+            "heirlooms_boxwood_comb",
+            "necklace_blakely_miniatue",
+            "earring_josephine_pearl"
         ],
         "looter_set": [
-            { "item": "arrowhead_crude" },
-            { "item": "coin_nickel_coin" },
-            { "item": "item_gold_tooth" }
+            "arrowhead_crude",
+            "coin_nickel_coin",
+            "item_gold_tooth"
         ],
         "ancient_tools_set": [
-            { "item": "arrowhead_obsidian" },
-            { "item": "heirlooms_horse_hair_brush" }
+            "arrowhead_obsidian",
+            "heirlooms_horse_hair_brush"
         ],
         "exotics_set": [
-            { "item": "egg_loon" },
-            { "item": "flower_agarita" },
-            { "item": "egg_spoonbill" }
+            "egg_loon",
+            "flower_agarita",
+            "egg_spoonbill"
         ],
         "1800_coins_set": [
-            { "item": "coin_five_dollar_bechtler" },
-            { "item": "coin_half_dime" },
-            { "item": "coin_gold_quarter" }
+            "coin_five_dollar_bechtler",
+            "coin_half_dime",
+            "coin_gold_quarter"
         ],
         "warrior_tokens_set": [
-            { "item": "swords_knight" },
-            { "item": "arrowhead_quartz" },
-            { "item": "ring_harland_coral" }
+            "swords_knight",
+            "arrowhead_quartz",
+            "ring_harland_coral"
         ],
         "squire_set": [
-            { "item": "pentacles_page" },
-            { "item": "wands_knight" },
-            { "item": "swords_king" }
+            "pentacles_page",
+            "wands_knight",
+            "swords_king"
         ],
         "saint_dennis_set": [
-            { "item": "bottle_cognac_bottle" },
-            { "item": "earring_beauchene_ruby" },
-            { "item": "ring_beaulieux_diamond" }
+            "bottle_cognac_bottle",
+            "earring_beauchene_ruby",
+            "ring_beaulieux_diamond"
         ],
         "fortune_teller_set": [
-            { "item": "cups_ace" },
-            { "item": "wands_ace" },
-            { "item": "bottle_absinthe" }
+            "cups_ace",
+            "wands_ace",
+            "bottle_absinthe"
         ],
         "guarma_set": [
-            { "item": "bottle_caribbean_rum" },
-            { "item": "necklace_tuamotu_pearl" },
-            { "item": "bracelet_infanta_turquoise" }
+            "bottle_caribbean_rum",
+            "necklace_tuamotu_pearl",
+            "bracelet_infanta_turquoise"
         ],
         "bowman_set": [
-            { "item": "arrowhead_flint" },
-            { "item": "arrowhead_raw" },
-            { "item": "arrowhead_agate" }
+            "arrowhead_flint",
+            "arrowhead_raw",
+            "arrowhead_agate"
         ],
         "royal_set": [
-            { "item": "earring_duchess_emerald" },
-            { "item": "earring_royal_victoria" },
-            { "item": "swords_queen" }
+            "earring_duchess_emerald",
+            "earring_royal_victoria",
+            "swords_queen"
         ],
         "witch_hunt_set": [
-            { "item": "egg_vulture" },
-            { "item": "flower_cardinal" },
-            { "item": "arrowhead_splintered" }
+            "egg_vulture",
+            "flower_cardinal",
+            "arrowhead_splintered"
         ],
         "night_watch_set": [
-            { "item": "ring_pilgrim_moonstone" },
-            { "item": "flower_wisteria" },
-            { "item": "egg_hawk" }
+            "ring_pilgrim_moonstone",
+            "flower_wisteria",
+            "egg_hawk"
         ],
         "foundation_set": [
-            { "item": "arrowhead_feldspar" },
-            { "item": "earring_endicott_diamond" },
-            { "item": "earring_emmeline_coral" }
+            "arrowhead_feldspar",
+            "earring_endicott_diamond",
+            "earring_emmeline_coral"
         ],
         "jeweler_set": [
-            { "item": "ring_thorburn_turquoise" },
-            { "item": "bracelet_hajnal_garnet_bangle" },
-            { "item": "necklace_dane_topaz" }
+            "ring_thorburn_turquoise",
+            "bracelet_hajnal_garnet_bangle",
+            "necklace_dane_topaz"
         ],
         "penny_set": [
-            { "item": "coin_penny" },
-            { "item": "coin_one_cent_token" },
-            { "item": "coin_halfpenny" }
+            "coin_penny",
+            "coin_one_cent_token",
+            "coin_halfpenny"
         ],
         "festive_feast_set": [
-            { "item": "egg_goose" },
-            { "item": "bottle_cognac_bottle" },
-            { "item": "item_cooked_plump_bird_thyme" }
+            "egg_goose",
+            "bottle_cognac_bottle",
+            "item_cooked_plump_bird_thyme"
         ],
         "new_year_set": [
-            { "item": "wands_ace" },
-            { "item": "bottle_scotch_whisky" },
-            { "item": "item_pocket_watch_platinum" }
+            "wands_ace",
+            "bottle_scotch_whisky",
+            "item_pocket_watch_platinum"
         ],
         "lovers_set": [
-            { "item": "flower_chocolate_daisy" },
-            { "item": "ring_yates_diamond" },
-            { "item": "cups_two" }
+            "flower_chocolate_daisy",
+            "ring_yates_diamond",
+            "cups_two"
         ],
         "egg_hunt_set": [
-            { "item": "egg_duck" },
-            { "item": "egg_heron" },
-            { "item": "egg_goose" }
+            "egg_duck",
+            "egg_heron",
+            "egg_goose"
         ]
     }
 }

@@ -36,7 +36,7 @@ class Marker {
     this.subdata = ['egg', 'flower'].includes(this.category) ?
       this.itemId.replace(`${this.category}_`, '') : undefined;
     this.legacyItemId = this.subdata || this.text;
-    this.amount = Inventory.items[this.itemId] || 0;
+    this.amount = this.category === 'random' ? undefined : Item.items[this.itemId].amount;
 
     /**
      * `._collectedKey` is the key for the `.isCollected` accessors
@@ -117,6 +117,8 @@ class Marker {
   get canCollect() {
     if (this.isCollected) {
       return false;
+    } else if (this.category === 'random') {
+      return true;
     } else if (InventorySettings.isEnabled) {
       const stackName = (this.category === 'flower') ? 'flowersSoftStackSize' : 'stackSize';
       return this.amount < InventorySettings[stackName];
@@ -125,7 +127,7 @@ class Marker {
     }
   }
   get isWeekly() {
-    return weeklySetData.sets[weeklySetData.current].map(item => item.item).includes(this.itemId);
+    return Collection.weeklyItems.includes(this.itemId);
   }
   get isCurrent() {
     // Cycles might serve numbers instead of strings
@@ -192,8 +194,6 @@ class Marker {
           e.preventDefault();
           MapBase.highlightImportantItem(this.text, this.category);
         });
-    snippet.find('.marker-popup-buttons button').click(e =>
-      Inventory.changeMarkerAmount(this.legacyItemId, $(e.target).hasClass('btn-danger') ? -1 : 1));
     snippet.find('.remove-button').click(() =>
       MapBase.removeItemFromMap(this.cycleName, this.text, this.subdata || '', this.category));
     if (!Cycles.isSameAsYesterday(this.category) && !unknownCycle) {
@@ -219,12 +219,16 @@ class Marker {
     if (['flower_agarita', 'flower_blood_flower'].includes(this.itemId)) {
       snippet.find('[data-text="map.mark_important"]').parent().hide();
     }
+    const inventoryButtons = snippet.find('.marker-popup-buttons')
     if (InventorySettings.isEnabled && InventorySettings.isPopupsEnabled &&
       this.category !== 'random') {
-        snippet.find('.marker-popup-buttons small').toggleClass('text-danger',
+        inventoryButtons.find('small').toggleClass('text-danger',
           this.amount >= InventorySettings.stackSize);
+        inventoryButtons.find('button').click(e =>
+          Inventory.changeMarkerAmount(this.legacyItemId,
+            $(e.target).hasClass('btn-danger') ? -1 : 1));
     } else {
-        snippet.find('.marker-popup-buttons').hide();
+        inventoryButtons.hide();
     }
 
     return Language.translateDom(snippet)[0];

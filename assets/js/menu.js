@@ -44,11 +44,6 @@ Menu.refreshMenu = function () {
   $('.menu-hidden[data-type]:not([data-type=treasure])')
     .children('.collectible-wrapper').remove();
 
-  var weeklyItems = [];
-  if (weeklySetData.sets !== null) {
-    weeklyItems = weeklySetData.sets[weeklySetData.current];
-  }
-
   var anyUnavailableCategories = [];
 
   const currentItemMarkers = {}
@@ -125,8 +120,8 @@ Menu.refreshMenu = function () {
       collectibleElement.addClass('disabled');
     }
 
-    $.each(weeklyItems, function (key, weeklyItem) {
-      if (marker.itemId == weeklyItem.item) {
+    Collection.weeklyItems.forEach(weeklyItemId => {
+      if (marker.itemId === weeklyItemId) {
         collectibleElement.attr('data-help', 'item_weekly');
         collectibleElement.addClass('weekly-item');
       }
@@ -197,8 +192,7 @@ Menu.refreshItemsCounter = function () {
     .replace('{count}', _markers.filter(marker => marker.isCollected).length)
     .replace('{max}', _markers.length));
 
-  // refresh items value counter
-  ItemsValue.reloadInventoryItems();
+  Menu.refreshTotalInventoryValue();
 
   $.each($(".menu-hidden[data-type]"), function (key, value) {
     var category = $(value).attr('data-type');
@@ -206,31 +200,30 @@ Menu.refreshItemsCounter = function () {
   });
 };
 
-Menu.refreshWeeklyItems = function () {
-  var weeklyItems = weeklySetData.sets[weeklySetData.current];
+Menu.refreshTotalInventoryValue = function () {
+  $('#items-value').text(`$${Collection.totalValue().toFixed(2)}`);
+};
 
+Menu.refreshWeeklyItems = function () {
   $('#weekly-container .weekly-item-listings').children('.weekly-item-listing').remove();
   $('#weekly-container .weekly-item-title').text(Language.get('collection'));
   $('#weekly-container .weekly-flavor-text').text(Language.get('weekly_flavor'));
 
-  $.each(weeklyItems, function (key, value) {
+  Collection.weeklyItems.forEach(weeklyItemId => {
     var inventoryCount = '';
 
     if (InventorySettings.isEnabled) {
-      var amount = Inventory.items[value.item];
-
-      if (amount !== undefined) {
-        inventoryCount = $(`<small class="counter-number">${amount}</small>`);
-        inventoryCount.toggleClass('text-danger', amount >= InventorySettings.stackSize);
-        inventoryCount = inventoryCount.prop('outerHTML');
-      }
+      const amount = Item.items[weeklyItemId].amount;
+      inventoryCount = $(`<small class="counter-number">${amount}</small>`);
+      inventoryCount.toggleClass('text-danger', amount >= InventorySettings.stackSize);
+      inventoryCount = inventoryCount.prop('outerHTML');
     }
 
     var element = `
       <div class="weekly-item-listing">
         <span>
-          <img class="icon" src="./assets/images/icons/game/${value.item}.png" alt="Weekly item icon" />
-          <span>${Language.get(value.item + '.name')}</span>
+          <img class="icon" src="./assets/images/icons/game/${weeklyItemId}.png" alt="Weekly item icon" />
+          <span>${Language.get(weeklyItemId + '.name')}</span>
         </span>
         ${inventoryCount}
       </div>

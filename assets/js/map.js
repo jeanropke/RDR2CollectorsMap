@@ -3,7 +3,6 @@
  */
 
 var fastTravelData;
-var weeklySetData = [];
 
 var MapBase = {
   minZoom: 2,
@@ -13,14 +12,13 @@ var MapBase = {
   // see building interiors in overlays; might not be rotated right
   // (you also have to load overlays_beta.json instead of overlays.json in loader.js)
   interiors: false,
-  markers: [],
   importantItems: [],
   isDarkMode: false,
   updateLoopAvailable: true,
   requestLoopCancel: false,
   showAllMarkers: false,
 
-  init: function () {
+  mapInit: function () {
     'use strict';
 
     const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
@@ -155,9 +153,9 @@ var MapBase = {
 
   loadOverlays: function () {
     return Loader.promises['overlays'].consumeJson(data => {
-        MapBase.overlays = data;
-        MapBase.setMapBackground();
-        console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
+      MapBase.overlays = data;
+      MapBase.setMapBackground();
+      console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
     });
   },
 
@@ -166,8 +164,7 @@ var MapBase = {
     MapBase.isDarkMode = Settings.baseLayer === 'map.layers.dark' ? true : false;
     $('#map').css('background-color', MapBase.isDarkMode ? '#3d3d3d' : '#d2b790');
     MapBase.setOverlays();
-    // Update the highlighted markers to show the appropriate marker colors
-    Inventory.updateLowAmountItems();
+    Inventory.updateItemHighlights();
   },
 
   setOverlays: function () {
@@ -197,39 +194,35 @@ var MapBase = {
     Layers.overlaysLayer.addTo(MapBase.map);
   },
 
-  loadMarkers: () => Loader.promises['items'].consumeJson(data => {
+  loadMarkers: function () {
     'use strict';
-    $.each(data, function (_category, _cycles) {
-      $.each(_cycles, function (cycleName, _markers) {
-        $.each(_markers, function (index, marker) {
-          MapBase.markers.push(new Marker(marker, cycleName, _category));
+    MapBase.markers = [];
+    return Loader.promises['items'].consumeJson(data => {
+      $.each(data, (category, allCycles) => {
+        $.each(allCycles, (cycleName, markers) => {
+          markers.forEach(marker => MapBase.markers.push(new Marker(marker, cycleName, category)));
         });
       });
     });
+  },
+
+  runOncePostLoad: function() {
+    'use strict';
     uniqueSearchMarkers = MapBase.markers;
 
     // Reset markers daily.
     var date = new Date().toISOUTCDateString();
 
     if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
-      var markers = MapBase.markers;
-
-      $.each(markers, function (key, value) {
-
-        if (Settings.resetMarkersDaily) {
-          markers[key].isCollected = false;
+      MapBase.markers.forEach(marker => {
+        if (Settings.resetMarkersDaily || marker.category === 'random') {
+          marker.isCollected = false;
         }
-        else if (value.category === 'random') {
-          markers[key].isCollected = false;
-        }
-
         if (InventorySettings.resetInventoryDaily) {
-          markers[key].amount = 0;
+          marker.amount = 0;
         }
       });
-
-      MapBase.markers = markers;
-      Inventory.save();
+      Item.overwriteAmountFromMarkers();
       Menu.refreshMenu();
     }
 
@@ -260,7 +253,7 @@ var MapBase = {
 
       Layers.itemMarkersLayer.getLayerById(goTo.text).openPopup();
     }
-  }),
+  },
 
   onSearch: function (searchString) {
 
@@ -329,7 +322,7 @@ var MapBase = {
         MapBase.requestLoopCancel = false;
         Menu.refreshItemsCounter();
         MapBase.loadImportantItems();
-        Inventory.updateLowAmountItems();
+        Inventory.updateItemHighlights();
         Routes.getCustomRoute();
       }
     );
@@ -351,20 +344,6 @@ var MapBase = {
 
     if (RouteSettings.generateOnVisit)
       Routes.generatePath(true);
-  },
-
-  loadWeeklySet: function () {
-    return Loader.promises['weekly'].consumeJson(data => {
-        weeklySetData = data;
-
-        var _weekly = getParameterByName('weekly');
-        if (_weekly != null) {
-          if (weeklySetData.sets[_weekly]) {
-            weeklySetData.current = _weekly;
-          }
-        }
-        console.info('%c[Weekly Sets] Loaded!', 'color: #bada55; background: #242424');
-    });
   },
 
   removeItemFromMap: function (day, text, subdata, category, skipInventory = false) {

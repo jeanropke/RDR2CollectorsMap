@@ -53,12 +53,10 @@ L.LayerGroup.include({
 });
 
 /*
-- all <script> will be loaded and executed (because this <script> comes last)
-- DOM will be ready
-- everything in here will be executed
+- DOM will be ready, all scripts will be loaded (all loaded via DOM script elements)
+- everything in this file here will be executed
 - they can depend on their order here
-- unfortunately they do async data loading and no one checks if they finished
-- → NO GUARANTEE json data is available
+- unfortunately some async dependencies are not properly taken care of (yet)
 */
 $(function () {
   try {
@@ -80,26 +78,24 @@ function init() {
 
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
-  Inventory.load();
-  const itemsAndCollections = Item.init();  // Item.items & Collection.collections promise
-  MapBase.loadWeeklySet();
-  itemsAndCollections.then(MapBase.loadOverlays);
-  MapBase.init();
+  // Item.items, Collection.collections, Collection.weekly*
+  const itemsCollectionsWeekly = Item.init();
+  itemsCollectionsWeekly.then(MapBase.loadOverlays);
+  MapBase.mapInit();  // MapBase.map
   Language.init();
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  itemsAndCollections.then(Cycles.load);
+  const markers = MapBase.loadMarkers();  // MapBase.markers
+  const cycles = Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();
   const treasureFinished = Treasure.init();
-  MapBase.loadMarkers();
+  Promise.all([cycles, markers]).then(MapBase.runOncePostLoad);
   Routes.init();
   // depends on MapBase, Treasure, Pins
-  // via `promise.then()`, the Treasure dependency is _guaranteed_ to have finished
-  // the other two still need a little rewriting
-  treasureFinished.then(Menu.activateHandlers);
+  Promise.all([treasureFinished, markers]).then(Menu.activateHandlers);
 
   if (Settings.isMenuOpened) $('.menu-toggle').click();
 
@@ -352,7 +348,7 @@ $("#clear-inventory").on("click", function () {
     marker.amount = 0;
   });
 
-  Inventory.save();
+  Item.overwriteAmountFromMarkers();
   Menu.refreshMenu();
   MapBase.addMarkers();
 });
@@ -450,14 +446,8 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
 });
 
 $('.weekly-item-listings .collection-sell').on('click', function (e) {
-  var weeklyItems = weeklySetData.sets[weeklySetData.current];
-
-  $.each(weeklyItems, function (key, weeklyItem) {
-    var amount = Inventory.items[weeklyItem.item];
-
-    if (amount !== undefined) {
-      Inventory.changeMarkerAmount(weeklyItem.item.replace(/flower_|egg_/, ''), -1);
-    }
+  Collection.weeklyItems.forEach(weeklyItemId => {
+    Inventory.changeMarkerAmount(Item.items[weeklyItemId].legacyItemId, -1);
   });
 });
 
@@ -609,7 +599,7 @@ $('#enable-inventory').on("change", function () {
 
   MapBase.addMarkers();
   Menu.refreshWeeklyItems();
-  ItemsValue.reloadInventoryItems();
+  Menu.refreshTotalInventoryValue();
 
   $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(InventorySettings.isEnabled);
   $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
