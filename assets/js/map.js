@@ -593,10 +593,9 @@ var MapBase = {
 
   highlightImportantItem: function (text, category = '') {
     if (category == 'flower' || category == 'egg')
-      text = text.replace(/(_\d+)/, '');
+      text = text.replace(/_\d/, '');
 
     var textMenu = text.replace(/egg_|flower_/, '');
-
     $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
 
     $.each($(`[data-marker*=${text}]`), function (key, marker) {
