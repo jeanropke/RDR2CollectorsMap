@@ -631,13 +631,13 @@ var MapBase = {
     else
       MapBase.importantItems = JSON.parse(localStorage.getItem('importantItems')) || [];
 
-    $.each(MapBase.importantItems, function (key, value) {
-      if (/random_item_\d+/.test(value))
-        $(`[data-marker=${value}]`).addClass('highlight-items');
+    $.each(MapBase.importantItems, function (key, item) {
+      if (/random_item_\d+/.test(item))
+        $(`[data-marker=${item}]`).addClass('highlight-items');
       else
-        $(`[data-marker*=${value}]`).addClass('highlight-items');
+        $(`[data-marker*=${item}]`).addClass('highlight-items');
 
-      var textMenu = value.replace(/egg_|flower_/, '');
+      var textMenu = item.replace(/egg_|flower_/, '');
       $(`[data-type=${textMenu}]`).addClass('highlight-important-items-menu');
     });
   },
