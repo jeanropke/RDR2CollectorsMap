@@ -229,6 +229,7 @@ var MapBase = {
       });
       Inventory.updateItemHighlights();
       Menu.refreshMenu();
+      MapBase.runOnDayChange();
     }
 
     localStorage.setItem('main.date', date);
@@ -710,7 +711,7 @@ var MapBase = {
       Pins.addPin(coords.latlng.lat, coords.latlng.lng);
   },
 
-  updateOnDayChange: function () {
+  runOnDayChange: function () {
     // put here all functions that needs to be executed on day change
     Routes.clearCustomRoutes(true);
   },
