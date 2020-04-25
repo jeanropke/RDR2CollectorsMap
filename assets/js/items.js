@@ -62,6 +62,7 @@ class Item {
     return +localStorage.getItem(this._amountKey);
   }
   set amount(value) {
+    if (value < 0) value = 0;
     if (value) {
       localStorage.setItem(this._amountKey, value);
     } else {
@@ -78,11 +79,5 @@ class Item {
     } else {
       return this.firstMarker().isCollected ? 1 : 0;
     }
-  }
-  static overwriteAmountFromMarkers() {
-    MapBase.markers.forEach(marker => {
-      if (marker.category !== 'random') Item.items[marker.itemId].amount = marker.amount;
-    });
-    Inventory.updateItemHighlights();
   }
 }

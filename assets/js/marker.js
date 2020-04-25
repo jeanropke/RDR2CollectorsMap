@@ -36,7 +36,7 @@ class Marker {
     this.subdata = ['egg', 'flower'].includes(this.category) ?
       this.itemId.replace(`${this.category}_`, '') : undefined;
     this.legacyItemId = this.subdata || this.text;
-    this.amount = this.category === 'random' ? undefined : Item.items[this.itemId].amount;
+    this.item = this.category === 'random' ? undefined : Item.items[this.itemId];
 
     /**
      * `._collectedKey` is the key for the `.isCollected` accessors
@@ -121,7 +121,7 @@ class Marker {
       return true;
     } else if (InventorySettings.isEnabled) {
       const stackName = (this.category === 'flower') ? 'flowersSoftStackSize' : 'stackSize';
-      return this.amount < InventorySettings[stackName];
+      return this.item.amount < InventorySettings[stackName];
     } else {
       return true;
     }
@@ -174,7 +174,7 @@ class Marker {
       <small class="popupContentDebug">Latitude: ${this.lat} / Longitude: ${this.lng}</small>
       <div class="marker-popup-buttons">
           <button class="btn btn-danger">↓</button>
-          <small data-item="${this.text}">${this.amount}</small>
+          <small></small>
           <button class="btn btn-success">↑</button>
       </div>
       <button type="button" class="btn btn-info remove-button" data-item="${this.text}"
@@ -222,8 +222,10 @@ class Marker {
     const inventoryButtons = snippet.find('.marker-popup-buttons')
     if (InventorySettings.isEnabled && InventorySettings.isPopupsEnabled &&
       this.category !== 'random') {
-        inventoryButtons.find('small').toggleClass('text-danger',
-          this.amount >= InventorySettings.stackSize);
+        inventoryButtons.find('small')
+          .toggleClass('text-danger', this.item.amount >= InventorySettings.stackSize)
+          .attr('data-item', this.text)
+          .text(this.item.amount);
         inventoryButtons.find('button').click(e =>
           Inventory.changeMarkerAmount(this.legacyItemId,
             $(e.target).hasClass('btn-danger') ? -1 : 1));
