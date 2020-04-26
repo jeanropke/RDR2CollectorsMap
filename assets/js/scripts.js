@@ -105,7 +105,7 @@ function init() {
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
   $('#marker-size').val(Settings.markerSize);
-  $('#custom-marker-color').val(Settings.markerCustomColor);
+  $('#marker-color').val(Settings.markerCustomColor);
 
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.isMarkerClusterEnabled);
@@ -408,8 +408,8 @@ $("#enable-cycle-input").on("change", function () {
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
 });
 
-$('#custom-marker-color').on("change", function () {
-  Settings.markerCustomColor = Number($("#custom-marker-color").val());
+$('#marker-color').on("change", function () {
+  Settings.markerCustomColor = Number($("#marker-color").val());
   MapBase.addMarkers();
 });
 
