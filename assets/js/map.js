@@ -321,7 +321,7 @@ var MapBase = {
       function (i) {
         if (MapBase.requestLoopCancel) return;
 
-        MapBase.addMarkerOnMap(MapBase.markers[i], Settings.markerOpacity);
+        MapBase.addMarkerOnMap(MapBase.markers[i]);
       },
       function () {
         MapBase.updateLoopAvailable = true;
@@ -409,90 +409,7 @@ var MapBase = {
     Menu.refreshItemsCounter();
   },
 
-  getIconColor: function (marker) {
-    if (marker.isWeekly) {
-      return "green";
-    }
-
-    if (InventorySettings.isEnabled && InventorySettings.highlightLowAmountItems &&
-      (InventorySettings.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED || InventorySettings.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
-      return MapBase.isDarkMode ? "darkblue" : "orange";
-    }
-
-    if (Settings.markerCustomColor === 1) {
-      return MapBase.getCategoryIconColor(marker.category);
-    }
-
-    var dailyColor = Settings.markerCustomColor === 0 || Settings.markerCustomColor === 1 ? marker.day : Settings.markerCustomColor - 1;
-    return MapBase.getDailyIconColor(dailyColor);
-  },
-
-  getContourColor: function (baseColor) {
-    var contourColors = {
-      beige: "darkblue",
-      black: "white",
-      blue: "orange",
-      cadetblue: "lightred",
-      darkblue: "red",
-      darkgreen: "purple",
-      darkpurple: "green",
-      darkred: "blue",
-      green: "pink",
-      lightred: "cadetblue",
-      orange: "lightblue",
-      purple: "lightgreen",
-      white: "gray"
-    };
-
-    if (InventorySettings.highlightLowAmountItems &&
-      (InventorySettings.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED ||
-        InventorySettings.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
-      return MapBase.isDarkMode ? "orange" : "darkblue";
-    }
-
-    return contourColors[baseColor] || "darkblue";
-  },
-
-  getDailyIconColor: function (day) {
-    // Array order defines correspondence to week days (0-5 and default "lightred")
-    var dailyColors = ["blue", "orange", "purple", "darkpurple", "darkred", "darkblue"];
-    return dailyColors[day - 1] || "lightred";
-  },
-
-  getCategoryIconColor: function (markerCategory) {
-    // object with category colors for fast lookup
-    var categoryColors = {
-      flower: "darkred",
-      cups: "blue",
-      swords: "blue",
-      wands: "blue",
-      pentacles: "blue",
-      bracelet: "beige",
-      necklace: "orange",
-      ring: "orange",
-      earring: "orange",
-      bottle: "cadetblue",
-      egg: "white",
-      arrowhead: "darkpurple",
-      heirlooms: "purple",
-      coin: "lightred"
-    };
-    return categoryColors[markerCategory] || "lightred";
-  },
-
-  getToolName: function (type) {
-    switch (type) {
-      default:
-      case '0':
-        return 'random';
-      case '1':
-        return 'shovel';
-      case '2':
-        return 'magnet';
-    }
-  },
-
-  addMarkerOnMap: function (marker, opacity = 1) {
+  addMarkerOnMap: function (marker) {
     if (!marker.isVisible) return;
 
     var toolType = Settings.toolType;
@@ -504,79 +421,7 @@ var MapBase = {
       if (toolType == -2 && markerTool != 2) return;
     }
 
-    var overlay = '';
-
-    var markerBackgroundColor = MapBase.getIconColor(marker);
-    var icon = `./assets/images/icons/${marker.category}.png?v=${nocache}`;
-    var background = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;
-    var markerContourColor = MapBase.getContourColor(markerBackgroundColor);
-    var markerContour = `./assets/images/icons/contours/contour_marker_${markerContourColor}.png?v=${nocache}`;
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-
-    // Random items override
-    if (marker.category === 'random') {
-      var color = (Settings.markerCustomColor === 1 ? (marker.tool == 2 ? "black" : "lightgray") : "lightgray");
-      icon = `./assets/images/icons/${MapBase.getToolName(marker.tool)}.png`;
-      background = `./assets/images/icons/marker_${color}.png`;
-    }
-
-    // highlight unknown cycles markers on red
-    if (marker.day == Cycles.unknownCycleNumber)
-      background = './assets/images/icons/marker_red.png';
-
-    // Height overlays
-    if (marker.height == '1') {
-      overlay = '<img class="overlay" src="./assets/images/icons/overlay_high.png" alt="Overlay">';
-    }
-
-    if (marker.height == '-1') {
-      overlay = '<img class="overlay" src="./assets/images/icons/overlay_low.png" alt="Overlay">';
-    }
-
-    // Timed flower overlay override
-    if (['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
-      overlay = '<img class="overlay" src="./assets/images/icons/overlay_time.png" alt="Overlay">';
-    }
-
-    if (marker.tool == '-1') {
-      overlay = '<img class="overlay" src="./assets/images/icons/overlay_cross.png" alt="Overlay">';
-    }
-
-    marker.lMarker = L.marker([marker.lat, marker.lng], {
-      opacity: marker.canCollect ? opacity : opacity / 3,
-      icon: new L.DivIcon.DataMarkup({
-        iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
-        iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-        popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
-        html: `
-          ${overlay}
-          <img class="marker-contour" src="${markerContour}" alt="markerContour">
-          <img class="icon" src="${icon}" alt="Icon">
-          <img class="background" src="${background}" alt="Background">
-          ${shadow}
-        `,
-        marker: marker.text
-      })
-    });
-
-    marker.lMarker.id = marker.text;
-
-    if (Settings.isPopupsEnabled) {
-      marker.lMarker.bindPopup(marker.popupContent.bind(marker), { minWidth: 300, maxWidth: 400 });
-    }
-
-    marker.lMarker.on("click", function (e) {
-      if (!Settings.isPopupsEnabled) {
-        MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata || '', marker.category);
-      }
-
-      Routes.addMarkerOnCustomRoute(marker.text);
-      if (RouteSettings.customRouteEnabled) e.target.closePopup();
-    });
-
-    marker.lMarker.on("contextmenu", function (e) {
-      MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata || '', marker.category);
-    });
+    marker.recreateLMarker();
 
     Layers.itemMarkersLayer.addLayer(marker.lMarker);
     if (Settings.isMarkerClusterEnabled)
@@ -584,7 +429,7 @@ var MapBase = {
   },
 
   gameToMap: function (lat, lng, name = "Debug Marker") {
-    MapBase.debugMarker((0.01552 * lng + -63.6), (0.01552 * lat + 111.29), name);
+    MapBase.game2Map({x: lat, y: lng, z: name});
   },
 
   game2Map: function ({ x, y, z }) {

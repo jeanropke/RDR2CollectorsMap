@@ -39,7 +39,7 @@ var Inventory = {
       return;
     }
     Object.entries(Collection.collections).forEach(([category, collection]) => {
-      const contourImg = $(`[data-marker*=${category}] > img.marker-contour`);
+      const contourImg = $(`[data-marker*=${category}] img.marker-contour`);
       contourImg.removeClass(function (index, className) {
         return (className.match(/highlight-low-amount-items-\S+/gm) || []).join(' ');
       });
@@ -52,7 +52,7 @@ var Inventory = {
 
       const collectionAverage = collection.averageAmount();
       markers.map(_m => {
-        Inventory.updateMarkerColor(_m);
+        _m.updateColor();
 
         if (!_m.canCollect) return;
 
@@ -60,7 +60,7 @@ var Inventory = {
           InventorySettings.stackSize));
         const scaledWeight = Math.min(1, weight * 2.4);
 
-        const contourImg = $(`[data-marker=${_m.text}] > img.marker-contour`);
+        const contourImg = $(`[data-marker=${_m.text}] img.marker-contour`);
         if (weight < 0.02) {
           contourImg.css('opacity', 0.0);
         }
@@ -74,17 +74,6 @@ var Inventory = {
         }
       });
     });
-  },
-
-  updateMarkerColor: function (marker) {
-    var markerBackgroundColor = MapBase.getIconColor(marker);
-    var markerContourColor = MapBase.getContourColor(markerBackgroundColor);
-
-    var markerSrc = `./assets/images/icons/marker_${markerBackgroundColor}.png?v=${nocache}`;
-    var markerContourSrc = `./assets/images/icons/contours/contour_marker_${markerContourColor}.png?v=${nocache}`;
-
-    $(`[data-marker=${marker.text}] > img.marker-contour`).attr('src', markerContourSrc);
-    $(`[data-marker=${marker.text}] > img.background`).attr('src', markerSrc);
   },
 
   changeMarkerAmount: function (legacyItemId, changeAmount, skipInventory = false) {
