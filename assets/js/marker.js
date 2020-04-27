@@ -140,16 +140,21 @@ class Marker {
   }
 
   colorUrls() {
+    const url = ([base, contour]) =>
+      [`assets/images/icons/marker_${base}.png`,
+      `assets/images/icons/contours/contour_marker_${contour}.png`];
+    const markerColor = Settings.markerColor;
+    if (markerColor.startsWith('auto')) {
+      const [, normal, dark] = markerColor.split('_');
+      return url(MapBase.isDarkMode ? [dark, normal] : [normal, dark]);
+    }
+
     let base;
     if (this.isWeekly) {
       base = "green";
     } else if (this.category === 'random') {
-      base = Settings.markerColor === 'by_category' && this.tool == 2 ? "black" : "lightgray";
-    } else if (InventorySettings.isEnabled && InventorySettings.highlightLowAmountItems &&
-      (InventorySettings.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED ||
-        InventorySettings.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
-      base = MapBase.isDarkMode ? "darkblue" : "orange";
-    } else if (Settings.markerColor === 'by_category') {
+      base = markerColor === 'by_category' && this.tool == 2 ? "black" : "lightgray";
+    } else if (markerColor === 'by_category') {
       base = {
         flower: "darkred",
         cups: "blue",
@@ -166,37 +171,28 @@ class Marker {
         heirlooms: "purple",
         coin: "lightred"
       }[this.category] || "lightred";
-    } else if (Settings.markerColor === 'by_cycle') {
+    } else if (markerColor === 'by_cycle') {
       base = ["blue", "orange", "purple", "darkpurple", "darkred",
         "darkblue"][+this.cycleName - 1] || "lightred";
     } else {
-      base = Settings.markerColor;
+      base = markerColor;
     }
-
-    let contour;
-    if (InventorySettings.highlightLowAmountItems &&
-      (InventorySettings.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED ||
-        InventorySettings.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
-      contour = MapBase.isDarkMode ? "orange" : "darkblue";
-    } else {
-      contour = {
-        beige: "darkblue",
-        black: "white",
-        blue: "orange",
-        cadetblue: "lightred",
-        darkblue: "red",
-        darkgreen: "purple",
-        darkpurple: "green",
-        darkred: "blue",
-        green: "pink",
-        lightred: "cadetblue",
-        orange: "lightblue",
-        purple: "lightgreen",
-        white: "gray"
-      }[base] || "darkblue";
-    }
-    const aii = 'assets/images/icons';
-    return [`${aii}/marker_${base}.png`, `${aii}/contours/contour_marker_${contour}.png`];
+    const contour = {
+      beige: "darkblue",
+      black: "white",
+      blue: "orange",
+      cadetblue: "lightred",
+      darkblue: "red",
+      darkgreen: "purple",
+      darkpurple: "green",
+      darkred: "blue",
+      green: "pink",
+      lightred: "cadetblue",
+      orange: "lightblue",
+      purple: "lightgreen",
+      white: "gray"
+    }[base] || "darkblue";
+    return url([base, contour]);
   }
 
   popupContent() {
@@ -366,13 +362,17 @@ class Marker {
     });
   }
   static init() {
-    SettingProxy.addSetting(Settings, 'markerColor', { default: 'by_cycle' });
-    $('#marker-color')
-      .find(`option[data-text$="${Settings.markerColor}"]`).prop('selected', true).end()
-      .on("change", e => {
-        Settings.markerColor = $(e.target.selectedOptions[0])
-          .attr('data-text').split('.').pop();
-        MapBase.addMarkers();
-      });
+    [
+      [Settings, 'markerColor', 'by_cycle', '#marker-color'],
+      [InventorySettings, 'highlightStyle', 'animated', '#highlight_style'],
+    ].forEach(([proxy, settingName, settingDefault, domSelector]) => {
+      SettingProxy.addSetting(proxy, settingName, { default: settingDefault });
+      $(domSelector)
+        .find(`option[data-text$="${proxy[settingName]}"]`).prop('selected', true).end()
+        .on("change", e => {
+          proxy[settingName] = $(e.target.selectedOptions[0]).attr('data-text').split('.').pop();
+          MapBase.addMarkers();
+        });
+    });
   }
 }

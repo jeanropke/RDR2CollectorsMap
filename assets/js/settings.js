@@ -154,7 +154,6 @@ Object.entries({
 const InventorySettings = SettingProxy.createSettingProxy('inventory');
 Object.entries({
   highlightLowAmountItems: { default: false },
-  highlightStyle: { default: 2 },
   isEnabled: { default: false },
   isMenuUpdateEnabled: { default: true },
   isPopupsEnabled: { default: true },

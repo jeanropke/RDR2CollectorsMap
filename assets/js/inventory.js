@@ -1,13 +1,9 @@
 var Inventory = {
-  items: {},
-  highlightStyles: { STATIC_RECOMMENDED: 0, STATIC_DEFAULT: 1, ANIMATED_RECOMMENDED: 2, ANIMATED_DEFAULT: 3 },
-
   init: function () {
     $('#enable-inventory-menu-update').prop("checked", InventorySettings.isMenuUpdateEnabled);
     $('#enable-inventory-popups').prop("checked", InventorySettings.isPopupsEnabled);
     $('#enable-inventory').prop("checked", InventorySettings.isEnabled);
     $('#highlight_low_amount_items').prop("checked", InventorySettings.highlightLowAmountItems);
-    $('#highlight_style').val(InventorySettings.highlightStyle);
     $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
     $('#inventory-stack').val(InventorySettings.stackSize);
     $('#soft-flowers-inventory-stack').val(InventorySettings.flowersSoftStackSize);
@@ -64,8 +60,7 @@ var Inventory = {
         if (weight < 0.02) {
           contourImg.css('opacity', 0.0);
         }
-        else if (weight < 0.3 ||
-          InventorySettings.highlightStyle < Inventory.highlightStyles.ANIMATED_RECOMMENDED) {
+        else if (weight < 0.3 || InventorySettings.highlightStyle === 'static') {
             contourImg.css('opacity', scaledWeight);
         }
         else {

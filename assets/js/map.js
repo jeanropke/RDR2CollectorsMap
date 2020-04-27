@@ -164,7 +164,9 @@ var MapBase = {
     MapBase.isDarkMode = Settings.baseLayer === 'map.layers.dark' ? true : false;
     $('#map').css('background-color', MapBase.isDarkMode ? '#3d3d3d' : '#d2b790');
     MapBase.setOverlays();
-    Inventory.updateItemHighlights();
+    if (Settings.markerColor.startsWith('auto')) {
+      MapBase.markers.forEach(marker => marker.updateColor());
+    }
   },
 
   setOverlays: function () {

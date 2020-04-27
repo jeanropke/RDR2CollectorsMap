@@ -617,14 +617,6 @@ $('#highlight_low_amount_items').on("change", function () {
   MapBase.addMarkers();
 });
 
-$('#highlight_style').on("change", function () {
-  var parsed = parseInt($("#highlight_style").val());
-
-  InventorySettings.highlightStyle = !isNaN(parsed) ? parsed : Inventory.highlightStyles.ANIMATED_RECOMMENDED;
-
-  MapBase.addMarkers();
-});
-
 $('#enable-inventory-menu-update').on("change", function () {
   InventorySettings.isMenuUpdateEnabled = $("#enable-inventory-menu-update").prop('checked');
 });

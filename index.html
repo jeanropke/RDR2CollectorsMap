@@ -624,12 +624,8 @@
         <div class="input-container clickable disabled" data-help="highlight_style">
           <label for="highlight_style" data-text="menu.highlight_style">Highlight style</label>
           <select class="input-text wide-select-menu" id="highlight_style">
-            <option disabled data-text="menu.highlight_style_static">-- Static --</option>
-            <option value="0" data-text="menu.highlight_style_recommended">Recommended colors</option>
-            <option value="1" data-text="menu.highlight_style_default">Default colors</option>
-            <option disabled data-text="menu.highlight_style_animated">-- Animated --</option>
-            <option value="2" data-text="menu.highlight_style_recommended">Recommended colors</option>
-            <option value="3" data-text="menu.highlight_style_default">Default colors</option>
+            <option data-text="menu.highlight_style_static">Static</option>
+            <option data-text="menu.highlight_style_animated">Animated</option>
           </select>
         </div>
       </div>
@@ -732,6 +728,8 @@
           <select class="input-text wide-select-menu" id="marker-color">
             <option data-text="menu.marker_color.by_cycle">By cycle</option>
             <option data-text="menu.marker_color.by_category">By category</option>
+            <option disabled>------------</option>
+            <option data-text="menu.marker_color.auto_orange_darkblue">auto orange/darkblue</option>
             <option disabled>------------</option>
             <option data-text="generic.blue">Blue</option>
             <option data-text="generic.orange">Orange</option>
