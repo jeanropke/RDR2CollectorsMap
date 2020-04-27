@@ -144,12 +144,12 @@ class Marker {
     if (this.isWeekly) {
       base = "green";
     } else if (this.category === 'random') {
-      base = Settings.markerCustomColor === 1 && this.tool == 2 ? "black" : "lightgray";
+      base = Settings.markerColor === 'by_category' && this.tool == 2 ? "black" : "lightgray";
     } else if (InventorySettings.isEnabled && InventorySettings.highlightLowAmountItems &&
       (InventorySettings.highlightStyle === Inventory.highlightStyles.STATIC_RECOMMENDED ||
         InventorySettings.highlightStyle === Inventory.highlightStyles.ANIMATED_RECOMMENDED)) {
       base = MapBase.isDarkMode ? "darkblue" : "orange";
-    } else if (Settings.markerCustomColor === 1) {
+    } else if (Settings.markerColor === 'by_category') {
       base = {
         flower: "darkred",
         cups: "blue",
@@ -166,11 +166,11 @@ class Marker {
         heirlooms: "purple",
         coin: "lightred"
       }[this.category] || "lightred";
+    } else if (Settings.markerColor === 'by_cycle') {
+      base = ["blue", "orange", "purple", "darkpurple", "darkred",
+        "darkblue"][+this.cycleName - 1] || "lightred";
     } else {
-      const dailyColor = Settings.markerCustomColor === 0 ?
-        this.day : Settings.markerCustomColor - 1;
-      base = ["blue", "orange", "purple", "darkpurple", "darkred", "darkblue"][dailyColor - 1]
-        || "lightred";
+      base = Settings.markerColor;
     }
 
     let contour;
@@ -364,5 +364,15 @@ class Marker {
     this.lMarker.on("contextmenu", function (e) {
       MapBase.removeItemFromMap(this.day, this.text, this.subdata || '', this.category);
     });
+  }
+  static init() {
+    SettingProxy.addSetting(Settings, 'markerColor', { default: 'by_cycle' });
+    $('#marker-color')
+      .find(`option[data-text$="${Settings.markerColor}"]`).prop('selected', true).end()
+      .on("change", e => {
+        Settings.markerColor = $(e.target.selectedOptions[0])
+          .attr('data-text').split('.').pop();
+        MapBase.addMarkers();
+      });
   }
 }

@@ -86,7 +86,7 @@ function init() {
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  const markers = MapBase.loadMarkers();  // MapBase.markers
+  const markers = MapBase.loadMarkers();  // MapBase.markers (without .lMarker)
   const cycles = Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
@@ -96,6 +96,7 @@ function init() {
   Routes.init();
   // depends on MapBase, Treasure, Pins
   Promise.all([treasureFinished, markers]).then(Menu.activateHandlers);
+  Marker.init();
 
   if (Settings.isMenuOpened) $('.menu-toggle').click();
 
@@ -105,8 +106,6 @@ function init() {
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
   $('#marker-size').val(Settings.markerSize);
-  $('#marker-color').val(Settings.markerCustomColor);
-
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.isMarkerClusterEnabled);
   $('#enable-marker-popups').prop("checked", Settings.isPopupsEnabled);
@@ -406,11 +405,6 @@ $("#enable-cycle-input").on("change", function () {
   Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
-});
-
-$('#marker-color').on("change", function () {
-  Settings.markerCustomColor = Number($("#marker-color").val());
-  MapBase.addMarkers();
 });
 
 //Open collection submenu
