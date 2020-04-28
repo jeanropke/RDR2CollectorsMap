@@ -348,7 +348,7 @@ class Marker {
       this.lMarker.bindPopup(this.popupContent.bind(this), { minWidth: 300, maxWidth: 400 });
     }
 
-    this.lMarker.on("click", function (e) {
+    this.lMarker.on("click", e => {
       if (!Settings.isPopupsEnabled) {
         MapBase.removeItemFromMap(this.day, this.text, this.subdata || '', this.category);
       }
@@ -357,7 +357,7 @@ class Marker {
       if (RouteSettings.customRouteEnabled) e.target.closePopup();
     });
 
-    this.lMarker.on("contextmenu", function (e) {
+    this.lMarker.on("contextmenu", () => {
       MapBase.removeItemFromMap(this.day, this.text, this.subdata || '', this.category);
     });
   }
