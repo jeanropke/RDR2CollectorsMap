@@ -135,7 +135,6 @@ Object.entries({
   isPopupsHoverEnabled: { default: false },
   isRightClickEnabled: { default: false },
   isShadowsEnabled: { default: true },
-  markerCustomColor: { default: 0 },
   markerOpacity: { default: 1 },
   markerSize: { default: 1 },
   overlayOpacity: { default: 0.5 },
@@ -155,7 +154,6 @@ Object.entries({
 const InventorySettings = SettingProxy.createSettingProxy('inventory');
 Object.entries({
   highlightLowAmountItems: { default: false },
-  highlightStyle: { default: 2 },
   isEnabled: { default: false },
   isMenuUpdateEnabled: { default: true },
   isPopupsEnabled: { default: true },
