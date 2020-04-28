@@ -50,12 +50,12 @@ class Item {
     return Promise.all([itemAndCollection, weekly]);
   }
   // prefill whenever “new” inventory is empty and “old” inventory exists
-  // avoids deleting old inventory for the moment
   static compatInit() {
     const oldAmounts = JSON.parse(localStorage.getItem("inventory"));
     if (oldAmounts && !Object.keys(localStorage).some(key => key.startsWith('amount.'))) {
       Object.entries(Item.items).forEach(([itemId, item]) => item.amount = oldAmounts[itemId]);
       console.log('old amounts converted');
+      localStorage.removeItem('inventory');
     }
   }
   get amount() {
