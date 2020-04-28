@@ -1697,5 +1697,5 @@
     "help.auto_enable_sold_items": "",
     "help.cycle_date": "",
     "help.collectables_counter": "",
-    "help.items_value": ""
+    "help.items_value": "Exibe o quanto de RDO$ os itens que você coletou valem no total. Isso também inclui bônus para conjuntos completos."
 }
