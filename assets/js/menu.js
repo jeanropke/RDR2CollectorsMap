@@ -49,97 +49,97 @@ Menu.refreshMenu = function () {
   MapBase.markers
     .filter(m => m.isCurrent && m.itemNumber === 1)
     .forEach(marker => {
-    var collectibleTitle = Language.get(marker.itemTranslationKey);
-    var collectibleImage = null;
+      var collectibleTitle = Language.get(marker.itemTranslationKey);
+      var collectibleImage = null;
 
-    // Prevents 404 errors. If doing the if-statement the other way round, jQuery tries to load the images.
-    if (marker.category !== 'random')
-      collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${marker.itemId}.png`).attr('alt', 'Set icon').addClass('collectible-icon');
+      // Prevents 404 errors. If doing the if-statement the other way round, jQuery tries to load the images.
+      if (marker.category !== 'random')
+        collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${marker.itemId}.png`).attr('alt', 'Set icon').addClass('collectible-icon');
 
-    var collectibleElement = $(`<div class="collectible-wrapper" data-help="item"
+      var collectibleElement = $(`<div class="collectible-wrapper" data-help="item"
       data-type="${marker.legacyItemId}">`);
-    var collectibleTextWrapperElement = $('<span class="collectible-text">');
-    var collectibleTextElement = $('<p class="collectible">').text(collectibleTitle);
+      var collectibleTextWrapperElement = $('<span class="collectible-text">');
+      var collectibleTextElement = $('<p class="collectible">').text(collectibleTitle);
 
-    var collectibleCountDecreaseElement = $('<div class="counter-button">-</div>');
-    var collectibleCountTextElement = $('<div class="counter-number">')
-      .text(marker.item && marker.item.amount);
-    var collectibleCountIncreaseElement = $('<div class="counter-button">+</div>');
+      var collectibleCountDecreaseElement = $('<div class="counter-button">-</div>');
+      var collectibleCountTextElement = $('<div class="counter-number">')
+        .text(marker.item && marker.item.amount);
+      var collectibleCountIncreaseElement = $('<div class="counter-button">+</div>');
 
-    collectibleCountDecreaseElement.on('click', function (e) {
-      e.stopPropagation();
-      Inventory.changeMarkerAmount(marker.legacyItemId, -1);
-    });
+      collectibleCountDecreaseElement.on('click', function (e) {
+        e.stopPropagation();
+        Inventory.changeMarkerAmount(marker.legacyItemId, -1);
+      });
 
-    collectibleCountIncreaseElement.on('click', function (e) {
-      e.stopPropagation();
-      Inventory.changeMarkerAmount(marker.legacyItemId, 1);
-    });
+      collectibleCountIncreaseElement.on('click', function (e) {
+        e.stopPropagation();
+        Inventory.changeMarkerAmount(marker.legacyItemId, 1);
+      });
 
-    collectibleElement.on('contextmenu', function (e) {
-      if (!Settings.isRightClickEnabled) e.preventDefault();
+      collectibleElement.on('contextmenu', function (e) {
+        if (!Settings.isRightClickEnabled) e.preventDefault();
 
-      if (!['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
-        MapBase.highlightImportantItem(marker.itemId, marker.category);
+        if (!['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
+          MapBase.highlightImportantItem(marker.itemId, marker.category);
+        }
+      });
+
+      var collectibleCountElement = $('<span>')
+        .addClass('counter')
+        .append(collectibleCountDecreaseElement)
+        .append(collectibleCountTextElement)
+        .append(collectibleCountIncreaseElement)
+        .toggle(InventorySettings.isEnabled);
+
+      var collectibleCategory = $(`.menu-option[data-type=${marker.category}]`);
+
+      if (marker.lat.length == 0 || marker.tool == -1) {
+        if (!anyUnavailableCategories.includes(marker.category))
+          anyUnavailableCategories.push(marker.category);
+
+        collectibleElement.attr('data-help', 'item_unavailable').addClass('not-found');
+        collectibleCategory.attr('data-help', 'item_category_unavailable_items').addClass('not-found');
       }
-    });
 
-    var collectibleCountElement = $('<span>')
-      .addClass('counter')
-      .append(collectibleCountDecreaseElement)
-      .append(collectibleCountTextElement)
-      .append(collectibleCountIncreaseElement)
-      .toggle(InventorySettings.isEnabled);
+      if (collectibleCategory.hasClass('not-found') && !anyUnavailableCategories.includes(marker.category))
+        collectibleCategory.attr('data-help', 'item_category').removeClass('not-found');
 
-    var collectibleCategory = $(`.menu-option[data-type=${marker.category}]`);
+      collectibleCountTextElement.toggleClass('text-danger',
+        marker.category !== 'random' && marker.item.amount >= InventorySettings.stackSize);
 
-    if (marker.lat.length == 0 || marker.tool == -1) {
-      if (!anyUnavailableCategories.includes(marker.category))
-        anyUnavailableCategories.push(marker.category);
-
-      collectibleElement.attr('data-help', 'item_unavailable').addClass('not-found');
-      collectibleCategory.attr('data-help', 'item_category_unavailable_items').addClass('not-found');
-    }
-
-    if (collectibleCategory.hasClass('not-found') && !anyUnavailableCategories.includes(marker.category))
-      collectibleCategory.attr('data-help', 'item_category').removeClass('not-found');
-
-    collectibleCountTextElement.toggleClass('text-danger',
-      marker.category !== 'random' && marker.item.amount >= InventorySettings.stackSize);
-
-    if (['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
-      collectibleElement.attr('data-help', 'item_night_only');
-    }
-
-    let multiMarkerItemMarkers = [marker];
-    if (['egg', 'flower'].includes(marker.category)) {
-      multiMarkerItemMarkers = MapBase.markers.filter(_marker =>
-        (marker.itemId === _marker.itemId && _marker.isCurrent));
-    }
-    if (multiMarkerItemMarkers.every(marker => !marker.canCollect)) {
-      collectibleElement.addClass('disabled');
-    }
-
-    Collection.weeklyItems.forEach(weeklyItemId => {
-      if (marker.itemId === weeklyItemId) {
-        collectibleElement.attr('data-help', 'item_weekly');
-        collectibleElement.addClass('weekly-item');
+      if (['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
+        collectibleElement.attr('data-help', 'item_night_only');
       }
-    });
 
-    collectibleElement.hover(function () {
+      let multiMarkerItemMarkers = [marker];
+      if (['egg', 'flower'].includes(marker.category)) {
+        multiMarkerItemMarkers = MapBase.markers.filter(_marker =>
+          (marker.itemId === _marker.itemId && _marker.isCurrent));
+      }
+      if (multiMarkerItemMarkers.every(marker => !marker.canCollect)) {
+        collectibleElement.addClass('disabled');
+      }
+
+      Collection.weeklyItems.forEach(weeklyItemId => {
+        if (marker.itemId === weeklyItemId) {
+          collectibleElement.attr('data-help', 'item_weekly');
+          collectibleElement.addClass('weekly-item');
+        }
+      });
+
+      collectibleElement.hover(function () {
         $('#help-container p').text(Language.get(`help.${$(this).data('help')}`));
       }, function () {
         $('#help-container p').text(Language.get(`help.default`));
       });
 
-    $(`.menu-hidden[data-type=${marker.category}]`)
-      .append(collectibleElement
-        .append(collectibleImage)
-        .append(collectibleTextWrapperElement
-          .append(collectibleTextElement)
-          .append(collectibleCountElement)));
-  });
+      $(`.menu-hidden[data-type=${marker.category}]`)
+        .append(collectibleElement
+          .append(collectibleImage)
+          .append(collectibleTextWrapperElement
+            .append(collectibleTextElement)
+            .append(collectibleCountElement)));
+    });
 
   $('.menu-hidden[data-type]').each(function (key, value) {
     var category = $(this);
@@ -258,7 +258,7 @@ Menu.activateHandlers = function () {
 
       if (category && toEnable) {
         enabledCategories.push(category);
-      } else if (category) {  // disable
+      } else if (category) { // disable
         enabledCategories = enabledCategories.filter(cat => cat !== category);
       } else {
         enabledCategories = toEnable ? categories : [];
@@ -276,5 +276,5 @@ Menu.activateHandlers = function () {
       } else {
         MapBase.addMarkers();
       }
-  });
+    });
 }

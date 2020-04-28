@@ -81,12 +81,12 @@ function init() {
   // Item.items, Collection.collections, Collection.weekly*
   const itemsCollectionsWeekly = Item.init();
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
-  MapBase.mapInit();  // MapBase.map
+  MapBase.mapInit(); // MapBase.map
   Language.init();
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  const markers = MapBase.loadMarkers();  // MapBase.markers (without .lMarker)
+  const markers = MapBase.loadMarkers(); // MapBase.markers (without .lMarker)
   const cycles = Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
@@ -464,12 +464,12 @@ $('.disable-collected-items').on('click', function (e) {
   MapBase.markers
     .filter(m => m.category === category && m.isCurrent && m.canCollect)
     .forEach(marker => {
-    if (marker.item && marker.item.amount > 0) {
-      $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
-      MapBase.removeItemFromMap(marker.cycleName,
-        marker.text, marker.subdata, marker.category, true);
-    };
-  });
+      if (marker.item && marker.item.amount > 0) {
+        $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
+        MapBase.removeItemFromMap(marker.cycleName,
+          marker.text, marker.subdata, marker.category, true);
+      };
+    });
 });
 
 // Remove item from map when using the menu

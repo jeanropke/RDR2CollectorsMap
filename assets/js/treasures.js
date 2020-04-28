@@ -65,8 +65,12 @@ class Treasure {
       fillOpacity: 0.5,
       radius: this.radius,
     }));
-    this.marker.addLayer(L.marker([this.x, this.y], {icon: Treasure.mainIcon})
-      .bindPopup(this.popupContent.bind(this), { minWidth: 300 })
+    this.marker.addLayer(L.marker([this.x, this.y], {
+        icon: Treasure.mainIcon
+      })
+      .bindPopup(this.popupContent.bind(this), {
+        minWidth: 300
+      })
     );
     this.locations.forEach(cross =>
       this.marker.addLayer(L.marker([cross.x, cross.y], {

@@ -14,8 +14,8 @@ class Collection {
     const collectionAmount = this.effectiveAmount();
     return this.items
       .map(item => (item.effectiveAmount() - collectionAmount) * item.price)
-      .reduce((a, b) => a + b, 0)
-      + collectionAmount * this.price;
+      .reduce((a, b) => a + b, 0) +
+      collectionAmount * this.price;
   }
   static totalValue() {
     return Object.values(this.collections)

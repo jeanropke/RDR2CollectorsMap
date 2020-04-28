@@ -87,7 +87,9 @@ const SettingProxy = function () {
 
   return {
     createSettingProxy: function (domain) {
-      return new Proxy(new Map([[_domain, domain]]), settingHandler);
+      return new Proxy(new Map([
+        [_domain, domain]
+      ]), settingHandler);
     },
     addSetting: function (settingProxy, name, config = {}) {
       const proxyConfig = settingProxy[_proxyConfig];
