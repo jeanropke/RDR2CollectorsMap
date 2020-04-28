@@ -1405,6 +1405,7 @@
     "menu.utils": "实用工具",
     "menu.fast_travel": "快速旅行",
     "menu.search_placeholder": "搜索物品名称.用;隔开",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "移除/添加至地图",
     "map.remove": "从地图中移除",
     "map.copy_link": "复制此收藏品分享给好友",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "物品数量大小",
     "menu.highlight_low_amount_items": "高亮低数量收藏品",
     "menu.highlight_style": "突出显示样式",
-    "menu.highlight_style.recommended": "推荐颜色",
-    "menu.highlight_style.default": "默认颜色",
     "menu.highlight_style.static": "-- 静态--",
     "menu.highlight_style.animated": "动画",
     "menu.marker_cluster": "展开显示重叠的标记",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "标记颜色",
     "menu.marker_color.by_cycle": "按天数选择颜色",
     "menu.marker_color.by_category": "按收藏品种类选择颜色",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "找到系列中所有的物品，并将这个系列卖给那扎尔夫人，换取经验和现金奖励。",
     "menu.show_weekly": "显示每周收藏",
     "map.has_multi_filter_alert": "您的“工具类型”设置和搜索查询隐藏了一些标记。",
@@ -1595,6 +1595,7 @@
     "generic.orange": "橙色",
     "generic.pink": "粉色",
     "generic.purple": "紫色",
+    "generic.darkpurple": "",
     "generic.darkred": "深红色",
     "generic.darkblue": "深蓝色",
     "menu.reset_inventory_daily": "每天重置物品栏",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "允许你重新加载地图，如果网站出现什么错误。",
     "help.disable_collected_items": "开关所有你已经拥有的物品",
     "help.collection_collect_all": "从目录加入所有的物品到库存中",
-    "help.enable_additional_inventory_options": "启用更多的选项来管理库存"
+    "help.enable_additional_inventory_options": "启用更多的选项来管理库存",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

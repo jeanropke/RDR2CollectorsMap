@@ -1405,6 +1405,7 @@
     "menu.utils": "Narzędzia",
     "menu.fast_travel": "Punkty szybkiej podróży",
     "menu.search_placeholder": "Wpisz nazwę/y, oddziel je średnikiem",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "Usuń z/ dodaj do mapy",
     "map.remove": "Usuń z mapy",
     "map.copy_link": "Skopiuj link znacznika",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "Rozmiar stosu przedmiotów",
     "menu.highlight_low_amount_items": "Podświetlaj niewielkie ilości przedmiotów",
     "menu.highlight_style": "Styl podświetlenia",
-    "menu.highlight_style.recommended": "Zalecane kolory",
-    "menu.highlight_style.default": "Domyślne kolory",
     "menu.highlight_style.static": "-- Statyczne --",
     "menu.highlight_style.animated": "-- Animowane --",
     "menu.marker_cluster": "Grupowanie znaczników",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "Kolor znaczników",
     "menu.marker_color.by_cycle": "Domyślny kolor",
     "menu.marker_color.by_category": "Zawsze takie same kolory",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "Znajdź wszystkie wymienione przedmioty i sprzedaj całą kolekcję madam Nazar, aby otrzymać nagrodę PD i RDO$.",
     "menu.show_weekly": "Pokaż kolekcję tygodniową",
     "map.has_multi_filter_alert": "Niektóre znaczniki nie są widoczne przez ustawienie \"Narzędzia\" oraz pasek wyszukiwania.",
@@ -1595,6 +1595,7 @@
     "generic.orange": "Pomarańczowy",
     "generic.pink": "Różowy",
     "generic.purple": "Fioletowy",
+    "generic.darkpurple": "",
     "generic.darkred": "Ciemnoczerwony",
     "generic.darkblue": "Ciemnoniebieski",
     "menu.reset_inventory_daily": "Resetuj ekwipunek co 24 godziny",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "Pozwala odświeżyć mapę, jeśli cokolwiek jest nie tak ze stroną internetową.",
     "help.disable_collected_items": "Pozwala wyłączyć wszystkie przedmioty, które już posiadasz w ekwipunku.",
     "help.collection_collect_all": "Pozwala na dodanie każdego przedmiotu z tej kategorii do Twojego ekwipunku.",
-    "help.enable_additional_inventory_options": "Pozwala włączyć więcej opcji do zarządzania ekwipunkiem."
+    "help.enable_additional_inventory_options": "Pozwala włączyć więcej opcji do zarządzania ekwipunkiem.",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

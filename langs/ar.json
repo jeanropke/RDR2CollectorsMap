@@ -1405,6 +1405,7 @@
     "menu.utils": "الخدمات",
     "menu.fast_travel": "السفر السريع",
     "menu.search_placeholder": "البحث عن العناصر (افصل بينها بـ ;)",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "إزالة/إضافة على الخريطة",
     "map.remove": "",
     "map.copy_link": "نسخ رابط العلامة",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "حجم تكدس العنصر",
     "menu.highlight_low_amount_items": "تسليط الضوء على عدد قليل من العناصر",
     "menu.highlight_style": "نمط تسليط الضوء",
-    "menu.highlight_style.recommended": "الألوان الموصى بها",
-    "menu.highlight_style.default": "الألوان الإعتادية",
     "menu.highlight_style.static": "-- ثابت --",
     "menu.highlight_style.animated": "-- متحركة --",
     "menu.marker_cluster": "مجموعة العلامات",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "لون العلامات المخصصة",
     "menu.marker_color.by_cycle": "اللون الافتراضي",
     "menu.marker_color.by_category": "الألوان الثابتة",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "",
     "menu.show_weekly": "إظهار المجموعة الأسبوعية",
     "map.has_multi_filter_alert": "يتم إخفاء بعض العلامات عن طريق إعداد \"نوع الأداة\" واستعلام البحث.",
@@ -1595,6 +1595,7 @@
     "generic.orange": "برتقالي",
     "generic.pink": "وردي",
     "generic.purple": "بنفسجي",
+    "generic.darkpurple": "",
     "generic.darkred": "احمر غامق",
     "generic.darkblue": "ازرق غامق",
     "menu.reset_inventory_daily": "إعادة تعيين المخزون يومياً",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "يسمح لك بإعادة تحميل الخريطة إذا كان هناك أي خطأ في الموقع.",
     "help.disable_collected_items": "",
     "help.collection_collect_all": "",
-    "help.enable_additional_inventory_options": ""
+    "help.enable_additional_inventory_options": "",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

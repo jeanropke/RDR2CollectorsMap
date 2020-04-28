@@ -1405,6 +1405,7 @@
     "menu.utils": "Pomůcky",
     "menu.fast_travel": "Rychlá cesta",
     "menu.search_placeholder": "Hledat položky. odloučená od;",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "Odebrat/Přidat z mapy",
     "map.remove": "",
     "map.copy_link": "Kopírovat odkaz značkovače",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "Velikost zásobníku položek",
     "menu.highlight_low_amount_items": "Zvýraznění položek nízké částky",
     "menu.highlight_style": "Styl zvýraznění",
-    "menu.highlight_style.recommended": "Doporučené barvy",
-    "menu.highlight_style.default": "Výchozí barvy",
     "menu.highlight_style.static": "-- Statický --",
     "menu.highlight_style.animated": "-- Animovaný --",
     "menu.marker_cluster": "Klastr značkovačů",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "Barva vlastních značek",
     "menu.marker_color.by_cycle": "Výchozí barvy",
     "menu.marker_color.by_category": "Pevné barvy",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "",
     "menu.show_weekly": "Zobrazit týdenní kolekci",
     "map.has_multi_filter_alert": "Některé značkovače jsou skryty vaším nastavením \"Typ nástroje\" a dotazem hledání.",
@@ -1595,6 +1595,7 @@
     "generic.orange": "Oranžový",
     "generic.pink": "Růžová",
     "generic.purple": "Purpurová",
+    "generic.darkpurple": "",
     "generic.darkred": "Tmavě červená",
     "generic.darkblue": "Tmavě modrá",
     "menu.reset_inventory_daily": "Vynulovat soupis denně",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "Umožňuje znovu načíst mapu, pokud se něco děje s webem.",
     "help.disable_collected_items": "Umožňuje zakázat všechny položky, které již máte v zásobách.",
     "help.collection_collect_all": "Umožňuje vám přidat každou položku z této kategorie do svého soupisu.",
-    "help.enable_additional_inventory_options": "Umožňuje vám zapnout více voleb pro správu soupisu."
+    "help.enable_additional_inventory_options": "Umožňuje vám zapnout více voleb pro správu soupisu.",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

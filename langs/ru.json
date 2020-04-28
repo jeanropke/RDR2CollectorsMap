@@ -1405,6 +1405,7 @@
     "menu.utils": "Доп. метки",
     "menu.fast_travel": "Быстрое перемещение",
     "menu.search_placeholder": "Поиск предметов",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "Показать/Скрыть",
     "map.remove": "Скрыть на карте",
     "map.copy_link": "Скопировать ссылку метки",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "Макс. кол-во предметов в слоте",
     "menu.highlight_low_amount_items": "",
     "menu.highlight_style": "Стиль выделения",
-    "menu.highlight_style.recommended": "Рекомендуемые цвета",
-    "menu.highlight_style.default": "Стандартные цвета",
     "menu.highlight_style.static": "-- Статичный --",
     "menu.highlight_style.animated": "-- Анимированные --",
     "menu.marker_cluster": "Сдвиг близкостоящих маркеров",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "Цвет маркеров",
     "menu.marker_color.by_cycle": "Стандартные цвета",
     "menu.marker_color.by_category": "Исправленные цвета",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "Найдите все необходимые предметы и продайте их Мадам Назар, чтобы получить в награду XP и RDO$.",
     "menu.show_weekly": "Показать коллекцию недели",
     "map.has_multi_filter_alert": "Некоторые отметки были скрыты настройкой \"Тип инструмента\" и поисковым запросом.",
@@ -1595,6 +1595,7 @@
     "generic.orange": "Оранжевый",
     "generic.pink": "Розовый",
     "generic.purple": "Фиолетовый",
+    "generic.darkpurple": "",
     "generic.darkred": "Тёмно-красный",
     "generic.darkblue": "Тёмно-синий",
     "menu.reset_inventory_daily": "Сбросить ежедневный инвентарь",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "Позволяет перезагрузить карту, если что-то не так с сайтом.",
     "help.disable_collected_items": "Позволяет отключить все элементы, которые уже есть в инвентаре.",
     "help.collection_collect_all": "Позволяет добавить каждый элемент из этой категории в инвентарь.",
-    "help.enable_additional_inventory_options": "Позволяет включить дополнительные опции управления инвентарём."
+    "help.enable_additional_inventory_options": "Позволяет включить дополнительные опции управления инвентарём.",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

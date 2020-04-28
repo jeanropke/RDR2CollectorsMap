@@ -1405,6 +1405,7 @@
     "menu.utils": "Utilidades",
     "menu.fast_travel": "Viaje rápido",
     "menu.search_placeholder": "Buscar artículos. Separados por ;",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "Eliminar/Añadir al mapa",
     "map.remove": "",
     "map.copy_link": "Copiar el vínculo del marcador",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "Tamaño de pila de artículos",
     "menu.highlight_low_amount_items": "Destacar ítems con poca cantidad",
     "menu.highlight_style": "Destacar estilo",
-    "menu.highlight_style.recommended": "Colores recomendados",
-    "menu.highlight_style.default": "Colores por defecto",
     "menu.highlight_style.static": "-- Estático --",
     "menu.highlight_style.animated": "-- Animado --",
     "menu.marker_cluster": "Grupo de marcadores",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "Color de marcadores personalizados",
     "menu.marker_color.by_cycle": "Colores predeterminados",
     "menu.marker_color.by_category": "Colores fijos",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "",
     "menu.show_weekly": "Mostrar colección semanal",
     "map.has_multi_filter_alert": "Algunos marcadores están siendo ocultados por su configuración de \"Tipo de herramienta\" y consulta de búsqueda.",
@@ -1595,6 +1595,7 @@
     "generic.orange": "Naranjo",
     "generic.pink": "Rosado",
     "generic.purple": "Morado",
+    "generic.darkpurple": "",
     "generic.darkred": "Rojo oscuro",
     "generic.darkblue": "Azul oscuro",
     "menu.reset_inventory_daily": "Reiniciar inventario diariamente",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "",
     "help.disable_collected_items": "",
     "help.collection_collect_all": "",
-    "help.enable_additional_inventory_options": ""
+    "help.enable_additional_inventory_options": "",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

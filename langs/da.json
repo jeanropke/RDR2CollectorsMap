@@ -1405,6 +1405,7 @@
     "menu.utils": "Hjælpeprogrammer",
     "menu.fast_travel": "Hurtig rejse",
     "menu.search_placeholder": "Søg i elementer. Separeret af ;",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "Fjern / tilføj fra kort",
     "map.remove": "",
     "map.copy_link": "Kopiér markeringslink",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "Størrelse på varestak",
     "menu.highlight_low_amount_items": "Fremhæv antal elementer med lav mængde",
     "menu.highlight_style": "Fremhæv typografi",
-    "menu.highlight_style.recommended": "Anbefalede farver",
-    "menu.highlight_style.default": "Standardfarver",
     "menu.highlight_style.static": "-Static ...",
     "menu.highlight_style.animated": "-Animerede ...",
     "menu.marker_cluster": "Mærkklynge",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "Farve på tilpasset markeringer",
     "menu.marker_color.by_cycle": "Standardfarver",
     "menu.marker_color.by_category": "Faste farver",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "",
     "menu.show_weekly": "Vis ugentlig samling",
     "map.has_multi_filter_alert": "Nogle markeringer skjules af indstillingen \"Værktøjstype\" og søgeforespørgsel.",
@@ -1595,6 +1595,7 @@
     "generic.orange": "",
     "generic.pink": "Lyserød",
     "generic.purple": "Lilla",
+    "generic.darkpurple": "",
     "generic.darkred": "Mørk rød",
     "generic.darkblue": "Mørkeblå",
     "menu.reset_inventory_daily": "Reset lagerbeholdning dagligt",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "Giver mulighed for at genindlæse kortet, hvis der er noget galt med webstedet.",
     "help.disable_collected_items": "Giver mulighed for at deaktivere alle de elementer, du allerede har i oversigten.",
     "help.collection_collect_all": "Giver mulighed for at tilføje alle elementer fra denne kategori til dit lager.",
-    "help.enable_additional_inventory_options": "Giver mulighed for at aktivere flere indstillinger for at administrere lagerbeholdningen."
+    "help.enable_additional_inventory_options": "Giver mulighed for at aktivere flere indstillinger for at administrere lagerbeholdningen.",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

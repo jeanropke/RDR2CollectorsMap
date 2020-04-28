@@ -1405,6 +1405,7 @@
     "menu.utils": "實用工具",
     "menu.fast_travel": "快速旅行",
     "menu.search_placeholder": "搜索物品名稱。用；隔開",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "移除/添加至地圖",
     "map.remove": "從地圖移除",
     "map.copy_link": "複製此收藏品的連結",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "物品數量大小",
     "menu.highlight_low_amount_items": "Highlight 少數量的物品",
     "menu.highlight_style": "Highlight風格",
-    "menu.highlight_style.recommended": "建議的顏色",
-    "menu.highlight_style.default": "預設顏色",
     "menu.highlight_style.static": "靜態",
     "menu.highlight_style.animated": "動畫式",
     "menu.marker_cluster": "收藏品重疊是否展開",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "自訂標記顏色",
     "menu.marker_color.by_cycle": "預設顏色",
     "menu.marker_color.by_category": "固定顏色",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "找到所有物品並將整套收藏品出售給娜札女士以獲得 經驗值 和 RDO遊戲幣 獎勵。",
     "menu.show_weekly": "顯示每週收藏清單",
     "map.has_multi_filter_alert": "您的“工具類型”設置和搜索查詢隱藏了一些標記。",
@@ -1595,6 +1595,7 @@
     "generic.orange": "橘黃色",
     "generic.pink": "粉紅色",
     "generic.purple": "紫色",
+    "generic.darkpurple": "",
     "generic.darkred": "暗紅色",
     "generic.darkblue": "深藍色",
     "menu.reset_inventory_daily": "每日重置清單",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "重新載入地圖。",
     "help.disable_collected_items": "允許你關閉所有你已擁有的物品。",
     "help.collection_collect_all": "允許你從目錄加入所有物品到庫存。",
-    "help.enable_additional_inventory_options": "允許你啓用更多選項去管理庫存。"
+    "help.enable_additional_inventory_options": "允許你啓用更多選項去管理庫存。",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

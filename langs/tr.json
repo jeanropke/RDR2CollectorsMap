@@ -1405,6 +1405,7 @@
     "menu.utils": "Yardımcı Programlar",
     "menu.fast_travel": "Hızlı Seyahat",
     "menu.search_placeholder": "Öğelerle arama yapın. Ayıran:",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "Eşlemden Kaldır/Ekle",
     "map.remove": "Haritadan kaldır",
     "map.copy_link": "İmleyici bağlantısını kopyala",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "Öğe yığını büyüklüğü",
     "menu.highlight_low_amount_items": "Düşük miktardaki öğeleri vurgula",
     "menu.highlight_style": "Stili vurgula",
-    "menu.highlight_style.recommended": "Önerilen renkler",
-    "menu.highlight_style.default": "Varsayılan renkler",
     "menu.highlight_style.static": "-- Statik --",
     "menu.highlight_style.animated": "-- Canlandırmalı --",
     "menu.marker_cluster": "İşaretçiler kümesi",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "Özel işaretçiler rengi",
     "menu.marker_color.by_cycle": "Varsayılan renkler",
     "menu.marker_color.by_category": "Sabit renkler",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "",
     "menu.show_weekly": "Haftalık toplamayı göster",
     "map.has_multi_filter_alert": "Bazı işaretçiler \"Araç tipi\" ayarınız ve arama sorgunuz tarafından gizleniyor.",
@@ -1595,6 +1595,7 @@
     "generic.orange": "Turuncu",
     "generic.pink": "Pembe",
     "generic.purple": "Mor",
+    "generic.darkpurple": "",
     "generic.darkred": "Koyu kırmızı",
     "generic.darkblue": "Koyu mavi",
     "menu.reset_inventory_daily": "Stoğu günlük ilk durumuna getir",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "Web sitesinde herhangi bir sorun varsa, haritayı yeniden yüklemenizi sağlar.",
     "help.disable_collected_items": "Stokta önceden sahip olduğunuz tüm öğeleri devre dışı bırakmanızı sağlar.",
     "help.collection_collect_all": "Bu kategoriden her bir öğeyi envanterinize eklemenize olanak tanır.",
-    "help.enable_additional_inventory_options": "Envanterinizi yönetmek için daha fazla seçenek açmanızı sağlar."
+    "help.enable_additional_inventory_options": "Envanterinizi yönetmek için daha fazla seçenek açmanızı sağlar.",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }
