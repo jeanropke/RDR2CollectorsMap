@@ -206,6 +206,7 @@ select,
 }
 
 @media (max-width: 1024px) {
+
     .map-cycle-alert,
     .filter-alert {
         left: 2px;
@@ -215,6 +216,7 @@ select,
 }
 
 @media (min-width: 1025px) {
+
     .map-cycle-alert,
     .filter-alert {
         left: 50%;
@@ -734,6 +736,7 @@ a.wiki-page:visited {
     from {
         opacity: 0.0;
     }
+
     to {
         opacity: var(--animation-target-opacity);
     }
@@ -844,7 +847,7 @@ a.wiki-page:visited {
     margin: 10px 0;
 }
 
-#cycle-changer-container .cycle-data {
+#cycle-changer-container .cycle-date {
     text-align: center;
     min-width: 170px;
     margin: 0 6px;
@@ -1041,9 +1044,16 @@ a.no-style:visited {
     padding: 2px 12px;
 }
 
+.weekly-item-listing .icon-wrapper {
+    height: 28px;
+    min-width: 28px;
+    margin-right: 10px;
+    text-align: center;
+    float: left;
+}
+
 .weekly-item-listing .icon {
     height: 28px;
-    margin-right: 10px;
 }
 
 .weekly-item-listing span {
@@ -1060,7 +1070,8 @@ a.no-style:visited {
 }
 
 .modal-content {
-    background: url(../images/modal_bg_long.png);
+    /* background: url(../images/modal_bg_long.png); */
+    background-color: #000;
     background-size: 100% 100% !important;
     background-repeat: no-repeat !important;
     -webkit-box-shadow: none !important;
@@ -1107,6 +1118,7 @@ a.no-style:visited {
         text-align: center;
         padding: 0 !important;
     }
+
     .modal:before {
         content: '';
         display: inline-block;
@@ -1115,11 +1127,13 @@ a.no-style:visited {
         margin-right: -4px;
         /* Adjusts for spacing */
     }
+
     .modal-dialog {
         display: inline-block;
         text-align: left;
         vertical-align: middle;
     }
+
     .modal-sm {
         width: 450px;
     }
@@ -1153,17 +1167,21 @@ a.no-style:visited {
     .timer-menu-opened {
         display: none;
     }
+
     .counter-menu-opened {
         display: none;
     }
+
     .side-menu .menu-hidden .collectible-icon {
         margin-top: 7px;
     }
+
     .counter-button {
         height: 32px;
         width: 32px;
         line-height: 1.5;
     }
+
     .side-menu .menu-hidden .collectible,
     .input-container label {
         line-height: 38px;
@@ -1176,12 +1194,15 @@ a.no-style:visited {
         left: -390px;
         top: 0;
     }
+
     .menu-opened {
         left: 0;
     }
+
     .timer-menu-opened {
         left: 395px;
     }
+
     .counter-menu-opened {
         left: 410px;
     }

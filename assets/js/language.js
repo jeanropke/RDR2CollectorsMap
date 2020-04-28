@@ -83,7 +83,10 @@ var Language = {
         'use strict';
         $('[data-text]', context).html(function () {
             const $this = $(this);
-            return Language.get($this.attr('data-text'), $this.data('text-optional'));
+            const string = Language.get($this.attr('data-text'), $this.data('text-optional'));
+
+            // Don't dump raw variables out to the user here, instead make them appear as if they are loading.
+            return string.replace(/\{([\w.]+)\}/g, '---');
         });
         return context;
     },

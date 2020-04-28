@@ -1694,5 +1694,8 @@
     "help.disable_collected_items": "Allows you to disable all items which you already have in your inventory.",
     "help.collection_collect_all": "Allows you to add every item from this category to your inventory.",
     "help.enable_additional_inventory_options": "Allows you to turn on more options to manage your inventory.",
-    "help.auto_enable_sold_items": "Automatically enables all items with amount of 0 in your inventory after selling the set."
+    "help.auto_enable_sold_items": "Automatically enables all items with amount of 0 in your inventory after selling the set.",
+    "help.cycle_date": "Displays the date of the current item cycles. If this date isn't correct, it means the cycles haven't been updated yet.",
+    "help.collectables_counter": "Displays the amount of items you've currently collected out of all of the currently enabled sets.",
+    "help.items_value": "Displays how much RDO$ the items you've collected are worth in total. This also includes bonuses for complete sets."
 }

@@ -30,7 +30,7 @@ var Cycles = {
     const selectedDayStr = selectedDay.toISOUTCDateString();
     const cycleIndex = Cycles.data.findIndex(element => element.date === selectedDayStr);
 
-    $('div>span.cycle-data').toggleClass('not-found', Cycles.offset !== 0);
+    $('div>span.cycle-date').toggleClass('not-found', Cycles.offset !== 0);
 
     if (cycleIndex < 1) {
       // either -1 (not found) or 0 (first day) for which there is no yesterday
@@ -111,7 +111,7 @@ var Cycles = {
     'use strict';
     if (Cycles.selectedDay === undefined) return;
     const options = { timeZone: "UTC", day: "2-digit", month: "long" };
-    $('.cycle-data').text(Cycles.selectedDay.toLocaleString(Settings.language, options));
+    $('.cycle-date').text(Cycles.selectedDay.toLocaleString(Settings.language, options));
   },
 
   checkForUpdate: function () {
@@ -124,7 +124,7 @@ var Cycles = {
       }
       else {
         Cycles.offset = 0;
-        $('div>span.cycle-data').removeClass('not-found');
+        $('div>span.cycle-date').removeClass('not-found');
       }
       MapBase.runOnDayChange();
     }

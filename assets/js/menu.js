@@ -222,7 +222,7 @@ Menu.refreshWeeklyItems = function () {
     var element = `
       <div class="weekly-item-listing">
         <span>
-          <img class="icon" src="./assets/images/icons/game/${weeklyItemId}.png" alt="Weekly item icon" />
+          <div class="icon-wrapper"><img class="icon" src="./assets/images/icons/game/${weeklyItemId}.png" alt="Weekly item icon" /></div>
           <span>${Language.get(weeklyItemId + '.name')}</span>
         </span>
         ${inventoryCount}
