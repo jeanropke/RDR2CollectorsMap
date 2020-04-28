@@ -1405,6 +1405,7 @@
     "menu.utils": "Werkzeuge",
     "menu.fast_travel": "Schnellreise",
     "menu.search_placeholder": "Gegenstände suchen. Getrennt durch ;",
+    "menu.auto_enable_sold_items": "Verkaufte Gegenstände automatisch aktivieren",
     "map.remove_add": "Von Karte entfernen/hinzufügen",
     "map.remove": "Von Karte entfernen",
     "map.copy_link": "Markierungs-Link kopieren",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "Inventar Größe",
     "menu.highlight_low_amount_items": "Wenige Items hervorheben",
     "menu.highlight_style": "Hervorhebungsstil",
-    "menu.highlight_style.recommended": "Empfohlene Farben",
-    "menu.highlight_style.default": "Standardfarben",
     "menu.highlight_style.static": "-- Statisch --",
     "menu.highlight_style.animated": "-- Animiert --",
     "menu.marker_cluster": "Anhäufungen markieren",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "Benutzerdefinierte Farben für Markierungen",
     "menu.marker_color.by_cycle": "Standardfarben",
     "menu.marker_color.by_category": "Feste Farben",
+    "menu.marker_color.auto_orange_darkblue": "Automatisch Orange/Dunkelblau",
     "menu.weekly_item_description": "Finde alle aufgelisteten Gegenstände und verkaufe die komplette Kollektion an Madame Nazar für eine XP- und RDO$-Belohnung.",
     "menu.show_weekly": "Wöchentliche Sammlung anzeigen",
     "map.has_multi_filter_alert": "Einige Marker werden durch die Einstellung \"Werkzeugtyp\" und die Suchabfrage versteckt.",
@@ -1595,6 +1595,7 @@
     "generic.orange": "Orange",
     "generic.pink": "Rosa",
     "generic.purple": "Lila",
+    "generic.darkpurple": "Dunkles Lila",
     "generic.darkred": "Dunkles Rot",
     "generic.darkblue": "Dunkles Blau",
     "menu.reset_inventory_daily": "Inventar täglich zurücksetzen",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "Ermöglicht das erneute Laden der Karte, falls etwas mit der Website nicht stimmt.",
     "help.disable_collected_items": "Erlaubt dir, alle Gegenstände zu deaktivieren, die du bereits im Inventar hast.",
     "help.collection_collect_all": "Ermöglicht dir, jeden Gegenstand aus dieser Kategorie deinem Inventar hinzuzufügen.",
-    "help.enable_additional_inventory_options": "Ermöglicht es Ihnen, weitere Optionen zur Verwaltung Ihres Inventars zu aktivieren."
+    "help.enable_additional_inventory_options": "Ermöglicht es Ihnen, weitere Optionen zur Verwaltung Ihres Inventars zu aktivieren.",
+    "help.auto_enable_sold_items": "Aktiviert automatisch alle Gegenstände mit einer Menge von 0 in deinem Inventar, nachdem du das Set verkauft hast.",
+    "help.cycle_date": "Zeigt das Datum des aktuellen Zyklus des Gegenstands an. Wenn dieses Datum nicht korrekt ist, bedeutet dies, dass die Zyklen noch nicht aktualisiert wurden.",
+    "help.collectables_counter": "Zeigt die Anzahl der Gegenstände an, die Sie momentan aus allen derzeit aktivierten Sets gefunden haben.",
+    "help.items_value": "Zeigt an, wie viel RDO$ die Gegenstände, die du gesammelt hast, insgesamt wert sind. Dies schließt auch Boni für komplette Sets ein."
 }

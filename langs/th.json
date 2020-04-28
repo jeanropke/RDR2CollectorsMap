@@ -1405,6 +1405,7 @@
     "menu.utils": "อื่น ๆ",
     "menu.fast_travel": "จุดวาร์ป",
     "menu.search_placeholder": "ค้นหาไอเท็ม คั่นด้วย ;",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "ปิด/เปิด",
     "map.remove": "",
     "map.copy_link": "",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "",
     "menu.highlight_low_amount_items": "",
     "menu.highlight_style": "",
-    "menu.highlight_style.recommended": "สีที่แนะนำ",
-    "menu.highlight_style.default": "สีเริ่มต้น",
     "menu.highlight_style.static": "",
     "menu.highlight_style.animated": "",
     "menu.marker_cluster": "จับกลุ่มหมุด",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "ปรับแต่งสีหมุด",
     "menu.marker_color.by_cycle": "สีเริ่มต้น",
     "menu.marker_color.by_category": "",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "",
     "menu.show_weekly": "แสดงชุดสะสมประจำสัปดาห์",
     "map.has_multi_filter_alert": "",
@@ -1595,6 +1595,7 @@
     "generic.orange": "สีส้ม",
     "generic.pink": "สีชมพู",
     "generic.purple": "สีม่วง",
+    "generic.darkpurple": "",
     "generic.darkred": "สีแดงเข้ม",
     "generic.darkblue": "น้ำเงินเข้ม",
     "menu.reset_inventory_daily": "",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "",
     "help.disable_collected_items": "",
     "help.collection_collect_all": "",
-    "help.enable_additional_inventory_options": ""
+    "help.enable_additional_inventory_options": "",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

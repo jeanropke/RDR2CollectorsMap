@@ -1405,6 +1405,7 @@
     "menu.utils": "",
     "menu.fast_travel": "Nopea matka",
     "menu.search_placeholder": "Hae kohteita. Eristetty;",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "Poista/Lisää kartasta",
     "map.remove": "",
     "map.copy_link": "Kopioi merkkilinkki",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "Nimikkeen pinon koko",
     "menu.highlight_low_amount_items": "Korosta alhainen määrä",
     "menu.highlight_style": "Korkein tyyli",
-    "menu.highlight_style.recommended": "Suositellut värit",
-    "menu.highlight_style.default": "Oletusvärit",
     "menu.highlight_style.static": "-Static ...",
     "menu.highlight_style.animated": "-Anikattu ...",
     "menu.marker_cluster": "Markers-joukko",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "Mukautettu merkkiväri",
     "menu.marker_color.by_cycle": "Oletusvärit",
     "menu.marker_color.by_category": "Kiinteät värit",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "",
     "menu.show_weekly": "Näytä viikoittainen kokoelma",
     "map.has_multi_filter_alert": "Työkalutyypin määritys-ja hakukyselyn avulla on piilotettu joitakin merkkejä.",
@@ -1595,6 +1595,7 @@
     "generic.orange": "Oranssi",
     "generic.pink": "",
     "generic.purple": "Purppura",
+    "generic.darkpurple": "",
     "generic.darkred": "Pimeä punainen",
     "generic.darkblue": "Tummansininen",
     "menu.reset_inventory_daily": "Palauta varasto päivittäin",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "Voit ladata kartan uudelleen, jos Web-sivustossa on jotain vikaa.",
     "help.disable_collected_items": "Tämän toiminnon avulla voit poistaa kaikki kohteet, jotka sinulla on jo varastossa.",
     "help.collection_collect_all": "Tämän toiminnon avulla voit lisätä tähän luokkaan kaikki nimikkeet inventaarioosi.",
-    "help.enable_additional_inventory_options": "Tämän toiminnon avulla voit hallita inventointitietojen hallintaa."
+    "help.enable_additional_inventory_options": "Tämän toiminnon avulla voit hallita inventointitietojen hallintaa.",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

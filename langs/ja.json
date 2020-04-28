@@ -1405,6 +1405,7 @@
     "menu.utils": "ユーティリティー",
     "menu.fast_travel": "ファースト・トラベル",
     "menu.search_placeholder": "項目を検索する。 分離者 ;",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "削除 / マップからの追加",
     "map.remove": "",
     "map.copy_link": "マーカー・リンクのコピー",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "項目スタック・サイズ",
     "menu.highlight_low_amount_items": "低金額アイテムを強調表示",
     "menu.highlight_style": "ハイライト・スタイル",
-    "menu.highlight_style.recommended": "推奨される色",
-    "menu.highlight_style.default": "デフォルトの色",
     "menu.highlight_style.static": "-- 静的 --",
     "menu.highlight_style.animated": "-- アニメーション --",
     "menu.marker_cluster": "マーカースクラスター",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "カスタム・マーカーの色",
     "menu.marker_color.by_cycle": "デフォルトの色",
     "menu.marker_color.by_category": "固定色",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "",
     "menu.show_weekly": "週次収集の表示",
     "map.has_multi_filter_alert": "「ツール・タイプ」設定および検索照会によって、一部のマーカーが非表示になっています。",
@@ -1595,6 +1595,7 @@
     "generic.orange": "オレンジ",
     "generic.pink": "ピンク",
     "generic.purple": "パープル",
+    "generic.darkpurple": "",
     "generic.darkred": "ダーク・レッド",
     "generic.darkblue": "ダーク・ブルー",
     "menu.reset_inventory_daily": "在庫を毎日リセット",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "Web サイトで何らかの問題がある場合は、マップを再ロードできます。",
     "help.disable_collected_items": "インベントリーに既に存在するすべての項目を使用不可にすることができます。",
     "help.collection_collect_all": "このカテゴリーのすべてのアイテムを在庫に追加することができます。",
-    "help.enable_additional_inventory_options": "インベントリーを管理するためのオプションをさらにオンにすることができます。"
+    "help.enable_additional_inventory_options": "インベントリーを管理するためのオプションをさらにオンにすることができます。",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }

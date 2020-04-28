@@ -1405,6 +1405,7 @@
     "menu.utils": "Hasznosság",
     "menu.fast_travel": "Gyorsutazás",
     "menu.search_placeholder": "Tárgyak keresése",
+    "menu.auto_enable_sold_items": "",
     "map.remove_add": "Eltávolítás/Hozzáadás a térképről",
     "map.remove": "",
     "map.copy_link": "",
@@ -1437,8 +1438,6 @@
     "menu.inventory_stack": "Gyűjtött tételek mennyisége",
     "menu.highlight_low_amount_items": "",
     "menu.highlight_style": "",
-    "menu.highlight_style.recommended": "",
-    "menu.highlight_style.default": "",
     "menu.highlight_style.static": "",
     "menu.highlight_style.animated": "",
     "menu.marker_cluster": "",
@@ -1586,6 +1585,7 @@
     "menu.marker_color.header": "",
     "menu.marker_color.by_cycle": "",
     "menu.marker_color.by_category": "",
+    "menu.marker_color.auto_orange_darkblue": "",
     "menu.weekly_item_description": "",
     "menu.show_weekly": "",
     "map.has_multi_filter_alert": "",
@@ -1595,6 +1595,7 @@
     "generic.orange": "",
     "generic.pink": "",
     "generic.purple": "",
+    "generic.darkpurple": "",
     "generic.darkred": "",
     "generic.darkblue": "",
     "menu.reset_inventory_daily": "",
@@ -1692,5 +1693,9 @@
     "help.reload_map": "",
     "help.disable_collected_items": "",
     "help.collection_collect_all": "",
-    "help.enable_additional_inventory_options": ""
+    "help.enable_additional_inventory_options": "",
+    "help.auto_enable_sold_items": "",
+    "help.cycle_date": "",
+    "help.collectables_counter": "",
+    "help.items_value": ""
 }
