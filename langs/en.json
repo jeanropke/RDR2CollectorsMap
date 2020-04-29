@@ -1697,5 +1697,9 @@
     "help.auto_enable_sold_items": "Automatically enables all items with amount of 0 in your inventory after selling the set.",
     "help.cycle_date": "Displays the date of the current item cycles. If this date isn't correct, it means the cycles haven't been updated yet.",
     "help.collectables_counter": "Displays the amount of items you've currently collected out of all of the currently enabled sets.",
-    "help.items_value": "Displays how much RDO$ the items you've collected are worth in total. This also includes bonuses for complete sets."
+    "help.items_value": "Displays how much RDO$ the items you've collected are worth in total. This also includes bonuses for complete sets.",
+    "help.cycle_change_countdown": "Displays how much time left to the end of this cycle day.",
+    "help.clock_in_game": "Displays current time in game.",
+    "help.sun_moon_indicator": "Simple indicator that shows if in game is day or night time.",
+    "help.map_coordinates_container": "Shows you coordinates of last clicked position on the map. Also allows you to set custom start point for route generator."
 }
