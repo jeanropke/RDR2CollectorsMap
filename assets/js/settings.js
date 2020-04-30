@@ -120,6 +120,8 @@ const Settings = SettingProxy.createSettingProxy('main');
 Object.entries({
   alertClosed: { default: false },
   baseLayer: { default: 'map.layers.default' },
+  fmeDisplayPeriod: { default: 60 },
+  fmeNotificationPeriod: { default: 10 },
   isClock24Hour: { default: false },
   isClockVisible: { default: false },
   isCoordsOnClickEnabled: { default: false },
@@ -127,6 +129,8 @@ Object.entries({
   isCycleInputEnabled: { default: false },
   isDebugEnabled: { default: false },
   isDoubleClickZoomEnabled: { default: true },
+  isFmeDisplayEnabled: { default: true },
+  isFmeNotificationEnabled: { default: false },
   isMarkerClusterEnabled: { default: true },
   isMenuOpened: { default: false },
   isPinsEditingEnabled: { default: true },

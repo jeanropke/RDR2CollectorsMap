@@ -1164,11 +1164,9 @@ a.no-style:visited {
 }
 
 @media (max-width: 1024px) {
-    .timer-menu-opened {
-        display: none;
-    }
-
-    .counter-menu-opened {
+    .timer-menu-opened,
+    .counter-menu-opened,
+    .fme-menu-opened {
         display: none;
     }
 
@@ -1341,4 +1339,50 @@ a.no-style:visited {
 
 .donate-form .input-text {
     margin: auto 0 auto auto;
+}
+
+/* Freemode Events */
+
+#fme-container {
+    position: absolute;
+    left: 5px;
+    bottom: 25px;
+    z-index: 990;
+    user-select: none;
+    transition: all 200ms ease-out;
+}
+
+#fme-container.fme-menu-opened {
+    left: 395px;
+}
+
+#fme-container .fme-card {
+    display: flex;
+    align-items: center;
+    background-image: url(../../assets/images/fme_background.png);
+    background-size: 100% 100%;
+    padding: 25px;
+    width: 400px;
+    color: #fff;
+}
+
+#fme-container .fme-card .fme-image {
+    margin-right: 12px;
+}
+
+#fme-container .fme-card .fme-body {
+    flex-grow: 1;
+}
+
+#fme-container .fme-card .fme-body .fme-title {
+    font-family: RDRLino, serif;
+    color: #7b66af;
+    margin: 0;
+    text-align: left;
+    font-size: 20px;
+}
+
+#fme-container .fme-card .fme-body .fme-text {
+    margin: 0;
+    text-align: left;
 }

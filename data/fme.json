@@ -1,0 +1,11 @@
+[
+    ["03:22", "menu.fme.salvage", "fme_role_wreckage"],
+    ["04:52", "menu.fme.trade_route", "fme_role_supply_train"],
+    ["07:52", "menu.fme.condor_egg", "fme_role_condor_egg"],
+    ["10:52", "menu.fme.salvage", "fme_role_wreckage"],
+    ["12:22", "menu.fme.trade_route", "fme_role_supply_train"],
+    ["15:22", "menu.fme.condor_egg", "fme_role_condor_egg"],
+    ["18:22", "menu.fme.salvage", "fme_role_wreckage"],
+    ["19:52", "menu.fme.trade_route", "fme_role_supply_train"],
+    ["22:52", "menu.fme.condor_egg", "fme_role_condor_egg"]
+]

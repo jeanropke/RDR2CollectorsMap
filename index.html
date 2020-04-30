@@ -24,15 +24,16 @@
   <link rel="preconnect" href="https://s.rsg.sc">
 
   <!-- Preloads for certain UI elements -->
-  <link rel="preload" as="image" href="./assets/images/header_bg_center.png">
-  <link rel="preload" as="image" href="./assets/images/header_border_divider.png">
-  <link rel="preload" as="image" href="./assets/images/header_border_white.png">
-  <link rel="preload" as="image" href="./assets/images/help_text_bg.png">
   <link rel="preload" as="image" href="./assets/images/action_indicator_clear.png">
   <link rel="preload" as="image" href="./assets/images/action_indicator_copy.png">
   <link rel="preload" as="image" href="./assets/images/action_indicator_external.png">
   <link rel="preload" as="image" href="./assets/images/action_indicator.png">
   <link rel="preload" as="image" href="./assets/images/arrow.png">
+  <link rel="preload" as="image" href="./assets/images/fme_background.png">
+  <link rel="preload" as="image" href="./assets/images/header_bg_center.png">
+  <link rel="preload" as="image" href="./assets/images/header_border_divider.png">
+  <link rel="preload" as="image" href="./assets/images/header_border_white.png">
+  <link rel="preload" as="image" href="./assets/images/help_text_bg.png">
   <link rel="preload" as="image" href="./assets/images/menu_donate.png">
   <link rel="preload" as="image" href="./assets/images/menu_hover.png">
   <link rel="preload" as="image" href="./assets/images/modal_bg.png">
@@ -41,10 +42,10 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1414" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1415" />
 
   <script>
-    var nocache = 1414;
+    var nocache = 1415;
   </script>
 </head>
 
@@ -550,6 +551,29 @@
       <div id="open-clear-important-items-modal" class="input-container clickable" data-help="clear_important_items">
         <label data-text="menu.clear_important_items">Clear important markers</label>
         <div class="input-action"></div>
+      </div>
+      <hr class="menu-divider">
+      <div class="input-container" data-help="fme_display">
+        <label for="fme-display" data-text="menu.fme_display">Show Freeroam Events</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="fme-display" value="1" id="fme-display" />
+          <label class="input-checkbox-label" for="fme-display"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="fme_display_period">
+        <label for="fme-display-period" data-text="menu.fme_display_period">Event display period</label>
+        <input id="fme-display-period" class="input-text narrow-select-menu" type="number" min="10" max="90" value="90">
+      </div>
+      <div class="input-container" data-help="fme_notification">
+        <label for="fme-notification" data-text="menu.fme_notification">Enable event notifications</label>
+        <div class="input-checkbox-wrapper">
+          <input class="input-checkbox" type="checkbox" name="fme-notification" value="1" id="fme-notification" />
+          <label class="input-checkbox-label" for="fme-notification"></label>
+        </div>
+      </div>
+      <div class="input-container" data-help="fme_notification_period">
+        <label for="fme-notification-period" data-text="menu.fme_notification_period">Event notification period</label>
+        <input id="fme-notification-period" class="input-text narrow-select-menu" type="number" min="1" max="30" value="10">
       </div>
       <hr class="menu-divider">
       <div class="input-container" data-help="user_pins_place_mode">
@@ -1111,6 +1135,17 @@
   <div class="counter-container">
     <p id="item-counter">-- of --</p>
   </div>
+
+  <div id="fme-container" style="display: none;">
+    <div id="next-event" class="fme-card">
+      <img class="fme-image" id="next-image" />
+      <div class="fme-body">
+        <h3 class="fme-title" id="next-name"></h3>
+        <p class="fme-text" id="next-eta"></p>
+      </div>
+    </div>
+  </div>
+
   <div id="map">
 
   </div>
@@ -1227,7 +1262,7 @@
   <script>function isES6() { try { return eval("() => {};"), !0 } catch (r) { return !1 } } isES6() || alert("This browser might not be fully supported, and errors will likely occur. Please update your browser if you experience issues.");</script>
 
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1414"></script>
+  <script src="assets/js/loader.js?nocache=1415"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
   <script src="assets/js/lib/leaflet.js"></script>
@@ -1236,21 +1271,22 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1414"></script>
-  <script src="assets/js/settings.js?nocache=1414"></script>
-  <script src="assets/js/nazar.js?nocache=1414"></script>
-  <script src="assets/js/cycles.js?nocache=1414"></script>
-  <script src="assets/js/marker.js?nocache=1414"></script>
-  <script src="assets/js/inventory.js?nocache=1414"></script>
-  <script src="assets/js/treasures.js?nocache=1414"></script>
-  <script src="assets/js/pins.js?nocache=1414"></script>
-  <script src="assets/js/map.js?nocache=1414"></script>
-  <script src="assets/js/language.js?nocache=1414"></script>
-  <script src="assets/js/menu.js?nocache=1414"></script>
-  <script src="assets/js/items.js?nocache=1414"></script>
-  <script src="assets/js/routes.js?nocache=1414"></script>
-  <script src="assets/js/pathfinder.js?nocache=1414"></script>
-  <script src="assets/js/scripts.js?nocache=1414"></script>
+  <script src="assets/js/layers.js?nocache=1415"></script>
+  <script src="assets/js/settings.js?nocache=1415"></script>
+  <script src="assets/js/nazar.js?nocache=1415"></script>
+  <script src="assets/js/fme.js?nocache=1415"></script>
+  <script src="assets/js/cycles.js?nocache=1415"></script>
+  <script src="assets/js/marker.js?nocache=1415"></script>
+  <script src="assets/js/inventory.js?nocache=1415"></script>
+  <script src="assets/js/treasures.js?nocache=1415"></script>
+  <script src="assets/js/pins.js?nocache=1415"></script>
+  <script src="assets/js/map.js?nocache=1415"></script>
+  <script src="assets/js/language.js?nocache=1415"></script>
+  <script src="assets/js/menu.js?nocache=1415"></script>
+  <script src="assets/js/items.js?nocache=1415"></script>
+  <script src="assets/js/routes.js?nocache=1415"></script>
+  <script src="assets/js/pathfinder.js?nocache=1415"></script>
+  <script src="assets/js/scripts.js?nocache=1415"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
