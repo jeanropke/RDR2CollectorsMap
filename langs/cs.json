@@ -1697,5 +1697,15 @@
     "help.auto_enable_sold_items": "",
     "help.cycle_date": "",
     "help.collectables_counter": "",
-    "help.items_value": ""
+    "help.items_value": "",
+    "help.cycle_change_countdown": "",
+    "help.clock_in_game": "",
+    "help.sun_moon_indicator": "",
+    "help.map_coordinates_container": "",
+    "help.weekly_item_collectable": "",
+    "help.weekly_item_pocket_watch_gold": "",
+    "help.weekly_item_carcass_squirrel_perfect": "",
+    "help.weekly_item_gold_tooth": "",
+    "help.weekly_item_cooked_plump_bird_thyme": "",
+    "help.weekly_item_pocket_watch_platinum": ""
 }

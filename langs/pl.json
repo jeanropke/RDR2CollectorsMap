@@ -1697,5 +1697,15 @@
     "help.auto_enable_sold_items": "Automatycznie włącza wszystkie sprzedane przedmioty, których już nie masz w ekwipunku po sprzedaży zestawu.",
     "help.cycle_date": "Wyświetla datę bieżącego cyklu. Jeśli ta data nie jest poprawna, oznacza to, że cykle nie zostały jeszcze zaktualizowane.",
     "help.collectables_counter": "Wyświetla ilość aktualnie zebranych przedmiotów, ze wszystkich możliwych do zebrania w tym cyklu.",
-    "help.items_value": "Określa całkowitą wartość RDO$ przedmiotów w Twoim ekwipunku. Watrość ta obejmuje również bonusy za kompletne zestawy."
+    "help.items_value": "Określa całkowitą wartość RDO$ przedmiotów w Twoim ekwipunku. Watrość ta obejmuje również bonusy za kompletne zestawy.",
+    "help.cycle_change_countdown": "",
+    "help.clock_in_game": "",
+    "help.sun_moon_indicator": "",
+    "help.map_coordinates_container": "",
+    "help.weekly_item_collectable": "",
+    "help.weekly_item_pocket_watch_gold": "",
+    "help.weekly_item_carcass_squirrel_perfect": "",
+    "help.weekly_item_gold_tooth": "",
+    "help.weekly_item_cooked_plump_bird_thyme": "",
+    "help.weekly_item_pocket_watch_platinum": ""
 }

@@ -1697,5 +1697,15 @@
     "help.auto_enable_sold_items": "Aktiviert automatisch alle Gegenstände mit einer Menge von 0 in deinem Inventar, nachdem du das Set verkauft hast.",
     "help.cycle_date": "Zeigt das Datum des aktuellen Zyklus des Gegenstands an. Wenn dieses Datum nicht korrekt ist, bedeutet dies, dass die Zyklen noch nicht aktualisiert wurden.",
     "help.collectables_counter": "Zeigt die Anzahl der Gegenstände an, die Sie momentan aus allen derzeit aktivierten Sets gefunden haben.",
-    "help.items_value": "Zeigt an, wie viel RDO$ die Gegenstände, die du gesammelt hast, insgesamt wert sind. Dies schließt auch Boni für komplette Sets ein."
+    "help.items_value": "Zeigt an, wie viel RDO$ die Gegenstände, die du gesammelt hast, insgesamt wert sind. Dies schließt auch Boni für komplette Sets ein.",
+    "help.cycle_change_countdown": "",
+    "help.clock_in_game": "",
+    "help.sun_moon_indicator": "",
+    "help.map_coordinates_container": "",
+    "help.weekly_item_collectable": "",
+    "help.weekly_item_pocket_watch_gold": "",
+    "help.weekly_item_carcass_squirrel_perfect": "",
+    "help.weekly_item_gold_tooth": "",
+    "help.weekly_item_cooked_plump_bird_thyme": "",
+    "help.weekly_item_pocket_watch_platinum": ""
 }
