@@ -240,16 +240,13 @@ var MapBase = {
       if (!goTo) return;
       MapBase.map.setView([goTo.lat, goTo.lng], 6);
 
-      //check if marker category is enabled, if not, enable it
-      if (!Layers.itemMarkersLayer.getLayerById(goTo.text)) {
+      if (!enabledCategories.includes(goTo.category)) {
         enabledCategories.push(goTo.category);
         MapBase.addMarkers();
         $(`[data-type="${goTo.category}"]`).removeClass('disabled');
       }
 
-      setTimeout(() => {
-        Layers.itemMarkersLayer.getLayerById(goTo.text).openPopup();
-      }, 3000);
+      setTimeout(() => goTo.lMarker && goTo.lMarker.openPopup(), 3000);
     }
   },
 
