@@ -376,5 +376,17 @@ class Marker {
           MapBase.addMarkers();
         });
     });
+    MapBase.markers = [];
+    return Loader.promises['items'].consumeJson(data => {
+      $.each(data, (category, allCycles) => {
+        $.each(allCycles, (cycleName, markers) => {
+          markers.forEach(preliminaryMarker => {
+            const marker = new Marker(preliminaryMarker, cycleName, category);
+            MapBase.markers.push(marker);
+            if (marker.category !== 'random') Item.items[marker.itemId].markers.push(marker);
+          });
+        });
+      });
+    });
   }
 }

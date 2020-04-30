@@ -27,7 +27,9 @@ class Item {
   constructor(preliminary) {
     Object.assign(this, preliminary);
     this.category = this.itemId.split('_', 1)[0];
+    this.itemTranslationKey = `${this.itemId}.name`;
     this.legacyItemId = this.itemId.replace(/^flower_|^egg_/, '');
+    this.markers = [];  // filled by Marker.init();
     this._amountKey = `amount.${this.itemId}`;
   }
   static init() {
@@ -69,15 +71,12 @@ class Item {
       localStorage.removeItem(this._amountKey);
     }
   }
-  // use the following marker based properties only after Markers are initialized!
-  firstMarker() {
-    return MapBase.markers.find(marker => marker.itemId === this.itemId);
-  }
+  // use the following marker based property only after Marker.init()!
   effectiveAmount() {
     if (InventorySettings.isEnabled) {
       return this.amount;
     } else {
-      return this.firstMarker().isCollected ? 1 : 0;
+      return this.markers.filter(marker => marker.isCurrent && marker.isCollected).length;
     }
   }
 }

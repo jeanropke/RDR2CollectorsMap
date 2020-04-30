@@ -201,18 +201,6 @@ var MapBase = {
     Layers.overlaysLayer.addTo(MapBase.map);
   },
 
-  loadMarkers: function () {
-    'use strict';
-    MapBase.markers = [];
-    return Loader.promises['items'].consumeJson(data => {
-      $.each(data, (category, allCycles) => {
-        $.each(allCycles, (cycleName, markers) => {
-          markers.forEach(marker => MapBase.markers.push(new Marker(marker, cycleName, category)));
-        });
-      });
-    });
-  },
-
   runOncePostLoad: function () {
     'use strict';
     uniqueSearchMarkers = MapBase.markers;

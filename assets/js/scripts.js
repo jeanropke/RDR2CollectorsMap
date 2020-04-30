@@ -86,7 +86,7 @@ function init() {
 
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
-  // Item.items, Collection.collections, Collection.weekly*
+  // Item.items (without .markers), Collection.collections, Collection.weekly*
   const itemsCollectionsWeekly = Item.init();
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.mapInit(); // MapBase.map
@@ -94,7 +94,8 @@ function init() {
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  const markers = MapBase.loadMarkers(); // MapBase.markers (without .lMarker)
+  // MapBase.markers (without .lMarker), Item.items[itemId].markers
+  const markers = itemsCollectionsWeekly.then(Marker.init);
   const cycles = Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
@@ -105,7 +106,6 @@ function init() {
   Routes.init();
   // depends on MapBase, Treasure, Pins
   Promise.all([treasureFinished, markers]).then(Menu.activateHandlers);
-  Marker.init();
 
   if (Settings.isMenuOpened) $('.menu-toggle').click();
 
