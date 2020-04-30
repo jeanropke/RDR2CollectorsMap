@@ -1559,7 +1559,7 @@
     "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "切換至偵錯模式",
-    "map.random_spot.desc": "這個位置會給你隨機物品，你可以在{int.random_spot.link}這個網站{int.end.link}查看更多詳細信息。",
+    "map.random_spot.desc": "這個位置會給你隨機物品，你可以{int.random_spot.link}點擊這裡{int.end.link}查看更多詳細信息。",
     "map.attribution_prefix": "地圖提供由",
     "menu.clear_important_items": "清除重要標記",
     "menu.modal_clear_important_items_body": "這會清除所有重要標記，且無法復原。",
