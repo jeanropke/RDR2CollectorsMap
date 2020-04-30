@@ -219,15 +219,27 @@ Menu.refreshWeeklyItems = function () {
       inventoryCount = inventoryCount.prop('outerHTML');
     }
 
-    var element = `
-      <div class="weekly-item-listing">
+    var helpKey = 'weekly_item_collectable';
+
+    if (weeklyItemId.startsWith('item_')) {
+      helpKey = 'weekly_' + weeklyItemId;
+    }
+
+    const element = $(`
+      <div class="weekly-item-listing" data-help="${helpKey}">
         <span>
           <div class="icon-wrapper"><img class="icon" src="./assets/images/icons/game/${weeklyItemId}.png" alt="Weekly item icon" /></div>
           <span>${Language.get(weeklyItemId + '.name')}</span>
         </span>
         ${inventoryCount}
       </div>
-    `;
+    `);
+
+    element.hover(function () {
+      $('#help-container p').text(Language.get(`help.${helpKey}`));
+    }, function () {
+      $('#help-container p').text(Language.get('help.default'));
+    });
 
     $('#weekly-container .weekly-item-listings').append(element);
   });
