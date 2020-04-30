@@ -1704,7 +1704,7 @@
     "help.map_coordinates_container": "Shows you coordinates of last clicked position on the map. Also allows you to set custom start point for route generator.",
     "help.weekly_item_collectable": "This item can be collected by going to the corresponding location marked on the map.",
     "help.weekly_item_pocket_watch_gold": "Gold Pocket Watches can be obtained by looting people. Revenue Agents, bounties and other criminals have a 5% chance of dropping these.",
-    "help.weekly_item_carcass_squirrel_perfect": "Squirrels are usually located in forests around the map. Use a bow with Small Game Arrows to obtained a perfect carcass.",
+    "help.weekly_item_carcass_squirrel_perfect": "Squirrels are usually located in forests around the map. Use a bow with Small Game Arrows to obtain a perfect carcass.",
     "help.weekly_item_gold_tooth": "Gold Teeth can be obtained by looting people. Bounties and other criminals have a 15% chance of dropping these.",
     "help.weekly_item_cooked_plump_bird_thyme": "Plain Plump Bird meat can be obtained from chickens, geese, turkeys, and roosters. Season and cook the meat with Creeping Thyme at any campfire to obtain these.",
     "help.weekly_item_pocket_watch_platinum": "Platinum Pocket Watches can be obtained by looting people. Rich folk like bankers have a 1-2% chance of dropping these."
