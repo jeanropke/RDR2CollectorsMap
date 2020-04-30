@@ -521,13 +521,11 @@ $('.menu-toggle').on('click', function () {
 
 $('#marker-cluster').on("change", function () {
   Settings.isMarkerClusterEnabled = $("#marker-cluster").prop('checked');
-  MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
 });
 
 $('#enable-marker-popups').on("change", function () {
   Settings.isPopupsEnabled = $("#enable-marker-popups").prop('checked');
-  MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
 });
 
@@ -538,7 +536,6 @@ $('#enable-marker-popups-hover').on("change", function () {
 $('#enable-marker-shadows').on("change", function () {
   Settings.isShadowsEnabled = $("#enable-marker-shadows").prop('checked');
   Treasure.onSettingsChanged();
-  MapBase.map.removeLayer(Layers.itemMarkersLayer);
   MapBase.addMarkers();
 });
 

@@ -149,6 +149,7 @@ var MapBase = {
     Layers.oms.addListener('spiderfy', function (markers) {
       MapBase.map.closePopup();
     });
+    Layers.itemMarkersLayer.addTo(MapBase.map);
   },
 
   loadOverlays: function () {
@@ -300,8 +301,7 @@ var MapBase = {
 
     Menu.updateHasFilters();
 
-    if (Layers.itemMarkersLayer != null)
-      Layers.itemMarkersLayer.clearLayers();
+    Layers.itemMarkersLayer.clearLayers();
 
     MapBase.updateLoopAvailable = false;
     MapBase.yieldingLoop(
@@ -322,7 +322,6 @@ var MapBase = {
       }
     );
 
-    Layers.itemMarkersLayer.addTo(MapBase.map);
     Layers.pinsLayer.addTo(MapBase.map);
 
     MapBase.addFastTravelMarker();
