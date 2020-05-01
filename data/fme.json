@@ -1,11 +1,18 @@
 [
-    ["03:22", "menu.fme.salvage", "fme_role_wreckage"],
-    ["04:52", "menu.fme.trade_route", "fme_role_supply_train"],
-    ["07:52", "menu.fme.condor_egg", "fme_role_condor_egg"],
-    ["10:52", "menu.fme.salvage", "fme_role_wreckage"],
-    ["12:22", "menu.fme.trade_route", "fme_role_supply_train"],
-    ["15:22", "menu.fme.condor_egg", "fme_role_condor_egg"],
-    ["18:22", "menu.fme.salvage", "fme_role_wreckage"],
-    ["19:52", "menu.fme.trade_route", "fme_role_supply_train"],
-    ["22:52", "menu.fme.condor_egg", "fme_role_condor_egg"]
+    ["00:22", "day_of_reckoning"],
+    ["01:52", "day_of_reckoning"],
+    ["03:22", "salvage"],
+    ["04:52", "trade_route"],
+    ["06:22", "manhunt"],
+    ["07:52", "condor_egg"],
+    ["09:22", "day_of_reckoning"],
+    ["10:52", "salvage"],
+    ["12:22", "trade_route"],
+    ["13:52", "manhunt"],
+    ["15:22", "condor_egg"],
+    ["16:52", "day_of_reckoning"],
+    ["18:22", "salvage"],
+    ["19:52", "trade_route"],
+    ["21:22", "manhunt"],
+    ["22:52", "condor_egg"]
 ]

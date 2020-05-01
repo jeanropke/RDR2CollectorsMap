@@ -662,6 +662,8 @@ select,
 .side-menu .collectible,
 .input-container label {
     line-height: 24px;
+    width: 100%;
+    text-align: left;
 }
 
 .same-cycle-warning-menu {
@@ -1069,22 +1071,18 @@ a.no-style:visited {
     user-select: none;
 }
 
-.modal-content {
-    /* background: url(../images/modal_bg_long.png); */
-    background-color: #000;
-    background-size: 100% 100% !important;
-    background-repeat: no-repeat !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    border: none !important;
-}
-
-.modal-sm .modal-content {
+.modal-dialog.modal-sm {
     background: url(../images/modal_bg.png);
     background-repeat: no-repeat !important;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.modal-content {
+    border: none !important;
+    background: transparent !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: none !important;
 }
 
 .modal-header,
@@ -1107,6 +1105,10 @@ a.no-style:visited {
 
 .modal-body {
     padding-top: 0;
+}
+
+.modal-body .settings-container {
+    margin-top: 15px;
 }
 
 .modal-footer {

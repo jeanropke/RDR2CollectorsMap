@@ -124,25 +124,6 @@ function init() {
   $("#enable-debug").prop('checked', Settings.isDebugEnabled);
   $("#enable-cycle-changer").prop('checked', Settings.isCycleChangerEnabled);
 
-  if (!("Notification" in window)) {
-    Settings.isFmeNotificationEnabled = false;
-    $('#fme-notification').prop('disabled', true);
-    $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.no_support');
-    $('#fme-notification-period').parent().hide();
-  } else if (Notification.permission === "denied") {
-    Settings.isFmeNotificationEnabled = false;
-    $('#fme-notification').prop('disabled', true);
-    $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.denied');
-    $('#fme-notification-period').parent().hide();
-  }
-
-  $("#fme-display").prop('checked', Settings.isFmeDisplayEnabled);
-  $("#fme-display-period").val(Settings.fmeDisplayPeriod);
-  $('#fme-display-period').parent().toggle(Settings.isFmeDisplayEnabled);
-  $("#fme-notification").prop('checked', Settings.isFmeNotificationEnabled);
-  $("#fme-notification-period").val(Settings.fmeNotificationPeriod);
-  $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
-
   $("#show-weekly").prop('checked', Settings.showWeeklySettings);
   $("#show-utilities").prop('checked', Settings.showUtilitiesSettings);
   $("#show-customization").prop('checked', Settings.showCustomizationSettings);
@@ -662,32 +643,6 @@ $('#soft-flowers-inventory-stack').on("change", function () {
   var inputValue = parseInt($('#soft-flowers-inventory-stack').val());
   inputValue = !isNaN(inputValue) ? inputValue : 10;
   InventorySettings.flowersSoftStackSize = inputValue;
-});
-
-$('#fme-display').on("change", function () {
-  Settings.isFmeDisplayEnabled = $("#fme-display").prop('checked');
-  $('#fme-display-period').parent().toggle(Settings.isFmeDisplayEnabled);
-  FME.updateVisiblity();
-});
-
-$('#fme-display-period').on("change", function () {
-  var inputValue = parseInt($('#fme-display-period').val());
-  inputValue = !isNaN(inputValue) ? inputValue : 60;
-  if (inputValue < 10 || inputValue > 90) inputValue = 60;
-  Settings.fmeDisplayPeriod = inputValue;
-  FME.update();
-});
-
-$('#fme-notification').on("change", function () {
-  Settings.isFmeNotificationEnabled = $("#fme-notification").prop('checked');
-  $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
-});
-
-$('#fme-notification-period').on("change", function () {
-  var inputValue = parseInt($('#fme-notification-period').val());
-  inputValue = !isNaN(inputValue) ? inputValue : 10;
-  if (inputValue < 1 || inputValue > 30) inputValue = 10;
-  Settings.fmeNotificationPeriod = inputValue;
 });
 
 $('#cookie-export').on("click", function () {

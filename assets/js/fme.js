@@ -18,6 +18,15 @@ var FME = {
     // Maybe make this persistent later, but there's no real need for it
     _sentNotifications: [],
 
+    flags: {
+        none: 0,
+        condor_egg: 1,
+        day_of_reckoning: 2,
+        manhunt: 4,
+        salvage: 8,
+        trade_route: 16,
+    },
+
     // DOM elements for the FME card
     elements: {
         nextEventImage: document.getElementById('next-image'),
@@ -36,12 +45,12 @@ var FME = {
         var hasValidNext = false;
         schedule.forEach(function (e, i) {
             var event = FME.getEventObject(e);
-            if (event.eta > 0 && event.eta < frequency) {
+            if (event.eta > 0 && event.eta < frequency && Settings.fmeEnabledEvents & FME.flags[event.name]) {
                 hasValidNext = true;
 
                 // No need to update DOM when it's not visible.
                 if (Settings.isFmeDisplayEnabled) {
-                    var fmeName = Language.get(event.name);
+                    var fmeName = event.nameText;
                     var fmeBody = Language.get('menu.fme.time.starts_in').replace('{time}', event.etaText);
                     elements.nextEventImage.src = event.imageSrc;
                     elements.nextEventName.innerHTML = fmeName;
@@ -86,11 +95,12 @@ var FME = {
             eta = eventDateTime - now;
         }
         return {
+            id: event[1],
             dateTime: eventDateTime,
             name: event[1],
-            nameText: Language.get(event[1]),
-            image: event[2],
-            imageSrc: `./assets/images/fme/${event[2]}.png`,
+            nameText: Language.get(`menu.fme.${event[1]}`),
+            image: `${event[1]}.png`,
+            imageSrc: `./assets/images/fme/${event[1]}.png`,
             eta: eta,
             etaText: FME.getEtaText(eta),
         };
@@ -129,10 +139,85 @@ var FME = {
         $('#fme-container').toggle(Settings.isFmeDisplayEnabled);
     },
 
+    markNotSupported: function () {
+        Settings.isFmeNotificationEnabled = false;
+        $('#fme-notification').prop('disabled', true);
+        $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.no_support');
+        $('#fme-notification-period').parent().hide();
+    },
+
+    markPermissionDenied: function () {
+        Settings.isFmeNotificationEnabled = false;
+        $('#fme-notification').prop('disabled', true);
+        $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.denied');
+        $('#fme-notification-period').parent().hide();
+    },
+
     /**
      * Retrieve the FME data from FME.json
      */
     init: function () {
+        $('#fme-display').on("change", function () {
+            Settings.isFmeDisplayEnabled = $("#fme-display").prop('checked');
+            $('#fme-display-period').parent().toggle(Settings.isFmeDisplayEnabled);
+            $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+            FME.update();
+        });
+
+        $('#fme-display-period').on("change", function () {
+            var inputValue = parseInt($('#fme-display-period').val());
+            inputValue = !isNaN(inputValue) ? inputValue : 60;
+            if (inputValue < 10 || inputValue > 90) inputValue = 60;
+            Settings.fmeDisplayPeriod = inputValue;
+            FME.update();
+        });
+
+        $('#fme-notification').on("change", function () {
+            Settings.isFmeNotificationEnabled = $("#fme-notification").prop('checked');
+            $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
+            $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+        });
+
+        $('#fme-notification-period').on("change", function () {
+            var inputValue = parseInt($('#fme-notification-period').val());
+            inputValue = !isNaN(inputValue) ? inputValue : 10;
+            if (inputValue < 1 || inputValue > 30) inputValue = 10;
+            Settings.fmeNotificationPeriod = inputValue;
+        });
+
+        if (!("Notification" in window)) {
+            this.markNotSupported();
+        } else if (Notification.permission === "denied") {
+            this.markPermissionDenied();
+        }
+
+        $("#fme-display").prop('checked', Settings.isFmeDisplayEnabled);
+        $("#fme-display-period").val(Settings.fmeDisplayPeriod);
+        $('#fme-display-period').parent().toggle(Settings.isFmeDisplayEnabled);
+        $("#fme-notification").prop('checked', Settings.isFmeNotificationEnabled);
+        $("#fme-notification-period").val(Settings.fmeNotificationPeriod);
+        $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
+        $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled && Settings.isFmeNotificationEnabled));
+
+        $("input[name='fme-enabled-events[]']").each(function (i, v) {
+            var id = $(this).attr('id');
+            $(this).prop('checked', (Settings.fmeEnabledEvents & FME.flags[id]));
+        });
+
+        $("input[name='fme-enabled-events[]']").change(function () {
+            var total = 0;
+            $("input[name='fme-enabled-events[]']:checked").each(function (i, v) {
+                var value = parseInt($(this).val());
+                total += value;
+            });
+            Settings.fmeEnabledEvents = total;
+            FME.update();
+        });
+
+        $('#open-fme-enabled-events-modal').on('click', function () {
+            $('#fme-enabled-events-modal').modal();
+        });
+
         $.getJSON(`data/fme.json?nocache=${nocache}`)
             .done(function (data) {
                 FME._eventsJson = data;
@@ -151,8 +236,11 @@ var FME = {
         if (!Settings.isFmeNotificationEnabled) return;
 
         // No support.
-        if (!("Notification" in window)) return;
-
+        if (!("Notification" in window)) {
+            this.markNotSupported();
+            return;
+        }
+        
         // Already sent.
         if (this._sentNotifications.includes(event.eventDateTime)) return;
 
@@ -182,12 +270,10 @@ var FME = {
                     });
                 }
             });
-        } else {
-            // The user has denied permission. Disable.
-            Settings.isFmeNotificationEnabled = false;
-            $('#fme-notification').prop('disabled', true);
-            $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.denied');
-            $('#fme-notification-period').parent().hide();
+        }
+        
+        if (Notification.permission === "denied") {
+            this.markPermissionDenied();
         }
 
         // Always add this to really make sure there's no dupes, even when the user denied permissions.

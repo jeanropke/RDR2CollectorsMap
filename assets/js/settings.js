@@ -121,6 +121,7 @@ Object.entries({
   alertClosed: { default: false },
   baseLayer: { default: 'map.layers.default' },
   fmeDisplayPeriod: { default: 60 },
+  fmeEnabledEvents: { default: 31 },
   fmeNotificationPeriod: { default: 10 },
   isClock24Hour: { default: false },
   isClockVisible: { default: false },
