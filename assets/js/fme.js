@@ -141,14 +141,14 @@ var FME = {
 
     markNotSupported: function () {
         Settings.isFmeNotificationEnabled = false;
-        $('#fme-notification').prop('disabled', true);
+        $('#fme-notification').prop('checked', false).prop('disabled', true);
         $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.no_support');
         $('#fme-notification-period').parent().hide();
     },
 
     markPermissionDenied: function () {
         Settings.isFmeNotificationEnabled = false;
-        $('#fme-notification').prop('disabled', true);
+        $('#fme-notification').prop('checked', false).prop('disabled', true);
         $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.denied');
         $('#fme-notification-period').parent().hide();
     },
@@ -174,6 +174,13 @@ var FME = {
 
         $('#fme-notification').on("change", function () {
             Settings.isFmeNotificationEnabled = $("#fme-notification").prop('checked');
+
+            Notification.requestPermission().then(function (permission) {
+                if (permission === "denied") {
+                    FME.markPermissionDenied();
+                }
+            });
+
             $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
             $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
         });
