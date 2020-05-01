@@ -122,5 +122,7 @@ var Language = {
     this.translateDom();
 
     $('#search').attr("placeholder", Language.get('menu.search_placeholder'));
+
+    FME.update();
   }
 };

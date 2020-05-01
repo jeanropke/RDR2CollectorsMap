@@ -455,6 +455,7 @@ select,
     height: 100%;
     border-radius: 3px;
     margin-left: 6px;
+    text-overflow: ellipsis;
 }
 
 .input-container-noflex .input-text {
