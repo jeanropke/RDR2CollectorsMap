@@ -187,10 +187,19 @@ Menu.refreshCollectionCounter = function (category) {
 
 Menu.refreshItemsCounter = function () {
   var _markers = MapBase.markers.filter(marker => marker.isCurrent && marker.isVisible);
+  var count = _markers.filter(marker => marker.isCollected).length;
+  var max = _markers.length;
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
-    .replace('{count}', _markers.filter(marker => marker.isCollected).length)
-    .replace('{max}', _markers.length));
+    .replace('{count}', count)
+    .replace('{max}', max));
+
+  $('#item-counter').text(Language.get('menu.collection_counter')
+    .replace('{count}', count)
+    .replace('{max}', max));
+
+  $('#item-counter-percentage').text(Language.get('menu.collection_counter_percentage')
+    .replace('{count}', (count / max * 100).toFixed(2)));
 
   Menu.refreshTotalInventoryValue();
 

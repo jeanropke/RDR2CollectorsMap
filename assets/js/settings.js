@@ -124,7 +124,6 @@ Object.entries({
   fmeEnabledEvents: { default: 31 },
   fmeNotificationPeriod: { default: 10 },
   isClock24Hour: { default: false },
-  isClockVisible: { default: false },
   isCoordsOnClickEnabled: { default: false },
   isCycleChangerEnabled: { default: false },
   isCycleInputEnabled: { default: false },
@@ -153,6 +152,7 @@ Object.entries({
   showWeeklySettings: { default: true },
   sortItemsAlphabetically: { default: false },
   toolType: { default: 3 },
+  topWidgetState: { default: 0 },
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 
 // Inventory settings

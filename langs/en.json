@@ -1429,6 +1429,7 @@
     "menu.random_spots": "Random Spots",
     "menu.collectables_counter": "Collected {count} of {max}",
     "menu.collection_counter": "{count} of {max}",
+    "menu.collection_counter_percentage": "{count}%",
     "menu.rdo_map": "RDO Map",
     "menu.auto_refresh": "Change cycle automatically",
     "menu.clear_inventory": "Clear inventory",

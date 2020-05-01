@@ -133,8 +133,6 @@ function init() {
 
   $("#help-container").toggle(Settings.showHelp);
 
-  $('.timer-container').toggleClass('hidden', Settings.isClockVisible);
-  $('.clock-container').toggleClass('hidden', !(Settings.isClockVisible));
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
   $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
@@ -145,6 +143,8 @@ function init() {
   $("#routes-container").toggleClass('opened', Settings.showRoutesSettings);
   $("#import-export-container").toggleClass('opened', Settings.showImportExportSettings);
   $("#debug-container").toggleClass('opened', Settings.showDebugSettings);
+
+  updateTopWidget();
 }
 
 function isLocalHost() {
@@ -158,6 +158,13 @@ function changeCursor() {
     $('.leaflet-grab').css('cursor', 'grab');
     $('.lat-lng-container').css('display', 'none');
   }
+}
+
+function updateTopWidget() {
+  $('#countdown').toggleClass('hidden', Settings.topWidgetState !== 0);
+  $('#time-in-game').toggleClass('hidden', Settings.topWidgetState !== 1);
+  $('#item-counter').toggleClass('hidden', Settings.topWidgetState !== 2);
+  $('#item-counter-percentage').toggleClass('hidden', Settings.topWidgetState !== 3);
 }
 
 function getParameterByName(name, url) {
@@ -206,7 +213,7 @@ function clockTick() {
   };
 
   $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
-  $('.day-cycle').css('background', `url(assets/images/${nightTime ? 'moon' : 'sun'}.png)`);
+  $('#day-cycle').removeClass('hidden').attr('src', `./assets/images/${nightTime ? 'moon' : 'sun'}.png`);
 
   const cycleResetTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
   const delta = new Date(cycleResetTime - now);
@@ -239,9 +246,13 @@ setInterval(clockTick, 1000);
   - only hope: user does not do anything until that happens
 - please move them out of here to their respective owners
 */
-$('.timer-container, .clock-container').on('click', function () {
-  $('.timer-container, .clock-container').toggleClass('hidden');
-  Settings.isClockVisible = $('.timer-container').hasClass('hidden');
+$('.top-widget > p').on('click', function () {
+  $('.top-widget > p').toggleClass('hidden');
+
+  if (Settings.topWidgetState >= 3) Settings.topWidgetState = 0;
+  else Settings.topWidgetState++;
+
+  updateTopWidget();
 });
 
 $('.update-warning').on('click', function () {
@@ -487,9 +498,7 @@ $('.menu-toggle').on('click', function () {
 
   $('.menu-toggle').text(Settings.isMenuOpened ? 'X' : '>');
 
-  $('.timer-container').toggleClass('timer-menu-opened', Settings.isMenuOpened);
-  $('.counter-container').toggleClass('counter-menu-opened', Settings.isMenuOpened);
-  $('.clock-container').toggleClass('timer-menu-opened', Settings.isMenuOpened);
+  $('.top-widget').toggleClass('top-widget-menu-opened', Settings.isMenuOpened);
   $('#fme-container').toggleClass('fme-menu-opened', Settings.isMenuOpened);
 });
 
