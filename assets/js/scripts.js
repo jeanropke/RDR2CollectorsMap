@@ -212,7 +212,8 @@ function clockTick() {
     hour12: !Settings.isClock24Hour
   };
 
-  $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
+  // replace added because of bug in google chrome that shows 24:00 instead of 00:00 (all .toLocale... methods doesn't work properly in google chrome)
+  $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat).replace(/^24:/, '00:'));
   $('#day-cycle').removeClass('hidden').attr('src', `./assets/images/${nightTime ? 'moon' : 'sun'}.png`);
 
   const cycleResetTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
