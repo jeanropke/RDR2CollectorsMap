@@ -22,7 +22,8 @@ var FME = {
     elements: {
         nextEventImage: document.getElementById('next-image'),
         nextEventName: document.getElementById('next-name'),
-        nextEventEta: document.getElementById('next-eta')
+        nextEventEta: document.getElementById('next-eta'),
+        nextEventBodyMobile: document.getElementById('next-body-mobile'),
     },
 
     /**
@@ -40,9 +41,12 @@ var FME = {
 
                 // No need to update DOM when it's not visible.
                 if (Settings.isFmeDisplayEnabled) {
+                    var fmeName = Language.get(event.name);
+                    var fmeBody = Language.get('menu.fme.time.starts_in').replace('{time}', event.etaText);
                     elements.nextEventImage.src = event.imageSrc;
-                    elements.nextEventName.innerHTML = Language.get(event.name);
-                    elements.nextEventEta.innerHTML = Language.get('menu.fme.time.starts_in').replace('{time}', event.etaText);
+                    elements.nextEventName.innerHTML = fmeName;
+                    elements.nextEventEta.innerHTML = fmeBody;
+                    elements.nextEventBodyMobile.innerHTML = `${fmeName} - ${fmeBody}`;
                 }
 
                 FME.notify(event);
@@ -155,8 +159,6 @@ var FME = {
         // Only send a notification if it's +-20 seconds away from the notification period.
         var timeMax = FME.minutesToMilliseconds(Settings.fmeNotificationPeriod);
         var timeMin = FME.minutesToMilliseconds(Settings.fmeNotificationPeriod - 0.33);
-        console.log(timeMin, event.eta, timeMax);
-
         if (!(event.eta > timeMin && event.eta < timeMax)) return;
 
         // Use the formatted time in case we want to change the notification period later

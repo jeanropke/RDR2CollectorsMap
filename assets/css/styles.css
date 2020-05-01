@@ -1167,7 +1167,7 @@ a.no-style:visited {
     .timer-menu-opened,
     .counter-menu-opened,
     .fme-menu-opened {
-        display: none;
+        display: none !important;
     }
 
     .side-menu .menu-hidden .collectible-icon {
@@ -1363,6 +1363,7 @@ a.no-style:visited {
     background-size: 100% 100%;
     padding: 25px;
     width: 400px;
+    max-width: 400px;
     color: #fff;
 }
 
@@ -1385,4 +1386,37 @@ a.no-style:visited {
 #fme-container .fme-card .fme-body .fme-text {
     margin: 0;
     text-align: left;
+}
+
+#fme-container .fme-card #next-body-mobile {
+    display: none;
+}
+
+#fme-container .fme-card .fme-body {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    #fme-container {
+        right: 50px;
+    }
+
+    #fme-container .fme-card {
+        padding: 10px 20px 10px 10px;
+        width: initial;
+    }
+
+    #fme-container .fme-card #next-body-mobile {
+        display: block;
+    }
+
+    #fme-container .fme-card .fme-body {
+        display: none;
+    }
+
+    #fme-container .fme-card .fme-image {
+        width: 32px;
+        height: auto;
+        margin-right: 8px;
+    }
 }
