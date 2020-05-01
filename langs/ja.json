@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "リング",
     "map.user_pins.icon.nazar": "マダム・ナザール",
     "map.user_pins.icon.treasure": "トレジャー",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "カスタム経路のクリア",
     "menu.clear_markers": "今すぐマーカーをリセット",
     "menu.information_links": "リンク/情報",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "{minutes} 分",
     "menu.fme.time.minutes": "{minutes} 分",
     "menu.fme.condor_egg": "コンドル・エッグ",
+    "menu.fme.day_of_reckoning": "レクリニングの日",
+    "menu.fme.manhunt": "マンハント",
     "menu.fme.salvage": "サルベージ",
     "menu.fme.trade_route": "営業経路",
-    "notification.fme.body": ""
+    "notification.fme.body": "",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

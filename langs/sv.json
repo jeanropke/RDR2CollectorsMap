@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "",
     "map.user_pins.icon.nazar": "Madam Nazar",
     "map.user_pins.icon.treasure": "Skatt",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "Rensa anpassad rutt",
     "menu.clear_markers": "Återställ markörer nu",
     "menu.information_links": "Länkar/Information",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "{minutes} minut",
     "menu.fme.time.minutes": "{minutes} minuter",
     "menu.fme.condor_egg": "Kondorägg",
+    "menu.fme.day_of_reckoning": "Dagers räkning",
+    "menu.fme.manhunt": "Förbrytarjakt",
     "menu.fme.salvage": "Bärgning",
     "menu.fme.trade_route": "Handelsväg",
-    "notification.fme.body": ""
+    "notification.fme.body": "",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

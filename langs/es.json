@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "Anillo",
     "map.user_pins.icon.nazar": "Madam Nazar",
     "map.user_pins.icon.treasure": "Tesoro",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "Borrar rutas personalizadas",
     "menu.clear_markers": "Reiniciar marcadores ahora",
     "menu.information_links": "Enlaces/Información",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "{minutes} minuto",
     "menu.fme.time.minutes": "{minutes} minutos",
     "menu.fme.condor_egg": "Huevo de Cóndor",
+    "menu.fme.day_of_reckoning": "",
+    "menu.fme.manhunt": "",
     "menu.fme.salvage": "",
     "menu.fme.trade_route": "",
-    "notification.fme.body": ""
+    "notification.fme.body": "",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

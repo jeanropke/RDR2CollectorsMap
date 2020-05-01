@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "",
     "map.user_pins.icon.nazar": "",
     "map.user_pins.icon.treasure": "",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "",
     "menu.clear_markers": "",
     "menu.information_links": "",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "",
     "menu.fme.time.minutes": "",
     "menu.fme.condor_egg": "",
+    "menu.fme.day_of_reckoning": "",
+    "menu.fme.manhunt": "",
     "menu.fme.salvage": "",
     "menu.fme.trade_route": "",
-    "notification.fme.body": ""
+    "notification.fme.body": "",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

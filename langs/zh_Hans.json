@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "遗失珠宝戒指",
     "map.user_pins.icon.nazar": "纳扎尔夫人",
     "map.user_pins.icon.treasure": "宝藏",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "清除自定义路线",
     "menu.clear_markers": "立即重置标记",
     "menu.information_links": "链接/信息",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "{minutes} 分钟",
     "menu.fme.time.minutes": "{minutes} 分钟",
     "menu.fme.condor_egg": "神鹫蛋 (收藏家)",
+    "menu.fme.day_of_reckoning": "审判之日（赏金猎人）",
+    "menu.fme.manhunt": "搜捕/捕获 (赏金猎人)",
     "menu.fme.salvage": "抢救物品 (收藏家)",
     "menu.fme.trade_route": "商队路线 (商贩)",
-    "notification.fme.body": ""
+    "notification.fme.body": "",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

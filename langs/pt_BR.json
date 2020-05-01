@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "Anéis",
     "map.user_pins.icon.nazar": "Madame Nazar",
     "map.user_pins.icon.treasure": "Tesouros",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "Limpar rota pers.",
     "menu.clear_markers": "Redefinir marcadores agora",
     "menu.information_links": "Links/Informações",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "{minutes} minuto",
     "menu.fme.time.minutes": "{minutes} minutos",
     "menu.fme.condor_egg": "Ovo de Condor",
+    "menu.fme.day_of_reckoning": "Acerto de Contas",
+    "menu.fme.manhunt": "Caça ao Alvo",
     "menu.fme.salvage": "Achado não é Roubado",
     "menu.fme.trade_route": "Rota Comercial",
-    "notification.fme.body": "Este é o seu aviso que o evento {name} começará em {time}."
+    "notification.fme.body": "Este é o seu aviso que o evento {name} começará em {time}.",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

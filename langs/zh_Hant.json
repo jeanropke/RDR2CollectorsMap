@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "遺失珠寶戒指",
     "map.user_pins.icon.nazar": "娜札女士",
     "map.user_pins.icon.treasure": "寶藏",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "清除自定義路線",
     "menu.clear_markers": "立即重置標記",
     "menu.information_links": "鏈接/信息",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": " {minutes} 分鐘",
     "menu.fme.time.minutes": " {minutes} 分鐘",
     "menu.fme.condor_egg": "神鷲珍蛋",
+    "menu.fme.day_of_reckoning": "審判之日",
+    "menu.fme.manhunt": "絕命追獵",
     "menu.fme.salvage": "殘骸搜索",
     "menu.fme.trade_route": "貿易幹道",
-    "notification.fme.body": ""
+    "notification.fme.body": "",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

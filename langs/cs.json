@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "Prstencový",
     "map.user_pins.icon.nazar": "Paní Nazarová",
     "map.user_pins.icon.treasure": "",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "Vymazat vlastní trasu",
     "menu.clear_markers": "Resetovat značkovače nyní",
     "menu.information_links": "Odkazy/Informace",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "{minutes} minuta",
     "menu.fme.time.minutes": "{minutes} minut",
     "menu.fme.condor_egg": "Condor Eggu.",
+    "menu.fme.day_of_reckoning": "Den zúčtování",
+    "menu.fme.manhunt": "",
     "menu.fme.salvage": "Zůstatková hodnota",
     "menu.fme.trade_route": "Obchodní trasa",
-    "notification.fme.body": ""
+    "notification.fme.body": "",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

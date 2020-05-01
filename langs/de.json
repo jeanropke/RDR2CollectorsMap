@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "Ring",
     "map.user_pins.icon.nazar": "Madam Nazar",
     "map.user_pins.icon.treasure": "Schatz",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "Benutzerdefinierte Route löschen",
     "menu.clear_markers": "Markierungen jetzt zurücksetzen",
     "menu.information_links": "Links/Informationen",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "{minutes} Minute",
     "menu.fme.time.minutes": "{minutes} Minuten",
     "menu.fme.condor_egg": "Condor Ei",
+    "menu.fme.day_of_reckoning": "",
+    "menu.fme.manhunt": "",
     "menu.fme.salvage": "",
     "menu.fme.trade_route": "Handelsroute",
-    "notification.fme.body": "Dies ist deine Übersicht, dass {name} in {time} beginnt."
+    "notification.fme.body": "Dies ist deine Übersicht, dass {name} in {time} beginnt.",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "",
     "map.user_pins.icon.nazar": "",
     "map.user_pins.icon.treasure": "Skatten",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "Ryd tilpasset rute",
     "menu.clear_markers": "Nulstil markeringer nu",
     "menu.information_links": "Link / Information",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "{minutes} minut",
     "menu.fme.time.minutes": "{minutes} minutter",
     "menu.fme.condor_egg": "Kondor Egg",
+    "menu.fme.day_of_reckoning": "Regnskabets dag",
+    "menu.fme.manhunt": "Manjagt",
     "menu.fme.salvage": "Bjærgning",
     "menu.fme.trade_route": "Handelrute",
-    "notification.fme.body": ""
+    "notification.fme.body": "",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

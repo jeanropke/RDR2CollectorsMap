@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "Sormus",
     "map.user_pins.icon.nazar": "Rouva Nazar.",
     "map.user_pins.icon.treasure": "Aarre",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "Poista mukautettu reitti",
     "menu.clear_markers": "Palauta merkit nyt",
     "menu.information_links": "Linkit/tiedot",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "{minutes} minuutti",
     "menu.fme.time.minutes": "{minutes} minuuttia",
     "menu.fme.condor_egg": "",
+    "menu.fme.day_of_reckoning": "Tilinteon päivä",
+    "menu.fme.manhunt": "Metsästys",
     "menu.fme.salvage": "",
     "menu.fme.trade_route": "Kauppareitti",
-    "notification.fme.body": ""
+    "notification.fme.body": "",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }

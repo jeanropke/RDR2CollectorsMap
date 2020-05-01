@@ -1504,6 +1504,7 @@
     "map.user_pins.icon.ring": "Кольцо",
     "map.user_pins.icon.nazar": "Мадам Назар",
     "map.user_pins.icon.treasure": "Сокровище",
+    "map.user_pins.icon.camp": "",
     "menu.clear_custom_routes": "Удалить маршрут",
     "menu.clear_markers": "Сброс скрытых меток",
     "menu.information_links": "Ссылки и информация",
@@ -1723,7 +1724,14 @@
     "menu.fme.time.minute": "{minutes} мин",
     "menu.fme.time.minutes": "{minutes} мин",
     "menu.fme.condor_egg": "Яйцо Кондора",
+    "menu.fme.day_of_reckoning": "Час расплаты",
+    "menu.fme.manhunt": "Облава",
     "menu.fme.salvage": "Обломки",
     "menu.fme.trade_route": "Торговый путь",
-    "notification.fme.body": ""
+    "notification.fme.body": "",
+    "menu.fme_enabled_events": "",
+    "help.fme_enabled_events": "",
+    "menu.modal_fme_enabled_events_title": "",
+    "menu.modal_fme_enabled_events_body": "",
+    "menu.close": ""
 }
