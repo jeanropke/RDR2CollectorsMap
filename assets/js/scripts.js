@@ -451,12 +451,12 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
 
 $('.weekly-item-listings .collection-sell').on('click', function (event) {
   Collection.weeklyItems.forEach(weeklyItemId => {
-    const marker = MapBase.markers.filter(marker => marker.legacyItemId === Item.items[weeklyItemId].legacyItemId && marker.isCurrent);
-    if (marker[0].itemNumber === 1)
-      Inventory.changeMarkerAmount(marker[0].legacyItemId, -1);
+    const marker = MapBase.markers.filter(marker => marker.legacyItemId === Item.items[weeklyItemId].legacyItemId && marker.isCurrent)[0];
+    if (marker.itemNumber === 1)
+      Inventory.changeMarkerAmount(marker.legacyItemId, -1);
 
-    if (InventorySettings.autoEnableSoldItems && marker[0].item.amount === 0 && marker[0].isCollected) {
-      MapBase.removeItemFromMap(marker[0].cycleName, marker[0].text, marker[0].subdata, marker[0].category, true);
+    if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected) {
+      MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
     }
   });
 });
