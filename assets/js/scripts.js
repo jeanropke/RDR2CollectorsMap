@@ -451,7 +451,8 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
 
 $('.weekly-item-listings .collection-sell').on('click', function (event) {
   Collection.weeklyItems.forEach(weeklyItemId => {
-    const marker = MapBase.markers.filter(marker => marker.legacyItemId === Item.items[weeklyItemId].legacyItemId && marker.isCurrent)[0];
+    const marker = MapBase.markers.find(m =>
+      m.legacyItemId === Item.items[weeklyItemId].legacyItemId && m.isCurrent);
     if (marker.itemNumber === 1)
       Inventory.changeMarkerAmount(marker.legacyItemId, -1);
 
