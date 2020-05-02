@@ -204,16 +204,16 @@ function clockTick() {
   const now = new Date();
   const gameTime = new Date(now * 30);
   const gameHour = gameTime.getUTCHours();
+  gameTime.setUTCHours(gameTime.getUTCHours() -5)
   const nightTime = gameHour >= 22 || gameHour < 5;
   const clockFormat = {
     timeZone: 'UTC',
     hour: 'numeric',
     minute: '2-digit',
-    hour12: !Settings.isClock24Hour
+    hourCycle: !Settings.isClock24Hour ? 'h12' : 'h23',
   };
 
-  // replace added because of bug in google chrome that shows 24:00 instead of 00:00 (all .toLocale... methods doesn't work properly in google chrome)
-  $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat).replace(/^24:/, '00:'));
+  $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
   $('#day-cycle').removeClass('hidden').attr('src', `./assets/images/${nightTime ? 'moon' : 'sun'}.png`);
 
   const cycleResetTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
