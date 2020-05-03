@@ -497,14 +497,16 @@ var MapBase = {
   },
 
   addFastTravelMarker: function () {
+    var markerSize = Settings.markerSize;
     if (enabledCategories.includes('fast_travel')) {
       $.each(fastTravelData, function (key, value) {
-        var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+        var shadow = Settings.isShadowsEnabled ?
+          '<img class="shadow" width="' + 35 * markerSize + '" height="' + 16 * markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         var marker = L.marker([value.x, value.y], {
           icon: L.divIcon({
-            iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
-            iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-            popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
+            iconSize: [35 * markerSize, 45 * markerSize],
+            iconAnchor: [17 * markerSize, 42 * markerSize],
+            popupAnchor: [0 * markerSize, -28 * markerSize],
             html: `
               <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Icon">
               <img class="background" src="./assets/images/icons/marker_gray.png" alt="Background">
@@ -520,13 +522,14 @@ var MapBase = {
     }
   },
 
-  debugMarker: function (lat, long, name = 'Debug Marker') {
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" width="' + 35 * Settings.markerSize + '" height="' + 16 * Settings.markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+  debugMarker: function (lat, long, name = 'Debug Marker', markerSize = Settings.markerSize) {
+    var shadow = Settings.isShadowsEnabled ?
+      '<img class="shadow" width="' + 35 * markerSize + '" height="' + 16 * markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     var marker = L.marker([lat, long], {
       icon: L.divIcon({
-        iconSize: [35 * Settings.markerSize, 45 * Settings.markerSize],
-        iconAnchor: [17 * Settings.markerSize, 42 * Settings.markerSize],
-        popupAnchor: [0 * Settings.markerSize, -28 * Settings.markerSize],
+        iconSize: [35 * ms, 45 * ms],
+        iconAnchor: [17 * ms, 42 * ms],
+        popupAnchor: [0 * ms, -28 * ms],
         html: `
           <img class="icon" src="./assets/images/icons/random.png" alt="Icon">
           <img class="background" src="./assets/images/icons/marker_darkblue.png" alt="Background">
@@ -546,7 +549,11 @@ var MapBase = {
 
       var lat = parseFloat(coords.latlng.lat.toFixed(4));
       var lng = parseFloat(coords.latlng.lng.toFixed(4));
-      $('.lat-lng-container p').html(`Latitude: ${lat}<br>Longitude: ${lng}<br><a href="javascript:void(0)" onclick="Routes.setCustomRouteStart('${lat}', '${lng}')">${Language.get('routes.set_as_route_start')}</a>`);
+      $('.lat-lng-container p').html(
+        `Latitude: ${lat}<br>
+        Longitude: ${lng}<br>
+        <a href="javascript:void(0)"
+        onclick="Routes.setCustomRouteStart('${lat}', '${lng}')">${Language.get('routes.set_as_route_start')}</a>`);
 
       $('#lat-lng-container-close-button').click(function () {
         $('.lat-lng-container').css('display', 'none');

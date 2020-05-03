@@ -29,15 +29,15 @@ class Treasure {
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
   }
-  static onSettingsChanged(ms = Settings.markerSize, shadow = Settings.isShadowsEnabled) {
+  static onSettingsChanged(markerSize = Settings.markerSize, shadow = Settings.isShadowsEnabled) {
     this.mainIcon = L.divIcon({
-      iconSize: [35 * ms, 45 * ms],
-      iconAnchor: [17 * ms, 42 * ms],
-      popupAnchor: [0 * ms, -28 * ms],
+      iconSize: [35 * markerSize, 45 * markerSize],
+      iconAnchor: [17 * markerSize, 42 * markerSize],
+      popupAnchor: [0 * markerSize, -28 * markerSize],
       html: `
         <img class="icon" src="./assets/images/icons/treasure.png" alt="Icon">
         <img class="background" src="./assets/images/icons/marker_beige.png" alt="Background">
-        ${shadow ? `<img class="shadow" width="${35 * ms}" height="${16 * ms}"
+        ${shadow ? `<img class="shadow" width="${35 * markerSize}" height="${16 * markerSize}"
             src="./assets/images/markers-shadow.png" alt="Shadow">` : ''}
       `
     });
