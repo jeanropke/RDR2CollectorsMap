@@ -209,7 +209,7 @@ function clockTick() {
     timeZone: 'UTC',
     hour: 'numeric',
     minute: '2-digit',
-    hourCycle: !Settings.isClock24Hour ? 'h12' : 'h23',
+    hourCycle: Settings.isClock24Hour ? 'h23' : 'h12',
   };
 
   $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
