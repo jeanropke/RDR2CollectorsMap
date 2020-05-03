@@ -479,7 +479,7 @@ var MapBase = {
       MapBase.importantItems = JSON.parse(localStorage.getItem('importantItems')) || [];
 
     $.each(MapBase.importantItems, function (key, item) {
-      if (/random_item_\d+/.test(item))
+      if (item.includes('random_item_'))
         $(`[data-marker=${item}]`).addClass('highlight-items');
       else
         $(`[data-marker*=${item}]`).addClass('highlight-items');
