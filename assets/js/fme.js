@@ -205,7 +205,7 @@ var FME = {
         $("#fme-notification").prop('checked', Settings.isFmeNotificationEnabled);
         $("#fme-notification-period").val(Settings.fmeNotificationPeriod);
         $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
-        $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled && Settings.isFmeNotificationEnabled));
+        $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
 
         $("input[name='fme-enabled-events[]']").each(function (i, v) {
             var id = $(this).attr('id');
