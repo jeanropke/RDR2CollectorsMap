@@ -249,9 +249,8 @@ setInterval(clockTick, 1000);
 $('.top-widget > p').on('click', function () {
   $('.top-widget > p').toggleClass('hidden');
 
-  if (Settings.topWidgetState >= 3) Settings.topWidgetState = 0;
-  else Settings.topWidgetState++;
-
+  Settings.topWidgetState++;
+  Settings.topWidgetState %= 4;
   updateTopWidget();
 });
 
