@@ -1,8 +1,18 @@
 class Collection {
-  // Collection.collections and more is constructed in `Item.init()`
   constructor(preliminary) {
     Object.assign(this, preliminary);
-    this.items = Object.values(Item.items).filter(item => item.category === this.category);
+    this.items = []; // filled by new Item()s
+  }
+  static init(collections) {
+    this.collections = Object.create(null);
+    Object.entries(collections).forEach(([category, price]) =>
+      this.collections[category] = new Collection({category, price}));
+    return Loader.promises['weekly'].consumeJson(data => {
+      const nameViaParam = getParameterByName('weekly');
+      this.weeklySetName = data.sets[nameViaParam] ? nameViaParam : data.current;
+      this.weeklyItems = data.sets[this.weeklySetName];
+      console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
+    });
   }
   averageAmount() {
     return this.items.reduce((sum, item) => sum + item.amount, 0) / this.items.length;
@@ -27,6 +37,8 @@ class Item {
   constructor(preliminary) {
     Object.assign(this, preliminary);
     this.category = this.itemId.split('_', 1)[0];
+    this.collection = Collection.collections[this.category];
+    this.collection.items.push(this);
     this.itemTranslationKey = `${this.itemId}.name`;
     this.legacyItemId = this.itemId.replace(/^flower_|^egg_/, '');
     this.markers = [];  // filled by Marker.init();
@@ -34,22 +46,13 @@ class Item {
   }
   static init() {
     this.items = Object.create(null);
-    Collection.collections = Object.create(null);
-    const itemAndCollection = Loader.promises['items_value'].consumeJson(data => {
+    return Loader.promises['items_value'].consumeJson(data => {
+      const weekly = Collection.init(data.full);
       Object.entries(data.items).forEach(([itemId, price]) =>
         this.items[itemId] = new Item({itemId, price}));
-      Object.entries(data.full).forEach(([category, price]) =>
-        Collection.collections[category] = new Collection({category, price}));
       this.compatInit();
+      return weekly;
     });
-    const weekly = Loader.promises['weekly'].consumeJson(data => {
-      const nameViaParam = getParameterByName('weekly');
-      const setViaParam = data.sets[nameViaParam];
-      Collection.weeklySetName = setViaParam ? nameViaParam : data.current;
-      Collection.weeklyItems = setViaParam || data.sets[Collection.weeklySetName];
-      console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
-    });
-    return Promise.all([itemAndCollection, weekly]);
   }
   // prefill whenever “new” inventory is empty and “old” inventory exists
   static compatInit() {
