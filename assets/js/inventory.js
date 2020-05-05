@@ -86,10 +86,6 @@ var Inventory = {
       if (popup) popup.update();
 
       const amount = marker.item && marker.item.amount;
-      $(`[data-type=${legacyItemId}] .counter-number`)
-        .text(amount)
-        .toggleClass('text-danger', amount >= InventorySettings.stackSize);
-
       if ((marker.isCollected ||
         (InventorySettings.isEnabled && amount >= InventorySettings.stackSize)) &&
         marker.isCurrent ||

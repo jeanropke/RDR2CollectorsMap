@@ -41,141 +41,12 @@ Menu.addCycleWarning = function (element, isSameCycle) {
 };
 
 Menu.refreshMenu = function () {
-  $('.menu-hidden[data-type]:not([data-type=treasure])')
-    .children('.collectible-wrapper').remove();
-
-  var anyUnavailableCategories = [];
-
-  MapBase.markers
-    .filter(m => m.isCurrent && m.itemNumber === 1)
-    .forEach(marker => {
-      var collectibleTitle = Language.get(marker.itemTranslationKey);
-      var collectibleImage = null;
-
-      // Prevents 404 errors. If doing the if-statement the other way round, jQuery tries to load the images.
-      if (marker.category !== 'random')
-        collectibleImage = $('<img>').attr('src', `./assets/images/icons/game/${marker.itemId}.png`).attr('alt', 'Set icon').addClass('collectible-icon');
-
-      var collectibleElement = $(`<div class="collectible-wrapper" data-help="item"
-      data-type="${marker.legacyItemId}">`);
-      var collectibleTextWrapperElement = $('<span class="collectible-text">');
-      var collectibleTextElement = $('<p class="collectible">').text(collectibleTitle);
-
-      var collectibleCountDecreaseElement = $('<div class="counter-button">-</div>');
-      var collectibleCountTextElement = $('<div class="counter-number">')
-        .text(marker.item && marker.item.amount);
-      var collectibleCountIncreaseElement = $('<div class="counter-button">+</div>');
-
-      collectibleCountDecreaseElement.on('click', function (e) {
-        e.stopPropagation();
-        Inventory.changeMarkerAmount(marker.legacyItemId, -1);
-      });
-
-      collectibleCountIncreaseElement.on('click', function (e) {
-        e.stopPropagation();
-        Inventory.changeMarkerAmount(marker.legacyItemId, 1);
-      });
-
-      collectibleElement.on('contextmenu', function (e) {
-        if (!Settings.isRightClickEnabled) e.preventDefault();
-
-        if (!['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
-          MapBase.highlightImportantItem(marker.itemId, marker.category);
-        }
-      });
-
-      var collectibleCountElement = $('<span>')
-        .addClass('counter')
-        .append(collectibleCountDecreaseElement)
-        .append(collectibleCountTextElement)
-        .append(collectibleCountIncreaseElement)
-        .toggle(InventorySettings.isEnabled);
-
-      var collectibleCategory = $(`.menu-option[data-type=${marker.category}]`);
-
-      if (marker.lat.length == 0 || marker.tool == -1) {
-        if (!anyUnavailableCategories.includes(marker.category))
-          anyUnavailableCategories.push(marker.category);
-
-        collectibleElement.attr('data-help', 'item_unavailable').addClass('not-found');
-        collectibleCategory.attr('data-help', 'item_category_unavailable_items').addClass('not-found');
-      }
-
-      if (collectibleCategory.hasClass('not-found') && !anyUnavailableCategories.includes(marker.category))
-        collectibleCategory.attr('data-help', 'item_category').removeClass('not-found');
-
-      collectibleCountTextElement.toggleClass('text-danger',
-        marker.category !== 'random' && marker.item.amount >= InventorySettings.stackSize);
-
-      if (['flower_agarita', 'flower_blood_flower'].includes(marker.itemId)) {
-        collectibleElement.attr('data-help', 'item_night_only');
-      }
-
-      let multiMarkerItemMarkers = [marker];
-      if (['egg', 'flower'].includes(marker.category)) {
-        multiMarkerItemMarkers = MapBase.markers.filter(_marker =>
-          (marker.itemId === _marker.itemId && _marker.isCurrent));
-      }
-      if (multiMarkerItemMarkers.every(marker => !marker.canCollect)) {
-        collectibleElement.addClass('disabled');
-      }
-
-      Collection.weeklyItems.forEach(weeklyItemId => {
-        if (marker.itemId === weeklyItemId) {
-          collectibleElement.attr('data-help', 'item_weekly');
-          collectibleElement.addClass('weekly-item');
-        }
-      });
-
-      collectibleElement.hover(function () {
-        $('#help-container p').text(Language.get(`help.${$(this).data('help')}`));
-      }, function () {
-        $('#help-container p').text(Language.get(`help.default`));
-      });
-
-      $(`.menu-hidden[data-type=${marker.category}]`)
-        .append(collectibleElement
-          .append(collectibleImage)
-          .append(collectibleTextWrapperElement
-            .append(collectibleTextElement)
-            .append(collectibleCountElement)));
-    });
-
-  $('.menu-hidden[data-type]').each(function (key, value) {
-    var category = $(this);
-
-    if (category.data('type') == 'treasure')
-      return;
-
-    // if the cycle is the same as yesterday highlight category in menu;
-    var isSameCycle = Cycles.isSameAsYesterday(category.data('type'));
-    var element = `[data-text="menu.${category.data('type')}"]`;
-
-    Menu.addCycleWarning(element, isSameCycle);
-    Menu.refreshCollectionCounter(category.data('type'));
-
-    if (Settings.sortItemsAlphabetically) {
-      if (category.data('type').includesOneOf('cups', 'swords', 'wands', 'pentacles'))
-        return;
-
-      var children = category.children('.collectible-wrapper');
-
-      children.sort(function (a, b) {
-        return a.innerText.toLowerCase().localeCompare(b.innerText.toLowerCase());
-      }).appendTo(this);
-    }
-  });
-
-  // Check cycle warning for random spots
+  Collection.updateMenu();
   Menu.addCycleWarning('[data-text="menu.random_spots"]', Cycles.isSameAsYesterday('random'));
-
   categories.forEach(cat => {
     if (!enabledCategories.includes(cat)) $(`[data-type="${cat}"]`).addClass('disabled');
   });
-
   Menu.refreshWeeklyItems();
-
-  $('.map-cycle-alert span').html(Language.get('map.refresh_for_updates_alert'));
 };
 
 Menu.refreshCollectionCounter = function (category) {
@@ -255,6 +126,7 @@ Menu.refreshWeeklyItems = function () {
 };
 
 Menu.activateHandlers = function () {
+  'use strict';
   $('#clear_highlights').on('click', function () {
     MapBase.clearImportantItems();
   });
@@ -298,4 +170,14 @@ Menu.activateHandlers = function () {
         MapBase.addMarkers();
       }
     });
+  const help = document.getElementById('help-container');
+  const $helpParagraph = $(help).children('p');
+  $('.side-menu, .top-widget, .lat-lng-container')
+    .on('mouseover mouseout', event => {
+      const target = event.type === 'mouseover' ? event.target : event.relatedTarget;
+      // keep current help if pointer jumped to help container or it overgrew current pointer pos.
+      if (help.contains(target)) return;
+      const helpTransId = $(target).closest('[data-help]').attr('data-help') || 'default';
+      $helpParagraph.html(Language.get(`help.${helpTransId}`));
+    })
 }

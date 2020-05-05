@@ -429,19 +429,6 @@ $("#enable-cycle-input").on("change", function () {
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
 });
 
-//Open collection submenu
-$('.open-submenu').on('click', function (e) {
-  e.stopPropagation();
-  $(this).parent().parent().children('.menu-hidden').toggleClass('opened');
-  $(this).toggleClass('rotate');
-});
-
-$('.submenu-only').on('click', function (e) {
-  e.stopPropagation();
-  $(this).parent().children('.menu-hidden').toggleClass('opened');
-  $(this).children('.open-submenu').toggleClass('rotate');
-});
-
 // Sell collections on menu && collect all (add every item to the inventory from category)
 $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('click', event => {
   'use strict';
@@ -880,17 +867,6 @@ $('#generate-route-fasttravel-weight').on("change", function () {
 $('#generate-route-railroad-weight').on("change", function () {
   RouteSettings.railroadWeight = parseFloat($("#generate-route-railroad-weight").val());
   Routes.generatePath();
-});
-
-var defaultHelpTimeout;
-$('[data-help]').hover(function (e) {
-  var attr = $(this).attr('data-help');
-  clearTimeout(defaultHelpTimeout);
-  $('#help-container p').attr('data-text', `help.${attr}`).text(Language.get(`help.${attr}`));
-}, function () {
-  defaultHelpTimeout = setTimeout(function () {
-    $('#help-container p').attr('data-text', `help.default`).text(Language.get(`help.default`));
-  }, 100);
 });
 
 $('#show-help').on("change", function () {
