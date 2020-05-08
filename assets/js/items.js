@@ -21,9 +21,8 @@ class Collection {
   }
   static init(collections) {
     this._installEventHandlers();
-    this.collections = Object.create(null);
-    Object.entries(collections).forEach(([category, price]) =>
-      this.collections[category] = new Collection({category, price}));
+    this.collections = [];
+    collections.forEach(interim => this.collections.push(new Collection(interim)));
     return Loader.promises['weekly'].consumeJson(data => {
       const nameViaParam = getParameterByName('weekly');
       this.weeklySetName = data.sets[nameViaParam] ? nameViaParam : data.current;
@@ -32,7 +31,7 @@ class Collection {
     });
   }
   static updateMenu() {
-    Object.values(this.collections).forEach(collection => collection.updateMenu());
+    this.collections.forEach(collection => collection.updateMenu());
   }
   static _installEventHandlers() {
     $('.side-menu')
@@ -130,8 +129,7 @@ class Collection {
       collectionAmount * this.price;
   }
   static totalValue() {
-    return Object.values(this.collections)
-      .reduce((sum, collection) => sum + collection.totalValue(), 0);
+    return this.collections.reduce((sum, collection) => sum + collection.totalValue(), 0);
   }
 }
 
@@ -139,7 +137,7 @@ class Item {
   constructor(preliminary) {
     Object.assign(this, preliminary);
     this.category = this.itemId.split('_', 1)[0];
-    this.collection = Collection.collections[this.category];
+    this.collection = Collection.collections.find(c => c.category === this.category);
     this.collection.items.push(this);
     this.itemTranslationKey = `${this.itemId}.name`;
     this.legacyItemId = this.itemId.replace(/^flower_|^egg_/, '');
@@ -150,11 +148,10 @@ class Item {
   // `.init()` needs DOM ready and jquery, but no other map realted scripts initialized
   static init() {
     this._installEventHandlers();
-    this.items = Object.create(null);
+    this.items = [];
     return Loader.promises['items_value'].consumeJson(data => {
-      const weekly = Collection.init(data.full);
-      Object.entries(data.items).forEach(([itemId, price]) =>
-        this.items[itemId] = new Item({itemId, price}));
+      const weekly = Collection.init(data.collections);
+      data.items.forEach(interimItem => this.items.push(new Item(interimItem)));
       this.compatInit();
       return weekly;
     });
@@ -163,7 +160,7 @@ class Item {
   static compatInit() {
     const oldAmounts = JSON.parse(localStorage.getItem("inventory"));
     if (oldAmounts && !Object.keys(localStorage).some(key => key.startsWith('amount.'))) {
-      Object.entries(Item.items).forEach(([itemId, item]) => item.amount = oldAmounts[itemId]);
+      Item.items.forEach(item => item.amount = oldAmounts[item.itemId]);
       console.log('old amounts converted');
       localStorage.removeItem('inventory');
     }

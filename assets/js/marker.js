@@ -36,7 +36,8 @@ class Marker {
     this.subdata = ['egg', 'flower'].includes(this.category) ?
       this.itemId.replace(`${this.category}_`, '') : undefined;
     this.legacyItemId = this.subdata || this.text;
-    this.item = this.category === 'random' ? undefined : Item.items[this.itemId];
+    this.item = this.category === 'random' ? undefined : Item.items.find(item =>
+      item.itemId === this.itemId);
 
     /**
      * `._collectedKey` is the key for the `.isCollected` accessors
@@ -383,7 +384,7 @@ class Marker {
           markers.forEach(preliminaryMarker => {
             const marker = new Marker(preliminaryMarker, cycleName, category);
             MapBase.markers.push(marker);
-            if (marker.category !== 'random') Item.items[marker.itemId].markers.push(marker);
+            if (marker.category !== 'random') marker.item.markers.push(marker);
           });
         });
       });

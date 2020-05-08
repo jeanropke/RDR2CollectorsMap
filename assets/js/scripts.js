@@ -94,7 +94,7 @@ function init() {
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  // MapBase.markers (without .lMarker), Item.items[itemId].markers
+  // MapBase.markers (without .lMarker), Item.items[].markers
   const markers = itemsCollectionsWeekly.then(Marker.init);
   const cycles = Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
   Inventory.init();
@@ -365,7 +365,7 @@ $("#clear-markers").on("click", function () {
 });
 
 $("#clear-inventory").on("click", function () {
-  Object.values(Item.items).forEach(item => item.amount = 0);
+  Item.items.forEach(item => item.amount = 0);
   Inventory.updateItemHighlights();
   Menu.refreshMenu();
   MapBase.addMarkers();
@@ -447,10 +447,8 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
 
 $('.weekly-item-listings .collection-sell').on('click', function (event) {
   Collection.weeklyItems.forEach(weeklyItemId => {
-    const marker = MapBase.markers.find(m =>
-      m.legacyItemId === Item.items[weeklyItemId].legacyItemId && m.isCurrent);
-    if (marker.itemNumber === 1)
-      Inventory.changeMarkerAmount(marker.legacyItemId, -1);
+    const marker = MapBase.markers.find(m => m.ItemId === weeklyItemId && m.isCurrent);
+    if (marker.itemNumber === 1) Inventory.changeMarkerAmount(marker.legacyItemId, -1);
 
     if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected) {
       MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);

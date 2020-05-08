@@ -93,7 +93,7 @@ Menu.refreshWeeklyItems = function () {
     var inventoryCount = '';
 
     if (InventorySettings.isEnabled) {
-      const amount = Item.items[weeklyItemId].amount;
+      const amount = Item.items.find(item => item.itemId === weeklyItemId).amount;
       inventoryCount = $(`<small class="counter-number">${amount}</small>`);
       inventoryCount.toggleClass('text-danger', amount >= InventorySettings.stackSize);
       inventoryCount = inventoryCount.prop('outerHTML');

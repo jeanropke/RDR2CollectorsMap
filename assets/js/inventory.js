@@ -34,17 +34,17 @@ var Inventory = {
       }
       return;
     }
-    Object.entries(Collection.collections).forEach(([category, collection]) => {
-      const contourImg = $(`[data-marker*=${category}] img.marker-contour`);
+    Collection.collections.forEach(collection => {
+      const contourImg = $(`[data-marker*=${collection.category}] img.marker-contour`);
       contourImg.removeClass(function (index, className) {
         return (className.match(/highlight-low-amount-items-\S+/gm) || []).join(' ');
       });
       contourImg.css('--animation-target-opacity', 0.0);
       contourImg.css("opacity", 0.0);
 
-      if (!enabledCategories.includes(category)) return;
+      if (!enabledCategories.includes(collection.category)) return;
 
-      var markers = MapBase.markers.filter(_m => _m.category === category && _m.isCurrent);
+      var markers = MapBase.markers.filter(_m => _m.category === collection.category && _m.isCurrent);
 
       const collectionAverage = collection.averageAmount();
       markers.map(_m => {
