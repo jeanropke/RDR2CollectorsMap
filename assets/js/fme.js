@@ -1,4 +1,6 @@
 /**
+ * Display various Free Mode Events.
+ * 
  * Created by Richard Westenra, stripped to only display next 2 events.
  * For the full experience, please visit his websites at:
  * 
@@ -10,19 +12,21 @@
  */
 
 var FME = {
-    // The last retrieved events JSON
+    /**
+     * The last retrieved events JSON
+     */
     _eventsJson: null,
 
-    // A list of notifications that have already been sent to prevent dupes
-    // Doesn't account for people refreshing just in time
-    // Maybe make this persistent later, but there's no real need for it
+    /**
+     * A list of notifications that have already been sent to prevent dupes.
+     * Doesn't account for people refreshing just in time.
+     * Maybe make this persistent later, but there's no real need for it.
+     */
     _sentNotifications: [],
 
-    frequency: {
-        general: Settings.fmeDisplayGeneralPeriod,
-        role: Settings.fmeDisplayRolePeriod
-    },
-
+    /**
+     * A list of flags to use for the FME enabled settings
+     */
     flags: {
         general: {
             none: 0,
@@ -46,7 +50,9 @@ var FME = {
         }
     },
 
-    // DOM elements for the FME card
+    /**
+     * DOM elements for the FME card
+     */
     elements: {
         general: {
             nextEventImage: document.getElementById('next-general-image'),
@@ -67,8 +73,13 @@ var FME = {
      * @param {Array} schedule List of event times
      */
     updateEvent: function (schedule, key) {
+        var frequencies = {
+            general: Settings.fmeDisplayGeneralPeriod,
+            role: Settings.fmeDisplayRolePeriod
+        };
+
         var elements = FME.elements[key];
-        var frequency = FME.minutesToMilliseconds(FME.frequency[key]);
+        var frequency = FME.minutesToMilliseconds(frequencies[key]);
         var hasValidNext = false;
 
         schedule.forEach(function (e, i) {
