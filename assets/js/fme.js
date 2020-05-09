@@ -18,34 +18,66 @@ var FME = {
     // Maybe make this persistent later, but there's no real need for it
     _sentNotifications: [],
 
+    frequency: {
+        general: Settings.fmeDisplayGeneralPeriod,
+        role: Settings.fmeDisplayRolePeriod
+    },
+
     flags: {
-        none: 0,
-        condor_egg: 1,
-        day_of_reckoning: 2,
-        manhunt: 4,
-        salvage: 8,
-        trade_route: 16,
+        general: {
+            none: 0,
+            cold_dead_hands: 1,
+            dispatch_rider: 2,
+            fishing_challenge: 4,
+            fools_gold: 8,
+            king_of_the_castle: 16,
+            master_archer: 32,
+            railroad_baron: 64,
+            random: 128,
+            wild_animal_kills: 256,
+        },
+        role: {
+            none: 0,
+            condor_egg: 1,
+            day_of_reckoning: 2,
+            manhunt: 4,
+            salvage: 8,
+            trade_route: 16,
+        }
     },
 
     // DOM elements for the FME card
     elements: {
-        nextEventImage: document.getElementById('next-image'),
-        nextEventName: document.getElementById('next-name'),
-        nextEventEta: document.getElementById('next-eta'),
-        nextEventBodyMobile: document.getElementById('next-body-mobile'),
+        general: {
+            nextEventImage: document.getElementById('next-general-image'),
+            nextEventName: document.getElementById('next-general-name'),
+            nextEventEta: document.getElementById('next-general-eta'),
+            nextEventBodyMobile: document.getElementById('next-general-mobile'),
+        },
+        role: {
+            nextEventImage: document.getElementById('next-role-image'),
+            nextEventName: document.getElementById('next-role-name'),
+            nextEventEta: document.getElementById('next-role-eta'),
+            nextEventBodyMobile: document.getElementById('next-role-mobile'),
+        }
     },
 
     /**
      * Update the FME data
      * @param {Array} schedule List of event times
      */
-    updateEvent: function (schedule) {
-        var elements = FME.elements;
-        var frequency = FME.minutesToMilliseconds(Settings.fmeDisplayPeriod);
+    updateEvent: function (schedule, key) {
+        var elements = FME.elements[key];
+        var frequency = FME.minutesToMilliseconds(FME.frequency[key]);
         var hasValidNext = false;
+
         schedule.forEach(function (e, i) {
             var event = FME.getEventObject(e);
-            if (event.eta > 0 && event.eta < frequency && Settings.fmeEnabledEvents & FME.flags[event.name]) {
+
+            if (key === "general" && !(Settings.fmeEnabledGeneralEvents & FME.flags.general[event.name])) return;
+            if (key === "role" && !(Settings.fmeEnabledRoleEvents & FME.flags.role[event.name])) return;
+
+            if (event.eta > 0 && event.eta < frequency) {
                 hasValidNext = true;
 
                 // No need to update DOM when it's not visible.
@@ -55,13 +87,14 @@ var FME = {
                     elements.nextEventImage.src = event.imageSrc;
                     elements.nextEventName.innerHTML = fmeName;
                     elements.nextEventEta.innerHTML = fmeBody;
-                    elements.nextEventBodyMobile.innerHTML = `${fmeName} - ${fmeBody}`;
+                    elements.nextEventBodyMobile.innerHTML = `${fmeName} - ${event.etaText}`;
                 }
 
                 FME.notify(event);
             }
         });
-        $('#next-event').toggle(hasValidNext);
+
+        $(`#next-${key}-event`).toggle(hasValidNext);
     },
 
     /**
@@ -129,7 +162,10 @@ var FME = {
     update: function () {
         if (!Settings.isFmeDisplayEnabled && !Settings.isFmeNotificationEnabled) return;
         if (FME._eventsJson === null) return;
-        FME.updateEvent(FME._eventsJson);
+
+        FME.updateEvent(FME._eventsJson.general, "general");
+        FME.updateEvent(FME._eventsJson.role, "role");
+
         FME.updateVisiblity();
     },
 
@@ -160,16 +196,24 @@ var FME = {
     init: function () {
         $('#fme-display').on("change", function () {
             Settings.isFmeDisplayEnabled = $("#fme-display").prop('checked');
-            $('#fme-display-period').parent().toggle(Settings.isFmeDisplayEnabled);
+            $('#fme-display-general-period, #fme-display-role-period').parent().toggle(Settings.isFmeDisplayEnabled);
             $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
             FME.update();
         });
 
-        $('#fme-display-period').on("change", function () {
-            var inputValue = parseInt($('#fme-display-period').val());
+        $('#fme-display-general-period').on("change", function () {
+            var inputValue = parseInt($('#fme-display-general-period').val());
+            inputValue = !isNaN(inputValue) ? inputValue : 30;
+            if (inputValue < 10 || inputValue > 45) inputValue = 30;
+            Settings.fmeDisplayGeneralPeriod = inputValue;
+            FME.update();
+        });
+
+        $('#fme-display-role-period').on("change", function () {
+            var inputValue = parseInt($('#fme-display-role-period').val());
             inputValue = !isNaN(inputValue) ? inputValue : 60;
             if (inputValue < 10 || inputValue > 90) inputValue = 60;
-            Settings.fmeDisplayPeriod = inputValue;
+            Settings.fmeDisplayRolePeriod = inputValue;
             FME.update();
         });
 
@@ -200,25 +244,40 @@ var FME = {
         }
 
         $("#fme-display").prop('checked', Settings.isFmeDisplayEnabled);
-        $("#fme-display-period").val(Settings.fmeDisplayPeriod);
-        $('#fme-display-period').parent().toggle(Settings.isFmeDisplayEnabled);
+        $("#fme-display-general-period").val(Settings.fmeDisplayGeneralPeriod).parent().toggle(Settings.isFmeDisplayEnabled);
+        $("#fme-display-role-period").val(Settings.fmeDisplayRolePeriod).parent().toggle(Settings.isFmeDisplayEnabled);
         $("#fme-notification").prop('checked', Settings.isFmeNotificationEnabled);
         $("#fme-notification-period").val(Settings.fmeNotificationPeriod);
         $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
         $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
 
-        $("input[name='fme-enabled-events[]']").each(function (i, v) {
+        $("input[name='fme-enabled-general-events[]']").each(function (i, v) {
             var id = $(this).attr('id');
-            $(this).prop('checked', (Settings.fmeEnabledEvents & FME.flags[id]));
+            $(this).prop('checked', (Settings.fmeEnabledGeneralEvents & FME.flags.general[id]));
         });
 
-        $("input[name='fme-enabled-events[]']").change(function () {
+        $("input[name='fme-enabled-general-events[]']").change(function () {
             var total = 0;
-            $("input[name='fme-enabled-events[]']:checked").each(function (i, v) {
+            $("input[name='fme-enabled-general-events[]']:checked").each(function (i, v) {
                 var value = parseInt($(this).val());
                 total += value;
             });
-            Settings.fmeEnabledEvents = total;
+            Settings.fmeEnabledGeneralEvents = total;
+            FME.update();
+        });
+
+        $("input[name='fme-enabled-role-events[]']").each(function (i, v) {
+            var id = $(this).attr('id');
+            $(this).prop('checked', (Settings.fmeEnabledRoleEvents & FME.flags.role[id]));
+        });
+
+        $("input[name='fme-enabled-role-events[]']").change(function () {
+            var total = 0;
+            $("input[name='fme-enabled-role-events[]']:checked").each(function (i, v) {
+                var value = parseInt($(this).val());
+                total += value;
+            });
+            Settings.fmeEnabledRoleEvents = total;
             FME.update();
         });
 
@@ -248,7 +307,7 @@ var FME = {
             this.markNotSupported();
             return;
         }
-        
+
         // Already sent.
         if (this._sentNotifications.includes(event.eventDateTime)) return;
 
@@ -279,7 +338,7 @@ var FME = {
                 }
             });
         }
-        
+
         if (Notification.permission === "denied") {
             this.markPermissionDenied();
         }

@@ -1374,8 +1374,12 @@ a.no-style:visited {
     text-align: left;
 }
 
-#fme-container .fme-card #next-body-mobile {
+#fme-container .fme-card #next-general-mobile,
+#fme-container .fme-card #next-role-mobile {
     display: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #fme-container .fme-card .fme-body {
@@ -1392,7 +1396,8 @@ a.no-style:visited {
         width: initial;
     }
 
-    #fme-container .fme-card #next-body-mobile {
+    #fme-container .fme-card #next-general-mobile,
+    #fme-container .fme-card #next-role-mobile {
         display: block;
     }
 

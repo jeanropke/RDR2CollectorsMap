@@ -120,8 +120,10 @@ const Settings = SettingProxy.createSettingProxy('main');
 Object.entries({
   alertClosed: { default: false },
   baseLayer: { default: 'map.layers.default' },
-  fmeDisplayPeriod: { default: 60 },
-  fmeEnabledEvents: { default: 31 },
+  fmeDisplayGeneralPeriod: { default: 30 },
+  fmeDisplayRolePeriod: { default: 60 },
+  fmeEnabledGeneralEvents: { default: 511 },
+  fmeEnabledRoleEvents: { default: 31 },
   fmeNotificationPeriod: { default: 10 },
   isClock24Hour: { default: false },
   isCoordsOnClickEnabled: { default: false },
