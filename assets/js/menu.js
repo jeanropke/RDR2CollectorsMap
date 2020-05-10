@@ -46,7 +46,6 @@ Menu.refreshMenu = function () {
   categories.forEach(cat => {
     if (!enabledCategories.includes(cat)) $(`[data-type="${cat}"]`).addClass('disabled');
   });
-  Menu.refreshWeeklyItems();
 };
 
 Menu.refreshCollectionCounter = function (category) {
@@ -82,47 +81,6 @@ Menu.refreshItemsCounter = function () {
 
 Menu.refreshTotalInventoryValue = function () {
   $('#items-value').text(`$${Collection.totalValue().toFixed(2)}`);
-};
-
-Menu.refreshWeeklyItems = function () {
-  $('#weekly-container .weekly-item-listings').children('.weekly-item-listing').remove();
-  $('#weekly-container .weekly-item-title').text(Language.get('collection'));
-  $('#weekly-container .weekly-flavor-text').text(Language.get('weekly_flavor'));
-
-  Collection.weeklyItems.forEach(weeklyItemId => {
-    var inventoryCount = '';
-
-    if (InventorySettings.isEnabled) {
-      const amount = Item.items.find(item => item.itemId === weeklyItemId).amount;
-      inventoryCount = $(`<small class="counter-number">${amount}</small>`);
-      inventoryCount.toggleClass('text-danger', amount >= InventorySettings.stackSize);
-      inventoryCount = inventoryCount.prop('outerHTML');
-    }
-
-    var helpKey = 'weekly_item_collectable';
-
-    if (weeklyItemId.startsWith('item_')) {
-      helpKey = 'weekly_' + weeklyItemId;
-    }
-
-    const element = $(`
-      <div class="weekly-item-listing" data-help="${helpKey}">
-        <span>
-          <div class="icon-wrapper"><img class="icon" src="./assets/images/icons/game/${weeklyItemId}.png" alt="Weekly item icon" /></div>
-          <span>${Language.get(weeklyItemId + '.name')}</span>
-        </span>
-        ${inventoryCount}
-      </div>
-    `);
-
-    element.hover(function () {
-      $('#help-container p').text(Language.get(`help.${helpKey}`));
-    }, function () {
-      $('#help-container p').text(Language.get('help.default'));
-    });
-
-    $('#weekly-container .weekly-item-listings').append(element);
-  });
 };
 
 Menu.activateHandlers = function () {

@@ -111,6 +111,5 @@ var Inventory = {
 
     Inventory.updateItemHighlights();
     Menu.refreshItemsCounter();
-    Menu.refreshWeeklyItems();
   }
 };

@@ -446,11 +446,10 @@ $('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('cli
 });
 
 $('.weekly-item-listings .collection-sell').on('click', function (event) {
-  Collection.weeklyItems.forEach(weeklyItemId => {
-    const marker = MapBase.markers.find(m => m.ItemId === weeklyItemId && m.isCurrent);
-    if (marker.itemNumber === 1) Inventory.changeMarkerAmount(marker.legacyItemId, -1);
-
-    if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected) {
+  Weekly.collectibleItems.forEach(weeklyItem => {
+    Inventory.changeMarkerAmount(weeklyItem.legacyItemId, -1);
+    const marker = weeklyItem.markers.find(marker => marker.isCurrent && marker.isCollected);
+    if (InventorySettings.autoEnableSoldItems && weeklyItem.amount === 0 && marker) {
       MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
     }
   });
@@ -598,7 +597,6 @@ $('#enable-inventory').on("change", function () {
   InventorySettings.isEnabled = $("#enable-inventory").prop('checked');
 
   MapBase.addMarkers();
-  Menu.refreshWeeklyItems();
   Menu.refreshTotalInventoryValue();
 
   $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(InventorySettings.isEnabled);

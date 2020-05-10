@@ -57,10 +57,6 @@ var Language = {
       translation = Language._externalLink(transKey);
     } else if (transKey === 'int.end.link') {
       translation = '</a>';
-    } else if (transKey === 'collection') {
-      transKey = `weekly.desc.${Collection.weeklySetName}`;
-    } else if (transKey === 'weekly_flavor') {
-      transKey = `weekly.flavor.${Collection.weeklySetName}`;
     } else if (['count', 'max', 'minutes', 'time'].includes(transKey)) {
       return `{${transKey}}`;
     }

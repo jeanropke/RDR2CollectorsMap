@@ -127,9 +127,6 @@ class Marker {
       return true;
     }
   }
-  get isWeekly() {
-    return Collection.weeklyItems.includes(this.itemId);
-  }
   get isCurrent() {
     // Cycles might serve numbers instead of strings
     return this.cycleName == Cycles.categories[this.category];
@@ -152,10 +149,10 @@ class Marker {
     }
 
     let base;
-    if (this.isWeekly) {
-      base = 'green';
-    } else if (this.category === 'random') {
+    if (this.category === 'random') {
       base = markerColor === 'by_category' && this.tool == 2 ? 'black' : 'lightgray';
+    } else if (this.item.isWeekly()) {
+      base = 'green';
     } else if (markerColor === 'by_category') {
       base = {
         flower: 'darkred',
@@ -264,8 +261,9 @@ class Marker {
         snippet.find('[data-text="map.unknown_cycle_description"]').hide();
       }
     }
-    if (!this.isWeekly) snippet.find('[data-text="weekly.desc"]').hide();
-    if (this.tool != '-1') snippet.find('[data-text="map.item.unable"]').hide();
+    snippet
+      .find('[data-text="weekly.desc"]').toggle(this.item && this.item.isWeekly()).end()
+      .find('[data-text="map.item.unable"]').toggle(this.tool == -1).end()
     const toolImg = snippet.find('.tool-type');
     if (this.tool == '0') {
       toolImg.hide();

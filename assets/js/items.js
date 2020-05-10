@@ -13,8 +13,87 @@ jQuery.fn.propSearchUp = function(property) {
   return element && element.prop(property);
 }
 
-class Collection {
+class BaseItem {
   constructor(preliminary) {
+    Object.assign(this, preliminary);
+    this.itemTranslationKey = `${this.itemId}.name`;
+  }
+  isWeekly() {
+    return Weekly.items.includes(this);
+  }
+  _insertWeeklyMenuElement() {
+    this.$weeklyMenuButton = $(`
+      <div class="weekly-item-listing" data-help="${this.weeklyHelpKey}">
+        <span>
+          <div class="icon-wrapper"><img class="icon"
+            src="./assets/images/icons/game/${this.itemId}.png" alt="Weekly item icon"></div>
+          <span data-text="${this.itemTranslationKey}></span>
+        </span>
+        <small class="counter-number">${this.amount}</small>
+      </div>
+    `).translate().appendTo(this.$listParent)
+    SettingProxy.addListener(InventorySettings, 'isEnabled stackSize', () => this.$weeklyMenuButton
+      .find('.counter-number')
+        .toggle(InventorySettings.isEnabled)
+        .toggleClass('text-danger', this.amount >= InventorySettings.stackSize)
+      .end()
+      )();
+  }
+}
+
+class NonCollectible extends BaseItem {
+  constructor(preliminary) {
+    super(preliminary);
+    this.amount = '?';
+    this.weeklyHelpKey = `weekly_${this.itemId}`;
+  }
+}
+
+class Category {}
+class Weekly extends Category {
+  // needs Item.items ready
+  static init() {
+    return Loader.promises['weekly'].consumeJson(data => {
+      const nameViaParam = getParameterByName('weekly');
+      this.weeklyId = data.sets[nameViaParam] ? nameViaParam : data.current;
+      this.items = data.sets[this.weeklyId].map(itemId =>
+        Item.items.find(i => i.itemId === itemId) || new NonCollectible({itemId}));
+      this.collectibleItems = this.items.filter(item => item.constructor === Item);
+      this._insertMenuElements()
+      console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
+    });
+  }
+  static _insertMenuElements() {
+    this.$menuEntry = $(`
+    <div id="weekly-container">
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title weekly-item-title" data-text="weekly.desc.${this.weeklyId}">
+          Weekly Collection</h2>
+        <span class="header-border"></span>
+      </div>
+      <div class="weekly-item-listings">
+        <p>
+          <span class="weekly-flavor-text" data-text="weekly.flavor.${this.weeklyId}"></span>
+          <span data-text="menu.weekly_item_description">Find all the items listed and sell the complete collection to Madam Nazar for an XP and RDO$ reward.</span>
+        </p>
+        <div class="collection-value">
+          <span class="collection-sell" data-text="menu.sell" data-help="item_sell">Sell</span>
+        </div>
+      </div>
+    </div>
+    `)
+    .translate()
+    .insertBefore('.links-container')
+    this.$listParent = this.$menuEntry.find('.weekly-item-listings');
+
+    this.items.forEach(item => item._insertWeeklyMenuElement());
+  }
+}
+
+class Collection extends Category {
+  constructor(preliminary) {
+    super();
     Object.assign(this, preliminary);
     this.items = []; // filled by new Item()s
     this._insertMenuElement();
@@ -23,12 +102,6 @@ class Collection {
     this._installEventHandlers();
     this.collections = [];
     collections.forEach(interim => this.collections.push(new Collection(interim)));
-    return Loader.promises['weekly'].consumeJson(data => {
-      const nameViaParam = getParameterByName('weekly');
-      this.weeklySetName = data.sets[nameViaParam] ? nameViaParam : data.current;
-      this.weeklyItems = data.sets[this.weeklySetName];
-      console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
-    });
   }
   static updateMenu() {
     this.collections.forEach(collection => collection.updateMenu());
@@ -81,10 +154,10 @@ class Collection {
     this.$menuButton = $elements.eq(0);
     this.$submenu = $elements.eq(1);
     this.$menuButton[0].rdoCollection = this;
-    this.$menuButton
-      .find('.same-cycle-warning-menu').hide().end()
+    this.$menuButton.find('.same-cycle-warning-menu').hide().end()
+    SettingProxy.addListener(Settings, 'isCycleInputEnabled', () => this.$menuButton
       .find('.input-cycle').toggleClass('hidden', !Settings.isCycleInputEnabled).end()
-      .find('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled).end()
+      .find('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled).end()) ();
   }
   updateMenu () {
     const buggy = this.items.map(item => item.updateMenu()).includes(true);
@@ -133,14 +206,14 @@ class Collection {
   }
 }
 
-class Item {
+class Item extends BaseItem{
   constructor(preliminary) {
-    Object.assign(this, preliminary);
+    super(preliminary);
     this.category = this.itemId.split('_', 1)[0];
     this.collection = Collection.collections.find(c => c.category === this.category);
     this.collection.items.push(this);
-    this.itemTranslationKey = `${this.itemId}.name`;
     this.legacyItemId = this.itemId.replace(/^flower_|^egg_/, '');
+    this.weeklyHelpKey = 'weekly_item_collectable';
     this.markers = [];  // filled by Marker.init();
     this._amountKey = `amount.${this.itemId}`;
     this._insertMenuElement();
@@ -150,10 +223,10 @@ class Item {
     this._installEventHandlers();
     this.items = [];
     return Loader.promises['items_value'].consumeJson(data => {
-      const weekly = Collection.init(data.collections);
+      Collection.init(data.collections);
       data.items.forEach(interimItem => this.items.push(new Item(interimItem)));
       this.compatInit();
-      return weekly;
+      return Weekly.init();
     });
   }
   // prefill whenever “new” inventory is empty and “old” inventory exists
@@ -229,9 +302,10 @@ class Item {
     } else {
       localStorage.removeItem(this._amountKey);
     }
-    this.$menuButton.find('.counter-number')
-      .text(value)
-      .toggleClass('text-danger', value >= InventorySettings.stackSize);
+    this.$menuButton.add(this.$weeklyMenuButton)
+      .find('.counter-number')
+        .text(value)
+        .toggleClass('text-danger', value >= InventorySettings.stackSize);
   }
   // use the following marker based property only after Marker.init()!
   effectiveAmount() {
@@ -248,14 +322,13 @@ class Item {
   updateMenu() {
     const currentMarkers = this.currentMarkers();
     const buggy = currentMarkers.every(marker => marker.tool == -1);
-    const isWeekly = Collection.weeklyItems.includes(this.itemId);
     this.$menuButton
       .attr('data-help', () => {
         if (buggy) {
           return 'item_unavailable';
         } else if (['flower_agarita', 'flower_blood_flower'].includes(this.itemId)) {
           return 'item_night_only';
-        } else if (isWeekly) {
+        } else if (this.isWeekly()) {
           return 'item_weekly';
         } else {
           return 'item';
@@ -263,7 +336,7 @@ class Item {
       })
       .toggleClass('not-found', buggy)
       .toggleClass('disabled', currentMarkers.every(marker => !marker.canCollect))
-      .toggleClass('weekly-item', isWeekly)
+      .toggleClass('weekly-item', this.isWeekly())
       .find('.counter')
         .toggle(InventorySettings.isEnabled)
       .end()
