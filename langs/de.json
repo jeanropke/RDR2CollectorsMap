@@ -1430,7 +1430,7 @@
     "menu.random_spots": "Zufällige Stellen",
     "menu.collectables_counter": "{count} von {max} gesammelt",
     "menu.collection_counter": "{count} von {max}",
-    "menu.collection_counter_percentage": "",
+    "menu.collection_counter_percentage": "{count}%",
     "menu.rdo_map": "Red Dead Online Karte",
     "menu.auto_refresh": "Zyklus automatisch anpassen",
     "menu.clear_inventory": "Inventar leeren",
