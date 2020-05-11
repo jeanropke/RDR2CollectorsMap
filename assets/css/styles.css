@@ -67,6 +67,17 @@ select,
     outline: none;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../../assets/images/select_caret.png) no-repeat !important;
+    background-size: 12px !important;
+    background-position: calc(100% - 5px) center !important;
+    background-repeat: no-repeat !important;
+    background-color: #383838 !important;
+}
+
 .cycle-table {
     color: white;
     background: black;
@@ -268,7 +279,7 @@ select,
     background-image: url(../../assets/images/timer_bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    padding: 5px;
+    padding: 5px 15px 5px 10px;
     color: #fff;
     text-align: center;
     user-select: none;
@@ -430,7 +441,7 @@ select,
     min-width: 40%;
     font-weight: 500;
     color: #fff;
-    border: 1px solid #999;
+    border: none;
 }
 
 .input-text {
@@ -466,8 +477,9 @@ select,
 .menu-toggle {
     width: 30px;
     height: 30px;
-    background: #111;
-    border: 1px solid #888;
+    background-image: url(../../assets/images/timer_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     position: fixed;
     z-index: 1000;
     left: 5px;
