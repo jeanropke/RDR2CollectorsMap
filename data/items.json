@@ -560,7 +560,7 @@
             { "text": "pentacles_ace", "height": "0", "tool": "0", "lat": "-56.6126", "lng": "134.9304", 	"video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=733s" },
             { "text": "pentacles_two", "height": "0", "tool": "0", "lat": "-57.7053", "lng": "76.1954", 	"video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=872s" },
             { "text": "pentacles_three", "height": "0", "tool": "0", "lat": "-55.8748", "lng": "156.9434", 	"video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=574s" },
-            { "text": "pentacles_four", "height": "0", "tool": "0", "lat": "-65.1880", "lng": "129.6110", 	"video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=696s" },
+            { "text": "pentacles_four", "height": "-1", "tool": "0", "lat": "-65.1880", "lng": "129.6110", 	"video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=696s" },
             { "text": "pentacles_five", "height": "0", "tool": "0", "lat": "-70.4713", "lng": "130.5154", 	"video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=662s" },
             { "text": "pentacles_six", "height": "0", "tool": "0", "lat": "-121.5763", "lng": "38.5891", 	"video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=967s" },
             { "text": "pentacles_seven", "height": "0", "tool": "0", "lat": "-83.3781", "lng": "99.3736", 	"video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=904s" },
