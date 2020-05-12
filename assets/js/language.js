@@ -61,7 +61,7 @@ var Language = {
       transKey = `weekly.desc.${Collection.weeklySetName}`;
     } else if (transKey === 'weekly_flavor') {
       transKey = `weekly.flavor.${Collection.weeklySetName}`;
-    } else if (['count', 'max'].includes(transKey)) {
+    } else if (['count', 'max', 'minutes', 'time'].includes(transKey)) {
       return `{${transKey}}`;
     }
 
