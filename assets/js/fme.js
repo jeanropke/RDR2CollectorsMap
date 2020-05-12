@@ -171,7 +171,6 @@ var FME = {
      * Update the FME card
      */
     update: function () {
-        if (!Settings.isFmeDisplayEnabled && !Settings.isFmeNotificationEnabled) return;
         if (FME._eventsJson === null) return;
 
         FME.updateEvent(FME._eventsJson.general, "general");
