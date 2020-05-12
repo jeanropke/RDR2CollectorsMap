@@ -259,7 +259,9 @@ var MapBase = {
         $(`[data-type="${goTo.category}"]`).removeClass('disabled');
       }
 
-      Layers.itemMarkersLayer.getLayerById(goTo.text).openPopup();
+      setTimeout(() => {
+        Layers.itemMarkersLayer.getLayerById(goTo.text).openPopup();
+      }, 3000);
     }
   },
 
