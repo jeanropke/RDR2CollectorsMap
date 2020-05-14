@@ -101,11 +101,13 @@ function init() {
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();
   FME.init();
-  const treasureFinished = Treasure.init();
+  const treasures = Treasure.init();
   Promise.all([cycles, markers]).then(MapBase.runOncePostLoad);
   Routes.init();
   // depends on MapBase, Treasure, Pins
-  Promise.all([treasureFinished, markers]).then(Menu.activateHandlers);
+  Promise.all([treasures, markers]).then(Menu.activateHandlers);
+  Promise.all([itemsCollectionsWeekly, markers, cycles, treasures])
+    .then(Loader.resolveMapModelLoaded);
 
   if (Settings.isMenuOpened) $('.menu-toggle').click();
 

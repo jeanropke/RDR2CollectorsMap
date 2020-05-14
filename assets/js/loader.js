@@ -9,6 +9,14 @@ class Loader {
             const name = url.split('/').pop().split('.', 1)[0];
             this.promises[name] = new Loader(name, url);
         });
+        /*
+        Similar to DOMContentLoaded: to be fired once cycles, items, collections, treasures, ...
+        are loaded and initialized. Can be used for final view updates which depend on data.
+        This promise is driven by the promises of all loaders and init functions providing data
+        for the map model. – Use like:
+        Loader.mapModelLoaded.then(callback);
+        */
+        this.mapModelLoaded = new Promise(resolve => this.resolveMapModelLoaded = resolve);
     }
     constructor(name, url) {
         const queryString = {};
