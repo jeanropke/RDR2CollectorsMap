@@ -318,11 +318,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
 }
 
 .leaflet-container a {
-	color: rgb(75, 189, 255);
+	color: rgb(50, 169, 255);
 }
 
 .leaflet-container a:hover {
-	color: rgb(23, 138, 231);
+	color: rgb(101, 198, 255);
 }
 
 .leaflet-container a.leaflet-active {
@@ -422,8 +422,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 /* layers control */
 
 .leaflet-control-layers {
-	box-shadow: 0 1px 5px #333;
-	background: #222;
+	box-shadow: 0 1px 5px #444;
+	background: #333;
 	border-radius: 5px;
 	user-select: none;
 }
