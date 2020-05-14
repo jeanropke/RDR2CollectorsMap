@@ -170,7 +170,6 @@ Object.entries({
   showRoutesSettings: { default: true },
   showUtilitiesSettings: { default: true },
   showWeeklySettings: { default: true },
-  sortItemsAlphabetically: { default: false },
   toolType: { default: 3 },
   topWidgetState: { default: 0 },
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));

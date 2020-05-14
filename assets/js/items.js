@@ -99,26 +99,35 @@ class Collection extends Category {
     this._insertMenuElement();
   }
   static init(collections) {
-    this._installEventHandlers();
+    this._installSettingsAndEventHandlers();
     this.collections = [];
     collections.forEach(interim => this.collections.push(new Collection(interim)));
   }
   static updateMenu() {
     this.collections.forEach(collection => collection.updateMenu());
   }
-  static _installEventHandlers() {
-    $('.side-menu')
-      .on('change', event => {
-        const $input = $(event.target);
-        const collection = $input.propSearchUp('rdoCollection');
-        if (collection && $input.hasClass('input-cycle')) {
-          Cycles.categories[collection.category] = +$input.val();
-          MapBase.addMarkers();
-          Menu.refreshMenu();
-        }
-      })[0].addEventListener('click', event => {
-        if (event.target.classList.contains('input-cycle')) event.stopImmediatePropagation();
-      }, {capture: true});
+  static _installSettingsAndEventHandlers() {
+    SettingProxy.addSetting(Settings, 'sortItemsAlphabetically', { default: false });
+    Loader.mapModelLoaded.then(() => {
+      const checkbox = $('#sort-items-alphabetically')
+        .prop("checked", Settings.sortItemsAlphabetically)
+        .on("change", () => Settings.sortItemsAlphabetically = checkbox.prop('checked'))
+      SettingProxy.addListener(Settings, 'sortItemsAlphabetically language', () =>
+        Collection.collections.forEach(collection =>
+          collection.menuSort(Settings.sortItemsAlphabetically))) ();
+      $('.side-menu')
+        .on('change', event => {
+          const $input = $(event.target);
+          const collection = $input.propSearchUp('rdoCollection');
+          if (collection && $input.hasClass('input-cycle')) {
+            Cycles.categories[collection.category] = +$input.val();
+            MapBase.addMarkers();
+            Menu.refreshMenu();
+          }
+        })[0].addEventListener('click', event => {
+          if (event.target.classList.contains('input-cycle')) event.stopImmediatePropagation();
+        }, {capture: true});
+    });
   }
   _insertMenuElement() {
     const $elements = $(`
@@ -181,12 +190,14 @@ class Collection extends Category {
         .replace('{count}', this.$submenu.find('.disabled').length)
         .replace('{max}', this.items.length)
       )
-    if (Settings.sortItemsAlphabetically &&
-      !['cups', 'swords', 'wands', 'pentacles'].includes(this.category)) {
-        this.$submenu.children('.collectible-wrapper').sort((a, b) =>
-          a.innerText.localeCompare(b.innerText, Settings.language, {sensitivity: 'base'}))
-          .appendTo(this.$submenu);
-    }
+  }
+  menuSort(alphabetically) {
+    if (['cups', 'swords', 'wands', 'pentacles'].includes(this.category)) return;
+    const items = !alphabetically ? this.items : [...this.items].sort((...args) => {
+      const [a, b] = args.map(item => Language.get(item.itemTranslationKey));
+      return a.localeCompare(b, Settings.language, {sensitivity: 'base'});
+    });
+    this.$submenu.append(items.map(item => item.$menuButton));
   }
   averageAmount() {
     return this.items.reduce((sum, item) => sum + item.amount, 0) / this.items.length;

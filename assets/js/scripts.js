@@ -128,7 +128,6 @@ function init() {
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsOnClickEnabled);
   $('#timestamps-24').prop("checked", Settings.isClock24Hour);
-  $('#sort-items-alphabetically').prop("checked", Settings.sortItemsAlphabetically);
   $('#enable-cycle-input').prop("checked", Settings.isCycleInputEnabled);
   $("#enable-right-click").prop('checked', Settings.isRightClickEnabled);
   $("#enable-debug").prop('checked', Settings.isDebugEnabled);
@@ -532,11 +531,6 @@ $('#enable-dclick-zoom').on("change", function () {
   } else {
     MapBase.map.doubleClickZoom.disable();
   }
-});
-
-$('#sort-items-alphabetically').on("change", function () {
-  Settings.sortItemsAlphabetically = $("#sort-items-alphabetically").prop('checked');
-  Menu.refreshMenu();
 });
 
 $('#pins-place-mode').on("change", function () {
