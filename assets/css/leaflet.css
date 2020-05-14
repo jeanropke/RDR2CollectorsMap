@@ -83,6 +83,7 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
+.leaflet-container a:visited,
 .leaflet-container a {
 	-webkit-tap-highlight-color: rgb(50, 169, 255);
 	color: rgb(50, 169, 255);
