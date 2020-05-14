@@ -385,7 +385,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 .leaflet-bar a.leaflet-disabled {
 	cursor: default;
-	background-color: #f4f4f4;
+	background-color: #555;
 	color: #bbb;
 }
 
