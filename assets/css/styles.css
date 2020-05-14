@@ -322,12 +322,14 @@ select {
 .marker-popup-links {
     text-align: center;
     margin: 6px 0 !important;
+    user-select: none;
 }
 
 .marker-popup-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 8px;
+    user-select: none;
 }
 
 .marker-popup-buttons small {
@@ -868,16 +870,20 @@ a.wiki-page:visited {
     align-items: center;
 }
 
+.marker-content-wrapper img {
+    user-select: none;
+}
+
 .marker-content-wrapper p {
     margin-bottom: 4px !important;
 }
 
 .marker-content-wrapper .unavailable-item {
-    color: #cc0000 !important;
+    color: #ff0000 !important;
 }
 
 .marker-content-wrapper .weekly-item {
-    color: #478200 !important;
+    color: #8bfd00 !important;
 }
 
 .marker-warning-wrapper {
@@ -1266,9 +1272,32 @@ a.no-style:visited {
     text-transform: uppercase;
 }
 
+/*Override Bootstrap buttons colors styling*/
+.btn.btn-info.remove-button {
+    background-color: rgb(0, 100, 180);
+}
+
+.btn.btn-info.remove-button:hover {
+    background-color: rgb(0, 120, 200);
+}
+
+.btn.btn-danger {
+    background-color: rgb(140, 0, 0);
+}
+.btn.btn-danger:hover {
+    background-color: rgb(160, 0, 0);
+}
+
+.btn.btn-success {
+    background-color: rgb(0, 120, 0);
+}
+
+.btn.btn-success:hover {
+    background-color: rgb(0, 145, 0);
+}
+
 
 /* Leaflet Marker styling */
-
 .leaflet-div-icon {
     width: 36px;
     height: 45px;
