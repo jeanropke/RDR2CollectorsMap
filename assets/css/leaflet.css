@@ -84,7 +84,8 @@
 }
 
 .leaflet-container a {
-	-webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
+	-webkit-tap-highlight-color: rgb(50, 169, 255);
+	color: rgb(50, 169, 255);
 }
 
 .leaflet-tile {
@@ -315,10 +316,6 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .leaflet-container {
 	background: #ddd;
 	outline: 0;
-}
-
-.leaflet-container a {
-	color: rgb(50, 169, 255);
 }
 
 .leaflet-container a:hover {
