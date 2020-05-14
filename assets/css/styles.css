@@ -341,6 +341,7 @@ select {
 .marker-popup-pin-input-desc {
     border: none;
     width: 100%;
+    background-color: #222;
 }
 
 .marker-popup-pin-input-name {
@@ -1272,28 +1273,94 @@ a.no-style:visited {
     text-transform: uppercase;
 }
 
-/*Override Bootstrap buttons colors styling*/
+/* Dark mode styling */
+/* Override Bootstrap buttons colors styling */
 .btn.btn-info.remove-button {
-    background-color: rgb(0, 110, 180);
+    background-color: #006fb4;
 }
 
 .btn.btn-info.remove-button:hover {
-    background-color: rgb(0, 150, 200);
+    background-color: #0096c8;
 }
 
+.remove-button,
 .btn.btn-danger {
-    background-color: rgb(165, 0, 0);
+    background-color: #a50000;
 }
+
+.remove-button:hover,
 .btn.btn-danger:hover {
-    background-color: rgb(190, 0, 0);
+    background-color: #bb0000;
 }
 
 .btn.btn-success {
-    background-color: rgb(0, 140, 0);
+    background-color: #008800;
 }
 
 .btn.btn-success:hover {
-    background-color: rgb(0, 180, 0);
+    background-color: #00aa00;
+}
+
+.save-button {
+    background-color: #008fbe;
+}
+
+.save-button:hover {
+    background-color: #0096cc;
+}
+
+.leaflet-popup-content-wrapper {
+    background: #222;
+    color: #dadada;
+}
+
+.leaflet-container a:visited,
+.leaflet-container a {
+    color: #3db2ff;
+}
+
+.leaflet-container a:hover {
+    color: #3dc6fc;
+}
+
+.leaflet-bar a {
+    background-color: #333;
+    color: #d4d4d4;
+}
+
+.leaflet-bar a:hover {
+    background-color: #444;
+    color: #d4d4d4;
+}
+
+.leaflet-bar a.leaflet-disabled {
+    background-color: #555;
+    color: #d4d4d4;
+}
+
+.leaflet-control-layers {
+    box-shadow: 0 1px 5px #111;
+    background: #333;
+    user-select: none;
+}
+
+.leaflet-control-layers-expanded {
+    color: #d4d4d4;
+    background: #333;
+}
+
+.leaflet-control-zoom {
+    background-color: #333;
+    color: #d4d4d4;
+}
+
+.leaflet-control-zoom a {
+    background-color: #222;
+}
+
+.leaflet-popup-tip {
+    background: #222;
+    color: #d4d4d4;
 }
 
 
