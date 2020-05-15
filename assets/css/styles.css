@@ -1323,17 +1323,20 @@ a.no-style:visited {
 
 .leaflet-bar a {
     background-color: #333;
-    color: #d4d4d4;
 }
 
 .leaflet-bar a:hover {
     background-color: #444;
+}
+
+.leaflet-bar a, .leaflet-bar a:hover {
+    border-bottom: 1px solid #555;
     color: #d4d4d4;
 }
 
 .leaflet-bar a.leaflet-disabled {
     background-color: #555;
-    color: #d4d4d4;
+    color: #d4d4d4 !important;
 }
 
 .leaflet-control-layers {
@@ -1357,8 +1360,13 @@ a.no-style:visited {
 }
 
 .leaflet-popup-tip {
-    background: #333;
+    background: #222;
     color: #d4d4d4;
+}
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+    border: none;
+    border-radius: 4px;
 }
 
 
