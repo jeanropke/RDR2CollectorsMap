@@ -508,7 +508,7 @@ var MapBase = {
           icon: L.divIcon({
             iconSize: [35 * markerSize, 45 * markerSize],
             iconAnchor: [17 * markerSize, 42 * markerSize],
-            popupAnchor: [0 * markerSize, -28 * markerSize],
+            popupAnchor: [1 * markerSize, -29 * markerSize],
             html: `
               <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Icon">
               <img class="background" src="./assets/images/icons/marker_gray.png" alt="Background">
@@ -531,7 +531,7 @@ var MapBase = {
       icon: L.divIcon({
         iconSize: [35 * markerSize, 45 * markerSize],
         iconAnchor: [17 * markerSize, 42 * markerSize],
-        popupAnchor: [0 * markerSize, -28 * markerSize],
+        popupAnchor: [1 * markerSize, -29 * markerSize],
         html: `
           <img class="icon" src="./assets/images/icons/random.png" alt="Icon">
           <img class="background" src="./assets/images/icons/marker_darkblue.png" alt="Background">
