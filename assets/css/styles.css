@@ -204,7 +204,7 @@ select {
     z-index: 990;
     text-align: center;
     cursor: pointer;
-    background-image: url(../images/menu_hover.png);
+    background-image: url(../images/menu_highlight.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: #fff;
@@ -402,7 +402,7 @@ select {
 }
 
 .input-file {
-    background-image: url(../images/menu_hover.png);
+    background-image: url(../images/menu_highlight.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     border: none;
@@ -413,6 +413,7 @@ select {
 }
 
 .input-container {
+    position: relative;
     user-select: none;
     display: flex;
     justify-content: space-between;
@@ -520,6 +521,7 @@ select {
 }
 
 .side-menu .menu-option {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -527,13 +529,6 @@ select {
     user-select: none;
     cursor: pointer;
     line-height: 36px;
-}
-
-.side-menu .menu-option:hover,
-.side-menu .menu-hidden .collectible-wrapper:hover {
-    background-image: url(../images/menu_hover.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
 }
 
 .side-menu .disabled {
@@ -581,6 +576,8 @@ select {
     max-height: 0;
     overflow: hidden;
     transition: max-height 250ms ease-out;
+    margin: 0px -10px;
+    padding: 0 10px;
 }
 
 .side-menu .menu-hidden.opened,
@@ -629,6 +626,7 @@ select {
 }
 
 .side-menu .collectible-wrapper {
+    position: relative;
     padding: 6px 12px;
     cursor: pointer;
     user-select: none;
@@ -636,8 +634,8 @@ select {
 
 .side-menu .collectible-icon {
     float: left;
-    height: 28px;
-    margin-right: 10px;
+    height: 24px;
+    margin-right: 6px;
 }
 
 .side-menu .collectible-icon.random-encounter {
@@ -1194,6 +1192,10 @@ a.no-style:visited {
     .input-container label {
         line-height: 38px;
     }
+
+    .input-checkbox-wrapper .input-checkbox+.input-checkbox-label, .input-text, .input-action {
+        margin-top: 5px;
+    }
 }
 
 @media (min-width: 1025px) {
@@ -1329,7 +1331,8 @@ a.no-style:visited {
     background-color: #444;
 }
 
-.leaflet-bar a, .leaflet-bar a:hover {
+.leaflet-bar a,
+.leaflet-bar a:hover {
     border-bottom: 1px solid #555;
     color: #d4d4d4;
 }
@@ -1364,7 +1367,8 @@ a.no-style:visited {
     color: #d4d4d4;
 }
 
-.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
     border: none;
     border-radius: 4px;
 }
@@ -1523,5 +1527,41 @@ a.no-style:visited {
         width: 32px;
         height: auto;
         margin-right: 8px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .settings-container .input-container:not(.disabled):after,
+    .side-menu .menu-option:after,
+    .side-menu .collectible-wrapper:after {
+        border-color: #d80419;
+        border-image-repeat: round;
+        border-image-slice: 10 10 10 10 fill;
+        border-image-source: url(../../assets/images/hover.png);
+        border-style: solid;
+        border-width: 10px;
+        content: "";
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: -5px;
+        right: -7px;
+        bottom: -5px;
+        left: -7px;
+        z-index: 10;
+    }
+
+    .side-menu .menu-option:after,
+    .side-menu .collectible-wrapper:after {
+        top: 1px;
+        right: 2px;
+        bottom: 1px;
+        left: 2px;
+    }
+
+    .settings-container .input-container:not(.disabled):hover:after,
+    .side-menu .menu-option:hover:after,
+    .side-menu .collectible-wrapper:hover:after {
+        opacity: 1;
     }
 }
