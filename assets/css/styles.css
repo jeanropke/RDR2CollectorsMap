@@ -682,8 +682,8 @@ select {
     width: 220px;
     margin: 0 calc(50% - 100px) 20px;
     z-index: 910;
-    color: #fff;
-    background-color: #333333;
+    color: #dadada;
+    background-color: #333;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
     padding: 14px 8px;
@@ -692,7 +692,8 @@ select {
 }
 
 .lat-lng-container a {
-    color: #fff;
+    color: #dadada;
+    user-select: none;
 }
 
 .lat-lng-container #lat-lng-container-close-button {
@@ -1232,7 +1233,7 @@ a.no-style:visited {
 
 .pathfinder-control {
     padding: 5px;
-    background: #fff
+    background: #333;
 }
 
 .pathfinder-btn {
@@ -1243,11 +1244,11 @@ a.no-style:visited {
     background: transparent;
     border: none;
     cursor: pointer;
-    color: #000;
+    color: #eee;
 }
 
 .pathfinder-btn:disabled {
-    color: #789;
+    color: rgb(160, 159, 159);
 }
 
 .pathfinder-btn-before {
@@ -1274,39 +1275,36 @@ a.no-style:visited {
 }
 
 /* Dark mode styling */
-/* Override Bootstrap buttons colors styling */
-.btn.btn-info.remove-button {
-    background-color: #006fb4;
+/* Override Bootstrap && Leaflet buttons color styling */
+.btn.btn-info.remove-button,
+.save-button {
+    background-color: #008fbece;
+    border: 1px solid #15b4f3af;
 }
 
-.btn.btn-info.remove-button:hover {
-    background-color: #0096c8;
+.btn.btn-info.remove-button:hover,
+.save-button:hover {
+    background-color: #15b4f3af;
 }
 
 .remove-button,
 .btn.btn-danger {
-    background-color: #a50000;
+    background-color: #a50000ce;
+    border: 1px solid #bb0000ce;
 }
 
 .remove-button:hover,
 .btn.btn-danger:hover {
-    background-color: #bb0000;
+    background-color: #bb0000ce;
 }
 
 .btn.btn-success {
-    background-color: #008800;
+    background-color: #008800ce;
+    border: 1px solid #00aa00ce;
 }
 
 .btn.btn-success:hover {
-    background-color: #00aa00;
-}
-
-.save-button {
-    background-color: #008fbe;
-}
-
-.save-button:hover {
-    background-color: #0096cc;
+    background-color: #00aa00ce;
 }
 
 .leaflet-popup-content-wrapper {
@@ -1355,11 +1353,11 @@ a.no-style:visited {
 }
 
 .leaflet-control-zoom a {
-    background-color: #222;
+    background-color: #333;
 }
 
 .leaflet-popup-tip {
-    background: #222;
+    background: #333;
     color: #d4d4d4;
 }
 
