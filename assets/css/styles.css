@@ -502,7 +502,8 @@ select {
     position: fixed;
     top: -1800px;
     left: 0;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
     height: 100vh;
     color: #eee;
