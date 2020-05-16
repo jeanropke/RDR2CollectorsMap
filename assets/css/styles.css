@@ -410,6 +410,7 @@ select {
     color: #f0f0f0;
     font-size: 14px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .input-container {
@@ -458,6 +459,7 @@ select {
     border-radius: 3px;
     margin-left: 6px;
     text-overflow: ellipsis;
+    cursor: pointer;
 }
 
 .input-container-noflex .input-text {
@@ -901,7 +903,6 @@ a.wiki-page:visited {
 }
 
 .disable-cycle-changer-arrow {
-    cursor: default !important;
     opacity: .3;
 }
 
@@ -945,13 +946,13 @@ a.wiki-page:visited {
 
 /* Custom action button styling */
 
-.input-container.clickable,
-.input-container.clickable label {
+.input-container,
+.input-container label {
     cursor: pointer !important;
 }
 
-.input-container.clickable.disabled,
-.input-container.clickable.disabled label {
+.input-container.disabled,
+.input-container.disabled label {
     cursor: not-allowed !important;
 }
 
@@ -1374,6 +1375,9 @@ a.no-style:visited {
     border-radius: 4px;
 }
 
+.leaflet-control-layers-base label {
+    cursor: pointer;
+}
 
 /* Leaflet Marker styling */
 .leaflet-div-icon {
