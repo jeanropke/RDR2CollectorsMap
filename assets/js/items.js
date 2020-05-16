@@ -19,25 +19,32 @@ class BaseItem {
     this.itemTranslationKey = `${this.itemId}.name`;
   }
   isWeekly() {
-    return Weekly.items.includes(this);
+    return Weekly.current.items.includes(this);
   }
-  _insertWeeklyMenuElement() {
+  // requires Marker and Cycles to be loaded
+  currentMarkers() {
+    return this.markers.filter(marker => marker.isCurrent);
+  }
+  _insertWeeklyMenuElement($listParent) {
     this.$weeklyMenuButton = $(`
       <div class="weekly-item-listing" data-help="${this.weeklyHelpKey}">
         <span>
           <div class="icon-wrapper"><img class="icon"
             src="./assets/images/icons/game/${this.itemId}.png" alt="Weekly item icon"></div>
-          <span data-text="${this.itemTranslationKey}></span>
+          <span data-text="${this.itemTranslationKey}"></span>
         </span>
         <small class="counter-number">${this.amount}</small>
       </div>
-    `).translate().appendTo(this.$listParent)
-    SettingProxy.addListener(InventorySettings, 'isEnabled stackSize', () => this.$weeklyMenuButton
-      .find('.counter-number')
-        .toggle(InventorySettings.isEnabled)
-        .toggleClass('text-danger', this.amount >= InventorySettings.stackSize)
-      .end()
-      )();
+    `).translate().appendTo($listParent)
+    Loader.mapModelLoaded.then(() => {
+      SettingProxy.addListener(InventorySettings, 'isEnabled stackSize', () =>
+        this.$weeklyMenuButton
+          .find('.counter-number')
+            .toggle(InventorySettings.isEnabled)
+            .toggleClass('text-danger', this.amount >= InventorySettings.stackSize)
+          .end()
+      ) ();
+    });
   }
 }
 
@@ -45,25 +52,39 @@ class NonCollectible extends BaseItem {
   constructor(preliminary) {
     super(preliminary);
     this.amount = '?';
+    this.markers = [];
     this.weeklyHelpKey = `weekly_${this.itemId}`;
   }
 }
 
 class Category {}
-class Weekly extends Category {
-  // needs Item.items ready
+// currently only shared by Weekly and Collection
+class BaseCollection extends Category {
+  currentMarkers() {
+    return [].concat(...this.items.map(item => item.currentMarkers()));
+  }
+  // “Sell” event handler shared by Weekly and Collection to be found in Collection.
+  // And this comment is shorter than the overhead for splitting that handler.
+}
+class Weekly extends BaseCollection {
   static init() {
     return Loader.promises['weekly'].consumeJson(data => {
-      const nameViaParam = getParameterByName('weekly');
-      this.weeklyId = data.sets[nameViaParam] ? nameViaParam : data.current;
-      this.items = data.sets[this.weeklyId].map(itemId =>
-        Item.items.find(i => i.itemId === itemId) || new NonCollectible({itemId}));
-      this.collectibleItems = this.items.filter(item => item.constructor === Item);
-      this._insertMenuElements()
+      this.current = new Weekly(data);
+      this._installSettingsAndEventHandlers();
       console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
-    });
+      });
   }
-  static _insertMenuElements() {
+  // needs Item.items ready
+  constructor(data) {
+    super();
+    const nameViaParam = getParameterByName('weekly');
+    this.weeklyId = data.sets[nameViaParam] ? nameViaParam : data.current;
+    this.items = data.sets[this.weeklyId].map(itemId =>
+      Item.items.find(i => i.itemId === itemId) || new NonCollectible({itemId}));
+    this.collectibleItems = this.items.filter(item => item.constructor === Item);
+    this._insertMenuElements();
+  }
+  _insertMenuElements() {
     this.$menuEntry = $(`
     <div id="weekly-container">
       <div class="header">
@@ -83,15 +104,35 @@ class Weekly extends Category {
       </div>
     </div>
     `)
-    .translate()
-    .insertBefore('.links-container')
+      .translate()
+      .insertBefore('.links-container')
+    this.$menuEntry[0].rdoCollection = this;
     this.$listParent = this.$menuEntry.find('.weekly-item-listings');
-
-    this.items.forEach(item => item._insertWeeklyMenuElement());
+    this.items.forEach(item => item._insertWeeklyMenuElement(this.$listParent));
+    Loader.mapModelLoaded.then(() => {
+      SettingProxy.addListener(InventorySettings, 'isEnabled', () =>
+        this.$menuEntry.find('.colleciton-value')
+          .toggle(InventorySettings.isEnabled)
+        .end()
+      ) ();
+    });
+  }
+  static _installSettingsAndEventHandlers() {
+    SettingProxy.addSetting(Settings, 'showWeeklySettings', {default: true});
+    const weeklyCheckbox = $("#show-weekly");
+    Loader.mapModelLoaded.then(() => {
+      SettingProxy.addListener(Settings, 'showWeeklySettings', () => {
+        this.current.$menuEntry.toggleClass('opened', Settings.showWeeklySettings);
+        weeklyCheckbox.prop('checked', Settings.showWeeklySettings)
+      }) ();
+      weeklyCheckbox.on("change", () => {
+        Settings.showWeeklySettings = weeklyCheckbox.prop('checked');
+      })
+    });
   }
 }
 
-class Collection extends Category {
+class Collection extends BaseCollection {
   constructor(preliminary) {
     super();
     Object.assign(this, preliminary);
@@ -120,17 +161,44 @@ class Collection extends Category {
           const $input = $(event.target);
           const collection = $input.propSearchUp('rdoCollection');
           if (collection && $input.hasClass('input-cycle')) {
+            event.stopImmediatePropagation();
             Cycles.categories[collection.category] = +$input.val();
             MapBase.addMarkers();
             Menu.refreshMenu();
           }
+        // on capture phase to override more generic handler in scripts.js
         })[0].addEventListener('click', event => {
-          if (event.target.classList.contains('input-cycle')) event.stopImmediatePropagation();
+          const etcL = event.target.classList;
+          if (etcL.contains('input-cycle')) {
+            // handled by browser _alone_: avoid own category enabled/disabled handler
+          } else if (etcL.contains('collection-sell') || etcL.contains('collection-collect-all')) {
+            const collection = $(event.target).propSearchUp('rdoCollection');
+            const changeAmount = etcL.contains('collection-sell') ? -1 : 1;
+            collection.currentMarkers().forEach(marker => {
+              if (marker.itemNumber === 1) {
+                Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount);
+              }
+              if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 &&
+                marker.isCollected) {
+                  MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata,
+                    marker.category, true);
+              }
+            });
+          } else if (etcL.contains('collection-reset')) {
+            const collection = $(event.target).propSearchUp('rdoCollection');
+            collection.currentMarkers().filter(marker => !marker.canCollect).forEach(marker => {
+              MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata,
+                marker.category, !InventorySettings.resetButtonUpdatesInventory);
+            });
+          } else {
+            return; // event not for “us”
+          }
+          event.stopImmediatePropagation();
         }, {capture: true});
     });
   }
   _insertMenuElement() {
-    const $elements = $(`
+    const $element = $(`
       <div>
         <div class="menu-option clickable" data-type="${this.category}" data-help="item_category">
           <span>
@@ -159,10 +227,9 @@ class Collection extends Category {
           </div>
         </div>
       </div>
-    `).translate().insertBefore('#collection-insertion-before-point').children();
-    this.$menuButton = $elements.eq(0);
-    this.$submenu = $elements.eq(1);
-    this.$menuButton[0].rdoCollection = this;
+    `).translate().insertBefore('#collection-insertion-before-point');
+    $element[0].rdoCollection = this;
+    [this.$menuButton, this.$submenu] = $element.children().toArray().map(e => $(e));
     this.$menuButton.find('.same-cycle-warning-menu').hide().end()
     SettingProxy.addListener(Settings, 'isCycleInputEnabled', () => this.$menuButton
       .find('.input-cycle').toggleClass('hidden', !Settings.isCycleInputEnabled).end()
@@ -217,7 +284,7 @@ class Collection extends Category {
   }
 }
 
-class Item extends BaseItem{
+class Item extends BaseItem {
   constructor(preliminary) {
     super(preliminary);
     this.category = this.itemId.split('_', 1)[0];
@@ -325,10 +392,6 @@ class Item extends BaseItem{
     } else {
       return this.markers.filter(marker => marker.isCurrent && marker.isCollected).length;
     }
-  }
-  // requires Marker and Cycles to be loaded
-  currentMarkers() {
-    return this.markers.filter(marker => marker.isCurrent);
   }
   updateMenu() {
     const currentMarkers = this.currentMarkers();

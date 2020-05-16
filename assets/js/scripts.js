@@ -133,7 +133,6 @@ function init() {
   $("#enable-debug").prop('checked', Settings.isDebugEnabled);
   $("#enable-cycle-changer").prop('checked', Settings.isCycleChangerEnabled);
 
-  $("#show-weekly").prop('checked', Settings.showWeeklySettings);
   $("#show-utilities").prop('checked', Settings.showUtilitiesSettings);
   $("#show-customization").prop('checked', Settings.showCustomizationSettings);
   $("#show-routes").prop('checked', Settings.showRoutesSettings);
@@ -146,7 +145,6 @@ function init() {
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
   $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
 
-  $("#weekly-container").toggleClass('opened', Settings.showWeeklySettings);
   $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
   $("#customization-container").toggleClass('opened', Settings.showCustomizationSettings);
   $("#routes-container").toggleClass('opened', Settings.showRoutesSettings);
@@ -279,11 +277,6 @@ $('#enable-right-click').on("change", function () {
   Settings.isRightClickEnabled = $("#enable-right-click").prop('checked');
 });
 
-$("#show-weekly").on("change", function () {
-  Settings.showWeeklySettings = $("#show-weekly").prop('checked');
-  $("#weekly-container").toggleClass('opened', Settings.showWeeklySettings);
-});
-
 $("#show-utilities").on("change", function () {
   Settings.showUtilitiesSettings = $("#show-utilities").prop('checked');
   $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
@@ -321,12 +314,10 @@ $('#enable-cycle-changer').on("change", function () {
   }
 });
 
-// ignore menu functions if clicks hit input fields embedded in active areas
+// “random” category still needs this (other collectibles have handlers in their class)
 $('.menu-option.clickable input').on('click', function (e) {
   e.stopPropagation();
 });
-
-// change collection cycles
 $('.menu-option.clickable input').on('change', function (e) {
   var el = $(e.target);
   Cycles.categories[el.attr("name")] = parseInt(el.val());
@@ -428,47 +419,6 @@ $("#enable-cycle-input").on("change", function () {
   Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
-});
-
-// Sell collections on menu && collect all (add every item to the inventory from category)
-$('.menu-hidden .collection-sell, .menu-hidden .collection-collect-all').on('click', event => {
-  'use strict';
-  const $target = $(event.target);
-  const category = $target.parent().parent().attr('data-type');
-  const changeAmount = $target.is(".collection-sell") ? -1 : 1;
-
-  MapBase.markers.filter(m => m.category === category && m.isCurrent).forEach(marker => {
-    if (marker.itemNumber === 1) Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount);
-
-    if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected) {
-      MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
-    }
-  });
-});
-
-$('.weekly-item-listings .collection-sell').on('click', function (event) {
-  Weekly.collectibleItems.forEach(weeklyItem => {
-    Inventory.changeMarkerAmount(weeklyItem.legacyItemId, -1);
-    const marker = weeklyItem.markers.find(marker => marker.isCurrent && marker.isCollected);
-    if (InventorySettings.autoEnableSoldItems && weeklyItem.amount === 0 && marker) {
-      MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
-    }
-  });
-});
-
-// Reset collections on menu
-$('.collection-reset').on('click', function (e) {
-  var collectionType = $(this).parent().parent().data('type');
-
-  var getMarkers = MapBase.markers.filter(_m =>
-    !_m.canCollect && _m.category == collectionType && _m.day == Cycles.categories[_m.category]);
-
-  $.each(getMarkers, function (key, marker) {
-    MapBase.removeItemFromMap(marker.day, marker.text, marker.subdata, marker.category,
-      !InventorySettings.resetButtonUpdatesInventory);
-  });
-
-  $(this).removeClass('disabled');
 });
 
 // disable only collected items (one or more in the inventory)
