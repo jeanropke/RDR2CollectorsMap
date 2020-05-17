@@ -1411,7 +1411,7 @@
     "map.remove": "",
     "map.copy_link": "Copier le lien du marqueur",
     "map.video": "Vidéo",
-    "map.flower_type.night_only": "Cette fleur n'apparaît que la nuit (de 22h00 à 17h00).",
+    "map.flower_type.night_only": "Cette fleur n'apparaît que la nuit (de 22h00 à 5h00).",
     "map.flower_type.bush": "Cette fleur pousse sur un buisson.",
     "map.egg_type.tree": "Dans un arbre. Utilisez un fusil à petit gibier ou des flèches à petit gibier.",
     "map.egg_type.stump": "À l'intérieur d'une souche d'arbre.",
