@@ -18,7 +18,6 @@ var Inventory = {
     $('#highlight_low_amount_items').on('change', function () {
       $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);
     });
-    $('.collection-value-bottom').toggleClass('hidden', !InventorySettings.enableAdvancedInventoryOptions);
   },
 
   updateItemHighlights: function myself(fromTimer) {

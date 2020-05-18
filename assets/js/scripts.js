@@ -545,9 +545,7 @@ $('#enable-inventory').on("change", function () {
   MapBase.addMarkers();
   Menu.refreshTotalInventoryValue();
 
-  $('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(InventorySettings.isEnabled);
   $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
-  $('.collection-value-bottom').toggleClass('hidden', !InventorySettings.isEnabled);
 });
 
 $('#enable-inventory-popups').on("change", function () {
@@ -562,7 +560,6 @@ $('#reset-inventory-daily').on("change", function () {
 
 $('#enable-additional-inventory-options').on("change", function () {
   InventorySettings.enableAdvancedInventoryOptions = $("#enable-additional-inventory-options").prop('checked');
-  $('.collection-value-bottom').toggleClass('hidden', !InventorySettings.enableAdvancedInventoryOptions);
 });
 
 $('#highlight_low_amount_items').on("change", function () {
@@ -582,8 +579,6 @@ $('#reset-collection-updates-inventory').on("change", function () {
 $('#auto-enable-sold-items').on("change", function () {
   InventorySettings.autoEnableSoldItems = $('#auto-enable-sold-items').prop('checked');
 });
-
-$('#weekly-container .collection-value, .collection-sell, .counter, .counter-number').toggle(InventorySettings.isEnabled);
 
 $('#inventory-stack').on("change", function () {
   var inputValue = parseInt($('#inventory-stack').val());

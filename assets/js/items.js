@@ -221,7 +221,7 @@ class Collection extends BaseCollection {
             <span class="collection-reset" data-text="menu.reset" data-help="item_reset">Reset</span>
             <span class="collection-sell" data-text="menu.sell" data-help="item_sell">Sell</span>
           </div>
-          <div class="collection-value-bottom hidden">
+          <div class="collection-value-bottom">
             <span class="disable-collected-items" data-text="menu.disable_collected_items" data-help="disable_collected_items">Disable collected</span>
             <span class="collection-collect-all" data-text="menu.collection_collect_all" data-help="collection_collect_all">Collect all</span>
           </div>
@@ -231,9 +231,19 @@ class Collection extends BaseCollection {
     $element[0].rdoCollection = this;
     [this.$menuButton, this.$submenu] = $element.children().toArray().map(e => $(e));
     this.$menuButton.find('.same-cycle-warning-menu').hide().end()
-    SettingProxy.addListener(Settings, 'isCycleInputEnabled', () => this.$menuButton
-      .find('.input-cycle').toggleClass('hidden', !Settings.isCycleInputEnabled).end()
-      .find('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled).end()) ();
+    Loader.mapModelLoaded.then(() => {
+      SettingProxy.addListener(Settings, 'isCycleInputEnabled', () =>
+        this.$menuButton
+          .find('.input-cycle').toggle(Settings.isCycleInputEnabled).end()
+          .find('.cycle-icon').toggle(!Settings.isCycleInputEnabled).end()
+      ) ();
+      SettingProxy.addListener(InventorySettings, 'isEnabled enableAdvancedInventoryOptions', () =>
+        this.$submenu
+          .find('.collection-sell').toggle(InventorySettings.isEnabled).end()
+          .find('.collection-value-bottom').toggle(InventorySettings.isEnabled &&
+            InventorySettings.enableAdvancedInventoryOptions).end()
+      ) ();
+    });
   }
   updateMenu () {
     const buggy = this.items.map(item => item.updateMenu()).includes(true);
@@ -365,10 +375,14 @@ class Item extends BaseItem {
     this.amount = this.amount;  // trigger counter update
     this.$menuButton
       .appendTo(this.collection.$submenu)
-      .find('.counter')
-        .toggle(InventorySettings.isEnabled)
-      .end()
-
+    Loader.mapModelLoaded.then(() => {
+      SettingProxy.addListener(InventorySettings, 'isEnabled', () =>
+        this.$menuButton
+          .find('.counter')
+            .toggle(InventorySettings.isEnabled)
+          .end()
+      ) ();
+    });
   }
   get amount() {
     return +localStorage.getItem(this._amountKey);
