@@ -15,6 +15,14 @@ Object.defineProperty(String.prototype, 'includesOneOf', {
   }
 });
 
+Object.defineProperty(String.prototype, 'filename', {
+  value: function (extension) {
+    let s = this.replace(/\\/g, '/');
+    s = s.substring(s.lastIndexOf('/') + 1);
+    return extension ? s.replace(/[?#].+$/, '') : s.split('.')[0];
+  }
+});
+
 var searchTerms = [];
 var uniqueSearchMarkers = [];
 
@@ -213,7 +221,10 @@ function clockTick() {
   };
 
   $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
-  $('#day-cycle').removeClass('hidden').attr('src', `./assets/images/${nightTime ? 'moon' : 'sun'}.png`);
+
+  const file = $('#day-cycle').attr('src').filename();
+  if ((nightTime && file !== "moon") || (!nightTime && file !== "sun"))
+    $('#day-cycle').removeClass('hidden').attr('src', `./assets/images/${nightTime ? 'moon' : 'sun'}.png`);
 
   const cycleResetTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
   const delta = new Date(cycleResetTime - now);
