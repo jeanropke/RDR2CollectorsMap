@@ -421,21 +421,6 @@ $("#enable-cycle-input").on("change", function () {
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
 });
 
-// disable only collected items (one or more in the inventory)
-$('.disable-collected-items').on('click', function (e) {
-  'use strict';
-  const category = $(this).parent().parent().data('type');
-  MapBase.markers
-    .filter(m => m.category === category && m.isCurrent && m.canCollect)
-    .forEach(marker => {
-      if (marker.item && marker.item.amount > 0) {
-        $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
-        MapBase.removeItemFromMap(marker.cycleName,
-          marker.text, marker.subdata, marker.category, true);
-      };
-    });
-});
-
 // Remove item from map when using the menu
 $(document).on('click', '.collectible-wrapper[data-type]', function () {
   var collectible = $(this).data('type');

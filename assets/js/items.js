@@ -190,6 +190,15 @@ class Collection extends BaseCollection {
               MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata,
                 marker.category, !InventorySettings.resetButtonUpdatesInventory);
             });
+          } else if (etcL.contains('disable-collected-items')) {
+            const collection = $(event.target).propSearchUp('rdoCollection');
+            collection.currentMarkers()
+              .filter(marker => marker.canCollect && marker.item.amount > 0)
+              .forEach(marker => {
+                $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
+                MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata,
+                  marker.category, true);
+              });
           } else {
             return; // event not for “us”
           }
