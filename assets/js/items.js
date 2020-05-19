@@ -236,7 +236,9 @@ class Collection extends BaseCollection {
           </div>
         </div>
       </div>
-    `).translate().insertBefore('#collection-insertion-before-point');
+    `).translate()
+      .find('.input-cycle, .cycle-icon').hide().end()  // improve visuals during initial loading
+      .insertBefore('#collection-insertion-before-point');
     $element[0].rdoCollection = this;
     [this.$menuButton, this.$submenu] = $element.children().toArray().map(e => $(e));
     this.$menuButton.find('.same-cycle-warning-menu').hide().end()
