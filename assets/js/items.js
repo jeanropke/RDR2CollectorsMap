@@ -226,7 +226,7 @@ class Collection extends BaseCollection {
         <div class="menu-hidden" data-type="${this.category}">
           <div class="collection-value">
             <span class="collection-collected" data-help="collection_collected"></span>
-            <span data-help="item_value">$${this.price}</span>
+            <span data-help="item_value">$${this.price.toFixed(2)}</span>
             <span class="collection-reset" data-text="menu.reset" data-help="item_reset">Reset</span>
             <span class="collection-sell" data-text="menu.sell" data-help="item_sell">Sell</span>
           </div>
