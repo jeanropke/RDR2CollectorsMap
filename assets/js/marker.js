@@ -171,9 +171,7 @@ class Marker {
         coin: 'lightred'
       } [this.category] || 'lightred';
     } else if (markerColor === 'by_cycle') {
-      base = ['blue', 'orange', 'purple', 'darkpurple', 'darkred',
-        'darkblue'
-      ][+this.cycleName - 1] || 'lightred';
+      base = ['blue', 'orange', 'purple', 'darkpurple', 'darkred', 'darkblue'][+this.cycleName - 1] || 'lightred';
     } else {
       base = markerColor;
     }
