@@ -36,7 +36,8 @@ class Marker {
     this.subdata = ['egg', 'flower'].includes(this.category) ?
       this.itemId.replace(`${this.category}_`, '') : undefined;
     this.legacyItemId = this.subdata || this.text;
-    this.item = this.category === 'random' ? undefined : Item.items[this.itemId];
+    this.item = this.category === 'random' ? undefined : Item.items.find(item =>
+      item.itemId === this.itemId);
 
     /**
      * `._collectedKey` is the key for the `.isCollected` accessors
@@ -126,9 +127,6 @@ class Marker {
       return true;
     }
   }
-  get isWeekly() {
-    return Collection.weeklyItems.includes(this.itemId);
-  }
   get isCurrent() {
     // Cycles might serve numbers instead of strings
     return this.cycleName == Cycles.categories[this.category];
@@ -151,10 +149,10 @@ class Marker {
     }
 
     let base;
-    if (this.isWeekly) {
-      base = 'green';
-    } else if (this.category === 'random') {
+    if (this.category === 'random') {
       base = markerColor === 'by_category' && this.tool == 2 ? 'black' : 'lightgray';
+    } else if (this.item.isWeekly()) {
+      base = 'green';
     } else if (markerColor === 'by_category') {
       base = {
         flower: 'darkred',
@@ -263,8 +261,9 @@ class Marker {
         snippet.find('[data-text="map.unknown_cycle_description"]').hide();
       }
     }
-    if (!this.isWeekly) snippet.find('[data-text="weekly.desc"]').hide();
-    if (this.tool != '-1') snippet.find('[data-text="map.item.unable"]').hide();
+    snippet
+      .find('[data-text="weekly.desc"]').toggle(this.item && this.item.isWeekly()).end()
+      .find('[data-text="map.item.unable"]').toggle(this.tool == -1).end()
     const toolImg = snippet.find('.tool-type');
     if (this.tool == '0') {
       toolImg.hide();
@@ -375,6 +374,18 @@ class Marker {
           proxy[settingName] = $(e.target.selectedOptions[0]).attr('data-text').split('.').pop();
           MapBase.addMarkers();
         });
+    });
+    MapBase.markers = [];
+    return Loader.promises['items'].consumeJson(data => {
+      $.each(data, (category, allCycles) => {
+        $.each(allCycles, (cycleName, markers) => {
+          markers.forEach(preliminaryMarker => {
+            const marker = new Marker(preliminaryMarker, cycleName, category);
+            MapBase.markers.push(marker);
+            if (marker.category !== 'random') marker.item.markers.push(marker);
+          });
+        });
+      });
     });
   }
 }

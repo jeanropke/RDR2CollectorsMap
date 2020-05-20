@@ -766,14 +766,6 @@ a.wiki-page:visited {
     display: none;
 }
 
-.help-container {
-    height: 100%;
-    padding: 25px;
-    background: #000;
-    border: 1px solid #eee;
-    box-shadow: 0 0 10px 0 black;
-}
-
 .help-close {
     width: 15px;
     height: 15px;

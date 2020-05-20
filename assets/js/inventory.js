@@ -18,7 +18,6 @@ var Inventory = {
     $('#highlight_low_amount_items').on('change', function () {
       $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);
     });
-    $('.collection-value-bottom').toggleClass('hidden', !InventorySettings.enableAdvancedInventoryOptions);
   },
 
   updateItemHighlights: function myself(fromTimer) {
@@ -34,17 +33,17 @@ var Inventory = {
       }
       return;
     }
-    Object.entries(Collection.collections).forEach(([category, collection]) => {
-      const contourImg = $(`[data-marker*=${category}] img.marker-contour`);
+    Collection.collections.forEach(collection => {
+      const contourImg = $(`[data-marker*=${collection.category}] img.marker-contour`);
       contourImg.removeClass(function (index, className) {
         return (className.match(/highlight-low-amount-items-\S+/gm) || []).join(' ');
       });
       contourImg.css('--animation-target-opacity', 0.0);
       contourImg.css("opacity", 0.0);
 
-      if (!enabledCategories.includes(category)) return;
+      if (!enabledCategories.includes(collection.category)) return;
 
-      var markers = MapBase.markers.filter(_m => _m.category === category && _m.isCurrent);
+      var markers = MapBase.markers.filter(_m => _m.category === collection.category && _m.isCurrent);
 
       const collectionAverage = collection.averageAmount();
       markers.map(_m => {
@@ -86,10 +85,6 @@ var Inventory = {
       if (popup) popup.update();
 
       const amount = marker.item && marker.item.amount;
-      $(`[data-type=${legacyItemId}] .counter-number`)
-        .text(amount)
-        .toggleClass('text-danger', amount >= InventorySettings.stackSize);
-
       if ((marker.isCollected ||
         (InventorySettings.isEnabled && amount >= InventorySettings.stackSize)) &&
         marker.isCurrent ||
@@ -115,6 +110,5 @@ var Inventory = {
 
     Inventory.updateItemHighlights();
     Menu.refreshItemsCounter();
-    Menu.refreshWeeklyItems();
   }
 };

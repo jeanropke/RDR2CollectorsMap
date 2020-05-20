@@ -149,6 +149,7 @@ var MapBase = {
     Layers.oms.addListener('spiderfy', function (markers) {
       MapBase.map.closePopup();
     });
+    Layers.itemMarkersLayer.addTo(MapBase.map);
   },
 
   loadOverlays: function () {
@@ -201,18 +202,6 @@ var MapBase = {
     Layers.overlaysLayer.addTo(MapBase.map);
   },
 
-  loadMarkers: function () {
-    'use strict';
-    MapBase.markers = [];
-    return Loader.promises['items'].consumeJson(data => {
-      $.each(data, (category, allCycles) => {
-        $.each(allCycles, (cycleName, markers) => {
-          markers.forEach(marker => MapBase.markers.push(new Marker(marker, cycleName, category)));
-        });
-      });
-    });
-  },
-
   runOncePostLoad: function () {
     'use strict';
     uniqueSearchMarkers = MapBase.markers;
@@ -252,16 +241,13 @@ var MapBase = {
       if (!goTo) return;
       MapBase.map.setView([goTo.lat, goTo.lng], 6);
 
-      //check if marker category is enabled, if not, enable it
-      if (!Layers.itemMarkersLayer.getLayerById(goTo.text)) {
+      if (!enabledCategories.includes(goTo.category)) {
         enabledCategories.push(goTo.category);
         MapBase.addMarkers();
         $(`[data-type="${goTo.category}"]`).removeClass('disabled');
       }
 
-      setTimeout(() => {
-        Layers.itemMarkersLayer.getLayerById(goTo.text).openPopup();
-      }, 3000);
+      setTimeout(() => goTo.lMarker && goTo.lMarker.openPopup(), 3000);
     }
   },
 
@@ -315,8 +301,7 @@ var MapBase = {
 
     Menu.updateHasFilters();
 
-    if (Layers.itemMarkersLayer != null)
-      Layers.itemMarkersLayer.clearLayers();
+    Layers.itemMarkersLayer.clearLayers();
 
     MapBase.updateLoopAvailable = false;
     MapBase.yieldingLoop(
@@ -337,7 +322,6 @@ var MapBase = {
       }
     );
 
-    Layers.itemMarkersLayer.addTo(MapBase.map);
     Layers.pinsLayer.addTo(MapBase.map);
 
     MapBase.addFastTravelMarker();

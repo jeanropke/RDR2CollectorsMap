@@ -33,6 +33,11 @@ SettingProxy.addSetting(Settings, 'day', {type: (str) => new Date(str), default:
 // string is understood by `new Date()`
 // without default type() is used
 // ...and `new Date(undefined)` is a Date() object which calls itself invalid
+
+SettingProxy.addListener(Settings, 'day secondSetting', callback)
+// whenever Settings.day or Settings.secondSetting are assigned, callback is called.
+// addListener() returns the callback for convenient immediate invocation by adding () to the line
+
 */
 
 const SettingProxy = function () {
@@ -80,6 +85,10 @@ const SettingProxy = function () {
       } else {
         localStorage.setItem(config.settingName, JSON.stringify(value));
       }
+      if (!('value' in config) || config.value !== value) {
+        const resolved = Promise.resolve();
+        config.listeners.forEach(callback => resolved.then(callback));
+      }
       config.value = value;
       return true;
     },
@@ -96,6 +105,7 @@ const SettingProxy = function () {
       }
       config = Object.assign(Object.create(null), config);
       delete config.value;
+      config.listeners = [];
       if (!('default' in config)) {
         config.default = 'type' in config ? config.type() : false;
       }
@@ -111,6 +121,14 @@ const SettingProxy = function () {
         config.settingName = `${proxyConfig.get(_domain)}.${name}`;
       }
       proxyConfig.set(name, config);
+    },
+    addListener: function (settingProxy, names, callback) {
+      const proxyConfig = settingProxy[_proxyConfig];
+      names.split(' ').forEach(name => {
+        settingHandler._checkAndGetSettingConfig(proxyConfig, name, ReferenceError)
+          .listeners.push(callback)
+      });
+      return callback;
     },
   };
 }();
@@ -151,8 +169,6 @@ Object.entries({
   showImportExportSettings: { default: true },
   showRoutesSettings: { default: true },
   showUtilitiesSettings: { default: true },
-  showWeeklySettings: { default: true },
-  sortItemsAlphabetically: { default: false },
   toolType: { default: 3 },
   topWidgetState: { default: 0 },
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
