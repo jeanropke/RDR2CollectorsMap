@@ -582,7 +582,6 @@ $('#cookie-export').on("click", function () {
 
     // Remove irrelevant properties (permanently from localStorage):
     delete settings.randid;
-    delete settings['inventory'];
 
     // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
     settings = $.extend(true, {}, localStorage);
