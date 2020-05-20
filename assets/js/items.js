@@ -340,12 +340,11 @@ class Item extends BaseItem {
   static _installEventHandlers() {
     $('.side-menu')
       .on('contextmenu', event => {
-        const itemElement = $(event.target).closest('.collectible-wrapper')[0];
+        const item = $(event.target).propSearchUp('rdoItem');
         // clicked inside of the collectible, but outside of its counter part?
-        if (itemElement && event.target.querySelector('.counter')) {
+        if (item && !event.target.closest('.counter')) {
           event.preventDefault();
           event.stopImmediatePropagation();
-          const item = itemElement.rdoItem;
           if (!['flower_agarita', 'flower_blood_flower'].includes(item.itemId)) {
             MapBase.highlightImportantItem(item.itemId, item.category);
           }

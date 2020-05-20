@@ -796,10 +796,8 @@ $('#show-help').on("change", function () {
   $("#help-container").toggle(Settings.showHelp);
 });
 
-// Disable annoying menu on right mouse click
-$('*').on('contextmenu', function (e) {
-  if (!Settings.isRightClickEnabled)
-    e.preventDefault();
+$(document).on('contextmenu', function (e) {
+  if (!Settings.isRightClickEnabled) e.preventDefault();
 });
 
 $('#delete-all-settings').on('click', function () {
