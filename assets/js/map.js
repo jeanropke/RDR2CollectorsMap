@@ -330,8 +330,7 @@ var MapBase = {
 
     if (refreshMenu) {
       Menu.refreshMenu();
-    }
-    else {
+    } else {
       Routes.generatePath();
       return;
     }

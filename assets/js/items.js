@@ -1,4 +1,4 @@
-jQuery.fn.firstAncestorOrSelf = function(func) {
+jQuery.fn.firstAncestorOrSelf = function (func) {
   'use strict';
   if (this.length !== 1) throw new TypeError('Not implemented (yet?) for selection length != 1.');
   let node = this[0];
@@ -7,7 +7,7 @@ jQuery.fn.firstAncestorOrSelf = function(func) {
     node = node.parentNode;
   }
 }
-jQuery.fn.propSearchUp = function(property) {
+jQuery.fn.propSearchUp = function (property) {
   'use strict';
   const element = this.firstAncestorOrSelf(element => element[property]);
   return element && element.prop(property);
@@ -39,11 +39,11 @@ class BaseItem {
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(InventorySettings, 'isEnabled stackSize', () =>
         this.$weeklyMenuButton
-          .find('.counter-number')
-            .toggle(InventorySettings.isEnabled)
-            .toggleClass('text-danger', this.amount >= InventorySettings.stackSize)
-          .end()
-      ) ();
+        .find('.counter-number')
+        .toggle(InventorySettings.isEnabled)
+        .toggleClass('text-danger', this.amount >= InventorySettings.stackSize)
+        .end()
+      )();
     });
   }
 }
@@ -72,7 +72,7 @@ class Weekly extends BaseCollection {
       this.current = new Weekly(data);
       this._installSettingsAndEventHandlers();
       console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
-      });
+    });
   }
   // needs Item.items ready
   constructor(data) {
@@ -80,7 +80,7 @@ class Weekly extends BaseCollection {
     const nameViaParam = getParameterByName('weekly');
     this.weeklyId = data.sets[nameViaParam] ? nameViaParam : data.current;
     this.items = data.sets[this.weeklyId].map(itemId =>
-      Item.items.find(i => i.itemId === itemId) || new NonCollectible({itemId}));
+      Item.items.find(i => i.itemId === itemId) || new NonCollectible({ itemId }));
     this.collectibleItems = this.items.filter(item => item.constructor === Item);
     this._insertMenuElements();
   }
@@ -112,9 +112,9 @@ class Weekly extends BaseCollection {
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(InventorySettings, 'isEnabled', () =>
         this.$menuEntry.find('.colleciton-value')
-          .toggle(InventorySettings.isEnabled)
+        .toggle(InventorySettings.isEnabled)
         .end()
-      ) ();
+      )();
     });
   }
   static _installSettingsAndEventHandlers() {
@@ -124,7 +124,7 @@ class Weekly extends BaseCollection {
       SettingProxy.addListener(Settings, 'showWeeklySettings', () => {
         this.current.$menuEntry.toggleClass('opened', Settings.showWeeklySettings);
         weeklyCheckbox.prop('checked', Settings.showWeeklySettings)
-      }) ();
+      })();
       weeklyCheckbox.on("change", () => {
         Settings.showWeeklySettings = weeklyCheckbox.prop('checked');
       })
@@ -155,7 +155,7 @@ class Collection extends BaseCollection {
         .on("change", () => Settings.sortItemsAlphabetically = checkbox.prop('checked'))
       SettingProxy.addListener(Settings, 'sortItemsAlphabetically language', () =>
         Collection.collections.forEach(collection =>
-          collection.menuSort(Settings.sortItemsAlphabetically))) ();
+          collection.menuSort(Settings.sortItemsAlphabetically)))();
       $('.side-menu')
         .on('change', event => {
           const $input = $(event.target);
@@ -166,7 +166,7 @@ class Collection extends BaseCollection {
             MapBase.addMarkers();
             Menu.refreshMenu();
           }
-        // on capture phase to override more generic handler in scripts.js
+          // on capture phase to override more generic handler in scripts.js
         })[0].addEventListener('click', event => {
           const etcL = event.target.classList;
           if (etcL.contains('input-cycle')) {
@@ -178,10 +178,8 @@ class Collection extends BaseCollection {
               if (marker.itemNumber === 1) {
                 Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount);
               }
-              if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 &&
-                marker.isCollected) {
-                  MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata,
-                    marker.category, true);
+              if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected) {
+                MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
               }
             });
           } else if (etcL.contains('collection-reset')) {
@@ -203,7 +201,7 @@ class Collection extends BaseCollection {
             return; // event not for “us”
           }
           event.stopImmediatePropagation();
-        }, {capture: true});
+        }, { capture: true });
     });
   }
   _insertMenuElement() {
@@ -237,7 +235,7 @@ class Collection extends BaseCollection {
         </div>
       </div>
     `).translate()
-      .find('.input-cycle, .cycle-icon').hide().end()  // improve visuals during initial loading
+      .find('.input-cycle, .cycle-icon').hide().end() // improve visuals during initial loading
       .insertBefore('#collection-insertion-before-point');
     $element[0].rdoCollection = this;
     [this.$menuButton, this.$submenu] = $element.children().toArray().map(e => $(e));
@@ -245,18 +243,18 @@ class Collection extends BaseCollection {
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(Settings, 'isCycleInputEnabled', () =>
         this.$menuButton
-          .find('.input-cycle').toggle(Settings.isCycleInputEnabled).end()
-          .find('.cycle-icon').toggle(!Settings.isCycleInputEnabled).end()
-      ) ();
+        .find('.input-cycle').toggle(Settings.isCycleInputEnabled).end()
+        .find('.cycle-icon').toggle(!Settings.isCycleInputEnabled).end()
+      )();
       SettingProxy.addListener(InventorySettings, 'isEnabled enableAdvancedInventoryOptions', () =>
         this.$submenu
-          .find('.collection-sell').toggle(InventorySettings.isEnabled).end()
-          .find('.collection-value-bottom').toggle(InventorySettings.isEnabled &&
-            InventorySettings.enableAdvancedInventoryOptions).end()
-      ) ();
+        .find('.collection-sell').toggle(InventorySettings.isEnabled).end()
+        .find('.collection-value-bottom').toggle(InventorySettings.isEnabled &&
+          InventorySettings.enableAdvancedInventoryOptions).end()
+      )();
     });
   }
-  updateMenu () {
+  updateMenu() {
     const buggy = this.items.map(item => item.updateMenu()).includes(true);
     const isSameCycle = Cycles.isSameAsYesterday(this.category);
     this.$menuButton
@@ -271,7 +269,7 @@ class Collection extends BaseCollection {
       })
       .toggleClass('not-found', buggy)
       .find('.same-cycle-warning-menu')
-        .toggle(isSameCycle)
+      .toggle(isSameCycle)
       .end()
     this.$submenu
       .find('.collection-collected').text(Language.get('menu.collection_counter')
@@ -283,7 +281,7 @@ class Collection extends BaseCollection {
     if (['cups', 'swords', 'wands', 'pentacles'].includes(this.category)) return;
     const items = !alphabetically ? this.items : [...this.items].sort((...args) => {
       const [a, b] = args.map(item => Language.get(item.itemTranslationKey));
-      return a.localeCompare(b, Settings.language, {sensitivity: 'base'});
+      return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
     });
     this.$submenu.append(items.map(item => item.$menuButton));
   }
@@ -313,7 +311,7 @@ class Item extends BaseItem {
     this.collection.items.push(this);
     this.legacyItemId = this.itemId.replace(/^flower_|^egg_/, '');
     this.weeklyHelpKey = 'weekly_item_collectable';
-    this.markers = [];  // filled by Marker.init();
+    this.markers = []; // filled by Marker.init();
     this._amountKey = `amount.${this.itemId}`;
     this._insertMenuElement();
   }
@@ -349,7 +347,7 @@ class Item extends BaseItem {
             MapBase.highlightImportantItem(item.itemId, item.category);
           }
         }
-      })[0].addEventListener('click', event => {  // `.on()` can’t register to capture phase
+      })[0].addEventListener('click', event => { // `.on()` can’t register to capture phase
         if (event.target.classList.contains('counter-button')) {
           event.stopImmediatePropagation();
           const $target = $(event.target);
@@ -382,16 +380,16 @@ class Item extends BaseItem {
       </div>
     `).translate();
     this.$menuButton[0].rdoItem = this;
-    this.amount = this.amount;  // trigger counter update
+    this.amount = this.amount; // trigger counter update
     this.$menuButton
       .appendTo(this.collection.$submenu)
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(InventorySettings, 'isEnabled', () =>
         this.$menuButton
-          .find('.counter')
-            .toggle(InventorySettings.isEnabled)
-          .end()
-      ) ();
+        .find('.counter')
+        .toggle(InventorySettings.isEnabled)
+        .end()
+      )();
     });
   }
   get amount() {
@@ -406,8 +404,8 @@ class Item extends BaseItem {
     }
     this.$menuButton.add(this.$weeklyMenuButton)
       .find('.counter-number')
-        .text(value)
-        .toggleClass('text-danger', value >= InventorySettings.stackSize);
+      .text(value)
+      .toggleClass('text-danger', value >= InventorySettings.stackSize);
   }
   // use the following marker based property only after Marker.init()!
   effectiveAmount() {
@@ -436,8 +434,8 @@ class Item extends BaseItem {
       .toggleClass('disabled', currentMarkers.every(marker => !marker.canCollect))
       .toggleClass('weekly-item', this.isWeekly())
       .find('.counter')
-        .toggle(InventorySettings.isEnabled)
-      .end()
+      .toggle(InventorySettings.isEnabled)
+      .end();
 
     return buggy;
   }

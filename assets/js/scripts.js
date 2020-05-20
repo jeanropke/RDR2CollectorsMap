@@ -69,8 +69,7 @@ L.LayerGroup.include({
 $(function () {
   try {
     init();
-  }
-  catch (e) {
+  } catch (e) {
     if (getParameterByName('show-alert') == '1') {
       alert(e);
     }

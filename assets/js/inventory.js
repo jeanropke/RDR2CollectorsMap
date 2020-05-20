@@ -58,11 +58,9 @@ var Inventory = {
         const contourImg = $(`[data-marker=${_m.text}] img.marker-contour`);
         if (weight < 0.02) {
           contourImg.css('opacity', 0.0);
-        }
-        else if (weight < 0.3 || InventorySettings.highlightStyle === 'static') {
-            contourImg.css('opacity', scaledWeight);
-        }
-        else {
+        } else if (weight < 0.3 || InventorySettings.highlightStyle === 'static') {
+          contourImg.css('opacity', scaledWeight);
+        } else {
           contourImg.css('--animation-target-opacity', scaledWeight);
           contourImg.addClass(`highlight-low-amount-items-animated`);
         }
@@ -86,13 +84,12 @@ var Inventory = {
 
       const amount = marker.item && marker.item.amount;
       if ((marker.isCollected ||
-        (InventorySettings.isEnabled && amount >= InventorySettings.stackSize)) &&
+          (InventorySettings.isEnabled && amount >= InventorySettings.stackSize)) &&
         marker.isCurrent ||
         (marker.category === 'flower' && amount >= InventorySettings.flowersSoftStackSize)) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
         $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
-      }
-      else if (marker.isCurrent) {
+      } else if (marker.isCurrent) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
         $(`[data-type=${marker.legacyItemId}]`).removeClass('disabled');
       }
