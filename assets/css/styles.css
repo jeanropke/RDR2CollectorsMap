@@ -1004,21 +1004,12 @@ a.no-style:visited {
 }
 
 .leaflet-control-attribution {
-    background: white;
-    color: #333;
+    background: #333 !important;
+    color: #fff !important;
 }
 
 .leaflet-control-attribution a {
-    color: #333 !important;
-}
-
-.leaflet-dark-mode .leaflet-control-attribution {
-    background: #333;
-    color: white;
-}
-
-.leaflet-dark-mode .leaflet-control-attribution a {
-    color: white !important;
+    color: #fff !important;
 }
 
 .text-danger {
@@ -1447,7 +1438,7 @@ a.no-style:visited {
 #fme-container {
     position: absolute;
     left: 5px;
-    bottom: 25px;
+    bottom: 5px;
     z-index: 990;
     user-select: none;
     transition: all 200ms ease-out;
