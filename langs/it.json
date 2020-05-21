@@ -1,5 +1,5 @@
 {
-    "fasttravel.tumbleweed.name": "Tumbleerba",
+    "fasttravel.tumbleweed.name": "Tumbleweed",
     "fasttravel.armadillo.name": "Armadillo",
     "fasttravel.macfarlanes.name": "Livello di MacFarlane",
     "fasttravel.manzanita.name": "Messaggio di Manzanita",
@@ -1749,6 +1749,6 @@
     "menu.modal_fme_general_events_title": "",
     "menu.modal_fme_role_events_title": "",
     "menu.close": "",
-    "menu.translate_body": "Le traduzioni realizzate dalla comunità per la comunità.",
+    "menu.translate_body": "Le traduzioni sono fatte dalla comunità per la comunità.",
     "menu.translate_link": "Aiutaci traducendo su Crowdin."
 }

@@ -1748,5 +1748,7 @@
     "menu.modal_fme_enabled_events_body": "",
     "menu.modal_fme_general_events_title": "",
     "menu.modal_fme_role_events_title": "",
-    "menu.close": "ปิด"
+    "menu.close": "ปิด",
+    "menu.translate_body": "",
+    "menu.translate_link": ""
 }
