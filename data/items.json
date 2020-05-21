@@ -1500,6 +1500,7 @@
             { "text": "random_item_200", "height": "0", "tool": "2", "lat": "-107.0483", "lng": "74.2880" }
         ],
         "2": [
+            { "text": "random_item_0", "height": "0", "tool": "1", "lat": "-18.9045", "lng": "95.225" },
             { "text": "random_item_6", "height": "0", "tool": "1", "lat": "-117.5190", "lng": "18.9957" },
             { "text": "random_item_8", "height": "0", "tool": "1", "lat": "-120.9359", "lng": "38.2979" },
             { "text": "random_item_10", "height": "0", "tool": "1", "lat": "-96.5753", "lng": "30.0653" },
