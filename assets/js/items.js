@@ -39,10 +39,10 @@ class BaseItem {
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(InventorySettings, 'isEnabled stackSize', () =>
         this.$weeklyMenuButton
-        .find('.counter-number')
-        .toggle(InventorySettings.isEnabled)
-        .toggleClass('text-danger', this.amount >= InventorySettings.stackSize)
-        .end()
+          .find('.counter-number')
+            .toggle(InventorySettings.isEnabled)
+            .toggleClass('text-danger', this.amount >= InventorySettings.stackSize)
+          .end()
       )();
     });
   }
