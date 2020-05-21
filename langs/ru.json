@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "Функция отладки (eng)",
     "map.random_spot.desc": "Здесь можно получить случайный предмет. Более подробно о метке можно узнать в этом {int.random_spot.link}руководстве{int.end.link} (eng).",
-    "map.attribution_prefix": "Субтитры предоставлены",
+    "map.attribution_prefix": "",
     "menu.clear_important_items": "Сброс важных меток",
     "menu.modal_clear_important_items_body": "Эта функция позволит сбросить все метки, отмеченные как важные.",
     "menu.modal_clear_important_items_title": "Сбросить важные метки?",

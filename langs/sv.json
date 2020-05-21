@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "Sätt på eller av felsökningsfunktioner",
     "map.random_spot.desc": "",
-    "map.attribution_prefix": "Ikoner tillhandahålls av",
+    "map.attribution_prefix": "",
     "menu.clear_important_items": "Ta bort viktiga markörer",
     "menu.modal_clear_important_items_body": "Detta kommer att rensa markeringen från alla markörer som är markerade som viktiga. Denna åtgärd kan inte ångras.",
     "menu.modal_clear_important_items_title": "Ta bort viktiga markörer?",

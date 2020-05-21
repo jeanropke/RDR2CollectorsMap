@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "Ativar recursos de debug",
     "map.random_spot.desc": "Este local tem um item aleatório, você pode ver informações mais detalhadas {int.random_spot.link}na página da Wiki{int.end.link}.",
-    "map.attribution_prefix": "Imagens do mapa por",
+    "map.attribution_prefix": "",
     "menu.clear_important_items": "Limpar marcadores importantes",
     "menu.modal_clear_important_items_body": "Isso vai apagar todos os marcadores marcados como importante. Essa ação não pode ser desfeita.",
     "menu.modal_clear_important_items_title": "Limpar marcadores importantes?",

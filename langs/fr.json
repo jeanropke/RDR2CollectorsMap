@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200 %",
     "menu.toggle_debug": "Activer/désactiver les fonctionnalités de débogage",
     "map.random_spot.desc": "Ce spot vous donne un objet aléatoire, vous pouvez voir plus d'informations détaillées {int.random_spot.link}sur cette page Wiki{int.end.link}.",
-    "map.attribution_prefix": "Sous-titres fournis par",
+    "map.attribution_prefix": "",
     "menu.clear_important_items": "Effacer les marqueurs importants",
     "menu.modal_clear_important_items_body": "Ceci effacera la surbrillance de tous les marqueurs marqués comme importants. Cette action ne peut pas être annulée.",
     "menu.modal_clear_important_items_title": "Effacer les marqueurs importants?",

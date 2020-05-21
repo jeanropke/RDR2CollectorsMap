@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "%200",
     "menu.toggle_debug": "Onarım özelliklerini aç/kapa",
     "map.random_spot.desc": "Bu nokta size rasgele bir eşya verir, {int.random_spot.link}bu Viki sayfasında{int.end.link}daha ayrıntılı bilgileri görüntüleyebilirsiniz.",
-    "map.attribution_prefix": "Desenleri sağlayan",
+    "map.attribution_prefix": "",
     "menu.clear_important_items": "Önemli işaretçileri sil",
     "menu.modal_clear_important_items_body": "Bu ayar önemli olarak işaretlenen işaretçilerin aydınlatmasını kaldırır. Bu işlem geri alınamaz.",
     "menu.modal_clear_important_items_title": "Önemli işaretçiler silinsin mi?",

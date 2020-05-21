@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200 %",
     "menu.toggle_debug": "デバッグ・フィーチャーの切り替え",
     "map.random_spot.desc": "このスポットは、この Wiki ページ{int.end.link} で詳細情報 {int.random_spot.link}を表示できるランダム・アイテムを提供します。",
-    "map.attribution_prefix": "提供されるタイルの提供者",
+    "map.attribution_prefix": "",
     "menu.clear_important_items": "重要マーカーのクリア",
     "menu.modal_clear_important_items_body": "これにより、重要としてマークされたすべてのマーカーからの強調表示がクリア このアクションは元にはできません。",
     "menu.modal_clear_important_items_title": "重要なマーカーをクリアする",

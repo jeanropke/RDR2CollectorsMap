@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200 %",
     "menu.toggle_debug": "Togon vianmääritysominaisuudet",
     "map.random_spot.desc": "Tämä kohta antaa sinulle satunnaisen kohteen, voit tarkastella yksityiskohtaisempia tietoja {int.random_spot.link}tästä wikisivulla{int.end.link}.",
-    "map.attribution_prefix": "Tilat, jotka",
+    "map.attribution_prefix": "",
     "menu.clear_important_items": "Selkeät merkittävät merkit",
     "menu.modal_clear_important_items_body": "Tämä poistaa korostuksen kaikista merkeistä, jotka on merkitty tärkeiksi. Tätä toimintoa ei voi poistaa.",
     "menu.modal_clear_important_items_title": "Kirkkaat tärkeät merkit?",
