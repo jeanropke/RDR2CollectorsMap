@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "Функция отладки (eng)",
     "map.random_spot.desc": "Здесь можно получить случайный предмет. Более подробно о метке можно узнать в этом {int.random_spot.link}руководстве{int.end.link} (eng).",
-    "map.attribution_prefix": "",
+    "map.attribution_prefix": "Вклад в карту коллекторов",
     "menu.clear_important_items": "Сброс важных меток",
     "menu.modal_clear_important_items_body": "Эта функция позволит сбросить все метки, отмеченные как важные.",
     "menu.modal_clear_important_items_title": "Сбросить важные метки?",
@@ -1748,5 +1748,7 @@
     "menu.modal_fme_enabled_events_body": "Установите флажок, чтобы отображать события на карте и/или получать уведомления.",
     "menu.modal_fme_general_events_title": "Общие события",
     "menu.modal_fme_role_events_title": "События роли",
-    "menu.close": "Закрыть"
+    "menu.close": "Закрыть",
+    "menu.translate_body": "",
+    "menu.translate_link": ""
 }

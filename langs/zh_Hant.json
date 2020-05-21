@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "切換至偵錯模式",
     "map.random_spot.desc": "這個位置會給你隨機物品，你可以{int.random_spot.link}點擊這裡{int.end.link}查看更多詳細信息。",
-    "map.attribution_prefix": "地圖提供由",
+    "map.attribution_prefix": "",
     "menu.clear_important_items": "清除重要標記",
     "menu.modal_clear_important_items_body": "這會清除所有重要標記，且無法復原。",
     "menu.modal_clear_important_items_title": "清除重要標記?",
@@ -1748,5 +1748,7 @@
     "menu.modal_fme_enabled_events_body": "選擇你希望顯示或收到通知的浪跡活動。",
     "menu.modal_fme_general_events_title": "浪跡活動",
     "menu.modal_fme_role_events_title": "職業浪跡活動",
-    "menu.close": "關閉"
+    "menu.close": "關閉",
+    "menu.translate_body": "",
+    "menu.translate_link": ""
 }

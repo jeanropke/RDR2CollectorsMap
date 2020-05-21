@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "تبديل خصائص التصحيح",
     "map.random_spot.desc": "هذا المكان يعطيك عنصر عشوائي، يمكنك عرض معلومات أكثر تفصيلاً {int.random_spot.link}على هذه الصفحة{int.end.link}.",
-    "map.attribution_prefix": "البيانات مقدمة من قبل",
+    "map.attribution_prefix": "",
     "menu.clear_important_items": "مسح العلامات المهمة",
     "menu.modal_clear_important_items_body": "وهذا من شأنه أن يزيل تسليط الضوء من جميع العلامات التي تعتبر مهمة. ولا يمكن التراجع عن هذا الإجراء.",
     "menu.modal_clear_important_items_title": "مسح العلامات المهمة؟",
@@ -1748,5 +1748,7 @@
     "menu.modal_fme_enabled_events_body": "",
     "menu.modal_fme_general_events_title": "",
     "menu.modal_fme_role_events_title": "",
-    "menu.close": ""
+    "menu.close": "",
+    "menu.translate_body": "",
+    "menu.translate_link": ""
 }

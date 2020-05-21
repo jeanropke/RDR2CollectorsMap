@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "切换调试功能",
     "map.random_spot.desc": "这个现货给您随机物品，您可以查看更多详细信息 {int.random_spot.link}在此Wiki页面上{int.end.link}.",
-    "map.attribution_prefix": "提供的地图",
+    "map.attribution_prefix": "",
     "menu.clear_important_items": "清除重要标记",
     "menu.modal_clear_important_items_body": "这将从所有标记为重要的标记中清除突出显示。 此操作无法撤消。",
     "menu.modal_clear_important_items_title": "清除重要标记?",
@@ -1748,5 +1748,7 @@
     "menu.modal_fme_enabled_events_body": "选择你想要获取通知的活动。",
     "menu.modal_fme_general_events_title": "常规活动",
     "menu.modal_fme_role_events_title": "职业活动",
-    "menu.close": "关闭"
+    "menu.close": "关闭",
+    "menu.translate_body": "",
+    "menu.translate_link": ""
 }
