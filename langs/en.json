@@ -1748,5 +1748,7 @@
     "menu.modal_fme_enabled_events_body": "Select which events you want to display on the map and/or to receive notifications for.",
     "menu.modal_fme_general_events_title": "General Events",
     "menu.modal_fme_role_events_title": "Role Events",
-    "menu.close": "Close"
+    "menu.close": "Close",
+    "menu.translate_body": "Translations are made by the community for the community.",
+    "menu.translate_link": "Help us by translating on Crowdin."
 }
