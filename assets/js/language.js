@@ -57,8 +57,8 @@ var Language = {
       translation = Language._externalLink(transKey);
     } else if (transKey === 'int.end.link') {
       translation = '</a>';
-    } else if (['count', 'max', 'minutes', 'time'].includes(transKey)) {
-      return `{${transKey}}`;
+    } else if (transKey === 'collection') {
+      transKey = `weekly.desc.${Weekly.current.weeklyId}`;
     }
 
     translation =
@@ -67,8 +67,10 @@ var Language = {
       Language.data.en[transKey] ||
       (optional ? '' : transKey);
 
-    return translation.replace(/\{([\w.]+)\}/g, (full, key) =>
-      this.get(key, true) || `{${key}}`);
+    return translation.replace(/\{([\w.]+)\}/g, (full, key) => {
+      const translation = this.get(key);
+      return translation === key ? `{${key}}` : translation;
+    });
   },
 
   translateDom: function (context) {
