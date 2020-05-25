@@ -2,18 +2,6 @@
 - these statements have no requirements
 - code at multiple places depend on these
 */
-Object.defineProperty(String.prototype, 'includesOneOf', {
-  value: function (...elements) {
-    var include = false;
-    for (var str of elements) {
-      if (this.includes(str)) {
-        include = true;
-        break;
-      }
-    }
-    return include;
-  }
-});
 
 Object.defineProperty(String.prototype, 'filename', {
   value: function (extension) {
