@@ -167,10 +167,11 @@ function changeCursor() {
 }
 
 function updateTopWidget() {
-  $('#countdown').toggleClass('hidden', Settings.topWidgetState !== 0);
-  $('#time-in-game').toggleClass('hidden', Settings.topWidgetState !== 1);
-  $('#item-counter').toggleClass('hidden', Settings.topWidgetState !== 2);
-  $('#item-counter-percentage').toggleClass('hidden', Settings.topWidgetState !== 3);
+  const pElements = document.querySelectorAll('.top-widget > p');
+
+  [].forEach.call(pElements, (element, index) => {
+    $(element).toggleClass('hidden', Settings.topWidgetState !== index);
+  });
 }
 
 function getParameterByName(name, url) {
@@ -256,10 +257,8 @@ setInterval(clockTick, 1000);
 - please move them out of here to their respective owners
 */
 $('.top-widget > p').on('click', function () {
-  $('.top-widget > p').toggleClass('hidden');
-
-  Settings.topWidgetState++;
-  Settings.topWidgetState %= 4;
+  const pElements = $('.top-widget > p').length;
+  Settings.topWidgetState = (Settings.topWidgetState + 1) % pElements;
   updateTopWidget();
 });
 
