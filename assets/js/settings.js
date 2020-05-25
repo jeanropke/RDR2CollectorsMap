@@ -185,7 +185,7 @@ Object.entries({
   stackSize: { default: 10 },
   flowersSoftStackSize: { default: 10 },
   enableAdvancedInventoryOptions: { default: false },
-  autoEnableSoldItems: { default: false },
+  autoEnableSoldItems: { default: true },
 }).forEach(([name, config]) => SettingProxy.addSetting(InventorySettings, name, config));
 
 // Route settings
