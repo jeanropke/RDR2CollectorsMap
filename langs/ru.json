@@ -1749,6 +1749,6 @@
     "menu.modal_fme_general_events_title": "Общие события",
     "menu.modal_fme_role_events_title": "События роли",
     "menu.close": "Закрыть",
-    "menu.translate_body": "",
-    "menu.translate_link": ""
+    "menu.translate_body": "Перевод сделан сообществом для сообщества.",
+    "menu.translate_link": "Помогите нам с переводом на Crowdin."
 }
