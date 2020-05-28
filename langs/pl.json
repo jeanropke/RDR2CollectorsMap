@@ -1563,7 +1563,7 @@
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "Włącz narzędzia debugowania",
     "map.random_spot.desc": "To miejsce zapewnia losowy przedmot, więcej informacji tutaj: {int.random_spot.link}Tabela losowych przedmiotów{int.end.link}.",
-    "map.attribution_prefix": "",
+    "map.attribution_prefix": "Współtwórcy mapy kolekcjonera",
     "menu.clear_important_items": "Usuń podświetlanie ważnych przedmiotów",
     "menu.modal_clear_important_items_body": "Ta opcja usunie podświetlenie ze wszystkich ważnych przedmiotów. Tej operacji nie można cofnąć.",
     "menu.modal_clear_important_items_title": "Usunąć podświetlenia?",
@@ -1729,7 +1729,7 @@
     "menu.fme.time.minutes": "{minutes} minut",
     "menu.fme.cold_dead_hands": "",
     "menu.fme.condor_egg": "Jajo Kondora",
-    "menu.fme.day_of_reckoning": "",
+    "menu.fme.day_of_reckoning": "Sądny dzień",
     "menu.fme.dispatch_rider": "",
     "menu.fme.fishing_challenge": "Rybobranie",
     "menu.fme.fools_gold": "Złoto głupców",
@@ -1749,6 +1749,6 @@
     "menu.modal_fme_general_events_title": "Wydarzenia ogólne gry swobodnej",
     "menu.modal_fme_role_events_title": "Wydarzenia ról gry swobodnej",
     "menu.close": "Zamknij",
-    "menu.translate_body": "",
-    "menu.translate_link": ""
+    "menu.translate_body": "Tłumaczenia są wykonywane przez społeczność dla społeczności.",
+    "menu.translate_link": "Pomóż nam, tłumacząc na Crowdin."
 }
