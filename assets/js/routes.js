@@ -304,7 +304,8 @@ const Routes = {
     // Use path finder when enabled
     try {
       if (RouteSettings.usePathfinder) {
-        PathFinder.routegenStart(last, newMarkers, RouteSettings.fasttravelWeight, RouteSettings.railroadWeight, true);
+        PathFinder.routegenStart(last, newMarkers, RouteSettings.fasttravelWeight,
+          RouteSettings.railroadWeight, false);
         return;
       }
     } catch (error) {
