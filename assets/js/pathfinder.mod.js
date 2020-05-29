@@ -449,8 +449,8 @@ class PathFinder {
 				var dx = a[0] - b[0];
 				var dy = a[1] - b[1];
 				var r = Math.sqrt(dx * dx + dy * dy);
-				if(typeof(props.type) === 'string' && props.type == 'railroad') r = r * railroadWeight
-				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * fastTravelWeight
+				if(props.type === 'railroad') r *= railroadWeight;
+				if(props.type === 'fasttravel') r *= fastTravelWeight;
 				return r
 			}
 		})
