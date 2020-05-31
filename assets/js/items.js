@@ -79,6 +79,7 @@ class Weekly extends BaseCollection {
     super();
     const nameViaParam = getParameterByName('weekly');
     this.weeklyId = data.sets[nameViaParam] ? nameViaParam : data.current;
+    this.weeklySetValue = data.setsValues[this.weeklyId];
     this.items = data.sets[this.weeklyId].map(itemId =>
       Item.items.find(i => i.itemId === itemId) || new NonCollectible({ itemId }));
     this.collectibleItems = this.items.filter(item => item.constructor === Item);
@@ -99,6 +100,7 @@ class Weekly extends BaseCollection {
           <span data-text="menu.weekly_item_description">Find all the items listed and sell the complete collection to Madam Nazar for an XP and RDO$ reward.</span>
         </p>
         <div class="collection-value">
+          <span data-help="item_value">$${this.weeklySetValue.toFixed(2)}</span>
           <span class="collection-sell" data-text="menu.sell" data-help="item_sell">Sell</span>
         </div>
       </div>
