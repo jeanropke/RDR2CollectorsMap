@@ -100,7 +100,7 @@ class Weekly extends BaseCollection {
           <span data-text="menu.weekly_item_description">Find all the items listed and sell the complete collection to Madam Nazar for an XP and RDO$ reward.</span>
         </p>
         <div class="collection-value">
-          <span data-help="item_value">$${this.weeklySetValue.toFixed(2)}</span>
+          <span class="weekly-set-value" data-help="item_value">$${this.weeklySetValue.toFixed(2)}</span>
           <span class="collection-sell" data-text="menu.sell" data-help="item_sell">Sell</span>
         </div>
       </div>
@@ -113,9 +113,16 @@ class Weekly extends BaseCollection {
     this.items.forEach(item => item._insertWeeklyMenuElement(this.$listParent));
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(InventorySettings, 'isEnabled', () =>
-        this.$menuEntry.find('.collection-sell')
-        .toggle(InventorySettings.isEnabled)
-        .end()
+        this.$menuEntry
+          .find('.collection-value')
+            .toggle(InventorySettings.isEnabled || this.weeklySetValue !== 0)
+          .end()
+          .find('.collection-sell')
+            .toggle(InventorySettings.isEnabled)
+          .end()
+          .find('.weekly-set-value')
+            .toggle(this.weeklySetValue !== 0)
+          .end()
       )();
     });
   }
