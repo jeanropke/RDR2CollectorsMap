@@ -113,7 +113,7 @@ class Weekly extends BaseCollection {
     this.items.forEach(item => item._insertWeeklyMenuElement(this.$listParent));
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(InventorySettings, 'isEnabled', () =>
-        this.$menuEntry.find('.collection-value')
+        this.$menuEntry.find('.collection-sell')
         .toggle(InventorySettings.isEnabled)
         .end()
       )();
