@@ -79,8 +79,8 @@ class Weekly extends BaseCollection {
     super();
     const nameViaParam = getParameterByName('weekly');
     this.weeklyId = data.sets[nameViaParam] ? nameViaParam : data.current;
-    this.weeklySetValue = data.setsValues[this.weeklyId];
-    this.items = data.sets[this.weeklyId].map(itemId =>
+    this.weeklySetValue = data.sets[this.weeklyId].value;
+    this.items = data.sets[this.weeklyId].items.map(itemId =>
       Item.items.find(i => i.itemId === itemId) || new NonCollectible({ itemId }));
     this.collectibleItems = this.items.filter(item => item.constructor === Item);
     this._insertMenuElements();
