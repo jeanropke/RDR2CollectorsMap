@@ -645,7 +645,7 @@
     "arrowhead_slate_3.desc": "在棉花田的南边。",
     "arrowhead_slate_4.desc": "在一棵死树旁。",
     "arrowhead_slate_5.desc": "在悬崖的半山腰，走小路上去。注意安全！",
-    "arrowhead_slate_6.desc": "",
+    "arrowhead_slate_6.desc": "在山体凹入处里面。",
     "arrowhead_bone.name": "骨制箭头",
     "arrowhead_bone_1.desc": "在沟里头。",
     "arrowhead_bone_2.desc": "在岛中央的一块空地上。",
@@ -1589,7 +1589,7 @@
     "menu.marker_color.by_cycle": "按天数选择颜色",
     "menu.marker_color.by_category": "按收藏品种类选择颜色",
     "menu.marker_color.auto_orange_darkblue": "",
-    "menu.weekly_item_description": "找到系列中所有的物品，并将这个系列卖给那扎尔夫人，换取经验和现金奖励。",
+    "menu.weekly_item_description": "找到系列中所有的物品，并将这个系列卖给纳扎尔夫人，换取经验和现金奖励。",
     "menu.show_weekly": "显示每周收藏",
     "map.has_multi_filter_alert": "您的“工具类型”设置和搜索查询隐藏了一些标记。",
     "map.has_search_filter_alert": "您的搜索查询隐藏了一些标记。",
@@ -1749,6 +1749,6 @@
     "menu.modal_fme_general_events_title": "常规活动",
     "menu.modal_fme_role_events_title": "职业活动",
     "menu.close": "关闭",
-    "menu.translate_body": "",
+    "menu.translate_body": "翻译由社区成员提供。",
     "menu.translate_link": "在Crowdin帮助我们翻译。"
 }
