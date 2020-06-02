@@ -140,6 +140,10 @@ class Marker {
       );
   }
 
+  toolAccepted() {
+    return Settings.toolType >= this.tool || Settings.toolType === -this.tool ? true : false;
+  }
+
   colorUrls() {
     const url = ([base, contour]) => [
       `assets/images/icons/marker_${base}.png`,
@@ -153,7 +157,7 @@ class Marker {
 
     let base;
     if (this.category === 'random') {
-      base = markerColor === 'by_category' && this.tool == 2 ? 'black' : 'lightgray';
+      base = (markerColor === 'by_category' && this.tool === 2) ? 'black' : 'lightgray';
     } else if (this.item.isWeekly()) {
       base = 'green';
     } else if (markerColor === 'by_category') {
@@ -264,13 +268,13 @@ class Marker {
     }
     snippet
       .find('[data-text="weekly.desc"]').toggle(this.item && this.item.isWeekly()).end()
-      .find('[data-text="map.item.unable"]').toggle(this.tool == -1).end()
+      .find('[data-text="map.item.unable"]').toggle(this.buggy).end()
     const toolImg = snippet.find('.tool-type');
-    if (this.tool == '0') {
+    if (!this.buggy && this.tool === 0) {
       toolImg.hide();
     } else {
-      toolImg.attr('src',
-        `assets/images/${{'-1': 'cross', 1: 'shovel', 2: 'magnet'}[this.tool]}.png`);
+      const imgName = this.buggy ? 'cross' : {1: 'shovel', 2: 'magnet'}[this.tool];
+      toolImg.attr('src', `assets/images/${imgName}.png`);
     }
     if (!Settings.isDebugEnabled) snippet.find('.popupContentDebug').hide();
     if (!this.video) snippet.find('[data-text="map.video"]').parent().hide();
@@ -303,7 +307,7 @@ class Marker {
   }
   recreateLMarker(opacity = Settings.markerOpacity, markerSize = Settings.markerSize) {
     const icon = this.category !== 'random' ? this.category :
-      (this.tool == 1 ? 'shovel' : 'magnet');
+      (this.tool === 1 ? 'shovel' : 'magnet');
     const [bgUrl, contourUrl] = this.colorUrls();
     const aii = 'assets/images/icons';
     const snippet = $(`<div>
@@ -318,7 +322,7 @@ class Marker {
     Settings.isShadowsEnabled || snippet.find('.shadow').remove();
     {
       let detail = false;
-      if (this.tool == '-1') {
+      if (this.buggy) {
         detail = ['cross', 'crossed out'];
       } else if (['flower_agarita', 'flower_blood_flower'].includes(this.itemId)) {
         detail = ['time', 'timed'];

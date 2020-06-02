@@ -265,36 +265,13 @@ const Routes = {
   },
 
   // Generate a path using a nearest neighbor algorithm.
-  // force: Whether the path should be generated with or without checking the restrictions.
   generatePath: function (force = false) {
-    if (!force) {
-      // Only run when an update is needed.
-      if (Routes.lastPolyline == null) return;
+    if (!force && (Routes.lastPolyline == null || !RouteSettings.autoUpdatePath)) return;
 
-      // Only run when the autoUpdatePath option is selected.
-      if (!RouteSettings.autoUpdatePath) return;
-    }
-
-    // Clean up before generating.
     Routes.clearPath(true);
 
-    // Setup variables.
-    let newMarkers = MapBase.markers.filter((marker) => {
-      if (!marker.isVisible) return false;
+    var newMarkers = MapBase.markers.filter(m => m.isVisible && m.toolAccepted());
 
-      const toolType = Settings.toolType;
-      const markerTool = parseInt(marker.tool);
-      if (toolType >= 0) {
-        if (toolType < markerTool) return false;
-      } else {
-        if (toolType == -1 && markerTool != 1) return false;
-        if (toolType == -2 && markerTool != 2) return false;
-      }
-
-      return true;
-    });
-
-    // Optionally ignore the already collected markers.
     if (RouteSettings.ignoreCollected) {
       newMarkers = newMarkers.filter(marker => marker.canCollect);
     }

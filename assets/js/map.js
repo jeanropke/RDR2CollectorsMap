@@ -425,19 +425,8 @@ const MapBase = {
     Menu.refreshItemsCounter();
   },
 
-  addMarkerOnMap: function (marker, inPreview) {
-    if (!marker.isVisible) return;
-
-    if (!inPreview) {
-      const toolType = Settings.toolType;
-      const markerTool = parseInt(marker.tool);
-      if (toolType >= 0) {
-        if (toolType < markerTool) return;
-      } else {
-        if (toolType == -1 && markerTool != 1) return;
-        if (toolType == -2 && markerTool != 2) return;
-      }
-    }
+  addMarkerOnMap: function (marker, ignoreToolSetting) {
+    if (!(marker.isVisible && (ignoreToolSetting || marker.toolAccepted()))) return;
 
     marker.recreateLMarker();
 

@@ -1,10 +1,5 @@
-/**
- * Created by Jean on 2019-10-09.
- */
-
 const Menu = {
   hasSearchFilters: false,
-  hasToolFilters: false,
 
   updateHasFilters: function () {
     if (Menu.hasSearchFilters && Menu.hasToolFilters) {
@@ -13,7 +8,7 @@ const Menu = {
     } else if (Menu.hasSearchFilters) {
       $('.filter-alert span').html(Language.get('map.has_search_filter_alert'));
       $('.filter-alert').removeClass('hidden');
-    } else if (Menu.hasToolFilters) {
+    } else if (Settings.toolType !== 3) {
       $('.filter-alert span').html(Language.get('map.has_tool_filter_alert'));
       $('.filter-alert').removeClass('hidden');
     } else {
