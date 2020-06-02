@@ -155,7 +155,7 @@ function changeCursor() {
 }
 
 function updateTopWidget() {
-  const pElements = document.querySelectorAll('.top-widget > p');
+  const pElements = $('.top-widget > p');
 
   [].forEach.call(pElements, (element, index) => {
     $(element).toggleClass('hidden', Settings.topWidgetState !== index);

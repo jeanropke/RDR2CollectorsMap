@@ -127,7 +127,7 @@ class Weekly extends BaseCollection {
     });
   }
   static _installSettingsAndEventHandlers() {
-    SettingProxy.addSetting(Settings, 'showWeeklySettings', {default: true});
+    SettingProxy.addSetting(Settings, 'showWeeklySettings', { default: true });
     const weeklyCheckbox = $("#show-weekly");
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(Settings, 'showWeeklySettings', () => {
