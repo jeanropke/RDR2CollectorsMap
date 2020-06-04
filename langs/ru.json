@@ -1602,7 +1602,7 @@
     "generic.darkred": "Тёмно-красный",
     "generic.darkblue": "Тёмно-синий",
     "menu.reset_inventory_daily": "Сбросить ежедневный инвентарь",
-    "menu.soft_flowers_inventory_stack": "",
+    "menu.soft_flowers_inventory_stack": "Flowers soft stack size",
     "menu.reload_map": "Перезагрузить карту сейчас",
     "menu.disable_collected_items": "Отключить собранные",
     "menu.collection_collect_all": "Собрать все",
