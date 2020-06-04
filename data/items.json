@@ -1464,6 +1464,7 @@
     },
     "random": {
         "1": [
+            { "text": "random_item_0", "height": "0", "tool": "1", "lat": "-18.9045", "lng": "95.225" },
             { "text": "random_item_5", "height": "0", "tool": "1", "lat": "-112.6363", "lng": "16.8176" },
             { "text": "random_item_19", "height": "0", "tool": "1", "lat": "-118.3649", "lng": "26.9547" },
             { "text": "random_item_27", "height": "0", "tool": "1", "lat": "-79.3281", "lng": "87.8251" },
