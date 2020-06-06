@@ -1,19 +1,21 @@
 const Menu = {
-  hasSearchFilters: false,
+  init: function() {
+    'use strict';
+    this._warnings = new Set();
 
-  updateHasFilters: function () {
-    if (Menu.hasSearchFilters && Menu.hasToolFilters) {
-      $('.filter-alert span').html(Language.get('map.has_multi_filter_alert'));
-      $('.filter-alert').removeClass('hidden');
-    } else if (Menu.hasSearchFilters) {
-      $('.filter-alert span').html(Language.get('map.has_search_filter_alert'));
-      $('.filter-alert').removeClass('hidden');
-    } else if (Settings.toolType !== 3) {
-      $('.filter-alert span').html(Language.get('map.has_tool_filter_alert'));
-      $('.filter-alert').removeClass('hidden');
-    } else {
-      $('.filter-alert').addClass('hidden');
-    }
+    SettingProxy.addSetting(Settings, 'toolType', { default: 3 });
+    Loader.mapModelLoaded.then(this.activateHandlers.bind(this));
+  },
+
+  toggleFilterWarning: function (warning, active) {
+    'use strict';
+    const method = active ? 'add' : 'delete';
+    this._warnings[method](warning);
+    $('.filter-alert')
+      .toggle(this._warnings.size > 0)
+      .attr('data-text', this._warnings.size > 1 ? 'map.has_multi_filter_alert':
+        this._warnings.values().next().value)
+      .translate()
   },
 
   reorderMenu: function (menu) {
@@ -133,4 +135,16 @@ Menu.activateHandlers = function () {
       const helpTransId = $(target).closest('[data-help]').attr('data-help') || 'default';
       $helpParagraph.html(Language.get(`help.${helpTransId}`));
     })
+
+  SettingProxy.addListener(Settings, 'toolType', () =>
+    this.toggleFilterWarning('map.has_tool_filter_alert', Settings.toolType !== 3))();
+  $("#tools")
+    .on("change", function () {
+      Settings.toolType = +$(this).val();
+      MapBase.addMarkers();
+    })
+    .val(Settings.toolType)
+  $('.filter-alert').on('click', function () {
+    $(this).hide();
+  });
 }

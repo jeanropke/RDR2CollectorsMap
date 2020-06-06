@@ -280,8 +280,7 @@ const MapBase = {
   },
 
   onSearch: function (searchString) {
-    Menu.hasSearchFilters = !!searchString;
-    Menu.updateHasFilters();
+    Menu.toggleFilterWarning('map.has_search_filter_alert', !!searchString);
 
     searchTerms = [];
     $.each(searchString.split(';'), function (key, value) {
@@ -326,10 +325,6 @@ const MapBase = {
       }, 0);
       return;
     }
-
-    Menu.hasToolFilters = (!inPreview && Settings.toolType !== 3) ? true : false;
-
-    Menu.updateHasFilters();
 
     Layers.itemMarkersLayer.clearLayers();
 

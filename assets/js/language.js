@@ -1,6 +1,9 @@
 jQuery.fn.translate = function () {
   return Language.translateDom(this);
 };
+jQuery.fn.findWithSelf = function(...args) {
+  return this.pushStack(this.find(...args).add(this.filter(...args)));
+};
 
 const Language = {
   data: {},
@@ -75,7 +78,7 @@ const Language = {
 
   translateDom: function (context) {
     'use strict';
-    $('[data-text]', context).html(function () {
+    $(context || document).findWithSelf('[data-text]').html(function () {
       const $this = $(this);
       const string = Language.get($this.attr('data-text'), $this.data('text-optional'));
 

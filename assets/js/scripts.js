@@ -73,6 +73,7 @@ function init() {
 
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
+  Menu.init();
   // Item.items (without .markers), Collection.collections, Collection.weekly*
   const itemsCollectionsWeekly = Item.init();
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
@@ -91,8 +92,6 @@ function init() {
   const treasures = Treasure.init();
   Promise.all([cycles, markers]).then(MapBase.runOncePostLoad);
   Routes.init();
-  // depends on MapBase, Treasure, Pins
-  Promise.all([treasures, markers]).then(Menu.activateHandlers);
   Promise.all([itemsCollectionsWeekly, markers, cycles, treasures])
     .then(Loader.resolveMapModelLoaded);
 
@@ -100,7 +99,6 @@ function init() {
 
   $('.map-alert').toggle(!Settings.alertClosed);
 
-  $('#tools').val(Settings.toolType);
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
   $('#marker-size').val(Settings.markerSize);
@@ -327,11 +325,6 @@ $("#clear-search").on("click", function () {
   $("#search").val('').trigger("input");
 });
 
-$("#tools").on("change", function () {
-  Settings.toolType = Number($("#tools").val());
-  MapBase.addMarkers();
-});
-
 $("#reset-markers").on("change", function () {
   Settings.resetMarkersDaily = $("#reset-markers").prop('checked');
 });
@@ -369,10 +362,6 @@ $('.map-alert').on('click', function () {
 
 $('.map-cycle-alert').on('click', function () {
   $('.map-cycle-alert').addClass('hidden');
-});
-
-$('.filter-alert').on('click', function () {
-  $('.filter-alert').addClass('hidden');
 });
 
 $('#show-coordinates').on('change', function () {
