@@ -189,11 +189,7 @@ class Chunk {
 	 * @returns {Boolean}
 	 */
 	contains(marker) {
-		for(var i = 0; i < this.markers.length; i++) {
-			if(this.markers[i].text == marker.text && parseFloat(this.markers[i].lat) == parseFloat(marker.lat))
-				return true
-		}
-		return false
+		return this.markers.includes(marker);
 	}
 
 	/**
@@ -733,26 +729,20 @@ class PathFinder {
 	 * @static
 	 * @returns {Promise}
 	 */
-	static routegenCancel() {
-		return new Promise(async (res) => {
-			if(PathFinder._running) {
-				if(PathFinder._worker === null) {
-					PathFinder._cancel = true
-					while(PathFinder._running) {
-						await new Promise((r) => { window.setTimeout(() => { r() }, 100) })
-					}
-					PathFinder._cancel = false
-					res()
-				} else {
-					PathFinder._worker.terminate()
-					PathFinder._worker = null
-					PathFinder._running = false
-					res()
+	static async routegenCancel() {
+		if(PathFinder._running) {
+			if(PathFinder._worker === null) {
+				PathFinder._cancel = true
+				while(PathFinder._running) {
+					await new Promise((r) => { window.setTimeout(() => { r() }, 100) })
 				}
+				PathFinder._cancel = false
 			} else {
-				res()
+				PathFinder._worker.terminate()
+				PathFinder._worker = null
+				PathFinder._running = false
 			}
-		})
+		}
 	}
 
 	/**
@@ -760,7 +750,7 @@ class PathFinder {
 	 * @static
 	 * @returns {Promise}
 	 */
-	static async routegenClear() {
+	static async routegenClearAndCancel() {
 		if(PathFinder._running) {
 			await PathFinder.routegenCancel()
 		}
@@ -810,7 +800,6 @@ class PathFinder {
 	 * @returns {Promise<Boolean>} false if geojson isn't fully loaded or route generation was canceled
 	 */
 	static async routegenStart(startingMarker, markers, fastTravelWeight, railroadWeight, forceNoWorker) {
-		
 		if(PathFinder._geoJson === null) {
 			await new Promise(async (res) => {
 				while(PathFinder._geoJson === null && PathFinder._geoJsonFT === null) {
@@ -820,10 +809,7 @@ class PathFinder {
 			})
 		}
 
-		if(typeof(forceNoWorker) !== 'boolean') forceNoWorker = false
-
-		// Clear layers and cancel if running
-		await PathFinder.routegenClear()
+		await PathFinder.routegenClearAndCancel()
 
 		PathFinder._running = true
 		PathFinder._currentChunk = null
@@ -861,20 +847,18 @@ class PathFinder {
 							break
 					}
 				})
-				PathFinder._worker.postMessage({ cmd: 'start', startingMarker: startingMarker, markers: markers, fastTravelWeight: fastTravelWeight, railroadWeight: railroadWeight })
+				PathFinder._worker.postMessage({ cmd: 'start', startingMarker, markers,
+					fastTravelWeight, railroadWeight });
 			})
 			return res
 		}
 
-		// Create GeoJSON path finder object (function will check if already created)
 		PathFinder.createPathFinder(fastTravelWeight, railroadWeight)
 
-		// Generate Chunks
 		PathFinder.generateChunks(markers)
 
-		// Removing startingMarker from markers
-		var current = {marker: startingMarker}
-		markers = markers.filter((m) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
+		markers = markers.filter(m => m !== startingMarker);
+		let current = {marker: startingMarker};
 
 		var last = current.marker
 		var paths = []
@@ -882,13 +866,10 @@ class PathFinder {
 		var markersNum = markers.length
 		try {
 			for (var i = 0; i < markersNum; i++) {
-				// Find next marker
-				var current = await PathFinder.findNearestTravelItem(last, markers)
-				// if no marker was found, we're propably done
+				current = await PathFinder.findNearestTravelItem(last, markers);
 				if(current == null || current.marker == null) break
 
-				// remove found marker from markers array
-				markers = markers.filter((m) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
+				markers = markers.filter(m => m !== current.marker);
 				last = current.marker
 		
 				if(typeof(window) !== 'undefined') {

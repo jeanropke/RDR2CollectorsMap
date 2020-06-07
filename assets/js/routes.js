@@ -174,7 +174,7 @@ const Routes = {
   clearPath: function (starting = false) {
     try {
       if (!starting && RouteSettings.usePathfinder) {
-        PathFinder.routegenClear();
+        PathFinder.routegenClearAndCancel();
       }
     } catch (error) {
       alert(Language.get('alerts.feature_not_supported'));
@@ -290,16 +290,8 @@ const Routes = {
 
     if (newMarkers.length <= 1) return;
 
-    let polylines = [];
-
-    // The starting point of the path.
-    let first = null;
-
-    // Grab the nearest marker to the start of the path.
-    first = Routes.nearestNeighborTo(Routes.startMarker(), newMarkers, polylines, -1);
-
-    // The last marker from the loop.
-    let last = first.marker;
+    const polylines = [];
+    let last = Routes.nearestNeighborTo(Routes.startMarker(), newMarkers, polylines, -1).marker;
 
     // Use path finder when enabled
     try {
