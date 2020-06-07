@@ -812,7 +812,7 @@
             { "text": "wands_nine", "height": "0", "tool": "0", "lat": "-70.1443", "lng": "150.0485", 	"video": "https://www.youtube.com/watch?v=88paa005RgI&t=2066s" },
             { "text": "wands_ten", "height": "0", "tool": "0", "lat": "-67.5366", "lng": "156.0437", 	"video": "https://www.youtube.com/watch?v=88paa005RgI&t=2035s" },
             { "text": "wands_page", "height": "0", "tool": "0", "lat": "-50.5701", "lng": "123.0719", 	"video": "https://www.youtube.com/watch?v=88paa005RgI&t=2268s" },
-            { "text": "wands_knight", "height": "0", "tool": "0", "lat": "-54.3508", "lng": "119.6832", "video": "https://www.youtube.com/watch?v=88paa005RgI&t=2229s" },
+            { "text": "wands_knight", "height": "1", "tool": "0", "lat": "-54.3508", "lng": "119.6832", "video": "https://www.youtube.com/watch?v=88paa005RgI&t=2229s" },
             { "text": "wands_queen", "height": "0", "tool": "0", "lat": "-117.9991", "lng": "30.3438", 	"video": "https://www.youtube.com/watch?v=88paa005RgI&t=2376s" },
             { "text": "wands_king", "height": "0", "tool": "0", "lat": "-36.7967", "lng": "105.1121", 	"video": "https://www.youtube.com/watch?v=88paa005RgI&t=2302s" }
         ],
