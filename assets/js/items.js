@@ -35,7 +35,7 @@ class BaseItem {
         </span>
         <small class="counter-number">${this.amount}</small>
       </div>
-    `).translate().appendTo($listParent)
+    `).translate().appendTo($listParent);
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(InventorySettings, 'isEnabled stackSize', () =>
         this.$weeklyMenuButton
@@ -132,7 +132,7 @@ class Weekly extends BaseCollection {
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(Settings, 'showWeeklySettings', () => {
         this.current.$menuEntry.toggleClass('opened', Settings.showWeeklySettings);
-        weeklyCheckbox.prop('checked', Settings.showWeeklySettings)
+        weeklyCheckbox.prop('checked', Settings.showWeeklySettings);
       })();
       weeklyCheckbox.on("change", () => {
         Settings.showWeeklySettings = weeklyCheckbox.prop('checked');
@@ -161,7 +161,7 @@ class Collection extends BaseCollection {
     Loader.mapModelLoaded.then(() => {
       const checkbox = $('#sort-items-alphabetically')
         .prop("checked", Settings.sortItemsAlphabetically)
-        .on("change", () => Settings.sortItemsAlphabetically = checkbox.prop('checked'))
+        .on("change", () => Settings.sortItemsAlphabetically = checkbox.prop('checked'));
       SettingProxy.addListener(Settings, 'sortItemsAlphabetically language', () =>
         Collection.collections.forEach(collection =>
           collection.menuSort(Settings.sortItemsAlphabetically)))();
@@ -248,7 +248,7 @@ class Collection extends BaseCollection {
       .insertBefore('#collection-insertion-before-point');
     $element[0].rdoCollection = this;
     [this.$menuButton, this.$submenu] = $element.children().toArray().map(e => $(e));
-    this.$menuButton.find('.same-cycle-warning-menu').hide().end()
+    this.$menuButton.find('.same-cycle-warning-menu').hide().end();
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(Settings, 'isCycleInputEnabled', () =>
         this.$menuButton
@@ -279,12 +279,13 @@ class Collection extends BaseCollection {
       .toggleClass('not-found', buggy)
       .find('.same-cycle-warning-menu')
       .toggle(isSameCycle)
-      .end()
+      .end();
     this.$submenu
-      .find('.collection-collected').text(Language.get('menu.collection_counter')
+      .find('.collection-collected')
+      .text(Language.get('menu.collection_counter')
         .replace('{count}', this.$submenu.find('.disabled').length)
         .replace('{max}', this.items.length)
-      )
+      );
   }
   menuSort(alphabetically) {
     if (['cups', 'swords', 'wands', 'pentacles'].includes(this.category)) return;
@@ -366,10 +367,12 @@ class Item extends BaseItem {
           );
         } else if (event.target.classList.contains('open-submenu')) {
           event.stopPropagation();
-          $(event.target).toggleClass('rotate')
-            .parent().parent().children('.menu-hidden').toggleClass('opened')
+          $(event.target)
+            .toggleClass('rotate')
+            .parent().parent().children('.menu-hidden')
+            .toggleClass('opened');
         }
-      }, {capture: true});
+      }, { capture: true });
   }
   _insertMenuElement() {
     this.$menuButton = $(`
