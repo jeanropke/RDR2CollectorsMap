@@ -650,11 +650,12 @@ class PathFinder {
 	}
 
 	/**
-	 * Finds the nearest marker in markers from start. This function uses the created chunks, so make sure to re-create
-	 * the chunks when you start the route generator
+	 * Finds the nearest marker in markers from start. This function uses the created chunks, so
+	 * make sure to re-create the chunks when you start the route generator
 	 * @static
 	 * @param {Marker} start 
-	 * @param {Array<Marker>} markers This array of markers must not include start or any already visited markers
+	 * @param {Array<Marker>} markers This array of markers must not include start or any already
+	 * visited markers
 	 * @returns {Promise<Object>} Resolving Object containes the properties weight, marker and path
 	 */
 	static async findNearestTravelItem(start, markers) {
@@ -814,8 +815,6 @@ class PathFinder {
 		PathFinder._running = true
 		PathFinder._currentChunk = null
 
-		var startTime = new Date().getTime()
-
 		if(typeof(MapBase) !== 'undefined') {
 			// Add controller and layer group to map
 			PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map)
@@ -836,8 +835,6 @@ class PathFinder {
 							PathFinder.drawRoute(paths)
 							break
 						case 'route-done':
-							var endTime = new Date().getTime();
-							
 							window.setTimeout(function(){
 								PathFinder._layerControl.selectPath(1, true)
 							}, 100)
