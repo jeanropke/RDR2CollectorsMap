@@ -1978,5 +1978,16 @@
   "random": 3,
   "tarot_cards": 6,
   "date": "2020-06-10"
+ }, {
+  "flower": 5,
+  "bottle": 2,
+  "arrowhead": 3,
+  "egg": 6,
+  "coin": 1,
+  "heirlooms": 5,
+  "lost_jewelry": 2,
+  "random": 5,
+  "tarot_cards": 1,
+  "date": "2020-06-11"
  }
 ]
