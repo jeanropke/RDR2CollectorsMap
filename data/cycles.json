@@ -1989,5 +1989,16 @@
   "random": 5,
   "tarot_cards": 1,
   "date": "2020-06-11"
+ }, {
+  "flower": 4,
+  "bottle": 6,
+  "arrowhead": 2,
+  "egg": 5,
+  "coin": 3,
+  "heirlooms": 2,
+  "lost_jewelry": 3,
+  "random": 2,
+  "tarot_cards": 2,
+  "date": "2020-06-12"
  }
 ]
