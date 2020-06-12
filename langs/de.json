@@ -1716,7 +1716,7 @@
     "menu.fme_display_general_period": "Anzeigezeitraum für allgemeine Ereignisse",
     "help.fme_display_general_period": "Ermöglicht die Auswahl der maximalen Anzahl von Minuten, für die allgemeine Free Roam Events angezeigt werden sollen. Alle Ereignisse, die nach dieser Zeit erscheinen werden, werden nicht angezeigt.",
     "menu.fme_display_role_period": "Anzeigezeitraum für Rollenereignisse",
-    "help.fme_display_role_period": "Allows you select the maximum amount of minutes you want to display Role Free Roam Events for. Any events after this amount will not be shown.",
+    "help.fme_display_role_period": "",
     "menu.fme_notification": "Ereignis-Benachrichtigung aktivieren",
     "help.fme_notification": "Sendet eine Benachrichtigung, wenn ein Free Roam Event beginnt.",
     "help.fme_notification.denied": "Sendet eine Benachrichtigung, wenn ein Free Roam-Event gestartet wird. Deaktiviert, weil die erforderliche Browser-Berechtigung fehlt.",
