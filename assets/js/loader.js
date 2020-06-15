@@ -20,7 +20,7 @@ class Loader {
     }
     constructor(name, url) {
         const queryString = {};
-        if (!name.startsWith('http')) queryString.nocache = nocache;
+        if (!url.startsWith('http')) queryString.nocache = nocache;
         if (name === 'cycles') queryString.date = new Date().toISOUTCDateString();
         this._json = $.getJSON(url, queryString);
     }
