@@ -7,7 +7,7 @@
                 "arrowhead_bone",
                 "heirlooms_boar_bristle_brush"
             ],
-            "value": 0
+            "value": 70
         },
         "veteran_set": {
             "items": [
@@ -246,7 +246,7 @@
                 "bracelet_hajnal_garnet_bangle",
                 "necklace_dane_topaz"
             ],
-            "value": 0
+            "value": 95
         },
         "penny_set": {
             "items": [
@@ -262,7 +262,7 @@
                 "bottle_cognac_bottle",
                 "item_cooked_plump_bird_thyme"
             ],
-            "value": 0
+            "value": 50
         },
         "new_year_set": {
             "items": [
@@ -270,7 +270,7 @@
                 "bottle_scotch_whisky",
                 "item_pocket_watch_platinum"
             ],
-            "value": 0
+            "value": 65
         },
         "lovers_set": {
             "items": [
