@@ -1,4 +1,4 @@
-var Pins = {
+const Pins = {
   pinsList: [],
 
   addToMap: function () {
@@ -11,14 +11,14 @@ var Pins = {
   addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true, markerSize = Settings.markerSize) {
     if (lat === null || lat === undefined || lng === null || lng === undefined) return;
 
-    var pinAtPositionExists = this.pinsList.some(function (marker) {
+    const pinAtPositionExists = this.pinsList.some(function (marker) {
       return marker._latlng.lat == lat && marker._latlng.lng == lng;
     });
     if (pinAtPositionExists) return;
 
     icon = icon == null ? 'pin' : icon;
-    var shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    var marker = L.marker([lat, lng], {
+    const shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    const marker = L.marker([lat, lng], {
       id: id == null ? this.generatePinHash(`${lat}_${lng}_${Date.now()}`) : id,
       name: name == null ? Language.get('map.user_pins.default_title') : name,
       desc: desc == null ? Language.get('map.user_pins.default_desc') : desc,
@@ -49,16 +49,16 @@ var Pins = {
   },
 
   addPinToCenter: function () {
-    var center = MapBase.map.getCenter();
+    const center = MapBase.map.getCenter();
     this.addPin(center.lat, center.lng);
   },
 
   savePin: function (id, name, desc, icon) {
-    var markerIndex = this.pinsList.findIndex(function (marker) {
+    const markerIndex = this.pinsList.findIndex(function (marker) {
       return marker.options.id == id;
     });
 
-    var marker = this.pinsList[markerIndex];
+    const marker = this.pinsList[markerIndex];
     marker.options.name = name.replace(/[\:\;<\>\"]/gi, '');
     marker.options.desc = desc.replace(/[\:\;<\>\"]/gi, '');
     marker.options.icon_name = icon;
@@ -68,11 +68,11 @@ var Pins = {
   },
 
   removePin: function (id, doSave = true) {
-    var markerIndex = this.pinsList.findIndex(function (marker) {
+    const markerIndex = this.pinsList.findIndex(function (marker) {
       return marker.options.id == id;
     });
 
-    var marker = this.pinsList[markerIndex];
+    const marker = this.pinsList[markerIndex];
     Layers.pinsLayer.removeLayer(marker);
 
     this.pinsList = this.pinsList.filter(function (marker) {
@@ -82,7 +82,7 @@ var Pins = {
   },
 
   saveAllPins: function () {
-    var pinnedItems = "";
+    let pinnedItems = "";
 
     this.pinsList.forEach(pin => {
       pinnedItems += `${pin._latlng.lat}:${pin._latlng.lng}:${pin.options.id}:${pin.options.name}:${pin.options.desc}:${pin.options.icon_name};`;
@@ -95,7 +95,7 @@ var Pins = {
   loadAllPins: function () {
     if (this.pinsList.length > 0) this.removeAllPins();
 
-    var pinnedItems = localStorage.getItem("pinned-items");
+    const pinnedItems = localStorage.getItem("pinned-items");
 
     if (pinnedItems == null)
       return;
@@ -103,7 +103,7 @@ var Pins = {
     pinnedItems.split(';').forEach(pinnedItem => {
       if (pinnedItem == '') return;
 
-      var properties = pinnedItem.split(':');
+      const properties = pinnedItem.split(':');
       this.addPin(properties[0], properties[1], properties[2] || null, properties[3] || null, properties[4] || null, properties[5] || null, false);
     });
   },
@@ -116,16 +116,17 @@ var Pins = {
   },
 
   updatePopup: function (marker) {
-    var markerId = marker.options.id;
-    var markerContent = `<h1 id="${markerId}_name">${marker.options.name}</h1>
+    const markerId = marker.options.id;
+    let markerContent = `
+      <h1 id="${markerId}_name">${marker.options.name}</h1>
       <p id="${markerId}_desc">${marker.options.desc}</p>`;
 
     if (Settings.isPinsEditingEnabled) {
-      var markerIcons = ["pin", "random", "shovel", "magnet", "flower", "bottle", "arrowhead", "egg", "cups", "pentacles", "swords", "wands", "coin", "heirlooms", "fast_travel", "bracelet", "earring", "necklace", "ring", "nazar", "treasure", "camp"];
-      var markerIconSelect = $('<select>').attr('id', `${markerId}_icon`).addClass('marker-popup-pin-input-icon');
+      const markerIcons = ["pin", "random", "shovel", "magnet", "flower", "bottle", "arrowhead", "egg", "cups", "pentacles", "swords", "wands", "coin", "heirlooms", "fast_travel", "bracelet", "earring", "necklace", "ring", "nazar", "treasure", "camp"];
+      const markerIconSelect = $('<select>').attr('id', `${markerId}_icon`).addClass('marker-popup-pin-input-icon');
 
       markerIcons.forEach(icon => {
-        var option = $('<option></option>').attr('value', icon).attr('data-text', `map.user_pins.icon.${icon}`).text(Language.get(`map.user_pins.icon.${icon}`));
+        const option = $('<option></option>').attr('value', icon).attr('data-text', `map.user_pins.icon.${icon}`).text(Language.get(`map.user_pins.icon.${icon}`));
         if (icon == marker.options.icon_name) option.attr('selected', 'selected');
         markerIconSelect.append(option);
       });
@@ -165,15 +166,15 @@ var Pins = {
   },
 
   exportPins: function () {
-    var text = localStorage.getItem("pinned-items");
-    var filename = 'pinned-items.txt';
+    const text = localStorage.getItem("pinned-items");
+    const filename = 'pinned-items.txt';
 
     if (text === null || !text.includes(':') || !text.includes(';')) {
       alert(Language.get('alerts.nothing_to_export'));
       return;
     }
 
-    var element = document.createElement('a');
+    const element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename);
 
@@ -201,12 +202,12 @@ var Pins = {
   },
 
   generatePinHash: function (str) {
-    var hash = 0;
+    let hash = 0;
 
     if (str.length == 0) return hash;
 
-    for (var i = 0, l = str.length; i < l; i++) {
-      var char = str.charCodeAt(i);
+    for (let i = 0, l = str.length; i < l; i++) {
+      let char = str.charCodeAt(i);
       hash = ((hash << 5) - hash) + char;
       hash |= 0;
     }
@@ -215,10 +216,10 @@ var Pins = {
   },
 
   createChunkedString: function (str, size) {
-    var numChunks = Math.ceil(str.length / size);
-    var chunks = new Array(numChunks);
+    const numChunks = Math.ceil(str.length / size);
+    const chunks = new Array(numChunks);
 
-    for (var i = 0, o = 0; i < numChunks; ++i, o += size) {
+    for (let i = 0, o = 0; i < numChunks; ++i, o += size) {
       chunks[i] = str.substr(o, size);
     }
 
