@@ -1,4 +1,4 @@
-var Cycles = {
+const Cycles = {
   categories: [],
   data: [],
   offset: 0,
@@ -69,20 +69,20 @@ var Cycles = {
       return;
 
     if (param.includes(',')) {
-      var _cycles = param.split(',');
+      const _cycles = param.split(',');
       if (_cycles.length == 9) {
         if (_cycles.some(isNaN)) {
           console.warn('Cycles parameters invalid');
         } else {
           Cycles.categories.flower = _cycles[0];
           Cycles.categories.cups,
-          Cycles.categories.pentacles,
-          Cycles.categories.swords,
-          Cycles.categories.wands = _cycles[1];
+            Cycles.categories.pentacles,
+            Cycles.categories.swords,
+            Cycles.categories.wands = _cycles[1];
           Cycles.categories.bracelet,
-          Cycles.categories.earring,
-          Cycles.categories.necklace,
-          Cycles.categories.ring = _cycles[2];
+            Cycles.categories.earring,
+            Cycles.categories.necklace,
+            Cycles.categories.ring = _cycles[2];
           Cycles.categories.bottle = _cycles[3];
           Cycles.categories.egg = _cycles[4];
           Cycles.categories.arrowhead = _cycles[5];
@@ -115,8 +115,8 @@ var Cycles = {
   },
 
   setCycles: function () {
-    for (var category in Cycles.categories) {
-      var cycle = Cycles.categories[category];
+    for (const category in Cycles.categories) {
+      const cycle = Cycles.categories[category];
       $(`input[name=${category}]`).val(cycle);
       $(`.cycle-icon[data-type=${category}]`).attr("src", `./assets/images/cycle_${cycle}.png`).attr("alt", `Cycle ${cycle}`);
     }
@@ -137,8 +137,7 @@ var Cycles = {
       if (Cycles.offset !== 1) {
         Cycles.offset = 0;
         Cycles.getTodayCycle();
-      }
-      else {
+      } else {
         Cycles.offset = 0;
         $('div>span.cycle-date').removeClass('not-found');
       }
@@ -147,19 +146,18 @@ var Cycles = {
   },
 
   isSameAsYesterday: function (category) {
-    if (!Cycles.yesterday)
-      return;
+    if (!Cycles.yesterday) return;
 
-    var todayCycle = Cycles.categories[category];
-    var yesterdayCycle = Cycles.yesterday[Cycles.getCyclesMainCategory(category)];
+    const todayCycle = Cycles.categories[category];
+    const yesterdayCycle = Cycles.yesterday[Cycles.getCyclesMainCategory(category)];
 
     return todayCycle == yesterdayCycle;
   },
 
   nextDayDataExists: function () {
-    var newDate = new Date();
+    const newDate = new Date();
     newDate.setUTCDate(newDate.getUTCDate() + Cycles.forwardMaxOffset);
-    var nextDayCycle = Cycles.data.findIndex(element => element.date === newDate.toISOUTCDateString());
+    const nextDayCycle = Cycles.data.findIndex(element => element.date === newDate.toISOUTCDateString());
     if (nextDayCycle === -1 && Cycles.forwardMaxOffset > 0) {
       Cycles.forwardMaxOffset--;
       Cycles.nextDayDataExists();
@@ -189,7 +187,7 @@ var Cycles = {
   },
 
   getInGameCycle: function (category) {
-    var _cycles = [];
+    let _cycles = [];
 
     //'old cycle': 'new cycle'
     switch (category) {
@@ -253,7 +251,7 @@ var Cycles = {
     return _cycles;
   },
   getCycleColor: function (cycle) {
-    var color = "";
+    let color = "";
     switch (cycle) {
       case 1:
         color = "#35a0d0";

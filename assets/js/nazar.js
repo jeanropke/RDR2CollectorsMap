@@ -1,4 +1,4 @@
-var MadamNazar = {
+const MadamNazar = {
   possibleLocations: [
     { "x": "-40.7817", "y": "109.4863", "id": "der" },
     { "x": "-43.1046", "y": "132.8263", "id": "grz" },
@@ -17,14 +17,13 @@ var MadamNazar = {
   currentDate: null,
 
   loadMadamNazar: function () {
-    var _nazarParam = getParameterByName('nazar');
+    const _nazarParam = getParameterByName('nazar');
     if (_nazarParam < MadamNazar.possibleLocations.length && _nazarParam) {
       MadamNazar.currentLocation = _nazarParam;
       MadamNazar.currentDate = '';
       MadamNazar.addMadamNazar();
       return Promise.resolve();
-    }
-    else {
+    } else {
       return Loader.promises['nazar'].consumeJson(nazar => {
         MadamNazar.currentLocation = nazar.nazar_id - 1;
         MadamNazar.currentDate = new Date(nazar.date).toLocaleString(Settings.language, {
@@ -42,7 +41,7 @@ var MadamNazar = {
       return;
 
     if (enabledCategories.includes('nazar')) {
-      var shadow = Settings.isShadowsEnabled ?
+      const shadow = Settings.isShadowsEnabled ?
         `<img class="shadow"
           width="${35 * markerSize}"
           height="${16 * markerSize}"
@@ -50,7 +49,7 @@ var MadamNazar = {
           alt="Shadow">` :
         '';
       const cl = MadamNazar.possibleLocations[MadamNazar.currentLocation];
-      var marker = L.marker([cl.x, cl.y], {
+      const marker = L.marker([cl.x, cl.y], {
         icon: L.divIcon({
           iconSize: [35 * markerSize, 45 * markerSize],
           iconAnchor: [17 * markerSize, 42 * markerSize],
@@ -62,7 +61,8 @@ var MadamNazar = {
             `
         })
       });
-      marker.bindPopup($(`<div>
+      marker.bindPopup($(`
+        <div>
           <h1><span data-text="menu.madam_nazar"></span> - ${MadamNazar.currentDate}</h1>
           <p style="text-align: center;" data-text="map.madam_nazar.desc"></p>
         </div>`).translate().html(), { minWidth: 300 });

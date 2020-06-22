@@ -11,16 +11,16 @@ Object.defineProperty(String.prototype, 'filename', {
   }
 });
 
-var searchTerms = [];
-var uniqueSearchMarkers = [];
+let searchTerms = [];
+let uniqueSearchMarkers = [];
 
-var categories = [
+const categories = [
   'flower', 'bottle', 'arrowhead', 'egg', 'coin', 'heirlooms', 'bracelet',
   'earring', 'necklace', 'ring', 'cups', 'pentacles', 'swords', 'wands', 'nazar',
   'fast_travel', 'treasure', 'random', 'user_pins'
 ];
 
-var enabledCategories = JSON.parse(localStorage.getItem("enabled-categories"));
+let enabledCategories = JSON.parse(localStorage.getItem("enabled-categories"));
 if (!enabledCategories) {
   const disabledCats = JSON.parse(localStorage.getItem("disabled-categories")) || ['random'];
   enabledCategories = categories.filter(item => !disabledCats.includes(item));
@@ -40,7 +40,7 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
 
 L.LayerGroup.include({
   getLayerById: function (id) {
-    for (var i in this._layers) {
+    for (const i in this._layers) {
       if (this._layers[i].id == id) {
         return this._layers[i];
       }
@@ -165,7 +165,7 @@ function updateTopWidget() {
 function getParameterByName(name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, '\\$&');
-  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+  const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
     results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return '';
@@ -182,7 +182,7 @@ function setClipboardText(text) {
 }
 
 function downloadAsFile(filename, text) {
-  var element = document.createElement('a');
+  const element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
   element.setAttribute('download', filename);
 
@@ -304,11 +304,12 @@ $('#enable-cycle-changer').on("change", function () {
 });
 
 // “random” category still needs this (other collectibles have handlers in their class)
-$('.menu-option.clickable input').on('click', function (e) {
-  e.stopPropagation();
+$('.menu-option.clickable input').on('click', function (event) {
+  event.stopPropagation();
 });
-$('.menu-option.clickable input').on('change', function (e) {
-  var el = $(e.target);
+
+$('.menu-option.clickable input').on('change', function (event) {
+  const el = $(event.target);
   Cycles.categories[el.attr("name")] = parseInt(el.val());
   MapBase.addMarkers();
   Menu.refreshMenu();
@@ -355,7 +356,7 @@ $("#clear-inventory").on("click", function () {
 $("#custom-routes").on("change", function () {
   RouteSettings.customRouteEnabled = $("#custom-routes").prop('checked');
   changeCursor();
-  var mapRoute = Routes.customRouteConnections.join(',');
+  const mapRoute = Routes.customRouteConnections.join(',');
   RouteSettings.customRoute = mapRoute;
 });
 
@@ -412,8 +413,8 @@ $("#enable-cycle-input").on("change", function () {
 
 // Remove item from map when using the menu
 $(document).on('click', '.collectible-wrapper[data-type]', function () {
-  var collectible = $(this).data('type');
-  var category = $(this).parent().data('type');
+  const collectible = $(this).data('type');
+  const category = $(this).parent().data('type');
 
   MapBase.removeItemFromMap(Cycles.categories[category], collectible, collectible, category, true);
 });
@@ -481,8 +482,8 @@ $('#pins-export').on("click", function () {
 
 $('#pins-import').on('click', function () {
   try {
-    var file = $('#pins-import-file').prop('files')[0];
-    var fallback = false;
+    const file = $('#pins-import-file').prop('files')[0];
+    let fallback = false;
 
     if (!file) {
       alert(Language.get('alerts.file_not_found'));
@@ -498,10 +499,10 @@ $('#pins-import').on('click', function () {
     }
 
     if (fallback) {
-      var reader = new FileReader();
+      const reader = new FileReader();
 
       reader.addEventListener('loadend', (e) => {
-        var text = e.srcElement.result;
+        const text = e.srcElement.result;
         Pins.importPins(text);
       });
 
@@ -555,20 +556,20 @@ $('#auto-enable-sold-items').on("change", function () {
 });
 
 $('#inventory-stack').on("change", function () {
-  var inputValue = parseInt($('#inventory-stack').val());
+  let inputValue = parseInt($('#inventory-stack').val());
   inputValue = !isNaN(inputValue) ? inputValue : 10;
   InventorySettings.stackSize = inputValue;
 });
 
 $('#soft-flowers-inventory-stack').on("change", function () {
-  var inputValue = parseInt($('#soft-flowers-inventory-stack').val());
+  let inputValue = parseInt($('#soft-flowers-inventory-stack').val());
   inputValue = !isNaN(inputValue) ? inputValue : 10;
   InventorySettings.flowersSoftStackSize = inputValue;
 });
 
 $('#cookie-export').on("click", function () {
   try {
-    var settings = localStorage;
+    let settings = localStorage;
 
     // Remove irrelevant properties (permanently from localStorage):
     delete settings.randid;
@@ -581,8 +582,8 @@ $('#cookie-export').on("click", function () {
     // Set file version
     settings.version = 2;
 
-    var settingsJson = JSON.stringify(settings, null, 4);
-    var exportDate = new Date().toISOUTCDateString();
+    const settingsJson = JSON.stringify(settings, null, 4);
+    const exportDate = new Date().toISOUTCDateString();
 
     downloadAsFile(`collectible-map-settings-(${exportDate}).json`, settingsJson);
   } catch (error) {
@@ -610,9 +611,9 @@ function setSettings(settings) {
 
 $('#cookie-import').on('click', function () {
   try {
-    var settings = null;
-    var file = $('#cookie-import-file').prop('files')[0];
-    var fallback = false;
+    let settings = null;
+    const file = $('#cookie-import-file').prop('files')[0];
+    let fallback = false;
 
     if (!file) {
       alert(Language.get('alerts.file_not_found'));
@@ -636,10 +637,10 @@ $('#cookie-import').on('click', function () {
     }
 
     if (fallback) {
-      var reader = new FileReader();
+      const reader = new FileReader();
 
       reader.addEventListener('loadend', (e) => {
-        var text = e.srcElement.result;
+        const text = e.srcElement.result;
 
         try {
           settings = JSON.parse(text);
@@ -681,16 +682,16 @@ $('#generate-route-auto-update').on("change", function () {
 });
 
 $('#generate-route-distance').on("change", function () {
-  var inputValue = parseInt($('#generate-route-distance').val());
+  let inputValue = parseInt($('#generate-route-distance').val());
   inputValue = !isNaN(inputValue) && inputValue > 0 ? inputValue : 25;
   RouteSettings.maxDistance = inputValue;
   Routes.generatePath();
 });
 
 $('#generate-route-start').on("change", function () {
-  var inputValue = $('#generate-route-start').val();
-  var startLat = null;
-  var startLng = null;
+  let inputValue = $('#generate-route-start').val();
+  let startLat = null;
+  let startLng = null;
 
   $('#generate-route-start-lat').parent().hide();
   $('#generate-route-start-lng').parent().hide();
@@ -734,14 +735,14 @@ $('#generate-route-start').on("change", function () {
 });
 
 $('#generate-route-start-lat').on("change", function () {
-  var inputValue = parseFloat($('#generate-route-start-lat').val());
+  let inputValue = parseFloat($('#generate-route-start-lat').val());
   inputValue = !isNaN(inputValue) ? inputValue : -119.9063;
   RouteSettings.startMarkerLat = inputValue;
   Routes.generatePath();
 });
 
 $('#generate-route-start-lng').on("change", function () {
-  var inputValue = parseFloat($('#generate-route-start-lng').val());
+  let inputValue = parseFloat($('#generate-route-start-lng').val());
   inputValue = !isNaN(inputValue) ? inputValue : 8.0313;
   RouteSettings.startMarkerLng = inputValue;
   Routes.generatePath();
