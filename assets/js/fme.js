@@ -11,7 +11,7 @@
  * License: MIT
  */
 
-var FME = {
+const FME = {
   /**
    * The last retrieved events JSON
    */
@@ -73,17 +73,17 @@ var FME = {
    * @param {Array} schedule List of event times
    */
   updateEvent: function (schedule, key) {
-    var frequencies = {
+    const frequencies = {
       general: Settings.fmeDisplayGeneralPeriod,
       role: Settings.fmeDisplayRolePeriod
     };
 
-    var elements = FME.elements[key];
-    var frequency = FME.minutesToMilliseconds(frequencies[key]);
-    var hasValidNext = false;
+    const elements = FME.elements[key];
+    const frequency = FME.minutesToMilliseconds(frequencies[key]);
+    let hasValidNext = false;
 
     schedule.forEach(function (e, i) {
-      var event = FME.getEventObject(e);
+      const event = FME.getEventObject(e);
 
       if (key === "general" && !(Settings.fmeEnabledGeneralEvents & FME.flags.general[event.name])) return;
       if (key === "role" && !(Settings.fmeEnabledRoleEvents & FME.flags.role[event.name])) return;
@@ -93,8 +93,8 @@ var FME = {
 
         // No need to update DOM when it's not visible.
         if (Settings.isFmeDisplayEnabled) {
-          var fmeName = event.nameText;
-          var fmeBody = Language.get('menu.fme.time.starts_in').replace('{time}', event.etaText);
+          const fmeName = event.nameText;
+          const fmeBody = Language.get('menu.fme.time.starts_in').replace('{time}', event.etaText);
 
           if (elements.nextEventImage.src.filename() !== event.imageSrc.filename())
             elements.nextEventImage.src = event.imageSrc;
@@ -126,15 +126,15 @@ var FME = {
    * @return {Object} Formatted event data
    */
   getEventObject: function (event) {
-    var eventTime = event[0];
-    var now = new Date();
-    var eventDateTime = new Date(
+    const eventTime = event[0];
+    const now = new Date();
+    let eventDateTime = new Date(
       [now.toDateString(), eventTime, 'UTC'].join(' ')
     );
-    var eta = eventDateTime - now;
+    let eta = eventDateTime - now;
     // Ensure that all event dates are in the future, to fix timezone bug
     if (eta <= 0) {
-      var tomorrow = new Date();
+      const tomorrow = new Date();
       tomorrow.setDate(now.getDate() + 1);
       eventDateTime = new Date(
         [tomorrow.toDateString(), eventTime, 'UTC'].join(' ')
@@ -220,7 +220,7 @@ var FME = {
     });
 
     $('#fme-display-general-period').on("change", function () {
-      var inputValue = parseInt($('#fme-display-general-period').val());
+      const inputValue = parseInt($('#fme-display-general-period').val());
       inputValue = !isNaN(inputValue) ? inputValue : 30;
       if (inputValue < 10 || inputValue > 45) inputValue = 30;
       Settings.fmeDisplayGeneralPeriod = inputValue;
@@ -228,7 +228,7 @@ var FME = {
     });
 
     $('#fme-display-role-period').on("change", function () {
-      var inputValue = parseInt($('#fme-display-role-period').val());
+      const inputValue = parseInt($('#fme-display-role-period').val());
       inputValue = !isNaN(inputValue) ? inputValue : 60;
       if (inputValue < 10 || inputValue > 90) inputValue = 60;
       Settings.fmeDisplayRolePeriod = inputValue;
@@ -249,7 +249,7 @@ var FME = {
     });
 
     $('#fme-notification-period').on("change", function () {
-      var inputValue = parseInt($('#fme-notification-period').val());
+      const inputValue = parseInt($('#fme-notification-period').val());
       inputValue = !isNaN(inputValue) ? inputValue : 10;
       if (inputValue < 1 || inputValue > 30) inputValue = 10;
       Settings.fmeNotificationPeriod = inputValue;
@@ -270,14 +270,14 @@ var FME = {
     $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
 
     $("input[name='fme-enabled-general-events[]']").each(function (i, v) {
-      var id = $(this).attr('id');
+      const id = $(this).attr('id');
       $(this).prop('checked', (Settings.fmeEnabledGeneralEvents & FME.flags.general[id]));
     });
 
     $("input[name='fme-enabled-general-events[]']").change(function () {
-      var total = 0;
+      const total = 0;
       $("input[name='fme-enabled-general-events[]']:checked").each(function (i, v) {
-        var value = parseInt($(this).val());
+        const value = parseInt($(this).val());
         total += value;
       });
       Settings.fmeEnabledGeneralEvents = total;
@@ -285,14 +285,14 @@ var FME = {
     });
 
     $("input[name='fme-enabled-role-events[]']").each(function (i, v) {
-      var id = $(this).attr('id');
+      const id = $(this).attr('id');
       $(this).prop('checked', (Settings.fmeEnabledRoleEvents & FME.flags.role[id]));
     });
 
     $("input[name='fme-enabled-role-events[]']").change(function () {
-      var total = 0;
+      const total = 0;
       $("input[name='fme-enabled-role-events[]']:checked").each(function (i, v) {
-        var value = parseInt($(this).val());
+        const value = parseInt($(this).val());
         total += value;
       });
       Settings.fmeEnabledRoleEvents = total;
@@ -330,12 +330,12 @@ var FME = {
     if (this._sentNotifications.includes(event.eventDateTime)) return;
 
     // Only send a notification if it's +-20 seconds away from the notification period.
-    var timeMax = FME.minutesToMilliseconds(Settings.fmeNotificationPeriod);
-    var timeMin = FME.minutesToMilliseconds(Settings.fmeNotificationPeriod - 0.33);
+    const timeMax = FME.minutesToMilliseconds(Settings.fmeNotificationPeriod);
+    const timeMin = FME.minutesToMilliseconds(Settings.fmeNotificationPeriod - 0.33);
     if (!(event.eta > timeMin && event.eta < timeMax)) return;
 
     // Use the formatted time in case we want to change the notification period later
-    var notificationBody = Language.get('notification.fme.body')
+    const notificationBody = Language.get('notification.fme.body')
       .replace('{name}', event.nameText)
       .replace('{time}', event.etaText);
 
