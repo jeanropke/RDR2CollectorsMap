@@ -24,24 +24,21 @@ var MapBase = {
     const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
     //Please, do not use the GitHub map tiles. Thanks
     const mapLayers = {
-      'map.layers.default':
-        L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
-          noWrap: true,
-          bounds: mapBoundary,
-          attribution: '<a href="https://www.rockstargames.com/" target="_blank">Rockstar Games</a>'
-        }),
-      'map.layers.detailed':
-        L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
-          noWrap: true,
-          bounds: mapBoundary,
-          attribution: '<a href="https://rdr2map.com/" target="_blank">RDR2Map</a>'
-        }),
-      'map.layers.dark':
-        L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
-          noWrap: true,
-          bounds: mapBoundary,
-          attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
-        }),
+      'map.layers.default': L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
+        noWrap: true,
+        bounds: mapBoundary,
+        attribution: '<a href="https://www.rockstargames.com/" target="_blank">Rockstar Games</a>'
+      }),
+      'map.layers.detailed': L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
+        noWrap: true,
+        bounds: mapBoundary,
+        attribution: '<a href="https://rdr2map.com/" target="_blank">RDR2Map</a>'
+      }),
+      'map.layers.dark': L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
+        noWrap: true,
+        bounds: mapBoundary,
+        attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
+      }),
     };
 
     // Override bindPopup to include mouseover and mouseout logic.
@@ -145,7 +142,9 @@ var MapBase = {
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
 
-    Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map, { keepSpiderfied: true });
+    Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map, {
+      keepSpiderfied: true
+    });
     Layers.oms.addListener('spiderfy', function (markers) {
       MapBase.map.closePopup();
     });
@@ -225,6 +224,21 @@ var MapBase = {
 
     localStorage.setItem('main.date', date);
 
+    // Preview mode.
+    const previewParam = getParameterByName('q');
+    if (previewParam && categories.includes(previewParam)) {
+      $('.menu-toggle').remove();
+      $('.top-widget').remove();
+      $('#fme-container').remove();
+      $('.side-menu').removeClass('menu-opened');
+      $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
+
+      enabledCategories = [previewParam];
+      MapBase.addMarkers(false, true);
+
+      return;
+    }
+
     MapBase.addMarkers(true);
 
     // Do search via URL.
@@ -248,19 +262,6 @@ var MapBase = {
       }
 
       setTimeout(() => goTo.lMarker && goTo.lMarker.openPopup(), 3000);
-    }
-    
-    // Preview mode.
-    const previewParam = getParameterByName('q');
-    if (previewParam && categories.includes(previewParam)) {
-      $('.menu-toggle').remove();
-      $('.top-widget').remove();
-      $('#fme-container').remove();
-      $('.side-menu').removeClass('menu-opened');
-      $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
-
-      enabledCategories = [ previewParam ];
-      MapBase.addMarkers();
     }
   },
 
@@ -301,16 +302,16 @@ var MapBase = {
     MapBase.addMarkers();
   },
 
-  addMarkers: function (refreshMenu = false) {
+  addMarkers: function (refreshMenu = false, inPreview = false) {
     if (!MapBase.updateLoopAvailable) {
       MapBase.requestLoopCancel = true;
       setTimeout(() => {
-        MapBase.addMarkers(refreshMenu);
+        MapBase.addMarkers(refreshMenu, inPreview);
       }, 0);
       return;
     }
 
-    Menu.hasToolFilters = Settings.toolType !== 3 ? true : false;
+    Menu.hasToolFilters = (!inPreview && Settings.toolType !== 3) ? true : false;
 
     Menu.updateHasFilters();
 
@@ -322,8 +323,7 @@ var MapBase = {
       25,
       function (i) {
         if (MapBase.requestLoopCancel) return;
-
-        MapBase.addMarkerOnMap(MapBase.markers[i]);
+        MapBase.addMarkerOnMap(MapBase.markers[i], inPreview);
       },
       function () {
         MapBase.updateLoopAvailable = true;
@@ -409,16 +409,18 @@ var MapBase = {
     Menu.refreshItemsCounter();
   },
 
-  addMarkerOnMap: function (marker) {
+  addMarkerOnMap: function (marker, inPreview) {
     if (!marker.isVisible) return;
 
-    var toolType = Settings.toolType;
-    var markerTool = parseInt(marker.tool);
-    if (toolType >= 0) {
-      if (toolType < markerTool) return;
-    } else {
-      if (toolType == -1 && markerTool != 1) return;
-      if (toolType == -2 && markerTool != 2) return;
+    if (!inPreview) {
+      var toolType = Settings.toolType;
+      var markerTool = parseInt(marker.tool);
+      if (toolType >= 0) {
+        if (toolType < markerTool) return;
+      } else {
+        if (toolType == -1 && markerTool != 1) return;
+        if (toolType == -2 && markerTool != 2) return;
+      }
     }
 
     marker.recreateLMarker();
@@ -429,10 +431,18 @@ var MapBase = {
   },
 
   gameToMap: function (lat, lng, name = "Debug Marker") {
-    MapBase.game2Map({x: lat, y: lng, z: name});
+    MapBase.game2Map({
+      x: lat,
+      y: lng,
+      z: name
+    });
   },
 
-  game2Map: function ({ x, y, z }) {
+  game2Map: function ({
+    x,
+    y,
+    z
+  }) {
     MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   },
 
@@ -536,7 +546,9 @@ var MapBase = {
       })
     });
 
-    marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, { minWidth: 300 });
+    marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, {
+      minWidth: 300
+    });
     Layers.itemMarkersLayer.addLayer(marker);
   },
 
