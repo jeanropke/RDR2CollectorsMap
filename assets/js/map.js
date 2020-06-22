@@ -2,9 +2,9 @@
  * Created by Jean on 2019-10-09.
  */
 
-var fastTravelData;
+let fastTravelData;
 
-var MapBase = {
+const MapBase = {
   minZoom: 2,
   maxZoom: 7,
   map: null,
@@ -74,8 +74,8 @@ var MapBase = {
         this.on('mouseout', function (e) {
           if (!Settings.isPopupsHoverEnabled) return;
 
-          var that = this;
-          var timeout = setTimeout(function () {
+          const that = this;
+          const timeout = setTimeout(function () {
             that.closePopup();
           }, 100);
 
@@ -137,7 +137,7 @@ var MapBase = {
 
     MapBase.map.doubleClickZoom[Settings.isDoubleClickZoomEnabled ? 'enable' : 'disable']();
 
-    var southWest = L.latLng(-160, -120),
+    const southWest = L.latLng(-160, -120),
       northEast = L.latLng(25, 250),
       bounds = L.latLngBounds(southWest, northEast);
     MapBase.map.setMaxBounds(bounds);
@@ -206,7 +206,7 @@ var MapBase = {
     uniqueSearchMarkers = MapBase.markers;
 
     // Reset markers daily.
-    var date = new Date().toISOUTCDateString();
+    const date = new Date().toISOUTCDateString();
 
     if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
       MapBase.markers.forEach(marker => {
@@ -283,7 +283,7 @@ var MapBase = {
       uniqueSearchMarkers = MapBase.markers;
     } else {
       Layers.itemMarkersLayer.clearLayers();
-      var searchMarkers = [];
+      let searchMarkers = [];
       uniqueSearchMarkers = [];
       $.each(searchTerms, function (id, term) {
 
@@ -353,19 +353,19 @@ var MapBase = {
   },
 
   removeItemFromMap: function (day, text, subdata, category, skipInventory = false) {
-    var markers = MapBase.markers.filter(function (marker) {
+    const markers = MapBase.markers.filter(function (marker) {
       return marker.day == day && (marker.text == text || marker.subdata == subdata);
     });
 
     if (markers == null) return;
 
-    var subdataCategoryIsDisabled =
+    const subdataCategoryIsDisabled =
       (text == subdata && !$(`[data-type=${subdata}]`).hasClass('disabled'));
 
     $.each(markers, function (key, marker) {
       if (text != subdata && marker.text != text) return;
 
-      var changeAmount = 0;
+      let changeAmount = 0;
 
       if (marker.isCurrent) {
         if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
@@ -413,8 +413,8 @@ var MapBase = {
     if (!marker.isVisible) return;
 
     if (!inPreview) {
-      var toolType = Settings.toolType;
-      var markerTool = parseInt(marker.tool);
+      const toolType = Settings.toolType;
+      const markerTool = parseInt(marker.tool);
       if (toolType >= 0) {
         if (toolType < markerTool) return;
       } else {
@@ -450,11 +450,11 @@ var MapBase = {
     if (category == 'flower' || category == 'egg')
       text = text.replace(/_\d/, '');
 
-    var textMenu = text.replace(/egg_|flower_/, '');
+      const textMenu = text.replace(/egg_|flower_/, '');
     $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
 
     $.each($(`[data-marker*=${text}]`), function (key, marker) {
-      var markerData = null;
+      let markerData = null;
 
       if (category !== 'random' && category !== '')
         markerData = $(this).data('marker').replace(/_\d/, '');
@@ -492,7 +492,7 @@ var MapBase = {
       else
         $(`[data-marker*=${item}]`).addClass('highlight-items');
 
-      var textMenu = item.replace(/egg_|flower_/, '');
+        const textMenu = item.replace(/egg_|flower_/, '');
       $(`[data-type=${textMenu}]`).addClass('highlight-important-items-menu');
     });
   },
@@ -505,12 +505,12 @@ var MapBase = {
   },
 
   addFastTravelMarker: function () {
-    var markerSize = Settings.markerSize;
+    const markerSize = Settings.markerSize;
     if (enabledCategories.includes('fast_travel')) {
       $.each(fastTravelData, function (key, value) {
-        var shadow = Settings.isShadowsEnabled ?
+        const shadow = Settings.isShadowsEnabled ?
           '<img class="shadow" width="' + 35 * markerSize + '" height="' + 16 * markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-        var marker = L.marker([value.x, value.y], {
+        const marker = L.marker([value.x, value.y], {
           icon: L.divIcon({
             iconSize: [35 * markerSize, 45 * markerSize],
             iconAnchor: [17 * markerSize, 42 * markerSize],
@@ -531,9 +531,9 @@ var MapBase = {
   },
 
   debugMarker: function (lat, long, name = 'Debug Marker', markerSize = Settings.markerSize) {
-    var shadow = Settings.isShadowsEnabled ?
+    const shadow = Settings.isShadowsEnabled ?
       '<img class="shadow" width="' + 35 * markerSize + '" height="' + 16 * markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
-    var marker = L.marker([lat, long], {
+    const marker = L.marker([lat, long], {
       icon: L.divIcon({
         iconSize: [35 * markerSize, 45 * markerSize],
         iconAnchor: [17 * markerSize, 42 * markerSize],
@@ -557,8 +557,8 @@ var MapBase = {
     if (Settings.isCoordsOnClickEnabled) {
       $('.lat-lng-container').css('display', 'block');
 
-      var lat = parseFloat(coords.latlng.lat.toFixed(4));
-      var lng = parseFloat(coords.latlng.lng.toFixed(4));
+      const lat = parseFloat(coords.latlng.lat.toFixed(4));
+      const lng = parseFloat(coords.latlng.lng.toFixed(4));
       $('.lat-lng-container p').html(
         `Latitude: ${lat}<br>
         Longitude: ${lng}<br>
@@ -580,9 +580,9 @@ var MapBase = {
   },
 
   yieldingLoop: function (count, chunksize, callback, finished) {
-    var i = 0;
+    let i = 0;
     (function chunk() {
-      var end = Math.min(i + chunksize, count);
+      const end = Math.min(i + chunksize, count);
       for (; i < end; ++i) {
         callback.call(null, i);
       }
