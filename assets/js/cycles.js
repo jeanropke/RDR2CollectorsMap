@@ -64,17 +64,16 @@ var Cycles = {
   },
 
   setCustomCycles: function () {
-
-    if (getParameterByName('cycles') == null)
+    const param = getParameterByName('cycles');
+    if (param == null)
       return;
 
-    if (getParameterByName('cycles').includes(',')) {
-      var _cycles = getParameterByName('cycles').split(',');
+    if (param.includes(',')) {
+      var _cycles = param.split(',');
       if (_cycles.length == 9) {
         if (_cycles.some(isNaN)) {
           console.warn('Cycles parameters invalid');
-        }
-        else {
+        } else {
           Cycles.categories.flower = _cycles[0];
           Cycles.categories.cups,
           Cycles.categories.pentacles,
@@ -91,10 +90,27 @@ var Cycles = {
           Cycles.categories.coin = _cycles[7];
           Cycles.categories.random = _cycles[8];
         }
-
       } else {
         console.warn('Cycles parameters invalid');
       }
+    }
+
+    if (!isNaN(param)) {
+      Cycles.categories.flower = param;
+      Cycles.categories.cups = param;
+      Cycles.categories.pentacles = param;
+      Cycles.categories.swords = param;
+      Cycles.categories.wands = param;
+      Cycles.categories.bracelet = param;
+      Cycles.categories.earring = param;
+      Cycles.categories.necklace = param;
+      Cycles.categories.ring = param;
+      Cycles.categories.bottle = param;
+      Cycles.categories.egg = param;
+      Cycles.categories.arrowhead = param;
+      Cycles.categories.heirlooms = param;
+      Cycles.categories.coin = param;
+      Cycles.categories.random = param;
     }
   },
 
