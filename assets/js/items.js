@@ -398,8 +398,8 @@ class Item extends BaseItem {
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(InventorySettings, 'isEnabled', () =>
         this.$menuButton
-        .find('.counter')
-        .toggle(InventorySettings.isEnabled)
+          .find('.counter')
+          .toggle(InventorySettings.isEnabled)
         .end()
       )();
     });

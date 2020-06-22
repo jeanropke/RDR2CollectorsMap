@@ -23,8 +23,7 @@ const MadamNazar = {
       MadamNazar.currentDate = '';
       MadamNazar.addMadamNazar();
       return Promise.resolve();
-    }
-    else {
+    } else {
       return Loader.promises['nazar'].consumeJson(nazar => {
         MadamNazar.currentLocation = nazar.nazar_id - 1;
         MadamNazar.currentDate = new Date(nazar.date).toLocaleString(Settings.language, {

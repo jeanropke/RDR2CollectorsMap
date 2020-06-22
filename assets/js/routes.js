@@ -134,7 +134,7 @@ const Routes = {
     //this needs to be in try catch because throw an error when is no route to remove
     try {
       MapBase.map.removeLayer(Routes.polylines);
-    } catch(e) {};
+    } catch (e) {};
   },
 
 
@@ -143,7 +143,10 @@ const Routes = {
    */
   // The point to start the path generator from, default is SW edge.
   startMarker: function () {
-    return { lat: RouteSettings.startMarkerLat, lng: RouteSettings.startMarkerLng };
+    return {
+      lat: RouteSettings.startMarkerLat,
+      lng: RouteSettings.startMarkerLng
+    };
   },
 
   // Needed to keep track of the previously drawn path so we can remove it later.

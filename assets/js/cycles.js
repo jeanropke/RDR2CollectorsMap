@@ -76,13 +76,13 @@ const Cycles = {
         } else {
           Cycles.categories.flower = _cycles[0];
           Cycles.categories.cups,
-          Cycles.categories.pentacles,
-          Cycles.categories.swords,
-          Cycles.categories.wands = _cycles[1];
+            Cycles.categories.pentacles,
+            Cycles.categories.swords,
+            Cycles.categories.wands = _cycles[1];
           Cycles.categories.bracelet,
-          Cycles.categories.earring,
-          Cycles.categories.necklace,
-          Cycles.categories.ring = _cycles[2];
+            Cycles.categories.earring,
+            Cycles.categories.necklace,
+            Cycles.categories.ring = _cycles[2];
           Cycles.categories.bottle = _cycles[3];
           Cycles.categories.egg = _cycles[4];
           Cycles.categories.arrowhead = _cycles[5];
@@ -137,8 +137,7 @@ const Cycles = {
       if (Cycles.offset !== 1) {
         Cycles.offset = 0;
         Cycles.getTodayCycle();
-      }
-      else {
+      } else {
         Cycles.offset = 0;
         $('div>span.cycle-date').removeClass('not-found');
       }
@@ -147,8 +146,7 @@ const Cycles = {
   },
 
   isSameAsYesterday: function (category) {
-    if (!Cycles.yesterday)
-      return;
+    if (!Cycles.yesterday) return;
 
     const todayCycle = Cycles.categories[category];
     const yesterdayCycle = Cycles.yesterday[Cycles.getCyclesMainCategory(category)];

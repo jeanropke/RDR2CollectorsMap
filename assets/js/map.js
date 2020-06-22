@@ -449,7 +449,7 @@ const MapBase = {
     if (category == 'flower' || category == 'egg')
       text = text.replace(/_\d/, '');
 
-      const textMenu = text.replace(/egg_|flower_/, '');
+    const textMenu = text.replace(/egg_|flower_/, '');
     $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
 
     $.each($(`[data-marker*=${text}]`), function (key, marker) {
@@ -491,7 +491,7 @@ const MapBase = {
       else
         $(`[data-marker*=${item}]`).addClass('highlight-items');
 
-        const textMenu = item.replace(/egg_|flower_/, '');
+      const textMenu = item.replace(/egg_|flower_/, '');
       $(`[data-type=${textMenu}]`).addClass('highlight-important-items-menu');
     });
   },
