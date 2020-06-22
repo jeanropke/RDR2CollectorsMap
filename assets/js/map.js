@@ -249,6 +249,19 @@ var MapBase = {
 
       setTimeout(() => goTo.lMarker && goTo.lMarker.openPopup(), 3000);
     }
+    
+    // Preview mode.
+    const previewParam = getParameterByName('q');
+    if (previewParam && categories.includes(previewParam)) {
+      $('.menu-toggle').remove();
+      $('.top-widget').remove();
+      $('#fme-container').remove();
+      $('.side-menu').removeClass('menu-opened');
+      $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
+
+      enabledCategories = [ previewParam ];
+      MapBase.addMarkers();
+    }
   },
 
   onSearch: function (searchString) {

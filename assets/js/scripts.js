@@ -209,9 +209,12 @@ function clockTick() {
 
   $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
 
-  const file = $('#day-cycle').attr('src').filename();
-  if ((nightTime && file !== "moon") || (!nightTime && file !== "sun"))
-    $('#day-cycle').removeClass('hidden').attr('src', `./assets/images/${nightTime ? 'moon' : 'sun'}.png`);
+  // Preview mode can remove this.
+  if ($('#day-cycle').length) {
+    const file = $('#day-cycle').attr('src').filename();
+    if ((nightTime && file !== "moon") || (!nightTime && file !== "sun"))
+      $('#day-cycle').removeClass('hidden').attr('src', `./assets/images/${nightTime ? 'moon' : 'sun'}.png`);
+  }
 
   const cycleResetTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
   const delta = new Date(cycleResetTime - now);
