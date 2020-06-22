@@ -2,7 +2,7 @@
  * Created by Jean on 2019-10-09.
  */
 
-var Menu = {
+const Menu = {
   hasSearchFilters: false,
   hasToolFilters: false,
 
@@ -29,8 +29,8 @@ var Menu = {
 };
 
 Menu.addCycleWarning = function (element, isSameCycle) {
-  var hasCycleWarning = $(`${element} .same-cycle-warning-menu`).length > 0;
-  var category = $(element);
+  const hasCycleWarning = $(`${element} .same-cycle-warning-menu`).length > 0;
+  const category = $(element);
   if (isSameCycle && !hasCycleWarning) {
     category.parent().parent().attr('data-help', 'item_category_same_cycle');
     category.append(`<img class="same-cycle-warning-menu" src="./assets/images/same-cycle-alert.png">`);
@@ -49,16 +49,16 @@ Menu.refreshMenu = function () {
 };
 
 Menu.refreshCollectionCounter = function (category) {
-  var collectiblesElement = $(`.menu-hidden[data-type="${category}"]`);
+  const collectiblesElement = $(`.menu-hidden[data-type="${category}"]`);
   collectiblesElement.find('.collection-collected').text(Language.get('menu.collection_counter')
     .replace('{count}', collectiblesElement.find('.disabled').length)
     .replace('{max}', collectiblesElement.find('.collectible-wrapper').length));
 };
 
 Menu.refreshItemsCounter = function () {
-  var _markers = MapBase.markers.filter(marker => marker.isCurrent && marker.isVisible);
-  var count = _markers.filter(marker => marker.isCollected).length;
-  var max = _markers.length;
+  const _markers = MapBase.markers.filter(marker => marker.isCurrent && marker.isVisible);
+  const count = _markers.filter(marker => marker.isCollected).length;
+  const max = _markers.length;
 
   $('.collectables-counter').text(Language.get('menu.collectables_counter')
     .replace('{count}', count)
@@ -74,7 +74,7 @@ Menu.refreshItemsCounter = function () {
   Menu.refreshTotalInventoryValue();
 
   $.each($(".menu-hidden[data-type]"), function (key, value) {
-    var category = $(value).attr('data-type');
+    const category = $(value).attr('data-type');
     Menu.refreshCollectionCounter(category);
   });
 };
