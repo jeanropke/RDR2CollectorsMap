@@ -1,4 +1,4 @@
-var Inventory = {
+const Inventory = {
   init: function () {
     $('#enable-inventory-menu-update').prop("checked", InventorySettings.isMenuUpdateEnabled);
     $('#enable-inventory-popups').prop("checked", InventorySettings.isPopupsEnabled);
@@ -22,9 +22,8 @@ var Inventory = {
 
   updateItemHighlights: function myself(fromTimer) {
     'use strict';
-    if (!InventorySettings.isEnabled || !InventorySettings.highlightLowAmountItems) {
-      return;
-    }
+    if (!InventorySettings.isEnabled || !InventorySettings.highlightLowAmountItems) return;
+
     if (fromTimer) {
       delete myself.timer;
     } else {
@@ -43,7 +42,7 @@ var Inventory = {
 
       if (!enabledCategories.includes(collection.category)) return;
 
-      var markers = MapBase.markers.filter(_m => _m.category === collection.category && _m.isCurrent);
+      const markers = MapBase.markers.filter(_m => _m.category === collection.category && _m.isCurrent);
 
       const collectionAverage = collection.averageAmount();
       markers.map(_m => {
@@ -69,7 +68,7 @@ var Inventory = {
   },
 
   changeMarkerAmount: function (legacyItemId, changeAmount, skipInventory = false) {
-    var sameItemMarkers = MapBase.markers.filter(marker => marker.legacyItemId === legacyItemId);
+    const sameItemMarkers = MapBase.markers.filter(marker => marker.legacyItemId === legacyItemId);
 
     const item = sameItemMarkers[0].item;
     if (item && (!skipInventory || skipInventory && InventorySettings.isMenuUpdateEnabled)) {
@@ -84,7 +83,7 @@ var Inventory = {
 
       const amount = marker.item && marker.item.amount;
       if ((marker.isCollected ||
-          (InventorySettings.isEnabled && amount >= InventorySettings.stackSize)) &&
+        (InventorySettings.isEnabled && amount >= InventorySettings.stackSize)) &&
         marker.isCurrent ||
         (marker.category === 'flower' && amount >= InventorySettings.flowersSoftStackSize)) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
