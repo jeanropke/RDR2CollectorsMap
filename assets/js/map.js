@@ -2,13 +2,12 @@
  * Created by Jean on 2019-10-09.
  */
 
-let fastTravelData;
-
 const MapBase = {
   minZoom: 2,
   maxZoom: 7,
   map: null,
   overlays: [],
+  fastTravelData: [],
   // see building interiors in overlays; might not be rotated right
   // (you also have to load overlays_beta.json instead of overlays.json in loader.js)
   interiors: false,
@@ -499,7 +498,7 @@ const MapBase = {
 
   loadFastTravels: function () {
     return Loader.promises['fasttravels'].consumeJson(data => {
-      fastTravelData = data;
+      MapBase.fastTravelData = data;
       console.info('%c[Fast travels] Loaded!', 'color: #bada55; background: #242424');
     });
   },
@@ -507,7 +506,7 @@ const MapBase = {
   addFastTravelMarker: function () {
     const markerSize = Settings.markerSize;
     if (enabledCategories.includes('fast_travel')) {
-      $.each(fastTravelData, function (key, value) {
+      $.each(MapBase.fastTravelData, function (key, value) {
         const shadow = Settings.isShadowsEnabled ?
           '<img class="shadow" width="' + 35 * markerSize + '" height="' + 16 * markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         const marker = L.marker([value.x, value.y], {
