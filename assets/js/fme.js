@@ -220,7 +220,7 @@ const FME = {
     });
 
     $('#fme-display-general-period').on("change", function () {
-      const inputValue = parseInt($('#fme-display-general-period').val());
+      let inputValue = parseInt($('#fme-display-general-period').val());
       inputValue = !isNaN(inputValue) ? inputValue : 30;
       if (inputValue < 10 || inputValue > 45) inputValue = 30;
       Settings.fmeDisplayGeneralPeriod = inputValue;
@@ -228,7 +228,7 @@ const FME = {
     });
 
     $('#fme-display-role-period').on("change", function () {
-      const inputValue = parseInt($('#fme-display-role-period').val());
+      let inputValue = parseInt($('#fme-display-role-period').val());
       inputValue = !isNaN(inputValue) ? inputValue : 60;
       if (inputValue < 10 || inputValue > 90) inputValue = 60;
       Settings.fmeDisplayRolePeriod = inputValue;
@@ -249,7 +249,7 @@ const FME = {
     });
 
     $('#fme-notification-period').on("change", function () {
-      const inputValue = parseInt($('#fme-notification-period').val());
+      let inputValue = parseInt($('#fme-notification-period').val());
       inputValue = !isNaN(inputValue) ? inputValue : 10;
       if (inputValue < 1 || inputValue > 30) inputValue = 10;
       Settings.fmeNotificationPeriod = inputValue;
@@ -275,7 +275,7 @@ const FME = {
     });
 
     $("input[name='fme-enabled-general-events[]']").change(function () {
-      const total = 0;
+      let total = 0;
       $("input[name='fme-enabled-general-events[]']:checked").each(function (i, v) {
         const value = parseInt($(this).val());
         total += value;
@@ -290,7 +290,7 @@ const FME = {
     });
 
     $("input[name='fme-enabled-role-events[]']").change(function () {
-      const total = 0;
+      let total = 0;
       $("input[name='fme-enabled-role-events[]']:checked").each(function (i, v) {
         const value = parseInt($(this).val());
         total += value;
