@@ -96,21 +96,10 @@ const Cycles = {
     }
 
     if (!isNaN(param)) {
-      Cycles.categories.flower = param;
-      Cycles.categories.cups = param;
-      Cycles.categories.pentacles = param;
-      Cycles.categories.swords = param;
-      Cycles.categories.wands = param;
-      Cycles.categories.bracelet = param;
-      Cycles.categories.earring = param;
-      Cycles.categories.necklace = param;
-      Cycles.categories.ring = param;
-      Cycles.categories.bottle = param;
-      Cycles.categories.egg = param;
-      Cycles.categories.arrowhead = param;
-      Cycles.categories.heirlooms = param;
-      Cycles.categories.coin = param;
-      Cycles.categories.random = param;
+      for (const key in Cycles.categories) {
+        if (Cycles.categories.hasOwnProperty(key))
+          Cycles.categories[key] = param;
+      }
     }
   },
 
