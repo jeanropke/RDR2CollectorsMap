@@ -119,7 +119,7 @@ const Routes = {
   },
 
   importCustomRoute: function () {
-    let input = prompt(Language.get('routes.import_prompt'), "");
+    const input = prompt(Language.get('routes.import_prompt'), "");
 
     if (input == null || input == "") {
       alert(Language.get('routes.empty'));

@@ -8,7 +8,7 @@ const Language = {
 
   init: function () {
     'use strict';
-    let langs = ['en'];
+    const langs = ['en'];
 
     if (Settings.language !== 'en') {
       langs.push(Settings.language);
@@ -22,7 +22,7 @@ const Language = {
         success: function (json) {
           let result = {};
 
-          for (let propName in json) {
+          for (const propName in json) {
             if (json[propName] !== "" && ($.isEmptyObject(Language.data.en) || Language.data.en[propName] !== json[propName])) {
               result[propName] = json[propName];
             }
@@ -96,7 +96,7 @@ const Language = {
         success: function (json) {
           let result = {};
 
-          for (let propName in json) {
+          for (const propName in json) {
             if (json[propName] !== "" && ($.isEmptyObject(Language.data.en) || Language.data.en[propName] !== json[propName])) {
               result[propName] = json[propName];
             }
