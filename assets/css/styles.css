@@ -471,7 +471,7 @@ select {
 }
 
 .input-text.input-cycle.random {
-    margin-right: 42px;
+    margin-right: 47px;
 }
 
 .issues-container a {
@@ -558,10 +558,11 @@ select {
 }
 
 .side-menu .open-submenu {
-    min-width: 32px;
+    min-width: 42px;
     height: 38px;
     background: url(../images/arrow.png) center no-repeat;
-    margin: auto 0;
+    margin: auto 0 auto 5px;
+    padding: 0;
 }
 
 .open-submenu.rotate {
@@ -784,7 +785,7 @@ a.wiki-page:visited {
 }
 
 .menu-option.clickable input {
-    margin: auto 10px auto auto;
+    margin: auto 0 auto auto;
     max-width: 50px;
     min-width: 40px;
     height: 30px;
@@ -1188,8 +1189,8 @@ a.no-style:visited {
 
 @media (min-width: 1025px) {
     .side-menu {
-        width: 390px;
-        left: -390px;
+        width: 400px;
+        left: -400px;
         top: 0;
     }
 
@@ -1198,7 +1199,7 @@ a.no-style:visited {
     }
 
     .top-widget-menu-opened {
-        left: 395px;
+        left: 405px;
     }
 }
 
@@ -1448,7 +1449,7 @@ a.no-style:visited {
 }
 
 #fme-container.fme-menu-opened {
-    left: 395px;
+    left: 405px;
 }
 
 #fme-container .fme-card {
