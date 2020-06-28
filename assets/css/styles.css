@@ -20,15 +20,6 @@
     box-sizing: border-box;
 }
 
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #aaa;
-    border-radius: 3px;
-}
-
 body {
     margin: 0;
     font-size: 16px;
@@ -510,7 +501,6 @@ select {
     height: 100vh;
     color: #eee;
     z-index: 1000;
-    scrollbar-width: thin;
     user-select: none;
 }
 
@@ -776,12 +766,6 @@ a.wiki-page:visited {
     text-align: center;
     user-select: none;
     cursor: pointer;
-}
-
-.help-scroll {
-    overflow-y: auto;
-    height: 100%;
-    padding: 10px;
 }
 
 .menu-option.clickable input {
@@ -1155,10 +1139,6 @@ a.no-style:visited {
     display: contents;
 }
 
-.leaflet-popup-content ::-webkit-scrollbar-thumb {
-    background: #000 !important;
-}
-
 @media (max-width: 1024px) {
 
     .top-widget-menu-opened,
@@ -1495,6 +1475,17 @@ a.no-style:visited {
 
 #fme-container .fme-card .fme-body {
     display: block;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.side-menu::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Edge and Firefox */
+.side-menu {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 @media (max-width: 1024px) {
