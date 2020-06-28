@@ -33,7 +33,7 @@ class BaseItem {
             src="./assets/images/icons/game/${this.itemId}.png" alt="Weekly item icon"></div>
           <span data-text="${this.itemTranslationKey}"></span>
         </span>
-        <small class="counter-number">${this.amount}</small>
+        <small class="counter-number counter-number-weekly">${this.amount}</small>
       </div>
     `).translate().appendTo($listParent);
     Loader.mapModelLoaded.then(() => {

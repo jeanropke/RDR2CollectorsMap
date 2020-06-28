@@ -806,6 +806,10 @@ a.wiki-page:visited {
     font-size: 15px;
 }
 
+.counter-number-weekly {
+    margin: 0 25px;
+}
+
 .counter-button {
     display: inline-block;
     padding: 3px;
