@@ -948,6 +948,7 @@ a.wiki-page:visited {
 .input-container.disabled,
 .input-container.disabled label {
     cursor: not-allowed !important;
+    pointer-events: none;
 }
 
 .input-action {
