@@ -770,7 +770,7 @@ a.wiki-page:visited {
 
 .menu-option.clickable input {
     margin: auto 0 auto auto;
-    max-width: 50px;
+    max-width: 47px;
     min-width: 40px;
     height: 30px;
     padding: 0 0 0 8px;
@@ -842,7 +842,7 @@ a.wiki-page:visited {
 }
 
 .cycle-icon.random {
-    margin-right: 38px;
+    margin-right: 53px;
 }
 
 .marker-content-wrapper {
