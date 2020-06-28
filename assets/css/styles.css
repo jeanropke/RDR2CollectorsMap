@@ -526,7 +526,7 @@ select {
 .side-menu .menu-option-outer {
     position: relative;
     display: flex;
-    padding: 0 0 0 5px;
+    padding: 0 0 0 2px;
     user-select: none;
     cursor: pointer;
 }
@@ -564,7 +564,7 @@ select {
 }
 
 .side-menu .open-submenu {
-    min-width: 41px;
+    min-width: 42px;
     height: 38px;
     background: url(../images/arrow.png) center no-repeat;
     margin: auto 0;
@@ -666,6 +666,7 @@ select {
 .menu-option span {
     overflow: hidden;
     white-space: nowrap;
+    width: 275px;
     text-overflow: ellipsis;
 }
 
