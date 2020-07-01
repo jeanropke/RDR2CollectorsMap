@@ -134,7 +134,10 @@ class Marker {
   get isVisible() {
     return (this.isCurrent || MapBase.showAllMarkers) &&
       uniqueSearchMarkers.includes(this) &&
-      enabledCategories.includes(this.category);
+      (
+        enabledCategories.includes(this.category) ||
+        (this.item && this.item.isWeekly() && enabledCategories.includes("weekly"))
+      );
   }
 
   colorUrls() {

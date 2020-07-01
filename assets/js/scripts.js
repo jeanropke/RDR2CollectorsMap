@@ -17,7 +17,7 @@ let uniqueSearchMarkers = [];
 const categories = [
   'flower', 'bottle', 'arrowhead', 'egg', 'coin', 'heirlooms', 'bracelet',
   'earring', 'necklace', 'ring', 'cups', 'pentacles', 'swords', 'wands', 'nazar',
-  'fast_travel', 'treasure', 'random', 'user_pins'
+  'fast_travel', 'treasure', 'random', 'weekly', 'user_pins'
 ];
 
 let enabledCategories = JSON.parse(localStorage.getItem("enabled-categories"));
