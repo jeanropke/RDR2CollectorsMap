@@ -62,11 +62,10 @@ const Routes = {
   loadCustomRoute: function (input) {
     try {
       let connections = [];
-      const customRouteString = input;
 
-      input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
+      const items = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
 
-      $.each(input, function (key, value) {
+      $.each(items, function (key, value) {
         const _marker = MapBase.markers.find(marker => marker.text == value && marker.isCurrent);
         if (_marker) connections.push([_marker.lat, _marker.lng]);
       });
@@ -81,7 +80,7 @@ const Routes = {
       MapBase.map.addLayer(Routes.polylines);
 
       if (connections.length)
-        RouteSettings.customRoute = customRouteString;
+        RouteSettings.customRoute = input;
 
     } catch (e) {
       alert(Language.get('routes.invalid'));

@@ -437,11 +437,7 @@ const MapBase = {
     });
   },
 
-  game2Map: function ({
-    x,
-    y,
-    z
-  }) {
+  game2Map: function ({ x, y, z }) {
     MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   },
 
