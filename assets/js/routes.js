@@ -62,6 +62,7 @@ const Routes = {
   loadCustomRoute: function (input) {
     try {
       let connections = [];
+      const customRouteString = input;
 
       input = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
 
@@ -78,6 +79,10 @@ const Routes = {
         'color': '#9a3033'
       });
       MapBase.map.addLayer(Routes.polylines);
+
+      if (connections.length)
+        RouteSettings.customRoute = customRouteString;
+
     } catch (e) {
       alert(Language.get('routes.invalid'));
       console.error(e);
