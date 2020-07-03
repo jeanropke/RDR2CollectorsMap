@@ -225,15 +225,25 @@ const MapBase = {
 
     // Preview mode.
     const previewParam = getParameterByName('q');
-    if (previewParam && categories.includes(previewParam)) {
+    if (previewParam) {
       $('.menu-toggle').remove();
       $('.top-widget').remove();
+      $('.filter-alert').remove();
       $('#fme-container').remove();
       $('.side-menu').removeClass('menu-opened');
       $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
 
-      enabledCategories = [previewParam];
+      const isValidCategory = categories.includes(previewParam);
+
+      if (isValidCategory) {
+        enabledCategories = [previewParam];
+      }
+
       MapBase.addMarkers(false, true);
+
+      if (!isValidCategory) {
+        MapBase.onSearch(previewParam);
+      }
 
       return;
     }
@@ -265,9 +275,7 @@ const MapBase = {
   },
 
   onSearch: function (searchString) {
-
     Menu.hasSearchFilters = !!searchString;
-
     Menu.updateHasFilters();
 
     searchTerms = [];
@@ -287,8 +295,9 @@ const MapBase = {
       $.each(searchTerms, function (id, term) {
 
         searchMarkers = searchMarkers.concat(MapBase.markers.filter(_marker =>
-          Language.get(_marker.itemTranslationKey).toLowerCase().includes(term.toLowerCase()) ||
-          _marker.itemNumberStr === term
+          Language.get(_marker.itemTranslationKey).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(term.toLowerCase()) ||
+          _marker.itemNumberStr === term ||
+          _marker.itemId === term
         ));
 
         $.each(searchMarkers, function (i, el) {
