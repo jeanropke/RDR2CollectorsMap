@@ -235,15 +235,15 @@ const MapBase = {
 
       const isValidCategory = categories.includes(previewParam);
 
-      if (isValidCategory) {
+      if (isValidCategory)
         enabledCategories = [previewParam];
-      }
+      else
+        enabledCategories = [];
 
       MapBase.addMarkers(false, true);
 
-      if (!isValidCategory) {
+      if (!isValidCategory)
         MapBase.onSearch(previewParam);
-      }
 
       return;
     }
@@ -301,7 +301,10 @@ const MapBase = {
         ));
 
         $.each(searchMarkers, function (i, el) {
-          if ($.inArray(el, uniqueSearchMarkers) === -1) uniqueSearchMarkers.push(el);
+          if ($.inArray(el, uniqueSearchMarkers) !== -1) return;
+          if (!enabledCategories.includes(el.category)) enabledCategories.push(el.category);
+
+          uniqueSearchMarkers.push(el);
         });
       });
 
