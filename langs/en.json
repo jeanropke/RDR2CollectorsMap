@@ -1473,6 +1473,7 @@
     "map.layers.default": "Default",
     "map.layers.detailed": "Detailed",
     "map.layers.dark": "Dark",
+    "map.layers.black": "Black",
     "menu.import_export_title": "Import/Export",
     "menu.import_export_explanation": "This will import or export your settings. Importing settings will replace all current settings and reload the page. This feature does not include pins.",
     "menu.import_button": "Import",

@@ -38,6 +38,11 @@ const MapBase = {
         bounds: mapBoundary,
         attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
       }),
+      'map.layers.black': L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/black/{z}/{x}_{y}.jpg', {
+        noWrap: true,
+        bounds: mapBoundary,
+        attribution: '<a href="https://github.com/AdamNortonUK" target="_blank">AdamNortonUK</a>'
+      }),
     };
 
     // Override bindPopup to include mouseover and mouseout logic.
@@ -160,8 +165,8 @@ const MapBase = {
 
   setMapBackground: function () {
     'use strict';
-    MapBase.isDarkMode = Settings.baseLayer === 'map.layers.dark' ? true : false;
-    $('#map').css('background-color', MapBase.isDarkMode ? '#3d3d3d' : '#d2b790');
+    MapBase.isDarkMode = ['map.layers.dark', 'map.layers.black'].includes(Settings.baseLayer) ? true : false;
+    $('#map').css('background-color', MapBase.isDarkMode ? (Settings.baseLayer === 'map.layers.black' ? '#000' : '#3d3d3d') : '#d2b790');
     MapBase.setOverlays();
     if (Settings.markerColor.startsWith('auto')) {
       MapBase.markers.forEach(marker => marker.updateColor());
