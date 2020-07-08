@@ -431,7 +431,7 @@ class Item extends BaseItem {
   }
   updateMenu() {
     const currentMarkers = this.currentMarkers();
-    const buggy = currentMarkers.every(marker => marker.tool == -1);
+    const buggy = currentMarkers.every(marker => marker.buggy);
     this.$menuButton
       .attr('data-help', () => {
         if (buggy) {

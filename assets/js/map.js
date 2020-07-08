@@ -280,8 +280,7 @@ const MapBase = {
   },
 
   onSearch: function (searchString) {
-    Menu.hasSearchFilters = !!searchString;
-    Menu.updateHasFilters();
+    Menu.toggleFilterWarning('map.has_search_filter_alert', !!searchString);
 
     searchTerms = [];
     $.each(searchString.split(';'), function (key, value) {
@@ -326,10 +325,6 @@ const MapBase = {
       }, 0);
       return;
     }
-
-    Menu.hasToolFilters = (!inPreview && Settings.toolType !== 3) ? true : false;
-
-    Menu.updateHasFilters();
 
     Layers.itemMarkersLayer.clearLayers();
 
@@ -425,19 +420,8 @@ const MapBase = {
     Menu.refreshItemsCounter();
   },
 
-  addMarkerOnMap: function (marker, inPreview) {
-    if (!marker.isVisible) return;
-
-    if (!inPreview) {
-      const toolType = Settings.toolType;
-      const markerTool = parseInt(marker.tool);
-      if (toolType >= 0) {
-        if (toolType < markerTool) return;
-      } else {
-        if (toolType == -1 && markerTool != 1) return;
-        if (toolType == -2 && markerTool != 2) return;
-      }
-    }
+  addMarkerOnMap: function (marker, ignoreToolSetting) {
+    if (!(marker.isVisible && (ignoreToolSetting || marker.toolAccepted()))) return;
 
     marker.recreateLMarker();
 
