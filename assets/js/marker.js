@@ -326,9 +326,9 @@ class Marker {
         detail = ['cross', 'crossed out'];
       } else if (['flower_agarita', 'flower_blood_flower'].includes(this.itemId)) {
         detail = ['time', 'timed'];
-      } else if (this.height == '1') {
+      } else if (this.height === 1) {
         detail = ['high', 'high ground'];
-      } else if (this.height == '-1') {
+      } else if (this.height === -1) {
         detail = ['low', 'underground/low ground'];
       }
       const extra = snippet.find('.overlay');
