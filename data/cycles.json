@@ -2385,5 +2385,16 @@
   "random": 5,
   "tarot_cards": 1,
   "date": "2020-07-17"
+ }, {
+  "flower": 3,
+  "bottle": 5,
+  "arrowhead": 6,
+  "egg": 5,
+  "coin": 1,
+  "heirlooms": 3,
+  "lost_jewelry": 5,
+  "random": 2,
+  "tarot_cards": 4,
+  "date": "2020-07-18"
  }
 ]
