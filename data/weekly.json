@@ -1,5 +1,5 @@
 {
-    "current": "whiskey_set",
+    "current": "warrior_tokens_set",
     "sets": {
         "sacred_set": {
             "items": [
@@ -166,7 +166,7 @@
                 "arrowhead_quartz",
                 "ring_harland_coral"
             ],
-            "value": 0
+            "value": 85
         },
         "squire_set": {
             "items": [
