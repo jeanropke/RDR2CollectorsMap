@@ -669,6 +669,7 @@ select {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    max-width: 285px;
 }
 
 .side-menu .collectible,
