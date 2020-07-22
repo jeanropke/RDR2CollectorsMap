@@ -1552,7 +1552,7 @@ a.no-style:visited {
     .side-menu .menu-option:after,
     .side-menu .collectible-wrapper:after {
         top: 1px;
-        right: 2px;
+        right: 0px;
         bottom: 1px;
         left: 2px;
     }
