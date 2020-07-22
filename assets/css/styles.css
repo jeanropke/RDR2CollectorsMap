@@ -528,7 +528,7 @@ select {
     display: flex;
     justify-content: space-between;
     align-items: start;
-    padding: 0 5px;
+    padding: 0;
     user-select: none;
     cursor: pointer;
     line-height: 36px;
@@ -562,7 +562,7 @@ select {
     height: 38px;
     background: url(../images/arrow.png) center no-repeat;
     margin: auto 0 auto 5px;
-    padding: 0;
+    padding: 0 5px 0 0;
 }
 
 .open-submenu.rotate {
