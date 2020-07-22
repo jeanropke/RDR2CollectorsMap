@@ -216,20 +216,18 @@ class Collection extends BaseCollection {
   _insertMenuElement() {
     const $element = $(`
       <div>
-        <div class="menu-option-outer" data-help="item_category">
-          <div class="menu-option clickable" data-type="${this.category}">
+        <div class="menu-option clickable" data-type="${this.category}" data-help="item_category">
+          <span>
+            <img class="icon" src="assets/images/icons/${this.category}.png" alt="${this.category}">
             <span>
-              <img class="icon" src="assets/images/icons/${this.category}.png" alt="${this.category}">
-              <span>
-                <span class="menu-option-text" data-text="menu.${this.category}"></span>
-                <img class="same-cycle-warning-menu" src="assets/images/same-cycle-alert.png">
-              </span>
+              <span class="menu-option-text" data-text="menu.${this.category}"></span>
+              <img class="same-cycle-warning-menu" src="assets/images/same-cycle-alert.png">
             </span>
-            <input class="input-text input-cycle" type="number" min="1" max="6"
-              name="${this.category}" data-help="item_manual_cycle">
-            <img class="cycle-icon" src="assets/images/cycle_1.png" alt="Cycle 1"
-              data-type="${this.category}">
-          </div>
+          </span>
+          <input class="input-text input-cycle" type="number" min="1" max="6"
+            name="${this.category}" data-help="item_manual_cycle">
+          <img class="cycle-icon" src="assets/images/cycle_1.png" alt="Cycle 1"
+            data-type="${this.category}">
           <div class="open-submenu"></div>
         </div>
         <div class="menu-hidden" data-type="${this.category}">

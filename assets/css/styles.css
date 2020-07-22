@@ -471,7 +471,7 @@ select {
 }
 
 .input-text.input-cycle.random {
-    margin-right: 52px;
+    margin-right: 47px;
 }
 
 .issues-container a {
@@ -523,22 +523,15 @@ select {
     transition: all 200ms ease-out;
 }
 
-.side-menu .menu-option-outer {
-    position: relative;
-    display: flex;
-    padding: 0;
-    user-select: none;
-    cursor: pointer;
-}
-
 .side-menu .menu-option {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: start;
-    padding: 0 0 0 5px;
+    padding: 0 5px;
+    user-select: none;
+    cursor: pointer;
     line-height: 36px;
-    flex-grow: 1;
 }
 
 .side-menu .disabled {
@@ -565,10 +558,10 @@ select {
 }
 
 .side-menu .open-submenu {
-    min-width: 52px;
+    min-width: 42px;
     height: 38px;
     background: url(../images/arrow.png) center no-repeat;
-    margin: auto 0;
+    margin: auto 0 auto 5px;
     padding: 0;
 }
 
@@ -869,7 +862,7 @@ a.wiki-page:visited {
 }
 
 .cycle-icon.random {
-    margin-right: 58px;
+    margin-right: 53px;
 }
 
 .marker-content-wrapper {
@@ -1537,7 +1530,7 @@ a.no-style:visited {
 @media (min-width: 1025px) {
 
     .settings-container .input-container:not(.disabled):after,
-    .side-menu .menu-option-outer:after,
+    .side-menu .menu-option:after,
     .side-menu .collectible-wrapper:after {
         border-color: #d80419;
         border-image-repeat: round;
@@ -1556,7 +1549,7 @@ a.no-style:visited {
         z-index: 10;
     }
 
-    .side-menu .menu-option-outer:after,
+    .side-menu .menu-option:after,
     .side-menu .collectible-wrapper:after {
         top: 1px;
         right: 2px;
@@ -1565,7 +1558,7 @@ a.no-style:visited {
     }
 
     .settings-container .input-container:not(.disabled):hover:after,
-    .side-menu .menu-option-outer:hover:after,
+    .side-menu .menu-option:hover:after,
     .side-menu .collectible-wrapper:hover:after {
         opacity: 1;
     }
