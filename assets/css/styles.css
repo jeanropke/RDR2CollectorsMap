@@ -553,8 +553,7 @@ select {
 
 .side-menu .menu-option .icon {
     width: 35px;
-    margin-top: 6px;
-    margin-bottom: -3px;
+    margin: 6px 0 -3px 2px;
 }
 
 .side-menu .open-submenu {
