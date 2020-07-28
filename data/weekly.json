@@ -287,6 +287,86 @@
                 "egg_goose"
             ],
             "value": 50
+        },
+        "trophy_hunter_set": {
+            "items": [
+                "legendary_item_bison_horn",
+                "legendary_item_boar_tusk",
+                "legendary_item_moose_antler"
+            ],
+            "value": 0
+        },
+        "beasts_of_prey_set": {
+            "items": [
+                "legendary_item_panther_eye",
+                "legendary_item_wolf_heart",
+                "fossil_tooth_serrated"
+            ],
+            "value": 0
+        },
+        "tooth_and_nail_set": {
+            "items": [
+                "legendary_item_beaver_tooth",
+                "legendary_item_coyote_fang",
+                "provision_badger_claw"
+            ],
+            "value": 0
+        },
+        "shot_in_the_dark_set": {
+            "items": [
+                "provision_opossum_fur_pristine",
+                "provision_raccoon_fur_pristine",
+                "provision_owl_feather"
+            ],
+            "value": 0
+        },
+        "black_and_white_set": {
+            "items": [
+                "provision_skunk_fur_pristine",
+                "provision_badger_pelt_pristine",
+                "provision_seagull_feather"
+            ],
+            "value": 0
+        },
+        "jurassic_set": {
+            "items": [
+                "fossil_tooth_trex",
+                "fossil_tail_spike",
+                "fossil_brow_horn"
+            ],
+            "value": 0
+        },
+        "ancient_wood_set": {
+            "items": [
+                "fossil_pet_wood",
+                "fossil_pet_wood_rainbow",
+                "fossil_pet_wood_yellow"
+            ],
+            "value": 0
+        },
+        "deep_blue_set": {
+            "items": [
+                "fossil_tully_monster",
+                "fossil_cephalopod",
+                "provision_fish_rock_bass"
+            ],
+            "value": 0
+        },
+        "arthropod_set": {
+            "items": [
+                "fossil_sea_scorpion",
+                "fossil_trilobite_crypto",
+                "carcass_crab_perfect"
+            ],
+            "value": 0
+        },
+        "bite_sized_set": {
+            "items": [
+                "provision_cougar_fang",
+                "fossil_tooth_mega",
+                "provision_alligator_tooth"
+            ],
+            "value": 0
         }
     }
 }
