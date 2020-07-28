@@ -97,7 +97,7 @@ select {
     padding: 10px;
     position: fixed;
     z-index: 9909;
-    display: none;
+    display: block;
     /* When the time comes, you gotta run and change this to block. This is a warning. */
 }
 
