@@ -146,7 +146,7 @@ Object.entries({
   isClock24Hour: { default: false },
   isCoordsOnClickEnabled: { default: false },
   isCycleChangerEnabled: { default: false },
-  isCycleInputEnabled: { default: false },
+  isCycleInputEnabled: { default: true },
   isDebugEnabled: { default: false },
   isDoubleClickZoomEnabled: { default: true },
   isFmeDisplayEnabled: { default: true },
