@@ -66,6 +66,16 @@ class Marker {
     this.primaryDescriptionKey = (() => {
       if (this.category === 'random') {
         return `${this.text}.desc`;
+      } else if (this.category === 'arrowhead') {
+        return "arrowhead_random.desc";
+      } else if (this.category === 'coin') {
+        return "coin_random.desc";
+      } else if (this.category === 'fossils_random') {
+        return "fossils_random.desc";
+      } else if (this.category === 'jewelry_random') {
+        return "jewelry_random.desc";
+      } else if (this.category === 'heirlooms_random') {
+        return "heirlooms_random.desc";
       } else {
         return `${this.markerId}.desc`;
       }
@@ -120,7 +130,7 @@ class Marker {
       return false;
     } else if (this.category === 'random') {
       return true;
-    } else if (InventorySettings.isEnabled) {
+    } else if (InventorySettings.isEnabled && this.item) {
       const stackName = (this.category === 'flower') ? 'flowersSoftStackSize' : 'stackSize';
       return this.item.amount < InventorySettings[stackName];
     } else {
@@ -136,7 +146,19 @@ class Marker {
       uniqueSearchMarkers.includes(this) &&
       (
         enabledCategories.includes(this.category) ||
-        (this.item && this.item.isWeekly() && enabledCategories.includes("weekly"))
+        (this.item && this.item.isWeekly() && enabledCategories.includes("weekly")) ||
+        (this.category === 'heirlooms_random' && enabledCategories.includes('heirlooms')) ||
+        (this.category === 'jewelry_random' && (
+          enabledCategories.includes('bracelet') ||
+          enabledCategories.includes('earring') ||
+          enabledCategories.includes('necklace') ||
+          enabledCategories.includes('ring')
+        )) ||
+        (this.category === 'fossils_random' && (
+          enabledCategories.includes('coastal') ||
+          enabledCategories.includes('oceanic') ||
+          enabledCategories.includes('megafauna')
+        ))
       );
   }
 
@@ -156,9 +178,7 @@ class Marker {
     }
 
     let base;
-    if (this.category === 'random') {
-      base = (markerColor === 'by_category' && this.tool === 2) ? 'black' : 'lightgray';
-    } else if (this.item.isWeekly()) {
+    if (this.item && this.item.isWeekly()) {
       base = 'green';
     } else if (markerColor === 'by_category') {
       base = {
@@ -283,7 +303,7 @@ class Marker {
     }
     const inventoryButtons = snippet.find('.marker-popup-buttons')
     if (InventorySettings.isEnabled && InventorySettings.isPopupsEnabled &&
-      this.category !== 'random') {
+      this.category !== 'random' && this.item) {
       inventoryButtons.find('small')
         .toggleClass('text-danger', this.item.amount >= InventorySettings.stackSize)
         .attr('data-item', this.text)
@@ -387,7 +407,9 @@ class Marker {
           markers.forEach(preliminaryMarker => {
             const marker = new Marker(preliminaryMarker, cycleName, category);
             MapBase.markers.push(marker);
-            if (marker.category !== 'random') marker.item.markers.push(marker);
+
+            if (!marker.item) return;
+            if (!marker.category.includes(['fossils_random', 'heirlooms_random', 'jewelry_random', 'random'])) marker.item.markers.push(marker);
           });
         });
       });

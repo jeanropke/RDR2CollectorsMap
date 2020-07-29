@@ -42,6 +42,7 @@ const Language = {
     'Discord': ['https://discord.gg/WWru8cP', 'Discord'],
     'int.nazar.link': ['https://twitter.com/MadamNazarIO', '@MadamNazarIO'],
     'int.random_spot.link': ['https://github.com/jeanropke/RDR2CollectorsMap/wiki/Random-Item-Possible-Loot'],
+    'int.naturalist_faq.link': ['https://github.com/jeanropke/RDR2CollectorsMap/wiki/Naturalist-Update-Changes'],
   },
 
   _externalLink: function (key) {

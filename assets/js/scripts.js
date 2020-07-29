@@ -15,9 +15,10 @@ let searchTerms = [];
 let uniqueSearchMarkers = [];
 
 const categories = [
-  'flower', 'bottle', 'arrowhead', 'egg', 'coin', 'heirlooms', 'bracelet',
-  'earring', 'necklace', 'ring', 'cups', 'pentacles', 'swords', 'wands', 'nazar',
-  'fast_travel', 'treasure', 'random', 'weekly', 'user_pins'
+  'arrowhead', 'bottle', 'bracelet', 'coastal', 'coin', 'cups', 'earring', 'egg',
+  'fast_travel', 'flower', 'fossils_random', 'heirlooms_random', 'heirlooms',
+  'jewelry_random', 'megafauna', 'nazar', 'necklace', 'oceanic', 'pentacles',
+  'random', 'ring', 'swords', 'treasure', 'user_pins', 'wands', 'weekly'
 ];
 
 let enabledCategories = JSON.parse(localStorage.getItem("enabled-categories"));

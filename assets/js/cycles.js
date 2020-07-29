@@ -47,6 +47,7 @@ const Cycles = {
     Cycles.categories.pentacles = _data.tarot_cards;
     Cycles.categories.swords = _data.tarot_cards;
     Cycles.categories.wands = _data.tarot_cards;
+    Cycles.categories.jewelry_random = _data.lost_jewelry;
     Cycles.categories.bracelet = _data.lost_jewelry;
     Cycles.categories.earring = _data.lost_jewelry;
     Cycles.categories.necklace = _data.lost_jewelry;
@@ -54,8 +55,13 @@ const Cycles = {
     Cycles.categories.bottle = _data.bottle;
     Cycles.categories.egg = _data.egg;
     Cycles.categories.arrowhead = _data.arrowhead;
+    Cycles.categories.heirlooms_random = _data.heirlooms;
     Cycles.categories.heirlooms = _data.heirlooms;
     Cycles.categories.coin = _data.coin;
+    Cycles.categories.fossils_random = _data.fossils;
+    Cycles.categories.coastal = _data.fossils;
+    Cycles.categories.oceanic = _data.fossils;
+    Cycles.categories.megafauna = _data.fossils;
     Cycles.categories.random = _data.random;
     Cycles.setLocaleDate();
     Cycles.nextDayDataExists();

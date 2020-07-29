@@ -9,6 +9,7 @@
     {"itemId": "flower_blood_flower", "price": 10.25},
     {"itemId": "flower_chocolate_daisy", "price": 7.25},
     {"itemId": "flower_wisteria", "price": 8.25},
+
     {"itemId": "cups_ace", "price": 12},
     {"itemId": "cups_two", "price": 7.75},
     {"itemId": "cups_three", "price": 7.75},
@@ -23,6 +24,7 @@
     {"itemId": "cups_knight", "price": 9},
     {"itemId": "cups_queen", "price": 10},
     {"itemId": "cups_king", "price": 11},
+
     {"itemId": "swords_ace", "price": 14.5},
     {"itemId": "swords_two", "price": 9.5},
     {"itemId": "swords_three", "price": 9.25},
@@ -37,6 +39,7 @@
     {"itemId": "swords_knight", "price": 11},
     {"itemId": "swords_queen", "price": 12},
     {"itemId": "swords_king", "price": 13.25},
+
     {"itemId": "wands_ace", "price": 12},
     {"itemId": "wands_two", "price": 7.5},
     {"itemId": "wands_three", "price": 7.5},
@@ -51,6 +54,7 @@
     {"itemId": "wands_knight", "price": 9},
     {"itemId": "wands_queen", "price": 10},
     {"itemId": "wands_king", "price": 11},
+
     {"itemId": "pentacles_ace", "price": 14.5},
     {"itemId": "pentacles_two", "price": 9},
     {"itemId": "pentacles_three", "price": 9.5},
@@ -65,6 +69,7 @@
     {"itemId": "pentacles_knight", "price": 11},
     {"itemId": "pentacles_queen", "price": 12},
     {"itemId": "pentacles_king", "price": 13.25},
+
     {"itemId": "bracelet_greco_sapphire", "price": 18},
     {"itemId": "bracelet_abello_ruby_bangle", "price": 17},
     {"itemId": "bracelet_ojeda_rose_gold", "price": 17},
@@ -73,6 +78,7 @@
     {"itemId": "bracelet_infanta_turquoise", "price": 16.75},
     {"itemId": "bracelet_elliston_carved", "price": 16.5},
     {"itemId": "bracelet_hajnal_garnet_bangle", "price": 16.25},
+
     {"itemId": "earring_ursula_citrine", "price": 15.5},
     {"itemId": "earring_royal_victoria", "price": 17.25},
     {"itemId": "earring_calumet_turquoise", "price": 15.75},
@@ -84,6 +90,7 @@
     {"itemId": "earring_endicott_diamond", "price": 19.25},
     {"itemId": "earring_josephine_pearl", "price": 16},
     {"itemId": "earring_emmeline_coral", "price": 16.25},
+
     {"itemId": "necklace_blakely_miniatue", "price": 18.75},
     {"itemId": "necklace_richelieu_amethyst", "price": 17.75},
     {"itemId": "necklace_pelle_pearl", "price": 18.25},
@@ -93,6 +100,7 @@
     {"itemId": "necklace_gosselin_white_gold", "price": 19.5},
     {"itemId": "necklace_dane_topaz", "price": 18.75},
     {"itemId": "necklace_tuamotu_pearl", "price": 20.75},
+
     {"itemId": "ring_harland_coral", "price": 16.75},
     {"itemId": "ring_magnate_turquoise", "price": 16.5},
     {"itemId": "ring_pilgrim_moonstone", "price": 16.75},
@@ -104,6 +112,7 @@
     {"itemId": "ring_bosque_emerald", "price": 16.5},
     {"itemId": "ring_sackville_diamond", "price": 19.25},
     {"itemId": "ring_thorburn_turquoise", "price": 16.75},
+
     {"itemId": "bottle_tennesee_whiskey", "price": 7.25},
     {"itemId": "bottle_irish_whiskey", "price": 10.25},
     {"itemId": "bottle_scotch_whisky", "price": 10.5},
@@ -113,6 +122,7 @@
     {"itemId": "bottle_caribbean_rum", "price": 7.75},
     {"itemId": "bottle_cognac_bottle", "price": 8.75},
     {"itemId": "bottle_london_dry_gin", "price": 7.25},
+
     {"itemId": "egg_spoonbill", "price": 12.75},
     {"itemId": "egg_heron", "price": 12.75},
     {"itemId": "egg_loon", "price": 3.5},
@@ -122,6 +132,7 @@
     {"itemId": "egg_egret", "price": 12.5},
     {"itemId": "egg_duck", "price": 2.25},
     {"itemId": "egg_goose", "price": 3},
+
     {"itemId": "arrowhead_rough", "price": 11.75},
     {"itemId": "arrowhead_splintered", "price": 8.75},
     {"itemId": "arrowhead_crude", "price": 9.5},
@@ -134,6 +145,7 @@
     {"itemId": "arrowhead_quartz", "price": 16.25},
     {"itemId": "arrowhead_flint", "price": 11.25},
     {"itemId": "arrowhead_agate", "price": 15.25},
+
     {"itemId": "heirlooms_jade_hairpin", "price": 11.75},
     {"itemId": "heirlooms_cherrywood_comb", "price": 8.75},
     {"itemId": "heirlooms_ebony_hairbrush", "price": 9},
@@ -149,6 +161,7 @@
     {"itemId": "heirlooms_horse_hair_brush", "price": 9.25},
     {"itemId": "heirlooms_boar_bristle_brush", "price": 9},
     {"itemId": "heirlooms_new_guinea_rosewood", "price": 9.5},
+
     {"itemId": "coin_gold_quarter", "price": 21},
     {"itemId": "coin_draped_bust_silver_dollar", "price": 18.25},
     {"itemId": "coin_one_cent_token", "price": 18},
@@ -163,7 +176,30 @@
     {"itemId": "coin_gold_eagle", "price": 21.25},
     {"itemId": "coin_liberty_quarter", "price": 20.75},
     {"itemId": "coin_half_dime", "price": 18.5},
-    {"itemId": "coin_penny", "price": 14.75}
+    {"itemId": "coin_penny", "price": 14.75},
+
+    {"itemId": "coastal_coral", "price": 0},
+    {"itemId": "coastal_bivalve", "price": 0},
+    {"itemId": "coastal_brachiopod", "price": 0},
+    {"itemId": "coastal_cephalopod", "price": 0},
+    {"itemId": "coastal_neo", "price": 0},
+    {"itemId": "coastal_stone", "price": 0},
+    {"itemId": "coastal_pet_wood", "price": 0},
+
+    {"itemId": "oceanic_pet_wood_rainbow", "price": 0},
+    {"itemId": "oceanic_sea_lily", "price": 0},
+    {"itemId": "oceanic_sea_scorpion", "price": 0},
+    {"itemId": "oceanic_trilobite_crypto", "price": 0},
+    {"itemId": "oceanic_trilobite_iso", "price": 0},
+    {"itemId": "oceanic_tully_monster", "price": 0},
+    {"itemId": "oceanic_pet_wood_yellow", "price": 0},
+
+    {"itemId": "megafauna_brow_horn", "price": 0},
+    {"itemId": "megafauna_tooth_trex", "price": 0},
+    {"itemId": "megafauna_tooth_mega", "price": 0},
+    {"itemId": "megafauna_tooth_serrated", "price": 0},
+    {"itemId": "megafauna_tail_spike", "price": 0},
+    {"itemId": "megafauna_toe_claw", "price": 0}
   ],
   "collections": [
     {"category": "flower", "price": 155.5},
@@ -179,6 +215,9 @@
     {"category": "egg", "price": 182.5},
     {"category": "arrowhead", "price": 289},
     {"category": "heirlooms", "price": 292.5},
-    {"category": "coin", "price": 540}
+    {"category": "coin", "price": 540},
+    {"category": "coastal", "price": 0},
+    {"category": "oceanic", "price": 0},
+    {"category": "megafauna", "price": 0}
   ]
 }
