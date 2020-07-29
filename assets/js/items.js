@@ -172,6 +172,26 @@ class Collection extends BaseCollection {
           if (collection && $input.hasClass('input-cycle')) {
             event.stopImmediatePropagation();
             Cycles.categories[collection.category] = +$input.val();
+            switch (collection.category) {
+              case 'heirloom':
+                Cycles.categories['heirloom_random'] = +$input.val();
+                break;
+              case 'bracelet':
+              case 'earring':
+              case 'necklace':
+              case 'ring':
+                Cycles.categories['jewelry_random'] = +$input.val();
+                $('.input-cycle[name=bracelet], .input-cycle[name=earring], .input-cycle[name=necklace], .input-cycle[name=ring]').val($input.val());
+                break;
+              case 'coastal':
+              case 'oceanic':
+              case 'megafauna':
+                Cycles.categories['fossils_random'] = +$input.val();
+                $('.input-cycle[name=coastal], .input-cycle[name=oceanic], .input-cycle[name=megafauna]').val($input.val());
+                break;
+              default:
+                break;
+            }
             MapBase.addMarkers();
             Menu.refreshMenu();
           }
