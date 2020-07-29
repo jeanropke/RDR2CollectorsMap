@@ -1807,7 +1807,7 @@
     "fossils_random_water.name": "Random Fossil (Water)",
     "arrowhead_random.desc": "This spot gives you a random Arrowhead, ever since the Naturalist update what item this spot gives can no longer be predicted. For more information, visit {int.naturalist_faq.link}this FAQ page{int.end.link}.",
     "coin_random.desc": "This spot gives you a random Coin, ever since the Naturalist update what item this spot gives can no longer be predicted. For more information, visit {int.naturalist_faq.link}this FAQ page{int.end.link}.",
-    "fossils_random.desc": "This spot gives you a random Fossil, ever since the Naturalist update what item this spot gives can no longer be predicted. For more information, visit {int.naturalist_faq.link}this FAQ page{int.end.link}.",
+    "fossils_random.desc": "Only available on PlayStation 4. This spot gives you a random Fossil, ever since the Naturalist update what item this spot gives can no longer be predicted. For more information, visit {int.naturalist_faq.link}this FAQ page{int.end.link}.",
     "jewelry_random.desc": "This spot gives you a random Lost Jewelry item, ever since the Naturalist update what item this spot gives can no longer be predicted. For more information, visit {int.naturalist_faq.link}this FAQ page{int.end.link}.",
     "heirlooms_random.desc": "This spot gives you a random Family Heirloom, ever since the Naturalist update what item this spot gives can no longer be predicted. For more information, visit {int.naturalist_faq.link}this FAQ page{int.end.link}."
 }
