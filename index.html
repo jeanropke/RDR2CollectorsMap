@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <title>Red Dead Online - Collectors Map</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Red Dead Online Collectors Map. Find all collectibles across the world and sell to Madam Nazar.">
-  <meta name="keywords" content="Red Dead Online, Collectors Map, Collectors Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
+  <meta name="description"
+    content="Red Dead Online Collectors Map. Find all collectibles across the world and sell to Madam Nazar.">
+  <meta name="keywords"
+    content="Red Dead Online, Collectors Map, Collectors Map, Map, Interactive Map, Interactive, jeanropke map, jeanropke">
 
   <link rel="apple-touch-icon" sizes="60x60" href="./apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
@@ -52,7 +54,7 @@
 </head>
 
 <body>
-  <div class="update-warning">Rockstar updated the game. Changes may occur on Collectors Role.</div>
+  <div class="update-warning hidden">Rockstar updated the game. Changes may occur on Collectors Role.</div>
   <div class="side-menu">
     <h2 id="main-header">
       <img id="main-header-left" src="./assets/images/header_bg_left.png" alt="">
@@ -61,16 +63,31 @@
         <h3 id="sub-header">
           <span class="cycle-date" data-help="cycle_date" dir="auto">Loading...</span>
           -
-          <span class="collectables-counter" data-text="menu.collectables_counter" data-help="collectables_counter" dir="auto">Collected --- of ---</span>
+          <span class="collectables-counter" data-text="menu.collectables_counter" data-help="collectables_counter"
+            dir="auto">Collected --- of ---</span>
           -
           <span id="items-value" data-help="items_value">$-.--</span>
         </h3>
       </div>
       <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
     </h2>
+    <div id="update-container" style="margin-bottom: 15px;">
+      <div class="header">
+        <span class="header-border"></span>
+        <h2 class="header-title update-title" style="color: #c00;">Update Notice</h2>
+        <span class="header-border"></span>
+      </div>
+      <p class="explain-text" style="padding: 0 15px;">
+        Rockstar updated the game and made some changes to the Collector role. <a
+          href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/Naturalist-Update-Changes" target="_blank"
+          rel="noopener noreferrer">Read all about it in our FAQ.</a>
+      </p>
+      <hr class="menu-divider" style="opacity: 0.7">
+    </div>
     <div class="settings-container">
       <div class="input-container">
-        <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off" data-help="search">
+        <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;"
+          autocomplete="off" data-help="search">
         <div id="clear-search" class="input-action-clear" data-help="search_clear"></div>
         <div id="copy-search-link" class="input-action-copy" data-help="search_copy_link"></div>
       </div>
@@ -92,7 +109,8 @@
           <img class="icon" src="./assets/images/icons/random.png" alt="Category icon" />
           <span class="menu-option-text" data-text="menu.random_spots">Random Spots</span>
         </span>
-        <input class="input-text input-cycle random" type="number" min="1" max="6" name="random" data-help="item_manual_cycle">
+        <input class="input-text input-cycle random" type="number" min="1" max="6" name="random"
+          data-help="item_manual_cycle">
         <img class="cycle-icon random" src="./assets/images/cycle_3.png" alt="Cycle 3" data-type="random">
       </div>
     </div>
@@ -150,7 +168,8 @@
     <div class="settings-container">
       <div class="explain-text">
         <span data-text="menu.translate_body">Translations are made by the community for the community.</span>
-        <a data-text="menu.translate_link" href="https://crowdin.com/project/rdr2collectorsmap" target="_blank" rel="noopener noreferrer">Help us by translating on Crowdin.</a>
+        <a data-text="menu.translate_link" href="https://crowdin.com/project/rdr2collectorsmap" target="_blank"
+          rel="noopener noreferrer">Help us by translating on Crowdin.</a>
       </div>
       <hr class="menu-divider">
       <div class="input-container" data-help="language">
@@ -225,12 +244,15 @@
         </div>
       </div>
       <div class="input-container" data-help="fme_display_general_period">
-        <label for="fme-display-general-period" data-text="menu.fme_display_general_period">General Event display period</label>
-        <input id="fme-display-general-period" class="input-text narrow-select-menu" type="number" min="10" max="45" value="90">
+        <label for="fme-display-general-period" data-text="menu.fme_display_general_period">General Event display
+          period</label>
+        <input id="fme-display-general-period" class="input-text narrow-select-menu" type="number" min="10" max="45"
+          value="90">
       </div>
       <div class="input-container" data-help="fme_display_role_period">
         <label for="fme-display-role-period" data-text="menu.fme_display_role_period">Role Event display period</label>
-        <input id="fme-display-role-period" class="input-text narrow-select-menu" type="number" min="10" max="90" value="90">
+        <input id="fme-display-role-period" class="input-text narrow-select-menu" type="number" min="10" max="90"
+          value="90">
       </div>
       <div class="input-container" data-help="fme_notification">
         <label for="fme-notification" data-text="menu.fme_notification">Enable event notifications</label>
@@ -241,7 +263,8 @@
       </div>
       <div class="input-container" data-help="fme_notification_period">
         <label for="fme-notification-period" data-text="menu.fme_notification_period">Event notification period</label>
-        <input id="fme-notification-period" class="input-text narrow-select-menu" type="number" min="1" max="30" value="10">
+        <input id="fme-notification-period" class="input-text narrow-select-menu" type="number" min="1" max="30"
+          value="10">
       </div>
       <div id="open-fme-enabled-events-modal" class="input-container clickable" data-help="fme_enabled_events">
         <label data-text="menu.fme_enabled_events">Select enabled events</label>
@@ -276,30 +299,38 @@
       </div>
       <div id="inventory-container">
         <div class="input-container" data-help="enable_inventory_popups">
-          <label for="enable-inventory-popups" data-text="menu.enable_inventory_popups">Enable inventory in popups</label>
+          <label for="enable-inventory-popups" data-text="menu.enable_inventory_popups">Enable inventory in
+            popups</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-inventory-popups" value="1" id="enable-inventory-popups" />
+            <input class="input-checkbox" type="checkbox" name="enable-inventory-popups" value="1"
+              id="enable-inventory-popups" />
             <label class="input-checkbox-label" for="enable-inventory-popups"></label>
           </div>
         </div>
         <div class="input-container" data-help="enable_inventory_menu_update">
-          <label for="enable-inventory-menu-update" data-text="menu.enable_inventory_menu_update">Toggling menu items updates inventory</label>
+          <label for="enable-inventory-menu-update" data-text="menu.enable_inventory_menu_update">Toggling menu items
+            updates inventory</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-inventory-menu-update" value="1" id="enable-inventory-menu-update" />
+            <input class="input-checkbox" type="checkbox" name="enable-inventory-menu-update" value="1"
+              id="enable-inventory-menu-update" />
             <label class="input-checkbox-label" for="enable-inventory-menu-update"></label>
           </div>
         </div>
         <div class="input-container" data-help="reset_button_updates_inventory">
-          <label for="reset-collection-updates-inventory" data-text="menu.reset_button_updates_inventory">Collection reset updates inventory</label>
+          <label for="reset-collection-updates-inventory" data-text="menu.reset_button_updates_inventory">Collection
+            reset updates inventory</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="reset-collection-updates-inventory" value="0" id="reset-collection-updates-inventory" />
+            <input class="input-checkbox" type="checkbox" name="reset-collection-updates-inventory" value="0"
+              id="reset-collection-updates-inventory" />
             <label class="input-checkbox-label" for="reset-collection-updates-inventory"></label>
           </div>
         </div>
         <div class="input-container" data-help="auto_enable_sold_items">
-          <label for="auto-enable-sold-items" data-text="menu.auto_enable_sold_items">Automatically enable sold items</label>
+          <label for="auto-enable-sold-items" data-text="menu.auto_enable_sold_items">Automatically enable sold
+            items</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="auto-enable-sold-items" value="0" id="auto-enable-sold-items" />
+            <input class="input-checkbox" type="checkbox" name="auto-enable-sold-items" value="0"
+              id="auto-enable-sold-items" />
             <label class="input-checkbox-label" for="auto-enable-sold-items"></label>
           </div>
         </div>
@@ -308,20 +339,25 @@
           <input id="inventory-stack" class="input-text narrow-select-menu" type="number" min="1" max="10" value="10">
         </div>
         <div class="input-container" data-help="soft_flowers_inventory_stack">
-          <label for="soft-flowers-inventory-stack" data-text="menu.soft_flowers_inventory_stack">Flowers soft stack size</label>
-          <input id="soft-flowers-inventory-stack" class="input-text narrow-select-menu" type="number" min="1" max="10" value="10">
+          <label for="soft-flowers-inventory-stack" data-text="menu.soft_flowers_inventory_stack">Flowers soft stack
+            size</label>
+          <input id="soft-flowers-inventory-stack" class="input-text narrow-select-menu" type="number" min="1" max="10"
+            value="10">
         </div>
         <div class="input-container" data-help="reset_inventory_daily">
           <label for="reset-inventory-daily" data-text="menu.reset_inventory_daily">Reset inventory daily</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="reset-inventory-daily" value="0" id="reset-inventory-daily" />
+            <input class="input-checkbox" type="checkbox" name="reset-inventory-daily" value="0"
+              id="reset-inventory-daily" />
             <label class="input-checkbox-label" for="reset-inventory-daily"></label>
           </div>
         </div>
         <div class="input-container" data-help="enable_additional_inventory_options">
-          <label for="enable-additional-inventory-options" data-text="menu.enable_additional_inventory_options">Enable advanced inventory options</label>
+          <label for="enable-additional-inventory-options" data-text="menu.enable_additional_inventory_options">Enable
+            advanced inventory options</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-additional-inventory-options" value="0" id="enable-additional-inventory-options" />
+            <input class="input-checkbox" type="checkbox" name="enable-additional-inventory-options" value="0"
+              id="enable-additional-inventory-options" />
             <label class="input-checkbox-label" for="enable-additional-inventory-options"></label>
           </div>
         </div>
@@ -330,9 +366,11 @@
           <div class="input-action"></div>
         </div>
         <div class="input-container" data-help="highlight_low_amount_items">
-          <label for="highlight_low_amount_items" data-text="menu.highlight_low_amount_items">Highlight low amount items</label>
+          <label for="highlight_low_amount_items" data-text="menu.highlight_low_amount_items">Highlight low amount
+            items</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="highlight_low_amount_items" value="0" id="highlight_low_amount_items" />
+            <input class="input-checkbox" type="checkbox" name="highlight_low_amount_items" value="0"
+              id="highlight_low_amount_items" />
             <label class="input-checkbox-label" for="highlight_low_amount_items"></label>
           </div>
         </div>
@@ -392,7 +430,8 @@
         <label data-text="menu.reload_map">Reload the map now</label>
         <div class="input-action"></div>
       </div>
-      <div id="open-delete-all-settings-modal" class="input-container clickable text-danger" data-help="delete_all_settings">
+      <div id="open-delete-all-settings-modal" class="input-container clickable text-danger"
+        data-help="delete_all_settings">
         <label data-text="menu.delete_all_settings">Reset all settings</label>
         <div class="input-action"></div>
       </div>
@@ -464,28 +503,34 @@
         <div class="input-container" data-help="enable_marker_shadows">
           <label for="enable-marker-shadows" data-text="menu.enable_marker_shadows">Marker shadows enabled</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1" id="enable-marker-shadows" />
+            <input class="input-checkbox" type="checkbox" name="enable-marker-shadows" value="1"
+              id="enable-marker-shadows" />
             <label class="input-checkbox-label" for="enable-marker-shadows"></label>
           </div>
         </div>
         <div class="input-container" data-help="enable_marker_popups">
           <label for="enable-marker-popups" data-text="menu.enable_marker_popups">Marker popups enabled</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-marker-popups" value="1" id="enable-marker-popups" />
+            <input class="input-checkbox" type="checkbox" name="enable-marker-popups" value="1"
+              id="enable-marker-popups" />
             <label class="input-checkbox-label" for="enable-marker-popups"></label>
           </div>
         </div>
         <div class="input-container" data-help="enable_marker_popups_hover">
-          <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on hover</label>
+          <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on
+            hover</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1" id="enable-marker-popups-hover" />
+            <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1"
+              id="enable-marker-popups-hover" />
             <label class="input-checkbox-label" for="enable-marker-popups-hover"></label>
           </div>
         </div>
         <div class="input-container" data-help="sort_items_alphabetically">
-          <label for="sort-items-alphabetically" data-text="menu.sort_items_alphabetically">Sort items alphabetically</label>
+          <label for="sort-items-alphabetically" data-text="menu.sort_items_alphabetically">Sort items
+            alphabetically</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="sort-items-alphabetically" value="1" id="sort-items-alphabetically" />
+            <input class="input-checkbox" type="checkbox" name="sort-items-alphabetically" value="1"
+              id="sort-items-alphabetically" />
             <label class="input-checkbox-label" for="sort-items-alphabetically"></label>
           </div>
         </div>
@@ -537,28 +582,36 @@
       </div>
       <div class="settings-container">
         <div class="input-container-noflex">
-          <button class="btn btn-default" onclick="Routes.generatePath(true)" data-text="menu.generate_route" data-help="generate_route">Generate route</button>
-          <button class="btn btn-default" onclick="Routes.clearPath()" data-text="menu.generate_route_clear" data-help="generate_route_clear">Clear route</button>
+          <button class="btn btn-default" onclick="Routes.generatePath(true)" data-text="menu.generate_route"
+            data-help="generate_route">Generate route</button>
+          <button class="btn btn-default" onclick="Routes.clearPath()" data-text="menu.generate_route_clear"
+            data-help="generate_route_clear">Clear route</button>
         </div>
         <hr class="menu-divider">
         <div class="input-container" data-help="generate_route_use_pathfinder">
-          <label for="generate-route-use-pathfinder" data-text="menu.generate_route_use_pathfinder">Use path finder (slower)</label>
+          <label for="generate-route-use-pathfinder" data-text="menu.generate_route_use_pathfinder">Use path finder
+            (slower)</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="generate-route-use-pathfinder" value="1" id="generate-route-use-pathfinder" />
+            <input class="input-checkbox" type="checkbox" name="generate-route-use-pathfinder" value="1"
+              id="generate-route-use-pathfinder" />
             <label class="input-checkbox-label" for="generate-route-use-pathfinder"></label>
           </div>
         </div>
         <div class="input-container" data-help="generate_route_generate_on_visit">
-          <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route on page visit</label>
+          <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route
+            on page visit</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="generate-route-generate-on-visit" value="1" id="generate-route-generate-on-visit" />
+            <input class="input-checkbox" type="checkbox" name="generate-route-generate-on-visit" value="1"
+              id="generate-route-generate-on-visit" />
             <label class="input-checkbox-label" for="generate-route-generate-on-visit"></label>
           </div>
         </div>
         <div class="input-container" data-help="generate_route_ignore_collected">
-          <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected items</label>
+          <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected
+            items</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="generate-route-ignore-collected" value="1" id="generate-route-ignore-collected" />
+            <input class="input-checkbox" type="checkbox" name="generate-route-ignore-collected" value="1"
+              id="generate-route-ignore-collected" />
             <label class="input-checkbox-label" for="generate-route-ignore-collected"></label>
           </div>
         </div>
@@ -566,19 +619,23 @@
           <label for="generate-route-important-only" data-text="menu.generate_route_important_only">Only items marked
             as important</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="generate-route-important-only" value="1" id="generate-route-important-only" />
+            <input class="input-checkbox" type="checkbox" name="generate-route-important-only" value="1"
+              id="generate-route-important-only" />
             <label class="input-checkbox-label" for="generate-route-important-only"></label>
           </div>
         </div>
         <div class="input-container" data-help="generate_route_auto_update">
-          <label for="generate-route-auto-update" data-text="menu.generate_route_auto_update">Automatically update route</label>
+          <label for="generate-route-auto-update" data-text="menu.generate_route_auto_update">Automatically update
+            route</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="generate-route-auto-update" value="1" id="generate-route-auto-update" />
+            <input class="input-checkbox" type="checkbox" name="generate-route-auto-update" value="1"
+              id="generate-route-auto-update" />
             <label class="input-checkbox-label" for="generate-route-auto-update"></label>
           </div>
         </div>
         <div class="input-container" data-help="generate_route_fasttravel_weight">
-          <label for="generate-route-fasttravel-weight" data-text="menu.generate_route_fasttravel_weight">Fast travel preference</label>
+          <label for="generate-route-fasttravel-weight" data-text="menu.generate_route_fasttravel_weight">Fast travel
+            preference</label>
           <select class="input-text wide-select-menu" id="generate-route-fasttravel-weight">
             <option value="Infinity" data-text="menu.generate_route_weight.Infinity">Don't use</option>
             <option value="1.5" data-text="menu.generate_route_weight.1.5">Very long distances</option>
@@ -587,7 +644,8 @@
           </select>
         </div>
         <div class="input-container" data-help="generate_route_railroad_weight">
-          <label for="generate-route-railroad-weight" data-text="menu.generate_route_railroad_weight">Railroads preference</label>
+          <label for="generate-route-railroad-weight" data-text="menu.generate_route_railroad_weight">Railroads
+            preference</label>
           <select class="input-text wide-select-menu" id="generate-route-railroad-weight">
             <option value="2" data-text="menu.generate_route_weight.2">Only necessarily</option>
             <option value="1.5" data-text="menu.generate_route_weight.1.5">Very long distances</option>
@@ -599,7 +657,8 @@
         </div>
         <div class="input-container" data-help="generate_route_distance">
           <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
-          <input id="generate-route-distance" class="input-text narrow-select-menu" type="number" min="1" max="200" value="25">
+          <input id="generate-route-distance" class="input-text narrow-select-menu" type="number" min="1" max="200"
+            value="25">
         </div>
         <div class="input-container" data-help="generate_route_start">
           <label for="generate-route-start" data-text="menu.generate_route_start">Route starts at</label>
@@ -613,11 +672,13 @@
         </div>
         <div class="input-container" data-help="generate_route_start_custom">
           <label for="generate-route-start-lat" data-text="menu.generate_route_start_lat">Route start lat.</label>
-          <input id="generate-route-start-lat" class="input-text wide-select-menu" type="number" step="any" value="-119.9063">
+          <input id="generate-route-start-lat" class="input-text wide-select-menu" type="number" step="any"
+            value="-119.9063">
         </div>
         <div class="input-container" data-help="generate_route_start_custom">
           <label for="generate-route-start-lng" data-text="menu.generate_route_start_lng">Route start long.</label>
-          <input id="generate-route-start-lng" class="input-text wide-select-menu" type="number" step="any" value="8.0313">
+          <input id="generate-route-start-lng" class="input-text wide-select-menu" type="number" step="any"
+            value="8.0313">
         </div>
       </div>
 
@@ -640,8 +701,10 @@
         </div>
         <hr class="menu-divider">
         <div class="input-container-noflex">
-          <button class="btn btn-default" data-text="menu.import_route" data-help="import_route" onclick="Routes.importCustomRoute()">Import route</button>
-          <button class="btn btn-default" data-text="menu.export_route" data-help="export_route" onclick="Routes.exportCustomRoute()">Export route</button>
+          <button class="btn btn-default" data-text="menu.import_route" data-help="import_route"
+            onclick="Routes.importCustomRoute()">Import route</button>
+          <button class="btn btn-default" data-text="menu.export_route" data-help="export_route"
+            onclick="Routes.exportCustomRoute()">Export route</button>
         </div>
       </div>
     </div>
@@ -658,7 +721,8 @@
         </div>
         <div class="input-container-noflex">
           <p class="explain-text" data-text="menu.import_export_explanation">
-            This will import or export your settings. Importing settings will replace all current settings and reload the
+            This will import or export your settings. Importing settings will replace all current settings and reload
+            the
             page. This feature does not include pins.
           </p>
         </div>
@@ -666,8 +730,10 @@
           <input id="cookie-import-file" type="file" class="input-file" autocomplete="off">
         </div>
         <div class="input-container-noflex">
-          <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.import_button" data-help="cookie_import">Import</button>
-          <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.export_button" data-help="cookie_export">Export</button>
+          <button id="cookie-import" type="button" class="btn btn-default narrow-select-menu"
+            data-text="menu.import_button" data-help="cookie_import">Import</button>
+          <button id="cookie-export" type="button" class="btn btn-default narrow-select-menu"
+            data-text="menu.export_button" data-help="cookie_export">Export</button>
         </div>
         <div class="input-container-noflex">
           <h4 data-text="menu.pins_import_export_title">User Pins</h4>
@@ -681,8 +747,10 @@
           <input id="pins-import-file" type="file" class="input-file" autocomplete="off">
         </div>
         <div class="input-container-noflex">
-          <button id="pins-import" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
-          <button id="pins-export" type="button" class="btn btn-default narrow-select-menu" data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
+          <button id="pins-import" type="button" class="btn btn-default narrow-select-menu"
+            data-text="menu.user_pins_import" data-help="user_pins_import">Import</button>
+          <button id="pins-export" type="button" class="btn btn-default narrow-select-menu"
+            data-text="menu.user_pins_export" data-help="user_pins_export">Export</button>
         </div>
       </div>
     </div>
@@ -710,7 +778,8 @@
         <div class="input-container">
           <label for="enable-cycle-changer">Enable day cycle changer</label>
           <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-cycle-changer" value="1" id="enable-cycle-changer" />
+            <input class="input-checkbox" type="checkbox" name="enable-cycle-changer" value="1"
+              id="enable-cycle-changer" />
             <label class="input-checkbox-label" for="enable-cycle-changer"></label>
           </div>
         </div>
@@ -743,7 +812,9 @@
           <div class="input-action external"></div>
         </div>
       </a>
-      <a class="no-style wiki-page" href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)" target="_blank">
+      <a class="no-style wiki-page"
+        href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
+        target="_blank">
         <div class="input-container clickable" data-help="read_wiki">
           <label data-text="menu.read_wiki">Read this map's Wiki</label>
           <div class="input-action external"></div>
@@ -755,12 +826,14 @@
           <div class="input-action external"></div>
         </div>
       </a>
-      <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <form class="donate-form" data-help="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post"
+        target="_blank">
         <input type="hidden" name="cmd" value="_donations" />
         <input type="hidden" name="business" value="X3A9DHBPW3B2A" />
         <input type="hidden" name="lc" value="en_US" />
 
-        <input type="image" src="./assets/images/donate.png" border="0" name="submit" title="Donate with PayPal" alt="Donate with PayPal button" />
+        <input type="image" src="./assets/images/donate.png" border="0" name="submit" title="Donate with PayPal"
+          alt="Donate with PayPal button" />
         <select class="input-text" name="currency_code">
           <option value="AUD">AUD $</option>
           <option value="BRL">BRL R$</option>
@@ -840,7 +913,8 @@
   </div>
 
   <!-- Modals -->
-  <div class="modal fade" id="fme-enabled-events-modal" tabindex="-1" role="dialog" aria-labelledby="fme-enabled-events-title">
+  <div class="modal fade" id="fme-enabled-events-modal" tabindex="-1" role="dialog"
+    aria-labelledby="fme-enabled-events-title">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-header">
         <h4 class="modal-title" id="fme-enabled-events-title" data-text="menu.modal_fme_enabled_events_title">
@@ -857,63 +931,72 @@
             <div class="input-container">
               <label for="cold_dead_hands" data-text="menu.fme.cold_dead_hands">Cold Dead Hands</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="1" id="cold_dead_hands" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="1"
+                  id="cold_dead_hands" />
                 <label class="input-checkbox-label" for="cold_dead_hands"></label>
               </div>
             </div>
             <div class="input-container">
               <label for="dispatch_rider" data-text="menu.fme.dispatch_rider">Dispatch Rider</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="2" id="dispatch_rider" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="2"
+                  id="dispatch_rider" />
                 <label class="input-checkbox-label" for="dispatch_rider"></label>
               </div>
             </div>
             <div class="input-container">
               <label for="fishing_challenge" data-text="menu.fme.fishing_challenge">Fishing Challenge</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="4" id="fishing_challenge" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="4"
+                  id="fishing_challenge" />
                 <label class="input-checkbox-label" for="fishing_challenge"></label>
               </div>
             </div>
             <div class="input-container">
               <label for="fools_gold" data-text="menu.fme.fools_gold">Fools Gold</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="8" id="fools_gold" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="8"
+                  id="fools_gold" />
                 <label class="input-checkbox-label" for="fools_gold"></label>
               </div>
             </div>
             <div class="input-container">
               <label for="king_of_the_castle" data-text="menu.fme.king_of_the_castle">King of the Castle</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="16" id="king_of_the_castle" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="16"
+                  id="king_of_the_castle" />
                 <label class="input-checkbox-label" for="king_of_the_castle"></label>
               </div>
             </div>
             <div class="input-container">
               <label for="master_archer" data-text="menu.fme.master_archer">Master Archer</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="32" id="master_archer" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="32"
+                  id="master_archer" />
                 <label class="input-checkbox-label" for="master_archer"></label>
               </div>
             </div>
             <div class="input-container">
               <label for="railroad_baron" data-text="menu.fme.railroad_baron">Railroad Baron</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="64" id="railroad_baron" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="64"
+                  id="railroad_baron" />
                 <label class="input-checkbox-label" for="railroad_baron"></label>
               </div>
             </div>
             <div class="input-container">
               <label for="random" data-text="menu.fme.random">Random Event</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="128" id="random" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="128"
+                  id="random" />
                 <label class="input-checkbox-label" for="random"></label>
               </div>
             </div>
             <div class="input-container">
               <label for="wild_animal_kills" data-text="menu.fme.wild_animal_kills">Wild Animal Kills</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="256" id="wild_animal_kills" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="256"
+                  id="wild_animal_kills" />
                 <label class="input-checkbox-label" for="wild_animal_kills"></label>
               </div>
             </div>
@@ -923,14 +1006,16 @@
             <div class="input-container">
               <label for="condor_egg" data-text="menu.fme.condor_egg">Condor Egg</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="1" id="condor_egg" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="1"
+                  id="condor_egg" />
                 <label class="input-checkbox-label" for="condor_egg"></label>
               </div>
             </div>
             <div class="input-container">
               <label for="day_of_reckoning" data-text="menu.fme.day_of_reckoning">Day of Reckoning</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="2" id="day_of_reckoning" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="2"
+                  id="day_of_reckoning" />
                 <label class="input-checkbox-label" for="day_of_reckoning"></label>
               </div>
             </div>
@@ -951,7 +1036,8 @@
             <div class="input-container">
               <label for="trade_route" data-text="menu.fme.trade_route">Trade Route</label>
               <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="16" id="trade_route" />
+                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="16"
+                  id="trade_route" />
                 <label class="input-checkbox-label" for="trade_route"></label>
               </div>
             </div>
@@ -977,13 +1063,15 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="clear-markers" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
+          <button id="clear-markers" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="clear-important-items-modal" tabindex="-1" role="dialog" aria-labelledby="clear-important-items-title">
+  <div class="modal fade" id="clear-important-items-modal" tabindex="-1" role="dialog"
+    aria-labelledby="clear-important-items-title">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -996,13 +1084,15 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="clear_highlights" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
+          <button id="clear_highlights" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="clear-inventory-modal" tabindex="-1" role="dialog" aria-labelledby="clear-inventory-title">
+  <div class="modal fade" id="clear-inventory-modal" tabindex="-1" role="dialog"
+    aria-labelledby="clear-inventory-title">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -1015,7 +1105,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="clear-inventory" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
+          <button id="clear-inventory" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
@@ -1035,13 +1126,15 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="clear-custom-routes" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
+          <button id="clear-custom-routes" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="delete-all-settings-modal" tabindex="-1" role="dialog" aria-labelledby="delete-all-settings-title">
+  <div class="modal fade" id="delete-all-settings-modal" tabindex="-1" role="dialog"
+    aria-labelledby="delete-all-settings-title">
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -1054,7 +1147,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
-          <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal" data-text="menu.yes">Yes</button>
+          <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
         </div>
       </div>
     </div>
