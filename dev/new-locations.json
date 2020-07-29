@@ -343,7 +343,7 @@
             { "text": "heirlooms_ebony_hairbrush", "height": 0, "tool": 0, "lat": -89.1644, "lng": 97.6028, "video": "" },
             { "text": "heirlooms_goat_hair_brush", "height": 0, "tool": 0, "lat": -84.9471, "lng": 131.9661, "video": "" },
             { "text": "heirlooms_horse_hair_brush", "height": 0, "tool": 0, "lat": -65.1471, "lng": 129.6543, "video": "" },
-            { "text": "heirlooms_rosewood_hairbrush", "height": 0, "tool": 0, "lat": -82.2140, "lng": 147.5657, "video": "" },
+            { "text": "heirlooms_new_guinea_rosewood", "height": 0, "tool": 0, "lat": -82.2140, "lng": 147.5657, "video": "" },
             { "text": "heirlooms_rosewood_hairbrush", "height": 0, "tool": 0, "lat": -79.2137, "lng": 137.8222, "video": "" },
             { "text": "heirlooms_boxwood_comb", "height": 0, "tool": 0, "lat": -59.4952, "lng": 125.2750, "video": "" },
             { "text": "heirlooms_cherrywood_comb", "height": 0, "tool": 0, "lat": -105.9577, "lng": 37.0023, "video": "" },
@@ -917,10 +917,10 @@
             { "text": "wb_dig_buried_jewelry", "height": 0, "tool": 0, "lat": -97.2358, "lng": 129.0385, "video": "" }
         ],
         "3": [
-            { "text": "mp_jewelry_french_dmnd_ring", "height": 0, "tool": 0, "lat": -92.9629, "lng": 79.0023, "video": "" },
+            { "text": "ring_beaulieux_diamond", "height": 0, "tool": 0, "lat": -92.9629, "lng": 79.0023, "video": "" },
             { "text": "necklace_ainsworth_cross", "height": 0, "tool": 0, "lat": -38.2367, "lng": 96.5663, "video": "" },
-            { "text": "mp_jewelry_gld_pendt_necklace", "height": 0, "tool": 0, "lat": -32.6183, "lng": 153.1273, "video": "" },
-            { "text": "mp_jewelry_mthr_pearl_necklace", "height": 0, "tool": 0, "lat": -57.0061, "lng": 152.8062, "video": "" },
+            { "text": "necklace_gosselin_white_gold", "height": 0, "tool": 0, "lat": -32.6183, "lng": 153.1273, "video": "" },
+            { "text": "necklace_pelle_pearl", "height": 0, "tool": 0, "lat": -57.0061, "lng": 152.8062, "video": "" },
             { "text": "ring_banais_topaz", "height": 0, "tool": 0, "lat": -92.1635, "lng": 136.0912, "video": "" },
             { "text": "earring_calumet_turquoise", "height": 0, "tool": 0, "lat": -72.6592, "lng": 143.5829, "video": "" },
             { "text": "ring_thorburn_turquoise", "height": 0, "tool": 0, "lat": -50.4097, "lng": 123.3215, "video": "" },
@@ -958,10 +958,10 @@
             { "text": "wb_dig_buried_jewelry", "height": 0, "tool": 0, "lat": -90.3806, "lng": 137.9220, "video": "" }
         ],
         "4": [
-            { "text": "mp_jewelry_french_dmnd_ring", "height": 0, "tool": 0, "lat": -36.4406, "lng": 104.9194, "video": "" },
+            { "text": "ring_beaulieux_diamond", "height": 0, "tool": 0, "lat": -36.4406, "lng": 104.9194, "video": "" },
             { "text": "necklace_ainsworth_cross", "height": 0, "tool": 0, "lat": -92.4905, "lng": 140.7281, "video": "" },
-            { "text": "mp_jewelry_gld_pendt_necklace", "height": 0, "tool": 0, "lat": -61.3875, "lng": 151.2194, "video": "" },
-            { "text": "mp_jewelry_mthr_pearl_necklace", "height": 0, "tool": 0, "lat": -37.2686, "lng": 152.0088, "video": "" },
+            { "text": "necklace_gosselin_white_gold", "height": 0, "tool": 0, "lat": -61.3875, "lng": 151.2194, "video": "" },
+            { "text": "necklace_pelle_pearl", "height": 0, "tool": 0, "lat": -37.2686, "lng": 152.0088, "video": "" },
             { "text": "ring_banais_topaz", "height": 0, "tool": 0, "lat": -80.0100, "lng": 153.5865, "video": "" },
             { "text": "earring_calumet_turquoise", "height": 0, "tool": 0, "lat": -28.7925, "lng": 119.2260, "video": "" },
             { "text": "ring_thorburn_turquoise", "height": 0, "tool": 0, "lat": -98.9206, "lng": 131.7358, "video": "" },
