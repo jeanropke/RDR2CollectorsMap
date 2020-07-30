@@ -63,7 +63,7 @@
                 "heirlooms_tortoiseshell_comb",
                 "heirlooms_ivory_hairpin"
             ],
-            "value": 0
+            "value": 80
         },
         "hunter_set": {
             "items": [
@@ -71,7 +71,7 @@
                 "egg_duck",
                 "item_carcass_squirrel_perfect"
             ],
-            "value": 0
+            "value": 50
         },
         "precious_stones_set": {
             "items": [
@@ -79,7 +79,7 @@
                 "earring_harford_garnet",
                 "heirlooms_jade_hairpin"
             ],
-            "value": 95
+            "value": 85
         },
         "hairdresser_set": {
             "items": [
@@ -119,7 +119,7 @@
                 "bottle_london_dry_gin",
                 "coin_silver_dollar"
             ],
-            "value": 0
+            "value": 95
         },
         "belle_set": {
             "items": [
@@ -135,7 +135,7 @@
                 "coin_nickel_coin",
                 "item_gold_tooth"
             ],
-            "value": 0
+            "value": 75
         },
         "ancient_tools_set": {
             "items": [
@@ -198,7 +198,7 @@
                 "necklace_tuamotu_pearl",
                 "bracelet_infanta_turquoise"
             ],
-            "value": 0
+            "value": 85
         },
         "bowman_set": {
             "items": [
@@ -294,7 +294,7 @@
                 "legendary_item_boar_tusk",
                 "legendary_item_moose_antler"
             ],
-            "value": 0
+            "value": 75
         },
         "beasts_of_prey_set": {
             "items": [
@@ -302,7 +302,7 @@
                 "legendary_item_wolf_heart",
                 "fossil_tooth_serrated"
             ],
-            "value": 0
+            "value": 85
         },
         "tooth_and_nail_set": {
             "items": [
@@ -310,7 +310,7 @@
                 "legendary_item_coyote_fang",
                 "provision_badger_claw"
             ],
-            "value": 0
+            "value": 65
         },
         "shot_in_the_dark_set": {
             "items": [
@@ -318,7 +318,7 @@
                 "provision_raccoon_fur_pristine",
                 "provision_owl_feather"
             ],
-            "value": 0
+            "value": 40
         },
         "black_and_white_set": {
             "items": [
@@ -326,7 +326,7 @@
                 "provision_badger_pelt_pristine",
                 "provision_seagull_feather"
             ],
-            "value": 0
+            "value": 30
         },
         "jurassic_set": {
             "items": [
@@ -334,7 +334,7 @@
                 "fossil_tail_spike",
                 "fossil_brow_horn"
             ],
-            "value": 0
+            "value": 180
         },
         "ancient_wood_set": {
             "items": [
@@ -342,7 +342,7 @@
                 "fossil_pet_wood_rainbow",
                 "fossil_pet_wood_yellow"
             ],
-            "value": 0
+            "value": 110
         },
         "deep_blue_set": {
             "items": [
@@ -350,7 +350,7 @@
                 "fossil_cephalopod",
                 "provision_fish_rock_bass"
             ],
-            "value": 0
+            "value": 95
         },
         "arthropod_set": {
             "items": [
@@ -358,7 +358,7 @@
                 "fossil_trilobite_crypto",
                 "carcass_crab_perfect"
             ],
-            "value": 0
+            "value": 90
         },
         "bite_sized_set": {
             "items": [
@@ -366,7 +366,7 @@
                 "fossil_tooth_mega",
                 "provision_alligator_tooth"
             ],
-            "value": 0
+            "value": 75
         }
     }
 }
