@@ -214,9 +214,11 @@ const MapBase = {
 
     if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
       MapBase.markers.forEach(marker => {
-        if (Settings.resetMarkersDaily || marker.category === 'random') {
+        // reset daily all random categories
+        if (Settings.resetMarkersDaily || ['random', 'fossils_random', 'heirlooms_random', 'jewelry_random', 'coin', 'arrowhead'].includes(marker.category)) {
           marker.isCollected = false;
         }
+
         if (InventorySettings.resetInventoryDaily && marker.category !== 'random') {
           marker.item.amount = 0;
         }
