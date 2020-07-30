@@ -181,7 +181,6 @@ class Collection extends BaseCollection {
               case 'necklace':
               case 'ring':
                 Cycles.categories['jewelry_random'] = +$input.val();
-                $('.input-cycle[name=bracelet], .input-cycle[name=earring], .input-cycle[name=necklace], .input-cycle[name=ring]').val($input.val());
                 break;
               case 'coastal':
               case 'oceanic':
