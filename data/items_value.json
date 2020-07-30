@@ -178,28 +178,28 @@
     {"itemId": "coin_half_dime", "price": 18.5},
     {"itemId": "coin_penny", "price": 14.75},
 
-    {"itemId": "coastal_coral", "price": 0},
-    {"itemId": "coastal_bivalve", "price": 0},
-    {"itemId": "coastal_brachiopod", "price": 0},
-    {"itemId": "coastal_cephalopod", "price": 0},
-    {"itemId": "coastal_neo", "price": 0},
-    {"itemId": "coastal_stone", "price": 0},
-    {"itemId": "coastal_pet_wood", "price": 0},
+    {"itemId": "coastal_coral", "price": 16.25},
+    {"itemId": "coastal_bivalve", "price": 14},
+    {"itemId": "coastal_brachiopod", "price": 14.5},
+    {"itemId": "coastal_cephalopod", "price": 15},
+    {"itemId": "coastal_neo", "price": 17.5},
+    {"itemId": "coastal_stone", "price": 15.75},
+    {"itemId": "coastal_pet_wood", "price": 15.5},
 
-    {"itemId": "oceanic_pet_wood_rainbow", "price": 0},
-    {"itemId": "oceanic_sea_lily", "price": 0},
-    {"itemId": "oceanic_sea_scorpion", "price": 0},
-    {"itemId": "oceanic_trilobite_crypto", "price": 0},
-    {"itemId": "oceanic_trilobite_iso", "price": 0},
-    {"itemId": "oceanic_tully_monster", "price": 0},
-    {"itemId": "oceanic_pet_wood_yellow", "price": 0},
+    {"itemId": "oceanic_pet_wood_rainbow", "price": 18.5},
+    {"itemId": "oceanic_sea_lily", "price": 20},
+    {"itemId": "oceanic_sea_scorpion", "price": 22.75},
+    {"itemId": "oceanic_trilobite_crypto", "price": 19},
+    {"itemId": "oceanic_trilobite_iso", "price": 21.5},
+    {"itemId": "oceanic_tully_monster", "price": 23},
+    {"itemId": "oceanic_pet_wood_yellow", "price": 19.5},
 
-    {"itemId": "megafauna_brow_horn", "price": 0},
-    {"itemId": "megafauna_tooth_trex", "price": 0},
-    {"itemId": "megafauna_tooth_mega", "price": 0},
-    {"itemId": "megafauna_tooth_serrated", "price": 0},
-    {"itemId": "megafauna_tail_spike", "price": 0},
-    {"itemId": "megafauna_toe_claw", "price": 0}
+    {"itemId": "megafauna_brow_horn", "price": 28.25},
+    {"itemId": "megafauna_tooth_trex", "price": 30},
+    {"itemId": "megafauna_tooth_mega", "price": 24.75},
+    {"itemId": "megafauna_tooth_serrated", "price": 24.5},
+    {"itemId": "megafauna_tail_spike", "price": 27.5},
+    {"itemId": "megafauna_toe_claw", "price": 25.5}
   ],
   "collections": [
     {"category": "flower", "price": 155.5},
@@ -216,8 +216,8 @@
     {"category": "arrowhead", "price": 289},
     {"category": "heirlooms", "price": 292.5},
     {"category": "coin", "price": 540},
-    {"category": "coastal", "price": 0},
-    {"category": "oceanic", "price": 0},
-    {"category": "megafauna", "price": 0}
+    {"category": "coastal", "price": 217},
+    {"category": "oceanic", "price": 288.5},
+    {"category": "megafauna", "price": 321}
   ]
 }
