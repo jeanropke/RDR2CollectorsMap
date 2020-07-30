@@ -849,306 +849,308 @@
     },
     "jewelry_random": {
         "1": [
-            { "text": "jewelry_random_chest_0", "height": 0, "tool": 0, "lat": -107.1518, "lng": 86.6680, "video": "" },
-            { "text": "jewelry_random_chest_1", "height": 0, "tool": 0, "lat": -116.5733, "lng": 19.6310, "video": "" },
-            { "text": "jewelry_random_chest_2", "height": 0, "tool": 0, "lat": -42.5037, "lng": 109.8482, "video": "" },
-            { "text": "jewelry_random_chest_3", "height": 0, "tool": 0, "lat": -46.1893, "lng": 134.3042, "video": "" },
-            { "text": "jewelry_random_chest_4", "height": 0, "tool": 0, "lat": -50.5077, "lng": 93.1584, "video": "" },
-            { "text": "jewelry_random_chest_5", "height": 0, "tool": 0, "lat": -53.8999, "lng": 97.8713, "video": "" },
-            { "text": "jewelry_random_chest_6", "height": 0, "tool": 0, "lat": -84.7187, "lng": 85.8649, "video": "" },
-            { "text": "jewelry_random_chest_7", "height": 0, "tool": 0, "lat": -92.1170, "lng": 59.8806, "video": "" },
-            { "text": "jewelry_random_dig_8", "height": 0, "tool": 0, "lat": -108.8249, "lng": 28.3243, "video": "" },
-            { "text": "jewelry_random_dig_9", "height": 0, "tool": 0, "lat": -118.9709, "lng": 55.6556, "video": "" },
-            { "text": "jewelry_random_dig_10", "height": 0, "tool": 0, "lat": -122.9080, "lng": 18.2888, "video": "" },
-            { "text": "jewelry_random_dig_11", "height": 0, "tool": 0, "lat": -32.5581, "lng": 149.7756, "video": "" },
-            { "text": "jewelry_random_dig_12", "height": 0, "tool": 0, "lat": -35.3828, "lng": 122.8023, "video": "" },
-            { "text": "jewelry_random_dig_13", "height": 0, "tool": 0, "lat": -41.0006, "lng": 133.7266, "video": "" },
-            { "text": "jewelry_random_dig_14", "height": 0, "tool": 0, "lat": -41.4066, "lng": 121.9528, "video": "" },
-            { "text": "jewelry_random_dig_15", "height": 0, "tool": 0, "lat": -45.1987, "lng": 122.9532, "video": "" },
-            { "text": "jewelry_random_dig_16", "height": 0, "tool": 0, "lat": -47.7711, "lng": 155.9122, "video": "" },
-            { "text": "jewelry_random_dig_17", "height": 0, "tool": 0, "lat": -50.3063, "lng": 102.0323, "video": "" },
-            { "text": "jewelry_random_dig_18", "height": 0, "tool": 0, "lat": -52.3345, "lng": 86.9452, "video": "" },
-            { "text": "jewelry_random_dig_19", "height": 0, "tool": 0, "lat": -52.4608, "lng": 151.1673, "video": "" },
-            { "text": "jewelry_random_dig_20", "height": 0, "tool": 0, "lat": -52.6337, "lng": 94.2921, "video": "" },
-            { "text": "jewelry_random_dig_21", "height": 0, "tool": 0, "lat": -54.1416, "lng": 76.5166, "video": "" },
-            { "text": "jewelry_random_dig_22", "height": 0, "tool": 0, "lat": -55.6663, "lng": 89.9511, "video": "" },
-            { "text": "jewelry_random_dig_23", "height": 0, "tool": 0, "lat": -58.7992, "lng": 116.3173, "video": "" },
-            { "text": "jewelry_random_dig_24", "height": 0, "tool": 0, "lat": -62.4224, "lng": 94.9503, "video": "" },
-            { "text": "jewelry_random_dig_25", "height": 0, "tool": 0, "lat": -68.1593, "lng": 124.9915, "video": "" },
-            { "text": "jewelry_random_dig_26", "height": 0, "tool": 0, "lat": -72.2677, "lng": 99.5798, "video": "" },
-            { "text": "jewelry_random_dig_27", "height": 0, "tool": 0, "lat": -73.6236, "lng": 132.8364, "video": "" },
-            { "text": "jewelry_random_dig_28", "height": 0, "tool": 0, "lat": -76.5052, "lng": 102.2166, "video": "" },
-            { "text": "jewelry_random_dig_29", "height": 0, "tool": 0, "lat": -84.6452, "lng": 94.2507, "video": "" },
-            { "text": "jewelry_random_dig_30", "height": 0, "tool": 0, "lat": -90.5123, "lng": 89.5911, "video": "" }
+            { "text": "jewelry_random_0", "height": 0, "tool": 2, "lat": -52.4608, "lng": 151.1713, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=82s" },
+            { "text": "jewelry_random_1", "height": 0, "tool": 1, "lat": -32.5581, "lng": 149.7796, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=50s" },
+            { "text": "jewelry_random_2", "height": 0, "tool": 1, "lat": -35.3828, "lng": 122.8063, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=153s" },
+            { "text": "jewelry_random_3", "height": 0, "tool": 2, "lat": -55.6663, "lng": 89.9551, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=219s" },
+            { "text": "jewelry_random_4", "height": 0, "tool": 2, "lat": -52.6337, "lng": 94.2961, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=259s" },
+            { "text": "jewelry_random_5", "height": 0, "tool": 2, "lat": -54.1416, "lng": 76.5206, 			"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=296s" },
+            { "text": "jewelry_random_6", "height": 0, "tool": 2, "lat": -84.6452, "lng": 94.2547, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=357s" },
+            { "text": "jewelry_random_7", "height": 0, "tool": 2, "lat": -50.3063, "lng": 102.0363, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=188s" },
+            { "text": "jewelry_random_8", "height": 0, "tool": 2, "lat": -118.9709, "lng": 55.6596, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=396s" },
+            { "text": "jewelry_random_9", "height": 0, "tool": 1, "lat": -45.1987, "lng": 122.9572, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=45s" },
+            { "text": "jewelry_random_10", "height": 0, "tool": 2, "lat": -62.4224, "lng": 94.9543, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=89s" },
+            { "text": "jewelry_random_11", "height": 0, "tool": 2, "lat": -47.7711, "lng": 155.9162, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=125s" },
+            { "text": "jewelry_random_12", "height": 0, "tool": 2, "lat": -72.2677, "lng": 99.5838, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=160s" },
+            { "text": "jewelry_random_13", "height": 0, "tool": 1, "lat": -73.6236, "lng": 132.8404, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=195s" },
+            { "text": "jewelry_random_14", "height": 0, "tool": 2, "lat": -90.5123, "lng": 89.5951, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=234s" },
+            { "text": "jewelry_random_15", "height": 0, "tool": 2, "lat": -41.4066, "lng": 121.9568, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=267s" },
+            { "text": "jewelry_random_16", "height": 0, "tool": 2, "lat": -68.1593, "lng": 124.9955, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=302s" },
+            { "text": "jewelry_random_17", "height": 0, "tool": 2, "lat": -41.0006, "lng": 133.7306, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=345s" },
+            { "text": "jewelry_random_18", "height": 0, "tool": 2, "lat": -108.8249, "lng": 28.3283, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=430s" },
+            { "text": "jewelry_random_19", "height": 0, "tool": 2, "lat": -52.3345, "lng": 86.9492, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=169s" },
+            { "text": "jewelry_random_20", "height": 0, "tool": 2, "lat": -58.7992, "lng": 116.3213, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=138s" },
+            { "text": "jewelry_random_21", "height": 0, "tool": 2, "lat": -122.9080, "lng": 18.2928, "video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=327s" },
+            { "text": "jewelry_random_22", "height": 0, "tool": 2, "lat": -76.5052, "lng": 102.2206, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=223s" }
         ],
-        "2": [
-            { "text": "jewelry_random_chest_0", "height": 0, "tool": 0, "lat": -27.6310, "lng": 82.5504, "video": "" },
-            { "text": "jewelry_random_chest_1", "height": 0, "tool": 0, "lat": -36.4675, "lng": 149.0207, "video": "" },
-            { "text": "jewelry_random_chest_2", "height": 0, "tool": 0, "lat": -37.4453, "lng": 129.4378, "video": "" },
-            { "text": "jewelry_random_chest_3", "height": 0, "tool": 0, "lat": -43.9611, "lng": 104.8585, "video": "" },
-            { "text": "jewelry_random_chest_4", "height": 0, "tool": 0, "lat": -45.6994, "lng": 105.8901, "video": "" },
-            { "text": "jewelry_random_chest_5", "height": 0, "tool": 0, "lat": -46.6482, "lng": 147.3985, "video": "" },
-            { "text": "jewelry_random_chest_6", "height": 0, "tool": 0, "lat": -57.0509, "lng": 95.0578, "video": "" },
-            { "text": "jewelry_random_chest_7", "height": 0, "tool": 0, "lat": -93.1473, "lng": 142.1974, "video": "" },
-            { "text": "jewelry_random_dig_8", "height": 0, "tool": 0, "lat": -105.3250, "lng": 42.3232, "video": "" },
-            { "text": "jewelry_random_dig_9", "height": 0, "tool": 0, "lat": -109.1889, "lng": 84.0060, "video": "" },
-            { "text": "jewelry_random_dig_10", "height": 0, "tool": 0, "lat": -113.3968, "lng": 41.5076, "video": "" },
-            { "text": "jewelry_random_dig_11", "height": 0, "tool": 0, "lat": -28.5856, "lng": 124.8397, "video": "" },
-            { "text": "jewelry_random_dig_12", "height": 0, "tool": 0, "lat": -32.2129, "lng": 134.8061, "video": "" },
-            { "text": "jewelry_random_dig_13", "height": 0, "tool": 0, "lat": -35.2336, "lng": 132.4776, "video": "" },
-            { "text": "jewelry_random_dig_14", "height": 0, "tool": 0, "lat": -40.8653, "lng": 161.2991, "video": "" },
-            { "text": "jewelry_random_dig_15", "height": 0, "tool": 0, "lat": -43.7324, "lng": 157.6201, "video": "" },
-            { "text": "jewelry_random_dig_16", "height": 0, "tool": 0, "lat": -46.1520, "lng": 104.7266, "video": "" },
-            { "text": "jewelry_random_dig_17", "height": 0, "tool": 0, "lat": -54.8588, "lng": 82.7202, "video": "" },
-            { "text": "jewelry_random_dig_18", "height": 0, "tool": 0, "lat": -55.9525, "lng": 156.2939, "video": "" },
-            { "text": "jewelry_random_dig_19", "height": 0, "tool": 0, "lat": -61.0610, "lng": 143.8552, "video": "" },
-            { "text": "jewelry_random_dig_20", "height": 0, "tool": 0, "lat": -61.4428, "lng": 140.5070, "video": "" },
-            { "text": "jewelry_random_dig_21", "height": 0, "tool": 0, "lat": -62.2226, "lng": 106.9727, "video": "" },
-            { "text": "jewelry_random_dig_22", "height": 0, "tool": 0, "lat": -63.2402, "lng": 122.3879, "video": "" },
-            { "text": "jewelry_random_dig_23", "height": 0, "tool": 0, "lat": -69.6420, "lng": 131.6055, "video": "" },
-            { "text": "jewelry_random_dig_24", "height": 0, "tool": 0, "lat": -70.1415, "lng": 139.1629, "video": "" },
-            { "text": "jewelry_random_dig_25", "height": 0, "tool": 0, "lat": -75.9708, "lng": 143.2097, "video": "" },
-            { "text": "jewelry_random_dig_26", "height": 0, "tool": 0, "lat": -85.3630, "lng": 89.7950, "video": "" },
-            { "text": "jewelry_random_dig_27", "height": 0, "tool": 0, "lat": -89.4320, "lng": 77.3837, "video": "" },
-            { "text": "jewelry_random_dig_28", "height": 0, "tool": 0, "lat": -93.2664, "lng": 92.0495, "video": "" },
-            { "text": "jewelry_random_dig_29", "height": 0, "tool": 0, "lat": -93.5165, "lng": 94.6834, "video": "" },
-            { "text": "jewelry_random_dig_30", "height": 0, "tool": 0, "lat": -97.2358, "lng": 129.0385, "video": "" }
+        "2": [ 
+            { "text": "jewelry_random_0", "height": 0, "tool": 1, "lat": -113.3968, "lng": 41.5116, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=892s" },
+            { "text": "jewelry_random_1", "height": 0, "tool": 2, "lat": -69.6420, "lng": 131.6095, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=514s" },
+            { "text": "jewelry_random_2", "height": 0, "tool": 2, "lat": -40.8653, "lng": 161.3031, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=444s" },
+            { "text": "jewelry_random_3", "height": 0, "tool": 1, "lat": -93.2664, "lng": 92.0535, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=851s" },
+            { "text": "jewelry_random_4", "height": 0, "tool": 2, "lat": -70.1415, "lng": 139.1669, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=474s" },
+            { "text": "jewelry_random_5", "height": 0, "tool": 1, "lat": -61.4428, "lng": 140.5110, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=517s" },
+            { "text": "jewelry_random_6", "height": 0, "tool": 2, "lat": -105.3250, "lng": 42.3272, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=557s" },
+            { "text": "jewelry_random_7", "height": 0, "tool": 2, "lat": -43.7324, "lng": 157.6241, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=635s" },
+            { "text": "jewelry_random_8", "height": 0, "tool": 2, "lat": -32.2129, "lng": 134.8101, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=681s" },
+            { "text": "jewelry_random_9", "height": 0, "tool": 2, "lat": -46.1520, "lng": 104.7306, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=757s" },
+            { "text": "jewelry_random_10", "height": 0, "tool": 2, "lat": -55.9525, "lng": 156.2979, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=805s" },
+            { "text": "jewelry_random_11", "height": 0, "tool": 1, "lat": -54.8588, "lng": 82.7242, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=848s" },
+            { "text": "jewelry_random_12", "height": 0, "tool": 2, "lat": -85.3630, "lng": 89.7990, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=890s" },
+            { "text": "jewelry_random_13", "height": 0, "tool": 2, "lat": -89.4320, "lng": 77.3877, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=602s" },
+            { "text": "jewelry_random_14", "height": 0, "tool": 2, "lat": -93.5165, "lng": 94.6874, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=548s" },
+            { "text": "jewelry_random_15", "height": 0, "tool": 2, "lat": -35.2336, "lng": 132.4816, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=485s" },
+            { "text": "jewelry_random_16", "height": 0, "tool": 2, "lat": -61.0610, "lng": 143.8592, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=447s" },
+            { "text": "jewelry_random_17", "height": 0, "tool": 2, "lat": -75.9708, "lng": 143.2137, 	"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=381s" },
+            { "text": "jewelry_random_18", "height": 0, "tool": 2, "lat": -97.2358, "lng": 129.0425, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=449s" },
+            { "text": "jewelry_random_19", "height": 0, "tool": 2, "lat": -63.2402, "lng": 122.3919, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=493s" },
+            { "text": "jewelry_random_20", "height": 0, "tool": 2, "lat": -109.1889, "lng": 84.0100, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=690s" },
+            { "text": "jewelry_random_21", "height": 0, "tool": 2, "lat": -62.2226, "lng": 106.9767, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=529s" },
+            { "text": "jewelry_random_22", "height": 0, "tool": 2, "lat": -28.5856, "lng": 124.8437, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=609s" }
+
         ],
         "3": [
-            { "text": "jewelry_random_chest_0", "height": 0, "tool": 0, "lat": -27.2344, "lng": 156.7077, "video": "" },
-            { "text": "jewelry_random_chest_1", "height": 0, "tool": 0, "lat": -40.5128, "lng": 136.4230, "video": "" },
-            { "text": "jewelry_random_chest_2", "height": 0, "tool": 0, "lat": -43.5611, "lng": 124.8242, "video": "" },
-            { "text": "jewelry_random_chest_3", "height": 0, "tool": 0, "lat": -44.1902, "lng": 156.5865, "video": "" },
-            { "text": "jewelry_random_chest_4", "height": 0, "tool": 0, "lat": -46.0243, "lng": 101.5035, "video": "" },
-            { "text": "jewelry_random_chest_5", "height": 0, "tool": 0, "lat": -48.7093, "lng": 120.9356, "video": "" },
-            { "text": "jewelry_random_chest_6", "height": 0, "tool": 0, "lat": -49.7712, "lng": 76.6579, "video": "" },
-            { "text": "jewelry_random_chest_7", "height": 0, "tool": 0, "lat": -71.0038, "lng": 133.9573, "video": "" },
-            { "text": "jewelry_random_chest_8", "height": 0, "tool": 0, "lat": -78.0037, "lng": 90.2333, "video": "" },
-            { "text": "jewelry_random_chest_9", "height": 0, "tool": 0, "lat": -90.9860, "lng": 83.3686, "video": "" },
-            { "text": "jewelry_random_dig_10", "height": 0, "tool": 0, "lat": -100.6077, "lng": 80.3664, "video": "" },
-            { "text": "jewelry_random_dig_11", "height": 0, "tool": 0, "lat": -104.9428, "lng": 53.9453, "video": "" },
-            { "text": "jewelry_random_dig_12", "height": 0, "tool": 0, "lat": -107.8929, "lng": 21.1536, "video": "" },
-            { "text": "jewelry_random_dig_13", "height": 0, "tool": 0, "lat": -107.9360, "lng": 59.3666, "video": "" },
-            { "text": "jewelry_random_dig_14", "height": 0, "tool": 0, "lat": -31.3659, "lng": 146.9036, "video": "" },
-            { "text": "jewelry_random_dig_15", "height": 0, "tool": 0, "lat": -31.9873, "lng": 129.6402, "video": "" },
-            { "text": "jewelry_random_dig_16", "height": 0, "tool": 0, "lat": -36.7246, "lng": 108.7396, "video": "" },
-            { "text": "jewelry_random_dig_17", "height": 0, "tool": 0, "lat": -46.6677, "lng": 118.5596, "video": "" },
-            { "text": "jewelry_random_dig_18", "height": 0, "tool": 0, "lat": -52.9447, "lng": 114.7125, "video": "" },
-            { "text": "jewelry_random_dig_19", "height": 0, "tool": 0, "lat": -56.4041, "lng": 137.9314, "video": "" },
-            { "text": "jewelry_random_dig_20", "height": 0, "tool": 0, "lat": -57.4521, "lng": 98.0400, "video": "" },
-            { "text": "jewelry_random_dig_21", "height": 0, "tool": 0, "lat": -57.9835, "lng": 113.7378, "video": "" },
-            { "text": "jewelry_random_dig_22", "height": 0, "tool": 0, "lat": -66.5008, "lng": 147.0649, "video": "" },
-            { "text": "jewelry_random_dig_23", "height": 0, "tool": 0, "lat": -70.7708, "lng": 66.7234, "video": "" },
-            { "text": "jewelry_random_dig_24", "height": 0, "tool": 0, "lat": -78.8746, "lng": 133.0566, "video": "" },
-            { "text": "jewelry_random_dig_25", "height": 0, "tool": 0, "lat": -79.0255, "lng": 145.4369, "video": "" },
-            { "text": "jewelry_random_dig_26", "height": 0, "tool": 0, "lat": -82.1525, "lng": 140.7427, "video": "" },
-            { "text": "jewelry_random_dig_27", "height": 0, "tool": 0, "lat": -84.1282, "lng": 147.0065, "video": "" },
-            { "text": "jewelry_random_dig_28", "height": 0, "tool": 0, "lat": -87.5331, "lng": 85.0006, "video": "" },
-            { "text": "jewelry_random_dig_29", "height": 0, "tool": 0, "lat": -89.4579, "lng": 130.4915, "video": "" },
-            { "text": "jewelry_random_dig_30", "height": 0, "tool": 0, "lat": -90.3806, "lng": 137.9220, "video": "" }
+            { "text": "jewelry_random_0", "height": 0, "tool": 1, "lat": -57.4521, "lng": 98.0440, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1253s" },
+            { "text": "jewelry_random_1", "height": 0, "tool": 2, "lat": -31.3659, "lng": 146.9076, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=937s" },
+            { "text": "jewelry_random_2", "height": 0, "tool": 1, "lat": -90.3806, "lng": 137.9260, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1093s" },
+            { "text": "jewelry_random_3", "height": 0, "tool": 2, "lat": -84.1282, "lng": 147.0105, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1019s" },
+            { "text": "jewelry_random_4", "height": 0, "tool": 2, "lat": -82.1525, "lng": 140.7467, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1056s" },
+            { "text": "jewelry_random_5", "height": 0, "tool": 2, "lat": -87.5331, "lng": 85.0046, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=933s" },
+            { "text": "jewelry_random_6", "height": 0, "tool": 2, "lat": -89.4579, "lng": 130.4955, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=981s" },
+            { "text": "jewelry_random_7", "height": 0, "tool": 2, "lat": -36.7246, "lng": 108.7436, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=1044s" },
+            { "text": "jewelry_random_8", "height": 0, "tool": 2, "lat": -52.9447, "lng": 114.7165, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=1089s" },
+            { "text": "jewelry_random_9", "height": 0, "tool": 1, "lat": -107.8929, "lng": 21.1576, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=1158s" },
+            { "text": "jewelry_random_10", "height": 0, "tool": 2, "lat": -66.5008, "lng": 147.0689, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=1198s" },
+            { "text": "jewelry_random_11", "height": 0, "tool": 2, "lat": -70.7708, "lng": 66.7274, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=1238s" },
+            { "text": "jewelry_random_12", "height": 0, "tool": 2, "lat": -79.0255, "lng": 145.4409, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=1275s" },
+            { "text": "jewelry_random_13", "height": 0, "tool": 1, "lat": -100.6077, "lng": 80.3704, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=1316s" },
+            { "text": "jewelry_random_14", "height": 0, "tool": 2, "lat": -46.6677, "lng": 118.5636, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=770s" },
+            { "text": "jewelry_random_15", "height": 0, "tool": 2, "lat": -57.9835, "lng": 113.7418, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=685s" },
+            { "text": "jewelry_random_16", "height": 0, "tool": 2, "lat": -78.8746, "lng": 133.0606, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=646s" },
+            { "text": "jewelry_random_17", "height": 0, "tool": 2, "lat": -107.9360, "lng": 59.3706, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=918s" },
+            { "text": "jewelry_random_18", "height": 0, "tool": 2, "lat": -56.4041, "lng": 137.9354, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=830s" },
+            { "text": "jewelry_random_19", "height": -1, "tool": 2, "lat": -33.7132, "lng": 124.1967, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=867s" },
+            { "text": "jewelry_random_20", "height": 0, "tool": 2, "lat": -104.9428, "lng": 53.9493, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1028s" }
         ],
         "4": [
-            { "text": "jewelry_random_dig_0", "height": 0, "tool": 0, "lat": -102.4677, "lng": 32.9746, "video": "" },
-            { "text": "jewelry_random_dig_1", "height": 0, "tool": 0, "lat": -102.7290, "lng": 71.1664, "video": "" },
-            { "text": "jewelry_random_dig_2", "height": 0, "tool": 0, "lat": -102.7567, "lng": 68.9030, "video": "" },
-            { "text": "jewelry_random_dig_3", "height": 0, "tool": 0, "lat": -107.8976, "lng": 73.1965, "video": "" },
-            { "text": "jewelry_random_dig_4", "height": 0, "tool": 0, "lat": -110.7738, "lng": 68.2461, "video": "" },
-            { "text": "jewelry_random_dig_5", "height": 0, "tool": 0, "lat": -111.0322, "lng": 25.6125, "video": "" },
-            { "text": "jewelry_random_dig_6", "height": 0, "tool": 0, "lat": -111.3898, "lng": 43.3075, "video": "" },
-            { "text": "jewelry_random_dig_7", "height": 0, "tool": 0, "lat": -113.0386, "lng": 20.3540, "video": "" },
-            { "text": "jewelry_random_dig_8", "height": 0, "tool": 0, "lat": -116.1981, "lng": 56.1216, "video": "" },
-            { "text": "jewelry_random_dig_9", "height": 0, "tool": 0, "lat": -117.8611, "lng": 43.9153, "video": "" },
-            { "text": "jewelry_random_dig_10", "height": 0, "tool": 0, "lat": -38.3373, "lng": 136.0083, "video": "" },
-            { "text": "jewelry_random_dig_11", "height": 0, "tool": 0, "lat": -44.2208, "lng": 110.9087, "video": "" },
-            { "text": "jewelry_random_dig_12", "height": 0, "tool": 0, "lat": -45.1627, "lng": 142.0326, "video": "" },
-            { "text": "jewelry_random_dig_13", "height": 0, "tool": 0, "lat": -48.9506, "lng": 143.2920, "video": "" },
-            { "text": "jewelry_random_dig_14", "height": 0, "tool": 0, "lat": -49.8784, "lng": 149.9299, "video": "" },
-            { "text": "jewelry_random_dig_15", "height": 0, "tool": 0, "lat": -49.9011, "lng": 104.2270, "video": "" },
-            { "text": "jewelry_random_dig_16", "height": 0, "tool": 0, "lat": -53.2246, "lng": 117.9531, "video": "" },
-            { "text": "jewelry_random_dig_17", "height": 0, "tool": 0, "lat": -56.1018, "lng": 91.4635, "video": "" },
-            { "text": "jewelry_random_dig_18", "height": 0, "tool": 0, "lat": -58.5164, "lng": 92.8555, "video": "" },
-            { "text": "jewelry_random_dig_19", "height": 0, "tool": 0, "lat": -58.6036, "lng": 131.5629, "video": "" },
-            { "text": "jewelry_random_dig_20", "height": 0, "tool": 0, "lat": -64.8256, "lng": 84.4377, "video": "" },
-            { "text": "jewelry_random_dig_21", "height": 0, "tool": 0, "lat": -67.5650, "lng": 77.5657, "video": "" },
-            { "text": "jewelry_random_dig_22", "height": 0, "tool": 0, "lat": -67.6766, "lng": 135.7494, "video": "" },
-            { "text": "jewelry_random_dig_23", "height": 0, "tool": 0, "lat": -69.2165, "lng": 105.3821, "video": "" },
-            { "text": "jewelry_random_dig_24", "height": 0, "tool": 0, "lat": -73.3123, "lng": 91.3240, "video": "" },
-            { "text": "jewelry_random_dig_25", "height": 0, "tool": 0, "lat": -81.1864, "lng": 82.9821, "video": "" },
-            { "text": "jewelry_random_dig_26", "height": 0, "tool": 0, "lat": -81.8106, "lng": 138.1778, "video": "" },
-            { "text": "jewelry_random_dig_27", "height": 0, "tool": 0, "lat": -82.1258, "lng": 95.6783, "video": "" },
-            { "text": "jewelry_random_dig_28", "height": 0, "tool": 0, "lat": -82.2887, "lng": 129.9651, "video": "" },
-            { "text": "jewelry_random_dig_29", "height": 0, "tool": 0, "lat": -85.8452, "lng": 76.2014, "video": "" },
-            { "text": "jewelry_random_dig_30", "height": 0, "tool": 0, "lat": -95.0953, "lng": 124.9196, "video": "" }
+            { "text": "jewelry_random_0", "height": 0, "tool": 2, "lat": -56.1018, "lng": 91.4675, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1687s" },
+            { "text": "jewelry_random_1", "height": 0, "tool": 2, "lat": -53.2246, "lng": 117.9571, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1573s" },
+            { "text": "jewelry_random_2", "height": -1, "tool": 2, "lat": -58.5262, "lng": 92.8484, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1648s" },
+            { "text": "jewelry_random_3", "height": 0, "tool": 2, "lat": -45.1627, "lng": 142.0366, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1384s" },
+            { "text": "jewelry_random_4", "height": 0, "tool": 2, "lat": -64.8256, "lng": 84.4417, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1724s" },
+            { "text": "jewelry_random_5", "height": 0, "tool": 2, "lat": -82.2887, "lng": 129.9691, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1534s" },
+            { "text": "jewelry_random_6", "height": 0, "tool": 2, "lat": -49.8784, "lng": 149.9339, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1423s" },
+            { "text": "jewelry_random_7", "height": 0, "tool": 2, "lat": -116.1981, "lng": 56.1256 },
+            { "text": "jewelry_random_8", "height": 0, "tool": 2, "lat": -85.8452, "lng": 76.2054 },
+            { "text": "jewelry_random_9", "height": 0, "tool": 2, "lat": -49.9011, "lng": 104.231 },
+            { "text": "jewelry_random_10", "height": 0, "tool": 2, "lat": -44.2208, "lng": 110.9127 },
+            { "text": "jewelry_random_11", "height": 0, "tool": 2, "lat": -48.9506, "lng": 143.2960 },
+            { "text": "jewelry_random_12", "height": 0, "tool": 2, "lat": -102.7567, "lng": 68.9070 },
+            { "text": "jewelry_random_13", "height": 0, "tool": 2, "lat": -67.6766, "lng": 135.7534 },
+            { "text": "jewelry_random_14", "height": 0, "tool": 2, "lat": -102.7290, "lng": 71.1704 },
+            { "text": "jewelry_random_15", "height": 0, "tool": 2, "lat": -82.1258, "lng": 95.6823 },
+            { "text": "jewelry_random_16", "height": 0, "tool": 2, "lat": -113.0386, "lng": 20.3580 },
+            { "text": "jewelry_random_17", "height": 0, "tool": 2, "lat": -73.3124, "lng": 91.3280, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1120s" },
+            { "text": "jewelry_random_18", "height": 0, "tool": 2, "lat": -69.2165, "lng": 105.3861, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1003s" },
+            { "text": "jewelry_random_19", "height": 0, "tool": 2, "lat": -38.3373, "lng": 136.0123, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1045s" },
+            { "text": "jewelry_random_20", "height": 0, "tool": 2, "lat": -107.8976, "lng": 73.2005, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1159s" },
+            { "text": "jewelry_random_21", "height": 0, "tool": 2, "lat": -95.0953, "lng": 124.9236, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=962s" },
+            { "text": "jewelry_random_22", "height": 0, "tool": 2, "lat": -111.3898, "lng": 43.3115, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1200s" },
+            { "text": "jewelry_random_23", "height": 0, "tool": 2, "lat": -67.5650, "lng": 77.5697, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1083s" },
+            { "text": "jewelry_random_24", "height": 0, "tool": 2, "lat": -117.8611, "lng": 43.9193, 	"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1241s" },
+            { "text": "jewelry_random_25", "height": 0, "tool": 2, "lat": -81.8106, "lng": 138.1818, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1136s" },
+            { "text": "jewelry_random_26", "height": 0, "tool": 2, "lat": -102.4677, "lng": 32.9786, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1321s" },
+            { "text": "jewelry_random_27", "height": 0, "tool": 2, "lat": -58.6036, "lng": 131.5669, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1209s" },
+            { "text": "jewelry_random_28", "height": 0, "tool": 2, "lat": -81.1864, "lng": 82.9861, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1247s" },
+            { "text": "jewelry_random_29", "height": 0, "tool": 2, "lat": -110.7738, "lng": 68.2501, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1285s" },
+            { "text": "jewelry_random_30", "height": 0, "tool": 2, "lat": -111.0322, "lng": 25.6165, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1357s" }
         ],
         "5": [
-            { "text": "jewelry_random_dig_0", "height": 0, "tool": 0, "lat": -105.1723, "lng": 79.1361, "video": "" },
-            { "text": "jewelry_random_dig_1", "height": 0, "tool": 0, "lat": -105.6522, "lng": 36.5865, "video": "" },
-            { "text": "jewelry_random_dig_2", "height": 0, "tool": 0, "lat": -106.3299, "lng": 59.4241, "video": "" },
-            { "text": "jewelry_random_dig_3", "height": 0, "tool": 0, "lat": -109.4001, "lng": 23.8625, "video": "" },
-            { "text": "jewelry_random_dig_4", "height": 0, "tool": 0, "lat": -110.8995, "lng": 56.4120, "video": "" },
-            { "text": "jewelry_random_dig_5", "height": 0, "tool": 0, "lat": -123.8172, "lng": 42.2223, "video": "" },
-            { "text": "jewelry_random_dig_6", "height": 0, "tool": 0, "lat": -29.6786, "lng": 135.9926, "video": "" },
-            { "text": "jewelry_random_dig_7", "height": 0, "tool": 0, "lat": -34.9640, "lng": 118.7643, "video": "" },
-            { "text": "jewelry_random_dig_8", "height": 0, "tool": 0, "lat": -40.2365, "lng": 108.8112, "video": "" },
-            { "text": "jewelry_random_dig_9", "height": 0, "tool": 0, "lat": -42.9543, "lng": 147.4384, "video": "" },
-            { "text": "jewelry_random_dig_10", "height": 0, "tool": 0, "lat": -47.7375, "lng": 100.6409, "video": "" },
-            { "text": "jewelry_random_dig_11", "height": 0, "tool": 0, "lat": -47.9574, "lng": 147.5739, "video": "" },
-            { "text": "jewelry_random_dig_12", "height": 0, "tool": 0, "lat": -50.4393, "lng": 115.9084, "video": "" },
-            { "text": "jewelry_random_dig_13", "height": 0, "tool": 0, "lat": -52.1020, "lng": 76.2431, "video": "" },
-            { "text": "jewelry_random_dig_14", "height": 0, "tool": 0, "lat": -54.3363, "lng": 137.9687, "video": "" },
-            { "text": "jewelry_random_dig_15", "height": 0, "tool": 0, "lat": -57.5547, "lng": 126.1350, "video": "" },
-            { "text": "jewelry_random_dig_16", "height": 0, "tool": 0, "lat": -58.9552, "lng": 140.6775, "video": "" },
-            { "text": "jewelry_random_dig_17", "height": 0, "tool": 0, "lat": -60.8501, "lng": 113.3876, "video": "" },
-            { "text": "jewelry_random_dig_18", "height": 0, "tool": 0, "lat": -62.0784, "lng": 149.0309, "video": "" },
-            { "text": "jewelry_random_dig_19", "height": 0, "tool": 0, "lat": -64.4409, "lng": 69.1717, "video": "" },
-            { "text": "jewelry_random_dig_20", "height": 0, "tool": 0, "lat": -69.0112, "lng": 70.6545, "video": "" },
-            { "text": "jewelry_random_dig_21", "height": 0, "tool": 0, "lat": -70.2055, "lng": 138.1647, "video": "" },
-            { "text": "jewelry_random_dig_22", "height": 0, "tool": 0, "lat": -75.0828, "lng": 140.1451, "video": "" },
-            { "text": "jewelry_random_dig_23", "height": 0, "tool": 0, "lat": -76.4870, "lng": 94.7926, "video": "" },
-            { "text": "jewelry_random_dig_24", "height": 0, "tool": 0, "lat": -79.2511, "lng": 137.7520, "video": "" },
-            { "text": "jewelry_random_dig_25", "height": 0, "tool": 0, "lat": -83.7344, "lng": 128.6941, "video": "" },
-            { "text": "jewelry_random_dig_26", "height": 0, "tool": 0, "lat": -87.1356, "lng": 98.4286, "video": "" },
-            { "text": "jewelry_random_dig_27", "height": 0, "tool": 0, "lat": -88.6431, "lng": 142.2331, "video": "" },
-            { "text": "jewelry_random_dig_28", "height": 0, "tool": 0, "lat": -90.3678, "lng": 82.2467, "video": "" },
-            { "text": "jewelry_random_dig_29", "height": 0, "tool": 0, "lat": -90.9396, "lng": 143.3194, "video": "" },
-            { "text": "jewelry_random_dig_30", "height": 0, "tool": 0, "lat": -93.5278, "lng": 79.2080, "video": "" }
+            { "text": "jewelry_random_0", "height": 0, "tool": 2, "lat": -79.2511, "lng": 137.7560, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1839s" },
+            { "text": "jewelry_random_1", "height": 0, "tool": 2, "lat": -90.9396, "lng": 143.3234, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1879s" },
+            { "text": "jewelry_random_2", "height": 0, "tool": 2, "lat": -40.2365, "lng": 108.8152, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1985s" },
+            { "text": "jewelry_random_3", "height": 0, "tool": 2, "lat": -123.8172, "lng": 42.2263, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2135s" },
+            { "text": "jewelry_random_4", "height": 0, "tool": 2, "lat": -93.5278, "lng": 79.2120, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2096s" },
+            { "text": "jewelry_random_5", "height": 0, "tool": 2, "lat": -87.1356, "lng": 98.4326, 			"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2058s" },
+            { "text": "jewelry_random_6", "height": 0, "tool": 2, "lat": -34.9640, "lng": 118.7683, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1946s" },
+            { "text": "jewelry_random_7", "height": 0, "tool": 2, "lat": -47.7375, "lng": 100.6449, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2021s" },
+            { "text": "jewelry_random_8", "height": 0, "tool": 2, "lat": -42.9543, "lng": 147.4424, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1767s" },
+            { "text": "jewelry_random_9", "height": 0, "tool": 2, "lat": -69.0112, "lng": 70.6585 },
+            { "text": "jewelry_random_10", "height": 0, "tool": 2, "lat": -76.4870, "lng": 94.7966 },
+            { "text": "jewelry_random_11", "height": 0, "tool": 2, "lat": -110.8995, "lng": 56.4160 },
+            { "text": "jewelry_random_12", "height": 0, "tool": 2, "lat": -62.0784, "lng": 149.0349 },
+            { "text": "jewelry_random_13", "height": 0, "tool": 2, "lat": -29.6786, "lng": 135.9966 },
+            { "text": "jewelry_random_14", "height": 0, "tool": 2, "lat": -105.6522, "lng": 36.5905 },
+            { "text": "jewelry_random_15", "height": 0, "tool": 1, "lat": -52.1020, "lng": 76.2471 },
+            { "text": "jewelry_random_16", "height": 0, "tool": 2, "lat": -50.4393, "lng": 115.9124 },
+            { "text": "jewelry_random_17", "height": 0, "tool": 2, "lat": -47.9574, "lng": 147.5779 },
+            { "text": "jewelry_random_18", "height": 0, "tool": 2, "lat": -75.0828, "lng": 140.1491 },
+            { "text": "jewelry_random_19", "height": 0, "tool": 2, "lat": -64.4409, "lng": 69.1757, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1433s" },
+            { "text": "jewelry_random_20", "height": 0, "tool": 2, "lat": -54.3363, "lng": 137.9727, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1396s" },
+            { "text": "jewelry_random_21", "height": 0, "tool": 2, "lat": -109.4001, "lng": 23.8665, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1545s" },
+            { "text": "jewelry_random_22", "height": 0, "tool": 2, "lat": -57.5547, "lng": 126.1390, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1359s" },
+            { "text": "jewelry_random_23", "height": 0, "tool": 2, "lat": -105.1723, "lng": 79.1401, 	"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1473s" },
+            { "text": "jewelry_random_24", "height": 0, "tool": 2, "lat": -70.2055, "lng": 138.1687, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1436s" },
+            { "text": "jewelry_random_25", "height": 0, "tool": 2, "lat": -83.7344, "lng": 128.6981, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1537s" },
+            { "text": "jewelry_random_26", "height": 0, "tool": 2, "lat": -90.3678, "lng": 82.2507, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1646s" },
+            { "text": "jewelry_random_27", "height": 0, "tool": 2, "lat": -58.9552, "lng": 140.6815, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1400s" },
+            { "text": "jewelry_random_28", "height": 0, "tool": 2, "lat": -88.6431, "lng": 142.2371, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1503s" },
+            { "text": "jewelry_random_29", "height": 0, "tool": 2, "lat": -106.3299, "lng": 59.4281, "video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1684s" },
+            { "text": "jewelry_random_30", "height": 0, "tool": 2, "lat": -60.8502, "lng": 113.3916, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1575s" }
+
         ],
         "6": [
-            { "text": "jewelry_random_dig_0", "height": 0, "tool": 0, "lat": -100.2322, "lng": 74.2699, "video": "" },
-            { "text": "jewelry_random_dig_1", "height": 0, "tool": 0, "lat": -102.0172, "lng": 62.0506, "video": "" },
-            { "text": "jewelry_random_dig_2", "height": 0, "tool": 0, "lat": -103.7754, "lng": 24.6320, "video": "" },
-            { "text": "jewelry_random_dig_3", "height": 0, "tool": 0, "lat": -104.9253, "lng": 55.1910, "video": "" },
-            { "text": "jewelry_random_dig_4", "height": 0, "tool": 0, "lat": -107.8306, "lng": 59.9797, "video": "" },
-            { "text": "jewelry_random_dig_5", "height": 0, "tool": 0, "lat": -110.1878, "lng": 52.0457, "video": "" },
-            { "text": "jewelry_random_dig_6", "height": 0, "tool": 0, "lat": -113.7867, "lng": 17.8035, "video": "" },
-            { "text": "jewelry_random_dig_7", "height": 0, "tool": 0, "lat": -36.4884, "lng": 119.5691, "video": "" },
-            { "text": "jewelry_random_dig_8", "height": 0, "tool": 0, "lat": -46.3946, "lng": 110.7111, "video": "" },
-            { "text": "jewelry_random_dig_9", "height": 0, "tool": 0, "lat": -47.7803, "lng": 140.4066, "video": "" },
-            { "text": "jewelry_random_dig_10", "height": 0, "tool": 0, "lat": -48.0359, "lng": 114.7740, "video": "" },
-            { "text": "jewelry_random_dig_11", "height": 0, "tool": 0, "lat": -50.7015, "lng": 123.7783, "video": "" },
-            { "text": "jewelry_random_dig_12", "height": 0, "tool": 0, "lat": -51.2014, "lng": 134.1017, "video": "" },
-            { "text": "jewelry_random_dig_13", "height": 0, "tool": 0, "lat": -52.7348, "lng": 142.3550, "video": "" },
-            { "text": "jewelry_random_dig_14", "height": 0, "tool": 0, "lat": -54.6284, "lng": 140.3407, "video": "" },
-            { "text": "jewelry_random_dig_15", "height": 0, "tool": 0, "lat": -55.8723, "lng": 108.7327, "video": "" },
-            { "text": "jewelry_random_dig_16", "height": 0, "tool": 0, "lat": -56.7912, "lng": 157.2942, "video": "" },
-            { "text": "jewelry_random_dig_17", "height": 0, "tool": 0, "lat": -62.2740, "lng": 93.1248, "video": "" },
-            { "text": "jewelry_random_dig_18", "height": 0, "tool": 0, "lat": -64.6906, "lng": 103.7987, "video": "" },
-            { "text": "jewelry_random_dig_19", "height": 0, "tool": 0, "lat": -65.9210, "lng": 117.9311, "video": "" },
-            { "text": "jewelry_random_dig_20", "height": 0, "tool": 0, "lat": -70.3017, "lng": 68.2631, "video": "" },
-            { "text": "jewelry_random_dig_21", "height": 0, "tool": 0, "lat": -73.5441, "lng": 144.2051, "video": "" },
-            { "text": "jewelry_random_dig_22", "height": 0, "tool": 0, "lat": -75.3212, "lng": 87.9124, "video": "" },
-            { "text": "jewelry_random_dig_23", "height": 0, "tool": 0, "lat": -75.4964, "lng": 146.1877, "video": "" },
-            { "text": "jewelry_random_dig_24", "height": 0, "tool": 0, "lat": -77.1923, "lng": 91.0777, "video": "" },
-            { "text": "jewelry_random_dig_25", "height": 0, "tool": 0, "lat": -79.4889, "lng": 127.8407, "video": "" },
-            { "text": "jewelry_random_dig_26", "height": 0, "tool": 0, "lat": -83.2286, "lng": 147.4603, "video": "" },
-            { "text": "jewelry_random_dig_27", "height": 0, "tool": 0, "lat": -83.8318, "lng": 137.8716, "video": "" },
-            { "text": "jewelry_random_dig_28", "height": 0, "tool": 0, "lat": -86.0196, "lng": 122.7450, "video": "" },
-            { "text": "jewelry_random_dig_29", "height": 0, "tool": 0, "lat": -92.6504, "lng": 141.7909, "video": "" },
-            { "text": "jewelry_random_dig_30", "height": 0, "tool": 0, "lat": -97.3936, "lng": 90.7594, "video": "" }
-        ]
-    },
-    "bracelet": {
-        "1": [
-            { "text": "bracelet_abello_ruby_bangle", "height": 0, "tool": 0, "lat": -49.9068, "lng": 148.2632, "video": "" },
-            { "text": "bracelet_helena_sapphire", "height": 0, "tool": 0, "lat": -55.4436, "lng": 101.7473, "video": "" }
-        ],
-        "2": [
-            { "text": "bracelet_durant_pearl", "height": 0, "tool": 0, "lat": -76.8175, "lng": 143.3168, "video": "" },
-            { "text": "bracelet_ojeda_rose_gold", "height": 0, "tool": 0, "lat": -83.0449, "lng": 122.1667, "video": "" }
-        ],
-        "3": [
-        ],
-        "4": [
-        ],
-        "5": [
-            { "text": "bracelet_abello_ruby_bangle", "height": 0, "tool": 0, "lat": -81.8280, "lng": 151.9994, "video": "" },
-            { "text": "bracelet_elliston_carved", "height": 0, "tool": 0, "lat": -117.4694, "lng": 57.2235, "video": "" },
-            { "text": "bracelet_helena_sapphire", "height": 0, "tool": 0, "lat": -73.9406, "lng": 116.6320, "video": "" }
-        ],
-        "6": [
-            { "text": "bracelet_durant_pearl", "height": 0, "tool": 0, "lat": -76.9431, "lng": 148.1103, "video": "" },
-            { "text": "bracelet_ojeda_rose_gold", "height": 0, "tool": 0, "lat": -36.6618, "lng": 105.0949, "video": "" }
-        ]
-    },
-    "earring": {
-        "1": [
-            { "text": "earring_josephine_pearl", "height": 0, "tool": 0, "lat": -41.1663, "lng": 146.6969, "video": "" }
-        ],
-        "2": [
-        ],
-        "3": [
-            { "text": "earring_calumet_turquoise", "height": 0, "tool": 0, "lat": -72.6592, "lng": 143.5829, "video": "" }
-        ],
-        "4": [
-            { "text": "earring_calumet_turquoise", "height": 0, "tool": 0, "lat": -28.7925, "lng": 119.2260, "video": "" }
-        ],
-        "5": [
-            { "text": "earring_josephine_pearl", "height": 0, "tool": 0, "lat": -65.1742, "lng": 129.6000, "video": "" }
-        ],
-        "6": [
-        ]
-    },
-    "necklace": {
-        "1": [
-            { "text": "necklace_ainsworth_cross", "height": 0, "tool": 0, "lat": -75.0648, "lng": 148.8006, "video": "" },
-            { "text": "necklace_dane_topaz", "height": 0, "tool": 0, "lat": -120.5299, "lng": 27.5162, "video": "" },
-            { "text": "necklace_rou_pearl", "height": 0, "tool": 0, "lat": -90.3315, "lng": 134.0359, "video": "" }
-        ],
-        "2": [
-            { "text": "necklace_blakely_miniatue", "height": 0, "tool": 0, "lat": -37.2923, "lng": 148.2777, "video": "" },
-            { "text": "necklace_richelieu_amethyst", "height": 0, "tool": 0, "lat": -44.4476, "lng": 110.2983, "video": "" }
-        ],
-        "3": [
-            { "text": "necklace_ainsworth_cross", "height": 0, "tool": 0, "lat": -38.2367, "lng": 96.5663, "video": "" },
-            { "text": "necklace_gosselin_white_gold", "height": 0, "tool": 0, "lat": -32.6183, "lng": 153.1273, "video": "" },
-            { "text": "necklace_pelle_pearl", "height": 0, "tool": 0, "lat": -57.0061, "lng": 152.8062, "video": "" }
-        ],
-        "4": [
-            { "text": "necklace_ainsworth_cross", "height": 0, "tool": 0, "lat": -92.4905, "lng": 140.7281, "video": "" },
-            { "text": "necklace_gosselin_white_gold", "height": 0, "tool": 0, "lat": -61.3875, "lng": 151.2194, "video": "" },
-            { "text": "necklace_pelle_pearl", "height": 0, "tool": 0, "lat": -37.2686, "lng": 152.0088, "video": "" }
-        ],
-        "5": [
-            { "text": "necklace_dane_topaz", "height": 0, "tool": 0, "lat": -36.7973, "lng": 105.1755, "video": "" },
-            { "text": "necklace_rou_pearl", "height": 0, "tool": 0, "lat": -80.3911, "lng": 153.4333, "video": "" }
-        ],
-        "6": [
-            { "text": "necklace_blakely_miniatue", "height": 0, "tool": 0, "lat": -38.0243, "lng": 152.9536, "video": "" },
-            { "text": "necklace_richelieu_amethyst", "height": 0, "tool": 0, "lat": -55.2989, "lng": 154.4409, "video": "" }
+            { "text": "jewelry_random_0", "height": 0, "tool": 2, "lat": -102.0172, "lng": 62.0546, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2439s" },
+            { "text": "jewelry_random_1", "height": 0, "tool": 2, "lat": -75.4964, "lng": 146.1917, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2224s" },
+            { "text": "jewelry_random_2", "height": 0, "tool": 2, "lat": -110.1878, "lng": 52.0497, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2508s" },
+            { "text": "jewelry_random_3", "height": 0, "tool": 2, "lat": -92.6504, "lng": 141.7949, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2267s" },
+            { "text": "jewelry_random_4", "height": 0, "tool": 2, "lat": -113.7867, "lng": 17.8075, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2565s" },
+            { "text": "jewelry_random_5", "height": 0, "tool": 2, "lat": -50.7015, "lng": 123.7823, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2332s" },
+            { "text": "jewelry_random_6", "height": 0, "tool": 2, "lat": -36.4884, "lng": 119.5731, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2396s" },
+            { "text": "jewelry_random_7", "height": 0, "tool": 2, "lat": -47.7803, "lng": 140.4106 },
+            { "text": "jewelry_random_8", "height": 0, "tool": 2, "lat": -86.0196, "lng": 122.7490 },
+            { "text": "jewelry_random_9", "height": 0, "tool": 2, "lat": -48.0359, "lng": 114.7780 },
+            { "text": "jewelry_random_10", "height": 0, "tool": 2, "lat": -97.3936, "lng": 90.7634 },
+            { "text": "jewelry_random_11", "height": 0, "tool": 2, "lat": -73.5441, "lng": 144.2091 },
+            { "text": "jewelry_random_12", "height": 0, "tool": 2, "lat": -65.9210, "lng": 117.9351 },
+            { "text": "jewelry_random_13", "height": 0, "tool": 2, "lat": -62.2740, "lng": 93.1288 },
+            { "text": "jewelry_random_14", "height": 0, "tool": 2, "lat": -83.2286, "lng": 147.4643 },
+            { "text": "jewelry_random_15", "height": 0, "tool": 2, "lat": -54.6284, "lng": 140.3447 },
+            { "text": "jewelry_random_16", "height": 0, "tool": 2, "lat": -104.9253, "lng": 55.1950 },
+            { "text": "jewelry_random_17", "height": 0, "tool": 2, "lat": -70.3017, "lng": 68.2671 },
+            { "text": "jewelry_random_18", "height": 0, "tool": 2, "lat": -56.7912, "lng": 157.2982, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1626s" },
+            { "text": "jewelry_random_19", "height": 0, "tool": 2, "lat": -107.8306, "lng": 59.9837, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1838s" },
+            { "text": "jewelry_random_20", "height": 0, "tool": 2, "lat": -46.3946, "lng": 110.7151, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1727s" },
+            { "text": "jewelry_random_21", "height": 0, "tool": 2, "lat": -52.7348, "lng": 142.3590, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1589s" },
+            { "text": "jewelry_random_22", "height": 0, "tool": 2, "lat": -100.2322, "lng": 74.2739, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1798s" },
+            { "text": "jewelry_random_23", "height": 0, "tool": 2, "lat": -55.8723, "lng": 108.7367, 	"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1692s" },
+            { "text": "jewelry_random_24", "height": 0, "tool": 2, "lat": -64.6906, "lng": 103.8027, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1904s" },
+            { "text": "jewelry_random_25", "height": 0, "tool": 2, "lat": -51.2014, "lng": 134.1057, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1866s" },
+            { "text": "jewelry_random_26", "height": 0, "tool": 2, "lat": -75.3212, "lng": 87.9164, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1954s" },
+            { "text": "jewelry_random_27", "height": 0, "tool": 2, "lat": -103.7754, "lng": 24.6360, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=2030s" },
+            { "text": "jewelry_random_28", "height": 0, "tool": 2, "lat": -83.8318, "lng": 137.8756, "video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1793s" },
+            { "text": "jewelry_random_29", "height": 0, "tool": 2, "lat": -77.1923, "lng": 91.0817, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1990s" },
+            { "text": "jewelry_random_30", "height": 0, "tool": 2, "lat": -79.4889, "lng": 127.8447, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1830s" }
         ]
     },
     "ring": {
         "1": [
-            { "text": "ring_bonnard_pearl", "height": 0, "tool": 0, "lat": -67.0985, "lng": 84.0483, "video": "" },
-            { "text": "ring_magnate_turquoise", "height": 0, "tool": 0, "lat": -92.3819, "lng": 140.7678, "video": "" }
+            { "text": "ring_magnate_turquoise", "height": 0, "tool": 0, "lat": -92.3819, "lng": 140.7718, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=117s" },
+            { "text": "ring_bonnard_pearl", "height": 0, "tool": 0, "lat": -67.0985, "lng": 84.0523, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=329s" }
         ],
         "2": [
-            { "text": "ring_aubrey_onyx", "height": 0, "tool": 0, "lat": -58.9428, "lng": 105.5900, "video": "" },
-            { "text": "ring_banais_topaz", "height": 0, "tool": 0, "lat": -94.1528, "lng": 138.0640, "video": "" },
-            { "text": "ring_pilgrim_moonstone", "height": 0, "tool": 0, "lat": -45.6560, "lng": 130.6838, "video": "" },
-            { "text": "ring_yates_diamond", "height": 0, "tool": 0, "lat": -52.4253, "lng": 77.5105, "video": "" }
+            { "text": "ring_harland_coral", "height": 0, "tool": 0, "lat": -27.6310, "lng": 82.5544, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=782s" },
+            { "text": "ring_pilgrim_moonstone", "height": 0, "tool": 0, "lat": -45.6560, "lng": 130.6878, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=615s" },
+            { "text": "ring_banais_topaz", "height": 0, "tool": 0, "lat": -94.1528, "lng": 138.0680, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=481s" },
+            { "text": "ring_beaulieux_diamond", "height": 0, "tool": 0, "lat": -45.6994, "lng": 105.8941, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=729s" },
+            { "text": "ring_yates_diamond", "height": 0, "tool": 0, "lat": -52.4253, "lng": 77.5145, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=814s" },
+            { "text": "ring_aubrey_onyx", "height": 0, "tool": 0, "lat": -58.9428, "lng": 105.5940, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=554s" },
+            { "text": "ring_sackville_diamond", "height": 0, "tool": 0, "lat": -37.4453, "lng": 129.4418, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=648s" }
         ],
         "3": [
-            { "text": "ring_banais_topaz", "height": 0, "tool": 0, "lat": -92.1635, "lng": 136.0912, "video": "" },
-            { "text": "ring_beaulieux_diamond", "height": 0, "tool": 0, "lat": -92.9629, "lng": 79.0023, "video": "" },
-            { "text": "ring_sackville_diamond", "height": 0, "tool": 0, "lat": -55.5571, "lng": 87.6763, "video": "" },
-            { "text": "ring_thorburn_turquoise", "height": 0, "tool": 0, "lat": -50.4097, "lng": 123.3215, "video": "" }
+            { "text": "ring_magnate_turquoise", "height": 0, "tool": 0, "lat": -43.5611, "lng": 124.8282, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1166s" },
+            { "text": "ring_bonnard_pearl", "height": 0, "tool": 0, "lat": -27.2344, "lng": 156.7117, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=982s" },
+            { "text": "ring_banais_topaz", "height": 0, "tool": 0, "lat": -92.1635, "lng": 136.0952, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1137s" },
+            { "text": "ring_beaulieux_diamond", "height": 0, "tool": 0, "lat": -92.9629, "lng": 79.0063, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1320s" },
+            { "text": "ring_sackville_diamond", "height": 0, "tool": 0, "lat": -55.5571, "lng": 87.6803, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1288s" },
+            { "text": "ring_thorburn_turquoise", "height": 0, "tool": 0, "lat": -50.4097, "lng": 123.3255, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1223s" }
         ],
         "4": [
-            { "text": "ring_banais_topaz", "height": 0, "tool": 0, "lat": -80.0100, "lng": 153.5865, "video": "" },
-            { "text": "ring_beaulieux_diamond", "height": 0, "tool": 0, "lat": -36.4406, "lng": 104.9194, "video": "" },
-            { "text": "ring_sackville_diamond", "height": 0, "tool": 0, "lat": -37.4956, "lng": 155.2958, "video": "" },
-            { "text": "ring_thorburn_turquoise", "height": 0, "tool": 0, "lat": -98.9206, "lng": 131.7358, "video": "" }
+            { "text": "ring_banais_topaz", "height": 0, "tool": 0, "lat": -80.0100, "lng": 153.5905, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1464s" },
+            { "text": "ring_beaulieux_diamond", "height": 0, "tool": 0, "lat": -36.4406, "lng": 104.9234, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1612s" },
+            { "text": "ring_sackville_diamond", "height": 0, "tool": 0, "lat": -37.4956, "lng": 155.2998, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1355s" },
+            { "text": "ring_thorburn_turquoise", "height": 0, "tool": 0, "lat": -98.9206, "lng": 131.7398, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1499s" }
         ],
         "5": [
-            { "text": "ring_bonnard_pearl", "height": 0, "tool": 0, "lat": -91.7385, "lng": 139.9289, "video": "" },
-            { "text": "ring_magnate_turquoise", "height": 0, "tool": 0, "lat": -65.7916, "lng": 145.9548, "video": "" }
+            { "text": "ring_magnate_turquoise", "height": 0, "tool": 0, "lat": -65.7916, "lng": 145.9588, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1810s" },
+            { "text": "ring_bonnard_pearl", "height": 0, "tool": 0, "lat": -91.7385, "lng": 139.9329, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=1915s" }
         ],
         "6": [
-            { "text": "ring_aubrey_onyx", "height": 0, "tool": 0, "lat": -113.4101, "lng": 68.2125, "video": "" },
-            { "text": "ring_banais_topaz", "height": 0, "tool": 0, "lat": -59.0912, "lng": 149.2069, "video": "" },
-            { "text": "ring_pilgrim_moonstone", "height": 0, "tool": 0, "lat": -29.5739, "lng": 135.9391, "video": "" },
-            { "text": "ring_yates_diamond", "height": 0, "tool": 0, "lat": -65.8312, "lng": 130.1935, "video": "" }
+            { "text": "ring_pilgrim_moonstone", "height": 0, "tool": 0, "lat": -29.5739, "lng": 135.9431, 	"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2364s" },
+            { "text": "ring_banais_topaz", "height": -1, "tool": 0, "lat": -59.0912, "lng": 149.2109, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2184s" },
+            { "text": "ring_yates_diamond", "height": 0, "tool": 0, "lat": -65.8312, "lng": 130.1975, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2304s" },
+            { "text": "ring_aubrey_onyx", "height": 0, "tool": 0, "lat": -113.4101, "lng": 68.2165, 		"video": "https://www.youtube.com/watch?v=V7Fti1UwVHg&t=2476s" }
+        ]
+    },
+    "earring": {
+        "1": [
+            { "text": "earring_josephine_pearl", "height": -1, "tool": 0, "lat": -41.1663, "lng": 146.7009, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=381s" }
+        ],
+        "2": [
+            { "text": "earring_orchidee_diamond", "height": 0, "tool": 0, "lat": -93.1473, "lng": 142.2014, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=605s" },
+            { "text": "earring_duchess_emerald", "height": -1, "tool": 0, "lat": -36.4675, "lng": 149.0247, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=718s" }
+        ],
+        "3": [
+            { "text": "earring_calumet_turquoise", "height": 0, "tool": 0, "lat": -72.6592, "lng": 143.5869, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=1018s" },
+            { "text": "earring_harford_garnet", "height": 0, "tool": 0, "lat": -44.1767, "lng": 156.5624, "video": "https://www.youtube.com/watch?v=QK2IO7DkOmY&t=1125s" }
+        ],
+        "4": [
+            { "text": "earring_calumet_turquoise", "height": 0, "tool": 0, "lat": -28.7925, "lng": 119.23 }
+        ],
+        "5": [
+            { "text": "earring_josephine_pearl", "height": 0, "tool": 0, "lat": -65.1742, "lng": 129.6040 }
+        ],
+        "6": [
+        ]
+    },
+    "bracelet": {
+        "1": [
+            { "text": "bracelet_greco_sapphire", "height": 0, "tool": 0, "lat": -55.4436, "lng": 101.7513, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=143s" },
+            { "text": "bracelet_abello_ruby_bangle", "height": 0, "tool": 0, "lat": -49.9068, "lng": 148.2672, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=50s" },
+            { "text": "bracelet_ojeda_rose_gold", "height": 0, "tool": 0, "lat": -116.5733, "lng": 19.6350, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=287s" },
+            { "text": "bracelet_helena_sapphire", "height": 0, "tool": 0, "lat": -92.1170, "lng": 59.8846, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=252s" },
+            { "text": "bracelet_durant_pearl", "height": 0, "tool": 0, "lat": -42.5037, "lng": 109.8522, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=77s" },
+            { "text": "bracelet_infanta_turquoise", "height": 0, "tool": 0, "lat": -107.1518, "lng": 86.6720, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=205s" },
+            { "text": "bracelet_hajnal_garnet_bangle", "height": 0, "tool": 0, "lat": -53.8999, "lng": 97.8753, 	"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=111s" }
+        ],
+        "2": [
+            { "text": "bracelet_ojeda_rose_gold", "height": 0, "tool": 0, "lat": -83.0449, "lng": 122.1707, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=420s" },
+            { "text": "bracelet_helena_sapphire", "height": 0, "tool": 0, "lat": -57.0509, "lng": 95.0618, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=514s" },
+            { "text": "bracelet_durant_pearl", "height": 0, "tool": 0, "lat": -76.8175, "lng": 143.3208, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=354s" }
+        ],
+        "3": [
+            { "text": "bracelet_abello_ruby_bangle", "height": 0, "tool": 0, "lat": -90.9860, "lng": 83.3726, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=870s" },
+            { "text": "bracelet_helena_sapphire", "height": 0, "tool": 0, "lat": -49.7712, "lng": 76.6619, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=803s" },
+            { "text": "bracelet_durant_pearl", "height": 0, "tool": 0, "lat": -40.5128, "lng": 136.4270, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=737s" },
+            { "text": "bracelet_hajnal_garnet_bangle", "height": 0, "tool": 0, "lat": -78.0037, "lng": 90.2373, 	"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=839s" }
+        ],
+        "4": [
+        ],
+        "5": [
+            { "text": "bracelet_greco_sapphire", "height": 0, "tool": 0, "lat": -73.9406, "lng": 116.6360, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1328s" },
+            { "text": "bracelet_abello_ruby_bangle", "height": 0, "tool": 0, "lat": -81.8280, "lng": 152.0034, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1293s" },
+            { "text": "bracelet_elliston_carved", "height": 0, "tool": 0, "lat": -117.4694, "lng": 57.2275, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1510s" }
+        ],
+        "6": [
+            { "text": "bracelet_ojeda_rose_gold", "height": 0, "tool": 0, "lat": -36.6618, "lng": 105.0989, 		"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1763s" },
+            { "text": "bracelet_durant_pearl", "height": 0, "tool": 0, "lat": -76.9431, "lng": 148.1143, 			"video": "https://www.youtube.com/watch?v=BfiHOiU5AFQ&t=1665s" }
+        ]
+    },
+    "necklace": {
+        "1": [
+            { "text": "necklace_blakely_miniatue", "height": 0, "tool": 0, "lat": -50.5077, "lng": 93.1624, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=180s" },
+            { "text": "necklace_richelieu_amethyst", "height": 0, "tool": 0, "lat": -84.7187, "lng": 85.8689, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=263s" },
+            { "text": "necklace_ainsworth_cross", "height": 0, "tool": 0, "lat": -75.0648, "lng": 148.8046, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=50s" },
+            { "text": "necklace_braxton_amethyst", "height": 0, "tool": 0, "lat": -46.2031, "lng": 134.3203, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=101s" },
+            { "text": "necklace_rou_pearl", "height": 0, "tool": 0, "lat": -90.3315, "lng": 134.0399, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=75s" },
+            { "text": "necklace_dane_topaz", "height": 0, "tool": 0, "lat": -120.5299, "lng": 27.5202, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=294s" }
+        ],
+        "2": [
+            { "text": "necklace_blakely_miniatue", "height": -1, "tool": 0, "lat": -37.2923, "lng": 148.2817, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=372s" },
+            { "text": "necklace_richelieu_amethyst", "height": 0, "tool": 0, "lat": -44.4476, "lng": 110.3023, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=581s" },
+            { "text": "necklace_braxton_amethyst", "height": 0, "tool": 0, "lat": -46.6482, "lng": 147.4025, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=403s" },
+            { "text": "necklace_gosselin_white_gold", "height": 0, "tool": 0, "lat": -43.9611, "lng": 104.8625, "video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=649s" }
+        ],
+        "3": [
+            { "text": "necklace_richelieu_amethyst", "height": 0, "tool": 0, "lat": -71.0038, "lng": 133.9613, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=795s" },
+            { "text": "necklace_pelle_pearl", "height": 0, "tool": 0, "lat": -57.0061, "lng": 152.8102, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=766s" },
+            { "text": "necklace_ainsworth_cross", "height": 0, "tool": 0, "lat": -38.2367, "lng": 96.5703, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=992s" },
+            { "text": "necklace_braxton_amethyst", "height": 0, "tool": 0, "lat": -48.7093, "lng": 120.9396, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=915s" },
+            { "text": "necklace_gosselin_white_gold", "height": 0, "tool": 0, "lat": -32.6183, "lng": 153.1313, "video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=733s" },
+            { "text": "necklace_tuamotu_pearl", "height": 0, "tool": 0, "lat": -46.0243, "lng": 101.5075, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=953s" }
+        ],
+        "4": [
+            { "text": "necklace_pelle_pearl", "height": 0, "tool": 0, "lat": -37.2686, "lng": 152.0128, 		"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1073s" },
+            { "text": "necklace_ainsworth_cross", "height": 0, "tool": 0, "lat": -92.4905, "lng": 140.7321, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1173s" },
+            { "text": "necklace_gosselin_white_gold", "height": 0, "tool": 0, "lat": -61.3875, "lng": 151.2234, "video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1107s" }
+        ],
+        "5": [
+            { "text": "necklace_rou_pearl", "height": 0, "tool": 0, "lat": -80.3911, "lng": 153.4373, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1472s" },
+            { "text": "necklace_dane_topaz", "height": 0, "tool": 0, "lat": -36.7973, "lng": 105.1795, 			"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1615s" }
+        ],
+        "6": [
+            { "text": "necklace_blakely_miniatue", "height": 0, "tool": 0, "lat": -38.0243, "lng": 152.9576, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1723s" },
+            { "text": "necklace_richelieu_amethyst", "height": 0, "tool": 0, "lat": -55.2989, "lng": 154.4449, 	"video": "https://www.youtube.com/watch?v=JMoT3Rc7-_c&t=1756s" }
         ]
     },
     "flower": {
