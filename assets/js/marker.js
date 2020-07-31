@@ -66,17 +66,7 @@ class Marker {
     this.primaryDescriptionKey = (() => {
       if (this.category === 'random') {
         return `${this.text}.desc`;
-      } else if (this.category === 'arrowhead') {
-        return "arrowhead_random.desc";
-      } else if (this.category === 'coin') {
-        return "coin_random.desc";
-      } else if (this.category === 'fossils_random') {
-        return "fossils_random.desc";
-      } else if (this.category === 'jewelry_random') {
-        return "jewelry_random.desc";
-      } else if (this.category === 'heirlooms_random') {
-        return "heirlooms_random.desc";
-      } else {
+      }  else {
         return `${this.markerId}.desc`;
       }
     })();
@@ -89,6 +79,16 @@ class Marker {
     this.secondaryDescriptionKey = (() => {
       if (this.category === 'random') {
         return 'map.random_spot.desc';
+      } else if (this.category === 'arrowhead') {
+        return "arrowhead_random.desc";
+      } else if (this.category === 'coin') {
+        return "coin_random.desc";
+      } else if (this.category === 'fossils_random') {
+        return "fossils_random.desc";
+      } else if (this.category === 'jewelry_random') {
+        return "jewelry_random.desc";
+      } else if (this.category === 'heirlooms_random') {
+        return "heirlooms_random.desc";
       }
 
       switch (this.itemId) {
