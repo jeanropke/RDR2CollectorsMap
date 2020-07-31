@@ -433,7 +433,7 @@ const MapBase = {
   },
 
   gameToMap: function (lat, lng, name = "Debug Marker") {
-    MapBase.game2Map({
+    return MapBase.game2Map({
       x: lat,
       y: lng,
       z: name
@@ -441,7 +441,7 @@ const MapBase = {
   },
 
   game2Map: function ({ x, y, z }) {
-    MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
+    return MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
   },
 
   highlightImportantItem: function (text, category = '') {
@@ -547,7 +547,10 @@ const MapBase = {
     marker.bindPopup(`<h1>${name}</h1><p>Lat.: ${lat}<br>Long.: ${long}</p>`, {
       minWidth: 300
     });
+
     Layers.itemMarkersLayer.addLayer(marker);
+
+    return { lat, long, name };
   },
 
   addCoordsOnMap: function (coords) {
