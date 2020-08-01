@@ -101,8 +101,30 @@ class Menu {
 
         if (category && toEnable) {
           enabledCategories.push(category);
+
+          if(enabledCategories.arrayContains(parentCategories['jewelry_random']) && parentCategories['jewelry_random'].includes(category)) {
+            enabledCategories.push('jewelry_random');
+          }
+          else if(enabledCategories.arrayContains(parentCategories['fossils_random']) && parentCategories['fossils_random'].includes(category)) {
+            enabledCategories.push('fossils_random');
+          }
+          else if(category == 'heirlooms') {
+            enabledCategories.push('heirlooms_random');
+          }
+
         } else if (category) { // disable
           enabledCategories = enabledCategories.filter(cat => cat !== category);
+
+          if(!enabledCategories.arrayContains(parentCategories['jewelry_random'])) {
+            enabledCategories = enabledCategories.filter(cat => cat !== 'jewelry_random');
+          }
+          else if(!enabledCategories.arrayContains(parentCategories['fossils_random'])) {
+            enabledCategories = enabledCategories.filter(cat => cat !== 'fossils_random');
+          }
+          else if(category == 'heirlooms') {
+            enabledCategories = enabledCategories.filter(cat => cat !== 'heirlooms_random');
+          }
+
         } else {
           enabledCategories = toEnable ? categories : [];
         }

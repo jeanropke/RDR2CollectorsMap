@@ -21,6 +21,11 @@ const categories = [
   'random', 'ring', 'swords', 'treasure', 'user_pins', 'wands', 'weekly'
 ];
 
+const parentCategories = { 
+  jewelry_random: ['bracelet', 'earring', 'necklace', 'ring'],
+  fossils_random: ['coastal', 'megafauna', 'oceanic']
+ };
+
 let enabledCategories = JSON.parse(localStorage.getItem("enabled-categories"));
 if (!enabledCategories) {
   const disabledCats = JSON.parse(localStorage.getItem("disabled-categories")) || ['random'];
@@ -48,6 +53,15 @@ L.LayerGroup.include({
     }
   }
 });
+
+// Check if an array contains another array. Used to enable random categories set (jewerly & fossils)
+Array.prototype.arrayContains = function (sub) {
+  var self = this;
+  var result = sub.filter(function(item) {
+    return self.indexOf(item) > -1;
+  });
+  return sub.length === result.length;
+}
 
 /*
 - DOM will be ready, all scripts will be loaded (all loaded via DOM script elements)
