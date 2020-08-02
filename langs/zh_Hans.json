@@ -1804,9 +1804,9 @@
     "fossils_random_snow_dirt.name": "随机化石 ( 雪/ 土)",
     "fossils_random_snow.name": "随机化石 ( 雪)",
     "fossils_random_water.name": "随机化石 ( 水)",
-    "arrowhead_random.desc": "这个点会给你一个随机的箭头，自从“自然主义者”更新之后，这个点给出的物品就不再能被预测了。 想要了解更多信息，请访问 {int.naturalist_faq.link}FAQ 页面{int.end.link}。",
-    "coin_random.desc": "这个点会给你一个随机的硬币，自从“自然主义者”更新之后，这个点给出的物品就不再能被预测了。 想要了解更多信息，请访问 {int.naturalist_faq.link}FAQ 页面{int.end.link}。",
-    "fossils_random.desc": "仅在PlayStation 4上可用。这个点会给你一个随机的化石，自从“自然主义者”更新之后，这个点给出的物品就不再能被预测了。 想要了解更多信息，请访问 {int.naturalist_faq.link}FAQ 页面{int.end.link}。",
-    "jewelry_random.desc": "这个点会给你一个随机的丢失的珠宝，自从“自然主义者”更新之后，这个点给出的物品就不再能被预测了。 想要了解更多信息，请访问 {int.naturalist_faq.link}FAQ 页面{int.end.link}。",
-    "heirlooms_random.desc": "这个点会给你一个随机的传家宝，自从“自然主义者”更新之后，这个点给出的物品就不再能被预测了。 想要了解更多信息，请访问 {int.naturalist_faq.link}FAQ 页面{int.end.link}。"
+    "arrowhead_random.desc": "这个点会给你一个随机的箭头，自从“博物学家”更新之后，这个点给出的物品就不再能被预测了。 想要了解更多信息，请访问 {int.naturalist_faq.link}FAQ 页面{int.end.link}。",
+    "coin_random.desc": "这个点会给你一个随机的硬币，自从“博物学家”更新之后，这个点给出的物品就不再能被预测了。 想要了解更多信息，请访问 {int.naturalist_faq.link}FAQ 页面{int.end.link}。",
+    "fossils_random.desc": "仅在PlayStation 4上可用。这个点会给你一个随机的化石，自从“博物学家”更新之后，这个点给出的物品就不再能被预测了。 想要了解更多信息，请访问 {int.naturalist_faq.link}FAQ 页面{int.end.link}。",
+    "jewelry_random.desc": "这个点会给你一个随机的遗失珠宝，自从“博物学家”更新之后，这个点给出的物品就不再能被预测了。 想要了解更多信息，请访问 {int.naturalist_faq.link}FAQ 页面{int.end.link}。",
+    "heirlooms_random.desc": "这个点会给你一个随机的传家宝，自从“博物学家”更新之后，这个点给出的物品就不再能被预测了。 想要了解更多信息，请访问 {int.naturalist_faq.link}FAQ 页面{int.end.link}。"
 }
