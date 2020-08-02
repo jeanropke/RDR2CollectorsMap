@@ -85,7 +85,7 @@ const FME = {
     let hasValidNext = false;
 
     schedule.forEach(function (e, i) {
-      const event = FME.getEventObject(e);
+      const event = FME.getEventObject(e, frequency);
 
       if (key === "general" && !(Settings.fmeEnabledGeneralEvents & FME.flags.general[event.name])) return;
       if (key === "role" && !(Settings.fmeEnabledRoleEvents & FME.flags.role[event.name])) return;
@@ -127,32 +127,42 @@ const FME = {
    * @param {Array} event Event data coming from the FME.json file
    * @return {Object} Formatted event data
    */
-  getEventObject: function (event) {
-    const eventTime = event[0];
-    const now = new Date();
-    let eventDateTime = new Date(
-      [now.toDateString(), eventTime, 'UTC'].join(' ')
-    );
-    let eta = eventDateTime - now;
+  getEventObject: function (d, frequency) {
+    var eventTime = d[0];
+    var now = Date.now();
+    var oneDay = this.minutesToMilliseconds(24 * 60);
+    var dateTime = this.getDateTime(now, eventTime);
+    var eta = dateTime - now;
+  
+    // Ensure that event dates are not in the past or too far
+    // in the future, where timezone is not UTC
+    if (eta > frequency) {
+      dateTime = this.getDateTime(now - oneDay, eventTime);
+      eta = dateTime - now;
+    }
+  
     // Ensure that all event dates are in the future, to fix timezone bug
     if (eta <= 0) {
-      const tomorrow = new Date();
-      tomorrow.setDate(now.getDate() + 1);
-      eventDateTime = new Date(
-        [tomorrow.toDateString(), eventTime, 'UTC'].join(' ')
-      );
-      eta = eventDateTime - now;
+      dateTime = this.getDateTime(now + oneDay, eventTime);
+      eta = dateTime - now;
     }
+  
     return {
-      id: event[1],
-      dateTime: eventDateTime,
-      name: event[1],
-      nameText: Language.get(`menu.fme.${event[1]}`),
-      image: `${event[1]}.png`,
-      imageSrc: `./assets/images/fme/${event[1]}.png`,
+      id: d[1],
+      dateTime: dateTime,
+      name: d[1],
+      nameText: Language.get(`menu.fme.${d[1]}`),
+      image: `${d[1]}.png`,
+      imageSrc: `./assets/images/fme/${d[1]}.png`,
       eta: eta,
       etaText: FME.getEtaText(eta),
     };
+  },
+
+  getDateTime: function (date, eventTime) {
+    return new Date(
+      [new Date(date).toDateString(), eventTime, "UTC"].join(" ")
+    );
   },
 
   /**
