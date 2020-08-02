@@ -1497,6 +1497,7 @@ a.no-style:visited {
     margin: 0;
     text-align: left;
     font-size: 24px;
+    line-height: 1;
 }
 
 #fme-container .fme-card .fme-body .fme-text {
