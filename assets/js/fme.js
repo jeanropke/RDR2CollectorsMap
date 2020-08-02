@@ -39,7 +39,6 @@ const FME = {
       fme_king_of_the_rail: 64,
       fme_random: 128,
       fme_wild_animal_kills: 256,
-      fme_wild_animal_kills: 512,
     },
     role: {
       none: 0,
