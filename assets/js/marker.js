@@ -39,6 +39,8 @@ class Marker {
     this.item = this.category === 'random' ? undefined : Item.items.find(item =>
       item.itemId === this.itemId);
 
+    this.isRandomizedItem = ['arrowhead', 'coin', 'fossils_random', 'heirlooms_random', 'jewelry_random', 'random'].includes(this.category);
+
     /**
      * `._collectedKey` is the key for the `.isCollected` accessors
      * - the data they represent are best described as “legacy non-sense”, if I’m allowed to say
@@ -255,6 +257,7 @@ class Marker {
       </span>
       <p class='marker-popup-links'>
         <a href="" data-text="map.copy_link"></a>
+        <span>| <a href="" data-text="map.view_loot" data-toggle="modal" data-target="#loot-table-modal" data-loot-table="${this.category}"></a></span>
         <span>| <a href="${this.video}" target="_blank" data-text="map.video"></a></span>
         <span>| <a href="" data-text="map.mark_important"></a></span>
       </p>
@@ -303,6 +306,7 @@ class Marker {
       toolImg.attr('src', `assets/images/${imgName}.png`);
     }
     if (!Settings.isDebugEnabled) snippet.find('.popupContentDebug').hide();
+    if (!this.isRandomizedItem) snippet.find('[data-text="map.view_loot"]').parent().hide();
     if (!this.video) snippet.find('[data-text="map.video"]').parent().hide();
     if (['flower_agarita', 'flower_blood_flower'].includes(this.itemId) ||
     ['random', 'fossils_random', 'heirlooms_random', 'jewelry_random', 'coin', 'arrowhead'].includes(this.category)) {

@@ -1069,10 +1069,25 @@ a.no-style:visited {
 }
 
 .modal-dialog.modal-sm {
-    background: url(../images/modal_bg.png);
-    background-repeat: no-repeat !important;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    position: relative;
+    background-color: #000;
+}
+
+.modal-dialog.modal-sm::after {
+    border-color: #d80419;
+    border-image-repeat: round;
+    border-image-slice: 10 10 10 10 fill;
+    border-image-source: url(../../assets/images/hover.png);
+    border-style: solid;
+    border-width: 10px;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    z-index: 10;
 }
 
 .modal-content {
@@ -1561,4 +1576,58 @@ a.no-style:visited {
     .side-menu .collectible-wrapper:hover:after {
         opacity: 1;
     }
+}
+
+#loot-table-modal .modal-body {
+    padding: 0 20px;
+}
+
+.loot-table-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.loot-table-title h4 {
+    width: 100%;
+    font-size: 24px;
+    line-height: 1.6;
+    margin: 12px 0 0 0;
+}
+
+.loot-table-title h5 {
+    display: inline;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 12px 0;
+}
+
+.loot-table-title h4, .loot-table-title h5, .loot-table-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.loot-table-title h4 {
+    text-align: center;
+}
+
+.loot-table-title h5 {
+    text-align: left;
+}
+
+.loot-table-title h5.rate, .loot-table-item span.rate {
+    min-width: 50px;
+    text-align: right;
+}
+
+.loot-table-title, .loot-table-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.loot-table-item {
+    padding: 0;
+    line-height: 28px;
 }

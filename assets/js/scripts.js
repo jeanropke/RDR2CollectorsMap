@@ -90,6 +90,7 @@ function init() {
 
   Menu.init();
   // Item.items (without .markers), Collection.collections, Collection.weekly*
+  const lootTables = MapBase.loadLootTable();
   const itemsCollectionsWeekly = Item.init();
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.mapInit(); // MapBase.map
@@ -98,7 +99,7 @@ function init() {
   Pins.addToMap();
   changeCursor();
   // MapBase.markers (without .lMarker), Item.items[].markers
-  const markers = itemsCollectionsWeekly.then(Marker.init);
+  const markers = Promise.all([itemsCollectionsWeekly, lootTables]).then(Marker.init);
   const cycles = Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
@@ -829,3 +830,48 @@ $('#open-clear-routes-modal').on('click', function () {
 $('#open-delete-all-settings-modal').on('click', function () {
   $('#delete-all-settings-modal').modal();
 });
+
+function formatLootTableLevel(table, level = 0) {
+  var result = $("<div>");
+
+  if (!table.items) {
+    var item = $(`<div class="loot-table-item"><span data-text="${table.name}.name"></span><span class="rate">${table.rate}%</span></div>`);
+    result.append(item);
+  } else {
+    var title = $(`<span class="loot-table-title level-${(level + 1)}">`);
+    
+    if (table.rate) {
+      title.append($(`<h5 data-text="menu.${table.name}">`));
+      title.append($(`<h5 class="rate">`).text(table.rate + "%"));
+    } else {
+      title.append($(`<h4 data-text="menu.${table.name}">`));
+    }
+
+    var wrapper = $(`<div class="loot-table-wrapper level-${(level + 1)}">`);
+    table.items.forEach(item => {
+      wrapper.append(formatLootTableLevel(item, (level + 1)));
+    });
+
+    result.append(title, wrapper);
+  }
+
+  return result.children();
+}
+
+$('#loot-table-modal').on('show.bs.modal', function (event) {
+  // Get related loot table.
+  var button = $(event.relatedTarget);
+  var table = button.attr('data-loot-table');
+
+  // Format loot table.
+  var modal = $(this);
+  var lootTables = MapBase.lootTables[table];
+  var wrapper = $('<div class="loot-tables-wrapper">');
+
+  lootTables.forEach(lootTable => {
+    wrapper.append(formatLootTableLevel(lootTable));
+  })
+
+  const translatedContent = Language.translateDom(wrapper)[0];
+  modal.find('.modal-body').html(translatedContent);
+})

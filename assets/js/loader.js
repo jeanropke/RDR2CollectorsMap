@@ -41,5 +41,6 @@ const urls = [
     'data/fasttravels.json',
     'https://pepegapi.jeanropke.net/rdo/nazar',
     'data/treasures.json',
+    'data/loot.json',
 ];
 Loader.init(urls);

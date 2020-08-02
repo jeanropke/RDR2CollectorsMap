@@ -1,0 +1,1610 @@
+{
+  "arrowhead": [
+    {
+      "name": "collectible_arrowheads_buried_all",
+      "items": [
+        {
+          "name": "collectible_arrowheads_common",
+          "rate": 60,
+          "items": [
+            {
+              "name": "arrowhead_chipped",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_crude",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_raw",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_rough",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_splintered",
+              "rate": 14
+            }
+          ]
+        },
+        {
+          "name": "collectible_arrowheads_uncommon",
+          "rate": 30,
+          "items": [
+            {
+              "name": "arrowhead_bone",
+              "rate": 7.5
+            },
+            {
+              "name": "arrowhead_feldspar",
+              "rate": 7.5
+            },
+            {
+              "name": "arrowhead_flint",
+              "rate": 7.5
+            },
+            {
+              "name": "arrowhead_slate",
+              "rate": 7.5
+            }
+          ]
+        },
+        {
+          "name": "collectible_arrowheads_rare",
+          "rate": 10,
+          "items": [
+            {
+              "name": "arrowhead_agate",
+              "rate": 3.5
+            },
+            {
+              "name": "arrowhead_obsidian",
+              "rate": 3.5
+            },
+            {
+              "name": "arrowhead_quartz",
+              "rate": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "collectible_arrowheads_buried_mounds",
+      "items": [
+        {
+          "name": "collectible_arrowheads_common",
+          "rate": 70,
+          "items": [
+            {
+              "name": "arrowhead_chipped",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_crude",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_raw",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_rough",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_splintered",
+              "rate": 14
+            }
+          ]
+        },
+        {
+          "name": "collectible_arrowheads_uncommon",
+          "rate": 30,
+          "items": [
+            {
+              "name": "arrowhead_bone",
+              "rate": 7.5
+            },
+            {
+              "name": "arrowhead_feldspar",
+              "rate": 7.5
+            },
+            {
+              "name": "arrowhead_flint",
+              "rate": 7.5
+            },
+            {
+              "name": "arrowhead_slate",
+              "rate": 7.5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "coin": [
+    {
+      "name": "collectible_coins_buried_all",
+      "items": [
+        {
+          "name": "collectible_coins_common",
+          "rate": 60,
+          "items": [
+            {
+              "name": "coin_quarter",
+              "rate": 12
+            },
+            {
+              "name": "coin_nickel_coin",
+              "rate": 12
+            },
+            {
+              "name": "coin_penny",
+              "rate": 12
+            },
+            {
+              "name": "coin_half_eagle",
+              "rate": 12
+            },
+            {
+              "name": "coin_halfpenny",
+              "rate": 12
+            }
+          ]
+        },
+        {
+          "name": "collectible_coins_uncommon",
+          "rate": 30,
+          "items": [
+            {
+              "name": "coin_one_cent_token",
+              "rate": 6
+            },
+            {
+              "name": "coin_silver_dollar",
+              "rate": 6
+            },
+            {
+              "name": "coin_draped_bust_silver_dollar",
+              "rate": 6
+            },
+            {
+              "name": "coin_five_dollar_bechtler",
+              "rate": 6
+            },
+            {
+              "name": "coin_half_dime",
+              "rate": 6
+            }
+          ]
+        },
+        {
+          "name": "collectible_coins_rare",
+          "rate": 10,
+          "items": [
+            {
+              "name": "coin_new_yorke_token",
+              "rate": 2
+            },
+            {
+              "name": "coin_gold_eagle",
+              "rate": 2
+            },
+            {
+              "name": "coin_quarter",
+              "rate": 2
+            },
+            {
+              "name": "coin_gold_dollar_coin",
+              "rate": 2
+            },
+            {
+              "name": "coin_gold_quarter",
+              "rate": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fossils_random": [
+    {
+      "name": "collectible_items_fossils_buried_snow",
+      "items": [
+        {
+          "name": "collectible_fossils_common",
+          "rate": 35,
+          "items": [
+            {
+              "name": "coastal_coral",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_bivalve",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_brachiopod",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_cephalopod",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_neo",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_stone",
+              "rate": 9
+            },
+            {
+              "name": "coastal_pet_wood",
+              "rate": 9
+            }
+          ]
+        },
+        {
+          "name": "collectible_fossils_uncommon",
+          "rate": 35,
+          "items": [
+            {
+              "name": "oceanic_pet_wood_rainbow",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_sea_lily",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_sea_scorpion",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_trilobite_crypto",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_trilobite_iso",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_tully_monster",
+              "rate": 6
+            },
+            {
+              "name": "oceanic_pet_wood_yellow",
+              "rate": 6
+            }
+          ]
+        },
+        {
+          "name": "collectible_fossils_rare",
+          "rate": 30,
+          "items": [
+            {
+              "name": "megafauna_brow_horn",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tooth_trex",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tooth_mega",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tooth_serrated",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tail_spike",
+              "rate": 1.7
+            },
+            {
+              "name": "megafauna_toe_claw",
+              "rate": 1.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "collectible_items_fossils_buried_dirt_snow",
+      "items": [
+        {
+          "name": "collectible_fossils_common",
+          "rate": 40,
+          "items": [
+            {
+              "name": "coastal_coral",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_bivalve",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_brachiopod",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_cephalopod",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_neo",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_stone",
+              "rate": 9
+            },
+            {
+              "name": "coastal_pet_wood",
+              "rate": 9
+            }
+          ]
+        },
+        {
+          "name": "collectible_fossils_uncommon",
+          "rate": 40,
+          "items": [
+            {
+              "name": "oceanic_pet_wood_rainbow",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_sea_lily",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_sea_scorpion",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_trilobite_crypto",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_trilobite_iso",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_tully_monster",
+              "rate": 6
+            },
+            {
+              "name": "oceanic_pet_wood_yellow",
+              "rate": 6
+            }
+          ]
+        },
+        {
+          "name": "collectible_fossils_rare",
+          "rate": 20,
+          "items": [
+            {
+              "name": "megafauna_brow_horn",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tooth_trex",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tooth_mega",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tooth_serrated",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tail_spike",
+              "rate": 1.7
+            },
+            {
+              "name": "megafauna_toe_claw",
+              "rate": 1.7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "collectible_items_fossils_buried_mud",
+      "items": [
+        {
+          "name": "collectible_fossils_common",
+          "rate": 75,
+          "items": [
+            {
+              "name": "coastal_coral",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_bivalve",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_brachiopod",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_cephalopod",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_neo",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_stone",
+              "rate": 9
+            },
+            {
+              "name": "coastal_pet_wood",
+              "rate": 9
+            }
+          ]
+        },
+        {
+          "name": "collectible_fossils_uncommon",
+          "rate": 25,
+          "items": [
+            {
+              "name": "oceanic_pet_wood_rainbow",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_sea_lily",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_sea_scorpion",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_trilobite_crypto",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_trilobite_iso",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_tully_monster",
+              "rate": 6
+            },
+            {
+              "name": "oceanic_pet_wood_yellow",
+              "rate": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "collectible_items_fossils_buried_water",
+      "items": [
+        {
+          "name": "collectible_fossils_common",
+          "rate": 50,
+          "items": [
+            {
+              "name": "coastal_coral",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_bivalve",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_brachiopod",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_cephalopod",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_neo",
+              "rate": 8.4
+            },
+            {
+              "name": "coastal_stone",
+              "rate": 9
+            },
+            {
+              "name": "coastal_pet_wood",
+              "rate": 9
+            }
+          ]
+        },
+        {
+          "name": "collectible_fossils_uncommon",
+          "rate": 40,
+          "items": [
+            {
+              "name": "oceanic_pet_wood_rainbow",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_sea_lily",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_sea_scorpion",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_trilobite_crypto",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_trilobite_iso",
+              "rate": 5.6
+            },
+            {
+              "name": "oceanic_tully_monster",
+              "rate": 6
+            },
+            {
+              "name": "oceanic_pet_wood_yellow",
+              "rate": 6
+            }
+          ]
+        },
+        {
+          "name": "collectible_fossils_rare",
+          "rate": 10,
+          "items": [
+            {
+              "name": "megafauna_brow_horn",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tooth_trex",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tooth_mega",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tooth_serrated",
+              "rate": 1.65
+            },
+            {
+              "name": "megafauna_tail_spike",
+              "rate": 1.7
+            },
+            {
+              "name": "megafauna_toe_claw",
+              "rate": 1.7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "heirlooms_random": [
+    {
+      "name": "collectible_hrlms_buried_mounds",
+      "items": [
+        {
+          "name": "heirlooms_carved_wooden",
+          "rate": 20
+        },
+        {
+          "name": "heirlooms_ebony_hairpin",
+          "rate": 20
+        },
+        {
+          "name": "heirlooms_ivory_hairpin",
+          "rate": 20
+        },
+        {
+          "name": "heirlooms_jade_hairpin",
+          "rate": 20
+        },
+        {
+          "name": "heirlooms_metal_hairpin",
+          "rate": 20
+        }
+      ]
+    }
+  ],
+  "jewelry_random": [
+    {
+      "name": "collectible_jewelry_all",
+      "items": [
+        {
+          "name": "collectible_jewelry_rings_01",
+          "rate": 12.5,
+          "items": [
+            {
+              "name": "ring_pilgrim_moonstone",
+              "rate": 2.5
+            },
+            {
+              "name": "ring_sackville_diamond",
+              "rate": 2.5
+            },
+            {
+              "name": "ring_yates_diamond",
+              "rate": 1.88
+            },
+            {
+              "name": "ring_beaulieux_diamond",
+              "rate": 1.88
+            },
+            {
+              "name": "ring_thorburn_turquoise",
+              "rate": 1.88
+            },
+            {
+              "name": "ring_banais_topaz",
+              "rate": 1.88
+            }
+          ]
+        },
+        {
+          "name": "collectible_jewelry_rings_02",
+          "rate": 12.5,
+          "items": [
+            {
+              "name": "ring_bonnard_pearl",
+              "rate": 2.5
+            },
+            {
+              "name": "ring_aubrey_onyx",
+              "rate": 2.5
+            },
+            {
+              "name": "ring_bosque_emerald",
+              "rate": 2.5
+            },
+            {
+              "name": "ring_magnate_turquoise",
+              "rate": 2.5
+            },
+            {
+              "name": "ring_harland_coral",
+              "rate": 2.5
+            }
+          ]
+        },
+        {
+          "name": "collectible_jewelry_earrings_01",
+          "rate": 12.5,
+          "items": [
+            {
+              "name": "earring_duchess_emerald",
+              "rate": 2.5
+            },
+            {
+              "name": "earring_royal_victoria",
+              "rate": 2.5
+            },
+            {
+              "name": "earring_orchidee_diamond",
+              "rate": 1.88
+            },
+            {
+              "name": "earring_beauchene_ruby",
+              "rate": 1.88
+            },
+            {
+              "name": "earring_ursula_citrine",
+              "rate": 1.88
+            },
+            {
+              "name": "earring_emmeline_coral",
+              "rate": 1.88
+            }
+          ]
+        },
+        {
+          "name": "collectible_jewelry_earrings_02",
+          "rate": 12.5,
+          "items": [
+            {
+              "name": "earring_calumet_turquoise",
+              "rate": 2.5
+            },
+            {
+              "name": "earring_sterling_tooth",
+              "rate": 2.5
+            },
+            {
+              "name": "earring_harford_garnet",
+              "rate": 2.5
+            },
+            {
+              "name": "earring_endicott_diamond",
+              "rate": 2.5
+            },
+            {
+              "name": "earring_josephine_pearl",
+              "rate": 2.5
+            }
+          ]
+        },
+        {
+          "name": "collectible_jewelry_necklaces",
+          "rate": 25,
+          "items": [
+            {
+              "name": "necklace_tuamotu_pearl",
+              "rate": 3.75
+            },
+            {
+              "name": "necklace_dane_topaz",
+              "rate": 3.75
+            },
+            {
+              "name": "necklace_pelle_pearl",
+              "rate": 2.5
+            },
+            {
+              "name": "necklace_gosselin_white_gold",
+              "rate": 2.5
+            },
+            {
+              "name": "necklace_braxton_amethyst",
+              "rate": 2.5
+            },
+            {
+              "name": "necklace_blakely_miniatue",
+              "rate": 2.5
+            },
+            {
+              "name": "necklace_richelieu_amethyst",
+              "rate": 2.5
+            },
+            {
+              "name": "necklace_ainsworth_cross",
+              "rate": 2.5
+            },
+            {
+              "name": "necklace_rou_pearl",
+              "rate": 2.5
+            }
+          ]
+        },
+        {
+          "name": "collectible_jewelry_bracelets",
+          "rate": 25,
+          "items": [
+            {
+              "name": "bracelet_elliston_carved",
+              "rate": 3.75
+            },
+            {
+              "name": "bracelet_ojeda_rose_gold",
+              "rate": 3.75
+            },
+            {
+              "name": "bracelet_durant_pearl",
+              "rate": 3.75
+            },
+            {
+              "name": "bracelet_hajnal_garnet_bangle",
+              "rate": 3.75
+            },
+            {
+              "name": "bracelet_infanta_turquoise",
+              "rate": 2.5
+            },
+            {
+              "name": "bracelet_helena_sapphire",
+              "rate": 2.5
+            },
+            {
+              "name": "bracelet_greco_sapphire",
+              "rate": 2.5
+            },
+            {
+              "name": "bracelet_abello_ruby_bangle",
+              "rate": 2.5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random": [
+    {
+      "name": "collectible_items_buried_mounds",
+      "items": [
+        {
+          "name": "collectible_arrowheads_buried_mounds",
+          "rate": 60,
+          "items": [
+            {
+              "name": "collectible_arrowheads_common",
+              "rate": 70,
+              "items": [
+                {
+                  "name": "arrowhead_chipped",
+                  "rate": 14
+                },
+                {
+                  "name": "arrowhead_crude",
+                  "rate": 14
+                },
+                {
+                  "name": "arrowhead_raw",
+                  "rate": 14
+                },
+                {
+                  "name": "arrowhead_rough",
+                  "rate": 14
+                },
+                {
+                  "name": "arrowhead_splintered",
+                  "rate": 14
+                }
+              ]
+            },
+            {
+              "name": "collectible_arrowheads_uncommon",
+              "rate": 30,
+              "items": [
+                {
+                  "name": "arrowhead_bone",
+                  "rate": 7.5
+                },
+                {
+                  "name": "arrowhead_feldspar",
+                  "rate": 7.5
+                },
+                {
+                  "name": "arrowhead_flint",
+                  "rate": 7.5
+                },
+                {
+                  "name": "arrowhead_slate",
+                  "rate": 7.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "collectible_jewelry_all",
+          "rate": 10,
+          "items": [
+            {
+              "name": "collectible_jewelry_rings_01",
+              "rate": 12.5,
+              "items": [
+                {
+                  "name": "ring_pilgrim_moonstone",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_sackville_diamond",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_yates_diamond",
+                  "rate": 1.88
+                },
+                {
+                  "name": "ring_beaulieux_diamond",
+                  "rate": 1.88
+                },
+                {
+                  "name": "ring_thorburn_turquoise",
+                  "rate": 1.88
+                },
+                {
+                  "name": "ring_banais_topaz",
+                  "rate": 1.88
+                }
+              ]
+            },
+            {
+              "name": "collectible_jewelry_rings_02",
+              "rate": 12.5,
+              "items": [
+                {
+                  "name": "ring_bonnard_pearl",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_aubrey_onyx",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_bosque_emerald",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_magnate_turquoise",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_harland_coral",
+                  "rate": 2.5
+                }
+              ]
+            },
+            {
+              "name": "collectible_jewelry_earrings_01",
+              "rate": 12.5,
+              "items": [
+                {
+                  "name": "earring_duchess_emerald",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_royal_victoria",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_orchidee_diamond",
+                  "rate": 1.88
+                },
+                {
+                  "name": "earring_beauchene_ruby",
+                  "rate": 1.88
+                },
+                {
+                  "name": "earring_ursula_citrine",
+                  "rate": 1.88
+                },
+                {
+                  "name": "earring_emmeline_coral",
+                  "rate": 1.88
+                }
+              ]
+            },
+            {
+              "name": "collectible_jewelry_earrings_02",
+              "rate": 12.5,
+              "items": [
+                {
+                  "name": "earring_calumet_turquoise",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_sterling_tooth",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_harford_garnet",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_endicott_diamond",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_josephine_pearl",
+                  "rate": 2.5
+                }
+              ]
+            },
+            {
+              "name": "collectible_jewelry_necklaces",
+              "rate": 25,
+              "items": [
+                {
+                  "name": "necklace_tuamotu_pearl",
+                  "rate": 3.75
+                },
+                {
+                  "name": "necklace_dane_topaz",
+                  "rate": 3.75
+                },
+                {
+                  "name": "necklace_pelle_pearl",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_gosselin_white_gold",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_braxton_amethyst",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_blakely_miniatue",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_richelieu_amethyst",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_ainsworth_cross",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_rou_pearl",
+                  "rate": 2.5
+                }
+              ]
+            },
+            {
+              "name": "collectible_jewelry_bracelets",
+              "rate": 25,
+              "items": [
+                {
+                  "name": "bracelet_elliston_carved",
+                  "rate": 3.75
+                },
+                {
+                  "name": "bracelet_ojeda_rose_gold",
+                  "rate": 3.75
+                },
+                {
+                  "name": "bracelet_durant_pearl",
+                  "rate": 3.75
+                },
+                {
+                  "name": "bracelet_hajnal_garnet_bangle",
+                  "rate": 3.75
+                },
+                {
+                  "name": "bracelet_infanta_turquoise",
+                  "rate": 2.5
+                },
+                {
+                  "name": "bracelet_helena_sapphire",
+                  "rate": 2.5
+                },
+                {
+                  "name": "bracelet_greco_sapphire",
+                  "rate": 2.5
+                },
+                {
+                  "name": "bracelet_abello_ruby_bangle",
+                  "rate": 2.5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "collectible_hrlms_buried_mounds",
+          "rate": 30,
+          "items": [
+            {
+              "name": "heirlooms_carved_wooden",
+              "rate": 6
+            },
+            {
+              "name": "heirlooms_ebony_hairpin",
+              "rate": 6
+            },
+            {
+              "name": "heirlooms_ivory_hairpin",
+              "rate": 6
+            },
+            {
+              "name": "heirlooms_jade_hairpin",
+              "rate": 6
+            },
+            {
+              "name": "heirlooms_metal_hairpin",
+              "rate": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "collectible_items_buried_flat_ground",
+      "items": [
+        {
+          "name": "collectible_items_buried_flat_ground_shallow",
+          "rate": 50,
+          "items": [
+            {
+              "name": "collectible_arrowheads_common",
+              "rate": 25,
+              "items": [
+                {
+                  "name": "arrowhead_chipped",
+                  "rate": 14
+                },
+                {
+                  "name": "arrowhead_crude",
+                  "rate": 14
+                },
+                {
+                  "name": "arrowhead_raw",
+                  "rate": 14
+                },
+                {
+                  "name": "arrowhead_rough",
+                  "rate": 14
+                },
+                {
+                  "name": "arrowhead_splintered",
+                  "rate": 14
+                }
+              ]
+            },
+            {
+              "name": "collectible_arrowheads_uncommon",
+              "rate": 20,
+              "items": [
+                {
+                  "name": "arrowhead_bone",
+                  "rate": 7.5
+                },
+                {
+                  "name": "arrowhead_feldspar",
+                  "rate": 7.5
+                },
+                {
+                  "name": "arrowhead_flint",
+                  "rate": 7.5
+                },
+                {
+                  "name": "arrowhead_slate",
+                  "rate": 7.5
+                }
+              ]
+            },
+            {
+              "name": "collectible_arrowheads_rare",
+              "rate": 10,
+              "items": [
+                {
+                  "name": "arrowhead_agate",
+                  "rate": 3.5
+                },
+                {
+                  "name": "arrowhead_obsidian",
+                  "rate": 3.5
+                },
+                {
+                  "name": "arrowhead_quartz",
+                  "rate": 3
+                }
+              ]
+            },
+            {
+              "name": "collectible_coins_common",
+              "rate": 20,
+              "items": [
+                {
+                  "name": "coin_quarter",
+                  "rate": 12
+                },
+                {
+                  "name": "coin_nickel_coin",
+                  "rate": 12
+                },
+                {
+                  "name": "coin_penny",
+                  "rate": 12
+                },
+                {
+                  "name": "coin_half_eagle",
+                  "rate": 12
+                },
+                {
+                  "name": "coin_halfpenny",
+                  "rate": 12
+                }
+              ]
+            },
+            {
+              "name": "collectible_coins_uncommon",
+              "rate": 15,
+              "items": [
+                {
+                  "name": "coin_one_cent_token",
+                  "rate": 6
+                },
+                {
+                  "name": "coin_silver_dollar",
+                  "rate": 6
+                },
+                {
+                  "name": "coin_draped_bust_silver_dollar",
+                  "rate": 6
+                },
+                {
+                  "name": "coin_five_dollar_bechtler",
+                  "rate": 6
+                },
+                {
+                  "name": "coin_half_dime",
+                  "rate": 6
+                }
+              ]
+            },
+            {
+              "name": "collectible_coins_rare",
+              "rate": 10,
+              "items": [
+                {
+                  "name": "coin_new_yorke_token",
+                  "rate": 2
+                },
+                {
+                  "name": "coin_gold_eagle",
+                  "rate": 2
+                },
+                {
+                  "name": "coin_quarter",
+                  "rate": 2
+                },
+                {
+                  "name": "coin_gold_dollar_coin",
+                  "rate": 2
+                },
+                {
+                  "name": "coin_gold_quarter",
+                  "rate": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "collectible_jewelry_all",
+          "rate": 50,
+          "items": [
+            {
+              "name": "collectible_jewelry_rings_01",
+              "rate": 12.5,
+              "items": [
+                {
+                  "name": "ring_pilgrim_moonstone",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_sackville_diamond",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_yates_diamond",
+                  "rate": 1.88
+                },
+                {
+                  "name": "ring_beaulieux_diamond",
+                  "rate": 1.88
+                },
+                {
+                  "name": "ring_thorburn_turquoise",
+                  "rate": 1.88
+                },
+                {
+                  "name": "ring_banais_topaz",
+                  "rate": 1.88
+                }
+              ]
+            },
+            {
+              "name": "collectible_jewelry_rings_02",
+              "rate": 12.5,
+              "items": [
+                {
+                  "name": "ring_bonnard_pearl",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_aubrey_onyx",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_bosque_emerald",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_magnate_turquoise",
+                  "rate": 2.5
+                },
+                {
+                  "name": "ring_harland_coral",
+                  "rate": 2.5
+                }
+              ]
+            },
+            {
+              "name": "collectible_jewelry_earrings_01",
+              "rate": 12.5,
+              "items": [
+                {
+                  "name": "earring_duchess_emerald",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_royal_victoria",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_orchidee_diamond",
+                  "rate": 1.88
+                },
+                {
+                  "name": "earring_beauchene_ruby",
+                  "rate": 1.88
+                },
+                {
+                  "name": "earring_ursula_citrine",
+                  "rate": 1.88
+                },
+                {
+                  "name": "earring_emmeline_coral",
+                  "rate": 1.88
+                }
+              ]
+            },
+            {
+              "name": "collectible_jewelry_earrings_02",
+              "rate": 12.5,
+              "items": [
+                {
+                  "name": "earring_calumet_turquoise",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_sterling_tooth",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_harford_garnet",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_endicott_diamond",
+                  "rate": 2.5
+                },
+                {
+                  "name": "earring_josephine_pearl",
+                  "rate": 2.5
+                }
+              ]
+            },
+            {
+              "name": "collectible_jewelry_necklaces",
+              "rate": 25,
+              "items": [
+                {
+                  "name": "necklace_tuamotu_pearl",
+                  "rate": 3.75
+                },
+                {
+                  "name": "necklace_dane_topaz",
+                  "rate": 3.75
+                },
+                {
+                  "name": "necklace_pelle_pearl",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_gosselin_white_gold",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_braxton_amethyst",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_blakely_miniatue",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_richelieu_amethyst",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_ainsworth_cross",
+                  "rate": 2.5
+                },
+                {
+                  "name": "necklace_rou_pearl",
+                  "rate": 2.5
+                }
+              ]
+            },
+            {
+              "name": "collectible_jewelry_bracelets",
+              "rate": 25,
+              "items": [
+                {
+                  "name": "bracelet_elliston_carved",
+                  "rate": 3.75
+                },
+                {
+                  "name": "bracelet_ojeda_rose_gold",
+                  "rate": 3.75
+                },
+                {
+                  "name": "bracelet_durant_pearl",
+                  "rate": 3.75
+                },
+                {
+                  "name": "bracelet_hajnal_garnet_bangle",
+                  "rate": 3.75
+                },
+                {
+                  "name": "bracelet_infanta_turquoise",
+                  "rate": 2.5
+                },
+                {
+                  "name": "bracelet_helena_sapphire",
+                  "rate": 2.5
+                },
+                {
+                  "name": "bracelet_greco_sapphire",
+                  "rate": 2.5
+                },
+                {
+                  "name": "bracelet_abello_ruby_bangle",
+                  "rate": 2.5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "collectible_items_buried_flat_ground_shallow",
+      "items": [
+        {
+          "name": "collectible_arrowheads_common",
+          "rate": 25,
+          "items": [
+            {
+              "name": "arrowhead_chipped",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_crude",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_raw",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_rough",
+              "rate": 14
+            },
+            {
+              "name": "arrowhead_splintered",
+              "rate": 14
+            }
+          ]
+        },
+        {
+          "name": "collectible_arrowheads_uncommon",
+          "rate": 20,
+          "items": [
+            {
+              "name": "arrowhead_bone",
+              "rate": 7.5
+            },
+            {
+              "name": "arrowhead_feldspar",
+              "rate": 7.5
+            },
+            {
+              "name": "arrowhead_flint",
+              "rate": 7.5
+            },
+            {
+              "name": "arrowhead_slate",
+              "rate": 7.5
+            }
+          ]
+        },
+        {
+          "name": "collectible_arrowheads_rare",
+          "rate": 10,
+          "items": [
+            {
+              "name": "arrowhead_agate",
+              "rate": 3.5
+            },
+            {
+              "name": "arrowhead_obsidian",
+              "rate": 3.5
+            },
+            {
+              "name": "arrowhead_quartz",
+              "rate": 3
+            }
+          ]
+        },
+        {
+          "name": "collectible_coins_common",
+          "rate": 20,
+          "items": [
+            {
+              "name": "coin_quarter",
+              "rate": 12
+            },
+            {
+              "name": "coin_nickel_coin",
+              "rate": 12
+            },
+            {
+              "name": "coin_penny",
+              "rate": 12
+            },
+            {
+              "name": "coin_half_eagle",
+              "rate": 12
+            },
+            {
+              "name": "coin_halfpenny",
+              "rate": 12
+            }
+          ]
+        },
+        {
+          "name": "collectible_coins_uncommon",
+          "rate": 15,
+          "items": [
+            {
+              "name": "coin_one_cent_token",
+              "rate": 6
+            },
+            {
+              "name": "coin_silver_dollar",
+              "rate": 6
+            },
+            {
+              "name": "coin_draped_bust_silver_dollar",
+              "rate": 6
+            },
+            {
+              "name": "coin_five_dollar_bechtler",
+              "rate": 6
+            },
+            {
+              "name": "coin_half_dime",
+              "rate": 6
+            }
+          ]
+        },
+        {
+          "name": "collectible_coins_rare",
+          "rate": 10,
+          "items": [
+            {
+              "name": "coin_new_yorke_token",
+              "rate": 2
+            },
+            {
+              "name": "coin_gold_eagle",
+              "rate": 2
+            },
+            {
+              "name": "coin_quarter",
+              "rate": 2
+            },
+            {
+              "name": "coin_gold_dollar_coin",
+              "rate": 2
+            },
+            {
+              "name": "coin_gold_quarter",
+              "rate": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

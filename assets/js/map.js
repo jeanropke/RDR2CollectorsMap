@@ -7,6 +7,7 @@ const MapBase = {
   maxZoom: 7,
   map: null,
   overlays: [],
+  lootTables: [],
   fastTravelData: [],
   // see building interiors in overlays; might not be rotated right
   // (you also have to load overlays_beta.json instead of overlays.json in loader.js)
@@ -526,6 +527,13 @@ const MapBase = {
         Layers.itemMarkersLayer.addLayer(marker);
       });
     }
+  },
+
+  loadLootTable: function () {
+    return Loader.promises['loot'].consumeJson(data => {
+      MapBase.lootTables = data;
+      console.info('%c[Loot Tables] Loaded!', 'color: #bada55; background: #242424');
+    });
   },
 
   debugMarker: function (lat, long, name = 'Debug Marker', markerSize = Settings.markerSize) {

@@ -1,0 +1,310 @@
+[
+  {
+    "Name": "COLLECTIBLE_ITEMS_FOSSILS_BURIED_SNOW_NORMAL",
+    "Items": [
+      {
+        "Name": "COLLECTIBLE_FOSSILS_COMMON",
+        "Rate": 60,
+        "Items": [
+          [
+            {
+              "Name": "COLLECTIBLE_FOSSIL_CORAL",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_BIVALVE",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_BRACHIOPOD",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_CEPHALOPOD",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_NEO",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_STONE",
+              "Rate": 9
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD",
+              "Rate": 9
+            }
+          ]
+        ]
+      },
+      {
+        "Name": "COLLECTIBLE_FOSSILS_UNCOMMON",
+        "Rate": 40,
+        "Items": [
+          [
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD_RAINBOW",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_SEA_LILY",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_SEA_SCORPION",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TRILOBITE_CRYPTO",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TRILOBITE_ISO",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TULLY_MONSTER",
+              "Rate": 6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD_YELLOW",
+              "Rate": 6
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "COLLECTIBLE_ITEMS_FOSSILS_BURIED_DIRT_SNOW_NORMAL",
+    "Items": [
+      {
+        "Name": "COLLECTIBLE_FOSSILS_COMMON",
+        "Rate": 60,
+        "Items": [
+          [
+            {
+              "Name": "COLLECTIBLE_FOSSIL_CORAL",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_BIVALVE",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_BRACHIOPOD",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_CEPHALOPOD",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_NEO",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_STONE",
+              "Rate": 9
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD",
+              "Rate": 9
+            }
+          ]
+        ]
+      },
+      {
+        "Name": "COLLECTIBLE_FOSSILS_UNCOMMON",
+        "Rate": 40,
+        "Items": [
+          [
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD_RAINBOW",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_SEA_LILY",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_SEA_SCORPION",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TRILOBITE_CRYPTO",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TRILOBITE_ISO",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TULLY_MONSTER",
+              "Rate": 6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD_YELLOW",
+              "Rate": 6
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "COLLECTIBLE_ITEMS_FOSSILS_BURIED_MUD_NORMAL",
+    "Items": [
+      {
+        "Name": "COLLECTIBLE_FOSSILS_COMMON",
+        "Rate": 60,
+        "Items": [
+          [
+            {
+              "Name": "COLLECTIBLE_FOSSIL_CORAL",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_BIVALVE",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_BRACHIOPOD",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_CEPHALOPOD",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_NEO",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_STONE",
+              "Rate": 9
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD",
+              "Rate": 9
+            }
+          ]
+        ]
+      },
+      {
+        "Name": "COLLECTIBLE_FOSSILS_UNCOMMON",
+        "Rate": 40,
+        "Items": [
+          [
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD_RAINBOW",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_SEA_LILY",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_SEA_SCORPION",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TRILOBITE_CRYPTO",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TRILOBITE_ISO",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TULLY_MONSTER",
+              "Rate": 6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD_YELLOW",
+              "Rate": 6
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "Name": "COLLECTIBLE_ITEMS_FOSSILS_BURIED_WATER_NORMAL",
+    "Items": [
+      {
+        "Name": "COLLECTIBLE_FOSSILS_COMMON",
+        "Rate": 60,
+        "Items": [
+          [
+            {
+              "Name": "COLLECTIBLE_FOSSIL_CORAL",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_BIVALVE",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_BRACHIOPOD",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_CEPHALOPOD",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_NEO",
+              "Rate": 8.4
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_STONE",
+              "Rate": 9
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD",
+              "Rate": 9
+            }
+          ]
+        ]
+      },
+      {
+        "Name": "COLLECTIBLE_FOSSILS_UNCOMMON",
+        "Rate": 40,
+        "Items": [
+          [
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD_RAINBOW",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_SEA_LILY",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_SEA_SCORPION",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TRILOBITE_CRYPTO",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TRILOBITE_ISO",
+              "Rate": 5.6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_TULLY_MONSTER",
+              "Rate": 6
+            },
+            {
+              "Name": "COLLECTIBLE_FOSSIL_PET_WOOD_YELLOW",
+              "Rate": 6
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]
