@@ -46,10 +46,10 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1480" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1481" />
 
   <script>
-    const nocache = 1480;
+    const nocache = 1481;
   </script>
 </head>
 
@@ -927,121 +927,9 @@
             Select which events you want to display on the map and/or to receive notifications for.
           </p>
           <h4 data-text="menu.modal_fme_general_events_title">General Events</h4>
-          <div class="settings-container">
-            <div class="input-container">
-              <label for="cold_dead_hands" data-text="menu.fme.cold_dead_hands">Cold Dead Hands</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="1"
-                  id="cold_dead_hands" />
-                <label class="input-checkbox-label" for="cold_dead_hands"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="dispatch_rider" data-text="menu.fme.dispatch_rider">Dispatch Rider</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="2"
-                  id="dispatch_rider" />
-                <label class="input-checkbox-label" for="dispatch_rider"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="fishing_challenge" data-text="menu.fme.fishing_challenge">Fishing Challenge</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="4"
-                  id="fishing_challenge" />
-                <label class="input-checkbox-label" for="fishing_challenge"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="fools_gold" data-text="menu.fme.fools_gold">Fools Gold</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="8"
-                  id="fools_gold" />
-                <label class="input-checkbox-label" for="fools_gold"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="king_of_the_castle" data-text="menu.fme.king_of_the_castle">King of the Castle</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="16"
-                  id="king_of_the_castle" />
-                <label class="input-checkbox-label" for="king_of_the_castle"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="master_archer" data-text="menu.fme.master_archer">Master Archer</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="32"
-                  id="master_archer" />
-                <label class="input-checkbox-label" for="master_archer"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="railroad_baron" data-text="menu.fme.railroad_baron">Railroad Baron</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="64"
-                  id="railroad_baron" />
-                <label class="input-checkbox-label" for="railroad_baron"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="random" data-text="menu.fme.random">Random Event</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="128"
-                  id="random" />
-                <label class="input-checkbox-label" for="random"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="wild_animal_kills" data-text="menu.fme.wild_animal_kills">Wild Animal Kills</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="256"
-                  id="wild_animal_kills" />
-                <label class="input-checkbox-label" for="wild_animal_kills"></label>
-              </div>
-            </div>
-          </div>
+          <div id="general" class="settings-container"></div>
           <h4 data-text="menu.modal_fme_role_events_title">Role Events</h4>
-          <div class="settings-container">
-            <div class="input-container">
-              <label for="condor_egg" data-text="menu.fme.condor_egg">Condor Egg</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="1"
-                  id="condor_egg" />
-                <label class="input-checkbox-label" for="condor_egg"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="day_of_reckoning" data-text="menu.fme.day_of_reckoning">Day of Reckoning</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="2"
-                  id="day_of_reckoning" />
-                <label class="input-checkbox-label" for="day_of_reckoning"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="manhunt" data-text="menu.fme.manhunt">Manhunt</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="4" id="manhunt" />
-                <label class="input-checkbox-label" for="manhunt"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="salvage" data-text="menu.fme.salvage">Salvage</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="8" id="salvage" />
-                <label class="input-checkbox-label" for="salvage"></label>
-              </div>
-            </div>
-            <div class="input-container">
-              <label for="trade_route" data-text="menu.fme.trade_route">Trade Route</label>
-              <div class="input-checkbox-wrapper">
-                <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="16"
-                  id="trade_route" />
-                <label class="input-checkbox-label" for="trade_route"></label>
-              </div>
-            </div>
-          </div>
+          <div id="role" class="settings-container"></div>
         </div>
       </div>
       <div class="modal-footer">
@@ -1173,7 +1061,7 @@
   <script>function isES6() { try { return eval("() => {};"), !0 } catch (r) { return !1 } } isES6() || alert("This browser might not be fully supported, and errors will likely occur. Please update your browser if you experience issues.");</script>
 
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1480"></script>
+  <script src="assets/js/loader.js?nocache=1481"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
   <script src="assets/js/lib/leaflet.js"></script>
@@ -1182,22 +1070,22 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1480"></script>
-  <script src="assets/js/settings.js?nocache=1480"></script>
-  <script src="assets/js/nazar.js?nocache=1480"></script>
-  <script src="assets/js/fme.js?nocache=1480"></script>
-  <script src="assets/js/cycles.js?nocache=1480"></script>
-  <script src="assets/js/marker.js?nocache=1480"></script>
-  <script src="assets/js/inventory.js?nocache=1480"></script>
-  <script src="assets/js/treasures.js?nocache=1480"></script>
-  <script src="assets/js/pins.js?nocache=1480"></script>
-  <script src="assets/js/map.js?nocache=1480"></script>
-  <script src="assets/js/language.js?nocache=1480"></script>
-  <script src="assets/js/menu.js?nocache=1480"></script>
-  <script src="assets/js/items.js?nocache=1480"></script>
-  <script src="assets/js/routes.js?nocache=1480"></script>
-  <script src="assets/js/pathfinder.js?nocache=1480"></script>
-  <script src="assets/js/scripts.js?nocache=1480"></script>
+  <script src="assets/js/layers.js?nocache=1481"></script>
+  <script src="assets/js/settings.js?nocache=1481"></script>
+  <script src="assets/js/nazar.js?nocache=1481"></script>
+  <script src="assets/js/fme.js?nocache=1481"></script>
+  <script src="assets/js/cycles.js?nocache=1481"></script>
+  <script src="assets/js/marker.js?nocache=1481"></script>
+  <script src="assets/js/inventory.js?nocache=1481"></script>
+  <script src="assets/js/treasures.js?nocache=1481"></script>
+  <script src="assets/js/pins.js?nocache=1481"></script>
+  <script src="assets/js/map.js?nocache=1481"></script>
+  <script src="assets/js/language.js?nocache=1481"></script>
+  <script src="assets/js/menu.js?nocache=1481"></script>
+  <script src="assets/js/items.js?nocache=1481"></script>
+  <script src="assets/js/routes.js?nocache=1481"></script>
+  <script src="assets/js/pathfinder.js?nocache=1481"></script>
+  <script src="assets/js/scripts.js?nocache=1481"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>

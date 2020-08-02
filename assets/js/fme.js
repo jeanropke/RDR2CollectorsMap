@@ -30,23 +30,26 @@ const FME = {
   flags: {
     general: {
       none: 0,
-      cold_dead_hands: 1,
-      dispatch_rider: 2,
-      fishing_challenge: 4,
-      fools_gold: 8,
-      king_of_the_castle: 16,
-      master_archer: 32,
-      railroad_baron: 64,
-      random: 128,
-      wild_animal_kills: 256,
+      fme_archery: 1,
+      fme_dead_drop: 2,
+      fme_fishing_challenge: 4,
+      fme_golden_hat: 8,
+      fme_hot_property: 16,
+      fme_king_of_the_castle: 32,
+      fme_king_of_the_rail: 64,
+      fme_random: 128,
+      fme_wild_animal_kills: 256,
+      fme_wild_animal_kills: 512,
     },
     role: {
       none: 0,
-      condor_egg: 1,
-      day_of_reckoning: 2,
-      manhunt: 4,
-      salvage: 8,
-      trade_route: 16,
+      fme_role_animal_tagging: 1,
+      fme_role_condor_egg: 2,
+      fme_role_greatest_bounty_hunter: 4,
+      fme_role_protect_legendary_animal: 8,
+      fme_role_round_up: 16,
+      fme_role_supply_train: 32,
+      fme_role_wreckage: 64,
     }
   },
 
@@ -274,30 +277,11 @@ const FME = {
       $(this).prop('checked', (Settings.fmeEnabledGeneralEvents & FME.flags.general[id]));
     });
 
-    $("input[name='fme-enabled-general-events[]']").change(function () {
-      let total = 0;
-      $("input[name='fme-enabled-general-events[]']:checked").each(function (i, v) {
-        const value = parseInt($(this).val());
-        total += value;
-      });
-      Settings.fmeEnabledGeneralEvents = total;
-      FME.update();
-    });
-
     $("input[name='fme-enabled-role-events[]']").each(function (i, v) {
       const id = $(this).attr('id');
       $(this).prop('checked', (Settings.fmeEnabledRoleEvents & FME.flags.role[id]));
     });
 
-    $("input[name='fme-enabled-role-events[]']").change(function () {
-      let total = 0;
-      $("input[name='fme-enabled-role-events[]']:checked").each(function (i, v) {
-        const value = parseInt($(this).val());
-        total += value;
-      });
-      Settings.fmeEnabledRoleEvents = total;
-      FME.update();
-    });
 
     $('#open-fme-enabled-events-modal').on('click', function () {
       $('#fme-enabled-events-modal').modal();
@@ -307,9 +291,63 @@ const FME = {
       .done(function (data) {
         FME._eventsJson = data;
         FME.update();
+        FME.initModal();
         window.setInterval(FME.update, 10000);
         console.info('%c[FME] Loaded!', 'color: #bada55; background: #242424');
       });
+  },
+
+  initModal: function () {
+    Object.keys(this.flags.general).forEach(f => {
+      if (f === "none") return;
+      var snippet = $(`
+        <div class="input-container">
+          <label for="${f}" data-text="menu.fme.${f}"></label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="fme-enabled-general-events[]" value="${this.flags.general[f]}"
+              id="${f}" ${(Settings.fmeEnabledGeneralEvents & FME.flags.general[f]) ? "checked" : ""} />
+            <label class="input-checkbox-label" for="${f}"></label>
+          </div>
+        </div>
+      `);
+
+      snippet.change(function () {
+        let total = 0;
+        $("input[name='fme-enabled-general-events[]']:checked").each(function (i, v) {
+          const value = parseInt($(this).val());
+          total += value;
+        });
+        Settings.fmeEnabledGeneralEvents = total;
+        FME.update();
+      });
+
+      $('#fme-enabled-events-modal #general').append(Language.translateDom(snippet)[0]);
+    });
+    Object.keys(this.flags.role).forEach(f => {
+      if (f === "none") return;
+      var snippet = $(`
+        <div class="input-container">
+          <label for="${f}" data-text="menu.fme.${f}"></label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="fme-enabled-role-events[]" value="${this.flags.role[f]}"
+            id="${f}" ${(Settings.fmeEnabledRoleEvents & FME.flags.role[f]) ? "checked" : ""} />
+            <label class="input-checkbox-label" for="${f}"></label>
+          </div>
+        </div>
+      `);
+
+      snippet.change(function () {
+        let total = 0;
+        $("input[name='fme-enabled-role-events[]']:checked").each(function (i, v) {
+          const value = parseInt($(this).val());
+          total += value;
+        });
+        Settings.fmeEnabledRoleEvents = total;
+        FME.update();
+      });
+
+      $('#fme-enabled-events-modal #role').append(Language.translateDom(snippet)[0]);
+    });
   },
 
   /**
