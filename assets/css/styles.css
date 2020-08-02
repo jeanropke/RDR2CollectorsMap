@@ -1484,6 +1484,7 @@ a.no-style:visited {
 
 #fme-container .fme-card .fme-image {
     margin-right: 12px;
+    height: 66px;
 }
 
 #fme-container .fme-card .fme-body {
@@ -1495,12 +1496,13 @@ a.no-style:visited {
     color: #7b66af;
     margin: 0;
     text-align: left;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 #fme-container .fme-card .fme-body .fme-text {
     margin: 0;
     text-align: left;
+    font-size: 18px;
 }
 
 #fme-container .fme-card #next-general-mobile,
