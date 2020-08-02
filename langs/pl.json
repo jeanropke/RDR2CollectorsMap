@@ -1516,7 +1516,7 @@
     "map.layers.default": "Domyślny",
     "map.layers.detailed": "Szczegółowy",
     "map.layers.dark": "Ciemny",
-    "map.layers.black": "",
+    "map.layers.black": "Czarny",
     "menu.import_export_title": "Import/ Eksport",
     "menu.import_export_explanation": "Spowoduje to zaimportowanie lub wyeksportowanie ustawień. Importowanie ustawień zastąpi wszystkie bieżące ustawienia i ponownie załaduje stronę. Ta funkcja nie obejmuje znaczników użytkownika.",
     "menu.import_button": "Importuj",
