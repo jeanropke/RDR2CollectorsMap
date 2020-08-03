@@ -1350,6 +1350,11 @@ a.no-style:visited {
     color: #d4d4d4 !important;
 }
 
+/* Fix being able to select the overlays. */
+.leaflet-overlay-pane {
+    user-select: none;
+}
+
 .leaflet-control-layers {
     box-shadow: 0 1px 5px #111;
     background: #333;
