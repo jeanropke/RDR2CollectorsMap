@@ -204,7 +204,7 @@ class Marker {
         egg: 'white',
         arrowhead: 'darkpurple',
         heirlooms: 'purple',
-        random_heirlooms: 'purple',
+        heirlooms_random: 'purple',
         coin: 'lightred',
         random: this.tool === 2 ? 'black' : 'lightgray',
       } [this.category] || 'lightred';
