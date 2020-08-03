@@ -107,7 +107,7 @@ class Weekly extends BaseCollection {
     </div>
     `)
       .translate()
-      .insertBefore('.links-container')
+      .insertBefore('.links-container');
     this.$menuEntry[0].rdoCollection = this;
     this.$listParent = this.$menuEntry.find('.weekly-item-listings');
     this.items.forEach(item => item._insertWeeklyMenuElement(this.$listParent));

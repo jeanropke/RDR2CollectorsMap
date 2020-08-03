@@ -206,6 +206,7 @@ class Marker {
         heirlooms: 'purple',
         heirlooms_random: 'purple',
         coin: 'lightred',
+        fossils_random: 'darkgreen',
         random: this.tool === 2 ? 'black' : 'lightgray',
       } [this.category] || 'lightred';
     } else if (markerColor === 'by_cycle') {
