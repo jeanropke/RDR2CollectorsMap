@@ -33,6 +33,8 @@ const Inventory = {
       return;
     }
     Collection.collections.forEach(collection => {
+      if (['arrowhead', 'coin', 'fossils_random', 'heirlooms_random', 'jewelry_random'].includes(collection.category)) return;
+
       const contourImg = $(`[data-marker*=${collection.category}] img.marker-contour`);
       contourImg.removeClass(function (index, className) {
         return (className.match(/highlight-low-amount-items-\S+/gm) || []).join(' ');
