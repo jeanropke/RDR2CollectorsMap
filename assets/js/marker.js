@@ -199,11 +199,14 @@ class Marker {
         necklace: 'orange',
         ring: 'orange',
         earring: 'orange',
+        jewelry_random: 'orange',
         bottle: 'cadetblue',
         egg: 'white',
         arrowhead: 'darkpurple',
         heirlooms: 'purple',
-        coin: 'lightred'
+        random_heirlooms: 'purple',
+        coin: 'lightred',
+        random: this.tool === 2 ? 'black' : 'lightgray',
       } [this.category] || 'lightred';
     } else if (markerColor === 'by_cycle') {
       base = ['blue', 'orange', 'purple', 'darkpurple', 'darkred', 'darkblue'][+this.cycleName - 1] || 'lightred';
