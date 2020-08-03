@@ -70,7 +70,7 @@ const Inventory = {
   changeMarkerAmount: function (legacyItemId, changeAmount, skipInventory = false) {
     const sameItemMarkers = MapBase.markers.filter(marker => marker.legacyItemId === legacyItemId);
 
-    const item = sameItemMarkers[0].item;
+    const item = Item.items.find(i => i.legacyItemId === legacyItemId);
     if (item && (!skipInventory || skipInventory && InventorySettings.isMenuUpdateEnabled)) {
       item.amount += changeAmount;
     }
