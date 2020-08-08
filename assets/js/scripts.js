@@ -576,6 +576,9 @@ $('#cookie-export').on("click", function () {
   try {
     let settings = localStorage;
 
+    const exportDate = new Date().toISOUTCDateString();
+    localStorage.setItem('main.date', exportDate);
+
     // Remove irrelevant properties (permanently from localStorage):
     delete settings.randid;
 
@@ -588,7 +591,6 @@ $('#cookie-export').on("click", function () {
     settings.version = 2;
 
     const settingsJson = JSON.stringify(settings, null, 4);
-    const exportDate = new Date().toISOUTCDateString();
 
     downloadAsFile(`collectible-map-settings-(${exportDate}).json`, settingsJson);
   } catch (error) {
