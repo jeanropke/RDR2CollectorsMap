@@ -210,26 +210,7 @@ const MapBase = {
     'use strict';
     uniqueSearchMarkers = MapBase.markers;
 
-    // Reset markers daily.
-    const date = new Date().toISOUTCDateString();
-
-    if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
-      MapBase.markers.forEach(marker => {
-        // reset daily all random categories
-        if (Settings.resetMarkersDaily || ['random', 'fossils_random', 'heirlooms_random', 'jewelry_random', 'coin', 'arrowhead'].includes(marker.category)) {
-          marker.isCollected = false;
-        }
-
-        if (InventorySettings.resetInventoryDaily && marker.category !== 'random') {
-          marker.item.amount = 0;
-        }
-      });
-      Inventory.updateItemHighlights();
-      Menu.refreshMenu();
-      MapBase.runOnDayChange();
-    }
-
-    localStorage.setItem('main.date', date);
+    MapBase.resetMarkersDaily();
 
     // Preview mode.
     const previewParam = getParameterByName('q');
@@ -280,6 +261,29 @@ const MapBase = {
 
       setTimeout(() => goTo.lMarker && goTo.lMarker.openPopup(), 3000);
     }
+  },
+
+  resetMarkersDaily: function () {
+    const date = new Date().toISOUTCDateString();
+    const randomCategories = ['random', 'fossils_random', 'heirlooms_random', 'jewelry_random', 'coin', 'arrowhead'];
+
+    if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
+      MapBase.markers.forEach(marker => {
+        // reset daily all random categories
+        if (Settings.resetMarkersDaily || randomCategories.includes(marker.category)) {
+          marker.isCollected = false;
+        }
+
+        if (InventorySettings.resetInventoryDaily && marker.category !== 'random') {
+          marker.item.amount = 0;
+        }
+      });
+      Inventory.updateItemHighlights();
+      Routes.clearCustomRoutes();
+      Menu.refreshMenu();
+    }
+
+    localStorage.setItem('main.date', date);
   },
 
   onSearch: function (searchString) {
@@ -585,7 +589,7 @@ const MapBase = {
 
   runOnDayChange: function () {
     // put here all functions that needs to be executed on day change
-    Routes.clearCustomRoutes(true);
+    MapBase.resetMarkersDaily();
   },
 
   yieldingLoop: function (count, chunksize, callback, finished) {

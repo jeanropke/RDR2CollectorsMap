@@ -47,16 +47,17 @@ const Routes = {
   getCustomRoute: function () {
     const customRoute = JSON.parse(localStorage.getItem("routes.customRoute"));
 
-    if (customRoute) {
-      Routes.loadCustomRoute(customRoute);
-      const itemsArray = customRoute.split(",");
+    if (!customRoute) return;
 
-      for (const item of itemsArray) {
-        if (!Routes.customRouteConnections.includes(item)) {
-          Routes.addMarkerOnCustomRoute(item, true);
-        }
+    Routes.loadCustomRoute(customRoute);
+    const itemsArray = customRoute.split(",");
+
+    for (const item of itemsArray) {
+      if (!Routes.customRouteConnections.includes(item)) {
+        Routes.addMarkerOnCustomRoute(item, true);
       }
     }
+
   },
 
   loadCustomRoute: function (input) {
