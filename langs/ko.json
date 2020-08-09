@@ -1768,7 +1768,7 @@
     "help.fme_notification.no_support": "",
     "menu.fme_notification_period": "",
     "help.fme_notification_period": "",
-    "menu.fme.time.starts_in": "",
+    "menu.fme.time.starts_in": "{time} 후 시작",
     "menu.fme.time.less_than_a_minute": "",
     "menu.fme.time.minute": "",
     "menu.fme.time.minutes": "",
