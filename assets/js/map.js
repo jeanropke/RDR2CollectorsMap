@@ -237,8 +237,6 @@ const MapBase = {
       return;
     }
 
-    MapBase.addMarkers(true);
-
     // Do search via URL.
     const searchParam = getParameterByName('search');
     if (searchParam) {
@@ -284,6 +282,7 @@ const MapBase = {
     }
 
     localStorage.setItem('main.date', date);
+    MapBase.addMarkers(true);
   },
 
   onSearch: function (searchString) {
