@@ -357,18 +357,8 @@ class Item extends BaseItem {
     return Loader.promises['items_value'].consumeJson(data => {
       Collection.init(data.collections);
       data.items.forEach(interimItem => this.items.push(new Item(interimItem)));
-      this.compatInit();
       return Weekly.init();
     });
-  }
-  // prefill whenever “new” inventory is empty and “old” inventory exists
-  static compatInit() {
-    const oldAmounts = JSON.parse(localStorage.getItem("inventory"));
-    if (oldAmounts && !Object.keys(localStorage).some(key => key.startsWith('amount.'))) {
-      Item.items.forEach(item => item.amount = oldAmounts[item.itemId]);
-      console.log('old amounts converted');
-      localStorage.removeItem('inventory');
-    }
   }
   static _installEventHandlers() {
     $('.side-menu')
