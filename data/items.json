@@ -507,7 +507,7 @@
         "4": [
             { "text": "cups_ace", "height": 0, "tool": 0, "lat": -112.41, "lng": 18.0071, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1875s" },
             { "text": "cups_eight", "height": 0, "tool": 0, "lat": -72.8705, "lng": 144.1485, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1511s" },
-            { "text": "cups_five", "height": 0, "tool": 0, "lat": -42.6238, "lng": 153.8062, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1483s" },
+            { "text": "cups_five", "height": -1, "tool": 0, "lat": -42.6238, "lng": 153.8062, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1483s" },
             { "text": "cups_four", "height": 0, "tool": 0, "lat": -81.9582, "lng": 153.9074, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1578s" },
             { "text": "cups_king", "height": 0, "tool": 0, "lat": -99.0986, "lng": 131.773, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1608s" },
             { "text": "cups_knight", "height": 0, "tool": 0, "lat": -81.4273, "lng": 155.5585, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1537s" },
