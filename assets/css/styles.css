@@ -635,10 +635,21 @@ select {
     user-select: none;
 }
 
-.side-menu .collectible-icon {
+.side-menu .collectible-icon img {
     float: left;
     height: 24px;
     margin-right: 6px;
+}
+
+.side-menu .random-spot .collectible-icon::after {
+    content: '';
+    position: absolute;
+    top: 9px;
+    right: 0;
+    bottom: 0;
+    left: 54px;
+    zoom: .5;
+    background: url(../images/icons/random_overlay.png) no-repeat;
 }
 
 .side-menu .collectible-icon.random-encounter {

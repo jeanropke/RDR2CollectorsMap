@@ -398,8 +398,8 @@ class Item extends BaseItem {
       <div class="collectible-wrapper" data-type="${this.legacyItemId}"
         data-help="${['flower_agarita', 'flower_blood_flower'].includes(this.itemId) ?
           'item_night_only' : 'item'}">
-        <img class='collectible-icon' src="assets/images/icons/game/${this.itemId}.png"
-          alt='Set icon'>
+          <div class='collectible-icon'><img src="assets/images/icons/game/${this.itemId}.png"
+          alt='Set icon'></div>        
         <span class="collectible-text">
           <p class="collectible" data-text="${this.itemTranslationKey}"></p>
           <span class="counter">
@@ -461,7 +461,7 @@ class Item extends BaseItem {
           return 'item';
         }
       })
-      .toggleClass('not-found', buggy)
+      .toggleClass('random-spot', buggy)
       .toggleClass('disabled', currentMarkers.every(marker => !marker.canCollect))
       .toggleClass('weekly-item', this.isWeekly())
       .find('.counter')

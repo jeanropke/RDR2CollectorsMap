@@ -379,7 +379,7 @@ const MapBase = {
     const subdataCategoryIsDisabled =
       (text == subdata && !$(`[data-type=${subdata}]`).hasClass('disabled'));
 
-    $.each(markers, function (key, marker) {
+      $.each(markers, function (key, marker) {      
       if (text != subdata && marker.text != text) return;
 
       let changeAmount = 0;
@@ -393,7 +393,6 @@ const MapBase = {
           changeAmount = -1;
         }
       }
-
       Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount, skipInventory);
 
       if (!InventorySettings.isEnabled) {
