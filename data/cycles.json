@@ -166,5 +166,17 @@
   "tarot_cards": 4,
   "fossils": 6,
   "date": "2020-08-10"
+ }, {
+  "flower": 5,
+  "bottle": 6,
+  "arrowhead": 3,
+  "egg": 4,
+  "coin": 1,
+  "heirlooms": 5,
+  "lost_jewelry": 5,
+  "random": 1,
+  "tarot_cards": 5,
+  "fossils": 1,
+  "date": "2020-08-11"
  }
 ]
