@@ -195,7 +195,7 @@ class Marker {
         swords: 'blue',
         wands: 'blue',
         pentacles: 'blue',
-        bracelet: 'beige',
+        bracelet: 'orange',
         necklace: 'orange',
         ring: 'orange',
         earring: 'orange',
