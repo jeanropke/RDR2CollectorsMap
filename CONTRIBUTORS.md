@@ -29,7 +29,7 @@ These are the people that provided the locations of the different items on the m
 ## Assets credits
 These are the people that provided assets for the map.
 
-- Icons by [Game Icons](https://game-icons.net/) and Rockstar Games.
+- Icons by [Game Icons](https://game-icons.net/), Rockstar Games and [Filipe Ramos](https://www.twitch.tv/filiperaaamos)
 - Map tiles by:
     * Default tiles by Rockstar Games.
     * Detailed tiles by [RDR2Map](https://rdr2map.com/).
