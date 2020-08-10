@@ -645,7 +645,7 @@ select {
     content: '';
     position: absolute;
     top: 9px;
-    right: 0;
+    right: 85%;
     bottom: 0;
     left: 54px;
     zoom: .5;
