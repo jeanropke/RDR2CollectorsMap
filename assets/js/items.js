@@ -56,7 +56,7 @@ class BaseItem {
 class NonCollectible extends BaseItem {
   constructor(preliminary) {
     super(preliminary);
-    this.amount = '?';
+    Object.defineProperty(this, 'amount', {configurable: false, enumerable: true, writable: false, value: '?'});
     this.markers = [];
     this.weeklyHelpKey = `weekly_${this.itemId}`;
   }
