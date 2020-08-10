@@ -20,6 +20,7 @@ These are the people that provided the locations of the different items on the m
 - Special thanks to Ghost on the Discord for the speedy daily cycles.
 - Cycle 1-3 locations by [GTA Series Videos](https://www.youtube.com/user/GTASeriesVideos), [Gtax Barrett](https://twitter.com/gtaxbarrett), [IronJeff80](https://github.com/IronJeff80), [/r/RedDeadOnline](https://www.reddit.com/r/RedDeadOnline), and the Discord community.
 - Cycle 4-6 locations by [Tez2](https://twitter.com/TezFunz2), [Senexis](https://github.com/Senexis), [IronJeff80](https://github.com/IronJeff80), and the Discord community.
+- Fossil locations by [Senexis](https://github.com/Senexis).
 - Random item locations by [IronJeff80](https://github.com/IronJeff80), [Senexis](https://github.com/Senexis), and the Discord community.
 - Possible treasures locations by [IronJeff80](https://github.com/IronJeff80), [Dirty Tyler](https://www.youtube.com/channel/UC3LdKFizyou1RfkkmDUUVsg) and [Dean Nutz](https://www.youtube.com/channel/UCBSYrZQsPndOm-zckXNUItw).
 - Possible weekly collections by [Senexis](https://github.com/Senexis).
