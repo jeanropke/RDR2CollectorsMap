@@ -1497,7 +1497,7 @@
             { "text": "fossils_random_snow_5", "height": 0, "tool": 0, "lat": -24.1236, "lng": 90.4185, "video": "https://www.youtube.com/watch?v=M9IYAJiQiVY&t=596s" },
             { "text": "fossils_random_snow_6", "height": 0, "tool": 0, "lat": -29.5514, "lng": 84.4346, "video": "https://www.youtube.com/watch?v=M9IYAJiQiVY&t=550s" },
             { "text": "fossils_random_snow_7", "height": 0, "tool": 0, "lat": -29.6261, "lng": 80.531, "video": "https://www.youtube.com/watch?v=M9IYAJiQiVY&t=509s" },
-            { "text": "fossils_random_snow_8", "height": 0, "tool": 0, "lat": -34.4596, "lng": 80.9181, "video": "https://www.youtube.com/watch?v=M9IYAJiQiVY&t=451s" },
+            { "text": "fossils_random_snow_8", "height": -1, "tool": 0, "lat": -34.4596, "lng": 80.9181, "video": "https://www.youtube.com/watch?v=M9IYAJiQiVY&t=451s" },
             { "text": "fossils_random_snow_9", "height": 0, "tool": 0, "lat": -36.2311, "lng": 86.0813, "video": "https://www.youtube.com/watch?v=M9IYAJiQiVY&t=404s" },
             { "text": "fossils_random_snow_10", "height": 0, "tool": 0, "lat": -44.1862, "lng": 88.2111, "video": "https://www.youtube.com/watch?v=M9IYAJiQiVY&t=316s" },
             { "text": "fossils_random_snow_11", "height": 0, "tool": 0, "lat": -44.6187, "lng": 79.1988, "video": "https://www.youtube.com/watch?v=M9IYAJiQiVY&t=730s" },
