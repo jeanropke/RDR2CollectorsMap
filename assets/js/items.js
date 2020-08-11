@@ -466,8 +466,10 @@ class Item extends BaseItem {
       .toggleClass('weekly-item', this.isWeekly())
       .find('.counter')
       .toggle(InventorySettings.isEnabled)
+      .end()
+      .find('.counter-number')
+      .toggleClass('not-found', buggy)
       .end();
-
     return buggy;
   }
 }

@@ -644,11 +644,11 @@ select {
 .side-menu .random-spot .collectible-icon::after {
     content: '';
     position: absolute;
-    top: 9px;
-    right: 85%;
-    bottom: 0;
-    left: 54px;
-    zoom: .5;
+    transform: scale(0.6, 0.6);
+    top: 0px;
+    right: 90%;
+    bottom: 10px;
+    left: 20px;
     background: url(../images/icons/random_overlay.png) no-repeat;
 }
 
