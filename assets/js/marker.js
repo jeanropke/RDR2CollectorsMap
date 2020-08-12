@@ -190,24 +190,28 @@ class Marker {
       base = 'green';
     } else if (markerColor === 'by_category') {
       base = {
-        flower: 'lightred',
+        arrowhead: 'purple',
+        bottle: 'brown',
+        coin: 'darkorange',
+        egg: 'white',
+        flower: 'lightdarkred',
+        fossils_random: 'darkgreen',
+
         cups: 'blue',
         swords: 'blue',
         wands: 'blue',
-        pentacles: 'blue',
+        pentacles: 'blue',        
+        
+        jewelry_random: 'yellow',
         bracelet: 'yellow',
         necklace: 'yellow',
         ring: 'yellow',
         earring: 'yellow',
-        jewelry_random: 'yellow',
-        bottle: 'brown',
-        egg: 'white',
-        arrowhead: 'lightgreen',
-        heirlooms: 'beige',
-        heirlooms_random: 'beige',
-        coin: 'darkorange',
-        fossils_random: 'purple',
-        random: this.tool === 2 ? 'black' : 'lightgray',
+        
+        heirlooms: 'pink',
+        heirlooms_random: 'pink',
+
+        random: this.tool === 2 ? 'lightgray' : 'lightgray',
       } [this.category] || 'lightred';
     } else if (markerColor === 'by_cycle') {
       base = ['blue', 'orange', 'purple', 'darkpurple', 'darkred', 'darkblue'][+this.cycleName - 1] || 'lightred';
