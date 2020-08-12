@@ -396,10 +396,9 @@ class Item extends BaseItem {
   _insertMenuElement() {
     this.$menuButton = $(`
       <div class="collectible-wrapper" data-type="${this.legacyItemId}"
-        data-help="${['flower_agarita', 'flower_blood_flower'].includes(this.itemId) ?
-          'item_night_only' : 'item'}">
-          <div class='collectible-icon'><img src="assets/images/icons/game/${this.itemId}.png"
-          alt='Set icon'></div>        
+        data-help="${['flower_agarita', 'flower_blood_flower'].includes(this.itemId) ? 'item_night_only' : 'item'}">
+        <img class="collectible-icon" src="assets/images/icons/game/${this.itemId}.png" alt="Set icon">
+        <img class="collectible-icon random-spot" src="assets/images/icons/random_overlay.png" alt="Random set icon">
         <span class="collectible-text">
           <p class="collectible" data-text="${this.itemTranslationKey}"></p>
           <span class="counter">
@@ -467,9 +466,13 @@ class Item extends BaseItem {
       .find('.counter')
       .toggle(InventorySettings.isEnabled)
       .end()
+      .find('.collectible-icon.random-spot')
+      .toggle(buggy)
+      .end()
       .find('.counter-number')
       .toggleClass('not-found', buggy)
       .end();
+
     return buggy;
   }
 }

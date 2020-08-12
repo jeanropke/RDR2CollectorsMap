@@ -635,21 +635,17 @@ select {
     user-select: none;
 }
 
-.side-menu .collectible-icon img {
+.side-menu .collectible-icon {
     float: left;
     height: 24px;
     margin-right: 6px;
 }
 
-.side-menu .random-spot .collectible-icon::after {
-    content: '';
+.collectible-icon.random-spot {
     position: absolute;
-    transform: scale(0.6, 0.6);
-    top: 0px;
-    right: 90%;
-    bottom: 7px;
-    left: 20px;
-    background: url(../images/icons/random_overlay.png) no-repeat;
+    transform: scale(0.85, 0.85);
+    left: 25px;
+    bottom: 35%;
 }
 
 .side-menu .collectible-icon.random-encounter {
@@ -1621,7 +1617,9 @@ a.no-style:visited {
     margin: 12px 0;
 }
 
-.loot-table-title h4, .loot-table-title h5, .loot-table-item span {
+.loot-table-title h4,
+.loot-table-title h5,
+.loot-table-item span {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1635,12 +1633,14 @@ a.no-style:visited {
     text-align: left;
 }
 
-.loot-table-title h5.rate, .loot-table-item span.rate {
+.loot-table-title h5.rate,
+.loot-table-item span.rate {
     min-width: 50px;
     text-align: right;
 }
 
-.loot-table-title, .loot-table-item {
+.loot-table-title,
+.loot-table-item {
     display: flex;
     justify-content: space-between;
     align-items: start;
