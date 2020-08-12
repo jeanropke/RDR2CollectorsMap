@@ -136,6 +136,7 @@ class Weekly extends BaseCollection {
       })();
       weeklyCheckbox.on("change", () => {
         Settings.showWeeklySettings = weeklyCheckbox.prop('checked');
+        MapBase.addMarkers();
       })
     });
   }
