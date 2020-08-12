@@ -186,7 +186,7 @@ class Marker {
     }
 
     let base;
-    if (this.item && this.item.isWeekly()) {
+    if (this.item && this.item.isWeekly() && Settings.showWeeklySettings) {
       base = 'green';
     } else if (markerColor === 'by_category') {
       base = {
