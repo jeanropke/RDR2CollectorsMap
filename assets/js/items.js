@@ -461,7 +461,6 @@ class Item extends BaseItem {
           return 'item';
         }
       })
-      .toggleClass('random-spot', buggy)
       .toggleClass('disabled', currentMarkers.every(marker => !marker.canCollect))
       .toggleClass('weekly-item', this.isWeekly())
       .find('.counter')
