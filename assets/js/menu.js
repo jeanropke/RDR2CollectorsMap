@@ -2,8 +2,12 @@ class Menu {
   static init() {
     this._warnings = new Set();
 
-    SettingProxy.addSetting(Settings, 'toolType', { default: 3 });
-    SettingProxy.addSetting(Settings, 'filterType', { default: 'none' });
+    SettingProxy.addSetting(Settings, 'toolType', {
+      default: 3
+    });
+    SettingProxy.addSetting(Settings, 'filterType', {
+      default: 'none'
+    });
     Loader.mapModelLoaded.then(this.activateHandlers.bind(this));
   }
 
@@ -169,13 +173,7 @@ class Menu {
         Settings.filterType = $(this).val();
         uniqueSearchMarkers = [];
 
-        const filterMarkers = function (array) {
-          MapBase.filtersData[Settings.filterType] = MapBase.markers.filter(marker => {
-            if (Settings.filterType === 'important')
-              return array.includes(marker.itemId);
-            else
-              return array.includes(marker.legacyItemId);
-          });
+        const filterMarkers = function () {
           MapBase.filtersData[Settings.filterType].forEach(marker => {
             if ($.inArray(marker, uniqueSearchMarkers) !== -1)
               return;
@@ -208,11 +206,16 @@ class Menu {
         else if (Settings.filterType === 'weekly') {
           let weeklyItems = [];
           $.each(Weekly.current.items, (index, item) => weeklyItems.push(item.legacyItemId));
-          filterMarkers(weeklyItems);
+          MapBase.filtersData[Settings.filterType] = MapBase.markers.filter(marker =>
+            weeklyItems.includes(marker.legacyItemId));
+          filterMarkers();
         }
         // important items
         else if (Settings.filterType === 'important') {
-          filterMarkers(MapBase.importantItems);
+          MapBase.filtersData[Settings.filterType] = MapBase.markers.filter(marker =>
+            MapBase.importantItems.includes(marker.itemId)
+          );
+          filterMarkers();
         }
 
         MapBase.addMarkers();

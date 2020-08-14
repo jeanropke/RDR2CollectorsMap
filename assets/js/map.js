@@ -287,6 +287,7 @@ const MapBase = {
       Inventory.updateItemHighlights();
       Routes.clearCustomRoutes();
       Menu.refreshMenu();
+      filterMapMarkers()
     }
 
     localStorage.setItem('main.date', date);
