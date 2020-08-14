@@ -169,17 +169,16 @@ class Menu {
     SettingProxy.addListener(Settings, 'filterType', () =>
       this.toggleFilterWarning('map.has_filter_type_alert', Settings.filterType !== 'none'))();
     $("#filter-type")
-      .on("change", function filterMapMarkers() {
+      .on("change", function () {
         Settings.filterType = $(this).val();
         uniqueSearchMarkers = [];
 
-        const filterMarkers = function () {
+        const filterMarkers = function (array) {
+          MapBase.filtersData[Settings.filterType] = MapBase.markers.filter(marker =>
+            array.includes(marker.itemId));
           MapBase.filtersData[Settings.filterType].forEach(marker => {
-            if ($.inArray(marker, uniqueSearchMarkers) !== -1)
-              return;
-            if (!enabledCategories.includes(marker.category))
-              enabledCategories.push(marker.category);
-
+            if ($.inArray(marker, uniqueSearchMarkers) !== -1) return;
+            if (!enabledCategories.includes(marker.category)) enabledCategories.push(marker.category);
             uniqueSearchMarkers.push(marker);
           });
         }
@@ -189,13 +188,13 @@ class Menu {
             MapBase.onSearch($("#search").val());
           else
             uniqueSearchMarkers = MapBase.markers;
-        } else if (['moonshiner', 'naturalist'].includes(Settings.filterType)) {
+        }
+        else if (['moonshiner', 'naturalist'].includes(Settings.filterType)) {
           Object.values(MapBase.filtersData[Settings.filterType]).filter(filterItems =>
             filterItems.some(item =>
               MapBase.markers.find(_m => {
                 if (_m.itemId == item)
                   uniqueSearchMarkers.push(_m);
-
                 if (!enabledCategories.includes(_m.category))
                   enabledCategories.push(_m.category);
               })
@@ -205,17 +204,12 @@ class Menu {
         // weekly set
         else if (Settings.filterType === 'weekly') {
           let weeklyItems = [];
-          $.each(Weekly.current.items, (index, item) => weeklyItems.push(item.legacyItemId));
-          MapBase.filtersData[Settings.filterType] = MapBase.markers.filter(marker =>
-            weeklyItems.includes(marker.legacyItemId));
-          filterMarkers();
+          $.each(Weekly.current.items, (index, item) => weeklyItems.push(item.itemId));
+          filterMarkers(weeklyItems);
         }
         // important items
         else if (Settings.filterType === 'important') {
-          MapBase.filtersData[Settings.filterType] = MapBase.markers.filter(marker =>
-            MapBase.importantItems.includes(marker.itemId)
-          );
-          filterMarkers();
+          filterMarkers(MapBase.importantItems);
         }
 
         MapBase.addMarkers();
