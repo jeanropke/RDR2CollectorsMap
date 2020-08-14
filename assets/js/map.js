@@ -219,7 +219,6 @@ const MapBase = {
     uniqueSearchMarkers = MapBase.markers;
 
     MapBase.resetMarkersDaily();
-    filterMapMarkers();
 
     // Preview mode.
     const previewParam = getParameterByName('q');

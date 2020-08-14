@@ -170,7 +170,8 @@ class Menu {
         Settings.filterType = $(this).val();
         filterMapMarkers();
       })
-      .val(Settings.filterType);
+      .val(Settings.filterType)
+      .trigger('change');
 
     $('.filter-alert').on('click', function () {
       $(this).hide();
