@@ -219,6 +219,7 @@ const MapBase = {
     uniqueSearchMarkers = MapBase.markers;
 
     MapBase.resetMarkersDaily();
+    filterMapMarkers();
 
     // Preview mode.
     const previewParam = getParameterByName('q');
@@ -287,7 +288,6 @@ const MapBase = {
       Inventory.updateItemHighlights();
       Routes.clearCustomRoutes();
       Menu.refreshMenu();
-      filterMapMarkers()
     }
 
     localStorage.setItem('main.date', date);

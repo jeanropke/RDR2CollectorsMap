@@ -1639,6 +1639,7 @@
     "map.has_multi_filter_alert": "Some markers are being hidden by your \"Tool type\" setting and search query.",
     "map.has_search_filter_alert": "Some markers are being hidden by your search query.",
     "map.has_tool_filter_alert": "Some markers are being hidden by your \"Tool type\" setting.",
+    "map.has_filter_type_alert": "Some markers are being hidden by your \"Filter markers\" setting.",
     "generic.blue": "Blue",
     "generic.orange": "Orange",
     "generic.pink": "Pink",
@@ -1840,5 +1841,11 @@
     "menu.collectible_jewelry_rings_01": "Rings 1",
     "menu.collectible_jewelry_rings_02": "Rings 2",
     "map.view_loot": "View Loot",
-    "menu.modal_loot_table_title": "Loot Table"
+    "menu.modal_loot_table_title": "Loot Table",
+    "menu.filter_type": "Filter markers",
+    "menu.filter_type.none": "None",
+    "menu.filter_type.moonshiner": "Moonshiner",
+    "menu.filter_type.naturalist": "Naturalist",
+    "menu.filter_type.weekly_set": "Weekly set",
+    "menu.filter_type.important_items": "Important items"
 }

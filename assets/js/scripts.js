@@ -879,3 +879,48 @@ $('#loot-table-modal').on('show.bs.modal', function (event) {
   const translatedContent = Language.translateDom(wrapper)[0];
   modal.find('.modal-body').html(translatedContent);
 });
+
+function filterMapMarkers() {
+  uniqueSearchMarkers = [];
+
+  const filterMarkers = function (array) {
+    MapBase.filtersData[Settings.filterType] = MapBase.markers.filter(marker =>
+      array.includes(marker.itemId));
+    MapBase.filtersData[Settings.filterType].forEach(marker => {
+      if ($.inArray(marker, uniqueSearchMarkers) !== -1) return;
+      if (!enabledCategories.includes(marker.category)) enabledCategories.push(marker.category);
+      uniqueSearchMarkers.push(marker);
+    });
+  }
+
+  if (Settings.filterType === 'none') {
+    if ($("#search").val())
+      MapBase.onSearch($("#search").val());
+    else
+      uniqueSearchMarkers = MapBase.markers;
+  }
+  else if (['moonshiner', 'naturalist'].includes(Settings.filterType)) {
+    Object.values(MapBase.filtersData[Settings.filterType]).filter(filterItems =>
+      filterItems.some(item =>
+        MapBase.markers.find(_m => {
+          if (_m.itemId == item)
+            uniqueSearchMarkers.push(_m);
+          if (!enabledCategories.includes(_m.category))
+            enabledCategories.push(_m.category);
+        })
+      )
+    );
+  }
+  // weekly set
+  else if (Settings.filterType === 'weekly') {
+    let weeklyItems = [];
+    $.each(Weekly.current.items, (index, item) => weeklyItems.push(item.itemId));
+    filterMarkers(weeklyItems);
+  }
+  // important items
+  else if (Settings.filterType === 'important') {
+    filterMarkers(MapBase.importantItems);
+  }
+
+  MapBase.addMarkers();
+}
