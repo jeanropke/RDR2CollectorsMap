@@ -3,6 +3,7 @@ class Menu {
     this._warnings = new Set();
 
     SettingProxy.addSetting(Settings, 'toolType', { default: 3 });
+    SettingProxy.addSetting(Settings, 'filterType', { default: 'none' });
     Loader.mapModelLoaded.then(this.activateHandlers.bind(this));
   }
 
@@ -161,6 +162,34 @@ class Menu {
         MapBase.addMarkers();
       })
       .val(Settings.toolType)
+    $('.filter-alert').on('click', function () {
+      $(this).hide();
+    });
+
+    SettingProxy.addListener(Settings, 'filterType', () =>
+      this.toggleFilterWarning('map.has_filter_type_alert', Settings.filterType !== 'none'))();
+    $("#filter-type")
+      .on("change", function () {
+        uniqueSearchMarkers = MapBase.markers;
+        Settings.filterType = $(this).val();
+
+        if(Settings.filterType != 'none') {
+          uniqueSearchMarkers = [];
+          Object.values(
+            MapBase.filtersData[Settings.filterType]).filter(
+            filterItems => filterItems.some(item => 
+              MapBase.markers.find(
+                function(_m) {
+                  if(_m.itemId == item) {
+                    uniqueSearchMarkers.push(_m); 
+                  }
+                }
+            )));
+          }
+
+        MapBase.addMarkers();
+      })
+      .val(Settings.filterType)
     $('.filter-alert').on('click', function () {
       $(this).hide();
     });

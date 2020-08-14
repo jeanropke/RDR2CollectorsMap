@@ -42,5 +42,6 @@ const urls = [
     'https://pepegapi.jeanropke.net/rdo/nazar',
     'data/treasures.json',
     'data/loot.json',
+    'data/filters.json',
 ];
 Loader.init(urls);

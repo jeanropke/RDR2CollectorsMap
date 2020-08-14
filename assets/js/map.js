@@ -17,6 +17,7 @@ const MapBase = {
   updateLoopAvailable: true,
   requestLoopCancel: false,
   showAllMarkers: false,
+  filtersData: [],
 
   mapInit: function () {
     'use strict';
@@ -161,6 +162,13 @@ const MapBase = {
       MapBase.overlays = data;
       MapBase.setMapBackground();
       console.info('%c[Overlays] Loaded!', 'color: #bada55; background: #242424');
+    });
+  },
+
+  loadFilters: function () {
+    return Loader.promises['filters'].consumeJson(data => {
+      MapBase.filtersData = data;
+      console.info('%c[Filters] Loaded!', 'color: #bada55; background: #242424');
     });
   },
 

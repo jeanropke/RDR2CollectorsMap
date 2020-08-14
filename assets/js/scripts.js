@@ -103,6 +103,7 @@ function init() {
   const cycles = Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
+  MapBase.loadFilters();
   MadamNazar.loadMadamNazar();
   FME.init();
   const treasures = Treasure.init();
