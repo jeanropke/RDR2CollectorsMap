@@ -332,6 +332,7 @@ $('.menu-option.clickable input').on('change', function (event) {
 
 $("#search").on("input", function () {
   MapBase.onSearch($('#search').val());
+  $("#filter-type").val('none');
 });
 
 $("#copy-search-link").on("click", function () {
@@ -842,7 +843,7 @@ function formatLootTableLevel(table, level = 0) {
     result.append(item);
   } else {
     var title = $(`<span class="loot-table-title level-${(level + 1)}">`);
-    
+
     if (table.rate) {
       title.append($(`<h5 data-text="menu.${table.name}">`));
       title.append($(`<h5 class="rate">`).text(table.rate + "%"));
@@ -877,4 +878,4 @@ $('#loot-table-modal').on('show.bs.modal', function (event) {
 
   const translatedContent = Language.translateDom(wrapper)[0];
   modal.find('.modal-body').html(translatedContent);
-})
+});

@@ -12,9 +12,9 @@ class Menu {
     this._warnings[method](warning);
     $('.filter-alert')
       .toggle(this._warnings.size > 0)
-      .attr('data-text', this._warnings.size > 1 ? 'map.has_multi_filter_alert':
+      .attr('data-text', this._warnings.size > 1 ? 'map.has_multi_filter_alert' :
         this._warnings.values().next().value)
-      .translate()
+      .translate();
   }
 
   static reorderMenu(menu) {
@@ -103,26 +103,22 @@ class Menu {
         if (category && toEnable) {
           enabledCategories.push(category);
 
-          if(enabledCategories.arrayContains(parentCategories['jewelry_random']) && parentCategories['jewelry_random'].includes(category)) {
+          if (enabledCategories.arrayContains(parentCategories['jewelry_random']) && parentCategories['jewelry_random'].includes(category)) {
             enabledCategories.push('jewelry_random');
-          }
-          else if(enabledCategories.arrayContains(parentCategories['fossils_random']) && parentCategories['fossils_random'].includes(category)) {
+          } else if (enabledCategories.arrayContains(parentCategories['fossils_random']) && parentCategories['fossils_random'].includes(category)) {
             enabledCategories.push('fossils_random');
-          }
-          else if(category == 'heirlooms') {
+          } else if (category == 'heirlooms') {
             enabledCategories.push('heirlooms_random');
           }
 
         } else if (category) { // disable
           enabledCategories = enabledCategories.filter(cat => cat !== category);
 
-          if(!enabledCategories.arrayContains(parentCategories['jewelry_random'])) {
+          if (!enabledCategories.arrayContains(parentCategories['jewelry_random'])) {
             enabledCategories = enabledCategories.filter(cat => cat !== 'jewelry_random');
-          }
-          else if(!enabledCategories.arrayContains(parentCategories['fossils_random'])) {
+          } else if (!enabledCategories.arrayContains(parentCategories['fossils_random'])) {
             enabledCategories = enabledCategories.filter(cat => cat !== 'fossils_random');
-          }
-          else if(category == 'heirlooms') {
+          } else if (category == 'heirlooms') {
             enabledCategories = enabledCategories.filter(cat => cat !== 'heirlooms_random');
           }
 
@@ -169,27 +165,59 @@ class Menu {
     SettingProxy.addListener(Settings, 'filterType', () =>
       this.toggleFilterWarning('map.has_filter_type_alert', Settings.filterType !== 'none'))();
     $("#filter-type")
-      .on("change", function () {
-        uniqueSearchMarkers = MapBase.markers;
+      .on("change", function filterMapMarkers() {
         Settings.filterType = $(this).val();
+        uniqueSearchMarkers = [];
 
-        if(Settings.filterType != 'none') {
-          uniqueSearchMarkers = [];
-          Object.values(
-            MapBase.filtersData[Settings.filterType]).filter(
-            filterItems => filterItems.some(item => 
-              MapBase.markers.find(
-                function(_m) {
-                  if(_m.itemId == item) {
-                    uniqueSearchMarkers.push(_m); 
-                  }
-                }
-            )));
-          }
+        const filterMarkers = function (array) {
+          MapBase.filtersData[Settings.filterType] = MapBase.markers.filter(marker => {
+            if (Settings.filterType === 'important')
+              return array.includes(marker.itemId);
+            else
+              return array.includes(marker.legacyItemId);
+          });
+          MapBase.filtersData[Settings.filterType].forEach(marker => {
+            if ($.inArray(marker, uniqueSearchMarkers) !== -1)
+              return;
+            if (!enabledCategories.includes(marker.category))
+              enabledCategories.push(marker.category);
+
+            uniqueSearchMarkers.push(marker);
+          });
+        }
+
+        if (Settings.filterType === 'none') {
+          if ($("#search").val())
+            MapBase.onSearch($("#search").val());
+          else
+            uniqueSearchMarkers = MapBase.markers;
+        } else if (['moonshiner', 'naturalist'].includes(Settings.filterType)) {
+          Object.values(MapBase.filtersData[Settings.filterType]).filter(filterItems =>
+            filterItems.some(item =>
+              MapBase.markers.find(_m => {
+                if (_m.itemId == item)
+                  uniqueSearchMarkers.push(_m);
+
+                if (!enabledCategories.includes(_m.category))
+                  enabledCategories.push(_m.category);
+              })
+            )
+          );
+        }
+        // weekly set
+        else if (Settings.filterType === 'weekly') {
+          let weeklyItems = [];
+          $.each(Weekly.current.items, (index, item) => weeklyItems.push(item.legacyItemId));
+          filterMarkers(weeklyItems);
+        }
+        // important items
+        else if (Settings.filterType === 'important') {
+          filterMarkers(MapBase.importantItems);
+        }
 
         MapBase.addMarkers();
       })
-      .val(Settings.filterType)
+      .val(Settings.filterType);
     $('.filter-alert').on('click', function () {
       $(this).hide();
     });
