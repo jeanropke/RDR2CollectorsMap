@@ -1,0 +1,76 @@
+{
+	"moonshiner": {
+		"mshine_flavor_agarita_sunrise": [
+			"consumable_strawberries_can",
+			"consumable_herb_evergreen_huckleberry",
+			"flower_agarita"
+		],
+		"mshine_flavor_apple_berry_crumb": [
+			"consumable_apple",
+			"consumable_herb_black_berry",
+			"consumable_herb_vanilla_flower"
+		],
+		"mshine_flavor_berry_cobbler": [
+			"consumable_peaches_can",
+			"consumable_herb_red_raspberry",
+			"consumable_peach"
+		],
+		"mshine_flavor_berry_mint": [
+			"consumable_strawberries_can",
+			"consumable_herb_black_berry",
+			"consumable_herb_wild_mint"
+		],
+		"mshine_flavor_evergreen": [
+			"consumable_herb_evergreen_huckleberry",
+			"consumable_herb_wintergreen_berry",
+			"consumable_herb_alaskan_ginseng"
+		],
+		"mshine_flavor_poison_poppys": [
+			"consumable_herb_prairie_poppy",
+			"consumable_herb_oleander_sage",
+			"bottle_absinthe"
+		],
+		"mshine_flavor_spiced_island": [
+			"consumable_apricots_can",
+			"consumable_herb_currant",
+			"bottle_caribbean_rum"
+		],
+		"mshine_flavor_tropical_punch": [
+			"consumable_pineapples_can",
+			"consumable_pear",
+			"consumable_herb_vanilla_flower"
+		],
+		"mshine_flavor_wild_cider": [
+			"consumable_apple",
+			"consumable_herb_alaskan_ginseng",
+			"consumable_herb_currant"
+		],
+		"mshine_flavor_wild_creek": [
+			"consumable_herb_wild_mint",
+			"consumable_herb_vanilla_flower",
+			"flower_creek_plum"
+		]
+	},
+	"naturalist": {
+		"provision_trinket_beaver_tooth": [
+			"earring_calumet_turquoise",
+			"provision_squirrel_tooth"
+		],
+		"provision_trinket_buck_antler": [
+			"necklace_dane_topaz",
+			"provision_buck_antlers"
+		],
+		"provision_trinket_javelina_tusk": [
+			"bracelet_elliston_carved",
+			"provision_javelina_tusk"
+		],
+		"provision_trinket_ram_horn": [
+			"ring_aubrey_onyx",
+			"provision_ram_horn"
+		],
+		"provision_trinket_snowy_egret": [
+			"necklace_braxton_amethyst",
+			"provision_egret_feather"
+		]
+	}
+}
