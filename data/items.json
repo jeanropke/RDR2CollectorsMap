@@ -272,11 +272,11 @@
     "heirlooms_random": {
         "1": [
             { "text": "heirlooms_random_0", "height": 0, "tool": 1, "lat": -28.0992, "lng": 150.6425, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=50s" },
-            { "text": "heirlooms_random_1", "height": 0, "tool": 0, "lat": -84.7317, "lng": 133.9765, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=289s" },
+            { "text": "heirlooms_random_1", "height": 0, "tool": 1, "lat": -84.7317, "lng": 133.9765, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=289s" },
             { "text": "heirlooms_random_2", "height": 0, "tool": 1, "lat": -92.9451, "lng": 79.6986, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=387s" }
         ],
         "2": [
-            { "text": "heirlooms_random_0", "height": 0, "tool": 0, "lat": -105.045, "lng": 36.0282, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=994s" },
+            { "text": "heirlooms_random_0", "height": 0, "tool": 1, "lat": -105.045, "lng": 36.0282, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=994s" },
             { "text": "heirlooms_random_1", "height": 0, "tool": 1, "lat": -28.7513, "lng": 117.6771, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=835s" },
             { "text": "heirlooms_random_2", "height": 0, "tool": 1, "lat": -45.5702, "lng": 72.0115, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=862s" },
             { "text": "heirlooms_random_3", "height": 0, "tool": 1, "lat": -61.264, "lng": 144.3581, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=737s" }
@@ -289,7 +289,7 @@
         ],
         "4": [
             { "text": "heirlooms_random_0", "height": 0, "tool": 2, "lat": -36.2682, "lng": 158.0968, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1588s" },
-            { "text": "heirlooms_random_1", "height": 0, "tool": 0, "lat": -65.2827, "lng": 106.3918, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1807s" },
+            { "text": "heirlooms_random_1", "height": 0, "tool": 2, "lat": -65.2827, "lng": 106.3918, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1807s" },
             { "text": "heirlooms_random_2", "height": 0, "tool": 2, "lat": -75.7794, "lng": 88.0026, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1975s" }
         ],
         "5": [
@@ -299,9 +299,9 @@
             { "text": "heirlooms_random_3", "height": 0, "tool": 2, "lat": -85.4993, "lng": 132.6165, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2304s" }
         ],
         "6": [
-            { "text": "heirlooms_random_0", "height": 0, "tool": 0, "lat": -106.3063, "lng": 36.9816, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=3030s" },
+            { "text": "heirlooms_random_0", "height": 0, "tool": 2, "lat": -106.3063, "lng": 36.9816, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=3030s" },
             { "text": "heirlooms_random_1", "height": 0, "tool": 2, "lat": -50.6291, "lng": 151.4591, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2645s" },
-            { "text": "heirlooms_random_2", "height": 0, "tool": 0, "lat": -54.6291, "lng": 157.1059, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2687s" },
+            { "text": "heirlooms_random_2", "height": 0, "tool": 2, "lat": -54.6291, "lng": 157.1059, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2687s" },
             { "text": "heirlooms_random_3", "height": 0, "tool": 2, "lat": -84.6803, "lng": 147.4572, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2832s" }
         ]
     },
