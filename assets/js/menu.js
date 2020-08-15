@@ -152,12 +152,12 @@ class Menu {
         if (help.contains(target)) return;
         const helpTransId = $(target).closest('[data-help]').attr('data-help') || 'default';
         $helpParagraph.html(Language.get(`help.${helpTransId}`));
-      })
+      });
 
     SettingProxy.addListener(Settings, 'toolType', () =>
       this.toggleFilterWarning('map.has_tool_filter_alert', Settings.toolType !== 3))();
-    $("#tools")
-      .on("change", function () {
+    $('#tools')
+      .on('change', function () {
         Settings.toolType = +$(this).val();
         MapBase.addMarkers();
       })
@@ -165,13 +165,13 @@ class Menu {
 
     SettingProxy.addListener(Settings, 'filterType', () =>
       this.toggleFilterWarning('map.has_filter_type_alert', Settings.filterType !== 'none'))();
-    $("#filter-type")
-      .on("change", function () {
+    $('#filter-type')
+      .on('change', function () {
         Settings.filterType = $(this).val();
         filterMapMarkers();
       })
       .val(Settings.filterType)
-      .trigger('change');
+      .triggerHandler('change');
 
     $('.filter-alert').on('click', function () {
       $(this).hide();
