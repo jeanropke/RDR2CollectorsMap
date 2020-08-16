@@ -111,8 +111,12 @@ class Menu {
             enabledCategories.push('jewelry_random');
           } else if (enabledCategories.arrayContains(parentCategories['fossils_random']) && parentCategories['fossils_random'].includes(category)) {
             enabledCategories.push('fossils_random');
-          } else if (category == 'heirlooms') {
+          } else if (category === 'heirlooms') {
             enabledCategories.push('heirlooms_random');
+          }
+
+          if (Weekly.current.items.reduce((acc, item) => acc + +(item.category === category), 0)) {
+            enabledCategories.push('weekly');
           }
 
         } else if (category) { // disable
@@ -122,8 +126,12 @@ class Menu {
             enabledCategories = enabledCategories.filter(cat => cat !== 'jewelry_random');
           } else if (!enabledCategories.arrayContains(parentCategories['fossils_random'])) {
             enabledCategories = enabledCategories.filter(cat => cat !== 'fossils_random');
-          } else if (category == 'heirlooms') {
+          } else if (category === 'heirlooms') {
             enabledCategories = enabledCategories.filter(cat => cat !== 'heirlooms_random');
+          }
+
+          if (Weekly.current.items.reduce((acc, item) => acc + +(item.category === category), 0)) {
+            enabledCategories = enabledCategories.filter(cat => cat !== 'weekly');
           }
 
         } else {
