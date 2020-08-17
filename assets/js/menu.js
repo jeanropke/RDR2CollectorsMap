@@ -130,7 +130,7 @@ class Menu {
             enabledCategories = enabledCategories.filter(cat => cat !== 'heirlooms_random');
           }
 
-          if (Weekly.current.items.some(item => enabledCategories.includes(item.category))) {
+          if (Weekly.current.items.reduce((acc, item) => acc + +(item.category === category), 0)) {
             enabledCategories = enabledCategories.filter(cat => cat !== 'weekly');
           }
 
