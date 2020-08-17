@@ -115,7 +115,7 @@ class Menu {
             enabledCategories.push('heirlooms_random');
           }
 
-          if (Weekly.current.items.reduce((acc, item) => acc + +(item.category === category), 0)) {
+          if (Weekly.current.items.every(item => enabledCategories.includes(item.category))) {
             enabledCategories.push('weekly');
           }
 
