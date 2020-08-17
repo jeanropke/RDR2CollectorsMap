@@ -111,11 +111,11 @@ class Menu {
             enabledCategories.push('jewelry_random');
           } else if (enabledCategories.arrayContains(parentCategories['fossils_random']) && parentCategories['fossils_random'].includes(category)) {
             enabledCategories.push('fossils_random');
-          } else if (category === 'heirlooms') {
+          } else if (category === 'heirlooms' && !enabledCategories.includes('heirlooms_random')) {
             enabledCategories.push('heirlooms_random');
           }
 
-          if (Weekly.current.items.every(item => enabledCategories.includes(item.category))) {
+          if (Weekly.current.items.every(item => enabledCategories.includes(item.category)) && !enabledCategories.includes('weekly')) {
             enabledCategories.push('weekly');
           }
 
