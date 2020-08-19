@@ -21,7 +21,7 @@ class Loader {
     constructor(name, url) {
         const queryString = {};
         if (!url.startsWith('http')) queryString.nocache = nocache;
-        if (name === 'cycles') queryString.date = new Date().toISOUTCDateString();
+        if (['cycles', 'weekly'].includes(name)) queryString.date = new Date().toISOUTCDateString();
         this._json = $.getJSON(url, queryString);
     }
     // allow garbage collection of loaded data after use
