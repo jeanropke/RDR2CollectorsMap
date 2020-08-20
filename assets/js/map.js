@@ -233,6 +233,7 @@ const MapBase = {
         enabledCategories = [previewParam];
         if (previewParam === "heirlooms") enabledCategories.push("heirlooms_random");
         if (previewParam === "ring" || previewParam === "earring" || previewParam === "bracelet" || previewParam === "necklace") enabledCategories.push("jewelry_random");
+        if (previewParam === "coastal" || previewParam === "megafauna" || previewParam === "oceanic") enabledCategories.push("fossils_random");
 
         MapBase.addMarkers();
       } else {
