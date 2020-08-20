@@ -231,11 +231,21 @@ const MapBase = {
       const isValidCategory = categories.includes(previewParam);
       if (isValidCategory) {
         enabledCategories = [previewParam];
-        MapBase.addMarkers(false, true);
+        if (previewParam === "heirlooms") enabledCategories.push("heirlooms_random");
+        if (previewParam === "ring" || previewParam === "earring" || previewParam === "bracelet" || previewParam === "necklace") enabledCategories.push("jewelry_random");
+
+        MapBase.addMarkers();
       } else {
         enabledCategories = [];
+        MapBase.addMarkers(false, true);
         $('#search').val(previewParam);
         MapBase.onSearch(previewParam);
+
+        // Zoom in if there's only one specific item.
+        // Only do this here, as earring cycle 1 has 1 item, and we don't want that to zoom.
+        const visibleItems = MapBase.markers.filter(m => m.isVisible);
+        if (visibleItems.length === 1)
+          MapBase.map.setView([visibleItems[0].lat, visibleItems[0].lng], 6);
       }
 
       // Don't need to do anything else, just exit.
@@ -330,11 +340,11 @@ const MapBase = {
     MapBase.addMarkers();
   },
 
-  addMarkers: function (refreshMenu = false, inPreview = false) {
+  addMarkers: function (refreshMenu = false) {
     if (!MapBase.updateLoopAvailable) {
       MapBase.requestLoopCancel = true;
       setTimeout(() => {
-        MapBase.addMarkers(refreshMenu, inPreview);
+        MapBase.addMarkers(refreshMenu);
       }, 0);
       return;
     }
@@ -347,7 +357,7 @@ const MapBase = {
       25,
       function (i) {
         if (MapBase.requestLoopCancel) return;
-        MapBase.addMarkerOnMap(MapBase.markers[i], inPreview);
+        MapBase.addMarkerOnMap(MapBase.markers[i]);
       },
       function () {
         MapBase.updateLoopAvailable = true;
@@ -360,12 +370,6 @@ const MapBase = {
     );
 
     Layers.pinsLayer.addTo(MapBase.map);
-
-    if (inPreview) {
-      const visibleItems = MapBase.markers.filter(m => m.isVisible);
-      if (visibleItems.length === 1)
-        MapBase.map.setView([visibleItems[0].lat, visibleItems[0].lng], 6);
-    }
 
     MapBase.addFastTravelMarker();
 
@@ -392,7 +396,7 @@ const MapBase = {
     const subdataCategoryIsDisabled =
       (text == subdata && !$(`[data-type=${subdata}]`).hasClass('disabled'));
 
-      $.each(markers, function (key, marker) {      
+    $.each(markers, function (key, marker) {
       if (text != subdata && marker.text != text) return;
 
       let changeAmount = 0;
