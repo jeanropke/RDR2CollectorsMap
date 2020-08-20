@@ -362,6 +362,12 @@ const MapBase = {
 
     Layers.pinsLayer.addTo(MapBase.map);
 
+    if (inPreview) {
+      const visibleItems = MapBase.markers.filter(m => m.isVisible);
+      if (visibleItems.length === 1)
+        MapBase.map.setView([visibleItems[0].lat, visibleItems[0].lng], 6);
+    }
+
     MapBase.addFastTravelMarker();
 
     MadamNazar.addMadamNazar();

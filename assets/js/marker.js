@@ -144,23 +144,25 @@ class Marker {
     return this.cycleName == Cycles.categories[this.category];
   }
   get isVisible() {
-    if (
-      this.category === 'heirlooms_random' &&
-      !enabledCategories.includes('heirlooms')
-    ) return false;
-    if (
-      this.category === 'jewelry_random' &&
-      !enabledCategories.includes('bracelet') &&
-      !enabledCategories.includes('earring') &&
-      !enabledCategories.includes('necklace') &&
-      !enabledCategories.includes('ring')
-    ) return false;
-    if (
-      this.category === 'fossils_random' &&
-      !enabledCategories.includes('coastal') &&
-      !enabledCategories.includes('oceanic') &&
-      !enabledCategories.includes('megafauna')
-    ) return false;
+    if (!getParameterByName('q')) {
+      if (
+        this.category === 'heirlooms_random' &&
+        !enabledCategories.includes('heirlooms')
+      ) return false;
+      if (
+        this.category === 'jewelry_random' &&
+        !enabledCategories.includes('bracelet') &&
+        !enabledCategories.includes('earring') &&
+        !enabledCategories.includes('necklace') &&
+        !enabledCategories.includes('ring')
+      ) return false;
+      if (
+        this.category === 'fossils_random' &&
+        !enabledCategories.includes('coastal') &&
+        !enabledCategories.includes('oceanic') &&
+        !enabledCategories.includes('megafauna')
+      ) return false;
+    }
 
     return (this.isCurrent || MapBase.showAllMarkers) &&
       uniqueSearchMarkers.includes(this) &&

@@ -29,6 +29,7 @@ const Cycles = {
     const selectedDay = Cycles.getFreshSelectedDay();
     const selectedDayStr = selectedDay.toISOUTCDateString();
     const cycleIndex = Cycles.data.findIndex(element => element.date === selectedDayStr);
+    let fallback = null;
 
     $('div>span.cycle-date').toggleClass('not-found', Cycles.offset !== 0);
 
@@ -36,10 +37,22 @@ const Cycles = {
       // either -1 (not found) or 0 (first day) for which there is no yesterday
       console.error('[Cycles] Cycle not found: ' + selectedDayStr);
       $('.map-cycle-alert').removeClass('hidden');
-      return;
+      
+      fallback = {
+        arrowhead: 1,
+        bottle: 1,
+        coin: 1,
+        egg: 1,
+        flower: 1,
+        heirlooms: 1,
+        lost_jewelry: 1,
+        random: 1,
+        tarot_cards: 1,
+        fossils: 1,
+      }
     }
 
-    const _data = Cycles.data[cycleIndex];
+    const _data = fallback || Cycles.data[cycleIndex];
     Cycles.yesterday = Cycles.data[cycleIndex - 1];
     Cycles.selectedDay = selectedDay;
     Cycles.categories.flower = _data.flower;

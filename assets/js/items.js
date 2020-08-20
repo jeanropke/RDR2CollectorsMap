@@ -19,6 +19,9 @@ class BaseItem {
     this.itemTranslationKey = `${this.itemId}.name`;
   }
   isWeekly() {
+    // Don't use weekly when in preview mode.
+    if (getParameterByName('q')) return false;
+
     return Weekly.current.items.includes(this);
   }
   // requires Marker and Cycles to be loaded
