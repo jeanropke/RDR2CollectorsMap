@@ -218,8 +218,6 @@ const MapBase = {
     'use strict';
     uniqueSearchMarkers = MapBase.markers;
 
-    MapBase.resetMarkersDaily();
-
     // Preview mode.
     const previewParam = getParameterByName('q');
     if (previewParam) {
@@ -231,19 +229,20 @@ const MapBase = {
       $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
 
       const isValidCategory = categories.includes(previewParam);
-
-      if (isValidCategory)
+      if (isValidCategory) {
         enabledCategories = [previewParam];
-      else
+        MapBase.addMarkers(false, true);
+      } else {
         enabledCategories = [];
-
-      MapBase.addMarkers(false, true);
-
-      if (!isValidCategory)
+        $('#search').val(previewParam);
         MapBase.onSearch(previewParam);
+      }
 
+      // Don't need to do anything else, just exit.
       return;
     }
+
+    MapBase.resetMarkersDaily();
 
     // Do search via URL.
     const searchParam = getParameterByName('search');
@@ -313,9 +312,9 @@ const MapBase = {
       $.each(searchTerms, function (id, term) {
 
         searchMarkers = searchMarkers.concat(MapBase.markers.filter(_marker =>
-          Language.get(_marker.itemTranslationKey).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(term.toLowerCase()) ||
+          _marker.itemId === term ||
           _marker.itemNumberStr === term ||
-          _marker.itemId === term
+          Language.get(_marker.itemTranslationKey).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(term.toLowerCase())
         ));
 
         $.each(searchMarkers, function (i, el) {
