@@ -34,7 +34,6 @@
         ["23:15", "fme_hot_property"]
     ],
     "role": [
-        ["00:22", "fme_role_animal_tagging"],
         ["01:52", "fme_role_greatest_bounty_hunter"],
         ["03:22", "fme_role_protect_legendary_animal"],
         ["04:52", "fme_role_animal_tagging"],
@@ -48,7 +47,7 @@
         ["16:52", "fme_role_protect_legendary_animal"],
         ["18:22", "fme_role_animal_tagging"],
         ["19:52", "fme_role_condor_egg"],
-        ["21:22", "fme_role_greatest_bounty_hunter"],
-        ["22:52", "fme_role_protect_legendary_animal"]
+        ["21:22", "fme_role_protect_legendary_animal"],
+        ["22:52", "fme_role_animal_tagging"]
     ]
 }
