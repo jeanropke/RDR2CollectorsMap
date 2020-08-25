@@ -1639,6 +1639,7 @@
     "map.has_multi_filter_alert": "您的“工具类型”设置和搜索查询隐藏了一些标记。",
     "map.has_search_filter_alert": "您的搜索查询隐藏了一些标记。",
     "map.has_tool_filter_alert": "您的“工具类型”设置隐藏了一些标记。",
+    "map.has_filter_type_alert": "",
     "generic.blue": "蓝色",
     "generic.orange": "橙色",
     "generic.pink": "粉色",
@@ -1840,5 +1841,11 @@
     "menu.collectible_jewelry_rings_01": "",
     "menu.collectible_jewelry_rings_02": "",
     "map.view_loot": "",
-    "menu.modal_loot_table_title": ""
+    "menu.modal_loot_table_title": "",
+    "menu.filter_type": "",
+    "menu.filter_type.none": "",
+    "menu.filter_type.moonshiner": "",
+    "menu.filter_type.naturalist": "",
+    "menu.filter_type.weekly_set": "",
+    "menu.filter_type.important_items": ""
 }

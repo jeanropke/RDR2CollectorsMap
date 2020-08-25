@@ -1604,7 +1604,7 @@
     "menu.marker_size.100": "100 %",
     "menu.marker_size.125": "125 %",
     "menu.marker_size.150": "150 %",
-    "menu.marker_size.175": "",
+    "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200 %",
     "menu.toggle_debug": "デバッグ・フィーチャーの切り替え",
     "map.random_spot.desc": "このスポットは、この Wiki ページ{int.end.link} で詳細情報 {int.random_spot.link}を表示できるランダム・アイテムを提供します。",
@@ -1639,6 +1639,7 @@
     "map.has_multi_filter_alert": "「ツール・タイプ」設定および検索照会によって、一部のマーカーが非表示になっています。",
     "map.has_search_filter_alert": "一部のマーカーは、検索照会によって非表示になっています。",
     "map.has_tool_filter_alert": "一部のマーカーは、「ツール・タイプ」設定によって非表示になっています。",
+    "map.has_filter_type_alert": "",
     "generic.blue": "ブルー",
     "generic.orange": "オレンジ",
     "generic.pink": "ピンク",
@@ -1840,5 +1841,11 @@
     "menu.collectible_jewelry_rings_01": "",
     "menu.collectible_jewelry_rings_02": "",
     "map.view_loot": "",
-    "menu.modal_loot_table_title": ""
+    "menu.modal_loot_table_title": "",
+    "menu.filter_type": "",
+    "menu.filter_type.none": "",
+    "menu.filter_type.moonshiner": "",
+    "menu.filter_type.naturalist": "",
+    "menu.filter_type.weekly_set": "",
+    "menu.filter_type.important_items": ""
 }

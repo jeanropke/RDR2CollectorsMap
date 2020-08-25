@@ -1567,7 +1567,7 @@
     "menu.settings_import_export_title": "설정",
     "menu.generate_route_auto_update": "",
     "menu.enable_inventory_popups": "",
-    "menu.random_encounters": "",
+    "menu.random_encounters": "랜덤 인카운터",
     "map.madam_nazar.desc": "",
     "map.user_pins.placeholder_title": "",
     "map.user_pins.default_title": "",
@@ -1639,6 +1639,7 @@
     "map.has_multi_filter_alert": "",
     "map.has_search_filter_alert": "",
     "map.has_tool_filter_alert": "",
+    "map.has_filter_type_alert": "",
     "generic.blue": "",
     "generic.orange": "",
     "generic.pink": "",
@@ -1769,7 +1770,7 @@
     "menu.fme_notification_period": "",
     "help.fme_notification_period": "",
     "menu.fme.time.starts_in": "{time} 후 시작",
-    "menu.fme.time.less_than_a_minute": "",
+    "menu.fme.time.less_than_a_minute": "1분 이내",
     "menu.fme.time.minute": "",
     "menu.fme.time.minutes": "",
     "menu.fme.fme_archery": "활쏘기 달인",
@@ -1840,5 +1841,11 @@
     "menu.collectible_jewelry_rings_01": "",
     "menu.collectible_jewelry_rings_02": "",
     "map.view_loot": "",
-    "menu.modal_loot_table_title": ""
+    "menu.modal_loot_table_title": "",
+    "menu.filter_type": "",
+    "menu.filter_type.none": "",
+    "menu.filter_type.moonshiner": "",
+    "menu.filter_type.naturalist": "",
+    "menu.filter_type.weekly_set": "",
+    "menu.filter_type.important_items": ""
 }

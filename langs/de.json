@@ -1639,6 +1639,7 @@
     "map.has_multi_filter_alert": "Einige Marker werden durch die Einstellung \"Werkzeugtyp\" und die Suchabfrage versteckt.",
     "map.has_search_filter_alert": "Einige Marker werden durch Ihre Suchabfrage versteckt.",
     "map.has_tool_filter_alert": "Einige Markierungen werden durch die Einstellung \"Werkzeugtyp\" verdeckt.",
+    "map.has_filter_type_alert": "",
     "generic.blue": "Blau",
     "generic.orange": "Orange",
     "generic.pink": "Rosa",
@@ -1840,5 +1841,11 @@
     "menu.collectible_jewelry_rings_01": "Ringe 1",
     "menu.collectible_jewelry_rings_02": "Ringe 2",
     "map.view_loot": "Beute anzeigen",
-    "menu.modal_loot_table_title": ""
+    "menu.modal_loot_table_title": "",
+    "menu.filter_type": "",
+    "menu.filter_type.none": "",
+    "menu.filter_type.moonshiner": "",
+    "menu.filter_type.naturalist": "",
+    "menu.filter_type.weekly_set": "",
+    "menu.filter_type.important_items": ""
 }

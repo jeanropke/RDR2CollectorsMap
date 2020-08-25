@@ -1516,7 +1516,7 @@
     "map.layers.default": "Normale",
     "map.layers.detailed": "Détaillé",
     "map.layers.dark": "Sombre",
-    "map.layers.black": "",
+    "map.layers.black": "Noir",
     "menu.import_export_title": "Import / Export",
     "menu.import_export_explanation": "Cela importera ou exportera vos paramètres. L'importation des paramètres remplacera tous les paramètres actuels et rechargera la page. Cette fonctionnalité n'inclut pas les épingles.",
     "menu.import_button": "Importer",
@@ -1639,6 +1639,7 @@
     "map.has_multi_filter_alert": "Certains marqueurs sont cachés par le paramètre \"Type d'outil\" et la requête de recherche.",
     "map.has_search_filter_alert": "Certains marqueurs sont masqués par votre requête de recherche.",
     "map.has_tool_filter_alert": "Certains marqueurs sont cachés par le paramètre \"Type d'outil\" et la requête de recherche.",
+    "map.has_filter_type_alert": "",
     "generic.blue": "Bleu",
     "generic.orange": "",
     "generic.pink": "Rose",
@@ -1840,5 +1841,11 @@
     "menu.collectible_jewelry_rings_01": "",
     "menu.collectible_jewelry_rings_02": "",
     "map.view_loot": "",
-    "menu.modal_loot_table_title": ""
+    "menu.modal_loot_table_title": "",
+    "menu.filter_type": "",
+    "menu.filter_type.none": "",
+    "menu.filter_type.moonshiner": "",
+    "menu.filter_type.naturalist": "",
+    "menu.filter_type.weekly_set": "",
+    "menu.filter_type.important_items": ""
 }

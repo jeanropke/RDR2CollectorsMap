@@ -1639,6 +1639,7 @@
     "map.has_multi_filter_alert": "Alguns marcadores estão escondidos pela configuração do \"Tipo de ferramenta\" e campo de busca.",
     "map.has_search_filter_alert": "Alguns marcadores estão escondidos pelo campo de busca",
     "map.has_tool_filter_alert": "Alguns marcadores estão escondidos pela configuração do \"Tipo de ferramenta\"",
+    "map.has_filter_type_alert": "",
     "generic.blue": "Azul",
     "generic.orange": "Laranja",
     "generic.pink": "Rosa",
@@ -1840,5 +1841,11 @@
     "menu.collectible_jewelry_rings_01": "",
     "menu.collectible_jewelry_rings_02": "",
     "map.view_loot": "",
-    "menu.modal_loot_table_title": ""
+    "menu.modal_loot_table_title": "",
+    "menu.filter_type": "",
+    "menu.filter_type.none": "",
+    "menu.filter_type.moonshiner": "",
+    "menu.filter_type.naturalist": "",
+    "menu.filter_type.weekly_set": "",
+    "menu.filter_type.important_items": ""
 }
