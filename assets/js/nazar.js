@@ -17,15 +17,15 @@ const MadamNazar = {
   currentDate: null,
 
   loadMadamNazar: function () {
-    const _nazarParam = getParameterByName('nazar');
-    if (_nazarParam < MadamNazar.possibleLocations.length && _nazarParam) {
+    const _nazarParam = getParameterByName('cycles');
+    if (_nazarParam && _nazarParam > 0 && _nazarParam <= MadamNazar.possibleLocations.length) {
       MadamNazar.currentLocation = _nazarParam;
       MadamNazar.currentDate = '';
       MadamNazar.addMadamNazar();
       return Promise.resolve();
     } else {
       return Loader.promises['nazar'].consumeJson(nazar => {
-        MadamNazar.currentLocation = nazar.nazar_id - 1;
+        MadamNazar.currentLocation = nazar.nazar_id;
         MadamNazar.currentDate = new Date(nazar.date).toLocaleString(Settings.language, {
           day: "2-digit", month: "long", year: "numeric"
         });
@@ -36,37 +36,40 @@ const MadamNazar = {
   },
 
   addMadamNazar: function () {
-    const markerSize = Settings.markerSize;
-    if (MadamNazar.currentLocation == null)
+    if (MadamNazar.currentLocation == null || !enabledCategories.includes('nazar'))
       return;
 
-    if (enabledCategories.includes('nazar')) {
-      const shadow = Settings.isShadowsEnabled ?
-        `<img class="shadow"
+    const cl = MadamNazar.possibleLocations[MadamNazar.currentLocation - 1];
+    const markerSize = Settings.markerSize;
+    const shadow = Settings.isShadowsEnabled ?
+      `<img class="shadow"
           width="${35 * markerSize}"
           height="${16 * markerSize}"
           src="./assets/images/markers-shadow.png"
           alt="Shadow">` :
-        '';
-      const cl = MadamNazar.possibleLocations[MadamNazar.currentLocation];
-      const marker = L.marker([cl.x, cl.y], {
-        icon: L.divIcon({
-          iconSize: [35 * markerSize, 45 * markerSize],
-          iconAnchor: [17 * markerSize, 42 * markerSize],
-          popupAnchor: [1 * markerSize, -29 * markerSize],
-          html: `
+      '';
+
+    const marker = L.marker([cl.x, cl.y], {
+      icon: L.divIcon({
+        iconSize: [35 * markerSize, 45 * markerSize],
+        iconAnchor: [17 * markerSize, 42 * markerSize],
+        popupAnchor: [1 * markerSize, -29 * markerSize],
+        html: `
               <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
               <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
               ${shadow}
             `
-        })
-      });
-      marker.bindPopup($(`
+      })
+    });
+    marker.bindPopup($(`
         <div>
-          <h1><span data-text="menu.madam_nazar"></span> - ${MadamNazar.currentDate}</h1>
+          <h1><span data-text="menu.madam_nazar"></span> - ${MadamNazar.currentDate || "#" + MadamNazar.currentLocation}</h1>
           <p style="text-align: center;" data-text="map.madam_nazar.desc"></p>
         </div>`).translate().html(), { minWidth: 300 });
-      Layers.itemMarkersLayer.addLayer(marker);
-    }
+
+    Layers.itemMarkersLayer.addLayer(marker);
+
+    if (getParameterByName('q'))
+      MapBase.map.setView([cl.x, cl.y], 6);
   }
 };

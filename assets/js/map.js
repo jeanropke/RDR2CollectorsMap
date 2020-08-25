@@ -243,7 +243,6 @@ const MapBase = {
         MapBase.onSearch(previewParam);
 
         // Zoom in if there's only one specific item.
-        // Only do this here, as earring cycle 1 has 1 item, and we don't want that to zoom.
         const visibleItems = MapBase.markers.filter(m => m.isVisible);
         if (visibleItems.length === 1)
           MapBase.map.setView([visibleItems[0].lat, visibleItems[0].lng], 6);

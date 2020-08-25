@@ -91,7 +91,7 @@ const Cycles = {
       const _cycles = param.split(',');
       if (_cycles.length == 9) {
         if (_cycles.some(isNaN) || _cycles.some((e) => e < 1 || e > 6)) {
-          console.warn('Cycles parameters invalid');
+          console.warn('Cycles parameters invalid for items.');
         } else {
           Cycles.categories.flower = _cycles[0];
           Cycles.categories.cups,
@@ -110,17 +110,15 @@ const Cycles = {
           Cycles.categories.random = _cycles[8];
         }
       } else {
-        console.warn('Cycles parameters invalid');
+        console.warn('Cycles parameters invalid for items.');
       }
-    }
-
-    if (!isNaN(param) && param > 0 && param < 7) {
+    } else if (!isNaN(param) && param > 0 && param < 7) {
       for (const key in Cycles.categories) {
         if (Cycles.categories.hasOwnProperty(key))
           Cycles.categories[key] = param;
       }
     } else {
-      console.warn('Cycles parameters invalid');
+      console.warn('Cycles parameters invalid for items.');
     }
   },
 
