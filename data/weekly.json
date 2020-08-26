@@ -300,7 +300,7 @@
             "items": [
                 "legendary_item_panther_eye",
                 "legendary_item_wolf_heart",
-                "fossil_tooth_serrated"
+                "megafauna_tooth_serrated"
             ],
             "value": 85
         },
@@ -330,32 +330,32 @@
         },
         "jurassic_set": {
             "items": [
-                "fossil_tooth_trex",
-                "fossil_tail_spike",
-                "fossil_brow_horn"
+                "megafauna_tooth_trex",
+                "megafauna_tail_spike",
+                "megafauna_brow_horn"
             ],
             "value": 180
         },
         "ancient_wood_set": {
             "items": [
-                "fossil_pet_wood",
-                "fossil_pet_wood_rainbow",
-                "fossil_pet_wood_yellow"
+                "coastal_pet_wood",
+                "oceanic_pet_wood_rainbow",
+                "oceanic_pet_wood_yellow"
             ],
             "value": 110
         },
         "deep_blue_set": {
             "items": [
-                "fossil_tully_monster",
-                "fossil_cephalopod",
+                "oceanic_tully_monster",
+                "coastal_cephalopod",
                 "provision_fish_rock_bass"
             ],
             "value": 95
         },
         "arthropod_set": {
             "items": [
-                "fossil_sea_scorpion",
-                "fossil_trilobite_crypto",
+                "oceanic_sea_scorpion",
+                "oceanic_trilobite_crypto",
                 "carcass_crab_perfect"
             ],
             "value": 90
@@ -363,7 +363,7 @@
         "bite_sized_set": {
             "items": [
                 "provision_cougar_fang",
-                "fossil_tooth_mega",
+                "megafauna_tooth_mega",
                 "provision_alligator_tooth"
             ],
             "value": 75
