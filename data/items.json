@@ -169,7 +169,7 @@
         "1": [
             { "text": "coin_random_0", "height": 0, "tool": 2, "lat": -109.7754, "lng": 27.1651, "video": "https://www.youtube.com/watch?v=u1FZd8oLO5I&t=601s" },
             { "text": "coin_random_1", "height": 0, "tool": 2, "lat": -110.2823, "lng": 56.2695, "video": "https://www.youtube.com/watch?v=u1FZd8oLO5I&t=568s" },
-            { "text": "coin_random_2", "height": 0, "tool": 2, "lat": -33.7132, "lng": 124.1927, "video": "https://www.youtube.com/watch?v=u1FZd8oLO5I&t=274s" },
+            { "text": "coin_random_2", "height": -1, "tool": 2, "lat": -33.7132, "lng": 124.1927, "video": "https://www.youtube.com/watch?v=u1FZd8oLO5I&t=274s" },
             { "text": "coin_random_3", "height": 0, "tool": 2, "lat": -39.8522, "lng": 160.0209, "video": "https://www.youtube.com/watch?v=u1FZd8oLO5I&t=50s" },
             { "text": "coin_random_4", "height": 0, "tool": 2, "lat": -42.6679, "lng": 107.3432, "video": "https://www.youtube.com/watch?v=u1FZd8oLO5I&t=325s" },
             { "text": "coin_random_5", "height": -1, "tool": 2, "lat": -52.4738, "lng": 69.1518, "video": "https://www.youtube.com/watch?v=u1FZd8oLO5I&t=393s" },
