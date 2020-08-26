@@ -1634,7 +1634,7 @@
     "map.has_multi_filter_alert": "Bazı işaretçiler \"Alet tipi\" ayarınız ve arama sorgunuz tarafından gizleniyor.",
     "map.has_search_filter_alert": "Bazı işaretçiler arama sorgunuz tarafından gizleniyor.",
     "map.has_tool_filter_alert": "Bazı işaretçiler \"Alet tipi\" ayarınız tarafından gizleniyor.",
-    "map.has_filter_type_alert": "",
+    "map.has_filter_type_alert": "Bazı işaretçiler \"İşaretçi filtreleme\" ayarınız tarafından gizleniyor.",
     "generic.blue": "Mavi",
     "generic.orange": "Turuncu",
     "generic.pink": "Pembe",
