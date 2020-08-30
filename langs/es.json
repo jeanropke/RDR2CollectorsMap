@@ -1716,7 +1716,7 @@
     "help.search_copy_link": "Copia el enlace de búsqueda actual al portapapeles para que puedas buscar en el mapa con esa consulta de búsqueda.",
     "help.sort_items_alphabetically": "Si los elementos deberían ser acomodados alfabéticamente o usando el orden del juego.",
     "help.enable_marker_shadows": "Alterna si el marcador debe tener una sombra o no. Desactivar las sombras podría mejorar un poco el rendimiento.",
-    "help.delete_all_settings": "Resets all settings, user pins, and inventory items to their default values.",
+    "help.delete_all_settings": "Restablece todos los ajustes, marcadores del usuario y ítems del inventario a sus valores predeterminados.",
     "help.enable_marker_popups_hover": "Activa si las ventanas emergentes deberían abrirse cuando pasas por encima de un marcador o cuando le haces click al marcador. No funciona bien en pantallas táctiles.",
     "help.marker_size": "Te permite cambiar el tamaño de los marcadores de los coleccionables en el mapa.",
     "help.show_utilities": "Activa si los ajustes de utilidades debería ser visible en el menú.",
