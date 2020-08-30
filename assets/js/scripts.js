@@ -918,6 +918,11 @@ function filterMapMarkers() {
   else if (Settings.filterType === 'important') {
     filterMarkers(MapBase.importantItems);
   }
+  else if(Settings.filterType === 'static') {
+    let staticItems = [];
+    MapBase.markers.find(_m => { if(!_m.text.includes('random')) staticItems.push(_m.itemId) });
+    filterMarkers(staticItems);
+  }
 
   MapBase.addMarkers();
 }
