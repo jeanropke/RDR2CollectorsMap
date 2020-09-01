@@ -1839,6 +1839,8 @@
     "menu.filter_type.weekly_set": "Weekly set",
     "menu.filter_type.important_items": "Important items",
     "menu.filter_type.only_static": "Only static",
+    "menu.join_discord": "Join our Discord!",
+    "help.join_discord": "Opens the new tab with collectors map Discord.",
     "help.weekly_item_collectable": "This item can be collected by going to the corresponding location marked on the map.",
     "help.weekly_carcass_crab_perfect": "Crabs are located on the northern-most large island in the Flat Iron Lake, near Rhodes. Use a Bow with a Small Game Arrow for a clean kill.",
     "help.weekly_item_carcass_squirrel_perfect": "Squirrels are usually located in forests around the map. Use a Bow with a Small Game Arrow for a clean kill.",
