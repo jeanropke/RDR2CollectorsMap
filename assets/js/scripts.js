@@ -107,9 +107,10 @@ function init() {
   MadamNazar.loadMadamNazar();
   FME.init();
   const treasures = Treasure.init();
+  const legendaries = Legendary.init();
   Promise.all([cycles, markers]).then(MapBase.runOncePostLoad);
   Routes.init();
-  Promise.all([itemsCollectionsWeekly, markers, cycles, treasures])
+  Promise.all([itemsCollectionsWeekly, markers, cycles, treasures, legendaries])
     .then(Loader.resolveMapModelLoaded);
 
   if (Settings.isMenuOpened) $('.menu-toggle').click();

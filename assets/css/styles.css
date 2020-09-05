@@ -584,6 +584,12 @@ select {
     padding: 0 10px;
 }
 
+.side-menu .menu-hidden.two-column .collectible-wrapper,
+.side-menu .menu-hidden.two-column .animal-wrapper {
+    width: calc(50% - 4px);
+    display: inline-block;
+}
+
 .side-menu .menu-hidden.opened,
 #weekly-container.opened,
 #utilities-container.opened,
