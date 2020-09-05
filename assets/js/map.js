@@ -424,13 +424,13 @@ const MapBase = {
       if (!InventorySettings.isEnabled) {
         if (marker.isCollected && marker.isCurrent) {
           $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
-          $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
+          $(`[data-type=${marker.legacyItemId}] .collectible-text p`).addClass('disabled');
         } else {
           $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
-          $(`[data-type=${marker.legacyItemId}]`).removeClass('disabled');
+          $(`[data-type=${marker.legacyItemId}] .collectible-text p`).removeClass('disabled');
         }
         if (marker.isCurrent && ['egg', 'flower'].includes(marker.category)) {
-          $(`[data-type=${marker.legacyItemId}]`).toggleClass('disabled',
+          $(`[data-type=${marker.legacyItemId}] .collectible-text p`).toggleClass('disabled',
             markers.every(m => !m.canCollect));
         }
       }

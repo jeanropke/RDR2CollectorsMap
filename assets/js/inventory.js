@@ -89,14 +89,14 @@ const Inventory = {
         marker.isCurrent ||
         (marker.category === 'flower' && amount >= InventorySettings.flowersSoftStackSize)) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
-        $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
+        $(`[data-type=${marker.legacyItemId}] .collectible-text p`).addClass('disabled');
       } else if (marker.isCurrent) {
         $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
-        $(`[data-type=${marker.legacyItemId}]`).removeClass('disabled');
+        $(`[data-type=${marker.legacyItemId}] .collectible-text p`).removeClass('disabled');
       }
 
       if (marker.isCurrent && ['egg', 'flower'].includes(marker.category)) {
-        $(`[data-type=${marker.legacyItemId}]`).toggleClass('disabled',
+        $(`[data-type=${marker.legacyItemId}] .collectible-text p`).toggleClass('disabled',
           sameItemMarkers.filter(m => m.cycleName === marker.cycleName).every(m => !m.canCollect));
       }
 
