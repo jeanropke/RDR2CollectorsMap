@@ -403,7 +403,7 @@ const MapBase = {
     if (markers == null) return;
 
     const subdataCategoryIsDisabled =
-      (text == subdata && !$(`[data-type=${subdata}]`).hasClass('disabled'));
+      (text == subdata && !$(`[data-type=${subdata}] .collectible-text p`).hasClass('disabled'));
 
     $.each(markers, function (key, marker) {
       if (text != subdata && marker.text != text) return;
