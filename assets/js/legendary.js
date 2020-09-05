@@ -76,22 +76,24 @@ class Legendary {
     if (this.marker) Legendary.layer.removeLayer(this.marker);
     this.marker = L.layerGroup();
     this.marker.addLayer(L.circle([this.x, this.y], {
-      color: "#fdc607",
-      fillColor: "#fdc607",
-      fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
-      radius: this.radius,
-    }));
-    this.marker.addLayer(L.marker([this.x, this.y], { icon: Legendary.mainIcon, opacity: Settings.markerOpacity, })
-      .bindPopup(this.popupContent.bind(this), { minWidth: 400 })
-    );
+        color: "#fdc607",
+        fillColor: "#fdc607",
+        fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
+        radius: this.radius,
+      })
+      .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
     this.locations.forEach(cross =>
       this.marker.addLayer(L.marker([cross.x, cross.y], {
-        icon: Legendary.crossIcon,
-        pane: 'animalX',
-      }))
+          icon: Legendary.crossIcon,
+          pane: 'animalX',
+        })
+        .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
     );
     var overlay = `assets/images/icons/game/animals/legendaries/${this.text}.png?nocache=${nocache}`;
-    this.marker.addLayer(L.imageOverlay(overlay, [[this.x - this.radius, this.y - this.radius * 2], [this.x + this.radius, this.y + this.radius * 2]], {
+    this.marker.addLayer(L.imageOverlay(overlay, [
+      [this.x - this.radius, this.y - this.radius * 2],
+      [this.x + this.radius, this.y + this.radius * 2]
+    ], {
       opacity: linear(Settings.overlayOpacity, 0, 1, 0.5, 1),
     }));
     this.onMap = this.onMap;
