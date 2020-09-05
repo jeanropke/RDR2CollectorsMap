@@ -43,7 +43,7 @@ class Menu {
     Collection.updateMenu();
     Menu.addCycleWarning('[data-text="menu.random_spots"]', Cycles.isSameAsYesterday('random'));
     categories.forEach(cat => {
-      if (!enabledCategories.includes(cat)) $(`[data-type="${cat}"]`).addClass('disabled');
+      if (!enabledCategories.includes(cat)) $(`.menu-option[data-type="${cat}"]`).addClass('disabled');
     });
   }
 

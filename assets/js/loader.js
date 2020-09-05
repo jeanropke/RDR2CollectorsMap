@@ -41,6 +41,7 @@ const urls = [
     'data/fasttravels.json',
     'https://pepegapi.jeanropke.net/rdo/nazar',
     'data/treasures.json',
+    'data/animal_legendary.json',
     'data/loot.json',
     'data/filters.json',
 ];

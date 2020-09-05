@@ -30,15 +30,17 @@ class BaseItem {
   }
   _insertWeeklyMenuElement($listParent) {
     this.$weeklyMenuButton = $(`
-      <div class="weekly-item-listing" data-help="${this.weeklyHelpKey}">
+      <div class="weekly-item-listing" ${this.legacyItemId ? `data-type="${this.legacyItemId}"` : ""} data-help="${this.weeklyHelpKey}">
         <span>
           <div class="icon-wrapper"><img class="icon"
             src="./assets/images/icons/game/${this.itemId}.png" alt="Weekly item icon"></div>
-          <span data-text="${this.itemTranslationKey}"></span>
+          <span class="collectible" data-text="${this.itemTranslationKey}"></span>
         </span>
         <small class="counter-number counter-number-weekly">${this.amount}</small>
       </div>
-    `).translate().appendTo($listParent);
+    `).translate();
+    this.$weeklyMenuButton[0].rdoItem = this;
+    this.$weeklyMenuButton.appendTo($listParent);
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(InventorySettings, 'isEnabled stackSize', () =>
         this.$weeklyMenuButton
@@ -225,7 +227,7 @@ class Collection extends BaseCollection {
             collection.currentMarkers()
               .filter(marker => marker.canCollect && marker.item.amount > 0)
               .forEach(marker => {
-                $(`[data-type=${marker.legacyItemId}]`).addClass('disabled');
+                $(`[data-type=${marker.legacyItemId}] .collectible-text p`).addClass('disabled');
                 MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata,
                   marker.category, true);
               });
@@ -464,8 +466,10 @@ class Item extends BaseItem {
           return 'item';
         }
       })
-      .toggleClass('disabled', currentMarkers.every(marker => !marker.canCollect))
       .toggleClass('weekly-item', this.isWeekly())
+      .find('.collectible-text p')
+      .toggleClass('disabled', currentMarkers.every(marker => !marker.canCollect))
+      .end()
       .find('.counter')
       .toggle(InventorySettings.isEnabled)
       .end()

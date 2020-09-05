@@ -539,7 +539,8 @@ select {
 }
 
 .side-menu .disabled .menu-option-text,
-.side-menu .disabled .collectible-text {
+.side-menu .disabled .collectible-text,
+.side-menu .collectible-text .collectible.disabled {
     text-decoration: line-through;
 }
 
@@ -547,7 +548,7 @@ select {
     color: greenyellow;
 }
 
-.side-menu .not-found {
+.side-menu .not-found .menu-option-text {
     color: #f95050 !important;
 }
 
@@ -581,6 +582,12 @@ select {
     transition: max-height 250ms ease-out;
     margin: 0px -10px;
     padding: 0 10px;
+}
+
+.side-menu .menu-hidden.two-column .collectible-wrapper,
+.side-menu .menu-hidden.two-column .animal-wrapper {
+    width: calc(50% - 4px);
+    display: inline-block;
 }
 
 .side-menu .menu-hidden.opened,
@@ -756,7 +763,7 @@ a.wiki-page:visited {
     }
 }
 
-.highlight-important-items-menu {
+.highlight-important-items-menu .collectible {
     text-decoration: underline;
     text-decoration-color: #cc0000;
     text-decoration-thickness: 2px;
@@ -826,10 +833,6 @@ a.wiki-page:visited {
     display: inline-block;
     text-align: center;
     font-size: 15px;
-}
-
-.counter-number-weekly {
-    margin: 0 25px;
 }
 
 .counter-button {

@@ -1,0 +1,331 @@
+[
+  {
+    "text": "mp_animal_alligator_legendary_01", "x": -90.2656, "y": 144.2344, "radius": 3,
+    "locations": [
+      { "text": "alligator_kamassa_01", "x": -89.6386, "y": 144.7167 },
+      { "text": "alligator_lagras_01", "x": -88.3644, "y": 145.2568 },
+      { "text": "alligator_lagras_02", "x": -89.9050, "y": 143.5474 },
+      { "text": "alligator_lannahechee_01", "x": -91.0286, "y": 143.3673 },
+      { "text": "alligator_kamassa_02", "x": -92.5550, "y": 144.3743 }
+    ]
+  },
+  {
+    "text": "mp_animal_alligator_legendary_02", "x": -73.125, "y": 150.125, "radius": 6,
+    "locations": [
+      { "text": "alligator_kamassa_03", "x": -73.7508, "y": 145.2728 },
+      { "text": "alligator_kamassa_04", "x": -72.0886, "y": 147.1718 },
+      { "text": "alligator_kamassa_05", "x": -72.9061, "y": 145.6270 },
+      { "text": "alligator_lagras_03", "x": -74.3699, "y": 146.5723 },
+      { "text": "alligator_lagras_04", "x": -72.9060, "y": 147.2135 },
+      { "text": "alligator_lagras_05", "x": -73.1091, "y": 154.3384 },
+      { "text": "alligator_lannahechee_02", "x": -74.8832, "y": 154.7480 },
+      { "text": "alligator_lannahechee_03", "x": -73.8838, "y": 153.5995 },
+      { "text": "alligator_lannahechee_04", "x": -71.8963, "y": 153.3513 },
+      { "text": "alligator_lannahechee_05", "x": -70.8694, "y": 153.6313 }
+    ]
+  },
+  {
+    "text": "mp_animal_bear_legendary_01", "x": -58.0625, "y": 95.0625, "radius": 7.5,
+    "locations": [
+      { "text": "bear_ambient_01", "x": -59.4831, "y": 89.9043 },
+      { "text": "bear_ambient_02", "x": -60.9262, "y": 92.5230 },
+      { "text": "bear_ambient_03", "x": -64.1792, "y": 94.3548 },
+      { "text": "bear_ambient_04", "x": -55.2928, "y": 97.8274 },
+      { "text": "bear_ambient_05", "x": -53.5565, "y": 98.9934 }
+    ]
+  },
+  {
+    "text": "mp_animal_bear_legendary_02", "x": -53.875, "y": 76.6875, "radius": 9,
+    "locations": [
+      { "text": "bear_baby_01", "x": -53.6051, "y": 84.7198 },
+      { "text": "bear_baby_02", "x": -50.3475, "y": 71.9142 },
+      { "text": "bear_baby_03", "x": -55.5420, "y": 72.3239 },
+      { "text": "bear_baby_04", "x": -51.9429, "y": 81.4947 },
+      { "text": "bear_camp_01", "x": -53.3151, "y": 79.8868 },
+      { "text": "bear_camp_02", "x": -50.7486, "y": 73.4919 },
+      { "text": "bear_camp_03", "x": -57.1709, "y": 72.6882 },
+      { "text": "bear_camp_04", "x": -58.2884, "y": 71.2636 }
+    ]
+  },
+  {
+    "text": "mp_animal_beaver_legendary_01", "x": -68.5, "y": 71.375, "radius": 6,
+    "locations": [
+      { "text": "beaver_elysian_pool", "x": -70.4958, "y": 75.2243 },
+      { "text": "beaver_kamassa_river_mid", "x": -68.7689, "y": 74.2316 },
+      { "text": "beaver_kamassa_river_n", "x": -68.9192, "y": 70.5888 },
+      { "text": "beaver_kamassa_river_s", "x": -64.8084, "y": 68.4498 },
+      { "text": "beaver_owanjila_dam", "x": -70.9532, "y": 76.0010 }
+    ]
+  },
+  {
+    "text": "mp_animal_beaver_legendary_02", "x": -52.5313, "y": 147.4375, "radius": 8.5,
+    "locations": [
+      { "text": "beaver_owanjila_ne", "x": -55.0030, "y": 149.2865 },
+      { "text": "beaver_owanjila_nn", "x": -59.6155, "y": 146.3325 },
+      { "text": "beaver_owanjila_nw", "x": -49.6997, "y": 147.3713 },
+      { "text": "beaver_owanjila_se", "x": -46.7739, "y": 148.2867 },
+      { "text": "beaver_south_elysian_pool", "x": -51.5952, "y": 148.5152 }
+    ]
+  },
+  {
+    "text": "mp_animal_bison_legendary_01", "x": -57.7813, "y": 127.5313, "radius": 6,
+    "locations": [
+      { "text": "bison_ambient_01", "x": -53.9939, "y": 126.1762 },
+      { "text": "bison_ambient_02", "x": -55.6537, "y": 126.7496 },
+      { "text": "bison_ambient_03", "x": -54.9453, "y": 130.1508 },
+      { "text": "bison_ambient_04", "x": -58.2484, "y": 130.7127 },
+      { "text": "bison_ambient_05", "x": -61.8377, "y": 125.4599 }
+    ]
+  },
+  {
+    "text": "mp_animal_bison_legendary_02", "x": -34.5938, "y": 81.9688, "radius": 5.5,
+    "locations": [
+      { "text": "bison_herd_01", "x": -35.6187, "y": 82.4754 },
+      { "text": "bison_herd_02", "x": -39.2902, "y": 83.0257 },
+      { "text": "bison_herd_03", "x": -35.4652, "y": 79.1702 },
+      { "text": "bison_herd_04", "x": -30.1821, "y": 81.3053 },
+      { "text": "bison_herd_05", "x": -33.3148, "y": 84.0936 }
+    ]
+  },
+  {
+    "text": "mp_animal_boar_legendary_01", "x": -65.1875, "y": 150.5, "radius": 4.5,
+    "locations": [
+      { "text": "boar_ambient_01", "x": -63.8982, "y": 149.2164 },
+      { "text": "boar_ambient_02", "x": -65.5981, "y": 153.4409 },
+      { "text": "boar_ambient_03", "x": -63.3960, "y": 147.9758 },
+      { "text": "boar_ambient_04", "x": -67.4389, "y": 147.8448 },
+      { "text": "boar_ambient_05", "x": -66.8984, "y": 151.6635 }
+    ]
+  },
+  {
+    "text": "mp_animal_boar_legendary_02", "x": -96.9688, "y": 85.1563, "radius": 9.5,
+    "locations": [
+      { "text": "boar_trail_01", "x": -103.1819, "y": 90.2970 },
+      { "text": "boar_trail_02", "x": -97.9545, "y": 81.5904 },
+      { "text": "boar_trail_03", "x": -100.6743, "y": 84.1939 },
+      { "text": "boar_charge_01", "x": -100.1018, "y": 86.5650 },
+      { "text": "boar_charge_02", "x": -89.1295, "y": 83.3439 },
+      { "text": "boar_charge_03", "x": -93.7640, "y": 86.0201 }
+    ]
+  },
+  {
+    "text": "mp_animal_buck_legendary_01", "x": -67.1875, "y": 115.9375, "radius": 9,
+    "locations": [
+      { "text": "buck_location_tier_i_0", "x": -72.2745, "y": 115.3483 },
+      { "text": "buck_location_tier_i_1", "x": -67.7966, "y": 118.6976 },
+      { "text": "buck_location_tier_i_2", "x": -66.5914, "y": 114.0578 },
+      { "text": "buck_location_tier_i_3", "x": -63.9323, "y": 109.1463 },
+      { "text": "buck_location_tier_i_4", "x": -69.1733, "y": 123.5270 }
+    ]
+  },
+  {
+    "text": "mp_animal_buck_legendary_02", "x": -86.6563, "y": 76.0938, "radius": 6,
+    "locations": [
+      { "text": "buck_location_tier_ii_0", "x": -89.3447, "y": 78.6062 },
+      { "text": "buck_location_tier_ii_1", "x": -88.5395, "y": 75.2394 },
+      { "text": "buck_location_tier_ii_2", "x": -85.3443, "y": 75.1735 },
+      { "text": "buck_location_tier_ii_3", "x": -84.1868, "y": 80.1802 },
+      { "text": "buck_location_tier_ii_4", "x": -85.4809, "y": 71.9787 }
+    ]
+  },
+  {
+    "text": "mp_animal_cougar_legendary_01", "x": -91.7031, "y": 93.8906, "radius": 4,
+    "locations": [
+      { "text": "cougar_kill_rabbit_1", "x": -93.0891, "y": 96.7434 },
+      { "text": "cougar_kill_rabbit_2", "x": -90.4661, "y": 94.8300 },
+      { "text": "cougar_kill_rabbit_3", "x": -91.3023, "y": 94.9527 },
+      { "text": "cougar_kill_rabbit_4", "x": -89.3882, "y": 96.3907 },
+      { "text": "cougar_kill_rabbit_5", "x": -92.9744, "y": 90.6234 }
+    ]
+  },
+  {
+    "text": "mp_animal_cougar_legendary_02", "x": -119.6875, "y": 18.8906, "radius": 8,
+    "locations": [
+      { "text": "cougar_ambient_1", "x": -119.3764, "y": 17.0412 },
+      { "text": "cougar_ambient_2", "x": -121.0665, "y": 15.0429 },
+      { "text": "cougar_ambient_3", "x": -123.9858, "y": 24.8225 },
+      { "text": "cougar_ambient_4", "x": -122.4723, "y": 16.3225 },
+      { "text": "cougar_ambient_5", "x": -121.9419, "y": 18.0300 },
+      { "text": "cougar_maul_hunter_1", "x": -122.7600, "y": 19.7807 },
+      { "text": "cougar_maul_hunter_2", "x": -116.3897, "y": 12.5799 },
+      { "text": "cougar_maul_hunter_3", "x": -116.8408, "y": 14.4202 },
+      { "text": "cougar_maul_hunter_4", "x": -116.3451, "y": 16.7493 },
+      { "text": "cougar_maul_hunter_5", "x": -119.3797, "y": 17.3290 },
+      { "text": "cougar_wrecked_camp_1", "x": -122.2831, "y": 24.2235 },
+      { "text": "cougar_wrecked_camp_2", "x": -118.8780, "y": 23.3747 },
+      { "text": "cougar_wrecked_camp_3", "x": -122.4136, "y": 21.1029 },
+      { "text": "cougar_wrecked_camp_4", "x": -118.2372, "y": 19.6210 },
+      { "text": "cougar_wrecked_camp_5", "x": -114.8591, "y": 21.9901 }
+    ]
+  },
+  {
+    "text": "mp_animal_coyote_legendary_01", "x": -101.5313, "y": 66.6875, "radius": 7.5,
+    "locations": [
+      { "text": "coyote_hennigans_stead_e", "x": -105.4703, "y": 69.6061 },
+      { "text": "coyote_hennigans_stead_ne", "x": -107.7573, "y": 67.1904 },
+      { "text": "coyote_hennigans_stead_nw", "x": -97.0414, "y": 64.0487 },
+      { "text": "coyote_hennigans_stead_s", "x": -96.8673, "y": 70.1063 },
+      { "text": "coyote_hennigans_stead_se", "x": -101.3838, "y": 61.1792 }
+    ]
+  },
+  {
+    "text": "mp_animal_coyote_legendary_02", "x": -73.25, "y": 88.0938, "radius": 6,
+    "locations": [
+      { "text": "coyote_montos_rest", "x": -75.2222, "y": 93.0137 },
+      { "text": "coyote_riggs_station_n", "x": -73.3518, "y": 84.3522 },
+      { "text": "coyote_riggs_station_s", "x": -68.7025, "y": 86.8780 },
+      { "text": "coyote_strawberry_s", "x": -71.0705, "y": 88.5742 },
+      { "text": "coyote_upper_montana_river", "x": -77.8200, "y": 87.6067 }
+    ]
+  },
+  {
+    "text": "mp_animal_elk_legendary_01", "x": -45.5, "y": 114.7188, "radius": 7,
+    "locations": [
+      { "text": "elk_cumberland_0", "x": -47.2455, "y": 118.3001 },
+      { "text": "elk_cumberland_1", "x": -49.0221, "y": 119.7748 },
+      { "text": "elk_cumberland_2", "x": -44.4929, "y": 109.0759 },
+      { "text": "elk_cumberland_3", "x": -42.9728, "y": 117.6739 },
+      { "text": "elk_cumberland_4", "x": -47.9034, "y": 118.6427 }
+    ]
+  },
+  {
+    "text": "mp_animal_elk_legendary_02", "x": -104.125, "y": 45.4375, "radius": 10,
+    "locations": [
+      { "text": "elk_cholla_0", "x": -105.1562, "y": 45.9612 },
+      { "text": "elk_cholla_1", "x": -101.0358, "y": 45.1652 },
+      { "text": "elk_cholla_2", "x": -104.8836, "y": 39.5809 },
+      { "text": "elk_cholla_3", "x": -112.2900, "y": 43.4511 },
+      { "text": "elk_cholla_4", "x": -95.5901, "y": 47.5888 }
+    ]
+  },
+  {
+    "text": "mp_animal_fox_legendary_01", "x": -76.9531, "y": 126.7969, "radius": 7.5,
+    "locations": [
+      { "text": "fox_ringneck_01", "x": -72.4177, "y": 129.9192 },
+      { "text": "fox_ringneck_02", "x": -72.0857, "y": 130.5053 },
+      { "text": "fox_clemens_01", "x": -73.3334, "y": 131.3731 },
+      { "text": "fox_clemens_02", "x": -74.6049, "y": 131.9333 },
+      { "text": "fox_colter_01", "x": -71.6793, "y": 129.5106 },
+      { "text": "fox_colter_02", "x": -79.7129, "y": 121.0258 },
+      { "text": "fox_ringneck_03", "x": -81.0047, "y": 121.7749 },
+      { "text": "fox_ringneck_04", "x": -82.0833, "y": 123.6960 },
+      { "text": "fox_ringneck_05", "x": -78.8710, "y": 122.9856 },
+      { "text": "fox_clemens_03", "x": -80.9810, "y": 122.8655 }
+    ]
+  },
+  {
+    "text": "mp_animal_fox_legendary_02", "x": -28.1406, "y": 92.6406, "radius": 5,
+    "locations": [
+      { "text": "fox_clemens_04", "x": -28.8616, "y": 96.3367 },
+      { "text": "fox_clemens_05", "x": -31.3041, "y": 94.2081 },
+      { "text": "fox_colter_03", "x": -26.0163, "y": 92.5196 },
+      { "text": "fox_colter_04", "x": -25.6515, "y": 91.4099 },
+      { "text": "fox_colter_05", "x": -27.9236, "y": 90.4859 },
+      { "text": "fox_colter_06", "x": -27.2660, "y": 93.2922 },
+      { "text": "fox_colter_07", "x": -28.4183, "y": 90.6566 },
+      { "text": "fox_colter_08", "x": -29.5941, "y": 92.6258 },
+      { "text": "fox_colter_09", "x": -27.9167, "y": 93.1054 },
+      { "text": "fox_colter_10", "x": -26.4321, "y": 89.6490 }
+    ]
+  },
+  {
+    "text": "mp_animal_moose_legendary_02", "x": -29.7969, "y": 151.75, "radius": 6,
+    "locations": [
+      { "text": "moose_barrow_lagoon_nw", "x": -29.7445, "y": 155.9338 },
+      { "text": "moose_barrow_lagoon_s", "x": -28.0544, "y": 154.8757 },
+      { "text": "moose_barrow_lagoon_s_2", "x": -30.3257, "y": 147.3624 },
+      { "text": "moose_barrow_lagoon_se", "x": -29.7445, "y": 155.9338 },
+      { "text": "moose_barrow_lagoon_sw", "x": -28.4404, "y": 149.9297 }
+    ]
+  },
+  {
+    "text": "mp_animal_moose_legendary_01", "x": -39.3984, "y": 96.5703, "radius": 2.5,
+    "locations": [
+      { "text": "moose_roanoke_ridge_n", "x": -39.5415, "y": 96.4371 },
+      { "text": "moose_roanoke_ridge_n_2", "x": -39.3638, "y": 95.4010 },
+      { "text": "moose_roanoke_ridge_ne", "x": -38.2047, "y": 95.9749 },
+      { "text": "moose_roanoke_ridge_ne_2", "x": -40.3290, "y": 97.7125 },
+      { "text": "moose_roanoke_ridge_nw", "x": -40.5919, "y": 97.0236 }
+    ]
+  },
+  {
+    "text": "mp_animal_panther_legendary_01", "x": -97, "y": 131, "radius": 4.5,
+    "locations": [
+      { "text": "panther_ambient_1", "x": -96.8149, "y": 134.3622 },
+      { "text": "panther_ambient_2", "x": -97.2213, "y": 133.0194 },
+      { "text": "panther_ambient_3", "x": -96.2076, "y": 130.3765 },
+      { "text": "panther_ambient_4", "x": -96.9257, "y": 127.3777 },
+      { "text": "panther_ambient_5", "x": -98.0348, "y": 129.7719 }
+    ]
+  },
+  {
+    "text": "mp_animal_panther_legendary_02", "x": -71, "y": 143.7813, "radius": 9.5,
+    "locations": [
+      { "text": "panther_ambush_1", "x": -69.3868, "y": 146.3774 },
+      { "text": "panther_ambush_2", "x": -73.1700, "y": 136.6251 },
+      { "text": "panther_ambush_3", "x": -77.6834, "y": 144.3107 },
+      { "text": "panther_ambush_4", "x": -79.3863, "y": 142.6978 },
+      { "text": "panther_ambush_5", "x": -75.0744, "y": 143.7882 },
+      { "text": "panther_reinforcement_1", "x": -66.9113, "y": 145.1785 },
+      { "text": "panther_reinforcement_2", "x": -64.2752, "y": 145.2116 },
+      { "text": "panther_reinforcement_3", "x": -64.4541, "y": 149.2745 },
+      { "text": "panther_reinforcement_4", "x": -68.5253, "y": 139.7292 },
+      { "text": "panther_reinforcement_5", "x": -70.6390, "y": 140.4138 }
+    ]
+  },
+  {
+    "text": "mp_animal_ram_legendary_01", "x": -119.9063, "y": 44.6406, "radius": 10,
+    "locations": [
+      { "text": "ram_location_tier_i_0", "x": -120.3972, "y": 35.4481 },
+      { "text": "ram_location_tier_i_1", "x": -118.8730, "y": 53.7722 },
+      { "text": "ram_location_tier_i_2", "x": -121.7022, "y": 49.2428 },
+      { "text": "ram_location_tier_i_3", "x": -121.9752, "y": 40.9367 },
+      { "text": "ram_location_tier_i_4", "x": -119.6918, "y": 46.6420 }
+    ]
+  },
+  {
+    "text": "mp_animal_ram_legendary_02", "x": -30.7813, "y": 131.2688, "radius": 10,
+    "locations": [
+      { "text": "ram_location_tier_ii_0", "x": -30.7893, "y": 136.3115 },
+      { "text": "ram_location_tier_ii_1", "x": -31.7775, "y": 140.4570 },
+      { "text": "ram_location_tier_ii_2", "x": -29.5669, "y": 134.9187 },
+      { "text": "ram_location_tier_ii_3", "x": -29.1032, "y": 122.0571 },
+      { "text": "ram_location_tier_ii_4", "x": -32.0274, "y": 123.0338 }
+    ]
+  },
+  {
+    "text": "mp_animal_wolf_legendary_01", "x": -41.6094, "y": 136.375, "radius": 7,
+    "locations": [
+      { "text": "wolf_o_creagh_01", "x": -42.8786, "y": 136.8918 },
+      { "text": "wolf_o_creagh_02", "x": -40.8738, "y": 137.8486 },
+      { "text": "wolf_o_creagh_03", "x": -42.2985, "y": 135.6452 },
+      { "text": "wolf_cohutta_01", "x": -37.1941, "y": 133.4385 },
+      { "text": "wolf_cohutta_02", "x": -38.0485, "y": 136.0282 },
+      { "text": "wolf_cohutta_03", "x": -36.5916, "y": 137.5960 },
+      { "text": "wolf_o_creagh_04", "x": -47.0415, "y": 134.3837 },
+      { "text": "wolf_o_creagh_05", "x": -43.0274, "y": 133.0478 },
+      { "text": "wolf_o_creagh_06", "x": -45.0703, "y": 139.4214 },
+      { "text": "wolf_o_creagh_07", "x": -42.0417, "y": 141.4063 }
+    ]
+  },
+  {
+    "text": "mp_animal_wolf_legendary_02", "x": -35.0469, "y": 115.3906, "radius": 6,
+    "locations": [
+      { "text": "wolf_cohutta_05", "x": -36.4469, "y": 114.3362 },
+      { "text": "wolf_cohutta_14", "x": -38.2638, "y": 110.9688 },
+      { "text": "wolf_cohutta_10", "x": -34.3610, "y": 119.1464 },
+      { "text": "wolf_cohutta_04", "x": -35.2884, "y": 114.1673 },
+      { "text": "wolf_cohutta_08", "x": -34.0797, "y": 116.3378 },
+      { "text": "wolf_cohutta_12", "x": -36.6548, "y": 116.2641 },
+      { "text": "wolf_cohutta_11", "x": -37.1316, "y": 115.2298 },
+      { "text": "wolf_cohutta_13", "x": -36.9613, "y": 110.8264 },
+      { "text": "wolf_cohutta_06", "x": -33.8945, "y": 115.0019 },
+      { "text": "wolf_cohutta_09", "x": -34.9834, "y": 116.8839 },
+      { "text": "wolf_o_creagh_10", "x": -34.5566, "y": 113.2794 },
+      { "text": "wolf_o_creagh_09", "x": -36.4563, "y": 113.7856 },
+      { "text": "wolf_o_creagh_08", "x": -35.2793, "y": 113.2706 },
+      { "text": "wolf_cohutta_15", "x": -31.4701, "y": 118.7416 },
+      { "text": "wolf_cohutta_07", "x": -33.7073, "y": 119.2495 }
+    ]
+  }
+]
