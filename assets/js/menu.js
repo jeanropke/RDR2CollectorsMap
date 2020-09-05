@@ -184,7 +184,7 @@ class Menu {
       .triggerHandler('change');
 
     SettingProxy.addListener(Settings, 'nazarCustomLocation', () =>
-      this.toggleFilterWarning('map.nazar_custom_location_alert', Settings.nazarCustomLocation[0] !== '0'))();
+      this.toggleFilterWarning('map.nazar_custom_location_alert', Settings.nazarCustomLocation !== 0))();
 
     $('.filter-alert').on('click', function () {
       $(this).hide();

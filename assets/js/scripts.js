@@ -420,13 +420,13 @@ $("#enable-cycle-input").on("change", function () {
   Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
-  Settings.nazarCustomLocation = [0, 0];
   $('.nazar-position-dropdown-menu').toggleClass('hidden', !Settings.isCycleInputEnabled);
 });
 
 $('#nazar-position').on("change", function () {
   const nazarDate = new Date(Date.now() - 21600000).toISOUTCDateString();
-  Settings.nazarCustomLocation = [$(this).val(), nazarDate];
+  Settings.nazarCustomLocation = $(this).val();
+  Settings.nazarDate = nazarDate;
   MadamNazar.addMadamNazar();
 });
 

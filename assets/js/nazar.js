@@ -43,7 +43,7 @@ const MadamNazar = {
     if (MadamNazar.currentLocation == null || !enabledCategories.includes('nazar'))
       return;
 
-    const isCustomLocation = Settings.nazarCustomLocation[0] !== '0' ? Settings.nazarCustomLocation[0] : MadamNazar.currentLocation;
+    const isCustomLocation = Settings.nazarCustomLocation !== 0 ? Settings.nazarCustomLocation : MadamNazar.currentLocation;
     const cl = MadamNazar.possibleLocations[isCustomLocation - 1];
 
     const markerSize = Settings.markerSize;

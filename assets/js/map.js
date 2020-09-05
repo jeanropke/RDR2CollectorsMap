@@ -280,9 +280,9 @@ const MapBase = {
 
     // Delete custom Nazar position from settings when she change location
     const nazarDate = new Date(Date.now() - 21600000).toISOUTCDateString();
-    if (Settings.nazarCustomLocation[1] != nazarDate) {
+    if (Settings.nazarDate != nazarDate) {
       $('#nazar-position').val(0);
-      Settings.nazarCustomLocation = [0, 0];
+      Settings.nazarCustomLocation = 0;
     }
   },
 
