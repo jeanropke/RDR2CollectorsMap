@@ -135,6 +135,7 @@ const MapBase = {
     $("#overlay-opacity").on("change", function () {
       Settings.overlayOpacity = Number($("#overlay-opacity").val());
       MapBase.setOverlays();
+      Legendary.onSettingsChanged();
     });
 
     MapBase.map.on('click', function (e) {

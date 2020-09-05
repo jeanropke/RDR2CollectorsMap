@@ -21,10 +21,10 @@ const categories = [
   'random', 'ring', 'swords', 'treasure', 'user_pins', 'wands', 'weekly'
 ];
 
-const parentCategories = { 
+const parentCategories = {
   jewelry_random: ['bracelet', 'earring', 'necklace', 'ring'],
   fossils_random: ['coastal', 'megafauna', 'oceanic']
- };
+};
 
 let enabledCategories = JSON.parse(localStorage.getItem("enabled-categories"));
 if (!enabledCategories) {
@@ -57,7 +57,7 @@ L.LayerGroup.include({
 // Check if an array contains another array. Used to enable random categories set (jewerly & fossils)
 Array.prototype.arrayContains = function (sub) {
   var self = this;
-  var result = sub.filter(function(item) {
+  var result = sub.filter(function (item) {
     return self.indexOf(item) > -1;
   });
   return sub.length === result.length;
@@ -411,6 +411,7 @@ $("#marker-size").on("change", function () {
   Settings.markerSize = Number($("#marker-size").val());
   MapBase.addMarkers();
   Treasure.onSettingsChanged();
+  Legendary.onSettingsChanged();
 });
 
 $("#enable-cycle-input").on("change", function () {
@@ -454,6 +455,7 @@ $('#enable-marker-popups-hover').on("change", function () {
 $('#enable-marker-shadows').on("change", function () {
   Settings.isShadowsEnabled = $("#enable-marker-shadows").prop('checked');
   Treasure.onSettingsChanged();
+  Legendary.onSettingsChanged();
   MapBase.addMarkers();
 });
 
@@ -919,9 +921,9 @@ function filterMapMarkers() {
   else if (Settings.filterType === 'important') {
     filterMarkers(MapBase.importantItems);
   }
-  else if(Settings.filterType === 'static') {
+  else if (Settings.filterType === 'static') {
     let staticItems = [];
-    MapBase.markers.find(_m => { if(!_m.text.includes('random')) staticItems.push(_m.itemId) });
+    MapBase.markers.find(_m => { if (!_m.text.includes('random')) staticItems.push(_m.itemId) });
     filterMarkers(staticItems);
   }
 
