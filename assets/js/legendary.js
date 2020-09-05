@@ -1,8 +1,8 @@
 class Legendary {
-
-  static start = Date.now();
-
   static init() {
+
+    const start = Date.now();
+
     // Legendary animals not yet released.
     this.notReleased = [
       'mp_animal_bear_legendary_01', 'mp_animal_bear_legendary_02', 'mp_animal_moose_legendary_01',
@@ -34,7 +34,7 @@ class Legendary {
     return Loader.promises['animal_legendary'].consumeJson(data => {
       data.forEach(item => this.animals.push(new Legendary(item)));
       this.onLanguageChanged();
-      console.info(`%c[Legendary animals] Loaded in ${Date.now() - Legendary.start}ms!`, 'color: #bada55; background: #242424');
+      console.info(`%c[Legendary animals] Loaded in ${Date.now() - start}ms!`, 'color: #bada55; background: #242424');
     });
   }
   static onLanguageChanged() {
