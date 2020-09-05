@@ -129,6 +129,7 @@ function init() {
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsOnClickEnabled);
+  $('#nazar-position').val(Settings.nazarCustomLocation)
   $('#timestamps-24').prop("checked", Settings.isClock24Hour);
   $('#enable-cycle-input').prop("checked", Settings.isCycleInputEnabled);
   $("#enable-right-click").prop('checked', Settings.isRightClickEnabled);
@@ -145,6 +146,7 @@ function init() {
 
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
+  $('.nazar-position-dropdown-menu').toggleClass('hidden', !Settings.isCycleInputEnabled);
   $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
 
   $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
@@ -416,6 +418,14 @@ $("#enable-cycle-input").on("change", function () {
   Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
   $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
   $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
+  Settings.nazarCustomLocation = [0, 0];
+  $('.nazar-position-dropdown-menu').toggleClass('hidden', !Settings.isCycleInputEnabled);
+});
+
+$('#nazar-position').on("change", function () {
+  const nazarDate = new Date(Date.now() - 21600000).toISOUTCDateString();
+  Settings.nazarCustomLocation = [$(this).val(), nazarDate];
+  MadamNazar.addMadamNazar();
 });
 
 // Remove item from map when using the menu

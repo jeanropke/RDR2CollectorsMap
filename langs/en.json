@@ -1887,5 +1887,21 @@
     "provision_owl_feather.name": "Owl Feather",
     "provision_raccoon_fur_pristine.name": "Perfect Raccoon Pelt",
     "provision_seagull_feather.name": "Seagull Feather",
-    "provision_skunk_fur_pristine.name": "Perfect Skunk Pelt"
+    "provision_skunk_fur_pristine.name": "Perfect Skunk Pelt",
+    "menu.nazar_position": "Madam Nazar location",
+    "help.nazar_position": "Allows you to set custom Madam Nazar position (note that this setting resets every 24 hours)",
+    "map.nazar_custom_location_alert": "Madam Nazar position has been set manually. (position may not be accurate)",
+    "menu.nazar_position_auto": "Auto",
+    "menu.nazar_position_window_rock": "Window Rock",
+    "menu.nazar_position_grizzlies East": "Grizzlies East",
+    "menu.nazar_position_ronaoke_ridge": "Ronaoke Ridge",
+    "menu.nazar_position_heartlands_west": "Heartlands West",
+    "menu.nazar_position_heartlands_east": "Heartlands East",
+    "menu.nazar_position_emerald_ranch": "Emerald Ranch",
+    "menu.nazar_position_bluewater_marsh": "Bluewater Marsh",
+    "menu.nazar_position_tall_trees": "Tall Trees",
+    "menu.nazar_position_bolger_glade": "Bolger Glade",
+    "menu.nazar_position_cholla_springs": "Cholla Springs",
+    "menu.nazar_position_thieves_landing": "Thieves Landing",
+    "menu.nazar_position_plainview": "Plainview"
 }

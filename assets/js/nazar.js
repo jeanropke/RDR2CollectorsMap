@@ -17,7 +17,9 @@ const MadamNazar = {
   currentDate: null,
 
   loadMadamNazar: function () {
-    const _nazarParam = getParameterByName('nazar') || getParameterByName('cycles');
+    Layers.nazarLayer.addTo(MapBase.map);
+
+    const _nazarParam = getParameterByName('nazar') || getParameterByName('cycles')
     if (_nazarParam && _nazarParam > 0 && _nazarParam <= MadamNazar.possibleLocations.length) {
       MadamNazar.currentLocation = _nazarParam;
       MadamNazar.currentDate = '';
@@ -36,10 +38,14 @@ const MadamNazar = {
   },
 
   addMadamNazar: function () {
+    Layers.nazarLayer.clearLayers();
+
     if (MadamNazar.currentLocation == null || !enabledCategories.includes('nazar'))
       return;
 
-    const cl = MadamNazar.possibleLocations[MadamNazar.currentLocation - 1];
+    const isCustomLocation = Settings.nazarCustomLocation[0] !== '0' ? Settings.nazarCustomLocation[0] : MadamNazar.currentLocation;
+    const cl = MadamNazar.possibleLocations[isCustomLocation - 1];
+
     const markerSize = Settings.markerSize;
     const shadow = Settings.isShadowsEnabled ?
       `<img class="shadow"
@@ -67,7 +73,7 @@ const MadamNazar = {
           <p style="text-align: center;" data-text="map.madam_nazar.desc"></p>
         </div>`).translate().html(), { minWidth: 300 });
 
-    Layers.itemMarkersLayer.addLayer(marker);
+    Layers.nazarLayer.addLayer(marker);
 
     if (getParameterByName('q'))
       MapBase.map.setView([cl.x, cl.y], 6);

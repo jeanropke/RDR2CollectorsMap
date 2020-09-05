@@ -143,6 +143,8 @@ class Menu {
           MapBase.addMarkers();
           Treasure.onCategoryToggle();
           Pins.addToMap();
+        } else if (category === 'nazar') {
+          MadamNazar.addMadamNazar();
         } else if (category === 'user_pins') {
           Pins.addToMap();
         } else if (category === 'treasure') {
@@ -180,6 +182,9 @@ class Menu {
       })
       .val(Settings.filterType)
       .triggerHandler('change');
+
+    SettingProxy.addListener(Settings, 'nazarCustomLocation', () =>
+      this.toggleFilterWarning('map.nazar_custom_location_alert', Settings.nazarCustomLocation[0] !== '0'))();
 
     $('.filter-alert').on('click', function () {
       $(this).hide();
