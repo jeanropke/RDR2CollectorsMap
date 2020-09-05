@@ -17,7 +17,7 @@ const MadamNazar = {
   currentDate: null,
 
   loadMadamNazar: function () {
-    const _nazarParam = getParameterByName('cycles');
+    const _nazarParam = getParameterByName('nazar') || getParameterByName('cycles');
     if (_nazarParam && _nazarParam > 0 && _nazarParam <= MadamNazar.possibleLocations.length) {
       MadamNazar.currentLocation = _nazarParam;
       MadamNazar.currentDate = '';
