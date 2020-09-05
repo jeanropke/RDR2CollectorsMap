@@ -283,6 +283,7 @@ const MapBase = {
     if (Settings.nazarDate != nazarDate) {
       $('#nazar-position').val(0);
       Settings.nazarCustomLocation = 0;
+      Settings.nazarDate = 0;
     }
   },
 
