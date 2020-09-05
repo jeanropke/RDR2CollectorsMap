@@ -32,7 +32,11 @@ class Legendary {
       Legendary.animals.forEach(animal => animal.onMap = showAll);
     });
     return Loader.promises['animal_legendary'].consumeJson(data => {
-      data.forEach(item => this.animals.push(new Legendary(item)));
+      data.forEach(item => {
+        if (this.notReleased.includes(item.text) && !Settings.isDebugEnabled)
+          return;
+        this.animals.push(new Legendary(item));
+      });
       this.onLanguageChanged();
       console.info(`%c[Legendary animals] Loaded in ${Date.now() - start}ms!`, 'color: #bada55; background: #242424');
     });
@@ -60,7 +64,8 @@ class Legendary {
     this._shownKey = `shown.${this.text}`;
     this.element = $('<div class="collectible-wrapper" data-help="item">')
       .on('click', () => this.onMap = !this.onMap)
-      .append($('<p class="collectible">').attr('data-text', this.text))
+      .append($('<p class="collectible menu-option-text">').attr('data-text', this.text))
+      .addClass(Legendary.notReleased.includes(this.text) ? 'not-found' : Legendary.psExclusive.includes(this.text) ? 'ps-exclusive' : '')
       .translate();
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
