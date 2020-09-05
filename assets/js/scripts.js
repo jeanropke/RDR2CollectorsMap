@@ -425,7 +425,7 @@ $("#enable-cycle-input").on("change", function () {
 
 $('#nazar-position').on("change", function () {
   const nazarDate = new Date(Date.now() - 21600000).toISOUTCDateString();
-  Settings.nazarCustomLocation = $(this).val();
+  Settings.nazarCustomLocation = parseInt($('#nazar-position').val());
   Settings.nazarDate = nazarDate;
   MadamNazar.addMadamNazar();
 });
