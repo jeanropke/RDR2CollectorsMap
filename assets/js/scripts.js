@@ -936,6 +936,16 @@ function filterMapMarkers() {
     MapBase.markers.find(_m => { if (!_m.text.includes('random')) staticItems.push(_m.itemId) });
     filterMarkers(staticItems);
   }
+  // hides only flowers not belongs to any moonshine recipe
+  else if (Settings.filterType === 'hideFlowers') {
+    const flowers = ['flower_agarita', 'flower_creek_plum'];
+    let items = [];
+    MapBase.markers.find(marker => {
+      if ((marker.category === 'flower' && flowers.includes(marker.itemId)) || marker.category !== 'flower')
+        items.push(marker.itemId)
+    });
+    filterMarkers(items);
+  }
 
   MapBase.addMarkers();
 }

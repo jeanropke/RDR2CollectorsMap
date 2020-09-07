@@ -1839,6 +1839,7 @@
     "menu.filter_type.weekly_set": "Weekly set",
     "menu.filter_type.important_items": "Important items",
     "menu.filter_type.only_static": "Only static",
+    "menu.filter_type.hide_flowers": "Hide no ingredients flowers",
     "menu.join_discord": "Join our Discord!",
     "help.join_discord": "Opens the new tab with collectors map Discord.",
     "help.weekly_item_collectable": "This item can be collected by going to the corresponding location marked on the map.",
