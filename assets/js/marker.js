@@ -410,7 +410,7 @@ class Marker {
   }
   static init() {
     [
-      [Settings, 'markerColor', 'by_cycle', '#marker-color'],
+      [Settings, 'markerColor', 'by_category', '#marker-color'],
       [InventorySettings, 'highlightStyle', 'animated', '#highlight_style'],
     ].forEach(([proxy, settingName, settingDefault, domSelector]) => {
       SettingProxy.addSetting(proxy, settingName, { default: settingDefault });
