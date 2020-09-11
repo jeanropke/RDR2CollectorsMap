@@ -548,7 +548,7 @@ select {
     color: greenyellow;
 }
 
-.side-menu .not-found .menu-option-text {
+.side-menu .not-found {
     color: #f95050 !important;
 }
 
