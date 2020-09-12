@@ -767,7 +767,7 @@ a.wiki-page:visited {
     }
 }
 
-.highlight-important-items-menu .collectible {
+.highlight-important-items-menu {
     text-decoration: underline;
     text-decoration-color: #cc0000;
     text-decoration-thickness: 2px;
