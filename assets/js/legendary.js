@@ -9,9 +9,6 @@ class Legendary {
       'mp_animal_moose_legendary_02', 'mp_animal_panther_legendary_01', 'mp_animal_panther_legendary_02'
     ];
 
-    // PlayStation 4 exclusives
-    this.psExclusive = ['mp_animal_ram_legendary_01', 'mp_animal_ram_legendary_02'];
-
     this.animals = [];
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
@@ -65,7 +62,7 @@ class Legendary {
     this.element = $('<div class="collectible-wrapper" data-help="item">')
       .on('click', () => this.onMap = !this.onMap)
       .append($('<p class="collectible menu-option-text">').attr('data-text', this.text))
-      .addClass(Legendary.notReleased.includes(this.text) ? 'not-found' : Legendary.psExclusive.includes(this.text) ? 'ps-exclusive' : '')
+      .addClass(Legendary.notReleased.includes(this.text) ? 'not-found' : '')
       .translate();
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
@@ -101,7 +98,7 @@ class Legendary {
   popupContent() {
     const snippet = $(`<div class="handover-wrapper-with-no-influence">
         <h1 data-text="${this.text}"></h1>
-        <p style='font-size: 16px; text-align: center; padding-bottom: 8px;'>${Legendary.notReleased.includes(this.text) ? Language.get('map.generic_not_released') : Legendary.psExclusive.includes(this.text) ? Language.get('map.generic_ps_exlusive') : ''}</p>
+        <p style='font-size: 16px; text-align: center; padding-bottom: 8px;'>${Legendary.notReleased.includes(this.text) ? Language.get('map.generic_not_released') : ''}</p>
         <p>${Language.get(this.text + '.desc')}</p>
         <br><p>${Language.get('map.legendary_animal.desc')}</p>
         <button type="button" class="btn btn-info remove-button" data-text="map.remove">

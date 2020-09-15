@@ -1799,7 +1799,7 @@
     "fossils_random_water.name": "",
     "arrowhead_random.desc": "Vị trí này cho bạn một Arrowhead ngẫu nhiên, kể từ bản cập nhật Naturalist vật phẩm tại vị trí này không thể biết trước được. Tham khảo {int.naturalist_faq.link}trang FAQ này{int.end.link} để biết thêm thông tin chi tiết.",
     "coin_random.desc": "Vị trí này cho bạn một Coin ngẫu nhiên, kể từ bản cập nhật Naturalist vật phẩm tại vị trí này không thể biết trước được. Tham khảo {int.naturalist_faq.link}trang FAQ này{int.end.link} để biết thêm thông tin chi tiết.",
-    "fossils_random.desc": "Chỉ xuất hiện trên phiên bản PlayStation 4. Vị trí này cho bạn một Fossil ngẫu nhiên, kể từ bản cập nhật Naturalist vật phẩm tại vị trí này không thể biết trước được. Tham khảo {int.naturalist_faq.link}trang FAQ này{int.end.link} để biết thêm thông tin chi tiết.",
+    "fossils_random.desc": "Vị trí này cho bạn một Fossil ngẫu nhiên, kể từ bản cập nhật Naturalist vật phẩm tại vị trí này không thể biết trước được. Tham khảo {int.naturalist_faq.link}trang FAQ này{int.end.link} để biết thêm thông tin chi tiết.",
     "jewelry_random.desc": "Vị trí này cho bạn một Lost Jewelry ngẫu nhiên, kể từ bản cập nhật Naturalist vật phẩm tại vị trí này không thể biết trước được. Tham khảo {int.naturalist_faq.link}trang FAQ này{int.end.link} để biết thêm thông tin chi tiết.",
     "heirlooms_random.desc": "Vị trí này cho bạn một Family Heirloom ngẫu nhiên, kể từ bản cập nhật Naturalist vật phẩm tại vị trí này không thể biết trước được. Tham khảo {int.naturalist_faq.link}trang FAQ này{int.end.link} để biết thêm thông tin chi tiết.",
     "menu.collectible_arrowheads_buried_all": "",
