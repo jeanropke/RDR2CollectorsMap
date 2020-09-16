@@ -432,6 +432,7 @@ class Item extends BaseItem {
       .find('.counter-number')
       .text(value)
       .toggleClass('text-danger', value >= InventorySettings.stackSize);
+    this.markers.forEach(m => m.updateOpacity());
   }
   // use the following marker based property only after Marker.init()!
   effectiveAmount() {
