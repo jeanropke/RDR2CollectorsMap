@@ -1639,6 +1639,7 @@
     "menu.filter_type.weekly_set": "Щотижневий набір",
     "menu.filter_type.important_items": "Важливі предмети",
     "menu.filter_type.only_static": "Лише статичні",
+    "menu.filter_type.hide_flowers": "Приховати квіти, котрі не є інгредієнтами",
     "menu.join_discord": "Приєднуйтеся до нашого Discord!",
     "help.join_discord": "Відкриває вкладку RDR2 Collector Map у Discord.",
     "help.weekly_item_collectable": "Цей предмет можна отримати, перейшовши у відповідне місце, позначене на карті.",
