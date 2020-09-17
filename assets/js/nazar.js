@@ -46,6 +46,11 @@ const MadamNazar = {
     const isCustomLocation = Settings.nazarCustomLocation === 0 ? MadamNazar.currentLocation : Settings.nazarCustomLocation;
     const cl = MadamNazar.possibleLocations[isCustomLocation - 1];
 
+    if (!cl) {
+      console.error("Madam Nazar location could not be found.");
+      return;
+    }
+
     const markerSize = Settings.markerSize;
     const shadow = Settings.isShadowsEnabled ?
       `<img class="shadow"
