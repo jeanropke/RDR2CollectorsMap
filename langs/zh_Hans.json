@@ -1617,6 +1617,7 @@
     "menu.collectible_jewelry_necklaces": "项链",
     "menu.collectible_jewelry_rings_01": "戒指 1",
     "menu.collectible_jewelry_rings_02": "戒指 2",
+    "menu.modal_loot_table_title": "战利品表单",
     "menu.filter_type": "标记过滤器",
     "help.filter_type": "允许你根据某些条件过滤收藏品.",
     "menu.filter_type.none": "不显示",
