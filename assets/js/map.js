@@ -419,7 +419,7 @@ const MapBase = {
           changeAmount = -1;
         }
       }
-      Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount, skipInventory);
+      Inventory.changeMarkerAmount(marker.legacyItemId, (skipInventory && !InventorySettings.isMenuUpdateEnabled) ? 0 : changeAmount);
 
       if (!InventorySettings.isEnabled) {
         if (marker.isCollected && marker.isCurrent) {

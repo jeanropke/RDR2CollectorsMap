@@ -69,10 +69,10 @@ const Inventory = {
     });
   },
 
-  changeMarkerAmount: function (legacyItemId, changeAmount, skipInventory = false) {
+  changeMarkerAmount: function (legacyItemId, changeAmount) {
     const item = Item.items.find(i => i.legacyItemId === legacyItemId);
     if (!item) return;
-    item.amount += (!skipInventory || InventorySettings.isMenuUpdateEnabled) ? changeAmount : 0;
+    item.amount += changeAmount;
 
     if (InventorySettings.isEnabled) {
       item.markers.forEach(marker => {
