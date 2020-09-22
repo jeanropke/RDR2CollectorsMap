@@ -68,27 +68,4 @@ const Inventory = {
       });
     });
   },
-
-  changeMarkerAmount: function (legacyItemId, changeAmount) {
-    const item = Item.items.find(i => i.legacyItemId === legacyItemId);
-    if (!item) return;
-    item.amount += changeAmount;
-
-    if (InventorySettings.isEnabled) {
-      item.markers.forEach(marker => {
-        const popup = marker.lMarker && marker.lMarker.getPopup();
-        popup && popup.isOpen() && popup.update();
-
-        if (marker.isCurrent) {
-          $(`[data-type=${marker.legacyItemId}] .collectible-text p`).toggleClass('disabled',
-            item.markers.filter(m => m.cycleName === marker.cycleName).every(m => !m.canCollect));
-        }
-
-        Menu.refreshCollectionCounter(marker.category);
-      });
-    }
-
-    Inventory.updateItemHighlights();
-    Menu.refreshItemsCounter();
-  }
 };

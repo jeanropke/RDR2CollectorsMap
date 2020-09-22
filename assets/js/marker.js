@@ -330,9 +330,7 @@ class Marker {
         .toggleClass('text-danger', this.item.amount >= InventorySettings.stackSize)
         .attr('data-item', this.text)
         .text(this.item.amount);
-      inventoryButtons.find('button').click(e =>
-        Inventory.changeMarkerAmount(this.legacyItemId,
-          $(e.target).hasClass('btn-danger') ? -1 : 1));
+      inventoryButtons.find('button').click(e => this.item.changeAmountWithSideEffects($(e.target).hasClass('btn-danger') ? -1 : 1));
     } else {
       inventoryButtons.hide();
     }

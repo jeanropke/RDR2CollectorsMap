@@ -208,10 +208,8 @@ class Collection extends BaseCollection {
           } else if (etcL.contains('collection-sell') || etcL.contains('collection-collect-all')) {
             const collection = $(event.target).propSearchUp('rdoCollection');
             const changeAmount = etcL.contains('collection-sell') ? -1 : 1;
+            collection.items.forEach(i => i.changeAmountWithSideEffects(changeAmount));
             collection.currentMarkers().forEach(marker => {
-              if (marker.itemNumber === 1) {
-                Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount);
-              }
               if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected) {
                 MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
               }
@@ -376,10 +374,7 @@ class Item extends BaseItem {
         if (event.target.classList.contains('counter-button')) {
           event.stopImmediatePropagation();
           const $target = $(event.target);
-          Inventory.changeMarkerAmount(
-            $target.closest('.collectible-wrapper')[0].rdoItem.legacyItemId,
-            $target.text() === '-' ? -1 : 1
-          );
+          $target.closest('.collectible-wrapper')[0].rdoItem.changeAmountWithSideEffects($target.text() === '-' ? -1 : 1);
         } else if (event.target.classList.contains('open-submenu')) {
           event.stopPropagation();
           $(event.target)
@@ -473,4 +468,25 @@ class Item extends BaseItem {
 
     return buggy;
   }
+  changeAmountWithSideEffects(changeAmount) {
+    this.amount += changeAmount;
+
+    if (InventorySettings.isEnabled) {
+      this.markers.forEach(marker => {
+        const popup = marker.lMarker && marker.lMarker.getPopup();
+        popup && popup.isOpen() && popup.update();
+
+        if (marker.isCurrent) {
+          $(`[data-type=${marker.legacyItemId}] .collectible-text p`).toggleClass('disabled',
+            this.markers.filter(m => m.cycleName === marker.cycleName).every(m => !m.canCollect));
+        }
+
+        Menu.refreshCollectionCounter(marker.category);
+      });
+    }
+
+    Inventory.updateItemHighlights();
+    Menu.refreshItemsCounter();
+  }
+
 }
