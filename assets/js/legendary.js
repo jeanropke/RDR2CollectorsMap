@@ -98,8 +98,8 @@ class Legendary {
   }
   set onMap(state) {
     if (state) {
-      const isEnabled = enabledCategories.includes('legendary_animals');
-      Legendary.layer[['removeLayer', 'addLayer'][+!!isEnabled]](this.marker);
+      const method = enabledCategories.includes('legendary_animals') ? 'addLayer' : 'removeLayer';
+      Legendary.layer[method](this.marker);
       this.element.removeClass('disabled');
       if (!MapBase.isPrewviewMode)
         localStorage.setItem(`rdr2collector:${this._shownKey}`, 'true');
