@@ -41,18 +41,7 @@ class Legendary {
   static onLanguageChanged() {
     Menu.reorderMenu(this.context);
   }
-  static onSettingsChanged(markerSize = Settings.markerSize, shadow = Settings.isShadowsEnabled) {
-    this.mainIcon = L.divIcon({
-      iconSize: [35 * markerSize, 45 * markerSize],
-      iconAnchor: [17 * markerSize, 42 * markerSize],
-      popupAnchor: [1 * markerSize, -29 * markerSize],
-      html: `
-        <img class="icon" src="./assets/images/icons/legendary_animals.png" alt="Icon">
-        <img class="background" src="./assets/images/icons/marker_black.png" alt="Background">
-        ${shadow ? `<img class="shadow" width="${35 * markerSize}" height="${16 * markerSize}"
-            src="./assets/images/markers-shadow.png" alt="Shadow">` : ''}
-      `
-    });
+  static onSettingsChanged() {
     this.animals.forEach(animal => animal.reinitMarker());
   }
   // not idempotent (on the environment)
