@@ -86,7 +86,7 @@ class Legendary {
         })
         .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
     );
-    var overlay = `assets/images/icons/game/animals/legendaries/${this.text}.png?nocache=${nocache}`;
+    const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.png?nocache=${nocache}`;
     this.marker.addLayer(L.imageOverlay(overlay, [
       [this.x - this.radius, this.y - this.radius * 2],
       [this.x + this.radius, this.y + this.radius * 2]

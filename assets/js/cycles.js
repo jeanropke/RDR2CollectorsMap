@@ -89,7 +89,7 @@ const Cycles = {
 
     if (param.includes(',')) {
       const _cycles = param.split(',');
-      if (_cycles.length == 9) {
+      if (_cycles.length === 9) {
         if (_cycles.some(isNaN) || _cycles.some((e) => e < 1 || e > 6)) {
           console.warn('Cycles parameters invalid for items.');
         } else {

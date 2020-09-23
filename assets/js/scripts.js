@@ -11,6 +11,14 @@ Object.defineProperty(String.prototype, 'filename', {
   }
 });
 
+// Check if an array contains another array. Used to enable random categories set (jewerly & fossils)
+Object.defineProperty(Array.prototype, 'arrayContains', {
+  value: function (sub) {
+    const result = sub.filter(item => this.indexOf(item) > -1);
+    return sub.length === result.length;
+  }
+});
+
 let searchTerms = [];
 let uniqueSearchMarkers = [];
 
@@ -53,15 +61,6 @@ L.LayerGroup.include({
     }
   }
 });
-
-// Check if an array contains another array. Used to enable random categories set (jewerly & fossils)
-Array.prototype.arrayContains = function (sub) {
-  var self = this;
-  var result = sub.filter(function (item) {
-    return self.indexOf(item) > -1;
-  });
-  return sub.length === result.length;
-}
 
 /*
 - DOM will be ready, all scripts will be loaded (all loaded via DOM script elements)
@@ -849,13 +848,13 @@ $('#open-delete-all-settings-modal').on('click', function () {
 });
 
 function formatLootTableLevel(table, level = 0) {
-  var result = $("<div>");
+  let result = $("<div>");
 
   if (!table.items) {
-    var item = $(`<div class="loot-table-item"><span data-text="${table.name}.name"></span><span class="rate">${table.rate}%</span></div>`);
+    const item = $(`<div class="loot-table-item"><span data-text="${table.name}.name"></span><span class="rate">${table.rate}%</span></div>`);
     result.append(item);
   } else {
-    var title = $(`<span class="loot-table-title level-${(level + 1)}">`);
+    let title = $(`<span class="loot-table-title level-${(level + 1)}">`);
 
     if (table.rate) {
       title.append($(`<h5 data-text="menu.${table.name}">`));
@@ -864,7 +863,7 @@ function formatLootTableLevel(table, level = 0) {
       title.append($(`<h4 data-text="menu.${table.name}">`));
     }
 
-    var wrapper = $(`<div class="loot-table-wrapper level-${(level + 1)}">`);
+    let wrapper = $(`<div class="loot-table-wrapper level-${(level + 1)}">`);
     table.items.forEach(item => {
       wrapper.append(formatLootTableLevel(item, (level + 1)));
     });
@@ -877,13 +876,13 @@ function formatLootTableLevel(table, level = 0) {
 
 $('#loot-table-modal').on('show.bs.modal', function (event) {
   // Get related loot table.
-  var button = $(event.relatedTarget);
-  var table = button.attr('data-loot-table');
+  const button = $(event.relatedTarget);
+  const table = button.attr('data-loot-table');
 
   // Format loot table.
-  var modal = $(this);
-  var lootTables = MapBase.lootTables[table];
-  var wrapper = $('<div class="loot-tables-wrapper">');
+  const modal = $(this);
+  const lootTables = MapBase.lootTables[table];
+  let wrapper = $('<div class="loot-tables-wrapper">');
 
   lootTables.forEach(lootTable => {
     wrapper.append(formatLootTableLevel(lootTable));

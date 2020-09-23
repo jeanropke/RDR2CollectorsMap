@@ -103,7 +103,7 @@ const Inventory = {
       Menu.refreshCollectionCounter(marker.category);
     });
 
-    if ($("#routes").val() == 1)
+    if ($("#routes").val() === 1)
       Routes.drawLines();
 
     Inventory.updateItemHighlights();

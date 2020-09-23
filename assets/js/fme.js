@@ -122,11 +122,11 @@ const FME = {
    * @return {Object} Formatted event data
    */
   getEventObject: function (d, frequency) {
-    var eventTime = d[0];
-    var now = Date.now();
-    var oneDay = this.minutesToMilliseconds(24 * 60);
-    var dateTime = this.getDateTime(now, eventTime);
-    var eta = dateTime - now;
+    const eventTime = d[0];
+    const now = Date.now();
+    const oneDay = this.minutesToMilliseconds(24 * 60);
+    let dateTime = this.getDateTime(now, eventTime);
+    let eta = dateTime - now;
 
     // Ensure that event dates are not in the past or too far
     // in the future, where timezone is not UTC
@@ -297,7 +297,7 @@ const FME = {
   initModal: function () {
     Object.keys(this.flags).forEach(f => {
       if (f === "none") return;
-      var snippet = $(`
+      const snippet = $(`
         <div class="input-container">
           <label for="${f}" data-text="menu.fme.${f}"></label>
           <div class="input-checkbox-wrapper">
@@ -321,7 +321,7 @@ const FME = {
       $('#fme-enabled-events-modal #events').append(Language.translateDom(snippet)[0]);
     });
 
-    var items = $('#fme-enabled-events-modal #events').children('.input-container').get();
+    const items = $('#fme-enabled-events-modal #events').children('.input-container').get();
     items.sort(function (a, b) {
       return $(a).find('label').text().toLowerCase().localeCompare($(b).find('label').text().toLowerCase());
     });

@@ -271,7 +271,7 @@ const Routes = {
 
     Routes.clearPath(true);
 
-    var newMarkers = MapBase.markers.filter(m => m.isVisible && m.toolAccepted());
+    let newMarkers = MapBase.markers.filter(m => m.isVisible && m.toolAccepted());
 
     if (RouteSettings.ignoreCollected) {
       newMarkers = newMarkers.filter(marker => marker.canCollect);
