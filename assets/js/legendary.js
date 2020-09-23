@@ -61,8 +61,8 @@ class Legendary {
     this._shownKey = `shown.${this.text}`;
     this.element = $('<div class="collectible-wrapper" data-help="item">')
       .on('click', () => this.onMap = !this.onMap)
-      .append($('<p class="collectible menu-option-text">').attr('data-text', this.text))
-      .addClass(Legendary.notReleased.includes(this.text) ? 'not-found' : '')
+      .append($('<p class="collectible">').attr('data-text', this.text))
+      .toggleClass('not-found', Legendary.notReleased.includes(this.text))
       .translate();
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
@@ -109,7 +109,8 @@ class Legendary {
   }
   set onMap(state) {
     if (state) {
-      Legendary.layer.addLayer(this.marker);
+      const isEnabled = enabledCategories.includes('legendary_animals');
+      Legendary.layer[['removeLayer', 'addLayer'][+!!isEnabled]](this.marker);
       this.element.removeClass('disabled');
       if (!MapBase.isPrewviewMode)
         localStorage.setItem(`rdr2collector:${this._shownKey}`, 'true');

@@ -26,7 +26,7 @@ const categories = [
   'arrowhead', 'bottle', 'bracelet', 'coastal', 'coin', 'cups', 'earring', 'egg',
   'fast_travel', 'flower', 'fossils_random', 'heirlooms_random', 'heirlooms',
   'jewelry_random', 'megafauna', 'nazar', 'necklace', 'oceanic', 'pentacles',
-  'random', 'ring', 'swords', 'treasure', 'user_pins', 'wands', 'weekly'
+  'random', 'ring', 'swords', 'treasure', 'user_pins', 'wands', 'weekly', 'legendary_animals'
 ];
 
 const parentCategories = {
@@ -412,7 +412,6 @@ $("#marker-size").on("change", function () {
   Settings.markerSize = Number($("#marker-size").val());
   MapBase.addMarkers();
   Treasure.onSettingsChanged();
-  Legendary.onSettingsChanged();
 });
 
 $("#enable-cycle-input").on("change", function () {

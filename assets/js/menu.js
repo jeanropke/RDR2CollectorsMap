@@ -149,6 +149,8 @@ class Menu {
           Pins.addToMap();
         } else if (category === 'treasure') {
           Treasure.onCategoryToggle();
+        } else if (category === 'legendary_animals') {
+          Legendary.onCategoryToggle();
         } else {
           MapBase.addMarkers();
         }
