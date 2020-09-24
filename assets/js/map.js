@@ -419,14 +419,12 @@ const MapBase = {
           changeAmount = -1;
         }
       }
-      Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount, skipInventory);
+      marker.item && marker.item.changeAmountWithSideEffects(skipInventory && !InventorySettings.isMenuUpdateEnabled ? 0 : changeAmount);
 
       if (!InventorySettings.isEnabled) {
         if (marker.isCollected && marker.isCurrent) {
-          $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
           $(`[data-type=${marker.legacyItemId}] .collectible-text p`).addClass('disabled');
         } else {
-          $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
           $(`[data-type=${marker.legacyItemId}] .collectible-text p`).removeClass('disabled');
         }
         if (marker.isCurrent && ['egg', 'flower'].includes(marker.category)) {

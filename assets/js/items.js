@@ -56,7 +56,7 @@ class BaseItem {
 class NonCollectible extends BaseItem {
   constructor(preliminary) {
     super(preliminary);
-    this.amount = '?';
+    Object.defineProperty(this, 'amount', {configurable: false, enumerable: true, writable: false, value: '?'});
     this.markers = [];
     this.weeklyHelpKey = `weekly_${this.itemId}`;
   }
@@ -208,10 +208,8 @@ class Collection extends BaseCollection {
           } else if (etcL.contains('collection-sell') || etcL.contains('collection-collect-all')) {
             const collection = $(event.target).propSearchUp('rdoCollection');
             const changeAmount = etcL.contains('collection-sell') ? -1 : 1;
+            collection.items.forEach(i => i.changeAmountWithSideEffects(changeAmount));
             collection.currentMarkers().forEach(marker => {
-              if (marker.itemNumber === 1) {
-                Inventory.changeMarkerAmount(marker.legacyItemId, changeAmount);
-              }
               if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected) {
                 MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
               }
@@ -305,6 +303,9 @@ class Collection extends BaseCollection {
       .find('.same-cycle-warning-menu')
       .toggle(isSameCycle)
       .end();
+    this.updateCounter();
+  }
+  updateCounter() {
     this.$submenu
       .find('.collection-collected')
       .text(Language.get('menu.collection_counter')
@@ -357,18 +358,8 @@ class Item extends BaseItem {
     return Loader.promises['items_value'].consumeJson(data => {
       Collection.init(data.collections);
       data.items.forEach(interimItem => this.items.push(new Item(interimItem)));
-      this.compatInit();
       return Weekly.init();
     });
-  }
-  // prefill whenever “new” inventory is empty and “old” inventory exists
-  static compatInit() {
-    const oldAmounts = JSON.parse(localStorage.getItem("inventory"));
-    if (oldAmounts && !Object.keys(localStorage).some(key => key.startsWith('amount.'))) {
-      Item.items.forEach(item => item.amount = oldAmounts[item.itemId]);
-      console.log('old amounts converted');
-      localStorage.removeItem('inventory');
-    }
   }
   static _installEventHandlers() {
     $('.side-menu')
@@ -386,10 +377,7 @@ class Item extends BaseItem {
         if (event.target.classList.contains('counter-button')) {
           event.stopImmediatePropagation();
           const $target = $(event.target);
-          Inventory.changeMarkerAmount(
-            $target.closest('.collectible-wrapper')[0].rdoItem.legacyItemId,
-            $target.text() === '-' ? -1 : 1
-          );
+          $target.closest('.collectible-wrapper')[0].rdoItem.changeAmountWithSideEffects($target.text() === '-' ? -1 : 1);
         } else if (event.target.classList.contains('open-submenu')) {
           event.stopPropagation();
           $(event.target)
@@ -442,6 +430,7 @@ class Item extends BaseItem {
       .find('.counter-number')
       .text(value)
       .toggleClass('text-danger', value >= InventorySettings.stackSize);
+    this.markers.forEach(m => m.updateOpacity());
   }
   // use the following marker based property only after Marker.init()!
   effectiveAmount() {
@@ -482,4 +471,23 @@ class Item extends BaseItem {
 
     return buggy;
   }
+  changeAmountWithSideEffects(changeAmount) {
+    this.amount += changeAmount;
+
+    if (InventorySettings.isEnabled) {
+      this.markers.forEach(marker => {
+        const popup = marker.lMarker && marker.lMarker.getPopup();
+        popup && popup.isOpen() && popup.update();
+
+        if (marker.isCurrent) {
+          $(`[data-type=${marker.legacyItemId}] .collectible-text p`).toggleClass('disabled',
+            this.markers.filter(m => m.cycleName === marker.cycleName).every(m => !m.canCollect));
+        }
+      });
+    }
+
+    Inventory.updateItemHighlights();
+    Menu.refreshItemsCounter();
+  }
+
 }

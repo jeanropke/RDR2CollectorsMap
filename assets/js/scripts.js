@@ -355,7 +355,6 @@ $("#clear-markers").on("click", function () {
   });
 
   Menu.refreshMenu();
-  Menu.refreshItemsCounter();
   MapBase.addMarkers();
 });
 
@@ -536,7 +535,6 @@ $('#enable-inventory').on("change", function () {
   InventorySettings.isEnabled = $("#enable-inventory").prop('checked');
 
   MapBase.addMarkers();
-  Menu.refreshTotalInventoryValue();
 
   $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
 });

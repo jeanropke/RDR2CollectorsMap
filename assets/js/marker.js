@@ -126,6 +126,7 @@ class Marker {
     } else {
       localStorage.removeItem(this._collectedKey);
     }
+    this.updateOpacity();
   }
   get canCollect() {
     if (this.isCollected) {
@@ -329,9 +330,7 @@ class Marker {
         .toggleClass('text-danger', this.item.amount >= InventorySettings.stackSize)
         .attr('data-item', this.text)
         .text(this.item.amount);
-      inventoryButtons.find('button').click(e =>
-        Inventory.changeMarkerAmount(this.legacyItemId,
-          $(e.target).hasClass('btn-danger') ? -1 : 1));
+      inventoryButtons.find('button').click(e => this.item.changeAmountWithSideEffects($(e.target).hasClass('btn-danger') ? -1 : 1));
     } else {
       inventoryButtons.hide();
     }
@@ -346,7 +345,10 @@ class Marker {
       .end()
       .find('img.background').attr('src', bgUrl);
   }
-  recreateLMarker(opacity = Settings.markerOpacity, markerSize = Settings.markerSize) {
+  updateOpacity(opacity = Settings.markerOpacity) {
+    this.lMarker && this.lMarker.setOpacity(this.canCollect ? opacity : opacity / 3);
+  }
+  recreateLMarker(isShadowsEnabled = Settings.isShadowsEnabled, markerSize = Settings.markerSize) {
     const icon = this.category !== 'random' ? this.category :
       (this.tool === 1 ? 'shovel' : 'magnet');
     const [bgUrl, contourUrl] = this.colorUrls();
@@ -360,7 +362,7 @@ class Marker {
         height="${16 * markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">
     </div>`);
 
-    Settings.isShadowsEnabled || snippet.find('.shadow').remove();
+    isShadowsEnabled || snippet.find('.shadow').remove();
     {
       let detail = false;
       if (this.buggy) {
@@ -379,7 +381,6 @@ class Marker {
     }
 
     this.lMarker = L.marker([this.lat, this.lng], {
-      opacity: this.canCollect ? opacity : opacity / 3,
       icon: new L.DivIcon.DataMarkup({
         iconSize: [35 * markerSize, 45 * markerSize],
         iconAnchor: [17 * markerSize, 42 * markerSize],
@@ -390,6 +391,7 @@ class Marker {
     });
 
     this.lMarker.id = this.text;
+    this.updateOpacity();
 
     if (Settings.isPopupsEnabled) {
       this.lMarker.bindPopup(this.popupContent.bind(this), { minWidth: 300, maxWidth: 400 });

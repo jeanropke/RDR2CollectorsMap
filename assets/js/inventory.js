@@ -68,45 +68,4 @@ const Inventory = {
       });
     });
   },
-
-  changeMarkerAmount: function (legacyItemId, changeAmount, skipInventory = false) {
-    const sameItemMarkers = MapBase.markers.filter(marker => marker.legacyItemId === legacyItemId);
-
-    const item = Item.items.find(i => i.legacyItemId === legacyItemId);
-    if (item && (!skipInventory || skipInventory && InventorySettings.isMenuUpdateEnabled)) {
-      item.amount += changeAmount;
-    }
-
-    sameItemMarkers.forEach(marker => {
-      if (!InventorySettings.isEnabled) return;
-
-      const popup = marker.lMarker && marker.lMarker.getPopup();
-      if (popup) popup.update();
-
-      const amount = marker.item && marker.item.amount;
-      if ((marker.isCollected ||
-        (InventorySettings.isEnabled && amount >= InventorySettings.stackSize)) &&
-        marker.isCurrent ||
-        (marker.category === 'flower' && amount >= InventorySettings.flowersSoftStackSize)) {
-        $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity / 3);
-        $(`[data-type=${marker.legacyItemId}] .collectible-text p`).addClass('disabled');
-      } else if (marker.isCurrent) {
-        $(`[data-marker=${marker.text}]`).css('opacity', Settings.markerOpacity);
-        $(`[data-type=${marker.legacyItemId}] .collectible-text p`).removeClass('disabled');
-      }
-
-      if (marker.isCurrent && ['egg', 'flower'].includes(marker.category)) {
-        $(`[data-type=${marker.legacyItemId}] .collectible-text p`).toggleClass('disabled',
-          sameItemMarkers.filter(m => m.cycleName === marker.cycleName).every(m => !m.canCollect));
-      }
-
-      Menu.refreshCollectionCounter(marker.category);
-    });
-
-    if ($("#routes").val() === 1)
-      Routes.drawLines();
-
-    Inventory.updateItemHighlights();
-    Menu.refreshItemsCounter();
-  }
 };
