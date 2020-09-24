@@ -70,16 +70,12 @@ class Menu {
     $('#item-counter-percentage').text(Language.get('menu.collection_counter_percentage')
       .replace('{count}', (count / max * 100).toFixed(2)));
 
-    Menu.refreshTotalInventoryValue();
+    $('#items-value').text(`$${Collection.totalValue().toFixed(2)}`);
 
     $.each($(".menu-hidden[data-type]"), function (key, value) {
       const category = $(value).attr('data-type');
       Menu.refreshCollectionCounter(category);
     });
-  }
-
-  static refreshTotalInventoryValue() {
-    $('#items-value').text(`$${Collection.totalValue().toFixed(2)}`);
   }
 
   static activateHandlers() {
