@@ -65,13 +65,7 @@ class Menu {
 
     $('#items-value').text(`$${Collection.totalValue().toFixed(2)}`);
 
-    $.each($(".menu-hidden[data-type]"), function (key, value) {
-      const category = $(value).attr('data-type');
-      const collectiblesElement = $(`.menu-hidden[data-type="${category}"]`);
-      collectiblesElement.find('.collection-collected').text(Language.get('menu.collection_counter')
-        .replace('{count}', collectiblesElement.find('.disabled').length)
-        .replace('{max}', collectiblesElement.find('.collectible-wrapper').length));
-    });
+    Collection.collections.forEach(coll => coll.updateCounter());
   }
 
   static activateHandlers() {

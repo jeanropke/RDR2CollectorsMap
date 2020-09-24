@@ -303,6 +303,9 @@ class Collection extends BaseCollection {
       .find('.same-cycle-warning-menu')
       .toggle(isSameCycle)
       .end();
+    this.updateCounter();
+  }
+  updateCounter() {
     this.$submenu
       .find('.collection-collected')
       .text(Language.get('menu.collection_counter')
