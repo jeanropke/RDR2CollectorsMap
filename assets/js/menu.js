@@ -47,13 +47,6 @@ class Menu {
     });
   }
 
-  static refreshCollectionCounter(category) {
-    const collectiblesElement = $(`.menu-hidden[data-type="${category}"]`);
-    collectiblesElement.find('.collection-collected').text(Language.get('menu.collection_counter')
-      .replace('{count}', collectiblesElement.find('.disabled').length)
-      .replace('{max}', collectiblesElement.find('.collectible-wrapper').length));
-  }
-
   static refreshItemsCounter() {
     const _markers = MapBase.markers.filter(marker => marker.isCurrent && marker.isVisible);
     const count = _markers.filter(marker => marker.isCollected).length;
@@ -74,7 +67,10 @@ class Menu {
 
     $.each($(".menu-hidden[data-type]"), function (key, value) {
       const category = $(value).attr('data-type');
-      Menu.refreshCollectionCounter(category);
+      const collectiblesElement = $(`.menu-hidden[data-type="${category}"]`);
+      collectiblesElement.find('.collection-collected').text(Language.get('menu.collection_counter')
+        .replace('{count}', collectiblesElement.find('.disabled').length)
+        .replace('{max}', collectiblesElement.find('.collectible-wrapper').length));
     });
   }
 

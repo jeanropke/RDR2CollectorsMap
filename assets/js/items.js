@@ -480,8 +480,6 @@ class Item extends BaseItem {
           $(`[data-type=${marker.legacyItemId}] .collectible-text p`).toggleClass('disabled',
             this.markers.filter(m => m.cycleName === marker.cycleName).every(m => !m.canCollect));
         }
-
-        Menu.refreshCollectionCounter(marker.category);
       });
     }
 
