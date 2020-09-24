@@ -1071,6 +1071,10 @@ a.no-style:visited {
     text-overflow: ellipsis;
 }
 
+.counter-number-weekly {
+    margin-right: 25px;
+}
+
 
 /* Bootstrap modal styling */
 
