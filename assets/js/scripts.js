@@ -34,11 +34,7 @@ const parentCategories = {
   fossils_random: ['coastal', 'megafauna', 'oceanic']
 };
 
-let enabledCategories = JSON.parse(localStorage.getItem("enabled-categories"));
-if (!enabledCategories) {
-  const disabledCats = JSON.parse(localStorage.getItem("disabled-categories")) || ['random'];
-  enabledCategories = categories.filter(item => !disabledCats.includes(item));
-}
+let enabledCategories = JSON.parse(localStorage.getItem("enabled-categories")) || [...categories];
 
 /*
 - Leaflet extentions require Leaflet loaded
