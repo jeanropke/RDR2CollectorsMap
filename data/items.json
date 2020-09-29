@@ -271,7 +271,6 @@
     },
     "heirlooms_random": {
         "1": [
-            { "text": "heirlooms_random_0", "height": 0, "tool": 1, "lat": -28.0992, "lng": 150.6425, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=50s" },
             { "text": "heirlooms_random_1", "height": 0, "tool": 1, "lat": -84.7317, "lng": 133.9765, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=289s" },
             { "text": "heirlooms_random_2", "height": 0, "tool": 1, "lat": -92.9451, "lng": 79.6986, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=387s" }
         ],
@@ -307,6 +306,7 @@
     },
     "heirlooms": {
         "1": [
+            { "text": "heirlooms_metal_hairpin", "height": 0, "tool": 1, "lat": -28.0992, "lng": 150.6425, "video": "https://www.youtube.com/lwatch?v=aTLYLLZeQ6Q&t=50s" },
             { "text": "heirlooms_boar_bristle_brush", "height": 0, "tool": 0, "lat": -121.702, "lng": 20.4381, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=480s" },
             { "text": "heirlooms_ebony_hairbrush", "height": 0, "tool": 0, "lat": -86.2128, "lng": 99.5375, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=454s" },
             { "text": "heirlooms_goat_hair_brush", "height": 0, "tool": 0, "lat": -55.2685, "lng": 157.0472, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=128s" },
