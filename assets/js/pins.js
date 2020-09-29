@@ -8,7 +8,7 @@ const Pins = {
       this.loadAllPins();
   },
 
-  addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true, markerSize = Settings.markerSize) {
+  addPin: function (lat, lng, id = null, name = null, desc = null, icon = null, doSave = true, markerColor = 'marker_red', markerSize = Settings.markerSize) {
     if (lat === null || lat === undefined || lng === null || lng === undefined) return;
 
     const pinAtPositionExists = this.pinsList.some(function (marker) {
@@ -31,7 +31,7 @@ const Pins = {
         shadowAnchor: [10 * markerSize, 12 * markerSize],
         html:
             `<img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
-            <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
+            <img class="background" src="./assets/images/icons/${markerColor}.png" alt="Background">
             ${shadow}`
       })
     });
@@ -122,7 +122,7 @@ const Pins = {
       <p id="${markerId}_desc">${marker.options.desc}</p>`;
 
     if (Settings.isPinsEditingEnabled) {
-      const markerIcons = ["pin", "random", "shovel", "magnet", "flower", "bottle", "arrowhead", "egg", "cups", "pentacles", "swords", "wands", "coin", "heirlooms", "fast_travel", "bracelet", "earring", "necklace", "ring", "nazar", "treasure", "camp"];
+      const markerIcons = ["pin", "random", "shovel", "magnet", "flower", "bottle", "arrowhead", "egg", "cups", "pentacles", "swords", "wands", "coin", "heirlooms", "fast_travel", "bracelet", "earring", "necklace", "ring", "nazar", "treasure", "camp", "harrietum"];
       const markerIconSelect = $('<select>').attr('id', `${markerId}_icon`).addClass('marker-popup-pin-input-icon');
 
       markerIcons.forEach(icon => {
