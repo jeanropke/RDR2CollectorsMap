@@ -319,8 +319,7 @@ class Marker {
     if (!Settings.isDebugEnabled) snippet.find('.popupContentDebug').hide();
     if (!this.isRandomizedItem) snippet.find('[data-text="map.view_loot"]').parent().hide();
     if (!this.video) snippet.find('[data-text="map.video"]').parent().hide();
-    if (['flower_agarita', 'flower_blood_flower'].includes(this.itemId) ||
-    ['fossils_random', 'heirlooms_random', 'jewelry_random', 'coin', 'arrowhead'].includes(this.category)) {
+    if (['flower_agarita', 'flower_blood_flower'].includes(this.itemId)) {
       snippet.find('[data-text="map.mark_important"]').parent().hide();
     }
     const inventoryButtons = snippet.find('.marker-popup-buttons')

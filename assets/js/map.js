@@ -472,17 +472,20 @@ const MapBase = {
   },
 
   highlightImportantItem: function (text, category = '') {
+    const randomCategories = ['arrowhead', 'coin', 'fossils_random', 'heirlooms_random', 'jewelry_random', 'random'];
     if (category == 'flower' || category == 'egg')
       text = text.replace(/_\d/, '');
 
     const textMenu = text.replace(/egg_|flower_/, '');
-    $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
+
+    if (!randomCategories.includes(category))
+      $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
 
     $.each($(`[data-marker*=${text}]`), function (key, marker) {
       let markerData = null;
 
-      if (category !== 'random' && category !== '')
-        markerData = $(this).data('marker').replace(/_\d/, '');
+      if (!randomCategories.includes(category))
+        markerData = $(this).data('marker').replace(/\B_\d$/, '');
       else
         markerData = $(this).data('marker');
 
@@ -512,7 +515,7 @@ const MapBase = {
       MapBase.importantItems = JSON.parse(localStorage.getItem('importantItems')) || [];
 
     $.each(MapBase.importantItems, function (key, item) {
-      if (item.includes('random_item_'))
+      if (item.includes('random'))
         $(`[data-marker=${item}]`).addClass('highlight-items');
       else
         $(`[data-marker*=${item}]`).addClass('highlight-items');
