@@ -19,6 +19,7 @@ class Menu {
       .attr('data-text', this._warnings.size > 1 ? 'map.has_multi_filter_alert' :
         this._warnings.values().next().value)
       .translate();
+    setTimeout(() => { $('.filter-alert').hide(); }, 10000);
   }
 
   static reorderMenu(menu) {
