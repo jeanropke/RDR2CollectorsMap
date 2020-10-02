@@ -281,8 +281,7 @@
         "5": [
             { "text": "heirlooms_random_0", "height": 0, "tool": 2, "lat": -103.6086, "lng": 24.7292, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2533s" },
             { "text": "heirlooms_random_1", "height": 0, "tool": 2, "lat": -33.1071, "lng": 141.2029, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2051s" },
-            { "text": "heirlooms_random_2", "height": 0, "tool": 2, "lat": -82.4897, "lng": 141.7576, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2257s" },
-            { "text": "heirlooms_random_3", "height": 0, "tool": 2, "lat": -85.4993, "lng": 132.6165, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2304s" }
+            { "text": "heirlooms_random_2", "height": 0, "tool": 2, "lat": -82.4897, "lng": 141.7576, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2257s" }
         ],
         "6": [
             { "text": "heirlooms_random_0", "height": 0, "tool": 2, "lat": -106.3063, "lng": 36.9816, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=3030s" },
@@ -368,7 +367,8 @@
             { "text": "heirlooms_ivory_comb", "height": 0, "tool": 0, "lat": -77.8702, "lng": 150.9823, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2185s" },
             { "text": "heirlooms_new_guinea_rosewood", "height": 0, "tool": 0, "lat": -82.214, "lng": 147.5657, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2214s" },
             { "text": "heirlooms_rosewood_hairbrush", "height": 0, "tool": 0, "lat": -79.2137, "lng": 137.8222, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2088s" },
-            { "text": "heirlooms_tortoiseshell_comb", "height": 0, "tool": 0, "lat": -30.1251, "lng": 80.8234, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2445s" }
+            { "text": "heirlooms_tortoiseshell_comb", "height": 0, "tool": 0, "lat": -30.1251, "lng": 80.8234, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2445s" },
+            { "text": "heirlooms_carved_wooden", "height": 0, "tool": 2, "lat": -85.4993, "lng": 132.6165, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2304s" }
         ],
         "6": [
             { "text": "heirlooms_boar_bristle_brush", "height": 0, "tool": 0, "lat": -50.2034, "lng": 106.7484, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2936s" },
