@@ -68,7 +68,6 @@ const Cycles = {
     Cycles.categories.bottle = _data.bottle;
     Cycles.categories.egg = _data.egg;
     Cycles.categories.arrowhead = _data.arrowhead;
-    Cycles.categories.heirlooms_random = _data.heirlooms;
     Cycles.categories.heirlooms = _data.heirlooms;
     Cycles.categories.coin = _data.coin;
     Cycles.categories.fossils_random = _data.fossils;

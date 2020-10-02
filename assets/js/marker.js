@@ -39,7 +39,7 @@ class Marker {
     this.item = this.category === 'random' ? undefined : Item.items.find(item =>
       item.itemId === this.itemId);
 
-    this.isRandomizedItem = ['arrowhead', 'coin', 'fossils_random', 'heirlooms_random', 'jewelry_random', 'random'].includes(this.category);
+    this.isRandomizedItem = ['arrowhead', 'coin', 'fossils_random', 'jewelry_random', 'random'].includes(this.category);
 
     /**
      * `._collectedKey` is the key for the `.isCollected` accessors
@@ -89,8 +89,6 @@ class Marker {
         return "fossils_random.desc";
       } else if (this.category === 'jewelry_random') {
         return "jewelry_random.desc";
-      } else if (this.category === 'heirlooms_random') {
-        return "heirlooms_random.desc";
       }
 
       switch (this.itemId) {
@@ -146,10 +144,6 @@ class Marker {
   }
   get isVisible() {
     if (!getParameterByName('q')) {
-      if (
-        this.category === 'heirlooms_random' &&
-        !enabledCategories.includes('heirlooms')
-      ) return false;
       if (
         this.category === 'jewelry_random' &&
         !enabledCategories.includes('bracelet') &&
@@ -212,7 +206,6 @@ class Marker {
         earring: 'yellow',
         
         heirlooms: 'pink',
-        heirlooms_random: 'pink',
 
         random: this.tool === 2 ? 'lightgray' : 'lightgray',
       } [this.category] || 'lightred';
@@ -431,7 +424,7 @@ class Marker {
             MapBase.markers.push(marker);
 
             if (!marker.item) return;
-            if (!marker.category.includes(['fossils_random', 'heirlooms_random', 'jewelry_random', 'random'])) marker.item.markers.push(marker);
+            if (!marker.category.includes(['fossils_random', 'jewelry_random', 'random'])) marker.item.markers.push(marker);
           });
         });
       });

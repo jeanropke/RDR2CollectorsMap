@@ -232,7 +232,6 @@ const MapBase = {
       const isValidCategory = categories.includes(previewParam);
       if (isValidCategory) {
         enabledCategories = [previewParam];
-        if (previewParam === "heirlooms") enabledCategories.push("heirlooms_random");
         if (previewParam === "ring" || previewParam === "earring" || previewParam === "bracelet" || previewParam === "necklace") enabledCategories.push("jewelry_random");
         if (previewParam === "coastal" || previewParam === "megafauna" || previewParam === "oceanic") enabledCategories.push("fossils_random");
 
@@ -289,7 +288,7 @@ const MapBase = {
 
   resetMarkersDaily: function () {
     const date = new Date().toISOUTCDateString();
-    const randomCategories = ['random', 'fossils_random', 'heirlooms_random', 'jewelry_random', 'coin', 'arrowhead'];
+    const randomCategories = ['random', 'fossils_random', 'jewelry_random', 'coin', 'arrowhead'];
 
     if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
       MapBase.markers.forEach(marker => {
@@ -472,7 +471,7 @@ const MapBase = {
   },
 
   highlightImportantItem: function (text, category = '') {
-    const randomCategories = ['arrowhead', 'coin', 'fossils_random', 'heirlooms_random', 'jewelry_random', 'random'];
+    const randomCategories = ['arrowhead', 'coin', 'fossils_random', 'jewelry_random', 'random'];
     if (category == 'flower' || category == 'egg')
       text = text.replace(/_\d/, '');
 

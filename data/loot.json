@@ -594,33 +594,6 @@
       ]
     }
   ],
-  "heirlooms_random": [
-    {
-      "name": "collectible_hrlms_buried_mounds",
-      "items": [
-        {
-          "name": "heirlooms_carved_wooden",
-          "rate": 20
-        },
-        {
-          "name": "heirlooms_ebony_hairpin",
-          "rate": 20
-        },
-        {
-          "name": "heirlooms_ivory_hairpin",
-          "rate": 20
-        },
-        {
-          "name": "heirlooms_jade_hairpin",
-          "rate": 20
-        },
-        {
-          "name": "heirlooms_metal_hairpin",
-          "rate": 20
-        }
-      ]
-    }
-  ],
   "jewelry_random": [
     {
       "name": "collectible_jewelry_all",
@@ -1073,32 +1046,6 @@
                   "rate": 2.5
                 }
               ]
-            }
-          ]
-        },
-        {
-          "name": "collectible_hrlms_buried_mounds",
-          "rate": 30,
-          "items": [
-            {
-              "name": "heirlooms_carved_wooden",
-              "rate": 6
-            },
-            {
-              "name": "heirlooms_ebony_hairpin",
-              "rate": 6
-            },
-            {
-              "name": "heirlooms_ivory_hairpin",
-              "rate": 6
-            },
-            {
-              "name": "heirlooms_jade_hairpin",
-              "rate": 6
-            },
-            {
-              "name": "heirlooms_metal_hairpin",
-              "rate": 6
             }
           ]
         }

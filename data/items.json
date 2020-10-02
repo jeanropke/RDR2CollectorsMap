@@ -269,14 +269,6 @@
             { "text": "coin_random_14", "height": 0, "tool": 2, "lat": -95.0278, "lng": 66.7276, "video": "https://www.youtube.com/watch?v=u1FZd8oLO5I&t=3339s" }
         ]
     },
-    "heirlooms_random": {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": [],
-        "6": []
-    },
     "heirlooms": {
         "1": [
             { "text": "heirlooms_boar_bristle_brush", "height": 0, "tool": 0, "lat": -121.702, "lng": 20.4381, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=480s" },
