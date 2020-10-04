@@ -28,7 +28,7 @@ const MadamNazar = {
     } else {
       return Loader.promises['nazar'].consumeJson(data => {
         MadamNazar.currentLocation = MadamNazar.possibleLocations.findIndex(({ key }) => key === data.nazar) + 1;
-        MadamNazar.currentDate = new Date(nazar.date).toLocaleString(Settings.language, {
+        MadamNazar.currentDate = new Date(data.date).toLocaleString(Settings.language, {
           day: "2-digit", month: "long", year: "numeric"
         });
         MadamNazar.addMadamNazar();
