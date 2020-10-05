@@ -34,7 +34,8 @@ class Loader {
 
 const urls = [
     'data/items_value.json',
-    'data/weekly.json',
+    'https://pepegapi.jeanropke.net/v2/rdo/weekly',
+    'data/weekly_sets.json',
     'data/cycles.json',
     'data/overlays.json',
     'data/items.json',
