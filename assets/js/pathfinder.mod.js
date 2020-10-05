@@ -644,8 +644,18 @@ class PathFinder {
 						break
 				}
 			})
-			PathFinder._worker.postMessage({ cmd: 'start', startingMarker, markers,
-				fastTravelWeight, railroadWeight });
+			const keysToPass = ['lat', 'lng'];
+			const strippedMarkers = markers.map(marker => keysToPass.reduce((finalObj, copyKey) => {
+				finalObj[copyKey] = marker[copyKey];
+				return finalObj;
+			}, {}));
+			PathFinder._worker.postMessage({
+				cmd: 'start',
+				startingMarker: strippedMarkers[markers.indexOf(startingMarker)],
+				markers: strippedMarkers,
+				fastTravelWeight,
+				railroadWeight,
+			});
 		})
 	}
 
