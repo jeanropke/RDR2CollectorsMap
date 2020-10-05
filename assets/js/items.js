@@ -84,7 +84,7 @@ class Weekly extends BaseCollection {
 
     return Promise.all([allWeeklySets, currentSet])
       .then(() => {
-        const data = this.allSets
+        const data = this.allSets;
         data.current = this.currentSet;
         this.current = new Weekly(data);
         this._installSettingsAndEventHandlers();
