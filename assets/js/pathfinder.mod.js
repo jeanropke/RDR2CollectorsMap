@@ -81,8 +81,6 @@ class WorkerL {
 }
 const L = (typeof(window) === 'undefined' ? WorkerL : window.L)
 
-const reqAnimFrame = (typeof(window) === 'undefined' ? function(cb) { cb() } : window.requestAnimationFrame)
-
 /**
  * Helping class to hold markers, that are nearby
  */
@@ -655,28 +653,24 @@ class PathFinder {
 			if(PathFinder._currentChunk.isDone || availableInChunk.length <= 0) {
 				PathFinder._currentChunk.isDone = true
 
-				PathFinder._currentChunk = await (new Promise((res) => { reqAnimFrame(() => {
-					res(PathFinder.findNearestChunk(start, PathFinder._currentChunk))
-				}) }))
+				PathFinder._currentChunk = PathFinder.findNearestChunk(start,
+					PathFinder._currentChunk);
 
 				if(PathFinder._currentChunk == null) return null
 				availableInChunk = PathFinder._currentChunk.markers.filter((m) => { return markers.includes(m) })
 			}
-	
-			for(let i = 0; i < availableInChunk.length; i++) {
-				// Request animation frame to unblock browser
-				var path = await (new Promise((res) => { reqAnimFrame(() => {
-					// Find the nearest road node to all the markers
-					var markerPoint = PathFinder.getNearestNode(availableInChunk[i])
-					if(markerPoint !== null) {
-						// Find path and resolve
-						res(PathFinder._PathFinder.findPath(startPoint, markerPoint))
-					} else {
-						console.error('[pathfinder] No node found to ', availableInChunk[i])
-						res(null)
-					}
-				}) }))
-				if(path !== null) {
+
+			availableInChunk.forEach(marker => {
+				let path;
+				// Find the nearest road node to all the markers
+				const markerPoint = PathFinder.getNearestNode(marker);
+				if (markerPoint !== null) {
+					path = PathFinder._PathFinder.findPath(startPoint, markerPoint);
+				} else {
+					console.error('[pathfinder] No node found to ', marker);
+					path = null;
+				}
+				if (path !== null) {
 					if(path.weight < shortest.weight) {
 						shortest.weight = path.weight
 						shortest.marker = availableInChunk[i]
@@ -754,16 +748,12 @@ class PathFinder {
 
 		var sourcePoint = PathFinder._points.features[Math.floor(Math.random() * PathFinder._points.features.length)]
 		L.circle([sourcePoint.geometry.coordinates[1], sourcePoint.geometry.coordinates[0]], { color: '#ff0000', radius: 0.5 }).addTo(PathFinder._layerGroup)
-		for(var i = 1; i < PathFinder._points.features.length; i++) {
-			var path = await new Promise(res => {
-				reqAnimFrame(function(){
-					res(PathFinder._PathFinder.findPath(sourcePoint, PathFinder._points.features[i]))
-				})
-			})
-			if(path == null) {
-				L.circle([PathFinder._points.features[i].geometry.coordinates[1], PathFinder._points.features[i].geometry.coordinates[0]], { radius: 0.04 }).addTo(PathFinder._layerGroup)
+		PathFinder._points.features.forEach(f => {
+			if (PathFinder._PathFinder.findPath(sourcePoint, f) == null) {
+				L.circle([f.geometry.coordinates[1], f.geometry.coordinates[0]], { radius: 0.04 })
+					.addTo(PathFinder._layerGroup)
 			}
-		}
+		})
 	}
 
 	/**
@@ -776,57 +766,38 @@ class PathFinder {
 	 * @param {Boolean} [forceNoWorker=false] Forces to skip the worker (mainly used inside the worker)
 	 * @returns {Promise<Boolean>} false if geojson isn't fully loaded or route generation was canceled
 	 */
-	static async routegenStart(startingMarker, markers, fastTravelWeight, railroadWeight, forceNoWorker) {
-		if(PathFinder._geoJson === null) {
-			await new Promise(async (res) => {
-				while(PathFinder._geoJson === null && PathFinder._geoJsonFT === null) {
-					await new Promise((r) => { setTimeout(() => { r() }, 100) })
+	static routegenStart(startingMarker, markers, fastTravelWeight, railroadWeight) {
+		PathFinder.routegenClearAndCancel();
+		PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map);
+		PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map);
+
+		return new Promise((res) => {
+			var paths = [];
+			PathFinder._worker = new Worker('assets/js/pathfinder.js')
+			PathFinder._worker.addEventListener('message', function(e) {
+				var data = e.data
+				switch(data.res) {
+					case 'route-progress':
+						PathFinder._layerControl.addPath(data.newPath)
+						paths.push(data.newPath)
+						PathFinder.drawRoute(paths)
+						break
+					case 'route-done':
+						window.setTimeout(function(){
+							PathFinder._layerControl.selectPath(1, true)
+						}, 100)
+						res(data.result)
+						break
 				}
-				res()
 			})
-		}
+			PathFinder._worker.postMessage({ cmd: 'start', startingMarker, markers,
+				fastTravelWeight, railroadWeight });
+		})
+	}
 
-		await PathFinder.routegenClearAndCancel()
-
-		PathFinder._running = true
-		PathFinder._currentChunk = null
-
-		if(typeof(MapBase) !== 'undefined') {
-			// Add controller and layer group to map
-			PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map)
-			PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map)
-		}
-
-		if(!forceNoWorker && typeof(Worker) !== 'undefined') {
-			var res = await new Promise((res) => {
-				var paths = []
-				PathFinder._worker = new Worker('assets/js/pathfinder.js')
-				PathFinder._worker.postMessage({ cmd: 'data', geojson: PathFinder._geoJson })
-				PathFinder._worker.addEventListener('message', function(e) {
-					var data = e.data
-					switch(data.res) {
-						case 'route-progress':
-							PathFinder._layerControl.addPath(data.newPath)
-							paths.push(data.newPath)
-							PathFinder.drawRoute(paths)
-							break
-						case 'route-done':
-							window.setTimeout(function(){
-								PathFinder._layerControl.selectPath(1, true)
-							}, 100)
-
-							PathFinder._running = false
-							res(data.result)
-							break
-					}
-				})
-				PathFinder._worker.postMessage({ cmd: 'start', startingMarker, markers,
-					fastTravelWeight, railroadWeight });
-			})
-			return res
-		}
-
-		PathFinder.createPathFinder(fastTravelWeight, railroadWeight)
+	static async routegenStartWorker(startingMarker, markers, fastTravelWeight, railroadWeight) {
+		PathFinder.createPathFinder(await PathFinder.geojsonPromise,
+			fastTravelWeight, railroadWeight);
 
 		PathFinder.generateChunks(markers)
 
