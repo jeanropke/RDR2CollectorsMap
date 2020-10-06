@@ -2,46 +2,6 @@ var GeoJSONPathFinder = require('geojson-path-finder')
 var point = require('turf-point')
 var featurecollection = require('turf-featurecollection')
 
-var ambarino = null, lemoyne = null, newAustin = null, newHanover = null, westElizabeth = null, fasttravel = null, railroads = null
-
-function loadGeoJsonData(path) {
-	return new Promise((res) => {
-		$.getJSON(path + '?nocache=' + nocache)
-			.done(function(data){
-				res(data)
-			})
-			.fail(function(){
-				console.error('[pathfinder] failed to load geojson ' + path.substr(path.lastIndexOf('/')+1))
-				// resolve to empty featurecollection so the rest doesn't break
-				res({"type":"FeatureCollection","features":[]})
-			})
-	})
-}
-
-async function loadAllGeoJson() {
-	ambarino = await loadGeoJsonData('data/geojson/ambarino.json')
-	lemoyne = await loadGeoJsonData('data/geojson/lemoyne.json')
-	newAustin = await loadGeoJsonData('data/geojson/new-austin.json')
-	newHanover = await loadGeoJsonData('data/geojson/new-hanover.json')
-	westElizabeth = await loadGeoJsonData('data/geojson/west-elizabeth.json')
-
-	fasttravel = await loadGeoJsonData('data/geojson/fasttravel.json')
-	railroads = await loadGeoJsonData('data/geojson/railroads.json')
-
-	var completeGeoJson = {"type":"FeatureCollection","features":[]}
-	completeGeoJson.features = completeGeoJson.features.concat(ambarino.features)
-	completeGeoJson.features = completeGeoJson.features.concat(lemoyne.features)
-	completeGeoJson.features = completeGeoJson.features.concat(newAustin.features)
-	completeGeoJson.features = completeGeoJson.features.concat(newHanover.features)
-	completeGeoJson.features = completeGeoJson.features.concat(westElizabeth.features)
-
-	completeGeoJson.features = completeGeoJson.features.concat(fasttravel.features)
-	completeGeoJson.features = completeGeoJson.features.concat(railroads.features)
-
-	PathFinder._geoJson = completeGeoJson
-}
-
-
 class WorkerLatLng {
 	constructor(lat, lng) {
 		this.lat = parseFloat(lat)
@@ -380,6 +340,29 @@ if(typeof(window) !== 'undefined') {
  * Main path finder class; all properties are static
  */
 class PathFinder {
+	static _jsonFetch(...args) {
+		return fetch(...args).then(response => {
+				if (!response.ok) {
+					throw new Error(`${response.status} ${response.statusText} on ${response.url}`);
+				} else {
+					return response.json();
+				}
+			}
+		);
+	}
+
+	static _loadAllGeoJson() {
+		const featureCollectionPromises = [
+			'ambarino', 'lemoyne', 'new-austin', 'new-hanover', 'west-elizabeth',
+			'fasttravel', 'railroads',
+		].map(part => this._jsonFetch(`/data/geojson/${part}.json`))
+
+		return Promise.all(featureCollectionPromises).then(fcs => ({
+				"type": "FeatureCollection",
+				"features": [].concat(...fcs.map(fc => fc.features)),
+			})
+		)
+	}
 
 	/**
 	 * Initiates properties and starts loading geojson data
@@ -403,11 +386,6 @@ class PathFinder {
 		PathFinder._drawing = false
 		PathFinder._redrawWhenFinished = false
 
-		if(typeof($) !== 'undefined') {
-			// Load geojson
-			loadAllGeoJson()
-		}
-
 		return PathFinder
 	}
 
@@ -422,6 +400,8 @@ class PathFinder {
 		for(var i = 0; i < markers.length; i++) {
 			Chunk.sortMarker(markers[i])
 		}
+	static workerInit() {
+		PathFinder.geojsonPromise = this._loadAllGeoJson();
 	}
 	
 	/**
