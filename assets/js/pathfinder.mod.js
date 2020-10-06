@@ -94,9 +94,6 @@ class Chunk {
 		this.isDone = false
 	}
 
-	/**
-	 * Calculates the bounds of the chunk
-	 */
 	_calcBounds() {
 		var latMin = null
 		var lngMin = null
@@ -656,7 +653,6 @@ class PathFinder {
 
 			// if current chunk is empty or done, fetch a new one
 			if(PathFinder._currentChunk.isDone || availableInChunk.length <= 0) {
-				// mark this chunk as done to skip it when searching a new one
 				PathFinder._currentChunk.isDone = true
 
 				PathFinder._currentChunk = await (new Promise((res) => { reqAnimFrame(() => {
