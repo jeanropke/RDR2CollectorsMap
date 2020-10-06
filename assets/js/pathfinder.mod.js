@@ -804,7 +804,7 @@ class PathFinder {
 		if(!forceNoWorker && typeof(Worker) !== 'undefined') {
 			var res = await new Promise((res) => {
 				var paths = []
-				PathFinder._worker = new Worker('assets/js/pathfinder.worker.js')
+				PathFinder._worker = new Worker('assets/js/pathfinder.js')
 				PathFinder._worker.postMessage({ cmd: 'data', geojson: PathFinder._geoJson })
 				PathFinder._worker.addEventListener('message', function(e) {
 					var data = e.data
@@ -875,9 +875,19 @@ class PathFinder {
 
 }
 
-if(typeof(window) !== 'undefined') {
-	// Make Pathfinder publicly accessible
-	window.PathFinder = PathFinder.init()
+if(typeof(window) === 'undefined') {
+	PathFinder.workerInit();
+	self.addEventListener('message', function(e){
+		const data = e.data;
+		switch(data.cmd) {
+			case 'start':
+				PathFinder.routegenStartWorker(data.startingMarker, data.markers,
+					data.fastTravelWeight, data.railroadWeight, true)
+					.then(result => self.postMessage({ res: 'route-done', result }))
+				break;
+		}
+	})
 } else {
-	module.exports = PathFinder
+	PathFinder.init();
+	window.PathFinder = PathFinder;
 }
