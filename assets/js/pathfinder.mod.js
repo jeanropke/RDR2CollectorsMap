@@ -454,18 +454,6 @@ class PathFinder {
 	}
 
 	/**
-	 * Turns an LatLng object into a GeoJSON point
-	 * @static
-	 * @param {LatLng} latlng 
-	 * @returns {Object}
-	 */
-	static latLngToPoint(latlng) {
-		var p = {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[parseFloat(latlng.lng), parseFloat(latlng.lat)]}}
-		if(typeof(latlng.text) === 'string') p.properties.text = latlng.text
-		return p
-	}
-	
-	/**
 	 * Turns GeoJSON point into a LatLng object
 	 * @static
 	 * @param {Object} point 
@@ -532,12 +520,13 @@ class PathFinder {
 	static findNearestChunk(marker, markerChunk) {
 		var c = {weight: Number.MAX_SAFE_INTEGER, c: null}
 	
-		var markerNode = PathFinder.getNearestNode(PathFinder.latLngToPoint(marker))
+		const markerNode = PathFinder.getNearestNode(marker);
 		for(var i = 0; i < Chunk.chunks.length; i++) {
 			if(Chunk.chunks[i].isDone) continue
 			if(Chunk.chunks[i] == markerChunk) continue
-	
-			var chunkNode = PathFinder.getNearestNode(PathFinder.latLngToPoint(Chunk.chunks[i].getBounds().getCenter()), 15)
+
+			const chunkNode = PathFinder.getNearestNode(Chunk.chunks[i].getBounds().getCenter(),
+				15);
 			if(chunkNode !== null) {
 				var p = PathFinder._PathFinder.findPath(markerNode, chunkNode)
 				if(p.weight < c.weight) {
