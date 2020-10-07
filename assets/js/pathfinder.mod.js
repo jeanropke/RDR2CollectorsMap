@@ -297,11 +297,6 @@ class PathFinder {
 		)
 	}
 
-	/**
-	 * Initiates properties and starts loading geojson data
-	 * @static
-	 * @returns {PathFinder}
-	 */
 	static init() {
 		PathFinder._PathFinder = null
 		PathFinder._points = []
@@ -309,37 +304,24 @@ class PathFinder {
 		PathFinder._layerControl = null
 		PathFinder._currentPath = null
 		PathFinder._running = false
-		PathFinder._geoJson = null
 		PathFinder._nodeCache = {}
 		PathFinder._cancel = false
-		PathFinder._pathfinderFTWeight = 0.9
-		PathFinder._pathfinderRRWeight = 1.1
 		PathFinder._worker = null
 		PathFinder._drawing = false
 		PathFinder._redrawWhenFinished = false
-
-		return PathFinder
 	}
 	static workerInit() {
 		PathFinder.geojsonPromise = this._loadAllGeoJson();
 	}
-	
+
 	/**
 	 * Creating the GeoJSON Path Finder object from geojson data and extracting all nodes
 	 * @static
 	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
 	 * @param {Number} railroadWeight Multiplier for rail road weights
 	 */
-	static createPathFinder(fastTravelWeight, railroadWeight) {
-		if(typeof(fastTravelWeight) !== 'number') fastTravelWeight = PathFinder._pathfinderFTWeight
-		if(typeof(railroadWeight) !== 'number') railroadWeight = PathFinder._pathfinderRRWeight
-
-		if(
-			PathFinder._PathFinder !== null &&
-			PathFinder._pathfinderFTWeight == fastTravelWeight && PathFinder._pathfinderRRWeight == railroadWeight
-		) return
-
-		PathFinder._PathFinder = new GeoJSONPathFinder(PathFinder._geoJson, {
+	static createPathFinder(geojson, fastTravelWeight, railroadWeight) {
+		PathFinder._PathFinder = new GeoJSONPathFinder(geojson, {
 			precision: 0.04,
 			weightFn: function(a, b, props) {
 				var dx = a[0] - b[0];
@@ -350,8 +332,6 @@ class PathFinder {
 				return r
 			}
 		})
-		PathFinder._pathfinderFTWeight = fastTravelWeight
-		PathFinder._pathfinderRRWeight = railroadWeight
 		var _vertices = PathFinder._PathFinder._graph.vertices;
 		PathFinder._points = featurecollection(
 			Object
@@ -650,9 +630,7 @@ class PathFinder {
 	 * @static
 	 * @returns {Promise}
 	 */
-	static async findHoles() {
-		PathFinder.createPathFinder(false)
-
+	static findHoles() {
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
 
