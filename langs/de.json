@@ -1321,6 +1321,7 @@
     "map.user_pins.icon.nazar": "Madam Nazar",
     "map.user_pins.icon.treasure": "Schatz",
     "map.user_pins.icon.camp": "Lager",
+    "map.user_pins.icon.harrietum": "Harrietum Officinalis",
     "menu.clear_custom_routes": "Benutzerdefinierte Route löschen",
     "menu.clear_markers": "Markierungen jetzt zurücksetzen",
     "menu.information_links": "Links/Informationen",
@@ -1676,5 +1677,6 @@
     "mp_animal_ram_legendary_03.desc": "Dieser seltene Widder wurde in Rio Bravo und Cholla Springs gesichtet. Sein Fell ist schwarz und die Hörner dunkelrot. Er ist berüchtigt dafür, Reisende und andere Tiere in seinem Revier anzugreifen. Das aggressive Wesen dieses Widders hat sich schnell herumgesprochen. Wer ihn studieren möchte, sollte dies aus sicherer Entfernung tun.",
     "mp_animal_wolf_legendary_01.desc": "Dieser Wolf wird häufig in der Umgebung von O'Creagh's Run gesehen. Er ist für sein rostbraunes Fell und die leuchtend grünen Augen bekannt. Er ist verstohlen und äußerst intelligent und hat keine Angst, anzugreifen, wenn er sich durch andere Tiere oder Reisende bedroht fühlt. Dieses nachtaktive Tier lässt sich auch bei schlechtestem Wetter nicht von der Jagd abbringen.",
     "mp_animal_wolf_legendary_02.desc": "Der legendäre Onyxwolf wurde auf dem Weg durch Wapiti entdeckt. Er ist bekannt für seine leuchtend gelben Augen, die aus seinem dunklen Fell herausstechen. Er verteidigt sein Revier aggressiv gegen alle Menschen, die ihm zu nahe kommen. Dieser Wolf ist meistens nachts aktiv und jagt am liebsten bei trockenem Wetter.",
-    "mp_animal_wolf_legendary_03.desc": "Ein Wolfsrudel nördlich des Cumberland Forest ist zu zweifelhaftem Ruhm gekommen. Es hat einen markanten Anführer, einen großen, weißen Wolf. Das Rudel greift Reisende auf den angrenzenden Straßen an und hat die Aufmerksamkeit von Naturkundlern und Wilderern erregt. Der legendäre Mondsteinwolf hat ein loyales Gefolge. Sei bei der Pirsch darauf vorbereitet, dem ganzen Rudel zu begegnen."
+    "mp_animal_wolf_legendary_03.desc": "Ein Wolfsrudel nördlich des Cumberland Forest ist zu zweifelhaftem Ruhm gekommen. Es hat einen markanten Anführer, einen großen, weißen Wolf. Das Rudel greift Reisende auf den angrenzenden Straßen an und hat die Aufmerksamkeit von Naturkundlern und Wilderern erregt. Der legendäre Mondsteinwolf hat ein loyales Gefolge. Sei bei der Pirsch darauf vorbereitet, dem ganzen Rudel zu begegnen.",
+    "map.gus_price": "Preis bei Gus:"
 }
