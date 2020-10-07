@@ -184,8 +184,6 @@ if(typeof(window) !== 'undefined') {
 
 			this.currentPath = 0
 			this._paths = []
-
-			this._openItem = ''
 		}
 
 		onAdd() {
@@ -259,14 +257,10 @@ if(typeof(window) !== 'undefined') {
 				var lastpoint = hlpath[hlpath.length-1]
 				PathFinder.highlightPath(hlpath)
 
-				var goTo = MapBase.markers.filter(_m => _m.lng == lastpoint[1] && _m.lat == lastpoint[0]);
-				if(goTo.length > 0) {
-					this._openItem = goTo[0].text
-					// Wait for the camera to move
-					setTimeout(() => {
-						Layers.itemMarkersLayer.getLayerById(this._openItem).openPopup();
-					}, 300)
-				}
+				this._lastMarker = MapBase.markers.find(m =>
+					m.lng == lastpoint[1] && m.lat == lastpoint[0]);
+				// Wait for the camera to move
+				setTimeout(() => this._lastMarker.lMarker.openPopup(), 300);
 			}
 		}
 
@@ -620,7 +614,7 @@ class PathFinder {
 	}
 
 	static wasRemovedFromMap(marker) {
-		if(PathFinder._layerControl && PathFinder._layerControl._openItem == marker.text) {
+		if(PathFinder._layerControl && PathFinder._layerControl._lastMarker === marker) {
 			PathFinder._layerControl.selectPath(1)
 		}
 	}
