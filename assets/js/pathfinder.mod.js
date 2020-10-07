@@ -110,26 +110,14 @@ class Chunk {
 	}
 
 	/**
-	 * Checks if the marker can be added to the chunk
-	 * This is the case if the marker is now further away than 10 from the center of the chunk
-	 * @param {Marker} marker 
-	 * @returns {Boolean}
-	 */
-	_canAdd(marker) {
-		if(this.bounds == null) return true
-		var d = WorkerL.distance(marker, this.bounds.getCenter())
-		return d < 10
-	}
-
-	/**
 	 * Checks if the marker can be added to the chunk and returns true if it was added
 	 * @param {Marker} marker 
 	 * @returns {Boolean}
 	 */
-	addMarker(marker) {
+	_addMarker(marker) {
 		marker.lat = parseFloat(marker.lat)
 		marker.lng = parseFloat(marker.lng)
-		if(this._canAdd(marker)) {
+		if(this.bounds == null || WorkerL.distance(marker, this.bounds.getCenter()) < 10) {
 			this.markers.push(marker)
 			this._calcBounds()
 			return true
@@ -157,70 +145,26 @@ class Chunk {
 	}
 
 	/**
-	 * Returns all availabe chunks
+	 * Sorts markers into new chunks.
 	 * @static
-	 * @readonly
-	 * @returns {Array<Chunk>}
+	 * @param {Array<Marker>} markers
 	 */
-	static get chunks() {
-		if(typeof(Chunk._chunks) === 'undefined') return []
-		return Chunk._chunks
-	}
-
-	/**
-	 * Creates and returns a new Chunk
-	 * @static
-	 * @returns {Chunk}
-	 */
-	static newChunk() {
-		if(typeof(Chunk._chunks) === 'undefined') Chunk.clearChunks()
-		var c = new Chunk()
-		Chunk._chunks.push(c)
-		return c
-	}
-
-	/**
-	 * Removes all saved chunks
-	 * @static
-	 */
-	static clearChunks() {
-		Chunk._chunks = []
-	}
-
-	/**
-	 * Sorts the marker into all chunks that are suitable.
-	 * If it wasn't sorted into an existing chunk, a new chunk is created.
-	 * @static
-	 * @param {Marker} marker 
-	 */
-	static sortMarker(marker) {
-		var added = false
-		for(var j = 0; j < Chunk.chunks.length; j++) {
-			if(Chunk.chunks[j].addMarker(marker)) {
-				added = true
+	static generateChunks(markers) {
+		Chunk.chunks = [];
+		markers.forEach(marker => {
+			var added = false;
+			for(var j = 0; j < Chunk.chunks.length; j++) {
+				if(Chunk.chunks[j]._addMarker(marker)) {
+					added = true;
+				}
 			}
-		}
-		if(!added) {
-			var c = Chunk.newChunk()
-			c.addMarker(marker)
-		}
-	}
-
-	/**
-	 * Searches for the marker in all chunks and returns the first chunk it's found in or null if it's in no chunk
-	 * @static
-	 * @param {Marker} marker 
-	 * @returns {Chunk|null}
-	 */
-	static getChunkByMarker(marker) {
-		for(var j = 0; j < Chunk.chunks.length; j++) {
-			if(Chunk.chunks[j].contains(marker)) {
-				return Chunk.chunks[j]
+			if(!added) {
+				const c = new Chunk();
+				Chunk.chunks.push(c);
+				c._addMarker(marker);
 			}
-		}
-		return null
+		});
 	}
-
 }
 
 if(typeof(window) !== 'undefined') {
@@ -367,7 +311,6 @@ class PathFinder {
 	static init() {
 		PathFinder._PathFinder = null
 		PathFinder._points = []
-		PathFinder._currentChunk = null
 		PathFinder._layerGroup = null
 		PathFinder._layerControl = null
 		PathFinder._currentPath = null
@@ -383,18 +326,6 @@ class PathFinder {
 
 		return PathFinder
 	}
-
-	/**
-	 * Start sorting markers into chunks
-	 * @static
-	 * @param {Array<Marker>} markers
-	 */
-	static generateChunks(markers) {
-		Chunk.clearChunks()
-	
-		for(var i = 0; i < markers.length; i++) {
-			Chunk.sortMarker(markers[i])
-		}
 	static workerInit() {
 		PathFinder.geojsonPromise = this._loadAllGeoJson();
 	}
@@ -633,11 +564,10 @@ class PathFinder {
 	 * visited markers
 	 * @returns {Promise<Object>} Resolving Object containes the properties weight, marker and path
 	 */
-	static async findNearestTravelItem(start, markers) {
-		if(PathFinder._PathFinder === null) PathFinder.createPathFinder()
-	
-		if(PathFinder._currentChunk === null) {
-			PathFinder._currentChunk = Chunk.getChunkByMarker(start)
+	static findNearestTravelItem(start, markers) {
+		const shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null, path: null};
+		if(PathFinder._currentChunk == null) {
+			PathFinder._currentChunk = Chunk.chunks.find(chunk => chunk.markers.includes(start));
 			if(PathFinder._currentChunk == null) {
 				console.error('[pathfinder] Starting marker is not in chunk', start)
 				return null
@@ -799,7 +729,7 @@ class PathFinder {
 		PathFinder.createPathFinder(await PathFinder.geojsonPromise,
 			fastTravelWeight, railroadWeight);
 
-		PathFinder.generateChunks(markers)
+		Chunk.generateChunks(markers);
 
 		markers = markers.filter(m => m !== startingMarker);
 		let current = {marker: startingMarker};
