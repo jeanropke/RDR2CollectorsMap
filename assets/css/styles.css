@@ -1657,3 +1657,7 @@ a.no-style:visited {
     padding: 0;
     line-height: 28px;
 }
+
+.legendary-price {
+    color: #fdc607;
+}

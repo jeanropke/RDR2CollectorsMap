@@ -89,6 +89,7 @@ class Legendary {
         <p style='font-size: 16px; text-align: center; padding-bottom: 8px;'>${Legendary.notReleased.includes(this.text) ? Language.get('map.generic_not_released') : ''}</p>
         <p>${Language.get(this.text + '.desc')}</p>
         <br><p>${Language.get('map.legendary_animal.desc')}</p>
+        <br><p class="legendary-price">${Language.get('map.gus_price')} $${this.gusPrice.toFixed(2)}</p>
         <button type="button" class="btn btn-info remove-button" data-text="map.remove">
           </button>
       </div>`).translate();

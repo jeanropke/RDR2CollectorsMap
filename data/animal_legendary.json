@@ -7,7 +7,8 @@
       { "text": "alligator_lagras_02", "x": -89.9050, "y": 143.5474 },
       { "text": "alligator_lannahechee_01", "x": -91.0286, "y": 143.3673 },
       { "text": "alligator_kamassa_02", "x": -92.5550, "y": 144.3743 }
-    ]
+    ],
+    "gusPrice": 17.7
   },
   {
     "text": "mp_animal_alligator_legendary_02", "x": -73.125, "y": 150.125, "radius": 6,
@@ -22,7 +23,8 @@
       { "text": "alligator_lannahechee_03", "x": -73.8838, "y": 153.5995 },
       { "text": "alligator_lannahechee_04", "x": -71.8963, "y": 153.3513 },
       { "text": "alligator_lannahechee_05", "x": -70.8694, "y": 153.6313 }
-    ]
+    ],
+    "gusPrice": 25.2
   },
   {
     "text": "mp_animal_bear_legendary_01", "x": -58.0625, "y": 95.0625, "radius": 7.5,
@@ -32,7 +34,8 @@
       { "text": "bear_ambient_03", "x": -64.1792, "y": 94.3548 },
       { "text": "bear_ambient_04", "x": -55.2928, "y": 97.8274 },
       { "text": "bear_ambient_05", "x": -53.5565, "y": 98.9934 }
-    ]
+    ],
+    "gusPrice": 26
   },
   {
     "text": "mp_animal_bear_legendary_02", "x": -53.875, "y": 76.6875, "radius": 9,
@@ -45,7 +48,8 @@
       { "text": "bear_camp_02", "x": -50.7486, "y": 73.4919 },
       { "text": "bear_camp_03", "x": -57.1709, "y": 72.6882 },
       { "text": "bear_camp_04", "x": -58.2884, "y": 71.2636 }
-    ]
+    ],
+    "gusPrice": 31
   },
   {
     "text": "mp_animal_beaver_legendary_01", "x": -68.5, "y": 71.375, "radius": 6,
@@ -55,7 +59,8 @@
       { "text": "beaver_kamassa_river_n", "x": -68.9192, "y": 70.5888 },
       { "text": "beaver_kamassa_river_s", "x": -64.8084, "y": 68.4498 },
       { "text": "beaver_owanjila_dam", "x": -70.9532, "y": 76.0010 }
-    ]
+    ],
+    "gusPrice": 18
   },
   {
     "text": "mp_animal_beaver_legendary_02", "x": -52.5313, "y": 147.4375, "radius": 8.5,
@@ -65,7 +70,8 @@
       { "text": "beaver_owanjila_nw", "x": -49.6997, "y": 147.3713 },
       { "text": "beaver_owanjila_se", "x": -46.7739, "y": 148.2867 },
       { "text": "beaver_south_elysian_pool", "x": -51.5952, "y": 148.5152 }
-    ]
+    ],
+    "gusPrice": 23
   },
   {
     "text": "mp_animal_bison_legendary_01", "x": -57.7813, "y": 127.5313, "radius": 6,
@@ -75,7 +81,8 @@
       { "text": "bison_ambient_03", "x": -54.9453, "y": 130.1508 },
       { "text": "bison_ambient_04", "x": -58.2484, "y": 130.7127 },
       { "text": "bison_ambient_05", "x": -61.8377, "y": 125.4599 }
-    ]
+    ],
+    "gusPrice": 18
   },
   {
     "text": "mp_animal_bison_legendary_02", "x": -34.5938, "y": 81.9688, "radius": 5.5,
@@ -85,7 +92,8 @@
       { "text": "bison_herd_03", "x": -35.4652, "y": 79.1702 },
       { "text": "bison_herd_04", "x": -30.1821, "y": 81.3053 },
       { "text": "bison_herd_05", "x": -33.3148, "y": 84.0936 }
-    ]
+    ],
+    "gusPrice": 22
   },
   {
     "text": "mp_animal_boar_legendary_01", "x": -65.1875, "y": 150.5, "radius": 4.5,
@@ -95,7 +103,8 @@
       { "text": "boar_ambient_03", "x": -63.3960, "y": 147.9758 },
       { "text": "boar_ambient_04", "x": -67.4389, "y": 147.8448 },
       { "text": "boar_ambient_05", "x": -66.8984, "y": 151.6635 }
-    ]
+    ],
+    "gusPrice": 16.8
   },
   {
     "text": "mp_animal_boar_legendary_02", "x": -96.9688, "y": 85.1563, "radius": 9.5,
@@ -106,7 +115,8 @@
       { "text": "boar_charge_01", "x": -100.1018, "y": 86.5650 },
       { "text": "boar_charge_02", "x": -89.1295, "y": 83.3439 },
       { "text": "boar_charge_03", "x": -93.7640, "y": 86.0201 }
-    ]
+    ],
+    "gusPrice": 20.8
   },
   {
     "text": "mp_animal_buck_legendary_01", "x": -67.1875, "y": 115.9375, "radius": 9,
@@ -116,7 +126,8 @@
       { "text": "buck_location_tier_i_2", "x": -66.5914, "y": 114.0578 },
       { "text": "buck_location_tier_i_3", "x": -63.9323, "y": 109.1463 },
       { "text": "buck_location_tier_i_4", "x": -69.1733, "y": 123.5270 }
-    ]
+    ],
+    "gusPrice": 27
   },
   {
     "text": "mp_animal_buck_legendary_02", "x": -86.6563, "y": 76.0938, "radius": 6,
@@ -126,7 +137,8 @@
       { "text": "buck_location_tier_ii_2", "x": -85.3443, "y": 75.1735 },
       { "text": "buck_location_tier_ii_3", "x": -84.1868, "y": 80.1802 },
       { "text": "buck_location_tier_ii_4", "x": -85.4809, "y": 71.9787 }
-    ]
+    ],
+    "gusPrice": 29
   },
   {
     "text": "mp_animal_cougar_legendary_01", "x": -91.7031, "y": 93.8906, "radius": 4,
@@ -136,7 +148,8 @@
       { "text": "cougar_kill_rabbit_3", "x": -91.3023, "y": 94.9527 },
       { "text": "cougar_kill_rabbit_4", "x": -89.3882, "y": 96.3907 },
       { "text": "cougar_kill_rabbit_5", "x": -92.9744, "y": 90.6234 }
-    ]
+    ],
+    "gusPrice": 29.5
   },
   {
     "text": "mp_animal_cougar_legendary_02", "x": -119.6875, "y": 18.8906, "radius": 8,
@@ -156,7 +169,8 @@
       { "text": "cougar_wrecked_camp_3", "x": -122.4136, "y": 21.1029 },
       { "text": "cougar_wrecked_camp_4", "x": -118.2372, "y": 19.6210 },
       { "text": "cougar_wrecked_camp_5", "x": -114.8591, "y": 21.9901 }
-    ]
+    ],
+    "gusPrice": 35.5
   },
   {
     "text": "mp_animal_coyote_legendary_01", "x": -101.5313, "y": 66.6875, "radius": 7.5,
@@ -166,7 +180,8 @@
       { "text": "coyote_hennigans_stead_nw", "x": -97.0414, "y": 64.0487 },
       { "text": "coyote_hennigans_stead_s", "x": -96.8673, "y": 70.1063 },
       { "text": "coyote_hennigans_stead_se", "x": -101.3838, "y": 61.1792 }
-    ]
+    ],
+    "gusPrice": 22.75
   },
   {
     "text": "mp_animal_coyote_legendary_02", "x": -73.25, "y": 88.0938, "radius": 6,
@@ -176,7 +191,8 @@
       { "text": "coyote_riggs_station_s", "x": -68.7025, "y": 86.8780 },
       { "text": "coyote_strawberry_s", "x": -71.0705, "y": 88.5742 },
       { "text": "coyote_upper_montana_river", "x": -77.8200, "y": 87.6067 }
-    ]
+    ],
+    "gusPrice": 28.75
   },
   {
     "text": "mp_animal_elk_legendary_01", "x": -45.5, "y": 114.7188, "radius": 7,
@@ -186,7 +202,8 @@
       { "text": "elk_cumberland_2", "x": -44.4929, "y": 109.0759 },
       { "text": "elk_cumberland_3", "x": -42.9728, "y": 117.6739 },
       { "text": "elk_cumberland_4", "x": -47.9034, "y": 118.6427 }
-    ]
+    ],
+    "gusPrice": 21.9
   },
   {
     "text": "mp_animal_elk_legendary_02", "x": -104.125, "y": 45.4375, "radius": 10,
@@ -196,7 +213,8 @@
       { "text": "elk_cholla_2", "x": -104.8836, "y": 39.5809 },
       { "text": "elk_cholla_3", "x": -112.2900, "y": 43.4511 },
       { "text": "elk_cholla_4", "x": -95.5901, "y": 47.5888 }
-    ]
+    ],
+    "gusPrice": 29.4
   },
   {
     "text": "mp_animal_fox_legendary_01", "x": -76.9531, "y": 126.7969, "radius": 7.5,
@@ -211,7 +229,8 @@
       { "text": "fox_ringneck_04", "x": -82.0833, "y": 123.6960 },
       { "text": "fox_ringneck_05", "x": -78.8710, "y": 122.9856 },
       { "text": "fox_clemens_03", "x": -80.9810, "y": 122.8655 }
-    ]
+    ],
+    "gusPrice": 22.25
   },
   {
     "text": "mp_animal_fox_legendary_02", "x": -28.1406, "y": 92.6406, "radius": 5,
@@ -226,17 +245,8 @@
       { "text": "fox_colter_08", "x": -29.5941, "y": 92.6258 },
       { "text": "fox_colter_09", "x": -27.9167, "y": 93.1054 },
       { "text": "fox_colter_10", "x": -26.4321, "y": 89.6490 }
-    ]
-  },
-  {
-    "text": "mp_animal_moose_legendary_02", "x": -29.7969, "y": 151.75, "radius": 6,
-    "locations": [
-      { "text": "moose_barrow_lagoon_nw", "x": -29.7445, "y": 155.9338 },
-      { "text": "moose_barrow_lagoon_s", "x": -28.0544, "y": 154.8757 },
-      { "text": "moose_barrow_lagoon_s_2", "x": -30.3257, "y": 147.3624 },
-      { "text": "moose_barrow_lagoon_se", "x": -29.7445, "y": 155.9338 },
-      { "text": "moose_barrow_lagoon_sw", "x": -28.4404, "y": 149.9297 }
-    ]
+    ],
+    "gusPrice": 24
   },
   {
     "text": "mp_animal_moose_legendary_01", "x": -39.3984, "y": 96.5703, "radius": 2.5,
@@ -246,7 +256,19 @@
       { "text": "moose_roanoke_ridge_ne", "x": -38.2047, "y": 95.9749 },
       { "text": "moose_roanoke_ridge_ne_2", "x": -40.3290, "y": 97.7125 },
       { "text": "moose_roanoke_ridge_nw", "x": -40.5919, "y": 97.0236 }
-    ]
+    ],
+    "gusPrice": 24.5
+  },
+  {
+    "text": "mp_animal_moose_legendary_02", "x": -29.7969, "y": 151.75, "radius": 6,
+    "locations": [
+      { "text": "moose_barrow_lagoon_nw", "x": -29.7445, "y": 155.9338 },
+      { "text": "moose_barrow_lagoon_s", "x": -28.0544, "y": 154.8757 },
+      { "text": "moose_barrow_lagoon_s_2", "x": -30.3257, "y": 147.3624 },
+      { "text": "moose_barrow_lagoon_se", "x": -29.7445, "y": 155.9338 },
+      { "text": "moose_barrow_lagoon_sw", "x": -28.4404, "y": 149.9297 }
+    ],
+    "gusPrice": 32
   },
   {
     "text": "mp_animal_panther_legendary_01", "x": -97, "y": 131, "radius": 4.5,
@@ -256,7 +278,8 @@
       { "text": "panther_ambient_3", "x": -96.2076, "y": 130.3765 },
       { "text": "panther_ambient_4", "x": -96.9257, "y": 127.3777 },
       { "text": "panther_ambient_5", "x": -98.0348, "y": 129.7719 }
-    ]
+    ],
+    "gusPrice": 29.75
   },
   {
     "text": "mp_animal_panther_legendary_02", "x": -71, "y": 143.7813, "radius": 9.5,
@@ -271,7 +294,8 @@
       { "text": "panther_reinforcement_3", "x": -64.4541, "y": 149.2745 },
       { "text": "panther_reinforcement_4", "x": -68.5253, "y": 139.7292 },
       { "text": "panther_reinforcement_5", "x": -70.6390, "y": 140.4138 }
-    ]
+    ],
+    "gusPrice": 35.75
   },
   {
     "text": "mp_animal_ram_legendary_01", "x": -119.9063, "y": 44.6406, "radius": 10,
@@ -281,7 +305,8 @@
       { "text": "ram_location_tier_i_2", "x": -121.7022, "y": 49.2428 },
       { "text": "ram_location_tier_i_3", "x": -121.9752, "y": 40.9367 },
       { "text": "ram_location_tier_i_4", "x": -119.6918, "y": 46.6420 }
-    ]
+    ],
+    "gusPrice": 20
   },
   {
     "text": "mp_animal_ram_legendary_02", "x": -30.7813, "y": 131.2688, "radius": 10,
@@ -291,7 +316,8 @@
       { "text": "ram_location_tier_ii_2", "x": -29.5669, "y": 134.9187 },
       { "text": "ram_location_tier_ii_3", "x": -29.1032, "y": 122.0571 },
       { "text": "ram_location_tier_ii_4", "x": -32.0274, "y": 123.0338 }
-    ]
+    ],
+    "gusPrice": 24.75
   },
   {
     "text": "mp_animal_wolf_legendary_01", "x": -41.6094, "y": 136.375, "radius": 7,
@@ -306,7 +332,8 @@
       { "text": "wolf_o_creagh_05", "x": -43.0274, "y": 133.0478 },
       { "text": "wolf_o_creagh_06", "x": -45.0703, "y": 139.4214 },
       { "text": "wolf_o_creagh_07", "x": -42.0417, "y": 141.4063 }
-    ]
+    ],
+    "gusPrice": 22.25
   },
   {
     "text": "mp_animal_wolf_legendary_02", "x": -35.0469, "y": 115.3906, "radius": 6,
@@ -326,6 +353,7 @@
       { "text": "wolf_o_creagh_08", "x": -35.2793, "y": 113.2706 },
       { "text": "wolf_cohutta_15", "x": -31.4701, "y": 118.7416 },
       { "text": "wolf_cohutta_07", "x": -33.7073, "y": 119.2495 }
-    ]
+    ],
+    "gusPrice": 28.25
   }
 ]
