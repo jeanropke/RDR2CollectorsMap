@@ -40,7 +40,7 @@ const urls = [
     'data/overlays.json',
     'data/items.json',
     'data/fasttravels.json',
-    'https://pepegapi.jeanropke.net/v2/rdo/nazar.json',
+    'https://pepegapi.jeanropke.net/v2/rdo/nazar',
     'data/treasures.json',
     'data/animal_legendary.json',
     'data/loot.json',
