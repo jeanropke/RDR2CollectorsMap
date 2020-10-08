@@ -506,22 +506,23 @@ class PathFinder {
 	 * @param {Marker} start 
 	 * @param {Array<Marker>} markers This array of markers must not include start or any already
 	 * visited markers
-	 * @returns {Promise<Object>} Resolving Object containes the properties weight, marker and path
+	 * @returns {Object} Containes the properties weight, marker and path. On error, `.marker`
+	 * will be `null`.
 	 */
 	static findNearestTravelItem(start, markers) {
 		const shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null, path: null};
 		if(PathFinder._currentChunk == null) {
 			PathFinder._currentChunk = Chunk.chunks.find(chunk => chunk.markers.includes(start));
 			if(PathFinder._currentChunk == null) {
-				console.error('[pathfinder] Starting marker is not in chunk', start)
-				return null
+				console.error('[pathfinder] Could not find starting marker in any chunk.', start);
+				return shortest;
 			}
 		}
-		var startPoint = PathFinder.getNearestNode(start)
-	
-		var shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null, path: null}
+		const startPoint = PathFinder.getNearestNode(start);
+
 		while(shortest.marker === null) {
-			var availableInChunk = PathFinder._currentChunk.markers.filter((m) => { return markers.includes(m) })
+			var availableInChunk = PathFinder._currentChunk.markers.filter(m =>
+				markers.includes(m));
 
 			// if current chunk is empty or done, fetch a new one
 			if(PathFinder._currentChunk.isDone || availableInChunk.length <= 0) {
@@ -530,8 +531,9 @@ class PathFinder {
 				PathFinder._currentChunk = PathFinder.findNearestChunk(start,
 					PathFinder._currentChunk);
 
-				if(PathFinder._currentChunk == null) return null
-				availableInChunk = PathFinder._currentChunk.markers.filter((m) => { return markers.includes(m) })
+				if(PathFinder._currentChunk == null) return shortest;
+				availableInChunk = PathFinder._currentChunk.markers.filter(m =>
+					markers.includes(m));
 			}
 
 			availableInChunk.forEach(marker => {
@@ -547,15 +549,15 @@ class PathFinder {
 				if (path !== null) {
 					if(path.weight < shortest.weight) {
 						shortest.weight = path.weight
-						shortest.marker = availableInChunk[i]
+						shortest.marker = marker;
 						path.path.unshift([start.lng, start.lat])
-						path.path.push([availableInChunk[i].lng, availableInChunk[i].lat])
-						shortest.path = path.path.map((c) => { return [c[1], c[0]] })
+						path.path.push([marker.lng, marker.lat]);
+						shortest.path = path.path.map(c => [c[1], c[0]])
 					}
 				}
-			}
-	
-			if(shortest.marker === null) {
+			});
+
+			if (shortest.marker === null) {
 				PathFinder._currentChunk.isDone = true
 			}
 		}
@@ -653,38 +655,18 @@ class PathFinder {
 
 		Chunk.generateChunks(markers);
 
-		markers = markers.filter(m => m !== startingMarker);
 		let current = {marker: startingMarker};
+		markers = markers.filter(m => m !== current.marker);
+		const markersNum = markers.length;
+		PathFinder._currentChunk = null;  // used in `.findNearestTravelItem()`
+		for (let i = 0; i < markersNum; i++) {
+			current = PathFinder.findNearestTravelItem(current.marker, markers);
+			if (current.marker == null) break;
 
-		var last = current.marker
-		var paths = []
-
-		var markersNum = markers.length
-		try {
-			for (var i = 0; i < markersNum; i++) {
-				current = await PathFinder.findNearestTravelItem(last, markers);
-				if(current == null || current.marker == null) break
-
-				markers = markers.filter(m => m !== current.marker);
-				last = current.marker
-		
-				if(typeof(window) !== 'undefined') {
-					// add route to controller and draw the current route
-					PathFinder._layerControl.addPath(current.path)
-					paths.push(current.path)
-					PathFinder.drawRoute(paths)
-				} else {
-					self.postMessage({ res: 'route-progress', newPath: current.path, val: i, max: markersNum })
-				}
-
-				if(PathFinder._cancel) break
-			}
-		} catch(e) {
-			// catching all errors, just in case
-			console.error('[pathfinder]', e)
+			markers = markers.filter(m => m !== current.marker);
+			self.postMessage({res: 'route-progress', newPath: current.path});
 		}
 	}
-
 }
 
 if(typeof(window) === 'undefined') {
