@@ -2,16 +2,14 @@ How to (re)create the pathfinder.* files?
 
 * source is
     * pathfinder.mod.js
-    * pathfinder.worker.mod.js
-* those are programmed in/for/with Node
-* and then the tool browserify is used to convert them to browser loadable files
+* source is programmed in/for/with Node
+* and then the tool browserify is used to convert it to a browser loadable file
     * pathfinder.js
-    * pathfinder.worker.js
 * browserify bridges the gap between Node and browser; some issues are:
     * globals like “window”
     * npm used to install Node modules, i.e. dependencies
     * code dependencies are loaded with “require()”
-* the current set of files can be generated with the following setup
+* the current (set of) file(s) can be generated with the following setup
     * nvm
         * a tool to install and manage diffent Node versions
         * Node versions end up under user home directory
@@ -49,7 +47,7 @@ How to (re)create the pathfinder.* files?
                 * exactly as recorded in package-lock.json, ...
                 * ...unless those versions conflict with what package.json wants...
                 * ...then it silently does something else(?)
-    * with all tool prepared, there are these options to install the required packages
+    * with all tools prepared, there are these options to install the required packages
         * `npm ci`
             * supposed to be faster than `npm install` if done for the first time
             * otherwise slower than `npm install`, because it deletes all node_modules at start
@@ -60,5 +58,3 @@ How to (re)create the pathfinder.* files?
                 * check back with git to see if npm did change it and consider investigating
     * with the packages installed...
         * `npx browserify pathfinder.mod.js > pathfinder.js`
-        * same with pathfinder.worker.mod.js
-        * right now, I get a result with mixed line endings, while the checkout is unix NL only
