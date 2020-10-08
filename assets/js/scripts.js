@@ -48,16 +48,6 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
   }
 });
 
-L.LayerGroup.include({
-  getLayerById: function (id) {
-    for (const i in this._layers) {
-      if (this._layers[i].id == id) {
-        return this._layers[i];
-      }
-    }
-  }
-});
-
 /*
 - DOM will be ready, all scripts will be loaded (all loaded via DOM script elements)
 - everything in this file here will be executed

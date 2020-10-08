@@ -2,46 +2,6 @@ var GeoJSONPathFinder = require('geojson-path-finder')
 var point = require('turf-point')
 var featurecollection = require('turf-featurecollection')
 
-var ambarino = null, lemoyne = null, newAustin = null, newHanover = null, westElizabeth = null, fasttravel = null, railroads = null
-
-function loadGeoJsonData(path) {
-	return new Promise((res) => {
-		$.getJSON(path + '?nocache=' + nocache)
-			.done(function(data){
-				res(data)
-			})
-			.fail(function(){
-				console.error('[pathfinder] failed to load geojson ' + path.substr(path.lastIndexOf('/')+1))
-				// resolve to empty featurecollection so the rest doesn't break
-				res({"type":"FeatureCollection","features":[]})
-			})
-	})
-}
-
-async function loadAllGeoJson() {
-	ambarino = await loadGeoJsonData('data/geojson/ambarino.json')
-	lemoyne = await loadGeoJsonData('data/geojson/lemoyne.json')
-	newAustin = await loadGeoJsonData('data/geojson/new-austin.json')
-	newHanover = await loadGeoJsonData('data/geojson/new-hanover.json')
-	westElizabeth = await loadGeoJsonData('data/geojson/west-elizabeth.json')
-
-	fasttravel = await loadGeoJsonData('data/geojson/fasttravel.json')
-	railroads = await loadGeoJsonData('data/geojson/railroads.json')
-
-	var completeGeoJson = {"type":"FeatureCollection","features":[]}
-	completeGeoJson.features = completeGeoJson.features.concat(ambarino.features)
-	completeGeoJson.features = completeGeoJson.features.concat(lemoyne.features)
-	completeGeoJson.features = completeGeoJson.features.concat(newAustin.features)
-	completeGeoJson.features = completeGeoJson.features.concat(newHanover.features)
-	completeGeoJson.features = completeGeoJson.features.concat(westElizabeth.features)
-
-	completeGeoJson.features = completeGeoJson.features.concat(fasttravel.features)
-	completeGeoJson.features = completeGeoJson.features.concat(railroads.features)
-
-	PathFinder._geoJson = completeGeoJson
-}
-
-
 class WorkerLatLng {
 	constructor(lat, lng) {
 		this.lat = parseFloat(lat)
@@ -121,8 +81,6 @@ class WorkerL {
 }
 const L = (typeof(window) === 'undefined' ? WorkerL : window.L)
 
-const reqAnimFrame = (typeof(window) === 'undefined' ? function(cb) { cb() } : window.requestAnimationFrame)
-
 /**
  * Helping class to hold markers, that are nearby
  */
@@ -134,9 +92,6 @@ class Chunk {
 		this.isDone = false
 	}
 
-	/**
-	 * Calculates the bounds of the chunk
-	 */
 	_calcBounds() {
 		var latMin = null
 		var lngMin = null
@@ -155,26 +110,14 @@ class Chunk {
 	}
 
 	/**
-	 * Checks if the marker can be added to the chunk
-	 * This is the case if the marker is now further away than 10 from the center of the chunk
-	 * @param {Marker} marker 
-	 * @returns {Boolean}
-	 */
-	_canAdd(marker) {
-		if(this.bounds == null) return true
-		var d = WorkerL.distance(marker, this.bounds.getCenter())
-		return d < 10
-	}
-
-	/**
 	 * Checks if the marker can be added to the chunk and returns true if it was added
 	 * @param {Marker} marker 
 	 * @returns {Boolean}
 	 */
-	addMarker(marker) {
+	_addMarker(marker) {
 		marker.lat = parseFloat(marker.lat)
 		marker.lng = parseFloat(marker.lng)
-		if(this._canAdd(marker)) {
+		if(this.bounds == null || WorkerL.distance(marker, this.bounds.getCenter()) < 10) {
 			this.markers.push(marker)
 			this._calcBounds()
 			return true
@@ -189,11 +132,7 @@ class Chunk {
 	 * @returns {Boolean}
 	 */
 	contains(marker) {
-		for(var i = 0; i < this.markers.length; i++) {
-			if(this.markers[i].text == marker.text && parseFloat(this.markers[i].lat) == parseFloat(marker.lat))
-				return true
-		}
-		return false
+		return this.markers.includes(marker);
 	}
 
 	/**
@@ -206,70 +145,26 @@ class Chunk {
 	}
 
 	/**
-	 * Returns all availabe chunks
+	 * Sorts markers into new chunks.
 	 * @static
-	 * @readonly
-	 * @returns {Array<Chunk>}
+	 * @param {Array<Marker>} markers
 	 */
-	static get chunks() {
-		if(typeof(Chunk._chunks) === 'undefined') return []
-		return Chunk._chunks
-	}
-
-	/**
-	 * Creates and returns a new Chunk
-	 * @static
-	 * @returns {Chunk}
-	 */
-	static newChunk() {
-		if(typeof(Chunk._chunks) === 'undefined') Chunk.clearChunks()
-		var c = new Chunk()
-		Chunk._chunks.push(c)
-		return c
-	}
-
-	/**
-	 * Removes all saved chunks
-	 * @static
-	 */
-	static clearChunks() {
-		Chunk._chunks = []
-	}
-
-	/**
-	 * Sorts the marker into all chunks that are suitable.
-	 * If it wasn't sorted into an existing chunk, a new chunk is created.
-	 * @static
-	 * @param {Marker} marker 
-	 */
-	static sortMarker(marker) {
-		var added = false
-		for(var j = 0; j < Chunk.chunks.length; j++) {
-			if(Chunk.chunks[j].addMarker(marker)) {
-				added = true
+	static generateChunks(markers) {
+		Chunk.chunks = [];
+		markers.forEach(marker => {
+			var added = false;
+			for(var j = 0; j < Chunk.chunks.length; j++) {
+				if(Chunk.chunks[j]._addMarker(marker)) {
+					added = true;
+				}
 			}
-		}
-		if(!added) {
-			var c = Chunk.newChunk()
-			c.addMarker(marker)
-		}
-	}
-
-	/**
-	 * Searches for the marker in all chunks and returns the first chunk it's found in or null if it's in no chunk
-	 * @static
-	 * @param {Marker} marker 
-	 * @returns {Chunk|null}
-	 */
-	static getChunkByMarker(marker) {
-		for(var j = 0; j < Chunk.chunks.length; j++) {
-			if(Chunk.chunks[j].contains(marker)) {
-				return Chunk.chunks[j]
+			if(!added) {
+				const c = new Chunk();
+				Chunk.chunks.push(c);
+				c._addMarker(marker);
 			}
-		}
-		return null
+		});
 	}
-
 }
 
 if(typeof(window) !== 'undefined') {
@@ -289,8 +184,6 @@ if(typeof(window) !== 'undefined') {
 
 			this.currentPath = 0
 			this._paths = []
-
-			this._openItem = ''
 		}
 
 		onAdd() {
@@ -364,14 +257,10 @@ if(typeof(window) !== 'undefined') {
 				var lastpoint = hlpath[hlpath.length-1]
 				PathFinder.highlightPath(hlpath)
 
-				var goTo = MapBase.markers.filter(_m => _m.lng == lastpoint[1] && _m.lat == lastpoint[0]);
-				if(goTo.length > 0) {
-					this._openItem = goTo[0].text
-					// Wait for the camera to move
-					setTimeout(() => {
-						Layers.itemMarkersLayer.getLayerById(this._openItem).openPopup();
-					}, 300)
-				}
+				this._lastMarker = MapBase.markers.find(m =>
+					m.lng == lastpoint[1] && m.lat == lastpoint[0]);
+				// Wait for the camera to move
+				setTimeout(() => this._lastMarker.lMarker.openPopup(), 300);
 			}
 		}
 
@@ -384,89 +273,68 @@ if(typeof(window) !== 'undefined') {
  * Main path finder class; all properties are static
  */
 class PathFinder {
+	static _jsonFetch(...args) {
+		return fetch(...args).then(response => {
+				if (!response.ok) {
+					throw new Error(`${response.status} ${response.statusText} on ${response.url}`);
+				} else {
+					return response.json();
+				}
+			}
+		);
+	}
 
-	/**
-	 * Initiates properties and starts loading geojson data
-	 * @static
-	 * @returns {PathFinder}
-	 */
+	static _loadAllGeoJson() {
+		const featureCollectionPromises = [
+			'ambarino', 'lemoyne', 'new-austin', 'new-hanover', 'west-elizabeth',
+			'fasttravel', 'railroads',
+		].map(part => this._jsonFetch(`/data/geojson/${part}.json`))
+
+		return Promise.all(featureCollectionPromises).then(fcs => ({
+				"type": "FeatureCollection",
+				"features": [].concat(...fcs.map(fc => fc.features)),
+			})
+		)
+	}
+
 	static init() {
 		PathFinder._PathFinder = null
 		PathFinder._points = []
-		PathFinder._currentChunk = null
 		PathFinder._layerGroup = null
 		PathFinder._layerControl = null
 		PathFinder._currentPath = null
-		PathFinder._running = false
-		PathFinder._geoJson = null
 		PathFinder._nodeCache = {}
-		PathFinder._cancel = false
-		PathFinder._pathfinderFTWeight = 0.9
-		PathFinder._pathfinderRRWeight = 1.1
 		PathFinder._worker = null
 		PathFinder._drawing = false
 		PathFinder._redrawWhenFinished = false
-
-		if(typeof($) !== 'undefined') {
-			// Load geojson
-			loadAllGeoJson()
-		}
-
-		return PathFinder
+	}
+	static workerInit() {
+		PathFinder.geojsonPromise = this._loadAllGeoJson();
 	}
 
-	/**
-	 * Start sorting markers into chunks
-	 * @static
-	 * @param {Array<Marker>} markers
-	 */
-	static generateChunks(markers) {
-		Chunk.clearChunks()
-	
-		for(var i = 0; i < markers.length; i++) {
-			Chunk.sortMarker(markers[i])
-		}
-	}
-	
 	/**
 	 * Creating the GeoJSON Path Finder object from geojson data and extracting all nodes
 	 * @static
 	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
 	 * @param {Number} railroadWeight Multiplier for rail road weights
 	 */
-	static createPathFinder(fastTravelWeight, railroadWeight) {
-		if(typeof(fastTravelWeight) !== 'number') fastTravelWeight = PathFinder._pathfinderFTWeight
-		if(typeof(railroadWeight) !== 'number') railroadWeight = PathFinder._pathfinderRRWeight
-
-		if(
-			PathFinder._PathFinder !== null &&
-			PathFinder._pathfinderFTWeight == fastTravelWeight && PathFinder._pathfinderRRWeight == railroadWeight
-		) return
-
-		PathFinder._PathFinder = new GeoJSONPathFinder(PathFinder._geoJson, {
+	static createPathFinder(geojson, fastTravelWeight, railroadWeight) {
+		PathFinder._PathFinder = new GeoJSONPathFinder(geojson, {
 			precision: 0.04,
 			weightFn: function(a, b, props) {
 				var dx = a[0] - b[0];
 				var dy = a[1] - b[1];
 				var r = Math.sqrt(dx * dx + dy * dy);
-				if(typeof(props.type) === 'string' && props.type == 'railroad') r = r * railroadWeight
-				if(typeof(props.type) === 'string' && props.type == 'fasttravel') r = r * fastTravelWeight
+				if(props.type === 'railroad') r *= railroadWeight;
+				if(props.type === 'fasttravel') r *= fastTravelWeight;
 				return r
 			}
 		})
-		PathFinder._pathfinderFTWeight = fastTravelWeight
-		PathFinder._pathfinderRRWeight = railroadWeight
-		var _vertices = PathFinder._PathFinder._graph.vertices;
 		PathFinder._points = featurecollection(
-			Object
-				.keys(_vertices)
-				.filter(function(nodeName) {
-					return Object.keys(_vertices[nodeName]).length
-				})
-				.map(function(nodeName) {
-					var vertice = PathFinder._PathFinder._graph.sourceVertices[nodeName]
-					return point(vertice)
-				})
+			Object.entries(PathFinder._PathFinder._graph.vertices)
+				.filter(([nodeName, node]) => Object.keys(node).length)
+				.map(([nodeName, node]) =>
+					point(PathFinder._PathFinder._graph.sourceVertices[nodeName]))
 		);
 
 		PathFinder._nodeCache = {}
@@ -558,18 +426,6 @@ class PathFinder {
 	}
 
 	/**
-	 * Turns an LatLng object into a GeoJSON point
-	 * @static
-	 * @param {LatLng} latlng 
-	 * @returns {Object}
-	 */
-	static latLngToPoint(latlng) {
-		var p = {"type":"Feature","properties":{},"geometry":{"type":"Point","coordinates":[parseFloat(latlng.lng), parseFloat(latlng.lat)]}}
-		if(typeof(latlng.text) === 'string') p.properties.text = latlng.text
-		return p
-	}
-	
-	/**
 	 * Turns GeoJSON point into a LatLng object
 	 * @static
 	 * @param {Object} point 
@@ -582,47 +438,36 @@ class PathFinder {
 	/**
 	 * Searches for nodes nearby on the roadmap
 	 * @static
-	 * @param {LatLng|Marker|Object} point Can be LatLng, Marker or GeoJSON point
-	 * @param {Number} [searchArea=5] Optional radius around the point to search for nodes, defaults to 5
+	 * @param {LatLng|Marker} target Can be LatLng, Marker
+	 * @param {Number} [searchDistance=5] Optional “radius” around the point to search for nodes.
 	 * @returns {Object} GeoJSON point
 	 */
-	static getNearestNode(point, searchArea) {
-		var pointLatLng = point
-		if(typeof(point.lat) == 'undefined') {
-			pointLatLng = PathFinder.pointToLatLng(point)
-		} else {
-			pointLatLng.lat = parseFloat(pointLatLng.lat)
-			pointLatLng.lng = parseFloat(pointLatLng.lng)
+	static getNearestNode(target, searchDistance=5) {
+		const p2ll = PathFinder.pointToLatLng;
+		const targetLatLng = {lat: +target.lat, lng: +target.lng};
+		const cacheKey = targetLatLng.lat + '|' + targetLatLng.lng;
+
+		if (PathFinder._nodeCache[cacheKey]) {
+			return PathFinder._nodeCache[cacheKey];
 		}
 
-		// Check if we already picked a point
-		if(typeof(PathFinder._nodeCache[pointLatLng.lat + '|' + pointLatLng.lng]) !== 'undefined') {
-			return PathFinder._nodeCache[pointLatLng.lat + '|' + pointLatLng.lng]
-		}
-
-		if(typeof(searchArea) === 'undefined')
-			searchArea = 5
-		var pointBounds = L.latLngBounds([
-			[pointLatLng.lat-searchArea, pointLatLng.lng-searchArea],
-			[pointLatLng.lat+searchArea, pointLatLng.lng+searchArea]
+		const searchArea = L.latLngBounds([
+			[targetLatLng.lat-searchDistance, targetLatLng.lng-searchDistance],
+			[targetLatLng.lat+searchDistance, targetLatLng.lng+searchDistance]
 		])
-	
-		var filtered = PathFinder._points.features.filter((p) => {
-			return pointBounds.contains(PathFinder.pointToLatLng(p));
-		})
-		var n = {distance: Number.MAX_SAFE_INTEGER, point: null}
-		for(let i = 0; i < filtered.length; i++) {
-			var distance = WorkerL.distance(
-				pointLatLng, 
-				PathFinder.pointToLatLng(filtered[i])
-			);
-			if(distance < n.distance) {
-				n.distance = distance
-				n.point = filtered[i]
-			}
-		}
-	
-		PathFinder._nodeCache[pointLatLng.lat + '|' + pointLatLng.lng] = n.point
+
+		const n = {distance: Infinity, point: null};
+		PathFinder._points.features
+			.filter(p => searchArea.contains(p2ll(p)))
+			.forEach(p => {
+				const distance = WorkerL.distance(targetLatLng, p2ll(p));
+				if(distance < n.distance) {
+					n.distance = distance;
+					n.point = p;
+				}
+			})
+
+		PathFinder._nodeCache[cacheKey] = n.point;
 		return n.point
 	}
 
@@ -634,14 +479,15 @@ class PathFinder {
 	 * @returns {Chunk|null}
 	 */
 	static findNearestChunk(marker, markerChunk) {
-		var c = {weight: Number.MAX_SAFE_INTEGER, c: null}
-	
-		var markerNode = PathFinder.getNearestNode(PathFinder.latLngToPoint(marker))
+		const c = {weight: Infinity, c: null};
+
+		const markerNode = PathFinder.getNearestNode(marker);
 		for(var i = 0; i < Chunk.chunks.length; i++) {
 			if(Chunk.chunks[i].isDone) continue
 			if(Chunk.chunks[i] == markerChunk) continue
-	
-			var chunkNode = PathFinder.getNearestNode(PathFinder.latLngToPoint(Chunk.chunks[i].getBounds().getCenter()), 15)
+
+			const chunkNode = PathFinder.getNearestNode(Chunk.chunks[i].getBounds().getCenter(),
+				15);
 			if(chunkNode !== null) {
 				var p = PathFinder._PathFinder.findPath(markerNode, chunkNode)
 				if(p.weight < c.weight) {
@@ -654,67 +500,64 @@ class PathFinder {
 	}
 
 	/**
-	 * Finds the nearest marker in markers from start. This function uses the created chunks, so make sure to re-create
-	 * the chunks when you start the route generator
+	 * Finds the nearest marker in markers from start. This function uses the created chunks, so
+	 * make sure to re-create the chunks when you start the route generator
 	 * @static
 	 * @param {Marker} start 
-	 * @param {Array<Marker>} markers This array of markers must not include start or any already visited markers
-	 * @returns {Promise<Object>} Resolving Object containes the properties weight, marker and path
+	 * @param {Array<Marker>} markers This array of markers must not include start or any already
+	 * visited markers
+	 * @returns {Object} Containes the properties weight, marker and path. On error, `.marker`
+	 * will be `null`.
 	 */
-	static async findNearestTravelItem(start, markers) {
-		if(PathFinder._PathFinder === null) PathFinder.createPathFinder()
-	
-		if(PathFinder._currentChunk === null) {
-			PathFinder._currentChunk = Chunk.getChunkByMarker(start)
+	static findNearestTravelItem(start, markers) {
+		const shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null, path: null};
+		if(PathFinder._currentChunk == null) {
+			PathFinder._currentChunk = Chunk.chunks.find(chunk => chunk.markers.includes(start));
 			if(PathFinder._currentChunk == null) {
-				console.error('[pathfinder] Starting marker is not in chunk', start)
-				return null
+				console.error('[pathfinder] Could not find starting marker in any chunk.', start);
+				return shortest;
 			}
 		}
-		var startPoint = PathFinder.getNearestNode(start)
-	
-		var shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null, path: null}
+		const startPoint = PathFinder.getNearestNode(start);
+
 		while(shortest.marker === null) {
-			var availableInChunk = PathFinder._currentChunk.markers.filter((m) => { return markers.includes(m) })
+			var availableInChunk = PathFinder._currentChunk.markers.filter(m =>
+				markers.includes(m));
 
 			// if current chunk is empty or done, fetch a new one
 			if(PathFinder._currentChunk.isDone || availableInChunk.length <= 0) {
-				// mark this chunk as done to skip it when searching a new one
 				PathFinder._currentChunk.isDone = true
 
-				PathFinder._currentChunk = await (new Promise((res) => { reqAnimFrame(() => {
-					res(PathFinder.findNearestChunk(start, PathFinder._currentChunk))
-				}) }))
+				PathFinder._currentChunk = PathFinder.findNearestChunk(start,
+					PathFinder._currentChunk);
 
-				if(PathFinder._currentChunk == null) return null
-				availableInChunk = PathFinder._currentChunk.markers.filter((m) => { return markers.includes(m) })
+				if(PathFinder._currentChunk == null) return shortest;
+				availableInChunk = PathFinder._currentChunk.markers.filter(m =>
+					markers.includes(m));
 			}
-	
-			for(let i = 0; i < availableInChunk.length; i++) {
-				// Request animation frame to unblock browser
-				var path = await (new Promise((res) => { reqAnimFrame(() => {
-					// Find the nearest road node to all the markers
-					var markerPoint = PathFinder.getNearestNode(availableInChunk[i])
-					if(markerPoint !== null) {
-						// Find path and resolve
-						res(PathFinder._PathFinder.findPath(startPoint, markerPoint))
-					} else {
-						console.error('[pathfinder] No node found to ', availableInChunk[i])
-						res(null)
-					}
-				}) }))
-				if(path !== null) {
+
+			availableInChunk.forEach(marker => {
+				let path;
+				// Find the nearest road node to all the markers
+				const markerPoint = PathFinder.getNearestNode(marker);
+				if (markerPoint !== null) {
+					path = PathFinder._PathFinder.findPath(startPoint, markerPoint);
+				} else {
+					console.error('[pathfinder] No node found to ', marker);
+					path = null;
+				}
+				if (path !== null) {
 					if(path.weight < shortest.weight) {
 						shortest.weight = path.weight
-						shortest.marker = availableInChunk[i]
+						shortest.marker = marker;
 						path.path.unshift([start.lng, start.lat])
-						path.path.push([availableInChunk[i].lng, availableInChunk[i].lat])
-						shortest.path = path.path.map((c) => { return [c[1], c[0]] })
+						path.path.push([marker.lng, marker.lat]);
+						shortest.path = path.path.map(c => [c[1], c[0]])
 					}
 				}
-			}
-	
-			if(shortest.marker === null) {
+			});
+
+			if (shortest.marker === null) {
 				PathFinder._currentChunk.isDone = true
 			}
 		}
@@ -723,36 +566,9 @@ class PathFinder {
 	}
 
 	static wasRemovedFromMap(marker) {
-		if(PathFinder._layerControl && PathFinder._layerControl._openItem == marker.text) {
+		if(PathFinder._layerControl && PathFinder._layerControl._lastMarker === marker) {
 			PathFinder._layerControl.selectPath(1)
 		}
-	}
-
-	/**
-	 * Cancels the route generation and resolves the returning Promise when route generation has stopped.
-	 * @static
-	 * @returns {Promise}
-	 */
-	static routegenCancel() {
-		return new Promise(async (res) => {
-			if(PathFinder._running) {
-				if(PathFinder._worker === null) {
-					PathFinder._cancel = true
-					while(PathFinder._running) {
-						await new Promise((r) => { window.setTimeout(() => { r() }, 100) })
-					}
-					PathFinder._cancel = false
-					res()
-				} else {
-					PathFinder._worker.terminate()
-					PathFinder._worker = null
-					PathFinder._running = false
-					res()
-				}
-			} else {
-				res()
-			}
-		})
 	}
 
 	/**
@@ -760,9 +576,10 @@ class PathFinder {
 	 * @static
 	 * @returns {Promise}
 	 */
-	static async routegenClear() {
-		if(PathFinder._running) {
-			await PathFinder.routegenCancel()
+	static routegenClearAndCancel() {
+		if(PathFinder._worker) {
+			PathFinder._worker.terminate();
+			PathFinder._worker = null;
 		}
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
@@ -776,9 +593,7 @@ class PathFinder {
 	 * @static
 	 * @returns {Promise}
 	 */
-	static async findHoles() {
-		PathFinder.createPathFinder(false)
-
+	static findHoles() {
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
 
@@ -787,16 +602,12 @@ class PathFinder {
 
 		var sourcePoint = PathFinder._points.features[Math.floor(Math.random() * PathFinder._points.features.length)]
 		L.circle([sourcePoint.geometry.coordinates[1], sourcePoint.geometry.coordinates[0]], { color: '#ff0000', radius: 0.5 }).addTo(PathFinder._layerGroup)
-		for(var i = 1; i < PathFinder._points.features.length; i++) {
-			var path = await new Promise(res => {
-				reqAnimFrame(function(){
-					res(PathFinder._PathFinder.findPath(sourcePoint, PathFinder._points.features[i]))
-				})
-			})
-			if(path == null) {
-				L.circle([PathFinder._points.features[i].geometry.coordinates[1], PathFinder._points.features[i].geometry.coordinates[0]], { radius: 0.04 }).addTo(PathFinder._layerGroup)
+		PathFinder._points.features.forEach(f => {
+			if (PathFinder._PathFinder.findPath(sourcePoint, f) == null) {
+				L.circle([f.geometry.coordinates[1], f.geometry.coordinates[0]], { radius: 0.04 })
+					.addTo(PathFinder._layerGroup)
 			}
-		}
+		})
 	}
 
 	/**
@@ -809,117 +620,78 @@ class PathFinder {
 	 * @param {Boolean} [forceNoWorker=false] Forces to skip the worker (mainly used inside the worker)
 	 * @returns {Promise<Boolean>} false if geojson isn't fully loaded or route generation was canceled
 	 */
-	static async routegenStart(startingMarker, markers, fastTravelWeight, railroadWeight, forceNoWorker) {
-		
-		if(PathFinder._geoJson === null) {
-			await new Promise(async (res) => {
-				while(PathFinder._geoJson === null && PathFinder._geoJsonFT === null) {
-					await new Promise((r) => { setTimeout(() => { r() }, 100) })
+	static routegenStart(startingMarker, markers, fastTravelWeight, railroadWeight) {
+		PathFinder.routegenClearAndCancel();
+		PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map);
+		PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map);
+
+		return new Promise((res) => {
+			var paths = [];
+			PathFinder._worker = new Worker('assets/js/pathfinder.js')
+			PathFinder._worker.addEventListener('message', function(e) {
+				var data = e.data
+				switch(data.res) {
+					case 'route-progress':
+						PathFinder._layerControl.addPath(data.newPath)
+						paths.push(data.newPath)
+						PathFinder.drawRoute(paths)
+						break
+					case 'route-done':
+						window.setTimeout(function(){
+							PathFinder._layerControl.selectPath(1, true)
+						}, 100)
+						res(data.result)
+						break
 				}
-				res()
 			})
-		}
-
-		if(typeof(forceNoWorker) !== 'boolean') forceNoWorker = false
-
-		// Clear layers and cancel if running
-		await PathFinder.routegenClear()
-
-		PathFinder._running = true
-		PathFinder._currentChunk = null
-
-		var startTime = new Date().getTime()
-
-		if(typeof(MapBase) !== 'undefined') {
-			// Add controller and layer group to map
-			PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map)
-			PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map)
-		}
-
-		if(!forceNoWorker && typeof(Worker) !== 'undefined') {
-			var res = await new Promise((res) => {
-				var paths = []
-				PathFinder._worker = new Worker('assets/js/pathfinder.worker.js')
-				PathFinder._worker.postMessage({ cmd: 'data', geojson: PathFinder._geoJson })
-				PathFinder._worker.addEventListener('message', function(e) {
-					var data = e.data
-					switch(data.res) {
-						case 'route-progress':
-							PathFinder._layerControl.addPath(data.newPath)
-							paths.push(data.newPath)
-							PathFinder.drawRoute(paths)
-							break
-						case 'route-done':
-							var endTime = new Date().getTime();
-							
-							window.setTimeout(function(){
-								PathFinder._layerControl.selectPath(1, true)
-							}, 100)
-
-							PathFinder._running = false
-							res(data.result)
-							break
-					}
-				})
-				PathFinder._worker.postMessage({ cmd: 'start', startingMarker: startingMarker, markers: markers, fastTravelWeight: fastTravelWeight, railroadWeight: railroadWeight })
-			})
-			return res
-		}
-
-		// Create GeoJSON path finder object (function will check if already created)
-		PathFinder.createPathFinder(fastTravelWeight, railroadWeight)
-
-		// Generate Chunks
-		PathFinder.generateChunks(markers)
-
-		// Removing startingMarker from markers
-		var current = {marker: startingMarker}
-		markers = markers.filter((m) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
-
-		var last = current.marker
-		var paths = []
-
-		var markersNum = markers.length
-		try {
-			for (var i = 0; i < markersNum; i++) {
-				// Find next marker
-				var current = await PathFinder.findNearestTravelItem(last, markers)
-				// if no marker was found, we're propably done
-				if(current == null || current.marker == null) break
-
-				// remove found marker from markers array
-				markers = markers.filter((m) => { return (m.text != current.marker.text || m.lat != current.marker.lat); })
-				last = current.marker
-		
-				if(typeof(window) !== 'undefined') {
-					// add route to controller and draw the current route
-					PathFinder._layerControl.addPath(current.path)
-					paths.push(current.path)
-					PathFinder.drawRoute(paths)
-				} else {
-					self.postMessage({ res: 'route-progress', newPath: current.path, val: i, max: markersNum })
-				}
-
-				if(PathFinder._cancel) break
-			}
-		} catch(e) {
-			// catching all errors, just in case
-			console.error('[pathfinder]', e)
-		}
-	
-		var canceled = PathFinder._cancel
-		if (!canceled && typeof(window) !== 'undefined') window.setTimeout(function(){ PathFinder._layerControl.selectPath(1, true) }, 100)
-
-		PathFinder._running = false
-
-		return !canceled
+			const keysToPass = ['lat', 'lng'];
+			const strippedMarkers = markers.map(marker => keysToPass.reduce((finalObj, copyKey) => {
+				finalObj[copyKey] = marker[copyKey];
+				return finalObj;
+			}, {}));
+			PathFinder._worker.postMessage({
+				cmd: 'start',
+				startingMarker: strippedMarkers[markers.indexOf(startingMarker)],
+				markers: strippedMarkers,
+				fastTravelWeight,
+				railroadWeight,
+			});
+		})
 	}
 
+	static async routegenStartWorker(startingMarker, markers, fastTravelWeight, railroadWeight) {
+		PathFinder.createPathFinder(await PathFinder.geojsonPromise,
+			fastTravelWeight, railroadWeight);
+
+		Chunk.generateChunks(markers);
+
+		let current = {marker: startingMarker};
+		markers = markers.filter(m => m !== current.marker);
+		const markersNum = markers.length;
+		PathFinder._currentChunk = null;  // used in `.findNearestTravelItem()`
+		for (let i = 0; i < markersNum; i++) {
+			current = PathFinder.findNearestTravelItem(current.marker, markers);
+			if (current.marker == null) break;
+
+			markers = markers.filter(m => m !== current.marker);
+			self.postMessage({res: 'route-progress', newPath: current.path});
+		}
+	}
 }
 
-if(typeof(window) !== 'undefined') {
-	// Make Pathfinder publicly accessible
-	window.PathFinder = PathFinder.init()
+if(typeof(window) === 'undefined') {
+	PathFinder.workerInit();
+	self.addEventListener('message', function(e){
+		const data = e.data;
+		switch(data.cmd) {
+			case 'start':
+				PathFinder.routegenStartWorker(data.startingMarker, data.markers,
+					data.fastTravelWeight, data.railroadWeight, true)
+					.then(result => self.postMessage({ res: 'route-done', result }))
+				break;
+		}
+	})
 } else {
-	module.exports = PathFinder
+	PathFinder.init();
+	window.PathFinder = PathFinder;
 }

@@ -432,14 +432,7 @@ const MapBase = {
         }
       }
 
-      try {
-        if (PathFinder !== undefined) {
-          PathFinder.wasRemovedFromMap(marker);
-        }
-      } catch (error) {
-        alert(Language.get('alerts.feature_not_supported'));
-        console.error(error);
-      }
+      PathFinder.wasRemovedFromMap(marker);
     });
 
     if (RouteSettings.ignoreCollected)

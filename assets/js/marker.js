@@ -382,7 +382,6 @@ class Marker {
       })
     });
 
-    this.lMarker.id = this.text;
     this.updateOpacity();
 
     if (Settings.isPopupsEnabled) {
