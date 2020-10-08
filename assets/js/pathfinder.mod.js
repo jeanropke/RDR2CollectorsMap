@@ -479,8 +479,8 @@ class PathFinder {
 	 * @returns {Chunk|null}
 	 */
 	static findNearestChunk(marker, markerChunk) {
-		var c = {weight: Number.MAX_SAFE_INTEGER, c: null}
-	
+		const c = {weight: Infinity, c: null};
+
 		const markerNode = PathFinder.getNearestNode(marker);
 		for(var i = 0; i < Chunk.chunks.length; i++) {
 			if(Chunk.chunks[i].isDone) continue
