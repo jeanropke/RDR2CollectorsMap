@@ -330,17 +330,11 @@ class PathFinder {
 				return r
 			}
 		})
-		var _vertices = PathFinder._PathFinder._graph.vertices;
 		PathFinder._points = featurecollection(
-			Object
-				.keys(_vertices)
-				.filter(function(nodeName) {
-					return Object.keys(_vertices[nodeName]).length
-				})
-				.map(function(nodeName) {
-					var vertice = PathFinder._PathFinder._graph.sourceVertices[nodeName]
-					return point(vertice)
-				})
+			Object.entries(PathFinder._PathFinder._graph.vertices)
+				.filter(([nodeName, node]) => Object.keys(node).length)
+				.map(([nodeName, node]) =>
+					point(PathFinder._PathFinder._graph.sourceVertices[nodeName]))
 		);
 
 		PathFinder._nodeCache = {}
