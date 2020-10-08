@@ -303,9 +303,7 @@ class PathFinder {
 		PathFinder._layerGroup = null
 		PathFinder._layerControl = null
 		PathFinder._currentPath = null
-		PathFinder._running = false
 		PathFinder._nodeCache = {}
-		PathFinder._cancel = false
 		PathFinder._worker = null
 		PathFinder._drawing = false
 		PathFinder._redrawWhenFinished = false
@@ -589,34 +587,14 @@ class PathFinder {
 	}
 
 	/**
-	 * Cancels the route generation and resolves the returning Promise when route generation has stopped.
-	 * @static
-	 * @returns {Promise}
-	 */
-	static async routegenCancel() {
-		if(PathFinder._running) {
-			if(PathFinder._worker === null) {
-				PathFinder._cancel = true
-				while(PathFinder._running) {
-					await new Promise((r) => { window.setTimeout(() => { r() }, 100) })
-				}
-				PathFinder._cancel = false
-			} else {
-				PathFinder._worker.terminate()
-				PathFinder._worker = null
-				PathFinder._running = false
-			}
-		}
-	}
-
-	/**
 	 * Removes controler and layer group from map and canceles route generation when running
 	 * @static
 	 * @returns {Promise}
 	 */
-	static async routegenClearAndCancel() {
-		if(PathFinder._running) {
-			await PathFinder.routegenCancel()
+	static routegenClearAndCancel() {
+		if(PathFinder._worker) {
+			PathFinder._worker.terminate();
+			PathFinder._worker = null;
 		}
 		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
 		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
@@ -722,13 +700,6 @@ class PathFinder {
 			// catching all errors, just in case
 			console.error('[pathfinder]', e)
 		}
-	
-		var canceled = PathFinder._cancel
-		if (!canceled && typeof(window) !== 'undefined') window.setTimeout(function(){ PathFinder._layerControl.selectPath(1, true) }, 100)
-
-		PathFinder._running = false
-
-		return !canceled
 	}
 
 }
