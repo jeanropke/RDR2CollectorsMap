@@ -438,47 +438,36 @@ class PathFinder {
 	/**
 	 * Searches for nodes nearby on the roadmap
 	 * @static
-	 * @param {LatLng|Marker|Object} point Can be LatLng, Marker or GeoJSON point
-	 * @param {Number} [searchArea=5] Optional radius around the point to search for nodes, defaults to 5
+	 * @param {LatLng|Marker} target Can be LatLng, Marker
+	 * @param {Number} [searchDistance=5] Optional “radius” around the point to search for nodes.
 	 * @returns {Object} GeoJSON point
 	 */
-	static getNearestNode(point, searchArea) {
-		var pointLatLng = point
-		if(typeof(point.lat) == 'undefined') {
-			pointLatLng = PathFinder.pointToLatLng(point)
-		} else {
-			pointLatLng.lat = parseFloat(pointLatLng.lat)
-			pointLatLng.lng = parseFloat(pointLatLng.lng)
+	static getNearestNode(target, searchDistance=5) {
+		const p2ll = PathFinder.pointToLatLng;
+		const targetLatLng = {lat: +target.lat, lng: +target.lng};
+		const cacheKey = targetLatLng.lat + '|' + targetLatLng.lng;
+
+		if (PathFinder._nodeCache[cacheKey]) {
+			return PathFinder._nodeCache[cacheKey];
 		}
 
-		// Check if we already picked a point
-		if(typeof(PathFinder._nodeCache[pointLatLng.lat + '|' + pointLatLng.lng]) !== 'undefined') {
-			return PathFinder._nodeCache[pointLatLng.lat + '|' + pointLatLng.lng]
-		}
-
-		if(typeof(searchArea) === 'undefined')
-			searchArea = 5
-		var pointBounds = L.latLngBounds([
-			[pointLatLng.lat-searchArea, pointLatLng.lng-searchArea],
-			[pointLatLng.lat+searchArea, pointLatLng.lng+searchArea]
+		const searchArea = L.latLngBounds([
+			[targetLatLng.lat-searchDistance, targetLatLng.lng-searchDistance],
+			[targetLatLng.lat+searchDistance, targetLatLng.lng+searchDistance]
 		])
-	
-		var filtered = PathFinder._points.features.filter((p) => {
-			return pointBounds.contains(PathFinder.pointToLatLng(p));
-		})
-		var n = {distance: Number.MAX_SAFE_INTEGER, point: null}
-		for(let i = 0; i < filtered.length; i++) {
-			var distance = WorkerL.distance(
-				pointLatLng, 
-				PathFinder.pointToLatLng(filtered[i])
-			);
-			if(distance < n.distance) {
-				n.distance = distance
-				n.point = filtered[i]
-			}
-		}
-	
-		PathFinder._nodeCache[pointLatLng.lat + '|' + pointLatLng.lng] = n.point
+
+		const n = {distance: Infinity, point: null};
+		PathFinder._points.features
+			.filter(p => searchArea.contains(p2ll(p)))
+			.forEach(p => {
+				const distance = WorkerL.distance(targetLatLng, p2ll(p));
+				if(distance < n.distance) {
+					n.distance = distance;
+					n.point = p;
+				}
+			})
+
+		PathFinder._nodeCache[cacheKey] = n.point;
 		return n.point
 	}
 
