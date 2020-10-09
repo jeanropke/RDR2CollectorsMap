@@ -288,7 +288,7 @@ class PathFinder {
 		const featureCollectionPromises = [
 			'ambarino', 'lemoyne', 'new-austin', 'new-hanover', 'west-elizabeth',
 			'fasttravel', 'railroads',
-		].map(part => this._jsonFetch(`/data/geojson/${part}.json`))
+		].map(part => this._jsonFetch(`../../data/geojson/${part}.json`))
 
 		return Promise.all(featureCollectionPromises).then(fcs => ({
 				"type": "FeatureCollection",
