@@ -1,10 +1,11 @@
-How to (re)create the pathfinder.* files?
+How to (re)create that one(?) pathfinder.* file(s)?
 
-* source is
-    * pathfinder.mod.js
-* source is programmed in/for/with Node
-* and then the tool browserify is used to convert it to a browser loadable file
-    * pathfinder.js
+* files
+    * pathfinder.main.js is the source for direct loading
+    * pathfinder.worker.mod.js is source code that needs converting
+* *.mod.js is/are programmed in/for/with Node
+  * and the tool browserify is used to convert those to a browser loadable file
+  * at the moment that file is actually loaded in web worker
 * browserify bridges the gap between Node and browser; some issues are:
     * globals like “window”
     * npm used to install Node modules, i.e. dependencies
@@ -57,4 +58,4 @@ How to (re)create the pathfinder.* files?
                 * I would like an option to complain at least
                 * check back with git to see if npm did change it and consider investigating
     * with the packages installed...
-        * `npx browserify pathfinder.mod.js > pathfinder.js`
+        * `npx browserify pathfinder.worker.mod.js > pathfinder.worker.js`
