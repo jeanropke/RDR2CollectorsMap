@@ -142,8 +142,7 @@ class PathFinder {
 	 * @param {Array<[Number, Number]>} path
 	 */
 	static highlightPath(path) {
-		if(typeof(window) === 'undefined') return
-		window.requestAnimationFrame(function(){
+		requestAnimationFrame(function(){
 			if(PathFinder._currentPath !== null) {
 				MapBase.map.removeLayer(PathFinder._currentPath)
 			}
@@ -168,7 +167,7 @@ class PathFinder {
 			PathFinder._redrawWhenFinished = paths
 		} else {
 			PathFinder._drawing = true
-			window.requestAnimationFrame(function(){
+			requestAnimationFrame(function(){
 				PathFinder._layerGroup.clearLayers()
 				PathFinder._currentPath = null
 				for(var i = 0; i < paths.length; i++) {
@@ -230,7 +229,7 @@ class PathFinder {
 						PathFinder.drawRoute(paths)
 						break
 					case 'route-done':
-						window.setTimeout(function(){
+						setTimeout(function(){
 							PathFinder._layerControl.selectPath(1, true)
 						}, 100)
 						res(data.result)
@@ -254,4 +253,3 @@ class PathFinder {
 }
 
 PathFinder.init();
-window.PathFinder = PathFinder;
