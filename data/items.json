@@ -709,7 +709,7 @@
             { "text": "swords_four", "height": 0, "tool": 0, "lat": -99.0992, "lng": 131.8663, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=2157s" },
             { "text": "swords_five", "height": 0, "tool": 0, "lat": -41.219, "lng": 158.2404, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=2060s" },
             { "text": "swords_six", "height": 0, "tool": 0, "lat": -52.4087, "lng": 77.422, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=2449s" },
-            { "text": "swords_seven", "height": 0, "tool": 0, "lat": -44.9264, "lng": 89.0834, "video": "", "nomatch": true },
+            { "text": "swords_seven", "height": -1, "tool": 0, "lat": -44.9264, "lng": 89.0834, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=2343s" },
             { "text": "swords_eight", "height": 0, "tool": 0, "lat": -48.2118, "lng": 114.2863, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=2282s" },
             { "text": "swords_nine", "height": 0, "tool": 0, "lat": -58.8511, "lng": 149.1679, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=2092s" },
             { "text": "swords_ten", "height": 0, "tool": 0, "lat": -25.3836, "lng": 90.8223, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=2382s" },
