@@ -98,11 +98,11 @@ class RouteControl extends L.Control {
  */
 class PathFinder {
 	static init() {
-		PathFinder._layerGroup = null
-		PathFinder._layerControl = null
-		PathFinder._currentPath = null
-		PathFinder._drawing = false
-		PathFinder._redrawWhenFinished = false
+		this._layerGroup = null
+		this._layerControl = null
+		this._currentPath = null
+		this._drawing = false
+		this._redrawWhenFinished = false
 	}
 
 	/**
@@ -114,7 +114,7 @@ class PathFinder {
 	 * @param {Number} opacity Between 0 and 1
 	 * @returns {Polyline}
 	 */
-	static drawPath(path, color, weight=5, opacity=1, layer=PathFinder._layerGroup) {
+	static drawPath(path, color, weight=5, opacity=1, layer=this._layerGroup) {
 		let pathGroup = L.layerGroup().addTo(layer)
 		let last = path[0]
 		let pathBuffer = [last]
@@ -142,16 +142,16 @@ class PathFinder {
 	 * @param {Array<[Number, Number]>} path
 	 */
 	static highlightPath(path) {
-		requestAnimationFrame(function(){
-			if(PathFinder._currentPath !== null) {
-				MapBase.map.removeLayer(PathFinder._currentPath)
+		requestAnimationFrame(() => {
+			if(this._currentPath !== null) {
+				MapBase.map.removeLayer(this._currentPath)
 			}
-			PathFinder._currentPath = L.layerGroup().addTo(MapBase.map)
+			this._currentPath = L.layerGroup().addTo(MapBase.map)
 
 
-			var line = PathFinder.drawPath(path, '#000000', 9, 0.5, PathFinder._currentPath)
-			PathFinder.drawPath(path, '#ffffff', 7, 1, PathFinder._currentPath)
-			PathFinder.drawPath(path, '#00bb00', 3, 1, PathFinder._currentPath)
+			var line = this.drawPath(path, '#000000', 9, 0.5, this._currentPath)
+			this.drawPath(path, '#ffffff', 7, 1, this._currentPath)
+			this.drawPath(path, '#00bb00', 3, 1, this._currentPath)
 			MapBase.map.fitBounds(line.getBounds(), { padding: [100, 100], maxZoom: 7 })
 		})
 	}
@@ -162,29 +162,28 @@ class PathFinder {
 	 * @param {Array<Array<[Number, Number]>>} paths
 	 */
 	static drawRoute(paths) {
-		if(typeof(MapBase) === 'undefined') return
-		if(PathFinder._drawing) {
-			PathFinder._redrawWhenFinished = paths
+		if(this._drawing) {
+			this._redrawWhenFinished = paths
 		} else {
-			PathFinder._drawing = true
-			requestAnimationFrame(function(){
-				PathFinder._layerGroup.clearLayers()
-				PathFinder._currentPath = null
+			this._drawing = true
+			requestAnimationFrame(() => {
+				this._layerGroup.clearLayers()
+				this._currentPath = null
 				for(var i = 0; i < paths.length; i++) {
-					PathFinder.drawPath(paths[i], '#bb0000')
+					this.drawPath(paths[i], '#bb0000')
 				}
-				PathFinder._drawing = false
-				if(PathFinder._redrawWhenFinished !== false) {
-					PathFinder.drawRoute(PathFinder._redrawWhenFinished)
-					PathFinder._redrawWhenFinished = false
+				this._drawing = false
+				if(this._redrawWhenFinished !== false) {
+					this.drawRoute(this._redrawWhenFinished)
+					this._redrawWhenFinished = false
 				}
 			})
 		}
 	}
 
 	static wasRemovedFromMap(marker) {
-		if(PathFinder._layerControl && PathFinder._layerControl._lastMarker === marker) {
-			PathFinder._layerControl.selectPath(1)
+		if(this._layerControl && this._layerControl._lastMarker === marker) {
+			this._layerControl.selectPath(1)
 		}
 	}
 
@@ -194,13 +193,13 @@ class PathFinder {
 	 * @returns {Promise}
 	 */
 	static routegenClearAndCancel() {
-		if(PathFinder._worker) {
-			PathFinder._worker.terminate();
-			PathFinder._worker = null;
+		if(this._worker) {
+			this._worker.terminate();
+			this._worker = null;
 		}
-		if(PathFinder._layerControl !== null) MapBase.map.removeControl(PathFinder._layerControl)
-		if(PathFinder._layerGroup !== null) MapBase.map.removeLayer(PathFinder._layerGroup)
-		if(PathFinder._currentPath !== null) MapBase.map.removeLayer(PathFinder._currentPath)
+		if(this._layerControl !== null) MapBase.map.removeControl(this._layerControl)
+		if(this._layerGroup !== null) MapBase.map.removeLayer(this._layerGroup)
+		if(this._currentPath !== null) MapBase.map.removeLayer(this._currentPath)
 	}
 
 	/**
@@ -213,24 +212,24 @@ class PathFinder {
 	 * @returns {Promise<Boolean>} false if geojson isn't fully loaded or route generation was canceled
 	 */
 	static routegenStart(startingMarker, markers, fastTravelWeight, railroadWeight) {
-		PathFinder.routegenClearAndCancel();
-		PathFinder._layerGroup = L.layerGroup([]).addTo(MapBase.map);
-		PathFinder._layerControl = (new RouteControl()).addTo(MapBase.map);
+		this.routegenClearAndCancel();
+		this._layerGroup = L.layerGroup([]).addTo(MapBase.map);
+		this._layerControl = (new RouteControl()).addTo(MapBase.map);
 
-		return new Promise((res) => {
+		return new Promise(res => {
 			var paths = [];
-			PathFinder._worker = new Worker('assets/js/pathfinder.worker.js')
-			PathFinder._worker.addEventListener('message', function(e) {
+			this._worker = new Worker('assets/js/pathfinder.worker.js')
+			this._worker.addEventListener('message', e => {
 				var data = e.data
 				switch(data.res) {
 					case 'route-progress':
-						PathFinder._layerControl.addPath(data.newPath)
+						this._layerControl.addPath(data.newPath)
 						paths.push(data.newPath)
-						PathFinder.drawRoute(paths)
+						this.drawRoute(paths)
 						break
 					case 'route-done':
-						setTimeout(function(){
-							PathFinder._layerControl.selectPath(1, true)
+						setTimeout(() => {
+							this._layerControl.selectPath(1, true)
 						}, 100)
 						res(data.result)
 						break
@@ -241,7 +240,7 @@ class PathFinder {
 				finalObj[copyKey] = marker[copyKey];
 				return finalObj;
 			}, {}));
-			PathFinder._worker.postMessage({
+			this._worker.postMessage({
 				cmd: 'start',
 				startingMarker: strippedMarkers[markers.indexOf(startingMarker)],
 				markers: strippedMarkers,
