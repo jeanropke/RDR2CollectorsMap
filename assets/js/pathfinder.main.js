@@ -97,14 +97,6 @@ class RouteControl extends L.Control {
  * Main path finder class; all properties are static
  */
 class PathFinder {
-	static init() {
-		this._layerGroup = null
-		this._layerControl = null
-		this._currentPath = null
-		this._drawing = false
-		this._redrawWhenFinished = false
-	}
-
 	/**
 	 * Draw a path to the path finder layer group
 	 * @static
@@ -143,9 +135,7 @@ class PathFinder {
 	 */
 	static highlightPath(path) {
 		requestAnimationFrame(() => {
-			if(this._currentPath !== null) {
-				MapBase.map.removeLayer(this._currentPath)
-			}
+			this._currentPath && MapBase.map.removeLayer(this._currentPath);
 			this._currentPath = L.layerGroup().addTo(MapBase.map)
 
 
@@ -169,11 +159,9 @@ class PathFinder {
 			requestAnimationFrame(() => {
 				this._layerGroup.clearLayers()
 				this._currentPath = null
-				for(var i = 0; i < paths.length; i++) {
-					this.drawPath(paths[i], '#bb0000')
-				}
+				paths.forEach(p => this.drawPath(p, '#bb0000'));
 				this._drawing = false
-				if(this._redrawWhenFinished !== false) {
+				if (this._redrawWhenFinished) {
 					this.drawRoute(this._redrawWhenFinished)
 					this._redrawWhenFinished = false
 				}
@@ -197,9 +185,9 @@ class PathFinder {
 			this._worker.terminate();
 			this._worker = null;
 		}
-		if(this._layerControl !== null) MapBase.map.removeControl(this._layerControl)
-		if(this._layerGroup !== null) MapBase.map.removeLayer(this._layerGroup)
-		if(this._currentPath !== null) MapBase.map.removeLayer(this._currentPath)
+		this._layerControl && MapBase.map.removeControl(this._layerControl);
+		this._layerGroup && MapBase.map.removeLayer(this._layerGroup);
+		this._currentPath && MapBase.map.removeLayer(this._currentPath);
 	}
 
 	/**
@@ -250,5 +238,3 @@ class PathFinder {
 		})
 	}
 }
-
-PathFinder.init();
