@@ -286,10 +286,11 @@ class PathFinder {
 	}
 
 	static _loadAllGeoJson() {
-		const featureCollectionPromises = [
-			'ambarino', 'lemoyne', 'new-austin', 'new-hanover', 'west-elizabeth',
-			'fasttravel', 'railroads',
-		].map(part => this._jsonFetch(`/data/geojson/${part}.json`))
+        const pathBase = ['127.0.0.1', 'localhost'].includes(location.hostname) ? '' : 'https://jeanropke.github.io/RDR2CollectorsMap'
+        const featureCollectionPromises = [
+            'ambarino', 'lemoyne', 'new-austin', 'new-hanover', 'west-elizabeth',
+            'fasttravel', 'railroads',
+        ].map(part => this._jsonFetch(`${pathBase}/data/geojson/${part}.json`))
 
 		return Promise.all(featureCollectionPromises).then(fcs => ({
 				"type": "FeatureCollection",
