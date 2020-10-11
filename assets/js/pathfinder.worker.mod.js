@@ -1,6 +1,4 @@
 var GeoJSONPathFinder = require('geojson-path-finder')
-var point = require('turf-point')
-var featurecollection = require('turf-featurecollection')
 
 class WorkerLatLng {
 	constructor(lat, lng) {
@@ -214,35 +212,25 @@ class PathFinder {
 				return r
 			}
 		})
-		PathFinder._points = featurecollection(
-			Object.entries(PathFinder._PathFinder._graph.vertices)
-				.filter(([nodeName, node]) => Object.keys(node).length)
-				.map(([nodeName, node]) =>
-					point(PathFinder._PathFinder._graph.sourceVertices[nodeName]))
-		);
+
+		PathFinder._points = Object.entries(PathFinder._PathFinder._graph.vertices)
+			.filter(([nodeName, node]) => Object.keys(node).length)
+			.map(([nodeName, node]) => {
+				const coordinates = PathFinder._PathFinder._graph.sourceVertices[nodeName];
+				return {lng: coordinates[0], lat: coordinates[1]};
+			})
 
 		PathFinder._nodeCache = {}
 	}
 
 	/**
-	 * Turns GeoJSON point into a LatLng object
-	 * @static
-	 * @param {Object} point 
-	 * @returns {LatLng}
-	 */
-	static pointToLatLng(point) {
-		return L.latLng(point.geometry.coordinates[1], point.geometry.coordinates[0])
-	}
-	
-	/**
 	 * Searches for nodes nearby on the roadmap
 	 * @static
 	 * @param {LatLng|Marker} target Can be LatLng, Marker
 	 * @param {Number} [searchDistance=5] Optional “radius” around the point to search for nodes.
-	 * @returns {Object} GeoJSON point
+	 * @returns {Object} GeoJSON point feature or null
 	 */
 	static getNearestNode(target, searchDistance=5) {
-		const p2ll = PathFinder.pointToLatLng;
 		const targetLatLng = {lat: +target.lat, lng: +target.lng};
 		const cacheKey = targetLatLng.lat + '|' + targetLatLng.lng;
 
@@ -255,19 +243,21 @@ class PathFinder {
 			[targetLatLng.lat+searchDistance, targetLatLng.lng+searchDistance]
 		])
 
-		const n = {distance: Infinity, point: null};
-		PathFinder._points.features
-			.filter(p => searchArea.contains(p2ll(p)))
+		let distance = Infinity;
+		let point = null;
+		PathFinder._points
+			.filter(p => searchArea.contains(p))
 			.forEach(p => {
-				const distance = WorkerL.distance(targetLatLng, p2ll(p));
-				if(distance < n.distance) {
-					n.distance = distance;
-					n.point = p;
+				const newDistance = WorkerL.distance(targetLatLng, p);
+				if (newDistance < distance) {
+					distance = newDistance;
+					point = p;
 				}
 			})
 
-		PathFinder._nodeCache[cacheKey] = n.point;
-		return n.point
+		const pointFeature = point ? {type: 'Feature', geometry: {type: 'Point', coordinates: [point.lng, point.lat]}} : null;
+		PathFinder._nodeCache[cacheKey] = pointFeature;
+		return pointFeature;
 	}
 
 	/**

@@ -1,7 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 var GeoJSONPathFinder = require('geojson-path-finder')
-var point = require('turf-point')
-var featurecollection = require('turf-featurecollection')
 
 class WorkerLatLng {
 	constructor(lat, lng) {
@@ -215,35 +213,25 @@ class PathFinder {
 				return r
 			}
 		})
-		PathFinder._points = featurecollection(
-			Object.entries(PathFinder._PathFinder._graph.vertices)
-				.filter(([nodeName, node]) => Object.keys(node).length)
-				.map(([nodeName, node]) =>
-					point(PathFinder._PathFinder._graph.sourceVertices[nodeName]))
-		);
+
+		PathFinder._points = Object.entries(PathFinder._PathFinder._graph.vertices)
+			.filter(([nodeName, node]) => Object.keys(node).length)
+			.map(([nodeName, node]) => {
+				const coordinates = PathFinder._PathFinder._graph.sourceVertices[nodeName];
+				return {lng: coordinates[0], lat: coordinates[1]};
+			})
 
 		PathFinder._nodeCache = {}
 	}
 
 	/**
-	 * Turns GeoJSON point into a LatLng object
-	 * @static
-	 * @param {Object} point 
-	 * @returns {LatLng}
-	 */
-	static pointToLatLng(point) {
-		return L.latLng(point.geometry.coordinates[1], point.geometry.coordinates[0])
-	}
-	
-	/**
 	 * Searches for nodes nearby on the roadmap
 	 * @static
 	 * @param {LatLng|Marker} target Can be LatLng, Marker
 	 * @param {Number} [searchDistance=5] Optional “radius” around the point to search for nodes.
-	 * @returns {Object} GeoJSON point
+	 * @returns {Object} GeoJSON point feature or null
 	 */
 	static getNearestNode(target, searchDistance=5) {
-		const p2ll = PathFinder.pointToLatLng;
 		const targetLatLng = {lat: +target.lat, lng: +target.lng};
 		const cacheKey = targetLatLng.lat + '|' + targetLatLng.lng;
 
@@ -256,19 +244,21 @@ class PathFinder {
 			[targetLatLng.lat+searchDistance, targetLatLng.lng+searchDistance]
 		])
 
-		const n = {distance: Infinity, point: null};
-		PathFinder._points.features
-			.filter(p => searchArea.contains(p2ll(p)))
+		let distance = Infinity;
+		let point = null;
+		PathFinder._points
+			.filter(p => searchArea.contains(p))
 			.forEach(p => {
-				const distance = WorkerL.distance(targetLatLng, p2ll(p));
-				if(distance < n.distance) {
-					n.distance = distance;
-					n.point = p;
+				const newDistance = WorkerL.distance(targetLatLng, p);
+				if (newDistance < distance) {
+					distance = newDistance;
+					point = p;
 				}
 			})
 
-		PathFinder._nodeCache[cacheKey] = n.point;
-		return n.point
+		const pointFeature = point ? {type: 'Feature', geometry: {type: 'Point', coordinates: [point.lng, point.lat]}} : null;
+		PathFinder._nodeCache[cacheKey] = pointFeature;
+		return pointFeature;
 	}
 
 	/**
@@ -397,7 +387,7 @@ self.addEventListener('message', function(e) {
     }
 })
 
-},{"geojson-path-finder":11,"turf-featurecollection":16,"turf-point":17}],2:[function(require,module,exports){
+},{"geojson-path-finder":11}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var invariant_1 = require("@turf/invariant");
@@ -3716,7 +3706,7 @@ module.exports = function preprocess(graph, options) {
     };
 };
 
-},{"./compactor":9,"./round-coord":13,"./topology":14,"@turf/distance":2,"turf-point":17}],13:[function(require,module,exports){
+},{"./compactor":9,"./round-coord":13,"./topology":14,"@turf/distance":2,"turf-point":16}],13:[function(require,module,exports){
 module.exports = function roundCoord(c, precision) {
     return [
         Math.round(c[0] / precision) * precision,
@@ -3895,32 +3885,6 @@ return TinyQueue;
 }));
 
 },{}],16:[function(require,module,exports){
-/**
- * Takes one or more {@link Feature|Features} and creates a {@link FeatureCollection}
- *
- * @module turf/featurecollection
- * @category helper
- * @param {Feature} features input Features
- * @returns {FeatureCollection} a FeatureCollection of input features
- * @example
- * var features = [
- *  turf.point([-75.343, 39.984], {name: 'Location A'}),
- *  turf.point([-75.833, 39.284], {name: 'Location B'}),
- *  turf.point([-75.534, 39.123], {name: 'Location C'})
- * ];
- *
- * var fc = turf.featurecollection(features);
- *
- * //=fc
- */
-module.exports = function(features){
-  return {
-    type: "FeatureCollection",
-    features: features
-  };
-};
-
-},{}],17:[function(require,module,exports){
 /**
  * Takes coordinates and properties (optional) and returns a new {@link Point} feature.
  *
