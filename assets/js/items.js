@@ -21,6 +21,8 @@ class BaseItem {
   isWeekly() {
     // Don't use weekly when in preview mode.
     if (getParameterByName('q')) return false;
+    //Check if weekly is valid to load markers on map
+    if(!Weekly.current) return false;
 
     return Weekly.current.items.includes(this);
   }
@@ -45,8 +47,8 @@ class BaseItem {
       SettingProxy.addListener(InventorySettings, 'isEnabled stackSize', () =>
         this.$weeklyMenuButton
           .find('.counter-number')
-            .toggle(InventorySettings.isEnabled)
-            .toggleClass('text-danger', this.amount >= InventorySettings.stackSize)
+          .toggle(InventorySettings.isEnabled)
+          .toggleClass('text-danger', this.amount >= InventorySettings.stackSize)
           .end()
       )();
     });
@@ -56,13 +58,13 @@ class BaseItem {
 class NonCollectible extends BaseItem {
   constructor(preliminary) {
     super(preliminary);
-    Object.defineProperty(this, 'amount', {configurable: false, enumerable: true, writable: false, value: '?'});
+    Object.defineProperty(this, 'amount', { configurable: false, enumerable: true, writable: false, value: '?' });
     this.markers = [];
     this.weeklyHelpKey = `weekly_${this.itemId}`;
   }
 }
 
-class Category {}
+class Category { }
 // currently only shared by Weekly and Collection
 class BaseCollection extends Category {
   currentMarkers() {
@@ -89,6 +91,9 @@ class Weekly extends BaseCollection {
         this.current = new Weekly(data);
         this._installSettingsAndEventHandlers();
         console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
+      })
+      .catch(() => {
+        console.info('%c[Weekly Set] Unable to load!', 'color: #FF6969; background: #242424');
       });
   }
   // needs Item.items ready
@@ -132,13 +137,13 @@ class Weekly extends BaseCollection {
       SettingProxy.addListener(InventorySettings, 'isEnabled', () =>
         this.$menuEntry
           .find('.collection-value')
-            .toggle(InventorySettings.isEnabled || this.weeklySetValue !== 0)
+          .toggle(InventorySettings.isEnabled || this.weeklySetValue !== 0)
           .end()
           .find('.collection-sell')
-            .toggle(InventorySettings.isEnabled)
+          .toggle(InventorySettings.isEnabled)
           .end()
           .find('.weekly-set-value')
-            .toggle(this.weeklySetValue !== 0)
+          .toggle(this.weeklySetValue !== 0)
           .end()
       )();
     });
@@ -287,14 +292,14 @@ class Collection extends BaseCollection {
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(Settings, 'isCycleInputEnabled', () =>
         this.$menuButton
-        .find('.input-cycle').toggle(Settings.isCycleInputEnabled).end()
-        .find('.cycle-icon').toggle(!Settings.isCycleInputEnabled).end()
+          .find('.input-cycle').toggle(Settings.isCycleInputEnabled).end()
+          .find('.cycle-icon').toggle(!Settings.isCycleInputEnabled).end()
       )();
       SettingProxy.addListener(InventorySettings, 'isEnabled enableAdvancedInventoryOptions', () =>
         this.$submenu
-        .find('.collection-sell').toggle(InventorySettings.isEnabled).end()
-        .find('.collection-value-bottom').toggle(InventorySettings.isEnabled &&
-          InventorySettings.enableAdvancedInventoryOptions).end()
+          .find('.collection-sell').toggle(InventorySettings.isEnabled).end()
+          .find('.collection-value-bottom').toggle(InventorySettings.isEnabled &&
+            InventorySettings.enableAdvancedInventoryOptions).end()
       )();
     });
   }
@@ -424,7 +429,7 @@ class Item extends BaseItem {
         this.$menuButton
           .find('.counter')
           .toggle(InventorySettings.isEnabled)
-        .end()
+          .end()
       )();
     });
   }
