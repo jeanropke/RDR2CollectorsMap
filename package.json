@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "browserify": "^16.5.1",
-    "geojson-path-finder": "^1.5.2",
-    "turf-featurecollection": "^1.0.1"
+    "browserify": "^16.5.2",
+    "geojson-path-finder": "^1.5.2"
   }
 }
