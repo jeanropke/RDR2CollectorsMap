@@ -1307,7 +1307,7 @@
     "map.layers.dark": "灰色",
     "map.layers.black": "黑色",
     "menu.import_export_title": "导入/导出",
-    "menu.import_export_explanation": "这将导入或导出您的设置，导入设置将替换所有当前设置并重新加载网页，此功能不包括引脚。",
+    "menu.import_export_explanation": "这将导入或导出您的设置，导入设置将替换所有当前设置并重新加载网页，此功能不包括自定义点。",
     "menu.import_button": "导入",
     "menu.export_button": "导出",
     "menu.user_pins": "自定义坐标点",
