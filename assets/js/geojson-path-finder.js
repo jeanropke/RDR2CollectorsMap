@@ -1,393 +1,4 @@
-(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-var GeoJSONPathFinder = require('geojson-path-finder')
-
-class WorkerLatLng {
-	constructor(lat, lng) {
-		this.lat = parseFloat(lat)
-		this.lng = parseFloat(lng)
-	}
-}
-
-class WorkerLatLngBounds {
-
-		constructor(pointA, pointB) {
-			pointA.lat = parseFloat(pointA.lat)
-			pointB.lat = parseFloat(pointB.lat)
-			pointA.lng = parseFloat(pointA.lng)
-			pointB.lng = parseFloat(pointB.lng)
-
-			this.pointA = pointA
-			this.pointB = pointB
-
-			this.southEast = L.latLng(
-				(pointA.lat < pointB.lat ? pointA.lat : pointB.lat),
-				(pointA.lng < pointB.lng ? pointA.lng : pointB.lng)
-			)
-			this.northWest = L.latLng(
-				(pointA.lat > pointB.lat ? pointA.lat : pointB.lat),
-				(pointA.lng > pointB.lng ? pointA.lng : pointB.lng)
-			)
-		}
-
-		getCenter() {
-			return L.latLng(
-				this.southEast.lat + ((this.northWest.lat - this.southEast.lat) / 2),
-				this.southEast.lng + ((this.northWest.lng - this.southEast.lng) / 2)
-			)
-		}
-
-		contains(latLng) {
-			return (
-				latLng.lat >= this.southEast.lat && latLng.lat <= this.northWest.lat &&
-				latLng.lng >= this.southEast.lng && latLng.lng <= this.northWest.lng
-			)
-		}
-
-}
-
-
-class WorkerL {
-
-	static latLngBounds(pointA, pointB) {
-		if(Array.isArray(pointA)) {
-			if(Array.isArray(pointA[0])) {
-				pointB = pointA[0]
-				pointA = pointA[1]
-			}
-			pointA = new WorkerLatLng(pointA[0], pointA[1])
-		}
-		if(Array.isArray(pointB)) {
-			pointB = new WorkerLatLng(pointB[0], pointB[1])
-		}
-		return new WorkerLatLngBounds(pointA, pointB)
-	}
-
-	static latLng(lat, lng) {
-		if(Array.isArray(lat)) {
-			lng = lat[1]
-			lat = lat[0]
-		}
-		return new WorkerLatLng(lat, lng)
-	}
-
-	static distance(pointA, pointB) {
-		var dx = pointB.lng - pointA.lng,
-			dy = pointB.lat - pointA.lat;
-
-		return Math.sqrt(dx * dx + dy * dy);
-	}
-
-}
-const L = WorkerL;
-
-/**
- * Helping class to hold markers, that are nearby
- */
-class Chunk {
-
-	constructor() {
-		this.markers = []
-		this.bounds = null
-		this.isDone = false
-	}
-
-	_calcBounds() {
-		var latMin = null
-		var lngMin = null
-		var latMax = null
-		var lngMax = null
-		for(var i = 0; i < this.markers.length; i++) {
-			if(latMin === null || this.markers[i].lat < latMin) latMin = this.markers[i].lat
-			if(lngMin === null || this.markers[i].lng < lngMin) lngMin = this.markers[i].lng
-			if(latMax === null || this.markers[i].lat > latMax) latMax = this.markers[i].lat
-			if(lngMax === null || this.markers[i].lng > lngMax) lngMax = this.markers[i].lng
-		}
-		if(latMin == latMax) latMax += 0.000001
-		if(lngMin == lngMax) lngMax += 0.000001
-
-		this.bounds = L.latLngBounds({ lat: latMin, lng: lngMin }, { lat: latMax, lng: lngMax })
-	}
-
-	/**
-	 * Checks if the marker can be added to the chunk and returns true if it was added
-	 * @param {Marker} marker 
-	 * @returns {Boolean}
-	 */
-	_addMarker(marker) {
-		marker.lat = parseFloat(marker.lat)
-		marker.lng = parseFloat(marker.lng)
-		if(this.bounds == null || WorkerL.distance(marker, this.bounds.getCenter()) < 10) {
-			this.markers.push(marker)
-			this._calcBounds()
-			return true
-		} else {
-			return false
-		}
-	}
-
-	/**
-	 * Returns true if chunks contains marker
-	 * @param {Marker} marker 
-	 * @returns {Boolean}
-	 */
-	contains(marker) {
-		return this.markers.includes(marker);
-	}
-
-	/**
-	 * Returns the bounds of the chunk
-	 * @see {@link https://leafletjs.com/reference-1.6.0.html#latlngbounds|LatLngBounds}
-	 * @returns {LatLngBounds}
-	 */
-	getBounds() {
-		return this.bounds
-	}
-
-	/**
-	 * Sorts markers into new chunks.
-	 * @static
-	 * @param {Array<Marker>} markers
-	 */
-	static generateChunks(markers) {
-		Chunk.chunks = [];
-		markers.forEach(marker => {
-			var added = false;
-			for(var j = 0; j < Chunk.chunks.length; j++) {
-				if(Chunk.chunks[j]._addMarker(marker)) {
-					added = true;
-				}
-			}
-			if(!added) {
-				const c = new Chunk();
-				Chunk.chunks.push(c);
-				c._addMarker(marker);
-			}
-		});
-	}
-}
-
-class PathFinder {
-	static _jsonFetch(...args) {
-		return fetch(...args).then(response => {
-				if (!response.ok) {
-					throw new Error(`${response.status} ${response.statusText} on ${response.url}`);
-				} else {
-					return response.json();
-				}
-			}
-		);
-	}
-
-	static _loadAllGeoJson() {
-		const featureCollectionPromises = [
-			'ambarino', 'lemoyne', 'new-austin', 'new-hanover', 'west-elizabeth',
-			'fasttravel', 'railroads',
-		].map(part => this._jsonFetch(`../../data/geojson/${part}.json`))
-
-		return Promise.all(featureCollectionPromises).then(fcs => ({
-				"type": "FeatureCollection",
-				"features": [].concat(...fcs.map(fc => fc.features)),
-			})
-		)
-	}
-
-    static init() {
-        this.geojsonPromise = this._loadAllGeoJson();
-    }
-
-	/**
-	 * Creating the GeoJSON Path Finder object from geojson data and extracting all nodes
-	 * @static
-	 * @param {Number} fastTravelWeight Multiplier for fast travel road weights
-	 * @param {Number} railroadWeight Multiplier for rail road weights
-	 */
-	static createPathFinder(geojson, fastTravelWeight, railroadWeight) {
-		PathFinder._PathFinder = new GeoJSONPathFinder(geojson, {
-			precision: 0.04,
-			weightFn: function(a, b, props) {
-				var dx = a[0] - b[0];
-				var dy = a[1] - b[1];
-				var r = Math.sqrt(dx * dx + dy * dy);
-				if(props.type === 'railroad') r *= railroadWeight;
-				if(props.type === 'fasttravel') r *= fastTravelWeight;
-				return r
-			}
-		})
-
-		PathFinder._points = Object.entries(PathFinder._PathFinder._graph.vertices)
-			.filter(([nodeName, node]) => Object.keys(node).length)
-			.map(([nodeName, node]) => {
-				const coordinates = PathFinder._PathFinder._graph.sourceVertices[nodeName];
-				return {lng: coordinates[0], lat: coordinates[1]};
-			})
-
-		PathFinder._nodeCache = {}
-	}
-
-	/**
-	 * Searches for nodes nearby on the roadmap
-	 * @static
-	 * @param {LatLng|Marker} target Can be LatLng, Marker
-	 * @param {Number} [searchDistance=5] Optional “radius” around the point to search for nodes.
-	 * @returns {Object} GeoJSON point feature or null
-	 */
-	static getNearestNode(target, searchDistance=5) {
-		const targetLatLng = {lat: +target.lat, lng: +target.lng};
-		const cacheKey = targetLatLng.lat + '|' + targetLatLng.lng;
-
-		if (PathFinder._nodeCache[cacheKey]) {
-			return PathFinder._nodeCache[cacheKey];
-		}
-
-		const searchArea = L.latLngBounds([
-			[targetLatLng.lat-searchDistance, targetLatLng.lng-searchDistance],
-			[targetLatLng.lat+searchDistance, targetLatLng.lng+searchDistance]
-		])
-
-		let distance = Infinity;
-		let point = null;
-		PathFinder._points
-			.filter(p => searchArea.contains(p))
-			.forEach(p => {
-				const newDistance = WorkerL.distance(targetLatLng, p);
-				if (newDistance < distance) {
-					distance = newDistance;
-					point = p;
-				}
-			})
-
-		const pointFeature = point ? {type: 'Feature', geometry: {type: 'Point', coordinates: [point.lng, point.lat]}} : null;
-		PathFinder._nodeCache[cacheKey] = pointFeature;
-		return pointFeature;
-	}
-
-	/**
-	 * Find the closest Chunk to the marker by road length
-	 * @static
-	 * @param {Marker} marker 
-	 * @param {Chunk} markerChunk Chunk the marker is in. Just to rule that one out.
-	 * @returns {Chunk|null}
-	 */
-	static findNearestChunk(marker, markerChunk) {
-		const c = {weight: Infinity, c: null};
-
-		const markerNode = PathFinder.getNearestNode(marker);
-		for(var i = 0; i < Chunk.chunks.length; i++) {
-			if(Chunk.chunks[i].isDone) continue
-			if(Chunk.chunks[i] == markerChunk) continue
-
-			const chunkNode = PathFinder.getNearestNode(Chunk.chunks[i].getBounds().getCenter(),
-				15);
-			if(chunkNode !== null) {
-				var p = PathFinder._PathFinder.findPath(markerNode, chunkNode)
-				if(p.weight < c.weight) {
-					c.weight = p.weight
-					c.c = Chunk.chunks[i]
-				}
-			}
-		}
-		return c.c
-	}
-
-	/**
-	 * Finds the nearest marker in markers from start. This function uses the created chunks, so
-	 * make sure to re-create the chunks when you start the route generator
-	 * @static
-	 * @param {Marker} start 
-	 * @param {Array<Marker>} markers This array of markers must not include start or any already
-	 * visited markers
-	 * @returns {Object} Containes the properties weight, marker and path. On error, `.marker`
-	 * will be `null`.
-	 */
-	static findNearestTravelItem(start, markers) {
-		const shortest = {weight: Number.MAX_SAFE_INTEGER, marker: null, path: null};
-		if(PathFinder._currentChunk == null) {
-			PathFinder._currentChunk = Chunk.chunks.find(chunk => chunk.markers.includes(start));
-			if(PathFinder._currentChunk == null) {
-				console.error('[pathfinder] Could not find starting marker in any chunk.', start);
-				return shortest;
-			}
-		}
-		const startPoint = PathFinder.getNearestNode(start);
-
-		while(shortest.marker === null) {
-			var availableInChunk = PathFinder._currentChunk.markers.filter(m =>
-				markers.includes(m));
-
-			// if current chunk is empty or done, fetch a new one
-			if(PathFinder._currentChunk.isDone || availableInChunk.length <= 0) {
-				PathFinder._currentChunk.isDone = true
-
-				PathFinder._currentChunk = PathFinder.findNearestChunk(start,
-					PathFinder._currentChunk);
-
-				if(PathFinder._currentChunk == null) return shortest;
-				availableInChunk = PathFinder._currentChunk.markers.filter(m =>
-					markers.includes(m));
-			}
-
-			availableInChunk.forEach(marker => {
-				let path;
-				// Find the nearest road node to all the markers
-				const markerPoint = PathFinder.getNearestNode(marker);
-				if (markerPoint !== null) {
-					path = PathFinder._PathFinder.findPath(startPoint, markerPoint);
-				} else {
-					console.error('[pathfinder] No node found to ', marker);
-					path = null;
-				}
-				if (path !== null) {
-					if(path.weight < shortest.weight) {
-						shortest.weight = path.weight
-						shortest.marker = marker;
-						path.path.unshift([start.lng, start.lat])
-						path.path.push([marker.lng, marker.lat]);
-						shortest.path = path.path.map(c => [c[1], c[0]])
-					}
-				}
-			});
-
-			if (shortest.marker === null) {
-				PathFinder._currentChunk.isDone = true
-			}
-		}
-
-		return shortest
-	}
-
-	static async routegenStartWorker(startingMarker, markers, fastTravelWeight, railroadWeight) {
-		PathFinder.createPathFinder(await PathFinder.geojsonPromise,
-			fastTravelWeight, railroadWeight);
-
-		Chunk.generateChunks(markers);
-
-		let current = {marker: startingMarker};
-		markers = markers.filter(m => m !== current.marker);
-		const markersNum = markers.length;
-		PathFinder._currentChunk = null;  // used in `.findNearestTravelItem()`
-		for (let i = 0; i < markersNum; i++) {
-			current = PathFinder.findNearestTravelItem(current.marker, markers);
-			if (current.marker == null) break;
-
-			markers = markers.filter(m => m !== current.marker);
-			self.postMessage({res: 'route-progress', newPath: current.path});
-		}
-    }
-}
-
-PathFinder.init();
-self.addEventListener('message', function(e) {
-    const data = e.data;
-    switch(data.cmd) {
-        case 'start':
-            PathFinder.routegenStartWorker(data.startingMarker, data.markers,
-                data.fastTravelWeight, data.railroadWeight, true)
-                .then(result => self.postMessage({ res: 'route-done', result }))
-            break;
-    }
-})
-
-},{"geojson-path-finder":11}],2:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.GeoJSONPathFinder = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var invariant_1 = require("@turf/invariant");
@@ -430,7 +41,7 @@ function distance(from, to, options) {
 }
 exports.default = distance;
 
-},{"@turf/helpers":5,"@turf/invariant":6}],3:[function(require,module,exports){
+},{"@turf/helpers":4,"@turf/invariant":5}],2:[function(require,module,exports){
 'use strict';
 
 var meta = require('@turf/meta');
@@ -470,7 +81,7 @@ function explode(geojson) {
 module.exports = explode;
 module.exports.default = explode;
 
-},{"@turf/helpers":4,"@turf/meta":7}],4:[function(require,module,exports){
+},{"@turf/helpers":3,"@turf/meta":6}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -1263,7 +874,7 @@ exports.radiansToDistance = radiansToDistance;
 exports.bearingToAngle = bearingToAngle;
 exports.convertDistance = convertDistance;
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
@@ -1998,7 +1609,7 @@ function convertDistance() {
 }
 exports.convertDistance = convertDistance;
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var helpers_1 = require("@turf/helpers");
@@ -2211,7 +1822,7 @@ function getType(geojson, name) {
 }
 exports.getType = getType;
 
-},{"@turf/helpers":5}],7:[function(require,module,exports){
+},{"@turf/helpers":4}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
@@ -3338,9 +2949,9 @@ exports.lineReduce = lineReduce;
 exports.findSegment = findSegment;
 exports.findPoint = findPoint;
 
-},{"@turf/helpers":8}],8:[function(require,module,exports){
-arguments[4][4][0].apply(exports,arguments)
-},{"dup":4}],9:[function(require,module,exports){
+},{"@turf/helpers":7}],7:[function(require,module,exports){
+arguments[4][3][0].apply(exports,arguments)
+},{"dup":3}],8:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -3468,7 +3079,7 @@ function compactGraph(vertices, vertexCoords, edgeData, options) {
     }, {graph: {}, coordinates: {}, reducedEdges: {}});
 };
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var Queue = require('tinyqueue');
 
 module.exports = function(graph, start, end) {
@@ -3499,7 +3110,297 @@ module.exports = function(graph, start, end) {
 
     return null;
 }
-},{"tinyqueue":15}],11:[function(require,module,exports){
+},{"tinyqueue":13}],10:[function(require,module,exports){
+'use strict';
+
+var topology = require('./topology'),
+    compactor = require('./compactor'),
+    distance = require('@turf/distance').default,
+    roundCoord = require('./round-coord'),
+    point = require('turf-point');
+
+module.exports = function preprocess(graph, options) {
+    options = options || {};
+    var weightFn = options.weightFn || function defaultWeightFn(a, b) {
+            return distance(point(a), point(b));
+        },
+        topo;
+
+    if (graph.type === 'FeatureCollection') {
+        // Graph is GeoJSON data, create a topology from it
+        topo = topology(graph, options);
+    } else if (graph.edges) {
+        // Graph is a preprocessed topology
+        topo = graph;
+    }
+
+    var graph = topo.edges.reduce(function buildGraph(g, edge, i, es) {
+        var a = edge[0],
+            b = edge[1],
+            props = edge[2],
+            w = weightFn(topo.vertices[a], topo.vertices[b], props),
+            makeEdgeList = function makeEdgeList(node) {
+                if (!g.vertices[node]) {
+                    g.vertices[node] = {};
+                    if (options.edgeDataReduceFn) {
+                        g.edgeData[node] = {};
+                    }
+                }
+            },
+            concatEdge = function concatEdge(startNode, endNode, weight) {
+                var v = g.vertices[startNode];
+                v[endNode] = weight;
+                if (options.edgeDataReduceFn) {
+                    g.edgeData[startNode][endNode] = options.edgeDataReduceFn(options.edgeDataSeed, props);
+                }
+            };
+
+        if (w) {
+            makeEdgeList(a);
+            makeEdgeList(b);
+            if (w instanceof Object) {
+                if (w.forward) {
+                    concatEdge(a, b, w.forward);
+                }
+                if (w.backward) {
+                    concatEdge(b, a, w.backward);
+                }
+            } else {
+                concatEdge(a, b, w);
+                concatEdge(b, a, w);
+            }
+        }
+
+        if (i % 1000 === 0 && options.progress) {
+            options.progress('edgeweights', i,es.length);
+        }
+
+        return g;
+    }, {edgeData: {}, vertices: {}});
+
+    var compact = compactor.compactGraph(graph.vertices, topo.vertices, graph.edgeData, options);
+
+    return {
+        vertices: graph.vertices,
+        edgeData: graph.edgeData,
+        sourceVertices: topo.vertices,
+        compactedVertices: compact.graph,
+        compactedCoordinates: compact.coordinates,
+        compactedEdges: options.edgeDataReduceFn ? compact.reducedEdges : null
+    };
+};
+
+},{"./compactor":8,"./round-coord":11,"./topology":12,"@turf/distance":1,"turf-point":14}],11:[function(require,module,exports){
+module.exports = function roundCoord(c, precision) {
+    return [
+        Math.round(c[0] / precision) * precision,
+        Math.round(c[1] / precision) * precision,
+    ];
+};
+
+},{}],12:[function(require,module,exports){
+'use strict';
+
+var explode = require('@turf/explode'),
+    roundCoord = require('./round-coord');
+
+module.exports = topology;
+
+function geoJsonReduce(geojson, fn, seed) {
+    if (geojson.type === 'FeatureCollection') {
+        return geojson.features.reduce(function reduceFeatures(a, f) {
+            return geoJsonReduce(f, fn, a);
+        }, seed);
+    } else {
+        return fn(seed, geojson);
+    }
+}
+
+function geoJsonFilterFeatures(geojson, fn) {
+    var features = [];
+    if (geojson.type === 'FeatureCollection') {
+        features = features.concat(geojson.features.filter(fn));
+    }
+
+    return {
+        type: 'FeatureCollection',
+        features: features
+    };
+}
+
+function isLineString(f) {
+    return f.geometry.type === 'LineString';
+}
+
+function topology(geojson, options) {
+    options = options || {};
+    var keyFn = options.keyFn || function defaultKeyFn(c) {
+            return c.join(',');
+        },
+        precision = options.precision || 1e-5;
+
+    var lineStrings = geoJsonFilterFeatures(geojson, isLineString);
+    var explodedLineStrings = explode(lineStrings);
+    var vertices = explodedLineStrings.features.reduce(function buildTopologyVertices(cs, f, i, fs) {
+            var rc = roundCoord(f.geometry.coordinates, precision);
+            cs[keyFn(rc)] = f.geometry.coordinates;
+
+            if (i % 1000 === 0 && options.progress) {
+                options.progress('topo:vertices', i, fs.length);
+            }
+
+            return cs;
+        }, {}),
+        edges = geoJsonReduce(lineStrings, function buildTopologyEdges(es, f, i, fs) {
+            f.geometry.coordinates.forEach(function buildLineStringEdges(c, i, cs) {
+                if (i > 0) {
+                    var k1 = keyFn(roundCoord(cs[i - 1], precision)),
+                        k2 = keyFn(roundCoord(c, precision));
+                    es.push([k1, k2, f.properties]);
+                }
+            });
+
+            if (i % 1000 === 0 && options.progress) {
+                options.progress('topo:edges', i, fs.length);
+            }
+
+            return es;
+        }, []);
+
+    return {
+        vertices: vertices,
+        edges: edges
+    };
+}
+
+},{"./round-coord":11,"@turf/explode":2}],13:[function(require,module,exports){
+(function (global, factory) {
+typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+typeof define === 'function' && define.amd ? define(factory) :
+(global = global || self, global.TinyQueue = factory());
+}(this, function () { 'use strict';
+
+var TinyQueue = function TinyQueue(data, compare) {
+    if ( data === void 0 ) data = [];
+    if ( compare === void 0 ) compare = defaultCompare;
+
+    this.data = data;
+    this.length = this.data.length;
+    this.compare = compare;
+
+    if (this.length > 0) {
+        for (var i = (this.length >> 1) - 1; i >= 0; i--) { this._down(i); }
+    }
+};
+
+TinyQueue.prototype.push = function push (item) {
+    this.data.push(item);
+    this.length++;
+    this._up(this.length - 1);
+};
+
+TinyQueue.prototype.pop = function pop () {
+    if (this.length === 0) { return undefined; }
+
+    var top = this.data[0];
+    var bottom = this.data.pop();
+    this.length--;
+
+    if (this.length > 0) {
+        this.data[0] = bottom;
+        this._down(0);
+    }
+
+    return top;
+};
+
+TinyQueue.prototype.peek = function peek () {
+    return this.data[0];
+};
+
+TinyQueue.prototype._up = function _up (pos) {
+    var ref = this;
+        var data = ref.data;
+        var compare = ref.compare;
+    var item = data[pos];
+
+    while (pos > 0) {
+        var parent = (pos - 1) >> 1;
+        var current = data[parent];
+        if (compare(item, current) >= 0) { break; }
+        data[pos] = current;
+        pos = parent;
+    }
+
+    data[pos] = item;
+};
+
+TinyQueue.prototype._down = function _down (pos) {
+    var ref = this;
+        var data = ref.data;
+        var compare = ref.compare;
+    var halfLength = this.length >> 1;
+    var item = data[pos];
+
+    while (pos < halfLength) {
+        var left = (pos << 1) + 1;
+        var best = data[left];
+        var right = left + 1;
+
+        if (right < this.length && compare(data[right], best) < 0) {
+            left = right;
+            best = data[right];
+        }
+        if (compare(best, item) >= 0) { break; }
+
+        data[pos] = best;
+        pos = left;
+    }
+
+    data[pos] = item;
+};
+
+function defaultCompare(a, b) {
+    return a < b ? -1 : a > b ? 1 : 0;
+}
+
+return TinyQueue;
+
+}));
+
+},{}],14:[function(require,module,exports){
+/**
+ * Takes coordinates and properties (optional) and returns a new {@link Point} feature.
+ *
+ * @module turf/point
+ * @category helper
+ * @param {number} longitude position west to east in decimal degrees
+ * @param {number} latitude position south to north in decimal degrees
+ * @param {Object} properties an Object that is used as the {@link Feature}'s
+ * properties
+ * @return {Point} a Point feature
+ * @example
+ * var pt1 = turf.point([-75.343, 39.984]);
+ *
+ * //=pt1
+ */
+var isArray = Array.isArray || function(arg) {
+  return Object.prototype.toString.call(arg) === '[object Array]';
+};
+module.exports = function(coordinates, properties) {
+  if (!isArray(coordinates)) throw new Error('Coordinates must be an array');
+  if (coordinates.length < 2) throw new Error('Coordinates must be at least 2 numbers long');
+  return {
+    type: "Feature",
+    geometry: {
+      type: "Point",
+      coordinates: coordinates
+    },
+    properties: properties || {}
+  };
+};
+
+},{}],"geojson-path-finder":[function(require,module,exports){
 'use strict';
 
 var findPath = require('./dijkstra'),
@@ -3626,294 +3527,5 @@ PathFinder.prototype = {
     }
 };
 
-},{"./compactor":9,"./dijkstra":10,"./preprocessor":12,"./round-coord":13}],12:[function(require,module,exports){
-'use strict';
-
-var topology = require('./topology'),
-    compactor = require('./compactor'),
-    distance = require('@turf/distance').default,
-    roundCoord = require('./round-coord'),
-    point = require('turf-point');
-
-module.exports = function preprocess(graph, options) {
-    options = options || {};
-    var weightFn = options.weightFn || function defaultWeightFn(a, b) {
-            return distance(point(a), point(b));
-        },
-        topo;
-
-    if (graph.type === 'FeatureCollection') {
-        // Graph is GeoJSON data, create a topology from it
-        topo = topology(graph, options);
-    } else if (graph.edges) {
-        // Graph is a preprocessed topology
-        topo = graph;
-    }
-
-    var graph = topo.edges.reduce(function buildGraph(g, edge, i, es) {
-        var a = edge[0],
-            b = edge[1],
-            props = edge[2],
-            w = weightFn(topo.vertices[a], topo.vertices[b], props),
-            makeEdgeList = function makeEdgeList(node) {
-                if (!g.vertices[node]) {
-                    g.vertices[node] = {};
-                    if (options.edgeDataReduceFn) {
-                        g.edgeData[node] = {};
-                    }
-                }
-            },
-            concatEdge = function concatEdge(startNode, endNode, weight) {
-                var v = g.vertices[startNode];
-                v[endNode] = weight;
-                if (options.edgeDataReduceFn) {
-                    g.edgeData[startNode][endNode] = options.edgeDataReduceFn(options.edgeDataSeed, props);
-                }
-            };
-
-        if (w) {
-            makeEdgeList(a);
-            makeEdgeList(b);
-            if (w instanceof Object) {
-                if (w.forward) {
-                    concatEdge(a, b, w.forward);
-                }
-                if (w.backward) {
-                    concatEdge(b, a, w.backward);
-                }
-            } else {
-                concatEdge(a, b, w);
-                concatEdge(b, a, w);
-            }
-        }
-
-        if (i % 1000 === 0 && options.progress) {
-            options.progress('edgeweights', i,es.length);
-        }
-
-        return g;
-    }, {edgeData: {}, vertices: {}});
-
-    var compact = compactor.compactGraph(graph.vertices, topo.vertices, graph.edgeData, options);
-
-    return {
-        vertices: graph.vertices,
-        edgeData: graph.edgeData,
-        sourceVertices: topo.vertices,
-        compactedVertices: compact.graph,
-        compactedCoordinates: compact.coordinates,
-        compactedEdges: options.edgeDataReduceFn ? compact.reducedEdges : null
-    };
-};
-
-},{"./compactor":9,"./round-coord":13,"./topology":14,"@turf/distance":2,"turf-point":16}],13:[function(require,module,exports){
-module.exports = function roundCoord(c, precision) {
-    return [
-        Math.round(c[0] / precision) * precision,
-        Math.round(c[1] / precision) * precision,
-    ];
-};
-
-},{}],14:[function(require,module,exports){
-'use strict';
-
-var explode = require('@turf/explode'),
-    roundCoord = require('./round-coord');
-
-module.exports = topology;
-
-function geoJsonReduce(geojson, fn, seed) {
-    if (geojson.type === 'FeatureCollection') {
-        return geojson.features.reduce(function reduceFeatures(a, f) {
-            return geoJsonReduce(f, fn, a);
-        }, seed);
-    } else {
-        return fn(seed, geojson);
-    }
-}
-
-function geoJsonFilterFeatures(geojson, fn) {
-    var features = [];
-    if (geojson.type === 'FeatureCollection') {
-        features = features.concat(geojson.features.filter(fn));
-    }
-
-    return {
-        type: 'FeatureCollection',
-        features: features
-    };
-}
-
-function isLineString(f) {
-    return f.geometry.type === 'LineString';
-}
-
-function topology(geojson, options) {
-    options = options || {};
-    var keyFn = options.keyFn || function defaultKeyFn(c) {
-            return c.join(',');
-        },
-        precision = options.precision || 1e-5;
-
-    var lineStrings = geoJsonFilterFeatures(geojson, isLineString);
-    var explodedLineStrings = explode(lineStrings);
-    var vertices = explodedLineStrings.features.reduce(function buildTopologyVertices(cs, f, i, fs) {
-            var rc = roundCoord(f.geometry.coordinates, precision);
-            cs[keyFn(rc)] = f.geometry.coordinates;
-
-            if (i % 1000 === 0 && options.progress) {
-                options.progress('topo:vertices', i, fs.length);
-            }
-
-            return cs;
-        }, {}),
-        edges = geoJsonReduce(lineStrings, function buildTopologyEdges(es, f, i, fs) {
-            f.geometry.coordinates.forEach(function buildLineStringEdges(c, i, cs) {
-                if (i > 0) {
-                    var k1 = keyFn(roundCoord(cs[i - 1], precision)),
-                        k2 = keyFn(roundCoord(c, precision));
-                    es.push([k1, k2, f.properties]);
-                }
-            });
-
-            if (i % 1000 === 0 && options.progress) {
-                options.progress('topo:edges', i, fs.length);
-            }
-
-            return es;
-        }, []);
-
-    return {
-        vertices: vertices,
-        edges: edges
-    };
-}
-
-},{"./round-coord":13,"@turf/explode":3}],15:[function(require,module,exports){
-(function (global, factory) {
-typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-typeof define === 'function' && define.amd ? define(factory) :
-(global = global || self, global.TinyQueue = factory());
-}(this, function () { 'use strict';
-
-var TinyQueue = function TinyQueue(data, compare) {
-    if ( data === void 0 ) data = [];
-    if ( compare === void 0 ) compare = defaultCompare;
-
-    this.data = data;
-    this.length = this.data.length;
-    this.compare = compare;
-
-    if (this.length > 0) {
-        for (var i = (this.length >> 1) - 1; i >= 0; i--) { this._down(i); }
-    }
-};
-
-TinyQueue.prototype.push = function push (item) {
-    this.data.push(item);
-    this.length++;
-    this._up(this.length - 1);
-};
-
-TinyQueue.prototype.pop = function pop () {
-    if (this.length === 0) { return undefined; }
-
-    var top = this.data[0];
-    var bottom = this.data.pop();
-    this.length--;
-
-    if (this.length > 0) {
-        this.data[0] = bottom;
-        this._down(0);
-    }
-
-    return top;
-};
-
-TinyQueue.prototype.peek = function peek () {
-    return this.data[0];
-};
-
-TinyQueue.prototype._up = function _up (pos) {
-    var ref = this;
-        var data = ref.data;
-        var compare = ref.compare;
-    var item = data[pos];
-
-    while (pos > 0) {
-        var parent = (pos - 1) >> 1;
-        var current = data[parent];
-        if (compare(item, current) >= 0) { break; }
-        data[pos] = current;
-        pos = parent;
-    }
-
-    data[pos] = item;
-};
-
-TinyQueue.prototype._down = function _down (pos) {
-    var ref = this;
-        var data = ref.data;
-        var compare = ref.compare;
-    var halfLength = this.length >> 1;
-    var item = data[pos];
-
-    while (pos < halfLength) {
-        var left = (pos << 1) + 1;
-        var best = data[left];
-        var right = left + 1;
-
-        if (right < this.length && compare(data[right], best) < 0) {
-            left = right;
-            best = data[right];
-        }
-        if (compare(best, item) >= 0) { break; }
-
-        data[pos] = best;
-        pos = left;
-    }
-
-    data[pos] = item;
-};
-
-function defaultCompare(a, b) {
-    return a < b ? -1 : a > b ? 1 : 0;
-}
-
-return TinyQueue;
-
-}));
-
-},{}],16:[function(require,module,exports){
-/**
- * Takes coordinates and properties (optional) and returns a new {@link Point} feature.
- *
- * @module turf/point
- * @category helper
- * @param {number} longitude position west to east in decimal degrees
- * @param {number} latitude position south to north in decimal degrees
- * @param {Object} properties an Object that is used as the {@link Feature}'s
- * properties
- * @return {Point} a Point feature
- * @example
- * var pt1 = turf.point([-75.343, 39.984]);
- *
- * //=pt1
- */
-var isArray = Array.isArray || function(arg) {
-  return Object.prototype.toString.call(arg) === '[object Array]';
-};
-module.exports = function(coordinates, properties) {
-  if (!isArray(coordinates)) throw new Error('Coordinates must be an array');
-  if (coordinates.length < 2) throw new Error('Coordinates must be at least 2 numbers long');
-  return {
-    type: "Feature",
-    geometry: {
-      type: "Point",
-      coordinates: coordinates
-    },
-    properties: properties || {}
-  };
-};
-
-},{}]},{},[1]);
+},{"./compactor":8,"./dijkstra":9,"./preprocessor":10,"./round-coord":11}]},{},[])("geojson-path-finder")
+});

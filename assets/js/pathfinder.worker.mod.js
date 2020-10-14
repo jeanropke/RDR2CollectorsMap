@@ -1,4 +1,4 @@
-var GeoJSONPathFinder = require('geojson-path-finder')
+importScripts('geojson-path-finder.js')  // GeoJSONPathFinder global
 
 class WorkerLatLng {
 	constructor(lat, lng) {

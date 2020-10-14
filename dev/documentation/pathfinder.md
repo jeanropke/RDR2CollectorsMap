@@ -1,11 +1,9 @@
-How to (re)create that one(?) pathfinder.* file(s)?
+## How to (re)create those artifacts?
+### Preparation of Node modules for use in browsers
 
-* files
-    * pathfinder.main.js is the source for direct loading
-    * pathfinder.worker.mod.js is source code that needs converting
-* *.mod.js is/are programmed in/for/with Node
-  * and the tool browserify is used to convert those to a browser loadable file
-  * at the moment that file is actually loaded in web worker
+* currently only one Node module is used by the pathfinder code: geojson-path-finder
+* the tool browserify is used to create a browser loadable file from Node modules
+    * current form of use: turn all module exports into browser globals
 * browserify bridges the gap between Node and browser; some issues are:
     * globals like “window”
     * npm used to install Node modules, i.e. dependencies
@@ -58,4 +56,6 @@ How to (re)create that one(?) pathfinder.* file(s)?
                 * I would like an option to complain at least
                 * check back with git to see if npm did change it and consider investigating
     * with the packages installed...
-        * `npx browserify pathfinder.worker.mod.js > pathfinder.worker.js`
+        * `npx browserify --require geojson-path-finder --standalone GeoJSONPathFinder --outfile geojson-path-finder.js`
+        * which means: loading geojson-path-finder.js in the browser ...
+        * ... is like `global.GeoJSONPathFinder = require('geojson-path-finder')` in Node
