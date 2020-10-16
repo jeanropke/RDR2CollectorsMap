@@ -62,7 +62,7 @@ class Menu {
       .replace('{max}', max));
 
     $('#item-counter-percentage').text(Language.get('menu.collection_counter_percentage')
-      .replace('{count}', (count / max * 100).toFixed(2)));
+      .replace('{count}', (max ? (count / max * 100) : 0).toFixed(2)));
 
     $('#items-value').text(`$${Collection.totalValue().toFixed(2)}`);
 
