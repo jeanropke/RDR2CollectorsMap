@@ -408,7 +408,6 @@
     "alerts.feature_not_supported": "Deze optie wordt niet ondersteund door je browser.",
     "alerts.nothing_to_export": "Er was niets om te exporteren.",
     "menu.enable_inventory_menu_update": "Menuinstellingen werken de inventaris bij",
-    "menu.reset_button_updates_inventory": "Collectieherstel werkt de inventaris bij",
     "menu.enable_marker_popups": "Markeringpopups inschakelen",
     "menu.user_pins_place_new": "Nieuwe gebruikersmarkering maken",
     "menu.enable_dclick_zoom": "Dubbelklikken om in te zoomen",
