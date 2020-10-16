@@ -228,14 +228,13 @@ class Collection extends BaseCollection {
             collection.items.forEach(i => i.changeAmountWithSideEffects(changeAmount));
             collection.currentMarkers().forEach(marker => {
               if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected) {
-                MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
+                MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, false);
               }
             });
           } else if (etcL.contains('collection-reset')) {
             const collection = $(event.target).propSearchUp('rdoCollection');
             collection.currentMarkers().filter(marker => !marker.canCollect).forEach(marker => {
-              MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata,
-                marker.category, !InventorySettings.resetButtonUpdatesInventory);
+              MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
             });
           } else if (etcL.contains('disable-collected-items')) {
             const collection = $(event.target).propSearchUp('rdoCollection');
@@ -243,8 +242,7 @@ class Collection extends BaseCollection {
               .filter(marker => marker.canCollect && marker.item.amount > 0)
               .forEach(marker => {
                 $(`[data-type=${marker.legacyItemId}] .collectible-text p`).addClass('disabled');
-                MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata,
-                  marker.category, true);
+                MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
               });
           } else {
             return; // event not for “us”

@@ -418,7 +418,7 @@ const MapBase = {
           changeAmount = -1;
         }
       }
-      marker.item && marker.item.changeAmountWithSideEffects(skipInventory && !InventorySettings.isMenuUpdateEnabled ? 0 : changeAmount);
+      marker.item && marker.item.changeAmountWithSideEffects(skipInventory ? 0 : changeAmount);
 
       if (!InventorySettings.isEnabled) {
         if (marker.isCollected && marker.isCurrent) {

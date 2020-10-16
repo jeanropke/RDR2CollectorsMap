@@ -418,7 +418,7 @@ $(document).on('click', '.collectible-wrapper[data-type]', function () {
   const collectible = $(this).data('type');
   const category = $(this).parent().data('type');
 
-  MapBase.removeItemFromMap(Cycles.categories[category], collectible, collectible, category, true);
+  MapBase.removeItemFromMap(Cycles.categories[category], collectible, collectible, category, !InventorySettings.isMenuUpdateEnabled);
 });
 
 $('.menu-toggle').on('click', function () {
