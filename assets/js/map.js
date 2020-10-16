@@ -418,8 +418,7 @@ const MapBase = {
           changeAmount = -1;
         }
       }
-      //! something is messed up, it should work on opposite way
-      marker.item && marker.item.changeAmountWithSideEffects(skipInventory && InventorySettings.isMenuUpdateEnabled ? changeAmount : 0);
+      marker.item && marker.item.changeAmountWithSideEffects(skipInventory && !InventorySettings.isMenuUpdateEnabled ? 0 : changeAmount);
 
       if (!InventorySettings.isEnabled) {
         if (marker.isCollected && marker.isCurrent) {

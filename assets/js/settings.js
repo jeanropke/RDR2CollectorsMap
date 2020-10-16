@@ -180,6 +180,7 @@ Object.entries({
   isEnabled: { default: false },
   isMenuUpdateEnabled: { default: true },
   isPopupsEnabled: { default: true },
+  resetButtonUpdatesInventory: { default: false },
   resetInventoryDaily: { default: false },
   stackSize: { default: 10 },
   flowersSoftStackSize: { default: 10 },

@@ -7,9 +7,11 @@ const Inventory = {
     $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
     $('#inventory-stack').val(InventorySettings.stackSize);
     $('#soft-flowers-inventory-stack').val(InventorySettings.flowersSoftStackSize);
+    $('#reset-collection-updates-inventory').prop("checked", InventorySettings.resetButtonUpdatesInventory);
     $('#auto-enable-sold-items').prop("checked", InventorySettings.autoEnableSoldItems);
     $('#reset-inventory-daily').prop("checked", InventorySettings.resetInventoryDaily);
     $('#enable-additional-inventory-options').prop("checked", InventorySettings.enableAdvancedInventoryOptions);
+
 
     // disable dropdown menu if highlight low amount items is disabled:
     $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);

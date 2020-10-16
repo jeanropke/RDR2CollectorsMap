@@ -549,6 +549,10 @@ $('#enable-inventory-menu-update').on("change", function () {
   InventorySettings.isMenuUpdateEnabled = $("#enable-inventory-menu-update").prop('checked');
 });
 
+$('#reset-collection-updates-inventory').on("change", function () {
+  InventorySettings.resetButtonUpdatesInventory = $('#reset-collection-updates-inventory').prop('checked');
+});
+
 $('#auto-enable-sold-items').on("change", function () {
   InventorySettings.autoEnableSoldItems = $('#auto-enable-sold-items').prop('checked');
 });

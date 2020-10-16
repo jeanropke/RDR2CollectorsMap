@@ -234,7 +234,8 @@ class Collection extends BaseCollection {
           } else if (etcL.contains('collection-reset')) {
             const collection = $(event.target).propSearchUp('rdoCollection');
             collection.currentMarkers().filter(marker => !marker.canCollect).forEach(marker => {
-              MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, false);
+              MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata,
+                marker.category, !InventorySettings.resetButtonUpdatesInventory);
             });
           } else if (etcL.contains('disable-collected-items')) {
             const collection = $(event.target).propSearchUp('rdoCollection');
@@ -242,7 +243,8 @@ class Collection extends BaseCollection {
               .filter(marker => marker.canCollect && marker.item.amount > 0)
               .forEach(marker => {
                 $(`[data-type=${marker.legacyItemId}] .collectible-text p`).addClass('disabled');
-                MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, false);
+                MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata,
+                  marker.category, true);
               });
           } else {
             return; // event not for “us”
