@@ -19,6 +19,21 @@ Object.defineProperty(Array.prototype, 'arrayContains', {
   }
 });
 
+jQuery.fn.firstAncestorOrSelf = function (func) {
+  'use strict';
+  if (this.length !== 1) throw new TypeError('Not implemented (yet?) for selection length != 1.');
+  let node = this[0];
+  while (node) {
+    if (func(node)) return this.pushStack([node]);
+    node = node.parentNode;
+  }
+}
+jQuery.fn.propSearchUp = function (property) {
+  'use strict';
+  const element = this.firstAncestorOrSelf(element => element[property]);
+  return element && element.prop(property);
+}
+
 let searchTerms = [];
 let uniqueSearchMarkers = [];
 
@@ -74,9 +89,8 @@ function init() {
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
   Menu.init();
-  // Item.items (without .markers), Collection.collections, Collection.weekly*
   const lootTables = MapBase.loadLootTable();
-  const itemsCollectionsWeekly = Item.init();
+  const itemsCollectionsWeekly = Item.init(); // Item.items (without .markers), Collection.collections, Collection.weekly*
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.mapInit(); // MapBase.map
   Language.init();
