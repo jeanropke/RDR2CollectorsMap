@@ -1658,6 +1658,29 @@ a.no-style:visited {
     line-height: 28px;
 }
 
-.legendary-price {
+.legendary-properties {
+    line-height: 1.8rem;
+    margin: 10px 0;
+    width: 100%;
+}
+
+/*Legendary animals popup text color*/
+.legendary-spawn-time,
+.legendary-preferred-weather {
+    color: #3abce5;
+}
+
+.legendary-trader-materials,
+.legendary-trader-pelt-materials {
+    color: #ff8d33;
+}
+
+.legendary-trapper-value,
+.legendary-trapper-pelt-value,
+.legendary-trapper-part-value {
     color: #fdc607;
+}
+
+.legendary-sample-value {
+    color: #5de033;
 }

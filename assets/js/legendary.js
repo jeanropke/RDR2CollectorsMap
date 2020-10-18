@@ -83,16 +83,50 @@ class Legendary {
     }));
     this.onMap = this.onMap;
   }
+  getAnimalProperties() {
+    const spawnTime = (() => {
+      const spawnTimes = [].concat.apply([], this.spawn_time);
+      let timeString = `${convertToTime(spawnTimes[0])} - ${convertToTime(spawnTimes[1])}`;
+      if (spawnTimes[2] && spawnTimes[3])
+        timeString += `, ${convertToTime(spawnTimes[2])} - ${convertToTime(spawnTimes[3])}`;
+      return timeString;
+    })();
+
+    return {
+      spawnTime,
+      preferredWeather: `map.weather.${this.preferred_weather}`,
+      traderMaterials: this.trader_materials ? this.trader_materials : Language.get('map.cant_be_picked_up'),
+      traderPeltMaterials: this.trader_pelt_materials,
+      trapperValue: this.trapper_value ? `$${this.trapper_value.toFixed(2)}` : Language.get('map.cant_be_picked_up'),
+      trapperPeltValue: `$${this.trapper_pelt_value.toFixed(2)}`,
+      trapperPartValue: `$${this.trapper_part_value.toFixed(2)}`,
+      sampleValue: `$${this.sample_value.toFixed(2)}`,
+    };
+  }
   popupContent() {
-    const snippet = $(`<div class="handover-wrapper-with-no-influence">
+    const properties = this.getAnimalProperties();
+    const snippet = $(`
+      <div class="handover-wrapper-with-no-influence">
         <h1 data-text="${this.text}"></h1>
-        <p style='font-size: 16px; text-align: center; padding-bottom: 8px;'>${Legendary.notReleased.includes(this.text) ? Language.get('map.generic_not_released') : ''}</p>
-        <p>${Language.get(this.text + '.desc')}</p>
-        <br><p>${Language.get('map.legendary_animal.desc')}</p>
-        <br><p class="legendary-price">${Language.get('map.gus_price')} $${this.gusPrice.toFixed(2)}</p>
-        <button type="button" class="btn btn-info remove-button" data-text="map.remove">
-          </button>
-      </div>`).translate();
+        <p style='font-size: 16px; text-align: center; padding-bottom: 8px;'>
+          ${Legendary.notReleased.includes(this.text) ? Language.get('map.generic_not_released') : ''}
+        </p>
+        <p data-text="${Language.get(this.text + '.desc')}"></p>
+        <br><p data-text="map.legendary_animal.desc"></p>
+        <span class="legendary-properties">
+          <p class="legendary-spawn-time">${Language.get('map.legendary.spawn_time').replace('{spawn_time}', properties.spawnTime)}</p>
+          <p class="legendary-preferred-weather">${Language.get('map.legendary.preferred_weather').replace('{preferred_weather}', Language.get(properties.preferredWeather))}</p>
+          <p class="legendary-trader-materials">${Language.get('map.legendary.trader_materials').replace('{trader_materials}', properties.traderMaterials)}</p>
+          <p class="legendary-trader-pelt-materials">${Language.get('map.legendary.trader_pelt_materials').replace('{trader_pelt_materials}', properties.traderPeltMaterials)}</p>
+          <p class="legendary-trapper-value">${Language.get('map.legendary.trapper_value').replace('{trapper_value}', properties.trapperValue)}</p>
+          <p class="legendary-trapper-pelt-value">${Language.get('map.legendary.trapper_pelt_value').replace('{trapper_pelt_value}', properties.trapperPeltValue)}</p>
+          <p class="legendary-trapper-part-value">${Language.get('map.legendary.trapper_part_value').replace('{trapper_part_value}', properties.trapperPartValue)}</p>
+          <p class="legendary-sample-value">${Language.get('map.legendary.sample_value').replace('{sample_value}', properties.sampleValue)}</p>
+        </span>
+        <button type="button" class="btn btn-info remove-button" data-text="map.remove"></button>
+      </div>`)
+      .translate();
+
     snippet.find('button').on('click', () => this.onMap = false);
     return snippet[0];
   }

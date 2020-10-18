@@ -953,3 +953,10 @@ function linear(value, iMin, iMax, oMin, oMax) {
   }
   return clamp((((value - iMin) / (iMax - iMin)) * (oMax - oMin) + oMin), oMin, oMax);
 }
+
+// converts string 'hours:minutes' to time 12/24 hours
+function convertToTime(hours = '00', minutes = '00') {
+  return Settings.isClock24Hour ?
+    `${hours}:${minutes}` :
+    `${+hours % 12 || 12}:${minutes}${+hours >= 12 ? 'PM' : 'AM'}`;
+}
