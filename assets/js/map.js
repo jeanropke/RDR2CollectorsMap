@@ -18,6 +18,7 @@ const MapBase = {
   requestLoopCancel: false,
   showAllMarkers: false,
   filtersData: [],
+  isPreviewMode: false,
 
   mapInit: function () {
     'use strict';
@@ -215,13 +216,35 @@ const MapBase = {
     Layers.overlaysLayer.addTo(MapBase.map);
   },
 
-  runOncePostLoad: function () {
+  beforeLoad: function () {
+    // Sets the map's default zoom level to anywhere between minZoom and maxZoom.
+    var zoomParam = Number.parseInt(getParameterByName('z'));
+    if (!isNaN(zoomParam) && MapBase.minZoom <= zoomParam && zoomParam <= MapBase.maxZoom) {
+      MapBase.map.setZoom(zoomParam);
+    }
+
+    // Pans the map to a specific coordinate location on the map for default focussing.
+    var flyParam = getParameterByName('ft');
+    if (flyParam) {
+      const latLng = flyParam.split(',');
+      if (latLng.filter(Number).length === 2)
+        MapBase.map.flyTo(latLng);
+    }
+
+    // Temporary hack.
+    const previewParam = getParameterByName('q');
+    if (previewParam) MapBase.isPreviewMode = true;
+  },
+
+  afterLoad: function () {
     'use strict';
     uniqueSearchMarkers = MapBase.markers;
 
     // Preview mode.
     const previewParam = getParameterByName('q');
     if (previewParam) {
+      MapBase.isPreviewMode = true;
+
       $('.menu-toggle').remove();
       $('.top-widget').remove();
       $('.filter-alert').remove();

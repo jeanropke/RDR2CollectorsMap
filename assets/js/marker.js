@@ -176,7 +176,7 @@ class Marker {
       `assets/images/icons/marker_${base}.png`,
       `assets/images/icons/contours/contour_marker_${contour}.png`,
     ];
-    const markerColor = Settings.markerColor;
+    const markerColor = MapBase.isPreviewMode ? 'by_cycle' : Settings.markerColor;
     if (markerColor.startsWith('auto')) {
       const [, normal, dark] = markerColor.split('_');
       return url(MapBase.isDarkMode ? [dark, normal] : [normal, dark]);

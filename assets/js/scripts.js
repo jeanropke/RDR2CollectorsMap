@@ -103,14 +103,19 @@ function init() {
   Inventory.init();
   MapBase.loadFastTravels();
   MapBase.loadFilters();
-  MadamNazar.loadMadamNazar();
   FME.init();
+
+  MapBase.beforeLoad();
+
   const treasures = Treasure.init();
   const legendaries = Legendary.init();
-  Promise.all([cycles, markers]).then(MapBase.runOncePostLoad);
+  Promise.all([cycles, markers]).then(MapBase.afterLoad);
   Routes.init();
   Promise.all([itemsCollectionsWeekly, markers, cycles, treasures, legendaries])
     .then(Loader.resolveMapModelLoaded);
+
+  if (!MapBase.isPreviewMode)
+    MadamNazar.loadMadamNazar();
 
   if (Settings.isMenuOpened) $('.menu-toggle').click();
 
