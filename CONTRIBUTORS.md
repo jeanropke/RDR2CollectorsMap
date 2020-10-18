@@ -25,6 +25,7 @@ These are the people that provided the locations of the different items on the m
 - Possible treasures locations by [IronJeff80](https://github.com/IronJeff80), [Dirty Tyler](https://www.youtube.com/channel/UC3LdKFizyou1RfkkmDUUVsg) and [Dean Nutz](https://www.youtube.com/channel/UCBSYrZQsPndOm-zckXNUItw).
 - Possible weekly collections by [Senexis](https://github.com/Senexis).
 - Madam Nazar location by the [MadamNazar.io API](https://madamnazar.io/).
+- Legendary Animal parts prices by [Senexis](https://github.com/Senexis), adapted to the map by [Michal__d](https://github.com/MichalD96) special thanks to [IronJeff80](https://github.com/IronJeff80) for collected data.
 
 ## Assets credits
 These are the people that provided assets for the map.
