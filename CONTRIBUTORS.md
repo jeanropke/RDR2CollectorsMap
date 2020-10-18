@@ -4,7 +4,7 @@ Lots of thanks to the community for contributing to the menu either by providing
 ## Menu credits
 These are the people that worked on improving the map itself.
 
-- Code optimization and fixes by [MichalD96](https://github.com/MichalD96) and [siemer](https://github.com/siemer).
+- Code optimization and fixes by [Michal__d](https://github.com/MichalD96) and [siemer](https://github.com/siemer).
 - Route generator by [Senexis](https://github.com/Senexis) (basic) and [PakL](https://github.com/PakL) (path finder).
 - Updated menu design by [Senexis](https://github.com/Senexis).
 - Other general contributors:
@@ -34,6 +34,21 @@ These are the people that provided assets for the map.
     * Default tiles by Rockstar Games.
     * Detailed tiles by [RDR2Map](https://rdr2map.com/).
     * Dark tiles by [TDLCTV](https://github.com/TDLCTV).
+    * Black tiles by [AdamNorton](https://github.com/AdamNortonUK).
+
+## Features credits
+These are the people that added new map functionality.
+
+- Displaying in-game clock by [Michal__d](https://github.com/MichalD96).
+- Inventory items value counter by [Michal__d](https://github.com/MichalD96).
+- Advanced options to manage inventory by [Michal__d](https://github.com/MichalD96).
+- Highlighting markers as important by [Michal__d](https://github.com/MichalD96).
+- Highlighting bugged items/ repeated cycles/ weekly set/ random items in menu by [Michal__d](https://github.com/MichalD96).
+- Filtering markers base on special criteria by [Michal__d](https://github.com/MichalD96).
+- Highlighting active night flowers by [Michal__d](https://github.com/MichalD96).
+- Day cycle changer by [Michal__d](https://github.com/MichalD96).
+- Custom user pins by [Senexis](https://github.com/Senexis).
+- Inventory by [Senexis](https://github.com/Senexis).
 
 ## Note to Contributors
 If you are a contributor to the map too and we didn't add you to this file yet, get in contact with us on the [Discord](https://discord.com/invite/HkU6ugT) and we'll add you as soon as we can.
