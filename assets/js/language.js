@@ -62,7 +62,7 @@ const Language = {
     } else if (transKey === 'int.end.link') {
       translation = '</a>';
     } else if (transKey === 'collection') {
-      transKey = `weekly.desc.${Weekly.current.weeklyId}`;
+      transKey = `weekly.desc.${Weekly.current?.weeklyId}`;
     }
 
     translation =
