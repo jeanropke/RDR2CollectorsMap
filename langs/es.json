@@ -1776,9 +1776,14 @@
     "help.nazar_position": "Le permite establecer la posición personalizada de Madam Nazar (tenga en cuenta que este ajuste se restablece cada 24 horas)",
     "map.nazar_custom_location_alert": "La ubicación de Madam Nazar se ha establecido manualmente (la posición puede no ser precisa)",
     "menu.nazar_position_auto": "Automático",
+    "menu.nazar_position_window_rock": "Window Rock",
     "menu.nazar_position_grizzlies East": "Grizzlies Este",
+    "menu.nazar_position_ronaoke_ridge": "Ronaoke Ridge",
     "menu.nazar_position_heartlands_west": "Heartlands Oeste",
     "menu.nazar_position_emerald_ranch": "Rancho Esmeralda",
     "menu.nazar_position_bluewater_marsh": "Pantano de Bluewater",
+    "menu.nazar_position_tall_trees": "Tall Trees",
+    "menu.nazar_position_bolger_glade": "Bolger Glade",
+    "menu.nazar_position_cholla_springs": "Cholla Springs",
     "menu.nazar_position_thieves_landing": "Tierra de ladrones"
 }
