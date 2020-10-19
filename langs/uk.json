@@ -1789,5 +1789,10 @@
     "menu.nazar_position_bolger_glade": "Болджер Глейд",
     "menu.nazar_position_cholla_springs": "Чолла Спрінгз",
     "menu.nazar_position_thieves_landing": "Пристань Розбійників",
-    "menu.nazar_position_plainview": "Плейнв'ю"
+    "menu.nazar_position_plainview": "Плейнв'ю",
+    "map.weather.clear": "Ясна погода",
+    "map.weather.foggy": "Туманна погода",
+    "map.weather.rain": "Дощова погода",
+    "map.weather.any": "Будь-яка погода",
+    "map.cant_be_picked_up": "Цю тварину не можна забрати."
 }

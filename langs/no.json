@@ -278,5 +278,10 @@
     "heirlooms_ivory_hairpin_1.desc": "På et hvitt bord med sjakkbord.",
     "earring_josephine_pearl_1.desc": "Inne i grotta.",
     "weekly.desc.saint_denis_set": "Saint Denis",
-    "map.user_pins.icon.nazar": "Madam Nazar"
+    "menu.settings": "Innstillinger",
+    "menu.export_button": "Eksport",
+    "map.user_pins.icon.nazar": "Madam Nazar",
+    "menu.enable_dclick_zoom": "Dobbelklikk for å forstørre",
+    "menu.clear_important_items": "Fjern viktige markører",
+    "menu.enable_marker_shadows": "Markørskygger aktivert"
 }
