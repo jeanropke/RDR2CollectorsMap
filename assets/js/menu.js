@@ -100,7 +100,7 @@ class Menu {
             enabledCategories.push('fossils_random');
           }
 
-          if (Weekly.current.items.every(item => enabledCategories.includes(item.category)) && !enabledCategories.includes('weekly')) {
+          if (Weekly.current && Weekly.current.items.every(item => enabledCategories.includes(item.category)) && !enabledCategories.includes('weekly')) {
             enabledCategories.push('weekly');
           }
 
@@ -113,7 +113,7 @@ class Menu {
             enabledCategories = enabledCategories.filter(cat => cat !== 'fossils_random');
           }
 
-          if (Weekly.current.items.reduce((acc, item) => acc + +(item.category == category), 0)) {
+          if (Weekly.current && Weekly.current.items.reduce((acc, item) => acc + +(item.category == category), 0)) {
             enabledCategories = enabledCategories.filter(cat => cat !== 'weekly');
           }
 
