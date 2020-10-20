@@ -3,11 +3,6 @@ class Legendary {
 
     const start = Date.now();
 
-    // Legendary animals not yet released.
-    this.notReleased = [
-      'mp_animal_panther_legendary_01', 'mp_animal_panther_legendary_02'
-    ];
-
     this.animals = [];
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
@@ -29,8 +24,6 @@ class Legendary {
     });
     return Loader.promises['animal_legendary'].consumeJson(data => {
       data.forEach(item => {
-        if (this.notReleased.includes(item.text) && !Settings.isDebugEnabled)
-          return;
         this.animals.push(new Legendary(item));
       });
       this.onLanguageChanged();
@@ -50,7 +43,6 @@ class Legendary {
     this.element = $('<div class="collectible-wrapper" data-help="item">')
       .on('click', () => this.onMap = !this.onMap)
       .append($('<p class="collectible">').attr('data-text', this.text))
-      .toggleClass('not-found', Legendary.notReleased.includes(this.text))
       .translate();
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
@@ -108,9 +100,6 @@ class Legendary {
     const snippet = $(`
       <div class="handover-wrapper-with-no-influence">
         <h1 data-text="${this.text}"></h1>
-        <p style='font-size: 16px; text-align: center; padding-bottom: 8px;'>
-          ${Legendary.notReleased.includes(this.text) ? Language.get('map.generic_not_released') : ''}
-        </p>
         <p data-text="${Language.get(this.text + '.desc')}"></p>
         <br><p data-text="map.legendary_animal.desc"></p>
         <span class="legendary-properties">
