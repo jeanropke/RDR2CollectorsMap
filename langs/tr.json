@@ -1754,5 +1754,20 @@
     "menu.nazar_position_bolger_glade": "Bolger Glade",
     "menu.nazar_position_cholla_springs": "Cholla Springs",
     "menu.nazar_position_thieves_landing": "Thieves Landing",
-    "menu.nazar_position_plainview": "Plainview"
+    "menu.nazar_position_plainview": "Plainview",
+    "map.weather.preferred_weather": "Tercih edilen hava durumu: {preferred_weather}",
+    "map.weather.clear": "Açık Hava",
+    "map.weather.storm": "Fırtınalı Hava",
+    "map.weather.foggy": "Sisli Hava",
+    "map.weather.rain": "Yağmurlu Hava",
+    "map.weather.any": "Bir Hava Durumu",
+    "map.legendary.spawn_time": "Önerilen doğma süresi: {spawn_time}",
+    "map.legendary.preferred_weather": "Önerilen hava durumu: {preferred_weather}",
+    "map.legendary.trader_materials": "Tüccar malzemeleri: {trader_materials}",
+    "map.legendary.trader_pelt_materials": "Tüccar post malzemeleri: {trader_pelt_materials}",
+    "map.legendary.trapper_value": "Avcı değeri: {trapper_value}",
+    "map.legendary.trapper_pelt_value": "Avcı post değeri: {trapper_pelt_value}",
+    "map.legendary.trapper_part_value": "Avcı parça değeri: {trapper_part_value}",
+    "map.legendary.sample_value": "Örnek değeri: {sample_value}",
+    "map.cant_be_picked_up": "Bu hayvan taşınamaz."
 }
