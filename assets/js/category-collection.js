@@ -10,19 +10,16 @@ class BaseCollection extends Category {
 class Weekly extends BaseCollection {
   static init() {
     this.allSets = [];
-    this.currentSet = '';
     const allWeeklySets = Loader.promises['weekly_sets'].consumeJson(data => {
       this.allSets = data;
     });
     const currentSet = Loader.promises['weekly'].consumeJson(data => {
-      this.currentSet = data.set.replace(/AWARD_ROLE_COLLECTOR_SET_/, '').toLowerCase() + '_set';
+      this.allSets.current = data.set.replace(/AWARD_ROLE_COLLECTOR_SET_/, '').toLowerCase() + '_set';
     });
 
     return Promise.all([allWeeklySets, currentSet])
       .then(() => {
-        const data = this.allSets;
-        data.current = this.currentSet;
-        this.current = new Weekly(data);
+        this.current = new Weekly(this.allSets);
         this._installSettingsAndEventHandlers();
         console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
       })
