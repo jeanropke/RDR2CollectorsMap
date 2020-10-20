@@ -1789,5 +1789,20 @@
     "menu.nazar_position_bolger_glade": "Болджер Глейд",
     "menu.nazar_position_cholla_springs": "Чолья-Спрингз",
     "menu.nazar_position_thieves_landing": "Пристань разбойников",
-    "menu.nazar_position_plainview": "Плэйнвью"
+    "menu.nazar_position_plainview": "Плэйнвью",
+    "map.weather.preferred_weather": "Предпочитаемая погода: {preferred_weather}",
+    "map.weather.clear": "Ясная погода",
+    "map.weather.storm": "Штормовая погода",
+    "map.weather.foggy": "Туманная погода",
+    "map.weather.rain": "Дождливая погода",
+    "map.weather.any": "Любая погода",
+    "map.legendary.spawn_time": "Предпочитаемое время появление: {spawn_time}",
+    "map.legendary.preferred_weather": "Предпочитаемая погода: {preferred_weather}",
+    "map.legendary.trader_materials": "Торговец, материалов из туши: {trader_materials}",
+    "map.legendary.trader_pelt_materials": "Торговец, материалов из шкуры: {trader_pelt_materials}",
+    "map.legendary.trapper_value": "Охотник, стоимость туши: {trapper_value}",
+    "map.legendary.trapper_pelt_value": "Охотник, стоимость шкуры: {trapper_pelt_value}",
+    "map.legendary.trapper_part_value": "Охотник, стоимость частей: {trapper_part_value}",
+    "map.legendary.sample_value": "Образец, стоимость: {sample_value}",
+    "map.cant_be_picked_up": "Это животное не может быть подобрано."
 }
