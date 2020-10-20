@@ -34,13 +34,13 @@ class Loader {
 
 const urls = [
     'data/items_value.json',
-    'https://pepegapi.jeanropke.net/v2/rdo/weekly',
+    'https://pepegapi.jeanropke.net/v2/rdo/weekly.json',
     'data/weekly_sets.json',
     'data/cycles.json',
     'data/overlays.json',
     'data/items.json',
     'data/fasttravels.json',
-    'https://pepegapi.jeanropke.net/v2/rdo/nazar',
+    'https://pepegapi.jeanropke.net/v2/rdo/nazar.json',
     'data/treasures.json',
     'data/animal_legendary.json',
     'data/loot.json',
