@@ -9,9 +9,9 @@ class BaseCollection extends Category {
 }
 class Weekly extends BaseCollection {
   static init() {
-    this.allSets = [];
-    const allWeeklySets = Loader.promises['weekly_sets'].consumeJson(data => {
-      this.allSets = data;
+    this.allSets = {};
+    const allWeeklySets = Loader.promises['weekly_sets'].consumeJson(({ sets }) => {
+      this.allSets.sets = sets;
     });
     const currentSet = Loader.promises['weekly'].consumeJson(data => {
       this.allSets.current = data.set.replace(/AWARD_ROLE_COLLECTOR_SET_/, '').toLowerCase() + '_set';
