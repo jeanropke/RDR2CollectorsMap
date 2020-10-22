@@ -19,7 +19,7 @@ const MadamNazar = {
   loadMadamNazar: function () {
     Layers.nazarLayer.addTo(MapBase.map);
 
-    const _nazarParam = getParameterByName('nazar') || getParameterByName('cycles')
+    const _nazarParam = getParameterByName('nazar') || getParameterByName('cycles');
     if (_nazarParam && _nazarParam > 0 && _nazarParam <= MadamNazar.possibleLocations.length) {
       MadamNazar.currentLocation = _nazarParam;
       MadamNazar.currentDate = '';
@@ -33,7 +33,10 @@ const MadamNazar = {
         });
         MadamNazar.addMadamNazar();
         console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
-      });
+      })
+        .catch((e) => {
+          console.info('%c[Nazar] Unable to load!', 'color: #FF6969; background: #242424');
+        });
     }
   },
 
