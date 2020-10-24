@@ -77,7 +77,7 @@ class Legendary {
   }
   getAnimalProperties() {
     const spawnTime = (() => {
-      const spawnTimes = [].concat.apply([], this.spawn_time);
+      const spawnTimes = [].concat(...this.spawn_time);
       let timeString = `${convertToTime(spawnTimes[0])} - ${convertToTime(spawnTimes[1])}`;
       if (spawnTimes[2] && spawnTimes[3])
         timeString += `, ${convertToTime(spawnTimes[2])} - ${convertToTime(spawnTimes[3])}`;
@@ -85,14 +85,14 @@ class Legendary {
     })();
 
     return {
-      spawnTime,
-      preferredWeather: `map.weather.${this.preferred_weather}`,
-      traderMaterials: this.trader_materials ? this.trader_materials : Language.get('map.cant_be_picked_up'),
-      traderPeltMaterials: this.trader_pelt_materials,
-      trapperValue: this.trapper_value ? `$${this.trapper_value.toFixed(2)}` : Language.get('map.cant_be_picked_up'),
-      trapperPeltValue: `$${this.trapper_pelt_value.toFixed(2)}`,
-      trapperPartValue: `$${this.trapper_part_value.toFixed(2)}`,
-      sampleValue: `$${this.sample_value.toFixed(2)}`,
+      spawn_time: spawnTime,
+      preferred_weather: Language.get(`map.weather.${this.preferred_weather}`),
+      trader_materials: this.trader_materials ? this.trader_materials : Language.get('map.cant_be_picked_up'),
+      trader_pelt_materials: this.trader_pelt_materials,
+      trapper_value: this.trapper_value ? `$${this.trapper_value.toFixed(2)}` : Language.get('map.cant_be_picked_up'),
+      trapper_pelt_value: `$${this.trapper_pelt_value.toFixed(2)}`,
+      trapper_part_value: `$${this.trapper_part_value.toFixed(2)}`,
+      sample_value: `$${this.sample_value.toFixed(2)}`,
     };
   }
   popupContent() {
@@ -103,18 +103,24 @@ class Legendary {
         <p data-text="${Language.get(this.text + '.desc')}"></p>
         <br><p data-text="map.legendary_animal.desc"></p>
         <span class="legendary-properties">
-          <p class="legendary-spawn-time">${Language.get('map.legendary.spawn_time').replace('{spawn_time}', properties.spawnTime)}</p>
-          <p class="legendary-preferred-weather">${Language.get('map.legendary.preferred_weather').replace('{preferred_weather}', Language.get(properties.preferredWeather))}</p>
-          <p class="legendary-trader-materials">${Language.get('map.legendary.trader_materials').replace('{trader_materials}', properties.traderMaterials)}</p>
-          <p class="legendary-trader-pelt-materials">${Language.get('map.legendary.trader_pelt_materials').replace('{trader_pelt_materials}', properties.traderPeltMaterials)}</p>
-          <p class="legendary-trapper-value">${Language.get('map.legendary.trapper_value').replace('{trapper_value}', properties.trapperValue)}</p>
-          <p class="legendary-trapper-pelt-value">${Language.get('map.legendary.trapper_pelt_value').replace('{trapper_pelt_value}', properties.trapperPeltValue)}</p>
-          <p class="legendary-trapper-part-value">${Language.get('map.legendary.trapper_part_value').replace('{trapper_part_value}', properties.trapperPartValue)}</p>
-          <p class="legendary-sample-value">${Language.get('map.legendary.sample_value').replace('{sample_value}', properties.sampleValue)}</p>
+          <p class="legendary-spawn-time" data-text="map.legendary.spawn_time"></p>
+          <p class="legendary-preferred-weather" data-text="map.legendary.preferred_weather"></p>
+          <p class="legendary-trader-materials" data-text="map.legendary.trader_materials"></p>
+          <p class="legendary-trader-pelt-materials" data-text="map.legendary.trader_pelt_materials"></p>
+          <p class="legendary-trapper-value" data-text="map.legendary.trapper_value"></p>
+          <p class="legendary-trapper-pelt-value" data-text="map.legendary.trapper_pelt_value"></p>
+          <p class="legendary-trapper-part-value" data-text="map.legendary.trapper_part_value"></p>
+          <p class="legendary-sample-value" data-text="map.legendary.sample_value"></p>
         </span>
         <button type="button" class="btn btn-info remove-button" data-text="map.remove"></button>
       </div>`)
       .translate();
+
+    const pElements = $('span > p', snippet);
+    [].forEach.call(pElements, p => {
+      const propertyText = $(p).text().replace(/{([a-z_]+)}/, (full, key) => properties[key]);
+      $(p).text(propertyText);
+    });
 
     snippet.find('button').on('click', () => this.onMap = false);
     return snippet[0];
