@@ -118,7 +118,7 @@ class Legendary {
 
     const pElements = $('span > p', snippet);
     [].forEach.call(pElements, p => {
-      const propertyText = $(p).text().replace(/{([a-z_]+)}/, (full, key) => properties[key]);
+      const propertyText = Language.get($(p).attr('data-text')).replace(/{([a-z_]+)}/, (full, key) => properties[key]);
       $(p).text(propertyText);
     });
 
