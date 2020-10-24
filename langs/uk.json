@@ -56,7 +56,7 @@
     "cups_two_2.desc": "На ящику на нижньому настилі залізничного мосту.",
     "cups_two_3.desc": "На тумбочці.",
     "cups_two_4.desc": "Залізнична платформа, на лавці.",
-    "cups_two_5.desc": "На поверхні вітряка, з видом на місто. Підіймись по драбині.",
+    "cups_two_5.desc": "На вітряку, що на пагорбі над містом. Піднятись драбиною.",
     "cups_two_6.desc": "На бочці наприкінці доків.",
     "cups_three.name": "Три Кружок",
     "cups_three_1.desc": "На кінці возу.",
@@ -1791,8 +1791,10 @@
     "menu.nazar_position_thieves_landing": "Пристань Розбійників",
     "menu.nazar_position_plainview": "Плейнв'ю",
     "map.weather.clear": "Ясна погода",
+    "map.weather.storm": "Штормова погода",
     "map.weather.foggy": "Туманна погода",
     "map.weather.rain": "Дощова погода",
     "map.weather.any": "Будь-яка погода",
+    "map.legendary.sample_value": "Зразок, вартість: {sample_value}",
     "map.cant_be_picked_up": "Цю тварину не можна забрати."
 }
