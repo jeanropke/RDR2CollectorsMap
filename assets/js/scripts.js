@@ -926,7 +926,7 @@ function filterMapMarkers() {
     filterMarkers(weeklyItems);
   }
   else if (Settings.filterType === 'important') {
-    filterMarkers(MapBase.importantItems);
+    filterMarkers(JSON.parse(localStorage.getItem('importantItems')) || []);
   }
   else if (Settings.filterType === 'static') {
     let staticItems = [];
