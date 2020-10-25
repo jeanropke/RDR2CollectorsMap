@@ -125,6 +125,7 @@ class Menu {
         if (!category) {
           MapBase.addMarkers();
           Treasure.onCategoryToggle();
+          Legendary.onCategoryToggle();
           Pins.addToMap();
         } else if (category === 'nazar') {
           MadamNazar.addMadamNazar();
