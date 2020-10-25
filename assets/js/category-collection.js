@@ -110,6 +110,12 @@ class Collection extends BaseCollection {
   static updateMenu() {
     this.collections.forEach(collection => collection.updateMenu());
   }
+  static switchCycle(categoriesArray, cycle) {
+    categoriesArray.forEach(category => {
+      $(`.input-cycle[name=${category}]`).val(cycle);
+      Cycles.categories[category] = cycle;
+    });
+  }
   static _installSettingsAndEventHandlers() {
     SettingProxy.addSetting(Settings, 'sortItemsAlphabetically', { default: false });
     Loader.mapModelLoaded.then(() => {
@@ -130,26 +136,21 @@ class Collection extends BaseCollection {
               case 'swords':
               case 'wands':
               case 'pentacles':
-                $('.input-cycle[name=cups], .input-cycle[name=swords], .input-cycle[name=wands], .input-cycle[name=pentacles]').val($input.val());
-                ['cups', 'swords', 'wands', 'pentacles'].forEach(category => Cycles.categories[category] = +$input.val());
+                this.switchCycle(['cups', 'swords', 'wands', 'pentacles'], +$input.val());
                 break;
               case 'bracelet':
               case 'earring':
               case 'necklace':
               case 'ring':
-                Cycles.categories['jewelry_random'] = +$input.val();
-                $('.input-cycle[name=bracelet], .input-cycle[name=earring], .input-cycle[name=necklace], .input-cycle[name=ring]').val($input.val());
-                ['bracelet', 'earring', 'necklace', 'ring'].forEach(category => Cycles.categories[category] = +$input.val());
+                this.switchCycle(['bracelet', 'earring', 'necklace', 'ring', 'jewelry_random'], +$input.val());
                 break;
               case 'coastal':
               case 'oceanic':
               case 'megafauna':
-                Cycles.categories['fossils_random'] = +$input.val();
-                $('.input-cycle[name=coastal], .input-cycle[name=oceanic], .input-cycle[name=megafauna]').val($input.val());
-                ['coastal', 'oceanic', 'megafauna'].forEach(category => Cycles.categories[category] = +$input.val());
+                this.switchCycle(['coastal', 'oceanic', 'megafauna', 'fossils_random'], +$input.val());
                 break;
               default:
-                Cycles.categories[collection.category] = +$input.val();
+                this.switchCycle([collection.category], +$input.val());
                 break;
             }
             MapBase.addMarkers();
