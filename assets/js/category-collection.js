@@ -127,14 +127,18 @@ class Collection extends BaseCollection {
             event.stopImmediatePropagation();
             Cycles.categories[collection.category] = +$input.val();
             switch (collection.category) {
-              case 'heirloom':
-                Cycles.categories['heirloom_random'] = +$input.val();
+              case 'cups':
+              case 'swords':
+              case 'wands':
+              case 'pentacles':
+                $('.input-cycle[name=cups], .input-cycle[name=swords], .input-cycle[name=wands], .input-cycle[name=pentacles]').val($input.val());
                 break;
               case 'bracelet':
               case 'earring':
               case 'necklace':
               case 'ring':
                 Cycles.categories['jewelry_random'] = +$input.val();
+                $('.input-cycle[name=bracelet], .input-cycle[name=earring], .input-cycle[name=necklace], .input-cycle[name=ring]').val($input.val());
                 break;
               case 'coastal':
               case 'oceanic':
