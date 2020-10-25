@@ -125,13 +125,13 @@ class Collection extends BaseCollection {
           const collection = $input.propSearchUp('rdoCollection');
           if (collection && $input.hasClass('input-cycle')) {
             event.stopImmediatePropagation();
-            Cycles.categories[collection.category] = +$input.val();
             switch (collection.category) {
               case 'cups':
               case 'swords':
               case 'wands':
               case 'pentacles':
                 $('.input-cycle[name=cups], .input-cycle[name=swords], .input-cycle[name=wands], .input-cycle[name=pentacles]').val($input.val());
+                ['cups', 'swords', 'wands', 'pentacles'].forEach(category => Cycles.categories[category] = +$input.val());
                 break;
               case 'bracelet':
               case 'earring':
@@ -139,14 +139,17 @@ class Collection extends BaseCollection {
               case 'ring':
                 Cycles.categories['jewelry_random'] = +$input.val();
                 $('.input-cycle[name=bracelet], .input-cycle[name=earring], .input-cycle[name=necklace], .input-cycle[name=ring]').val($input.val());
+                ['bracelet', 'earring', 'necklace', 'ring'].forEach(category => Cycles.categories[category] = +$input.val());
                 break;
               case 'coastal':
               case 'oceanic':
               case 'megafauna':
                 Cycles.categories['fossils_random'] = +$input.val();
                 $('.input-cycle[name=coastal], .input-cycle[name=oceanic], .input-cycle[name=megafauna]').val($input.val());
+                ['coastal', 'oceanic', 'megafauna'].forEach(category => Cycles.categories[category] = +$input.val());
                 break;
               default:
+                Cycles.categories[collection.category] = +$input.val();
                 break;
             }
             MapBase.addMarkers();
