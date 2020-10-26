@@ -77,11 +77,12 @@ class Legendary {
   }
   getAnimalProperties() {
     const spawnTime = (() => {
+      let timeString = '';
       const spawnTimes = [].concat(...this.spawn_time);
-      let timeString = `${convertToTime(spawnTimes[0])} - ${convertToTime(spawnTimes[1])}`;
-      if (spawnTimes[2] && spawnTimes[3])
-        timeString += `, ${convertToTime(spawnTimes[2])} - ${convertToTime(spawnTimes[3])}`;
-      return timeString;
+      spawnTimes.forEach((time, index) => {
+        timeString += convertToTime(time) + (index % 2 === 0 ? ' - ' : ', ');
+      });
+      return timeString.replace(/,\s$/, '');
     })();
 
     return {
