@@ -493,6 +493,10 @@ $('#pins-place-new').on("click", function () {
   Pins.addPinToCenter();
 });
 
+$('#remove-all-pins').on('click', function () {
+  Pins.removeAllPins();
+});
+
 $('#pins-export').on("click", function () {
   try {
     Pins.exportPins();
@@ -843,6 +847,10 @@ $('#open-clear-routes-modal').on('click', function () {
 
 $('#open-delete-all-settings-modal').on('click', function () {
   $('#delete-all-settings-modal').modal();
+});
+
+$('#open-remove-all-pins-modal').on('click', function () {
+  $('#remove-all-pins-modal').modal();
 });
 
 function formatLootTableLevel(table, level = 0) {

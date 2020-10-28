@@ -317,6 +317,10 @@
         <label data-text="menu.user_pins_place_new">Create new pin now</label>
         <div class="input-action"></div>
       </div>
+      <div id="open-remove-all-pins-modal" class="input-container clickable text-danger" data-help="remove_all_pins">
+        <label data-text="menu.remove_all_pins">Remove all pins</label>
+        <div class="input-action"></div>
+      </div>
       <hr class="menu-divider">
       <div class="input-container" data-help="enable_inventory">
         <label for="enable-inventory" data-text="menu.enable_inventory">Enable inventory</label>
@@ -1090,6 +1094,27 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
           <button id="delete-all-settings" type="button" class="btn btn-danger" data-dismiss="modal"
+            data-text="menu.yes">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="remove-all-pins-modal" tabindex="-1" role="dialog"
+    aria-labelledby="remove-all-pins-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="remove-all-pins-title" data-text="menu.modal_remove_all_pins_title">remove all
+            pins?</h4>
+        </div>
+        <div class="modal-body" data-text="menu.modal_remove_all_pins_body">
+          This will delete all your custom pins. This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.no">No</button>
+          <button id="remove-all-pins" type="button" class="btn btn-danger" data-dismiss="modal"
             data-text="menu.yes">Yes</button>
         </div>
       </div>
