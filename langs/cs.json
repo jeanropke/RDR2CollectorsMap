@@ -1582,5 +1582,17 @@
     "mp_animal_wolf_legendary_01": "Vlk #1 - Emerald",
     "mp_animal_wolf_legendary_02": "Vlk #2 - Onyx",
     "mp_animal_wolf_legendary_03": "Vlk #3 - Moonstone",
-    "menu.nazar_position_tall_trees": "Vysoké stromy"
+    "menu.nazar_position_tall_trees": "Vysoké stromy",
+    "map.weather.preferred_weather": "Preferované počasí: {preferred_weather}",
+    "map.weather.clear": "Jasné počasí",
+    "map.weather.storm": "Bouřlivé počasí",
+    "map.weather.foggy": "Mlžné počasí",
+    "map.weather.rain": "Dešťivé počasí",
+    "map.weather.any": "Jakékoliv počasí",
+    "map.legendary.spawn_time": "Preferovaný čas spawnu: {spawn_time}",
+    "map.legendary.preferred_weather": "Preferované počasí: {preferred_weather}",
+    "map.legendary.trader_materials": "Materiály obchodníka: {trader_materials}",
+    "map.legendary.trapper_value": "Lovecká hodnota: {trapper_value}",
+    "map.legendary.sample_value": "Hodnota vzorku: {sample_value}",
+    "map.cant_be_picked_up": "Toto zvíře nelze zvednout."
 }
