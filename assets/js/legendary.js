@@ -68,13 +68,15 @@ class Legendary {
         })
         .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
     );
-    const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.svg?nocache=${nocache}`;
-    this.marker.addLayer(L.imageOverlay(overlay, [
-      [this.x - this.radius, this.y - this.radius * 2],
-      [this.x + this.radius, this.y + this.radius * 2]
-    ], {
-      opacity: linear(Settings.overlayOpacity, 0, 1, 0.5, 1),
-    }));
+    if (Settings.isLaBgEnabled) {
+      const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.svg?nocache=${nocache}`;
+      this.marker.addLayer(L.imageOverlay(overlay, [
+        [this.x - this.radius, this.y - this.radius * 2],
+        [this.x + this.radius, this.y + this.radius * 2]
+      ], {
+        opacity: linear(Settings.overlayOpacity, 0, 1, 0.5, 1),
+      }));
+    }
     this.onMap = this.onMap;
   }
   getAnimalProperties() {

@@ -129,6 +129,7 @@ function init() {
   $('#enable-marker-popups').prop("checked", Settings.isPopupsEnabled);
   $('#enable-marker-popups-hover').prop("checked", Settings.isPopupsHoverEnabled);
   $('#enable-marker-shadows').prop("checked", Settings.isShadowsEnabled);
+  $('#enable-legendary-backgrounds').prop("checked", Settings.isLaBgEnabled);
   $('#enable-dclick-zoom').prop("checked", Settings.isDoubleClickZoomEnabled);
   $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
@@ -469,6 +470,11 @@ $('#enable-marker-shadows').on("change", function () {
   Treasure.onSettingsChanged();
   Legendary.onSettingsChanged();
   MapBase.addMarkers();
+});
+
+$("#enable-legendary-backgrounds").on("change", function () {
+  Settings.isLaBgEnabled = $("#enable-legendary-backgrounds").prop('checked');
+  Legendary.onSettingsChanged();
 });
 
 $('#enable-dclick-zoom').on("change", function () {

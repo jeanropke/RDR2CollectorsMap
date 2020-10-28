@@ -158,6 +158,7 @@ Object.entries({
   isPopupsHoverEnabled: { default: false },
   isRightClickEnabled: { default: false },
   isShadowsEnabled: { default: true },
+  isLaBgEnabled: { default: true },
   markerOpacity: { default: 1 },
   markerSize: { default: 1 },
   overlayOpacity: { default: 0.5 },

@@ -2009,6 +2009,7 @@
     "map.legendary.trapper_pelt_value": "Trapper pelt value: {trapper_pelt_value}",
     "map.legendary.trapper_part_value": "Trapper part value: {trapper_part_value}",
     "map.legendary.sample_value": "Sample value: {sample_value}",
-    "map.cant_be_picked_up": "This animal can't be picked up."
-
+    "map.cant_be_picked_up": "This animal can't be picked up.",
+    "menu.enable_legendary_backgrounds": "Legendary Animal backgrounds enabled",
+    "help.enable_legendary_backgrounds": "Allows you enable or disable the animal icon backgrounds in the yellow circles on the map."
 }
