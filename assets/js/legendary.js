@@ -11,10 +11,11 @@ class Legendary {
     pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
     pane.style.pointerEvents = 'none';
     this.context = $('.menu-hidden[data-type=legendary_animals]');
-    this.crossIcon = L.icon({
+    this.spawnIcon = L.icon({
       iconUrl: './assets/images/icons/legendary_animals2.png',
       iconSize: [16, 16],
       iconAnchor: [8, 8],
+      opacity: 0.75,
     });
     this.onSettingsChanged();
     $('.menu-hidden[data-type="legendary_animals"] > *:first-child a').click(e => {
@@ -59,10 +60,11 @@ class Legendary {
         radius: this.radius,
       })
       .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
-    this.locations.forEach(cross =>
-      this.marker.addLayer(L.marker([cross.x, cross.y], {
-          icon: Legendary.crossIcon,
+    this.locations.forEach(point =>
+      this.marker.addLayer(L.marker([point.x, point.y], {
+          icon: Legendary.spawnIcon,
           pane: 'animalX',
+          opacity: .8,
         })
         .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
     );
