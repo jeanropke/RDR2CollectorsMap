@@ -12,7 +12,7 @@ class Legendary {
     pane.style.pointerEvents = 'none';
     this.context = $('.menu-hidden[data-type=legendary_animals]');
     this.spawnIcon = L.icon({
-      iconUrl: './assets/images/icons/legendary_animals2.png',
+      iconUrl: './assets/images/la_cross.png',
       iconSize: [16, 16],
       iconAnchor: [8, 8],
       opacity: 0.75,
