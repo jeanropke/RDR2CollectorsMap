@@ -1348,6 +1348,10 @@
     "map.user_pins.icon.treasure": "Hazine",
     "map.user_pins.icon.camp": "Kamp",
     "map.user_pins.icon.harrietum": "Harrietum Officinalis",
+    "menu.remove_all_pins": "Tüm pimleri kaldır",
+    "help.remove_all_pins": "Kullanıcı tarafından oluşturulan tüm pimleri kaldırır.",
+    "menu.modal_remove_all_pins_title": "Tüm pimler kaldırılsın mı?",
+    "menu.modal_remove_all_pins_body": "Özel pimlerinizin tümünü siler. Bu işlem geri alınamaz.",
     "menu.clear_custom_routes": "Özel rotayı sil",
     "menu.clear_markers": "İşaretçileri şimdi sıfırla",
     "menu.information_links": "Bağlantılar/Bilgi",
@@ -1769,5 +1773,7 @@
     "map.legendary.trapper_pelt_value": "Avcı post değeri: {trapper_pelt_value}",
     "map.legendary.trapper_part_value": "Avcı parça değeri: {trapper_part_value}",
     "map.legendary.sample_value": "Örnek değeri: {sample_value}",
-    "map.cant_be_picked_up": "Bu hayvan taşınamaz."
+    "map.cant_be_picked_up": "Bu hayvan taşınamaz.",
+    "menu.enable_legendary_backgrounds": "Legendary Animal arka planları açık",
+    "help.enable_legendary_backgrounds": "Haritadaki sarı yuvarlakların içindeki hayvan simgesi arka planlarını açıp kapatmanızı sağlar."
 }
