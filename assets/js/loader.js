@@ -22,7 +22,7 @@ class Loader {
     constructor(name, url, customNoCache = null) {
         const queryString = {};
         if (!url.startsWith('http')) queryString.nocache = customNoCache || nocache;
-        if (url.startsWith('http') && !!customNoCache) queryString.nocache = customNoCache;
+        else queryString.nocache = customNoCache || new Date(Date.now() - 21600000).toISOUTCDateString();
         if (['cycles'].includes(name)) queryString.date = customNoCache || new Date().toISOUTCDateString();
         this._json = $.getJSON(url, queryString);
     }
