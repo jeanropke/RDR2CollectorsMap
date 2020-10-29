@@ -4,6 +4,7 @@ Object.defineProperty(Date.prototype, 'toISOUTCDateString', {
 
 class Loader {
     static init(urls) {
+        this.urls = urls;
         this.promises = {};
         urls.forEach(url => {
             const name = url.split('/').pop().split('.', 1)[0];
@@ -18,10 +19,11 @@ class Loader {
         */
         this.mapModelLoaded = new Promise(resolve => this.resolveMapModelLoaded = resolve);
     }
-    constructor(name, url) {
+    constructor(name, url, customNoCache = null) {
         const queryString = {};
-        if (!url.startsWith('http')) queryString.nocache = nocache;
-        if (['cycles'].includes(name)) queryString.date = new Date().toISOUTCDateString();
+        if (!url.startsWith('http')) queryString.nocache = customNoCache || nocache;
+        if (url.startsWith('http') && !!customNoCache) queryString.nocache = customNoCache;
+        if (['cycles'].includes(name)) queryString.date = customNoCache || new Date().toISOUTCDateString();
         this._json = $.getJSON(url, queryString);
     }
     // allow garbage collection of loaded data after use
@@ -29,6 +31,11 @@ class Loader {
         const json = this._json;
         delete this._json;
         return json.then(...args);
+    }
+    static reloadData(name) {
+        delete this.promises[name];
+        const url = this.urls.find(url => url.split('/').pop().split('.', 1)[0] === name);
+        this.promises[name] = new Loader(name, url, Date.now());
     }
 }
 
