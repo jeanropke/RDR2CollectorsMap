@@ -1732,5 +1732,20 @@
     "menu.nazar_position_bolger_glade": "Bolger Glade",
     "menu.nazar_position_cholla_springs": "Cholla Springs",
     "menu.nazar_position_thieves_landing": "Thieves Landing",
-    "menu.nazar_position_plainview": "Plainview"
+    "menu.nazar_position_plainview": "Plainview",
+    "map.weather.preferred_weather": "Preferowana pogoda: {preferred_weather}",
+    "map.weather.clear": "Ładna pogoda",
+    "map.weather.storm": "Burzowa pogoda",
+    "map.weather.foggy": "Mglistna pogoda",
+    "map.weather.rain": "Deszczowa pogoda",
+    "map.weather.any": "Dowolna pogoda",
+    "map.legendary.spawn_time": "Preferowana pora dnia: {spawn_time}",
+    "map.legendary.preferred_weather": "Preferowana pogoda: {preferred_weather}",
+    "map.legendary.trader_materials": "Materiały handlowca: {trader_materials}",
+    "map.legendary.trader_pelt_materials": "Materiały handlowca - futro: {trader_pelt_materials}",
+    "map.legendary.trapper_value": "Cena trapera: {trapper_value}",
+    "map.legendary.trapper_pelt_value": "Cena trapera - futro: {trapper_pelt_value}",
+    "map.legendary.trapper_part_value": "Cena trapera - inne części: {trapper_part_value}",
+    "map.legendary.sample_value": "Wartość próbki: {sample_value}",
+    "map.cant_be_picked_up": "Tego zwierzęcia nie można podnieść."
 }
