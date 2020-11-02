@@ -1171,7 +1171,7 @@ a.no-style:visited {
     background: #000 !important;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
 
     .top-widget-menu-opened,
     .fme-menu-opened {
@@ -1207,7 +1207,7 @@ a.no-style:visited {
     }
 }
 
-@media (min-width: 801px) {
+@media (min-width: 769px) {
     .side-menu {
         width: 400px;
         left: -400px;
@@ -1531,7 +1531,7 @@ a.no-style:visited {
     display: block;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     #fme-container {
         right: 50px;
     }
@@ -1557,7 +1557,7 @@ a.no-style:visited {
     }
 }
 
-@media (min-width: 801px) {
+@media (min-width: 769px) {
 
     .settings-container .input-container:not(.disabled):after,
     .side-menu .menu-option:after,
