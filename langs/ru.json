@@ -1809,6 +1809,6 @@
     "map.legendary.trapper_part_value": "Охотник, стоимость частей: {trapper_part_value}",
     "map.legendary.sample_value": "Образец, стоимость: {sample_value}",
     "map.cant_be_picked_up": "Это животное не может быть подобрано.",
-    "menu.enable_legendary_backgrounds": "Включить фон с легенд. животным",
-    "help.enable_legendary_backgrounds": "Позволяет включить или отключить фон с иконкой животного для желтых кругов на карте."
+    "menu.enable_legendary_backgrounds": "Фоны легендарных животных включены",
+    "help.enable_legendary_backgrounds": "Позволяет включить или отключить фон с иконкой легендарного животного для желтых кругов на карте."
 }
