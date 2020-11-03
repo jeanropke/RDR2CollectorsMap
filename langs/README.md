@@ -12,6 +12,7 @@ english (en-en.json)
   - Senexis
   - Kaffe97
   - yeradd12
+  - Michal__d
 
 german (de-de.json)
   - flameango
