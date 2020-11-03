@@ -1793,5 +1793,7 @@
     "map.legendary.trapper_pelt_value": "捕兽人毛皮价值：{trapper_pelt_value}",
     "map.legendary.trapper_part_value": "捕兽人动物器官价值：{trapper_part_value}",
     "map.legendary.sample_value": "样本价值：{sample_value}",
-    "map.cant_be_picked_up": "这只动物不能被扛起。"
+    "map.cant_be_picked_up": "这只动物不能被扛起。",
+    "menu.enable_legendary_backgrounds": "启用传说动物背景",
+    "help.enable_legendary_backgrounds": "允许您在地图上的黄色圆圈中启用或禁用动物图标背景。"
 }
