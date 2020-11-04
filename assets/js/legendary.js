@@ -29,6 +29,7 @@ class Legendary {
       });
       this.onLanguageChanged();
       console.info(`%c[Legendary animals] Loaded in ${Date.now() - start}ms!`, 'color: #bada55; background: #242424');
+      this.checkSpawnTime();
     });
   }
   static onLanguageChanged() {
@@ -98,6 +99,7 @@ class Legendary {
       trapper_pelt_value: `$${this.trapper_pelt_value.toFixed(2)}`,
       trapper_part_value: `$${this.trapper_part_value.toFixed(2)}`,
       sample_value: `$${this.sample_value.toFixed(2)}`,
+      animal_category: this.animal_category,
     };
   }
   popupContent() {
@@ -117,7 +119,8 @@ class Legendary {
           <p class="legendary-trapper-part-value" data-text="map.legendary.trapper_part_value"></p>
           <p class="legendary-sample-value" data-text="map.legendary.sample_value"></p>
         </span>
-        <button type="button" class="btn btn-info remove-button" data-text="map.remove"></button>
+        <button type="button" class="btn btn-info remove-button remove-animal-category" data-text="map.remove.animal_category"></button>
+        <button type="button" class="btn btn-info remove-button remove-animal" data-text="map.remove"></button>
       </div>`)
       .translate();
 
@@ -127,8 +130,41 @@ class Legendary {
       $(p).text(propertyText);
     });
 
-    snippet.find('button').on('click', () => this.onMap = false);
+    snippet.find('button.remove-animal-category').on('click', () => {
+      localStorage.setItem(`rdr2collector:Legendaries_category_time_${properties.animal_category}`, Date.now() + 259200000); // 259200000 ms = 72 hours
+      Legendary.toggleAnimalCategory(properties.animal_category, false);
+    });
+
+    snippet.find('button.remove-animal').on('click', () => this.onMap = false);
+
     return snippet[0];
+  }
+  static toggleAnimalCategory(category, show) {
+    Legendary.animals.forEach(animal => {
+      const _prop = animal.getAnimalProperties();
+      if (_prop.animal_category === category)
+        animal.onMap = show;
+    });
+  }
+  static checkSpawnTime() {
+    const animalCategories = new Set();
+    Legendary.animals.forEach(animal => {
+      const _prop = animal.getAnimalProperties();
+      animalCategories.add(_prop.animal_category);
+    });
+
+    setInterval(() => {
+      animalCategories.forEach(category => {
+        const key = `rdr2collector:Legendaries_category_time_${category}`;
+        if (!(key in localStorage)) return;
+
+        const time = localStorage.getItem(key);
+        if (time <= Date.now()) {
+          delete localStorage[key];
+          Legendary.toggleAnimalCategory(category, true);
+        }
+      });
+    }, 10000);
   }
   set onMap(state) {
     if (state) {

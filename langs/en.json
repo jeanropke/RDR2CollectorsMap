@@ -2011,5 +2011,7 @@
     "map.legendary.sample_value": "Sample value: {sample_value}",
     "map.cant_be_picked_up": "This animal can't be picked up.",
     "menu.enable_legendary_backgrounds": "Legendary Animal backgrounds enabled",
-    "help.enable_legendary_backgrounds": "Allows you enable or disable the animal icon backgrounds in the yellow circles on the map."
+    "help.enable_legendary_backgrounds": "Allows you enable or disable the animal icon backgrounds in the yellow circles on the map.",
+    "map.sightseeing.hidden": "Hidden Spot",
+    "map.remove.animal_category": "Remove all animals from this category for 72 hours"
 }
