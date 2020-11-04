@@ -1335,6 +1335,7 @@
     "map.user_pins.icon.nazar": "娜札女士",
     "map.user_pins.icon.treasure": "寶藏",
     "map.user_pins.icon.camp": "營地",
+    "menu.remove_all_pins": "移除所有標記",
     "menu.clear_custom_routes": "清除自定義路線",
     "menu.clear_markers": "立即重置標記",
     "menu.information_links": "鏈接/信息",
@@ -1678,5 +1679,6 @@
     "map.legendary.spawn_time": "首選生成時間：{spawn_time}",
     "map.legendary.preferred_weather": "首選天氣：{preferred_weather}",
     "map.legendary.sample_value": "樣本賣價：{sample_value}",
-    "map.cant_be_picked_up": "此動物屍體無法被抬起。"
+    "map.cant_be_picked_up": "此動物屍體無法被抬起。",
+    "menu.enable_legendary_backgrounds": "啟用傳說動物背景圖"
 }

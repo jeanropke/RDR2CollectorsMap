@@ -1810,5 +1810,7 @@
     "map.legendary.sample_value": "Образец, стоимость: {sample_value}",
     "map.cant_be_picked_up": "Это животное не может быть подобрано.",
     "menu.enable_legendary_backgrounds": "Фоны легендарных животных",
-    "help.enable_legendary_backgrounds": "Позволяет включить или отключить фон с изображением легендарного животного в желтых кругах на карте."
+    "help.enable_legendary_backgrounds": "Позволяет включить или отключить фон с изображением легендарного животного в желтых кругах на карте.",
+    "map.sightseeing.hidden": "Скрытое место",
+    "map.remove.animal_category": "Скрыть всех животных из этой категории на 72 часа"
 }
