@@ -91,6 +91,7 @@ class Legendary {
     })();
 
     return {
+      animalSpecies: this.text.replace(/^mp_animal_|_legendary_\d+$/g, ''),
       spawn_time: spawnTime,
       preferred_weather: Language.get(`map.weather.${this.preferred_weather}`),
       trader_materials: this.trader_materials ? this.trader_materials : Language.get('map.cant_be_picked_up'),
@@ -131,37 +132,37 @@ class Legendary {
     });
 
     snippet.find('button.remove-animal-category').on('click', () => {
-      localStorage.setItem(`rdr2collector:Legendaries_category_time_${properties.animal_category}`, Date.now() + 259200000); // 259200000 ms = 72 hours
-      Legendary.toggleAnimalCategory(properties.animal_category, false);
+      localStorage.setItem(`rdr2collector:Legendaries_category_time_${properties.animalSpecies}`, Date.now() + 259200000); // 259200000 ms = 72 hours
+      Legendary.toggleAnimalSpecies(properties.animalSpecies, false);
     });
 
     snippet.find('button.remove-animal').on('click', () => this.onMap = false);
 
     return snippet[0];
   }
-  static toggleAnimalCategory(category, show) {
+  static toggleAnimalSpecies(animalSpecies, show) {
     Legendary.animals.forEach(animal => {
       const _prop = animal.getAnimalProperties();
-      if (_prop.animal_category === category)
+      if (_prop.animalSpecies === animalSpecies)
         animal.onMap = show;
     });
   }
   static checkSpawnTime() {
-    const animalCategories = new Set();
+    const animalSpeciesSet = new Set();
     Legendary.animals.forEach(animal => {
       const _prop = animal.getAnimalProperties();
-      animalCategories.add(_prop.animal_category);
+      animalSpeciesSet.add(_prop.animalSpecies);
     });
 
     setInterval(() => {
-      animalCategories.forEach(category => {
-        const key = `rdr2collector:Legendaries_category_time_${category}`;
+      animalSpeciesSet.forEach(animalSpecies => {
+        const key = `rdr2collector:Legendaries_category_time_${animalSpecies}`;
         if (!(key in localStorage)) return;
 
         const time = localStorage.getItem(key);
         if (time <= Date.now()) {
           delete localStorage[key];
-          Legendary.toggleAnimalCategory(category, true);
+          Legendary.toggleAnimalSpecies(animalSpecies, true);
         }
       });
     }, 10000);
