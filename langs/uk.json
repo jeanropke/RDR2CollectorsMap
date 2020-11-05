@@ -1810,5 +1810,7 @@
     "map.legendary.sample_value": "Зразок, вартість: {sample_value}",
     "map.cant_be_picked_up": "Цю тварину не можна забрати.",
     "menu.enable_legendary_backgrounds": "Показувати фони з легендарними тваринами",
-    "help.enable_legendary_backgrounds": "Дозволяє вмикати або вимикати фон з позначкою тварин у жовтих колах на карті."
+    "help.enable_legendary_backgrounds": "Дозволяє вмикати або вимикати фон з позначкою тварин у жовтих колах на карті.",
+    "map.sightseeing.hidden": "Приховане місце",
+    "map.remove.animal_category": "Приховати тварин із цієї категорії на 72 гдини"
 }
