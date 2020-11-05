@@ -908,7 +908,7 @@
     "necklace_rou_pearl.name": "Rou-Perlenkette",
     "necklace_rou_pearl_1.desc": "Im Kamin.",
     "jewelry_random_20_2.desc": "Auf der Insel zwischen einigen Felsen.",
-    "jewelry_random_19_3.desc": "In der Höhle in der Mitte des Statuenkreises.",
+    "jewelry_random_19_3.desc": "An der Stelle, wo das Haus einst stand.",
     "jewelry_random_28_4.desc": "Zwischen einer Gruppe von Bäumen in der Nähe des Bergrückens mit Blick auf das Wasser.",
     "necklace_rou_pearl_5.desc": "Im Grab der Familie \"Fellowes\".",
     "jewelry_random_27_6.desc": "Hinter dem zerstörten Haus.",
@@ -1327,6 +1327,10 @@
     "map.user_pins.icon.treasure": "Schatz",
     "map.user_pins.icon.camp": "Lager",
     "map.user_pins.icon.harrietum": "Harrietum Officinalis",
+    "menu.remove_all_pins": "Entferne alle Markierungen",
+    "help.remove_all_pins": "Entfernt alle vom Benutzer erstellten Markierungen.",
+    "menu.modal_remove_all_pins_title": "Alle Markierungen entfernen?",
+    "menu.modal_remove_all_pins_body": "Das entfernt alle vom Benutzer erstellten Markierungen- Dieser Vorgang kann nicht rückgängig gemacht werden.",
     "menu.clear_custom_routes": "Benutzerdefinierte Route löschen",
     "menu.clear_markers": "Markierungen jetzt zurücksetzen",
     "menu.information_links": "Links/Informationen",
@@ -1728,5 +1732,9 @@
     "map.legendary.trapper_pelt_value": "Trapper-Pelz-Wert: {trapper_pelt_value}",
     "map.legendary.trapper_part_value": "Trapper-Teilwert: {trapper_part_value}",
     "map.legendary.sample_value": "Wert der Probe: {sample_value}",
-    "map.cant_be_picked_up": "Dieses Tier kann nicht aufgehoben werden."
+    "map.cant_be_picked_up": "Dieses Tier kann nicht aufgehoben werden.",
+    "menu.enable_legendary_backgrounds": "Legendäre Tiersymbolhintergründe aktiviert",
+    "help.enable_legendary_backgrounds": "Ermöglicht das Aktivieren oder Inaktivieren der Tiersymbolhintergründe in den gelben Kreisen auf der Karte.",
+    "map.sightseeing.hidden": "Verborgener Ort",
+    "map.remove.animal_category": "Entferne alle Tiere dieser Kategorie für 72 Stunden"
 }
