@@ -1046,6 +1046,8 @@
     "menu.collection_collect_all": "모두 수집",
     "menu.fme.time.starts_in": "{time} 후 시작",
     "menu.fme.time.less_than_a_minute": "1분 이내",
+    "menu.fme.time.minute": "{minutes} 분",
+    "menu.fme.time.minutes": "{minutes} 분",
     "menu.fme.fme_archery": "활쏘기 달인",
     "menu.fme.fme_dead_drop": "배달의 기수",
     "menu.fme.fme_fishing_challenge": "낚시 도전",
@@ -1184,5 +1186,6 @@
     "menu.nazar_position_bluewater_marsh": "블루워터 습지",
     "menu.nazar_position_tall_trees": "톨 트리",
     "menu.nazar_position_thieves_landing": "씨브즈 랜딩",
-    "menu.nazar_position_plainview": "플레인뷰"
+    "menu.nazar_position_plainview": "플레인뷰",
+    "map.sightseeing.hidden": "숨겨진 장소"
 }
