@@ -904,7 +904,7 @@
     "jewelry_random_26_6.desc": "Přední část vysoké dřevěné struktury.",
     "necklace_rou_pearl_1.desc": "Uvnitř komínu.",
     "jewelry_random_20_2.desc": "Na ostrově mezi nějakými kameny.",
-    "jewelry_random_19_3.desc": "Uvnitř jeskyně ve středu kruhu soch.",
+    "jewelry_random_19_3.desc": "V místě, kde dům kdysi stál.",
     "jewelry_random_28_4.desc": "Mezi skupinou na stromech u hřebene s výhledem na vodu.",
     "necklace_rou_pearl_5.desc": "V rodinném hrobě \"Fellowes\".",
     "jewelry_random_27_6.desc": "Na zadní straně zničeného domu.",
@@ -1616,5 +1616,9 @@
     "map.legendary.trader_materials": "Materiály obchodníka: {trader_materials}",
     "map.legendary.trapper_value": "Lovecká hodnota: {trapper_value}",
     "map.legendary.sample_value": "Hodnota vzorku: {sample_value}",
-    "map.cant_be_picked_up": "Toto zvíře nelze zvednout."
+    "map.cant_be_picked_up": "Toto zvíře nelze zvednout.",
+    "menu.enable_legendary_backgrounds": "Povolit obrázek legendárního zvířete na pozadí",
+    "help.enable_legendary_backgrounds": "Dovoluje zapnout nebo vypnout obrázek legendárního zvířete na pozadí žlutého kruhu na mapě.",
+    "map.sightseeing.hidden": "Skryté místo",
+    "map.remove.animal_category": "Odstranit všechna zvířata z této kategorie po dobu 72 hodin"
 }
