@@ -1079,6 +1079,7 @@
     "menu.collectible_fossils_common": "화석 - 해안 화석",
     "menu.collectible_fossils_rare": "화석 - 거대 동물 화석",
     "menu.collectible_fossils_uncommon": "화석 - 해양 화석",
+    "map.view_loot": "획득 확률",
     "menu.filter_type.naturalist": "박물학자",
     "menu.filter_type.weekly_set": "주간 세트",
     "menu.filter_type.important_items": "중요한 항목",
