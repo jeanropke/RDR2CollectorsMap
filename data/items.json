@@ -306,7 +306,7 @@
         ],
         "3": [
             { "text": "heirlooms_boar_bristle_brush", "height": 0, "tool": 0, "lat": -101.1255, "lng": 43.5203, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1485s" },
-            { "text": "heirlooms_boxwood_comb", "height": 0, "tool": 0, "lat": -51.8241, "lng": 106.2154, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1340s" },
+            { "text": "heirlooms_boxwood_comb", "height": 1, "tool": 0, "lat": -51.8241, "lng": 106.2154, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1340s" },
             { "text": "heirlooms_carved_wooden", "height": 0, "tool": 1, "lat": -55.5959, "lng": 101.8395, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1372s" },
             { "text": "heirlooms_cherrywood_comb", "height": 0, "tool": 0, "lat": -90.9872, "lng": 127.1091, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1241s" },
             { "text": "heirlooms_ebony_hairbrush", "height": 0, "tool": 0, "lat": -78.84, "lng": 128.8823, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1274s" },
@@ -359,7 +359,7 @@
             { "text": "heirlooms_boar_bristle_brush", "height": 0, "tool": 0, "lat": -50.2034, "lng": 106.7484, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2936s" },
             { "text": "heirlooms_boxwood_comb", "height": 0, "tool": 0, "lat": -82.6878, "lng": 155.0959, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2764s" },
             { "text": "heirlooms_carved_wooden", "height": 0, "tool": 2, "lat": -84.6803, "lng": 147.4572, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2832s" },
-            { "text": "heirlooms_cherrywood_comb", "height": 0, "tool": 0, "lat": -51.5552, "lng": 106.242, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2901s" },
+            { "text": "heirlooms_cherrywood_comb", "height": 1, "tool": 0, "lat": -51.5552, "lng": 106.242, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2901s" },
             { "text": "heirlooms_ebony_hairbrush", "height": 0, "tool": 0, "lat": -80.0571, "lng": 148.6429, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=2730s" },
             { "text": "heirlooms_ebony_hairpin", "height": 0, "tool": 2, "lat": -106.3063, "lng": 36.9816, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=3030s" },
             { "text": "heirlooms_goat_hair_brush", "height": 0, "tool": 0, "lat": -109.3317, "lng": 23.9977, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=3068s" },
