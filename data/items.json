@@ -17,7 +17,7 @@
         "2": [
             { "text": "arrowhead_random_0", "height": 0, "tool": 1, "lat": -103.4881, "lng": 90.6806, "video": "https://www.youtube.com/watch?v=RMOPbWHhOGM&t=888s" },
             { "text": "arrowhead_random_1", "height": 0, "tool": 1, "lat": -113.6651, "lng": 38.008, "video": "https://www.youtube.com/watch?v=RMOPbWHhOGM&t=973s" },
-            { "text": "arrowhead_random_2", "height": 0, "tool": 2, "lat": -120.8225, "lng": 63.33, "video": "https://www.youtube.com/watch?v=RMOPbWHhOGM&t=510s" },
+            { "text": "arrowhead_random_2", "height": 0, "tool": 1, "lat": -120.8225, "lng": 63.33, "video": "https://www.youtube.com/watch?v=RMOPbWHhOGM&t=510s" },
             { "text": "arrowhead_random_3", "height": 0, "tool": 2, "lat": -28.627, "lng": 155.4711, "video": "https://www.youtube.com/watch?v=RMOPbWHhOGM&t=510s" },
             { "text": "arrowhead_random_4", "height": -1, "tool": 1, "lat": -36.954, "lng": 116.3295, "video": "https://www.youtube.com/watch?v=RMOPbWHhOGM&t=706s" },
             { "text": "arrowhead_random_5", "height": 0, "tool": 1, "lat": -49.818, "lng": 152.904, "video": "https://www.youtube.com/watch?v=RMOPbWHhOGM&t=547s" },
