@@ -133,7 +133,7 @@ async function updateReadme() {
       result += '\n';
     });
 
-    fs.writeFileSync('../langs/README.md', result);
+    fs.writeFileSync('langs/README.md', result);
 
     console.log('README updated.');
   } catch (error) {
