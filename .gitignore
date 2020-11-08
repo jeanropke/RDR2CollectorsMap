@@ -1,6 +1,13 @@
-.idea/
-node_modules/
+_long/
+_short/
 .DS_Store
-assets/js/salesman.js
-rdo/
+.idea/
 desktop.ini
+node_modules/
+
+# Used to make development easier.
+rdo/
+
+# Our credentials, don't bother removing this, you won't get our stuff. ;-)
+.env
+crowdin.yml
