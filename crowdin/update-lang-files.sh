@@ -1,8 +1,8 @@
 # Updates all language files from our Crowdin project.
 # Requires a valid crowdin.ymt file to be present in the root.
 
+cd ..
 {
-  cd ..
   git pull
   crowdin download
   git add .

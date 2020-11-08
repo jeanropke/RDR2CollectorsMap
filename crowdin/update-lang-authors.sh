@@ -1,8 +1,8 @@
 # Updates langs/README.md with the latest members, ordered alphabetically.
 # Requires crowdin/.env to be setup correctly with the details in this folder.
 
+cd ..
 {
-  cd ..
   git pull
   node "crowdin/index.js"
   git add .
