@@ -88,7 +88,7 @@ async function getTopMembers() {
           const key = language.name;
           if (!users[key]) users[key] = [];
 
-          users[key].push(item.user.username);
+          users[key].push(`${item.user.username} (${new Intl.NumberFormat('en-US').format(item.translated)} words)`);
           users[key].sort((a, b) => a.localeCompare(b, 'en-US', { 'sensitivity': 'base' }));
         });
       });
@@ -123,7 +123,7 @@ async function updateReadme() {
     let result = `${header}\n${body}\n\n`;
 
     Object.keys(members).forEach(function (key) {
-      result += `${key}:\n`;
+      result += `**${key}:**\n`;
 
       const users = members[key];
       users.forEach(user => {
