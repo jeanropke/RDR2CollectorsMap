@@ -81,6 +81,9 @@ async function getTopMembers() {
           // I don't really count as translator.
           if (item.user.id === '14157933') return;
 
+          // Jean only really translates Portuguese.
+          if (item.user.id === '12829574' && language.id !== 'pt-BR') return;
+
           // Some people only vote, require at least some activity before being counted.
           // NOTE: the unit is words (ln 27), so this currently requires at least 10 translated words.
           if (item.translated < 10) return;
@@ -88,7 +91,7 @@ async function getTopMembers() {
           const key = language.name;
           if (!users[key]) users[key] = [];
 
-          users[key].push(`${item.user.username} (${new Intl.NumberFormat('en-US').format(item.translated)} words)`);
+          users[key].push(`**${item.user.username}** (${new Intl.NumberFormat('en-US').format(item.translated)} words)`);
           users[key].sort((a, b) => a.localeCompare(b, 'en-US', { 'sensitivity': 'base' }));
         });
       });
@@ -117,13 +120,19 @@ async function updateReadme() {
       return;
     }
 
-    const header = '# Localisation contributors';
-    const body = `Thanks to the following people for helping translate the project! If you are savvy in a language and feel like you want to help out, we'd greatly appreciate it! You can contribute by translating on our [Crowdin project](${process.env.PROJECT_URL}).`;
+    let result = '';
 
-    let result = `${header}\n${body}\n\n`;
+    result += '# Localisation contributors\n';
+    result += `Thanks to the following people for helping translate the project! If you are savvy in a language and feel like you want to help out, we'd greatly appreciate it! You can contribute by translating on our [Crowdin project](${process.env.PROJECT_URL}).\n\n`;
+
+    result += '## Pre-Crowdin Contributors\n';
+    result += "We'd like to also mention the people that helped translate before the project switched to Crowdin, namely **Asya**, **flameango**, **githb123**, **glaseca**, **Gromino**, **iliggalodin**, **jeanropke**, **Kaffe97**, **Kiddamned**, **Klinorin**, **Korfeeeezy**, **Michal__d**, **MSSatari**, **Nopitch**, **Overnoes**, **pb29**, **qiexia**, **Raffox97**, **Rakmarok**, **rbcunhadesign**, **Senexis**, **sporb**, **Tiax**, **Vitor-Borba72**, **yamazakitouma**, and **yeradd12**.\n\n";
+    
+    result += '## Crowdin Contributors\n';
+    result += 'These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.\n\n';
 
     Object.keys(members).forEach(function (key) {
-      result += `**${key}:**\n`;
+      result += `### ${key}:\n`;
 
       const users = members[key];
       users.forEach(user => {
