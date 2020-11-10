@@ -91,7 +91,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **momc** (529 words)
 
 ### Korean:
-  - **CoolBreeze-13s** (114 words)
+  - **CoolBreeze-13s** (156 words)
   - **nikelhard** (4,892 words)
 
 ### Norwegian:
@@ -178,6 +178,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **snookyyy** (10 words)
 
 ### Turkish:
+  - **atayyu** (74 words)
   - **bariss** (101 words)
   - **KagitmiAdam** (100 words)
   - **Krykl** (11,992 words)
