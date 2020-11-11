@@ -1796,5 +1796,6 @@
     "map.cant_be_picked_up": "这只动物不能被扛起。",
     "menu.enable_legendary_backgrounds": "启用传说动物背景",
     "help.enable_legendary_backgrounds": "允许您在地图上的黄色圆圈中启用或禁用动物图标背景。",
-    "map.sightseeing.hidden": "隐藏点"
+    "map.sightseeing.hidden": "隐藏点",
+    "map.remove.animal_category": "将该类动物从地图上移除72小时"
 }
