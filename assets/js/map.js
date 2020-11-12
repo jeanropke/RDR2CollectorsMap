@@ -573,7 +573,7 @@ const MapBase = {
             popupAnchor: [1 * markerSize, -29 * markerSize],
             html: `
               <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Icon">
-              <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'red'}.png" alt="Background">
+              <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'gray'}.png" alt="Background">
               ${shadow}
             `
           })

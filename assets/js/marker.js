@@ -197,14 +197,14 @@ class Marker {
         cups: 'blue',
         swords: 'blue',
         wands: 'blue',
-        pentacles: 'blue',        
-        
+        pentacles: 'blue',
+
         jewelry_random: 'yellow',
         bracelet: 'yellow',
         necklace: 'yellow',
         ring: 'yellow',
         earring: 'yellow',
-        
+
         heirlooms: 'pink',
 
         random: this.tool === 2 ? 'lightgray' : 'lightgray',
