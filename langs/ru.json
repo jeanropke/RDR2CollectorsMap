@@ -1260,7 +1260,7 @@
     "menu.custom_routes": "Ваш маршрут",
     "menu.import_route": "Загрузить маршрут",
     "menu.export_route": "Сохранить маршрут",
-    "menu.treasures": "Сокровища",
+    "menu.treasures": "Карты сокровищ",
     "routes.exported": "Код маршрута скопирован в буфер.",
     "routes.import_prompt": "Введите код маршрута",
     "routes.empty": "Пустой код маршрута",
