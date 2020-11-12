@@ -19,6 +19,7 @@ const MapBase = {
   showAllMarkers: false,
   filtersData: [],
   isPreviewMode: false,
+  colorOverride: null,
 
   mapInit: function () {
     'use strict';
@@ -217,6 +218,18 @@ const MapBase = {
   },
 
   beforeLoad: function () {
+    // Sets all marker colors to static color.
+    var colorParam = getParameterByName('c');
+    if (colorParam) {
+      const validColors = [
+        'aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple',
+        'darkred', 'gray', 'green', 'lightblue', 'lightdarkred', 'lightgray', 'lightgreen', 'lightorange', 'lightred',
+        'orange', 'pink', 'purple', 'red', 'white', 'yellow'
+      ];
+
+      if (validColors.includes(colorParam)) this.colorOverride = colorParam;
+    }
+
     // Sets the map's default zoom level to anywhere between minZoom and maxZoom.
     var zoomParam = Number.parseInt(getParameterByName('z'));
     if (!isNaN(zoomParam) && MapBase.minZoom <= zoomParam && zoomParam <= MapBase.maxZoom) {
@@ -560,7 +573,7 @@ const MapBase = {
             popupAnchor: [1 * markerSize, -29 * markerSize],
             html: `
               <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Icon">
-              <img class="background" src="./assets/images/icons/marker_gray.png" alt="Background">
+              <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'red'}.png" alt="Background">
               ${shadow}
             `
           })
@@ -590,7 +603,7 @@ const MapBase = {
         popupAnchor: [1 * markerSize, -29 * markerSize],
         html: `
           <img class="icon" src="./assets/images/icons/random.png" alt="Icon">
-          <img class="background" src="./assets/images/icons/marker_darkblue.png" alt="Background">
+          <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'darkblue'}.png" alt="Background">
           ${shadow}
         `
       })

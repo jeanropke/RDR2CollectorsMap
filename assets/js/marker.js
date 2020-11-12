@@ -173,7 +173,7 @@ class Marker {
 
   colorUrls() {
     const url = ([base, contour]) => [
-      `assets/images/icons/marker_${base}.png`,
+      `assets/images/icons/marker_${MapBase.colorOverride || base}.png`,
       `assets/images/icons/contours/contour_marker_${contour}.png`,
     ];
     const markerColor = MapBase.isPreviewMode ? 'by_cycle' : Settings.markerColor;

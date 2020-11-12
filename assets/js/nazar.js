@@ -69,7 +69,7 @@ const MadamNazar = {
         popupAnchor: [1 * markerSize, -29 * markerSize],
         html: `
               <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
-              <img class="background" src="./assets/images/icons/marker_red.png" alt="Background">
+              <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'red'}.png" alt="Background">
               ${shadow}
             `
       })

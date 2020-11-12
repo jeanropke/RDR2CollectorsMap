@@ -36,7 +36,7 @@ class Treasure {
       popupAnchor: [1 * markerSize, -29 * markerSize],
       html: `
         <img class="icon" src="./assets/images/icons/treasure.png" alt="Icon">
-        <img class="background" src="./assets/images/icons/marker_beige.png" alt="Background">
+        <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'beige'}.png" alt="Background">
         ${shadow ? `<img class="shadow" width="${35 * markerSize}" height="${16 * markerSize}"
             src="./assets/images/markers-shadow.png" alt="Shadow">` : ''}
       `
