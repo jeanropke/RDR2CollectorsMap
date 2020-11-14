@@ -22,7 +22,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Muahahas** (51 words)
 
 ### Chinese Simplified:
-  - **akbcd** (253 words)
+  - **akbcd** (267 words)
   - **Approach** (12 words)
   - **BHT256** (7,717 words)
   - **curryguru** (47 words)
