@@ -63,7 +63,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **thecrazystranger** (1,830 words)
   - **thegamer1604** (125 words)
   - **thibaud3109** (68 words)
-  - **YuYusS** (2,174 words)
+  - **YuYusS** (2,364 words)
 
 ### German:
   - **ADRlAN1988** (41 words)
