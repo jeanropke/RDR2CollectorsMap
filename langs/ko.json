@@ -1065,6 +1065,7 @@
     "generic.darkblue": "진한 파랑",
     "menu.reload_map": "지도 다시 불러오기",
     "menu.collection_collect_all": "모두 수집",
+    "menu.fme_display": "유랑 모드 이벤트 표시",
     "menu.fme.time.starts_in": "{time} 후 시작",
     "menu.fme.time.less_than_a_minute": "1분 이내",
     "menu.fme.time.minute": "{minutes}분",
@@ -1211,5 +1212,17 @@
     "menu.nazar_position_tall_trees": "톨 트리",
     "menu.nazar_position_thieves_landing": "씨브즈 랜딩",
     "menu.nazar_position_plainview": "플레인뷰",
-    "map.sightseeing.hidden": "숨겨진 장소"
+    "map.weather.preferred_weather": "날씨: {preferred_weather}",
+    "map.legendary.spawn_time": "스폰 시간대: {spawn_time}",
+    "map.legendary.preferred_weather": "날씨: {preferred_weather}",
+    "map.legendary.trader_materials": "상인 재료: {trader_materials}",
+    "map.legendary.trader_pelt_materials": "상인 가죽 재료: {trader_pelt_materials}",
+    "map.legendary.trapper_value": "판매: {trapper_value}",
+    "map.legendary.trapper_pelt_value": "상인 가죽 판매: {trapper_pelt_value}",
+    "map.legendary.trapper_part_value": "상인 부분 판매: {trapper_part_value}",
+    "map.legendary.sample_value": "표본 판매: {sample_value}",
+    "map.sightseeing.hidden": "숨겨진 장소",
+    "map.remove.animal_category": "해당 카테고리의 동물을 72시간 동안 회색으로 표시합니다.",
+    "map.legendary_animal_cooldown_end_time": "쿨타임 종료: {timer}",
+    "map.reset_animal_timer": "해당 카테고리 동물의 쿨타임을 초기화 합니다."
 }

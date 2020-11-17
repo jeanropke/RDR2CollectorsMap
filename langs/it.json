@@ -1532,5 +1532,9 @@
     "menu.nazar_position_emerald_ranch": "Emerald Ranch",
     "menu.nazar_position_bluewater_marsh": "Bluewater Marsh",
     "menu.nazar_position_cholla_springs": "Cholla Springs",
-    "menu.nazar_position_thieves_landing": "Thieves Landing"
+    "menu.nazar_position_thieves_landing": "Thieves Landing",
+    "map.weather.clear": "Clima sereno",
+    "map.remove.animal_category": "Disattiva tutti gli animali di questa specie per 72 ore",
+    "map.legendary_animal_cooldown_end_time": "Fine tempo di recupero",
+    "map.reset_animal_timer": "Resetta tempo di recupero per tutti gli animali di questa specie"
 }
