@@ -79,7 +79,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (2,578 words)
-  - **Fuzman** (37 words)
+  - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
   - **Jarsha1311** (500 words)
   - **masterflash222** (268 words)
@@ -92,7 +92,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **momc** (529 words)
 
 ### Korean:
-  - **CoolBreeze-13s** (179 words)
+  - **CoolBreeze-13s** (201 words)
   - **nikelhard** (4,892 words)
 
 ### Norwegian:
