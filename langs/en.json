@@ -2013,5 +2013,7 @@
     "menu.enable_legendary_backgrounds": "Legendary Animal backgrounds enabled",
     "help.enable_legendary_backgrounds": "Allows you enable or disable the animal icon backgrounds in the yellow circles on the map.",
     "map.sightseeing.hidden": "Hidden Spot",
-    "map.remove.animal_category": "Remove all animals from this category for 72 hours"
+    "map.remove.animal_category": "Grey out all animals of this species for 72 hours",
+    "map.legendary_animal_cooldown_end_time": "Cooldown end: {timer}",
+    "map.reset_animal_timer":"Reset cooldown time for all animals of this species"
 }

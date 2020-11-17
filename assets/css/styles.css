@@ -1678,3 +1678,8 @@ a.no-style:visited {
 .legendary-sample-value {
     color: #5de033;
 }
+
+.legendary-cooldown-timer {
+    color: #d80419;
+    margin-bottom: 10px;
+}
