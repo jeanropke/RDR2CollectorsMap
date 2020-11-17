@@ -406,6 +406,7 @@ $("#language").on("change", function () {
   Cycles.setLocaleDate();
   MapBase.addMarkers();
   Treasure.onLanguageChanged();
+  Legendary.onLanguageChanged();
 });
 
 $("#marker-opacity").on("change", function () {
