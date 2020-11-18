@@ -60,16 +60,15 @@ class Legendary {
         .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
     }
     this.spawnIcon = L.icon({
-      iconUrl: `./assets/images/icons/animal_footprints/${(this.isGreyedOut ? 'grey/' : '')}footprint_${this.species}.png`,
-      iconSize: [16, 16],
-      iconAnchor: [8, 8],
-      opacity: 0.75,
+      iconUrl: `./assets/images/icons/legendary_animal_heads/blip_mp_${this.species}.png`,
+      iconSize: [16 * Settings.markerSize, 16 * Settings.markerSize],
+      iconAnchor: [8 * Settings.markerSize, 8 * Settings.markerSize],
     });
     this.locations.forEach(point =>
       this.marker.addLayer(L.marker([point.x, point.y], {
           icon: this.spawnIcon,
           pane: 'animalSpawnPoint',
-          opacity: .8,
+          opacity: this.isGreyedOut ? .25 : 1,
         })
         .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
     );

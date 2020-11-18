@@ -418,6 +418,7 @@ $("#marker-size").on("change", function () {
   Settings.markerSize = Number($("#marker-size").val());
   MapBase.addMarkers();
   Treasure.onSettingsChanged();
+  Legendary.onSettingsChanged();
 });
 
 $("#enable-cycle-input").on("change", function () {
