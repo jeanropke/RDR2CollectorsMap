@@ -5,17 +5,8 @@ class Legendary {
     this.animals = [];
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
-
-    const pane = MapBase.map.createPane('animalX');
-    pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
-    pane.style.pointerEvents = 'none';
     this.context = $('.menu-hidden[data-type=legendary_animals]');
-    this.spawnIcon = L.icon({
-      iconUrl: './assets/images/la_cross.png',
-      iconSize: [16, 16],
-      iconAnchor: [8, 8],
-      opacity: 0.75,
-    });
+
     this.onSettingsChanged();
     $('.menu-hidden[data-type="legendary_animals"] > *:first-child a').click(e => {
       e.preventDefault();
@@ -48,24 +39,38 @@ class Legendary {
       .translate();
     this.species = this.text.replace(/^mp_animal_|_legendary_\d+$/g, '');
     this.animalSpeciesKey = `rdr2collector:Legendaries_category_time_${this.species}`;
+    this.addPane();
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
+  }
+  addPane() {
+    const pane = MapBase.map.createPane(`footprint_${this.species}`);
+    pane.style.zIndex = 450; // markers on top of circle, but behind “normal” markers/shadows
+    pane.style.pointerEvents = 'none';
   }
   // auto remove marker? from map, recreate marker, auto add? marker
   reinitMarker() {
     if (this.marker) Legendary.layer.removeLayer(this.marker);
     this.marker = L.layerGroup();
-    this.marker.addLayer(L.circle([this.x, this.y], {
-        color: this.isGreyedOut ? '#c4c4c4': "#fdc607",
-        fillColor: this.isGreyedOut ? '#c4c4c4': "#fdc607",
+    if (Settings.isLaBgEnabled) {
+      this.marker.addLayer(L.circle([this.x, this.y], {
+        color: this.isGreyedOut ? '#c4c4c4' : "#fdc607",
+        fillColor: this.isGreyedOut ? '#c4c4c4' : "#fdc607",
         fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
         radius: this.radius,
       })
-      .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
+        .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
+    }
+    this.spawnIcon = L.icon({
+      iconUrl: `./assets/images/icons/animal_footprints/${(this.isGreyedOut ? 'grey/' : '')}footprint_${this.species}.png`,
+      iconSize: [16, 16],
+      iconAnchor: [8, 8],
+      opacity: 0.75,
+    });
     this.locations.forEach(point =>
       this.marker.addLayer(L.marker([point.x, point.y], {
-          icon: Legendary.spawnIcon,
-          pane: 'animalX',
+          icon: this.spawnIcon,
+          pane: `footprint_${this.species}`,
           opacity: .8,
         })
         .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
