@@ -6,6 +6,9 @@ class Legendary {
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
     this.context = $('.menu-hidden[data-type=legendary_animals]');
+    const pane = MapBase.map.createPane('animalSpawnPoint');
+    pane.style.zIndex = 450; // markers on top of circle, but behind “normal” markers/shadows
+    pane.style.pointerEvents = 'none';
 
     this.onSettingsChanged();
     $('.menu-hidden[data-type="legendary_animals"] > *:first-child a').click(e => {
@@ -13,6 +16,7 @@ class Legendary {
       const showAll = $(e.target).attr('data-text') === 'menu.show_all';
       Legendary.animals.forEach(animal => animal.onMap = showAll);
     });
+
     return Loader.promises['animal_legendary'].consumeJson(data => {
       data.forEach(item => {
         this.animals.push(new Legendary(item));
@@ -39,14 +43,8 @@ class Legendary {
       .translate();
     this.species = this.text.replace(/^mp_animal_|_legendary_\d+$/g, '');
     this.animalSpeciesKey = `rdr2collector:Legendaries_category_time_${this.species}`;
-    this.addPane();
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
-  }
-  addPane() {
-    const pane = MapBase.map.createPane(`footprint_${this.species}`);
-    pane.style.zIndex = 450; // markers on top of circle, but behind “normal” markers/shadows
-    pane.style.pointerEvents = 'none';
   }
   // auto remove marker? from map, recreate marker, auto add? marker
   reinitMarker() {
@@ -70,7 +68,7 @@ class Legendary {
     this.locations.forEach(point =>
       this.marker.addLayer(L.marker([point.x, point.y], {
           icon: this.spawnIcon,
-          pane: `footprint_${this.species}`,
+          pane: 'animalSpawnPoint',
           opacity: .8,
         })
         .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
