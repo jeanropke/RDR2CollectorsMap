@@ -2015,5 +2015,11 @@
     "map.sightseeing.hidden": "Hidden Spot",
     "map.remove.animal_category": "Grey out all animals of this species for 72 hours",
     "map.legendary_animal_cooldown_end_time": "Cooldown end: {timer}",
-    "map.reset_animal_timer":"Reset cooldown time for all animals of this species"
+    "map.reset_animal_timer": "Reset cooldown time for all animals of this species",
+    "help.legendary_marker_type": "Allows you to change legendary animal spawn location icon.",
+    "menu.legendary_animal_marker_type": "Legendary Animal marker type",
+    "menu.legendary_icon_type.paw_prints": "Animal paw prints",
+    "menu.legendary_icon_type.head": "Animal heads",
+    "help.legendary_marker_size": "Allows tou to change scale of legendary animal spawn icon.",
+    "menu.legendary_animal_marker_size": "Legendary Animal marker size"
 }

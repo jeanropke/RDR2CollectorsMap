@@ -59,10 +59,12 @@ class Legendary {
       })
         .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
     }
+    const iconTypePath = ['heads/blip_mp', 'footprints/footprint'][Settings.legendarySpawnIconType];
+    const spawnIconSize = Settings.legendarySpawnIconSize;
     this.spawnIcon = L.icon({
-      iconUrl: `./assets/images/icons/legendary_animal_heads/blip_mp_${this.species}.png`,
-      iconSize: [16 * Settings.markerSize, 16 * Settings.markerSize],
-      iconAnchor: [8 * Settings.markerSize, 8 * Settings.markerSize],
+      iconUrl: `./assets/images/icons/game/animals/legendaries/${iconTypePath}_${this.species}.png?nocache=${nocache}`,
+      iconSize: [16 * spawnIconSize, 16 * spawnIconSize],
+      iconAnchor: [8 * spawnIconSize, 8 * spawnIconSize],
     });
     this.locations.forEach(point =>
       this.marker.addLayer(L.marker([point.x, point.y], {
@@ -70,7 +72,7 @@ class Legendary {
           pane: 'animalSpawnPoint',
           opacity: this.isGreyedOut ? .25 : 1,
         })
-        .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
+          .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
     );
     if (!MapBase.isPreviewMode && Settings.isLaBgEnabled) {
       const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.svg?nocache=${nocache}`;

@@ -130,6 +130,8 @@ function init() {
   $('#enable-marker-popups-hover').prop("checked", Settings.isPopupsHoverEnabled);
   $('#enable-marker-shadows').prop("checked", Settings.isShadowsEnabled);
   $('#enable-legendary-backgrounds').prop("checked", Settings.isLaBgEnabled);
+  $('#legendary-animal-marker-type').val(Settings.legendarySpawnIconType);
+  $('#legendary-animal-marker-size').val(Settings.legendarySpawnIconSize);
   $('#enable-dclick-zoom').prop("checked", Settings.isDoubleClickZoomEnabled);
   $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
@@ -476,6 +478,16 @@ $('#enable-marker-shadows').on("change", function () {
 
 $("#enable-legendary-backgrounds").on("change", function () {
   Settings.isLaBgEnabled = $("#enable-legendary-backgrounds").prop('checked');
+  Legendary.onSettingsChanged();
+});
+
+$("#legendary-animal-marker-type").on("change", function () {
+  Settings.legendarySpawnIconType = Number($("#legendary-animal-marker-type").val());
+  Legendary.onSettingsChanged();
+});
+
+$("#legendary-animal-marker-size").on("change", function () {
+  Settings.legendarySpawnIconSize = Number($("#legendary-animal-marker-size").val());
   Legendary.onSettingsChanged();
 });
 
