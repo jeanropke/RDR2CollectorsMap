@@ -98,6 +98,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Norwegian:
   - **camillgh** (724 words)
   - **casse** (31 words)
+  - **DandelionSprout** (255 words)
   - **henrietteg95** (830 words)
   - **Rilfus** (156 words)
 
