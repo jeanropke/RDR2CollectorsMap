@@ -1778,5 +1778,7 @@
     "menu.enable_legendary_backgrounds": "Legendary Animal arka planları açık",
     "help.enable_legendary_backgrounds": "Haritadaki sarı yuvarlakların içindeki hayvan simgesi arka planlarını açıp kapatmanızı sağlar.",
     "map.sightseeing.hidden": "Gizli Yer",
-    "map.remove.animal_category": "Tüm hayvanları 72 saat boyunca bu kategori dışında tutun"
+    "map.remove.animal_category": "Tüm hayvanları 72 saat boyunca bu kategori dışında tutun",
+    "map.legendary_animal_cooldown_end_time": "Bekleme süresi: {timer}",
+    "map.reset_animal_timer": "Bu türün bütün hayvanlarının bekleme süresini sıfırla"
 }
