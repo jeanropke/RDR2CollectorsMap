@@ -52,12 +52,15 @@ class Legendary {
     this.marker = L.layerGroup();
     if (Settings.isLaBgEnabled) {
       this.marker.addLayer(L.circle([this.x, this.y], {
-        color: this.isGreyedOut ? '#c4c4c4' : "#fdc607",
-        fillColor: this.isGreyedOut ? '#c4c4c4' : "#fdc607",
-        fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
-        radius: this.radius,
-      })
-        .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
+          color: this.isGreyedOut ? '#c4c4c4' : "#fdc607",
+          fillColor: this.isGreyedOut ? '#c4c4c4' : "#fdc607",
+          fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
+          radius: this.radius,
+        })
+        .bindPopup(this.popupContent.bind(this), {
+          minWidth: 400
+        })
+      );
     }
     const iconTypePath = ['heads/blip_mp', 'footprints/footprint'][Settings.legendarySpawnIconType];
     const spawnIconSize = Settings.legendarySpawnIconSize;
@@ -72,7 +75,10 @@ class Legendary {
           pane: 'animalSpawnPoint',
           opacity: this.isGreyedOut ? .25 : 1,
         })
-          .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
+        .bindPopup(this.popupContent.bind(this), {
+          minWidth: 400
+        })
+      )
     );
     if (!MapBase.isPreviewMode && Settings.isLaBgEnabled) {
       const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.svg?nocache=${nocache}`;
