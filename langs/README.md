@@ -35,7 +35,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **pach318** (269 words)
 
 ### Czech:
-  - **avojta** (542 words)
+  - **avojta** (581 words)
   - **CzechJura** (719 words)
   - **Nydrail** (372 words)
 
