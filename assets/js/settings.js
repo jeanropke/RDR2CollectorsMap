@@ -172,6 +172,8 @@ Object.entries({
   topWidgetState: { default: 0 },
   nazarCustomLocation: { default: 0 },
   nazarDate: { default: "" },
+  legendarySpawnIconType: { default: 0 },
+  legendarySpawnIconSize: { default: 1 },
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 
 // Inventory settings

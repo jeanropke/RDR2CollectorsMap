@@ -5,23 +5,18 @@ class Legendary {
     this.animals = [];
     this.layer = L.layerGroup();
     this.layer.addTo(MapBase.map);
-
-    const pane = MapBase.map.createPane('animalX');
-    pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
-    pane.style.pointerEvents = 'none';
     this.context = $('.menu-hidden[data-type=legendary_animals]');
-    this.spawnIcon = L.icon({
-      iconUrl: './assets/images/la_cross.png',
-      iconSize: [16, 16],
-      iconAnchor: [8, 8],
-      opacity: 0.75,
-    });
+    const pane = MapBase.map.createPane('animalSpawnPoint');
+    pane.style.zIndex = 450; // markers on top of circle, but behind “normal” markers/shadows
+    pane.style.pointerEvents = 'none';
+
     this.onSettingsChanged();
     $('.menu-hidden[data-type="legendary_animals"] > *:first-child a').click(e => {
       e.preventDefault();
       const showAll = $(e.target).attr('data-text') === 'menu.show_all';
       Legendary.animals.forEach(animal => animal.onMap = showAll);
     });
+
     return Loader.promises['animal_legendary'].consumeJson(data => {
       data.forEach(item => {
         this.animals.push(new Legendary(item));
@@ -55,20 +50,35 @@ class Legendary {
   reinitMarker() {
     if (this.marker) Legendary.layer.removeLayer(this.marker);
     this.marker = L.layerGroup();
-    this.marker.addLayer(L.circle([this.x, this.y], {
-        color: this.isGreyedOut ? '#c4c4c4': "#fdc607",
-        fillColor: this.isGreyedOut ? '#c4c4c4': "#fdc607",
-        fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
-        radius: this.radius,
-      })
-      .bindPopup(this.popupContent.bind(this), { minWidth: 400 }));
+    if (Settings.isLaBgEnabled) {
+      this.marker.addLayer(L.circle([this.x, this.y], {
+          color: this.isGreyedOut ? '#c4c4c4' : "#fdc607",
+          fillColor: this.isGreyedOut ? '#c4c4c4' : "#fdc607",
+          fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
+          radius: this.radius,
+        })
+        .bindPopup(this.popupContent.bind(this), {
+          minWidth: 400
+        })
+      );
+    }
+    const iconTypePath = ['heads/blip_mp', 'footprints/footprint'][Settings.legendarySpawnIconType];
+    const spawnIconSize = Settings.legendarySpawnIconSize;
+    this.spawnIcon = L.icon({
+      iconUrl: `./assets/images/icons/game/animals/legendaries/${iconTypePath}_${this.species}.png?nocache=${nocache}`,
+      iconSize: [16 * spawnIconSize, 16 * spawnIconSize],
+      iconAnchor: [8 * spawnIconSize, 8 * spawnIconSize],
+    });
     this.locations.forEach(point =>
       this.marker.addLayer(L.marker([point.x, point.y], {
-          icon: Legendary.spawnIcon,
-          pane: 'animalX',
-          opacity: .8,
+          icon: this.spawnIcon,
+          pane: 'animalSpawnPoint',
+          opacity: this.isGreyedOut ? .25 : 1,
         })
-        .bindPopup(this.popupContent.bind(this), { minWidth: 400 }))
+        .bindPopup(this.popupContent.bind(this), {
+          minWidth: 400
+        })
+      )
     );
     if (!MapBase.isPreviewMode && Settings.isLaBgEnabled) {
       const overlay = `assets/images/icons/game/animals/legendaries/${this.text}.svg?nocache=${nocache}`;
