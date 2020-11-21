@@ -1313,5 +1313,9 @@
     "menu.collectible_coins_buried_all": "العملات المعدنية",
     "menu.filter_type.none": "لا شيء",
     "menu.legendary_animals": "الحيوانات الأسطورية",
-    "mp_animal_boar_legendary_03": "خنزير #3 - Icahi"
+    "mp_animal_boar_legendary_03": "خنزير #3 - Icahi",
+    "help.legendary_marker_type": "يسمك لك بتغير الحيوانات الأسطورية، ايقونة موقع تبديل.",
+    "menu.legendary_animal_marker_type": "حيوان اسطوري نوع العلامة",
+    "menu.legendary_icon_type.paw_prints": "علامة أثر",
+    "menu.legendary_icon_type.head": "رؤوس"
 }
