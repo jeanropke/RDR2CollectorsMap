@@ -1620,5 +1620,12 @@
     "menu.enable_legendary_backgrounds": "Povolit obrázek legendárního zvířete na pozadí",
     "help.enable_legendary_backgrounds": "Dovoluje zapnout nebo vypnout obrázek legendárního zvířete na pozadí žlutého kruhu na mapě.",
     "map.sightseeing.hidden": "Skryté místo",
-    "map.remove.animal_category": "Odstranit všechna zvířata z této kategorie po dobu 72 hodin"
+    "map.remove.animal_category": "Odstranit všechna zvířata z této kategorie po dobu 72 hodin",
+    "map.reset_animal_timer": "Vynulovat časovač pro všechna zvířata tohoto druhu",
+    "help.legendary_marker_type": "Umožňuje změnit ikonu výskytu legendárního zvířete.",
+    "menu.legendary_animal_marker_type": "Typ značky legendárního zvířete",
+    "menu.legendary_icon_type.paw_prints": "Otisky tlap",
+    "menu.legendary_icon_type.head": "Hlavy",
+    "help.legendary_marker_size": "Umožňuje změnit velikost ikony legendárních zvířat.",
+    "menu.legendary_animal_marker_size": "Velikost značky legendárního zvířete"
 }
