@@ -519,7 +519,7 @@
             { "text": "cups_ten", "height": 0, "tool": 0, "lat": -65.1553, "lng": 139.1785, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2088s" },
             { "text": "cups_page", "height": 0, "tool": 0, "lat": -69.1908, "lng": 136.4463, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2056s" },
             { "text": "cups_knight", "height": 0, "tool": 0, "lat": -100.8554, "lng": 25.0672, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2294s" },
-            { "text": "cups_queen", "height": 0, "tool": 0, "lat": -59.2601, "lng": 155.1765, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1936s" },
+            { "text": "cups_queen", "height": 1, "tool": 0, "lat": -59.2601, "lng": 155.1765, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1936s" },
             { "text": "cups_king", "height": 0, "tool": 0, "lat": -64.7485, "lng": 101.5625, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2119s" }
         ],
         "6": [
@@ -625,7 +625,7 @@
             { "text": "pentacles_two", "height": 0, "tool": 0, "lat": -97.6463, "lng": 89.1785, "video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=2776s" },
             { "text": "pentacles_three", "height": 0, "tool": 0, "lat": -99.1883, "lng": 132.0656, "video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=2495s" },
             { "text": "pentacles_four", "height": 0, "tool": 0, "lat": -59.4657, "lng": 125.165, "video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=2557s" },
-            { "text": "pentacles_five", "height": 0, "tool": 0, "lat": -59.2438, "lng": 155.1312, "video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=2404s" },
+            { "text": "pentacles_five", "height": 1, "tool": 0, "lat": -59.2438, "lng": 155.1312, "video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=2404s" },
             { "text": "pentacles_six", "height": 0, "tool": 0, "lat": -50.5779, "lng": 123.5384, "video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=2586s" },
             { "text": "pentacles_seven", "height": 1, "tool": 0, "lat": -108.9148, "lng": 25.6962, "video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=2811s" },
             { "text": "pentacles_eight", "height": 0, "tool": 0, "lat": -84.8183, "lng": 97.2352, "video": "https://www.youtube.com/watch?v=Fkkqniqqo4k&t=2743s" },
