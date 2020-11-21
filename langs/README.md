@@ -12,7 +12,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
   - **fhyyd** (85 words)
-  - **JokerUAE** (61 words)
+  - **JokerUAE** (77 words)
   - **moed99** (340 words)
   - **mohammad.khaled594** (92 words)
   - **noo7jri** (693 words)
