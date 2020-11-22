@@ -401,7 +401,7 @@
             { "text": "bottle_cognac_bottle", "height": 0, "tool": 0, "lat": -65.9933, "lng": 105.9711, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=796s" },
             { "text": "bottle_absinthe", "height": 0, "tool": 0, "lat": -93.7327, "lng": 93.2442, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=848s" },
             { "text": "bottle_irish_whiskey", "height": 0, "tool": 0, "lat": -76.9381, "lng": 148.0528, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=736s" },
-            { "text": "bottle_london_dry_gin", "height": 0, "tool": 0, "lat": -56.8868, "lng": 158.424, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=664s" },
+            { "text": "bottle_london_dry_gin", "height": 1, "tool": 0, "lat": -56.8868, "lng": 158.424, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=664s" },
             { "text": "bottle_old_tom_gin", "height": 0, "tool": 0, "lat": -65.8626, "lng": 146.0223, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=704s" },
             { "text": "bottle_gran_corazon_madeira", "height": 0, "tool": 0, "lat": -33.3556, "lng": 141.373, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=632s" },
             { "text": "bottle_scotch_whisky", "height": 1, "tool": 0, "lat": -114.1115, "lng": 17.4073, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=883s" },
@@ -430,7 +430,7 @@
             { "text": "bottle_tennesee_whiskey", "height": 0, "tool": 0, "lat": -104.6625, "lng": 55.4262, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1470s" }
         ],
         "6": [
-            { "text": "bottle_caribbean_rum", "height": 0, "tool": 0, "lat": -56.166, "lng": 157.9279, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1506s" },
+            { "text": "bottle_caribbean_rum", "height": 1, "tool": 0, "lat": -56.166, "lng": 157.9279, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1506s" },
             { "text": "bottle_cognac_bottle", "height": 1, "tool": 0, "lat": -42.8947, "lng": 81.9189, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1640s" },
             { "text": "bottle_absinthe", "height": -1, "tool": 0, "lat": -120.4882, "lng": 27.5812, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1755s" },
             { "text": "bottle_irish_whiskey", "height": 0, "tool": 0, "lat": -89.1662, "lng": 144.7078, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1541s" },
