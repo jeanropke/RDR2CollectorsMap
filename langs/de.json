@@ -1737,5 +1737,13 @@
     "menu.enable_legendary_backgrounds": "Legendäre Tiersymbolhintergründe aktiviert",
     "help.enable_legendary_backgrounds": "Ermöglicht das Aktivieren oder Inaktivieren der Tiersymbolhintergründe in den gelben Kreisen auf der Karte.",
     "map.sightseeing.hidden": "Verborgener Ort",
-    "map.remove.animal_category": "Entferne alle Tiere dieser Kategorie für 72 Stunden"
+    "map.remove.animal_category": "Entferne alle Tiere dieser Kategorie für 72 Stunden",
+    "map.legendary_animal_cooldown_end_time": "Abklingzeit Ende: {timer}",
+    "map.reset_animal_timer": "Abklingzeit für alle Tiere dieser Art zurücksetzen",
+    "help.legendary_marker_type": "Erlaubt dir, das Symbol des legendären Tier-Spawn-Ort zu ändern.",
+    "menu.legendary_animal_marker_type": "Legendärer Tiermarker Typ",
+    "menu.legendary_icon_type.paw_prints": "Pfotenabdrücke",
+    "menu.legendary_icon_type.head": "Köpfe",
+    "help.legendary_marker_size": "Erlaubt dir, die Größe des legendären Tier-Spawn-Symbols zu ändern.",
+    "menu.legendary_animal_marker_size": "Legendäre Tiermarkierungsgröße"
 }
