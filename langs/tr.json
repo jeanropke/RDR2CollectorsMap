@@ -1780,5 +1780,11 @@
     "map.sightseeing.hidden": "Gizli Yer",
     "map.remove.animal_category": "Tüm hayvanları 72 saat boyunca bu kategori dışında tutun",
     "map.legendary_animal_cooldown_end_time": "Bekleme süresi: {timer}",
-    "map.reset_animal_timer": "Bu türün bütün hayvanlarının bekleme süresini sıfırla"
+    "map.reset_animal_timer": "Bu türün bütün hayvanlarının bekleme süresini sıfırla",
+    "help.legendary_marker_type": "Efsanevi hayvanların doğma yerinin simgesini değiştirmenizi sağlar.",
+    "menu.legendary_animal_marker_type": "Efsanevi Hayvan işaretçisi türü",
+    "menu.legendary_icon_type.paw_prints": "Pati izleri",
+    "menu.legendary_icon_type.head": "Kafa",
+    "help.legendary_marker_size": "Efsanevi hayvanların doğma yerini gösteren simgenin boyutunu ayarlamanızı sağlar.",
+    "menu.legendary_animal_marker_size": "Efsanevi Hayvan işaretçisi boyutu"
 }
