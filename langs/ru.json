@@ -1815,10 +1815,10 @@
     "map.remove.animal_category": "Скрыть всех животных этого вида на 72 часа",
     "map.legendary_animal_cooldown_end_time": "Откат заканчивается: {timer}",
     "map.reset_animal_timer": "Сбросить таймер отката для всех животных этого вида",
-    "help.legendary_marker_type": "Позволяет изменять вид метки с местом появления легендарного животного.",
+    "help.legendary_marker_type": "Позволяет изменять вид метки места появления легендарного животного.",
     "menu.legendary_animal_marker_type": "Тип меток легендарных животных",
     "menu.legendary_icon_type.paw_prints": "Отпечатки лап",
     "menu.legendary_icon_type.head": "Головы",
-    "help.legendary_marker_size": "Позволяет изменять масштаб метки с местом появления легендарного животного.",
+    "help.legendary_marker_size": "Позволяет изменять масштаб метки места появления легендарного животного.",
     "menu.legendary_animal_marker_size": "Размер меток легендарных животных"
 }
