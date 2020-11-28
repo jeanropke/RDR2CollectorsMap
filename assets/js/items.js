@@ -150,10 +150,15 @@ class Item extends BaseItem {
       return this.markers.filter(marker => marker.isCurrent && marker.isCollected).length;
     }
   }
+  get isRandomizedItem() {
+    return ['arrowhead', 'coin', 'fossils_random', 'jewelry_random', 'random'].includes(this.category);
+  } 
   updateMenu() {
     const currentMarkers = this.currentMarkers();
     const buggy = currentMarkers.every(marker => marker.buggy);
-    const isRandom = currentMarkers.every(marker => !marker.canCollect);
+    const canCollectItem = currentMarkers.every(marker => !marker.canCollect);
+    const isRandom = currentMarkers.every(marker => marker.isRandomizedItem);
+    console.log(this.itemId, isRandom, buggy);
     this.$menuButton
       .attr('data-help', () => {
         if (isRandom) {
@@ -170,7 +175,7 @@ class Item extends BaseItem {
       })
       .toggleClass('weekly-item', this.isWeekly())
       .find('.collectible-text p')
-      .toggleClass('disabled', isRandom)
+      .toggleClass('disabled', canCollectItem)
       .toggleClass('not-found', buggy && !isRandom)
       .end()
       .find('.counter')
