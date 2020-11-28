@@ -534,7 +534,7 @@
             { "text": "cups_nine", "height": 0, "tool": 0, "lat": -78.8054, "lng": 128.972, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2692s" },
             { "text": "cups_ten", "height": 1, "tool": 0, "lat": -80.1405, "lng": 148.5578, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2554s" },
             { "text": "cups_page", "height": 0, "tool": 0, "lat": -65.8944, "lng": 146.0402, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2490s" },
-            { "text": "cups_knight", "height": 0, "tool": 0, "lat": -36.6862, "lng": 105.0544, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2771s" },
+            { "text": "cups_knight", "height": 1, "tool": 0, "lat": -36.6862, "lng": 105.0544, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2771s" },
             { "text": "cups_queen", "height": 0, "tool": 0, "lat": -70.9318, "lng": 138.9301, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2518s" },
             { "text": "cups_king", "height": 0, "tool": 0, "lat": -29.5848, "lng": 157.7104, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2367s" }
         ]
