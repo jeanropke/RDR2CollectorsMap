@@ -1714,6 +1714,7 @@
     "help.item_night_only": "Toggles whether this item should be visible on the map. Note that this item only appears between 10:00 PM and 5:00 AM. Click the timer in the upper left corner of the map to view the in-game time.",
     "help.item_weekly": "Toggles whether this item should be visible on the map. This item is part of the {collection} weekly collection.",
     "help.item_unavailable": "Toggles whether this item should be visible on the map. Note that this item is unavailable due to a game bug or being undiscovered.",
+    "help.item_random": "Toggles whether this item should be visible on the map. Note that this item it random in current cycle.",
     "help.clear_important_items": "Clears the highlight from all markers marked as important.",
     "help.item_category_unavailable_items": "Toggles whether this set should be visible on the map. Note that this set contains one or more items that are randomized since the Naturalist update, or are unavailable due to a game bug.",
     "help.search_clear": "Clears your current search query.",
