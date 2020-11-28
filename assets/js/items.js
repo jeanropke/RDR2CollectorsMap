@@ -158,7 +158,6 @@ class Item extends BaseItem {
     const buggy = currentMarkers.every(marker => marker.buggy);
     const canCollectItem = currentMarkers.every(marker => !marker.canCollect);
     const isRandom = currentMarkers.every(marker => marker.isRandomizedItem);
-    console.log(this.itemId, isRandom, buggy);
     this.$menuButton
       .attr('data-help', () => {
         if (isRandom) {
