@@ -150,9 +150,6 @@ class Item extends BaseItem {
       return this.markers.filter(marker => marker.isCurrent && marker.isCollected).length;
     }
   }
-  get isRandomizedItem() {
-    return ['arrowhead', 'coin', 'fossils_random', 'jewelry_random', 'random'].includes(this.category);
-  }
   updateMenu() {
     const currentMarkers = this.currentMarkers();
     const isBugged = currentMarkers.every(marker => marker.buggy);

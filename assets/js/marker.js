@@ -39,8 +39,6 @@ class Marker {
     this.item = this.category === 'random' ? undefined : Item.items.find(item =>
       item.itemId === this.itemId);
 
-    this.isRandomizedItem = ['arrowhead', 'coin', 'fossils_random', 'jewelry_random', 'random'].includes(this.category);
-
     /**
      * `._collectedKey` is the key for the `.isCollected` accessors
      * - the data they represent are best described as “legacy non-sense”, if I’m allowed to say
@@ -62,7 +60,7 @@ class Marker {
     /**
      * Used to display per-item descriptions.
      * Kept in case we need to change this later.
-     * 
+     *
      * @returns {string} The translatable key of the primary description.
      */
     this.primaryDescriptionKey = (() => {
@@ -75,7 +73,7 @@ class Marker {
 
     /**
      * Used to display descriptions per category.
-     * 
+     *
      * @returns {string} The translatable key of the secondary description.
      */
     this.secondaryDescriptionKey = (() => {
@@ -165,6 +163,10 @@ class Marker {
         enabledCategories.includes(this.category) ||
         (this.item && this.item.isWeekly() && enabledCategories.includes("weekly"))
       );
+  }
+
+  get isRandomizedItem() {
+    return ['arrowhead', 'coin', 'fossils_random', 'jewelry_random', 'random'].includes(this.category);
   }
 
   toolAccepted() {
