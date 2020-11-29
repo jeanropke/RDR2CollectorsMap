@@ -241,19 +241,22 @@ class Collection extends BaseCollection {
     });
   }
   updateMenu() {
-    const buggy = this.items.map(item => item.updateMenu()).includes(true);
+    const checkItems = property => this.items.map(item => item.updateMenu()[property]).includes(true);
+    const containBuggedItems = checkItems('isBugged');
+    const containRandomItems = checkItems('isRandom');
     const isSameCycle = Cycles.isSameAsYesterday(this.category);
     this.$menuButton
       .attr('data-help', () => {
         if (isSameCycle) {
           return 'item_category_same_cycle';
-        } else if (buggy) {
+        } else if (containBuggedItems || containRandomItems) {
           return 'item_category_unavailable_items';
         } else {
           return 'item_category';
         }
       })
-      .toggleClass('not-found', buggy)
+      .toggleClass('random-category', containRandomItems)
+      .toggleClass('not-found', containBuggedItems)
       .find('.same-cycle-warning-menu')
       .toggle(isSameCycle)
       .end();

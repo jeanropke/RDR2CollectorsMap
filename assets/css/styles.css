@@ -528,6 +528,10 @@ select {
     color: greenyellow;
 }
 
+.side-menu .random-category {
+    color: #F0F000;
+}
+
 .side-menu .not-found {
     color: #f95050 !important;
 }
