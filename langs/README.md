@@ -75,7 +75,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
   - **viliri** (1,470 words)
-  - **werhel** (167 words)
+  - **werhel** (186 words)
 
 ### Italian:
   - **AlexTucci** (23 words)
@@ -190,7 +190,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Ukrainian:
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
-  - **grmaster5s** (10,370 words)
+  - **grmaster5s** (10,412 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
   - **UluMulu** (217 words)
