@@ -1812,7 +1812,7 @@
     "menu.enable_legendary_backgrounds": "Показувати фони з легендарними тваринами",
     "help.enable_legendary_backgrounds": "Дозволяє вмикати або вимикати фон з позначкою тварин у жовтих колах на карті.",
     "map.sightseeing.hidden": "Приховане місце",
-    "map.remove.animal_category": "Приховати тварин із цієї категорії на 72 гдини",
+    "map.remove.animal_category": "Приховати тварин даного виду на 72 гoдини",
     "map.legendary_animal_cooldown_end_time": "Час очікування: {timer}",
     "map.reset_animal_timer": "Скинути час очікування для всіх тварин даного виду",
     "help.legendary_marker_type": "Дозволяє змінювати вигляд мітки місця появи легендарної тварини.",
