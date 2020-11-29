@@ -1492,6 +1492,7 @@
     "help.item_night_only": "Anklicken um den entsprechenden Gegenstand auf der Karte anzuzeigen/auszublenden. Es ist zu beachten das dieser Gegenstand nur zwischen 22 Uhr und 5 Uhr erschein.",
     "help.item_weekly": "Anklicken um den entsprechenden Gegenstand auf der Karte anzuzeigen/auszublenden. Dieser Gegenstand ist Teil der aktuellen {collection} Sammlung.",
     "help.item_unavailable": "Anklicken um den entsprechenden Gegenstand auf der Karte anzuzeigen/auszublenden. Es ist zu beachten das dieser Gegenstand nicht aufgesammelt werden kann, da ein Bug existiert oder da er noch nicht entdeckt wurde.",
+    "help.item_random": "Schaltet um, ob dieses Element auf der Karte sichtbar sein soll. Beachte, dass dieses Element im aktuellen Zyklus zufällig ist.",
     "help.clear_important_items": "Entferne alle Hervorhebungen der als wichtig markierten Gegenstände von der Karte.",
     "help.search_clear": "Löscht deinen aktuellen Suchverlauf.",
     "help.search_copy_link": "Kopiert den aktuellen Such-Link in die Zwischenablage, so dass die Seite direkt mit Suche aufgerufen werden kann.",

@@ -1812,5 +1812,13 @@
     "menu.enable_legendary_backgrounds": "Показувати фони з легендарними тваринами",
     "help.enable_legendary_backgrounds": "Дозволяє вмикати або вимикати фон з позначкою тварин у жовтих колах на карті.",
     "map.sightseeing.hidden": "Приховане місце",
-    "map.remove.animal_category": "Приховати тварин із цієї категорії на 72 гдини"
+    "map.remove.animal_category": "Приховати тварин із цієї категорії на 72 гдини",
+    "map.legendary_animal_cooldown_end_time": "Час очікування: {timer}",
+    "map.reset_animal_timer": "Скинути час очікування для всіх тварин даного виду",
+    "help.legendary_marker_type": "Дозволяє змінювати вигляд мітки місця появи легендарної тварини.",
+    "menu.legendary_animal_marker_type": "Тип міток легендарних тварин",
+    "menu.legendary_icon_type.paw_prints": "Відбитки лап",
+    "menu.legendary_icon_type.head": "Голови",
+    "help.legendary_marker_size": "Дозволяє змінювати масштаб мітки місця появи легендарної тварини.",
+    "menu.legendary_animal_marker_size": "Розмір міток легендарних тварин"
 }
