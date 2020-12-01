@@ -324,12 +324,11 @@ const MapBase = {
 
   resetMarkersDaily: function () {
     const date = new Date().toISOUTCDateString();
-    const randomCategories = ['random', 'fossils_random', 'jewelry_random', 'coin', 'arrowhead'];
 
-    if (localStorage.getItem('main.date') === null || date != localStorage.getItem('main.date')) {
+    if (localStorage.getItem('main.date') == null || date != localStorage.getItem('main.date')) {
       MapBase.markers.forEach(marker => {
         // reset daily all random categories
-        if (Settings.resetMarkersDaily || randomCategories.includes(marker.category)) {
+        if (Settings.resetMarkersDaily || marker.isRandomizedItem) {
           marker.isCollected = false;
         }
 
