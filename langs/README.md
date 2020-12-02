@@ -37,6 +37,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Czech:
   - **avojta** (581 words)
   - **CzechJura** (719 words)
+  - **filutav39** (49 words)
   - **Nydrail** (372 words)
 
 ### Dutch:
