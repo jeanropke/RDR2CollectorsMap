@@ -1510,6 +1510,7 @@
     "help.item_night_only": "切换此项目在地图上是否应可见。 请注意，该项目仅出现在晚上10:00至5:00之间。 单击地图左上角的计时器以查看游戏中时间。",
     "help.item_weekly": "切换此项目在地图上是否应可见。 此项目是{collection} 每周收集.",
     "help.item_unavailable": "切换此项目在地图上是否应可见。 请注意，由于游戏错误或未被发现，该项目不可用。",
+    "help.item_random": "切换是否在地图上显示此收藏品。请注意此收藏品在当前周期中是随机的。",
     "help.clear_important_items": "从所有标记为重要的标记中清除突出显示。",
     "help.item_category_unavailable_items": "切换此设置是否应在地图上可见。请注意，此集合包含自“博物学家”更新以来随机变化的一个或多个项目，或者由于游戏错误而不可用。",
     "help.search_clear": "清除当前的搜索内容。",
@@ -1799,5 +1800,13 @@
     "menu.enable_legendary_backgrounds": "启用传说动物背景",
     "help.enable_legendary_backgrounds": "允许您在地图上的黄色圆圈中启用或禁用动物图标背景。",
     "map.sightseeing.hidden": "隐藏点",
-    "map.remove.animal_category": "将该类动物从地图上移除72小时"
+    "map.remove.animal_category": "将该类动物从地图上移除72小时",
+    "map.legendary_animal_cooldown_end_time": "冷却时间: {timer}",
+    "map.reset_animal_timer": "重置此物种所有动物的冷却时间",
+    "help.legendary_marker_type": "允许您更改传说动物生成位置的标记。",
+    "menu.legendary_animal_marker_type": "传说动物标记样式",
+    "menu.legendary_icon_type.paw_prints": "爪印",
+    "menu.legendary_icon_type.head": "头像",
+    "help.legendary_marker_size": "允许你改变传说动物生成位置标记的大小。",
+    "menu.legendary_animal_marker_size": "传说动物标记大小"
 }
