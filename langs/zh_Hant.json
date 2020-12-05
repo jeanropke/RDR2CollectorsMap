@@ -6,7 +6,7 @@
     "fasttravel.blackwater.name": "黑水鎮",
     "fasttravel.strawberry.name": "史卓伯裡",
     "fasttravel.valentine.name": "瓦倫泰恩",
-    "fasttravel.colter.name": "柯爾特",
+    "fasttravel.colter.name": "科爾特",
     "fasttravel.emerald.name": "愛瑪洛車站",
     "fasttravel.rhodes.name": "羅德",
     "fasttravel.wapiti.name": "瓦匹提",
@@ -1676,10 +1676,17 @@
     "mp_animal_wolf_legendary_01.desc": "祖母綠狼經常現身於克里湖周圍，以鐵鏽棕色毛皮和懾人的綠色眼睛聞名。牠行蹤隱密而且具有很高的智慧，若受到其他動物或旅人的威脅，會毫不猶豫地發動攻擊。祖母綠狼是夜行動物，即使在最惡劣的天氣也能繼續狩獵。",
     "mp_animal_wolf_legendary_02.desc": "曾有人目擊傳說縞瑪瑙狼在瓦匹提附近出沒。牠有著亮黃色的眼睛，與一身深色毛皮形成強烈對比。此外，牠具有防衛心和領域性，如果人類靠得太近就會遭到襲擊。縞瑪瑙狼在夜晚最為活躍，喜歡在乾燥的天氣外出獵食。",
     "mp_animal_wolf_legendary_03.desc": "有一群狼在坎伯蘭森林北部可說是聲名狼藉。這群狼的首領非常特別，是一匹巨大白狼。狼群會攻擊附近道路上的旅人，因此引起博物學家和盜獵者的注意。狼群對傳說月長石狼忠心耿耿，因此追蹤這隻狼時，要有遇上狼群的心理準備。",
+    "map.generic_not_released": "這個內容還沒有在遊戲中。",
+    "menu.nazar_position": "娜札女士位置",
+    "help.nazar_position": "可讓您設定自訂的娜扎女士位置（請注意，此設定每 24 小時重新設定）",
     "map.weather.preferred_weather": "受影響的天氣： {preferred_weather}",
     "map.legendary.spawn_time": "首選生成時間：{spawn_time}",
     "map.legendary.preferred_weather": "首選天氣：{preferred_weather}",
     "map.legendary.sample_value": "樣本賣價：{sample_value}",
     "map.cant_be_picked_up": "此動物屍體無法被抬起。",
-    "menu.enable_legendary_backgrounds": "啟用傳說動物背景圖"
+    "menu.enable_legendary_backgrounds": "啟用傳說動物背景圖",
+    "menu.legendary_animal_marker_type": "傳說動物標記類型",
+    "menu.legendary_icon_type.paw_prints": "掌印",
+    "menu.legendary_icon_type.head": "頭部",
+    "menu.legendary_animal_marker_size": "傳說動物標記大小"
 }
