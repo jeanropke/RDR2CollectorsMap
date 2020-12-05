@@ -31,7 +31,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **qiexiacn** (715 words)
 
 ### Chinese Traditional:
-  - **L1Chung** (11,690 words)
+  - **L1Chung** (11,729 words)
   - **pach318** (269 words)
 
 ### Czech:
