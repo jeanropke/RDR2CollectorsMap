@@ -28,9 +28,12 @@ const MadamNazar = {
     } else {
       return Loader.promises['nazar'].consumeJson(data => {
         MadamNazar.currentLocation = MadamNazar.possibleLocations.findIndex(({ key }) => key === data.nazar) + 1;
-        MadamNazar.currentDate = new Date(data.date).toLocaleString(Settings.language, {
-          day: "2-digit", month: "long", year: "numeric"
-        });
+        MadamNazar.currentDate = {
+          locale: new Date(data.date).toLocaleString([], {
+            day: "2-digit", month: "long", year: "numeric"
+          }),
+          isoString: data.date,
+        }
         MadamNazar.addMadamNazar();
         console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
       })
@@ -74,15 +77,29 @@ const MadamNazar = {
             `
       })
     });
-    marker.bindPopup($(`
-        <div>
-          <h1><span data-text="menu.madam_nazar"></span> - ${MadamNazar.currentDate || "#" + MadamNazar.currentLocation}</h1>
-          <p style="text-align: center;" data-text="map.madam_nazar.desc"></p>
-        </div>`).translate().html(), { minWidth: 300 });
+    marker.bindPopup(MadamNazar.popupContent(), { minWidth: 300 });
 
     Layers.nazarLayer.addLayer(marker);
 
     if (getParameterByName('q'))
       MapBase.map.setView([cl.x, cl.y], 6);
+  },
+  popupContent: function () {
+    const popup$ = $(`
+        <div>
+          <h1><span data-text="menu.madam_nazar"></span> - ${MadamNazar.currentDate.locale || "#" + MadamNazar.currentLocation}</h1>
+          <p style="text-align: center;" data-text="map.madam_nazar.desc"></p>
+          <button class="btn btn-default reload-nazar" onclick="MadamNazar.reloadNazar();" data-text="menu.madam_nazar_reload_position"></button>
+        </div>`)
+      .translate();
+
+    return popup$.html();
+  },
+  reloadNazar: function () {
+    const nazarDate = new Date(Date.now() - 21600000).toISOUTCDateString();
+    if (MadamNazar.currentDate.isoString !== nazarDate) {
+      Loader.reloadData('nazar');
+      MadamNazar.loadMadamNazar();
+    }
   }
 };

@@ -2023,5 +2023,6 @@
     "menu.legendary_icon_type.paw_prints": "Paw prints",
     "menu.legendary_icon_type.head": "Heads",
     "help.legendary_marker_size": "Allows you to change scale of legendary animal spawn icon.",
-    "menu.legendary_animal_marker_size": "Legendary Animal marker size"
+    "menu.legendary_animal_marker_size": "Legendary Animal marker size",
+    "menu.madam_nazar_reload_position": "Click to update position"
 }

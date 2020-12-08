@@ -1687,3 +1687,7 @@ a.no-style:visited {
     color: #d80419;
     margin-bottom: 10px;
 }
+
+button.reload-nazar {
+    margin: 10px 0;
+}
