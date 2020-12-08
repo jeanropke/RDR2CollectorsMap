@@ -1771,19 +1771,5 @@
     "mp_animal_wolf_legendary_01.desc": "Este lobo suele ser visto con frecuencia alrededor de O'Creagh's Run, y es fácil de reconocer por su pelaje marrón cobrizo y sus llamativos ojos verdes. Es sigiloso y sumamente astuto. No tiene miedo de atacar si se ve amenazado por otros animales o por algún viajero. Es una criatura nocturna capaz de cazar en las peores condiciones climatológicas.",
     "mp_animal_wolf_legendary_02.desc": "El lobo ónice legendario ha sido visto de paso por Wapiti. Es famoso por sus brillantes ojos amarillos, que destacan sobre su pelaje oscuro. Es reservado y territorial, y atacará a los humanos que se acerquen demasiado. Su pico de actividad es por la noche y prefiere cazar con tiempo seco.",
     "mp_animal_wolf_legendary_03.desc": "Una manada de lobos se ha hecho famosa al norte de Cumberland Forest. Tiene un líder bastante peculiar: un enorme lobo blanco. Se sabe que la manada ha atacado a viajeros en las carreteras cercanas, y ha llamado la atención tanto de naturalistas como de cazadores furtivos. Los compañeros del lobo piedra lunar legendario son muy leales. Si lo persigues, prepárate para enfrentarte a toda la manada.",
-    "map.generic_not_released": "Este contenido no está todavía en el juego.",
-    "menu.nazar_position": "Ubicación de Madam Nazar",
-    "help.nazar_position": "Le permite establecer la posición personalizada de Madam Nazar (tenga en cuenta que este ajuste se restablece cada 24 horas)",
-    "map.nazar_custom_location_alert": "La ubicación de Madam Nazar se ha establecido manualmente (la posición puede no ser precisa)",
-    "menu.nazar_position_auto": "Automático",
-    "menu.nazar_position_window_rock": "Window Rock",
-    "menu.nazar_position_grizzlies East": "Grizzlies Este",
-    "menu.nazar_position_ronaoke_ridge": "Ronaoke Ridge",
-    "menu.nazar_position_heartlands_west": "Heartlands Oeste",
-    "menu.nazar_position_emerald_ranch": "Rancho Esmeralda",
-    "menu.nazar_position_bluewater_marsh": "Pantano de Bluewater",
-    "menu.nazar_position_tall_trees": "Tall Trees",
-    "menu.nazar_position_bolger_glade": "Bolger Glade",
-    "menu.nazar_position_cholla_springs": "Cholla Springs",
-    "menu.nazar_position_thieves_landing": "Tierra de ladrones"
+    "map.generic_not_released": "Este contenido no está todavía en el juego."
 }

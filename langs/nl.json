@@ -608,19 +608,5 @@
     "mp_animal_ram_legendary_03": "Ram #3 -Rutielhoorn",
     "mp_animal_wolf_legendary_01": "Wolf #1 - Smaragd",
     "mp_animal_wolf_legendary_02": "Wolf #2 - Onyx",
-    "mp_animal_wolf_legendary_03": "Wolf #3 - Maansteen",
-    "menu.nazar_position": "Madam Nazar-locatie",
-    "menu.nazar_position_auto": "Automatisch",
-    "menu.nazar_position_window_rock": "Window Rock",
-    "menu.nazar_position_grizzlies East": "Grizzlies East",
-    "menu.nazar_position_ronaoke_ridge": "Ronaoke Ridge",
-    "menu.nazar_position_heartlands_west": "Heartlands West",
-    "menu.nazar_position_heartlands_east": "Heartlands East",
-    "menu.nazar_position_emerald_ranch": "Emerald Ranch",
-    "menu.nazar_position_bluewater_marsh": "Bluewater Marsh",
-    "menu.nazar_position_tall_trees": "Tall Trees",
-    "menu.nazar_position_bolger_glade": "Bolger Glade",
-    "menu.nazar_position_cholla_springs": "Cholla Springs",
-    "menu.nazar_position_thieves_landing": "Thieves Landing",
-    "menu.nazar_position_plainview": "Plainview"
+    "mp_animal_wolf_legendary_03": "Wolf #3 - Maansteen"
 }

@@ -1690,8 +1690,6 @@
     "mp_animal_wolf_legendary_02.desc": "曾有人目擊傳說縞瑪瑙狼在瓦匹提附近出沒。牠有著亮黃色的眼睛，與一身深色毛皮形成強烈對比。此外，牠具有防衛心和領域性，如果人類靠得太近就會遭到襲擊。縞瑪瑙狼在夜晚最為活躍，喜歡在乾燥的天氣外出獵食。",
     "mp_animal_wolf_legendary_03.desc": "有一群狼在坎伯蘭森林北部可說是聲名狼藉。這群狼的首領非常特別，是一匹巨大白狼。狼群會攻擊附近道路上的旅人，因此引起博物學家和盜獵者的注意。狼群對傳說月長石狼忠心耿耿，因此追蹤這隻狼時，要有遇上狼群的心理準備。",
     "map.generic_not_released": "這個內容還沒有在遊戲中。",
-    "menu.nazar_position": "娜札女士位置",
-    "help.nazar_position": "可讓您設定自訂的娜扎女士位置（請注意，此設定每 24 小時重新設定）",
     "map.weather.preferred_weather": "受影響的天氣： {preferred_weather}",
     "map.legendary.spawn_time": "首選生成時間：{spawn_time}",
     "map.legendary.preferred_weather": "首選天氣：{preferred_weather}",
