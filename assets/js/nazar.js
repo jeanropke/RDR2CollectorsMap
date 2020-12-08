@@ -49,8 +49,7 @@ const MadamNazar = {
     if (MadamNazar.currentLocation == null || !enabledCategories.includes('nazar'))
       return;
 
-    const isCustomLocation = Settings.nazarCustomLocation === 0 ? MadamNazar.currentLocation : Settings.nazarCustomLocation;
-    const cl = MadamNazar.possibleLocations[isCustomLocation - 1];
+    const cl = MadamNazar.possibleLocations[MadamNazar.currentLocation - 1];
     if (!cl) {
       console.error("Madam Nazar location could not be found.");
       return;

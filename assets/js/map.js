@@ -312,14 +312,6 @@ const MapBase = {
 
       setTimeout(() => goTo.lMarker && goTo.lMarker.openPopup(), 3000);
     }
-
-    // Delete custom Nazar position from settings when she change location
-    const nazarDate = new Date(Date.now() - 21600000).toISOUTCDateString();
-    if (Settings.nazarDate != nazarDate) {
-      $('#nazar-position').val(0);
-      Settings.nazarCustomLocation = 0;
-      Settings.nazarDate = "";
-    }
   },
 
   resetMarkersDaily: function () {
