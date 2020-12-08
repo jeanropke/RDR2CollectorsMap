@@ -112,7 +112,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Portuguese:
   - **indigonature** (71 words)
-  - **petrasoares7** (118 words)
+  - **petrasoares7** (340 words)
 
 ### Portuguese, Brazilian:
   - **Ahnaocara** (1,002 words)
