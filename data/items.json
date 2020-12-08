@@ -148,7 +148,7 @@
             { "text": "egg_hawk_2", "height": 0, "tool": 0, "lat": -38.3643, "lng": 118.2983, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1933s" },
             { "text": "egg_heron", "height": 0, "tool": 0, "lat": -67.7025, "lng": 145.9029, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1776s" },
             { "text": "egg_loon", "height": 0, "tool": 0, "lat": -54.4755, "lng": 97.897, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1970s" },
-            { "text": "egg_spoonbill", "height": 0, "tool": 0, "lat": -77.7716, "lng": 135.647, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1814s", "buggy": true },
+            { "text": "egg_spoonbill", "height": 0, "tool": 0, "lat": -77.7716, "lng": 135.647, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1814s" },
             { "text": "egg_vulture", "height": 0, "tool": 0, "lat": -30.024, "lng": 153.5106, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1740s" }
         ],
         "6": [
