@@ -1075,6 +1075,7 @@
     "egg_heron.name": "鹭蛋",
     "egg_loon.name": "潜鸟蛋",
     "egg_spoonbill.name": "琵鹭蛋",
+    "egg_spoonbill_5.desc": "这个蛋经常卡在树上。如果发生这种情况，把赏金马车叫出来爬上去然后用捕猎步枪开镜射击鸟巢。",
     "egg_vulture.name": "秃鹫蛋",
     "flower_agarita.name": "十大功劳",
     "flower_bitterweed.name": "苦味堆心菊",
@@ -1109,6 +1110,7 @@
     "weekly.desc": "此物属于{collection} 收藏的一部分",
     "weekly.desc.1800_coins_set": "1800 年制硬币收藏系列",
     "weekly.desc.ancient_tools_set": "古代工具",
+    "weekly.desc.ancient_wood_set": "古代木",
     "weekly.desc.arthropod_set": "节肢动物",
     "weekly.desc.beasts_of_prey_set": "猛兽收藏系列",
     "weekly.desc.belle_set": "布雷斯韦特美人",
@@ -1792,5 +1794,6 @@
     "menu.legendary_icon_type.paw_prints": "爪印",
     "menu.legendary_icon_type.head": "头像",
     "help.legendary_marker_size": "允许你改变传说动物生成位置标记的大小。",
-    "menu.legendary_animal_marker_size": "传说动物标记大小"
+    "menu.legendary_animal_marker_size": "传说动物标记大小",
+    "menu.madam_nazar_reload_position": "点击更新位置"
 }
