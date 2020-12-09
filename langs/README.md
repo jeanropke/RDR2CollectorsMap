@@ -27,7 +27,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **BHT256** (7,717 words)
   - **curryguru** (47 words)
   - **labrary** (238 words)
-  - **PeanutSlinger** (2,094 words)
+  - **PeanutSlinger** (2,135 words)
   - **qiexiacn** (715 words)
 
 ### Chinese Traditional:
