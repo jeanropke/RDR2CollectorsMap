@@ -1771,5 +1771,6 @@
     "menu.legendary_icon_type.paw_prints": "Pati izleri",
     "menu.legendary_icon_type.head": "Kafa",
     "help.legendary_marker_size": "Efsanevi hayvanların doğma yerini gösteren simgenin boyutunu ayarlamanızı sağlar.",
-    "menu.legendary_animal_marker_size": "Efsanevi Hayvan işaretçisi boyutu"
+    "menu.legendary_animal_marker_size": "Efsanevi Hayvan işaretçisi boyutu",
+    "menu.madam_nazar_reload_position": "Konumu güncellemek için tıklayın"
 }
