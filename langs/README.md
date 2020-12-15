@@ -94,7 +94,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Japanese:
   - **momc** (529 words)
-  - **TOSA_MAKI** (145 words)
+  - **TOSA_MAKI** (403 words)
 
 ### Korean:
   - **CoolBreeze-13s** (219 words)
