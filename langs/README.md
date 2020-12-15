@@ -11,12 +11,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **a.youssry78** (109 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
-  - **fhyyd** (89 words)
+  - **fhyyd** (95 words)
   - **JokerUAE** (77 words)
   - **moed99** (340 words)
   - **mohammad.khaled594** (92 words)
   - **noo7jri** (693 words)
   - **razzer.tube** (47 words)
+  - **REMOVED_USER** (89 words)
 
 ### Catalan:
   - **Muahahas** (51 words)
@@ -93,7 +94,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Japanese:
   - **momc** (529 words)
-  - **TOSA_MAKI** (108 words)
+  - **TOSA_MAKI** (145 words)
 
 ### Korean:
   - **CoolBreeze-13s** (219 words)
