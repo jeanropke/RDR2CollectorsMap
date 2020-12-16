@@ -1703,5 +1703,17 @@
   "tarot_cards": 6,
   "fossils": 6,
   "date": "2020-12-16"
+ }, {
+  "flower": 4,
+  "bottle": 5,
+  "arrowhead": 6,
+  "egg": 4,
+  "coin": 2,
+  "heirlooms": 3,
+  "lost_jewelry": 2,
+  "random": 2,
+  "tarot_cards": 4,
+  "fossils": 2,
+  "date": "2020-12-17"
  }
 ]
