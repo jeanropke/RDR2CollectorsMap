@@ -50,7 +50,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### French:
   - **Ca0dan** (93 words)
-  - **FRANCESCADOLORES** (988 words)
+  - **FRANCESCADOLORES** (995 words)
   - **Gaetan92** (15 words)
   - **HGNitro** (30 words)
   - **iGuuunz** (225 words)
