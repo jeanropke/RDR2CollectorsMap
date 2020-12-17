@@ -1806,5 +1806,6 @@
     "menu.legendary_icon_type.paw_prints": "Відбитки лап",
     "menu.legendary_icon_type.head": "Голови",
     "help.legendary_marker_size": "Дозволяє змінювати масштаб мітки місця появи легендарної тварини.",
-    "menu.legendary_animal_marker_size": "Розмір міток легендарних тварин"
+    "menu.legendary_animal_marker_size": "Розмір міток легендарних тварин",
+    "menu.madam_nazar_reload_position": "Натисніть щоб оновити позицію"
 }
