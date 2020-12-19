@@ -60,7 +60,24 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
     L.DivIcon.prototype._setIconStyles.call(this, img, name);
     if (this.options.marker)
       img.dataset.marker = this.options.marker;
+
+    if (this.options.time) {
+      const from = parseInt(this.options.time[0]);
+      const to = parseInt(this.options.time[1]);
+
+      img.dataset.time = timeRange(from, to);
+    }
   }
+});
+
+// Glowing icon (legendary animals)
+L.Icon.TimedData = L.Icon.extend({
+  _setIconStyles: function (img, name) {
+    L.Icon.prototype._setIconStyles.call(this, img, name);
+    if (this.options.time && this.options.time !== []) {
+      img.dataset.time = this.options.time;
+    }
+  },
 });
 
 /*
@@ -253,6 +270,16 @@ function clockTick() {
 
   $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter',
     nightTime ? 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)' : 'none');
+
+  $('.leaflet-marker-icon[data-time]').each(function () {
+    let time = $(this).data('time') + '';
+    if (time === null || time === '') return;
+    if (time.split(',').includes(gameHour + '') && !MapBase.isPreviewMode) {
+      $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
+    } else {
+      $(this).css('filter', 'none');
+    }
+  });
 }
 
 /*
@@ -977,4 +1004,16 @@ function convertToTime(hours = '00', minutes = '00') {
   return Settings.isClock24Hour ?
     `${hours}:${minutes}` :
     `${+hours % 12 || 12}:${minutes}${+hours >= 12 ? 'PM' : 'AM'}`;
+}
+
+// returns an Array with all hours between from...to
+function timeRange(from, to) {
+  const times = [];
+
+  let hour = from;
+  while (hour !== to) {
+    times.push(hour);
+    hour = (hour + 1) % 24;
+  }
+  return times;
 }
