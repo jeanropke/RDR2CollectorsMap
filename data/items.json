@@ -311,7 +311,7 @@
             { "text": "heirlooms_cherrywood_comb", "height": 1, "tool": 0, "lat": -90.9872, "lng": 127.1091, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1241s" },
             { "text": "heirlooms_ebony_hairbrush", "height": 0, "tool": 0, "lat": -78.84, "lng": 128.8823, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1274s" },
             { "text": "heirlooms_ebony_hairpin", "height": 0, "tool": 0, "lat": -80.5905, "lng": 148.6836, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1184s" },
-            { "text": "heirlooms_goat_hair_brush", "height": 0, "tool": 0, "lat": -99.2648, "lng": 90.2921, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1441s" },
+            { "text": "heirlooms_goat_hair_brush", "height": -1, "tool": 0, "lat": -99.2648, "lng": 90.2921, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1441s" },
             { "text": "heirlooms_horse_hair_brush", "height": 0, "tool": 0, "lat": -29.5385, "lng": 157.6945, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1038s" },
             { "text": "heirlooms_ivory_comb", "height": 0, "tool": 0, "lat": -83.495, "lng": 97.9247, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1410s" },
             { "text": "heirlooms_ivory_hairpin", "height": 0, "tool": 1, "lat": -55.2957, "lng": 154.3946, "video": "https://www.youtube.com/watch?v=aTLYLLZeQ6Q&t=1066s" },
@@ -422,7 +422,7 @@
             { "text": "bottle_caribbean_rum", "height": 1, "tool": 0, "lat": -56.8265, "lng": 153.2689, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1243s" },
             { "text": "bottle_cognac_bottle", "height": 0, "tool": 0, "lat": -69.2273, "lng": 136.4689, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1346s" },
             { "text": "bottle_absinthe", "height": 0, "tool": 0, "lat": -56.2526, "lng": 74.5295, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1442s" },
-            { "text": "bottle_irish_whiskey", "height": 0, "tool": 0, "lat": -44.2524, "lng": 88.1078, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1406s" },
+            { "text": "bottle_irish_whiskey", "height": 1, "tool": 0, "lat": -44.2524, "lng": 88.1078, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1406s" },
             { "text": "bottle_london_dry_gin", "height": 0, "tool": 0, "lat": -86.9434, "lng": 145.391, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1308s" },
             { "text": "bottle_old_tom_gin", "height": 0, "tool": 0, "lat": -42.2208, "lng": 156.3708, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1209s" },
             { "text": "bottle_gran_corazon_madeira", "height": 0, "tool": 0, "lat": -51.6336, "lng": 107.567, "video": "https://www.youtube.com/watch?v=pXTFD3gEBLQ&t=1376s" },
@@ -472,7 +472,7 @@
             { "text": "cups_page", "height": 0, "tool": 0, "lat": -70.3944, "lng": 149.9404, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=546s" },
             { "text": "cups_knight", "height": 0, "tool": 0, "lat": -117.4943, "lng": 30.3782, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=912s" },
             { "text": "cups_queen", "height": 0, "tool": 0, "lat": -82.2661, "lng": 139.6259, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=646s" },
-            { "text": "cups_king", "height": 0, "tool": 0, "lat": -83.5379, "lng": 144.5016, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=607s" }
+            { "text": "cups_king", "height": 1, "tool": 0, "lat": -83.5379, "lng": 144.5016, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=607s" }
         ],
         "3": [
             { "text": "cups_ace", "height": 0, "tool": 0, "lat": -29.6785, "lng": 157.6742, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=982s" },
@@ -514,7 +514,7 @@
             { "text": "cups_five", "height": 0, "tool": 0, "lat": -85.4765, "lng": 154.9942, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1969s" },
             { "text": "cups_six", "height": 0, "tool": 0, "lat": -84.0893, "lng": 138.4225, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1999s" },
             { "text": "cups_seven", "height": 0, "tool": 0, "lat": -88.6974, "lng": 80.5419, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2225s" },
-            { "text": "cups_eight", "height": 0, "tool": 0, "lat": -100.0196, "lng": 89.635, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2257s" },
+            { "text": "cups_eight", "height": 1, "tool": 0, "lat": -100.0196, "lng": 89.635, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2257s" },
             { "text": "cups_nine", "height": 0, "tool": 0, "lat": -53.8491, "lng": 156.2201, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=1908s" },
             { "text": "cups_ten", "height": 0, "tool": 0, "lat": -65.1553, "lng": 139.1785, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2088s" },
             { "text": "cups_page", "height": 0, "tool": 0, "lat": -69.1908, "lng": 136.4463, "video": "https://www.youtube.com/watch?v=uR6BF8Ze3UA&t=2056s" },
@@ -642,7 +642,7 @@
             { "text": "swords_ace", "height": 0, "tool": 0, "lat": -68.7226, "lng": 106.2866, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=232s" },
             { "text": "swords_two", "height": 0, "tool": 0, "lat": -85.6146, "lng": 97.6831, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=423s" },
             { "text": "swords_three", "height": 0, "tool": 0, "lat": -64.9324, "lng": 84.4564, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=390s" },
-            { "text": "swords_four", "height": 0, "tool": 0, "lat": -84.4514, "lng": 140.5453, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=163s" },
+            { "text": "swords_four", "height": 1, "tool": 0, "lat": -84.4514, "lng": 140.5453, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=163s" },
             { "text": "swords_five", "height": 0, "tool": 0, "lat": -91.835, "lng": 124.913, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=194s" },
             { "text": "swords_six", "height": 0, "tool": 0, "lat": -44.721, "lng": 110.7306, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=316s" },
             { "text": "swords_seven", "height": 0, "tool": 0, "lat": -93.8858, "lng": 92.6598, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=457s" },
@@ -650,7 +650,7 @@
             { "text": "swords_nine", "height": 0, "tool": 0, "lat": -101.0476, "lng": 43.4341, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=494s" },
             { "text": "swords_ten", "height": 0, "tool": 0, "lat": -40.4654, "lng": 108.8979, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=279s" },
             { "text": "swords_page", "height": 0, "tool": 0, "lat": -47.5662, "lng": 100.8491, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=352s" },
-            { "text": "swords_knight", "height": 0, "tool": 0, "lat": -109.3841, "lng": 25.474, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=527s" },
+            { "text": "swords_knight", "height": 1, "tool": 0, "lat": -109.3841, "lng": 25.474, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=527s" },
             { "text": "swords_queen", "height": 0, "tool": 0, "lat": -31.0688, "lng": 149.3537, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=50s" },
             { "text": "swords_king", "height": 0, "tool": 0, "lat": -79.299, "lng": 151.4173, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=82s" }
         ],
@@ -666,7 +666,7 @@
             { "text": "swords_nine", "height": 1, "tool": 0, "lat": -86.454, "lng": 151.6589, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=703s" },
             { "text": "swords_ten", "height": 0, "tool": 0, "lat": -45.0174, "lng": 142.1557, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=604s" },
             { "text": "swords_page", "height": 0, "tool": 0, "lat": -59.0129, "lng": 140.7676, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=775s" },
-            { "text": "swords_knight", "height": 0, "tool": 0, "lat": -84.9692, "lng": 131.9827, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=738s" },
+            { "text": "swords_knight", "height": 1, "tool": 0, "lat": -84.9692, "lng": 131.9827, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=738s" },
             { "text": "swords_queen", "height": 0, "tool": 0, "lat": -99.9015, "lng": 89.206, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=901s" },
             { "text": "swords_king", "height": 0, "tool": 0, "lat": -37.2069, "lng": 152.1751, "video": "https://www.youtube.com/watch?v=7muzpmU8VYY&t=572s" }
         ],
@@ -782,7 +782,7 @@
             { "text": "wands_page", "height": -1, "tool": 0, "lat": -41.8239, "lng": 147.5385, "video": "https://www.youtube.com/watch?v=88paa005RgI&t=1074s" },
             { "text": "wands_knight", "height": 0, "tool": 0, "lat": -91.6271, "lng": 126.9361, "video": "https://www.youtube.com/watch?v=88paa005RgI&t=1241s" },
             { "text": "wands_queen", "height": 0, "tool": 0, "lat": -110.3045, "lng": 51.6182, "video": "https://www.youtube.com/watch?v=88paa005RgI&t=1477s" },
-            { "text": "wands_king", "height": 0, "tool": 0, "lat": -99.1528, "lng": 90.222, "video": "https://www.youtube.com/watch?v=88paa005RgI&t=1436s" }
+            { "text": "wands_king", "height": 1, "tool": 0, "lat": -99.1528, "lng": 90.222, "video": "https://www.youtube.com/watch?v=88paa005RgI&t=1436s" }
         ],
         "4": [
             { "text": "wands_ace", "height": 1, "tool": 0, "lat": -52.3226, "lng": 76.8733, "video": "https://www.youtube.com/watch?v=88paa005RgI&t=1716s" },
