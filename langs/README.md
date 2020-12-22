@@ -23,7 +23,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Muahahas** (51 words)
 
 ### Chinese Simplified:
-  - **akbcd** (278 words)
+  - **akbcd** (292 words)
   - **Approach** (12 words)
   - **BHT256** (7,717 words)
   - **curryguru** (47 words)
@@ -97,7 +97,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
 
 ### Korean:
-  - **CoolBreeze-13s** (231 words)
+  - **CoolBreeze-13s** (245 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
 
