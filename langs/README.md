@@ -97,7 +97,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
 
 ### Korean:
-  - **CoolBreeze-13s** (256 words)
+  - **CoolBreeze-13s** (259 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
 
@@ -125,7 +125,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **FilipFelipe** (146 words)
   - **jeanropke** (4,938 words)
   - **KAKUNO123** (30 words)
-  - **msfern** (201 words)
+  - **msfern** (215 words)
   - **Mutxatxo** (45 words)
   - **neohazukibr** (904 words)
   - **rafaelsadriano** (16 words)
