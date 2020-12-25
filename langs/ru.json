@@ -1075,6 +1075,7 @@
     "egg_heron.name": "Яйцо цапли",
     "egg_loon.name": "Яйцо гагары",
     "egg_spoonbill.name": "Яйцо колпицы",
+    "egg_spoonbill_5.desc": "Достаточно часто это яйцо может застревать в дереве. Если это произойдет, заберитесь на крышу тюремного фургона и выстрелите в гнездо и яйцо из винтовки «Варминт» используя оптический прицел.",
     "egg_vulture.name": "Яйцо грифа",
     "flower_agarita.name": "Магония",
     "flower_bitterweed.name": "Гелениум",
@@ -1805,5 +1806,6 @@
     "menu.legendary_icon_type.paw_prints": "Отпечатки лап",
     "menu.legendary_icon_type.head": "Головы",
     "help.legendary_marker_size": "Позволяет изменять масштаб метки места появления легендарного животного.",
-    "menu.legendary_animal_marker_size": "Размер меток легендарных животных"
+    "menu.legendary_animal_marker_size": "Размер меток легендарных животных",
+    "menu.madam_nazar_reload_position": "Нажмите, чтобы обновить местоположение"
 }
