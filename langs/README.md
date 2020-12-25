@@ -140,7 +140,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **hellcat_tail** (15 words)
   - **ita.jk7** (54 words)
   - **maxdavinci** (40 words)
-  - **Megitsune** (1,856 words)
+  - **Megitsune** (1,895 words)
   - **noiracero693** (27 words)
   - **Overnoes** (85 words)
   - **tomvsxvi** (563 words)
