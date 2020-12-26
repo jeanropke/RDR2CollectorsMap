@@ -61,7 +61,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Maxemi** (224 words)
   - **Michal__d** (2,387 words)
   - **Oldboy77** (494 words)
-  - **radragon** (234 words)
+  - **radragon** (326 words)
   - **RedShard-B** (36 words)
   - **skonky** (113 words)
   - **thecrazystranger** (1,830 words)
