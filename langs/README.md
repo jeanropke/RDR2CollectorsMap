@@ -89,6 +89,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **masterflash222** (268 words)
   - **misticjoker** (3,718 words)
   - **Raffox97** (33 words)
+  - **TheSgrash** (196 words)
   - **Tony_Bell** (192 words)
   - **Visite** (121 words)
 
