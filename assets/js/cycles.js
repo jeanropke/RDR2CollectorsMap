@@ -2,7 +2,7 @@ const Cycles = {
   categories: [],
   data: [],
   offset: 0,
-  unknownCycleNumber: 7,
+  unknownCycleNumber: 0,
   forwardMaxOffset: 1,
   backwardMaxOffset: 7,
   yesterday: [],
@@ -37,7 +37,7 @@ const Cycles = {
       // either -1 (not found) or 0 (first day) for which there is no yesterday
       console.error('[Cycles] Cycle not found: ' + selectedDayStr);
       $('.map-cycle-alert').removeClass('hidden');
-      
+
       fallback = {
         arrowhead: 1,
         bottle: 1,
@@ -93,14 +93,14 @@ const Cycles = {
           console.warn('Cycles parameters invalid for items.');
         } else {
           Cycles.categories.flower = _cycles[0];
-          Cycles.categories.cups,
-            Cycles.categories.pentacles,
-            Cycles.categories.swords,
-            Cycles.categories.wands = _cycles[1];
-          Cycles.categories.bracelet,
-            Cycles.categories.earring,
-            Cycles.categories.necklace,
-            Cycles.categories.ring = _cycles[2];
+          Cycles.categories.cups = _cycles[1];
+          Cycles.categories.pentacles = _cycles[1];
+          Cycles.categories.swords = _cycles[1];
+          Cycles.categories.wands = _cycles[1];
+          Cycles.categories.bracelet = _cycles[2];
+          Cycles.categories.earring = _cycles[2];
+          Cycles.categories.necklace = _cycles[2];
+          Cycles.categories.ring = _cycles[2];
           Cycles.categories.bottle = _cycles[3];
           Cycles.categories.egg = _cycles[4];
           Cycles.categories.arrowhead = _cycles[5];
@@ -158,7 +158,7 @@ const Cycles = {
     const todayCycle = Cycles.categories[category];
     const yesterdayCycle = Cycles.yesterday[Cycles.getCyclesMainCategory(category)];
 
-    return todayCycle == yesterdayCycle;
+    return todayCycle === yesterdayCycle;
   },
 
   nextDayDataExists: function () {
@@ -188,6 +188,10 @@ const Cycles = {
       case "necklace":
       case "ring":
         return "lost_jewelry";
+      case "oceanic":
+      case "coastal":
+      case "megafauna":
+        return "fossils"
       default:
         return category;
     }
@@ -245,6 +249,18 @@ const Cycles = {
           '2': 1,
           '3': 2,
           '1': 3,
+          '4': 4,
+          '5': 5,
+          '6': 6
+        };
+        break;
+      case "oceanic":
+      case "coastal":
+      case "megafauna":
+        _cycles = {
+          '1': 1,
+          '2': 2,
+          '3': 3,
           '4': 4,
           '5': 5,
           '6': 6
