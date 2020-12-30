@@ -1801,5 +1801,6 @@
     "menu.legendary_icon_type.paw_prints": "Odciski łop",
     "menu.legendary_icon_type.head": "Głowy",
     "help.legendary_marker_size": "Pozwala na zmianę skali ikon miejsc pojawiania się legendarnych zwierząt.",
-    "menu.legendary_animal_marker_size": "Rozmiar znacznika legendarnych zwierząt"
+    "menu.legendary_animal_marker_size": "Rozmiar znacznika legendarnych zwierząt",
+    "menu.madam_nazar_reload_position": "Kliknij, aby zaktualizować pozycję"
 }

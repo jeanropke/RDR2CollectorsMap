@@ -74,6 +74,7 @@
     "menu.marker_size.150": "150%",
     "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200%",
+    "menu.clear_important_items": "Fontos jelölők törlése",
     "menu.collectible_arrowheads_buried_all": "Nyílhegyek",
     "menu.collectible_coins_buried_all": "Érmék"
 }
