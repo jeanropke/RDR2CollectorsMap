@@ -242,21 +242,25 @@ class Collection extends BaseCollection {
   }
   updateMenu() {
     const checkItems = property => this.items.map(item => item.updateMenu()[property]).includes(true);
-    const containBuggedItems = checkItems('isBugged');
-    const containRandomItems = checkItems('isRandom');
+    const containsBuggedItems = checkItems('isBugged');
+    const containsRandomItems = checkItems('isRandom');
     const isSameCycle = Cycles.isSameAsYesterday(this.category);
     this.$menuButton
       .attr('data-help', () => {
         if (isSameCycle) {
           return 'item_category_same_cycle';
-        } else if (containBuggedItems || containRandomItems) {
+        } else if (containsBuggedItems && containsRandomItems) {
           return 'item_category_unavailable_items';
+        } else if (containsBuggedItems) {
+          return 'item_category_bugged_items';
+        } else if (containsRandomItems) {
+          return 'item_category_random_items';
         } else {
           return 'item_category';
         }
       })
-      .toggleClass('random-category', containRandomItems)
-      .toggleClass('not-found', containBuggedItems)
+      .toggleClass('random-category', containsRandomItems)
+      .toggleClass('not-found', containsBuggedItems)
       .find('.same-cycle-warning-menu')
       .toggle(isSameCycle)
       .end();

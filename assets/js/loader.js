@@ -21,9 +21,13 @@ class Loader {
     }
     constructor(name, url, customNoCache = null) {
         const queryString = {};
-        if (!url.startsWith('http')) queryString.nocache = customNoCache || nocache;
+
+        if (['updates'].includes(name)) queryString.nocache = Date.now();
+        else if (!url.startsWith('http')) queryString.nocache = customNoCache || nocache;
         else queryString.nocache = customNoCache || new Date(Date.now() - 21600000).toISOUTCDateString();
+
         if (['cycles'].includes(name)) queryString.date = customNoCache || new Date().toISOUTCDateString();
+
         this._json = $.getJSON(url, queryString);
     }
     // allow garbage collection of loaded data after use
@@ -40,6 +44,7 @@ class Loader {
 }
 
 const urls = [
+    'data/updates.json',
     'data/items_value.json',
     'https://pepegapi.jeanropke.net/v2/rdo/weekly',
     'data/weekly_sets.json',

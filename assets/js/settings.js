@@ -136,6 +136,7 @@ const SettingProxy = function () {
 // General settings
 const Settings = SettingProxy.createSettingProxy('main');
 Object.entries({
+  lastVersion: { default: 0 },
   alertClosed: { default: false },
   baseLayer: { default: 'map.layers.default' },
   fmeDisplayGeneralPeriod: { default: 30 },
@@ -205,6 +206,6 @@ Object.entries({
   runOnStart: { default: false },
   startMarkerLat: { default: -119.9063 },
   startMarkerLng: { default: 8.0313 },
-  usePathfinder: { default: false },
+  usePathfinder: { default: true },
   customRoute: { default: '' }
 }).forEach(([name, config]) => SettingProxy.addSetting(RouteSettings, name, config));

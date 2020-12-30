@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "message": "Rockstar updated the game and made some changes to the Collector role. Please visit the page below to read about what this means to you.",
+  "lists": [
+    {
+      "text": "Summary",
+      "items": [
+        "Fossils, Arrowheads and Coins are fully randomized;",
+        "Bracelets, Earrings, Necklaces and Rings are partially randomized;",
+        "Other sets are unaffected by the Naturalist update."
+      ]
+    }
+  ],
+  "links": [
+    {
+      "class": "primary",
+      "text": "Naturalist Changes FAQ",
+      "url": "https://github.com/jeanropke/RDR2CollectorsMap/wiki/Naturalist-Update-Changes"
+    }
+  ]
+}

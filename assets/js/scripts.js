@@ -15,7 +15,7 @@ Object.defineProperty(String.prototype, 'filename', {
 Object.defineProperty(Array.prototype, 'arrayContains', {
   value: function (sub) {
     const result = sub.filter(item => this.indexOf(item) > -1);
-    return sub.length === result.length;
+    return result.length > 0;
   }
 });
 
@@ -178,6 +178,8 @@ function init() {
   $("#import-export-container").toggleClass('opened', Settings.showImportExportSettings);
   $("#debug-container").toggleClass('opened', Settings.showDebugSettings);
 
+  Updates.init();
+
   updateTopWidget();
 }
 
@@ -301,10 +303,6 @@ $('.top-widget > p').on('click', function () {
   const pElements = $('.top-widget > p').length;
   Settings.topWidgetState = (Settings.topWidgetState + 1) % pElements;
   updateTopWidget();
-});
-
-$('.update-warning').on('click', function () {
-  $(this).hide();
 });
 
 $("#show-all-markers").on("change", function () {
@@ -888,6 +886,10 @@ $('#open-delete-all-settings-modal').on('click', function () {
 
 $('#open-remove-all-pins-modal').on('click', function () {
   $('#remove-all-pins-modal').modal();
+});
+
+$('#open-updates-modal').on('click', function () {
+  Updates.showModal();
 });
 
 function formatLootTableLevel(table, level = 0) {

@@ -262,10 +262,10 @@ class Marker {
           </div>
       </span>
       <p class='marker-popup-links'>
-        <a href="" data-text="map.copy_link"></a>
-        <span>| <a href="" data-text="map.view_loot" data-toggle="modal" data-target="#loot-table-modal" data-loot-table="${this.category}"></a></span>
-        <span>| <a href="${this.video}" target="_blank" data-text="map.video"></a></span>
-        <span>| <a href="" data-text="map.mark_important"></a></span>
+        <span><a href="${this.video}" target="_blank" data-text="map.video"></a> |</span>
+        <span><a href="" data-text="map.view_loot" data-toggle="modal" data-target="#loot-table-modal" data-loot-table="${this.category}"></a> |</span>
+        <span><a href="" data-text="map.mark_important"></a> |</span>
+        <span><a href="" data-text="map.copy_link"></a></span>
       </p>
       <small class="popupContentDebug">Latitude: ${this.lat} / Longitude: ${this.lng}</small>
       <div class="marker-popup-buttons">

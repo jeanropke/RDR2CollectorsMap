@@ -89,18 +89,6 @@ select {
     border: 1px solid black;
 }
 
-.update-warning {
-    width: 100%;
-    background: #800000;
-    color: #eee;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    z-index: 9909;
-    display: block;
-    /* When the time comes, you gotta run and change this to block. This is a warning. */
-}
-
 #main-header {
     display: flex;
     margin: 10px;
@@ -529,7 +517,7 @@ select {
 }
 
 .side-menu .random-category {
-    color: #F0F000;
+    color: #fef390;
 }
 
 .side-menu .not-found {
@@ -1066,12 +1054,12 @@ a.no-style:visited {
     user-select: none;
 }
 
-.modal-dialog.modal-sm {
+.modal-dialog {
     position: relative;
     background-color: #000;
 }
 
-.modal-dialog.modal-sm::after {
+.modal-dialog::after {
     border-color: #d80419;
     border-image-repeat: round;
     border-image-slice: 10 10 10 10 fill;
@@ -1111,6 +1099,12 @@ a.no-style:visited {
 
 .modal-header {
     padding-top: 40px;
+}
+
+.modal-title {
+    font-family: RDRLino, serif;
+    font-weight: normal;
+    font-size: 24px;
 }
 
 .modal-body {
@@ -1691,4 +1685,18 @@ a.no-style:visited {
 button.reload-nazar {
     margin: 10px 0;
     width: 100%;
+}
+
+/* Updates modal styling */
+.modal-updates .modal-header, .modal-updates .modal-footer {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
+}
+
+.modal-updates .modal-body {
+    padding: 30px 40px;
+}
+
+.modal-updates .modal-actions .btn {
+    margin: 8px;
 }
