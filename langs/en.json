@@ -2014,5 +2014,7 @@
     "menu.modal_map_updates_title": "Latest Updates",
     "menu.modal_map_updates_actions": "Links",
     "menu.show_updates": "Show the latest updates",
-    "help.show_updates": "Shows you the latest updates that are related to the map."
+    "help.show_updates": "Shows you the latest updates that are related to the map.",
+    "menu.timezone_offset": "Time zone offset",
+    "help.timezone_offset": "Allows you to change time offset if clock is wrong."
 }
