@@ -1130,7 +1130,7 @@
     "map.user_pins.default_title": "사용자 핀",
     "menu.enable_inventory_menu_update": "전환시 아이템 인벤토리 항목 갱신",
     "menu.enable_marker_popups": "마커 팝업창 사용",
-    "menu.user_pins_place_new": "중앙에 핀 생성",
+    "menu.user_pins_place_new": "새로운 핀 생성",
     "menu.enable_dclick_zoom": "탭을 더블 클릭으로 닫기",
     "menu.show_help": "마우스 오버시 도움말 표시",
     "map.mark_important": "중요한 마커로 지정",
