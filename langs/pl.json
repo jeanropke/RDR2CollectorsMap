@@ -1514,6 +1514,8 @@
     "help.item_random": "Przełącza, czy ten element powinien być widoczny na mapie. Należy zauważyć, że ten przedmiot nie ma stałego punktu pojawiania się na mapie w obecnym cyklu.",
     "help.clear_important_items": "Usuwa podświetlenie ze wszystkich znacników oznaczonych jako wazne.",
     "help.item_category_unavailable_items": "Przełącza, czy ten zestaw powinien być widoczny na mapie. Należy zauważyć, że ten zestaw zawiera co najmniej jeden element, który jest randomowy od czasu aktualizacji Przyrodnika, lub jest niedostępny z powodu błędu w grze.",
+    "help.item_category_bugged_items": "Przełącza, czy ten zestaw powinien być widoczny na mapie. Należy zauważyć, że ten zestaw zawiera co najmniej jeden element, który jest niedostępny z powodu błędu w grze.",
+    "help.item_category_random_items": "Przełącza, czy ten zestaw powinien być widoczny na mapie. Należy zauważyć, że ten zestaw zawiera co najmniej jeden element, który jest randomowy od czasu aktualizacji przyrodnika.",
     "help.search_clear": "Czyści pasek wyszukiwania.",
     "help.search_copy_link": "Kopiuje link do mapy z kategoriami wyszukiwania, które można wkleić do paska adresu.",
     "help.sort_items_alphabetically": "Określa czy przedmioty maja być sortowane alfabetycznie czy według klejności w grze.",
@@ -1802,5 +1804,11 @@
     "menu.legendary_icon_type.head": "Głowy",
     "help.legendary_marker_size": "Pozwala na zmianę skali ikon miejsc pojawiania się legendarnych zwierząt.",
     "menu.legendary_animal_marker_size": "Rozmiar znacznika legendarnych zwierząt",
-    "menu.madam_nazar_reload_position": "Kliknij, aby zaktualizować pozycję"
+    "menu.madam_nazar_reload_position": "Kliknij, aby zaktualizować pozycję",
+    "menu.modal_map_updates_title": "Ostatnie aktualizacje",
+    "menu.modal_map_updates_actions": "Linki",
+    "menu.show_updates": "Pokaż najnowsze aktualizacje",
+    "help.show_updates": "Wyświetla najnowsze aktualizacje mapy.",
+    "menu.timezone_offset": "Korekta strefy czasowej",
+    "help.timezone_offset": "Pozwala na zmianę strefy czasowej, jeżeli zegar nie działa poprawnie."
 }
