@@ -1049,7 +1049,6 @@ a.no-style:visited {
 
 
 /* Bootstrap modal styling */
-
 .modal {
     user-select: none;
 }
@@ -1086,19 +1085,19 @@ a.no-style:visited {
 .modal-header,
 .modal-body,
 .modal-footer {
-    padding-left: 40px;
-    padding-right: 40px;
     text-align: center;
     border: none;
 }
 
 .modal-header,
-.modal-body {
-    color: #fff;
+.modal-footer {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
 }
 
-.modal-header {
-    padding-top: 40px;
+.modal-header,
+.modal-body {
+    color: #fff;
 }
 
 .modal-title {
@@ -1108,15 +1107,15 @@ a.no-style:visited {
 }
 
 .modal-body {
-    padding-top: 0;
+    padding: 30px 40px;
 }
 
 .modal-body .settings-container {
     margin-top: 15px;
 }
 
-.modal-footer {
-    padding-bottom: 60px;
+.modal-actions .btn {
+    margin: 5px;
 }
 
 @media (min-width: 768px) {
@@ -1144,7 +1143,6 @@ a.no-style:visited {
         width: 450px;
     }
 }
-
 
 /* Fix buttons showing on top of sidebar on mobile menu */
 
@@ -1468,7 +1466,6 @@ a.no-style:visited {
 }
 
 /* Freemode Events */
-
 #fme-container {
     position: absolute;
     left: 5px;
@@ -1480,6 +1477,7 @@ a.no-style:visited {
 
 #fme-container.fme-menu-opened {
     left: 405px;
+    overflow: hidden;
 }
 
 #fme-container .fme-card {
@@ -1487,19 +1485,22 @@ a.no-style:visited {
     align-items: center;
     background-image: url(../../assets/images/fme_background.png);
     background-size: 100% 100%;
-    padding: 25px;
-    width: 400px;
-    max-width: 400px;
+    width: 432px;
+    max-width: 432px;
+    height: 96px;
+    max-height: 96px;
     color: #fff;
 }
 
 #fme-container .fme-card .fme-image {
+    margin-left: 16px;
     margin-right: 12px;
     height: 66px;
+    width: 66px;
 }
 
 #fme-container .fme-card .fme-body {
-    flex-grow: 1;
+flex-grow: 1;
 }
 
 #fme-container .fme-card .fme-body .fme-title {
@@ -1507,14 +1508,23 @@ a.no-style:visited {
     color: #7b66af;
     margin: 0;
     text-align: left;
-    font-size: 24px;
+    font-size: 21px;
     line-height: 1;
+    font-weight: normal;
+    margin-right: 35px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #fme-container .fme-card .fme-body .fme-text {
-    margin: 0;
     text-align: left;
     font-size: 18px;
+    margin: 0 !important;
+    margin-right: 35px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #fme-container .fme-card #next-general-mobile,
@@ -1527,6 +1537,7 @@ a.no-style:visited {
 
 #fme-container .fme-card .fme-body {
     display: block;
+    overflow: hidden;
 }
 
 @media (max-width: 1024px) {
@@ -1536,12 +1547,14 @@ a.no-style:visited {
 
     #fme-container .fme-card {
         padding: 10px 20px 10px 10px;
+        height: auto;
         width: initial;
     }
 
     #fme-container .fme-card #next-general-mobile,
     #fme-container .fme-card #next-role-mobile {
         display: block;
+        overflow: hidden;
     }
 
     #fme-container .fme-card .fme-body {
@@ -1551,7 +1564,12 @@ a.no-style:visited {
     #fme-container .fme-card .fme-image {
         width: 32px;
         height: auto;
+        margin-left: 0;
         margin-right: 8px;
+    }
+
+    .top-widget-menu-opened .fme-menu-opened {
+        display: none !important;
     }
 }
 
@@ -1685,18 +1703,4 @@ a.no-style:visited {
 button.reload-nazar {
     margin: 10px 0;
     width: 100%;
-}
-
-/* Updates modal styling */
-.modal-updates .modal-header, .modal-updates .modal-footer {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px 40px;
-}
-
-.modal-updates .modal-body {
-    padding: 30px 40px;
-}
-
-.modal-updates .modal-actions .btn {
-    margin: 8px;
 }
