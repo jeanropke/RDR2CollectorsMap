@@ -2016,5 +2016,6 @@
     "menu.show_updates": "Show the latest updates",
     "help.show_updates": "Shows you the latest updates that are related to the map.",
     "menu.timezone_offset": "Time zone offset",
-    "help.timezone_offset": "Allows you to change time offset if clock is wrong."
+    "help.timezone_offset": "Allows you to change time offset if clock is wrong.",
+    "menu.modal_loot_table_explainer": "These tables show the percentage that the corresponding item can drop when digging for an item."
 }

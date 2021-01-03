@@ -931,7 +931,6 @@ $('#loot-table-modal').on('show.bs.modal', function (event) {
   const table = button.attr('data-loot-table');
 
   // Format loot table.
-  const modal = $(this);
   const lootTables = MapBase.lootTables[table];
   let wrapper = $('<div class="loot-tables-wrapper">');
 
@@ -940,7 +939,7 @@ $('#loot-table-modal').on('show.bs.modal', function (event) {
   })
 
   const translatedContent = Language.translateDom(wrapper)[0];
-  modal.find('.modal-body').html(translatedContent);
+  $('#loot-table-modal #loot').html(translatedContent);
 });
 
 function filterMapMarkers() {
