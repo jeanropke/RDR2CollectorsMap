@@ -79,7 +79,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
   - **viliri** (1,470 words)
-  - **werhel** (186 words)
+  - **werhel** (372 words)
 
 ### Italian:
   - **AlexTucci** (23 words)
