@@ -50,7 +50,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **MrSmithr** (290 words)
 
 ### French:
-  - **Azhellarke** (30 words)
+  - **Azhellarke** (568 words)
   - **Ca0dan** (93 words)
   - **FRANCESCADOLORES** (1,005 words)
   - **Gaetan92** (15 words)
@@ -79,7 +79,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
   - **viliri** (1,470 words)
-  - **werhel** (186 words)
+  - **werhel** (372 words)
 
 ### Italian:
   - **AlexTucci** (23 words)
@@ -101,7 +101,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean:
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (285 words)
+  - **CoolBreeze-13s** (288 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
 
