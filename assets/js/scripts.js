@@ -898,28 +898,33 @@ $('#open-updates-modal').on('click', function () {
   Updates.showModal();
 });
 
-function formatLootTableLevel(table, level = 0) {
-  let result = $("<div>");
+function formatLootTableLevel(table, rate = 1, level = 0) {
+  const result = $("<div>");
+  
+  const items = MapBase.lootTables.loot[table];
+  const hasItems = !!items;
 
-  if (!table.items) {
-    const item = $(`<div class="loot-table-item"><span data-text="${table.name}.name"></span><span class="rate">${table.rate}%</span></div>`);
-    result.append(item);
-  } else {
-    let title = $(`<span class="loot-table-title level-${(level + 1)}">`);
+  // Max. 2 digits but no trailing.
+  const formatted = Number((rate * 100).toPrecision(2));
 
-    if (table.rate) {
-      title.append($(`<h5 data-text="menu.${table.name}">`));
-      title.append($(`<h5 class="rate">`).text(table.rate + "%"));
+  if (hasItems) {
+    const title = $(`<span class="loot-table-title level-${level + 1}">`);
+    if (level === 0) {
+      title.append($(`<h4 data-text="menu.${table}">`));
     } else {
-      title.append($(`<h4 data-text="menu.${table.name}">`));
+      title.append($(`<h5 data-text="menu.${table}">`));
+      title.append($(`<h5 class="rate">`).text(formatted + "%"));
     }
+    result.append(title);
 
-    let wrapper = $(`<div class="loot-table-wrapper level-${(level + 1)}">`);
-    table.items.forEach(item => {
-      wrapper.append(formatLootTableLevel(item, (level + 1)));
+    const wrapper = $(`<div class="loot-table-wrapper level-${level + 1}">`);
+    Object.keys(items).forEach(key => {
+      wrapper.append(formatLootTableLevel(key, rate * items[key], level + 1));
     });
-
-    result.append(title, wrapper);
+    result.append(wrapper);
+  } else {
+    const item = $(`<div class="loot-table-item"><span data-text="${table}.name"></span><span class="rate">${formatted}%</span></div>`);
+    result.append(item);
   }
 
   return result.children();
@@ -929,15 +934,15 @@ $('#loot-table-modal').on('show.bs.modal', function (event) {
   // Get related loot table.
   const button = $(event.relatedTarget);
   const table = button.attr('data-loot-table');
-
-  // Format loot table.
-  const lootTables = MapBase.lootTables[table];
   let wrapper = $('<div class="loot-tables-wrapper">');
 
-  lootTables.forEach(lootTable => {
-    wrapper.append(formatLootTableLevel(lootTable));
+  // Format loot table.
+  const tables = MapBase.lootTables.categories[table];
+  tables.forEach(table => {
+    wrapper.append(formatLootTableLevel(table));
   })
 
+  // Append loot table to modal.
   const translatedContent = Language.translateDom(wrapper)[0];
   $('#loot-table-modal #loot').html(translatedContent);
 });
