@@ -46,10 +46,10 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1543" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1544" />
 
   <script>
-    const nocache = 1543;
+    const nocache = 1544;
   </script>
 </head>
 
@@ -95,9 +95,8 @@
           <img class="icon" src="./assets/images/icons/random.png" alt="Category icon" />
           <span class="menu-option-text" data-text="menu.random_spots">Random Spots</span>
         </span>
-        <input class="input-text input-cycle random" type="number" min="1" max="6" name="random"
-          data-help="item_manual_cycle">
-        <img class="cycle-icon random" src="./assets/images/cycle_3.png" alt="Cycle 3" data-type="random">
+        <input class="input-text input-cycle random hidden" type="number" min="1" max="6" name="random" data-help="item_manual_cycle">
+        <img class="cycle-icon random hidden" src="./assets/images/cycle_3.png" alt="Cycle 3" data-type="random">
       </div>
     </div>
 
@@ -453,6 +452,32 @@
         <span class="header-border"></span>
       </div>
       <div class="settings-container">
+        <div class="input-container" data-help="sort_items_alphabetically">
+          <label for="sort-items-alphabetically" data-text="menu.sort_items_alphabetically">Sort items
+            alphabetically</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="sort-items-alphabetically" value="1"
+              id="sort-items-alphabetically" />
+            <label class="input-checkbox-label" for="sort-items-alphabetically"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="marker_color">
+          <label for="marker-color" data-text="menu.marker_color.header">Marker colors</label>
+          <select class="input-text wide-select-menu" id="marker-color">
+            <option data-text="menu.marker_color.by_cycle">By cycle</option>
+            <option data-text="menu.marker_color.by_category">By category</option>
+            <option disabled>------------</option>
+            <option data-text="menu.marker_color.auto_orange_darkblue">auto orange/darkblue</option>
+            <option disabled>------------</option>
+            <option data-text="generic.blue">Blue</option>
+            <option data-text="generic.orange">Orange</option>
+            <option data-text="generic.purple">Purple</option>
+            <option data-text="generic.darkpurple">Dark purple</option>
+            <option data-text="generic.darkred">Dark red</option>
+            <option data-text="generic.darkblue">Dark blue</option>
+          </select>
+        </div>
+        <hr class="menu-divider">
         <div class="input-container" data-help="overlay_opacity">
           <label for="overlay-opacity" data-text="menu.overlay_opacity">Overlay opacity</label>
           <select class="input-text wide-select-menu" id="overlay-opacity">
@@ -486,22 +511,6 @@
             <option value="1" data-text="menu.marker_opacity.100" selected>Opaque</option>
           </select>
         </div>
-        <div class="input-container" data-help="marker_color">
-          <label for="marker-color" data-text="menu.marker_color.header">Marker colors</label>
-          <select class="input-text wide-select-menu" id="marker-color">
-            <option data-text="menu.marker_color.by_cycle">By cycle</option>
-            <option data-text="menu.marker_color.by_category">By category</option>
-            <option disabled>------------</option>
-            <option data-text="menu.marker_color.auto_orange_darkblue">auto orange/darkblue</option>
-            <option disabled>------------</option>
-            <option data-text="generic.blue">Blue</option>
-            <option data-text="generic.orange">Orange</option>
-            <option data-text="generic.purple">Purple</option>
-            <option data-text="generic.darkpurple">Dark purple</option>
-            <option data-text="generic.darkred">Dark red</option>
-            <option data-text="generic.darkblue">Dark blue</option>
-          </select>
-        </div>
         <div class="input-container" data-help="marker_cluster">
           <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
           <div class="input-checkbox-wrapper">
@@ -517,6 +526,24 @@
             <label class="input-checkbox-label" for="enable-marker-shadows"></label>
           </div>
         </div>
+        <div class="input-container" data-help="enable_marker_popups">
+          <label for="enable-marker-popups" data-text="menu.enable_marker_popups">Marker popups enabled</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-marker-popups" value="1"
+              id="enable-marker-popups" />
+            <label class="input-checkbox-label" for="enable-marker-popups"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="enable_marker_popups_hover">
+          <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on
+            hover</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1"
+              id="enable-marker-popups-hover" />
+            <label class="input-checkbox-label" for="enable-marker-popups-hover"></label>
+          </div>
+        </div>
+        <hr class="menu-divider">
         <div class="input-container" data-help="enable_legendary_backgrounds">
           <label for="enable-legendary-backgrounds" data-text="menu.enable_legendary_backgrounds">Legendary Animal backgrounds enabled</label>
           <div class="input-checkbox-wrapper">
@@ -545,32 +572,7 @@
             <option value="2" data-text="menu.marker_size.200">200%</option>
           </select>
         </div>
-        <div class="input-container" data-help="enable_marker_popups">
-          <label for="enable-marker-popups" data-text="menu.enable_marker_popups">Marker popups enabled</label>
-          <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-marker-popups" value="1"
-              id="enable-marker-popups" />
-            <label class="input-checkbox-label" for="enable-marker-popups"></label>
-          </div>
-        </div>
-        <div class="input-container" data-help="enable_marker_popups_hover">
-          <label for="enable-marker-popups-hover" data-text="menu.enable_marker_popups_hover">Open marker popups on
-            hover</label>
-          <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="enable-marker-popups-hover" value="1"
-              id="enable-marker-popups-hover" />
-            <label class="input-checkbox-label" for="enable-marker-popups-hover"></label>
-          </div>
-        </div>
-        <div class="input-container" data-help="sort_items_alphabetically">
-          <label for="sort-items-alphabetically" data-text="menu.sort_items_alphabetically">Sort items
-            alphabetically</label>
-          <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="sort-items-alphabetically" value="1"
-              id="sort-items-alphabetically" />
-            <label class="input-checkbox-label" for="sort-items-alphabetically"></label>
-          </div>
-        </div>
+        <hr class="menu-divider">
         <div class="input-container" data-help="enable_dclick_zoom">
           <label for="enable-dclick-zoom" data-text="menu.enable_dclick_zoom">Double-click to zoom in</label>
           <div class="input-checkbox-wrapper">
@@ -578,18 +580,18 @@
             <label class="input-checkbox-label" for="enable-dclick-zoom"></label>
           </div>
         </div>
-        <div class="input-container" data-help="timestamps_24">
-          <label for="timestamps-24" data-text="menu.timestamps_24">Clock in 24-hour format</label>
-          <div class="input-checkbox-wrapper">
-            <input class="input-checkbox" type="checkbox" name="timestamps-24" value="0" id="timestamps-24" />
-            <label class="input-checkbox-label" for="timestamps-24"></label>
-          </div>
-        </div>
         <div class="input-container" data-help="show_help">
           <label for="show-help" data-text="menu.show_help">Show help on hover</label>
           <div class="input-checkbox-wrapper">
             <input class="input-checkbox" type="checkbox" name="show-help" value="1" id="show-help" />
             <label class="input-checkbox-label" for="show-help"></label>
+          </div>
+        </div>
+        <div class="input-container" data-help="enable_cycles">
+          <label for="enable-cycles" data-text="menu.enable_cycles">Enable cycles display</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="enable-cycles" value="1" id="enable-cycles" />
+            <label class="input-checkbox-label" for="enable-cycles"></label>
           </div>
         </div>
         <div class="input-container" data-help="enable_cycle_input">
@@ -604,6 +606,14 @@
           <div class="input-checkbox-wrapper">
             <input class="input-checkbox" type="checkbox" name="show-coordinates" value="1" id="show-coordinates" />
             <label class="input-checkbox-label" for="show-coordinates"></label>
+          </div>
+        </div>
+        <hr class="menu-divider">
+        <div class="input-container" data-help="timestamps_24">
+          <label for="timestamps-24" data-text="menu.timestamps_24">Clock in 24-hour format</label>
+          <div class="input-checkbox-wrapper">
+            <input class="input-checkbox" type="checkbox" name="timestamps-24" value="0" id="timestamps-24" />
+            <label class="input-checkbox-label" for="timestamps-24"></label>
           </div>
         </div>
         <div class="input-container" data-help="timezone_offset">
@@ -1001,7 +1011,7 @@
   </div>
 
   <div class="modal fade" id="loot-table-modal" tabindex="-1" role="dialog" aria-labelledby="loot-table-title">
-    <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title" id="loot-table-title" data-text="menu.modal_loot_table_title">Loot Table</h4>
@@ -1146,7 +1156,7 @@
   <script>function isES6() { try { return eval("() => {};"), !0 } catch (r) { return !1 } } isES6() || alert("This browser might not be fully supported, and errors will likely occur. Please update your browser if you experience issues.");</script>
 
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1543"></script>
+  <script src="assets/js/loader.js?nocache=1544"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
   <script src="assets/js/lib/leaflet.js"></script>
@@ -1155,25 +1165,25 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1543"></script>
-  <script src="assets/js/settings.js?nocache=1543"></script>
-  <script src="assets/js/nazar.js?nocache=1543"></script>
-  <script src="assets/js/fme.js?nocache=1543"></script>
-  <script src="assets/js/cycles.js?nocache=1543"></script>
-  <script src="assets/js/marker.js?nocache=1543"></script>
-  <script src="assets/js/inventory.js?nocache=1543"></script>
-  <script src="assets/js/treasures.js?nocache=1543"></script>
-  <script src="assets/js/legendary.js?nocache=1543"></script>
-  <script src="assets/js/pins.js?nocache=1543"></script>
-  <script src="assets/js/map.js?nocache=1543"></script>
-  <script src="assets/js/language.js?nocache=1543"></script>
-  <script src="assets/js/menu.js?nocache=1543"></script>
-  <script src="assets/js/items.js?nocache=1543"></script>
-  <script src="assets/js/category-collection.js?nocache=1543"></script>
-  <script src="assets/js/routes.js?nocache=1543"></script>
-  <script src="assets/js/pathfinder.main.js?nocache=1543"></script>
-  <script src="assets/js/updates.js?nocache=1543"></script>
-  <script src="assets/js/scripts.js?nocache=1543"></script>
+  <script src="assets/js/layers.js?nocache=1544"></script>
+  <script src="assets/js/settings.js?nocache=1544"></script>
+  <script src="assets/js/nazar.js?nocache=1544"></script>
+  <script src="assets/js/fme.js?nocache=1544"></script>
+  <script src="assets/js/cycles.js?nocache=1544"></script>
+  <script src="assets/js/marker.js?nocache=1544"></script>
+  <script src="assets/js/inventory.js?nocache=1544"></script>
+  <script src="assets/js/treasures.js?nocache=1544"></script>
+  <script src="assets/js/legendary.js?nocache=1544"></script>
+  <script src="assets/js/pins.js?nocache=1544"></script>
+  <script src="assets/js/map.js?nocache=1544"></script>
+  <script src="assets/js/language.js?nocache=1544"></script>
+  <script src="assets/js/menu.js?nocache=1544"></script>
+  <script src="assets/js/items.js?nocache=1544"></script>
+  <script src="assets/js/category-collection.js?nocache=1544"></script>
+  <script src="assets/js/routes.js?nocache=1544"></script>
+  <script src="assets/js/pathfinder.main.js?nocache=1544"></script>
+  <script src="assets/js/updates.js?nocache=1544"></script>
+  <script src="assets/js/scripts.js?nocache=1544"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>

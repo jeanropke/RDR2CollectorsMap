@@ -201,9 +201,9 @@ class Collection extends BaseCollection {
               <img class="same-cycle-warning-menu" src="assets/images/same-cycle-alert.png">
             </span>
           </span>
-          <input class="input-text input-cycle" type="number" min="1" max="6"
+          <input class="input-text input-cycle hidden" type="number" min="1" max="6"
             name="${this.category}" data-help="item_manual_cycle">
-          <img class="cycle-icon" src="assets/images/cycle_1.png" alt="Cycle 1"
+          <img class="cycle-icon hidden" src="assets/images/cycle_1.png" alt="Cycle 1"
             data-type="${this.category}">
           <div class="open-submenu"></div>
         </div>
@@ -221,7 +221,7 @@ class Collection extends BaseCollection {
         </div>
       </div>
     `).translate()
-      .find('.input-cycle, .cycle-icon').hide().end() // improve visuals during initial loading
+      .find('.input-cycle, .cycle-icon').addClass('hidden').end() // improve visuals during initial loading
       .insertBefore('#collection-insertion-before-point');
     $element[0].rdoCollection = this;
     [this.$menuButton, this.$submenu] = $element.children().toArray().map(e => $(e));
@@ -229,8 +229,8 @@ class Collection extends BaseCollection {
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(Settings, 'isCycleInputEnabled', () =>
         this.$menuButton
-          .find('.input-cycle').toggle(Settings.isCycleInputEnabled).end()
-          .find('.cycle-icon').toggle(!Settings.isCycleInputEnabled).end()
+          .find('.input-cycle').toggleClass('hidden', !Settings.isCycleInputEnabled).end()
+          .find('.cycle-icon').toggleClass('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled).end()
       )();
       SettingProxy.addListener(InventorySettings, 'isEnabled enableAdvancedInventoryOptions', () =>
         this.$submenu

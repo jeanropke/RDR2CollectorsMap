@@ -133,7 +133,7 @@ const Cycles = {
   setLocaleDate: function () {
     'use strict';
     if (Cycles.selectedDay === undefined) return;
-    const options = { timeZone: "UTC", day: "2-digit", month: "long" };
+    const options = { timeZone: 'UTC', month: 'long', day: 'numeric' };
     $('.cycle-date').text(Cycles.selectedDay.toLocaleString(Settings.language, options));
   },
 

@@ -238,10 +238,11 @@ class Marker {
     const unknownCycle = this.cycleName == Cycles.unknownCycleNumber;
     const snippet = $(`<div class="handover-wrapper-with-no-influence">
       <h1>
-        <span data-text="${this.itemTranslationKey}"></span>
-        ${this.itemNumberStr} -
-        <span data-text="menu.day"></span>
-        <span data-text="${unknownCycle ? 'map.unknown_cycle' : this.cycleName}"></span>
+        <span data-text="${this.itemTranslationKey}"></span> ${this.itemNumberStr}
+        <span class="cycle-display hidden">
+          -&nbsp;<span data-text="menu.day"></span>
+          <span data-text="${unknownCycle ? 'map.unknown_cycle' : this.cycleName}"></span>
+        </span>
       </h1>
       <span class="marker-warning-wrapper">
         <div>
@@ -278,7 +279,10 @@ class Marker {
       </button>
     </div>`);
 
-    snippet.find('.marker-popup-links')
+    snippet.find('.cycle-display')
+      .toggleClass('hidden', !Settings.isCyclesVisible)
+      .end()
+      .find('.marker-popup-links')
       .find('[data-text="map.copy_link"]')
       .click((e) => {
         e.preventDefault();
