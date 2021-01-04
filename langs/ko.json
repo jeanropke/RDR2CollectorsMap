@@ -1364,5 +1364,6 @@
     "menu.legendary_animal_marker_type": "전설의 동물 마커 유형",
     "menu.legendary_icon_type.paw_prints": "발톱",
     "menu.legendary_icon_type.head": "머리",
-    "menu.legendary_animal_marker_size": "전설의 동물 마커 크기"
+    "menu.legendary_animal_marker_size": "전설의 동물 마커 크기",
+    "menu.timezone_offset": "시간대 보정"
 }
