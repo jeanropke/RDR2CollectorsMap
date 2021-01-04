@@ -923,7 +923,7 @@ function formatLootTableLevel(table, rate = 1, level = 0) {
     });
     result.append(wrapper);
   } else {
-    const item = $(`<div class="loot-table-item"><span data-text="${table}.name"></span><span class="rate">${formatted}%</span></div>`);
+    const item = $(`<div class="loot-table-item"><span data-text="${table}.name"></span><span class="rate">~${formatted}%</span></div>`);
     result.append(item);
   }
 
