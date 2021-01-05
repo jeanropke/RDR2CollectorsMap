@@ -1702,6 +1702,9 @@ flex-grow: 1;
     margin: 10px 0;
     width: 100%;
 }
+.legendary-properties p {
+    max-width: 65%;
+}
 
 /*Legendary animals popup text color*/
 .legendary-spawn-time,
@@ -1727,6 +1730,17 @@ flex-grow: 1;
 .legendary-cooldown-timer {
     color: #d80419;
     margin-bottom: 10px;
+}
+
+.snippet-animal-image {
+    width: 90%;
+    position: absolute;
+    top: 47%;
+    right: 0%;
+    opacity: .7;
+    margin: 0 -25%;
+    pointer-events: none;
+    user-select: none;
 }
 
 button.reload-nazar {
