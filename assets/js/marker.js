@@ -181,7 +181,7 @@ class Marker {
     const markerColor = MapBase.isPreviewMode ? 'by_cycle' : Settings.markerColor;
     if (markerColor.startsWith('auto')) {
       const [, normal, dark] = markerColor.split('_');
-      return url(MapBase.isDarkMode ? [dark, normal] : [normal, dark]);
+      return url(MapBase.isDarkMode() ? [dark, normal] : [normal, dark]);
     }
 
     let base;

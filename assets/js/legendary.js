@@ -52,10 +52,11 @@ class Legendary {
     this.marker = L.layerGroup();
     if (Settings.isLaBgEnabled) {
       this.marker.addLayer(L.circle([this.x, this.y], {
-          color: this.isGreyedOut ? '#c4c4c4' : "#fdc607",
-          fillColor: this.isGreyedOut ? '#c4c4c4' : "#fdc607",
-          fillOpacity: linear(Settings.overlayOpacity, 0, 1, 0.1, 0.5),
+          color: this.isGreyedOut ? '#c4c4c4' : '#fdc607',
+          fillColor: this.isGreyedOut ? '#c4c4c4' : '#fdc607',
+          fillOpacity: linear(Settings.overlayOpacity, 0, 1, .1, .2),
           radius: this.radius,
+          opacity: linear(Settings.overlayOpacity, 0, 1, .2, .6),
         })
         .bindPopup(this.popupContent.bind(this), {
           minWidth: 400
@@ -63,11 +64,11 @@ class Legendary {
       );
     }
 
-    const iconTypePath = ['heads/blip_mp', 'footprints/footprint'][Settings.legendarySpawnIconType];
+    const iconType = ['head', 'footprint'][Settings.legendarySpawnIconType];
     const spawnIconSize = Settings.legendarySpawnIconSize;
 
     this.spawnIcon = new L.Icon.TimedData({
-      iconUrl: `./assets/images/icons/game/animals/legendaries/${iconTypePath}_${this.species}.png?nocache=${nocache}`,
+      iconUrl: `./assets/images/icons/game/animals/legendaries/small/${iconType}_${MapBase.isDarkMode() ? 'gold_' : ''}${this.species}.png?nocache=${nocache}`,
       iconSize: [16 * spawnIconSize, 16 * spawnIconSize],
       iconAnchor: [8 * spawnIconSize, 8 * spawnIconSize],
       time: (() => {
@@ -93,7 +94,7 @@ class Legendary {
         [this.x - this.radius, this.y - this.radius * 2],
         [this.x + this.radius, this.y + this.radius * 2]
       ], {
-        opacity: linear(Settings.overlayOpacity, 0, 1, 0.5, 1),
+        opacity: MapBase.isDarkMode() ? linear(Settings.overlayOpacity, 0, 1, .1, .5) : linear(Settings.overlayOpacity, 0, 1, .5, .8),
       }));
     }
     this.onMap = this.onMap;

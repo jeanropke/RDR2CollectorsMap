@@ -13,7 +13,6 @@ const MapBase = {
   // (you also have to load overlays_beta.json instead of overlays.json in loader.js)
   interiors: false,
   importantItems: [],
-  isDarkMode: false,
   updateLoopAvailable: true,
   requestLoopCancel: false,
   showAllMarkers: false,
@@ -131,6 +130,7 @@ const MapBase = {
     MapBase.map.on('baselayerchange', function (e) {
       Settings.baseLayer = e.name;
       MapBase.setMapBackground();
+      Legendary.onSettingsChanged();
     });
 
     $('#overlay-opacity').val(Settings.overlayOpacity);
@@ -160,6 +160,10 @@ const MapBase = {
     Layers.itemMarkersLayer.addTo(MapBase.map);
   },
 
+  isDarkMode: function () {
+    return ['map.layers.dark', 'map.layers.black'].includes(Settings.baseLayer);
+  },
+
   loadOverlays: function () {
     return Loader.promises['overlays'].consumeJson(data => {
       MapBase.overlays = data;
@@ -177,8 +181,7 @@ const MapBase = {
 
   setMapBackground: function () {
     'use strict';
-    MapBase.isDarkMode = ['map.layers.dark', 'map.layers.black'].includes(Settings.baseLayer) ? true : false;
-    $('#map').css('background-color', MapBase.isDarkMode ? (Settings.baseLayer === 'map.layers.black' ? '#000' : '#3d3d3d') : '#d2b790');
+    $('#map').css('background-color', MapBase.isDarkMode() ? (Settings.baseLayer === 'map.layers.black' ? '#000' : '#3d3d3d') : '#d2b790');
     MapBase.setOverlays();
     if (Settings.markerColor.startsWith('auto')) {
       MapBase.markers.forEach(marker => marker.updateColor());
@@ -191,7 +194,7 @@ const MapBase = {
 
     if (Settings.overlayOpacity === 0) return;
 
-    let subDir = MapBase.isDarkMode ? 'dark' : 'normal';
+    let subDir = MapBase.isDarkMode() ? 'dark' : 'normal';
     if (MapBase.interiors) {
       subDir += '/game';
     }
