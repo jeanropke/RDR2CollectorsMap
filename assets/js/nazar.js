@@ -28,12 +28,7 @@ const MadamNazar = {
     } else {
       return Loader.promises['nazar'].consumeJson(data => {
         MadamNazar.currentLocation = MadamNazar.possibleLocations.findIndex(({ key }) => key === data.nazar);
-        MadamNazar.currentDate = {
-          locale: new Date(data.date).toLocaleString(Settings.language, {
-            day: "2-digit", month: "long", year: "numeric", timeZone: "UTC",
-          }),
-          isoString: data.date,
-        }
+        MadamNazar.currentDate = data.date;
         MadamNazar.addMadamNazar();
         console.info('%c[Nazar] Loaded!', 'color: #bada55; background: #242424');
       })
@@ -84,9 +79,12 @@ const MadamNazar = {
       MapBase.map.setView([cl.x, cl.y], 6);
   },
   popupContent: function () {
+    // Prevents date getting stuck when changing lang.
+    const locale = new Date(MadamNazar.currentDate).toLocaleString(Settings.language, { timeZone: 'UTC', month: 'long', day: 'numeric' });
+
     const $popup = $(`
         <div>
-          <h1><span data-text="menu.madam_nazar"></span> - ${MadamNazar.currentDate.locale || "#" + MadamNazar.currentLocation}</h1>
+          <h1><span data-text="menu.madam_nazar"></span> - ${locale || "#" + MadamNazar.currentLocation}</h1>
           <p style="text-align: center;" data-text="map.madam_nazar.desc"></p>
           <button class="btn btn-default reload-nazar" data-text="menu.madam_nazar_reload_position"></button>
         </div>`)
@@ -99,7 +97,7 @@ const MadamNazar = {
   },
   reloadNazar: function () {
     const nazarDate = new Date(Date.now() - 21600000).toISOUTCDateString();
-    if (MadamNazar.currentDate.isoString === nazarDate) return;
+    if (MadamNazar.currentDate === nazarDate) return;
     Loader.reloadData('nazar');
     MadamNazar.loadMadamNazar();
     console.info('%c[Nazar] Reloaded!', 'color: #FF6969; background: #242424');

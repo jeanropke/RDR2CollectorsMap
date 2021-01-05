@@ -1750,5 +1750,7 @@
     "help.show_updates": "Zeigt die neuesten Aktualisierungen an, die mit der Karte zusammenhängen.",
     "menu.timezone_offset": "Zeitzonen-Versatz",
     "help.timezone_offset": "Ermöglicht das Ändern des Zeitversatzes, wenn die Uhr falsch ist.",
-    "menu.modal_loot_table_explainer": "In diesen Tabellen wird der Prozentsatz angezeigt, wie wahrscheinlich es ist das man das entsprechende Element beim Graben erhält."
+    "menu.modal_loot_table_body": "In diesen Tabellen wird der Prozentsatz angezeigt, wie wahrscheinlich es ist das man das entsprechende Element beim Graben erhalten kann. Bitte beachte, dass es sich bei diesen Prozentsätzen um Näherungswerte handelt. Das Spiel rollt mehrere Male, zuerst für eine Kategorie, dann für ein Element innerhalb dieser Kategorie. Deswegen kann der tatsächliche Prozentsatz anders sein als hier angegeben.",
+    "menu.enable_cycles": "Zyklus-Anzeige aktivieren",
+    "help.enable_cycles": "Erlaubt es dir, die Sichtbarkeit der Zyklussymbole und des Textes in den Popups zu ändern."
 }

@@ -1130,7 +1130,7 @@ a.no-style:visited {
     color: #fff;
 }
 
-.modal-title {
+.modal h4 {
     font-family: RDRLino, serif;
     font-weight: normal;
     font-size: 24px;
@@ -1139,7 +1139,6 @@ a.no-style:visited {
 
 .modal-body {
     padding: 40px;
-    max-height: 500px;
     overflow-y: scroll;
 }
 
@@ -1163,7 +1162,10 @@ a.no-style:visited {
         height: 100%;
         vertical-align: middle;
         margin-right: -4px;
-        /* Adjusts for spacing */
+    }
+
+    .modal-body {
+        max-height: 650px !important;
     }
 
     .modal-dialog {
@@ -1652,13 +1654,13 @@ flex-grow: 1;
 .loot-table-title h4 {
     width: 100%;
     font-size: 24px;
-    margin: 12px 0;
+    margin: 18px 0 12px 0;
 }
 
 .loot-table-title h5 {
     display: inline;
     font-size: 20px;
-    margin: 12px 4px;
+    margin: 8px 4px;
 }
 
 .loot-table-title h4,
@@ -1728,6 +1730,6 @@ flex-grow: 1;
 }
 
 button.reload-nazar {
-    margin: 10px 0;
+    margin-top: 14px;
     width: 100%;
 }

@@ -153,11 +153,10 @@ class Legendary {
       $cooldownTimer.text(Language.get($cooldownTimer.attr('data-text'))
         .replace('{timer}', () => {
           const timeMilliseconds = +localStorage.getItem(this.animalSpeciesKey);
-          const timer = new Date(timeMilliseconds)
+          return new Date(timeMilliseconds)
             .toLocaleString(Settings.language, {
-              weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit',
+              weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit',
             });
-          return `[${timer}]`;
         })
       );
     }

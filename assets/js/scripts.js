@@ -155,6 +155,7 @@ function init() {
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsOnClickEnabled);
   $('#timestamps-24').prop("checked", Settings.isClock24Hour);
+  $('#enable-cycles').prop("checked", Settings.isCyclesVisible);
   $('#enable-cycle-input').prop("checked", Settings.isCycleInputEnabled);
   $("#enable-right-click").prop('checked', Settings.isRightClickEnabled);
   $("#enable-debug").prop('checked', Settings.isDebugEnabled);
@@ -169,8 +170,9 @@ function init() {
 
   $("#help-container").toggle(Settings.showHelp);
 
-  $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
-  $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
+  $('.input-cycle').toggleClass('hidden', !Settings.isCycleInputEnabled);
+  $('.cycle-icon').toggleClass('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled);
+  $('.cycle-display').toggleClass('hidden', !Settings.isCyclesVisible);
   $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
 
   $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
@@ -452,10 +454,16 @@ $("#marker-size").on("change", function () {
   Legendary.onSettingsChanged();
 });
 
+$("#enable-cycles").on("change", function () {
+  Settings.isCyclesVisible = $("#enable-cycles").prop('checked');
+  $('.cycle-icon').toggleClass('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled);
+  $('.cycle-display').toggleClass('hidden', !Settings.isCyclesVisible);
+});
+
 $("#enable-cycle-input").on("change", function () {
   Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
-  $('.input-cycle').toggleClass('hidden', !(Settings.isCycleInputEnabled));
-  $('.cycle-icon').toggleClass('hidden', Settings.isCycleInputEnabled);
+  $('.input-cycle').toggleClass('hidden', !Settings.isCycleInputEnabled);
+  $('.cycle-icon').toggleClass('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled);
 });
 
 // Remove item from map when using the menu
@@ -1015,7 +1023,7 @@ function linear(value, iMin, iMax, oMin, oMax) {
 function convertToTime(hours = '00', minutes = '00') {
   return Settings.isClock24Hour ?
     `${hours}:${minutes}` :
-    `${+hours % 12 || 12}:${minutes}${+hours >= 12 ? 'PM' : 'AM'}`;
+    `${+hours % 12 || 12}:${minutes}${+hours >= 12 ? ' PM' : ' AM'}`;
 }
 
 // returns an Array with all hours between from...to

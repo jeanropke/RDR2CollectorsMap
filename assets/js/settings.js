@@ -145,6 +145,7 @@ Object.entries({
   fmeNotificationPeriod: { default: 10 },
   isClock24Hour: { default: false },
   isCoordsOnClickEnabled: { default: false },
+  isCyclesVisible: { default: false },
   isCycleChangerEnabled: { default: false },
   isCycleInputEnabled: { default: false },
   isDebugEnabled: { default: false },
