@@ -50,7 +50,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **MrSmithr** (290 words)
 
 ### French:
-  - **Azhellarke** (568 words)
+  - **Azhellarke** (635 words)
   - **Ca0dan** (93 words)
   - **FRANCESCADOLORES** (1,005 words)
   - **Gaetan92** (15 words)
@@ -172,7 +172,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **smauri** (105 words)
   - **tomyloly.11** (698 words)
   - **ulises_hdz22** (361 words)
-  - **W10075343** (23 words)
+  - **W10075343** (70 words)
 
 ### Swedish:
   - **...---...** (431 words)
