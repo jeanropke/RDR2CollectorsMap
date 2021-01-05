@@ -1110,6 +1110,8 @@
     "weekly.desc": "此物品是{collection}的一部分。",
     "weekly.desc.1800_coins_set": "1800 年硬幣收藏",
     "weekly.desc.ancient_tools_set": "古代器具收藏",
+    "weekly.desc.ancient_wood_set": "古代木",
+    "weekly.desc.arthropod_set": "節肢動物",
     "weekly.desc.belle_set": "布萊特懷特美人收藏",
     "weekly.desc.black_and_white_set": "黑色和白色",
     "weekly.desc.bowman_set": "弓箭手收藏",
@@ -1142,6 +1144,7 @@
     "weekly.desc.royal_set": "皇家收藏",
     "weekly.desc.sacred_set": "神聖收藏",
     "weekly.desc.saint_denis_set": "聖丹尼收藏",
+    "weekly.desc.shot_in_the_dark_set": "黑夜追獵",
     "weekly.desc.squire_set": "護衛之旅收藏",
     "weekly.desc.tooth_and_nail_set": "牙齒和指甲",
     "weekly.desc.trophy_hunter_set": "獎杯獵人",
@@ -1218,7 +1221,7 @@
     "menu.wands": "權杖牌組塔羅牌",
     "menu.search": "搜索",
     "menu.settings": "設定",
-    "menu.day": "天",
+    "menu.day": "週期",
     "menu.tool_type": "工具類型",
     "menu.tool_type.no_tools": "無工具",
     "menu.tool_type.shovel": "鏟子",
@@ -1343,6 +1346,7 @@
     "map.user_pins.icon.nazar": "娜札女士",
     "map.user_pins.icon.treasure": "寶藏",
     "map.user_pins.icon.camp": "營地",
+    "map.user_pins.icon.harrietum": "哈莉特花",
     "menu.remove_all_pins": "移除所有標記",
     "help.remove_all_pins": "移除所有使用者創建的標記。",
     "menu.modal_remove_all_pins_title": "移除所有標記?",
@@ -1809,5 +1813,8 @@
     "menu.show_updates": "顯示最新的更新",
     "help.show_updates": "顯示與地圖相關的最新更新。",
     "menu.timezone_offset": "時區偏移",
-    "help.timezone_offset": "允許您變更時間偏移若時鐘顯示錯誤"
+    "help.timezone_offset": "允許您變更時間偏移若時鐘顯示錯誤",
+    "menu.modal_loot_table_body": "這些表格顯示當挖掘一項物品時相對應物品的掉落率百分比。請注意這些百分比僅為近似值。遊戲內變更(翻滾)數次, 首先是物品種類, 接著是該種類中所包含的物品項目。因此實際機率可與這裡陳述的有所不同。",
+    "menu.enable_cycles": "啟用週期顯示",
+    "help.enable_cycles": "允許您切換彈出式視窗的週期按鈕和文字的能見度"
 }
