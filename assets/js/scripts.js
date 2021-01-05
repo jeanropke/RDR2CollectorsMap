@@ -1012,6 +1012,14 @@ function filterMapMarkers() {
   MapBase.addMarkers();
 }
 
+/**
+  linear proportion with cut values out of range:
+  value - number to convert,
+  iMin - input range minimum,
+  iMax - input range maximum,
+  oMin - output range minimum,
+  oMax - output range maximum;
+**/
 function linear(value, iMin, iMax, oMin, oMax) {
   const clamp = (num, min, max) => {
     return num <= min ? min : num >= max ? max : num;
@@ -1019,7 +1027,7 @@ function linear(value, iMin, iMax, oMin, oMax) {
   return clamp((((value - iMin) / (iMax - iMin)) * (oMax - oMin) + oMin), oMin, oMax);
 }
 
-// converts string 'hours:minutes' to time 12/24 hours
+// converts number to correct 12/24 hours time:
 function convertToTime(hours = '00', minutes = '00') {
   return Settings.isClock24Hour ?
     `${hours}:${minutes}` :
