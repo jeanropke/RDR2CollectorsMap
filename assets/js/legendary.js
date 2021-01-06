@@ -44,7 +44,7 @@ class Legendary {
     this.species = this.text.replace(/^mp_animal_|_legendary_\d+$/g, '');
     this.animalSpeciesKey = `rdr2collector:Legendaries_category_time_${this.species}`;
     this.preferred_weather = Language.get(`map.weather.${this.preferred_weather}`);
-    this.trader_materials ||= Language.get('map.cant_be_picked_up');
+    this.trader_materials = this.trader_materials || Language.get('map.cant_be_picked_up');
     this.trapper_value = this.trapper_value ? `$${this.trapper_value.toFixed(2)}` : Language.get('map.cant_be_picked_up');
     this.trapper_pelt_value = `$${this.trapper_pelt_value.toFixed(2)}`;
     this.trapper_part_value = `$${this.trapper_part_value.toFixed(2)}`;
