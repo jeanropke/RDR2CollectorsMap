@@ -123,7 +123,7 @@ class Legendary {
     const properties = this.getAnimalProperties();
     const snippet = $(`
       <div class="handover-wrapper-with-no-influence">
-        <img class="snippet-animal-image" src="assets/images/icons/game/animals/legendaries/${this.text}.svg" alt="Animal">
+        <img class="legendary-animal-popup-image" src="assets/images/icons/game/animals/legendaries/${this.text}.svg" alt="Animal">
         <h1 data-text="${this.text}"></h1>
         <p class="legendary-cooldown-timer" data-text="map.legendary_animal_cooldown_end_time"></p>
         <p data-text="${Language.get(this.text + '.desc')}"></p>
@@ -177,9 +177,6 @@ class Legendary {
       .end()
       .find('button.remove-animal')
         .on('click', () => this.onMap = false)
-      .end()
-        .find('.snippet-animal-image')
-        .toggle(!Settings.isLaBgEnabled)
       .end();
 
     return snippet[0];

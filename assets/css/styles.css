@@ -1703,7 +1703,7 @@ flex-grow: 1;
     width: 100%;
 }
 .legendary-properties p {
-    max-width: 65%;
+    max-width: 60%;
 }
 
 /*Legendary animals popup text color*/
@@ -1732,10 +1732,10 @@ flex-grow: 1;
     margin-bottom: 10px;
 }
 
-.snippet-animal-image {
+.legendary-animal-popup-image {
     width: 90%;
     position: absolute;
-    top: 47%;
+    bottom: 16%;
     right: 0%;
     opacity: .7;
     margin: 0 -25%;
