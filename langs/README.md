@@ -96,6 +96,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Visite** (121 words)
 
 ### Japanese:
+  - **igucheese** (82 words)
   - **momc** (529 words)
   - **TOSA_MAKI** (403 words)
 
