@@ -1989,7 +1989,7 @@
     "map.weather.foggy": "Foggy weather",
     "map.weather.rain": "Rainy weather",
     "map.weather.any": "Any weather",
-    "map.legendary.spawn_time": "Preferred spawn time: {spawn_time}",
+    "map.legendary.spawn_time_string": "Preferred spawn time: {spawn_time_string}",
     "map.legendary.preferred_weather": "Preferred weather: {preferred_weather}",
     "map.legendary.trader_materials": "Trader materials: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Trader pelt materials: {trader_pelt_materials}",
