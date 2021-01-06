@@ -90,14 +90,13 @@ const MadamNazar = {
         </div>`)
       .translate()
       .find('button')
-      .on('click', () => MadamNazar.reloadNazar())
+        .on('click', () => MadamNazar.reloadNazar())
+        .toggle(MadamNazar.currentDate !== new Date(Date.now() - 21600000).toISOUTCDateString())
       .end();
 
     return $popup[0];
   },
   reloadNazar: function () {
-    const nazarDate = new Date(Date.now() - 21600000).toISOUTCDateString();
-    if (MadamNazar.currentDate === nazarDate) return;
     Loader.reloadData('nazar');
     MadamNazar.loadMadamNazar();
     console.info('%c[Nazar] Reloaded!', 'color: #FF6969; background: #242424');
