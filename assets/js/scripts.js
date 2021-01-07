@@ -1031,7 +1031,7 @@ function linear(value, iMin, iMax, oMin, oMax) {
 function convertToTime(hours = '00', minutes = '00') {
   return Settings.isClock24Hour ?
     `${hours}:${minutes}` :
-    `${+hours % 12 || 12}:${minutes}${+hours >= 12 ? ' PM' : ' AM'}`;
+    `${+hours % 12 || 12}:${minutes} ${+hours >= 12 ? 'PM' : 'AM'}`;
 }
 
 // returns an Array with all hours between from...to
