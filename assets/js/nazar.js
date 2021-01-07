@@ -71,7 +71,7 @@ const MadamNazar = {
             `
       })
     });
-    marker.bindPopup(MadamNazar.popupContent(), { minWidth: 300 });
+    marker.bindPopup(MadamNazar.popupContent.bind(this), { minWidth: 300 });
 
     Layers.nazarLayer.addLayer(marker);
 
