@@ -1723,6 +1723,7 @@
     "map.weather.foggy": "Nebelwetter",
     "map.weather.rain": "Regenwetter",
     "map.weather.any": "Bei jedem Wetter",
+    "map.legendary.spawn_time_string": "Bevorzugte Spawn-Zeit: {spawn_time_string}",
     "map.legendary.preferred_weather": "Bevorzugtes Wetter: {preferred_weather}",
     "map.legendary.trader_materials": "Händler-Materialien: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Händlerpelz-Materialien: {trader_pelt_materials}",
