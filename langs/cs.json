@@ -1615,7 +1615,6 @@
     "map.weather.foggy": "Mlžné počasí",
     "map.weather.rain": "Dešťivé počasí",
     "map.weather.any": "Jakékoliv počasí",
-    "map.legendary.spawn_time": "Preferovaný čas spawnu: {spawn_time}",
     "map.legendary.preferred_weather": "Preferované počasí: {preferred_weather}",
     "map.legendary.trader_materials": "Materiály obchodníka: {trader_materials}",
     "map.legendary.trapper_value": "Lovecká hodnota: {trapper_value}",

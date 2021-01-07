@@ -1753,7 +1753,6 @@
     "map.weather.foggy": "Sisli Hava",
     "map.weather.rain": "Yağmurlu Hava",
     "map.weather.any": "Bir Hava Durumu",
-    "map.legendary.spawn_time": "Önerilen doğma süresi: {spawn_time}",
     "map.legendary.preferred_weather": "Önerilen hava durumu: {preferred_weather}",
     "map.legendary.trader_materials": "Tüccar malzemeleri: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Tüccar post malzemeleri: {trader_pelt_materials}",

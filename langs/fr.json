@@ -1786,7 +1786,6 @@
     "map.weather.foggy": "Temps brumeux",
     "map.weather.rain": "Temps pluvieux",
     "map.weather.any": "Tous les temps",
-    "map.legendary.spawn_time": "Heure d'apparition préférée : {spawn_time}",
     "map.legendary.preferred_weather": "Préférence météo: {preferred_weather}",
     "map.legendary.trader_materials": "Marchandises de marchand: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Morceaux d'animaux de marchand: {trader_pelt_materials}",

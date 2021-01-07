@@ -1580,7 +1580,6 @@
     "map.weather.foggy": "Meteo nebbioso",
     "map.weather.rain": "Meteo piovoso",
     "map.weather.any": "Qualsiasi meteo",
-    "map.legendary.spawn_time": "Orario di spawn preferito: {spawn_time}",
     "map.legendary.preferred_weather": "Meteo preferito: {preferred_weather}",
     "map.legendary.trader_materials": "Materiali da commerciante: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Pelli da commerciante: {trader_pelt_materials}",

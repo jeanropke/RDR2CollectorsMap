@@ -1774,7 +1774,6 @@
     "map.weather.foggy": "雾天",
     "map.weather.rain": "雨天",
     "map.weather.any": "任何天气",
-    "map.legendary.spawn_time": "偏好刷出时间：{spawn_time}",
     "map.legendary.preferred_weather": "偏好天气：{preferred_weather}",
     "map.legendary.trader_materials": "商贩补充材料价值：{trader_materials}",
     "map.legendary.trader_pelt_materials": "商贩毛皮补充材料价值：{trader_pelt_materials}",

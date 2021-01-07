@@ -1786,7 +1786,6 @@
     "map.weather.foggy": "Туманна погода",
     "map.weather.rain": "Дощова погода",
     "map.weather.any": "Будь-яка погода",
-    "map.legendary.spawn_time": "Рекомендований час: {spawn_time}",
     "map.legendary.preferred_weather": "Рекомендована погода: {preferred_weather}",
     "map.legendary.trader_materials": "Торговець, матеріалів з туші: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Торговець, матеріалів з шкіри: {trader_pelt_materials}",

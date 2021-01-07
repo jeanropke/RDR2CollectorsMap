@@ -1783,7 +1783,6 @@
     "map.weather.foggy": "Mglistna pogoda",
     "map.weather.rain": "Deszczowa pogoda",
     "map.weather.any": "Dowolna pogoda",
-    "map.legendary.spawn_time": "Preferowana pora dnia: {spawn_time}",
     "map.legendary.preferred_weather": "Preferowana pogoda: {preferred_weather}",
     "map.legendary.trader_materials": "Materiały handlowca: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Materiały handlowca - futro: {trader_pelt_materials}",
