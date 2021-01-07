@@ -1515,7 +1515,7 @@
     "help.item_weekly": "切換此項目是否顯示在地圖上。此物品是{collection}的一部分。",
     "help.item_unavailable": "切換此項目在地圖上是否應可見。請注意，由於遊戲錯誤或未被發現，該項目不可用。",
     "help.item_random": "切換此項目是否顯示在地圖上。此物品在目前周期中是隨機的。",
-    "help.clear_important_items": "清除所有重要標記的明亮部分。",
+    "help.clear_important_items": "清除所有已標為重要標記的高亮外框。",
     "help.item_category_unavailable_items": "切換這個套組是否顯示在地圖上。這套組包含一個或以上的隨機項目, 或由於遊戲錯誤漏洞而無法使用。",
     "help.item_category_bugged_items": "切換這個套組是否顯示在地圖上。這套組包含一個或以上的項目因遊戲錯誤漏洞而無法使用。",
     "help.item_category_random_items": "切換這個套組是否顯示在地圖上。這套組包含一個或以上的隨機項目。",
