@@ -49,11 +49,6 @@ class Legendary {
     this.trapper_pelt_value = `$${this.trapper_pelt_value.toFixed(2)}`;
     this.trapper_part_value = `$${this.trapper_part_value.toFixed(2)}`;
     this.sample_value = `$${this.sample_value.toFixed(2)}`;
-    this.spawn_time_string = (() => {
-      let timeString = '';
-      this.spawn_time.forEach(timeArray => timeString += `${convertToTime(timeArray[0])} - ${convertToTime(timeArray[1])}, `);
-      return timeString.replace(/,\s$/, '');
-    })();
     this.reinitMarker();
     this.element.appendTo(Legendary.context);
   }
@@ -131,6 +126,12 @@ class Legendary {
         <button type="button" class="btn btn-info remove-button remove-animal" data-text="map.remove"></button>
       </div>`)
       .translate();
+
+    this.spawn_time_string = (() => {
+      let timeString = '';
+      this.spawn_time.forEach(timeArray => timeString += `${convertToTime(timeArray[0])} - ${convertToTime(timeArray[1])}, `);
+      return timeString.replace(/,\s$/, '');
+    })();
 
     const pElements = $('span > p', snippet);
     [...pElements].forEach(p => {
