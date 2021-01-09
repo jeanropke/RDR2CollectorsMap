@@ -163,6 +163,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **BrendaLinet** (59 words)
   - **Bruxes** (135 words)
   - **catmc8565** (163 words)
+  - **Deepnight** (83 words)
   - **drcx00** (13 words)
   - **maximilianocarvajalluengo** (423 words)
   - **mbc_2017** (101 words)
