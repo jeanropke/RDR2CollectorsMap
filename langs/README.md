@@ -49,6 +49,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **AdamNortonUK** (12 words)
   - **MrSmithr** (290 words)
 
+### Finnish:
+  - **seevimi** (283 words)
+
 ### French:
   - **Azhellarke** (635 words)
   - **Ca0dan** (93 words)
@@ -85,12 +88,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (2,578 words)
+  - **Enrik014** (670 words)
   - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
   - **Jarsha1311** (500 words)
   - **masterflash222** (268 words)
   - **misticjoker** (3,718 words)
   - **Raffox97** (33 words)
+  - **REMOVED_USER** (1,189 words)
   - **TheSgrash** (282 words)
   - **Tony_Bell** (192 words)
   - **Visite** (121 words)
@@ -98,11 +103,12 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Japanese:
   - **igucheese** (82 words)
   - **momc** (529 words)
+  - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
 
 ### Korean:
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (319 words)
+  - **CoolBreeze-13s** (325 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
 
@@ -202,12 +208,13 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Ukrainian:
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
-  - **grmaster5s** (10,504 words)
+  - **grmaster5s** (10,571 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
   - **UluMulu** (217 words)
   - **warkoun** (290 words)
 
 ### Vietnamese:
+  - **minhnhat.2206** (10 words)
   - **rheascarlete** (387 words)
 
