@@ -1517,6 +1517,8 @@
     "help.item_random": "Bu eşyanın haritada görünür olmasını belirler. Bu eşyanın mevcut döngüde rastgele olduğuna dikkat edin.",
     "help.clear_important_items": "Önemli olarak işaretlenen tüm işaretçileri temizler.",
     "help.item_category_unavailable_items": "Bu setin haritada görünür olmasını ayarlar. Bu setteki bazı eşyaların Naturalist güncellemesinden sonra rastgele çıktığını veya bir oyun hatası nedeniyle kullanılamaz olduğunu dikkate alınız.",
+    "help.item_category_bugged_items": "Bu setin haritada görünür olup olmayacağını ayarlar. Bu set, bir oyun hatası nedeniyle kullanılamayan bir veya daha fazla eşya içeriyor.",
+    "help.item_category_random_items": "Bu setin haritada görünür olup olmayacağını ayarlar. Bu set, rastgele seçilen bir veya daha fazla eşya içerir.",
     "help.search_clear": "Mevcut arama sorgunuzu temizler.",
     "help.search_copy_link": "Mevcut arama bağlantısını panoya kopyalar bu sayede arama sorgusuyla haritayı aratabilirsiniz.",
     "help.sort_items_alphabetically": "Eşyaların alfabetik veya oyundaki sırasına göre sıralanmasını belirler.",
@@ -1753,6 +1755,7 @@
     "map.weather.foggy": "Sisli Hava",
     "map.weather.rain": "Yağmurlu Hava",
     "map.weather.any": "Bir Hava Durumu",
+    "map.legendary.spawn_time_string": "Önerilen doğma süresi: {spawn_time_string}",
     "map.legendary.preferred_weather": "Önerilen hava durumu: {preferred_weather}",
     "map.legendary.trader_materials": "Tüccar malzemeleri: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Tüccar post malzemeleri: {trader_pelt_materials}",
@@ -1773,5 +1776,14 @@
     "menu.legendary_icon_type.head": "Kafa",
     "help.legendary_marker_size": "Efsanevi hayvanların doğma yerini gösteren simgenin boyutunu ayarlamanızı sağlar.",
     "menu.legendary_animal_marker_size": "Efsanevi Hayvan işaretçisi boyutu",
-    "menu.madam_nazar_reload_position": "Konumu güncellemek için tıklayın"
+    "menu.madam_nazar_reload_position": "Konumu güncellemek için tıklayın",
+    "menu.modal_map_updates_title": "Son Güncellemeler",
+    "menu.modal_map_updates_actions": "Bağlantılar",
+    "menu.show_updates": "En son güncelleştirmeleri göster",
+    "help.show_updates": "Haritayla ilgili en son güncelleştirmeleri gösterir.",
+    "menu.timezone_offset": "Saat dilimi farkı",
+    "help.timezone_offset": "Saat yanlışsa saat farkını değiştirmenizi sağlar.",
+    "menu.modal_loot_table_body": "Bu tablolar, bir eşyayı kazarken o eşyanın düşebileceği yüzdeyi gösterir. Lütfen bu yüzdelerin yaklaşık değerler olduğunu unutmayın. Oyun, önce bir kategori için, sonra da o kategorideki bir eşya için birden çok kez zar atar. Bu nedenle gerçek yüzde burada belirtilenden farklı olabilir.",
+    "menu.enable_cycles": "Döngülerin görüntülenmesini etkinleştir",
+    "help.enable_cycles": "Açılır pencerelerdeki döngü simgelerinin ve metnin görünürlüğünü değiştirmenizi sağlar."
 }
