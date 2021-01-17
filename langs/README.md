@@ -57,6 +57,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Ca0dan** (93 words)
   - **FRANCESCADOLORES** (1,005 words)
   - **Gaetan92** (15 words)
+  - **george37** (20 words)
   - **HGNitro** (30 words)
   - **iGuuunz** (225 words)
   - **JeanBankarbone** (538 words)
@@ -203,7 +204,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **atayyu** (74 words)
   - **bariss** (101 words)
   - **KagitmiAdam** (100 words)
-  - **Krykl** (12,147 words)
+  - **Krykl** (12,294 words)
 
 ### Ukrainian:
   - **andrew.zaanle** (484 words)
