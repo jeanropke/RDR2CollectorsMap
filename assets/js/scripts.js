@@ -303,6 +303,16 @@ setInterval(clockTick, 1000);
   - only hope: user does not do anything until that happens
 - please move them out of here to their respective owners
 */
+$('.side-menu').on('scroll', function () {
+  // These are not equality checks because of mobile weirdness.
+  const atTop = $(this).scrollTop() <= 0;
+  const atBottom = $(this).scrollTop() + $(document).height() >= $(this).prop("scrollHeight");
+  $('.scroller-line-tp').toggle(atTop);
+  $('.scroller-arrow-tp').toggle(!atTop);
+  $('.scroller-line-bt').toggle(atBottom);
+  $('.scroller-arrow-bt').toggle(!atBottom);
+});
+
 $('.top-widget > p').on('click', function () {
   const pElements = $('.top-widget > p').length;
   Settings.topWidgetState = (Settings.topWidgetState + 1) % pElements;
@@ -908,7 +918,7 @@ $('#open-updates-modal').on('click', function () {
 
 function formatLootTableLevel(table, rate = 1, level = 0) {
   const result = $("<div>");
-  
+
   const items = MapBase.lootTables.loot[table];
   const hasItems = !!items;
 

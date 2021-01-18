@@ -29,6 +29,10 @@
     border-radius: 3px;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
     font-size: 16px;
@@ -91,7 +95,7 @@ select {
 
 #main-header {
     display: flex;
-    margin: 10px;
+    margin-bottom: 5px;
 }
 
 #main-header::after {
@@ -200,10 +204,6 @@ select {
     text-align: center;
 }
 
-.map-cycle-alert {
-    z-index: 1010 !important;
-}
-
 .map-alert .close-button,
 .map-cycle-alert .close-button,
 .filter-alert .close-button {
@@ -223,7 +223,6 @@ select {
     width: 100%;
     width: 100vw;
     height: 100%;
-    height: 100vh;
     font-family: Hapna, serif;
     font-size: 13px;
 }
@@ -475,7 +474,6 @@ select {
     overflow-y: auto;
     overflow-x: hidden;
     height: 100%;
-    height: 100vh;
     color: #eee;
     z-index: 1000;
     scrollbar-width: thin;
@@ -744,7 +742,7 @@ a.wiki-page:visited {
 .help-popup {
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: rgba(0, 0, 0, .2);
     z-index: 1010;
     padding: 5%;
@@ -1264,19 +1262,75 @@ a.no-style:visited {
 
 /* Tutorial styling */
 
-#help-container {
+#top-sticky, #bottom-sticky {
     position: relative;
     position: -webkit-sticky;
     position: sticky;
+    z-index: 20;
+    background-color: #000;
+}
+
+#top-sticky {
+    padding: 10px 10px 0 10px !important;
+}
+
+#bottom-sticky {
+    padding: 0 !important;
+}
+
+#top-sticky {
+    top: 0;
+}
+
+#bottom-sticky {
     bottom: 0;
-    z-index: 10;
+}
+
+.scroller {
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    overflow: hidden;
+    line-height: 0;
+    margin: 0 -10px;
+}
+
+.scroller-grow, .scroller-stat {
+    position: relative;
+    width: 100%;
+    min-height: 10px;
+    line-height: 0;
+}
+
+.scroller-grow {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.scroller-stat {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+}
+
+.scroller-grow img {
+    width: 100%;
+    height: 10px;
+}
+
+#help-container {
     min-height: 100px;
     background-image: url(../../assets/images/help_text_bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding: 15px 25px;
+    margin-top: 5px;
 }
-
 
 /* Pathfinder styling */
 
@@ -1577,6 +1631,7 @@ flex-grow: 1;
 
 @media (max-width: 1024px) {
     #fme-container {
+        bottom: 25px;
         right: 50px;
     }
 
@@ -1609,7 +1664,6 @@ flex-grow: 1;
 }
 
 @media (min-width: 769px) {
-
     .settings-container .input-container:not(.disabled):after,
     .side-menu .menu-option:after,
     .side-menu .collectible-wrapper:after {
