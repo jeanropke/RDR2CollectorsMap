@@ -611,5 +611,17 @@
   "tarot_cards": 6,
   "fossils": 1,
   "date": "2021-01-20"
+ }, {
+  "flower": 2,
+  "bottle": 5,
+  "arrowhead": 3,
+  "egg": 2,
+  "coin": 1,
+  "heirlooms": 2,
+  "lost_jewelry": 4,
+  "random": 1,
+  "tarot_cards": 4,
+  "fossils": 5,
+  "date": "2021-01-21"
  }
 ]
