@@ -920,7 +920,6 @@ a.wiki-page:visited {
     cursor: not-allowed !important;
 }
 
-
 /* Custom action button styling */
 
 .input-container,
@@ -1148,7 +1147,7 @@ a.no-style:visited {
     margin: 5px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .modal {
         text-align: center;
         padding: 0 !important;
@@ -1201,9 +1200,7 @@ a.no-style:visited {
 }
 
 @media (max-width: 768px) {
-
-    .top-widget-menu-opened,
-    .fme-menu-opened {
+    .top-widget-menu-opened {
         display: none !important;
     }
 
@@ -1537,7 +1534,6 @@ a.no-style:visited {
     left: 9px;
 }
 
-
 /* Donate form */
 
 .donate-form {
@@ -1658,9 +1654,9 @@ flex-grow: 1;
         margin-right: 8px;
     }
 
-    .top-widget-menu-opened .fme-menu-opened {
-        display: none !important;
-    }
+    #fme-container.fme-menu-opened {
+        left: 5px;
+    }  
 }
 
 @media (min-width: 769px) {
