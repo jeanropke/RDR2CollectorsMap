@@ -56,31 +56,33 @@
 <body>
   <div class="side-menu">
     <div id="top-sticky">
-      <h2 id="main-header">
-        <img id="main-header-left" src="./assets/images/header_bg_left.png" alt="">
-        <div id="main-header-center">
-          <span data-text="menu.collectables">Collectables</span>
-          <h3 id="sub-header">
-            <span class="cycle-date" data-help="cycle_date" dir="auto">Loading...</span>
-            -
-            <span class="collectables-counter" data-text="menu.collectables_counter" data-help="collectables_counter"
-              dir="auto">Collected --- of ---</span>
-            -
-            <span id="items-value" data-help="items_value">$-.--</span>
-          </h3>
-        </div>
-        <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
-      </h2>
+      <div class="sticky-container">
+        <h2 id="main-header">
+          <img id="main-header-left" src="./assets/images/header_bg_left.png" alt="">
+          <div id="main-header-center">
+            <span data-text="menu.collectables">Collectables</span>
+            <h3 id="sub-header">
+              <span class="cycle-date" data-help="cycle_date" dir="auto">Loading...</span>
+              -
+              <span class="collectables-counter" data-text="menu.collectables_counter" data-help="collectables_counter"
+                dir="auto">Collected --- of ---</span>
+              -
+              <span id="items-value" data-help="items_value">$-.--</span>
+            </h3>
+          </div>
+          <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
+        </h2>
+      </div>
       <div class="scroller">
         <div class="scroller-grow">
           <img src="./assets/images/scroller/scroller_left_top.png" alt="">
-        </div>
-        <div class="scroller-stat">
-          <img src="./assets/images/scroller/scroller_arrow_top.png" alt="" class="scroller-arrow-tp" style="display: none;">
-          <img src="./assets/images/scroller/scroller_line_top.png" alt="" class="scroller-line-tp">
-        </div>
-        <div class="scroller-grow">
-          <img src="./assets/images/scroller/scroller_right_top.png" alt="">
+          </div>
+          <div class="scroller-stat">
+            <img src="./assets/images/scroller/scroller_arrow_top.png" alt="" class="scroller-arrow-tp" style="display: none;">
+            <img src="./assets/images/scroller/scroller_line_top.png" alt="" class="scroller-line-tp">
+          </div>
+          <div class="scroller-grow">
+            <img src="./assets/images/scroller/scroller_right_top.png" alt="">
         </div>
       </div>
     </div>
@@ -949,8 +951,10 @@
           <img src="./assets/images/scroller/scroller_right_bottom.png" alt="">
         </div>
       </div>
-      <div id="help-container">
-        <p data-text="help.default">Hover over any setting to get an explanation about it.</p>
+      <div class="sticky-container">
+        <div id="help-container">
+          <p data-text="help.default">Hover over any setting to get an explanation about it.</p>
+        </div>
       </div>
     </div>
   </div>
