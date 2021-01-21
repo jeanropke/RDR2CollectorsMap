@@ -34,21 +34,21 @@
     [ "23:15", "fme_king_of_the_castle" ]
   ],
   "role": [
-    [ "00:22", "fme_role_protect_legendary_animal"],
+    [ "00:22", "fme_role_greatest_bounty_hunter"],
     [ "01:52", "fme_role_greatest_bounty_hunter"],
     [ "03:22", "fme_role_animal_tagging"],
-    [ "04:52", "fme_role_round_up"],
-    [ "06:22", "fme_role_supply_train"],
-    [ "07:52", "fme_role_condor_egg"],
-    [ "09:22", "fme_role_greatest_bounty_hunter"],
-    [ "10:52", "fme_role_protect_legendary_animal"],
-    [ "12:22", "fme_role_round_up"],
-    [ "13:52", "fme_role_wreckage"],
-    [ "15:22", "fme_role_greatest_bounty_hunter"],
-    [ "16:52", "fme_role_animal_tagging"],
-    [ "18:22", "fme_role_round_up"],
-    [ "19:52", "fme_role_supply_train"],
-    [ "21:22", "fme_role_condor_egg"],
-    [ "22:52", "fme_role_greatest_bounty_hunter"]
+    [ "04:52", "fme_role_protect_legendary_animal"],  
+    [ "06:22", "fme_role_round_up"],
+    [ "07:52", "fme_role_animal_tagging"],
+    [ "09:22", "fme_role_protect_legendary_animal"],
+    [ "10:52", "fme_role_supply_train"],      
+    [ "12:22", "fme_role_animal_tagging"],
+    [ "13:52", "fme_role_protect_legendary_animal"],
+    [ "15:22", "fme_role_wreckage"],
+    [ "16:52", "fme_role_animal_tagging"], 
+    [ "18:22", "fme_role_protect_legendary_animal"], 
+    [ "19:52", "fme_role_condor_egg"],
+    [ "21:22", "fme_role_animal_tagging"], 
+    [ "22:52", "fme_role_protect_legendary_animal"]
   ]
 }
