@@ -87,7 +87,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **werhel** (443 words)
 
 ### Greek:
-  - **Arsenis** (58 words)
+  - **Arsenis** (189 words)
 
 ### Italian:
   - **AlexTucci** (23 words)
