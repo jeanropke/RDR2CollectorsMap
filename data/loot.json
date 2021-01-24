@@ -13,6 +13,18 @@
       "collectible_items_fossils_buried_mud",
       "collectible_items_fossils_buried_water"
     ],
+    "fossils_buried_snow": [
+      "collectible_items_fossils_buried_snow"
+    ],
+    "fossils_buried_dirt_snow": [
+      "collectible_items_fossils_buried_dirt_snow"
+    ],
+    "fossils_buried_mud": [
+      "collectible_items_fossils_buried_mud"
+    ],
+    "fossils_buried_water": [
+      "collectible_items_fossils_buried_water"
+    ],
     "heirlooms_random": [
       "collectible_hrlms_buried_mounds"
     ],

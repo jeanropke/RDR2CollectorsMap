@@ -111,6 +111,28 @@ class Marker {
           return '';
       }
     })();
+
+    /**
+     * Used to get the loot table key per category.
+     *
+     * @returns {string} The key of the loot table.
+     */
+    this.lootTable = (() => {
+      if (this.category === 'fossils_random') {
+        if (this.text.includes('_mud_'))
+          return 'fossils_buried_mud';
+        else if (this.text.includes('_snow_dirt_'))
+          return 'fossils_buried_dirt_snow';
+        else if (this.text.includes('_snow_'))
+          return 'fossils_buried_snow';
+        else if (this.text.includes('_water_'))
+          return 'fossils_buried_water';
+        else
+          return this.category;
+      } else {
+        return this.category;
+      }
+    })();
   }
 
   get isCollected() {
@@ -264,7 +286,7 @@ class Marker {
       </span>
       <p class='marker-popup-links'>
         <span><a href="${this.video}" target="_blank" data-text="map.video"></a> |</span>
-        <span><a href="" data-text="map.view_loot" data-toggle="modal" data-target="#loot-table-modal" data-loot-table="${this.category}"></a> |</span>
+        <span><a href="" data-text="map.view_loot" data-toggle="modal" data-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a> |</span>
         <span><a href="" data-text="map.mark_important"></a> |</span>
         <span><a href="" data-text="map.copy_link"></a></span>
       </p>
