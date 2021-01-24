@@ -175,6 +175,7 @@ Object.entries({
   legendarySpawnIconType: { default: 0 },
   legendarySpawnIconSize: { default: 1 },
   timeZoneOffset: { default: 0 },
+  showTooltipsMap: { default: 1 },
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 
 // Inventory settings

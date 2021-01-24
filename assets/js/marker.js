@@ -66,7 +66,7 @@ class Marker {
     this.primaryDescriptionKey = (() => {
       if (this.category === 'random') {
         return `${this.text}.desc`;
-      }  else {
+      } else {
         return `${this.markerId}.desc`;
       }
     })();
@@ -312,7 +312,7 @@ class Marker {
     if (!this.buggy && this.tool === 0) {
       toolImg.hide();
     } else {
-      const imgName = this.buggy ? 'cross' : {1: 'shovel', 2: 'magnet'}[this.tool];
+      const imgName = this.buggy ? 'cross' : { 1: 'shovel', 2: 'magnet' }[this.tool];
       toolImg.attr('src', `assets/images/${imgName}.png`);
     }
     if (!Settings.isDebugEnabled) snippet.find('.popupContentDebug').hide();
@@ -378,13 +378,20 @@ class Marker {
         extra.remove();
     }
 
+    let itemString = `${Language.get(this.itemTranslationKey)} ${this.itemNumberStr}`;
+
+    const unknownCycle = this.cycleName == Cycles.unknownCycleNumber;
+    if (!unknownCycle && Settings.isCyclesVisible)
+      itemString += ` - ${Language.get('menu.day')} ${this.cycleName}`;
+
     this.lMarker = L.marker([this.lat, this.lng], {
       icon: new L.DivIcon.DataMarkup({
         iconSize: [35 * markerSize, 45 * markerSize],
         iconAnchor: [17 * markerSize, 42 * markerSize],
         popupAnchor: [1 * markerSize, -29 * markerSize],
         html: snippet[0],
-        marker: this.text
+        marker: this.text,
+        tippy: itemString,
       })
     });
 

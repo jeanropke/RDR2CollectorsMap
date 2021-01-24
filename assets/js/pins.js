@@ -18,21 +18,24 @@ const Pins = {
 
     icon = icon == null ? 'pin' : icon;
     const shadow = Settings.isShadowsEnabled ? '<img class="shadow" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
+    const realName = name == null ? Language.get('map.user_pins.default_title') : name;
     const marker = L.marker([lat, lng], {
       id: id == null ? this.generatePinHash(`${lat}_${lng}_${Date.now()}`) : id,
-      name: name == null ? Language.get('map.user_pins.default_title') : name,
+      name: realName,
       desc: desc == null ? Language.get('map.user_pins.default_desc') : desc,
       icon_name: icon,
       draggable: Settings.isPinsEditingEnabled,
-      icon: L.divIcon({
+      icon: new L.DivIcon.DataMarkup({
         iconSize: [35 * markerSize, 45 * markerSize],
         iconAnchor: [17 * markerSize, 42 * markerSize],
         popupAnchor: [1 * markerSize, -29 * markerSize],
         shadowAnchor: [10 * markerSize, 12 * markerSize],
-        html:
-            `<img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
-            <img class="background" src="./assets/images/icons/${markerColor}.png" alt="Background">
-            ${shadow}`
+        html: `
+          <img class="icon" src="./assets/images/icons/${icon}.png" alt="Icon">
+          <img class="background" src="./assets/images/icons/${markerColor}.png" alt="Background">
+          ${shadow}
+        `,
+        tippy: realName,
       })
     });
 

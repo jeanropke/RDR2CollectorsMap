@@ -1,0 +1,44 @@
+.tippy-box[data-theme~='menu-theme'] {
+  background-color: transparent;
+  background-image: url(../../assets/images/bgTooltip.png);
+  background-size: 100% 100%;
+  border-radius: 3px;
+  color: #1a1a1a !important;
+  -webkit-filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
+  filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
+  font-family: RDRLino, serif;
+  font-weight: 400;
+  max-width: 260px;
+  padding: 8px;
+  text-align: center
+}
+
+.tippy-box[data-theme~='menu-theme'] .tippy-arrow {
+  color: #cacaca;
+}
+
+.tippy-box[data-theme~='map-theme'] {
+  background-color: transparent;
+  background-image: url(../../assets/images/bgMapTooltip.png);
+  background-size: 100% 100%;
+  border-radius: 0;
+  color: #fff !important;
+  font-family: Hapna, serif;
+  max-width: 260px;
+  text-align: center;
+  padding: 0;
+}
+
+.tippy-popper[x-placement^=bottom] .menu-theme .tippy-arrow {
+  top: -6px
+}
+
+.tippy-popper[x-placement^=top] .menu-theme .tippy-arrow {
+  bottom: -6px
+}
+
+@media (max-width: 768px) {
+  .tippy-box[data-theme~='map-theme'] {
+    display: none !important;
+  }
+}

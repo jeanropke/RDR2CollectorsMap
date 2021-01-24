@@ -60,15 +60,16 @@ const MadamNazar = {
       '';
 
     const marker = L.marker([cl.x, cl.y], {
-      icon: L.divIcon({
+      icon: new L.DivIcon.DataMarkup({
         iconSize: [35 * markerSize, 45 * markerSize],
         iconAnchor: [17 * markerSize, 42 * markerSize],
         popupAnchor: [1 * markerSize, -29 * markerSize],
         html: `
-              <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
-              <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'red'}.png" alt="Background">
-              ${shadow}
-            `
+          <img class="icon" src="./assets/images/icons/nazar.png" alt="Icon">
+          <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'red'}.png" alt="Background">
+          ${shadow}
+        `,
+        tippy: Language.get('menu.madam_nazar'),
       })
     });
     marker.bindPopup(MadamNazar.popupContent.bind(this), { minWidth: 300 });

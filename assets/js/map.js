@@ -14,6 +14,7 @@ const MapBase = {
   interiors: false,
   importantItems: [],
   updateLoopAvailable: true,
+  updateTippyTimer: null,
   requestLoopCancel: false,
   showAllMarkers: false,
   filtersData: [],
@@ -23,7 +24,9 @@ const MapBase = {
   mapInit: function () {
     'use strict';
 
+    this.tippyInstances = [];
     const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
+
     //Please, do not use the GitHub map tiles. Thanks
     const mapLayers = {
       'map.layers.default': L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
@@ -404,6 +407,7 @@ const MapBase = {
         MapBase.loadImportantItems();
         Inventory.updateItemHighlights();
         Routes.getCustomRoute();
+        MapBase.updateTippy('addMarkers');
       }
     );
 
@@ -561,7 +565,7 @@ const MapBase = {
         const shadow = Settings.isShadowsEnabled ?
           '<img class="shadow" width="' + 35 * markerSize + '" height="' + 16 * markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         const marker = L.marker([value.x, value.y], {
-          icon: L.divIcon({
+          icon: new L.DivIcon.DataMarkup({
             iconSize: [35 * markerSize, 45 * markerSize],
             iconAnchor: [17 * markerSize, 42 * markerSize],
             popupAnchor: [1 * markerSize, -29 * markerSize],
@@ -569,7 +573,8 @@ const MapBase = {
               <img class="icon" src="./assets/images/icons/fast_travel.png" alt="Icon">
               <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'gray'}.png" alt="Background">
               ${shadow}
-            `
+            `,
+            tippy: Language.get(value.text + '.name'),
           })
         });
 
@@ -591,7 +596,7 @@ const MapBase = {
     const shadow = Settings.isShadowsEnabled ?
       '<img class="shadow" width="' + 35 * markerSize + '" height="' + 16 * markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
     const marker = L.marker([lat, long], {
-      icon: L.divIcon({
+      icon: new L.DivIcon.DataMarkup({
         iconSize: [35 * markerSize, 45 * markerSize],
         iconAnchor: [17 * markerSize, 42 * markerSize],
         popupAnchor: [1 * markerSize, -29 * markerSize],
@@ -599,7 +604,8 @@ const MapBase = {
           <img class="icon" src="./assets/images/icons/random.png" alt="Icon">
           <img class="background" src="./assets/images/icons/marker_${MapBase.colorOverride || 'darkblue'}.png" alt="Background">
           ${shadow}
-        `
+        `,
+        tippy: name,
       })
     });
 
@@ -652,6 +658,73 @@ const MapBase = {
         finished.call(null);
       }
     })();
-  }
+  },
 
+  updateTippy: function (loc = '') {
+    if (Settings.isDebugEnabled)
+      console.log('UpdateTippy called from', loc);
+
+    // This is here to deal with stacked onMap updates (show all/hide all)
+    clearTimeout(MapBase.updateTippyTimer);
+    MapBase.updateTippyTimer = setTimeout(function () {
+      if (Settings.isDebugEnabled)
+        console.log('Updating MapBase Tippy...');
+
+      MapBase.tippyInstances.forEach(instance => instance.destroy());
+      MapBase.tippyInstances = [];
+
+      if (!Settings.showTooltipsMap || Settings.isPopupsHoverEnabled) return;
+
+      MapBase.tippyInstances = tippy('[data-tippy]', {
+        theme: 'map-theme',
+        placement: 'right',
+        arrow: false,
+        distance: 0,
+        content(ref) {
+          return ref.getAttribute('data-tippy');
+        },
+      });
+    }, 300);
+  },
+
+  // Rectangle for testing.
+  _rectangle: function (x, y, width, height) {
+    var currentPoint = this.map.latLngToContainerPoint([x, y]);
+
+    var xDifference = width / 2;
+    var yDifference = height / 2;
+
+    var southWest = L.point((currentPoint.x - xDifference), (currentPoint.y - yDifference));
+    var northEast = L.point((currentPoint.x + xDifference), (currentPoint.y + yDifference));
+
+    var bounds = L.latLngBounds(this.map.containerPointToLatLng(southWest), this.map.containerPointToLatLng(northEast));
+    L.rectangle(bounds).addTo(this.map);
+  },
+
+  //R* converting stuff
+  _debugMarker: function (coords) {
+    let temp = MapBase.map.unproject(this._gameToMap(coords), 8);
+    MapBase.debugMarker(temp.lat, temp.lng);
+    return { 'lat': temp.lat.toFixed(4), 'lng': temp.lng.toFixed(4) };
+  },
+
+  _gameToMap: function (coords) {
+    let image = [48841, 38666],
+      topLeft = [-7168, 4096],
+      bottomRight = [5120, -5632];
+
+    let i = image[0],
+      n = image[1],
+      e = this._normal_xy(topLeft, bottomRight),
+      s = this._normal_xy(topLeft, coords);
+    return [i * (s[0] / e[0]), n * (s[1] / e[1])];
+  },
+
+  _normal_xy: function (t, i) {
+    return [this._num_distance(t[0], i[0]), this._num_distance(t[1], i[1])];
+  },
+
+  _num_distance: function (t, i) {
+    return t > i ? t - i : i - t;
+  },
 };

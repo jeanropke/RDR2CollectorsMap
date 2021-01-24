@@ -67,6 +67,9 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
 
       img.dataset.time = timeRange(from, to);
     }
+
+    if (this.options.tippy)
+      img.dataset.tippy = this.options.tippy;
   }
 });
 
@@ -143,6 +146,7 @@ function init() {
   $('#marker-size').val(Settings.markerSize);
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.isMarkerClusterEnabled);
+  $('#tooltip-map').prop('checked', Settings.showTooltipsMap);
   $('#enable-marker-popups').prop("checked", Settings.isPopupsEnabled);
   $('#enable-marker-popups-hover').prop("checked", Settings.isPopupsHoverEnabled);
   $('#enable-marker-shadows').prop("checked", Settings.isShadowsEnabled);
@@ -468,6 +472,7 @@ $("#enable-cycles").on("change", function () {
   Settings.isCyclesVisible = $("#enable-cycles").prop('checked');
   $('.cycle-icon').toggleClass('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled);
   $('.cycle-display').toggleClass('hidden', !Settings.isCyclesVisible);
+  MapBase.addMarkers();
 });
 
 $("#enable-cycle-input").on("change", function () {
@@ -492,6 +497,11 @@ $('.menu-toggle').on('click', function () {
 
   $('.top-widget').toggleClass('top-widget-menu-opened', Settings.isMenuOpened);
   $('#fme-container').toggleClass('fme-menu-opened', Settings.isMenuOpened);
+});
+
+$('#tooltip-map').on('change', function () {
+  Settings.showTooltipsMap = $('#tooltip-map').prop('checked');
+  MapBase.updateTippy('tooltip');
 });
 
 $('#marker-cluster').on("change", function () {
