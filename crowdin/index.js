@@ -1,7 +1,11 @@
-const { Reports } = require('@crowdin/crowdin-api-client');
+const { TranslationStatus, Reports } = require('@crowdin/crowdin-api-client');
 const fetch = require('node-fetch');
 const fs = require('fs');
 require('dotenv').config();
+
+const status = new TranslationStatus({
+  token: process.env.API_TOKEN,
+});
 
 const api = new Reports({
   token: process.env.API_TOKEN,
@@ -15,6 +19,17 @@ async function getTopMembers() {
   try {
     const projectId = process.env.PROJECT_ID;
     const apiMaxTryCount = 5;
+
+    const projectProgress = {};
+    try {
+      const progress = await status.getProjectProgress(projectId, 500);
+      progress.data.forEach(language => {
+        const data = language.data;
+        projectProgress[data.languageId] = data.translationProgress;
+      });
+    } catch (error) {
+      console.error('getProjectProgress', JSON.stringify(error));
+    }
 
     let report = null;
     let reportId = null;
@@ -38,7 +53,7 @@ async function getTopMembers() {
       reportId = report.data.identifier;
       console.log(`Created a report with ID ${reportId}.`);
     } catch (error) {
-      console.error('generateReport', error);
+      console.error('generateReport', JSON.stringify(error));
       return false;
     }
 
@@ -49,7 +64,7 @@ async function getTopMembers() {
         reportReady = report.data.status === 'finished';
         console.log(`Checked report status, result is: ${report.data.status}.`);
       } catch (error) {
-        console.error('checkReportStatus', error);
+        console.error('checkReportStatus', JSON.stringify(error));
         reportReady = false;
       }
 
@@ -65,7 +80,7 @@ async function getTopMembers() {
       reportLink = await api.downloadReport(projectId, reportId);
       console.log(`Retrieved the report with ID ${reportId}.`);
     } catch (error) {
-      console.error('downloadReport', error);
+      console.error('downloadReport', JSON.stringify(error));
       return false;
     }
 
@@ -88,7 +103,7 @@ async function getTopMembers() {
           // NOTE: the unit is words (ln 27), so this currently requires at least 10 translated words.
           if (item.translated < 10) return;
 
-          const key = language.name;
+          const key = `${language.name} (${projectProgress[language.id]}%)`;
           if (!users[key]) users[key] = [];
 
           users[key].push(`**${item.user.username}** (${new Intl.NumberFormat('en-US').format(item.translated)} words)`);
@@ -101,9 +116,32 @@ async function getTopMembers() {
         ordered[key] = users[key];
       });
 
+      try {
+        // Save a file with the latest translation progress.
+        var replacements = {
+          'en-GB': 'en_GB',
+          'es-ES': 'es',
+          'pt-BR': 'pt_BR',
+          'pt-PT': 'pt',
+          'sv-SE': 'sv',
+          'zh-CN': 'zh_Hans',
+          'zh-TW': 'zh_Hant',
+        };
+
+        Object.keys(replacements).forEach(key => {
+          const value = replacements[key];
+          projectProgress[value] = projectProgress[key];
+          delete projectProgress[key];
+        });
+
+        fs.writeFileSync('data/lang_progress.json', JSON.stringify(projectProgress));
+      } catch (error) {
+        console.error('langProgress', JSON.stringify(error));
+      }
+
       return ordered;
     } catch (error) {
-      console.error('parse', error);
+      console.error('parse', JSON.stringify(error));
       return false;
     }
   } catch (error) {
@@ -127,7 +165,7 @@ async function updateReadme() {
 
     result += '## Pre-Crowdin Contributors\n';
     result += "We'd like to also mention the people that helped translate before the project switched to Crowdin, namely **Asya**, **flameango**, **githb123**, **glaseca**, **Gromino**, **iliggalodin**, **jeanropke**, **Kaffe97**, **Kiddamned**, **Klinorin**, **Korfeeeezy**, **Michal__d**, **MSSatari**, **Nopitch**, **Overnoes**, **pb29**, **qiexia**, **Raffox97**, **Rakmarok**, **rbcunhadesign**, **Senexis**, **sporb**, **Tiax**, **Vitor-Borba72**, **yamazakitouma**, and **yeradd12**.\n\n";
-    
+
     result += '## Crowdin Contributors\n';
     result += 'These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.\n\n';
 
@@ -146,7 +184,7 @@ async function updateReadme() {
 
     console.log('README updated.');
   } catch (error) {
-    console.error('updateReadme', error);
+    console.error('updateReadme', JSON.stringify(error));
   }
 }
 
