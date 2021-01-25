@@ -86,9 +86,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **viliri** (1,470 words)
   - **werhel** (443 words)
 
-### Greek (5%):
+### Greek (9%):
   - **Arsenis** (189 words)
-  - **jbrodaskal** (53 words)
+  - **jbrodaskal** (632 words)
 
 ### Italian (97%):
   - **AlexTucci** (23 words)
@@ -134,13 +134,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **indigonature** (71 words)
   - **petrasoares7** (340 words)
 
-### Portuguese, Brazilian (84%):
+### Portuguese, Brazilian (85%):
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
   - **ArthurZussman** (222 words)
   - **borba72** (23 words)
   - **FilipFelipe** (146 words)
   - **jeanropke** (4,938 words)
+  - **joabeHK** (104 words)
   - **KAKUNO123** (30 words)
   - **msfern** (215 words)
   - **Mutxatxo** (45 words)
@@ -211,10 +212,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,294 words)
 
-### Ukrainian (98%):
+### Ukrainian (99%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
-  - **grmaster5s** (10,578 words)
+  - **grmaster5s** (10,665 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
   - **UluMulu** (217 words)
