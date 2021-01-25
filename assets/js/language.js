@@ -1,13 +1,14 @@
 jQuery.fn.translate = function () {
   return Language.translateDom(this);
 };
-jQuery.fn.findWithSelf = function(...args) {
+jQuery.fn.findWithSelf = function (...args) {
   return this.pushStack(this.find(...args).add(this.filter(...args)));
 };
 
 const Language = {
   data: {},
   availableLanguages: ['en', 'af', 'ar', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'fi', 'fr', 'he', 'hu', 'it', 'ja', 'ko', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sr', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-Hans', 'zh-Hant'],
+  progress: {},
 
   init: function () {
     'use strict';
@@ -19,7 +20,7 @@ const Language = {
 
     langs.forEach(language => {
       $.ajax({
-        url: `./langs/${language.replace('-', '_')}.json?nocache=${nocache}`,
+        url: `./langs/${language.replace('-', '_')}.json?nocache=${nocache}&date=${new Date().toISOUTCDateString()}`,
         async: false,
         dataType: 'json',
         success: function (json) {
@@ -34,6 +35,11 @@ const Language = {
           Language.data[language] = result;
         }
       });
+    });
+
+    return Loader.promises['lang_progress'].consumeJson(data => {
+      this.progress = data;
+      this.updateProgress();
     });
   },
 
@@ -126,5 +132,23 @@ const Language = {
     $('#search').attr("placeholder", Language.get('menu.search_placeholder'));
 
     FME.update();
+    this.updateProgress();
+  },
+
+  updateProgress: function () {
+    $('#language option').each((key, value) => {
+      const item = $(value).attr('value').replace('-', '_');
+      let percent = this.progress[item];
+
+      if (item === "en") percent = 100;
+      if (!percent) percent = 0;
+
+      $(value).text(`${Language.get('menu.lang_' + item)} (${percent}%)`);
+    });
+
+    let thisProg = this.progress[Settings.language.replace('-', '_')];
+    if (Settings.language === "en") thisProg = 100;
+    if (!thisProg) thisProg = 0;
+    $('#translation-progress').text(Language.get('menu.translate_progress').replace('{progress}', thisProg))
   }
 };
