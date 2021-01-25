@@ -2019,5 +2019,7 @@
     "help.timezone_offset": "Allows you to change time offset if clock is wrong.",
     "menu.modal_loot_table_body": "У цих таблицях вказано відсоток, відповідно до якого може випасти відповідний предмет при викопуванні. Зауважте, що ці відсотки є приблизними. Гра прокручується кілька разів, першу для категорії, а потім для предмета цієї категорії. Тому фактичний відсоток може відрізнятися від зазначеного.",
     "menu.enable_cycles": "Enable cycles display",
-    "help.enable_cycles": "Allows you to toggle the visibility of the cycle icons and text in the popups."
+    "help.enable_cycles": "Allows you to toggle the visibility of the cycle icons and text in the popups.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

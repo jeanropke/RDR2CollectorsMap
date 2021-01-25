@@ -2019,5 +2019,7 @@
     "help.timezone_offset": "允許您變更時間偏移若時鐘顯示錯誤",
     "menu.modal_loot_table_body": "這些表格顯示當挖掘一項物品時相對應物品的掉落率百分比。請注意這些百分比僅為近似值。遊戲內變更(翻滾)數次, 首先是物品種類, 接著是該種類中所包含的物品項目。因此實際機率可與這裡陳述的有所不同。",
     "menu.enable_cycles": "啟用週期顯示",
-    "help.enable_cycles": "允許您切換彈出式視窗的週期按鈕和文字的能見度"
+    "help.enable_cycles": "允許您切換彈出式視窗的週期按鈕和文字的能見度",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

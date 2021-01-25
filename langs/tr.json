@@ -2019,5 +2019,7 @@
     "help.timezone_offset": "Saat yanlışsa saat farkını değiştirmenizi sağlar.",
     "menu.modal_loot_table_body": "Bu tablolar, bir eşyayı kazarken o eşyanın düşebileceği yüzdeyi gösterir. Lütfen bu yüzdelerin yaklaşık değerler olduğunu unutmayın. Oyun, önce bir kategori için, sonra da o kategorideki bir eşya için birden çok kez zar atar. Bu nedenle gerçek yüzde burada belirtilenden farklı olabilir.",
     "menu.enable_cycles": "Döngülerin görüntülenmesini etkinleştir",
-    "help.enable_cycles": "Açılır pencerelerdeki döngü simgelerinin ve metnin görünürlüğünü değiştirmenizi sağlar."
+    "help.enable_cycles": "Açılır pencerelerdeki döngü simgelerinin ve metnin görünürlüğünü değiştirmenizi sağlar.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

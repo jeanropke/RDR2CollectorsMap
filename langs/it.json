@@ -2019,5 +2019,7 @@
     "help.timezone_offset": "Consente di modificare l'offset del tempo se l'orologio è sbagliato.",
     "menu.modal_loot_table_body": "Queste tabelle mostrano la percentuale che l'articolo corrispondente può diminuire quando si scavava per un articolo. Si prega di notare che queste percentuali sono approssimazioni. Il gioco rotola più volte, prima per una categoria, poi per un articolo all'interno di quella categoria. Thereper la percentuale effettiva può essere diversa da qui riportata.",
     "menu.enable_cycles": "Attiva display wireless",
-    "help.enable_cycles": "Ti consente di scegliere se abilitare o no la visibilità delle icone e dei testi nei popup."
+    "help.enable_cycles": "Ti consente di scegliere se abilitare o no la visibilità delle icone e dei testi nei popup.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }

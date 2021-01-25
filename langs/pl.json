@@ -2019,5 +2019,7 @@
     "help.timezone_offset": "Pozwala na zmianę strefy czasowej, jeżeli zegar nie działa poprawnie.",
     "menu.modal_loot_table_body": "These tables show the percentage that the corresponding item can drop when digging for an item. Please note that these percentages are approximations. The game rolls multiple times, first for a category, then for an item within that category. Therefor the actual percentage can be different from stated here.",
     "menu.enable_cycles": "Enable cycles display",
-    "help.enable_cycles": "Allows you to toggle the visibility of the cycle icons and text in the popups."
+    "help.enable_cycles": "Allows you to toggle the visibility of the cycle icons and text in the popups.",
+    "menu.tooltip_map": "Tooltips for map items",
+    "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title."
 }
