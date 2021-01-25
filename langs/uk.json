@@ -2022,7 +2022,7 @@
     "help.enable_cycles": "Allows you to toggle the visibility of the cycle icons and text in the popups.",
     "menu.tooltip_map": "Tooltips for map items",
     "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
-    "menu.translate_progress": "The translation progress for this language is {progress}%.",
+    "menu.translate_progress": "Прогрес перекладу для цієї мови - {progress}%.",
     "menu.lang_en": "English",
     "menu.lang_af": "Afrikaans (Afrikaans)",
     "menu.lang_ar": "ٱلْعَرَبِيَّة (Arabic)",
