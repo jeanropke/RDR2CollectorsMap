@@ -88,6 +88,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Greek (5%):
   - **Arsenis** (189 words)
+  - **jbrodaskal** (53 words)
 
 ### Italian (97%):
   - **AlexTucci** (23 words)
