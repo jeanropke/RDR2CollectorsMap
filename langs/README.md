@@ -66,7 +66,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
   - **Maxemi** (224 words)
-  - **Michal__d** (2,463 words)
+  - **Michal__d** (2,639 words)
   - **Oldboy77** (494 words)
   - **radragon** (917 words)
   - **RedShard-B** (36 words)
@@ -125,9 +125,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **henrietteg95** (830 words)
   - **Rilfus** (156 words)
 
-### Polish (98%):
+### Polish (99%):
   - **kac3pro** (97 words)
-  - **Michal__d** (2,463 words)
+  - **Michal__d** (2,639 words)
   - **Quahox** (39 words)
 
 ### Portuguese (5%):
