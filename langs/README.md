@@ -134,13 +134,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **indigonature** (71 words)
   - **petrasoares7** (340 words)
 
-### Portuguese, Brazilian (85%):
+### Portuguese, Brazilian (87%):
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
   - **ArthurZussman** (222 words)
   - **borba72** (23 words)
   - **FilipFelipe** (146 words)
-  - **jeanropke** (4,938 words)
+  - **jeanropke** (5,257 words)
   - **joabeHK** (104 words)
   - **KAKUNO123** (30 words)
   - **msfern** (215 words)
