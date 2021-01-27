@@ -636,8 +636,10 @@ const MapBase = {
       });
     }
 
-    if (Settings.isPinsPlacingEnabled)
-      Pins.addPin(coords.latlng.lat, coords.latlng.lng);
+    if (Settings.isPinsPlacingEnabled) {
+      Pins.onMap = true;
+      Pins.addPin(coords.latlng);
+    }
   },
 
   runOnDayChange: function () {

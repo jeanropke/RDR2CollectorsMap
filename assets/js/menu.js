@@ -126,11 +126,11 @@ class Menu {
           MapBase.addMarkers();
           Treasure.onCategoryToggle();
           Legendary.onCategoryToggle();
-          Pins.addToMap();
+          Pins.onCategoryToggle();
         } else if (category === 'nazar') {
           MadamNazar.addMadamNazar();
         } else if (category === 'user_pins') {
-          Pins.addToMap();
+          Pins.onCategoryToggle();
         } else if (category === 'treasure') {
           Treasure.onCategoryToggle();
         } else if (category === 'legendary_animals') {

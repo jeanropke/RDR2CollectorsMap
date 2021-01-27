@@ -115,7 +115,7 @@ function init() {
   MapBase.mapInit(); // MapBase.map
   Language.init();
   Language.setMenuLanguage();
-  Pins.addToMap();
+  Pins.init();
   changeCursor();
   // MapBase.markers (without .lMarker), Item.items[].markers
   const markers = Promise.all([itemsCollectionsWeekly, lootTables]).then(Marker.init);
@@ -546,66 +546,6 @@ $('#enable-dclick-zoom').on("change", function () {
     MapBase.map.doubleClickZoom.enable();
   } else {
     MapBase.map.doubleClickZoom.disable();
-  }
-});
-
-$('#pins-place-mode').on("change", function () {
-  Settings.isPinsPlacingEnabled = $("#pins-place-mode").prop('checked');
-});
-
-$('#pins-edit-mode').on("change", function () {
-  Settings.isPinsEditingEnabled = $("#pins-edit-mode").prop('checked');
-  Pins.addToMap();
-});
-
-$('#pins-place-new').on("click", function () {
-  Pins.addPinToCenter();
-});
-
-$('#remove-all-pins').on('click', function () {
-  Pins.removeAllPins();
-});
-
-$('#pins-export').on("click", function () {
-  try {
-    Pins.exportPins();
-  } catch (error) {
-    console.error(error);
-    alert(Language.get('alerts.feature_not_supported'));
-  }
-});
-
-$('#pins-import').on('click', function () {
-  try {
-    const file = $('#pins-import-file').prop('files')[0];
-    let fallback = false;
-
-    if (!file) {
-      alert(Language.get('alerts.file_not_found'));
-      return;
-    }
-
-    try {
-      file.text().then((text) => {
-        Pins.importPins(text);
-      });
-    } catch (error) {
-      fallback = true;
-    }
-
-    if (fallback) {
-      const reader = new FileReader();
-
-      reader.addEventListener('loadend', (e) => {
-        const text = e.srcElement.result;
-        Pins.importPins(text);
-      });
-
-      reader.readAsText(file);
-    }
-  } catch (error) {
-    console.error(error);
-    alert(Language.get('alerts.feature_not_supported'));
   }
 });
 

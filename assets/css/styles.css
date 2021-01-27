@@ -322,20 +322,117 @@ select {
 .marker-popup-pin-input-divider {
     margin: 2px 0;
     border: none;
-    border-top: solid 1px #B0B0B0;
+    border-top: solid 1px #b0b0b0;
 }
 
 .marker-popup-pin-label {
     margin-bottom: 2px;
 }
 
-.marker-popup-pin-input-icon {
+.marker-popup-pin-input-icon,
+.marker-popup-pin-input-color {
     background: #eee;
     border: none;
     padding: 5px 10px;
     font-size: 14px;
     height: 100%;
     border-radius: 3px;
+}
+
+.pin-color.aquagreen {
+    color: #00ffa2;
+}
+
+.pin-color.beige {
+    color: #ffce70;
+}
+
+.pin-color.black {
+    color: #292929;
+}
+
+.pin-color.blue {
+    color: #31a6c7;
+}
+
+.pin-color.brown {
+    color: #7c411f;
+}
+
+.pin-color.cadetblue {
+    color: #416776;
+}
+
+.pin-color.darkblue {
+    color: #0066a2;
+}
+
+.pin-color.darkgreen {
+    color: #627134;
+}
+
+.pin-color.darkorange {
+    color: #e27839;
+}
+
+.pin-color.darkpurple {
+    color: #593769;
+}
+
+.pin-color.darkred {
+    color: #a13235;
+}
+
+.pin-color.gray {
+    color: #444444;
+}
+
+.pin-color.green {
+    color: #70ae25;
+}
+
+.pin-color.lightblue {
+    color: #88dbff;
+}
+
+.pin-color.lightgray {
+    color: #5e5e5e;
+}
+
+.pin-color.lightgreen {
+    color: #a3c62c;
+}
+
+.pin-color.lightorange {
+    color: #ff8c7d;
+}
+
+.pin-color.lightred {
+    color: #da4d6d;
+}
+
+.pin-color.orange {
+    color: #ee9232;
+}
+
+.pin-color.pink {
+    color: #c05b9f;
+}
+
+.pin-color.purple {
+    color: #6b65a4;
+}
+
+.pin-color.red {
+    color: #d43d29;
+}
+
+.pin-color.white {
+    color: #ffffff;
+}
+
+.pin-color.yellow {
+    color: #ffcc5c;
 }
 
 .links-container {
