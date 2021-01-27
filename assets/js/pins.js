@@ -208,7 +208,7 @@ class Pins {
 
     this.context = $('.menu-option[data-type=user_pins]');
     this.context.toggleClass('disabled', !this.onMap)
-      .on('click', () => this.onMap = !this.onMap)
+      .on('click', this.onCategoryToggle)
       .translate();
 
       this.loadPins();
@@ -339,7 +339,7 @@ class Pins {
       if (!MapBase.isPreviewMode)
         localStorage.removeItem('rdr2collector:pins-enabled');
     }
-    this.context.toggleClass('disabled', state);
+    this.context.toggleClass('disabled', !state);
     MapBase.updateTippy('pins');
   }
 
@@ -355,8 +355,6 @@ class Pins {
     Pins.save();
   }
   static onCategoryToggle() {
-    Pins.pinsList.forEach(pin => {
-      pin.onMap = pin.onMap;
-    });
+    this.onMap = !this.onMap;
   }
 }
