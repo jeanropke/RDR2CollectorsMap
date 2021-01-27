@@ -1468,6 +1468,7 @@
     "routes.empty": "Tom rute",
     "routes.invalid": "Ugyldig rute. Kontrollér konsollen for at få flere oplysninger (F12)",
     "routes.set_as_route_start": "Angiv som rutestart",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "Tilfældige Spots",
     "menu.collectables_counter": "Indsaml {count} af {max}",
     "menu.collection_counter": "{count} af {max}",

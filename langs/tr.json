@@ -1468,6 +1468,7 @@
     "routes.empty": "Boş rota",
     "routes.invalid": "Geçersiz rota. Daha çok bilgi için konsola bakın (F12)",
     "routes.set_as_route_start": "Rota başlangıcı olarak ayarla",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "Rastgele Noktalar",
     "menu.collectables_counter": "Toplanan {count} / {max}",
     "menu.collection_counter": "{count} / {max}",

@@ -1468,6 +1468,7 @@
     "routes.empty": "Tyhjä reitti",
     "routes.invalid": "Virheellinen reitti. Lisätietoja (F12)",
     "routes.set_as_route_start": "Määritä reitin alkuun",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "SatunnaisSpotit",
     "menu.collectables_counter": "Kerätty {count} of {max}",
     "menu.collection_counter": "{count} of {max}",

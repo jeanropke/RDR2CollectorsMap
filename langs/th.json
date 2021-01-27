@@ -1468,6 +1468,7 @@
     "routes.empty": "ไม่มีเส้นทาง",
     "routes.invalid": "เส้นทางผิดพลาด. ตรวจสอบ Console โดยกด (F12)",
     "routes.set_as_route_start": "เริ่มจาก",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "สุ่มจุด",
     "menu.collectables_counter": "เก็บได้ {count} ใน {max}",
     "menu.collection_counter": "{count} ใน {max}",

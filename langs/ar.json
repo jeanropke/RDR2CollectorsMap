@@ -1468,6 +1468,7 @@
     "routes.empty": "مسار فارغ",
     "routes.invalid": "مسار غير صالح (اضغط F12 لمزيد من المعلومات)",
     "routes.set_as_route_start": "تعيين كبداية طريق",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "نقاط عشوائية",
     "menu.collectables_counter": "تم جمع {count} من أصل {max}",
     "menu.collection_counter": "{count} من أصل {max}",

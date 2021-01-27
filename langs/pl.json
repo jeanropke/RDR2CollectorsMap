@@ -1468,6 +1468,7 @@
     "routes.empty": "Pusta trasa",
     "routes.invalid": "Nieprawidłowa trasa. Sprawdź konsolę, aby uzyskać więcej informacji (F12)",
     "routes.set_as_route_start": "Ustaw jako początek trasy",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "Losowe przedmioty",
     "menu.collectables_counter": "Zebrano {count} z {max}",
     "menu.collection_counter": "{count} z {max}",

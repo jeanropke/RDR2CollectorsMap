@@ -1468,6 +1468,7 @@
     "routes.empty": "Percorso vuoto",
     "routes.invalid": "Percorso non valido. Controlla la console per più informazioni (F12)",
     "routes.set_as_route_start": "Imposta come inizio del percorso",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "Punti casuali",
     "menu.collectables_counter": "Collezionati {count} di {max}",
     "menu.collection_counter": "{count} di {max}",

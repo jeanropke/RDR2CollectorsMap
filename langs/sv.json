@@ -1468,6 +1468,7 @@
     "routes.empty": "Tom rutt",
     "routes.invalid": "Ogiltig rutt. Kontrollera konsolen för mer information (F12)",
     "routes.set_as_route_start": "Ange som ruttstart",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "Slumpmässiga platser",
     "menu.collectables_counter": "Insamlad {count} av {max}",
     "menu.collection_counter": "{count} av {max}",

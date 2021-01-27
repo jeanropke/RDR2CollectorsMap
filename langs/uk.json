@@ -1468,6 +1468,7 @@
     "routes.empty": "Пустий код маршруту",
     "routes.invalid": "Маршрут недійсний. Превірте консоль для отримання додаткової інформації (F12)",
     "routes.set_as_route_start": "Встановити як початок маршруту",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "Випадкові предмети",
     "menu.collectables_counter": "Зібрано {count} із {max}",
     "menu.collection_counter": "{count} із {max}",

@@ -1468,6 +1468,7 @@
     "routes.empty": "Empty route",
     "routes.invalid": "Érvénytelen útvonal. További információkét ellenőrizd a konzolt. (F12)",
     "routes.set_as_route_start": "Set as route start",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "Véletlenszerű helyek",
     "menu.collectables_counter": "Begyűjtött {count} Ennyiből {max}",
     "menu.collection_counter": "{count} of {max}",

@@ -1468,6 +1468,7 @@
     "routes.empty": "Leere Route",
     "routes.invalid": "Ungültige Route",
     "routes.set_as_route_start": "Als Routenstart festlegen",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "Zufällige Stellen",
     "menu.collectables_counter": "{count} von {max} gesammelt",
     "menu.collection_counter": "{count} von {max}",

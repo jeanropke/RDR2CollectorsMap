@@ -1468,6 +1468,7 @@
     "routes.empty": "Route vide",
     "routes.invalid": "Route invalide. Vérifiez la console pour plus d'informations (F12)",
     "routes.set_as_route_start": "Définir comme début d'itinéraire",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "Lieux Aléatoires",
     "menu.collectables_counter": "{count} sur {max} Collecté(s)",
     "menu.collection_counter": "{count} sur {max}",

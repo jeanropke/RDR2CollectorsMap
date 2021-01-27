@@ -1468,6 +1468,7 @@
     "routes.empty": "Пустой код маршрута",
     "routes.invalid": "Неверный код маршрута",
     "routes.set_as_route_start": "Установить, как начало маршрута",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "Случайные предметы",
     "menu.collectables_counter": "Собрано {count} из {max}",
     "menu.collection_counter": "{count} из {max}",

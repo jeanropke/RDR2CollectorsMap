@@ -1468,6 +1468,7 @@
     "routes.empty": "空のルート",
     "routes.invalid": "経路が無効です。 詳細についてはコンソールを確認してください (F12)",
     "routes.set_as_route_start": "経路開始として設定",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "ランダム・スポッツ",
     "menu.collectables_counter": "{max} の収集された {count}",
     "menu.collection_counter": "{count} ( {max} )",

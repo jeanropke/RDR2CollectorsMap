@@ -1468,6 +1468,7 @@
     "routes.empty": "無效的路線",
     "routes.invalid": "無效的路線。 檢查控制臺以獲取更多信息 (F12)",
     "routes.set_as_route_start": "設定爲路線開始的位置",
+    "routes.generate_route_now": "Set start and generate route",
     "menu.random_spots": "隨機收藏品地點",
     "menu.collectables_counter": "已收集 {count}/{max}",
     "menu.collection_counter": "{count}/{max}",
