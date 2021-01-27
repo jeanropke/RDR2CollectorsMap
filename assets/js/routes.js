@@ -323,7 +323,7 @@ const Routes = {
     Routes.lastPolyline = L.polyline(polylines).addTo(MapBase.map);
   },
 
-  setCustomRouteStart: function (lat, lng) {
+  setCustomRouteStart: function (lat, lng, startNow) {
     lat = parseFloat(lat) ? parseFloat(lat) : -119.9063;
     lng = parseFloat(lng) ? parseFloat(lng) : 8.0313;
 
@@ -336,5 +336,8 @@ const Routes = {
     RouteSettings.genPathStart = 'Custom';
     RouteSettings.startMarkerLat = lat;
     RouteSettings.startMarkerLng = lng;
+
+    if (startNow)
+      Routes.generatePath(true);
   }
 };

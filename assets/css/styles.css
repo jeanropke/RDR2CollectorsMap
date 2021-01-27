@@ -761,7 +761,7 @@ select {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 220px;
+    width: 250px;
     margin: 0 calc(50% - 100px) 20px;
     z-index: 910;
     color: #dadada;
@@ -771,6 +771,12 @@ select {
     padding: 14px 8px;
     border-radius: 3px;
     display: none;
+}
+
+.lat-lng-container hr {
+    height: 1px;
+    margin: 5px 0;
+    padding: 0;
 }
 
 .lat-lng-container a {

@@ -628,8 +628,11 @@ const MapBase = {
       $('.lat-lng-container p').html(
         `Latitude: ${lat}<br>
         Longitude: ${lng}<br>
+        <hr>
         <a href="javascript:void(0)"
-        onclick="Routes.setCustomRouteStart('${lat}', '${lng}')">${Language.get('routes.set_as_route_start')}</a>`);
+        onclick="Routes.setCustomRouteStart('${lat}', '${lng}')">${Language.get('routes.set_as_route_start')}</a><br>
+        <a href="javascript:void(0)"
+        onclick="Routes.setCustomRouteStart('${lat}', '${lng}', true)">${Language.get('routes.generate_route_now')}</a>`);
 
       $('#lat-lng-container-close-button').click(function () {
         $('.lat-lng-container').css('display', 'none');
