@@ -118,12 +118,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
 
-### Norwegian (15%):
+### Norwegian (16%):
   - **camillgh** (724 words)
   - **casse** (31 words)
   - **DandelionSprout** (255 words)
   - **henrietteg95** (830 words)
-  - **martinbruh** (56 words)
+  - **martinbruh** (212 words)
   - **Rilfus** (156 words)
 
 ### Polish (99%):
@@ -142,7 +142,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ArthurZussman** (222 words)
   - **borba72** (23 words)
   - **FilipFelipe** (146 words)
-  - **jeanropke** (7,050 words)
+  - **jeanropke** (7,087 words)
   - **joabeHK** (104 words)
   - **KAKUNO123** (30 words)
   - **msfern** (215 words)
