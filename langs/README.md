@@ -123,7 +123,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **casse** (31 words)
   - **DandelionSprout** (255 words)
   - **henrietteg95** (830 words)
-  - **martinbruh** (51 words)
+  - **martinbruh** (56 words)
   - **Rilfus** (156 words)
 
 ### Polish (99%):
