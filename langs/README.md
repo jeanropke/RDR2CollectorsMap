@@ -91,7 +91,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (632 words)
 
 ### Hebrew (0%):
-  - **dudiv5674** (34 words)
+  - **dudiv5674** (105 words)
 
 ### Hungarian (1%):
   - **meezalena** (27 words)
@@ -120,7 +120,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (70%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (325 words)
+  - **CoolBreeze-13s** (335 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
 
