@@ -100,7 +100,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (2,578 words)
-  - **Enrik014** (777 words)
+  - **Enrik014** (864 words)
   - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
   - **Jarsha1311** (500 words)
