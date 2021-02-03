@@ -90,10 +90,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Arsenis** (236 words)
   - **REMOVED_USER** (632 words)
 
-### Hebrew (13%):
+### Hebrew (14%):
   - **dudiv5674** (1,796 words)
   - **edimezraoui** (29 words)
-  - **klain123** (137 words)
+  - **klain123** (258 words)
 
 ### Hungarian (1%):
   - **meezalena** (27 words)
