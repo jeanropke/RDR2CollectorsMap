@@ -45,6 +45,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Dutch (22%):
   - **Helmond1989** (2,058 words)
+  - **MrGrivixer** (20 words)
 
 ### English, United Kingdom (2%):
   - **AdamNortonUK** (12 words)
@@ -119,7 +120,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
-  - **uraomote** (22 words)
+  - **uraomote** (274 words)
 
 ### Korean (70%):
   - **ciizel** (697 words)
