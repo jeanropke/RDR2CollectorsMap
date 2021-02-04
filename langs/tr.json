@@ -1267,6 +1267,7 @@
     "routes.empty": "Boş rota",
     "routes.invalid": "Geçersiz rota. Daha çok bilgi için konsola bakın (F12)",
     "routes.set_as_route_start": "Rota başlangıcı olarak ayarla",
+    "routes.generate_route_now": "Başlangıç noktasını seçip rota oluştur",
     "menu.random_spots": "Rastgele Noktalar",
     "menu.collectables_counter": "Toplanan {count} / {max}",
     "menu.collection_counter": "{count} / {max}",
@@ -1810,5 +1811,7 @@
     "help.timezone_offset": "Saat yanlışsa saat farkını değiştirmenizi sağlar.",
     "menu.modal_loot_table_body": "Bu tablolar, bir eşyayı kazarken o eşyanın düşebileceği yüzdeyi gösterir. Lütfen bu yüzdelerin yaklaşık değerler olduğunu unutmayın. Oyun, önce bir kategori için, sonra da o kategorideki bir eşya için birden çok kez zar atar. Bu nedenle gerçek yüzde burada belirtilenden farklı olabilir.",
     "menu.enable_cycles": "Döngülerin görüntülenmesini etkinleştir",
-    "help.enable_cycles": "Açılır pencerelerdeki döngü simgelerinin ve metnin görünürlüğünü değiştirmenizi sağlar."
+    "help.enable_cycles": "Açılır pencerelerdeki döngü simgelerinin ve metnin görünürlüğünü değiştirmenizi sağlar.",
+    "menu.lang_en": "İngilizce",
+    "menu.lang_ca": "Katalanca (Katalan)"
 }
