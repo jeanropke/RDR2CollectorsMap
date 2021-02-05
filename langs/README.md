@@ -7,10 +7,11 @@ We'd like to also mention the people that helped translate before the project sw
 ## Crowdin Contributors
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
-### Arabic (62%):
+### Arabic (63%):
   - **a.youssry78** (109 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
+  - **alichakra.9** (92 words)
   - **fhyyd** (293 words)
   - **JokerUAE** (77 words)
   - **madhatterxk** (15 words)
@@ -91,11 +92,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Arsenis** (277 words)
   - **REMOVED_USER** (632 words)
 
-### Hebrew (22%):
+### Hebrew (24%):
   - **dudiv5674** (2,493 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
-  - **klain123** (674 words)
+  - **klain123** (883 words)
 
 ### Hungarian (1%):
   - **meezalena** (27 words)
