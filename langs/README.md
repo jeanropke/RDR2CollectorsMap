@@ -97,7 +97,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **dudiv5674** (2,493 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
-  - **klain123** (1,463 words)
+  - **klain123** (1,468 words)
 
 ### Hungarian (1%):
   - **meezalena** (27 words)
@@ -123,7 +123,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
-  - **uraomote** (353 words)
+  - **uraomote** (402 words)
 
 ### Korean (70%):
   - **ciizel** (697 words)
