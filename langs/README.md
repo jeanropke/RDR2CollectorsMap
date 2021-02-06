@@ -51,6 +51,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### English, United Kingdom (2%):
   - **AdamNortonUK** (12 words)
   - **MrSmithr** (290 words)
+  - **XRuthlessShadow** (29 words)
 
 ### Finnish (66%):
   - **seevimi** (283 words)
@@ -122,7 +123,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
-  - **uraomote** (343 words)
+  - **uraomote** (353 words)
 
 ### Korean (70%):
   - **ciizel** (697 words)
