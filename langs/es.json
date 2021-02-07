@@ -1812,6 +1812,7 @@
     "map.weather.foggy": "Clima nebuloso",
     "map.weather.rain": "Clima lluvioso",
     "map.weather.any": "Cualquier clima",
+    "map.cant_be_picked_up": "Este animal no puede ser recogido.",
     "map.sightseeing.hidden": "Lugar Oculto",
     "map.remove.animal_category": "Sombrea todos los animales de esta especie durante 72 horas",
     "map.legendary_animal_cooldown_end_time": "Fin de cooldown: {timer}",
