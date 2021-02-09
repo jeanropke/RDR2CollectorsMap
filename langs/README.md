@@ -209,8 +209,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ulises_hdz22** (361 words)
   - **W10075343** (70 words)
 
-### Swedish (13%):
+### Swedish (18%):
   - **...---...** (431 words)
+  - **emeliris** (636 words)
   - **idaerika** (30 words)
   - **JohanLiljegren** (430 words)
   - **LilleJah** (10 words)
