@@ -90,8 +90,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **viliri** (1,470 words)
   - **werhel** (443 words)
 
-### Greek (10%):
+### Greek (13%):
   - **Arsenis** (277 words)
+  - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
 
 ### Hebrew (31%):
@@ -125,7 +126,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
-  - **uraomote** (412 words)
+  - **uraomote** (457 words)
 
 ### Korean (70%):
   - **ciizel** (697 words)
@@ -170,7 +171,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **catmc8565** (163 words)
   - **tudoradrianburlacu** (35 words)
 
-### Russian (98%):
+### Russian (100%):
   - **AlexXanderGrib** (464 words)
   - **davidpash89** (67 words)
   - **dramatic_prophet** (1,425 words)
@@ -181,6 +182,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **noiracero693** (27 words)
   - **Overnoes** (85 words)
   - **platonomania** (15 words)
+  - **quietamer** (170 words)
   - **tomvsxvi** (563 words)
   - **UluMulu** (217 words)
 
