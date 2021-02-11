@@ -270,7 +270,7 @@ class Pins {
 
     tempMarker.addEventListener('dragend', function () {
       Pins.pinsList.forEach(pin => {
-        pin.save(pin.title, pin.desc, pin.icon, pin.color);
+        pin.save.bind(pin, pin.title, pin.desc, pin.icon, pin.color);
       });
       Pins.save();
     }, { capture: false });
