@@ -207,11 +207,11 @@ class Pins {
     $('#pins-edit-mode').prop('checked', Settings.isPinsEditingEnabled);
 
     this.context = $('.menu-option[data-type=user_pins]');
-    this.context.toggleClass('disabled', !this.onMap)
-      .on('click', this.onCategoryToggle)
+    this.context
+      .toggleClass('disabled', !this.onMap)
       .translate();
 
-      this.loadPins();
+    this.loadPins();
 
     if (this.onMap)
       this.layer.addTo(MapBase.map);
@@ -332,19 +332,15 @@ class Pins {
   static set onMap(state) {
     if (state) {
       this.layer.addTo(MapBase.map);
-      if (!MapBase.isPreviewMode)
-        localStorage.setItem('rdr2collector:pins-enabled', 'true');
     } else {
       this.layer.remove();
-      if (!MapBase.isPreviewMode)
-        localStorage.removeItem('rdr2collector:pins-enabled');
     }
-    this.context.toggleClass('disabled', !state);
+
     MapBase.updateTippy('pins');
   }
 
   static get onMap() {
-    return !!localStorage.getItem('rdr2collector:pins-enabled');
+    return enabledCategories.includes('user_pins');
   }
 
   static removeAllPins() {
@@ -355,6 +351,6 @@ class Pins {
     Pins.save();
   }
   static onCategoryToggle() {
-    this.onMap = !this.onMap;
+    this.onMap = this.onMap;
   }
 }
