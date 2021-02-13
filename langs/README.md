@@ -124,12 +124,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Tony_Bell** (192 words)
   - **Visite** (121 words)
 
-### Japanese (91%):
+### Japanese (93%):
   - **igucheese** (82 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
-  - **uraomote** (577 words)
+  - **uraomote** (868 words)
 
 ### Korean (70%):
   - **ciizel** (697 words)
