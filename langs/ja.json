@@ -1729,7 +1729,7 @@
     "map.legendary.trapper_part_value": "他部位の売却価値（ガスの店）: {trapper_part_value}",
     "map.legendary.sample_value": "サンプルの売却価格: {sample_value}",
     "map.cant_be_picked_up": "不可",
-    "menu.enable_legendary_backgrounds": "伝説の動物マーカーを地図に表示する",
+    "menu.enable_legendary_backgrounds": "伝説の動物マーカーの背景（黄色半透明）を、地図に表示する",
     "map.remove.animal_category": "72時間この種のすべての動物を灰色にする",
     "menu.legendary_animal_marker_type": "伝説の動物マーカーの種類",
     "menu.legendary_animal_marker_size": "伝説の動物マーカーのサイズ",
