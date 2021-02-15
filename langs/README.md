@@ -134,6 +134,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Korean (70%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (348 words)
+  - **KKimRoma** (78 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
 
