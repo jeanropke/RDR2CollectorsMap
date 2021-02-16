@@ -99,11 +99,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
 
-### Hebrew (31%):
+### Hebrew (32%):
   - **dudiv5674** (2,559 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
-  - **klain123** (1,903 words)
+  - **klain123** (2,055 words)
 
 ### Hungarian (1%):
   - **jjameska** (26 words)
@@ -134,7 +134,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (70%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (348 words)
+  - **CoolBreeze-13s** (379 words)
   - **KKimRoma** (78 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
