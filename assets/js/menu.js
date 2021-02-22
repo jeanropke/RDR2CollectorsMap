@@ -49,7 +49,7 @@ class Menu {
   }
 
   static refreshItemsCounter() {
-    const _markers = MapBase.markers.filter(marker => marker.isCurrent && marker.isVisible);
+    const _markers = MapBase.markers.filter(marker => marker.isCurrent && marker.isVisible && marker.toolAccepted());
     const count = _markers.filter(marker => marker.isCollected).length;
     const max = _markers.length;
 
