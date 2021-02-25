@@ -183,7 +183,8 @@ function init() {
   $("#import-export-container").toggleClass('opened', Settings.showImportExportSettings);
   $("#debug-container").toggleClass('opened', Settings.showDebugSettings);
 
-  Updates.init();
+  if (!MapBase.isPreviewMode)
+    Updates.init();
 
   updateTopWidget();
 }
