@@ -305,6 +305,10 @@ const MapBase = {
           MapBase.map.setView([visibleItems[0].lat, visibleItems[0].lng], 6);
       }
 
+      // Puppeteer hack and utility for other extensions.
+      // Allows utilities to wait for this global to then do their stuff.
+      window.loaded = true;
+
       // Don't need to do anything else, just exit.
       return;
     }
