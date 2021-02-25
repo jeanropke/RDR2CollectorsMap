@@ -18,16 +18,25 @@ const MapBase = {
   requestLoopCancel: false,
   showAllMarkers: false,
   filtersData: [],
+
+  // Query adjustable parameters
   isPreviewMode: false,
   colorOverride: null,
+  themeOverride: null,
+  viewportX: -70,
+  viewportY: 111.75,
+  viewportZoom: 3,
 
   mapInit: function () {
     'use strict';
 
+    // Parses and properly sets map preferences from query parameters.
+    this.beforeLoad();
+
     this.tippyInstances = [];
     const mapBoundary = L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176));
 
-    //Please, do not use the GitHub map tiles. Thanks
+    // Please, do not use the GitHub map tiles. Thanks
     const mapLayers = {
       'map.layers.default': L.tileLayer('https://s.rsg.sc/sc/images/games/RDR2/map/game/{z}/{x}/{y}.jpg', {
         noWrap: true,
@@ -106,8 +115,8 @@ const MapBase = {
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
-      layers: [mapLayers[Settings.baseLayer]],
-    }).setView([-70, 111.75], 3);
+      layers: [mapLayers[this.themeOverride || Settings.baseLayer]],
+    }).setView([this.viewportX, this.viewportY], this.viewportZoom);
 
     MapBase.map.addControl(
       L.control.attribution({
@@ -164,7 +173,7 @@ const MapBase = {
   },
 
   isDarkMode: function () {
-    return ['map.layers.dark', 'map.layers.black'].includes(Settings.baseLayer);
+    return ['map.layers.dark', 'map.layers.black'].includes(this.themeOverride || Settings.baseLayer);
   },
 
   loadOverlays: function () {
@@ -184,7 +193,7 @@ const MapBase = {
 
   setMapBackground: function () {
     'use strict';
-    $('#map').css('background-color', MapBase.isDarkMode() ? (Settings.baseLayer === 'map.layers.black' ? '#000' : '#3d3d3d') : '#d2b790');
+    $('#map').css('background-color', MapBase.isDarkMode() ? ((this.themeOverride || Settings.baseLayer) === 'map.layers.black' ? '#000' : '#3d3d3d') : '#d2b790');
     MapBase.setOverlays();
     if (Settings.markerColor.startsWith('auto')) {
       MapBase.markers.forEach(marker => marker.updateColor());
@@ -224,8 +233,32 @@ const MapBase = {
   },
 
   beforeLoad: function () {
+    // Set map to preview mode before loading.
+    const previewParam = getParameterByName('q');
+    if (previewParam) this.isPreviewMode = true;
+
+    // Set map theme according to param.
+    const themeParam = getParameterByName('theme');
+    if (themeParam && ['default', 'detailed', 'dark', 'black'].includes(themeParam))
+      this.themeOverride = `map.layers.${themeParam}`;
+
+    // Sets the map's default zoom level to anywhere between minZoom and maxZoom.
+    const zoomParam = Number.parseInt(getParameterByName('z'));
+    if (!isNaN(zoomParam) && this.minZoom <= zoomParam && zoomParam <= this.maxZoom)
+      this.viewportZoom = zoomParam;
+
+    // Pans the map to a specific coordinate location on the map for default focussing.
+    const flyParam = getParameterByName('ft');
+    if (flyParam) {
+      const latLng = flyParam.split(',');
+      if (latLng.filter(Number).length === 2) {
+        this.viewportX = latLng[0];
+        this.viewportY = latLng[1];
+      }
+    }
+
     // Sets all marker colors to static color.
-    var colorParam = getParameterByName('c');
+    const colorParam = getParameterByName('c');
     if (colorParam) {
       const validColors = [
         'aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple',
@@ -235,24 +268,6 @@ const MapBase = {
 
       if (validColors.includes(colorParam)) this.colorOverride = colorParam;
     }
-
-    // Sets the map's default zoom level to anywhere between minZoom and maxZoom.
-    var zoomParam = Number.parseInt(getParameterByName('z'));
-    if (!isNaN(zoomParam) && MapBase.minZoom <= zoomParam && zoomParam <= MapBase.maxZoom) {
-      MapBase.map.setZoom(zoomParam);
-    }
-
-    // Pans the map to a specific coordinate location on the map for default focussing.
-    var flyParam = getParameterByName('ft');
-    if (flyParam) {
-      const latLng = flyParam.split(',');
-      if (latLng.filter(Number).length === 2)
-        MapBase.map.flyTo(latLng);
-    }
-
-    // Temporary hack.
-    const previewParam = getParameterByName('q');
-    if (previewParam) MapBase.isPreviewMode = true;
   },
 
   afterLoad: function () {

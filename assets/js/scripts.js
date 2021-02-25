@@ -125,8 +125,6 @@ function init() {
   MapBase.loadFilters();
   FME.init();
 
-  MapBase.beforeLoad();
-
   const treasures = Treasure.init();
   const legendaries = Legendary.init();
   Promise.all([cycles, markers]).then(MapBase.afterLoad);
@@ -279,7 +277,7 @@ function clockTick() {
   $('#countdown').text(delta.toLocaleString([], deltaFormat));
 
   $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter',
-    nightTime ? 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)' : 'none');
+    nightTime && !MapBase.isPreviewMode ? 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)' : 'none');
 
   $('.leaflet-marker-icon[data-time]').each(function () {
     let time = $(this).data('time') + '';

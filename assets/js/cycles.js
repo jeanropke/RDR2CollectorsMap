@@ -36,7 +36,9 @@ const Cycles = {
     if (cycleIndex < 1) {
       // either -1 (not found) or 0 (first day) for which there is no yesterday
       console.error('[Cycles] Cycle not found: ' + selectedDayStr);
-      $('.map-cycle-alert').removeClass('hidden');
+
+      if (!MapBase.isPreviewMode)
+        $('.map-cycle-alert').removeClass('hidden');
 
       fallback = {
         arrowhead: 1,
