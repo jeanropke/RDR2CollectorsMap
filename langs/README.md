@@ -82,7 +82,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **thibaud3109** (68 words)
   - **YuYusS** (2,522 words)
 
-### German (96%):
+### German (99%):
   - **ADRlAN1988** (50 words)
   - **catmc8565** (163 words)
   - **CodingMax** (39 words)
@@ -90,6 +90,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **davidcooper73760** (86 words)
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
+  - **SSR_Joni** (359 words)
   - **Tolpelbold** (39 words)
   - **viliri** (1,470 words)
   - **werhel** (443 words)
@@ -134,10 +135,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,332 words)
 
-### Korean (74%):
+### Korean (82%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (393 words)
-  - **KKimRoma** (520 words)
+  - **KKimRoma** (1,817 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
 
