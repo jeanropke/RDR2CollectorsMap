@@ -241,9 +241,9 @@ class Collection extends BaseCollection {
     });
   }
   updateMenu() {
-    const checkItems = property => this.items.map(item => item.updateMenu()[property]).includes(true);
-    const containsBuggedItems = checkItems('isBugged');
-    const containsRandomItems = checkItems('isRandom');
+    const categoryItems = this.items.map(item => item.updateMenu());
+    const containsBuggedItems = categoryItems.some(item => item.isBugged);
+    const containsRandomItems = categoryItems.some(item => item.isRandom);
     const isSameCycle = Cycles.isSameAsYesterday(this.category);
     this.$menuButton
       .attr('data-help', () => {
