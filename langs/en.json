@@ -2049,6 +2049,8 @@
     "menu.tooltip_map": "Tooltips for map items",
     "help.tooltip_map": "Shows a tooltip for markers on the map displaying the full title.",
     "menu.translate_progress": "The translation progress for this language is {progress}%.",
+    "help.map_boundaries": "Allows you to enable or disable map boundaries. When enabled, map always be on screen.",
+    "menu.map_boundaries": "Map boundaries enabled",
     "menu.lang_en": "English",
     "menu.lang_af": "Afrikaans (Afrikaans)",
     "menu.lang_ar": "ٱلْعَرَبِيَّة (Arabic)",

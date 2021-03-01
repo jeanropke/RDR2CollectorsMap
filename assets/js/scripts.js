@@ -156,6 +156,7 @@ function init() {
   $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
   $('#show-help').prop("checked", Settings.showHelp);
   $('#show-coordinates').prop("checked", Settings.isCoordsOnClickEnabled);
+  $('#map-boundaries').prop("checked", Settings.isMapBoundariesEnabled);
   $('#timestamps-24').prop("checked", Settings.isClock24Hour);
   $('#enable-cycles').prop("checked", Settings.isCyclesVisible);
   $('#enable-cycle-input').prop("checked", Settings.isCycleInputEnabled);
@@ -438,6 +439,12 @@ $('.map-cycle-alert').on('click', function () {
 $('#show-coordinates').on('change', function () {
   Settings.isCoordsOnClickEnabled = $("#show-coordinates").prop('checked');
   changeCursor();
+});
+
+$('#map-boundaries').on('change', function () {
+  Settings.isMapBoundariesEnabled = $("#map-boundaries").prop('checked');
+  MapBase.map.setMaxBounds(); //Remove boundaries
+  MapBase.updateMapBoundaries();
 });
 
 $('#timestamps-24').on('change', function () {

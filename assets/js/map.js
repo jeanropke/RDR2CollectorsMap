@@ -1,7 +1,3 @@
-/**
- * Created by Jean on 2019-10-09.
- */
-
 const MapBase = {
   minZoom: 2,
   maxZoom: 7,
@@ -158,10 +154,7 @@ const MapBase = {
 
     MapBase.map.doubleClickZoom[Settings.isDoubleClickZoomEnabled ? 'enable' : 'disable']();
 
-    const southWest = L.latLng(-160, -120),
-      northEast = L.latLng(25, 250),
-      bounds = L.latLngBounds(southWest, northEast);
-    MapBase.map.setMaxBounds(bounds);
+    MapBase.updateMapBoundaries();
 
     Layers.oms = new OverlappingMarkerSpiderfier(MapBase.map, {
       keepSpiderfied: true
@@ -170,6 +163,15 @@ const MapBase = {
       MapBase.map.closePopup();
     });
     Layers.itemMarkersLayer.addTo(MapBase.map);
+  },
+
+  updateMapBoundaries: function() {
+    if(Settings.isMapBoundariesEnabled) {
+      const southWest = L.latLng(-160, -120),
+        northEast = L.latLng(25, 250),
+        bounds = L.latLngBounds(southWest, northEast);
+      MapBase.map.setMaxBounds(bounds);
+    }
   },
 
   isDarkMode: function () {
