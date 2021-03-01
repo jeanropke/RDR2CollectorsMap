@@ -33,7 +33,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **PeanutSlinger** (2,575 words)
   - **qiexiacn** (715 words)
 
-### Chinese Traditional (100%):
+### Chinese Traditional (99%):
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (1,690 words)
@@ -56,10 +56,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **MrSmithr** (290 words)
   - **XRuthlessShadow** (29 words)
 
-### Finnish (66%):
+### Finnish (68%):
   - **seevimi** (283 words)
 
-### French (100%):
+### French (99%):
   - **Azhellarke** (635 words)
   - **Ca0dan** (93 words)
   - **FRANCESCADOLORES** (1,005 words)
@@ -128,17 +128,17 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Tony_Bell** (192 words)
   - **Visite** (121 words)
 
-### Japanese (100%):
+### Japanese (99%):
   - **igucheese** (82 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,332 words)
 
-### Korean (82%):
+### Korean (84%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (393 words)
-  - **KKimRoma** (2,445 words)
+  - **KKimRoma** (2,758 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
 
@@ -156,13 +156,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Michal__d** (2,639 words)
   - **Quahox** (39 words)
 
-### Portuguese (6%):
+### Portuguese (7%):
   - **badaro42** (53 words)
   - **daniel.of.monteiro** (138 words)
   - **indigonature** (71 words)
   - **petrasoares7** (340 words)
 
-### Portuguese, Brazilian (100%):
+### Portuguese, Brazilian (99%):
   - **agpariz** (50 words)
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
@@ -182,7 +182,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **catmc8565** (163 words)
   - **tudoradrianburlacu** (35 words)
 
-### Russian (100%):
+### Russian (99%):
   - **AlexXanderGrib** (464 words)
   - **davidpash89** (67 words)
   - **dramatic_prophet** (1,425 words)
@@ -200,7 +200,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Serbian (Cyrillic) (0%):
   - **UluMulu** (217 words)
 
-### Spanish (98%):
+### Spanish (99%):
   - **23.jonathantadeoleiva** (13 words)
   - **avillamizar71** (5,456 words)
   - **BabyAir** (41 words)
@@ -246,7 +246,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,294 words)
 
-### Ukrainian (100%):
+### Ukrainian (99%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
   - **grmaster5s** (10,796 words)
