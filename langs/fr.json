@@ -1848,6 +1848,8 @@
     "menu.tooltip_map": "Bulles d'aides pour les éléments de la carte",
     "help.tooltip_map": "Affiche une infobulle pour les marqueurs sur la carte affichant le titre complet.",
     "menu.translate_progress": "La progression de la traduction pour cette langue est de {progress}%.",
+    "help.map_boundaries": "Permet d'activer ou de désactiver les limites de la carte. Lorsqu'activé, la carte est toujours à l'écran.",
+    "menu.map_boundaries": "Limites de la carte activées",
     "menu.lang_en": "Anglais",
     "menu.lang_af": "Afrikaans (Afrikaans)",
     "menu.lang_ar": "لعربية (arabe)",
