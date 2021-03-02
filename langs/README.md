@@ -59,7 +59,8 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Finnish (68%):
   - **seevimi** (283 words)
 
-### French (99%):
+### French (100%):
+  - **AlexandreHemery** (18 words)
   - **Azhellarke** (635 words)
   - **Ca0dan** (93 words)
   - **FRANCESCADOLORES** (1,005 words)
@@ -133,7 +134,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
-  - **uraomote** (2,332 words)
+  - **uraomote** (2,334 words)
 
 ### Korean (84%):
   - **ciizel** (697 words)
