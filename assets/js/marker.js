@@ -231,7 +231,7 @@ class Marker {
 
         heirlooms: 'pink',
 
-        random: this.tool === 2 ? 'lightgray' : 'lightgray',
+        random: this.tool === 2 ? 'lightgray' : 'lightergray',
       } [this.category] || 'lightred';
     } else if (markerColor === 'by_cycle') {
       base = ['blue', 'orange', 'pink', 'darkpurple', 'darkred', 'darkblue'][+this.cycleName - 1] || 'lightred';
