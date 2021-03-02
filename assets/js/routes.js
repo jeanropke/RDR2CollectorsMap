@@ -278,7 +278,7 @@ const Routes = {
     }
 
     if (RouteSettings.importantOnly) {
-      newMarkersImp = newMarkers.filter(marker => MapBase.importantItems.includes(marker.text));
+      const newMarkersImp = newMarkers.filter(marker => marker.item && marker.item.isImportant);
       if (newMarkers.length > 0 && newMarkersImp.length == 0) {
         if (!confirm(Language.get('dialog.generate_route_important_only_ignore'))) {
           return;

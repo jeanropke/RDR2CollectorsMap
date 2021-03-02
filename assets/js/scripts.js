@@ -952,22 +952,22 @@ function filterMapMarkers() {
     );
   }
   else if (Settings.filterType === 'weekly') {
-    let weeklyItems = [];
+    const weeklyItems = [];
     $.each(Weekly.current.items, (index, item) => weeklyItems.push(item.itemId));
     filterMarkers(weeklyItems);
   }
   else if (Settings.filterType === 'important') {
-    filterMarkers(JSON.parse(localStorage.getItem('importantItems')) || []);
+    filterMarkers(Item.items.filter(item => item.isImportant).map(item => item.itemId));
   }
   else if (Settings.filterType === 'static') {
-    let staticItems = [];
+    const staticItems = [];
     MapBase.markers.find(_m => { if (!_m.text.includes('random')) staticItems.push(_m.itemId) });
     filterMarkers(staticItems);
   }
   // hides only flowers not belongs to any moonshine recipe
   else if (Settings.filterType === 'hideFlowers') {
     const flowers = ['flower_agarita', 'flower_creek_plum'];
-    let items = [];
+    const items = [];
     MapBase.markers.find(marker => {
       if ((marker.category === 'flower' && flowers.includes(marker.itemId)) || marker.category !== 'flower')
         items.push(marker.itemId)

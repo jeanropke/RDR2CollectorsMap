@@ -29,7 +29,8 @@
     border-radius: 3px;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -830,6 +831,7 @@ a.wiki-page:visited {
     from {
         opacity: 0.0;
     }
+
     to {
         opacity: var(--animation-target-opacity);
     }
@@ -1253,6 +1255,7 @@ a.no-style:visited {
         text-align: center;
         padding: 0 !important;
     }
+
     .modal:before {
         content: '';
         display: inline-block;
@@ -1260,14 +1263,17 @@ a.no-style:visited {
         vertical-align: middle;
         margin-right: -4px;
     }
+
     .modal-body {
         max-height: 650px !important;
     }
+
     .modal-dialog {
         display: inline-block;
         text-align: left;
         vertical-align: middle;
     }
+
     .modal-sm {
         width: 450px;
     }
@@ -1300,23 +1306,28 @@ a.no-style:visited {
     .top-widget-menu-opened {
         display: none !important;
     }
+
     .side-menu .menu-hidden .collectible-icon {
         margin-top: 7px;
     }
+
     .counter-button {
         height: 32px;
         width: 32px;
         line-height: 1.5;
     }
+
     .side-menu .menu-hidden .collectible,
     .input-container label {
         line-height: 38px;
     }
+
     .input-checkbox-wrapper .input-checkbox+.input-checkbox-label,
     .input-text,
     .input-action {
         margin-top: 5px;
     }
+
     .map-cycle-alert,
     .filter-alert {
         left: 2px;
@@ -1331,12 +1342,15 @@ a.no-style:visited {
         left: -400px;
         top: 0;
     }
+
     .menu-opened {
         left: 0;
     }
+
     .top-widget-menu-opened {
         left: 405px;
     }
+
     .map-cycle-alert,
     .filter-alert {
         left: 50%;
@@ -1729,31 +1743,37 @@ a.no-style:visited {
         bottom: 25px;
         right: 50px;
     }
+
     #fme-container .fme-card {
         padding: 10px 20px 10px 10px;
         height: auto;
         width: initial;
     }
+
     #fme-container .fme-card #next-general-mobile,
     #fme-container .fme-card #next-role-mobile {
         display: block;
         overflow: hidden;
     }
+
     #fme-container .fme-card .fme-body {
         display: none;
     }
+
     #fme-container .fme-card .fme-image {
         width: 32px;
         height: auto;
         margin-left: 0;
         margin-right: 8px;
     }
+
     #fme-container.fme-menu-opened {
         left: 5px;
     }
 }
 
 @media (min-width: 769px) {
+
     .settings-container .input-container:not(.disabled):after,
     .side-menu .menu-option:after,
     .side-menu .collectible-wrapper:after {
@@ -1773,6 +1793,7 @@ a.no-style:visited {
         left: -7px;
         z-index: 10;
     }
+
     .side-menu .menu-option:after,
     .side-menu .collectible-wrapper:after {
         top: 1px;
@@ -1780,6 +1801,7 @@ a.no-style:visited {
         bottom: 1px;
         left: 2px;
     }
+
     .settings-container .input-container:not(.disabled):hover:after,
     .side-menu .menu-option:hover:after,
     .side-menu .collectible-wrapper:hover:after {

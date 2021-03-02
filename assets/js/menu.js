@@ -71,7 +71,7 @@ class Menu {
 
   static activateHandlers() {
     $('#clear_highlights').on('click', function () {
-      MapBase.clearImportantItems();
+      Item.clearImportantItems();
     });
 
     // change cycles from menu (if debug options are enabled)

@@ -314,8 +314,11 @@ class Marker {
       .find('[data-text="map.mark_important"]')
       .click((e) => {
         e.preventDefault();
-        MapBase.highlightImportantItem(this.text, this.category);
-      });
+        this.item.isImportant = !this.item.isImportant;
+      })
+      .parent()
+      .toggle(!this.isRandomizedItem)
+      .end();
     snippet.find('.remove-button').click(() =>
       MapBase.removeItemFromMap(this.cycleName, this.text, this.subdata || '', this.category));
     if (!Cycles.isSameAsYesterday(this.category) && !unknownCycle) {
@@ -329,7 +332,7 @@ class Marker {
     }
     snippet
       .find('[data-text="weekly.desc"]').toggle(this.item && this.item.isWeekly()).end()
-      .find('[data-text="map.item.unable"]').toggle(this.buggy).end()
+      .find('[data-text="map.item.unable"]').toggle(this.buggy).end();
     const toolImg = snippet.find('.tool-type');
     if (!this.buggy && this.tool === 0) {
       toolImg.hide();

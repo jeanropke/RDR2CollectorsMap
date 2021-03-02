@@ -80,7 +80,7 @@ class Item extends BaseItem {
           event.preventDefault();
           event.stopImmediatePropagation();
           if (!['flower_agarita', 'flower_blood_flower'].includes(item.itemId)) {
-            MapBase.highlightImportantItem(item.itemId, item.category);
+            item.isImportant = !item.isImportant;
           }
         }
       })[0].addEventListener('click', event => { // `.on()` can’t register to capture phase
@@ -207,5 +207,43 @@ class Item extends BaseItem {
 
     Inventory.updateItemHighlights();
     Menu.refreshItemsCounter();
+  }
+
+  static initImportedItems() {
+    this.items.forEach(item => item.isImportant = item.isImportant);
+  }
+
+  set isImportant(state) {
+    const textKey = `rdr2collector:important.${this.itemId}`;
+    if (state)
+      localStorage.setItem(textKey, 'true');
+    else
+      localStorage.removeItem(textKey);
+
+    if (Settings.filterType === 'important') {
+      filterMapMarkers();
+    }
+    this.highlightImportantItem();
+  }
+
+  get isImportant() {
+    return !!localStorage.getItem(`rdr2collector:important.${this.itemId}`);
+  }
+
+  highlightImportantItem() {
+    $(`[data-marker*="${this.itemId}"]`).toggleClass('highlight-items', this.isImportant);
+    $(`[data-type="${this.legacyItemId}"]`).toggleClass('highlight-important-items-menu', this.isImportant);
+  }
+
+  static clearImportantItems() {
+    this.items.forEach(item => item.isImportant = false);
+  }
+
+  static convertImportantItems() {
+    const oldItems = JSON.parse(localStorage.getItem('importantItems'));
+    if (!oldItems) return;
+    const newItems = this.items.filter(marker => oldItems.includes(marker.itemId));
+    [...new Set(newItems)].forEach(item => item.isImportant = true);
+    localStorage.removeItem('importantItems');
   }
 }

@@ -8,7 +8,6 @@ const MapBase = {
   // see building interiors in overlays; might not be rotated right
   // (you also have to load overlays_beta.json instead of overlays.json in loader.js)
   interiors: false,
-  importantItems: [],
   updateLoopAvailable: true,
   updateTippyTimer: null,
   requestLoopCancel: false,
@@ -425,8 +424,9 @@ const MapBase = {
         MapBase.updateLoopAvailable = true;
         MapBase.requestLoopCancel = false;
         Menu.refreshItemsCounter();
-        MapBase.loadImportantItems();
         Inventory.updateItemHighlights();
+        Item.convertImportantItems(); // only temporary - convert old localStorage values to new
+        Item.initImportedItems();
         Routes.getCustomRoute();
         MapBase.updateTippy('addMarkers');
       }
@@ -516,60 +516,6 @@ const MapBase = {
 
   game2Map: function ({ x, y, z }) {
     return MapBase.debugMarker((0.01552 * y + -63.6), (0.01552 * x + 111.29), z);
-  },
-
-  highlightImportantItem: function (text, category = '') {
-    const randomCategories = ['arrowhead', 'coin', 'fossils_random', 'jewelry_random', 'random'];
-    if (category == 'flower' || category == 'egg')
-      text = text.replace(/_\d/, '');
-
-    const textMenu = text.replace(/egg_|flower_/, '');
-
-    if (!randomCategories.includes(category))
-      $(`[data-type=${textMenu}]`).toggleClass('highlight-important-items-menu');
-
-    $.each($(`[data-marker*=${text}]`), function (key, marker) {
-      let markerData = null;
-
-      if (!randomCategories.includes(category))
-        markerData = $(this).data('marker').replace(/\B_\d$/, '');
-      else
-        markerData = $(this).data('marker');
-
-      if (markerData === text)
-        $(this).toggleClass('highlight-items');
-    });
-
-    if ($(`[data-marker*=${text}].highlight-items`).length)
-      MapBase.importantItems.push(text);
-    else
-      MapBase.importantItems.splice(MapBase.importantItems.indexOf(text), 1);
-
-    localStorage.setItem('importantItems', JSON.stringify(MapBase.importantItems));
-  },
-
-  clearImportantItems: function () {
-    $('.highlight-items').removeClass('highlight-items');
-    $('.highlight-important-items-menu').removeClass('highlight-important-items-menu');
-    MapBase.importantItems = [];
-    localStorage.setItem('importantItems', JSON.stringify(MapBase.importantItems));
-  },
-
-  loadImportantItems: function () {
-    if (localStorage.getItem('importantItems') === undefined)
-      MapBase.importantItems = [];
-    else
-      MapBase.importantItems = JSON.parse(localStorage.getItem('importantItems')) || [];
-
-    $.each(MapBase.importantItems, function (key, item) {
-      if (item.includes('random'))
-        $(`[data-marker=${item}]`).addClass('highlight-items');
-      else
-        $(`[data-marker*=${item}]`).addClass('highlight-items');
-
-      const textMenu = item.replace(/egg_|flower_/, '');
-      $(`[data-type=${textMenu}]`).addClass('highlight-important-items-menu');
-    });
   },
 
   loadFastTravels: function () {
