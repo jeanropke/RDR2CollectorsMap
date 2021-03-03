@@ -233,12 +233,13 @@ class Marker {
     if (this.item && this.item.isWeekly() && Settings.showWeeklySettings) {
       base = 'green';
     }
-    else if (markerColor === 'by_category' || markerColor === 'custom') {
-      if (markerColor === 'custom') {
-        const settingsColor = JSON.parse(localStorage.getItem('customMarkersColors'));
-        const colors = Object.assign(base, settingsColor || {});
-        colors.random = (this.tool === 2 ? colors.random_spot_metal : colors.random_spot_shovel) || 'lightgray';
-      }
+    else if (markerColor === 'by_category') {
+      base = base[this.category] || 'lightred';
+    }
+    else if (markerColor === 'custom') {
+      const settingsColor = JSON.parse(localStorage.getItem('customMarkersColors'));
+      const colors = Object.assign(base, settingsColor || {});
+      colors.random = (this.tool === 2 ? colors.random_spot_metal : colors.random_spot_shovel) || 'lightgray';
       base = base[this.category] || 'lightred';
     }
     else if (markerColor === 'by_cycle') {

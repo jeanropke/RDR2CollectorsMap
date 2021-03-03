@@ -934,7 +934,6 @@ $('#open-custom-marker-color-modal').on('click', function (event) {
     ...randomCategories,
   ];
   const savedColors = Object.assign(baseColors, JSON.parse(localStorage.getItem('customMarkersColors')) || {});
-
   const wrapper = $('<div id="custom-markers-colors"></div>');
 
   categories.forEach(category => {
