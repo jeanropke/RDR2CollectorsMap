@@ -206,38 +206,38 @@ class Marker {
       return url(MapBase.isDarkMode() ? [dark, normal] : [normal, dark]);
     }
 
-    let base;
+    let base = {
+      arrowhead: 'purple',
+      bottle: 'brown',
+      coin: 'darkorange',
+      egg: 'white',
+      flower: 'lightdarkred',
+      fossils_random: 'darkgreen',
+
+      cups: 'blue',
+      swords: 'blue',
+      wands: 'blue',
+      pentacles: 'blue',
+
+      jewelry_random: 'yellow',
+      bracelet: 'yellow',
+      necklace: 'yellow',
+      ring: 'yellow',
+      earring: 'yellow',
+
+      heirlooms: 'pink',
+
+      random: this.tool === 2 ? 'lightgray' : 'lightergray',
+    };
+
     if (this.item && this.item.isWeekly() && Settings.showWeeklySettings) {
       base = 'green';
     }
     else if (markerColor === 'by_category' || markerColor === 'custom') {
-      base = {
-        arrowhead: 'purple',
-        bottle: 'brown',
-        coin: 'darkorange',
-        egg: 'white',
-        flower: 'lightdarkred',
-        fossils_random: 'darkgreen',
-
-        cups: 'blue',
-        swords: 'blue',
-        wands: 'blue',
-        pentacles: 'blue',
-
-        jewelry_random: 'yellow',
-        bracelet: 'yellow',
-        necklace: 'yellow',
-        ring: 'yellow',
-        earring: 'yellow',
-
-        heirlooms: 'pink',
-
-        random: this.tool === 2 ? 'lightgray' : 'lightergray',
-      }
-
       if (markerColor === 'custom') {
-        const settingsColor = JSON.parse(localStorage.getItem('customMarkersColors'))
-        Object.assign(base, settingsColor || {});
+        const settingsColor = JSON.parse(localStorage.getItem('customMarkersColors'));
+        const colors = Object.assign(base, settingsColor || {});
+        colors.random = (this.tool === 2 ? colors.random_spot_metal : colors.random_spot_shovel) || 'lightgray';
       }
       base = base[this.category] || 'lightred';
     }

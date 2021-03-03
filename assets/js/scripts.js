@@ -872,10 +872,6 @@ $('#open-updates-modal').on('click', function () {
   Updates.showModal();
 });
 
-$('#open-custom-marker-color-modal').on('click', function () {
-  $('#custom-marker-color-modal').modal();
-})
-
 function formatLootTableLevel(table, rate = 1, level = 0) {
   const result = $("<div>");
 
@@ -929,12 +925,17 @@ $('#loot-table-modal').on('show.bs.modal', function (event) {
 $('#open-custom-marker-color-modal').on('click', function (event) {
   $('#custom-marker-color-modal custom-colors').empty();
   const markerColors = ['aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple', 'darkred', 'gray', 'green', 'lightblue', 'lightgray', 'lightgreen', 'lightorange', 'lightred', 'orange', 'pink', 'purple', 'red', 'white', 'yellow'];
-  const allCategories = [...Collection.collections.map(({ category }) =>
-    category.replace(/coastal|oceanic|megafauna/, 'fossils_random')) ,'jewelry_random', 'random'];
-  const categories = [...new Set(allCategories)]; // remove fossils duplicated category
-  const wrapper = $('<div id="custom-markers-colors"></div>');
-  const baseColors = { arrowhead: 'purple', bottle: 'brown', coin: 'darkorange', egg: 'white', flower: 'lightdarkred', fossils_random: 'darkgreen', cups: 'blue', swords: 'blue', wands: 'blue', pentacles: 'blue', jewelry_random: 'yellow', bracelet: 'yellow', necklace: 'yellow', ring: 'yellow', earring: 'yellow', heirlooms: 'pink', random: 'lightgray' };
+  const baseColors = { arrowhead: 'purple', bottle: 'brown', coin: 'darkorange', egg: 'white', flower: 'lightdarkred', fossils_random: 'darkgreen', cups: 'blue', swords: 'blue', wands: 'blue', pentacles: 'blue', jewelry_random: 'yellow', bracelet: 'yellow', necklace: 'yellow', ring: 'yellow', earring: 'yellow', heirlooms: 'pink', random: 'lightgray', random_spot_metal: 'lightgray', random_spot_shovel: 'lightgray' };
+  const randomCategories = ['fossils_random', 'jewelry_random', 'random_spot_metal', 'random_spot_shovel'];
+  const categories = [
+    ...Collection.collections
+      .map(({ category }) => category)
+      .filter(category => Object.keys(baseColors).includes(category)),
+    ...randomCategories,
+  ];
   const savedColors = Object.assign(baseColors, JSON.parse(localStorage.getItem('customMarkersColors')) || {});
+
+  const wrapper = $('<div id="custom-markers-colors"></div>');
 
   categories.forEach(category => {
     const snippet = $(`
@@ -957,7 +958,7 @@ $('#open-custom-marker-color-modal').on('click', function (event) {
 
   $('.input-container', wrapper).on('change', function (event) {
     console.log(event.target.value);
-    baseColors[event.target.id.split('-')[0].replace('_spots', '')] = event.target.value;
+    baseColors[event.target.id.split('-')[0]] = event.target.value;
     localStorage.setItem('customMarkersColors', JSON.stringify(baseColors));
     MapBase.addMarkers();
   });

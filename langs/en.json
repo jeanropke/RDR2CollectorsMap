@@ -2090,5 +2090,6 @@
     "help.custom_marker_color_modal": "Allows you to set custom color for each markers category.",
     "menu.fossils_random": "Random Fossils",
     "menu.jewelry_random": "Random Jewelry",
-    "menu.random": "Random Spots"
+    "menu.random_spot_metal": "Random Spots (metal detector)",
+    "menu.random_spot_shovel": "Random Spots (shovel)"
 }
