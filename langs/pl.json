@@ -1847,6 +1847,7 @@
     "menu.tooltip_map": "Podpowiedzi znaczników",
     "help.tooltip_map": "Wyświetla podpowiedź dla znaczników na mapie, w której wyświetlany jest pełny tytuł.",
     "menu.translate_progress": "Postęp tłumaczenia dla tego języka to {progress}%.",
+    "menu.map_boundaries": "Granice mapy zostały włączone",
     "menu.lang_en": "Angielski (English)",
     "menu.lang_af": "Afrykański (Afrikaans)",
     "menu.lang_ar": "Arabski (Arabic)",
