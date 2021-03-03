@@ -872,6 +872,10 @@ $('#open-updates-modal').on('click', function () {
   Updates.showModal();
 });
 
+$('#open-custom-marker-color-modal').on('click', function () {
+  $('#custom-marker-color-modal').modal();
+})
+
 function formatLootTableLevel(table, rate = 1, level = 0) {
   const result = $("<div>");
 
@@ -914,11 +918,52 @@ $('#loot-table-modal').on('show.bs.modal', function (event) {
   const tables = MapBase.lootTables.categories[table];
   tables.forEach(table => {
     wrapper.append(formatLootTableLevel(table));
-  })
+  });
 
   // Append loot table to modal.
   const translatedContent = Language.translateDom(wrapper)[0];
   $('#loot-table-modal #loot').html(translatedContent);
+});
+
+
+$('#open-custom-marker-color-modal').on('click', function (event) {
+  $('#custom-marker-color-modal custom-colors').empty();
+  const markerColors = ['aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple', 'darkred', 'gray', 'green', 'lightblue', 'lightgray', 'lightgreen', 'lightorange', 'lightred', 'orange', 'pink', 'purple', 'red', 'white', 'yellow'];
+  const allCategories = [...Collection.collections.map(({ category }) =>
+    category.replace(/coastal|oceanic|megafauna/, 'fossils_random')) ,'jewelry_random', 'random'];
+  const categories = [...new Set(allCategories)]; // remove fossils duplicated category
+  const wrapper = $('<div id="custom-markers-colors"></div>');
+  const baseColors = { arrowhead: 'purple', bottle: 'brown', coin: 'darkorange', egg: 'white', flower: 'lightdarkred', fossils_random: 'darkgreen', cups: 'blue', swords: 'blue', wands: 'blue', pentacles: 'blue', jewelry_random: 'yellow', bracelet: 'yellow', necklace: 'yellow', ring: 'yellow', earring: 'yellow', heirlooms: 'pink', random: 'lightgray' };
+  const savedColors = Object.assign(baseColors, JSON.parse(localStorage.getItem('customMarkersColors')) || {});
+
+  categories.forEach(category => {
+    const snippet = $(`
+      <div class="input-container" id="${category}-custom-color" data-help="custom_marker_color">
+        <label for="custom-marker-color" data-text="menu.${category}"></label>
+        <select class="input-text wide-select-menu" id="${category}-custom-marker-color"></select>
+      </div>`);
+
+    markerColors.forEach(color => {
+      const option = $(`<option value="${color}" data-text="map.user_pins.color.${color}"></option>`)
+      if (savedColors[category] === color) {
+        option.attr('selected', 'selected');
+      }
+      $('select', snippet).append(option);
+    });
+    wrapper.append(snippet);
+  });
+
+  const translatedContent = Language.translateDom(wrapper);
+
+  $('.input-container', wrapper).on('change', function (event) {
+    console.log(event.target.value);
+    baseColors[event.target.id.split('-')[0].replace('_spots', '')] = event.target.value;
+    localStorage.setItem('customMarkersColors', JSON.stringify(baseColors));
+    MapBase.addMarkers();
+  });
+
+  $('#custom-marker-color-modal #custom-colors').html(translatedContent);
+  $('#custom-marker-color-modal').modal('show');
 });
 
 function filterMapMarkers() {

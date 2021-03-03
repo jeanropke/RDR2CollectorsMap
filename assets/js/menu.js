@@ -150,8 +150,6 @@ class Menu {
         $helpParagraph.html(Language.get(`help.${helpTransId}`));
       });
 
-    SettingProxy.addListener(Settings, 'toolType', () =>
-      this.toggleFilterWarning('map.has_tool_filter_alert', Settings.toolType !== 3))();
     $('#tools')
       .on('change', function () {
         Settings.toolType = +$(this).val();
@@ -159,8 +157,15 @@ class Menu {
       })
       .val(Settings.toolType);
 
+    SettingProxy.addListener(Settings, 'toolType', () =>
+      this.toggleFilterWarning('map.has_tool_filter_alert', Settings.toolType !== 3))();
+
     SettingProxy.addListener(Settings, 'filterType', () =>
       this.toggleFilterWarning('map.has_filter_type_alert', Settings.filterType !== 'none'))();
+
+    SettingProxy.addListener(Settings, 'markerColor', () =>
+      $('#open-custom-marker-color-modal').toggle(Settings.markerColor === 'custom'))();
+
     $('#filter-type')
       .on('change', function () {
         Settings.filterType = $(this).val();

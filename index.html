@@ -492,6 +492,8 @@
             <option data-text="menu.marker_color.by_cycle">By cycle</option>
             <option data-text="menu.marker_color.by_category">By category</option>
             <option disabled>------------</option>
+            <option data-text="menu.marker_color.custom">Custom</option>
+            <option disabled>------------</option>
             <option data-text="menu.marker_color.auto_orange_darkblue">auto orange/darkblue</option>
             <option disabled>------------</option>
             <option data-text="generic.blue">Blue</option>
@@ -502,6 +504,12 @@
             <option data-text="generic.darkblue">Dark blue</option>
           </select>
         </div>
+
+        <div id="open-custom-marker-color-modal" class="input-container clickable" data-help="custom_marker_color_modal">
+          <label data-text="menu.custom_marker_color">Select custom colors</label>
+          <div class="input-action"></div>
+        </div>
+
         <hr class="menu-divider">
         <div class="input-container" data-help="overlay_opacity">
           <label for="overlay-opacity" data-text="menu.overlay_opacity">Overlay opacity</label>
@@ -1066,6 +1074,26 @@
         <div class="modal-body">
           <p data-text="menu.modal_loot_table_body"></p>
           <div id="loot"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="custom-marker-color-modal" tabindex="-1" role="dialog"
+    aria-labelledby="custom-marker-color-title">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="custom-marker-color-title" data-text="menu.custom_marker_color_title">
+            Custom markers colors
+          </h4>
+        </div>
+        <div class="modal-body">
+          <p data-text="menu.custom_marker_color_body"></p>
+          <div id="custom-colors" class="settings-container" style="font-size: 1.3rem"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.close">Close</button>

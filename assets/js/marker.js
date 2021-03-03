@@ -209,7 +209,8 @@ class Marker {
     let base;
     if (this.item && this.item.isWeekly() && Settings.showWeeklySettings) {
       base = 'green';
-    } else if (markerColor === 'by_category') {
+    }
+    else if (markerColor === 'by_category' || markerColor === 'custom') {
       base = {
         arrowhead: 'purple',
         bottle: 'brown',
@@ -232,10 +233,18 @@ class Marker {
         heirlooms: 'pink',
 
         random: this.tool === 2 ? 'lightgray' : 'lightergray',
-      } [this.category] || 'lightred';
-    } else if (markerColor === 'by_cycle') {
+      }
+
+      if (markerColor === 'custom') {
+        const settingsColor = JSON.parse(localStorage.getItem('customMarkersColors'))
+        Object.assign(base, settingsColor || {});
+      }
+      base = base[this.category] || 'lightred';
+    }
+    else if (markerColor === 'by_cycle') {
       base = ['blue', 'orange', 'pink', 'darkpurple', 'darkred', 'darkblue'][+this.cycleName - 1] || 'lightred';
-    } else {
+    }
+    else {
       base = markerColor;
     }
     const contour = {

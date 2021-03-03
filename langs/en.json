@@ -2082,5 +2082,13 @@
     "menu.lang_uk": "Українська мова (Ukrainian)",
     "menu.lang_vi": "Tiếng Việt (Vietnamese)",
     "menu.lang_zh_Hans": "简体中文 (Chinese Simplified)",
-    "menu.lang_zh_Hant": "繁体中文 (Chinese Traditional)"
+    "menu.lang_zh_Hant": "繁体中文 (Chinese Traditional)",
+    "menu.marker_color.custom": "Custom",
+    "menu.custom_marker_color": "Set custom marker colors",
+    "menu.custom_marker_color_title": "Custom markers colors",
+    "menu.custom_marker_color_body": "Set custom color for each category:",
+    "help.custom_marker_color_modal": "Allows you to set custom color for each markers category.",
+    "menu.fossils_random": "Random Fossils",
+    "menu.jewelry_random": "Random Jewelry",
+    "menu.random": "Random Spots"
 }

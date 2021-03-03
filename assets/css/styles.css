@@ -1197,11 +1197,11 @@ a.no-style:visited {
 
 .modal-header::after,
 .modal-footer::before {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     left: 0;
     right: 0;
-    height: 28px;
+    height: 20px;
     display: block;
 }
 
@@ -1220,7 +1220,7 @@ a.no-style:visited {
 }
 
 .modal-footer::before {
-    margin-top: -36px;
+    margin-top: -20px;
     background: url(../../assets/images/modal-footer.png) !important;
     background-position: top center !important;
 }
