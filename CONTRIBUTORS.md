@@ -52,6 +52,7 @@ These are the people that added new map functionality.
 - Hide/grey-out from map legendary animals for 72 hours by [Michal__d](https://github.com/MichalD96).
 - Custom user pins by [Senexis](https://github.com/Senexis).
 - Inventory by [Senexis](https://github.com/Senexis).
+- Custom marker colors settings by [Michal__d](https://github.com/MichalD96).
 
 ## Note to Contributors
 If you are a contributor to the map too and we didn't add you to this file yet, get in contact with us on the [Discord](https://discord.com/invite/HkU6ugT) and we'll add you as soon as we can.
