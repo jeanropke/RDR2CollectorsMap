@@ -1848,6 +1848,8 @@
     "menu.tooltip_map": "Dica de ferramenta para itens do mapa",
     "help.tooltip_map": "Mostra uma dica de ferramenta com o nome do marcador no mapa.",
     "menu.translate_progress": "O progresso da tradução para esta língua é de {progress}%.",
+    "help.map_boundaries": "Permite ativar ou desativar os limites do mapa. Quando ativado, o mapa sempre estará na tela.",
+    "menu.map_boundaries": "Limites do mapa ativado",
     "menu.lang_en": "English (Inglês)",
     "menu.lang_af": "Afrikaans (Africâner)",
     "menu.lang_ar": "ٱلْعَرَبِيَّة (Árabe)",
@@ -1879,5 +1881,13 @@
     "menu.lang_uk": "Українська мова (Ucraniano)",
     "menu.lang_vi": "Tiếng Việt (Vietnamês)",
     "menu.lang_zh_Hans": "简体中文 (Chinês Simplificado)",
-    "menu.lang_zh_Hant": "繁体中文 (Chinês Tradicional)"
+    "menu.lang_zh_Hant": "繁体中文 (Chinês Tradicional)",
+    "menu.marker_color.custom": "Personalizada",
+    "menu.custom_marker_color": "Definir cores dos marcadores",
+    "menu.custom_marker_color_title": "Cores personalizadas dos marcadores",
+    "menu.custom_marker_color_body": "Defina cor personalizada para cada categoria:",
+    "help.custom_marker_color_modal": "Permite configurar uma cor personalizada para cada categoria de marcadores.",
+    "menu.fossils_random": "Fósseis Aleatório",
+    "menu.jewelry_random": "Joias Perdida Aleatória",
+    "menu.random": "Locais Aleatórios"
 }

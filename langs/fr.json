@@ -1881,5 +1881,13 @@
     "menu.lang_uk": "Українська мова (ukrainien)",
     "menu.lang_vi": "Tiếng Việt (Vietnamien)",
     "menu.lang_zh_Hans": "简体中文 (Chinois simplifié)",
-    "menu.lang_zh_Hant": "中文 中文 (chinois traditionnel)"
+    "menu.lang_zh_Hant": "中文 中文 (chinois traditionnel)",
+    "menu.marker_color.custom": "Personnalisé",
+    "menu.custom_marker_color": "Définir des couleurs de marqueur personnalisées",
+    "menu.custom_marker_color_title": "Couleurs de marqueurs personnalisées",
+    "menu.custom_marker_color_body": "Définir une couleur personnalisée pour chaque catégorie :",
+    "help.custom_marker_color_modal": "Permet de définir une couleur personnalisée pour chaque catégorie de marqueurs.",
+    "menu.fossils_random": "Fossiles aléatoires",
+    "menu.jewelry_random": "Bijoux aléatoires",
+    "menu.random": "Zones aléatoires"
 }

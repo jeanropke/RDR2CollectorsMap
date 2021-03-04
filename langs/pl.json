@@ -1847,6 +1847,7 @@
     "menu.tooltip_map": "Podpowiedzi znaczników",
     "help.tooltip_map": "Wyświetla podpowiedź dla znaczników na mapie, w której wyświetlany jest pełny tytuł.",
     "menu.translate_progress": "Postęp tłumaczenia dla tego języka to {progress}%.",
+    "help.map_boundaries": "Umożliwia włączenie lub wyłączenie granic mapy. Jeśli ta opcja jest włączona, mapa zawsze znajduje się na ekranie.",
     "menu.map_boundaries": "Granice mapy zostały włączone",
     "menu.lang_en": "Angielski (English)",
     "menu.lang_af": "Afrykański (Afrikaans)",
@@ -1879,5 +1880,13 @@
     "menu.lang_uk": "Ukraiński (Ukrainian)",
     "menu.lang_vi": "Wietnamski (Vietnamese)",
     "menu.lang_zh_Hans": "Chiński uproszczony (Chinese Simplified)",
-    "menu.lang_zh_Hant": "Chiński tradycyjny (Chinese Traditional)"
+    "menu.lang_zh_Hant": "Chiński tradycyjny (Chinese Traditional)",
+    "menu.marker_color.custom": "Własny",
+    "menu.custom_marker_color": "Ustaw własny kolor znaczników",
+    "menu.custom_marker_color_title": "Własny kolor znaczników",
+    "menu.custom_marker_color_body": "Ustaw niestandardowy kolor dla każdej kategorii:",
+    "help.custom_marker_color_modal": "Umożliwia ustawienie niestandardowego koloru dla każdej kategorii znaczników.",
+    "menu.fossils_random": "Losowe Skamieniałości",
+    "menu.jewelry_random": "Losowa Biżuteria",
+    "menu.random": "Losowe Przedmioty"
 }

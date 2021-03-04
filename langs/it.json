@@ -1255,6 +1255,7 @@
     "routes.empty": "Percorso vuoto",
     "routes.invalid": "Percorso non valido. Controlla la console per più informazioni (F12)",
     "routes.set_as_route_start": "Imposta come inizio del percorso",
+    "routes.generate_route_now": "Imposta l'inizio e genera il percorso",
     "menu.random_spots": "Punti casuali",
     "menu.collectables_counter": "Collezionati {count} di {max}",
     "menu.collection_counter": "{count} di {max}",
@@ -1849,5 +1850,13 @@
     "menu.lang_uk": "Укранська мова (ucraino)",
     "menu.lang_vi": "Tiếng Việt (Vietnamita)",
     "menu.lang_zh_Hans": "简体中文 (Cinese Semplificato)",
-    "menu.lang_zh_Hant": "繁体中文 (Cinese Tradizionale)"
+    "menu.lang_zh_Hant": "繁体中文 (Cinese Tradizionale)",
+    "menu.marker_color.custom": "Personalizzato",
+    "menu.custom_marker_color": "Imposta i colori degli indicatori personalizzati",
+    "menu.custom_marker_color_title": "Colori degli indicatori personalizzati",
+    "menu.custom_marker_color_body": "Imposta il colore personalizzato per ogni categoria:",
+    "help.custom_marker_color_modal": "Ti permette di impostare il colore personalizzato per ogni categoria di indicatori.",
+    "menu.fossils_random": "Fossili Casuali",
+    "menu.jewelry_random": "Gioielli Casuali",
+    "menu.random": "Punti casuali"
 }
