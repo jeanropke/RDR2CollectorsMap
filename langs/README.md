@@ -59,8 +59,8 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Finnish (68%):
   - **seevimi** (283 words)
 
-### French (99%):
-  - **AlexandreHemery** (48 words)
+### French (100%):
+  - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
   - **Ca0dan** (93 words)
   - **FRANCESCADOLORES** (1,005 words)
@@ -120,7 +120,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
   - **Jarsha1311** (500 words)
-  - **LucaBa** (95 words)
+  - **LucaBa** (142 words)
   - **masterflash222** (268 words)
   - **misticjoker** (3,718 words)
   - **Raffox97** (33 words)
@@ -134,7 +134,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
-  - **uraomote** (2,347 words)
+  - **uraomote** (2,348 words)
 
 ### Korean (84%):
   - **ciizel** (697 words)
