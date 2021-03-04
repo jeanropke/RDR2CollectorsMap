@@ -1889,5 +1889,6 @@
     "help.custom_marker_color_modal": "Permet de définir une couleur personnalisée pour chaque catégorie de marqueurs.",
     "menu.fossils_random": "Fossiles aléatoires",
     "menu.jewelry_random": "Bijoux aléatoires",
-    "menu.random": "Zones aléatoires"
+    "menu.random_spot_metal": "Spots aléatoires (détecteur de métal)",
+    "menu.random_spot_shovel": "Spots aléatoires (pelle)"
 }

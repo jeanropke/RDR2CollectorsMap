@@ -1167,6 +1167,7 @@
     "weekly.flavor.hairdresser_set": "Questa settimana Madame Nazar sta cercando tre cimeli di famiglia che un parrucchiere apprezzerebbe molto.",
     "weekly.flavor.herbalist_set": "Questa settimana Madame Nazar sta cercando tre fiori selvatici americani particolari.",
     "weekly.flavor.hunter_set": "Questa settimana Madame Nazar sta cercando tre oggetti che potrebbero far gola a un cacciatore.",
+    "weekly.flavor.jeweler_set": "Questa settimana, Madam Nazar sta cercando tre gioielli con pietre semipreziose.",
     "weekly.flavor.jurassic_set": "Questa settimana, Madam Nazar è in cerca di 3 fossili Giurassici.",
     "weekly.flavor.looter_set": "Questa settimana Madame Nazar sta cercando tre oggetti che potrebbero trovarsi addosso a un cadavere.",
     "weekly.flavor.loser_set": "Questa settimana Madame Nazar sta cercando tre carte sfortunate.",
@@ -1182,6 +1183,7 @@
     "weekly.flavor.sacred_set": "Questa settimana Madame Nazar sta cercando tre oggetti sacri.",
     "weekly.flavor.saint_denis_set": "Questa settimana Madame Nazar sta cercando tre oggetti comunemente posseduti dagli esponenti della buona società di Saint Denis.",
     "weekly.flavor.semiprecious_stones_set": "Questa settimana Madame Nazar sta cercando tre gioielli perduti ornati di pietre senza il minimo difetto.",
+    "weekly.flavor.shot_in_the_dark_set": "Questa settimana, Madam Nazar sta cercando tre parti di animali notturni.",
     "weekly.flavor.squire_set": "Questa settimana Madame Nazar sta cercando tre carte dei tarocchi che raccontano la storia di uno scudiero.",
     "weekly.flavor.tooth_and_nail_set": "Questa settimana, Madam Nazar è in cerca di 3 denti o unghie di animali unici.",
     "weekly.flavor.trophy_hunter_set": "Questa settimana, Madam Nazar è in cerca di 3 oggetti leggendari.",
@@ -1664,6 +1666,7 @@
     "help.weekly_item_pocket_watch_platinum": "Gli orologi da tasca di platino possono essere ottenuti saccheggiando le persone. La gente ricca come i banchieri hanno una probabilità di drop pari a 1-2%.",
     "help.weekly_legendary_item_beaver_tooth": "I Denti di Castoro Leggendari possono essere ottenuti scuoiando qualsiasi Castoro Leggendario.",
     "help.weekly_legendary_item_bison_horn": "Le Corna di Bisonte Leggendario possono essere ottenute scuoiando qualsiasi Bisonte leggendario.",
+    "help.weekly_legendary_item_boar_tusk": "Le Zanne di Cinghiale Leggendario possono essere ottenute scuoiando uno qualsiasi dei Cinghiali leggendari.",
     "help.weekly_legendary_item_moose_antler": "Le Corna di Alce leggendario possono essere ottenute scuoiando qualsiasi Alce leggendario.",
     "help.weekly_legendary_item_panther_eye": "L'Occhio di Pantera Leggendario può essere ottenuto scuoiando qualsiasi Pantera leggendaria.",
     "help.weekly_provision_alligator_tooth": "Gli Alligatori si trovano ovunque a Bayou Nwa.",
@@ -1819,6 +1822,7 @@
     "menu.enable_cycles": "Attiva display wireless",
     "help.enable_cycles": "Ti consente di scegliere se abilitare o no la visibilità delle icone e dei testi nei popup.",
     "menu.translate_progress": "La traduzione di questa lingua è al {progress}%.",
+    "menu.map_boundaries": "Confini mappa abilitati",
     "menu.lang_en": "Inglese",
     "menu.lang_af": "Afrikaans (Afrikaans)",
     "menu.lang_ar": "ٱلْعَرَبِيَّة (Arabo)",
@@ -1858,5 +1862,6 @@
     "help.custom_marker_color_modal": "Ti permette di impostare il colore personalizzato per ogni categoria di indicatori.",
     "menu.fossils_random": "Fossili Casuali",
     "menu.jewelry_random": "Gioielli Casuali",
-    "menu.random": "Punti casuali"
+    "menu.random_spot_metal": "Punto Casuale (cercametalli)",
+    "menu.random_spot_shovel": "Punto Casuale (pala)"
 }
