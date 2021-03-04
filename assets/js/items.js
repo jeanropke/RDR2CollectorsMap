@@ -79,9 +79,7 @@ class Item extends BaseItem {
         if (item && !event.target.closest('.counter')) {
           event.preventDefault();
           event.stopImmediatePropagation();
-          if (!['flower_agarita', 'flower_blood_flower'].includes(item.itemId)) {
-            item.isImportant = !item.isImportant;
-          }
+          item.isImportant = !item.isImportant;
         }
       })[0].addEventListener('click', event => { // `.on()` can’t register to capture phase
         if (event.target.classList.contains('counter-button')) {

@@ -249,7 +249,7 @@ function clockTick() {
   now.setHours((now.getHours() + Settings.timeZoneOffset))
   const gameTime = new Date(now * 30);
   const gameHour = gameTime.getUTCHours();
-  const nightTime = gameHour >= 22 || gameHour < 5;
+  const nightTime = gameHour >= 22 || gameHour < 5 || true;
   const clockFormat = {
     timeZone: 'UTC',
     hour: 'numeric',
@@ -278,8 +278,18 @@ function clockTick() {
 
   $('#countdown').text(delta.toLocaleString([], deltaFormat));
 
-  $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter',
-    nightTime && !MapBase.isPreviewMode ? 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)' : 'none');
+  $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', (function () {
+    if (MapBase.isPreviewMode) return 'none';
+    const isImportant = $(this).hasClass('highlight-items');
+    const whiteGlow = 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .3rem #fff)';
+    const redGlow = 'drop-shadow(0 0 .5rem #cc0000) drop-shadow(0 0 .4rem #cc0000';
+    const pinkGlow = 'drop-shadow(0 0 .5rem #ff6fc7) drop-shadow(0 0 .3rem #ff6fc7';
+    if (isImportant && nightTime)
+      return pinkGlow;
+    if (isImportant)
+      return redGlow;
+    return nightTime ? whiteGlow : 'none';
+  }));
 
   $('.leaflet-marker-icon[data-time]').each(function () {
     let time = $(this).data('time') + '';
