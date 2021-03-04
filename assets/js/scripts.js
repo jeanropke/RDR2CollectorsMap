@@ -962,9 +962,7 @@ $('#open-custom-marker-color-modal').on('click', event => {
 
     markerColors.forEach(color => {
       const option = $(`<option value="${color}" data-text="map.user_pins.color.${color}"></option>`)
-      if (savedColors[category] === color) {
-        option.attr('selected', 'selected');
-      }
+        .attr('selected', savedColors[category] === color);
       $('select', snippet).append(option);
     });
     wrapper.append(snippet);
@@ -975,7 +973,6 @@ $('#open-custom-marker-color-modal').on('click', event => {
   $('#custom-marker-color-modal').modal('show');
 
   $('.input-container', wrapper).on('change', event => {
-    console.log(event.target.value);
     baseColors[event.target.id.split('-')[0]] = event.target.value;
     localStorage.setItem('customMarkersColors', JSON.stringify(baseColors));
     MapBase.addMarkers();
