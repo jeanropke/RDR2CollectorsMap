@@ -60,7 +60,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **seevimi** (283 words)
 
 ### French (99%):
-  - **AlexandreHemery** (18 words)
+  - **AlexandreHemery** (48 words)
   - **Azhellarke** (635 words)
   - **Ca0dan** (93 words)
   - **FRANCESCADOLORES** (1,005 words)
@@ -73,7 +73,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
   - **Maxemi** (224 words)
-  - **Michal__d** (2,639 words)
+  - **Michal__d** (2,684 words)
   - **Oldboy77** (494 words)
   - **radragon** (917 words)
   - **RedShard-B** (36 words)
@@ -112,7 +112,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **meezalena** (27 words)
   - **SzKrJ** (1,429 words)
 
-### Italian (97%):
+### Italian (98%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (2,592 words)
@@ -120,7 +120,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
   - **Jarsha1311** (500 words)
-  - **LucaBa** (60 words)
+  - **LucaBa** (95 words)
   - **masterflash222** (268 words)
   - **misticjoker** (3,718 words)
   - **Raffox97** (33 words)
@@ -154,7 +154,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Polish (99%):
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
-  - **Michal__d** (2,639 words)
+  - **Michal__d** (2,684 words)
   - **Quahox** (39 words)
 
 ### Portuguese (7%):
@@ -170,7 +170,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ArthurZussman** (222 words)
   - **borba72** (23 words)
   - **FilipFelipe** (146 words)
-  - **jeanropke** (7,087 words)
+  - **jeanropke** (7,135 words)
   - **joabeHK** (104 words)
   - **KAKUNO123** (30 words)
   - **msfern** (215 words)
