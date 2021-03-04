@@ -249,7 +249,7 @@ function clockTick() {
   now.setHours((now.getHours() + Settings.timeZoneOffset))
   const gameTime = new Date(now * 30);
   const gameHour = gameTime.getUTCHours();
-  const nightTime = gameHour >= 22 || gameHour < 5 || true;
+  const nightTime = gameHour >= 22 || gameHour < 5;
   const clockFormat = {
     timeZone: 'UTC',
     hour: 'numeric',
