@@ -218,9 +218,6 @@ class Item extends BaseItem {
     else
       localStorage.removeItem(textKey);
 
-    if (Settings.filterType === 'important') {
-      filterMapMarkers();
-    }
     this.highlightImportantItem();
   }
 
