@@ -36,7 +36,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Chinese Traditional (99%):
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
-  - **RichardC.P.** (1,690 words)
+  - **RichardC.P.** (1,697 words)
 
 ### Czech (71%):
   - **avojta** (581 words)
