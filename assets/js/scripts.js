@@ -981,57 +981,45 @@ $('#open-custom-marker-color-modal').on('click', event => {
 
 function filterMapMarkers() {
   uniqueSearchMarkers = [];
-
-  const filterMarkers = function (array) {
-    MapBase.filtersData[Settings.filterType] = MapBase.markers.filter(marker => array.includes(marker.itemId));
-    MapBase.filtersData[Settings.filterType].forEach(marker => {
-      if (!enabledCategories.includes(marker.category))
-        enabledCategories.push(marker.category);
-      uniqueSearchMarkers.push(marker);
-    });
-  }
+  let filterType = () => true;
 
   if (Settings.filterType === 'none') {
-    if ($("#search").val())
-      MapBase.onSearch($("#search").val());
+    if ($('#search').val())
+      MapBase.onSearch($('#search').val());
     else
       uniqueSearchMarkers = MapBase.markers;
+
+    MapBase.addMarkers();
+    return;
   }
   else if (['moonshiner', 'naturalist'].includes(Settings.filterType)) {
-    Object.values(MapBase.filtersData[Settings.filterType]).filter(filterItems =>
-      filterItems.some(item =>
-        MapBase.markers.find(_m => {
-          if (_m.itemId === item)
-            uniqueSearchMarkers.push(_m);
-          if (!enabledCategories.includes(_m.category))
-            enabledCategories.push(_m.category);
-        })
-      )
-    );
+    const roleItems = [].concat(...Object.values(MapBase.filtersData[Settings.filterType]));
+    filterType = marker => roleItems.includes(marker.itemId);
   }
   else if (Settings.filterType === 'weekly') {
-    const weeklyItems = [];
-    $.each(Weekly.current.items, (index, item) => weeklyItems.push(item.itemId));
-    filterMarkers(weeklyItems);
+    const weeklyItems = Weekly.current.collectibleItems;
+    filterType = marker => weeklyItems.map(item => item.itemId).includes(marker.itemId);
   }
   else if (Settings.filterType === 'important') {
-    filterMarkers(Item.items.filter(item => item.isImportant).map(item => item.itemId));
+    const importantItems = Item.items.filter(item => item.isImportant);
+    filterType = marker => importantItems.map(item => item.itemId).includes(marker.itemId);
   }
   else if (Settings.filterType === 'static') {
-    const staticItems = [];
-    MapBase.markers.find(_m => { if (!_m.text.includes('random')) staticItems.push(_m.itemId) });
-    filterMarkers(staticItems);
+    filterType = marker => !marker.legacyItemId.includes('random');
   }
   // hides only flowers not belongs to any moonshine recipe
   else if (Settings.filterType === 'hideFlowers') {
-    const flowers = ['flower_agarita', 'flower_creek_plum'];
-    const items = [];
-    MapBase.markers.find(marker => {
-      if ((marker.category === 'flower' && flowers.includes(marker.itemId)) || marker.category !== 'flower')
-        items.push(marker.itemId)
-    });
-    filterMarkers(items);
+    const roleItems = [].concat(...Object.values(MapBase.filtersData['moonshiner']));
+    filterType = marker => roleItems.includes(marker.itemId) || marker.category !== 'flower';
   }
+
+  MapBase.markers
+    .filter(filterType)
+    .forEach(marker => {
+      uniqueSearchMarkers.push(marker);
+      if (!enabledCategories.includes(marker.category))
+        enabledCategories.push(marker.category);
+    });
 
   MapBase.addMarkers();
 }
