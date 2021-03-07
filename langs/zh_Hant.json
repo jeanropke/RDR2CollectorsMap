@@ -1277,7 +1277,7 @@
     "menu.clear_inventory": "清除物品庫存數量",
     "menu.sell": "出售",
     "menu.inventory": "物品數量",
-    "menu.enable_inventory": "是否啟用數量功能",
+    "menu.enable_inventory": "啟用物品庫存",
     "menu.inventory_stack": "物品數量大小",
     "menu.highlight_low_amount_items": "Highlight 數量少的物品",
     "menu.highlight_style": "Highlight風格",
@@ -1848,6 +1848,8 @@
     "menu.tooltip_map": "地圖項目提示工具",
     "help.tooltip_map": "顯示地圖上標記點完整名稱的小工具。",
     "menu.translate_progress": "此語言的翻譯進度為 {progress}%。",
+    "help.map_boundaries": "允許您啟用或停用地圖界限。 當啟用時，地圖會保持顯示在螢幕上。",
+    "menu.map_boundaries": "啟用地圖界限",
     "menu.lang_en": "英文",
     "menu.lang_af": "Afrikaans (南非語)",
     "menu.lang_ar": "ٱلْعَرَبِيَّة (阿拉伯語)",
@@ -1879,5 +1881,14 @@
     "menu.lang_uk": "Українська мова (烏克蘭語)",
     "menu.lang_vi": "Tiếng Việt (越南文)",
     "menu.lang_zh_Hans": "简体中文 (Chinese Simplified)",
-    "menu.lang_zh_Hant": "繁體中文 (Chinese Traditional)"
+    "menu.lang_zh_Hant": "繁體中文 (Chinese Traditional)",
+    "menu.marker_color.custom": "自定義",
+    "menu.custom_marker_color": "設定自訂標記顏色",
+    "menu.custom_marker_color_title": "自定義標記顏色",
+    "menu.custom_marker_color_body": "為每類別設定自訂顏色:",
+    "help.custom_marker_color_modal": "允許您為每標記種類設定自訂的顏色。",
+    "menu.fossils_random": "隨機化石",
+    "menu.jewelry_random": "隨機珠寶首飾",
+    "menu.random_spot_metal": "隨機地點(金屬探測器)",
+    "menu.random_spot_shovel": "隨機地點(鏟子)"
 }
