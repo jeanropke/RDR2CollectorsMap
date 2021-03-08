@@ -24,7 +24,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Catalan (2%):
   - **Muahahas** (51 words)
 
-### Chinese Simplified (99%):
+### Chinese Simplified (98%):
   - **akbcd** (292 words)
   - **Approach** (12 words)
   - **BHT256** (7,717 words)
@@ -33,7 +33,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **PeanutSlinger** (2,575 words)
   - **qiexiacn** (715 words)
 
-### Chinese Traditional (100%):
+### Chinese Traditional (99%):
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (1,745 words)
@@ -44,7 +44,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **filutav39** (49 words)
   - **Nydrail** (372 words)
 
-### Danish (64%):
+### Danish (63%):
   - **TheWilliBM** (10 words)
 
 ### Dutch (22%):
@@ -59,7 +59,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Finnish (68%):
   - **seevimi** (283 words)
 
-### French (100%):
+### French (99%):
   - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
   - **Ca0dan** (93 words)
@@ -97,7 +97,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **viliri** (1,470 words)
   - **werhel** (443 words)
 
-### Greek (13%):
+### Greek (12%):
   - **Arsenis** (277 words)
   - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
@@ -225,7 +225,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ulises_hdz22** (361 words)
   - **W10075343** (70 words)
 
-### Swedish (18%):
+### Swedish (17%):
   - **...---...** (431 words)
   - **emeliris** (636 words)
   - **idaerika** (30 words)
