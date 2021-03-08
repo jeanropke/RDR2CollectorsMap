@@ -141,6 +141,7 @@ function init() {
 
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
+  $('#filter-type').val(Settings.filterType);
   $('#marker-size').val(Settings.markerSize);
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
   $('#marker-cluster').prop("checked", Settings.isMarkerClusterEnabled);
@@ -482,6 +483,15 @@ $("#marker-size").on("change", function () {
   MapBase.addMarkers();
   Treasure.onSettingsChanged();
   Legendary.onSettingsChanged();
+});
+
+$('#filter-type').on('change', function () {
+  Settings.filterType = $(this).val();
+});
+
+$('#filter-min-amount-items').on("change", function () {
+  InventorySettings.maxAmountLowInventoryItems = $(this).val();
+  filterMapMarkers();
 });
 
 $("#enable-cycles").on("change", function () {
@@ -982,6 +992,7 @@ $('#open-custom-marker-color-modal').on('click', event => {
 function filterMapMarkers() {
   uniqueSearchMarkers = [];
   let filterType = () => true;
+  let enableMainCategory = true;
 
   if (Settings.filterType === 'none') {
     if ($('#search').val())
@@ -997,12 +1008,12 @@ function filterMapMarkers() {
     filterType = marker => roleItems.includes(marker.itemId);
   }
   else if (Settings.filterType === 'weekly') {
-    const weeklyItems = Weekly.current.collectibleItems;
-    filterType = marker => weeklyItems.map(item => item.itemId).includes(marker.itemId);
+    const weeklyItems = Weekly.current.collectibleItems.map(item => item.itemId);
+    filterType = marker => weeklyItems.includes(marker.itemId);
   }
   else if (Settings.filterType === 'important') {
-    const importantItems = Item.items.filter(item => item.isImportant);
-    filterType = marker => importantItems.map(item => item.itemId).includes(marker.itemId);
+    const importantItems = Item.items.filter(item => item.isImportant).map(item => item.itemId);
+    filterType = marker => importantItems.includes(marker.itemId);
   }
   else if (Settings.filterType === 'static') {
     filterType = marker => !marker.legacyItemId.includes('random');
@@ -1012,13 +1023,21 @@ function filterMapMarkers() {
     const roleItems = [].concat(...Object.values(MapBase.filtersData['moonshiner']));
     filterType = marker => roleItems.includes(marker.itemId) || marker.category !== 'flower';
   }
+  else if (Settings.filterType === 'lowInventoryItems') {
+    enableMainCategory = false;
+    const maxAmount = InventorySettings.maxAmountLowInventoryItems;
+    const lowItems = Item.items.filter(item => item.amount < maxAmount).map(item => item.itemId);
+    filterType = marker => lowItems.includes(marker.itemId);
+  }
 
   MapBase.markers
     .filter(filterType)
     .forEach(marker => {
       uniqueSearchMarkers.push(marker);
-      if (!enabledCategories.includes(marker.category))
+      if (!enabledCategories.includes(marker.category) && enableMainCategory) {
         enabledCategories.push(marker.category);
+        $(`[data-type="${marker.category}"]`).removeClass('disabled');
+      }
     });
 
   MapBase.addMarkers();

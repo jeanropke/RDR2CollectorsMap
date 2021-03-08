@@ -2091,5 +2091,8 @@
     "menu.fossils_random": "Random Fossils",
     "menu.jewelry_random": "Random Jewelry",
     "menu.random_spot_metal": "Random Spots (metal detector)",
-    "menu.random_spot_shovel": "Random Spots (shovel)"
+    "menu.random_spot_shovel": "Random Spots (shovel)",
+    "help.filter_min_amount_items": "Allows you to set max amount of items in your inventory considered as \"low inventory items\".",
+    "menu.filter_type.low_amount_items": "Only low inventory items",
+    "menu.filter_min_amount_items": "Show only items amount lower than"
 }

@@ -10,7 +10,7 @@ const Inventory = {
     $('#auto-enable-sold-items').prop("checked", InventorySettings.autoEnableSoldItems);
     $('#reset-inventory-daily').prop("checked", InventorySettings.resetInventoryDaily);
     $('#enable-additional-inventory-options').prop("checked", InventorySettings.enableAdvancedInventoryOptions);
-
+    $('#filter-min-amount-items').val(InventorySettings.maxAmountLowInventoryItems);
 
     // disable dropdown menu if highlight low amount items is disabled:
     $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);

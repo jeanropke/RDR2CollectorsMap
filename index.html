@@ -256,7 +256,13 @@
           <option value="important" data-text="menu.filter_type.important_items">Important items</option>
           <option value="static" data-text="menu.filter_type.only_static">Only static</option>
           <option value="hideFlowers" data-text="menu.filter_type.hide_flowers">Hide no ingredients flowers</option>
+          <option value="lowInventoryItems" data-text="menu.filter_type.low_amount_items">Low amount items</option>
         </select>
+      </div>
+      <div class="input-container" data-help="filter_min_amount_items">
+        <label for="filter-min-amount-items" data-text="menu.filter_min_amount_items">Show items with amount less than</label>
+        <input id="filter-min-amount-items" class="input-text narrow-select-menu" type="number" min="1" max="10"
+          value="10">
       </div>
       <div class="input-container" data-help="reset_markers_daily">
         <label for="reset-markers" data-text="menu.reset_markers_daily">Reset markers daily</label>

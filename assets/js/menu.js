@@ -160,19 +160,19 @@ class Menu {
     SettingProxy.addListener(Settings, 'toolType', () =>
       this.toggleFilterWarning('map.has_tool_filter_alert', Settings.toolType !== 3))();
 
-    SettingProxy.addListener(Settings, 'filterType', () =>
-      this.toggleFilterWarning('map.has_filter_type_alert', Settings.filterType !== 'none'))();
+    SettingProxy.addListener(Settings, 'filterType', () => {
+      this.toggleFilterWarning('map.has_filter_type_alert', Settings.filterType !== 'none');
+      $('#filter-min-amount-items').parent().toggle(Settings.filterType === 'lowInventoryItems' && InventorySettings.isEnabled);
+      filterMapMarkers();
+    })();
 
     SettingProxy.addListener(Settings, 'markerColor', () =>
       $('#open-custom-marker-color-modal').toggle(Settings.markerColor === 'custom'))();
 
-    $('#filter-type')
-      .on('change', function () {
-        Settings.filterType = $(this).val();
-        filterMapMarkers();
-      })
-      .val(Settings.filterType)
-      .triggerHandler('change');
+    SettingProxy.addListener(InventorySettings, 'isEnabled', () => {
+      $('#filter-min-amount-items').parent().toggle(Settings.filterType === 'lowInventoryItems' && InventorySettings.isEnabled);
+      $('#filter-type option[value="lowInventoryItems"]').toggle(InventorySettings.isEnabled);
+    })();
 
     $('.filter-alert').on('click', function () {
       $(this).hide();
