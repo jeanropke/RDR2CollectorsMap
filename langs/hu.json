@@ -248,6 +248,7 @@
     "map.user_pins.icon.fast_travel": "Gyorsutazás",
     "menu.modal_clear_inventory_title": "Leltár törlése?",
     "menu.settings_import_export_title": "Beállítások",
+    "menu.enable_dclick_zoom": "Dupla kattintás a nagyításhoz",
     "menu.marker_opacity.20": "20%",
     "menu.marker_opacity.40": "40%",
     "menu.marker_opacity.60": "60%",

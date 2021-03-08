@@ -1860,5 +1860,8 @@
     "menu.fossils_random": "Rastgele Fosiller",
     "menu.jewelry_random": "Rastgele Mücevher",
     "menu.random_spot_metal": "Rastgele Noktalar (metal dedektörü)",
-    "menu.random_spot_shovel": "Rastgele Noktalar (kürek)"
+    "menu.random_spot_shovel": "Rastgele Noktalar (kürek)",
+    "help.filter_min_amount_items": "Envanterinizde \"az envanter öğeleri\" olarak kabul edilen maksimum öğe miktarını ayarlamanıza olanak sağlar.",
+    "menu.filter_type.low_amount_items": "Yalnızca az envanter öğeleri",
+    "menu.filter_min_amount_items": "Yalnızca öğe sayısızdan az olan öğeleri göster"
 }

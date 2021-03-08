@@ -1831,6 +1831,7 @@
     "menu.enable_cycles": "Zyklus-Anzeige aktivieren",
     "help.enable_cycles": "Erlaubt es dir, die Sichtbarkeit der Zyklussymbole und des Textes in den Popups zu ändern.",
     "menu.tooltip_map": "Tooltips für Kartenelemente",
+    "help.tooltip_map": "Zeigt einen Tooltip für Marker auf der Karte, der den vollständigen Titel anzeigt.",
     "menu.translate_progress": "Der Übersetzungsfortschritt für diese Sprache beträgt {progress}%.",
     "menu.lang_en": "Englisch",
     "menu.lang_af": "Afrikaans (Afrikanisch)",
