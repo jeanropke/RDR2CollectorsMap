@@ -1848,6 +1848,8 @@
     "menu.tooltip_map": "Підказки для елементів на карті",
     "help.tooltip_map": "Показує підказку для міток на карті з повним заголовком.",
     "menu.translate_progress": "Прогрес перекладу для цієї мови - {progress}%.",
+    "help.map_boundaries": "Вмикає або вимикає межі карт. Якщо ввімкнено, карта завжди буде на екрані.",
+    "menu.map_boundaries": "Межі карти ввімкнено",
     "menu.lang_en": "English",
     "menu.lang_af": "Afrikaans (Afrikaans)",
     "menu.lang_ar": "ٱلْعَرَبِيَّة (Arabic)",
@@ -1879,5 +1881,6 @@
     "menu.lang_uk": "Українська мова (Ukrainian)",
     "menu.lang_vi": "Tiếng Việt (Vietnamese)",
     "menu.lang_zh_Hans": "简体中文 (Chinese Simplified)",
-    "menu.lang_zh_Hant": "繁体中文 (Chinese Traditional)"
+    "menu.lang_zh_Hant": "繁体中文 (Chinese Traditional)",
+    "menu.jewelry_random": "Випадкова втрачена прикраса"
 }
