@@ -253,7 +253,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Ukrainian (99%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
-  - **grmaster5s** (10,796 words)
+  - **grmaster5s** (10,816 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
   - **UluMulu** (217 words)
