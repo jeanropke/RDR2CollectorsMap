@@ -1184,7 +1184,7 @@
     "weekly.flavor.lovers_set": "本週, 娜札女士正在尋找三種浪漫收藏品。",
     "weekly.flavor.naturalist_set": "本週, 娜札女士正在尋找三個天然寶藏。",
     "weekly.flavor.new_year_set": "本週, 娜札女士正在尋找三項迎接新一年的物品。",
-    "weekly.flavor.night_watch_set": "本週, 娜札女士正在尋找三項與傍晚相關的物品。",
+    "weekly.flavor.night_watch_set": "本週, 娜札女士正在尋找三種與黑夜有關的物品。",
     "weekly.flavor.pearls_set": "本週, 娜札女士正在尋找三項附有珍珠打造的失落珠寶。",
     "weekly.flavor.penny_set": "本週, 娜札女士正在尋找三枚特定的硬幣。",
     "weekly.flavor.poacher_set": "本週, 娜札女士正在尋找三項以動物為原料製作的奢侈品。",
@@ -1890,5 +1890,8 @@
     "menu.fossils_random": "隨機化石",
     "menu.jewelry_random": "隨機珠寶首飾",
     "menu.random_spot_metal": "隨機地點(金屬探測器)",
-    "menu.random_spot_shovel": "隨機地點(鏟子)"
+    "menu.random_spot_shovel": "隨機地點(鏟子)",
+    "help.filter_min_amount_items": "允許您設定在庫存中被視為\"低庫存物品\"的物品最大值。",
+    "menu.filter_type.low_amount_items": "僅低庫存物品",
+    "menu.filter_min_amount_items": "只顯示物品數量低於"
 }

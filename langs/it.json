@@ -1863,5 +1863,8 @@
     "menu.fossils_random": "Fossili Casuali",
     "menu.jewelry_random": "Gioielli Casuali",
     "menu.random_spot_metal": "Punto Casuale (cercametalli)",
-    "menu.random_spot_shovel": "Punto Casuale (pala)"
+    "menu.random_spot_shovel": "Punto Casuale (pala)",
+    "help.filter_min_amount_items": "Consente di impostare la quantità massima di oggetti nel tuo inventario considerati \"oggetti a basso inventario\".",
+    "menu.filter_type.low_amount_items": "Solo articoli a basso inventario",
+    "menu.filter_min_amount_items": "Mostra solo gli articoli con quantità inferiore a"
 }
