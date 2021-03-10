@@ -49,6 +49,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Dutch (22%):
   - **Helmond1989** (2,058 words)
+  - **jopiejooow** (72 words)
   - **MrGrivixer** (20 words)
 
 ### English, United Kingdom (2%):
