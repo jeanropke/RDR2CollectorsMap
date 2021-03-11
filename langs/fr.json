@@ -49,7 +49,7 @@
     "cups_ace_2.desc": "Sur un baril derrière le hangar délabré.",
     "cups_ace_3.desc": "Sur la table de nuit dans la chambre de droite.",
     "cups_ace_4.desc": "Sur le baril sur la plate-forme de la tour.",
-    "cups_ace_5.desc": "Sur le toit du cinéma.",
+    "cups_ace_5.desc": "Sur le toit du cinéma sur un conduit d'aération carré.",
     "cups_ace_6.desc": "Sur la balustrade du côté est à l'avant du bateau.",
     "cups_two.name": "Deux de coupe",
     "cups_two_1.desc": "Sur un baril sous le bâtiment.",
@@ -87,7 +87,7 @@
     "cups_six_5.desc": "Sur une caisse à côté du coin de la maison.",
     "cups_six_6.desc": "En haut de la tour sur les rails. Montez les deux échelles.",
     "cups_seven.name": "Sept de Coupe",
-    "cups_seven_1.desc": "Sur un baril en dehors de la cabane.",
+    "cups_seven_1.desc": "Sur un baril à l'extérieur de la cabane.",
     "cups_seven_2.desc": "À l'intérieur de la chambre à coucher sur la table de nuit derrière la porte.",
     "cups_seven_3.desc": "À l'intérieur de la maison dans une armoire ouverte.",
     "cups_seven_4.desc": "A l'intérieur de la maison sur la cheminée.",
@@ -1890,5 +1890,6 @@
     "menu.fossils_random": "Fossiles aléatoires",
     "menu.jewelry_random": "Bijoux aléatoires",
     "menu.random_spot_metal": "Spots aléatoires (détecteur de métal)",
-    "menu.random_spot_shovel": "Spots aléatoires (pelle)"
+    "menu.random_spot_shovel": "Spots aléatoires (pelle)",
+    "menu.filter_min_amount_items": "Afficher uniquement les articles d'un montant inférieur à"
 }
