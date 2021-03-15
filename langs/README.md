@@ -104,16 +104,17 @@ These are the people that helped translate the project using Crowdin. Please not
   - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
 
-### Hebrew (36%):
-  - **dudiv5674** (2,724 words)
+### Hebrew (37%):
+  - **dudiv5674** (2,779 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
 
-### Hungarian (11%):
+### Hungarian (12%):
   - **jjameska** (26 words)
   - **meezalena** (27 words)
   - **SzKrJ** (1,429 words)
+  - **tabandi** (239 words)
 
 ### Italian (98%):
   - **AlexTucci** (23 words)
@@ -123,7 +124,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
   - **Jarsha1311** (500 words)
-  - **LucaBa** (168 words)
+  - **LucaBa** (190 words)
   - **masterflash222** (268 words)
   - **misticjoker** (3,718 words)
   - **Raffox97** (33 words)
@@ -228,7 +229,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ulises_hdz22** (361 words)
   - **W10075343** (70 words)
 
-### Swedish (17%):
+### Swedish (18%):
   - **...---...** (431 words)
   - **emeliris** (636 words)
   - **idaerika** (30 words)
@@ -236,6 +237,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **LilleJah** (10 words)
   - **lychothroat** (114 words)
   - **niklase005** (27 words)
+  - **Swedish_Chef69** (63 words)
   - **swiff** (134 words)
 
 ### Thai (28%):
