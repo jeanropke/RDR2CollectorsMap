@@ -90,6 +90,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **CodingMax** (39 words)
   - **cwildfoerster** (104 words)
   - **davidcooper73760** (86 words)
+  - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
