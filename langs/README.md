@@ -184,7 +184,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **rafaelsadriano** (16 words)
   - **Raphael_** (39 words)
 
-### Romanian (0%):
+### Romanian (11%):
+  - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
   - **tudoradrianburlacu** (35 words)
 
@@ -237,7 +238,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **LilleJah** (10 words)
   - **lychothroat** (114 words)
   - **niklase005** (27 words)
-  - **Swedish_Chef69** (63 words)
+  - **Swedish_Chef69** (140 words)
   - **swiff** (134 words)
 
 ### Thai (28%):
