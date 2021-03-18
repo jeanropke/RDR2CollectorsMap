@@ -18,6 +18,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **moed99** (340 words)
   - **mohammad.khaled594** (92 words)
   - **noo7jri** (693 words)
+  - **osm4reaper** (15 words)
   - **razzer.tube** (47 words)
   - **REMOVED_USER** (89 words)
 
