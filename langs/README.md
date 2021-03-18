@@ -86,7 +86,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### German (100%):
   - **ADRlAN1988** (50 words)
-  - **benedikt.albert** (72 words)
+  - **benedikt.albert** (76 words)
   - **catmc8565** (163 words)
   - **CodingMax** (39 words)
   - **cwildfoerster** (104 words)
