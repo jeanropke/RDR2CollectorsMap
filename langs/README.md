@@ -38,6 +38,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (1,771 words)
+  - **Vinnie5412** (11 words)
 
 ### Czech (71%):
   - **avojta** (581 words)
@@ -61,7 +62,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Finnish (68%):
   - **seevimi** (283 words)
 
-### French (99%):
+### French (100%):
   - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
   - **Ca0dan** (93 words)
@@ -70,6 +71,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **george37** (20 words)
   - **HGNitro** (30 words)
   - **iGuuunz** (225 words)
+  - **Indessis** (20 words)
   - **JeanBankarbone** (538 words)
   - **jipsu31** (43 words)
   - **kaeporatheglitcha** (58 words)
