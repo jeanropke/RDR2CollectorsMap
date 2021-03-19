@@ -1891,6 +1891,7 @@
     "menu.jewelry_random": "Bijoux aléatoires",
     "menu.random_spot_metal": "Spots aléatoires (détecteur de métal)",
     "menu.random_spot_shovel": "Spots aléatoires (pelle)",
+    "help.filter_min_amount_items": "Vous permet de définir le nombre maximal d'objets dans votre inventaire considérés comme des \"objets en faible quantité\".",
     "menu.filter_type.low_amount_items": "Uniquement les objets en faible quantité",
     "menu.filter_min_amount_items": "Afficher uniquement les articles d'un montant inférieur à"
 }
