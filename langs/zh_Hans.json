@@ -1874,5 +1874,9 @@
     "menu.lang_uk": "Українська мова (乌克兰语)",
     "menu.lang_vi": "Tiếng Việt (越南语)",
     "menu.lang_zh_Hans": "简体中文",
-    "menu.lang_zh_Hant": "繁体中文"
+    "menu.lang_zh_Hant": "繁体中文",
+    "menu.fossils_random": "随机化石",
+    "menu.jewelry_random": "随机珠宝",
+    "menu.random_spot_metal": "随机地点 (金属检测器)",
+    "menu.random_spot_shovel": "随机地点 (铁锨)"
 }
