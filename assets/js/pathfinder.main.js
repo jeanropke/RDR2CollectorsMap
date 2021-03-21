@@ -170,8 +170,13 @@ class PathFinder {
 	}
 
 	static wasRemovedFromMap(marker) {
-		if(this._layerControl && this._layerControl._lastMarker === marker) {
-			this._layerControl.selectPath(1)
+		if(this._layerControl && this._layerControl._lastMarker === marker && marker.isCollected) {
+			this._layerControl.selectPath(1);
+
+			// Skip the markers that are already collected ahead, unless already in the end of route
+			while (this._layerControl && this._layerControl._lastMarker.isCollected && this._layerControl.currentPath !== this._layerControl._paths.length) {
+				this._layerControl.selectPath(1);
+			}
 		}
 	}
 
