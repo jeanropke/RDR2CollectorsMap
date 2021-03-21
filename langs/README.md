@@ -39,7 +39,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (1,771 words)
-  - **Vinnie5412** (11 words)
+  - **Vinnie5412** (13 words)
 
 ### Czech (71%):
   - **avojta** (581 words)
@@ -90,11 +90,11 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### German (100%):
   - **ADRlAN1988** (50 words)
-  - **benedikt.albert** (76 words)
   - **catmc8565** (163 words)
   - **CodingMax** (39 words)
   - **cwildfoerster** (104 words)
   - **davidcooper73760** (86 words)
+  - **FreeAsABird** (83 words)
   - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
@@ -121,7 +121,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **SzKrJ** (1,429 words)
   - **tabandi** (239 words)
 
-### Italian (98%):
+### Italian (99%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (2,592 words)
@@ -129,7 +129,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
   - **Jarsha1311** (500 words)
-  - **LucaBa** (190 words)
+  - **LucaBa** (404 words)
   - **masterflash222** (268 words)
   - **misticjoker** (3,718 words)
   - **Raffox97** (33 words)
@@ -201,7 +201,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **hellcat_tail** (15 words)
   - **ita.jk7** (54 words)
   - **maxdavinci** (40 words)
-  - **Megitsune** (1,904 words)
+  - **Megitsune** (1,908 words)
   - **noiracero693** (27 words)
   - **Overnoes** (85 words)
   - **platonomania** (15 words)
@@ -259,7 +259,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **bariss** (101 words)
   - **emrullahsimsar** (992 words)
   - **KagitmiAdam** (100 words)
-  - **Krykl** (12,294 words)
+  - **Krykl** (12,333 words)
 
 ### Ukrainian (99%):
   - **andrew.zaanle** (484 words)
