@@ -110,13 +110,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (632 words)
 
 ### Hebrew (37%):
-  - **dudiv5674** (2,779 words)
+  - **dudiv5674** (2,855 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
 
-### Hungarian (12%):
+### Hungarian (15%):
   - **jjameska** (26 words)
+  - **laszlo2033** (322 words)
   - **meezalena** (27 words)
   - **SzKrJ** (1,429 words)
   - **tabandi** (239 words)
