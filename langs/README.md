@@ -117,7 +117,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Hungarian (15%):
   - **jjameska** (26 words)
-  - **laszlo2033** (322 words)
+  - **laszlo2033** (370 words)
   - **meezalena** (27 words)
   - **SzKrJ** (1,429 words)
   - **tabandi** (239 words)
