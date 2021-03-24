@@ -54,6 +54,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Helmond1989** (2,058 words)
   - **jopiejooow** (72 words)
   - **MrGrivixer** (20 words)
+  - **nielsb2004** (50 words)
 
 ### English, United Kingdom (2%):
   - **AdamNortonUK** (12 words)
