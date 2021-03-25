@@ -47,8 +47,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **filutav39** (49 words)
   - **Nydrail** (372 words)
 
-### Danish (63%):
+### Danish (64%):
   - **TheWilliBM** (10 words)
+  - **Wilize** (76 words)
 
 ### Dutch (22%):
   - **Helmond1989** (2,058 words)
