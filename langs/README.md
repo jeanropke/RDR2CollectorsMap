@@ -143,6 +143,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Japanese (99%):
   - **igucheese** (82 words)
+  - **lumeanarunbird** (16 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
@@ -251,6 +252,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Thai (28%):
   - **Brieffish** (10 words)
+  - **kittipat_2011** (18 words)
   - **MrFermz** (2,424 words)
   - **nonthawatbunrod** (217 words)
   - **Sawada_18** (14 words)
