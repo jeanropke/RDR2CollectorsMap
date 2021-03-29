@@ -51,7 +51,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TheWilliBM** (10 words)
   - **Wilize** (76 words)
 
-### Dutch (22%):
+### Dutch (23%):
+  - **GIGAPLAYCLAN** (30 words)
   - **Helmond1989** (2,058 words)
   - **jopiejooow** (72 words)
   - **MrGrivixer** (20 words)
@@ -143,7 +144,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Japanese (99%):
   - **igucheese** (82 words)
-  - **lumeanarunbird** (82 words)
+  - **lumeanarunbird** (166 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
