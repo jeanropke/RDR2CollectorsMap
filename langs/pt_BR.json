@@ -1888,5 +1888,10 @@
     "menu.custom_marker_color_body": "Defina cor personalizada para cada categoria:",
     "help.custom_marker_color_modal": "Permite configurar uma cor personalizada para cada categoria de marcadores.",
     "menu.fossils_random": "Fósseis Aleatório",
-    "menu.jewelry_random": "Joias Perdida Aleatória"
+    "menu.jewelry_random": "Joias Perdida Aleatória",
+    "menu.random_spot_metal": "Locais Aleatórios (detector de metais)",
+    "menu.random_spot_shovel": "Locais Aleatórios (pá)",
+    "help.filter_min_amount_items": "Permite que você defina a quantidade máxima de itens no seu inventário considerados como \"itens em menor quantidade\".",
+    "menu.filter_type.low_amount_items": "Itens em menor quantidade",
+    "menu.filter_min_amount_items": "Mostrar somente itens com valor inferior a"
 }
