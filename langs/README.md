@@ -144,7 +144,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Japanese (99%):
   - **igucheese** (82 words)
-  - **lumeanarunbird** (294 words)
+  - **lumeanarunbird** (312 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
