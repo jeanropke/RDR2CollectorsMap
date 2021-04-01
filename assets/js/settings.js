@@ -173,7 +173,7 @@ Object.entries({
   showRoutesSettings: { default: true },
   showUtilitiesSettings: { default: true },
   topWidgetState: { default: 0 },
-  legendarySpawnIconType: { default: 0 },
+  legendarySpawnIconType: { default: 'head' },
   legendarySpawnIconSize: { default: 1 },
   timeZoneOffset: { default: 0 },
   showTooltipsMap: { default: 1 },
