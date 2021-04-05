@@ -8,7 +8,7 @@ We'd like to also mention the people that helped translate before the project sw
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
 ### Afrikaans (0%):
-  - **R36za** (31 words)
+  - **R36za** (101 words)
 
 ### Arabic (63%):
   - **a.youssry78** (109 words)
@@ -64,6 +64,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### English, United Kingdom (2%):
   - **AdamNortonUK** (12 words)
   - **MrSmithr** (290 words)
+  - **R36za** (101 words)
   - **XRuthlessShadow** (29 words)
 
 ### Finnish (68%):
@@ -148,7 +149,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Japanese (99%):
   - **igucheese** (82 words)
-  - **lumeanarunbird** (432 words)
+  - **lumeanarunbird** (449 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **TOSA_MAKI** (403 words)
