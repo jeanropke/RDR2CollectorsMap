@@ -58,5 +58,7 @@ const urls = [
     'data/animal_legendary.json',
     'data/loot.json',
     'data/filters.json',
+    'https://senexis.github.io/Red-Dead-Redemption-2-Tunables/fme.json',
+    'data/fme_keys.json'
 ];
 Loader.init(urls);

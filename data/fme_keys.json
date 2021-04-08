@@ -1,0 +1,21 @@
+[
+  { "newKey": "fme_master_archer", "oldKey": "fme_archery" },
+  { "newKey": "fme_challenges", "oldKey": "fme_random" },
+  { "newKey": "fme_challenge_river_fishing", "oldKey": "fme_fishing_challenge" },
+  { "newKey": "fme_challenge_lake_fishing", "oldKey": "fme_fishing_challenge" },
+  { "newKey": "fme_challenge_swamp_fishing", "oldKey": "fme_fishing_challenge" },
+  { "newKey": "fme_challenge_wild_animals_kills", "oldKey": "fme_wild_animal_kills" },
+  { "newKey": "fme_dispatch_rider", "oldKey": "fme_dead_drop" },
+  { "newKey": "fme_fools_gold", "oldKey": "fme_golden_hat" },
+  { "newKey": "fme_cold_dead_hands", "oldKey": "fme_hot_property" },
+  { "newKey": "fme_king_of_the_castle", "oldKey": "fme_king_of_the_castle" },
+  { "newKey": "fme_railroad_baron", "oldKey": "fme_king_of_the_rail" },
+  { "newKey": "fme_wildlife_photographer", "oldKey": "fme_role_wildlife_photographer" },
+  { "newKey": "fme_role_day_of_reckoning", "oldKey": "fme_role_greatest_bounty_hunter" },
+  { "newKey": "fme_role_manhunt", "oldKey": "fme_role_round_up" },
+  { "newKey": "fme_role_trade_route", "oldKey": "fme_role_supply_train" },
+  { "newKey": "fme_role_salvage", "oldKey": "fme_role_wreckage" },
+  { "newKey": "fme_role_condor_egg", "oldKey": "fme_role_condor_egg" },
+  { "newKey": "fme_role_animal_tagging", "oldKey": "fme_role_animal_tagging" },
+  { "newKey": "fme_role_protect_legendary_animal", "oldKey": "fme_role_protect_legendary_animal" }
+]
