@@ -1836,6 +1836,8 @@
     "menu.modal_loot_table_body": "Queste tabelle mostrano la percentuale che l'articolo corrispondente può diminuire quando si scavava per un articolo. Si prega di notare che queste percentuali sono approssimazioni. Il gioco rotola più volte, prima per una categoria, poi per un articolo all'interno di quella categoria. Thereper la percentuale effettiva può essere diversa da qui riportata.",
     "menu.enable_cycles": "Attiva display wireless",
     "help.enable_cycles": "Ti consente di scegliere se abilitare o no la visibilità delle icone e dei testi nei popup.",
+    "menu.tooltip_map": "Suggerimenti per gli elementi della mappa",
+    "help.tooltip_map": "Mostra un suggerimento per i segnalini presenti sulla mappa che mostrano il titolo completo.",
     "menu.translate_progress": "La traduzione di questa lingua è al {progress}%.",
     "help.map_boundaries": "Consente di abilitare o disabilitare i confini della mappa. Quando è attivo, la mappa è sempre sullo schermo.",
     "menu.map_boundaries": "Confini mappa abilitati",
