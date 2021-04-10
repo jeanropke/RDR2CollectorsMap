@@ -1118,7 +1118,7 @@
     "menu.fme.time.starts_in": "Elkezdődik {time} perc múlva.",
     "menu.fme.time.less_than_a_minute": "kevesebb mint egy perc múlva",
     "menu.fme.time.minute": "{minutes} perc",
-    "menu.fme.time.minutes": "{minutes} perc múlva",
+    "menu.fme.time.minutes": "{minutes} percek",
     "menu.fme.fme_archery": "Íjászverseny",
     "menu.fme.fme_fishing_challenge": "Horgászverseny",
     "menu.fme.fme_golden_hat": "Bolondok aranya",
