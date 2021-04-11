@@ -4,6 +4,7 @@ _short/
 .idea/
 desktop.ini
 node_modules/
+cycles_update/
 
 # Used to make development easier.
 rdo/
