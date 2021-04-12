@@ -130,6 +130,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **laszlo2033** (678 words)
   - **m1esautopalya** (103 words)
   - **meezalena** (27 words)
+  - **OdinsEyeTeam** (36 words)
   - **Ottilia** (2,400 words)
   - **SzKrJ** (1,429 words)
   - **tabandi** (239 words)
