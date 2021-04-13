@@ -71,7 +71,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Finnish (68%):
   - **seevimi** (283 words)
 
-### French (99%):
+### French (100%):
   - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
   - **Ca0dan** (93 words)
@@ -94,7 +94,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **thecrazystranger** (1,830 words)
   - **thegamer1604** (125 words)
   - **thibaud3109** (68 words)
-  - **YuYusS** (2,522 words)
+  - **YuYusS** (2,537 words)
 
 ### German (100%):
   - **ADRlAN1988** (50 words)
@@ -277,7 +277,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **bariss** (101 words)
   - **emrullahsimsar** (992 words)
   - **KagitmiAdam** (100 words)
-  - **Krykl** (12,333 words)
+  - **Krykl** (12,348 words)
 
 ### Ukrainian (99%):
   - **andrew.zaanle** (484 words)
