@@ -143,7 +143,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
   - **Jarsha1311** (500 words)
-  - **LucaBa** (404 words)
+  - **LucaBa** (425 words)
   - **masterflash222** (268 words)
   - **misticjoker** (3,718 words)
   - **Raffox97** (33 words)
@@ -229,7 +229,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Serbian (Cyrillic) (0%):
   - **UluMulu** (217 words)
 
-### Spanish (98%):
+### Spanish (100%):
   - **23.jonathantadeoleiva** (13 words)
   - **avillamizar71** (5,456 words)
   - **BabyAir** (41 words)
@@ -239,6 +239,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **catmc8565** (163 words)
   - **Deepnight** (83 words)
   - **drcx00** (13 words)
+  - **emilyhewsonh** (206 words)
   - **maximilianocarvajalluengo** (423 words)
   - **mbc_2017** (101 words)
   - **mmmateo** (1,952 words)
