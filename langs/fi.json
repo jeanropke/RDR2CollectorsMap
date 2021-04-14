@@ -1061,6 +1061,7 @@
     "weekly.desc.night_watch_set": "Yövartio",
     "weekly.desc.pearls_set": "Meren helmiä",
     "weekly.desc.penny_set": "Penni",
+    "weekly.desc.saint_denis_set": "Saint Denis",
     "weekly.desc.squire_set": "Squiren matka",
     "weekly.desc.veteran_set": "Veteraani",
     "weekly.desc.warrior_tokens_set": "Warriorin sanakkeet",
@@ -1494,5 +1495,6 @@
     "mp_animal_wolf_legendary_02": "Susi #2 - Onyx",
     "mp_animal_wolf_legendary_03": "Susi #3 - Moonstone",
     "mp_animal_alligator_legendary_01.desc": "Tämän alligaattorin huhutaan oleskelevan Lannahechee-joessa, Saint Denis'tä lounaaseen. Se on kuuluisa kiiltävästä mustasta nahkastaan, ja on salametsästäjien keskuudessa vaalittu saalis. Lähestyessä kannattaa varoa, sillä alligaattorin purenta voi koitua kohtalokkaaksi. Tämä laji on kaikkein aktiivisin yöllä, jolloin sitä on lähes mahdotonta erottaa tummassa vedessä. Sen voi usein nähdä myrskyisällä säällä.",
-    "mp_animal_alligator_legendary_03.desc": "Sana on levinnyt oudosta alligaattorista lähellä Saint Denisiä. Sen sanotaan omaavan valkoisen nahan ja punaraitaisen selän. Pesän ollessa lähellä kaupunkia, Legendaarinen Banded Alligaatori saattaa muuttua hyökkääväksi puolustaessaan reviiriä. Salametsästäjiä on nähty alueella, varoituksista huolimatta. Älä mene lankaan sen koon vuoksi, tämä petoeläin liikkuu huomattavan ripeästi."
+    "mp_animal_alligator_legendary_03.desc": "Sana on levinnyt oudosta alligaattorista lähellä Saint Denisiä. Sen sanotaan omaavan valkoisen nahan ja punaraitaisen selän. Pesän ollessa lähellä kaupunkia, Legendaarinen Banded Alligaatori saattaa muuttua hyökkääväksi puolustaessaan reviiriä. Salametsästäjiä on nähty alueella, varoituksista huolimatta. Älä mene lankaan sen koon vuoksi, tämä petoeläin liikkuu huomattavan ripeästi.",
+    "menu.marker_color.custom": "Mukautettu"
 }

@@ -1020,6 +1020,7 @@
     "weekly.desc.night_watch_set": "Nattevagt",
     "weekly.desc.pearls_set": "Perler of the Sea",
     "weekly.desc.poacher_set": "Lærer",
+    "weekly.desc.saint_denis_set": "Sankt Denis",
     "weekly.desc.whiskey_set": "Whisky",
     "weekly.desc.witch_hunt_set": "Heksejagt",
     "weekly.flavor.jurassic_set": "I denne uge leder fru Nazar efter tre jurassiske fossiler.",
@@ -1407,5 +1408,6 @@
     "mp_animal_bear_legendary_01": "Bjørn #1 - Owiza",
     "mp_animal_bear_legendary_02": "Bjørne #2 -Ridgeback-ånd",
     "mp_animal_bear_legendary_03": "Bjørn #3 - Gylden Ånd",
+    "menu.marker_color.custom": "Tilpasset",
     "menu.fossils_random": "Tilfældige Fossiler"
 }

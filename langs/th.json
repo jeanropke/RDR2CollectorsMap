@@ -696,6 +696,13 @@
     "menu.import_export_title": "นำเข้า / ส่งออก",
     "menu.import_button": "นําเข้า",
     "menu.export_button": "ส่งออก",
+    "map.user_pins.color.blue": "สีน้ำเงิน",
+    "map.user_pins.color.darkblue": "สีน้ำเงินเข้ม",
+    "map.user_pins.color.darkpurple": "สีม่วงเข้ม",
+    "map.user_pins.color.darkred": "สีแดงเข้ม",
+    "map.user_pins.color.orange": "สีส้ม",
+    "map.user_pins.color.pink": "สีชมพู",
+    "map.user_pins.color.purple": "สีม่วง",
     "menu.user_pins_place_mode": "ปักหมุดเมื่อคลิก",
     "menu.user_pins_edit_mode": "เปิดใช้งานแก้ไขหมุด",
     "menu.user_pins_import": "นําเข้า",
@@ -791,5 +798,6 @@
     "menu.fme_notification": "เปิดการแจ้งเตือนกิจกรรม",
     "menu.close": "ปิด",
     "menu.collectible_arrowheads_buried_all": "Arrowheads",
-    "menu.collectible_coins_buried_all": "Coins"
+    "menu.collectible_coins_buried_all": "Coins",
+    "menu.marker_color.custom": "ปรับแต่งเอง"
 }

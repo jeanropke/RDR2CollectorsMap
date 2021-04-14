@@ -1879,5 +1879,7 @@
     "menu.lang_uk": "Українська мова (Ukrainian)",
     "menu.lang_vi": "Tiếng Việt (Vietnamese)",
     "menu.lang_zh_Hans": "简体中文 (Chinese Simplified)",
-    "menu.lang_zh_Hant": "繁体中文 (Chinese Traditional)"
+    "menu.lang_zh_Hant": "繁体中文 (Chinese Traditional)",
+    "menu.marker_color.custom": "カスタム",
+    "menu.jewelry_random": "ランダムな宝石"
 }

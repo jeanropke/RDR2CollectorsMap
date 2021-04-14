@@ -1023,6 +1023,7 @@
     "bracelet_durant_pearl_1.desc": "في صندوق أسفل الأخشاب بجانب واجهة الهاوية.",
     "bracelet_durant_pearl_2.desc": "داخل المدخنة.",
     "bracelet_durant_pearl_3.desc": "في الجزيرة الصغيرة في صندوق كبير.",
+    "bracelet_durant_pearl_6.desc": "على رف المدخنه.",
     "bracelet_infanta_turquoise_1.desc": "في صندوق ، على الصخرة المركزية الكبيرة على قمة الشلال!",
     "jewelry_random_15_2.desc": "بالقرب من الصخرة على الجانب الأيسر من مدخل النفق.",
     "jewelry_random_16_3.desc": "بجانب الأخشاب.",
@@ -1151,6 +1152,11 @@
     "map.user_pins.color.black": "أسود",
     "map.user_pins.color.blue": "أزرق",
     "map.user_pins.color.brown": "بني",
+    "map.user_pins.color.darkblue": "ازرق غامق",
+    "map.user_pins.color.darkred": "احمر غامق",
+    "map.user_pins.color.orange": "برتقالي",
+    "map.user_pins.color.pink": "وردي",
+    "map.user_pins.color.purple": "بنفسجي",
     "menu.user_pins": "دبابيس المستخدم",
     "menu.user_pins_place_mode": "إنشاء دبوس جديد عند النقر",
     "menu.user_pins_edit_mode": "تمكين تحرير الدبوس",
@@ -1388,5 +1394,6 @@
     "help.legendary_marker_type": "يسمك لك بتغير الحيوانات الأسطورية، ايقونة موقع تبديل.",
     "menu.legendary_animal_marker_type": "حيوان اسطوري نوع العلامة",
     "menu.legendary_icon_type.paw_prints": "علامة أثر",
-    "menu.legendary_icon_type.head": "رؤوس"
+    "menu.legendary_icon_type.head": "رؤوس",
+    "menu.marker_color.custom": "مخصص"
 }

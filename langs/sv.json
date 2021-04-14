@@ -264,7 +264,17 @@
     "pentacles_ace_2.desc": "På ett bord bredvid en våg.",
     "pentacles_six_2.desc": "På baksidan av en vagn.",
     "pentacles_six_5.desc": "På baksidan av en vagn.",
+    "pentacles_seven_3.desc": "På bordet på farstun.",
+    "pentacles_page_2.desc": "I ett trasigt utedass.",
+    "coin_random_5_1.desc": "I grottan.",
     "coin_random_2_1.desc": "Inuti grottan, mellan statyerna.",
+    "arrowhead_random_7_2.desc": "I grottan.",
+    "arrowhead_random_3_4.desc": "I grottan.",
+    "arrowhead_random_6_6.desc": "I grottan.",
+    "heirlooms_ebony_hairbrush_5.desc": "På bordet på farstun.",
+    "heirlooms_goat_hair_brush_6.desc": "På bordet på farstun.",
+    "heirlooms_ivory_hairpin_1.desc": "På ett vitt bord med ett schackbräde.",
+    "earring_josephine_pearl_1.desc": "I grottan.",
     "weekly.desc.saint_denis_set": "Saint Denis",
     "weekly.flavor.jeweler_set": "Den här veckan letar fru Nazar efter tre smycken med halvädelstenar.",
     "menu.collectables": "Samlarobjekt",
@@ -518,5 +528,6 @@
     "menu.filter_type.weekly_set": "Veckans saker",
     "menu.filter_type.important_items": "Viktiga artiklar",
     "menu.legendary_animals": "Legendariska Djur",
-    "map.generic_not_released": "Det här innehållet är ännu inte i spelet."
+    "map.generic_not_released": "Det här innehållet är ännu inte i spelet.",
+    "menu.marker_color.custom": "Anpassad"
 }

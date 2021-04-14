@@ -391,6 +391,14 @@
     "menu.import_export_title": "Importer / Eksporter",
     "menu.import_button": "Importer",
     "menu.export_button": "Eksport",
+    "map.user_pins.color.black": "Svart",
+    "map.user_pins.color.blue": "Blå",
+    "map.user_pins.color.darkblue": "Mørkeblå",
+    "map.user_pins.color.darkpurple": "Mørkelilla",
+    "map.user_pins.color.darkred": "Mørkerød",
+    "map.user_pins.color.orange": "Oransje",
+    "map.user_pins.color.pink": "Rosa",
+    "map.user_pins.color.purple": "Lilla",
     "menu.user_pins_import": "Import",
     "menu.user_pins_export": "Eksporter",
     "map.user_pins.save": "Lagre",
@@ -400,6 +408,7 @@
     "map.user_pins.icon.magnet": "Metalldetektor",
     "map.user_pins.icon.egg": "Fugleegg",
     "map.user_pins.icon.coin": "Mynt",
+    "map.user_pins.icon.fast_travel": "Hurtigreise",
     "map.user_pins.icon.hide": "Skjul",
     "map.user_pins.icon.necklace": "Halskjede",
     "map.user_pins.icon.ring": "Ring",
@@ -461,5 +470,6 @@
     "map.weather.storm": "Stormfullt vær",
     "map.weather.foggy": "Tåkete vær",
     "map.weather.rain": "Regnvær",
-    "map.weather.any": "Ethvert vær"
+    "map.weather.any": "Ethvert vær",
+    "menu.marker_color.custom": "Egendefinert"
 }

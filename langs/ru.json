@@ -1884,5 +1884,7 @@
     "menu.lang_uk": "Українська мова (Украинский)",
     "menu.lang_vi": "Tiếng Việt (Вьетнамский)",
     "menu.lang_zh_Hans": "简体中文 (Китайский Упрощенный)",
-    "menu.lang_zh_Hant": "简体中文 (Китайский Традиционный)"
+    "menu.lang_zh_Hant": "简体中文 (Китайский Традиционный)",
+    "menu.marker_color.custom": "по координатам",
+    "menu.jewelry_random": "Случайная потерянная драгоценность"
 }

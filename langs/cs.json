@@ -1663,5 +1663,7 @@
     "menu.legendary_icon_type.paw_prints": "Otisky tlap",
     "menu.legendary_icon_type.head": "Hlavy",
     "help.legendary_marker_size": "Umožňuje změnit velikost ikony legendárních zvířat.",
-    "menu.legendary_animal_marker_size": "Velikost značky legendárního zvířete"
+    "menu.legendary_animal_marker_size": "Velikost značky legendárního zvířete",
+    "menu.marker_color.custom": "Vlastní",
+    "menu.jewelry_random": "Náhodný klenot"
 }
