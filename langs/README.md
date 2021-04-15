@@ -81,7 +81,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **HGNitro** (30 words)
   - **iGuuunz** (225 words)
   - **Indessis** (20 words)
-  - **JeanBankarbone** (538 words)
+  - **JeanBankarbone** (591 words)
   - **jipsu31** (43 words)
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
