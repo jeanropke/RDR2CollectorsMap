@@ -238,7 +238,7 @@ select {
 }
 
 .top-widget {
-    z-index: 1010;
+    z-index: 990;
     position: fixed;
     left: 40px;
     top: 3px;
@@ -1303,10 +1303,6 @@ a.no-style:visited {
 }
 
 @media (max-width: 768px) {
-    .top-widget-menu-opened {
-        display: none !important;
-    }
-
     .side-menu .menu-hidden .collectible-icon {
         margin-top: 7px;
     }
@@ -1752,8 +1748,21 @@ a.no-style:visited {
 
     #fme-container .fme-card #next-general-mobile,
     #fme-container .fme-card #next-role-mobile {
-        display: block;
+        display: flex;
         overflow: hidden;
+    }
+
+    #fme-container .fme-card #next-general-mobile .next-title,
+    #fme-container .fme-card #next-role-mobile .next-title {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    #fme-container .fme-card #next-general-mobile .next-time,
+    #fme-container .fme-card #next-role-mobile .next-time {
+        flex: 1;
+        margin: 0 5px;
     }
 
     #fme-container .fme-card .fme-body {

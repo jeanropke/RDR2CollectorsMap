@@ -97,7 +97,7 @@ const FME = {
 
           elements.nextEventName.innerHTML = fmeName;
           elements.nextEventEta.innerHTML = fmeBody;
-          elements.nextEventBodyMobile.innerHTML = `${fmeName} - ${event.etaText}`;
+          elements.nextEventBodyMobile.innerHTML = `<span class="next-title">${fmeName}</span><span class="next-time"> - ${event.etaText}</span>`;
         }
 
         FME.notify(event);
