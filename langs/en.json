@@ -2099,5 +2099,6 @@
     "menu.random_spot_shovel": "Random Spots (shovel)",
     "help.filter_min_amount_items": "Allows you to set max amount of items in your inventory considered as \"low inventory items\".",
     "menu.filter_type.low_amount_items": "Only low inventory items",
-    "menu.filter_min_amount_items": "Show only items amount lower than"
+    "menu.filter_min_amount_items": "Show only items amount lower than",
+    "menu.sponsors": "Sponsors"
 }
