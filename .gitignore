@@ -1,12 +1,16 @@
-_long/
-_short/
 .DS_Store
 .idea/
 desktop.ini
 node_modules/
-cycles_update/
+
+# Screenshot stuff.
+_long/
+_short/
+_manifest.json
 
 # Used to make development easier.
+cycles_update/
+fme/
 rdo/
 
 # Our credentials, don't bother removing this, you won't get our stuff. ;-)

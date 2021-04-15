@@ -22,7 +22,7 @@ class Loader {
     constructor(name, url, customNoCache = null) {
         const queryString = {};
 
-        if (['updates'].includes(name)) queryString.nocache = Date.now();
+        if (['updates', 'fme'].includes(name)) queryString.nocache = Date.now();
         else if (!url.startsWith('http')) queryString.nocache = customNoCache || nocache;
         else queryString.nocache = customNoCache || new Date(Date.now() - 21600000).toISOUTCDateString();
 
