@@ -1892,5 +1892,6 @@
     "menu.random_spot_shovel": "Losowe przedmioty (łopata)",
     "help.filter_min_amount_items": "Pozwala ustawić maksymalną ilość przedmiotów w twoim ekwipunku uznawanych za \"niewielką ilość przedmiotów\".",
     "menu.filter_type.low_amount_items": "Tylko przedmioty o małej ilości wekwipunku",
-    "menu.filter_min_amount_items": "Pokaż przedmioty w ilości mniejszej niż"
+    "menu.filter_min_amount_items": "Pokaż przedmioty w ilości mniejszej niż",
+    "menu.sponsors": "Sponsorzy"
 }

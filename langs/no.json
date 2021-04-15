@@ -439,6 +439,7 @@
     "menu.marker_size.200": "200%",
     "menu.clear_important_items": "Fjern viktige markører",
     "menu.modal_clear_important_items_body": "Dette vil fjerne markeringen fra alle markører som er merket som viktig. Denne handlingen kan ikke angres.",
+    "menu.modal_clear_important_items_title": "Fjern viktige markører?",
     "menu.enable_marker_shadows": "Markørskygger aktivert",
     "map.unknown_cycle": "ukjent",
     "menu.delete_all_settings": "Tilbakestill alle innstillinger",

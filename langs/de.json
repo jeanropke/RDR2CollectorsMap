@@ -1898,5 +1898,6 @@
     "menu.random_spot_shovel": "Zufällige Flecken (Schaufel)",
     "help.filter_min_amount_items": "Ermöglicht es Ihnen, die maximale Anzahl von Elementen in Ihrem Bestand als \"Artikel mit niedriger Lagerbestandsmenge\" festzulegen.",
     "menu.filter_type.low_amount_items": "Keine Gegenstände im Inventar",
-    "menu.filter_min_amount_items": "Nur Artikel anzeigen, die niedriger sind als"
+    "menu.filter_min_amount_items": "Nur Artikel anzeigen, die niedriger sind als",
+    "menu.sponsors": "Sponsoren"
 }

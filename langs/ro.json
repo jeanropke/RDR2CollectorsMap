@@ -299,5 +299,6 @@
     "map.user_pins.icon.nazar": "Doamna Nazar",
     "menu.enable_dclick_zoom": "Faceţi dublu clic pentru a mări",
     "menu.clear_important_items": "Curăță marcajele importante",
+    "menu.modal_clear_important_items_title": "Curăță marcajele importante?",
     "menu.enable_marker_shadows": "Umbrele mărcilor activate"
 }
