@@ -4,13 +4,16 @@ Thanks to the following people for helping translate the project! If you are sav
 ## Pre-Crowdin Contributors
 We'd like to also mention the people that helped translate before the project switched to Crowdin, namely **Asya**, **flameango**, **githb123**, **glaseca**, **Gromino**, **iliggalodin**, **jeanropke**, **Kaffe97**, **Kiddamned**, **Klinorin**, **Korfeeeezy**, **Michal__d**, **MSSatari**, **Nopitch**, **Overnoes**, **pb29**, **qiexia**, **Raffox97**, **Rakmarok**, **rbcunhadesign**, **Senexis**, **sporb**, **Tiax**, **Vitor-Borba72**, **yamazakitouma**, and **yeradd12**.
 
+## RDO Map Contributors
+The following people helped translate the RDO Map specifically but are possibly not included on the list below: **1751020005**, **1Jay1**, **578218087**, **a.equis23**, **abdulkadiraktas**, **Aboodsaad27**, **akbcd**, **aksu.smal**, **Alexified**, **Anvnamnet**, **Aronsfeld**, **AshTurquoise**, **Atarufox**, **avojta**, **Balesz**, **beskorjake2332**, **BHT256**, **birseysoylicem**, **bruno.jacquin**, **Bruxes**, **chanito86**, **CoolBreeze-13s**, **curryguru**, **daveo979**, **djenerg**, **Doringl**, **dramatic_prophet**, **DrNuts**, **dudiv5674**, **dvagos7**, **eduardvlog**, **emrullahsimsar**, **Enrik014**, **escaliburos**, **esershnr**, **esj.h**, **ethandaxps4**, **FilipeLuk**, **FilipFelipe**, **FRANCESCADOLORES**, **FrankTVPL**, **GiorgioHerbie**, **grmaster5s**, **h_p_38**, **harleyhawke**, **HeadShot557**, **hellcat_tail**, **i_NaifKhaldi**, **idiot.rejected**, **ilyuas73**, **ingoonline11**, **Jabaay**, **JeanBankarbone**, **jeanropke**, **jeremymm1538**, **JoseLopez95**, **juandamanacor2013**, **julianforce**, **jurn0818**, **k4makazy**, **kaeporatheglitcha**, **kagurazakakotori**, **Korax94**, **Krykl**, **L1Chung**, **L2**, **L4**, **libidosiemens**, **lorenzoitalia**, **Ltf007**, **LucaBa**, **Matityahuu**, **Mattablatta**, **MEE5RUS**, **Megitsune**, **menbou**, **mgoebelm**, **michaelahofer**, **Michal__d**, **mixsiarz**, **mojan66**, **MrFermz**, **mrsanze6**, **msfern**, **Nacuman.exe**, **nahov91**, **nellonenollen**, **neohazukibr**, **Njordude**, **Nydrail**, **Overnoes**, **Pabeu**, **pach318**, **paeulchen.j**, **PeanutSlinger**, **petter.landsem.krogstad**, **PLTytus**, **Pocholo95**, **poeblu85**, **pozitive95**, **qiexiacn**, **raffouk40**, **Raffox97**, **ranforingus**, **re4k117**, **RichardC.P.**, **romuald.vanrock**, **sandratormo20**, **sayt_itoxiikoz**, **Scotmanhands**, **shar13f4**, **Shineberg**, **skonky**, **SkyFisherGames**, **SoSuz**, **Srandokan**, **ssh2**, **starblunter**, **SwinHulk**, **tabandi**, **tegetron**, **tercumantanumut**, **tharchangl**, **Tharek_Tolemac**, **TheBango**, **Tony_Bell**, **tuwangi**, **vega7621**, **viliri**, **Vinnie5412**, **W10075343**, **warkoun**, **werhel**, **wiiwil**, **windharp**, **y_ksq**, **YuYusS**, and **zrubio**
+
 ## Crowdin Contributors
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
 ### Afrikaans (24%):
   - **R36za** (101 words)
 
-### Arabic (41%):
+### Arabic (42%):
   - **a.youssry78** (109 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
@@ -62,7 +65,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **MrGrivixer** (20 words)
   - **nielsb2004** (50 words)
 
-### English, United Kingdom (1%):
+### English, United Kingdom (2%):
   - **AdamNortonUK** (12 words)
   - **MrSmithr** (290 words)
   - **R36za** (101 words)
@@ -86,7 +89,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
   - **Maxemi** (224 words)
-  - **Michal__d** (2,773 words)
+  - **Michal__d** (2,799 words)
   - **Oldboy77** (494 words)
   - **radragon** (917 words)
   - **RedShard-B** (36 words)
@@ -102,7 +105,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **CodingMax** (39 words)
   - **cwildfoerster** (104 words)
   - **davidcooper73760** (86 words)
-  - **FreeAsABird** (323 words)
+  - **FreeAsABird** (325 words)
   - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
@@ -118,7 +121,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
 
-### Hebrew (18%):
+### Hebrew (19%):
   - **dudiv5674** (2,855 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
@@ -160,7 +163,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
-### Korean (58%):
+### Korean (59%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (393 words)
   - **KKimRoma** (2,770 words)
@@ -178,7 +181,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Polish (79%):
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
-  - **Michal__d** (2,773 words)
+  - **Michal__d** (2,799 words)
   - **Quahox** (39 words)
 
 ### Portuguese (26%):
@@ -253,7 +256,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ulises_hdz22** (361 words)
   - **W10075343** (70 words)
 
-### Swedish (19%):
+### Swedish (20%):
   - **...---...** (431 words)
   - **emeliris** (636 words)
   - **idaerika** (30 words)
@@ -273,9 +276,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **snookyyy** (10 words)
   - **woradorn** (212 words)
 
-### Turkish (77%):
+### Turkish (78%):
   - **atayyu** (74 words)
   - **bariss** (101 words)
+  - **EmreKLC** (349 words)
   - **emrullahsimsar** (992 words)
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,348 words)
