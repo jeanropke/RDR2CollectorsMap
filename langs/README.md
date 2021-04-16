@@ -84,12 +84,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **HGNitro** (30 words)
   - **iGuuunz** (225 words)
   - **Indessis** (20 words)
-  - **JeanBankarbone** (591 words)
+  - **JeanBankarbone** (593 words)
   - **jipsu31** (43 words)
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
   - **Maxemi** (224 words)
-  - **Michal__d** (2,799 words)
+  - **Michal__d** (2,807 words)
   - **Oldboy77** (494 words)
   - **radragon** (917 words)
   - **RedShard-B** (36 words)
@@ -181,7 +181,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Polish (79%):
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
-  - **Michal__d** (2,799 words)
+  - **Michal__d** (2,807 words)
   - **Quahox** (39 words)
 
 ### Portuguese (26%):
@@ -191,14 +191,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **petrasoares7** (340 words)
   - **RodasQ** (560 words)
 
-### Portuguese, Brazilian (90%):
+### Portuguese, Brazilian (91%):
   - **agpariz** (50 words)
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
   - **ArthurZussman** (222 words)
   - **borba72** (23 words)
   - **FilipFelipe** (146 words)
-  - **jeanropke** (7,135 words)
+  - **jeanropke** (7,214 words)
   - **joabeHK** (104 words)
   - **KAKUNO123** (30 words)
   - **msfern** (215 words)
@@ -276,18 +276,18 @@ These are the people that helped translate the project using Crowdin. Please not
   - **snookyyy** (10 words)
   - **woradorn** (212 words)
 
-### Turkish (78%):
+### Turkish (81%):
   - **atayyu** (74 words)
   - **bariss** (101 words)
-  - **EmreKLC** (349 words)
+  - **EmreKLC** (1,114 words)
   - **emrullahsimsar** (992 words)
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,348 words)
 
-### Ukrainian (72%):
+### Ukrainian (73%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
-  - **grmaster5s** (10,816 words)
+  - **grmaster5s** (10,934 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
   - **UluMulu** (217 words)
