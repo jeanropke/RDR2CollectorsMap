@@ -1612,6 +1612,11 @@
     "menu.fme.fme_role_wildlife_photographer": "Fotografia da Vida Selvagem",
     "menu.fme.fme_role_wreckage": "Achado não é Roubado",
     "menu.fme.fme_wild_animal_kills": "Animais Selvagens",
+    "menu.fme.fme_challenge_bow_kills": "Desafio Arco e Flecha",
+    "menu.fme.fme_challenge_headshot_kills": "Desafio Tiros na Cabeça",
+    "menu.fme.fme_challenge_horseback_kills": "Desafio Matar a Cavalo",
+    "menu.fme.fme_challenge_longarm_kills": "Desafio Armas Longas",
+    "menu.fme.fme_challenge_sidearm_kills": "Desafio Armas Curtas",
     "notification.fme.body": "Este é o seu aviso que o evento {name} começará em {time}.",
     "menu.fme_enabled_events": "Selecionar eventos ativados",
     "help.fme_enabled_events": "Permite que você selecione quais eventos deseja exibir no mapa e/ou receber notificações.",
@@ -1893,5 +1898,6 @@
     "menu.random_spot_shovel": "Locais Aleatórios (pá)",
     "help.filter_min_amount_items": "Permite que você defina a quantidade máxima de itens no seu inventário considerados como \"itens em menor quantidade\".",
     "menu.filter_type.low_amount_items": "Itens em menor quantidade",
-    "menu.filter_min_amount_items": "Mostrar somente itens com valor inferior a"
+    "menu.filter_min_amount_items": "Mostrar somente itens com valor inferior a",
+    "menu.sponsors": "Patrocinadores"
 }
