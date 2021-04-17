@@ -1898,5 +1898,6 @@
     "menu.random_spot_shovel": "隨機地點(鏟子)",
     "help.filter_min_amount_items": "允許您設定在庫存中被視為\"低庫存物品\"的物品最大值。",
     "menu.filter_type.low_amount_items": "僅低庫存物品",
-    "menu.filter_min_amount_items": "只顯示物品數量低於"
+    "menu.filter_min_amount_items": "只顯示物品數量低於",
+    "menu.sponsors": "贊助商"
 }
