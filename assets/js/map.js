@@ -360,7 +360,6 @@ const MapBase = {
     }
 
     localStorage.setItem('main.date', date);
-    MapBase.addMarkers(true);
   },
 
   onSearch: function (searchString) {

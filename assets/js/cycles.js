@@ -11,17 +11,16 @@ const Cycles = {
     return Loader.promises['cycles'].consumeJson(_data => {
       Cycles.data = _data;
       Cycles.getTodayCycle();
-      setInterval(Cycles.checkForUpdate, 1000 * 10);
+      Cycles.checkForUpdate();
       console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
     });
   },
-  getFreshSelectedDay: function () {
-    'use strict';
+  getFreshSelectedDay: function (offset = Cycles.offset) {
     const now = new Date();
     return new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
-      now.getUTCDate() + Cycles.offset
+      now.getUTCDate() + offset,
     ));
   },
   getTodayCycle: function () {
@@ -142,7 +141,8 @@ const Cycles = {
   checkForUpdate: function () {
     'use strict';
     if (Cycles.selectedDay === undefined) return;
-    if (Cycles.getFreshSelectedDay().valueOf() !== Cycles.selectedDay.valueOf()) {
+    const remainingTime = Cycles.getFreshSelectedDay(1).valueOf() - Date.now();
+    setTimeout(() => {
       if (Cycles.offset !== 1) {
         Cycles.offset = 0;
         Cycles.getTodayCycle();
@@ -151,7 +151,8 @@ const Cycles = {
         $('div>span.cycle-date').removeClass('not-found');
       }
       MapBase.runOnDayChange();
-    }
+      Cycles.checkForUpdate();
+    }, remainingTime);
   },
 
   isSameAsYesterday: function (category) {
