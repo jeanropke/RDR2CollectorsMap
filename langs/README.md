@@ -279,11 +279,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **snookyyy** (10 words)
   - **woradorn** (212 words)
 
-### Turkish (81%):
+### Turkish (92%):
   - **atayyu** (74 words)
   - **bariss** (101 words)
   - **EmreKLC** (1,114 words)
-  - **emrullahsimsar** (992 words)
+  - **emrullahsimsar** (3,121 words)
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,348 words)
 
