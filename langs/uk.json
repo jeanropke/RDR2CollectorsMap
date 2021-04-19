@@ -1892,6 +1892,7 @@
     "menu.custom_marker_color_title": "Власні кольори маркерів",
     "menu.custom_marker_color_body": "Встановити власний колір для кожної категорії:",
     "help.custom_marker_color_modal": "Дозволяє встановити власний колір для кожної категорії маркерів.",
+    "menu.fossils_random": "Випадкова скам’янілість",
     "menu.jewelry_random": "Випадкова втрачена прикраса",
     "menu.sponsors": "Спонсори"
 }
