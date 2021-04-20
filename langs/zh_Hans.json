@@ -1610,6 +1610,9 @@
     "menu.fme.fme_role_wildlife_photographer": "野生动物摄影",
     "menu.fme.fme_role_wreckage": "抢救物品",
     "menu.fme.fme_wild_animal_kills": "击杀野生动物挑战赛",
+    "menu.fme.fme_challenge_bow_kills": "弓箭击杀挑战",
+    "menu.fme.fme_challenge_headshot_kills": "爆头击杀挑战",
+    "menu.fme.fme_challenge_longarm_kills": "长武器击杀挑战",
     "notification.fme.body": "这是你的活动通知， {name} 将在 {time} 后开始.",
     "menu.fme_enabled_events": "选择启用的活动",
     "help.fme_enabled_events": "允许你选择想要获取通知的活动。",
@@ -1891,5 +1894,6 @@
     "menu.random_spot_shovel": "随机地点 (铁锨)",
     "help.filter_min_amount_items": "允许您设置库存中被视为“低库存物品”的物品最大数量。",
     "menu.filter_type.low_amount_items": "仅低库存物品",
-    "menu.filter_min_amount_items": "仅显示物品数量低于"
+    "menu.filter_min_amount_items": "仅显示物品数量低于",
+    "menu.sponsors": "赞助商"
 }
