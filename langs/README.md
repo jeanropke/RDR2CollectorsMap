@@ -166,7 +166,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
-### Korean (59%):
+### Korean (58%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (393 words)
   - **KKimRoma** (2,770 words)
@@ -200,6 +200,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **AmauriJunior** (469 words)
   - **ArthurZussman** (222 words)
   - **borba72** (23 words)
+  - **bortoluzzibernardo** (16 words)
   - **FilipFelipe** (146 words)
   - **jeanropke** (7,214 words)
   - **joabeHK** (104 words)
@@ -291,7 +292,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Ukrainian (80%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
-  - **grmaster5s** (13,001 words)
+  - **grmaster5s** (13,007 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
   - **UluMulu** (217 words)
