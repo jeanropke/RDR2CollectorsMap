@@ -34,7 +34,6 @@ jQuery.fn.propSearchUp = function (property) {
   return element && element.prop(property);
 }
 
-let searchTerms = [];
 let uniqueSearchMarkers = [];
 
 const categories = [

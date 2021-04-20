@@ -365,37 +365,34 @@ const MapBase = {
   onSearch: function (searchString) {
     Menu.toggleFilterWarning('map.has_search_filter_alert', !!searchString);
 
-    searchTerms = [];
-    $.each(searchString.split(';'), function (key, value) {
-      if ($.inArray(value.trim(), searchTerms) == -1) {
-        if (value.length > 0)
-          searchTerms.push(value.trim());
-      }
-    });
+    const searchTerms = [
+      ...new Set(searchString
+        .split(';')
+        .map(term => term.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+      )
+    ];
 
-    if (searchTerms.length == 0) {
+    if (!searchTerms.length) {
       uniqueSearchMarkers = MapBase.markers;
-    } else {
-      Layers.itemMarkersLayer.clearLayers();
-      let searchMarkers = [];
-      uniqueSearchMarkers = [];
-      $.each(searchTerms, function (id, term) {
-
-        searchMarkers = searchMarkers.concat(MapBase.markers.filter(_marker =>
-          _marker.itemId === term ||
-          _marker.itemNumberStr === term ||
-          Language.get(_marker.itemTranslationKey).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(term.toLowerCase())
-        ));
-
-        $.each(searchMarkers, function (i, el) {
-          if ($.inArray(el, uniqueSearchMarkers) !== -1) return;
-          if (!enabledCategories.includes(el.category)) enabledCategories.push(el.category);
-
-          uniqueSearchMarkers.push(el);
-        });
-      });
-
+      MapBase.addMarkers();
+      return;
     }
+
+    Layers.itemMarkersLayer.clearLayers();
+    uniqueSearchMarkers = MapBase.markers.filter(marker =>
+      searchTerms.some(term =>
+        marker.itemId === term ||
+        marker.itemNumberStr === term ||
+        Language.get(marker.itemTranslationKey).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(term)
+      )
+    );
+
+    uniqueSearchMarkers
+      .map(({ category }) => category)
+      .forEach(category => {
+        if (!enabledCategories.includes(category))
+          enabledCategories.push(category);
+      });
 
     MapBase.addMarkers();
   },
