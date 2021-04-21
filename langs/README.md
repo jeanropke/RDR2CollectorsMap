@@ -36,7 +36,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Approach** (12 words)
   - **BHT256** (7,717 words)
   - **curryguru** (47 words)
-  - **Jabaay** (14 words)
+  - **Jabaay** (17 words)
   - **labrary** (238 words)
   - **PeanutSlinger** (2,588 words)
   - **qiexiacn** (715 words)
