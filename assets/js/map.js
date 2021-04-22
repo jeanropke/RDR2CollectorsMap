@@ -367,6 +367,7 @@ const MapBase = {
 
     const searchTerms = [
       ...new Set(searchString
+        .replace(/^;|;$/g, '')
         .split(';')
         .map(term => term.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
       )
@@ -387,12 +388,10 @@ const MapBase = {
       )
     );
 
-    uniqueSearchMarkers
-      .map(({ category }) => category)
-      .forEach(category => {
-        if (!enabledCategories.includes(category))
-          enabledCategories.push(category);
-      });
+    uniqueSearchMarkers.forEach(({ category }) => {
+      if (!enabledCategories.includes(category))
+        enabledCategories.push(category);
+    });
 
     MapBase.addMarkers();
   },
