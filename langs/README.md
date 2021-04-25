@@ -45,7 +45,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Chinese Traditional (97%):
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
-  - **RichardC.P.** (7,199 words)
+  - **RichardC.P.** (7,202 words)
   - **Vinnie5412** (28 words)
 
 ### Czech (45%):
@@ -113,7 +113,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
-  - **Tharek_Tolemac** (28 words)
+  - **Tharek_Tolemac** (31 words)
   - **TheBango** (12 words)
   - **Tolpelbold** (39 words)
   - **viliri** (1,470 words)
@@ -290,10 +290,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,348 words)
 
-### Ukrainian (81%):
+### Ukrainian (82%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
-  - **grmaster5s** (13,534 words)
+  - **grmaster5s** (13,826 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
   - **UluMulu** (217 words)
