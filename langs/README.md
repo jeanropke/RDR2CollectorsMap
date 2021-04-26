@@ -37,7 +37,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Approach** (12 words)
   - **BHT256** (7,717 words)
   - **curryguru** (47 words)
-  - **Jabaay** (17 words)
+  - **Jabaay** (26 words)
   - **labrary** (238 words)
   - **PeanutSlinger** (2,588 words)
   - **qiexiacn** (715 words)
@@ -130,9 +130,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
 
-### Hungarian (29%):
-  - **GoP** (84 words)
-  - **Hutty98** (2,199 words)
+### Hungarian (30%):
+  - **GoP** (85 words)
+  - **Hutty98** (2,249 words)
   - **jjameska** (26 words)
   - **laszlo2033** (678 words)
   - **m1esautopalya** (103 words)
@@ -290,10 +290,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,348 words)
 
-### Ukrainian (82%):
+### Ukrainian (85%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
-  - **grmaster5s** (13,826 words)
+  - **grmaster5s** (14,592 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
   - **UluMulu** (217 words)
