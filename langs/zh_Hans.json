@@ -1613,6 +1613,7 @@
     "menu.fme.fme_challenge_bow_kills": "弓箭击杀挑战",
     "menu.fme.fme_challenge_headshot_kills": "爆头击杀挑战",
     "menu.fme.fme_challenge_longarm_kills": "长武器击杀挑战",
+    "menu.fme.fme_challenge_sidearm_kills": "副武器击杀挑战",
     "notification.fme.body": "这是你的活动通知， {name} 将在 {time} 后开始.",
     "menu.fme_enabled_events": "选择启用的活动",
     "help.fme_enabled_events": "允许你选择想要获取通知的活动。",

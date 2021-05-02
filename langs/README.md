@@ -10,11 +10,11 @@ The following people helped translate the RDO Map specifically but are possibly 
 ## Crowdin Contributors
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
-### Afrikaans (24%):
-  - **HeadShot557** (98 words)
+### Afrikaans (28%):
+  - **HeadShot557** (1,329 words)
   - **R36za** (101 words)
 
-### Arabic (42%):
+### Arabic (41%):
   - **a.youssry78** (109 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
@@ -37,7 +37,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Approach** (12 words)
   - **BHT256** (7,717 words)
   - **curryguru** (47 words)
-  - **Jabaay** (26 words)
+  - **Jabaay** (52 words)
   - **labrary** (238 words)
   - **PeanutSlinger** (2,588 words)
   - **qiexiacn** (715 words)
@@ -108,7 +108,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **cwildfoerster** (104 words)
   - **davidcooper73760** (86 words)
   - **deragent007** (28 words)
-  - **FreeAsABird** (325 words)
+  - **FreeAsABird** (330 words)
   - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
@@ -125,7 +125,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (632 words)
 
 ### Hebrew (19%):
-  - **dudiv5674** (2,855 words)
+  - **dudiv5674** (2,863 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
@@ -182,7 +182,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **martinbruh** (212 words)
   - **Rilfus** (156 words)
 
-### Polish (80%):
+### Polish (79%):
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
   - **Michal__d** (2,968 words)
@@ -195,7 +195,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **petrasoares7** (340 words)
   - **RodasQ** (560 words)
 
-### Portuguese, Brazilian (91%):
+### Portuguese, Brazilian (90%):
   - **agpariz** (50 words)
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
