@@ -288,7 +288,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **EmreKLC** (1,114 words)
   - **emrullahsimsar** (3,121 words)
   - **KagitmiAdam** (100 words)
-  - **Krykl** (12,348 words)
+  - **Krykl** (12,605 words)
 
 ### Ukrainian (85%):
   - **andrew.zaanle** (484 words)
