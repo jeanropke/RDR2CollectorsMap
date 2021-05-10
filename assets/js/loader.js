@@ -7,7 +7,9 @@ class Loader {
         this.urls = urls;
         this.promises = {};
         urls.forEach(url => {
-            const name = url.split('/').pop().split('.', 1)[0];
+            let name = null;
+            const array = url.split('/');
+            while (!name) name = array.pop().split('.', 1)[0];
             this.promises[name] = new Loader(name, url);
         });
         /*
@@ -22,7 +24,8 @@ class Loader {
     constructor(name, url, customNoCache = null) {
         const queryString = {};
 
-        if (['updates', 'fme'].includes(name)) queryString.nocache = Date.now();
+        if (['updates'].includes(name)) queryString.nocache = Date.now();
+        else if (['fme'].includes(name)) queryString.nocache = Math.floor(Date.now() / 10000);
         else if (!url.startsWith('http')) queryString.nocache = customNoCache || nocache;
         else queryString.nocache = customNoCache || new Date(Date.now() - 21600000).toISOUTCDateString();
 
@@ -58,7 +61,7 @@ const urls = [
     'data/animal_legendary.json',
     'data/loot.json',
     'data/filters.json',
-    'https://tunables.rdo.gg/fme.json',
+    'https://api.rdo.gg/fme/',
     'data/fme_keys.json'
 ];
 Loader.init(urls);
