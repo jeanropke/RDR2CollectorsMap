@@ -1863,6 +1863,7 @@
     "menu.lang_el": "ελληνικά (Греческий)",
     "menu.lang_en_GB": "English (Великобритания)",
     "menu.lang_es": "Español (Испанский)",
+    "menu.lang_es_MX": "Español (Мексиканский Испанский)",
     "menu.lang_fi": "Suomi (Финский)",
     "menu.lang_fr": "Français (Французский)",
     "menu.lang_he": "עברית (Иврит)",
@@ -1886,5 +1887,9 @@
     "menu.lang_zh_Hans": "简体中文 (Китайский Упрощенный)",
     "menu.lang_zh_Hant": "简体中文 (Китайский Традиционный)",
     "menu.marker_color.custom": "по координатам",
-    "menu.jewelry_random": "Случайная потерянная драгоценность"
+    "menu.fossils_random": "Случайные окаменелости",
+    "menu.jewelry_random": "Случайная потерянная драгоценность",
+    "menu.random_spot_metal": "Случайные места (металлоискатель)",
+    "menu.random_spot_shovel": "Случайные места (лопата)",
+    "menu.sponsors": "Спонсоры"
 }
