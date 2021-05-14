@@ -11,7 +11,7 @@ The following people helped translate the RDO Map specifically but are possibly 
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
 ### Afrikaans (29%):
-  - **HeadShot557** (1,452 words)
+  - **HeadShot557** (1,567 words)
   - **R36za** (101 words)
 
 ### Arabic (41%):
@@ -68,6 +68,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### English, United Kingdom (1%):
   - **AdamNortonUK** (12 words)
+  - **Michal__d** (2,990 words)
   - **MrSmithr** (290 words)
   - **R36za** (101 words)
   - **XRuthlessShadow** (29 words)
@@ -90,7 +91,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
   - **Maxemi** (224 words)
-  - **Michal__d** (2,968 words)
+  - **Michal__d** (2,990 words)
   - **MORGANE8** (292 words)
   - **Oldboy77** (494 words)
   - **radragon** (917 words)
@@ -113,7 +114,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **paulschlachter88** (149 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
-  - **Tharek_Tolemac** (31 words)
+  - **Tharek_Tolemac** (49 words)
   - **TheBango** (12 words)
   - **Tolpelbold** (39 words)
   - **viliri** (1,470 words)
@@ -185,7 +186,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Polish (79%):
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
-  - **Michal__d** (2,968 words)
+  - **Michal__d** (2,990 words)
   - **Quahox** (39 words)
 
 ### Portuguese (26%):
