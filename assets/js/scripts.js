@@ -103,7 +103,7 @@ function init() {
   try {
     Sentry.init({ release: nocache, tracesSampleRate: isLocalHost() ? 1 : 0.3 });
   } catch (err) {
-    console.error(`Sentry: ${err}`);
+    console.log(`Sentry: ${err}`);
   }
 
   const navLang = navigator.language;
