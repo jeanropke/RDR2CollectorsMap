@@ -2015,5 +2015,17 @@
   "tarot_cards": 3,
   "fossils": 5,
   "date": "2021-05-17"
+ }, {
+  "flower": 6,
+  "bottle": 6,
+  "arrowhead": 6,
+  "egg": 4,
+  "coin": 1,
+  "heirlooms": 3,
+  "lost_jewelry": 6,
+  "random": 6,
+  "tarot_cards": 6,
+  "fossils": 6,
+  "date": "2021-05-18"
  }
 ]
