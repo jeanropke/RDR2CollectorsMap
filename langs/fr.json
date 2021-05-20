@@ -1865,6 +1865,7 @@
     "menu.lang_el": "ελληνικά (grec)",
     "menu.lang_en_GB": "Anglais (Royaume-Uni)",
     "menu.lang_es": "Español (Espagnol)",
+    "menu.lang_es_MX": "Español (Espagnol mexicain)",
     "menu.lang_fi": "Suomi (finnois)",
     "menu.lang_fr": "Français (Français)",
     "menu.lang_he": "עברית (hébreu)",
@@ -1898,5 +1899,6 @@
     "menu.random_spot_shovel": "Spots aléatoires (pelle)",
     "help.filter_min_amount_items": "Vous permet de définir le nombre maximal d'objets dans votre inventaire considérés comme des \"objets en faible quantité\".",
     "menu.filter_type.low_amount_items": "Uniquement les objets en faible quantité",
-    "menu.filter_min_amount_items": "Afficher uniquement les articles d'un montant inférieur à"
+    "menu.filter_min_amount_items": "Afficher uniquement les articles d'un montant inférieur à",
+    "menu.sponsors": "Sponsors"
 }
