@@ -1854,7 +1854,7 @@
     "help.tooltip_map": "Wyświetla podpowiedź dla znaczników na mapie, w której wyświetlany jest pełny tytuł.",
     "menu.translate_progress": "Postęp tłumaczenia dla tego języka to {progress}%.",
     "help.map_boundaries": "Umożliwia włączenie lub wyłączenie granic mapy. Jeśli ta opcja jest włączona, mapa zawsze znajduje się na ekranie.",
-    "menu.map_boundaries": "Granice mapy zostały włączone",
+    "menu.map_boundaries": "Aktywne granice mapy",
     "menu.lang_en": "Angielski (English)",
     "menu.lang_af": "Afrykański (Afrikaans)",
     "menu.lang_ar": "Arabski (Arabic)",
