@@ -53,7 +53,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **CzechJura** (719 words)
   - **filutav39** (49 words)
   - **Nydrail** (372 words)
-  - **Roesaro** (996 words)
+  - **Roesaro** (1,093 words)
   - **Srandokan** (24 words)
 
 ### Danish (40%):
@@ -294,7 +294,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **EmreKLC** (1,114 words)
   - **emrullahsimsar** (3,121 words)
   - **KagitmiAdam** (100 words)
-  - **Krykl** (12,681 words)
+  - **Krykl** (12,722 words)
 
 ### Ukrainian (85%):
   - **andrew.zaanle** (484 words)
