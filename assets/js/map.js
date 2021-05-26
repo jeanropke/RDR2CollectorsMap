@@ -345,12 +345,11 @@ const MapBase = {
 
     if (localStorage.getItem('main.date') == null || date != localStorage.getItem('main.date')) {
       MapBase.markers.forEach(marker => {
-        // reset daily all random categories
         if (Settings.resetMarkersDaily || marker.isRandomizedItem) {
           marker.isCollected = false;
         }
 
-        if (InventorySettings.resetInventoryDaily && marker.category !== 'random') {
+        if (InventorySettings.resetInventoryDaily && !marker.isRandomizedItem) {
           marker.item.amount = 0;
         }
       });
