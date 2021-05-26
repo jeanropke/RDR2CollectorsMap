@@ -194,6 +194,12 @@ function init() {
     Updates.init();
 
   updateTopWidget();
+
+  /*
+  - clockTick() relies on DOM and jquery
+  - guaranteed only by this script’s position at end of index.html
+  */
+  setInterval(clockTick, 1000);
 }
 
 function isLocalHost() {
@@ -307,12 +313,6 @@ function clockTick() {
     }
   });
 }
-
-/*
-- clockTick() relies on DOM and jquery
-- guaranteed only by this script’s position at end of index.html
-*/
-setInterval(clockTick, 1000);
 
 /*
 - rest of file: event handler registrations (and some more functions)
