@@ -170,6 +170,10 @@ class Menu {
       filterMapMarkers();
     })();
 
+    SettingProxy.addListener(InventorySettings, 'maxAmountLowInventoryItems', () => {
+      filterMapMarkers();
+    });
+
     SettingProxy.addListener(Settings, 'markerColor', () =>
       $('#open-custom-marker-color-modal').toggle(Settings.markerColor === 'custom'))();
 
