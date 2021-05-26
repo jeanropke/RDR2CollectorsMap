@@ -127,14 +127,14 @@ function init() {
   const cycles = Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
-  MapBase.loadFilters();
+  const filters = MapBase.loadFilters();
   FME.init();
 
   const treasures = Treasure.init();
   const legendaries = Legendary.init();
   Promise.all([cycles, markers]).then(MapBase.afterLoad);
   Routes.init();
-  Promise.all([itemsCollectionsWeekly, markers, cycles, treasures, legendaries])
+  Promise.all([itemsCollectionsWeekly, markers, cycles, treasures, legendaries, filters])
     .then(Loader.resolveMapModelLoaded);
 
   if (!MapBase.isPreviewMode)
