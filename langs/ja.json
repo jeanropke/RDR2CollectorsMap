@@ -1881,5 +1881,6 @@
     "menu.lang_zh_Hans": "简体中文 (Chinese Simplified)",
     "menu.lang_zh_Hant": "繁体中文 (Chinese Traditional)",
     "menu.marker_color.custom": "カスタム",
+    "menu.custom_marker_color_title": "カスタム・マーカーの色",
     "menu.jewelry_random": "ランダムな宝石"
 }

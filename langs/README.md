@@ -122,10 +122,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **viliri** (1,470 words)
   - **werhel** (443 words)
 
-### Greek (10%):
+### Greek (12%):
   - **Arsenis** (277 words)
   - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
+  - **ToX1cRanG3r** (363 words)
 
 ### Hebrew (19%):
   - **dudiv5674** (2,863 words)
@@ -134,6 +135,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **klain123** (2,363 words)
 
 ### Hungarian (30%):
+  - **emperger** (143 words)
   - **GoP** (85 words)
   - **Hutty98** (2,249 words)
   - **jjameska** (26 words)
@@ -145,13 +147,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **SzKrJ** (1,429 words)
   - **tabandi** (239 words)
 
-### Italian (83%):
+### Italian (84%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (2,592 words)
   - **Enrik014** (864 words)
   - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
+  - **hellseeker** (327 words)
   - **Jarsha1311** (500 words)
   - **LucaBa** (425 words)
   - **masterflash222** (268 words)
@@ -159,7 +162,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Raffox97** (33 words)
   - **REMOVED_USER** (1,189 words)
   - **TheSgrash** (282 words)
-  - **Tony_Bell** (192 words)
+  - **Tony_Bell** (194 words)
   - **Visite** (121 words)
 
 ### Japanese (72%):
@@ -167,6 +170,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **lumeanarunbird** (729 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
+  - **redredrom** (17 words)
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
@@ -230,7 +234,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **hellcat_tail** (15 words)
   - **ita.jk7** (54 words)
   - **maxdavinci** (40 words)
-  - **Megitsune** (1,947 words)
+  - **Megitsune** (1,987 words)
   - **noiracero693** (27 words)
   - **Overnoes** (85 words)
   - **platonomania** (15 words)

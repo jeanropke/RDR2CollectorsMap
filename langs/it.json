@@ -1497,6 +1497,8 @@
     "help.generate_route_railroad_weight": "Consente di scegliere quanto il tracciatore del percorso debba preferire utilizzare le ferrovie.",
     "help.generate_route_auto_update": "Decidi se il percorso deve essere automaticamente aggiornato quando raccogli un collezionabile o premi un elemento nel menu.",
     "help.generate_route_clear": "Elimina la rotta appena generata.",
+    "help.generate_route_distance": "Permette di impostare la distanza massima dei percorsi. Impostando un valore troppo basso, il percorso potrebbe non essere completo. Impostando un valore troppo alto, potrebbero essere generati percorsi impossibili.",
+    "help.generate_route_generate_on_visit": "Scegli se creare un nuovo percorso quando apri questa pagina.",
     "help.generate_route_ignore_collected": "Scegli se il percorso debba ignorare gli oggetti che hai già raccolto.",
     "help.generate_route_important_only": "Toggine se devono essere instradati solo gli articoli contrassegnati come importanti.",
     "help.generate_route_start": "Consente di impostare da dove partirà la rotta.",
@@ -1856,6 +1858,7 @@
     "menu.lang_el": "ελληνικά (greco)",
     "menu.lang_en_GB": "Inglese (UK)",
     "menu.lang_es": "Español (Spagnolo)",
+    "menu.lang_es_MX": "Spagnolo (Spagnolo messicano)",
     "menu.lang_fi": "Suomi (finlandese)",
     "menu.lang_fr": "Français (Francese)",
     "menu.lang_he": "עברית (Hebrew)",
@@ -1889,5 +1892,6 @@
     "menu.random_spot_shovel": "Punto Casuale (pala)",
     "help.filter_min_amount_items": "Consente di impostare la quantità massima di oggetti nel tuo inventario considerati \"oggetti a basso inventario\".",
     "menu.filter_type.low_amount_items": "Solo articoli a basso inventario",
-    "menu.filter_min_amount_items": "Mostra solo gli articoli con quantità inferiore a"
+    "menu.filter_min_amount_items": "Mostra solo gli articoli con quantità inferiore a",
+    "menu.sponsors": "Sponsor"
 }
