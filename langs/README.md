@@ -128,11 +128,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (632 words)
   - **ToX1cRanG3r** (363 words)
 
-### Hebrew (19%):
+### Hebrew (20%):
   - **dudiv5674** (2,863 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
+  - **Vasili_Koulakov** (305 words)
 
 ### Hungarian (30%):
   - **emperger** (143 words)
@@ -147,14 +148,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **SzKrJ** (1,429 words)
   - **tabandi** (239 words)
 
-### Italian (84%):
+### Italian (85%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (2,592 words)
   - **Enrik014** (864 words)
   - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
-  - **hellseeker** (327 words)
+  - **hellseeker** (731 words)
   - **Jarsha1311** (500 words)
   - **LucaBa** (425 words)
   - **masterflash222** (268 words)
