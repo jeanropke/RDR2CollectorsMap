@@ -1031,6 +1031,9 @@ function filterMapMarkers() {
     const roleItems = [].concat(...Object.values(MapBase.filtersData['moonshiner']));
     filterType = marker => roleItems.includes(marker.itemId) || marker.category !== 'flower';
   }
+  else if (Settings.filterType === 'coinsSpots') {
+    filterType = marker => ['coin', 'random'].includes(marker.category) && marker.tool === 2;
+  }
   else if (Settings.filterType === 'lowInventoryItems') {
     enableMainCategory = false;
     const maxAmount = InventorySettings.maxAmountLowInventoryItems;
