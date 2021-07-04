@@ -35,7 +35,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Chinese Simplified (79%):
   - **akbcd** (409 words)
   - **Approach** (12 words)
-  - **BHT256** (7,750 words)
+  - **BHT256** (7,811 words)
   - **curryguru** (47 words)
   - **Jabaay** (52 words)
   - **labrary** (238 words)
@@ -130,7 +130,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ToX1cRanG3r** (363 words)
 
 ### Hebrew (21%):
-  - **dudiv5674** (2,863 words)
+  - **dudiv5674** (2,867 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
@@ -172,13 +172,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **lumeanarunbird** (729 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
-  - **redredrom** (17 words)
+  - **redredrom** (25 words)
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
-### Korean (58%):
+### Korean (59%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (407 words)
+  - **CoolBreeze-13s** (524 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
@@ -236,7 +236,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **hellcat_tail** (15 words)
   - **ita.jk7** (54 words)
   - **maxdavinci** (40 words)
-  - **Megitsune** (1,992 words)
+  - **Megitsune** (2,036 words)
   - **noiracero693** (27 words)
   - **Overnoes** (85 words)
   - **platonomania** (15 words)
@@ -274,7 +274,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ulises_hdz22** (361 words)
 
 ### Spanish, Mexico (89%):
-  - **bloobhy** (30 words)
+  - **bloobhy** (152 words)
 
 ### Swedish (20%):
   - **...---...** (431 words)
@@ -300,7 +300,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Turkish (92%):
   - **atayyu** (74 words)
   - **bariss** (101 words)
-  - **EmreKLC** (1,114 words)
+  - **EmreKLC** (1,131 words)
   - **emrullahsimsar** (3,121 words)
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,722 words)
