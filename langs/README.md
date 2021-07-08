@@ -171,6 +171,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Japanese (72%):
   - **igucheese** (82 words)
   - **lumeanarunbird** (729 words)
+  - **moku3** (331 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **redredrom** (159 words)
@@ -192,7 +193,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **martinbruh** (212 words)
   - **Rilfus** (156 words)
 
-### Polish (81%):
+### Polish (82%):
+  - **Baltazaro** (113 words)
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
   - **Michal__d** (2,997 words)
@@ -207,7 +209,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **petrasoares7** (340 words)
   - **RodasQ** (560 words)
 
-### Portuguese, Brazilian (90%):
+### Portuguese, Brazilian (91%):
   - **agpariz** (50 words)
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
@@ -215,7 +217,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **borba72** (23 words)
   - **bortoluzzibernardo** (16 words)
   - **FilipFelipe** (146 words)
-  - **jeanropke** (7,214 words)
+  - **jeanropke** (7,524 words)
   - **joabeHK** (104 words)
   - **KAKUNO123** (30 words)
   - **msfern** (215 words)
