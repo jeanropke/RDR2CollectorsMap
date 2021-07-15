@@ -116,6 +116,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **FreeAsABird** (330 words)
   - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
+  - **s.pantermueller** (94 words)
   - **Scotmanhands** (22 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
@@ -170,10 +171,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Tony_Bell** (194 words)
   - **Visite** (121 words)
 
-### Japanese (72%):
+### Japanese (73%):
   - **igucheese** (82 words)
   - **lumeanarunbird** (729 words)
-  - **moku3** (331 words)
+  - **moku3** (465 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
   - **redredrom** (159 words)
@@ -182,7 +183,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (59%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (620 words)
+  - **CoolBreeze-13s** (624 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
@@ -200,7 +201,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
   - **Michal__d** (2,997 words)
-  - **PLTytus** (515 words)
+  - **PLTytus** (522 words)
   - **Quahox** (39 words)
   - **THE_MALOTEK** (422 words)
 
@@ -229,10 +230,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Raphael_** (39 words)
   - **vierim** (33 words)
 
-### Romanian (9%):
+### Romanian (17%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (1,001 words)
+  - **proximacentaurib** (3,318 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (90%):
@@ -247,6 +248,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Overnoes** (85 words)
   - **platonomania** (15 words)
   - **quietamer** (170 words)
+  - **scriptSQD** (19 words)
   - **SkyFisherGames** (15 words)
   - **sleyxz** (134 words)
   - **tomvsxvi** (563 words)
