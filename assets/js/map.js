@@ -366,8 +366,9 @@ const MapBase = {
 
     const searchTerms = [
       ...new Set(searchString
-        .replace(/^;|;$/g, '')
+        .replace(/^[;\s]+|[;\s]+$/g, '')
         .split(';')
+        .filter(element => element)
         .map(term => term.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
       )
     ];
