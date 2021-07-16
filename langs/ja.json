@@ -1675,6 +1675,7 @@
     "menu.filter_type.weekly_set": "週次セット",
     "menu.filter_type.important_items": "アイテムのインポート",
     "menu.filter_type.only_static": "静的のみ",
+    "menu.filter_type.all_coins_spots": "収集可能なコインの場所",
     "menu.filter_type.hide_flowers": "材料の花を非表示",
     "menu.join_discord": "Discordに参加する",
     "help.join_discord": "コレクターマップのDiscordを、新規タブを開きます。",
@@ -1892,10 +1893,13 @@
     "menu.custom_marker_color": "カスタムマーカーの色",
     "menu.custom_marker_color_title": "カスタム・マーカーの色",
     "menu.custom_marker_color_body": "各カテゴリーのカスタムカラーを設定 :",
+    "help.custom_marker_color_modal": "各マーカーのカテゴリにカスタム色を設定できます。",
     "menu.fossils_random": "ランダムな化石",
     "menu.jewelry_random": "ランダムな宝石",
     "menu.random_spot_metal": "ランダムなスポット (金属探知器)",
     "menu.random_spot_shovel": "ランダムなスポット (シャベル)",
+    "help.filter_min_amount_items": "インベントリの中で「所持数の少ないアイテム」とみなされるアイテムの最大量を設定することができます。",
     "menu.filter_type.low_amount_items": "所持数が少ない収集品のみ",
+    "menu.filter_min_amount_items": "以下の金額のアイテムのみ表示",
     "menu.sponsors": "スポンサー"
 }
