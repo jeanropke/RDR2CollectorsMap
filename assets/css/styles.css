@@ -622,7 +622,7 @@ select {
 
 .side-menu .menu-option .icon {
     width: 35px;
-    margin: 6px 0 -3px 2px;
+    margin: -4px 0 -3px 2px;
 }
 
 .side-menu .open-submenu {
@@ -1615,7 +1615,6 @@ a.no-style:visited {
     z-index: 4;
     width: 100%;
     height: auto;
-    padding-top: 6px;
 }
 
 .leaflet-div-icon .background {
