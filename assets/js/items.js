@@ -52,10 +52,10 @@ class NonCollectible extends BaseItem {
 class Item extends BaseItem {
   constructor(preliminary) {
     super(preliminary);
-    this.category = this.itemId.split('_', 1)[0];
     this.collection = Collection.collections.find(c => c.category === this.category);
+    
     this.collection.items.push(this);
-    this.legacyItemId = this.itemId.replace(/^flower_|^egg_/, '');
+    this.legacyItemId = this.itemId.replace(/^_flower|^_egg/, '');
     this.weeklyHelpKey = 'weekly_item_collectable';
     this.markers = []; // filled by Marker.init();
     this._amountKey = `amount.${this.itemId}`;
@@ -98,7 +98,7 @@ class Item extends BaseItem {
   _insertMenuElement() {
     this.$menuButton = $(`
       <div class="collectible-wrapper" data-type="${this.legacyItemId}"
-        data-help="${['flower_agarita', 'flower_blood_flower'].includes(this.itemId) ? 'item_night_only' : 'item'}">
+        data-help="${['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId) ? 'item_night_only' : 'item'}">
         <img class="collectible-icon" src="assets/images/icons/game/${this.itemId}.png" alt="Set icon">
         <img class="collectible-icon random-spot" src="assets/images/icons/random_overlay.png" alt="Random set icon">
         <span class="collectible-text">
@@ -160,7 +160,7 @@ class Item extends BaseItem {
           return 'item_unavailable';
         } else if (isRandom) {
           return 'item_random';
-        } else if (['flower_agarita', 'flower_blood_flower'].includes(this.itemId)) {
+        } else if (['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId)) {
           return 'item_night_only';
         } else if (this.isWeekly()) {
           return 'item_weekly';

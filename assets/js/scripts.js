@@ -291,7 +291,7 @@ function clockTick() {
 
   $('#countdown').text(delta.toLocaleString([], deltaFormat));
 
-  $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', (function () {
+  $('[data-marker*="provision_wldflwr_agarita"], [data-marker*="provision_wldflwr_blood_flower"]').css('filter', (function () {
     if (MapBase.isPreviewMode) return 'none';
     const isImportant = $(this).hasClass('highlight-items');
     const whiteGlow = 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .3rem #fff)';

@@ -88,24 +88,23 @@ class Marker {
       } else if (this.category === 'jewelry_random') {
         return "jewelry_random.desc";
       }
-
       switch (this.itemId) {
-        case 'flower_agarita':
-        case 'flower_blood_flower':
+        case 'provision_wldflwr_agarita':
+        case 'provision_wldflwr_blood_flower':
           return 'map.flower_type.night_only';
-        case 'flower_creek_plum':
+        case 'provision_wldflwr_creek_plum':
           return 'map.flower_type.bush';
-        case 'egg_spoonbill':
-        case 'egg_heron':
-        case 'egg_eagle':
-        case 'egg_hawk':
-        case 'egg_egret':
+        case 'provision_spoonbill_egg':
+        case 'provision_heron_egg':
+        case 'provision_eagle_egg':
+        case 'provision_hawk_egg':
+        case 'provision_egret_egg':
           return 'map.egg_type.tree';
-        case 'egg_vulture':
+        case 'provision_vulture_egg':
           return 'map.egg_type.stump';
-        case 'egg_duck':
-        case 'egg_goose':
-        case 'egg_loon':
+        case 'provision_duck_egg':
+        case 'provision_goose_egg':
+        case 'provision_loon_egg':
           return 'map.egg_type.ground';
         default:
           return '';
@@ -397,7 +396,7 @@ class Marker {
       let detail = false;
       if (this.buggy) {
         detail = ['cross', 'crossed out'];
-      } else if (['flower_agarita', 'flower_blood_flower'].includes(this.itemId)) {
+      } else if (['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId)) {
         detail = ['time', 'timed'];
       } else if (this.height === 1) {
         detail = ['high', 'high ground'];

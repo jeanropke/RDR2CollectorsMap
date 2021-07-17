@@ -3,7 +3,7 @@
 		"mshine_flavor_agarita_sunrise": [
 			"consumable_strawberries_can",
 			"consumable_herb_evergreen_huckleberry",
-			"flower_agarita"
+			"provision_wldflwr_agarita"
 		],
 		"mshine_flavor_apple_berry_crumb": [
 			"consumable_apple",
@@ -28,12 +28,12 @@
 		"mshine_flavor_poison_poppys": [
 			"consumable_herb_prairie_poppy",
 			"consumable_herb_oleander_sage",
-			"bottle_absinthe"
+			"consumable_cyprus_brandy"
 		],
 		"mshine_flavor_spiced_island": [
 			"consumable_apricots_can",
 			"consumable_herb_currant",
-			"bottle_caribbean_rum"
+			"consumable_carib_rum"
 		],
 		"mshine_flavor_tropical_punch": [
 			"consumable_pineapples_can",
@@ -48,28 +48,28 @@
 		"mshine_flavor_wild_creek": [
 			"consumable_herb_wild_mint",
 			"consumable_herb_vanilla_flower",
-			"flower_creek_plum"
+			"provision_wldflwr_creek_plum"
 		]
 	},
 	"naturalist": {
 		"provision_trinket_beaver_tooth": [
-			"earring_calumet_turquoise",
+			"provision_jewelry_turq_stud_earring",
 			"provision_squirrel_tooth"
 		],
 		"provision_trinket_buck_antler": [
-			"necklace_dane_topaz",
+			"provision_jewelry_topaz_necklace",
 			"provision_buck_antlers"
 		],
 		"provision_trinket_javelina_tusk": [
-			"bracelet_elliston_carved",
+			"provision_jewelry_carved_bracelet",
 			"provision_javelina_tusk"
 		],
 		"provision_trinket_ram_horn": [
-			"ring_aubrey_onyx",
+			"provision_jewelry_onyx_ring",
 			"provision_ram_horn"
 		],
 		"provision_trinket_snowy_egret": [
-			"necklace_braxton_amethyst",
+			"provision_jewelry_amethyst_necklace",
 			"provision_egret_feather"
 		]
 	}

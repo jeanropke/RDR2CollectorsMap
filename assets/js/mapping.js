@@ -9,6 +9,19 @@ class Mapping {
 
     constructor(preliminary) {
         Object.assign(this, preliminary);
+
+        let amount = localStorage.getItem(`amount.${this.value}`);
+        let collected = localStorage.getItem(`collected.${this.value}`);
+
+        if (amount != null) {
+            localStorage.setItem(`amount.${this.key}`, amount);
+            localStorage.removeItem(`amount.${this.value}`);
+        }
+
+        if (collected != null) {
+            localStorage.setItem(`collected.${this.key}`, collected);
+            localStorage.removeItem(`collected.${this.value}`);
+        }
     }
 
     //compare both images, just to be sure I didnt messed up
@@ -22,7 +35,7 @@ class Mapping {
                     <img src="../RDR2CollectorsMap/assets/images/icons/game/pm_collectors_bag_mp/${value.key}.png">                    
                 </div>`
             ));
-          });
+        });
         $('#mapping-modal .modal-body').append(snippet);
         $('#mapping-modal').modal('show');
     }
