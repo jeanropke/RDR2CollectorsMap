@@ -70,7 +70,7 @@ class Menu {
 
     $('#items-value').text(`$${Collection.totalValue().toFixed(2)}`);
 
-    Collection.collections.forEach(coll => coll.updateCounter());
+    Object.keys(Collection.collections).forEach(coll => Collection.collections[coll].updateCounter());
   }
 
   static activateHandlers() {
