@@ -640,6 +640,14 @@ $('#cookie-export').on("click", function () {
 
     // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
     settings = $.extend(true, {}, localStorage);
+
+    //Yes, keys starting with `rdo:` are irrelevant to collectors map
+    //In future, Collectors map localStorage keys will start with `collectors:` or something
+    Object.keys(settings).forEach(function(key){
+      if(key.startsWith('rdo:'))
+        delete settings[key];
+    });
+
     delete settings['pinned-items'];
     delete settings['routes.customRoute'];
 
@@ -665,7 +673,9 @@ function setSettings(settings) {
   delete settings.version;
 
   $.each(settings, function (key, value) {
-    localStorage.setItem(key, value);
+    //Skip `rdo:` keys.
+    if(!key.startsWith('rdo:'))
+      localStorage.setItem(key, value);
   });
 
   // Do this for now, maybe look into refreshing the menu completely (from init) later.
@@ -854,7 +864,8 @@ $(document).on('contextmenu', function (e) {
 
 $('#delete-all-settings').on('click', function () {
   $.each(localStorage, function (key) {
-    localStorage.removeItem(key);
+    if(!key.startsWith('rdo:'))
+      localStorage.removeItem(key);
   });
 
   location.reload(true);
