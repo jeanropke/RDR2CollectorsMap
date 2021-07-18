@@ -180,7 +180,7 @@ Object.entries({
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 
 // Inventory settings
-const InventorySettings = SettingProxy.createSettingProxy('inventory');
+const InventorySettings = SettingProxy.createSettingProxy('rdr2collector.inventory');
 Object.entries({
   highlightLowAmountItems: { default: false },
   isEnabled: { default: false },
@@ -195,7 +195,7 @@ Object.entries({
 }).forEach(([name, config]) => SettingProxy.addSetting(InventorySettings, name, config));
 
 // Route settings
-const RouteSettings = SettingProxy.createSettingProxy('routes');
+const RouteSettings = SettingProxy.createSettingProxy('rdr2collector.routes');
 Object.entries({
   allowFasttravel: { default: false },
   allowRailroad: { default: false },

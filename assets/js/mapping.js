@@ -29,8 +29,11 @@ class Mapping {
         });
     }
 
+    //open typing `Mapping.showModal()` on console (yes, i'm that lazy :))
     //compare both images, just to be sure I didnt messed up
+    //not in use anymore, but I'll keep just in case
     static showModal() {
+        if (!Settings.isDebugEnabled) return;
         const snippet = $('<div></div>');
 
         this.mapping.forEach(value => {

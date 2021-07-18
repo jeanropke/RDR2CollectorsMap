@@ -124,7 +124,15 @@ function init() {
       localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
       localStorage.removeItem(key);
     }
-
+    else if(key.startsWith('routes.')) {
+      localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }
+    else if(key.startsWith('inventory.')) {
+      localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }
+    
   });
 
   Menu.init();
@@ -655,15 +663,15 @@ $('#cookie-export').on("click", function () {
     // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
     settings = $.extend(true, {}, localStorage);
 
-    //Yes, keys starting with `rdo.` are irrelevant to collectors map
-    //In future, Collectors map localStorage keys will start with `collectors:` or something
+    //Now we can just export this map settings :)
     Object.keys(settings).forEach(function(key){
-      if(key.startsWith('rdo.'))
+      if(!key.startsWith('rdr2collector.'))
         delete settings[key];
     });
 
     delete settings['pinned-items'];
-    delete settings['routes.customRoute'];
+    delete settings['rdr2collector.pinned-items'];
+    delete settings['rdr2collector.routes.customRoute'];
 
     // Set file version
     settings.version = 2;
@@ -879,7 +887,7 @@ $(document).on('contextmenu', function (e) {
 
 $('#delete-all-settings').on('click', function () {
   $.each(localStorage, function (key) {
-    if(!key.startsWith('rdo.'))
+    if(key.startsWith('rdr2collector.'))
       localStorage.removeItem(key);
   });
 
