@@ -134,7 +134,7 @@ const SettingProxy = function () {
 }();
 
 // General settings
-const Settings = SettingProxy.createSettingProxy('main');
+const Settings = SettingProxy.createSettingProxy('rdr2collector');
 Object.entries({
   lastVersion: { default: 0 },
   alertClosed: { default: false },

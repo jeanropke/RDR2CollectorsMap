@@ -231,8 +231,8 @@ class Pins {
       });
     }
 
-    if (Pins.isValidJSON(localStorage.getItem('rdr2collector:pinned-items'))) {
-      JSON.parse(localStorage.getItem('rdr2collector:pinned-items')).forEach(pinnedItem => {
+    if (Pins.isValidJSON(localStorage.getItem('rdr2collector.pinned-items'))) {
+      JSON.parse(localStorage.getItem('rdr2collector.pinned-items')).forEach(pinnedItem => {
         this.addPin(pinnedItem);
       });
     }
@@ -283,13 +283,13 @@ class Pins {
 
   static save() {
     localStorage.removeItem('pinned-items');
-    localStorage.setItem('rdr2collector:pinned-items', JSON.stringify(this.pinsList));
+    localStorage.setItem('rdr2collector.pinned-items', JSON.stringify(this.pinsList));
   }
 
   static importPins(text) {
     if (Pins.isValidJSON(text)) {
       console.log(text);
-      localStorage.setItem('rdr2collector:pinned-items', text);
+      localStorage.setItem('rdr2collector.pinned-items', text);
       this.loadPins();
     } else {
       alert(Language.get('alerts.file_not_valid'));
@@ -298,7 +298,7 @@ class Pins {
   }
 
   static exportPins() {
-    const text = localStorage.getItem('rdr2collector:pinned-items');
+    const text = localStorage.getItem('rdr2collector.pinned-items');
     const filename = 'pinned-items.txt';
 
     if (text === null) {

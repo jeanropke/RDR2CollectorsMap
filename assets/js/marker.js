@@ -55,7 +55,7 @@ class Marker {
      * and one for “visibility” per item (in a new Item class).
      * Both should drive how faded the marker is going to be.
      */
-    this._collectedKey = `collected.${this.text}`;
+    this._collectedKey = `rdr2collector.collected.${this.text}`;
 
     /**
      * Used to display per-item descriptions.
@@ -236,7 +236,7 @@ class Marker {
       base = base[this.category] || 'lightred';
     }
     else if (markerColor === 'custom') {
-      const settingsColor = JSON.parse(localStorage.getItem('customMarkersColors'));
+      const settingsColor = JSON.parse(localStorage.getItem('rdr2collector.customMarkersColors') || localStorage.getItem('customMarkersColors'));
       const colors = Object.assign(base, settingsColor || {});
       colors.random = (this.tool === 2 ? colors.random_spot_metal : colors.random_spot_shovel) || 'lightgray';
       base = base[this.category] || 'lightred';

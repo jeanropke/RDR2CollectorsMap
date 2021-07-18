@@ -59,7 +59,7 @@ class Item extends BaseItem {
     this.legacyItemId = this.itemId.replace(/^_flower|^_egg/, '');
     this.weeklyHelpKey = 'weekly_item_collectable';
     this.markers = []; // filled by Marker.init();
-    this._amountKey = `amount.${this.itemId}`;
+    this._amountKey = `rdr2collector.amount.${this.itemId}`;
     this._insertMenuElement();
   }
   // `.init()` needs DOM ready and jquery, but no other map realted scripts initialized
@@ -212,7 +212,7 @@ class Item extends BaseItem {
   }
 
   set isImportant(state) {
-    const textKey = `rdr2collector:important.${this.itemId}`;
+    const textKey = `rdr2collector.important.${this.itemId}`;
     if (state)
       localStorage.setItem(textKey, 'true');
     else
@@ -222,7 +222,7 @@ class Item extends BaseItem {
   }
 
   get isImportant() {
-    return !!localStorage.getItem(`rdr2collector:important.${this.itemId}`);
+    return !!localStorage.getItem(`rdr2collector.important.${this.itemId}`);
   }
 
   highlightImportantItem() {

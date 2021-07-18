@@ -124,7 +124,7 @@ class Menu {
         } else {
           enabledCategories = toEnable ? categories : [];
         }
-        localStorage.setItem("enabled-categories", JSON.stringify(enabledCategories));
+        localStorage.setItem("rdr2collector.enabled-categories", JSON.stringify(enabledCategories));
 
         if (!category) {
           MapBase.addMarkers();
