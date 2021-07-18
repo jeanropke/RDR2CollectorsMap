@@ -137,6 +137,8 @@ function init() {
       localStorage.removeItem(key);
     }    
   });
+  
+  Mapping.init();
 
   Menu.init();
   const lootTables = MapBase.loadLootTable();
@@ -157,10 +159,9 @@ function init() {
 
   const treasures = Treasure.init();
   const legendaries = Legendary.init();
-  const mapping = Mapping.init();
   Promise.all([cycles, markers]).then(MapBase.afterLoad);
   Routes.init();
-  Promise.all([itemsCollectionsWeekly, markers, cycles, treasures, legendaries, filters, mapping])
+  Promise.all([itemsCollectionsWeekly, markers, cycles, treasures, legendaries, filters])
     .then(Loader.resolveMapModelLoaded);
 
   if (!MapBase.isPreviewMode)
@@ -703,7 +704,6 @@ function setSettings(settings) {
       localStorage.setItem(key, value);
   });
 
-  Mapping.convert();
   // Do this for now, maybe look into refreshing the menu completely (from init) later.
   location.reload();
 }
