@@ -48,7 +48,7 @@ const parentCategories = {
   fossils_random: ['coastal', 'megafauna', 'oceanic']
 };
 
-let enabledCategories = JSON.parse(localStorage.getItem("enabled-categories")) || [...categories];
+let enabledCategories = JSON.parse(localStorage.getItem("rdr2collector.enabled-categories") || localStorage.getItem("enabled-categories")) || [...categories];
 
 /*
 - Leaflet extentions require Leaflet loaded
@@ -112,6 +112,20 @@ function init() {
   });
 
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
+
+  //Convert some old settings here
+  //amount and collected items are converted in mapping
+  Object.keys(localStorage).forEach(key => {
+    if(key.startsWith('main.')) {
+      localStorage.setItem(`rdr2collector.${key.replace('main.', '')}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }
+    else if(key == 'customMarkersColors') {
+      localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }
+
+  });
 
   Menu.init();
   const lootTables = MapBase.loadLootTable();
@@ -633,7 +647,7 @@ $('#cookie-export').on("click", function () {
     let settings = localStorage;
 
     const exportDate = new Date().toISOUTCDateString();
-    localStorage.setItem('main.date', exportDate);
+    localStorage.setItem('rdr2collector.date', exportDate);
 
     // Remove irrelevant properties (permanently from localStorage):
     delete settings.randid;
@@ -641,10 +655,10 @@ $('#cookie-export').on("click", function () {
     // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
     settings = $.extend(true, {}, localStorage);
 
-    //Yes, keys starting with `rdo:` are irrelevant to collectors map
+    //Yes, keys starting with `rdo.` are irrelevant to collectors map
     //In future, Collectors map localStorage keys will start with `collectors:` or something
     Object.keys(settings).forEach(function(key){
-      if(key.startsWith('rdo:'))
+      if(key.startsWith('rdo.'))
         delete settings[key];
     });
 
@@ -673,11 +687,12 @@ function setSettings(settings) {
   delete settings.version;
 
   $.each(settings, function (key, value) {
-    //Skip `rdo:` keys.
-    if(!key.startsWith('rdo:'))
+    //Skip `rdo.` keys.
+    if(!key.startsWith('rdo.'))
       localStorage.setItem(key, value);
   });
 
+  Mapping.convert();
   // Do this for now, maybe look into refreshing the menu completely (from init) later.
   location.reload();
 }
@@ -864,7 +879,7 @@ $(document).on('contextmenu', function (e) {
 
 $('#delete-all-settings').on('click', function () {
   $.each(localStorage, function (key) {
-    if(!key.startsWith('rdo:'))
+    if(!key.startsWith('rdo.'))
       localStorage.removeItem(key);
   });
 
@@ -980,7 +995,7 @@ $('#open-custom-marker-color-modal').on('click', event => {
     });
     return a - b;
   });
-  const savedColors = Object.assign(baseColors, JSON.parse(localStorage.getItem('customMarkersColors')) || {});
+  const savedColors = Object.assign(baseColors, JSON.parse(localStorage.getItem('rdr2collector.customMarkersColors') || localStorage.getItem('customMarkersColors')) || {});
   const wrapper = $('<div id="custom-markers-colors"></div>');
 
   categories.forEach(category => {
@@ -1004,7 +1019,7 @@ $('#open-custom-marker-color-modal').on('click', event => {
 
   $('.input-container', wrapper).on('change', event => {
     baseColors[event.target.id.split('-')[0]] = event.target.value;
-    localStorage.setItem('customMarkersColors', JSON.stringify(baseColors));
+    localStorage.setItem('rdr2collector.customMarkersColors', JSON.stringify(baseColors));
     MapBase.addMarkers();
   });
 });

@@ -4,24 +4,29 @@ class Mapping {
         return Loader.promises['mapping'].consumeJson(data => {
             data.forEach(item => this.mapping.push(new Mapping(item)));
             console.info('%c[Mapping] Loaded!', 'color: #bada55; background: #242424');
+            Mapping.convert()
         });
     }
 
     constructor(preliminary) {
         Object.assign(this, preliminary);
+    }
 
-        let amount = localStorage.getItem(`amount.${this.value}`);
-        let collected = localStorage.getItem(`collected.${this.value}`);
+    static convert() {
+        this.mapping.forEach(item => {
+            let amount = localStorage.getItem(`amount.${item.value}`);
+            let collected = localStorage.getItem(`collected.${item.value}`);
 
-        if (amount != null) {
-            localStorage.setItem(`amount.${this.key}`, amount);
-            localStorage.removeItem(`amount.${this.value}`);
-        }
+            if (amount != null) {
+                localStorage.setItem(`rdr2collector.amount.${item.key}`, amount);
+                localStorage.removeItem(`amount.${item.value}`);
+            }
 
-        if (collected != null) {
-            localStorage.setItem(`collected.${this.key}`, collected);
-            localStorage.removeItem(`collected.${this.value}`);
-        }
+            if (collected != null) {
+                localStorage.setItem(`rdr2collector.collected.${item.key}`, collected);
+                localStorage.removeItem(`collected.${item.value}`);
+            }
+        });
     }
 
     //compare both images, just to be sure I didnt messed up
