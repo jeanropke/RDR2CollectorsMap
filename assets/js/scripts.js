@@ -135,14 +135,13 @@ function init() {
     else if(key == 'enabled-categories') {
       localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
       localStorage.removeItem(key);
-    }    
+    }
   });
-  
-  Mapping.init();
 
+  const mapping = Mapping.init();
   Menu.init();
   const lootTables = MapBase.loadLootTable();
-  const itemsCollectionsWeekly = Item.init(); // Item.items (without .markers), Collection.collections, Collection.weekly*
+  const itemsCollectionsWeekly = Promise.all([mapping]).then(() => Item.init()); // Item.items (without .markers), Collection.collections, Collection.weekly*
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.mapInit(); // MapBase.map
   Language.init();
