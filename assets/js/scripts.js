@@ -1000,7 +1000,6 @@ $('#open-custom-marker-color-modal').on('click', event => {
     ...randomCategories,
   ].sort((...args) => {
     const [a, b] = args.map(element => {
-      console.log(Object.keys(itemCollections));
       const index = Object.keys(itemCollections).indexOf(element);
       return index !== -1 ? index : Object.keys(itemCollections).length;
     });
