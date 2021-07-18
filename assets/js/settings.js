@@ -141,7 +141,6 @@ Object.entries({
   baseLayer: { default: 'map.layers.default' },
   fmeDisplayGeneralPeriod: { default: 30 },
   fmeDisplayRolePeriod: { default: 60 },
-  fmeEnabledEvents: { default: 131071 },
   fmeNotificationPeriod: { default: 10 },
   isClock24Hour: { default: false },
   isCoordsOnClickEnabled: { default: false },

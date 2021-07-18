@@ -158,13 +158,13 @@
     "menu.fme.time.less_than_a_minute": "menys d’un minut",
     "menu.fme.time.minute": "{minutes} minut",
     "menu.fme.time.minutes": "{minutes} minuts",
-    "menu.fme.fme_archery": "Mestre arquer",
-    "menu.fme.fme_dead_drop": "Missatger",
-    "menu.fme.fme_fishing_challenge": "Desafiament de pesca",
+    "menu.fme.fme_master_archer": "Mestre arquer",
+    "menu.fme.fme_dispatch_rider": "Missatger",
+    "menu.fme.fme_challenge_river_fishing": "Desafiament de pesca",
     "menu.fme.fme_king_of_the_castle": "Rei del castell",
-    "menu.fme.fme_random": "Desafiament aleatòri",
+    "menu.fme.fme_challenges": "Desafiament aleatòri",
     "menu.fme.fme_role_condor_egg": "Ou de Còndor",
-    "menu.fme.fme_role_supply_train": "Ruta Comercial",
+    "menu.fme.fme_role_trade_route": "Ruta Comercial",
     "menu.join_discord": "Uneix-te al nostre discord!",
     "map.gus_price": "Preu de Gus:"
 }
