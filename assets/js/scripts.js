@@ -132,7 +132,10 @@ function init() {
       localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
       localStorage.removeItem(key);
     }
-    
+    else if(key == 'enabled-categories') {
+      localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }    
   });
 
   Menu.init();
