@@ -105,7 +105,7 @@ class Collection extends BaseCollection {
   }
   static init(data) {
     this._installSettingsAndEventHandlers();
-    this.collections = [];
+    this.collections = {};
 
     Object.keys(data).forEach(category => {
       this.collections[category] = new Collection(data[category], category);

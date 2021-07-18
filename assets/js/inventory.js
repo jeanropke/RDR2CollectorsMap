@@ -31,7 +31,8 @@ const Inventory = {
       }
       return;
     }
-    Collection.collections.forEach(collection => {
+
+    Object.entries(Collection.collections).forEach(([categoryName, collection]) => {
       if (['arrowhead', 'coin', 'fossils_random', 'jewelry_random'].includes(collection.category)) return;
 
       const contourImg = $(`[data-marker*=${collection.category}] img.marker-contour`);
@@ -41,9 +42,9 @@ const Inventory = {
       contourImg.css('--animation-target-opacity', 0.0);
       contourImg.css("opacity", 0.0);
 
-      if (!enabledCategories.includes(collection.category)) return;
+      if (!enabledCategories.includes(categoryName)) return;
 
-      const markers = MapBase.markers.filter(_m => _m.category === collection.category && _m.isCurrent);
+      const markers = MapBase.markers.filter(_m => _m.category === categoryName && _m.isCurrent);
 
       const collectionAverage = collection.averageAmount();
       markers.map(_m => {
