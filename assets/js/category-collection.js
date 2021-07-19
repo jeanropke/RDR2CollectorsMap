@@ -9,17 +9,12 @@ class BaseCollection extends Category {
 }
 class Weekly extends BaseCollection {
   static init() {
-    this.allSets = {};
-    const allWeeklySets = Loader.promises['weekly_sets'].consumeJson(({ sets }) => {
-      this.allSets.sets = sets;
-    });
-    const currentSet = Loader.promises['weekly'].consumeJson(({ set }) => {
-      this.allSets.current = set.toLowerCase();
-    });
-
-    return Promise.all([allWeeklySets, currentSet])
-      .then(() => {
-        this.current = new Weekly(this.allSets);
+    return Promise.all([
+      Loader.promises['weekly_sets'].consumeJson(({ sets }) => sets),
+      Loader.promises['weekly'].consumeJson(({ set }) => set.toLowerCase()),
+    ])
+      .then(([sets, current]) => {
+        this.current = new Weekly({ sets, current });
         this._installSettingsAndEventHandlers();
         console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
       })
