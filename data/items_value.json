@@ -1,5 +1,6 @@
-{
-  "coastal": {
+[
+  {
+    "category": "coastal",
     "price": 217,
     "itemsList": [
       {"itemId": "collector_fossil_bivalve", "price": 14},
@@ -11,7 +12,8 @@
       {"itemId": "collector_fossil_coral", "price": 16.25}
     ]
   },
-  "oceanic": {
+  {
+    "category": "oceanic",
     "price": 288.5,
     "itemsList": [
       {"itemId": "collector_fossil_trilobite_iso", "price": 21.5},
@@ -23,7 +25,8 @@
       {"itemId": "collector_fossil_tully_monster", "price": 23}
     ]
   },
-  "megafauna": {
+  {
+    "category": "megafauna",
     "price": 321,
     "itemsList": [
       {"itemId": "collector_fossil_tooth_serrated", "price": 24.5},
@@ -34,7 +37,8 @@
       {"itemId": "collector_fossil_tooth_mega", "price": 24.75}
     ]
   },
-  "flower": {
+  {
+    "category": "flower",
     "price": 155.5,
     "itemsList": [
       {"itemId": "provision_wldflwr_texas_blue_bonnet", "price": 8.5},
@@ -48,7 +52,8 @@
       {"itemId": "provision_wldflwr_wisteria", "price": 8.25}
     ]
   },
-  "cups": {
+  {
+    "category": "cups",
     "price": 240.5,
     "itemsList": [
       {"itemId": "document_card_ace_cups", "price": 12},
@@ -67,7 +72,8 @@
       {"itemId": "document_card_king_cups", "price": 11}
     ]
   },
-  "swords": {
+  {
+    "category": "swords",
     "price": 286.5,
     "itemsList": [
       {"itemId": "document_card_ace_swords", "price": 14.5},
@@ -86,7 +92,8 @@
       {"itemId": "document_card_king_swords", "price": 13.25}
     ]
   },
-  "wands": {
+  {
+    "category": "wands",
     "price": 239,
     "itemsList": [
       {"itemId": "document_card_ace_wands", "price": 12},
@@ -105,7 +112,8 @@
       {"itemId": "document_card_king_wands", "price": 11}
     ]
   },
-  "pentacles": {
+  {
+    "category": "pentacles",
     "price": 287,
     "itemsList": [
       {"itemId": "document_card_ace_pentacles", "price": 14.5},
@@ -124,7 +132,8 @@
       {"itemId": "document_card_king_pentacles", "price": 13.25}
     ]
   },
-  "bracelet": {
+  {
+    "category": "bracelet",
     "price": 271.5,
     "itemsList": [
       {"itemId": "provision_jewelry_sphr_bracelet", "price": 18},
@@ -137,7 +146,8 @@
       {"itemId": "provision_jewelry_grnet_bracelet", "price": 16.25}
     ]
   },
-  "earring": {
+  {
+    "category": "earring",
     "price": 364.5,
     "itemsList": [
       {"itemId": "provision_jewelry_drop_earring", "price": 15.5},
@@ -153,7 +163,8 @@
       {"itemId": "provision_jewelry_coral_dngl_earring", "price": 16.25}
     ]
   },
-  "necklace": {
+  {
+    "category": "necklace",
     "price": 335,
     "itemsList": [
       {"itemId": "provision_jewelry_porcelain_necklace", "price": 18.75},
@@ -167,7 +178,8 @@
       {"itemId": "provision_jewelry_blck_pearl_necklace", "price": 20.75}
     ]
   },
-  "ring": {
+  {
+    "category": "ring",
     "price": 378,
     "itemsList": [
       {"itemId": "provision_jewelry_coral_ring", "price": 16.75},
@@ -183,7 +195,8 @@
       {"itemId": "provision_jewelry_turquoise_ring", "price": 16.75}
     ]
   },
-  "bottle": {
+  {
+    "category": "bottle",
     "price": 160.5,
     "itemsList": [
       {"itemId": "consumable_tenn_whiskey", "price": 7.25},
@@ -197,21 +210,23 @@
       {"itemId": "consumable_londry_gin", "price": 7.25}
     ]
   },
-  "egg": {
+  {
+    "category": "egg",
     "price": 182.5,
     "itemsList": [
-      {"category": "egg", "itemId": "provision_spoonbill_egg", "price": 12.75},
-      {"category": "egg", "itemId": "provision_heron_egg", "price": 12.75},
-      {"category": "egg", "itemId": "provision_loon_egg", "price": 3.5},
-      {"category": "egg", "itemId": "provision_eagle_egg", "price": 14.75},
-      {"category": "egg", "itemId": "provision_vulture_egg", "price": 15},
-      {"category": "egg", "itemId": "provision_hawk_egg", "price": 14.75},
-      {"category": "egg", "itemId": "provision_egret_egg", "price": 12.5},
-      {"category": "egg", "itemId": "provision_duck_egg", "price": 2.25},
-      {"category": "egg", "itemId": "provision_goose_egg", "price": 3}
+      {"itemId": "provision_spoonbill_egg", "price": 12.75},
+      {"itemId": "provision_heron_egg", "price": 12.75},
+      {"itemId": "provision_loon_egg", "price": 3.5},
+      {"itemId": "provision_eagle_egg", "price": 14.75},
+      {"itemId": "provision_vulture_egg", "price": 15},
+      {"itemId": "provision_hawk_egg", "price": 14.75},
+      {"itemId": "provision_egret_egg", "price": 12.5},
+      {"itemId": "provision_duck_egg", "price": 2.25},
+      {"itemId": "provision_goose_egg", "price": 3}
     ]
   },
-  "arrowhead": {
+  {
+    "category": "arrowhead",
     "price": 289,
     "itemsList": [
       {"itemId": "provision_arrowhead_rough", "price": 11.75},
@@ -228,7 +243,8 @@
       {"itemId": "provision_arrowhead_agate", "price": 15.25}
     ]
   },
-  "heirlooms": {
+  {
+    "category": "heirlooms",
     "price": 292.5,
     "itemsList": [
       {"itemId": "provision_hrlm_hairpin_jade", "price": 11.75},
@@ -248,7 +264,8 @@
       {"itemId": "provision_hrlm_brush_rosewood_ng", "price": 9.5}
     ]
   },
-  "coin": {
+  {
+    "category": "coin",
     "price": 540,
     "itemsList": [
       {"itemId": "provision_coin_1800_gld_qtr", "price": 21},
@@ -268,4 +285,4 @@
       {"itemId": "provision_coin_1789_pny", "price": 14.75}
     ]
   }
-}
+]

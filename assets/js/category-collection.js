@@ -96,24 +96,19 @@ class Weekly extends BaseCollection {
 }
 
 class Collection extends BaseCollection {
-  constructor(preliminary, category) {
+  constructor(preliminary) {
     super();
     Object.assign(this, preliminary);
     this.items = []; // filled by new Item()s
-    this.category = category;
     this._insertMenuElement();
   }
-  static init(data) {
+  static init(collections) {
     this._installSettingsAndEventHandlers();
-    this.collections = {};
-
-    Object.keys(data).forEach(category => {
-      this.collections[category] = new Collection(data[category], category);
-      data[category].itemsList.forEach(interimItem => Item.items.push(new Item(interimItem, category)));
-    });
+    this.collections = [];
+    collections.forEach(({ category, price }) => this.collections.push(new Collection({ category, price })));
   }
   static updateMenu() {
-    Object.keys(this.collections).forEach(collection => this.collections[collection].updateMenu());
+    this.collections.forEach(collection => collection.updateMenu());
   }
   static switchCycle(categoriesArray, cycle) {
     categoriesArray.forEach(category => {
@@ -128,8 +123,8 @@ class Collection extends BaseCollection {
         .prop("checked", Settings.sortItemsAlphabetically)
         .on("change", () => Settings.sortItemsAlphabetically = checkbox.prop('checked'));
       SettingProxy.addListener(Settings, 'sortItemsAlphabetically language', () =>
-        Object.keys(Collection.collections).forEach(collection =>
-          Collection.collections[collection].menuSort(Settings.sortItemsAlphabetically)))();
+        Collection.collections.forEach(collection =>
+          collection.menuSort(Settings.sortItemsAlphabetically)))();
       $('.side-menu')
         .on('change', event => {
           const $input = $(event.target);
@@ -301,6 +296,6 @@ class Collection extends BaseCollection {
       collectionAmount * this.price;
   }
   static totalValue() {
-    return Object.keys(this.collections).reduce((sum, collection) => sum + this.collections[collection].totalValue(), 0);
+    return this.collections.reduce((sum, collection) => sum + collection.totalValue(), 0);
   }
 }

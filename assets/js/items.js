@@ -50,11 +50,9 @@ class NonCollectible extends BaseItem {
 }
 
 class Item extends BaseItem {
-  constructor(preliminary, category) {
+  constructor(preliminary) {
     super(preliminary);
-    this.category = category;
-    this.collection = Collection.collections[this.category];
-
+    this.collection = Collection.collections.find(({ category }) => category === this.category);
     this.collection.items.push(this);
     this.legacyItemId = this.itemId.replace(/^_flower|^_egg/, '');
     this.weeklyHelpKey = 'weekly_item_collectable';
@@ -68,6 +66,11 @@ class Item extends BaseItem {
     this.items = [];
     return Loader.promises['items_value'].consumeJson(data => {
       Collection.init(data);
+      data.forEach(({ category, itemsList }) =>
+        itemsList.forEach((interimItem) =>
+          this.items.push(new Item({ category, ...interimItem }))
+        )
+      );
       return Weekly.init();
     });
   }
