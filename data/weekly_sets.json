@@ -1,6 +1,6 @@
 {
     "sets": {
-        "sacred_set": {
+        "award_role_collector_set_sacred": {
             "items": [
                 "provision_eagle_egg",
                 "provision_arrowhead_bone",
@@ -8,7 +8,7 @@
             ],
             "value": 70
         },
-        "veteran_set": {
+        "award_role_collector_set_veteran": {
             "items": [
                 "provision_coin_1792_qtr",
                 "consumable_oldtom_gin",
@@ -16,7 +16,7 @@
             ],
             "value": 80
         },
-        "herbalist_set": {
+        "award_role_collector_set_herbalist": {
             "items": [
                 "provision_wldflwr_blood_flower",
                 "provision_wldflwr_chocolate_daisy",
@@ -24,7 +24,7 @@
             ],
             "value": 60
         },
-        "gold_panner_set": {
+        "award_role_collector_set_gold_panner": {
             "items": [
                 "provision_jewelry_gld_bngle_bracelet",
                 "provision_coin_1797_gld_eag",
@@ -32,7 +32,7 @@
             ],
             "value": 90
         },
-        "pearls_set": {
+        "award_role_collector_set_pearls": {
             "items": [
                 "provision_jewelry_pearl_bracelet",
                 "provision_jewelry_mthr_pearl_necklace",
@@ -40,7 +40,7 @@
             ],
             "value": 90
         },
-        "gambler_set": {
+        "award_role_collector_set_gambler": {
             "items": [
                 "document_card_ace_swords",
                 "consumable_plymouth_gin",
@@ -48,7 +48,7 @@
             ],
             "value": 95
         },
-        "naturalist_set": {
+        "award_role_collector_set_naturalist": {
             "items": [
                 "provision_hrlm_comb_cherrywood",
                 "provision_egret_egg",
@@ -56,7 +56,7 @@
             ],
             "value": 70
         },
-        "poacher_set": {
+        "award_role_collector_set_poacher": {
             "items": [
                 "provision_jewelry_elk_tooth_earring",
                 "provision_hrlm_comb_tortoiseshell",
@@ -64,7 +64,7 @@
             ],
             "value": 80
         },
-        "hunter_set": {
+        "award_role_collector_set_hunter": {
             "items": [
                 "provision_arrowhead_slate",
                 "provision_duck_egg",
@@ -72,7 +72,7 @@
             ],
             "value": 50
         },
-        "precious_stones_set": {
+        "award_role_collector_set_precious_stones": {
             "items": [
                 "provision_jewelry_topaz_ring",
                 "provision_jewelry_grnet_post_earring",
@@ -80,7 +80,7 @@
             ],
             "value": 85
         },
-        "hairdresser_set": {
+        "award_role_collector_set_hairdresser": {
             "items": [
                 "provision_hrlm_brush_rosewood",
                 "provision_hrlm_comb_ivory",
@@ -88,7 +88,7 @@
             ],
             "value": 70
         },
-        "whiskey_set": {
+        "award_role_collector_set_whiskey": {
             "items": [
                 "consumable_tenn_whiskey",
                 "consumable_irish_whiskey",
@@ -96,7 +96,7 @@
             ],
             "value": 65
         },
-        "cheater_set": {
+        "award_role_collector_set_cheater": {
             "items": [
                 "document_card_queen_wands",
                 "document_card_king_cups",
@@ -104,7 +104,7 @@
             ],
             "value": 65
         },
-        "loser_set": {
+        "award_role_collector_set_loser": {
             "items": [
                 "document_card_two_cups",
                 "document_card_two_pentacles",
@@ -112,7 +112,7 @@
             ],
             "value": 65
         },
-        "gentleman_set": {
+        "award_role_collector_set_gentleman": {
             "items": [
                 "provision_jewelry_emerald_ring",
                 "consumable_londry_gin",
@@ -120,7 +120,7 @@
             ],
             "value": 95
         },
-        "belle_set": {
+        "award_role_collector_set_belle": {
             "items": [
                 "provision_hrlm_comb_boxwood",
                 "provision_jewelry_porcelain_necklace",
@@ -128,7 +128,7 @@
             ],
             "value": 85
         },
-        "looter_set": {
+        "award_role_collector_set_looter": {
             "items": [
                 "provision_arrowhead_crude",
                 "provision_coin_1792_nickel",
@@ -136,14 +136,14 @@
             ],
             "value": 75
         },
-        "ancient_tools_set": {
+        "award_role_collector_set_ancient_tools": {
             "items": [
                 "provision_arrowhead_obsidian",
                 "provision_hrlm_brush_horsehair"
             ],
             "value": 75
         },
-        "exotics_set": {
+        "award_role_collector_set_exotics": {
             "items": [
                 "provision_loon_egg",
                 "provision_wldflwr_agarita",
@@ -151,7 +151,7 @@
             ],
             "value": 65
         },
-        "1800_coins_set": {
+        "award_role_collector_set_1800_coins": {
             "items": [
                 "provision_coin_1800_five_dlr",
                 "provision_coin_1800_hlf_dime",
@@ -159,7 +159,7 @@
             ],
             "value": 100
         },
-        "warrior_tokens_set": {
+        "award_role_collector_set_warrior_tokens": {
             "items": [
                 "document_card_knight_swords",
                 "provision_arrowhead_quartz",
@@ -167,7 +167,7 @@
             ],
             "value": 85
         },
-        "squire_set": {
+        "award_role_collector_set_squire": {
             "items": [
                 "document_card_page_pentacles",
                 "document_card_knight_wands",
@@ -175,7 +175,7 @@
             ],
             "value": 65
         },
-        "saint_denis_set": {
+        "award_role_collector_set_saint_denis": {
             "items": [
                 "consumable_cognac",
                 "provision_jewelry_rudy_dngl_earring",
@@ -183,7 +183,7 @@
             ],
             "value": 85
         },
-        "fortune_teller_set": {
+        "award_role_collector_set_fortune_teller": {
             "items": [
                 "document_card_ace_cups",
                 "document_card_ace_wands",
@@ -191,7 +191,7 @@
             ],
             "value": 60
         },
-        "guarma_set": {
+        "award_role_collector_set_guarma": {
             "items": [
                 "consumable_carib_rum",
                 "provision_jewelry_blck_pearl_necklace",
@@ -199,7 +199,7 @@
             ],
             "value": 85
         },
-        "bowman_set": {
+        "award_role_collector_set_bowman": {
             "items": [
                 "provision_arrowhead_granite",
                 "provision_arrowhead_raw",
@@ -207,7 +207,7 @@
             ],
             "value": 75
         },
-        "royal_set": {
+        "award_role_collector_set_royal": {
             "items": [
                 "provision_jewelry_emerald_earring",
                 "provision_jewelry_qn_dmnd_earring",
@@ -215,7 +215,7 @@
             ],
             "value": 85
         },
-        "witch_hunt_set": {
+        "award_role_collector_set_witch_hunt": {
             "items": [
                 "provision_vulture_egg",
                 "provision_wldflwr_cardinal_flower",
@@ -223,7 +223,7 @@
             ],
             "value": 75
         },
-        "night_watch_set": {
+        "award_role_collector_set_night_watch": {
             "items": [
                 "provision_jewelry_moon_ring",
                 "provision_wldflwr_wisteria",
@@ -231,7 +231,7 @@
             ],
             "value": 80
         },
-        "foundation_set": {
+        "award_role_collector_set_foundation": {
             "items": [
                 "provision_arrowhead_feldspar",
                 "provision_jewelry_dmnd_pendt_earring",
@@ -239,7 +239,7 @@
             ],
             "value": 85
         },
-        "jeweler_set": {
+        "award_role_collector_set_jeweler": {
             "items": [
                 "provision_jewelry_turquoise_ring",
                 "provision_jewelry_grnet_bracelet",
@@ -247,7 +247,7 @@
             ],
             "value": 95
         },
-        "penny_set": {
+        "award_role_collector_set_penny": {
             "items": [
                 "provision_coin_1789_pny",
                 "provision_coin_1787_cent_tkn",
@@ -255,7 +255,7 @@
             ],
             "value": 100
         },
-        "festive_feast_set": {
+        "award_role_collector_set_festive_feast": {
             "items": [
                 "provision_goose_egg",
                 "consumable_cognac",
@@ -263,7 +263,7 @@
             ],
             "value": 50
         },
-        "new_year_set": {
+        "award_role_collector_set_new_year": {
             "items": [
                 "document_card_ace_wands",
                 "consumable_scotch_whiskey",
@@ -271,7 +271,7 @@
             ],
             "value": 65
         },
-        "lovers_set": {
+        "award_role_collector_set_lovers": {
             "items": [
                 "provision_wldflwr_chocolate_daisy",
                 "provision_jewelry_ylwgld_dmnd_ring",
@@ -279,7 +279,7 @@
             ],
             "value": 75
         },
-        "egg_hunt_set": {
+        "award_role_collector_set_egg_hunt": {
             "items": [
                 "provision_duck_egg",
                 "provision_heron_egg",
@@ -287,7 +287,7 @@
             ],
             "value": 50
         },
-        "trophy_hunter_set": {
+        "award_role_collector_set_trophy_hunter": {
             "items": [
                 "legendary_item_bison_horn",
                 "legendary_item_boar_tusk",
@@ -295,7 +295,7 @@
             ],
             "value": 75
         },
-        "beasts_of_prey_set": {
+        "award_role_collector_set_beasts_of_prey": {
             "items": [
                 "legendary_item_panther_eye",
                 "legendary_item_wolf_heart",
@@ -303,7 +303,7 @@
             ],
             "value": 85
         },
-        "tooth_and_nail_set": {
+        "award_role_collector_set_tooth_and_nail": {
             "items": [
                 "legendary_item_beaver_tooth",
                 "legendary_item_coyote_fang",
@@ -311,7 +311,7 @@
             ],
             "value": 65
         },
-        "shot_in_the_dark_set": {
+        "award_role_collector_set_shot_in_the_dark": {
             "items": [
                 "provision_opossum_fur_pristine",
                 "provision_raccoon_fur_pristine",
@@ -319,7 +319,7 @@
             ],
             "value": 40
         },
-        "black_and_white_set": {
+        "award_role_collector_set_black_and_white": {
             "items": [
                 "provision_skunk_fur_pristine",
                 "provision_badger_pelt_pristine",
@@ -327,7 +327,7 @@
             ],
             "value": 30
         },
-        "jurassic_set": {
+        "award_role_collector_set_jurassic": {
             "items": [
                 "collector_fossil_tooth_trex",
                 "collector_fossil_tail_spike",
@@ -335,7 +335,7 @@
             ],
             "value": 180
         },
-        "ancient_wood_set": {
+        "award_role_collector_set_ancient_wood": {
             "items": [
                 "collector_fossil_pet_wood",
                 "collector_fossil_pet_wood_rainbow",
@@ -343,7 +343,7 @@
             ],
             "value": 110
         },
-        "deep_blue_set": {
+        "award_role_collector_set_deep_blue": {
             "items": [
                 "collector_fossil_tully_monster",
                 "collector_fossil_cephalopod",
@@ -351,7 +351,7 @@
             ],
             "value": 95
         },
-        "arthropod_set": {
+        "award_role_collector_set_arthropod": {
             "items": [
                 "collector_fossil_sea_scorpion",
                 "collector_fossil_trilobite_crypto",
@@ -359,7 +359,7 @@
             ],
             "value": 90
         },
-        "bite_sized_set": {
+        "award_role_collector_set_bite_sized": {
             "items": [
                 "provision_cougar_fang",
                 "collector_fossil_tooth_mega",

@@ -13,8 +13,8 @@ class Weekly extends BaseCollection {
     const allWeeklySets = Loader.promises['weekly_sets'].consumeJson(({ sets }) => {
       this.allSets.sets = sets;
     });
-    const currentSet = Loader.promises['weekly'].consumeJson(data => {
-      this.allSets.current = data.set.replace(/AWARD_ROLE_COLLECTOR_SET_/, '').toLowerCase() + '_set';
+    const currentSet = Loader.promises['weekly'].consumeJson(({ set }) => {
+      this.allSets.current = set.toLowerCase();
     });
 
     return Promise.all([allWeeklySets, currentSet])
