@@ -61,6 +61,5 @@ const urls = [
     'data/filters.json',
     'data/mapping.json',
     'https://api.rdo.gg/fme/',
-    'data/fme_keys.json'
 ];
 Loader.init(urls);

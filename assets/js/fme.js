@@ -290,10 +290,7 @@ const FME = {
       $('#fme-enabled-events-modal').modal();
     });
 
-    const events = Loader.promises['fme'].consumeJson(data => data);
-    const eventsKeys = Loader.promises['fme_keys'].consumeJson(data => data);
-
-    Promise.all([events, eventsKeys]).then(([eventsData, keysData]) => {
+    return Loader.promises['fme'].consumeJson(eventsData => {
       const [general, role] = ['default', 'themed'].map(key => {
         return Object.entries(eventsData[key]).reduce((acc, [time, { name, variation }]) => {
           return [...acc, [time, variation || name]];
