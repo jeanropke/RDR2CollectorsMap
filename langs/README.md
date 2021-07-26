@@ -117,7 +117,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **FreeAsABird** (330 words)
   - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
-  - **s.pantermueller** (114 words)
+  - **s.pantermueller** (137 words)
   - **Scotmanhands** (22 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
@@ -172,13 +172,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Tony_Bell** (194 words)
   - **Visite** (121 words)
 
-### Japanese (81%):
+### Japanese (82%):
   - **igucheese** (82 words)
   - **lumeanarunbird** (729 words)
-  - **moku3** (2,945 words)
+  - **moku3** (3,536 words)
   - **momc** (529 words)
   - **qyubeye** (436 words)
-  - **redredrom** (159 words)
+  - **redredrom** (243 words)
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
