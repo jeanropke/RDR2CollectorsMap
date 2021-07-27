@@ -1675,6 +1675,7 @@
     "menu.filter_type.weekly_set": "Set semanal",
     "menu.filter_type.important_items": "Ítems importantes",
     "menu.filter_type.only_static": "Solo estático",
+    "menu.filter_type.all_coins_spots": "Todos los lugares de monedas posibles",
     "menu.filter_type.hide_flowers": "Ocultar flores sin ingredientes",
     "menu.join_discord": "¡Únete a nuestro Discord!",
     "help.join_discord": "Abre la nueva pestaña con el mapa de coleccionista de Discord.",
@@ -1865,6 +1866,7 @@
     "menu.lang_el": "ελληνικά (Greek)",
     "menu.lang_en_GB": "English (UK)",
     "menu.lang_es": "Español (Español)",
+    "menu.lang_es_MX": "Español (Español Mexicano)",
     "menu.lang_fi": "Suomi (finés)",
     "menu.lang_fr": "Français (Francés)",
     "menu.lang_he": "עברית (Hebreo)",
@@ -1898,5 +1900,6 @@
     "menu.random_spot_shovel": "Zonas aleatorias (pala)",
     "help.filter_min_amount_items": "Le permite establecer la cantidad máxima de artículos en tu inventario considerados como \"artículos de inventario bajos\".",
     "menu.filter_type.low_amount_items": "Sólo artículos de inventario bajos",
-    "menu.filter_min_amount_items": "Mostrar sólo la cantidad de artículos por debajo de"
+    "menu.filter_min_amount_items": "Mostrar sólo la cantidad de artículos por debajo de",
+    "menu.sponsors": "Patrocinadores"
 }

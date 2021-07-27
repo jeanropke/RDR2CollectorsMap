@@ -140,7 +140,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **klain123** (2,363 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (39%):
+### Hungarian (42%):
+  - **Barackvirag** (1,123 words)
   - **emperger** (691 words)
   - **GoP** (85 words)
   - **Hutty98** (3,472 words)
@@ -154,7 +155,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **tabandi** (239 words)
   - **YaBoiRichard614** (375 words)
 
-### Italian (85%):
+### Italian (87%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (2,841 words)
@@ -165,6 +166,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Jarsha1311** (500 words)
   - **LucaBa** (425 words)
   - **masterflash222** (268 words)
+  - **MattSini912** (547 words)
   - **misticjoker** (3,718 words)
   - **Raffox97** (33 words)
   - **REMOVED_USER** (1,189 words)
@@ -182,9 +184,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
-### Korean (59%):
+### Korean (60%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (791 words)
+  - **CoolBreeze-13s** (799 words)
+  - **jinwoo.jeon** (143 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
@@ -250,16 +253,18 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Overnoes** (85 words)
   - **platonomania** (15 words)
   - **quietamer** (170 words)
+  - **rokamalen** (78 words)
   - **scriptSQD** (19 words)
   - **SkyFisherGames** (15 words)
   - **sleyxz** (134 words)
+  - **sniperruslan** (22 words)
   - **tomvsxvi** (563 words)
   - **UluMulu** (217 words)
 
 ### Serbian (Cyrillic) (0%):
   - **UluMulu** (217 words)
 
-### Spanish (89%):
+### Spanish (90%):
   - **23.jonathantadeoleiva** (13 words)
   - **avillamizar71** (5,456 words)
   - **BabyAir** (41 words)
@@ -270,6 +275,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Deepnight** (83 words)
   - **drcx00** (13 words)
   - **emilyhewsonh** (206 words)
+  - **gabriel.ferrer.arias** (156 words)
   - **maximilianocarvajalluengo** (423 words)
   - **mbc_2017** (101 words)
   - **mmmateo** (1,952 words)
