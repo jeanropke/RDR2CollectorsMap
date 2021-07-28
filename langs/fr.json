@@ -1675,6 +1675,7 @@
     "menu.filter_type.weekly_set": "Collection hebdomadaire",
     "menu.filter_type.important_items": "Article important",
     "menu.filter_type.only_static": "Statique uniquement",
+    "menu.filter_type.all_coins_spots": "Tous les emplacements possibles pour les pièces de monnaie",
     "menu.filter_type.hide_flowers": "Masquer les fleurs sans ingrédients",
     "menu.join_discord": "Rejoignez notre Discord!",
     "help.join_discord": "Ouvre le nouvel onglet avec Discord des Collectionneurs.",
