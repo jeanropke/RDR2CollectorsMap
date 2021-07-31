@@ -186,7 +186,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (60%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (839 words)
+  - **CoolBreeze-13s** (849 words)
   - **jinwoo.jeon** (175 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
@@ -253,7 +253,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Overnoes** (85 words)
   - **platonomania** (15 words)
   - **quietamer** (170 words)
-  - **rokamalen** (78 words)
+  - **rokamalen** (92 words)
   - **scriptSQD** (19 words)
   - **SkyFisherGames** (15 words)
   - **sleyxz** (134 words)
@@ -264,7 +264,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Serbian (Cyrillic) (0%):
   - **UluMulu** (217 words)
 
-### Spanish (90%):
+### Spanish (91%):
   - **23.jonathantadeoleiva** (13 words)
   - **avillamizar71** (5,456 words)
   - **BabyAir** (41 words)
@@ -275,7 +275,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Deepnight** (83 words)
   - **drcx00** (13 words)
   - **emilyhewsonh** (206 words)
-  - **gabriel.ferrer.arias** (156 words)
+  - **gabriel.ferrer.arias** (453 words)
   - **maximilianocarvajalluengo** (423 words)
   - **mbc_2017** (101 words)
   - **mmmateo** (1,952 words)
@@ -289,9 +289,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **tomyloly.11** (698 words)
   - **ulises_hdz22** (361 words)
 
-### Spanish, Mexico (90%):
+### Spanish, Mexico (91%):
   - **bloobhy** (152 words)
-  - **juanestevez** (453 words)
+  - **juanestevez** (570 words)
 
 ### Swedish (20%):
   - **...---...** (431 words)
