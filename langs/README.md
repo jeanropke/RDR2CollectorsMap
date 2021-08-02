@@ -117,7 +117,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **FreeAsABird** (330 words)
   - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
-  - **s.pantermueller** (137 words)
+  - **s.pantermueller** (208 words)
   - **Scotmanhands** (22 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
@@ -187,7 +187,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Korean (60%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (849 words)
-  - **jinwoo.jeon** (175 words)
+  - **jinwoo.jeon** (327 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
   - **wlfogb** (11 words)
@@ -238,7 +238,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Romanian (27%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (6,238 words)
+  - **proximacentaurib** (6,248 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (90%):
