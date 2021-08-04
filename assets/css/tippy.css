@@ -17,6 +17,12 @@
   color: #cacaca;
 }
 
+.tippy-box img {
+  position: relative;
+  width: 35px;
+  top: 6px;
+}
+
 .tippy-box[data-theme~='map-theme'] {
   background-color: transparent;
   background-image: url(../../assets/images/bgMapTooltip.png);

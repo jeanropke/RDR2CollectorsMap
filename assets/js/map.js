@@ -649,6 +649,7 @@ const MapBase = {
         arrow: false,
         distance: 0,
         zIndex: 910,
+        allowHTML: true,
         content(ref) {
           return ref.getAttribute('data-tippy');
         },

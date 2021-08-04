@@ -379,8 +379,7 @@ class Marker {
     this.lMarker && this.lMarker.setOpacity(this.canCollect ? opacity : opacity / 3);
   }
   recreateLMarker(isShadowsEnabled = Settings.isShadowsEnabled, markerSize = Settings.markerSize) {
-    const icon = this.category !== 'random' ? this.category :
-      (this.tool === 1 ? 'shovel' : 'magnet');
+    const icon = this.category !== 'random' ? this.category : (this.tool === 1 ? 'shovel' : 'magnet');
     const [bgUrl, contourUrl] = this.colorUrls();
     const aii = 'assets/images/icons';
     const snippet = $(`<div>
@@ -423,7 +422,7 @@ class Marker {
         popupAnchor: [1 * markerSize, -29 * markerSize],
         html: snippet[0],
         marker: this.text,
-        tippy: itemString,
+        tippy: `${itemString} ${this.tool > 0 ? `<img class="icon" src="${aii}/${this.tool === 1 ? 'shovel' : 'magnet'}.png" alt="Icon">` : ''}`
       })
     });
 
