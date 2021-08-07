@@ -1753,5 +1753,7 @@
     "help.legendary_marker_size": "Umožňuje změnit velikost ikony legendárních zvířat.",
     "menu.legendary_animal_marker_size": "Velikost značky legendárního zvířete",
     "menu.marker_color.custom": "Vlastní",
-    "menu.jewelry_random": "Náhodný klenot"
+    "menu.jewelry_random": "Náhodný klenot",
+    "menu.random_spot_metal": "Náhodná místa (detektor kovu)",
+    "menu.random_spot_shovel": "Náhodná místa (lopata)"
 }
