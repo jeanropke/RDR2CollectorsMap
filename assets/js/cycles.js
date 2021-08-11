@@ -6,17 +6,25 @@ const Cycles = {
   forwardMaxOffset: 1,
   backwardMaxOffset: 7,
   yesterday: [],
+  utcNow: 0,
 
   load: function () {
-    return Loader.promises['cycles'].consumeJson(_data => {
-      Cycles.data = _data;
-      Cycles.getTodayCycle();
-      Cycles.checkForUpdate();
-      console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
-    });
+    Promise.all([
+      Loader.promises['now'].consumeJson(_time => Cycles.utcNow = _time.currentDateTime),
+      Loader.promises['cycles'].consumeJson(_data => {
+        Cycles.data = _data;
+        Cycles.getTodayCycle();
+        Cycles.checkForUpdate();
+        console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
+      })
+    ]);
   },
   getFreshSelectedDay: function (offset = Cycles.offset) {
-    const now = new Date();
+    let now = new Date();
+    
+    if(Cycles.utcNow != 0)
+      now = new Date(Date.parse(Cycles.utcNow));
+
     return new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),

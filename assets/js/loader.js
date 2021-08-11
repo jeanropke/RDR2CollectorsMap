@@ -61,5 +61,6 @@ const urls = [
     'data/filters.json',
     'data/mapping.json',
     'https://api.rdo.gg/fme/',
+    'http://worldclockapi.com/api/json/utc/now'
 ];
 Loader.init(urls);
