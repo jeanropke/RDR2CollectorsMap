@@ -195,7 +195,6 @@ function init() {
   $("#enable-right-click").prop('checked', Settings.isRightClickEnabled);
   $("#enable-debug").prop('checked', Settings.isDebugEnabled);
   $("#enable-cycle-changer").prop('checked', Settings.isCycleChangerEnabled);
-  $("#timezone-offset").val(Settings.timeZoneOffset);
 
   $("#show-utilities").prop('checked', Settings.showUtilitiesSettings);
   $("#show-customization").prop('checked', Settings.showCustomizationSettings);
@@ -284,8 +283,6 @@ function downloadAsFile(filename, text) {
 function clockTick() {
   'use strict';
   const now = Cycles.mapTime();
-  now.setSeconds(new Date().getSeconds());
-
   const gameTime = new Date(now * 30);
   const gameHour = gameTime.getUTCHours();
   const nightTime = gameHour >= 22 || gameHour < 5;
@@ -402,10 +399,6 @@ $("#show-debug").on("change", function () {
 
 $('#enable-debug').on("change", function () {
   Settings.isDebugEnabled = $("#enable-debug").prop('checked');
-});
-
-$('#timezone-offset').on("change", function () {
-  Settings.timeZoneOffset = parseInt($("#timezone-offset").val());
 });
 
 $('#enable-cycle-changer').on("change", function () {

@@ -174,7 +174,6 @@ Object.entries({
   topWidgetState: { default: 0 },
   legendarySpawnIconType: { default: 'head' },
   legendarySpawnIconSize: { default: 1 },
-  timeZoneOffset: { default: 0 },
   showTooltipsMap: { default: 1 },
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 
