@@ -13,11 +13,11 @@ const Cycles = {
       Loader.promises['now'].consumeJson(({ currentDateTime }) => {
         const apiTime = new Date(Date.parse(currentDateTime));
         const difference = Date.now() - apiTime.valueOf();
-        // apply correction if the difference is more then 2 minutes
-        if (difference > 12e4) {
+        // apply correction if the difference is bigger than 2 minutes
+        if (Math.abs(difference) > 12e4) {
           Cycles.utcCorrectionMs = difference;
+          console.info(`%c[UTC time] Corrected by ${difference}ms`, 'color: #bada55; background: #242424');
         }
-        console.info('%c[UTC time] Corrected!', 'color: #bada55; background: #242424');
       }),
       Loader.promises['cycles'].consumeJson(_data => {
         Cycles.data = _data;
