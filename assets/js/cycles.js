@@ -6,10 +6,10 @@ const Cycles = {
   forwardMaxOffset: 1,
   backwardMaxOffset: 7,
   yesterday: [],
-  utcNow: 0,
+  utcNow: null,
 
   load: function () {
-    Promise.all([
+    return Promise.allSettled([
       Loader.promises['now'].consumeJson(_time => Cycles.utcNow = _time.currentDateTime),
       Loader.promises['cycles'].consumeJson(_data => {
         Cycles.data = _data;
@@ -21,8 +21,8 @@ const Cycles = {
   },
   getFreshSelectedDay: function (offset = Cycles.offset) {
     let now = new Date();
-    
-    if(Cycles.utcNow != 0)
+
+    if(Cycles.utcNow)
       now = new Date(Date.parse(Cycles.utcNow));
 
     return new Date(Date.UTC(
