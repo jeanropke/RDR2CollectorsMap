@@ -6,29 +6,41 @@ const Cycles = {
   forwardMaxOffset: 1,
   backwardMaxOffset: 7,
   yesterday: [],
-  utcNow: null,
+  now: new Date(),
 
   load: function () {
     return Promise.allSettled([
-      Loader.promises['now'].consumeJson(_time => Cycles.utcNow = _time.currentDateTime),
+      Loader.promises['now'].consumeJson(({ currentDateTime }) => {
+        const apiTime = new Date(Date.parse(currentDateTime)).getUTCHours();
+        const systemTime = Cycles.now.getUTCHours();
+        if (apiTime !== systemTime) {
+          const correctDate = new Date(Date.parse(currentDateTime));
+          Cycles.now = new Date(Date.UTC(
+            correctDate.getUTCFullYear(),
+            correctDate.getUTCMonth(),
+            correctDate.getUTCDate(),
+            correctDate.getUTCHours(),
+            correctDate.getUTCMinutes(),
+          ));
+          console.info('%c[UTC time] Corrected!', 'color: #bada55; background: #242424');
+        }
+      }),
       Loader.promises['cycles'].consumeJson(_data => {
         Cycles.data = _data;
-        Cycles.getTodayCycle();
-        Cycles.checkForUpdate();
         console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
       })
-    ]);
+    ])
+      .then(() => {
+        Cycles.getTodayCycle();
+        Cycles.checkForUpdate();
+      })
+      .catch(console.log);
   },
   getFreshSelectedDay: function (offset = Cycles.offset) {
-    let now = new Date();
-
-    if(Cycles.utcNow)
-      now = new Date(Date.parse(Cycles.utcNow));
-
     return new Date(Date.UTC(
-      now.getUTCFullYear(),
-      now.getUTCMonth(),
-      now.getUTCDate() + offset,
+      Cycles.now.getUTCFullYear(),
+      Cycles.now.getUTCMonth(),
+      Cycles.now.getUTCDate() + offset,
     ));
   },
   getTodayCycle: function () {
