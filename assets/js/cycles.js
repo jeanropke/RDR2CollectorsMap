@@ -6,29 +6,23 @@ const Cycles = {
   forwardMaxOffset: 1,
   backwardMaxOffset: 7,
   yesterday: [],
-  now: new Date(),
+  utcCorrectionMs: 0,
 
   load: function () {
     return Promise.allSettled([
       Loader.promises['now'].consumeJson(({ currentDateTime }) => {
-        const apiTime = new Date(Date.parse(currentDateTime)).getUTCHours();
-        const systemTime = Cycles.now.getUTCHours();
-        if (apiTime !== systemTime) {
-          const correctDate = new Date(Date.parse(currentDateTime));
-          Cycles.now = new Date(Date.UTC(
-            correctDate.getUTCFullYear(),
-            correctDate.getUTCMonth(),
-            correctDate.getUTCDate(),
-            correctDate.getUTCHours(),
-            correctDate.getUTCMinutes(),
-          ));
-          console.info('%c[UTC time] Corrected!', 'color: #bada55; background: #242424');
+        const apiTime = new Date(Date.parse(currentDateTime));
+        const difference = Date.now() - apiTime.valueOf();
+        // apply correction if the difference is more then 2 minutes
+        if (difference > 12e4) {
+          Cycles.utcCorrectionMs = difference;
         }
+        console.info('%c[UTC time] Corrected!', 'color: #bada55; background: #242424');
       }),
       Loader.promises['cycles'].consumeJson(_data => {
         Cycles.data = _data;
         console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
-      })
+      }),
     ])
       .then(() => {
         Cycles.getTodayCycle();
@@ -36,11 +30,17 @@ const Cycles = {
       })
       .catch(console.log);
   },
+
+  mapTime: function () {
+    return new Date(Date.now() - Cycles.utcCorrectionMs);
+  },
+
   getFreshSelectedDay: function (offset = Cycles.offset) {
+    const now = Cycles.mapTime();
     return new Date(Date.UTC(
-      Cycles.now.getUTCFullYear(),
-      Cycles.now.getUTCMonth(),
-      Cycles.now.getUTCDate() + offset,
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate() + offset,
     ));
   },
   getTodayCycle: function () {
@@ -161,7 +161,7 @@ const Cycles = {
   checkForUpdate: function () {
     'use strict';
     if (Cycles.selectedDay === undefined) return;
-    const remainingTime = Cycles.getFreshSelectedDay(1).valueOf() - Cycles.now.valueOf();
+    const remainingTime = Cycles.getFreshSelectedDay(1).valueOf() - Cycles.mapTime();
     setTimeout(() => {
       if (Cycles.offset !== 1) {
         Cycles.offset = 0;
@@ -185,7 +185,7 @@ const Cycles = {
   },
 
   nextDayDataExists: function () {
-    const newDate = Cycles.now;
+    const newDate = Cycles.mapTime();
     const nextDayCycle = Cycles.data.findIndex(element => element.date === newDate.toISOUTCDateString());
     if (nextDayCycle === -1 && Cycles.forwardMaxOffset > 0) {
       Cycles.forwardMaxOffset--;

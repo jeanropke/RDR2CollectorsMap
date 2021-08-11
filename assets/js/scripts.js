@@ -283,7 +283,7 @@ function downloadAsFile(filename, text) {
 
 function clockTick() {
   'use strict';
-  const now = Cycles.now;
+  const now = Cycles.mapTime();
   now.setSeconds(new Date().getSeconds());
 
   const gameTime = new Date(now * 30);
