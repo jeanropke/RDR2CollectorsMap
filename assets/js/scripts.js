@@ -283,8 +283,9 @@ function downloadAsFile(filename, text) {
 
 function clockTick() {
   'use strict';
-  const now = new Date();
-  now.setHours((now.getHours() + Settings.timeZoneOffset))
+  const now = Cycles.now;
+  now.setSeconds(new Date().getSeconds());
+
   const gameTime = new Date(now * 30);
   const gameHour = gameTime.getUTCHours();
   const nightTime = gameHour >= 22 || gameHour < 5;

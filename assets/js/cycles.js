@@ -161,7 +161,7 @@ const Cycles = {
   checkForUpdate: function () {
     'use strict';
     if (Cycles.selectedDay === undefined) return;
-    const remainingTime = Cycles.getFreshSelectedDay(1).valueOf() - Date.now();
+    const remainingTime = Cycles.getFreshSelectedDay(1).valueOf() - Cycles.now.valueOf();
     setTimeout(() => {
       if (Cycles.offset !== 1) {
         Cycles.offset = 0;
@@ -185,8 +185,7 @@ const Cycles = {
   },
 
   nextDayDataExists: function () {
-    const newDate = new Date();
-    newDate.setUTCDate(newDate.getUTCDate() + Cycles.forwardMaxOffset);
+    const newDate = Cycles.now;
     const nextDayCycle = Cycles.data.findIndex(element => element.date === newDate.toISOUTCDateString());
     if (nextDayCycle === -1 && Cycles.forwardMaxOffset > 0) {
       Cycles.forwardMaxOffset--;
