@@ -341,7 +341,7 @@ const MapBase = {
   },
 
   resetMarkersDaily: function () {
-    const date = new Date().toISOUTCDateString();
+    const date = Cycles.mapTime().toISOUTCDateString();
 
     if (localStorage.getItem('rdr2collector.date') == null || date != localStorage.getItem('rdr2collector.date')) {
       MapBase.markers.forEach(marker => {
