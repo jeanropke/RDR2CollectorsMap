@@ -1672,6 +1672,7 @@
     "menu.filter_type.weekly_set": "每周收藏",
     "menu.filter_type.important_items": "重要收藏品",
     "menu.filter_type.only_static": "位置确定的收藏品",
+    "menu.filter_type.all_coins_spots": "所有可能的硬币点",
     "menu.filter_type.hide_flowers": "隐藏不是配方的花",
     "menu.join_discord": "Join our Discord!",
     "help.join_discord": "使用浏览器新窗口打开Discord。",

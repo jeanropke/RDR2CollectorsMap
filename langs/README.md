@@ -33,14 +33,14 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Catalan (3%):
   - **Muahahas** (51 words)
 
-### Chinese Simplified (79%):
+### Chinese Simplified (80%):
   - **akbcd** (409 words)
   - **Approach** (12 words)
   - **BHT256** (7,811 words)
   - **curryguru** (47 words)
   - **Jabaay** (52 words)
   - **labrary** (238 words)
-  - **PeanutSlinger** (2,588 words)
+  - **PeanutSlinger** (3,008 words)
   - **qiexiacn** (715 words)
 
 ### Chinese Traditional (97%):
