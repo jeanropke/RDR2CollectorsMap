@@ -109,7 +109,7 @@
     "collectible_arrowheads_uncommon": {
       "provision_arrowhead_bone": 0.25,
       "provision_arrowhead_feldspar": 0.25,
-      "provision_arrowhead_granite": 0.25,
+      "provision_arrowhead_flint": 0.25,
       "provision_arrowhead_slate": 0.25
     },
     "collectible_arrowheads_rare": {

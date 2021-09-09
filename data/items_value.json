@@ -239,7 +239,7 @@
       {"itemId": "provision_arrowhead_raw", "price": 9},
       {"itemId": "provision_arrowhead_obsidian", "price": 17},
       {"itemId": "provision_arrowhead_quartz", "price": 16.25},
-      {"itemId": "provision_arrowhead_granite", "price": 11.25},
+      {"itemId": "provision_arrowhead_flint", "price": 11.25},
       {"itemId": "provision_arrowhead_agate", "price": 15.25}
     ]
   },

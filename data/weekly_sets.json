@@ -201,7 +201,7 @@
         },
         "set_bowman": {
             "items": [
-                "provision_arrowhead_granite",
+                "provision_arrowhead_flint",
                 "provision_arrowhead_raw",
                 "provision_arrowhead_agate"
             ],
