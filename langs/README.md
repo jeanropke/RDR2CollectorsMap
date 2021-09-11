@@ -69,6 +69,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **jopiejooow** (72 words)
   - **MrGrivixer** (20 words)
   - **nielsb2004** (50 words)
+  - **rp.lameris** (196 words)
 
 ### English, United Kingdom (1%):
   - **AdamNortonUK** (12 words)
@@ -333,7 +334,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Ukrainian (85%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
-  - **grmaster5s** (14,592 words)
+  - **grmaster5s** (14,608 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
   - **ptrp1995** (17 words)
