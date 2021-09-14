@@ -68,7 +68,7 @@
             "items": [
                 "provision_arrowhead_slate",
                 "provision_duck_egg",
-                "item_carcass_squirrel_perfect"
+                "provision_animal_carcass_squirrel_perfect"
             ],
             "value": 50
         },
@@ -355,7 +355,7 @@
             "items": [
                 "collector_fossil_sea_scorpion",
                 "collector_fossil_trilobite_crypto",
-                "carcass_crab_perfect"
+                "provision_animal_carcass_crab_perfect"
             ],
             "value": 90
         },
