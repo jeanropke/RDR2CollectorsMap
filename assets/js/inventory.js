@@ -19,6 +19,16 @@ const Inventory = {
     });
   },
 
+  import: function(data) {
+    Collection.collections.forEach((collection) => {
+      collection.items.forEach((item) => {
+        let _item = data.find(scItem => scItem.itemid == item.enumHash);
+        item.amount = _item.quantity;
+        //console.log(`${item.itemId} / ${item.price} > ${_item.quantity}`);
+      });
+    });
+  },
+
   updateItemHighlights: function myself(fromTimer) {
     'use strict';
     if (!InventorySettings.isEnabled || !InventorySettings.highlightLowAmountItems) return;
