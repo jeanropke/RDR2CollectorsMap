@@ -36,6 +36,7 @@ const Inventory = {
         
         if(_item == null) {
           console.log(item);
+          item.amount = 0;
           return;
         }
 
