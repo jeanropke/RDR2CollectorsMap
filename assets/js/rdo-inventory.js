@@ -122,7 +122,23 @@ RDOInventory.doRequest(
         method: 'GET',
         success: function (json) {
             RDOInventory.Items = [];
-            json.items.forEach(item => { RDOInventory.Items.push({ itemid: item.itemid, quantity: item.quantity }) });
+
+            json.items.forEach(item => {
+
+                if(RDOInventory.Items.find(_item => _item.itemid == item.itemid)) return;
+
+                let _items = json.items.filter(_i => _i.itemid == item.itemid);
+
+                if(_items.length > 1) {            
+                    _items.sort((a,b) => {
+                       return b.quantity - a.quantity;
+                    });
+                }
+
+                let _item = _items[0];
+                RDOInventory.Items.push({ itemid: _item.itemid, quantity: _item.quantity }) 
+            });
+
             RDOInventory.download('rdo-character.txt', JSON.stringify(RDOInventory.Items));
         },
         error: function (error) {

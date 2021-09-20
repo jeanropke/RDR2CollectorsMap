@@ -33,6 +33,12 @@ const Inventory = {
     Collection.collections.forEach((collection) => {
       collection.items.forEach((item) => {
         let _item = data.find(scItem => scItem.itemid == item.enumHash);
+        
+        if(_item == null) {
+          console.log(item);
+          return;
+        }
+
         item.amount = _item.quantity;
       });
     });
