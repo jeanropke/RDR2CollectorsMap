@@ -928,6 +928,7 @@ $('#open-updates-modal').on('click', function () {
 });
 
 $('#open-import-rdo-inventory-modal').on('click', function () {
+  $('#rdo-inventory-textarea').val('');
   $('#import-rdo-inventory-modal').modal();
 });
 
