@@ -139,7 +139,7 @@ RDOInventory.doRequest(
                 RDOInventory.Items.push({ itemid: _item.itemid, quantity: _item.quantity }) 
             });
 
-            RDOInventory.download('rdo-character.txt', JSON.stringify(RDOInventory.Items));
+            RDOInventory.download(`rdo-character-${new Date().toISOString()}.txt`, JSON.stringify(RDOInventory.Items));
         },
         error: function (error) {
             console.log(`ERROR: ${error}`);
