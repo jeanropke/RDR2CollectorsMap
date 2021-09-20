@@ -99,7 +99,20 @@ const RDOInventory = {
         dummy.select();
         document.execCommand("copy");
         document.body.removeChild(dummy);
-    }
+    },
+
+    download: function(filename, text) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+      
+        element.style.display = 'none';
+        document.body.appendChild(element);
+      
+        element.click();
+      
+        document.body.removeChild(element);
+      }
 
 }
 
@@ -110,8 +123,7 @@ RDOInventory.doRequest(
         success: function (json) {
             RDOInventory.Items = [];
             json.items.forEach(item => { RDOInventory.Items.push({ itemid: item.itemid, quantity: item.quantity }) });
-            RDOInventory.copy(`Inventory.import(${JSON.stringify(RDOInventory.Items)})`);
-            console.log(`Inventory data copied to the clipboard.`);
+            RDOInventory.download('rdo-character.txt', JSON.stringify(RDOInventory.Items));
         },
         error: function (error) {
             console.log(`ERROR: ${error}`);

@@ -927,6 +927,10 @@ $('#open-updates-modal').on('click', function () {
   Updates.showModal();
 });
 
+$('#open-import-rdo-inventory-modal').on('click', function () {
+  $('#import-rdo-inventory-modal').modal();
+});
+
 function formatLootTableLevel(table, rate = 1, level = 0) {
   const result = $("<div>");
 

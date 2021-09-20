@@ -17,6 +17,16 @@ const Inventory = {
     $('#highlight_low_amount_items').on('change', function () {
       $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);
     });
+
+    $('#import-rdo-inventory').on('click', function () {
+      try {        
+        Inventory.import(JSON.parse($('#rdo-inventory-textarea').val()));
+        $('#import-rdo-inventory-modal').modal('hide');
+      } catch (error) {
+        alert(Language.get('alerts.file_not_valid'));
+        return;
+      }
+    });
   },
 
   import: function(data) {
@@ -24,7 +34,6 @@ const Inventory = {
       collection.items.forEach((item) => {
         let _item = data.find(scItem => scItem.itemid == item.enumHash);
         item.amount = _item.quantity;
-        //console.log(`${item.itemId} / ${item.price} > ${_item.quantity}`);
       });
     });
   },

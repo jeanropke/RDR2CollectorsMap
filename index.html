@@ -422,6 +422,10 @@
             <option data-text="menu.highlight_style.animated">Animated</option>
           </select>
         </div>
+        <div id="open-import-rdo-inventory-modal" class="input-container clickable" data-help="import_rdo_inventory">
+          <label data-text="menu.import_rdo_inventory">Import RDO inventory</label>
+          <div class="input-action"></div>
+        </div>
       </div>
       <hr class="menu-divider">
       <div class="input-container" data-help="show_weekly">
@@ -1247,7 +1251,7 @@
     </div>
   </div>
 
-    <div class="modal fade" id="mapping-modal" tabindex="-1" role="dialog" aria-labelledby="mapping-modal-title">
+  <div class="modal fade" id="mapping-modal" tabindex="-1" role="dialog" aria-labelledby="mapping-modal-title">
     <div class="modal-dialog modal-updates" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -1256,6 +1260,31 @@
         <div class="modal-body"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="import-rdo-inventory-modal" tabindex="-1" role="dialog" aria-labelledby="import-rdo-inventory-modal-title">
+    <div class="modal-dialog modal-updates" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="import-rdo-inventory-modal-title">Import RDO character inventory</h4>
+        </div>
+        <div class="modal-body" style="text-align: left;">
+          
+          <p>To import your character inventory to this map, follow this steps:</p>
+          <p>1. <a href="https://socialclub.rockstargames.com/games/rdo/overview" target="_blank">Log in</a> your Social Club account.</p>
+          <p>2. Copy <a href="http://localhost/RDR2CollectorsMap/assets/js/rdo-inventory.js" target="_blank">this script</a> to your clipboard.</p>
+          <p>3. Open your browser console on Social Club website and paste the script from step 2 and press enter.</p>
+          <br>
+          <p>If everything is right, a new file will be downloaded with your inventory data. Just copy all content from that file and paste in this box bellow.</p>
+          <br>
+          <textarea id="rdo-inventory-textarea" class="input-text" style="max-width: 100%;min-width: 100%;"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.close">Close</button>
+          <button id="import-rdo-inventory" type="button" class="btn btn-primary" data-text="menu.import_button">Import</button>
         </div>
       </div>
     </div>
