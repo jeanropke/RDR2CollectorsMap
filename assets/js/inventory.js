@@ -19,30 +19,32 @@ const Inventory = {
     });
 
     $('#import-rdo-inventory').on('click', function () {
-      try {        
-        Inventory.import(JSON.parse($('#rdo-inventory-textarea').val()));
-        $('#import-rdo-inventory-modal').modal('hide');
-      } catch (error) {
-        alert(Language.get('alerts.file_not_valid'));
-        return;
-      }
+        Inventory.import($('#rdo-inventory-textarea').val());
     });
   },
 
-  import: function(data) {
-    Collection.collections.forEach((collection) => {
-      collection.items.forEach((item) => {
-        let _item = data.find(scItem => scItem.itemid == item.enumHash);
-        
-        if(_item == null) {
-          console.log(item);
-          item.amount = 0;
-          return;
-        }
+  import: function (json) {
+    try {
+      let data = JSON.parse(json);
+      Collection.collections.forEach((collection) => {
+        collection.items.forEach((item) => {
+          let _item = data.find(scItem => scItem.itemid == item.enumHash);
 
-        item.amount = _item.quantity;
+          if (_item == null) {
+            item.amount = 0;
+            return;
+          }
+
+          item.amount = _item.quantity;
+        });
       });
-    });
+      
+      $('#import-rdo-inventory-modal').modal('hide');
+    } catch (error) {
+      alert(Language.get('alerts.file_not_valid'));
+      return;
+    }
+
   },
 
   updateItemHighlights: function myself(fromTimer) {
