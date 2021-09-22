@@ -151,7 +151,7 @@ RDOInventory.doRequest(
         RDOInventory.Items.push({ itemid: _item.itemid, quantity: _item.quantity })
       });
 
-      RDOInventory.download(`rdo-character-${RDOInventory.Platform}-${new Date().toISOString()}.txt`, JSON.stringify(RDOInventory.Items));
+      RDOInventory.download(`rdo-character-${RDOInventory.Platform}-${new Date().toISOString()}.json`, JSON.stringify(RDOInventory.Items));
       console.log('And done! Now you need to upload your inventory on RDR2CollectorsMap!');
     },
     error: function (error) {
