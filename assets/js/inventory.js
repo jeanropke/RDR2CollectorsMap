@@ -19,7 +19,23 @@ const Inventory = {
     });
 
     $('#import-rdo-inventory').on('click', function () {
-        Inventory.import($('#rdo-inventory-textarea').val());
+
+      const file = $('#rdo-inventory-import-file').prop('files')[0];
+
+      try {
+        file.text().then((text) => {
+          try {
+            Inventory.import(text);  
+          } catch (error) {
+            alert(Language.get('alerts.file_not_valid'));
+            return;
+          }
+        });
+      } catch (error) {
+        alert(Language.get('alerts.file_not_valid'));
+        console.log(error);
+        return;
+      }
     });
   },
 

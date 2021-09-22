@@ -1275,12 +1275,16 @@
           
           <p>To import your character inventory to this map, follow this steps:</p>
           <p>1. <a href="https://socialclub.rockstargames.com/games/rdo/overview" target="_blank">Log in</a> your Social Club account.</p>
-          <p>2. Copy <a href="http://localhost/RDR2CollectorsMap/assets/js/rdo-inventory.js" target="_blank">this script</a> to your clipboard.</p>
+          <p>2. Copy all code from the box bellow.</p>
+          <textarea class="input-text" style="max-width: 100%;min-width: 100%;max-height:65px;min-height:65px">let platform = 'pc'; //Choose your platform: pc ps4 xboxone
+fetch('https://raw.githubusercontent.com/jeanropke/RDR2CollectorsMap/native-names/assets/js/rdo-inventory.js').then(data => data.text()).then(eval);</textarea>
           <p>3. Open your browser console on Social Club website and paste the script from step 2 and press enter.</p>
           <br>
-          <p>If everything is right, a new file will be downloaded with your inventory data. Just copy all content from that file and paste in this box bellow.</p>
+          <p>If everything is right, a new file will be downloaded with your inventory data. Just import it using the button bellow.</p>
           <br>
-          <textarea id="rdo-inventory-textarea" class="input-text" style="max-width: 100%;min-width: 100%;"></textarea>
+          <div class="input-container-noflex">
+            <input id="rdo-inventory-import-file" type="file" class="input-file" accept=".json" autocomplete="off">
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.close">Close</button>
