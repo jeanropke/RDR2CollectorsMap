@@ -6,7 +6,7 @@
 */
 const RDOInventory = {
   ValidPlataforms: ['pc', 'ps4', 'xboxone', 'stadia'],
-  Platform: 'pc',
+  Platform: null,
   Items: [],
 
   getCookie: function (name) {
@@ -123,6 +123,9 @@ if (typeof platform !== 'undefined') {
     console.log(`Invalid platform '${platform}'. Setting platform to 'pc'`);
     RDOInventory.Platform = 'pc';
   }
+} else {
+  console.log(`No platform defined. Setting platform to 'pc'`);
+  RDOInventory.Platform = 'pc';
 }
 
 RDOInventory.doRequest(
