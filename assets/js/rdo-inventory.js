@@ -116,7 +116,7 @@ const RDOInventory = {
 
 }
 
-let platform = $('select[data-ui-name="toggleMenu--dropdown"]').value;
+let platform = document.querySelector('select[data-ui-name="toggleMenu--dropdown"]').value;
 
 if (typeof platform !== 'undefined') {
   if (RDOInventory.ValidPlataforms.includes(platform)) {
