@@ -1274,10 +1274,10 @@
         <div class="modal-body" style="text-align: left;">
           
           <p>To import your character inventory to this map, follow this steps:</p>
+
           <p>1. <a href="https://socialclub.rockstargames.com/games/rdo/overview" target="_blank">Log in</a> your Social Club account.</p>
-          <p>2. Copy all code from the box bellow.</p>
-          <textarea class="input-text" style="max-width: 100%;min-width: 100%;max-height:65px;min-height:65px">let platform = 'pc'; //Choose your platform: pc ps4 xboxone
-fetch('https://raw.githubusercontent.com/jeanropke/RDR2CollectorsMap/native-names/assets/js/rdo-inventory.js').then(data => data.text()).then(eval);</textarea>
+          <p>2. Copy all code from this box bellow.</p>
+          <textarea class="input-text" style="max-width: 100%;min-width: 100%;max-height:45px;min-height:45px" onclick="this.select()" readonly>fetch('https://raw.githubusercontent.com/jeanropke/RDR2CollectorsMap/native-names/assets/js/rdo-inventory.js').then(data => data.text()).then(eval);</textarea>
           <p>3. Open your browser console on Social Club website and paste the script from step 2 and press enter.</p>
           <br>
           <p>If everything is right, a new file will be downloaded with your inventory data. Just import it using the button bellow.</p>
