@@ -59,7 +59,8 @@ const urls = [
     'data/animal_legendary.json',
     'data/loot.json',
     'data/filters.json',
+    'data/mapping.json',
     'https://api.rdo.gg/fme/',
-    'data/fme_keys.json'
+    'http://worldclockapi.com/api/json/utc/now'
 ];
 Loader.init(urls);

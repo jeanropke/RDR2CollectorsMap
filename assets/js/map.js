@@ -341,9 +341,9 @@ const MapBase = {
   },
 
   resetMarkersDaily: function () {
-    const date = new Date().toISOUTCDateString();
+    const date = Cycles.mapTime().toISOUTCDateString();
 
-    if (localStorage.getItem('main.date') == null || date != localStorage.getItem('main.date')) {
+    if (localStorage.getItem('rdr2collector.date') == null || date != localStorage.getItem('rdr2collector.date')) {
       MapBase.markers.forEach(marker => {
         if (Settings.resetMarkersDaily || marker.isRandomizedItem) {
           marker.isCollected = false;
@@ -358,7 +358,7 @@ const MapBase = {
       Menu.refreshMenu();
     }
 
-    localStorage.setItem('main.date', date);
+    localStorage.setItem('rdr2collector.date', date);
   },
 
   onSearch: function (searchString) {

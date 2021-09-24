@@ -49,6 +49,7 @@ const Language = {
     'int.nazar.link': ['https://twitter.com/MadamNazarIO', '@MadamNazarIO'],
     'int.random_spot.link': ['https://github.com/jeanropke/RDR2CollectorsMap/wiki/Random-Item-Possible-Loot'],
     'int.naturalist_faq.link': ['https://github.com/jeanropke/RDR2CollectorsMap/wiki/Naturalist-Update-Changes'],
+    'int.rdo.overview': ['https://socialclub.rockstargames.com/games/rdo/overview']
   },
 
   _externalLink: function (key) {

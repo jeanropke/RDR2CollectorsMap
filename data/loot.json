@@ -100,22 +100,22 @@
       "collectible_arrowheads_uncommon": 0.3
     },
     "collectible_arrowheads_common": {
-      "arrowhead_chipped": 0.2,
-      "arrowhead_crude": 0.2,
-      "arrowhead_raw": 0.2,
-      "arrowhead_rough": 0.2,
-      "arrowhead_splintered": 0.2
+      "provision_arrowhead_chipped": 0.2,
+      "provision_arrowhead_crude": 0.2,
+      "provision_arrowhead_raw": 0.2,
+      "provision_arrowhead_rough": 0.2,
+      "provision_arrowhead_splintered": 0.2
     },
     "collectible_arrowheads_uncommon": {
-      "arrowhead_bone": 0.25,
-      "arrowhead_feldspar": 0.25,
-      "arrowhead_flint": 0.25,
-      "arrowhead_slate": 0.25
+      "provision_arrowhead_bone": 0.25,
+      "provision_arrowhead_feldspar": 0.25,
+      "provision_arrowhead_flint": 0.25,
+      "provision_arrowhead_slate": 0.25
     },
     "collectible_arrowheads_rare": {
-      "arrowhead_agate": 0.35,
-      "arrowhead_obsidian": 0.35,
-      "arrowhead_quartz": 0.3
+      "provision_arrowhead_agate": 0.35,
+      "provision_arrowhead_obsidian": 0.35,
+      "provision_arrowhead_quartz": 0.3
     },
     "collectible_coins_buried_all": {
       "collectible_coins_common": 0.6,
@@ -123,58 +123,58 @@
       "collectible_coins_rare": 0.1
     },
     "collectible_coins_common": {
-      "coin_quarter": 0.2,
-      "coin_nickel_coin": 0.2,
-      "coin_penny": 0.2,
-      "coin_half_eagle": 0.2,
-      "coin_halfpenny": 0.2
+      "provision_coin_1792_qtr": 0.2,
+      "provision_coin_1792_nickel": 0.2,
+      "provision_coin_1789_pny": 0.2,
+      "provision_coin_1795_hlf_eag": 0.2,
+      "provision_coin_1796_hlf_pny": 0.2
     },
     "collectible_coins_uncommon": {
-      "coin_one_cent_token": 0.2,
-      "coin_silver_dollar": 0.2,
-      "coin_draped_bust_silver_dollar": 0.2,
-      "coin_five_dollar_bechtler": 0.2,
-      "coin_half_dime": 0.2
+      "provision_coin_1787_cent_tkn": 0.2,
+      "provision_coin_1794_slv_dlr": 0.2,
+      "provision_coin_1798_slv_dlr": 0.2,
+      "provision_coin_1800_five_dlr": 0.2,
+      "provision_coin_1800_hlf_dime": 0.2
     },
     "collectible_coins_rare": {
-      "coin_new_yorke_token": 0.2,
-      "coin_gold_eagle": 0.2,
-      "coin_quarter": 0.2,
-      "coin_gold_dollar_coin": 0.2,
-      "coin_gold_quarter": 0.2
+      "provision_coin_1700_ny_tkn": 0.2,
+      "provision_coin_1797_gld_eag": 0.2,
+      "provision_coin_1792_qtr": 0.2,
+      "provision_coin_1800_gld_dlr": 0.2,
+      "provision_coin_1800_gld_qtr": 0.2
     },
     "collectible_fossils_common": {
-      "coastal_coral": 0.14,
-      "coastal_bivalve": 0.14,
-      "coastal_brachiopod": 0.14,
-      "coastal_cephalopod": 0.14,
-      "coastal_neo": 0.14,
-      "coastal_stone": 0.15,
-      "coastal_pet_wood": 0.15
+      "collector_fossil_coral": 0.14,
+      "collector_fossil_bivalve": 0.14,
+      "collector_fossil_brachiopod": 0.14,
+      "collector_fossil_cephalopod": 0.14,
+      "collector_fossil_neo": 0.14,
+      "collector_fossil_stone": 0.15,
+      "collector_fossil_pet_wood": 0.15
     },
     "collectible_fossils_uncommon": {
-      "oceanic_pet_wood_rainbow": 0.14,
-      "oceanic_sea_lily": 0.14,
-      "oceanic_sea_scorpion": 0.14,
-      "oceanic_trilobite_crypto": 0.14,
-      "oceanic_trilobite_iso": 0.14,
-      "oceanic_tully_monster": 0.15,
-      "oceanic_pet_wood_yellow": 0.15
+      "collector_fossil_pet_wood_rainbow": 0.14,
+      "collector_fossil_sea_lily": 0.14,
+      "collector_fossil_sea_scorpion": 0.14,
+      "collector_fossil_trilobite_crypto": 0.14,
+      "collector_fossil_trilobite_iso": 0.14,
+      "collector_fossil_tully_monster": 0.15,
+      "collector_fossil_pet_wood_yellow_cat": 0.15
     },
     "collectible_fossils_rare": {
-      "megafauna_brow_horn": 0.165,
-      "megafauna_tooth_trex": 0.165,
-      "megafauna_tooth_mega": 0.165,
-      "megafauna_tooth_serrated": 0.165,
-      "megafauna_tail_spike": 0.17,
-      "megafauna_toe_claw": 0.17
+      "collector_fossil_brow_horn": 0.165,
+      "collector_fossil_tooth_trex": 0.165,
+      "collector_fossil_tooth_mega": 0.165,
+      "collector_fossil_tooth_serrated": 0.165,
+      "collector_fossil_tail_spike": 0.17,
+      "collector_fossil_toe_claw": 0.17
     },
     "collectible_hrlms_buried_mounds": {
-      "heirlooms_carved_wooden": 0.2,
-      "heirlooms_ebony_hairpin": 0.2,
-      "heirlooms_ivory_hairpin": 0.2,
-      "heirlooms_jade_hairpin": 0.2,
-      "heirlooms_metal_hairpin": 0.2
+      "provision_hrlm_hairpin_wooden": 0.2,
+      "provision_hrlm_hairpin_ebony": 0.2,
+      "provision_hrlm_hairpin_ivory": 0.2,
+      "provision_hrlm_hairpin_jade": 0.2,
+      "provision_hrlm_hairpin_metal": 0.2
     },
     "collectible_jewelry_all": {
       "collectible_jewelry_rings_01": 0.125,
@@ -185,55 +185,55 @@
       "collectible_jewelry_bracelets": 0.25
     },
     "collectible_jewelry_rings_01": {
-      "ring_pilgrim_moonstone": 0.2,
-      "ring_sackville_diamond": 0.2,
-      "ring_yates_diamond": 0.15,
-      "ring_beaulieux_diamond": 0.15,
-      "ring_thorburn_turquoise": 0.15,
-      "ring_banais_topaz": 0.15
+      "provision_jewelry_moon_ring": 0.2,
+      "provision_jewelry_whtgld_dmnd_ring": 0.2,
+      "provision_jewelry_ylwgld_dmnd_ring": 0.15,
+      "provision_jewelry_french_dmnd_ring": 0.15,
+      "provision_jewelry_turquoise_ring": 0.15,
+      "provision_jewelry_topaz_ring": 0.15
     },
     "collectible_jewelry_rings_02": {
-      "ring_bonnard_pearl": 0.2,
-      "ring_aubrey_onyx": 0.2,
-      "ring_bosque_emerald": 0.2,
-      "ring_magnate_turquoise": 0.2,
-      "ring_harland_coral": 0.2
+      "provision_jewelry_pearl_ring": 0.2,
+      "provision_jewelry_onyx_ring": 0.2,
+      "provision_jewelry_emerald_ring": 0.2,
+      "provision_jewelry_pers_turq_ring": 0.2,
+      "provision_jewelry_coral_ring": 0.2
     },
     "collectible_jewelry_earrings_01": {
-      "earring_duchess_emerald": 0.2,
-      "earring_royal_victoria": 0.2,
-      "earring_orchidee_diamond": 0.15,
-      "earring_beauchene_ruby": 0.15,
-      "earring_ursula_citrine": 0.15,
-      "earring_emmeline_coral": 0.15
+      "provision_jewelry_emerald_earring": 0.2,
+      "provision_jewelry_qn_dmnd_earring": 0.2,
+      "provision_jewelry_wht_dmnd_earring": 0.15,
+      "provision_jewelry_rudy_dngl_earring": 0.15,
+      "provision_jewelry_drop_earring": 0.15,
+      "provision_jewelry_coral_dngl_earring": 0.15
     },
     "collectible_jewelry_earrings_02": {
-      "earring_calumet_turquoise": 0.2,
-      "earring_sterling_tooth": 0.2,
-      "earring_harford_garnet": 0.2,
-      "earring_endicott_diamond": 0.2,
-      "earring_josephine_pearl": 0.2
+      "provision_jewelry_turq_stud_earring": 0.2,
+      "provision_jewelry_elk_tooth_earring": 0.2,
+      "provision_jewelry_grnet_post_earring": 0.2,
+      "provision_jewelry_dmnd_pendt_earring": 0.2,
+      "provision_jewelry_pearl_earring": 0.2
     },
     "collectible_jewelry_bracelets": {
-      "bracelet_elliston_carved": 0.15,
-      "bracelet_ojeda_rose_gold": 0.15,
-      "bracelet_durant_pearl": 0.15,
-      "bracelet_hajnal_garnet_bangle": 0.15,
-      "bracelet_infanta_turquoise": 0.1,
-      "bracelet_helena_sapphire": 0.1,
-      "bracelet_greco_sapphire": 0.1,
-      "bracelet_abello_ruby_bangle": 0.1
+      "provision_jewelry_carved_bracelet": 0.15,
+      "provision_jewelry_gld_bngle_bracelet": 0.15,
+      "provision_jewelry_pearl_bracelet": 0.15,
+      "provision_jewelry_grnet_bracelet": 0.15,
+      "provision_jewelry_turquoise_bracelet": 0.1,
+      "provision_jewelry_sphr_bngle_bracelet": 0.1,
+      "provision_jewelry_sphr_bracelet": 0.1,
+      "provision_jewelry_dmnd_bngle_bracelet": 0.1
     },
     "collectible_jewelry_necklaces": {
-      "necklace_tuamotu_pearl": 0.15,
-      "necklace_dane_topaz": 0.15,
-      "necklace_pelle_pearl": 0.1,
-      "necklace_gosselin_white_gold": 0.1,
-      "necklace_braxton_amethyst": 0.1,
-      "necklace_blakely_miniatue": 0.1,
-      "necklace_richelieu_amethyst": 0.1,
-      "necklace_ainsworth_cross": 0.1,
-      "necklace_rou_pearl": 0.1
+      "provision_jewelry_blck_pearl_necklace": 0.15,
+      "provision_jewelry_topaz_necklace": 0.15,
+      "provision_jewelry_mthr_pearl_necklace": 0.1,
+      "provision_jewelry_gld_pendt_necklace": 0.1,
+      "provision_jewelry_amethyst_necklace": 0.1,
+      "provision_jewelry_porcelain_necklace": 0.1,
+      "provision_jewelry_slvr_pearl_necklace": 0.1,
+      "provision_jewelry_gld_cross_necklace": 0.1,
+      "provision_jewelry_gld_pearl_necklace": 0.1
     }
   }
 }

@@ -9,17 +9,12 @@ class BaseCollection extends Category {
 }
 class Weekly extends BaseCollection {
   static init() {
-    this.allSets = {};
-    const allWeeklySets = Loader.promises['weekly_sets'].consumeJson(({ sets }) => {
-      this.allSets.sets = sets;
-    });
-    const currentSet = Loader.promises['weekly'].consumeJson(data => {
-      this.allSets.current = data.set.replace(/AWARD_ROLE_COLLECTOR_SET_/, '').toLowerCase() + '_set';
-    });
-
-    return Promise.all([allWeeklySets, currentSet])
-      .then(() => {
-        this.current = new Weekly(this.allSets);
+    return Promise.all([
+      Loader.promises['weekly_sets'].consumeJson(({ sets }) => sets),
+      Loader.promises['weekly'].consumeJson(({ set }) => set.replace('AWARD_ROLE_COLLECTOR_', '').toLowerCase()),
+    ])
+      .then(([sets, current]) => {
+        this.current = new Weekly({ sets, current });
         this._installSettingsAndEventHandlers();
         console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
       })
@@ -105,7 +100,7 @@ class Collection extends BaseCollection {
   static init(collections) {
     this._installSettingsAndEventHandlers();
     this.collections = [];
-    collections.forEach(interim => this.collections.push(new Collection(interim)));
+    collections.forEach(({ category, price }) => this.collections.push(new Collection({ category, price })));
   }
   static updateMenu() {
     this.collections.forEach(collection => collection.updateMenu());

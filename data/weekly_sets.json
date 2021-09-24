@@ -1,293 +1,293 @@
 {
     "sets": {
-        "sacred_set": {
+        "set_sacred": {
             "items": [
-                "egg_eagle",
-                "arrowhead_bone",
-                "heirlooms_boar_bristle_brush"
+                "provision_eagle_egg",
+                "provision_arrowhead_bone",
+                "provision_hrlm_brush_boar"
             ],
             "value": 70
         },
-        "veteran_set": {
+        "set_veteran": {
             "items": [
-                "coin_quarter",
-                "bottle_old_tom_gin",
-                "ring_aubrey_onyx"
+                "provision_coin_1792_qtr",
+                "consumable_oldtom_gin",
+                "provision_jewelry_onyx_ring"
             ],
             "value": 80
         },
-        "herbalist_set": {
+        "set_herbalist": {
             "items": [
-                "flower_blood_flower",
-                "flower_chocolate_daisy",
-                "flower_creek_plum"
+                "provision_wldflwr_blood_flower",
+                "provision_wldflwr_chocolate_daisy",
+                "provision_wldflwr_creek_plum"
             ],
             "value": 60
         },
-        "gold_panner_set": {
+        "set_gold_panner": {
             "items": [
-                "bracelet_ojeda_rose_gold",
-                "coin_gold_eagle",
-                "item_pocket_watch_gold"
+                "provision_jewelry_gld_bngle_bracelet",
+                "provision_coin_1797_gld_eag",
+                "provision_pocket_watch_gold"
             ],
             "value": 90
         },
-        "pearls_set": {
+        "set_pearls": {
             "items": [
-                "bracelet_durant_pearl",
-                "necklace_pelle_pearl",
-                "ring_bonnard_pearl"
+                "provision_jewelry_pearl_bracelet",
+                "provision_jewelry_mthr_pearl_necklace",
+                "provision_jewelry_pearl_ring"
             ],
             "value": 90
         },
-        "gambler_set": {
+        "set_gambler": {
             "items": [
-                "swords_ace",
-                "bottle_gran_corazon_madeira",
-                "coin_gold_dollar_coin"
+                "document_card_ace_swords",
+                "consumable_plymouth_gin",
+                "provision_coin_1800_gld_dlr"
             ],
             "value": 95
         },
-        "naturalist_set": {
+        "set_naturalist": {
             "items": [
-                "heirlooms_cherrywood_comb",
-                "egg_egret",
-                "flower_bitterweed"
+                "provision_hrlm_comb_cherrywood",
+                "provision_egret_egg",
+                "provision_wldflwr_bitterweed"
             ],
             "value": 70
         },
-        "poacher_set": {
+        "set_poacher": {
             "items": [
-                "earring_sterling_tooth",
-                "heirlooms_tortoiseshell_comb",
-                "heirlooms_ivory_hairpin"
+                "provision_jewelry_elk_tooth_earring",
+                "provision_hrlm_comb_tortoiseshell",
+                "provision_hrlm_hairpin_ivory"
             ],
             "value": 80
         },
-        "hunter_set": {
+        "set_hunter": {
             "items": [
-                "arrowhead_slate",
-                "egg_duck",
-                "item_carcass_squirrel_perfect"
+                "provision_arrowhead_slate",
+                "provision_duck_egg",
+                "provision_animal_carcass_squirrel_perfect"
             ],
             "value": 50
         },
-        "precious_stones_set": {
+        "set_precious_stones": {
             "items": [
-                "ring_banais_topaz",
-                "earring_harford_garnet",
-                "heirlooms_jade_hairpin"
+                "provision_jewelry_topaz_ring",
+                "provision_jewelry_grnet_post_earring",
+                "provision_hrlm_hairpin_jade"
             ],
             "value": 85
         },
-        "hairdresser_set": {
+        "set_hairdresser": {
             "items": [
-                "heirlooms_rosewood_hairbrush",
-                "heirlooms_ivory_comb",
-                "heirlooms_ebony_hairpin"
+                "provision_hrlm_brush_rosewood",
+                "provision_hrlm_comb_ivory",
+                "provision_hrlm_hairpin_ebony"
             ],
             "value": 70
         },
-        "whiskey_set": {
+        "set_whiskey": {
             "items": [
-                "bottle_tennesee_whiskey",
-                "bottle_irish_whiskey",
-                "bottle_scotch_whisky"
+                "consumable_tenn_whiskey",
+                "consumable_irish_whiskey",
+                "consumable_scotch_whiskey"
             ],
             "value": 65
         },
-        "cheater_set": {
+        "set_cheater": {
             "items": [
-                "wands_queen",
-                "cups_king",
-                "pentacles_ace"
+                "document_card_queen_wands",
+                "document_card_king_cups",
+                "document_card_ace_pentacles"
             ],
             "value": 65
         },
-        "loser_set": {
+        "set_loser": {
             "items": [
-                "cups_two",
-                "pentacles_two",
-                "swords_two"
+                "document_card_two_cups",
+                "document_card_two_pentacles",
+                "document_card_two_swords"
             ],
             "value": 65
         },
-        "gentleman_set": {
+        "set_gentleman": {
             "items": [
-                "ring_bosque_emerald",
-                "bottle_london_dry_gin",
-                "coin_silver_dollar"
+                "provision_jewelry_emerald_ring",
+                "consumable_londry_gin",
+                "provision_coin_1794_slv_dlr"
             ],
             "value": 95
         },
-        "belle_set": {
+        "set_belle": {
             "items": [
-                "heirlooms_boxwood_comb",
-                "necklace_blakely_miniatue",
-                "earring_josephine_pearl"
+                "provision_hrlm_comb_boxwood",
+                "provision_jewelry_porcelain_necklace",
+                "provision_jewelry_pearl_earring"
             ],
             "value": 85
         },
-        "looter_set": {
+        "set_looter": {
             "items": [
-                "arrowhead_crude",
-                "coin_nickel_coin",
-                "item_gold_tooth"
+                "provision_arrowhead_crude",
+                "provision_coin_1792_nickel",
+                "provision_goldtooth"
             ],
             "value": 75
         },
-        "ancient_tools_set": {
+        "set_ancient_tools": {
             "items": [
-                "arrowhead_obsidian",
-                "heirlooms_horse_hair_brush"
+                "provision_arrowhead_obsidian",
+                "provision_hrlm_brush_horsehair"
             ],
             "value": 75
         },
-        "exotics_set": {
+        "set_exotics": {
             "items": [
-                "egg_loon",
-                "flower_agarita",
-                "egg_spoonbill"
+                "provision_loon_egg",
+                "provision_wldflwr_agarita",
+                "provision_spoonbill_egg"
             ],
             "value": 65
         },
-        "1800_coins_set": {
+        "set_1800_coins": {
             "items": [
-                "coin_five_dollar_bechtler",
-                "coin_half_dime",
-                "coin_gold_quarter"
+                "provision_coin_1800_five_dlr",
+                "provision_coin_1800_hlf_dime",
+                "provision_coin_1800_gld_qtr"
             ],
             "value": 100
         },
-        "warrior_tokens_set": {
+        "set_warrior_tokens": {
             "items": [
-                "swords_knight",
-                "arrowhead_quartz",
-                "ring_harland_coral"
+                "document_card_knight_swords",
+                "provision_arrowhead_quartz",
+                "provision_jewelry_coral_ring"
             ],
             "value": 85
         },
-        "squire_set": {
+        "set_squire": {
             "items": [
-                "pentacles_page",
-                "wands_knight",
-                "swords_king"
+                "document_card_page_pentacles",
+                "document_card_knight_wands",
+                "document_card_king_swords"
             ],
             "value": 65
         },
-        "saint_denis_set": {
+        "set_saint_denis": {
             "items": [
-                "bottle_cognac_bottle",
-                "earring_beauchene_ruby",
-                "ring_beaulieux_diamond"
+                "consumable_cognac",
+                "provision_jewelry_rudy_dngl_earring",
+                "provision_jewelry_french_dmnd_ring"
             ],
             "value": 85
         },
-        "fortune_teller_set": {
+        "set_fortune_teller": {
             "items": [
-                "cups_ace",
-                "wands_ace",
-                "bottle_absinthe"
+                "document_card_ace_cups",
+                "document_card_ace_wands",
+                "consumable_cyprus_brandy"
             ],
             "value": 60
         },
-        "guarma_set": {
+        "set_guarma": {
             "items": [
-                "bottle_caribbean_rum",
-                "necklace_tuamotu_pearl",
-                "bracelet_infanta_turquoise"
+                "consumable_carib_rum",
+                "provision_jewelry_blck_pearl_necklace",
+                "provision_jewelry_turquoise_bracelet"
             ],
             "value": 85
         },
-        "bowman_set": {
+        "set_bowman": {
             "items": [
-                "arrowhead_flint",
-                "arrowhead_raw",
-                "arrowhead_agate"
+                "provision_arrowhead_flint",
+                "provision_arrowhead_raw",
+                "provision_arrowhead_agate"
             ],
             "value": 75
         },
-        "royal_set": {
+        "set_royal": {
             "items": [
-                "earring_duchess_emerald",
-                "earring_royal_victoria",
-                "swords_queen"
+                "provision_jewelry_emerald_earring",
+                "provision_jewelry_qn_dmnd_earring",
+                "document_card_queen_swords"
             ],
             "value": 85
         },
-        "witch_hunt_set": {
+        "set_witch_hunt": {
             "items": [
-                "egg_vulture",
-                "flower_cardinal",
-                "arrowhead_splintered"
+                "provision_vulture_egg",
+                "provision_wldflwr_cardinal_flower",
+                "provision_arrowhead_splintered"
             ],
             "value": 75
         },
-        "night_watch_set": {
+        "set_night_watch": {
             "items": [
-                "ring_pilgrim_moonstone",
-                "flower_wisteria",
-                "egg_hawk"
+                "provision_jewelry_moon_ring",
+                "provision_wldflwr_wisteria",
+                "provision_hawk_egg"
             ],
             "value": 80
         },
-        "foundation_set": {
+        "set_foundation": {
             "items": [
-                "arrowhead_feldspar",
-                "earring_endicott_diamond",
-                "earring_emmeline_coral"
+                "provision_arrowhead_feldspar",
+                "provision_jewelry_dmnd_pendt_earring",
+                "provision_jewelry_coral_dngl_earring"
             ],
             "value": 85
         },
-        "jeweler_set": {
+        "set_jeweler": {
             "items": [
-                "ring_thorburn_turquoise",
-                "bracelet_hajnal_garnet_bangle",
-                "necklace_dane_topaz"
+                "provision_jewelry_turquoise_ring",
+                "provision_jewelry_grnet_bracelet",
+                "provision_jewelry_topaz_necklace"
             ],
             "value": 95
         },
-        "penny_set": {
+        "set_penny": {
             "items": [
-                "coin_penny",
-                "coin_one_cent_token",
-                "coin_halfpenny"
+                "provision_coin_1789_pny",
+                "provision_coin_1787_cent_tkn",
+                "provision_coin_1796_hlf_pny"
             ],
             "value": 100
         },
-        "festive_feast_set": {
+        "set_festive_feast": {
             "items": [
-                "egg_goose",
-                "bottle_cognac_bottle",
-                "item_cooked_plump_bird_thyme"
+                "provision_goose_egg",
+                "consumable_cognac",
+                "consumable_plump_bird_thyme_cooked"
             ],
             "value": 50
         },
-        "new_year_set": {
+        "set_new_year": {
             "items": [
-                "wands_ace",
-                "bottle_scotch_whisky",
-                "item_pocket_watch_platinum"
+                "document_card_ace_wands",
+                "consumable_scotch_whiskey",
+                "provision_pocket_watch_platinum"
             ],
             "value": 65
         },
-        "lovers_set": {
+        "set_lovers": {
             "items": [
-                "flower_chocolate_daisy",
-                "ring_yates_diamond",
-                "cups_two"
+                "provision_wldflwr_chocolate_daisy",
+                "provision_jewelry_ylwgld_dmnd_ring",
+                "document_card_two_cups"
             ],
             "value": 75
         },
-        "egg_hunt_set": {
+        "set_egg_hunt": {
             "items": [
-                "egg_duck",
-                "egg_heron",
-                "egg_goose"
+                "provision_duck_egg",
+                "provision_heron_egg",
+                "provision_goose_egg"
             ],
             "value": 50
         },
-        "trophy_hunter_set": {
+        "set_trophy_hunter": {
             "items": [
                 "legendary_item_bison_horn",
                 "legendary_item_boar_tusk",
@@ -295,15 +295,15 @@
             ],
             "value": 75
         },
-        "beasts_of_prey_set": {
+        "set_beasts_of_prey": {
             "items": [
                 "legendary_item_panther_eye",
                 "legendary_item_wolf_heart",
-                "megafauna_tooth_serrated"
+                "collector_fossil_tooth_serrated"
             ],
             "value": 85
         },
-        "tooth_and_nail_set": {
+        "set_tooth_and_nail": {
             "items": [
                 "legendary_item_beaver_tooth",
                 "legendary_item_coyote_fang",
@@ -311,7 +311,7 @@
             ],
             "value": 65
         },
-        "shot_in_the_dark_set": {
+        "set_shot_in_the_dark": {
             "items": [
                 "provision_opossum_fur_pristine",
                 "provision_raccoon_fur_pristine",
@@ -319,7 +319,7 @@
             ],
             "value": 40
         },
-        "black_and_white_set": {
+        "set_black_and_white": {
             "items": [
                 "provision_skunk_fur_pristine",
                 "provision_badger_pelt_pristine",
@@ -327,42 +327,42 @@
             ],
             "value": 30
         },
-        "jurassic_set": {
+        "set_jurassic": {
             "items": [
-                "megafauna_tooth_trex",
-                "megafauna_tail_spike",
-                "megafauna_brow_horn"
+                "collector_fossil_tooth_trex",
+                "collector_fossil_tail_spike",
+                "collector_fossil_brow_horn"
             ],
             "value": 180
         },
-        "ancient_wood_set": {
+        "set_ancient_wood": {
             "items": [
-                "coastal_pet_wood",
-                "oceanic_pet_wood_rainbow",
-                "oceanic_pet_wood_yellow"
+                "collector_fossil_pet_wood",
+                "collector_fossil_pet_wood_rainbow",
+                "collector_fossil_pet_wood_yellow_cat"
             ],
             "value": 110
         },
-        "deep_blue_set": {
+        "set_deep_blue": {
             "items": [
-                "oceanic_tully_monster",
-                "coastal_cephalopod",
+                "collector_fossil_tully_monster",
+                "collector_fossil_cephalopod",
                 "provision_fish_rock_bass"
             ],
             "value": 95
         },
-        "arthropod_set": {
+        "set_arthropod": {
             "items": [
-                "oceanic_sea_scorpion",
-                "oceanic_trilobite_crypto",
-                "carcass_crab_perfect"
+                "collector_fossil_sea_scorpion",
+                "collector_fossil_trilobite_crypto",
+                "provision_animal_carcass_crab_perfect"
             ],
             "value": 90
         },
-        "bite_sized_set": {
+        "set_bite_sized": {
             "items": [
                 "provision_cougar_fang",
-                "megafauna_tooth_mega",
+                "collector_fossil_tooth_mega",
                 "provision_alligator_tooth"
             ],
             "value": 75

@@ -1,0 +1,758 @@
+[
+    {
+        "key": "collector_fossil_bivalve",
+        "value": "coastal_bivalve"
+    },
+    {
+        "key": "collector_fossil_brachiopod",
+        "value": "coastal_brachiopod"
+    },
+    {
+        "key": "collector_fossil_brow_horn",
+        "value": "megafauna_brow_horn"
+    },
+    {
+        "key": "collector_fossil_cephalopod",
+        "value": "coastal_cephalopod"
+    },
+    {
+        "key": "collector_fossil_coral",
+        "value": "coastal_coral"
+    },
+    {
+        "key": "collector_fossil_neo",
+        "value": "coastal_neo"
+    },
+    {
+        "key": "collector_fossil_pet_wood",
+        "value": "coastal_pet_wood"
+    },
+    {
+        "key": "collector_fossil_pet_wood_rainbow",
+        "value": "oceanic_pet_wood_rainbow"
+    },
+    {
+        "key": "collector_fossil_pet_wood_yellow_cat",
+        "value": "oceanic_pet_wood_yellow"
+    },
+    {
+        "key": "collector_fossil_sea_lily",
+        "value": "oceanic_sea_lily"
+    },
+    {
+        "key": "collector_fossil_sea_scorpion",
+        "value": "oceanic_sea_scorpion"
+    },
+    {
+        "key": "collector_fossil_stone",
+        "value": "coastal_stone"
+    },
+    {
+        "key": "collector_fossil_tail_spike",
+        "value": "megafauna_tail_spike"
+    },
+    {
+        "key": "collector_fossil_toe_claw",
+        "value": "megafauna_toe_claw"
+    },
+    {
+        "key": "collector_fossil_tooth_mega",
+        "value": "megafauna_tooth_mega"
+    },
+    {
+        "key": "collector_fossil_tooth_serrated",
+        "value": "megafauna_tooth_serrated"
+    },
+    {
+        "key": "collector_fossil_tooth_trex",
+        "value": "megafauna_tooth_trex"
+    },
+    {
+        "key": "collector_fossil_trilobite_crypto",
+        "value": "oceanic_trilobite_crypto"
+    },
+    {
+        "key": "collector_fossil_trilobite_iso",
+        "value": "oceanic_trilobite_iso"
+    },
+    {
+        "key": "collector_fossil_tully_monster",
+        "value": "oceanic_tully_monster"
+    },
+    {
+        "key": "consumable_carib_rum",
+        "value": "bottle_caribbean_rum"
+    },
+    {
+        "key": "consumable_cognac",
+        "value": "bottle_cognac_bottle"
+    },
+    {
+        "key": "consumable_cyprus_brandy",
+        "value": "bottle_absinthe"
+    },
+    {
+        "key": "consumable_irish_whiskey",
+        "value": "bottle_irish_whiskey"
+    },
+    {
+        "key": "consumable_londry_gin",
+        "value": "bottle_london_dry_gin"
+    },
+    {
+        "key": "consumable_oldtom_gin",
+        "value": "bottle_old_tom_gin"
+    },
+    {
+        "key": "consumable_plump_bird_thyme_cooked",
+        "value": "item_cooked_plump_bird_thyme"
+    },
+    {
+        "key": "consumable_plymouth_gin",
+        "value": "bottle_gran_corazon_madeira"
+    },
+    {
+        "key": "consumable_scotch_whiskey",
+        "value": "bottle_scotch_whisky"
+    },
+    {
+        "key": "consumable_tenn_whiskey",
+        "value": "bottle_tennesee_whiskey"
+    },
+    {
+        "key": "document_card_ace_cups",
+        "value": "cups_ace"
+    },
+    {
+        "key": "document_card_ace_pentacles",
+        "value": "pentacles_ace"
+    },
+    {
+        "key": "document_card_ace_swords",
+        "value": "swords_ace"
+    },
+    {
+        "key": "document_card_ace_wands",
+        "value": "wands_ace"
+    },
+    {
+        "key": "document_card_eight_cups",
+        "value": "cups_eight"
+    },
+    {
+        "key": "document_card_eight_pentacles",
+        "value": "pentacles_eight"
+    },
+    {
+        "key": "document_card_eight_swords",
+        "value": "swords_eight"
+    },
+    {
+        "key": "document_card_eight_wands",
+        "value": "wands_eight"
+    },
+    {
+        "key": "document_card_five_cups",
+        "value": "cups_five"
+    },
+    {
+        "key": "document_card_five_pentacles",
+        "value": "pentacles_five"
+    },
+    {
+        "key": "document_card_five_swords",
+        "value": "swords_five"
+    },
+    {
+        "key": "document_card_five_wands",
+        "value": "wands_five"
+    },
+    {
+        "key": "document_card_four_cups",
+        "value": "cups_four"
+    },
+    {
+        "key": "document_card_four_pentacles",
+        "value": "pentacles_four"
+    },
+    {
+        "key": "document_card_four_swords",
+        "value": "swords_four"
+    },
+    {
+        "key": "document_card_four_wands",
+        "value": "wands_four"
+    },
+    {
+        "key": "document_card_king_cups",
+        "value": "cups_king"
+    },
+    {
+        "key": "document_card_king_pentacles",
+        "value": "pentacles_king"
+    },
+    {
+        "key": "document_card_king_swords",
+        "value": "swords_king"
+    },
+    {
+        "key": "document_card_king_wands",
+        "value": "wands_king"
+    },
+    {
+        "key": "document_card_knight_cups",
+        "value": "cups_knight"
+    },
+    {
+        "key": "document_card_knight_pentacles",
+        "value": "pentacles_knight"
+    },
+    {
+        "key": "document_card_knight_swords",
+        "value": "swords_knight"
+    },
+    {
+        "key": "document_card_knight_wands",
+        "value": "wands_knight"
+    },
+    {
+        "key": "document_card_nine_cups",
+        "value": "cups_nine"
+    },
+    {
+        "key": "document_card_nine_pentacles",
+        "value": "pentacles_nine"
+    },
+    {
+        "key": "document_card_nine_swords",
+        "value": "swords_nine"
+    },
+    {
+        "key": "document_card_nine_wands",
+        "value": "wands_nine"
+    },
+    {
+        "key": "document_card_page_cups",
+        "value": "cups_page"
+    },
+    {
+        "key": "document_card_page_pentacles",
+        "value": "pentacles_page"
+    },
+    {
+        "key": "document_card_page_swords",
+        "value": "swords_page"
+    },
+    {
+        "key": "document_card_page_wands",
+        "value": "wands_page"
+    },
+    {
+        "key": "document_card_queen_cups",
+        "value": "cups_queen"
+    },
+    {
+        "key": "document_card_queen_pentacles",
+        "value": "pentacles_queen"
+    },
+    {
+        "key": "document_card_queen_swords",
+        "value": "swords_queen"
+    },
+    {
+        "key": "document_card_queen_wands",
+        "value": "wands_queen"
+    },
+    {
+        "key": "document_card_seven_cups",
+        "value": "cups_seven"
+    },
+    {
+        "key": "document_card_seven_pentacles",
+        "value": "pentacles_seven"
+    },
+    {
+        "key": "document_card_seven_swords",
+        "value": "swords_seven"
+    },
+    {
+        "key": "document_card_seven_wands",
+        "value": "wands_seven"
+    },
+    {
+        "key": "document_card_six_cups",
+        "value": "cups_six"
+    },
+    {
+        "key": "document_card_six_pentacles",
+        "value": "pentacles_six"
+    },
+    {
+        "key": "document_card_six_swords",
+        "value": "swords_six"
+    },
+    {
+        "key": "document_card_six_wands",
+        "value": "wands_six"
+    },
+    {
+        "key": "document_card_ten_cups",
+        "value": "cups_ten"
+    },
+    {
+        "key": "document_card_ten_pentacles",
+        "value": "pentacles_ten"
+    },
+    {
+        "key": "document_card_ten_swords",
+        "value": "swords_ten"
+    },
+    {
+        "key": "document_card_ten_wands",
+        "value": "wands_ten"
+    },
+    {
+        "key": "document_card_three_cups",
+        "value": "cups_three"
+    },
+    {
+        "key": "document_card_three_pentacles",
+        "value": "pentacles_three"
+    },
+    {
+        "key": "document_card_three_swords",
+        "value": "swords_three"
+    },
+    {
+        "key": "document_card_three_wands",
+        "value": "wands_three"
+    },
+    {
+        "key": "document_card_two_cups",
+        "value": "cups_two"
+    },
+    {
+        "key": "document_card_two_pentacles",
+        "value": "pentacles_two"
+    },
+    {
+        "key": "document_card_two_swords",
+        "value": "swords_two"
+    },
+    {
+        "key": "document_card_two_wands",
+        "value": "wands_two"
+    },
+    {
+        "key": "provision_arrowhead_agate",
+        "value": "arrowhead_agate"
+    },
+    {
+        "key": "provision_arrowhead_bone",
+        "value": "arrowhead_bone"
+    },
+    {
+        "key": "provision_arrowhead_chipped",
+        "value": "arrowhead_chipped"
+    },
+    {
+        "key": "provision_arrowhead_crude",
+        "value": "arrowhead_crude"
+    },
+    {
+        "key": "provision_arrowhead_feldspar",
+        "value": "arrowhead_feldspar"
+    },
+    {
+        "key": "provision_arrowhead_flint",
+        "value": "arrowhead_flint"
+    },
+    {
+        "key": "provision_arrowhead_obsidian",
+        "value": "arrowhead_obsidian"
+    },
+    {
+        "key": "provision_arrowhead_quartz",
+        "value": "arrowhead_quartz"
+    },
+    {
+        "key": "provision_arrowhead_raw",
+        "value": "arrowhead_raw"
+    },
+    {
+        "key": "provision_arrowhead_rough",
+        "value": "arrowhead_rough"
+    },
+    {
+        "key": "provision_arrowhead_slate",
+        "value": "arrowhead_slate"
+    },
+    {
+        "key": "provision_arrowhead_splintered",
+        "value": "arrowhead_splintered"
+    },
+    {
+        "key": "provision_coin_1700_ny_tkn",
+        "value": "coin_new_yorke_token"
+    },
+    {
+        "key": "provision_coin_1787_cent_tkn",
+        "value": "coin_one_cent_token"
+    },
+    {
+        "key": "provision_coin_1789_pny",
+        "value": "coin_penny"
+    },
+    {
+        "key": "provision_coin_1792_lib_qtr",
+        "value": "coin_liberty_quarter"
+    },
+    {
+        "key": "provision_coin_1792_nickel",
+        "value": "coin_nickel_coin"
+    },
+    {
+        "key": "provision_coin_1792_qtr",
+        "value": "coin_quarter"
+    },
+    {
+        "key": "provision_coin_1794_slv_dlr",
+        "value": "coin_silver_dollar"
+    },
+    {
+        "key": "provision_coin_1795_hlf_eag",
+        "value": "coin_half_eagle"
+    },
+    {
+        "key": "provision_coin_1796_hlf_pny",
+        "value": "coin_halfpenny"
+    },
+    {
+        "key": "provision_coin_1797_gld_eag",
+        "value": "coin_gold_eagle"
+    },
+    {
+        "key": "provision_coin_1798_slv_dlr",
+        "value": "coin_draped_bust_silver_dollar"
+    },
+    {
+        "key": "provision_coin_1800_five_dlr",
+        "value": "coin_five_dollar_bechtler"
+    },
+    {
+        "key": "provision_coin_1800_gld_dlr",
+        "value": "coin_gold_dollar_coin"
+    },
+    {
+        "key": "provision_coin_1800_gld_qtr",
+        "value": "coin_gold_quarter"
+    },
+    {
+        "key": "provision_coin_1800_hlf_dime",
+        "value": "coin_half_dime"
+    },
+    {
+        "key": "provision_condor_egg",
+        "value": "egg_condor"
+    },
+    {
+        "key": "provision_duck_egg",
+        "value": "egg_duck"
+    },
+    {
+        "key": "provision_eagle_egg",
+        "value": "egg_eagle"
+    },
+    {
+        "key": "provision_egret_egg",
+        "value": "egg_egret"
+    },
+    {
+        "key": "provision_goldtooth",
+        "value": "item_gold_tooth"
+    },
+    {
+        "key": "provision_goose_egg",
+        "value": "egg_goose"
+    },
+    {
+        "key": "provision_hawk_egg",
+        "value": "egg_hawk"
+    },
+    {
+        "key": "provision_heron_egg",
+        "value": "egg_heron"
+    },
+    {
+        "key": "provision_hrlm_brush_boar",
+        "value": "heirlooms_boar_bristle_brush"
+    },
+    {
+        "key": "provision_hrlm_brush_ebony",
+        "value": "heirlooms_ebony_hairbrush"
+    },
+    {
+        "key": "provision_hrlm_brush_goathair",
+        "value": "heirlooms_goat_hair_brush"
+    },
+    {
+        "key": "provision_hrlm_brush_horsehair",
+        "value": "heirlooms_horse_hair_brush"
+    },
+    {
+        "key": "provision_hrlm_brush_rosewood",
+        "value": "heirlooms_rosewood_hairbrush"
+    },
+    {
+        "key": "provision_hrlm_brush_rosewood_ng",
+        "value": "heirlooms_new_guinea_rosewood"
+    },
+    {
+        "key": "provision_hrlm_comb_boxwood",
+        "value": "heirlooms_boxwood_comb"
+    },
+    {
+        "key": "provision_hrlm_comb_cherrywood",
+        "value": "heirlooms_cherrywood_comb"
+    },
+    {
+        "key": "provision_hrlm_comb_ivory",
+        "value": "heirlooms_ivory_comb"
+    },
+    {
+        "key": "provision_hrlm_comb_tortoiseshell",
+        "value": "heirlooms_tortoiseshell_comb"
+    },
+    {
+        "key": "provision_hrlm_hairpin_ebony",
+        "value": "heirlooms_ebony_hairpin"
+    },
+    {
+        "key": "provision_hrlm_hairpin_ivory",
+        "value": "heirlooms_ivory_hairpin"
+    },
+    {
+        "key": "provision_hrlm_hairpin_jade",
+        "value": "heirlooms_jade_hairpin"
+    },
+    {
+        "key": "provision_hrlm_hairpin_metal",
+        "value": "heirlooms_metal_hairpin"
+    },
+    {
+        "key": "provision_hrlm_hairpin_wooden",
+        "value": "heirlooms_carved_wooden"
+    },
+    {
+        "key": "provision_jewelry_amethyst_necklace",
+        "value": "necklace_braxton_amethyst"
+    },
+    {
+        "key": "provision_jewelry_blck_pearl_necklace",
+        "value": "necklace_tuamotu_pearl"
+    },
+    {
+        "key": "provision_jewelry_carved_bracelet",
+        "value": "bracelet_elliston_carved"
+    },
+    {
+        "key": "provision_jewelry_coral_dngl_earring",
+        "value": "earring_emmeline_coral"
+    },
+    {
+        "key": "provision_jewelry_coral_ring",
+        "value": "ring_harland_coral"
+    },
+    {
+        "key": "provision_jewelry_dmnd_bngle_bracelet",
+        "value": "bracelet_abello_ruby_bangle"
+    },
+    {
+        "key": "provision_jewelry_dmnd_pendt_earring",
+        "value": "earring_endicott_diamond"
+    },
+    {
+        "key": "provision_jewelry_drop_earring",
+        "value": "earring_ursula_citrine"
+    },
+    {
+        "key": "provision_jewelry_elk_tooth_earring",
+        "value": "earring_sterling_tooth"
+    },
+    {
+        "key": "provision_jewelry_emerald_earring",
+        "value": "earring_duchess_emerald"
+    },
+    {
+        "key": "provision_jewelry_emerald_ring",
+        "value": "ring_bosque_emerald"
+    },
+    {
+        "key": "provision_jewelry_french_dmnd_ring",
+        "value": "ring_beaulieux_diamond"
+    },
+    {
+        "key": "provision_jewelry_gld_bngle_bracelet",
+        "value": "bracelet_ojeda_rose_gold"
+    },
+    {
+        "key": "provision_jewelry_gld_cross_necklace",
+        "value": "necklace_ainsworth_cross"
+    },
+    {
+        "key": "provision_jewelry_gld_pearl_necklace",
+        "value": "necklace_rou_pearl"
+    },
+    {
+        "key": "provision_jewelry_gld_pendt_necklace",
+        "value": "necklace_gosselin_white_gold"
+    },
+    {
+        "key": "provision_jewelry_grnet_bracelet",
+        "value": "bracelet_hajnal_garnet_bangle"
+    },
+    {
+        "key": "provision_jewelry_grnet_post_earring",
+        "value": "earring_harford_garnet"
+    },
+    {
+        "key": "provision_jewelry_moon_ring",
+        "value": "ring_pilgrim_moonstone"
+    },
+    {
+        "key": "provision_jewelry_mthr_pearl_necklace",
+        "value": "necklace_pelle_pearl"
+    },
+    {
+        "key": "provision_jewelry_onyx_ring",
+        "value": "ring_aubrey_onyx"
+    },
+    {
+        "key": "provision_jewelry_pearl_bracelet",
+        "value": "bracelet_durant_pearl"
+    },
+    {
+        "key": "provision_jewelry_pearl_earring",
+        "value": "earring_josephine_pearl"
+    },
+    {
+        "key": "provision_jewelry_pearl_ring",
+        "value": "ring_bonnard_pearl"
+    },
+    {
+        "key": "provision_jewelry_pers_turq_ring",
+        "value": "ring_magnate_turquoise"
+    },
+    {
+        "key": "provision_jewelry_porcelain_necklace",
+        "value": "necklace_blakely_miniatue"
+    },
+    {
+        "key": "provision_jewelry_qn_dmnd_earring",
+        "value": "earring_royal_victoria"
+    },
+    {
+        "key": "provision_jewelry_rudy_dngl_earring",
+        "value": "earring_beauchene_ruby"
+    },
+    {
+        "key": "provision_jewelry_slvr_pearl_necklace",
+        "value": "necklace_richelieu_amethyst"
+    },
+    {
+        "key": "provision_jewelry_sphr_bngle_bracelet",
+        "value": "bracelet_helena_sapphire"
+    },
+    {
+        "key": "provision_jewelry_sphr_bracelet",
+        "value": "bracelet_greco_sapphire"
+    },
+    {
+        "key": "provision_jewelry_topaz_necklace",
+        "value": "necklace_dane_topaz"
+    },
+    {
+        "key": "provision_jewelry_topaz_ring",
+        "value": "ring_banais_topaz"
+    },
+    {
+        "key": "provision_jewelry_turquoise_bracelet",
+        "value": "bracelet_infanta_turquoise"
+    },
+    {
+        "key": "provision_jewelry_turquoise_ring",
+        "value": "ring_thorburn_turquoise"
+    },
+    {
+        "key": "provision_jewelry_turq_stud_earring",
+        "value": "earring_calumet_turquoise"
+    },
+    {
+        "key": "provision_jewelry_whtgld_dmnd_ring",
+        "value": "ring_sackville_diamond"
+    },
+    {
+        "key": "provision_jewelry_wht_dmnd_earring",
+        "value": "earring_orchidee_diamond"
+    },
+    {
+        "key": "provision_jewelry_ylwgld_dmnd_ring",
+        "value": "ring_yates_diamond"
+    },
+    {
+        "key": "provision_loon_egg",
+        "value": "egg_loon"
+    },
+    {
+        "key": "provision_pocket_watch_gold",
+        "value": "item_pocket_watch_gold"
+    },
+    {
+        "key": "provision_spoonbill_egg",
+        "value": "egg_spoonbill"
+    },
+    {
+        "key": "provision_vulture_egg",
+        "value": "egg_vulture"
+    },
+    {
+        "key": "provision_wldflwr_agarita",
+        "value": "flower_agarita"
+    },
+    {
+        "key": "provision_wldflwr_bitterweed",
+        "value": "flower_bitterweed"
+    },
+    {
+        "key": "provision_wldflwr_blood_flower",
+        "value": "flower_blood_flower"
+    },
+    {
+        "key": "provision_wldflwr_cardinal_flower",
+        "value": "flower_cardinal"
+    },
+    {
+        "key": "provision_wldflwr_chocolate_daisy",
+        "value": "flower_chocolate_daisy"
+    },
+    {
+        "key": "provision_wldflwr_creek_plum",
+        "value": "flower_creek_plum"
+    },
+    {
+        "key": "provision_wldflwr_texas_blue_bonnet",
+        "value": "flower_texas_bluebonnet"
+    },
+    {
+        "key": "provision_wldflwr_wild_rhubarb",
+        "value": "flower_wild_rhubarb"
+    },
+    {
+        "key": "provision_wldflwr_wisteria",
+        "value": "flower_wisteria"
+    },
+    {
+        "key": "provision_pocket_watch_platinum",
+        "value": "item_pocket_watch_platinum"
+    }
+]

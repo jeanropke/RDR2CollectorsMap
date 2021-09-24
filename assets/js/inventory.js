@@ -17,6 +17,50 @@ const Inventory = {
     $('#highlight_low_amount_items').on('change', function () {
       $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);
     });
+
+    $('#import-rdo-inventory').on('click', function () {
+
+      const file = $('#rdo-inventory-import-file').prop('files')[0];
+
+      try {
+        file.text().then((text) => {
+          try {
+            Inventory.import(text);  
+          } catch (error) {
+            alert(Language.get('alerts.file_not_valid'));
+            return;
+          }
+        });
+      } catch (error) {
+        alert(Language.get('alerts.file_not_valid'));
+        console.log(error);
+        return;
+      }
+    });
+  },
+
+  import: function (json) {
+    try {
+      let data = JSON.parse(json);
+      Collection.collections.forEach((collection) => {
+        collection.items.forEach((item) => {
+          let _item = data.find(scItem => scItem.itemid == item.enumHash);
+
+          if (_item == null) {
+            item.amount = 0;
+            return;
+          }
+
+          item.amount = _item.quantity;
+        });
+      });
+      
+      $('#import-rdo-inventory-modal').modal('hide');
+    } catch (error) {
+      alert(Language.get('alerts.file_not_valid'));
+      return;
+    }
+
   },
 
   updateItemHighlights: function myself(fromTimer) {
@@ -31,7 +75,8 @@ const Inventory = {
       }
       return;
     }
-    Collection.collections.forEach(collection => {
+
+    Collection.collections.forEach((collection) => {
       if (['arrowhead', 'coin', 'fossils_random', 'jewelry_random'].includes(collection.category)) return;
 
       const contourImg = $(`[data-marker*=${collection.category}] img.marker-contour`);

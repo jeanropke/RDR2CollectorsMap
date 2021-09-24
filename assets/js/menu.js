@@ -70,7 +70,7 @@ class Menu {
 
     $('#items-value').text(`$${Collection.totalValue().toFixed(2)}`);
 
-    Collection.collections.forEach(coll => coll.updateCounter());
+    Collection.collections.forEach(collection => collection.updateCounter());
   }
 
   static activateHandlers() {
@@ -124,7 +124,7 @@ class Menu {
         } else {
           enabledCategories = toEnable ? categories : [];
         }
-        localStorage.setItem("enabled-categories", JSON.stringify(enabledCategories));
+        localStorage.setItem("rdr2collector.enabled-categories", JSON.stringify(enabledCategories));
 
         if (!category) {
           MapBase.addMarkers();

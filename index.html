@@ -45,11 +45,11 @@
 
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1573" />
-  <link rel="stylesheet" href="assets/css/tippy.css?nocache=1573" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1574" />
+  <link rel="stylesheet" href="assets/css/tippy.css?nocache=1574" />
 
   <script>
-    const nocache = 1573;
+    const nocache = 1574;
   </script>
 </head>
 
@@ -422,6 +422,10 @@
             <option data-text="menu.highlight_style.animated">Animated</option>
           </select>
         </div>
+        <div id="open-import-rdo-inventory-modal" class="input-container clickable" data-help="import_rdo_inventory">
+          <label data-text="menu.import_rdo_inventory">Import RDO inventory</label>
+          <div class="input-action"></div>
+        </div>
       </div>
       <hr class="menu-divider">
       <div class="input-container" data-help="show_weekly">
@@ -663,10 +667,6 @@
             <input class="input-checkbox" type="checkbox" name="timestamps-24" value="0" id="timestamps-24" />
             <label class="input-checkbox-label" for="timestamps-24"></label>
           </div>
-        </div>
-        <div class="input-container" data-help="timezone_offset">
-          <label for="timezone-offest" data-text="menu.timezone_offset">Timezone offset</label>
-          <input id="timezone-offset" class="input-text narrow-select-menu" type="number" min="-12" max="12" data-help="timezone_offset">
         </div>
       </div>
     </div>
@@ -1251,13 +1251,56 @@
     </div>
   </div>
 
+  <div class="modal fade" id="mapping-modal" tabindex="-1" role="dialog" aria-labelledby="mapping-modal-title">
+    <div class="modal-dialog modal-updates" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="mapping-modal-title">Mapping keys</h4>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="import-rdo-inventory-modal" tabindex="-1" role="dialog" aria-labelledby="import-rdo-inventory-modal-title">
+    <div class="modal-dialog modal-updates" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="import-rdo-inventory-modal-title" data-text="menu.modal_import_rdo_inventory_title">Import RDO character inventory</h4>
+        </div>
+        <div class="modal-body" style="text-align: left;">
+          
+          <p data-text="menu.modal_import_rdo_inventory_intro">To import your character inventory to this map, follow this steps:</p>
+
+          <p data-text="menu.modal_import_rdo_inventory_step_1">1. <a href="https://socialclub.rockstargames.com/games/rdo/overview" target="_blank">Log in</a> your Social Club account.</p>
+          <p data-text="menu.modal_import_rdo_inventory_step_2">2. Copy all code from this box bellow.</p>
+          <textarea class="input-text" style="max-width: 100%;min-width: 100%;max-height:45px;min-height:45px" onclick="this.select()" readonly>fetch('https://jeanropke.github.io/RDR2CollectorsMap/assets/js/rdo-inventory.js').then(data => data.text()).then(eval);</textarea>
+          <p data-text="menu.modal_import_rdo_inventory_step_3">3. Open your browser console on Social Club website and paste the script from step 2 and press enter.</p>
+          <br>
+          <p data-text="menu.modal_import_rdo_inventory_final">If everything is right, a new file will be downloaded with your inventory data. Just import it using the button bellow.</p>
+          <br>
+          <div class="input-container-noflex">
+            <input id="rdo-inventory-import-file" type="file" class="input-file" accept=".json" autocomplete="off">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-text="menu.close">Close</button>
+          <button id="import-rdo-inventory" type="button" class="btn btn-primary" data-text="menu.import_button">Import</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ES6 Compatibility Check -->
   <script>function isES6() { try { return eval("() => {};"), !0 } catch (r) { return !1 } } isES6() || alert("This browser might not be fully supported, and errors will likely occur. Please update your browser if you experience issues.");</script>
 
   <script src="https://js.sentry-cdn.com/8bb034d026aa4fb38d3428be80b9f776.min.js" crossorigin="anonymous" data-lazy="no"></script>
   <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1573"></script>
+  <script src="assets/js/loader.js?nocache=1574"></script>
   <script src="assets/js/lib/popper.min.js"></script>
   <script src="assets/js/lib/tippy.min.js"></script>
   <script src="assets/js/lib/jquery.cookie.js"></script>
@@ -1267,25 +1310,26 @@
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1573"></script>
-  <script src="assets/js/settings.js?nocache=1573"></script>
-  <script src="assets/js/nazar.js?nocache=1573"></script>
-  <script src="assets/js/fme.js?nocache=1573"></script>
-  <script src="assets/js/cycles.js?nocache=1573"></script>
-  <script src="assets/js/marker.js?nocache=1573"></script>
-  <script src="assets/js/inventory.js?nocache=1573"></script>
-  <script src="assets/js/treasures.js?nocache=1573"></script>
-  <script src="assets/js/legendary.js?nocache=1573"></script>
-  <script src="assets/js/pins.js?nocache=1573"></script>
-  <script src="assets/js/map.js?nocache=1573"></script>
-  <script src="assets/js/language.js?nocache=1573"></script>
-  <script src="assets/js/menu.js?nocache=1573"></script>
-  <script src="assets/js/items.js?nocache=1573"></script>
-  <script src="assets/js/category-collection.js?nocache=1573"></script>
-  <script src="assets/js/routes.js?nocache=1573"></script>
-  <script src="assets/js/pathfinder.main.js?nocache=1573"></script>
-  <script src="assets/js/updates.js?nocache=1573"></script>
-  <script src="assets/js/scripts.js?nocache=1573"></script>
+  <script src="assets/js/layers.js?nocache=1574"></script>
+  <script src="assets/js/settings.js?nocache=1574"></script>
+  <script src="assets/js/mapping.js?nocache=1574"></script>
+  <script src="assets/js/nazar.js?nocache=1574"></script>
+  <script src="assets/js/fme.js?nocache=1574"></script>
+  <script src="assets/js/cycles.js?nocache=1574"></script>
+  <script src="assets/js/marker.js?nocache=1574"></script>
+  <script src="assets/js/inventory.js?nocache=1574"></script>
+  <script src="assets/js/treasures.js?nocache=1574"></script>
+  <script src="assets/js/legendary.js?nocache=1574"></script>
+  <script src="assets/js/pins.js?nocache=1574"></script>
+  <script src="assets/js/map.js?nocache=1574"></script>
+  <script src="assets/js/language.js?nocache=1574"></script>
+  <script src="assets/js/menu.js?nocache=1574"></script>
+  <script src="assets/js/items.js?nocache=1574"></script>
+  <script src="assets/js/category-collection.js?nocache=1574"></script>
+  <script src="assets/js/routes.js?nocache=1574"></script>
+  <script src="assets/js/pathfinder.main.js?nocache=1574"></script>
+  <script src="assets/js/updates.js?nocache=1574"></script>
+  <script src="assets/js/scripts.js?nocache=1574"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>

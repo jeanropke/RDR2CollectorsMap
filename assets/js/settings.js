@@ -134,14 +134,13 @@ const SettingProxy = function () {
 }();
 
 // General settings
-const Settings = SettingProxy.createSettingProxy('main');
+const Settings = SettingProxy.createSettingProxy('rdr2collector');
 Object.entries({
   lastVersion: { default: 0 },
   alertClosed: { default: false },
   baseLayer: { default: 'map.layers.default' },
   fmeDisplayGeneralPeriod: { default: 30 },
   fmeDisplayRolePeriod: { default: 60 },
-  fmeEnabledEvents: { default: 131071 },
   fmeNotificationPeriod: { default: 10 },
   isClock24Hour: { default: false },
   isCoordsOnClickEnabled: { default: false },
@@ -175,12 +174,11 @@ Object.entries({
   topWidgetState: { default: 0 },
   legendarySpawnIconType: { default: 'head' },
   legendarySpawnIconSize: { default: 1 },
-  timeZoneOffset: { default: 0 },
   showTooltipsMap: { default: 1 },
 }).forEach(([name, config]) => SettingProxy.addSetting(Settings, name, config));
 
 // Inventory settings
-const InventorySettings = SettingProxy.createSettingProxy('inventory');
+const InventorySettings = SettingProxy.createSettingProxy('rdr2collector.inventory');
 Object.entries({
   highlightLowAmountItems: { default: false },
   isEnabled: { default: false },
@@ -195,7 +193,7 @@ Object.entries({
 }).forEach(([name, config]) => SettingProxy.addSetting(InventorySettings, name, config));
 
 // Route settings
-const RouteSettings = SettingProxy.createSettingProxy('routes');
+const RouteSettings = SettingProxy.createSettingProxy('rdr2collector.routes');
 Object.entries({
   allowFasttravel: { default: false },
   allowRailroad: { default: false },

@@ -36,13 +36,13 @@ class Legendary {
   // not idempotent (on the environment)
   constructor(preliminary) {
     Object.assign(this, preliminary);
-    this._shownKey = `shown.${this.text}`;
+    this._shownKey = `rdr2collector.shown.${this.text}`;
     this.element = $('<div class="collectible-wrapper" data-help="item">')
       .on('click', () => this.onMap = !this.onMap)
       .append($('<p class="collectible">').attr('data-text', this.text))
       .translate();
     this.species = this.text.replace(/^mp_animal_|_legendary_\d+$/g, '');
-    this.animalSpeciesKey = `rdr2collector:Legendaries_category_time_${this.species}`;
+    this.animalSpeciesKey = `rdr2collector.Legendaries_category_time_${this.species}`;
     this.preferred_weather = Language.get(`map.weather.${this.preferred_weather}`);
     this.trader_materials = this.trader_materials || Language.get('map.cant_be_picked_up');
     this.trapper_value = this.trapper_value ? `$${this.trapper_value.toFixed(2)}` : Language.get('map.cant_be_picked_up');
@@ -177,7 +177,7 @@ class Legendary {
 
     setInterval(() => {
       animalSpeciesSet.forEach(animalSpecies => {
-        const key = `rdr2collector:Legendaries_category_time_${animalSpecies}`;
+        const key = `rdr2collector.Legendaries_category_time_${animalSpecies}`;
         if (!(key in localStorage)) return;
 
         const time = localStorage.getItem(key);
@@ -205,16 +205,16 @@ class Legendary {
       Legendary.layer[method](this.marker);
       this.element.removeClass('disabled');
       if (!MapBase.isPrewviewMode)
-        localStorage.setItem(`rdr2collector:${this._shownKey}`, 'true');
+        localStorage.setItem(this._shownKey, 'true');
     } else {
       Legendary.layer.removeLayer(this.marker);
       this.element.addClass('disabled');
       if (!MapBase.isPrewviewMode)
-        localStorage.removeItem(`rdr2collector:${this._shownKey}`);
+        localStorage.removeItem(this._shownKey);
     }
   }
   get onMap() {
-    return !!localStorage.getItem(`rdr2collector:${this._shownKey}`);
+    return !!localStorage.getItem(this._shownKey);
   }
   static onCategoryToggle() {
     Legendary.animals.forEach(animal => animal.onMap = animal.onMap);

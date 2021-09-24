@@ -45,7 +45,7 @@ const Routes = {
   },
 
   getCustomRoute: function () {
-    const customRoute = JSON.parse(localStorage.getItem("routes.customRoute"));
+    const customRoute = JSON.parse(localStorage.getItem("rdr2collector.routes.customRoute") || localStorage.getItem("routes.customRoute"));
 
     if (!customRoute) return;
 

@@ -48,7 +48,7 @@ const parentCategories = {
   fossils_random: ['coastal', 'megafauna', 'oceanic']
 };
 
-let enabledCategories = JSON.parse(localStorage.getItem("enabled-categories")) || [...categories];
+let enabledCategories = JSON.parse(localStorage.getItem("rdr2collector.enabled-categories") || localStorage.getItem("enabled-categories")) || [...categories];
 
 /*
 - Leaflet extentions require Leaflet loaded
@@ -113,9 +113,35 @@ function init() {
 
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
+  //Convert some old settings here
+  //amount and collected items are converted in mapping
+  Object.keys(localStorage).forEach(key => {
+    if(key.startsWith('main.')) {
+      localStorage.setItem(`rdr2collector.${key.replace('main.', '')}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }
+    else if(key == 'customMarkersColors') {
+      localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }
+    else if(key.startsWith('routes.')) {
+      localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }
+    else if(key.startsWith('inventory.')) {
+      localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }
+    else if(key == 'enabled-categories') {
+      localStorage.setItem(`rdr2collector.${key}`, localStorage.getItem(key));
+      localStorage.removeItem(key);
+    }
+  });
+
+  const mapping = Mapping.init();
   Menu.init();
   const lootTables = MapBase.loadLootTable();
-  const itemsCollectionsWeekly = Item.init(); // Item.items (without .markers), Collection.collections, Collection.weekly*
+  const itemsCollectionsWeekly = Promise.all([mapping]).then(() => Item.init()); // Item.items (without .markers), Collection.collections, Collection.weekly*
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.mapInit(); // MapBase.map
   Language.init();
@@ -169,7 +195,6 @@ function init() {
   $("#enable-right-click").prop('checked', Settings.isRightClickEnabled);
   $("#enable-debug").prop('checked', Settings.isDebugEnabled);
   $("#enable-cycle-changer").prop('checked', Settings.isCycleChangerEnabled);
-  $("#timezone-offset").val(Settings.timeZoneOffset);
 
   $("#show-utilities").prop('checked', Settings.showUtilitiesSettings);
   $("#show-customization").prop('checked', Settings.showCustomizationSettings);
@@ -257,8 +282,7 @@ function downloadAsFile(filename, text) {
 
 function clockTick() {
   'use strict';
-  const now = new Date();
-  now.setHours((now.getHours() + Settings.timeZoneOffset))
+  const now = Cycles.mapTime();
   const gameTime = new Date(now * 30);
   const gameHour = gameTime.getUTCHours();
   const nightTime = gameHour >= 22 || gameHour < 5;
@@ -290,7 +314,7 @@ function clockTick() {
 
   $('#countdown').text(delta.toLocaleString([], deltaFormat));
 
-  $('[data-marker*="flower_agarita"], [data-marker*="flower_blood"]').css('filter', (function () {
+  $('[data-marker*="provision_wldflwr_agarita"], [data-marker*="provision_wldflwr_blood_flower"]').css('filter', (function () {
     if (MapBase.isPreviewMode) return 'none';
     const isImportant = $(this).hasClass('highlight-items');
     const whiteGlow = 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .3rem #fff)';
@@ -375,10 +399,6 @@ $("#show-debug").on("change", function () {
 
 $('#enable-debug').on("change", function () {
   Settings.isDebugEnabled = $("#enable-debug").prop('checked');
-});
-
-$('#timezone-offset').on("change", function () {
-  Settings.timeZoneOffset = parseInt($("#timezone-offset").val());
 });
 
 $('#enable-cycle-changer').on("change", function () {
@@ -632,15 +652,23 @@ $('#cookie-export').on("click", function () {
     let settings = localStorage;
 
     const exportDate = new Date().toISOUTCDateString();
-    localStorage.setItem('main.date', exportDate);
+    localStorage.setItem('rdr2collector.date', exportDate);
 
     // Remove irrelevant properties (permanently from localStorage):
     delete settings.randid;
 
     // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
     settings = $.extend(true, {}, localStorage);
+
+    //Now we can just export this map settings :)
+    Object.keys(settings).forEach(function(key){
+      if(!key.startsWith('rdr2collector.'))
+        delete settings[key];
+    });
+
     delete settings['pinned-items'];
-    delete settings['routes.customRoute'];
+    delete settings['rdr2collector.pinned-items'];
+    delete settings['rdr2collector.routes.customRoute'];
 
     // Set file version
     settings.version = 2;
@@ -664,7 +692,9 @@ function setSettings(settings) {
   delete settings.version;
 
   $.each(settings, function (key, value) {
-    localStorage.setItem(key, value);
+    //Skip `rdo.` keys.
+    if(!key.startsWith('rdo.'))
+      localStorage.setItem(key, value);
   });
 
   // Do this for now, maybe look into refreshing the menu completely (from init) later.
@@ -853,7 +883,8 @@ $(document).on('contextmenu', function (e) {
 
 $('#delete-all-settings').on('click', function () {
   $.each(localStorage, function (key) {
-    localStorage.removeItem(key);
+    if(key.startsWith('rdr2collector.'))
+      localStorage.removeItem(key);
   });
 
   location.reload(true);
@@ -894,6 +925,11 @@ $('#open-remove-all-pins-modal').on('click', function () {
 
 $('#open-updates-modal').on('click', function () {
   Updates.showModal();
+});
+
+$('#open-import-rdo-inventory-modal').on('click', function () {
+  $('#rdo-inventory-textarea').val('');
+  $('#import-rdo-inventory-modal').modal();
 });
 
 function formatLootTableLevel(table, rate = 1, level = 0) {
@@ -968,7 +1004,7 @@ $('#open-custom-marker-color-modal').on('click', event => {
     });
     return a - b;
   });
-  const savedColors = Object.assign(baseColors, JSON.parse(localStorage.getItem('customMarkersColors')) || {});
+  const savedColors = Object.assign(baseColors, JSON.parse(localStorage.getItem('rdr2collector.customMarkersColors') || localStorage.getItem('customMarkersColors')) || {});
   const wrapper = $('<div id="custom-markers-colors"></div>');
 
   categories.forEach(category => {
@@ -992,7 +1028,7 @@ $('#open-custom-marker-color-modal').on('click', event => {
 
   $('.input-container', wrapper).on('change', event => {
     baseColors[event.target.id.split('-')[0]] = event.target.value;
-    localStorage.setItem('customMarkersColors', JSON.stringify(baseColors));
+    localStorage.setItem('rdr2collector.customMarkersColors', JSON.stringify(baseColors));
     MapBase.addMarkers();
   });
 });

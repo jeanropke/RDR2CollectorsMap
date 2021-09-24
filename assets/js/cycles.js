@@ -6,17 +6,37 @@ const Cycles = {
   forwardMaxOffset: 1,
   backwardMaxOffset: 7,
   yesterday: [],
+  utcCorrectionMs: 0,
 
   load: function () {
-    return Loader.promises['cycles'].consumeJson(_data => {
-      Cycles.data = _data;
-      Cycles.getTodayCycle();
-      Cycles.checkForUpdate();
-      console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
-    });
+    return Promise.allSettled([
+      Loader.promises['now'].consumeJson(({ currentDateTime }) => {
+        const apiTime = new Date(Date.parse(currentDateTime));
+        const difference = Date.now() - apiTime.valueOf();
+        // apply correction if the difference is bigger than 2 minutes
+        if (Math.abs(difference) > 12e4) {
+          Cycles.utcCorrectionMs = difference;
+          console.info(`%c[UTC time] Corrected by ${difference}ms`, 'color: #bada55; background: #242424');
+        }
+      }),
+      Loader.promises['cycles'].consumeJson(_data => {
+        Cycles.data = _data;
+        console.info('%c[Cycles] Loaded!', 'color: #bada55; background: #242424');
+      }),
+    ])
+      .then(() => {
+        Cycles.getTodayCycle();
+        Cycles.checkForUpdate();
+      })
+      .catch(console.log);
   },
+
+  mapTime: function () {
+    return new Date(Date.now() - Cycles.utcCorrectionMs);
+  },
+
   getFreshSelectedDay: function (offset = Cycles.offset) {
-    const now = new Date();
+    const now = Cycles.mapTime();
     return new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -141,7 +161,7 @@ const Cycles = {
   checkForUpdate: function () {
     'use strict';
     if (Cycles.selectedDay === undefined) return;
-    const remainingTime = Cycles.getFreshSelectedDay(1).valueOf() - Date.now();
+    const remainingTime = Cycles.getFreshSelectedDay(1).valueOf() - Cycles.mapTime();
     setTimeout(() => {
       if (Cycles.offset !== 1) {
         Cycles.offset = 0;
@@ -165,8 +185,7 @@ const Cycles = {
   },
 
   nextDayDataExists: function () {
-    const newDate = new Date();
-    newDate.setUTCDate(newDate.getUTCDate() + Cycles.forwardMaxOffset);
+    const newDate = Cycles.mapTime();
     const nextDayCycle = Cycles.data.findIndex(element => element.date === newDate.toISOUTCDateString());
     if (nextDayCycle === -1 && Cycles.forwardMaxOffset > 0) {
       Cycles.forwardMaxOffset--;

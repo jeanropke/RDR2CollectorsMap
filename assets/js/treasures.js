@@ -46,7 +46,7 @@ class Treasure {
   // not idempotent (on the environment)
   constructor(preliminary) {
     Object.assign(this, preliminary);
-    this._shownKey = `shown.${this.text}`;
+    this._shownKey = `rdr2collector.shown.${this.text}`;
     this.element = $('<div class="collectible-wrapper" data-help="item">')
       .on('click', () => this.onMap = !this.onMap)
       .append($('<p class="collectible">').attr('data-text', this.text))
