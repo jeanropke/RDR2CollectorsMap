@@ -7,7 +7,7 @@ class Loader {
         this.urls = new Map();
         this.promises = {};
         urls.forEach(url => {
-            const name = url.split('/').filter(e => e).pop().split('.', 1)[0];
+            const name = url.split('?')[0].split('/').filter(e => e).pop().split('.', 1)[0];
             this.promises[name] = new Loader(name, url);
             this.urls.set(name, url);
         });
@@ -61,6 +61,6 @@ const urls = [
     'data/filters.json',
     'data/mapping.json',
     'https://api.rdo.gg/fme/',
-    'https://pepegapi.jeanropke.net/v2/misc/timezone'
+    'https://showcase.api.linx.twenty57.net/UnixTime/tounixtimestamp?datetime=now'
 ];
 Loader.init(urls);

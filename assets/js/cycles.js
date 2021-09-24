@@ -10,8 +10,9 @@ const Cycles = {
 
   load: function () {
     return Promise.allSettled([
-      Loader.promises['timezone'].consumeJson(({ time }) => {
-        const difference = Date.now() / 1000 - time;
+      Loader.promises['tounixtimestamp'].consumeJson(({ UnixTimeStamp }) => {
+        const difference = Date.now() / 1000 - UnixTimeStamp;
+        console.log(difference);
         // apply correction if the difference is bigger than 2 minutes
         if (Math.abs(difference) > 12e4) {
           Cycles.utcCorrectionMs = difference;
