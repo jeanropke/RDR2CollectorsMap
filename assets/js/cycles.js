@@ -10,9 +10,8 @@ const Cycles = {
 
   load: function () {
     return Promise.allSettled([
-      Loader.promises['now'].consumeJson(({ currentDateTime }) => {
-        const apiTime = new Date(Date.parse(currentDateTime));
-        const difference = Date.now() - apiTime.valueOf();
+      Loader.promises['timezone'].consumeJson(({ time }) => {
+        const difference = Date.now() / 1000 - time;
         // apply correction if the difference is bigger than 2 minutes
         if (Math.abs(difference) > 12e4) {
           Cycles.utcCorrectionMs = difference;
