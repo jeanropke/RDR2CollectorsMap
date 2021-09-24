@@ -11,9 +11,9 @@ const Cycles = {
   load: function () {
     return Promise.allSettled([
       Loader.promises['tounixtimestamp'].consumeJson(({ UnixTimeStamp }) => {
-        const difference = Date.now() / 1000 - UnixTimeStamp;
-        // apply correction if the difference is bigger than 2 minutes
-        if (Math.abs(difference) > 12e4) {
+        const difference = Date.now() - UnixTimeStamp * 1000;
+        // apply correction if the difference is bigger than 10 seconds
+        if (Math.abs(difference) > 1e4) {
           Cycles.utcCorrectionMs = difference;
           console.info(`%c[UTC time] Corrected by ${difference}ms`, 'color: #bada55; background: #242424');
         }
