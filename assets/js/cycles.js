@@ -185,6 +185,7 @@ const Cycles = {
 
   nextDayDataExists: function () {
     const newDate = Cycles.mapTime();
+    newDate.setUTCDate(newDate.getUTCDate() + Cycles.forwardMaxOffset);
     const nextDayCycle = Cycles.data.findIndex(element => element.date === newDate.toISOUTCDateString());
     if (nextDayCycle === -1 && Cycles.forwardMaxOffset > 0) {
       Cycles.forwardMaxOffset--;
