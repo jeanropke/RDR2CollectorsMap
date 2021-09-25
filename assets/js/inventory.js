@@ -60,6 +60,8 @@ const Inventory = {
         });
       });
 
+      InventorySettings.isEnabled = true;
+      
       $('#import-rdo-inventory-modal').modal('hide');
     } catch (error) {
       alert(Language.get('alerts.file_not_valid'));
