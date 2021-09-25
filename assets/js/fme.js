@@ -368,22 +368,27 @@ const FME = {
       .replace('{name}', event.nameText)
       .replace('{time}', event.etaText);
 
-    if (Notification.permission === "granted") {
-      new Notification(event.nameText, {
-        body: notificationBody,
-        icon: event.imageSrc,
-        lang: Settings.language,
-      });
-    } else if (Notification.permission !== "denied") {
-      Notification.requestPermission().then(function (permission) {
-        if (permission === "granted") {
-          new Notification(event.nameText, {
-            body: notificationBody,
-            icon: event.imageSrc,
-            lang: Settings.language,
-          });
-        }
-      });
+    try {
+      if (Notification.permission === "granted") {
+        new Notification(event.nameText, {
+          body: notificationBody,
+          icon: event.imageSrc,
+          lang: Settings.language,
+        });
+      } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then(function (permission) {
+          if (permission === "granted") {
+            new Notification(event.nameText, {
+              body: notificationBody,
+              icon: event.imageSrc,
+              lang: Settings.language,
+            });
+          }
+        });
+      }
+    } catch (error) {
+      // Notifications not supported.
+      this.markPermissionDenied();
     }
 
     if (Notification.permission === "denied") {
