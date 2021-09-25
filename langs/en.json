@@ -2109,7 +2109,7 @@
     "menu.modal_import_rdo_inventory_title": "Import RDO character inventory",
     "menu.modal_import_rdo_inventory_intro": "To import your character inventory to this map, follow this steps:",
     "menu.modal_import_rdo_inventory_step_1": "1. {int.rdo.overview}Log in{int.end.link} your Social Club account.",
-    "menu.modal_import_rdo_inventory_step_2": "2. Copy all code from this box bellow.",
-    "menu.modal_import_rdo_inventory_step_3": "3. Open your browser console on Social Club website and paste the script from step 2 and press enter.",
+    "menu.modal_import_rdo_inventory_step_2": "2. Click box bellow to copy its content.",
+    "menu.modal_import_rdo_inventory_step_3": "3. Open your browser console (F12) on Social Club website and paste the script from step 2 and press enter.",
     "menu.modal_import_rdo_inventory_final": "If everything is right, a new file will be downloaded with your inventory data. Just import it using the button bellow."
 }

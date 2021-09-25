@@ -25,7 +25,7 @@ const Inventory = {
       try {
         file.text().then((text) => {
           try {
-            Inventory.import(text);  
+            Inventory.import(text);
           } catch (error) {
             alert(Language.get('alerts.file_not_valid'));
             return;
@@ -36,6 +36,11 @@ const Inventory = {
         console.log(error);
         return;
       }
+    });
+
+    $('#inventory-script').on('click', function () {
+      this.select();
+      navigator.clipboard.writeText(this.value);
     });
   },
 
@@ -54,7 +59,7 @@ const Inventory = {
           item.amount = _item.quantity;
         });
       });
-      
+
       $('#import-rdo-inventory-modal').modal('hide');
     } catch (error) {
       alert(Language.get('alerts.file_not_valid'));
