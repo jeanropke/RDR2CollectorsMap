@@ -6,9 +6,9 @@ cd ..
   git pull
 
   # Lang files.
-  crowdin download -b Main
   crowdin upload sources -b Main
   crowdin upload translations -b Main
+  crowdin download -b Main
 
   if [[ $(git status --porcelain) ]]; then
     # Cont files.
