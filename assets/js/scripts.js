@@ -48,7 +48,13 @@ const parentCategories = {
   fossils_random: ['coastal', 'megafauna', 'oceanic']
 };
 
-let enabledCategories = JSON.parse(localStorage.getItem("rdr2collector.enabled-categories") || localStorage.getItem("enabled-categories")) || [...categories];
+let enabledCategories = [...categories];
+try {
+  enabledCategories = JSON.parse(localStorage.getItem("rdr2collector.enabled-categories") || localStorage.getItem("enabled-categories")) || [...categories];
+} catch (error) {
+  // localStorage is not available due to user's browser settings.
+  alert("Error retrieving settings.\n\nPlease make sure storing data is allowed for this site. Some browsers restrict storing data in private browsing modes. This website will not work properly until this is resolved.");
+}
 
 /*
 - Leaflet extentions require Leaflet loaded

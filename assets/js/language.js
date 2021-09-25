@@ -72,11 +72,15 @@ const Language = {
       transKey = Weekly.current ? `weekly.desc.${Weekly.current.weeklyId}` : '';
     }
 
-    translation =
-      translation ||
-      Language.data[Settings.language][transKey] ||
-      Language.data.en[transKey] ||
-      (optional ? '' : transKey);
+    if (translation) {
+      translation = translation.replace('{0}', optional);
+    } else if (Language.data[Settings.language] && Language.data[Settings.language][transKey]) {
+      translation = Language.data[Settings.language][transKey];
+    } else if (Language.data.en && Language.data.en[transKey]) {
+      translation = Language.data.en[transKey];
+    } else {
+      translation = (optional ? '' : transKey);
+    }
 
     return translation.replace(/\{([\w.]+)\}/g, (full, key) => {
       const translation = this.get(key);

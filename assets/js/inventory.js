@@ -40,7 +40,9 @@ const Inventory = {
 
     $('#inventory-script').on('click', function () {
       this.select();
-      navigator.clipboard.writeText(this.value);
+
+      if (navigater && navigator.clipboard)
+        navigator.clipboard.writeText(this.value);
     });
   },
 
@@ -61,7 +63,7 @@ const Inventory = {
       });
 
       InventorySettings.isEnabled = true;
-      
+
       $('#import-rdo-inventory-modal').modal('hide');
     } catch (error) {
       alert(Language.get('alerts.file_not_valid'));
