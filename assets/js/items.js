@@ -222,6 +222,7 @@ class Item extends BaseItem {
       localStorage.removeItem(textKey);
 
     this.highlightImportantItem();
+    clockTick();
   }
 
   get isImportant() {
