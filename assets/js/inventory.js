@@ -41,7 +41,7 @@ const Inventory = {
     $('#inventory-script').on('click', function () {
       this.select();
 
-      if (navigater && navigator.clipboard)
+      if (navigator && navigator.clipboard)
         navigator.clipboard.writeText(this.value);
     });
   },
