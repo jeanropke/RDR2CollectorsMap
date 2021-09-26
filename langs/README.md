@@ -14,7 +14,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **HeadShot557** (2,365 words)
   - **R36za** (101 words)
 
-### Arabic (42%):
+### Arabic (43%):
   - **a.youssry78** (109 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
@@ -29,6 +29,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **osm4reaper** (15 words)
   - **razzer.tube** (47 words)
   - **REMOVED_USER** (89 words)
+  - **younessmouhid** (160 words)
 
 ### Catalan (3%):
   - **Muahahas** (51 words)
@@ -43,13 +44,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **PeanutSlinger** (3,008 words)
   - **qiexiacn** (715 words)
 
-### Chinese Traditional (97%):
+### Chinese Traditional (96%):
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (7,227 words)
   - **Vinnie5412** (28 words)
 
-### Czech (49%):
+### Czech (48%):
   - **avojta** (581 words)
   - **CzechJura** (719 words)
   - **filutav39** (49 words)
@@ -72,7 +73,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **rp.lameris** (196 words)
   - **xvilo** (425 words)
 
-### English, United Kingdom (4%):
+### English, United Kingdom (2%):
   - **AdamNortonUK** (12 words)
   - **JRSC01** (657 words)
   - **Michal__d** (3,085 words)
@@ -88,6 +89,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
   - **Ca0dan** (93 words)
+  - **drthomasgeek** (24 words)
   - **FRANCESCADOLORES** (1,005 words)
   - **Gaetan92** (15 words)
   - **george37** (20 words)
@@ -146,7 +148,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **shimmyminay** (331 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (42%):
+### Hungarian (43%):
   - **Barackvirag** (1,123 words)
   - **emperger** (745 words)
   - **GoP** (85 words)
@@ -168,7 +170,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Enrik014** (864 words)
   - **Fuzman** (59 words)
   - **gamemasterkey78** (243 words)
-  - **GiorgioHerbie** (1,202 words)
+  - **GiorgioHerbie** (1,222 words)
   - **hellseeker** (731 words)
   - **Jarsha1311** (500 words)
   - **LucaBa** (425 words)
@@ -193,7 +195,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (61%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (949 words)
+  - **CoolBreeze-13s** (967 words)
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
@@ -207,7 +209,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **martinbruh** (212 words)
   - **Rilfus** (283 words)
 
-### Persian (4%):
+### Persian (6%):
   - **amirhoseindavat** (1,281 words)
 
 ### Polish (82%):
@@ -245,10 +247,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **neohazukibr** (904 words)
   - **rafaelsadriano** (16 words)
   - **Raphael_** (39 words)
-  - **Sephivader** (1,148 words)
+  - **Sephivader** (2,138 words)
   - **vierim** (33 words)
 
-### Romanian (39%):
+### Romanian (25%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
   - **proximacentaurib** (9,714 words)
@@ -319,7 +321,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Swedish_Chef69** (140 words)
   - **swiff** (134 words)
 
-### Thai (14%):
+### Thai (13%):
   - **Brieffish** (10 words)
   - **kittipat_2011** (18 words)
   - **MrFermz** (2,424 words)
@@ -328,7 +330,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **snookyyy** (10 words)
   - **woradorn** (212 words)
 
-### Turkish (92%):
+### Turkish (90%):
   - **atayyu** (74 words)
   - **bariss** (101 words)
   - **EmreKLC** (1,131 words)
@@ -336,7 +338,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,722 words)
 
-### Ukrainian (85%):
+### Ukrainian (84%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
   - **grmaster5s** (14,651 words)
