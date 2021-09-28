@@ -15,6 +15,7 @@ const MapBase = {
   requestLoopCancel: false,
   showAllMarkers: false,
   filtersData: [],
+  utcTimeCorrectionMs: 0,
 
   // Query adjustable parameters
   isPreviewMode: false,
@@ -164,6 +165,25 @@ const MapBase = {
       MapBase.map.closePopup();
     });
     Layers.itemMarkersLayer.addTo(MapBase.map);
+  },
+
+  mapTime: function () {
+    return new Date(Date.now() - MapBase.utcTimeCorrectionMs);
+  },
+
+  setMapTime: function () {
+    return Loader.promises['tounixtimestamp'].consumeJson(({ UnixTimeStamp }) => {
+      const difference = Date.now() - UnixTimeStamp * 1000;
+      // apply correction if the difference is bigger than 10 seconds
+      if (Math.abs(difference) > 1e4) {
+        MapBase.utcTimeCorrectionMs = difference;
+        console.info(`%c[UTC time] Corrected by ${difference}ms`, 'color: #bada55; background: #242424');
+      }
+    }).catch((err) => {
+      console.log(err);
+      // Allow to load next scripts on API error
+      return Promise.resolve();
+    });
   },
 
   updateMapBoundaries: function() {
@@ -343,7 +363,7 @@ const MapBase = {
   },
 
   resetMarkersDaily: function () {
-    const date = Cycles.mapTime().toISOUTCDateString();
+    const date = MapBase.mapTime().toISOUTCDateString();
 
     if (localStorage.getItem('rdr2collector.date') == null || date != localStorage.getItem('rdr2collector.date')) {
       MapBase.markers.forEach(marker => {

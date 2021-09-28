@@ -145,6 +145,7 @@ function init() {
   });
 
   const mapping = Mapping.init();
+  const setMapTime = MapBase.setMapTime();
   Menu.init();
   const lootTables = MapBase.loadLootTable();
   const itemsCollectionsWeekly = Promise.all([mapping]).then(() => Item.init()); // Item.items (without .markers), Collection.collections, Collection.weekly*
@@ -156,7 +157,7 @@ function init() {
   changeCursor();
   // MapBase.markers (without .lMarker), Item.items[].markers
   const markers = Promise.all([itemsCollectionsWeekly, lootTables]).then(Marker.init);
-  const cycles = Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
+  const cycles = Promise.all([itemsCollectionsWeekly, markers, setMapTime]).then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
   const filters = MapBase.loadFilters();
@@ -288,7 +289,7 @@ function downloadAsFile(filename, text) {
 
 function clockTick() {
   'use strict';
-  const now = Cycles.mapTime();
+  const now = MapBase.mapTime();
   const gameTime = new Date(now * 30);
   const gameHour = gameTime.getUTCHours();
   const nightTime = gameHour >= 22 || gameHour < 5;
