@@ -416,18 +416,6 @@ $('#enable-cycle-changer').on("change", function () {
   }
 });
 
-// “random” category still needs this (other collectibles have handlers in their class)
-$('.menu-option.clickable input').on('click', function (event) {
-  event.stopPropagation();
-});
-
-$('.menu-option.clickable input').on('change', function (event) {
-  const el = $(event.target);
-  Cycles.categories[el.attr("name")] = parseInt(el.val());
-  MapBase.addMarkers();
-  Menu.refreshMenu();
-});
-
 $("#search").on("input", function () {
   MapBase.onSearch($('#search').val());
   $("#filter-type").val('none');
