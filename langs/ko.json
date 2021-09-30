@@ -1237,7 +1237,7 @@
     "routes.invalid": "유효하지 않은 경로입니다. 자세한 정보는 콘솔창을 확인하세요 (F12)",
     "routes.set_as_route_start": "경로 시작 위치로 지정",
     "routes.generate_route_now": "시작 위치로 지정하고 경로를 만듦",
-    "menu.random_spots": "랜덤 장소",
+    "menu.random_spots": "랜덤 수집품",
     "menu.collectables_counter": "{max} 중 {count} 모았음",
     "menu.collection_counter_percentage": "{count}%",
     "menu.rdo_map": "Red Dead Online 지도",

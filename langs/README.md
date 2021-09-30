@@ -150,7 +150,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Hungarian (44%):
   - **Barackvirag** (1,123 words)
-  - **DannyTI** (359 words)
+  - **DannyTI** (416 words)
   - **emperger** (745 words)
   - **GoP** (85 words)
   - **Hutty98** (3,472 words)
@@ -196,7 +196,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (61%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (967 words)
+  - **CoolBreeze-13s** (969 words)
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
@@ -272,7 +272,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **rokamalen** (92 words)
   - **scriptSQD** (19 words)
   - **SkyFisherGames** (15 words)
-  - **sleyxz** (138 words)
+  - **sleyxz** (239 words)
   - **sniperruslan** (22 words)
   - **tomvsxvi** (563 words)
   - **UluMulu** (217 words)
