@@ -421,7 +421,11 @@ class Marker {
         popupAnchor: [1 * markerSize, -29 * markerSize],
         html: snippet[0],
         marker: this.text,
-        tippy: `${itemString} ${this.tool > 0 ? `<img class="icon" src="${aii}/${this.tool === 1 ? 'shovel' : 'magnet'}.png" alt="Icon">` : ''}`
+        tippy: `
+          <div class="tippy-box hint">
+            ${itemString} ${this.tool > 0 ? `<img class="icon" src="${aii}/${this.tool === 1 ? 'shovel' : 'magnet'}.png" alt="Icon">` : ''}
+          </div>
+        `,
       })
     });
 

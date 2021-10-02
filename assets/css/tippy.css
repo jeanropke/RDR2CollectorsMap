@@ -18,9 +18,14 @@
 }
 
 .tippy-box img {
-  position: relative;
   width: 35px;
-  top: 6px;
+  margin: 0 -6px 0 0;
+}
+
+.tippy-box.hint {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
 }
 
 .tippy-box[data-theme~='map-theme'] {
