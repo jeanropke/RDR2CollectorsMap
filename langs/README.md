@@ -65,7 +65,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Dutch (26%):
   - **GIGAPLAYCLAN** (30 words)
-  - **Gs69** (630 words)
+  - **Gs69** (703 words)
   - **Helmond1989** (2,058 words)
   - **JBO393** (184 words)
   - **jopiejooow** (72 words)
@@ -197,7 +197,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (61%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (969 words)
+  - **CoolBreeze-13s** (980 words)
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
@@ -252,10 +252,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Sephivader** (2,756 words)
   - **vierim** (33 words)
 
-### Romanian (39%):
+### Romanian (40%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (14,134 words)
+  - **proximacentaurib** (14,208 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (90%):
