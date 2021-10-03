@@ -149,12 +149,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **shimmyminay** (331 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (44%):
+### Hungarian (45%):
   - **Barackvirag** (1,123 words)
   - **DannyTI** (416 words)
   - **emperger** (745 words)
   - **GoP** (85 words)
-  - **Hutty98** (3,472 words)
+  - **Hutty98** (3,609 words)
   - **jjameska** (26 words)
   - **laszlo2033** (678 words)
   - **m1esautopalya** (103 words)
@@ -197,7 +197,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Korean (61%):
   - **ciizel** (697 words)
-  - **CoolBreeze-13s** (980 words)
+  - **CoolBreeze-13s** (983 words)
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
@@ -252,10 +252,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Sephivader** (2,756 words)
   - **vierim** (33 words)
 
-### Romanian (40%):
+### Romanian (49%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (14,208 words)
+  - **proximacentaurib** (16,275 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (90%):

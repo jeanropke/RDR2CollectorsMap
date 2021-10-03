@@ -1386,6 +1386,8 @@
     "menu.modal_clear_inventory_title": "Leltár törlése?",
     "menu.modal_clear_markers_body": "Ezzel visszaállítja a térképről eltávolított összes jelzőt. Ez a művelet nem visszavonható.",
     "menu.modal_clear_markers_title": "Visszaállítod a jelöléseket?",
+    "menu.modal_clear_routes_body": "Ez el fog távolítani minden egyedi útvonalat a térképről. A nem mentett tartalom el fog veszni. Ez a művelet nem visszavonható.",
+    "menu.modal_clear_routes_title": "Egyedi utak eltávolítása?",
     "menu.pins_import_export_explanation": "Ez importálja vagy exportálja a csapokat. Az importáló csapok az összes jelenlegi csapot kicserélik.",
     "menu.pins_import_export_title": "Felhasználói tűk",
     "menu.read_wiki": "A térkép Wiki oldala",
@@ -1676,6 +1678,7 @@
     "mp_animal_moose_legendary_02.desc": "Ezt a jávorszarvast Északra látták Roanoke Ridge-től, Kamassa River fele legelészni. Tudni kell róla hogy különleges fekete bundája van. A jávorszarvasok félénk teremtmények és el kezdenek futni ha megijednek, szóval halkan és óvatosan közelítsd meg. Nappal a legaktívabbak és a vastag bundájuk lehetővé teszi hogy ellenálljanak bármilyen időjárásnak.",
     "mp_animal_panther_legendary_02.desc": "A legenda úgy tartja hogy egy albínó párduc járkál Merkins Waller és Macomb's End között. A bundája világítóan fehér, és kiemelkedik a mocsaras környezetből. Ez a párduc nagyon veszélyes és mindenkire rátámad aki az ő területére bemerészkedik, provokálja vagy bármi mást tesz. Éjszaka, esős időben szokták észlelni amikor zsákmányra vadászik.",
     "mp_animal_ram_legendary_03.desc": "Ezt a ritka kost Rio Bravo és Cholla Springs között látták. A bundája fekete és a szarvai sötétvörösek. Általában szereti feldönteni a járókelőket és megtámad más állatokat is az ő területén. A szó gyorsan száll, ezért is alapból agresszív az állat. Az állat tanulmányozása nagyobb távolságból biztonságos hogy nehogy megtámadjon.",
+    "mp_animal_wolf_legendary_02.desc": "A Legendás Onyx Farkast akkor látták meg amikor Wapiti mellett haladt el. Híres fényes sárga szemeiről, amelyek kiemelkednek sötét bundájával szemben. Őrizni szokta a területeit, az emberekre is rá támad akik túl közel kerülnek a területéhez. Ez a farkas éjszaka a legaktívabb és vadászni csak száraz időben szokott.",
     "map.generic_not_released": "Ez a tartalom még nem jelent meg a játékban.",
     "map.gus_price": "Gus árai:",
     "map.weather.preferred_weather": "Preferált időjárás",
@@ -1743,5 +1746,11 @@
     "menu.jewelry_random": "Véletlenszerű Ékszer",
     "menu.random_spot_metal": "Véletlenszerű Hely (Fémdetektor)",
     "menu.random_spot_shovel": "Véletlenszerű Hely (Ásó)",
-    "menu.sponsors": "Szponzorok"
+    "menu.sponsors": "Szponzorok",
+    "menu.import_rdo_inventory": "RDO leltár importálása",
+    "menu.modal_import_rdo_inventory_title": "RDO karakter leltárának importálása",
+    "menu.modal_import_rdo_inventory_step_1": "1. {int.rdo.overview} Jelentkezz be{int.end.link} a saját Social Club fiókodba.",
+    "menu.modal_import_rdo_inventory_step_2": "2. A tartalom másolásához kattintson az alábbi mezőre.",
+    "menu.modal_import_rdo_inventory_step_3": "3. Nyisd meg a böngésző konzolt (F12) a Social Club weboldalán és másold be a script-et a 2. lépésből és nyomj egy enter-t.",
+    "menu.modal_import_rdo_inventory_final": "Hogyha minden jól működött akkor az új fájl le lesz töltve a leltári adatokkal együtt. Csak importáld a fájlokat a gomb segítségével."
 }
