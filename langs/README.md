@@ -35,7 +35,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Muahahas** (51 words)
 
 ### Chinese Simplified (80%):
-  - **akbcd** (421 words)
+  - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,811 words)
   - **curryguru** (47 words)
@@ -252,10 +252,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Sephivader** (2,756 words)
   - **vierim** (33 words)
 
-### Romanian (49%):
+### Romanian (53%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (16,275 words)
+  - **proximacentaurib** (17,015 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (90%):
