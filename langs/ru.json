@@ -1597,6 +1597,9 @@
     "menu.fme.time.minutes": "{minutes} мин",
     "menu.fme.fme_master_archer": "Мастер Лучник",
     "menu.fme.fme_dispatch_rider": "Экспресс-доставка",
+    "menu.fme.fme_challenge_river_fishing": "Речная рыбалка",
+    "menu.fme.fme_challenge_lake_fishing": "Озёрная рыбалка",
+    "menu.fme.fme_challenge_swamp_fishing": "Болотная рыбалка",
     "menu.fme.fme_fools_gold": "Золотой костюм",
     "menu.fme.fme_cold_dead_hands": "Позиционная война",
     "menu.fme.fme_king_of_the_castle": "Царь горы",
@@ -1901,6 +1904,11 @@
     "menu.filter_type.low_amount_items": "Только предметы с низким запасом",
     "menu.filter_min_amount_items": "Показывать только те предметы, которых в запасе меньше чем",
     "menu.sponsors": "Спонсоры",
+    "menu.import_rdo_inventory": "Импортировать инвентарь RDO",
+    "menu.modal_import_rdo_inventory_title": "Импортировать инвентарь персонажа RDO",
+    "menu.modal_import_rdo_inventory_intro": "Чтобы импортировать инвентарь вашего персонажа в эту карту, следуйте данным шагам:",
+    "menu.modal_import_rdo_inventory_step_1": "{int.rdo.overview}Войти{int.end.link} в ваш аккаунт Social Club.",
     "menu.modal_import_rdo_inventory_step_2": "2. Нажмите кнопку ниже для копирования содержимого.",
-    "menu.modal_import_rdo_inventory_step_3": "3. Откройте консоль браузера (F12) на сайте Social Club, вставьте скрипт из шага 2 и нажмите Enter."
+    "menu.modal_import_rdo_inventory_step_3": "3. Откройте консоль браузера (F12) на сайте Social Club, вставьте скрипт из шага 2 и нажмите Enter.",
+    "menu.modal_import_rdo_inventory_final": "Если всё верно, новый файл с данными о вашем инвентаре будет загружен на компьютер. Просто импортируйте его используя кнопку снизу."
 }

@@ -260,6 +260,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Russian (90%):
   - **AlexXanderGrib** (464 words)
+  - **bebrus** (107 words)
   - **davidpash89** (67 words)
   - **dramatic_prophet** (1,425 words)
   - **hellcat_tail** (15 words)
