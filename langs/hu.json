@@ -1504,6 +1504,7 @@
     "help.clear_important_items": "Eltávolítja a kijelölést az összes olyan jelölőről amely fontosnak volt jelölve.",
     "help.search_copy_link": "Másolja az aktuális keresési hivatkozást a vágólapra, így az ezzel a keresési lekérdezéssel böngészhet a térképen.",
     "help.enable_marker_shadows": "Ki-/bekapcsolja a jelölők árnyékait. Az árnyékok kikapcsolása javíthat a teljesítményen.",
+    "help.show_routes": "Ki-/bekpacsolja, hogy az adott elem megjelenjen -e a menüben.",
     "help.clock_in_game": "Megmutatja a jelenlegi idő a játékban.",
     "help.sun_moon_indicator": "Egy egyszerű kijelző ami megmutatja hogy éppen éjszaka vagy nappal van a játékban.",
     "help.map_coordinates_container": "Megmutatja az utolsó megjelölt helynek a koordinátáit a térképen. Ezzel engedélyezi hogy kezdőpontként beállíthasd az úttervezőben.",
