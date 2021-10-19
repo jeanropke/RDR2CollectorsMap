@@ -283,7 +283,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Serbian (Cyrillic) (0%):
   - **UluMulu** (217 words)
 
-### Spanish (94%):
+### Spanish (98%):
   - **23.jonathantadeoleiva** (13 words)
   - **Arisgo** (1,009 words)
   - **avillamizar71** (5,456 words)
@@ -307,9 +307,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **smauri** (105 words)
   - **Straks1668** (34 words)
   - **tomyloly.11** (698 words)
+  - **ToshyExS** (1,272 words)
   - **ulises_hdz22** (361 words)
 
-### Spanish, Mexico (94%):
+### Spanish, Mexico (97%):
   - **bloobhy** (152 words)
   - **juanestevez** (911 words)
 

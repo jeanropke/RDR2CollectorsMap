@@ -1077,6 +1077,7 @@
     "provision_spoonbill_egg.name": "Huevo de espátula",
     "provision_spoonbill_egg_5.desc": "Este huevo en particular puede quedarse atrapado en el árbol. Si eso ocurre, consigue un carro de cazarrecompensas, súbete encima y dispara al nido y al huevo con el rifle varmint usando la mira.",
     "provision_vulture_egg.name": "Huevo de buitre",
+    "provision_wldflwr_agarita.name": "Agaita",
     "provision_wldflwr_bitterweed.name": "Solecillo amargo",
     "provision_wldflwr_blood_flower.name": "Flor de sangre",
     "provision_wldflwr_cardinal_flower.name": "Flor del cardenal",
@@ -1596,6 +1597,9 @@
     "menu.fme.time.minutes": "{minutes} minutos",
     "menu.fme.fme_master_archer": "Maestro Arquero",
     "menu.fme.fme_dispatch_rider": "Mensajero",
+    "menu.fme.fme_challenge_river_fishing": "Desafío de pesca en el río",
+    "menu.fme.fme_challenge_lake_fishing": "Desafío de pesca en el lago",
+    "menu.fme.fme_challenge_swamp_fishing": "Desafío de pesca en el pantano",
     "menu.fme.fme_fools_gold": "Oro del necio",
     "menu.fme.fme_cold_dead_hands": "Manos frías",
     "menu.fme.fme_king_of_the_castle": "Rey del castillo",
@@ -1899,5 +1903,12 @@
     "help.filter_min_amount_items": "Le permite establecer la cantidad máxima de artículos en tu inventario considerados como \"artículos de inventario bajos\".",
     "menu.filter_type.low_amount_items": "Sólo artículos de inventario bajos",
     "menu.filter_min_amount_items": "Mostrar sólo la cantidad de artículos por debajo de",
-    "menu.sponsors": "Patrocinadores"
+    "menu.sponsors": "Patrocinadores",
+    "menu.import_rdo_inventory": "Importar inventario de RDO",
+    "menu.modal_import_rdo_inventory_title": "Importar el inventario del personaje de RDO",
+    "menu.modal_import_rdo_inventory_intro": "Para importar el inventario de tu personaje para este mapa, sigue estos pasos:",
+    "menu.modal_import_rdo_inventory_step_1": "1. {int.rdo.overview}Inicia sesión{int.end.link} tu cuenta del Social Club.",
+    "menu.modal_import_rdo_inventory_step_2": "2. Haz clic en el cuadro de abajo para copiar su contenido.",
+    "menu.modal_import_rdo_inventory_step_3": "3. Abre la consola de tu navegador (F12) en la web de Social Club y pega el script del paso 2 y presiona Intro.",
+    "menu.modal_import_rdo_inventory_final": "Si todo va bien, un nuevo archivo debería descargarse con los datos de tu inventario. Solo impórtalo usando el botón de abajo."
 }
