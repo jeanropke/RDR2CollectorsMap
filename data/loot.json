@@ -138,8 +138,8 @@
     },
     "collectible_coins_rare": {
       "provision_coin_1700_ny_tkn": 0.2,
+      "provision_coin_1792_lib_qtr": 0.2,
       "provision_coin_1797_gld_eag": 0.2,
-      "provision_coin_1792_qtr": 0.2,
       "provision_coin_1800_gld_dlr": 0.2,
       "provision_coin_1800_gld_qtr": 0.2
     },
