@@ -1921,3 +1921,8 @@ button.reload-nazar {
     margin-top: 14px;
     width: 100%;
 }
+.chrome-store-button {
+    justify-content: center;
+    display: flex;
+    padding: 12px 0 0 0;
+}
