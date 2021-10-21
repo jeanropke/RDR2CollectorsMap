@@ -1,7 +1,9 @@
 {
   "categories": {
     "arrowhead": [
-      "collectible_arrowheads_buried_all",
+      "collectible_arrowheads_buried_all"
+    ],
+    "arrowhead_buried_mounds": [
       "collectible_arrowheads_buried_mounds"
     ],
     "coin": [
@@ -32,9 +34,11 @@
       "collectible_jewelry_all"
     ],
     "random": [
-      "collectible_items_buried_mounds",
       "collectible_items_buried_flat_ground",
       "collectible_items_buried_flat_ground_shallow"
+    ],
+    "random_buried_mounds": [
+      "collectible_items_buried_mounds"
     ]
   },
   "loot": {

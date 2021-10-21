@@ -117,19 +117,29 @@ class Marker {
      * @returns {string} The key of the loot table.
      */
     this.lootTable = (() => {
-      if (this.category === 'fossils_random') {
-        if (this.text.includes('_mud_'))
-          return 'fossils_buried_mud';
-        else if (this.text.includes('_snow_dirt_'))
-          return 'fossils_buried_dirt_snow';
-        else if (this.text.includes('_snow_'))
-          return 'fossils_buried_snow';
-        else if (this.text.includes('_water_'))
-          return 'fossils_buried_water';
-        else
+      switch (this.category) {
+        case 'fossils_random': {
+          if (this.text.includes('_mud_'))
+            return 'fossils_buried_mud';
+          else if (this.text.includes('_snow_dirt_'))
+            return 'fossils_buried_dirt_snow';
+          else if (this.text.includes('_snow_'))
+            return 'fossils_buried_snow';
+          else if (this.text.includes('_water_'))
+            return 'fossils_buried_water';
+        }
+        case 'arrowhead': {
+          if (this.tool === 1) {
+            return 'arrowhead_buried_mounds';
+          }
+        }
+        case 'random': {
+          if (this.tool === 1) {
+            return 'random_buried_mounds';
+          }
+        }
+        default:
           return this.category;
-      } else {
-        return this.category;
       }
     })();
   }
