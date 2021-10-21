@@ -179,8 +179,8 @@ const MapBase = {
         MapBase.utcTimeCorrectionMs = difference;
         console.info(`%c[UTC time] Corrected by ${difference}ms`, 'color: #bada55; background: #242424');
       }
-    }).catch((err) => {
-      console.log(err);
+    }).catch(() => {
+      console.info('%c[UTC time] Unable to load!', 'color: #FF6969; background: #242424');
       // Allow to load next scripts on API error
       return Promise.resolve();
     });
