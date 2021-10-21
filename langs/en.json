@@ -1870,6 +1870,7 @@
     "menu.collectible_jewelry_rings_02": "Rings 2",
     "map.view_loot": "View Loot",
     "menu.modal_loot_table_title": "Loot Table",
+    "menu.modal_loot_table_all_tables_descr": "To view all loot tables visit {int.random_spot.link}",
     "menu.filter_type": "Filter markers",
     "help.filter_type": "Allows you to filter items based on certain criteria.",
     "menu.filter_type.none": "None",
