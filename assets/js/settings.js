@@ -187,7 +187,7 @@ Object.entries({
   resetInventoryDaily: { default: false },
   stackSize: { default: 10 },
   flowersSoftStackSize: { default: 10 },
-  enableAdvancedInventoryOptions: { default: false },
+  enableAdvancedInventoryOptions: { default: true },
   autoEnableSoldItems: { default: true },
   maxAmountLowInventoryItems: { default: 5 }
 }).forEach(([name, config]) => SettingProxy.addSetting(InventorySettings, name, config));
