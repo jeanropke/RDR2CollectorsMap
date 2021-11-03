@@ -1125,6 +1125,7 @@
     "weekly.desc.set_gambler": "Glücksspieler",
     "weekly.desc.set_gentleman": "Gegenstände für den Gentleman von Welt",
     "weekly.desc.set_gold_panner": "Traum eines Goldschürfers",
+    "weekly.desc.set_guarma": "Guarma",
     "weekly.desc.set_hairdresser": "Friseurutensilien",
     "weekly.desc.set_herbalist": "Kräuterkenner",
     "weekly.desc.set_hunter": "Jäger",
@@ -1896,5 +1897,6 @@
     "help.filter_min_amount_items": "Ermöglicht es Ihnen, die maximale Anzahl von Elementen in Ihrem Bestand als \"Artikel mit niedriger Lagerbestandsmenge\" festzulegen.",
     "menu.filter_type.low_amount_items": "Keine Gegenstände im Inventar",
     "menu.filter_min_amount_items": "Nur Artikel anzeigen, die niedriger sind als",
-    "menu.sponsors": "Sponsoren"
+    "menu.sponsors": "Sponsoren",
+    "menu.modal_import_rdo_inventory_manual": "Handbuch"
 }
