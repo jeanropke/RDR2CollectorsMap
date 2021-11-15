@@ -167,7 +167,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **tabandi** (287 words)
   - **YaBoiRichard614** (375 words)
 
-### Italian (88%):
+### Italian (90%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (3,281 words)
@@ -177,6 +177,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **GiorgioHerbie** (1,222 words)
   - **hellseeker** (731 words)
   - **Jarsha1311** (500 words)
+  - **kyek** (569 words)
   - **LucaBa** (425 words)
   - **masterflash222** (268 words)
   - **MattSini912** (547 words)
@@ -200,6 +201,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Korean (61%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (1,009 words)
+  - **Garudia** (111 words)
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
@@ -216,12 +218,12 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Persian (6%):
   - **amirhoseindavat** (1,281 words)
 
-### Polish (82%):
+### Polish (83%):
   - **Baltazaro** (209 words)
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
   - **Michal__d** (3,243 words)
-  - **PLTytus** (590 words)
+  - **PLTytus** (758 words)
   - **Quahox** (39 words)
   - **THE_MALOTEK** (422 words)
 
@@ -356,6 +358,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **warkoun** (290 words)
 
 ### Vietnamese (3%):
+  - **khahdihdz** (10 words)
   - **khoadang1211** (260 words)
   - **minhnhat.2206** (13 words)
   - **rheascarlete** (387 words)
