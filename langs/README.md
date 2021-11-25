@@ -222,7 +222,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Baltazaro** (209 words)
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
-  - **Kosa51** (309 words)
+  - **Kosa51** (313 words)
   - **Michal__d** (3,243 words)
   - **PLTytus** (758 words)
   - **Quahox** (39 words)
@@ -342,7 +342,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Turkish (90%):
   - **atayyu** (74 words)
   - **bariss** (101 words)
-  - **EmreKLC** (1,131 words)
+  - **EmreKLC** (1,137 words)
   - **emrullahsimsar** (3,121 words)
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,722 words)
@@ -359,7 +359,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **warkoun** (290 words)
 
 ### Vietnamese (3%):
-  - **khahdihdz** (10 words)
+  - **khahdihdz** (110 words)
   - **khoadang1211** (260 words)
   - **minhnhat.2206** (13 words)
   - **rheascarlete** (387 words)
