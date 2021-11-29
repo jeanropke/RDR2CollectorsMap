@@ -1669,6 +1669,7 @@
     "menu.collectible_jewelry_rings_02": "Anéis 2",
     "map.view_loot": "Visualizar Loot",
     "menu.modal_loot_table_title": "Tabela de Loot",
+    "menu.modal_loot_table_all_tables_descr": "Para visualizar todas as tabelas de saque visite {int.random_spot.link}",
     "menu.filter_type": "Filtrar marcadores",
     "help.filter_type": "Permite filtrar os itens baseados em certos critérios.",
     "menu.filter_type.none": "None",
@@ -1910,5 +1911,7 @@
     "menu.modal_import_rdo_inventory_step_1": "1. {int.rdo.overview}Faça login{int.end.link} em sua conta do Social Club.",
     "menu.modal_import_rdo_inventory_step_2": "2. Clique na caixa abaixo para copiar seu conteúdo.",
     "menu.modal_import_rdo_inventory_step_3": "3. Abra o console do seu navegador (F12) no site do Social Club, cole o script da etapa 2 e pressione Enter.",
-    "menu.modal_import_rdo_inventory_final": "Se tudo estiver certo, um novo arquivo será baixado com seus dados de inventário. Basta importá-lo usando o botão abaixo."
+    "menu.modal_import_rdo_inventory_final": "Se tudo estiver certo, um novo arquivo será baixado com seus dados de inventário. Basta importá-lo usando o botão abaixo.",
+    "menu.modal_import_rdo_inventory_manual": "Manual",
+    "menu.modal_import_rdo_inventory_extension": "Você pode sincronizar seu inventário usando esta extensão. Basta instalá-lo e apertar um botão. Compatível com navegadores baseados em Chromium como Brave, Google Chrome, Microsoft Edge, Opera."
 }
