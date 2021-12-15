@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@crowdin/crowdin-api-client": "^1.9.0",
+    "cron": "^1.8.2",
     "dotenv": "^8.2.0",
     "node-fetch": "^2.6.1"
   }
