@@ -13,7 +13,6 @@ cycles_update/
 fme/
 !assets/images/fme
 rdo/
-logs/
 
 # Our credentials, don't bother removing this, you won't get our stuff. ;-)
 .env
