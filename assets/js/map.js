@@ -371,6 +371,10 @@ const MapBase = {
           marker.isCollected = false;
         }
 
+        if (InventorySettings.isEnabled && !marker.isRandomizedItem && marker.item.amount === 0) {
+          marker.isCollected = false;
+        }
+
         if (InventorySettings.resetInventoryDaily && !marker.isRandomizedItem) {
           marker.item.amount = 0;
         }
