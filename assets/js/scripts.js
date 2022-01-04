@@ -442,6 +442,14 @@ $("#clear-markers").on("click", function () {
   MapBase.addMarkers();
 });
 
+$('#disable-all-collected-items').on('click', function () {
+  MapBase.markers.forEach(marker => {
+    if (marker.isRandomizedItem || marker.item.amount === 0) return;
+    marker.isCollected = true;
+  });
+  MapBase.addMarkers();
+});
+
 $("#clear-inventory").on("click", function () {
   Item.items.forEach(item => item.amount = 0);
   Inventory.updateItemHighlights();

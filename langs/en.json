@@ -1677,6 +1677,7 @@
     "menu.reset_inventory_daily": "Reset inventory daily",
     "menu.reload_map": "Reload the map now",
     "menu.disable_collected_items": "Disable collected",
+    "menu.disable_all_collected_items": "Disable collected items",
     "menu.collection_collect_all": "Collect all",
     "menu.enable_additional_inventory_options": "Enable advanced inventory options",
     "help.default": "Hover over or long-press (mobile) any setting to get information about it.",
