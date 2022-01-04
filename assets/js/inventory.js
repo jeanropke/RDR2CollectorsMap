@@ -6,7 +6,6 @@ const Inventory = {
     $('#highlight_low_amount_items').prop("checked", InventorySettings.highlightLowAmountItems);
     $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
     $('#inventory-stack').val(InventorySettings.stackSize);
-    $('#soft-flowers-inventory-stack').val(InventorySettings.flowersSoftStackSize);
     $('#auto-enable-sold-items').prop("checked", InventorySettings.autoEnableSoldItems);
     $('#reset-inventory-daily').prop("checked", InventorySettings.resetInventoryDaily);
     $('#enable-additional-inventory-options').prop("checked", InventorySettings.enableAdvancedInventoryOptions);
