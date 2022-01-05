@@ -66,7 +66,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TheWilliBM** (10 words)
   - **Wilize** (76 words)
 
-### Dutch (25%):
+### Dutch (26%):
   - **GIGAPLAYCLAN** (30 words)
   - **Gs69** (703 words)
   - **Helmond1989** (2,058 words)
@@ -152,7 +152,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **shimmyminay** (331 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (39%):
+### Hungarian (40%):
   - **Barackvirag** (1,123 words)
   - **DannyTI** (703 words)
   - **emperger** (898 words)
@@ -281,7 +281,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **rokamalen** (92 words)
   - **scriptSQD** (19 words)
   - **SkyFisherGames** (15 words)
-  - **sleyxz** (239 words)
+  - **sleyxz** (245 words)
   - **sniperruslan** (22 words)
   - **sunloved** (631 words)
   - **tomvsxvi** (563 words)
