@@ -82,7 +82,7 @@ L.DivIcon.DataMarkup = L.DivIcon.extend({
 L.Icon.TimedData = L.Icon.extend({
   _setIconStyles: function (img, name) {
     L.Icon.prototype._setIconStyles.call(this, img, name);
-    if (this.options.time && this.options.time !== []) {
+    if (this.options.time && this.options.time.length) {
       img.dataset.time = this.options.time;
     }
   },
