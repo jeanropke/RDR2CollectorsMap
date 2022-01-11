@@ -1476,6 +1476,7 @@
     "menu.reset_inventory_daily": "Resetuj ekwipunek co 24 godziny",
     "menu.reload_map": "Przeładuj mapę",
     "menu.disable_collected_items": "Wyłącz zebrane",
+    "menu.disable_all_collected_items": "Wyłącz zebrane przedmioty",
     "menu.collection_collect_all": "Zbierz wszystko",
     "menu.enable_additional_inventory_options": "Włącz zaawansowane opcje ekwipunku",
     "help.default": "Najedź lub przytrzymaj opcję menu na urz. mobilnym, aby wyświetlić podpowiedzi.",
