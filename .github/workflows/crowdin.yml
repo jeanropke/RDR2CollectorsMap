@@ -21,6 +21,7 @@ jobs:
           download_translations: true
 
           localization_branch_name: master
+          crowdin_branch_name: Main
           create_pull_request: false
           push_translations: true
           commit_message: "Automatic language update."
