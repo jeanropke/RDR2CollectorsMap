@@ -45,6 +45,7 @@ jobs:
 
       - name: Update README
         run: |
+          cd .github
           npm ci
           node .github/update.js
         env:
