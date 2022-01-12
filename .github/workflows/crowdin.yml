@@ -47,7 +47,7 @@ jobs:
         run: |
           cd .github
           npm ci
-          node .github/update.js
+          node update.js
         env:
           CROWDIN_PROJECT_ID: ${{secrets.CROWDIN_PROJECT_ID}}
           CROWDIN_PERSONAL_TOKEN: ${{secrets.CROWDIN_PERSONAL_TOKEN}}
