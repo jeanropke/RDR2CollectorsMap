@@ -1,14 +1,17 @@
 const { TranslationStatus, Reports } = require('@crowdin/crowdin-api-client');
 const fetch = require('node-fetch');
 const fs = require('fs');
+const path = require('path');
 require('dotenv').config();
 
+const basepath = path.join(__dirname, '..');
+
 const status = new TranslationStatus({
-  token: process.env.API_TOKEN,
+  token: process.env.CROWDIN_PERSONAL_TOKEN,
 });
 
 const api = new Reports({
-  token: process.env.API_TOKEN,
+  token: process.env.CROWDIN_PERSONAL_TOKEN,
 });
 
 function sleep(ms) {
@@ -17,7 +20,7 @@ function sleep(ms) {
 
 async function getTopMembers() {
   try {
-    const projectId = process.env.PROJECT_ID;
+    const projectId = process.env.CROWDIN_PROJECT_ID;
     const apiMaxTryCount = 5;
 
     const projectProgress = {};
@@ -135,7 +138,7 @@ async function getTopMembers() {
           delete projectProgress[key];
         });
 
-        fs.writeFileSync('data/lang_progress.json', JSON.stringify(projectProgress));
+        fs.writeFileSync(path.join(basepath, 'data', 'lang_progress.json'), JSON.stringify(projectProgress));
       } catch (error) {
         console.error('langProgress', JSON.stringify(error));
       }
@@ -162,7 +165,7 @@ async function updateReadme() {
     let result = '';
 
     result += '# Localisation contributors\n';
-    result += `Thanks to the following people for helping translate the project! If you are savvy in a language and feel like you want to help out, we'd greatly appreciate it! You can contribute by translating on our [Crowdin project](${process.env.PROJECT_URL}).\n\n`;
+    result += "Thanks to the following people for helping translate the project! If you are savvy in a language and feel like you want to help out, we'd greatly appreciate it! You can contribute by translating on our [Crowdin project](https://translate.rdo.gg/).\n\n";
 
     result += '## Pre-Crowdin Contributors\n';
     result += "We'd like to also mention the people that helped translate before the project switched to Crowdin, namely **Asya**, **flameango**, **githb123**, **glaseca**, **Gromino**, **iliggalodin**, **jeanropke**, **Kaffe97**, **Kiddamned**, **Klinorin**, **Korfeeeezy**, **Michal__d**, **MSSatari**, **Nopitch**, **Overnoes**, **pb29**, **qiexia**, **Raffox97**, **Rakmarok**, **rbcunhadesign**, **Senexis**, **sporb**, **Tiax**, **Vitor-Borba72**, **yamazakitouma**, and **yeradd12**.\n\n";
@@ -184,7 +187,7 @@ async function updateReadme() {
       result += '\n';
     });
 
-    fs.writeFileSync('langs/README.md', result);
+    fs.writeFileSync(path.join(basepath, 'langs', 'README.md'), result);
 
     console.log('README updated.');
   } catch (error) {

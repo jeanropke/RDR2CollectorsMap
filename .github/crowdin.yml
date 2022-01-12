@@ -1,0 +1,21 @@
+project_id_env: CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_PERSONAL_TOKEN
+base_path: "./langs"
+preserve_hierarchy: true
+
+files: 
+  [
+    {
+      type: "json",
+      source: "en.json",
+      translation: "%osx_locale%.json",
+      languages_mapping:
+        {
+          osx_locale:
+            {
+              "zh-CN": "zh_Hans",
+              "zh-TW": "zh_Hant"
+            }
+        },
+    }
+  ]

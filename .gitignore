@@ -13,7 +13,3 @@ cycles_update/
 fme/
 !assets/images/fme
 rdo/
-
-# Our credentials, don't bother removing this, you won't get our stuff. ;-)
-.env
-crowdin.yml

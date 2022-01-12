@@ -1,0 +1,65 @@
+name: Update translations
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  crowdin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Update translations
+        uses: crowdin/github-action@1.4.3
+        with:
+          upload_sources: true
+          upload_translations: true
+          download_translations: true
+
+          localization_branch_name: master
+          create_pull_request: false
+          push_translations: true
+          commit_message: "Automatic language update."
+
+          export_only_approved: false
+          config: ".github/crowdin.yml"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          CROWDIN_PROJECT_ID: ${{secrets.CROWDIN_PROJECT_ID}}
+          CROWDIN_PERSONAL_TOKEN: ${{secrets.CROWDIN_PERSONAL_TOKEN}}
+  readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Update README
+        run: |
+          npm ci
+          node .github/readme.js
+        env:
+          CROWDIN_PROJECT_ID: ${{secrets.CROWDIN_PROJECT_ID}}
+          CROWDIN_PERSONAL_TOKEN: ${{secrets.CROWDIN_PERSONAL_TOKEN}}
+
+      - name: Commit files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Update language README."
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true

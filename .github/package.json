@@ -1,10 +1,10 @@
 {
-  "name": "crowdin",
+  "name": "readme",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "readme.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node readme.js"
   },
   "keywords": [],
   "author": "",
