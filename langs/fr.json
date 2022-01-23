@@ -1077,6 +1077,7 @@
     "provision_spoonbill_egg.name": "Œuf de Spatule",
     "provision_spoonbill_egg_5.desc": "Cet œuf peut souvent rester coincé dans l'arbre. Si cela se produit, appelez le chariot de primes, grimpez dessus, puis tirez sur le nid et l'œuf avec un fusil à petit gibier en utilisant la lunette.",
     "provision_vulture_egg.name": "Œuf de Vautour",
+    "provision_wldflwr_agarita.name": "Agarita",
     "provision_wldflwr_bitterweed.name": "Ambroisie",
     "provision_wldflwr_blood_flower.name": "Asclépiade de Curaçao",
     "provision_wldflwr_cardinal_flower.name": "Lobélie Cardinale",
@@ -1474,6 +1475,7 @@
     "menu.reset_inventory_daily": "Réinitialiser l'inventaire quotidiennement",
     "menu.reload_map": "Actualiser la carte maintenant",
     "menu.disable_collected_items": "Désactiver collectés",
+    "menu.disable_all_collected_items": "Désactiver les objets collectés",
     "menu.collection_collect_all": "Tout collecter",
     "menu.enable_additional_inventory_options": "Activer les options d'inventaire avancées",
     "help.default": "Survolez ou appuyez longuement (mobile) n'importe quel paramètre pour obtenir des informations à ce sujet.",
@@ -1593,6 +1595,7 @@
     "menu.fme.time.minutes": "{minutes} minutes",
     "menu.fme.fme_master_archer": "Maître archer",
     "menu.fme.fme_dispatch_rider": "Livraison spéciale",
+    "menu.fme.fme_challenge_lake_fishing": "Défi Pêche en Lac",
     "menu.fme.fme_fools_gold": "L'or des fous",
     "menu.fme.fme_cold_dead_hands": "Possession recherchée",
     "menu.fme.fme_king_of_the_castle": "Roi du château",
@@ -1896,5 +1899,6 @@
     "help.filter_min_amount_items": "Vous permet de définir le nombre maximal d'objets dans votre inventaire considérés comme des \"objets en faible quantité\".",
     "menu.filter_type.low_amount_items": "Uniquement les objets en faible quantité",
     "menu.filter_min_amount_items": "Afficher uniquement les articles d'un montant inférieur à",
-    "menu.sponsors": "Sponsors"
+    "menu.sponsors": "Sponsors",
+    "menu.modal_import_rdo_inventory_step_2": "2. Cliquez sur la case ci-dessous pour copier son contenu."
 }
