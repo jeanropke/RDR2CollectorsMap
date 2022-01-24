@@ -33,8 +33,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (89 words)
   - **younessmouhid** (160 words)
 
-### Catalan (10%):
-  - **ElTellito** (2,518 words)
+### Catalan (12%):
+  - **ElTellito** (2,961 words)
   - **Muahahas** (51 words)
 
 ### Chinese Simplified (80%):
@@ -66,12 +66,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TheWilliBM** (10 words)
   - **Wilize** (76 words)
 
-### Dutch (30%):
+### Dutch (31%):
   - **GIGAPLAYCLAN** (30 words)
   - **Gs69** (703 words)
   - **Helmond1989** (2,058 words)
   - **JBO393** (184 words)
-  - **jopiejooow** (979 words)
+  - **jopiejooow** (1,186 words)
   - **MrGrivixer** (20 words)
   - **nielsb2004** (50 words)
   - **rp.lameris** (196 words)
@@ -94,6 +94,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **bloodymanfr** (72 words)
   - **Ca0dan** (93 words)
   - **drthomasgeek** (24 words)
+  - **EternalEagle** (78 words)
   - **FRANCESCADOLORES** (1,005 words)
   - **Gaetan92** (15 words)
   - **george37** (20 words)
@@ -117,11 +118,12 @@ These are the people that helped translate the project using Crowdin. Please not
   - **thibaud3109** (68 words)
   - **YuYusS** (2,537 words)
 
-### German (90%):
+### German (91%):
   - **ADRlAN1988** (50 words)
   - **catmc8565** (163 words)
   - **CodingMax** (39 words)
   - **cwildfoerster** (104 words)
+  - **daekybbx.contact** (78 words)
   - **davidcooper73760** (86 words)
   - **deragent007** (28 words)
   - **djenerg** (12 words)
@@ -145,15 +147,16 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ToX1cRanG3r** (363 words)
 
 ### Hebrew (23%):
-  - **dudiv5674** (3,016 words)
+  - **dudiv5674** (3,027 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
   - **shimmyminay** (331 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (46%):
+### Hungarian (47%):
   - **Barackvirag** (1,123 words)
+  - **BMX** (237 words)
   - **DannyTI** (703 words)
   - **emperger** (898 words)
   - **GoP** (85 words)
@@ -218,6 +221,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Persian (6%):
   - **amirhoseindavat** (1,281 words)
+  - **lostman2000** (219 words)
 
 ### Polish (85%):
   - **Baltazaro** (209 words)
