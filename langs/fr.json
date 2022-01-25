@@ -1608,7 +1608,7 @@
     "menu.fme.fme_role_manhunt": "Chasse à l'homme",
     "menu.fme.fme_role_trade_route": "Route commerciale",
     "menu.fme.fme_wildlife_photographer": "Photographe de la nature",
-    "menu.fme.fme_role_salvage": "Récupération",
+    "menu.fme.fme_role_salvage": "Rien ne se perd",
     "menu.fme.fme_challenge_wild_animals_kills": "Défi « Chasse aux animaux sauvages »",
     "menu.fme.fme_challenge_bow_kills": "Défi de victimes à l'arc",
     "menu.fme.fme_challenge_headshot_kills": "Défi Tir à la tête",
@@ -1900,5 +1900,6 @@
     "menu.filter_type.low_amount_items": "Uniquement les objets en faible quantité",
     "menu.filter_min_amount_items": "Afficher uniquement les articles d'un montant inférieur à",
     "menu.sponsors": "Sponsors",
-    "menu.modal_import_rdo_inventory_step_2": "2. Cliquez sur la case ci-dessous pour copier son contenu."
+    "menu.modal_import_rdo_inventory_step_2": "2. Cliquez sur la case ci-dessous pour copier son contenu.",
+    "menu.modal_import_rdo_inventory_manual": "Manuel"
 }
