@@ -119,6 +119,20 @@ function init() {
 
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
+  // Open side-menu on default only on desktop
+  SettingProxy.addSetting(Settings, 'isMenuOpened', {
+    default: (() => {
+      try {
+        const height = window.screen.availHeight;
+        const width = window.screen.availWidth;
+        const mediaMobile = window.matchMedia('only screen and (max-width: 760px)').matches;
+        return (height > width && mediaMobile) ? false : true;
+      } catch (err) {
+        return false;
+      }
+    })(),
+  });
+
   //Convert some old settings here
   //amount and collected items are converted in mapping
   Object.keys(localStorage).forEach(key => {

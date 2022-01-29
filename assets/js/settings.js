@@ -152,7 +152,6 @@ Object.entries({
   isFmeDisplayEnabled: { default: true },
   isFmeNotificationEnabled: { default: false },
   isMarkerClusterEnabled: { default: true },
-  isMenuOpened: { default: true },
   isPinsEditingEnabled: { default: true },
   isPinsPlacingEnabled: { default: false },
   isPopupsEnabled: { default: true },
