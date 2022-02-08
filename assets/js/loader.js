@@ -45,22 +45,22 @@ class Loader {
 }
 
 const urls = [
-    'data/lang_progress.json',
-    'data/updates.json',
-    'data/items_value.json',
-    'https://pepegapi.jeanropke.net/v2/rdo/weekly',
-    'data/weekly_sets.json',
-    'data/cycles.json',
-    'data/overlays.json',
-    'data/items.json',
-    'data/fasttravels.json',
-    'https://pepegapi.jeanropke.net/v2/rdo/nazar',
-    'data/treasures.json',
     'data/animal_legendary.json',
-    'data/loot.json',
+    'data/cycles.json',
+    'data/fasttravels.json',
     'data/filters.json',
+    'data/items_value.json',
+    'data/items.json',
+    'data/lang_progress.json',
+    'data/loot.json',
     'data/mapping.json',
+    'data/overlays.json',
+    'data/treasures.json',
+    'data/updates.json',
+    'data/weekly_sets.json',
     'https://api.rdo.gg/fme/',
-    'https://showcase.api.linx.twenty57.net/UnixTime/tounixtimestamp?datetime=now'
+    'https://pepegapi.jeanropke.net/v2/misc/timezone',
+    'https://pepegapi.jeanropke.net/v2/rdo/nazar',
+    'https://pepegapi.jeanropke.net/v2/rdo/weekly',
 ];
 Loader.init(urls);

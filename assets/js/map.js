@@ -172,8 +172,8 @@ const MapBase = {
   },
 
   setMapTime: function () {
-    return Loader.promises['tounixtimestamp'].consumeJson(({ UnixTimeStamp }) => {
-      const difference = Date.now() - UnixTimeStamp * 1000;
+    return Loader.promises['timezone'].consumeJson(({ time }) => {
+      const difference = Date.now() - time * 1000;
       // apply correction if the difference is bigger than 10 seconds
       if (Math.abs(difference) > 1e4) {
         MapBase.utcTimeCorrectionMs = difference;
