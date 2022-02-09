@@ -39,7 +39,7 @@ const Language = {
 
     return Loader.promises['lang_progress'].consumeJson(data => {
       this.progress = data;
-      this.updateProgress();
+      this.updateLanguageMenu();
     });
   },
 
@@ -137,23 +137,29 @@ const Language = {
     $('#search').attr("placeholder", Language.get('menu.search_placeholder'));
 
     FME.update();
-    this.updateProgress();
+    this.updateLanguageMenu();
   },
 
-  updateProgress: function () {
-    $('#language option').each((key, value) => {
-      const item = $(value).attr('value').replace('-', '_');
-      let percent = this.progress[item];
+  updateLanguageMenu: function () {
+    const currentLanguage = Settings.language;
+    const languageGlobalName = new Intl.DisplayNames([currentLanguage], { type: 'language' });
 
-      if (item === "en") percent = 100;
+    $('#language option').each((key, value) => {
+      const item = $(value).attr('value');
+      let percent = this.progress[item.replace('-', '_')];
+
+      if (item === 'en') percent = 100;
       if (!percent) percent = 0;
 
-      $(value).text(`${Language.get('menu.lang_' + item)} (${percent}%)`);
+      const languageLocaleName = new Intl.DisplayNames([item], { type: 'language' });
+      const currentLang = currentLanguage === item;
+
+      $(value).text(capitalize(`${languageLocaleName.of(item)} ${!currentLang ? `(${languageGlobalName.of(item)})` : '' } (${percent}%)`));
     });
 
-    let thisProg = this.progress[Settings.language.replace('-', '_')];
-    if (Settings.language === "en") thisProg = 100;
+    let thisProg = this.progress[currentLanguage.replace('-', '_')];
+    if (currentLanguage === 'en') thisProg = 100;
     if (!thisProg) thisProg = 0;
-    $('#translation-progress').text(Language.get('menu.translate_progress').replace('{progress}', thisProg))
+    $('#translation-progress').text(Language.get('menu.translate_progress').replace('{progress}', thisProg));
   }
 };
