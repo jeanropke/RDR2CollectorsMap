@@ -982,9 +982,5 @@
     "menu.collectible_jewelry_all": "תכשיט אבוד",
     "menu.legendary_animals": "חיות אגדיות",
     "menu.translate_progress": "התקדמות התרגום עבור שפה זו היא {progress}%.",
-    "menu.lang_en": "אנגלית",
-    "menu.lang_af": "אפריקאנס (אפריקאנס)",
-    "menu.lang_ar": "ٱلْعَرَبِيَّة (ערבית)",
-    "menu.lang_he": "עברית",
     "menu.marker_color.custom": "מותאם אישית"
 }
