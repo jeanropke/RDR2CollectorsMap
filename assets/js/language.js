@@ -142,7 +142,7 @@ const Language = {
 
   updateLanguageMenu: function () {
     const currentLanguage = Settings.language;
-    const languageGlobalName = new Intl.DisplayNames([currentLanguage], { type: 'language' });
+    const languageGlobalName = new Intl.DisplayNames([currentLanguage], { type: 'language', style: 'long', languageDisplay: 'standard' });
 
     $('#language option').each((key, value) => {
       const item = $(value).attr('value');
@@ -151,7 +151,7 @@ const Language = {
       if (item === 'en') percent = 100;
       if (!percent) percent = 0;
 
-      const languageLocaleName = new Intl.DisplayNames([item], { type: 'language' });
+      const languageLocaleName = new Intl.DisplayNames([item], { type: 'language', style: 'long', languageDisplay: 'standard' });
       const currentLang = currentLanguage === item;
 
       $(value).text(capitalize(`${languageLocaleName.of(item)} ${!currentLang ? `(${languageGlobalName.of(item)})` : '' } (${percent}%)`));
