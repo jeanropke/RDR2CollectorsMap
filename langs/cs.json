@@ -1713,10 +1713,6 @@
     "menu.legendary_icon_type.head": "Hlavy",
     "help.legendary_marker_size": "Umožňuje změnit velikost ikony legendárních zvířat.",
     "menu.legendary_animal_marker_size": "Velikost značky legendárního zvířete",
-    "menu.marker_color.custom": "Vlastní",
-    "menu.jewelry_random": "Náhodný klenot",
-    "menu.random_spot_metal": "Náhodná místa (detektor kovu)",
-    "menu.random_spot_shovel": "Náhodná místa (lopata)",
     "menu.lang_en": "English (angličtina)",
     "menu.lang_af": "Afrikaans (afrikánština)",
     "menu.lang_ar": "العربية (arabština)",
@@ -1748,5 +1744,9 @@
     "menu.lang_uk": "Українська (ukrajinština)",
     "menu.lang_vi": "Tiếng Việt (vietnamština)",
     "menu.lang_zh_Hans": "简体中文 (čínština (zjednodušená))",
-    "menu.lang_zh_Hant": "繁體中文 (čínština (tradiční))"
+    "menu.lang_zh_Hant": "繁體中文 (čínština (tradiční))",
+    "menu.marker_color.custom": "Vlastní",
+    "menu.jewelry_random": "Náhodný klenot",
+    "menu.random_spot_metal": "Náhodná místa (detektor kovu)",
+    "menu.random_spot_shovel": "Náhodná místa (lopata)"
 }

@@ -1474,7 +1474,6 @@
     "menu.legendary_animal_marker_type": "حيوان اسطوري نوع العلامة",
     "menu.legendary_icon_type.paw_prints": "علامة أثر",
     "menu.legendary_icon_type.head": "رؤوس",
-    "menu.marker_color.custom": "مخصص",
     "menu.lang_en": "English (الإنجليزية)",
     "menu.lang_af": "Afrikaans (الأفريقانية)",
     "menu.lang_ar": "العربية",
@@ -1506,5 +1505,6 @@
     "menu.lang_uk": "Українська (الأوكرانية)",
     "menu.lang_vi": "Tiếng Việt (الفيتنامية)",
     "menu.lang_zh_Hans": "简体中文 (الصينية المبسطة)",
-    "menu.lang_zh_Hant": "繁體中文 (الصينية التقليدية)"
+    "menu.lang_zh_Hant": "繁體中文 (الصينية التقليدية)",
+    "menu.marker_color.custom": "مخصص"
 }

@@ -485,7 +485,6 @@
     "map.weather.foggy": "Tåkete vær",
     "map.weather.rain": "Regnvær",
     "map.weather.any": "Ethvert vær",
-    "menu.marker_color.custom": "Egendefinert",
     "menu.lang_en": "English (engelsk)",
     "menu.lang_af": "Afrikaans (afrikaans)",
     "menu.lang_ar": "العربية (arabisk)",
@@ -517,5 +516,6 @@
     "menu.lang_uk": "Українська (ukrainsk)",
     "menu.lang_vi": "Tiếng Việt (vietnamesisk)",
     "menu.lang_zh_Hans": "简体中文 (forenklet kinesisk)",
-    "menu.lang_zh_Hant": "繁體中文 (tradisjonell kinesisk)"
+    "menu.lang_zh_Hant": "繁體中文 (tradisjonell kinesisk)",
+    "menu.marker_color.custom": "Egendefinert"
 }

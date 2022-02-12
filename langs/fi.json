@@ -1504,7 +1504,6 @@
     "mp_animal_wolf_legendary_03": "Susi #3 - Moonstone",
     "mp_animal_alligator_legendary_01.desc": "Tämän alligaattorin huhutaan oleskelevan Lannahechee-joessa, Saint Denis'tä lounaaseen. Se on kuuluisa kiiltävästä mustasta nahkastaan, ja on salametsästäjien keskuudessa vaalittu saalis. Lähestyessä kannattaa varoa, sillä alligaattorin purenta voi koitua kohtalokkaaksi. Tämä laji on kaikkein aktiivisin yöllä, jolloin sitä on lähes mahdotonta erottaa tummassa vedessä. Sen voi usein nähdä myrskyisällä säällä.",
     "mp_animal_alligator_legendary_03.desc": "Sana on levinnyt oudosta alligaattorista lähellä Saint Denisiä. Sen sanotaan omaavan valkoisen nahan ja punaraitaisen selän. Pesän ollessa lähellä kaupunkia, Legendaarinen Banded Alligaatori saattaa muuttua hyökkääväksi puolustaessaan reviiriä. Salametsästäjiä on nähty alueella, varoituksista huolimatta. Älä mene lankaan sen koon vuoksi, tämä petoeläin liikkuu huomattavan ripeästi.",
-    "menu.marker_color.custom": "Mukautettu",
     "menu.lang_en": "English (englanti)",
     "menu.lang_af": "Afrikaans (afrikaans)",
     "menu.lang_ar": "العربية (arabia)",
@@ -1536,5 +1535,6 @@
     "menu.lang_uk": "Українська (ukraina)",
     "menu.lang_vi": "Tiếng Việt (vietnam)",
     "menu.lang_zh_Hans": "简体中文 (kiina (yksinkertaistettu))",
-    "menu.lang_zh_Hant": "繁體中文 (kiina (perinteinen))"
+    "menu.lang_zh_Hant": "繁體中文 (kiina (perinteinen))",
+    "menu.marker_color.custom": "Mukautettu"
 }

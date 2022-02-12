@@ -982,7 +982,6 @@
     "menu.collectible_jewelry_all": "תכשיט אבוד",
     "menu.legendary_animals": "חיות אגדיות",
     "menu.translate_progress": "התקדמות התרגום עבור שפה זו היא {progress}%.",
-    "menu.marker_color.custom": "מותאם אישית",
     "menu.lang_en": "English (אנגלית)",
     "menu.lang_af": "Afrikaans (אפריקאנס)",
     "menu.lang_ar": "العربية (ערבית)",
@@ -1014,5 +1013,6 @@
     "menu.lang_uk": "Українська (אוקראינית)",
     "menu.lang_vi": "Tiếng Việt (וייטנאמית)",
     "menu.lang_zh_Hans": "简体中文 (סינית פשוטה)",
-    "menu.lang_zh_Hant": "繁體中文 (סינית מסורתית)"
+    "menu.lang_zh_Hant": "繁體中文 (סינית מסורתית)",
+    "menu.marker_color.custom": "מותאם אישית"
 }

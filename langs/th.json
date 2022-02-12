@@ -682,7 +682,6 @@
     "menu.close": "ปิด",
     "menu.collectible_arrowheads_buried_all": "Arrowheads",
     "menu.collectible_coins_buried_all": "Coins",
-    "menu.marker_color.custom": "ปรับแต่งเอง",
     "menu.lang_en": "English (อังกฤษ)",
     "menu.lang_af": "Afrikaans (แอฟริกานส์)",
     "menu.lang_ar": "العربية (อาหรับ)",
@@ -714,5 +713,6 @@
     "menu.lang_uk": "Українська (ยูเครน)",
     "menu.lang_vi": "Tiếng Việt (เวียดนาม)",
     "menu.lang_zh_Hans": "简体中文 (จีนตัวย่อ)",
-    "menu.lang_zh_Hant": "繁體中文 (จีนตัวเต็ม)"
+    "menu.lang_zh_Hant": "繁體中文 (จีนตัวเต็ม)",
+    "menu.marker_color.custom": "ปรับแต่งเอง"
 }

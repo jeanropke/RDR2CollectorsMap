@@ -1694,10 +1694,6 @@
     "menu.translate_progress": "이 언어의 변역 진행률은 {progress}% 입니다.",
     "help.map_boundaries": "지도 경계를 켜거나 끈다. 켜면 지도를 항상 화면에 표시한다.",
     "menu.map_boundaries": "지도 경계 켬",
-    "menu.marker_color.custom": "맞춤형",
-    "menu.custom_marker_color": "맞춤형 마커 색상 설정",
-    "menu.custom_marker_color_body": "카테고리별 색상 설정",
-    "menu.jewelry_random": "랜덤 쥬얼리",
     "menu.lang_en": "English (영어)",
     "menu.lang_af": "Afrikaans (아프리칸스어)",
     "menu.lang_ar": "العربية (아랍어)",
@@ -1716,6 +1712,7 @@
     "menu.lang_it": "Italiano (이탈리아어)",
     "menu.lang_ja": "日本語 (일본어)",
     "menu.lang_ko": "한국어",
+    "menu.lang_nl": "Nederlands (Dutch)",
     "menu.lang_no": "Norsk (노르웨이어)",
     "menu.lang_pl": "Polski (폴란드어)",
     "menu.lang_pt": "Português (포르투갈어)",
@@ -1729,5 +1726,9 @@
     "menu.lang_uk": "Українська (우크라이나어)",
     "menu.lang_vi": "Tiếng Việt (베트남어)",
     "menu.lang_zh_Hans": "简体中文 (중국어(간체))",
-    "menu.lang_zh_Hant": "繁體中文 (중국어(번체))"
+    "menu.lang_zh_Hant": "繁體中文 (중국어(번체))",
+    "menu.marker_color.custom": "맞춤형",
+    "menu.custom_marker_color": "맞춤형 마커 색상 설정",
+    "menu.custom_marker_color_body": "카테고리별 색상 설정",
+    "menu.jewelry_random": "랜덤 쥬얼리"
 }

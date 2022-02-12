@@ -1408,8 +1408,6 @@
     "mp_animal_bear_legendary_01": "Bjørn #1 - Owiza",
     "mp_animal_bear_legendary_02": "Bjørne #2 -Ridgeback-ånd",
     "mp_animal_bear_legendary_03": "Bjørn #3 - Gylden Ånd",
-    "menu.marker_color.custom": "Tilpasset",
-    "menu.fossils_random": "Tilfældige Fossiler",
     "menu.lang_en": "English (engelsk)",
     "menu.lang_af": "Afrikaans (afrikaans)",
     "menu.lang_ar": "العربية (arabisk)",
@@ -1441,5 +1439,7 @@
     "menu.lang_uk": "Українська (ukrainsk)",
     "menu.lang_vi": "Tiếng Việt (vietnamesisk)",
     "menu.lang_zh_Hans": "简体中文 (forenklet kinesisk)",
-    "menu.lang_zh_Hant": "繁體中文 (traditionelt kinesisk)"
+    "menu.lang_zh_Hant": "繁體中文 (traditionelt kinesisk)",
+    "menu.marker_color.custom": "Tilpasset",
+    "menu.fossils_random": "Tilfældige Fossiler"
 }

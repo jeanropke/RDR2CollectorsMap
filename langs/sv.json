@@ -561,7 +561,6 @@
     "menu.filter_type.important_items": "Viktiga artiklar",
     "menu.legendary_animals": "Legendariska Djur",
     "map.generic_not_released": "Det här innehållet är ännu inte i spelet.",
-    "menu.marker_color.custom": "Anpassad",
     "menu.lang_en": "English (engelska)",
     "menu.lang_af": "Afrikaans (afrikaans)",
     "menu.lang_ar": "العربية (arabiska)",
@@ -593,5 +592,6 @@
     "menu.lang_uk": "Українська (ukrainska)",
     "menu.lang_vi": "Tiếng Việt (vietnamesiska)",
     "menu.lang_zh_Hans": "简体中文 (förenklad kinesiska)",
-    "menu.lang_zh_Hant": "繁體中文 (traditionell kinesiska)"
+    "menu.lang_zh_Hant": "繁體中文 (traditionell kinesiska)",
+    "menu.marker_color.custom": "Anpassad"
 }
