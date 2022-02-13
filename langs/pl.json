@@ -1909,7 +1909,7 @@
     "menu.modal_import_rdo_inventory_intro": "Aby zaimportować swój ekwipunek do mapy, wykonaj następujące kroki:",
     "menu.modal_import_rdo_inventory_step_1": "{int.rdo.overview}Zaloguj się{int.end.link} do swojego konta Social Club.",
     "menu.modal_import_rdo_inventory_step_2": "Kliknij obszar poniżej, aby skopiować jego zawartość.",
-    "menu.modal_import_rdo_inventory_step_3": "3. Otwórz konsolę przeglądarki (klawisz F12) na stronie Social Club, wklej skryp z kroku 2 i naciśnij enter.",
+    "menu.modal_import_rdo_inventory_step_3": "3. Otwórz konsolę przeglądarki (klawisz F12) na stronie Social Club, wklej skrypt z kroku 2 i naciśnij enter.",
     "menu.modal_import_rdo_inventory_final": "Jeśli wszystko jest w porządku, zostanie pobrany plik z zawierający wszytkie przedmioty w Twoim ekwipunku. Teraz wystarczy go zaimportować za pomocą przycisku poniżej.",
     "menu.modal_import_rdo_inventory_manual": "Instrukcja",
     "menu.modal_import_rdo_inventory_extension": "Możesz zsynchronizować swój ekwipunek używając tego rozszerzenia. Zainstaluj je, i kliknij przycisk synchronizacji. Kompatybilne z przeglądarkami opartymi na silniku Chromium takimi jak: Brave, Google Chrome, Microsoft Edge, Opera."
