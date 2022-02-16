@@ -220,8 +220,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **martinbruh** (212 words)
   - **Rilfus** (283 words)
 
-### Persian (7%):
+### Persian (12%):
   - **amirhoseindavat** (1,281 words)
+  - **Barmak88** (2,006 words)
   - **lostman2000** (309 words)
 
 ### Polish (85%):
