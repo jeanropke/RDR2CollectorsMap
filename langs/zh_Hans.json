@@ -1908,5 +1908,9 @@
     "menu.modal_import_rdo_inventory_title": "导入RDO 角色库存",
     "menu.modal_import_rdo_inventory_intro": "要导入您的角色库存到此地图，请遵循以下步骤：",
     "menu.modal_import_rdo_inventory_step_1": "1. {int.rdo.overview}登录{int.end.link} 您的Social Club账户。",
-    "menu.modal_import_rdo_inventory_step_2": "2. 单击下方选框来复制内容。"
+    "menu.modal_import_rdo_inventory_step_2": "2. 单击下方选框来复制内容。",
+    "menu.modal_import_rdo_inventory_step_3": "3. 从浏览器在Social Club网站上打开您的控制台(F12)，按步骤 2 粘贴脚本并按回车键。",
+    "menu.modal_import_rdo_inventory_final": "如果一切都是正确的，将下载一个包含您的库存数据的新文件。只需使用下面的按钮即可导入。",
+    "menu.modal_import_rdo_inventory_manual": "说明书",
+    "menu.modal_import_rdo_inventory_extension": "您可以使用此扩展同步您的物品栏。只需安装它，然后点击按钮。 兼容基于 Chromium 的浏览器，如Brave、Google Chrome、Microsoft Edge、Opera."
 }
