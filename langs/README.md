@@ -33,17 +33,18 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (89 words)
   - **younessmouhid** (160 words)
 
-### Catalan (14%):
-  - **ElTellito** (3,697 words)
+### Catalan (15%):
+  - **ElTellito** (3,872 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (80%):
+### Chinese Simplified (83%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
   - **curryguru** (47 words)
   - **Jabaay** (52 words)
   - **labrary** (238 words)
+  - **lzyplayer.vic** (937 words)
   - **PeanutSlinger** (3,008 words)
   - **qiexiacn** (715 words)
 
@@ -75,7 +76,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **MrGrivixer** (20 words)
   - **nielsb2004** (50 words)
   - **rp.lameris** (196 words)
-  - **xvilo** (425 words)
+  - **xvilo** (426 words)
 
 ### English, United Kingdom (7%):
   - **AdamNortonUK** (12 words)
@@ -202,13 +203,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
-### Korean (66%):
+### Korean (67%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (1,031 words)
   - **Garudia** (111 words)
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
+  - **Seogi** (237 words)
   - **sksk2943** (1,376 words)
   - **wlfogb** (11 words)
 
@@ -222,7 +224,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Persian (12%):
   - **amirhoseindavat** (1,281 words)
-  - **Barmak88** (2,006 words)
+  - **Barmak88** (2,018 words)
   - **lostman2000** (309 words)
 
 ### Polish (85%):
@@ -343,7 +345,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Thai (14%):
   - **Brieffish** (10 words)
   - **kittipat_2011** (18 words)
-  - **MrFermz** (2,424 words)
+  - **MrFermz** (2,495 words)
   - **nonthawatbunrod** (217 words)
   - **Sawada_18** (14 words)
   - **snookyyy** (10 words)
