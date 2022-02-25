@@ -521,6 +521,10 @@
     "coin_random_7_5.desc": "Sota l'estenedor.",
     "coin_random_7_6.desc": "Sota la cabina elevada.",
     "provision_coin_1792_lib_qtr.name": "Quart de la Llibertat 1792",
+    "coin_random_4_1.desc": "Al final del camí al costat del pont trencat.",
+    "coin_random_1_2.desc": "Enfront d'una gran roca.",
+    "coin_random_9_3.desc": "Darrere la senyal.",
+    "coin_random_12_4.desc": "Dintre de l'arc trencat al costat oest.",
     "arrowhead_random_7_2.desc": "Dintre de la cova.",
     "arrowhead_random_3_4.desc": "Dintre de la cova.",
     "arrowhead_random_6_6.desc": "Dintre de la cova.",
@@ -700,5 +704,9 @@
     "menu.lang_uk": "Українська (ucraïnès)",
     "menu.lang_vi": "Tiếng Việt (vietnamita)",
     "menu.lang_zh_Hans": "简体中文 (xinès simplificat)",
-    "menu.lang_zh_Hant": "繁體中文 (xinès tradicional)"
+    "menu.lang_zh_Hant": "繁體中文 (xinès tradicional)",
+    "menu.modal_import_rdo_inventory_title": "Importar l'inventari del personatge de RDO",
+    "menu.modal_import_rdo_inventory_intro": "Per importar l'inventari del teu personatge a aquest mapa, segueix aquests passos:",
+    "menu.modal_import_rdo_inventory_step_1": "1. {int.rdo.overview} Inicia sessió{int.end.link} al teu compte del Social Club.",
+    "menu.modal_import_rdo_inventory_extension": "Pots sincronitzar el teu inventari amb aquesta extensió. Només insta-la i dona-li al botó. Compatible amb navegadors basats en Chromium com Brave, Google Chrome, Microsoft Edge i Opera."
 }
