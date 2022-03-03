@@ -1476,6 +1476,7 @@
     "menu.reset_inventory_daily": "Reiniciar inventario diariamente",
     "menu.reload_map": "Recargar el mapa ahora",
     "menu.disable_collected_items": "Desactivar recolectados",
+    "menu.disable_all_collected_items": "Desactivar recolectados",
     "menu.collection_collect_all": "Recoger todo",
     "menu.enable_additional_inventory_options": "Habilitar opciones avanzadas de inventario",
     "help.default": "Mantener el cursor o presionar durante un tiempo (móvil) cualquier ajuste para obtener información al respecto.",
