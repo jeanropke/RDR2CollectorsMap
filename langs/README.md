@@ -211,7 +211,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
-  - **Seogi** (559 words)
+  - **Seogi** (566 words)
   - **sksk2943** (1,376 words)
   - **wlfogb** (11 words)
 
