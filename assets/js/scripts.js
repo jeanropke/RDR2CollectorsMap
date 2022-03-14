@@ -658,6 +658,11 @@ $('#inventory-stack').on("change", function () {
   InventorySettings.stackSize = inputValue;
 });
 
+$('#soft-flowers-inventory-stack').on("change", function () {
+  let inputValue = parseInt($('#soft-flowers-inventory-stack').val());
+  inputValue = !isNaN(inputValue) ? inputValue : 10;
+  InventorySettings.flowersSoftStackSize = inputValue;
+});
 
 $('#cookie-export').on("click", function () {
   try {

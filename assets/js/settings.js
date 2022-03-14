@@ -185,6 +185,7 @@ Object.entries({
   isPopupsEnabled: { default: true },
   resetInventoryDaily: { default: false },
   stackSize: { default: 10 },
+  flowersSoftStackSize: { default: 10 },
   enableAdvancedInventoryOptions: { default: true },
   autoEnableSoldItems: { default: true },
   maxAmountLowInventoryItems: { default: 5 }

@@ -161,7 +161,8 @@ class Marker {
     } else if (this.category === 'random') {
       return true;
     } else if (InventorySettings.isEnabled && this.item) {
-      return this.item.amount < InventorySettings.stackSize;
+      const stackName = (this.category === 'flower') ? 'flowersSoftStackSize' : 'stackSize';
+      return this.item.amount < InventorySettings[stackName];
     } else {
       return true;
     }
