@@ -390,36 +390,52 @@ const MapBase = {
   onSearch: function (searchString) {
     Menu.toggleFilterWarning('map.has_search_filter_alert', !!searchString);
 
-    const searchTerms = [
-      ...new Set(searchString
-        .replace(/^[;\s]+|[;\s]+$/g, '')
-        .split(';')
-        .filter(element => element)
-        .map(term => term.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-      )
-    ];
+    // Wait 500ms before search items to do not search not full term
+    clearTimeout(MapBase.onSearch.delaySearch);
 
-    if (!searchTerms.length) {
-      uniqueSearchMarkers = MapBase.markers;
+    MapBase.onSearch.delaySearch = setTimeout(() => {
+      const searchTerms = [
+        ...new Set(searchString
+          .replace(/^[;\s]+|[;\s]+$/g, '')
+          .split(';')
+          .filter(element => element)
+          .map(term => term.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+        )
+      ];
+
+      if (!searchTerms.length) {
+        uniqueSearchMarkers = MapBase.markers;
+        MapBase.addMarkers();
+        return;
+      }
+
+      Layers.itemMarkersLayer.clearLayers();
+      uniqueSearchMarkers = MapBase.markers.filter(marker =>
+        searchTerms.some(term =>
+          marker.itemId === term ||
+          marker.itemNumberStr === term ||
+          Language.get(marker.itemTranslationKey).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(term)
+        )
+      );
+
+      if (!uniqueSearchMarkers.length) {
+        const markerNames = MapBase.markers.map(marker =>
+          Language.get(marker.itemTranslationKey).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        )
+        searchTerms.forEach(term => {
+          const bestMatch = stringSimilarity.findBestMatch(term, markerNames);
+          const bestMatchItemId = MapBase.markers[bestMatch.bestMatchIndex].itemId;
+          uniqueSearchMarkers.push(...MapBase.markers.filter(marker => bestMatchItemId === marker.itemId));
+        });
+      }
+
+      uniqueSearchMarkers.forEach(({ category }) => {
+        if (!enabledCategories.includes(category))
+          enabledCategories.push(category);
+      });
+
       MapBase.addMarkers();
-      return;
-    }
-
-    Layers.itemMarkersLayer.clearLayers();
-    uniqueSearchMarkers = MapBase.markers.filter(marker =>
-      searchTerms.some(term =>
-        marker.itemId === term ||
-        marker.itemNumberStr === term ||
-        Language.get(marker.itemTranslationKey).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(term)
-      )
-    );
-
-    uniqueSearchMarkers.forEach(({ category }) => {
-      if (!enabledCategories.includes(category))
-        enabledCategories.push(category);
-    });
-
-    MapBase.addMarkers();
+    }, !!searchString ? 500 : 0);
   },
 
   addMarkers: function (refreshMenu = false) {
