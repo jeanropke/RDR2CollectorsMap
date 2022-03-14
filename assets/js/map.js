@@ -418,16 +418,14 @@ const MapBase = {
         )
       );
 
-      if (!uniqueSearchMarkers.length) {
-        const markerNames = MapBase.markers.map(marker =>
-          Language.get(marker.itemTranslationKey).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        )
-        searchTerms.forEach(term => {
-          const bestMatch = stringSimilarity.findBestMatch(term, markerNames);
-          const bestMatchItemId = MapBase.markers[bestMatch.bestMatchIndex].itemId;
-          uniqueSearchMarkers.push(...MapBase.markers.filter(marker => bestMatchItemId === marker.itemId));
-        });
-      }
+      const markerNames = MapBase.markers.map(marker =>
+        Language.get(marker.itemTranslationKey).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      )
+      searchTerms.forEach(term => {
+        const bestMatch = stringSimilarity.findBestMatch(term, markerNames);
+        const bestMatchItemId = MapBase.markers[bestMatch.bestMatchIndex].itemId;
+        uniqueSearchMarkers.push(...MapBase.markers.filter(marker => bestMatchItemId === marker.itemId));
+      });
 
       uniqueSearchMarkers.forEach(({ category }) => {
         if (!enabledCategories.includes(category))
