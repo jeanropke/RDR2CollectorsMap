@@ -68,7 +68,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TheWilliBM** (10 words)
   - **Wilize** (76 words)
 
-### Dutch (31%):
+### Dutch (30%):
   - **GIGAPLAYCLAN** (30 words)
   - **Gs69** (703 words)
   - **Helmond1989** (2,058 words)
@@ -148,7 +148,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (632 words)
   - **ToX1cRanG3r** (363 words)
 
-### Hebrew (24%):
+### Hebrew (23%):
   - **dudiv5674** (3,039 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
@@ -204,14 +204,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
-### Korean (67%):
+### Korean (68%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (1,031 words)
   - **Garudia** (111 words)
   - **jinwoo.jeon** (539 words)
   - **KKimRoma** (2,770 words)
   - **nikelhard** (4,892 words)
-  - **Seogi** (566 words)
+  - **Seogi** (570 words)
   - **sksk2943** (1,376 words)
   - **wlfogb** (11 words)
 
@@ -223,7 +223,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **martinbruh** (212 words)
   - **Rilfus** (283 words)
 
-### Persian (13%):
+### Persian (14%):
   - **amirhoseindavat** (1,664 words)
   - **Barmak88** (2,018 words)
   - **lostman2000** (309 words)
