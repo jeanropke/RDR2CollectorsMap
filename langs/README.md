@@ -373,7 +373,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **warkoun** (290 words)
 
 ### Vietnamese (4%):
-  - **gautruc2002_2003** (59 words)
+  - **gautruc2002_2003** (72 words)
   - **khahdihdz** (110 words)
   - **khoadang1211** (260 words)
   - **minhnhat.2206** (13 words)
