@@ -339,7 +339,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **k_imq** (217 words)
   - **LilleJah** (10 words)
   - **lychothroat** (114 words)
-  - **mollyyy** (2,856 words)
+  - **mollyyy** (3,079 words)
   - **niklase005** (27 words)
   - **Swedish_Chef69** (140 words)
   - **swiff** (134 words)
