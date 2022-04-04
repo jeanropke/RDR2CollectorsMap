@@ -38,7 +38,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ElTellito** (4,539 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (87%):
+### Chinese Simplified (86%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
@@ -55,7 +55,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **RichardC.P.** (7,227 words)
   - **Vinnie5412** (28 words)
 
-### Czech (60%):
+### Czech (59%):
   - **avojta** (581 words)
   - **CzechJura** (719 words)
   - **filutav39** (49 words)
@@ -64,11 +64,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Srandokan** (24 words)
   - **wooder0403** (19 words)
 
-### Danish (53%):
+### Danish (52%):
   - **TheWilliBM** (10 words)
   - **Wilize** (76 words)
 
-### Dutch (46%):
+### Dutch (45%):
   - **GIGAPLAYCLAN** (30 words)
   - **Gs69** (703 words)
   - **Helmond1989** (2,058 words)
@@ -87,7 +87,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **R36za** (101 words)
   - **XRuthlessShadow** (29 words)
 
-### Finnish (56%):
+### Finnish (55%):
   - **seevimi** (283 words)
 
 ### French (94%):
@@ -120,7 +120,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **thibaud3109** (68 words)
   - **YuYusS** (2,537 words)
 
-### German (93%):
+### German (92%):
   - **ADRlAN1988** (50 words)
   - **catmc8565** (163 words)
   - **CodingMax** (39 words)
@@ -194,7 +194,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Tony_Bell** (194 words)
   - **Visite** (121 words)
 
-### Japanese (86%):
+### Japanese (85%):
   - **igucheese** (82 words)
   - **lumeanarunbird** (729 words)
   - **moku3** (3,536 words)
@@ -228,7 +228,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Barmak88** (2,018 words)
   - **lostman2000** (309 words)
 
-### Polish (89%):
+### Polish (88%):
   - **Baltazaro** (209 words)
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
@@ -362,7 +362,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Krykl** (12,722 words)
   - **TitanHaxz** (289 words)
 
-### Ukrainian (88%):
+### Ukrainian (87%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
   - **grmaster5s** (14,651 words)
