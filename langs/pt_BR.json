@@ -1477,6 +1477,7 @@
     "menu.soft_flowers_inventory_stack": "Quant. máx de flores",
     "menu.reload_map": "Recarregar o mapa agora",
     "menu.disable_collected_items": "Desativar coletado",
+    "menu.disable_all_collected_items": "Desativar itens coletados",
     "menu.collection_collect_all": "Coletar todos",
     "menu.enable_additional_inventory_options": "Ativar opções avançadas de inventário",
     "help.default": "Passe o cursor por cima ou segure (mobile) em qualquer configuração para receber informações sobre.",
