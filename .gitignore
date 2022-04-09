@@ -13,3 +13,7 @@ cycles_update/
 fme/
 !assets/images/fme
 rdo/
+
+# Remove map tiles from Github
+assets/maps/jpg
+assets/maps/webp
