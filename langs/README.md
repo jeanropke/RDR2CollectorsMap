@@ -275,7 +275,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **proximacentaurib** (20,298 words)
   - **tudoradrianburlacu** (35 words)
 
-### Russian (94%):
+### Russian (96%):
   - **AlexXanderGrib** (464 words)
   - **bebrus** (107 words)
   - **davidpash89** (67 words)
@@ -291,7 +291,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **rokamalen** (92 words)
   - **scriptSQD** (19 words)
   - **SkyFisherGames** (15 words)
-  - **sleyxz** (285 words)
+  - **sleyxz** (1,118 words)
   - **sniperruslan** (22 words)
   - **sunloved** (631 words)
   - **tomvsxvi** (563 words)
