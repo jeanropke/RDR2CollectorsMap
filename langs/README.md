@@ -72,7 +72,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Dutch (43%):
   - **GIGAPLAYCLAN** (30 words)
-  - **Gs69** (703 words)
+  - **Gs69** (781 words)
   - **Helmond1989** (2,058 words)
   - **JBO393** (184 words)
   - **jopiejooow** (1,186 words)
@@ -293,7 +293,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **rokamalen** (92 words)
   - **scriptSQD** (19 words)
   - **SkyFisherGames** (15 words)
-  - **sleyxz** (1,118 words)
+  - **sleyxz** (1,127 words)
   - **sniperruslan** (22 words)
   - **sunloved** (631 words)
   - **tomvsxvi** (563 words)
