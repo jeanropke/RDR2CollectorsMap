@@ -10,11 +10,11 @@ The following people helped translate the RDO Map specifically but are possibly 
 ## Crowdin Contributors
 These are the people that helped translate the project using Crowdin. Please note that Crowdin might not always report accurate numbers due to contributions from before Crowdin.
 
-### Afrikaans (30%):
+### Afrikaans (31%):
   - **HeadShot557** (2,365 words)
   - **R36za** (101 words)
 
-### Arabic (53%):
+### Arabic (52%):
   - **a.youssry78** (109 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
@@ -38,7 +38,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ElTellito** (4,539 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (86%):
+### Chinese Simplified (85%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
@@ -66,11 +66,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Srandokan** (24 words)
   - **wooder0403** (19 words)
 
-### Danish (50%):
+### Danish (49%):
   - **TheWilliBM** (10 words)
   - **Wilize** (76 words)
 
-### Dutch (43%):
+### Dutch (42%):
   - **GIGAPLAYCLAN** (30 words)
   - **Gs69** (781 words)
   - **Helmond1989** (2,058 words)
@@ -122,7 +122,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **thibaud3109** (68 words)
   - **YuYusS** (2,537 words)
 
-### German (88%):
+### German (87%):
   - **ADRlAN1988** (50 words)
   - **catmc8565** (163 words)
   - **CodingMax** (39 words)
@@ -144,7 +144,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **viliri** (1,470 words)
   - **werhel** (443 words)
 
-### Greek (29%):
+### Greek (28%):
   - **Arsenis** (277 words)
   - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
@@ -206,7 +206,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
-### Korean (52%):
+### Korean (53%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (1,031 words)
   - **Garudia** (111 words)
@@ -217,7 +217,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **sksk2943** (1,376 words)
   - **wlfogb** (11 words)
 
-### Norwegian (27%):
+### Norwegian (26%):
   - **camillgh** (724 words)
   - **casse** (31 words)
   - **DandelionSprout** (255 words)
@@ -241,7 +241,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **THE_MALOTEK** (422 words)
   - **tkwitak** (638 words)
 
-### Portuguese (42%):
+### Portuguese (41%):
   - **badaro42** (53 words)
   - **daniel.of.monteiro** (138 words)
   - **daniel.teixeira** (706 words)
@@ -271,7 +271,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Sephivader** (3,328 words)
   - **vierim** (33 words)
 
-### Romanian (72%):
+### Romanian (71%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
   - **proximacentaurib** (20,298 words)
@@ -333,7 +333,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **bloobhy** (152 words)
   - **juanestevez** (911 words)
 
-### Swedish (45%):
+### Swedish (44%):
   - **...---...** (431 words)
   - **emeliris** (636 words)
   - **idaerika** (30 words)
@@ -346,7 +346,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Swedish_Chef69** (140 words)
   - **swiff** (134 words)
 
-### Thai (10%):
+### Thai (11%):
   - **Brieffish** (10 words)
   - **kittipat_2011** (18 words)
   - **MrFermz** (2,495 words)
@@ -355,7 +355,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **snookyyy** (10 words)
   - **woradorn** (212 words)
 
-### Turkish (76%):
+### Turkish (77%):
   - **atayyu** (74 words)
   - **bariss** (101 words)
   - **EmreKLC** (1,137 words)
@@ -364,7 +364,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Krykl** (12,722 words)
   - **TitanHaxz** (289 words)
 
-### Ukrainian (83%):
+### Ukrainian (82%):
   - **andrew.zaanle** (484 words)
   - **ankara797919** (10 words)
   - **grmaster5s** (14,651 words)
