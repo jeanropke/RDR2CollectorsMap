@@ -142,6 +142,29 @@ class Marker {
           return this.category;
       }
     })();
+
+    /**
+     * if it's randomized item, get list of items you can pick up from this spot
+     * @returns { Array / undefined } (undefined for static categories)
+     */
+    this.possibleItems = (() => {
+      const randomCategories = MapBase.lootTables.categories[this.lootTable];
+      if (!randomCategories) {
+        return undefined;
+      }
+      const items = [];
+      function getItems(obj) {
+        const items = MapBase.lootTables.loot[obj];
+        if (!items) {
+          return obj;
+        }
+        return Object.keys(items)
+          .map(getItems)
+          .reduce((acc, value) => acc.concat(value), []);
+      }
+      randomCategories.forEach(category => items.push(...getItems(category)));
+      return items;
+    })();
   }
 
   get isCollected() {

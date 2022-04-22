@@ -1091,7 +1091,9 @@ function filterMapMarkers() {
     enableMainCategory = false;
     const maxAmount = InventorySettings.maxAmountLowInventoryItems;
     const lowItems = Item.items.filter(item => item.amount < maxAmount).map(item => item.itemId);
-    filterType = marker => lowItems.includes(marker.itemId);
+    filterType = marker =>
+      lowItems.includes(marker.itemId) ||
+      lowItems.some(item => marker.possibleItems && marker.possibleItems.includes(item));
   }
 
   MapBase.markers
