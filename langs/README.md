@@ -46,7 +46,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Jabaay** (52 words)
   - **labrary** (238 words)
   - **lzyplayer.vic** (937 words)
-  - **PeanutSlinger** (4,914 words)
+  - **PeanutSlinger** (4,940 words)
   - **qiexiacn** (715 words)
   - **ToxicMagisk** (503 words)
   - **user670839245** (224 words)
