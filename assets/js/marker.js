@@ -144,7 +144,7 @@ class Marker {
     })();
 
     /**
-     * if it's randomized item, get list of items you can pick up from this spot
+     * if it's random spot, get list of all items you can pick up from this spot
      * @returns { Array / undefined } (undefined for static categories)
      */
     this.possibleItems = (() => {
