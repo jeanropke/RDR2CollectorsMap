@@ -163,7 +163,7 @@ class Marker {
           .reduce((acc, value) => acc.concat(value), []);
       }
       randomCategories.forEach(category => items.push(...getItems(category)));
-      return items;
+      return [...new Set(items)];
     })();
   }
 
