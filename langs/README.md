@@ -48,6 +48,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **lzyplayer.vic** (937 words)
   - **PeanutSlinger** (5,024 words)
   - **philchang** (158 words)
+  - **qicoka** (65 words)
   - **qiexiacn** (715 words)
   - **ToxicMagisk** (503 words)
   - **user670839245** (224 words)
