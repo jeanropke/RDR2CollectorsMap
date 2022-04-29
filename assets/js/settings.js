@@ -161,6 +161,7 @@ Object.entries({
   isLaBgEnabled: { default: true },
   isMapBoundariesEnabled: {default: true },
   markerOpacity: { default: 1 },
+  isInvisibleRemovedMarkers: { default: false },
   markerSize: { default: 1 },
   overlayOpacity: { default: 0.5 },
   resetMarkersDaily: { default: true },

@@ -1633,6 +1633,8 @@
     "menu.marker_size.150": "150%",
     "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200%",
+    "help.invisible-removed-markers": "Completely hides removed markers instead of making it partially transparent.",
+    "menu.invisible-removed-markers": "Completely hide removed markers",
     "menu.toggle_debug": "Toggle debug features",
     "map.random_spot.desc": "This spot gives you a random item, you can view more detailed information {int.random_spot.link}on this Wiki page{int.end.link}.",
     "map.attribution_prefix": "Collectors Map Contributors",
