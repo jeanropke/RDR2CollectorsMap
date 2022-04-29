@@ -520,6 +520,11 @@ $("#marker-opacity").on("change", function () {
   MapBase.addMarkers();
 });
 
+$("#invisible-removed-markers").on("change", function () {
+  Settings.isInvisibleRemovedMarkers = $("#invisible-removed-markers").prop("checked");
+  MapBase.addMarkers();
+});
+
 $("#marker-size").on("change", function () {
   Settings.markerSize = Number($("#marker-size").val());
   MapBase.addMarkers();
