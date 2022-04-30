@@ -176,6 +176,11 @@ class Marker {
     } else {
       localStorage.removeItem(this._collectedKey);
     }
+
+    if (Settings.isInvisibleRemovedMarkers) {
+      MapBase.removeMarkerFromMap(this);
+    }
+
     this.updateOpacity();
   }
   get canCollect() {
@@ -407,15 +412,8 @@ class Marker {
       .end()
       .find('img.background').attr('src', bgUrl);
   }
-  updateOpacity(opacity = Settings.markerOpacity, isInvisibleRemovedMarkers = Settings.isInvisibleRemovedMarkers) {
-    let targetOpacity;
-    if (this.canCollect) {
-      targetOpacity = opacity;
-    } else {
-      targetOpacity = isInvisibleRemovedMarkers ? 0 : opacity / 3;
-    }
-
-    this.lMarker && this.lMarker.setOpacity(targetOpacity);
+  updateOpacity(opacity = Settings.markerOpacity) {
+    this.lMarker && this.lMarker.setOpacity(this.canCollect ? opacity : opacity / 3);
   }
   recreateLMarker(isShadowsEnabled = Settings.isShadowsEnabled, markerSize = Settings.markerSize) {
     const icon = this.category !== 'random' ? this.category : (this.tool === 1 ? 'shovel' : 'magnet');

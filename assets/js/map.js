@@ -447,13 +447,20 @@ const MapBase = {
 
     Layers.itemMarkersLayer.clearLayers();
 
+    let markersToRender;
+    if (Settings.isInvisibleRemovedMarkers) {
+      markersToRender = MapBase.markers.filter(marker => !marker.isCollected);
+    } else {
+      markersToRender = MapBase.markers;
+    }
+
     MapBase.updateLoopAvailable = false;
     MapBase.yieldingLoop(
-      MapBase.markers.length,
+      markersToRender.length,
       25,
       function (i) {
         if (MapBase.requestLoopCancel) return;
-        MapBase.addMarkerOnMap(MapBase.markers[i]);
+        MapBase.addMarkerOnMap(markersToRender[i]);
       },
       function () {
         MapBase.updateLoopAvailable = true;
@@ -539,6 +546,12 @@ const MapBase = {
     Layers.itemMarkersLayer.addLayer(marker.lMarker);
     if (Settings.isMarkerClusterEnabled)
       Layers.oms.addMarker(marker.lMarker);
+  },
+
+  removeMarkerFromMap: function (marker) {
+    if (!marker.isVisible) return;
+
+    Layers.itemMarkersLayer.removeLayer(marker.lMarker);
   },
 
   gameToMap: function (lat, lng, name = "Debug Marker") {
