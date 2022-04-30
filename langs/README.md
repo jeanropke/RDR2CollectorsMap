@@ -164,7 +164,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Barackvirag** (1,123 words)
   - **BMX** (237 words)
   - **DannyTI** (703 words)
-  - **emperger** (898 words)
+  - **emperger** (903 words)
   - **GoP** (85 words)
   - **Hutty98** (3,609 words)
   - **jjameska** (26 words)
