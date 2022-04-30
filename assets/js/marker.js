@@ -412,7 +412,7 @@ class Marker {
     if (this.canCollect) {
       targetOpacity = opacity;
     } else {
-      targetOpacity = (isInvisibleRemovedMarkers? 0: opacity / 3);
+      targetOpacity = isInvisibleRemovedMarkers ? 0 : opacity / 3;
     }
 
     this.lMarker && this.lMarker.setOpacity(targetOpacity);
