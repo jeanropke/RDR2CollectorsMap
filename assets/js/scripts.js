@@ -193,6 +193,8 @@ function init() {
 
   $('#language').val(Settings.language);
   $('#marker-opacity').val(Settings.markerOpacity);
+  $('#invisible-removed-markers').prop("checked", Settings.isInvisibleRemovedMarkers);
+
   $('#filter-type').val(Settings.filterType);
   $('#marker-size').val(Settings.markerSize);
   $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
