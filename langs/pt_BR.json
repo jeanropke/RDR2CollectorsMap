@@ -1432,6 +1432,8 @@
     "menu.marker_size.150": "150%",
     "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200%",
+    "help.invisible-removed-markers": "Oculta completamente os marcadores removidos em vez de torná-los parcialmente transparentes.",
+    "menu.invisible-removed-markers": "Esconda completamente os marcadores removidos",
     "menu.toggle_debug": "Ativar recursos de debug",
     "map.random_spot.desc": "Este local tem um item aleatório, você pode ver informações mais detalhadas {int.random_spot.link}na página da Wiki{int.end.link}.",
     "map.attribution_prefix": "Colaboradores do Mapa do Colecionador",
