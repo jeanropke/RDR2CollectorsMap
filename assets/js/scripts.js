@@ -539,7 +539,7 @@ $('#filter-type').on('change', function () {
 });
 
 $('#filter-min-amount-items').on("change", function () {
-  InventorySettings.maxAmountLowInventoryItems = $(this).val();
+  InventorySettings.maxAmountLowInventoryItems = Number($(this).val());
 });
 
 $("#enable-cycles").on("change", function () {
