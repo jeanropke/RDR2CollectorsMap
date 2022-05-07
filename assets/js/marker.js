@@ -148,20 +148,24 @@ class Marker {
      * @returns { Array / undefined } (undefined for static categories)
      */
     this.possibleItems = (() => {
-      const randomCategories = MapBase.lootTables.categories[this.lootTable];
+      const { categories, loot } = MapBase.lootTables;
+      const randomCategories = categories[this.lootTable];
+
       if (!randomCategories) {
         return undefined;
       }
-      const items = [];
-      function getItems(obj) {
-        const items = MapBase.lootTables.loot[obj];
-        if (!items) {
-          return obj;
+
+      function getItems(key) {
+        const itemsArray = loot[key];
+        if (!itemsArray) {
+          return key;
         }
-        return Object.keys(items)
+        return Object.keys(itemsArray)
           .map(getItems)
           .reduce((acc, value) => acc.concat(value), []);
       }
+
+      const items = [];
       randomCategories.forEach(category => items.push(...getItems(category)));
       return [...new Set(items)];
     })();
