@@ -1251,7 +1251,7 @@
     "map.remove": "Eltávolítás a térképről",
     "map.copy_link": "Link másolása",
     "map.video": "Videó",
-    "map.flower_type.night_only": "Ez a növény csak éjszaka terem (este 8-tól hajnal 5-ig).",
+    "map.flower_type.night_only": "Ez a növény csak éjszaka terem (este 10-től hajnal 5-ig).",
     "map.flower_type.bush": "Ez a növény bokrokon nő.",
     "map.egg_type.tree": "A fán van. Lődd le egy Varmint puskával vagy egy small game nyíllal rendelkező íjjal.",
     "map.egg_type.stump": "A kivágott fa törzsében.",
