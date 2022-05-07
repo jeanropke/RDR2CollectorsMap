@@ -156,11 +156,11 @@ class Marker {
       }
 
       function getItems(key) {
-        const itemsArray = loot[key];
-        if (!itemsArray) {
+        const items = loot[key];
+        if (!items) {
           return key;
         }
-        return Object.keys(itemsArray)
+        return Object.keys(items)
           .map(getItems)
           .reduce((acc, value) => acc.concat(value), []);
       }
