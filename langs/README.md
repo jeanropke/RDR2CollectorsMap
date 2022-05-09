@@ -80,7 +80,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **jopiejooow** (1,186 words)
   - **MrGrivixer** (20 words)
   - **nielsb2004** (50 words)
-  - **pangurjan** (756 words)
+  - **pangurjan** (1,021 words)
   - **rp.lameris** (196 words)
   - **xvilo** (426 words)
 
