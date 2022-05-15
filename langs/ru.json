@@ -1432,6 +1432,8 @@
     "menu.marker_size.150": "150%",
     "menu.marker_size.175": "175",
     "menu.marker_size.200": "200%",
+    "help.invisible-removed-markers": "Позволяет полностью спрятать скрытые метки вместо того, чтобы сделать их прозрачными.",
+    "menu.invisible-removed-markers": "Полностью спрятать скрытые метки",
     "menu.toggle_debug": "Функция отладки (eng)",
     "map.random_spot.desc": "Здесь можно получить случайный предмет. Более подробно о метке можно узнать в этом {int.random_spot.link}руководстве{int.end.link} (eng).",
     "map.attribution_prefix": "Вкладчики карты коллекционеров",
