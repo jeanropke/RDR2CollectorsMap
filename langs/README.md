@@ -38,7 +38,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ElTellito** (4,619 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (86%):
+### Chinese Simplified (94%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
@@ -50,7 +50,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (544 words)
+  - **ToxicMagisk** (9,954 words)
   - **user670839245** (224 words)
 
 ### Chinese Traditional (80%):
@@ -87,7 +87,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### English, United Kingdom (5%):
   - **AdamNortonUK** (12 words)
   - **JRSC01** (2,157 words)
-  - **Michal__d** (3,349 words)
+  - **Michal__d** (3,363 words)
   - **MrSmithr** (290 words)
   - **R36za** (101 words)
   - **XRuthlessShadow** (29 words)
@@ -95,7 +95,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Finnish (52%):
   - **seevimi** (283 words)
 
-### French (88%):
+### French (89%):
   - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
@@ -110,10 +110,11 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Indessis** (20 words)
   - **JeanBankarbone** (598 words)
   - **jipsu31** (43 words)
+  - **Jules_** (43 words)
   - **kaeporatheglitcha** (58 words)
   - **lguilleml126** (2,228 words)
   - **Maxemi** (224 words)
-  - **Michal__d** (3,349 words)
+  - **Michal__d** (3,363 words)
   - **MORGANE8** (292 words)
   - **Oldboy77** (494 words)
   - **pamplemousse.web** (351 words)
@@ -239,7 +240,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
   - **Kosa51** (313 words)
-  - **Michal__d** (3,349 words)
+  - **Michal__d** (3,363 words)
   - **PLTytus** (758 words)
   - **Quahox** (39 words)
   - **THE_MALOTEK** (422 words)
@@ -272,16 +273,16 @@ These are the people that helped translate the project using Crowdin. Please not
   - **neohazukibr** (904 words)
   - **rafaelsadriano** (16 words)
   - **Raphael_** (39 words)
-  - **Sephivader** (3,411 words)
+  - **Sephivader** (3,425 words)
   - **vierim** (33 words)
 
-### Romanian (71%):
+### Romanian (78%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (20,298 words)
+  - **proximacentaurib** (23,001 words)
   - **tudoradrianburlacu** (35 words)
 
-### Russian (94%):
+### Russian (96%):
   - **AlexXanderGrib** (464 words)
   - **bebrus** (107 words)
   - **davidpash89** (67 words)
@@ -289,7 +290,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **hellcat_tail** (15 words)
   - **ita.jk7** (54 words)
   - **maxdavinci** (40 words)
-  - **Megitsune** (2,141 words)
+  - **Megitsune** (3,001 words)
   - **noiracero693** (27 words)
   - **Overnoes** (1,860 words)
   - **platonomania** (15 words)
