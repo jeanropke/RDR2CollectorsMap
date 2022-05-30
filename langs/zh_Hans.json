@@ -1417,7 +1417,7 @@
     "menu.marker_opacity.60": "60%",
     "menu.marker_opacity.80": "80%",
     "menu.marker_opacity.100": "不透明",
-    "menu.overlay_opacity": "地图叠加层不透明度",
+    "menu.overlay_opacity": "叠置不透明度",
     "menu.overlay_opacity.0": "禁用",
     "menu.overlay_opacity.25": "25%",
     "menu.overlay_opacity.50": "50%",
