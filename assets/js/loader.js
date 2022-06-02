@@ -62,5 +62,6 @@ const urls = [
     'https://pepegapi.jeanropke.net/v2/misc/timezone',
     'https://pepegapi.jeanropke.net/v2/rdo/nazar',
     'https://pepegapi.jeanropke.net/v2/rdo/weekly',
+    'https://rdoapi.xyz/api/RDO/collector/jewelry_timestamps'
 ];
 Loader.init(urls);

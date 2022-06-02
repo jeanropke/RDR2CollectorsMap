@@ -151,6 +151,22 @@ class Menu {
         // keep current help if pointer jumped to help container or it overgrew current pointer pos.
         if (help.contains(target)) return;
         const helpTransId = $(target).closest('[data-help]').attr('data-help') || 'default';
+
+        // Used only for jewelry that appears in some cycles
+        if (helpTransId.includes('timestamp')) {
+          const itemId = $(target).closest('[data-help]').attr('data-type');
+          const timestamp = MapBase.jewelryTimestamps[itemId];
+          $helpParagraph.html(Language.get(`help.${helpTransId}`)
+            .replace('{day}', new Date(timestamp * 1000).toLocaleDateString(Settings.language, {
+              timeZone: 'UTC',
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              weekday: 'long',
+            })));
+          return;
+        }
+
         $helpParagraph.html(Language.get(`help.${helpTransId}`));
       });
 

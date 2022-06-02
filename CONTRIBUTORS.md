@@ -27,6 +27,7 @@ These are the people that provided the locations of the different items on the m
 - Madam Nazar location provided by Alloc8or and [MadamNazar.io API](https://madamnazar.io/).
 - Weekly set items provided by Alloc8or.
 - Legendary Animal parts prices by [Senexis](https://github.com/Senexis), adapted to the map by [Michal__d](https://github.com/MichalD96), special thanks to [IronJeff80](https://github.com/IronJeff80) for collected data.
+- Jewelry next occurrence time API provided and adapted to the map by [Michal__d](https://github.com/MichalD96).
 
 ## Assets credits
 These are the people that provided assets for the map.
@@ -52,6 +53,7 @@ These are the people that added new map functionality.
 - Hide/grey-out from map legendary animals for 72 hours by [Michal__d](https://github.com/MichalD96).
 - Custom user pins by [Senexis](https://github.com/Senexis).
 - Inventory by [Senexis](https://github.com/Senexis).
+- Custom marker colors settings by [Michal__d](https://github.com/MichalD96).
 - Custom marker colors settings by [Michal__d](https://github.com/MichalD96).
 
 ## Note to Contributors

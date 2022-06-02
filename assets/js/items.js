@@ -161,15 +161,16 @@ class Item extends BaseItem {
       .attr('data-help', () => {
         if (isBugged) {
           return 'item_unavailable';
+        } else if (isRandom && parentCategories.jewelry_random.includes(this.category) && !!MapBase.jewelryTimestamps[this.itemId]) {
+          return 'jewelry_random_timestamp';
         } else if (isRandom) {
           return 'item_random';
         } else if (['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId)) {
           return 'item_night_only';
         } else if (this.isWeekly()) {
           return 'item_weekly';
-        } else {
-          return 'item';
         }
+        return 'item';
       })
       .toggleClass('weekly-item', this.isWeekly())
       .find('.collectible-text p')

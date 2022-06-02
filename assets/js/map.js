@@ -16,6 +16,7 @@ const MapBase = {
   showAllMarkers: false,
   filtersData: [],
   utcTimeCorrectionMs: 0,
+  jewelryTimestamps: {},
 
   // Query adjustable parameters
   isPreviewMode: false,
@@ -211,6 +212,16 @@ const MapBase = {
     return Loader.promises['filters'].consumeJson(data => {
       MapBase.filtersData = data;
       console.info('%c[Filters] Loaded!', 'color: #bada55; background: #242424');
+    });
+  },
+
+  loadJewelryTimestamps: function () {
+    return Loader.promises['jewelry_timestamps'].consumeJson(data => {
+      MapBase.jewelryTimestamps = data.items;
+      console.info('%c[Jewelry timestamps] Loaded!', 'color: #bada55; background: #242424');
+    }).catch(() => {
+      console.info('%c[Jewelry timestamps] Unable to load!', 'color: #FF6969; background: #242424');
+      return Promise.resolve();
     });
   },
 
