@@ -1542,8 +1542,6 @@
     "help.item": "Active/désactive si cet ensemble doit être visible sur la carte.",
     "help.item_night_only": "Active/Désactive si cet élément doit être visible sur la carte. Notez que cet élément n'apparaît qu'entre 22h00 et 17h00. Cliquez sur le minuteur dans le coin supérieur gauche de la carte pour voir l'heure en jeu.",
     "help.item_weekly": "Active/Désactive si cet élément doit être visible sur la carte. Cet élément fait partie de la collection hebdomadaire de {collection}.",
-    "help.item_unavailable": "Active/Désactive si cet objet doit être visible sur la carte. Notez que cet objet n'est pas disponible en raison d'un bug de jeu ou d'être non découvert.",
-    "help.item_random": "Permet de déterminer si cet élément doit être visible sur la carte. Notez que cet élément est aléatoire dans le cycle actuel.",
     "help.clear_important_items": "Efface la surbrillance de tous les marqueurs marqués comme importants.",
     "help.item_category_unavailable_items": "Permet de déterminer si cet ensemble doit être visible sur la carte. Notez que cet ensemble contient un ou plusieurs éléments qui sont aléatoires depuis la mise à jour du Naturaliste, ou qui sont indisponibles en raison d'un bug du jeu.",
     "help.item_category_bugged_items": "Active ou non la visibilité de ce set sur la carte. Ce set contient un ou plusieurs objets indisponibles en raison d'un bug du jeu.",

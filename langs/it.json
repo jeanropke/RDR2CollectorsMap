@@ -1539,8 +1539,6 @@
     "help.item": "Scegli se questo oggetto deve essere visibile sulla mappa.",
     "help.item_night_only": "Scegli se questo oggetto deve essere visibile sulla mappa. Nota che questo oggetto compare soltanto tra le 22:00 e le 05:00. Cliccare sul timer nell'angolo in alto a sinistra della mappa per visualizzare l'ora di gioco.",
     "help.item_weekly": "Scegli se questo oggetto deve essere visibile sulla mappa. Questo oggetto fa parte della {collection} collezione settimanale.",
-    "help.item_unavailable": "Scegli se questo oggetto deve essere visibile sulla mappa. Nota che questo oggetto non è disponibile a causa di un bug di gioco o non è stato scoperto.",
-    "help.item_random": "Scegli se questo oggetto debba essere visibile o meno sulla mappa. Questo oggetto è attualmente in un ciclo randomico.",
     "help.clear_important_items": "Rimuove l'evidenziazione da tutti i segnalini marcati come importanti.",
     "help.item_category_unavailable_items": "Altera se questo set deve essere visibile sulla mappa. Questo set contiene uno o più elementi che vengono randomizzati o non sono disponibili a causa di un bug di gioco.",
     "help.item_category_bugged_items": "Scegli se questo set deve essere visibile sulla mappa. Nota che questo set contiene uno o più oggetti non disponibili a causa di un bug di gioco o non sono stati scoperti.",

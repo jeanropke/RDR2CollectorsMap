@@ -1346,7 +1346,6 @@
     "help.item": "Aktiverer / deaktiverer, om dette element skal være synligt på kortet.",
     "help.item_night_only": "Aktiverer / deaktiverer, om dette element skal være synligt på kortet. Bemærk, at dette element kun vises mellem kl. 22 og 5:00 AM. Klik på timeren i det øverste venstre hjørne af kortet for at få vist tidsfristen for spillet.",
     "help.item_weekly": "Aktiverer / deaktiverer, om dette element skal være synligt på kortet. Dette element er en del af samlingen {collection} hver uge.",
-    "help.item_unavailable": "Aktiverer / deaktiverer, om dette element skal være synligt på kortet. Bemærk, at dette element ikke er tilgængeligt på grund af en fejl i spillet, eller at der ikke er fundet nogen fejl.",
     "help.clear_important_items": "Rydder højdepunktet fra alle markeringer, der er markeret som vigtige.",
     "help.search_copy_link": "Kopierer det aktuelle søgelink til din udklipsholder, så du kan søge efter et kort med søgeforespørgslen.",
     "help.sort_items_alphabetically": "Angiver, om elementer skal sorteres alfabetisk eller bruge i-spilsrækkefølgen.",

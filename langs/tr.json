@@ -1347,8 +1347,6 @@
     "help.item": "Bu eşyanın haritada görünür olmasını belirler.",
     "help.item_night_only": "Bu eşyanın haritada görünür olmasını belirler. Bu eşyanın yalnızca 10:00 ve 5:00 saatleri arasında belirdiğine dikkat edin. Oyun içi zamanı görüntülemek için, haritanın sol üst köşesindeki zamanlayıcıya tıklayın.",
     "help.item_weekly": "Bu eşyanın haritada görünür olmasını belirler. Bu eşya {collection} haftalık koleksiyonunun bir parçasıdır.",
-    "help.item_unavailable": "Bu eşyanın haritada görünür olmasını belirler. Eşyanın oyundaki bir hata ya da henüz keşfedilmemiş olması nedeniyle mevcut olmadığına dikkat edin.",
-    "help.item_random": "Bu eşyanın haritada görünür olmasını belirler. Bu eşyanın mevcut döngüde rastgele olduğuna dikkat edin.",
     "help.clear_important_items": "Önemli olarak işaretlenen tüm işaretçileri temizler.",
     "help.item_category_unavailable_items": "Bu setin haritada görünür olmasını ayarlar. Bu setteki bazı eşyaların Naturalist güncellemesinden sonra rastgele çıktığını veya bir oyun hatası nedeniyle kullanılamaz olduğunu dikkate alınız.",
     "help.item_category_bugged_items": "Bu setin haritada görünür olup olmayacağını ayarlar. Bu set, bir oyun hatası nedeniyle kullanılamayan bir veya daha fazla eşya içeriyor.",

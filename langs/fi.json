@@ -1401,7 +1401,6 @@
     "help.item_category_same_cycle": "Määritä, onko tämän joukon nähtävissä kartalla. Huomaa, että tämä sarja on sama sykli kuin eilen ja on 24 tunnin viivästys ennen kuin voit hakea kohteen uudelleen.",
     "help.item": "Osoittaa, onko tämä objekti näkymässä kartalla.",
     "help.item_night_only": "Osoittaa, onko tämä objekti näkymässä kartalla. Huomaa, että tämä objekti esiintyy vain klo 10-17 AM. Klikkaa kartan vasemmassa yläkulmassa olevaa ajastinta.",
-    "help.item_unavailable": "Osoittaa, onko tämä objekti näkymässä kartalla. Huomaa, että tämä objekti ei ole käytettävissä pelin kuuntelulaitteen tai paljastumisen vuoksi.",
     "help.clear_important_items": "Se puhdistaa kaikki tärkeät merkit.",
     "help.item_category_random_items": "Määritä, onko tämä setti nähtävissä kartalla. Tämä setti sisältää yhden tai useamman satunnaisen objektin.",
     "help.search_clear": "Poistaa nykyisen hakukyselyn.",

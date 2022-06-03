@@ -1542,8 +1542,6 @@
     "help.item": "Alterna se este item deve estar visível no mapa.",
     "help.item_night_only": "Alterna se este item deve estar visível no mapa. Note que esse item só aparece a noite entre 10:00 PM e 5:00 AM.",
     "help.item_weekly": "Alterna se este item deve estar visível no mapa. Esse item faz parte da Coleção Semanal atual.",
-    "help.item_unavailable": "Alterna se este item deve estar visível no mapa. Note que não é possível coletar esse item por estar bugado ou não descoberto.",
-    "help.item_random": "Alterna se este item deve estar visível no mapa. Esse item é aleatório no ciclo atual.",
     "help.clear_important_items": "Limpa o destaque de todos os marcadores marcados como imporante.",
     "help.item_category_unavailable_items": "Alterna se esta coleção deve estar visível no mapa. Essa coleção tem um ou mais itens que são aleatórios ou não tem como obter devido a um bug no jogo.",
     "help.item_category_bugged_items": "Alterna se esta coleção deve estar visível no mapa. Essa coleção tem um ou mais itens que não tem como obter devido a um bug no jogo.",

@@ -1540,8 +1540,6 @@
     "help.item": "Alterna si este objeto debe ser visible en el mapa.",
     "help.item_night_only": "Alterna si este objeto debe ser visible en el mapa. Ten en cuenta que este objeto solo aparece entre las 10:00 PM y las 5:00 AM. Haga clic en el temporizador en la esquina superior izquierda del mapa para ver el tiempo dentro del juego.",
     "help.item_weekly": "Alterna si este objeto debe ser visible en el mapa. Este objeto forma parte de la colección semanal {collection}.",
-    "help.item_unavailable": "Alterna si este elemento debe ser visible en el mapa. Ten en cuenta que este elemento no está disponible debido a un bug del juego o al no estar descubierto.",
-    "help.item_random": "Activa si este objeto debe ser visible en el mapa. Este objeto es aleatorio en el ciclo actual.",
     "help.clear_important_items": "Elimina el resaltado de todos los marcadores marcados como importantes.",
     "help.item_category_unavailable_items": "Alterna si este set debe ser visible en el mapa. Ten en cuenta que este set contiene uno o más ítems que están aleatorizados desde la actualización de el Naturalista, o no están disponibles debido a un bug del juego.",
     "help.item_category_bugged_items": "Alterna si este set debe ser visible en el mapa. Ten en cuenta que este set contiene uno o más ítems que están aleatorizados desde la actualización de el Naturalista, o no están disponibles debido a un bug del juego.",

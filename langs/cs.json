@@ -1503,8 +1503,6 @@
     "help.item": "Přepíná, zda má být tato položka viditelná na mapě.",
     "help.item_night_only": "Přepíná, zda má být tato položka viditelná na mapě. Všimněte si, že tato položka se objevuje pouze mezi 22:00 a 5:00 ráno. Klepněte na časovač v levém horním rohu mapy a zobrazte si čas ve hře.",
     "help.item_weekly": "Přepíná, zda má být tato položka viditelná na mapě. Tato položka je součástí týdenní kolekce {collection}.",
-    "help.item_unavailable": "Přepíná, zda má být tato položka viditelná na mapě. Všimněte si, že tato položka je nedostupná kvůli chybě hry nebo byla neobjevena.",
-    "help.item_random": "Přepíná, zda má být tato položka viditelná na mapě. Tato položka je náhodná v aktuálním cyklu.",
     "help.clear_important_items": "Vyčistí zvýraznění ze všech značek označených jako důležité.",
     "help.item_category_unavailable_items": "Přepíná, zda by tato sada měla být viditelná na mapě. Tato sada obsahuje jednu nebo více položek, které jsou náhodné, nebo jsou nedostupné kvůli chybě hry.",
     "help.item_category_bugged_items": "Přepíná, zda by tato sada měla být viditelná na mapě. Tato sada obsahuje jednu nebo více položek, které jsou náhodné, nebo jsou nedostupné kvůli chybě hry.",
