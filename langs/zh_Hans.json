@@ -1676,7 +1676,7 @@
     "menu.modal_loot_table_all_tables_descr": "查看所有 {int.random_spot.link} 随机物品发掘几率表{int.end.link}",
     "menu.filter_type": "筛选标记",
     "help.filter_type": "允许您根据某些条件筛选物品。",
-    "menu.filter_type.none": "无",
+    "menu.filter_type.none": "无条件",
     "menu.filter_type.moonshiner": "私酒贩",
     "menu.filter_type.naturalist": "博物学家",
     "menu.filter_type.weekly_set": "每周收藏品系列",
