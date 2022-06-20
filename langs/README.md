@@ -16,6 +16,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Arabic (65%):
   - **a.youssry78** (109 words)
+  - **Aiman95** (197 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
   - **alichakra.9** (92 words)
