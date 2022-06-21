@@ -14,9 +14,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **HeadShot557** (2,365 words)
   - **R36za** (101 words)
 
-### Arabic (65%):
+### Arabic (66%):
   - **a.youssry78** (109 words)
-  - **Aiman95** (197 words)
+  - **Aiman95** (551 words)
   - **Alalwi** (1,552 words)
   - **ali78nahi2** (12 words)
   - **alichakra.9** (92 words)
@@ -51,7 +51,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (20,216 words)
+  - **ToxicMagisk** (20,217 words)
   - **user670839245** (224 words)
 
 ### Chinese Traditional (93%):
