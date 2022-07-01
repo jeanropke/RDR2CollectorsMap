@@ -924,6 +924,7 @@
     "menu.modal_clear_inventory_title": "לנקות תיק?",
     "menu.settings_import_export_title": "הגדרות",
     "menu.random_encounters": "מפגש רנדומלי",
+    "map.user_pins.placeholder_desc": "תיאור",
     "menu.enable_dclick_zoom": "לחץ לחיצה כפולה כדי להתקרב",
     "menu.marker_opacity.20": "20%",
     "menu.marker_opacity.40": "40%",
