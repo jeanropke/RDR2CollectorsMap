@@ -213,5 +213,11 @@ class Menu {
       MapBase.addMarkers();
       Menu.refreshMenu();
     });
+
+    $(document).on('keydown', (event) => {
+      if (event.keyCode === 32 && event.ctrlKey) {
+        $('.menu-toggle').click();
+      }
+    });
   }
 }
