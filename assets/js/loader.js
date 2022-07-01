@@ -28,7 +28,7 @@ class Loader {
         else if (!url.startsWith('http')) queryString.nocache = customNoCache || nocache;
         else queryString.nocache = customNoCache || new Date(Date.now() - 21600000).toISOUTCDateString();
 
-        if (['cycles', 'lang_progress'].includes(name)) queryString.date = customNoCache || new Date().toISOUTCDateString();
+        if (['cycles', 'lang_progress', 'jewelry_timestamps'].includes(name)) queryString.date = customNoCache || new Date().toISOUTCDateString();
 
         this._json = $.getJSON(url, queryString);
     }
