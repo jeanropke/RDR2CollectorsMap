@@ -142,7 +142,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Megitsune** (4,383 words)
   - **Niiccii** (194 words)
   - **paulschlachter88** (149 words)
-  - **s.pantermueller** (230 words)
+  - **s.pantermueller** (340 words)
   - **Scotmanhands** (22 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
