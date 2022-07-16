@@ -1827,7 +1827,7 @@
     "map.weather.foggy": "Туманная погода",
     "map.weather.rain": "Дождливая погода",
     "map.weather.any": "Любая погода",
-    "map.legendary.spawn_time_string": "Предпочтительное время спавна: {spawn_time_string}",
+    "map.legendary.spawn_time_string": "Предпочтительное время появления: {spawn_time_string}",
     "map.legendary.preferred_weather": "Предпочитаемая погода: {preferred_weather}",
     "map.legendary.trader_materials": "Торговец, материалов из туши: {trader_materials}",
     "map.legendary.trader_pelt_materials": "Торговец, материалов из шкуры: {trader_pelt_materials}",
