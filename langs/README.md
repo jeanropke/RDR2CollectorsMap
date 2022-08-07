@@ -121,7 +121,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **MORGANE8** (292 words)
   - **Oldboy77** (494 words)
   - **pamplemousse.web** (351 words)
-  - **PoorPocketsMcNewHold** (75 words)
+  - **PoorPocketsMcNewHold** (114 words)
   - **radragon** (917 words)
   - **RedShard-B** (36 words)
   - **skonky** (113 words)
