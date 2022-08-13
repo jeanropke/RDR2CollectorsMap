@@ -389,8 +389,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **grmaster5s** (14,651 words)
   - **kononuthenko.kostya** (21 words)
   - **Lyal178** (61 words)
-  - **ptrp1995** (17 words)
   - **rzaluzhniy** (18 words)
+  - **shprd95** (29 words)
   - **UluMulu** (217 words)
   - **warkoun** (290 words)
 
