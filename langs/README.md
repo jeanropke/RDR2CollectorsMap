@@ -26,6 +26,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **hhfffddd** (17 words)
   - **JokerUAE** (77 words)
   - **madhatterxk** (15 words)
+  - **mhhnd95** (30 words)
   - **moed99** (340 words)
   - **mohammad.khaled594** (92 words)
   - **n945841** (50 words)
@@ -51,7 +52,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (23,344 words)
+  - **ToxicMagisk** (23,377 words)
   - **user670839245** (224 words)
 
 ### Chinese Traditional (95%):
