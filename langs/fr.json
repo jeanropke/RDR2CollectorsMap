@@ -1912,6 +1912,10 @@
     "menu.import_rdo_inventory": "Importer l'inventaire RDO",
     "menu.modal_import_rdo_inventory_title": "Importer l'inventaire du personnage RDO",
     "menu.modal_import_rdo_inventory_intro": "Pour importer votre inventaire de personnage sur cette carte, suivez les étapes suivantes :",
+    "menu.modal_import_rdo_inventory_step_1": "1. {int.rdo.overview}Connectez-vous{int.end.link} à votre compte Social Club.",
     "menu.modal_import_rdo_inventory_step_2": "2. Cliquez sur la case ci-dessous pour copier son contenu.",
-    "menu.modal_import_rdo_inventory_manual": "Manuel"
+    "menu.modal_import_rdo_inventory_step_3": "3. Ouvrez la console de votre navigateur (F12) sur le site du Social Club et collez le script de l'étape 2 et appuyez sur entrée.",
+    "menu.modal_import_rdo_inventory_final": "Si tout va bien, un nouveau fichier sera téléchargé avec les données de votre inventaire. Importez-le simplement avec le bouton ci-dessous.",
+    "menu.modal_import_rdo_inventory_manual": "Manuel",
+    "menu.modal_import_rdo_inventory_extension": "Vous pouvez synchroniser votre inventaire grâce à cette extension. Installez-le et appuyez sur un bouton. Compatible avec les navigateurs établis sur Chromium comme Brave, Google Chrome, Microsoft Edge, Opera."
 }
