@@ -99,7 +99,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Finnish (67%):
   - **seevimi** (283 words)
 
-### French (96%):
+### French (97%):
   - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
@@ -123,7 +123,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **MORGANE8** (292 words)
   - **Oldboy77** (494 words)
   - **pamplemousse.web** (351 words)
-  - **PoorPocketsMcNewHold** (114 words)
+  - **PoorPocketsMcNewHold** (204 words)
   - **radragon** (917 words)
   - **RedShard-B** (36 words)
   - **skonky** (113 words)
