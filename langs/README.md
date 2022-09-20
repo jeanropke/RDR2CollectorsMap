@@ -380,7 +380,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **atayyu** (74 words)
   - **bariss** (101 words)
   - **dubelnaz** (2,441 words)
-  - **EmreKLC** (9,330 words)
+  - **EmreKLC** (9,439 words)
   - **emrullahsimsar** (3,121 words)
   - **KagitmiAdam** (100 words)
   - **Krykl** (12,722 words)
