@@ -232,6 +232,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **sksk2943** (1,376 words)
   - **spagheeetti** (1,258 words)
   - **wlfogb** (11 words)
+  - **youbeebee** (65 words)
 
 ### Norwegian (39%):
   - **camillgh** (724 words)
