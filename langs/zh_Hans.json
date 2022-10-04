@@ -1245,7 +1245,7 @@
     "menu.report_issues": "在此处报告问题",
     "menu.utils": "实用工具",
     "menu.fast_travel": "快速旅行",
-    "menu.search_placeholder": "搜索物品。多个物品需以“;”隔开（英文分号）",
+    "menu.search_placeholder": "搜索物品。多个物品需以半角“;”隔开",
     "menu.auto_enable_sold_items": "自动启用已全部售出的物品",
     "map.remove_add": "从地图中移除/添加",
     "map.remove": "从地图中移除",
