@@ -1432,6 +1432,8 @@
     "menu.marker_size.150": "150%",
     "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200%",
+    "help.invisible-removed-markers": "제게된 마커를 불투명하게 만드는 대신 완전히 숨깁니다.",
+    "menu.invisible-removed-markers": "제거된 마커를 완전히 숨깁니다.",
     "menu.toggle_debug": "디버그 기능 사용",
     "map.random_spot.desc": "이 지점은 랜덤 항목을 제공합니다. 자세한 정보를 참조하려면 {int.random_spot.link}위키 페이지{int.end.link}에서 확인할 수 있습니다.",
     "map.attribution_prefix": "수집가 지도 제공자",
