@@ -1903,7 +1903,7 @@
     "help.custom_marker_color_modal": "允许您为每个标记类别设置自定义颜色。",
     "menu.fossils_random": "随机化石",
     "menu.jewelry_random": "随机珠宝",
-    "menu.random_spot_metal": "随机物品（金属检测器）",
+    "menu.random_spot_metal": "随机物品（金属探测器）",
     "menu.random_spot_shovel": "随机物品（铁锹）",
     "help.filter_min_amount_items": "允许您设置库存中被视为“低库存物品”的物品最大数量。",
     "menu.filter_type.low_amount_items": "低库存物品",
