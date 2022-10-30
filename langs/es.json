@@ -1432,6 +1432,8 @@
     "menu.marker_size.150": "150%",
     "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200%",
+    "help.invisible-removed-markers": "Oculta completamente los marcadores eliminados en lugar de hacerlos parcialmente transparentes.",
+    "menu.invisible-removed-markers": "Ocultar completamente los marcadores eliminados",
     "menu.toggle_debug": "Activar opciones del debug",
     "map.random_spot.desc": "Este lugar te da un artículo aleatorio, puedes ver información más detallada {int.random_spot.link}en esta página Wiki{int.end.link}.",
     "map.attribution_prefix": "Colaboradores con el mapa de coleccionistas",
@@ -1477,6 +1479,7 @@
     "menu.soft_flowers_inventory_stack": "Tamaño de stack de flores suave",
     "menu.reload_map": "Recargar el mapa ahora",
     "menu.disable_collected_items": "Desactivar recolectados",
+    "menu.disable_all_collected_items": "Deshabilitar objetos ya recolectados",
     "menu.collection_collect_all": "Recoger todo",
     "menu.enable_additional_inventory_options": "Habilitar opciones avanzadas de inventario",
     "help.default": "Mantener el cursor o presionar durante un tiempo (móvil) cualquier ajuste para obtener información al respecto.",
@@ -1539,6 +1542,9 @@
     "help.item": "Alterna si este objeto debe ser visible en el mapa.",
     "help.item_night_only": "Alterna si este objeto debe ser visible en el mapa. Ten en cuenta que este objeto solo aparece entre las 10:00 PM y las 5:00 AM. Haga clic en el temporizador en la esquina superior izquierda del mapa para ver el tiempo dentro del juego.",
     "help.item_weekly": "Alterna si este objeto debe ser visible en el mapa. Este objeto forma parte de la colección semanal {collection}.",
+    "help.item_unavailable": "Este objeto no está disponible debido a un error en el juego o a que no se ha descubierto.",
+    "help.item_random": "Este objeto es aleatorio y no tiene punto de spawn estático.",
+    "help.jewelry_random_timestamp": "Este elemento es aleatorio hoy, el siguiente spawn estático es {day}",
     "help.clear_important_items": "Elimina el resaltado de todos los marcadores marcados como importantes.",
     "help.item_category_unavailable_items": "Alterna si este set debe ser visible en el mapa. Ten en cuenta que este set contiene uno o más ítems que están aleatorizados desde la actualización de el Naturalista, o no están disponibles debido a un bug del juego.",
     "help.item_category_bugged_items": "Alterna si este set debe ser visible en el mapa. Ten en cuenta que este set contiene uno o más ítems que están aleatorizados desde la actualización de el Naturalista, o no están disponibles debido a un bug del juego.",
@@ -1908,5 +1914,7 @@
     "menu.modal_import_rdo_inventory_step_1": "1. {int.rdo.overview}Inicia sesión{int.end.link} tu cuenta del Social Club.",
     "menu.modal_import_rdo_inventory_step_2": "2. Haz clic en el cuadro de abajo para copiar su contenido.",
     "menu.modal_import_rdo_inventory_step_3": "3. Abre la consola de tu navegador (F12) en la web de Social Club y pega el script del paso 2 y presiona Intro.",
-    "menu.modal_import_rdo_inventory_final": "Si todo va bien, un nuevo archivo debería descargarse con los datos de tu inventario. Solo impórtalo usando el botón de abajo."
+    "menu.modal_import_rdo_inventory_final": "Si todo va bien, un nuevo archivo debería descargarse con los datos de tu inventario. Solo impórtalo usando el botón de abajo.",
+    "menu.modal_import_rdo_inventory_manual": "Manual",
+    "menu.modal_import_rdo_inventory_extension": "Puedes sincronizar tu inventario usando esta extensión. Simplemente instálalo y pulsa un botón. Compatible con navegadores basados en Chromium como Brave, Google Chrome, Microsoft Edge, Opera."
 }
