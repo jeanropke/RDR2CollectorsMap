@@ -347,7 +347,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **smauri** (105 words)
   - **Straks1668** (34 words)
   - **tomyloly.11** (698 words)
-  - **ToshyExS** (1,272 words)
+  - **ToshyExS** (1,519 words)
   - **ulises_hdz22** (361 words)
 
 ### Spanish, Mexico (74%):
