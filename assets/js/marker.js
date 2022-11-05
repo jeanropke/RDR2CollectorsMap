@@ -145,15 +145,12 @@ class Marker {
 
     /**
      * if it's random spot, get list of all items you can pick up from this spot
-     * @returns { Array / undefined } (undefined for static categories)
+     * @returns { Array | undefined } (undefined for static categories)
      */
     this.possibleItems = (() => {
       const { categories, loot } = MapBase.lootTables;
       const randomCategories = categories[this.lootTable];
-
-      if (!randomCategories) {
-        return undefined;
-      }
+      if (!randomCategories) return;
 
       function getItems(key) {
         const items = loot[key];
