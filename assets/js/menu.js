@@ -182,7 +182,7 @@ class Menu {
 
     SettingProxy.addListener(Settings, 'filterType', () => {
       this.toggleFilterWarning('map.has_filter_type_alert', Settings.filterType !== 'none');
-      $('#filter-min-amount-items').parent().toggle(Settings.filterType === 'lowInventoryItems' && InventorySettings.isEnabled);
+      $('#filter-min-amount-items').parent().toggle(['lowInventoryItems', 'lowInventoryItemsAndRandom'].includes(Settings.filterType) && InventorySettings.isEnabled);
       filterMapMarkers();
     })();
 
@@ -194,7 +194,7 @@ class Menu {
       $('#open-custom-marker-color-modal').toggle(Settings.markerColor === 'custom'))();
 
     SettingProxy.addListener(InventorySettings, 'isEnabled', () => {
-      $('#filter-min-amount-items').parent().toggle(Settings.filterType === 'lowInventoryItems' && InventorySettings.isEnabled);
+      $('#filter-min-amount-items').parent().toggle(['lowInventoryItems', 'lowInventoryItemsAndRandom'].includes(Settings.filterType) && InventorySettings.isEnabled);
       $('#filter-type option[value="lowInventoryItems"]').toggle(InventorySettings.isEnabled);
     })();
 
