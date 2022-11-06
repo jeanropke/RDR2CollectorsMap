@@ -1538,6 +1538,8 @@
     "menu.fme_display_general_period": "Általános eseménymegjelenítési időszak",
     "menu.fme_display_role_period": "Szerep Esemény megjelenési időszaka",
     "menu.fme_notification": "Esemény értesítések engedélyezése",
+    "help.fme_notification": "Értesítés küldése, ha a Szabad Roam esemény elindul.",
+    "help.fme_notification.denied": "Értesítés küldése, ha a Szabad Roam esemény elindul. Tiltott, mert a szükséges böngésző engedély nem adható meg.",
     "menu.fme_notification_period": "Esemény bejelentési időszak",
     "help.fme_notification_period": "Kiválaszthatod, hogy a szabad mászkálás esemény előtt hány perccel kezdődik az értesítés elküldése.",
     "menu.fme.time.starts_in": "Elkezdődik {time} múlva.",
