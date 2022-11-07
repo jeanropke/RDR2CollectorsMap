@@ -1006,6 +1006,10 @@
     "menu.fme.fme_wildlife_photographer": "Wildlife Photographer",
     "menu.fme.fme_role_salvage": "Salvage",
     "menu.fme.fme_challenge_wild_animals_kills": "Wild Animal Kills",
+    "menu.fme.fme_challenge_headshot_kills": "Headshot Kills Uitdaging",
+    "menu.fme.fme_challenge_horseback_kills": "Horseback Kills Uitdaging",
+    "menu.fme.fme_challenge_longarm_kills": "Longarm Kills Uitdaging",
+    "menu.fme.fme_challenge_sidearm_kills": "Sidearm Kills Uitdaging",
     "notification.fme.body": "Dit is een herinnering dat {name} gaat beginnen in {time}.",
     "menu.fme_enabled_events": "Ingeschakelde evenementen selecteren",
     "menu.modal_fme_enabled_events_title": "Instellingen Free Roam evenementen",
@@ -1097,6 +1101,7 @@
     "mp_animal_alligator_legendary_03.desc": "Er gaan geruchten over een vreemde alligator nabij Saint Denis. Er wordt gezegd dat ie een witte huid heeft en een rood gestreepte rug. Met een nest zo dicht bij de stad is het haast vanzelfsprekend dat de Legendarische Banded Gator defensief en territoriaal is geworden. Stropers zijn gespot in de omgeving, onverschrokken door de waarschuwingen. Laat je niet voor de gek houden door zijn grootte. Deze alligator kan zich met aanzienlijke snelheid voortbewegen.",
     "mp_animal_bear_legendary_01.desc": "Deze beer waart rond nabij de Dakota Rivier. Hij heeft korte, gedronge poten met een grijze rug en kop. Een solitair dier, wat eenvoudig geïrriteerd raakt door de aanwezigheid van mensen en zal uithalen als hij wordt uitgelokt. Hij heeft een voorkeur om 's nachts te jagen en, door zijn dikke vacht, kan hij zware regenval verdragen.",
     "mp_animal_bear_legendary_02.desc": "De Legendarische Ridgeback Spirit beer wordt soms nabij de Little Creek rivier gezien. De opvallende rode streep op zijn rug maakt 'm eenvoudig herkenbaar. Deze beren zijn extreem agressief. Als je ze moet benaderen, doe dat dan voorzichtig. Ze zijn gedurende de dag actief en trekken zich 's nachts terug en geven de voorkeur aan helder, open weer voor de jacht.",
+    "map.gus_price": "Gus prijs:",
     "menu.marker_color.custom": "Aangepast",
     "menu.custom_marker_color": "Aangepaste markeringskleuren instellen",
     "menu.custom_marker_color_title": "Aangepaste markeringskleuren"

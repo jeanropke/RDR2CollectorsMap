@@ -1907,6 +1907,7 @@
     "menu.random_spot_shovel": "随机物品（铁锹）",
     "help.filter_min_amount_items": "允许您设置库存中被视为“低库存物品”的物品最大数量。",
     "menu.filter_type.low_amount_items": "低库存物品",
+    "menu.filter_type.low_amount_items_and_random": "低库存和随机物品",
     "menu.filter_min_amount_items": "仅显示物品数量低于",
     "menu.sponsors": "赞助商",
     "menu.import_rdo_inventory": "导入 RDO 库存",
