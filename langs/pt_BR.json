@@ -1907,6 +1907,7 @@
     "menu.random_spot_shovel": "Locais Aleatórios (pá)",
     "help.filter_min_amount_items": "Permite que você defina a quantidade máxima de itens no seu inventário considerados como \"itens em menor quantidade\".",
     "menu.filter_type.low_amount_items": "Itens em menor quantidade",
+    "menu.filter_type.low_amount_items_and_random": "Somente itens com estoque baixo + pontos aleatórios",
     "menu.filter_min_amount_items": "Mostrar somente itens com valor inferior a",
     "menu.sponsors": "Patrocinadores",
     "menu.import_rdo_inventory": "Importar Inventário RDO",
