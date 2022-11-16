@@ -287,7 +287,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **neohazukibr** (904 words)
   - **rafaelsadriano** (16 words)
   - **Raphael_** (39 words)
-  - **Sephivader** (3,429 words)
+  - **Sephivader** (3,538 words)
   - **victorpxavier** (593 words)
   - **vierim** (33 words)
 
