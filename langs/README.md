@@ -170,7 +170,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **shimmyminay** (331 words)
   - **Vasili_Koulakov** (829 words)
 
-### Hungarian (88%):
+### Hungarian (90%):
   - **Barackvirag** (1,123 words)
   - **BMX** (237 words)
   - **DannyTI** (703 words)
@@ -183,7 +183,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **meezalena** (27 words)
   - **OdinsEyeTeam** (36 words)
   - **Ottilia** (2,400 words)
-  - **reddeadvaqueros** (417 words)
+  - **reddeadvaqueros** (873 words)
   - **SzKrJ** (1,429 words)
   - **tabandi** (287 words)
   - **YaBoiRichard614** (375 words)
