@@ -183,7 +183,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **meezalena** (27 words)
   - **OdinsEyeTeam** (36 words)
   - **Ottilia** (2,400 words)
-  - **reddeadvaqueros** (1,858 words)
+  - **reddeadvaqueros** (1,865 words)
   - **SzKrJ** (1,429 words)
   - **tabandi** (287 words)
   - **YaBoiRichard614** (375 words)
@@ -292,10 +292,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **victorpxavier** (593 words)
   - **vierim** (33 words)
 
-### Romanian (96%):
+### Romanian (97%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (23,872 words)
+  - **proximacentaurib** (24,098 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (99%):
