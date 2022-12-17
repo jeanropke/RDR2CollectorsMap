@@ -295,7 +295,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Romanian (97%):
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
-  - **proximacentaurib** (24,098 words)
+  - **proximacentaurib** (24,201 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (99%):
