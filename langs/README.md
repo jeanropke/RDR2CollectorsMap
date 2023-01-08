@@ -184,7 +184,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **meezalena** (27 words)
   - **OdinsEyeTeam** (36 words)
   - **Ottilia** (2,400 words)
-  - **reddeadvaqueros** (1,923 words)
+  - **reddeadvaqueros** (1,934 words)
   - **SzKrJ** (1,429 words)
   - **tabandi** (287 words)
   - **YaBoiRichard614** (375 words)
