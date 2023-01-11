@@ -1080,6 +1080,12 @@ function filterMapMarkers() {
     const weeklyItems = Weekly.current.collectibleItems.map(item => item.itemId);
     filterType = marker => weeklyItems.includes(marker.itemId);
   }
+  else if (Settings.filterType === 'weeklyAndRandom') {
+    const weeklyItems = Weekly.current.collectibleItems.map(item => item.itemId);
+    filterType = marker =>
+      weeklyItems.includes(marker.itemId) ||
+      weeklyItems.some(item => marker.possibleItems && marker.possibleItems.includes(item));
+  }
   else if (Settings.filterType === 'important') {
     const importantItems = Item.items.filter(item => item.isImportant).map(item => item.itemId);
     filterType = marker => importantItems.includes(marker.itemId);
