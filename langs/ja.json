@@ -1668,7 +1668,6 @@
     "map.view_loot": "確率を見る",
     "menu.modal_loot_table_title": "確率表",
     "menu.filter_type": "マーカーをフィルターする",
-    "help.filter_type": "条件に基づいてアイテムをフィルタリングします。",
     "menu.filter_type.none": "なし",
     "menu.filter_type.moonshiner": "密造酒製造者",
     "menu.filter_type.naturalist": "自然探究家",
@@ -1676,7 +1675,7 @@
     "menu.filter_type.important_items": "アイテムのインポート",
     "menu.filter_type.only_static": "静的のみ",
     "menu.filter_type.all_coins_spots": "収集可能なコインの場所",
-    "menu.filter_type.hide_flowers": "材料の花を非表示",
+    "menu.filter_type.low_amount_items": "所持数が少ない収集品のみ",
     "menu.join_discord": "Discordに参加する",
     "help.join_discord": "コレクターマップのDiscordを、新規タブを開きます。",
     "help.weekly_item_collectable": "この項目は、マップ上にマークが付けられた対応する場所に移動することによって収集できます。",
@@ -1899,7 +1898,6 @@
     "menu.random_spot_metal": "ランダムなスポット (金属探知器)",
     "menu.random_spot_shovel": "ランダムなスポット (シャベル)",
     "help.filter_min_amount_items": "インベントリの中で「所持数の少ないアイテム」とみなされるアイテムの最大量を設定することができます。",
-    "menu.filter_type.low_amount_items": "所持数が少ない収集品のみ",
     "menu.filter_min_amount_items": "以下の金額のアイテムのみ表示",
     "menu.sponsors": "スポンサー"
 }

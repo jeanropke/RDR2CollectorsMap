@@ -1665,14 +1665,13 @@
     "map.view_loot": "查看物品機率",
     "menu.modal_loot_table_title": "物品機率表",
     "menu.filter_type": "標記篩選",
-    "help.filter_type": "允許您根據特定條件過濾項目。",
     "menu.filter_type.none": "無",
     "menu.filter_type.moonshiner": "私釀酒商",
     "menu.filter_type.naturalist": "博物學家",
     "menu.filter_type.weekly_set": "每週收藏",
     "menu.filter_type.important_items": "重要收藏品",
     "menu.filter_type.only_static": "非隨機之收藏品",
-    "menu.filter_type.hide_flowers": "隱藏非配方的花",
+    "menu.filter_type.low_amount_items": "僅低庫存物品",
     "menu.join_discord": "加入我們的 Discord 服務器",
     "help.join_discord": "以瀏覽器新視窗開啟 收藏家地圖 Discord。",
     "help.weekly_item_collectable": "這個收藏品可以在地圖上標記的對應位置找到。",
@@ -1895,7 +1894,6 @@
     "menu.random_spot_metal": "隨機地點(金屬探測器)",
     "menu.random_spot_shovel": "隨機地點(鏟子)",
     "help.filter_min_amount_items": "允許您設定在庫存中被視為\"低庫存物品\"的物品最大值。",
-    "menu.filter_type.low_amount_items": "僅低庫存物品",
     "menu.filter_min_amount_items": "只顯示物品數量低於",
     "menu.sponsors": "贊助商"
 }
