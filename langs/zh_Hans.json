@@ -1550,7 +1550,7 @@
     "help.item_category_bugged_items": "切换此系列在地图上是否可见。请注意，此系列包含一个或多个由于游戏错误而不可用的物品。",
     "help.item_category_random_items": "切换此系列在地图上是否可见。请注意，此系列包含一个或多个随机化的物品。",
     "help.search_clear": "清除您当前的搜索查询。",
-    "help.search_copy_link": "将当前搜索链接复制到剪贴板，以便您可以使用该搜索查询浏览到地图。",
+    "help.search_copy_link": "将当前搜索链接复制到剪贴板，以便您可以使用该搜索查询在地图中直接查阅。",
     "help.sort_items_alphabetically": "切换菜单中的物品按照名称拼音首字母顺序还是游戏中的顺序排序。",
     "help.enable_marker_shadows": "切换标记是否有阴影效果。禁用阴影可以略微提升性能。",
     "help.delete_all_settings": "将所有设置，用户图钉以及库存物品重置为其默认值。",
