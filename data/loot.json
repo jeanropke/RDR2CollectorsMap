@@ -37,6 +37,7 @@
       "collectible_items_buried_flat_ground"
     ],
     "random_buried_shallow": [
+      "collectible_items_buried_flat_ground",
       "collectible_items_buried_flat_ground_shallow"
     ],
     "random_buried_mounds": [

@@ -143,10 +143,7 @@ class Marker {
           if (this.tool === 1) {
             return 'random_buried_mounds';
           }
-          if (this.itemNumber > 100) {
-            return 'random_buried_shallow'
-          }
-          return 'random_buried_chest'
+          return `random_buried_${this.type}`;
         }
         default:
           return this.category;
@@ -274,7 +271,7 @@ class Marker {
         if (this.tool === 1) {
           return 'lightergray';
         }
-        if (this.itemNumber > 100) {
+        if (this.type === 'shallow') {
           return 'gray';
         }
         return 'lightgray';
@@ -294,10 +291,7 @@ class Marker {
         if (this.tool === 1) {
           return colors.random_spot_shovel;
         }
-        if (this.itemNumber > 100) {
-          return colors.random_spot_metal_detector_shallow;
-        }
-        return colors.random_spot_metal_detector_chest;
+        return colors[`random_spot_metal_detector_${this.type}`];
       })();
       base = base[this.category] || 'lightred';
     }
