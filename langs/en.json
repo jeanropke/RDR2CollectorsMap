@@ -1636,7 +1636,7 @@
     "help.invisible-removed-markers": "Completely hides removed markers instead of making it partially transparent.",
     "menu.invisible-removed-markers": "Completely hide removed markers",
     "menu.toggle_debug": "Toggle debug features",
-    "map.random_spot.desc": "This spot gives you a random item, you can view more detailed information {int.random_spot.link}on this Wiki page{int.end.link}.",
+    "map.random_spot.desc": "This spot gives you a random item, you can view more detailed information on {int.random_spot.link} this Wiki page{int.end.link}.",
     "map.attribution_prefix": "Collectors Map Contributors",
     "menu.clear_important_items": "Clear important markers",
     "menu.modal_clear_important_items_body": "This will clear the highlight from all markers marked as important. This action cannot be undone.",
