@@ -1874,7 +1874,7 @@
     "menu.collectible_jewelry_rings_02": "Rings 2",
     "map.view_loot": "View Loot",
     "menu.modal_loot_table_title": "Loot Table",
-    "menu.modal_loot_table_all_tables_descr": "To view all loot tables visit {int.random_spot.link}",
+    "menu.modal_loot_table_all_tables_descr": "To view all loot tables visit {int.random_spot.link} Random item possible loot {int.end.link} wiki page.",
     "menu.filter_type": "Filter markers",
     "help.filter_type": "Allows you to filter items based on certain criteria.\n\"+ random spots\" means that only random spots, where you have a chance to find filtered items will be shown.",
     "menu.filter_type.none": "None",
