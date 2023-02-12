@@ -1013,8 +1013,8 @@ $('#open-custom-marker-color-modal').on('click', event => {
       const [a, b] = args.map(color => Language.get(`map.user_pins.color.${color}`));
       return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
     });
-  const baseColors = { arrowhead: 'purple', bottle: 'brown', coin: 'darkorange', egg: 'white', flower: 'red', fossils_random: 'darkgreen', cups: 'blue', swords: 'blue', wands: 'blue', pentacles: 'blue', jewelry_random: 'yellow', bracelet: 'yellow', necklace: 'yellow', ring: 'yellow', earring: 'yellow', heirlooms: 'pink', random: 'lightgray', random_spot_metal: 'lightgray', random_spot_shovel: 'lightgray' };
-  const randomCategories = ['random_spot_metal', 'random_spot_shovel']; // divide random spots to metal detector and shovel
+  const baseColors = { arrowhead: 'purple', bottle: 'brown', coin: 'darkorange', egg: 'white', flower: 'red', fossils_random: 'darkgreen', cups: 'blue', swords: 'blue', wands: 'blue', pentacles: 'blue', jewelry_random: 'yellow', bracelet: 'yellow', necklace: 'yellow', ring: 'yellow', earring: 'yellow', heirlooms: 'pink', random: 'lightgray', random_spot_metal_detector_chest: 'lightgray', random_spot_shovel: 'lightgray', random_spot_metal_detector_shallow: 'gray' };
+  const randomCategories = ['random_spot_metal_detector_chest', 'random_spot_metal_detector_shallow', 'random_spot_shovel']; // divide random spots to metal detector chest & shallow & shovel
   const itemCollections = Collection.collections;
   const possibleCategories = [...new Set(MapBase.markers.map(({ category }) => category))]
     // fossils categories => fossils_random, random => random_spot_metal & random_spot_shovel

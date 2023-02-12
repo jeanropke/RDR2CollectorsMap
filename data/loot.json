@@ -33,8 +33,10 @@
     "jewelry_random": [
       "collectible_jewelry_all"
     ],
-    "random": [
-      "collectible_items_buried_flat_ground",
+    "random_buried_chest": [
+      "collectible_items_buried_flat_ground"
+    ],
+    "random_buried_shallow": [
       "collectible_items_buried_flat_ground_shallow"
     ],
     "random_buried_mounds": [

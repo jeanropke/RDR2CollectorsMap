@@ -78,7 +78,13 @@ class Marker {
      */
     this.secondaryDescriptionKey = (() => {
       if (this.category === 'random') {
-        return 'map.random_spot.desc';
+        if (this.tool === 1) {
+          return 'map.random_spot_shovel.desc';
+        }
+        if (this.itemNumber > 100) {
+          return 'map.random_spot_metal_detector_shallow.desc'
+        }
+        return 'map.random_spot_metal_detector_chest.desc'
       } else if (this.category === 'arrowhead') {
         return "arrowhead_random.desc";
       } else if (this.category === 'coin') {
@@ -137,6 +143,10 @@ class Marker {
           if (this.tool === 1) {
             return 'random_buried_mounds';
           }
+          if (this.itemNumber > 100) {
+            return 'random_buried_shallow'
+          }
+          return 'random_buried_chest'
         }
         default:
           return this.category;
@@ -260,7 +270,15 @@ class Marker {
 
       heirlooms: 'pink',
 
-      random: this.tool === 2 ? 'lightgray' : 'lightergray',
+      random: (() => {
+        if (this.tool === 1) {
+          return 'lightergray';
+        }
+        if (this.itemNumber > 100) {
+          return 'gray';
+        }
+        return 'lightgray';
+      })(),
     };
 
     if (this.item && this.item.isWeekly() && Settings.showWeeklySettings) {
@@ -272,7 +290,15 @@ class Marker {
     else if (markerColor === 'custom') {
       const settingsColor = JSON.parse(localStorage.getItem('rdr2collector.customMarkersColors') || localStorage.getItem('customMarkersColors'));
       const colors = Object.assign(base, settingsColor || {});
-      colors.random = (this.tool === 2 ? colors.random_spot_metal : colors.random_spot_shovel) || 'lightgray';
+      colors.random = (() => {
+        if (this.tool === 1) {
+          return colors.random_spot_shovel;
+        }
+        if (this.itemNumber > 100) {
+          return colors.random_spot_metal_detector_shallow;
+        }
+        return colors.random_spot_metal_detector_chest;
+      })();
       base = base[this.category] || 'lightred';
     }
     else if (markerColor === 'by_cycle') {
