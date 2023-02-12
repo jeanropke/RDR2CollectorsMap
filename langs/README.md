@@ -14,7 +14,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **HeadShot557** (2,365 words)
   - **R36za** (101 words)
 
-### Arabic (66%):
+### Arabic (65%):
   - **a.youssry78** (109 words)
   - **Aiman95** (606 words)
   - **Alalwi** (1,552 words)
@@ -52,14 +52,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **philchang** (158 words)
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
-  - **ToxicMagisk** (24,039 words)
+  - **ToxicMagisk** (24,166 words)
   - **user670839245** (224 words)
 
 ### Chinese Traditional (95%):
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (7,227 words)
-  - **Vinnie5412** (180 words)
+  - **Vinnie5412** (316 words)
 
 ### Czech (70%):
   - **avojta** (581 words)
@@ -190,7 +190,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **YaBoiRichard614** (375 words)
   - **zsnkn_** (2,674 words)
 
-### Italian (96%):
+### Italian (95%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
   - **daveo979** (3,281 words)
@@ -222,7 +222,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TOSA_MAKI** (403 words)
   - **uraomote** (2,348 words)
 
-### Korean (89%):
+### Korean (88%):
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (1,031 words)
   - **Garudia** (111 words)
@@ -321,7 +321,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **tomvsxvi** (563 words)
   - **UluMulu** (217 words)
 
-### Serbian (Cyrillic) (32%):
+### Serbian (Cyrillic) (31%):
   - **UluMulu** (217 words)
 
 ### Spanish (96%):
