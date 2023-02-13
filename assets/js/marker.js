@@ -271,7 +271,7 @@ class Marker {
         if (this.tool === 1) {
           return 'lightergray';
         }
-        if (this.type === 'shallow') {
+        if (this.type === 'chest') {
           return 'gray';
         }
         return 'lightgray';
