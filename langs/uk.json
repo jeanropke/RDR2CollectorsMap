@@ -1433,7 +1433,6 @@
     "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "Показати функції налагодження",
-    "map.random_spot.desc": "Тут можна отримати випадковий предмет. Додаткову інформацію можна отримати відвідавши {int.random_spot.link} та сторінку поширених запитань {int.end.link}.",
     "map.attribution_prefix": "Співучасники карти колекціонерів",
     "menu.clear_important_items": "Видалити важливі мітки",
     "menu.modal_clear_important_items_body": "Очистить підсвічування від усіх маркерів, позначених як важливо. Цю дію не можна скасувати.",
@@ -1648,9 +1647,6 @@
     "menu.collectible_fossils_rare": "Скам’янілості – Мегафауна",
     "menu.collectible_fossils_uncommon": "Скам’янілості – Океанічні",
     "menu.collectible_hrlms_buried_mounds": "Сімейні реліквії",
-    "menu.collectible_items_buried_flat_ground": "Захоронення – Металошукач",
-    "menu.collectible_items_buried_flat_ground_shallow": "Захоронення – Контейнер для металошукача",
-    "menu.collectible_items_buried_mounds": "Захоронення – Лопата",
     "menu.collectible_items_fossils_buried_dirt_snow": "Скам’янілості – Грязь /Сніг",
     "menu.collectible_items_fossils_buried_mud": "Скам’янілості – Грязь",
     "menu.collectible_items_fossils_buried_snow": "Скам’янілості – Сніг",
@@ -1842,7 +1838,6 @@
     "help.show_updates": "Показує останні оновлення, пов'язані з картою.",
     "menu.timezone_offset": "Зміщення часового поясу",
     "help.timezone_offset": "Дозволяє змінювати час, що відображається, якщо він відображається неправильно.",
-    "menu.modal_loot_table_body": "У цих таблицях вказано відсоток, відповідно до якого може випасти відповідний предмет при викопуванні. Зауважте, що ці відсотки є приблизними. Гра прокручується кілька разів, першу для категорії, а потім для предмета цієї категорії. Тому фактичний відсоток може відрізнятися від зазначеного.",
     "menu.enable_cycles": "Увімкнути відображення циклів",
     "help.enable_cycles": "Дозволяє ввімкнути або вимкнути видимість значків циклу та тексту спливаючих меню.",
     "menu.tooltip_map": "Підказки для елементів на карті",
@@ -1890,7 +1885,5 @@
     "help.custom_marker_color_modal": "Дозволяє встановити свій колір для кожної категорії маркерів.",
     "menu.fossils_random": "Випадкові скам’янілості",
     "menu.jewelry_random": "Випадкова втрачена прикраса",
-    "menu.random_spot_metal": "Випадкові місця (детектор металу)",
-    "menu.random_spot_shovel": "Випадкові місця (лопата)",
     "menu.sponsors": "Спонсори"
 }

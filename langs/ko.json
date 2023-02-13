@@ -1435,7 +1435,6 @@
     "help.invisible-removed-markers": "제게된 마커를 불투명하게 만드는 대신 완전히 숨깁니다.",
     "menu.invisible-removed-markers": "제거된 마커를 완전히 숨깁니다.",
     "menu.toggle_debug": "디버그 기능 사용",
-    "map.random_spot.desc": "이 지점은 랜덤 항목을 제공합니다. 자세한 정보를 참조하려면 {int.random_spot.link}위키 페이지{int.end.link}에서 확인할 수 있습니다.",
     "map.attribution_prefix": "수집가 지도 제공자",
     "menu.clear_important_items": "중요한 마커 제거",
     "menu.modal_clear_important_items_body": "이 옵션은 모든 중요한 항목에서 강조 표시를 제거합니다. 이 작업은 취소 할 수 없습니다.",
@@ -1605,9 +1604,6 @@
     "menu.collectible_fossils_rare": "화석 - 거대 동물 화석",
     "menu.collectible_fossils_uncommon": "화석 - 해양 화석",
     "menu.collectible_hrlms_buried_mounds": "가보",
-    "menu.collectible_items_buried_flat_ground": "묻혀있는 - 금속탐지기",
-    "menu.collectible_items_buried_flat_ground_shallow": "묻혀있는 것 - 금속 탐지기 상자",
-    "menu.collectible_items_buried_mounds": "묻혀있는 것 - 삽",
     "menu.collectible_items_fossils_buried_water": "화석 - 해안",
     "menu.collectible_jewelry_all": "잃어버린 보석",
     "menu.collectible_jewelry_bracelets": "팔찌",
@@ -1788,7 +1784,6 @@
     "help.show_updates": "지도와 관련된 최신 업데이트를 표시합니다.",
     "menu.timezone_offset": "시간대 보정",
     "help.timezone_offset": "시계가 잘못된 경우 시간 단위로 시간대를 보정 할 수 있습니다.",
-    "menu.modal_loot_table_body": "이 테이블은 항목을 조사할 때 해당 항목의 드롭 확률을 표시합니다. 이러한 확률은 근사치임에 유의하십시오. 게임은 분류에 대해 무작위 선택을 한 다음 선택된 분류에서 아이템에 대해 다시 무작위 선택을 합니다. 따라서 실제 확률은 여기에서 설명하는 것과 다를 수 있습니다.",
     "menu.enable_cycles": "주기 표시",
     "help.enable_cycles": "팝업에서 주기 아이콘과 텍스트의 표시 여부를 설정할 수 있습니다.",
     "menu.tooltip_map": "맵 항목을 얻기 위한 도구 팁 사용",
@@ -1835,7 +1830,5 @@
     "menu.custom_marker_color_body": "카테고리별 색상 설정",
     "help.custom_marker_color_modal": "각 마커 카테고리의 사용자 정의 색상 설정을 허용합니다.",
     "menu.fossils_random": "무작위 화석",
-    "menu.jewelry_random": "랜덤 쥬얼리",
-    "menu.random_spot_metal": "무작위 아이템 (금속 탐지기)",
-    "menu.random_spot_shovel": "무작위 아이템 (삽)"
+    "menu.jewelry_random": "랜덤 쥬얼리"
 }

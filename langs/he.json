@@ -943,7 +943,6 @@
     "menu.marker_size.150": "150 %",
     "menu.marker_size.175": "175 %",
     "menu.marker_size.200": "200%",
-    "map.random_spot.desc": "נקודה זו מעניקה לכם פריט אקראי, תוכלו לראות מידע מפורט יותר {int.random_spot.link}בדף זה{int.end.link}.",
     "menu.clear_important_items": "ניקוי סמנים חשובים",
     "menu.modal_clear_important_items_title": "ניקוי סמנים חשובים?",
     "menu.sort_items_alphabetically": "מיין לפי סדר אלפביתי",

@@ -1244,7 +1244,6 @@
     "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "Aktivér / deaktivér fejlfindingsfunktioner",
-    "map.random_spot.desc": "Dette sted giver dig et vilkårligt element, du kan få vist mere detaljerede oplysninger {int.random_spot.link}på denne Wiki side{int.end.link}.",
     "menu.clear_important_items": "Ryd vigtige markeringer",
     "menu.modal_clear_important_items_body": "Dette vil fjerne fokus fra alle markeringer, der er markeret som vigtige. Handlingen kan ikke fortryde.",
     "menu.modal_clear_important_items_title": "Ryd vigtige markeringer?",

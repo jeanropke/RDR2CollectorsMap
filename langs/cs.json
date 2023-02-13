@@ -1397,7 +1397,6 @@
     "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200%",
     "menu.toggle_debug": "Přepnout funkce ladění",
-    "map.random_spot.desc": "Toto místo vám poskytuje náhodnou položku, můžete si prohlédnout podrobnější informace. {int.random_spot.link}na této stránce wikiwebu{int.end.link}.",
     "map.attribution_prefix": "Přispěvatelé mapy sběračů",
     "menu.clear_important_items": "Vymazat důležité značky",
     "menu.modal_clear_important_items_body": "Tím se vymaže zvýraznění ze všech značek označených jako důležité. Tuto akci nelze vrátit zpět.",
@@ -1611,9 +1610,6 @@
     "menu.collectible_fossils_rare": "Fosílie - Megafauna",
     "menu.collectible_fossils_uncommon": "Fosílie - Oceánské",
     "menu.collectible_hrlms_buried_mounds": "Kartáče na vlasy",
-    "menu.collectible_items_buried_flat_ground": "Zakopané - Metal Detector",
-    "menu.collectible_items_buried_flat_ground_shallow": "Zakopané - Metal Detector Container",
-    "menu.collectible_items_buried_mounds": "Zakopané - Lopata",
     "menu.collectible_items_fossils_buried_dirt_snow": "Fosílie - Hlína/Sníh",
     "menu.collectible_items_fossils_buried_mud": "Fosílie - Bláto",
     "menu.collectible_items_fossils_buried_snow": "Fosílie - sníh",
@@ -1745,7 +1741,5 @@
     "menu.lang_zh_Hans": "简体中文 (čínština (zjednodušená))",
     "menu.lang_zh_Hant": "繁體中文 (čínština (tradiční))",
     "menu.marker_color.custom": "Vlastní",
-    "menu.jewelry_random": "Náhodný klenot",
-    "menu.random_spot_metal": "Náhodná místa (detektor kovu)",
-    "menu.random_spot_shovel": "Náhodná místa (lopata)"
+    "menu.jewelry_random": "Náhodný klenot"
 }

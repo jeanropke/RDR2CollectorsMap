@@ -154,7 +154,6 @@
     "menu.marker_size.150": "150%",
     "menu.marker_size.175": "175%",
     "menu.marker_size.200": "200%",
-    "map.random_spot.desc": "Vị trí này cho bạn một vật phẩm ngẫu nhiên, bạn có thể xem thêm thông tin {int.random_spot.link}ở trang Wiki này{int.end.link}.",
     "menu.clear_important_items": "Xóa các điểm đánh dấu quan trọng",
     "menu.modal_clear_important_items_body": "Thao tác này sẽ xóa phần đánh dấu khỏi tất cả các điểm đánh dấu được đánh dấu là quan trọng. Hành động này không thể được hoàn tác.",
     "menu.modal_clear_important_items_title": "Xóa các điểm đánh dấu quan trọng?",
