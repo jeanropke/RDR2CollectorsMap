@@ -81,10 +81,7 @@ class Marker {
         if (this.tool === 1) {
           return 'map.random_spot_shovel.desc';
         }
-        if (this.itemNumber > 100) {
-          return 'map.random_spot_metal_detector_shallow.desc'
-        }
-        return 'map.random_spot_metal_detector_chest.desc'
+        return `map.random_spot_metal_detector_${this.type}.desc`;
       } else if (this.category === 'arrowhead') {
         return "arrowhead_random.desc";
       } else if (this.category === 'coin') {
