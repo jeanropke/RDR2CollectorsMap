@@ -1616,7 +1616,7 @@
             { "text": "random_item_33", "height": 0, "tool": 1, "lat": -35.673, "lng": 150.2485, "video": "", "type": "mounds"  },
             { "text": "random_item_35", "height": 0, "tool": 1, "lat": -91.7326, "lng": 121.8597, "video": "", "type": "mounds"  },
             { "text": "random_item_40", "height": 0, "tool": 1, "lat": -89.129, "lng": 144.6561, "video": "", "type": "mounds"  },
-            { "text": "random_item_43", "height": 0, "tool": 1, "lat": -81.2544, "lng": 156.7882, "video": "", "type": "chest" },
+            { "text": "random_item_43", "height": 0, "tool": 1, "lat": -81.2544, "lng": 156.7882, "video": "", "type": "mounds" },
             { "text": "random_item_57", "height": 0, "tool": 2, "lat": -42.6009, "lng": 137.203, "video": "", "type": "chest" },
             { "text": "random_item_58", "height": 0, "tool": 2, "lat": -58.9752, "lng": 70.7348, "video": "", "type": "chest" },
             { "text": "random_item_62", "height": 0, "tool": 2, "lat": -100.4811, "lng": 25.2372, "video": "", "type": "chest" },
