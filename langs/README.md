@@ -60,7 +60,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **L1Chung** (11,767 words)
   - **pach318** (269 words)
   - **RichardC.P.** (7,227 words)
-  - **Vinnie5412** (801 words)
+  - **Vinnie5412** (804 words)
 
 ### Czech (70%):
   - **avojta** (581 words)
