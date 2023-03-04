@@ -135,11 +135,9 @@ class Marker {
           if (this.tool === 1) {
             return 'arrowhead_buried_mounds';
           }
+          return 'arrowhead';
         }
         case 'random': {
-          if (this.tool === 1) {
-            return 'random_buried_mounds';
-          }
           return `random_buried_${this.type}`;
         }
         default:
