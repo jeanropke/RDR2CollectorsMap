@@ -348,7 +348,10 @@ class Marker {
         <span><a href="" data-text="map.mark_important"></a> |</span>
         <span><a href="" data-text="map.copy_link"></a></span>
       </p>
-      <small class="popupContentDebug">Description key: ${this.primaryDescriptionKey} / Latitude: ${this.lat} / Longitude: ${this.lng}</small>
+      <small class="popupContentDebug">
+        Latitude: ${this.lat} / Longitude: ${this.lng}<br>
+        Description key: ${this.primaryDescriptionKey}
+      </small>
       <div class="marker-popup-buttons">
           <button class="btn btn-danger">↓</button>
           <small></small>
