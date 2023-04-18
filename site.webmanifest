@@ -1,14 +1,19 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "RDO - Collectors Map",
+    "short_name": "RDO",
     "icons": [
         {
-            "src": "./android-chrome-48x48.png",
-            "sizes": "48x48",
-            "type": "image/png"
+            "src": "./icon_144x144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
         }
     ],
     "theme_color": "#000000",
     "background_color": "#000000",
-    "display": "standalone"
+    "display": "standalone",
+    "scope": "/",
+    "start_url":"/",
+    "description":"Red Dead Online Collectors Map",
+    "lang":"en"
 }
