@@ -54,7 +54,7 @@
 </head>
 
 <body>
-  <div class="side-menu">
+  <aside class="side-menu">
     <div id="top-sticky">
       <div class="sticky-container">
         <h2 id="main-header">
@@ -1017,7 +1017,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </aside>
   <div class="menu-toggle">></div>
 
   <div class="top-widget">
@@ -1047,9 +1047,10 @@
     </div>
   </div>
 
-  <div id="map">
+  <main id="map">
 
-  </div>
+  </main>
+
   <div class="lat-lng-container" data-help="map_coordinates_container">
     <p></p><button id="lat-lng-container-close-button">×</button>
   </div>
@@ -1317,6 +1318,20 @@
     </div>
   </div>
 
+  <!-- Service Worker Init -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('Service worker registered with scope:', registration.scope);
+          })
+          .catch(error => {
+            console.error('Service worker registration failed:', error);
+          });
+      });
+    }
+  </script>
   <!-- ES6 Compatibility Check -->
   <script>function isES6() { try { return eval("() => {};"), !0 } catch (r) { return !1 } } isES6() || alert("This browser might not be fully supported, and errors will likely occur. Please update your browser if you experience issues.");</script>
 
