@@ -260,6 +260,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **piszczel24** (57 words)
   - **PLTytus** (789 words)
   - **Quahox** (39 words)
+  - **skalski.jas** (12 words)
   - **THE_MALOTEK** (422 words)
   - **tkwitak** (638 words)
 
