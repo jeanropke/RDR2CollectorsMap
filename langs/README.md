@@ -339,7 +339,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Deepnight** (83 words)
   - **drcx00** (13 words)
   - **emilyhewsonh** (206 words)
-  - **gabriel.ferrer.arias** (453 words)
+  - **gabriel.ferrer.arias** (636 words)
   - **maximilianocarvajalluengo** (423 words)
   - **mbc_2017** (101 words)
   - **Megitsune** (4,440 words)
@@ -357,7 +357,8 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Spanish, Mexico (79%):
   - **bloobhy** (152 words)
-  - **jorgex94** (2,097 words)
+  - **gabriel.ferrer.arias** (636 words)
+  - **jorgex94** (2,143 words)
   - **juanestevez** (911 words)
   - **Lopezpatricio3** (14 words)
   - **Megitsune** (4,440 words)
