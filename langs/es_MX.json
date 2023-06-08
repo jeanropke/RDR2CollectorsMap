@@ -1436,7 +1436,7 @@
     "menu.invisible-removed-markers": "Ocultar completamente los marcadores eliminados",
     "menu.toggle_debug": "Activar opciones del debug",
     "map.random_spot_metal_detector_chest.desc": "En este lugar, desenterrarás un cofre que contiene un artículo aleatorio, puedes ver información más detallada en {int.random_spot.link}esta Wiki{int.end.link}.",
-    "map.random_spot_metal_detector_shallow.desc": "En este lugar, desenterrarás un artículo aleatorio del suelo, puedes ver información más detallada en {int.random_spot.link}esta Wiki{int.end.link}.",
+    "map.random_spot_metal_detector_shallow.desc": "En este lugar, encontrarás un artículo aleatorio enterrado en el suelo, puedes ver información más detallada en {int.random_spot.link}esta Wiki{int.end.link}.",
     "map.random_spot_shovel.desc": "Este lugar te da un artículo aleatorio, puedes ver información más detallada en {int.random_spot.link}esta Wiki{int.end.link}.",
     "map.attribution_prefix": "Colaboradores con el mapa de coleccionistas",
     "menu.clear_important_items": "Borrar marcadores importantes",
