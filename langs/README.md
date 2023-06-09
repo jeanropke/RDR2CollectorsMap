@@ -340,6 +340,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **drcx00** (13 words)
   - **emilyhewsonh** (206 words)
   - **gabriel.ferrer.arias** (636 words)
+  - **jj037** (201 words)
   - **maximilianocarvajalluengo** (423 words)
   - **mbc_2017** (101 words)
   - **Megitsune** (4,440 words)
