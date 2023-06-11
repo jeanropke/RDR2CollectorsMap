@@ -359,7 +359,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Spanish, Mexico (85%):
   - **bloobhy** (152 words)
   - **gabriel.ferrer.arias** (636 words)
-  - **jorgex94** (4,561 words)
+  - **jorgex94** (4,580 words)
   - **juanestevez** (911 words)
   - **Lopezpatricio3** (14 words)
   - **Megitsune** (4,440 words)
