@@ -251,8 +251,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Barmak88** (2,018 words)
   - **lostman2000** (309 words)
 
-### Polish (97%):
-  - **Baltazaro** (209 words)
+### Polish (98%):
+  - **Baltazaro** (458 words)
   - **damian.filipek** (13 words)
   - **kac3pro** (97 words)
   - **Kosa51** (313 words)
