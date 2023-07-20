@@ -125,7 +125,7 @@ const FME = {
    */
   getEventObject: function (d, frequency) {
     const eventTime = d[0];
-    const now = Date.now();
+    const now = MapBase.mapTime().valueOf();
     const oneDay = this.minutesToMilliseconds(24 * 60);
     let dateTime = this.getDateTime(now, eventTime);
     let eta = dateTime - now;
