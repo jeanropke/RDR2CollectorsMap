@@ -235,7 +235,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **KKimRoma** (2,770 words)
   - **Megitsune** (4,440 words)
   - **nikelhard** (4,892 words)
-  - **Seogi** (2,044 words)
+  - **Seogi** (2,079 words)
   - **sksk2943** (1,376 words)
   - **spagheeetti** (1,358 words)
   - **wlfogb** (11 words)
@@ -360,13 +360,13 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ToshyExS** (1,519 words)
   - **ulises_hdz22** (361 words)
 
-### Spanish, Mexico (90%):
+### Spanish, Mexico (91%):
   - **bloobhy** (152 words)
   - **gabriel.ferrer.arias** (636 words)
   - **jorgex94** (6,907 words)
   - **juanestevez** (911 words)
   - **Lopezpatricio3** (14 words)
-  - **marcoruizg** (102 words)
+  - **marcoruizg** (563 words)
   - **Megitsune** (4,440 words)
 
 ### Swedish (50%):
