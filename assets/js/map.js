@@ -435,6 +435,7 @@ const MapBase = {
         )
         searchTerms.forEach(term => {
           const bestMatch = stringSimilarity.findBestMatch(term, markerNames);
+          if (bestMatch.bestMatch.rating < 0.6) return;
           const bestMatchItemId = MapBase.markers[bestMatch.bestMatchIndex].itemId;
           uniqueSearchMarkers.push(...MapBase.markers.filter(marker => bestMatchItemId === marker.itemId));
         });
