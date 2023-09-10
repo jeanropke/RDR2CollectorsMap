@@ -80,7 +80,7 @@ These are the people that helped translate the project using Crowdin. Please not
 
 ### Dutch (59%):
   - **GIGAPLAYCLAN** (30 words)
-  - **Gs69** (781 words)
+  - **Gs69** (841 words)
   - **Helmond1989** (2,058 words)
   - **JBO393** (184 words)
   - **jopiejooow** (1,186 words)
