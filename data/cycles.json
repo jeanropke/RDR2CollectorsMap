@@ -1,29 +1,5 @@
 [
  {
-  "flower": 3,
-  "bottle": 6,
-  "arrowhead": 3,
-  "egg": 3,
-  "coin": 4,
-  "heirlooms": 4,
-  "lost_jewelry": 3,
-  "random": 4,
-  "tarot_cards": 4,
-  "fossils": 3,
-  "date": "2023-08-21"
- }, {
-  "flower": 6,
-  "bottle": 4,
-  "arrowhead": 2,
-  "egg": 5,
-  "coin": 6,
-  "heirlooms": 2,
-  "lost_jewelry": 4,
-  "random": 1,
-  "tarot_cards": 2,
-  "fossils": 5,
-  "date": "2023-08-22"
- }, {
   "flower": 2,
   "bottle": 3,
   "arrowhead": 5,
@@ -347,5 +323,17 @@
   "tarot_cards": 3,
   "fossils": 3,
   "date": "2023-09-18"
+ }, {
+  "flower": 3,
+  "bottle": 4,
+  "arrowhead": 1,
+  "egg": 6,
+  "coin": 3,
+  "heirlooms": 5,
+  "lost_jewelry": 5,
+  "random": 6,
+  "tarot_cards": 5,
+  "fossils": 5,
+  "date": "2023-09-19"
  }
 ]
