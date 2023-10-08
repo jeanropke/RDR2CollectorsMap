@@ -1916,11 +1916,11 @@
     "menu.sponsors": "赞助商",
     "menu.import_rdo_inventory": "导入 RDO 库存",
     "menu.modal_import_rdo_inventory_title": "导入 RDO 角色库存",
-    "menu.modal_import_rdo_inventory_intro": "要导入您的角色库存到此地图，请遵循以下步骤：",
+    "menu.modal_import_rdo_inventory_intro": "若您无法安装扩展，也可通过以下步骤来手动导入角色库存：",
     "menu.modal_import_rdo_inventory_step_1": "1. {int.rdo.overview}登录{int.end.link}您的 Social Club 账户。",
     "menu.modal_import_rdo_inventory_step_2": "2. 单击下方选框来复制内容。",
     "menu.modal_import_rdo_inventory_step_3": "3. 来到 Social Club 网站，打开浏览器开发者工具的控制台/Console (F12)，粘贴步骤 2 中的脚本并按回车键。",
     "menu.modal_import_rdo_inventory_final": "如果一切顺利，将会下载一个包含您库存数据的文件。点击下方的按钮导入即可。",
-    "menu.modal_import_rdo_inventory_manual": "使用说明",
+    "menu.modal_import_rdo_inventory_manual": "手动导入",
     "menu.modal_import_rdo_inventory_extension": "您可以使用此扩展来同步库存。只需安装然后一键。 兼容基于 Chromium 的浏览器，如 Brave、Google Chrome、Microsoft Edge 以及 Opera。"
 }
