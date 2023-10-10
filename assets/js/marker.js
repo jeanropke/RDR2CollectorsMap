@@ -345,7 +345,7 @@ class Marker {
       <p class='marker-popup-links'>
         <span><a href="${this.video}" target="_blank" data-text="map.video"></a> |</span>
         <span><a href="" data-text="map.view_loot" data-toggle="modal" data-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a> |</span>
-        <span><a href="" data-text="map.mark_important"></a> |</span>
+        <span><a href="" data-text="${this.item && this.item.isImportant ? 'map.unmark_important' : 'map.mark_important'}"></a> |</span>
         <span><a href="" data-text="map.copy_link"></a></span>
       </p>
       <small class="popupContentDebug">
@@ -370,12 +370,20 @@ class Marker {
       .click((e) => {
         e.preventDefault();
         setClipboardText(`https://jeanropke.github.io/RDR2CollectorsMap/?m=${this.text}`);
+        $(e.currentTarget).attr('data-text', 'map.link_copied');
+        $('a[data-text=""]').append(Language.translateDom(snippet[0]));
+        setTimeout(() => {
+          $(e.currentTarget).attr('data-text', 'map.copy_link')
+          $('a[data-text=""]').append(Language.translateDom(snippet[0]))
+        }, 1000)
       })
       .end()
-      .find('[data-text="map.mark_important"]')
+      .find('[data-text="map.mark_important"], [data-text="map.unmark_important"]')
       .click((e) => {
         e.preventDefault();
         this.item.isImportant = !this.item.isImportant;
+        $(e.currentTarget).attr('data-text', this.item.isImportant ? 'map.unmark_important' : 'map.mark_important');
+        $('a[data-text=""]').append(Language.translateDom(snippet[0]));
       })
       .parent()
       .toggle(!this.isRandomizedItem)
