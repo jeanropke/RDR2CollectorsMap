@@ -373,9 +373,9 @@ class Marker {
         $(e.currentTarget).attr('data-text', 'map.link_copied');
         $('a[data-text=""]').append(Language.translateDom(snippet[0]));
         setTimeout(() => {
-          $(e.currentTarget).attr('data-text', 'map.copy_link')
-          $('a[data-text=""]').append(Language.translateDom(snippet[0]))
-        }, 1000)
+          $(e.currentTarget).attr('data-text', 'map.copy_link');
+          $('a[data-text=""]').append(Language.translateDom(snippet[0]));
+        }, 1000);
       })
       .end()
       .find('[data-text="map.mark_important"], [data-text="map.unmark_important"]')

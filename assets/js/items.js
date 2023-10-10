@@ -231,7 +231,8 @@ class Item extends BaseItem {
   }
 
   highlightImportantItem() {
-    $(`[data-marker*="${this.itemId}"]`).toggleClass('highlight-items', this.isImportant);
+    const selector = ['egg', 'flower'].includes(this.category) ? `[data-marker*="${this.itemId}"]` : `[data-marker^="${this.itemId}"]`;
+    $(selector).toggleClass('highlight-items', this.isImportant);
     $(`[data-type="${this.legacyItemId}"]`).toggleClass('highlight-important-items-menu', this.isImportant);
   }
 
