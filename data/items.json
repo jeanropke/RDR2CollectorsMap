@@ -114,8 +114,8 @@
         ],
         "3": [
             { "text": "provision_duck_egg", "height": 0, "tool": 0, "lat": -48.272, "lng": 148.2364, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=859s" },
-            { "text": "provision_eagle_egg_1", "height": 0, "tool": 0, "lat": -39.8578, "lng": 96.0157, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1231s" },
-            { "text": "provision_eagle_egg_2", "height": 0, "tool": 0, "lat": -64.7479, "lng": 78.4874, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1154s" },
+            { "text": "provision_eagle_egg_1", "height": 0, "tool": 0, "lat": -39.8578, "lng": 96.0157, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1154s" },
+            { "text": "provision_eagle_egg_2", "height": 0, "tool": 0, "lat": -64.7479, "lng": 78.4874, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1231s" },
             { "text": "provision_egret_egg", "height": 0, "tool": 0, "lat": -76.939, "lng": 140.0815, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=889s" },
             { "text": "provision_goose_egg", "height": 0, "tool": 0, "lat": -75.4266, "lng": 114.0073, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1037s" },
             { "text": "provision_hawk_egg_1", "height": 0, "tool": 0, "lat": -22.4707, "lng": 95.1546, "video": "https://www.youtube.com/watch?v=0hug79s8qa0&t=1195s" },
