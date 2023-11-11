@@ -335,5 +335,17 @@
   "tarot_cards": 5,
   "fossils": 6,
   "date": "2023-11-11"
+ }, {
+  "flower": 1,
+  "bottle": 1,
+  "arrowhead": 1,
+  "egg": 1,
+  "coin": 3,
+  "heirlooms": 3,
+  "lost_jewelry": 2,
+  "random": 4,
+  "tarot_cards": 1,
+  "fossils": 2,
+  "date": "2023-11-12"
  }
 ]
