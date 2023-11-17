@@ -1,17 +1,5 @@
 [
  {
-  "flower": 6,
-  "bottle": 5,
-  "arrowhead": 5,
-  "egg": 5,
-  "coin": 5,
-  "heirlooms": 5,
-  "lost_jewelry": 6,
-  "random": 2,
-  "tarot_cards": 5,
-  "fossils": 6,
-  "date": "2023-10-21"
- }, {
   "flower": 3,
   "bottle": 1,
   "arrowhead": 2,
@@ -335,5 +323,17 @@
   "tarot_cards": 5,
   "fossils": 6,
   "date": "2023-11-17"
+ }, {
+  "flower": 6,
+  "bottle": 4,
+  "arrowhead": 4,
+  "egg": 6,
+  "coin": 5,
+  "heirlooms": 4,
+  "lost_jewelry": 4,
+  "random": 2,
+  "tarot_cards": 6,
+  "fossils": 4,
+  "date": "2023-11-18"
  }
 ]
