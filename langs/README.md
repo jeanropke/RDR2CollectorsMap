@@ -21,7 +21,6 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ali78nahi2** (12 words)
   - **alichakra.9** (92 words)
   - **anwar_442233** (92 words)
-  - **DrAbdulilah** (348 words)
   - **fhyyd** (293 words)
   - **hhfffddd** (17 words)
   - **JokerUAE** (77 words)
@@ -33,6 +32,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **noo7jri** (693 words)
   - **osm4reaper** (15 words)
   - **razzer.tube** (47 words)
+  - **REMOVED_USER** (348 words)
   - **REMOVED_USER** (89 words)
   - **younessmouhid** (160 words)
 
