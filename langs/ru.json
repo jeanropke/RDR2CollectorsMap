@@ -1250,6 +1250,7 @@
     "map.remove_add": "Показать/Скрыть",
     "map.remove": "Скрыть на карте",
     "map.copy_link": "Скопировать ссылку метки",
+    "map.link_copied": "Скопировано!",
     "map.video": "Видео",
     "map.flower_type.night_only": "Растет ночью - с 22:00 до 05:00",
     "map.flower_type.bush": "Это растение является кустарником.",
