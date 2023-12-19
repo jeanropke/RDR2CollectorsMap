@@ -372,6 +372,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Swedish (50%):
   - **...---...** (431 words)
   - **emeliris** (636 words)
+  - **Fringillus** (18 words)
   - **idaerika** (30 words)
   - **JohanLiljegren** (430 words)
   - **k_imq** (217 words)
