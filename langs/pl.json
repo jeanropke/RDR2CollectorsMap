@@ -1250,6 +1250,7 @@
     "map.remove_add": "Usuń z / dodaj do mapy",
     "map.remove": "Usuń z mapy",
     "map.copy_link": "Skopiuj link znacznika",
+    "map.link_copied": "Skopiowano!",
     "map.video": "Wideo",
     "map.flower_type.night_only": "Tylko w nocy - 22:00 do 5:00.",
     "map.flower_type.bush": "Ten kwiat rośnie na krzewie.",
