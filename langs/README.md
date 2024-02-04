@@ -43,7 +43,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ElTellito** (4,619 words)
   - **Muahahas** (51 words)
 
-### Chinese Simplified (98%):
+### Chinese Simplified (100%):
   - **akbcd** (424 words)
   - **Approach** (12 words)
   - **BHT256** (7,841 words)
@@ -55,7 +55,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
   - **SeaBreeze33** (52 words)
-  - **ToxicMagisk** (24,653 words)
+  - **ToxicMagisk** (25,109 words)
   - **User670** (224 words)
 
 ### Chinese Traditional (98%):
@@ -92,8 +92,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **VDM0598** (176 words)
   - **xvilo** (426 words)
 
-### English, United Kingdom (8%):
+### English, United Kingdom (10%):
   - **AdamNortonUK** (12 words)
+  - **ChrisR2602** (894 words)
   - **JRSC01** (2,869 words)
   - **Michal__d** (4,235 words)
   - **MrSmithr** (290 words)
