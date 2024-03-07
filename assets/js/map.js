@@ -115,6 +115,9 @@ const MapBase = {
       zoomControl: false,
       crs: L.CRS.Simple,
       layers: [mapLayers[this.themeOverride || Settings.baseLayer]],
+      zoomSnap: 0.25,
+      zoomDelta: 0.5,
+      wheelPxPerZoomLevel: 150,
     }).setView([this.viewportX, this.viewportY], this.viewportZoom);
 
     MapBase.map.addControl(
