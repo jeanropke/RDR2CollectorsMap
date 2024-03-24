@@ -343,7 +343,7 @@ class Marker {
           </div>
       </span>
       <p class='marker-popup-links'>
-        <span><a href="${this.video}" target="_blank" data-text="map.video"></a> |</span>
+        <span><a href="${['zh-Hans'].includes(Settings.language) ? this.video2 : this.video}" target="_blank" data-text="map.video"></a> |</span>
         <span><a href="" data-text="map.view_loot" data-toggle="modal" data-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a> |</span>
         <span><a href="" data-text="${this.item && this.item.isImportant ? 'map.unmark_important' : 'map.mark_important'}"></a> |</span>
         <span><a href="" data-text="map.copy_link"></a></span>
@@ -411,7 +411,7 @@ class Marker {
     }
     if (!Settings.isDebugEnabled) snippet.find('.popupContentDebug').hide();
     if (!this.isRandomizedItem) snippet.find('[data-text="map.view_loot"]').parent().hide();
-    if (!this.video) snippet.find('[data-text="map.video"]').parent().hide();
+    if (!this.video && !this.video2) snippet.find('[data-text="map.video"]').parent().hide();
     const inventoryButtons = snippet.find('.marker-popup-buttons')
     if (InventorySettings.isEnabled && InventorySettings.isPopupsEnabled &&
       this.category !== 'random' && this.item) {
