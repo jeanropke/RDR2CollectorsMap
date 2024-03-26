@@ -36,8 +36,7 @@ class Marker {
     this.subdata = ['egg', 'flower'].includes(this.category) ?
       this.itemId.replace(`${this.category}_`, '') : undefined;
     this.legacyItemId = this.subdata || this.text;
-    this.item = this.category === 'random' ? undefined : Item.items.find(item =>
-      item.itemId === this.itemId);
+    this.item = this.category === 'random' ? undefined : Item.items.find(item => item.itemId === this.itemId);
 
     /**
      * `._collectedKey` is the key for the `.isCollected` accessors
@@ -315,6 +314,7 @@ class Marker {
   }
 
   popupContent() {
+    const videoUrl = this[`video_${Settings.language}`] || this.video;
     const unknownCycle = this.cycleName == Cycles.unknownCycleNumber;
     const snippet = $(`<div class="handover-wrapper-with-no-influence">
       <h1>
@@ -332,18 +332,18 @@ class Marker {
         <p data-text="map.same_cycle_yesterday"></p>
       </span>
       <span class="marker-content-wrapper">
-          <div>
-            <img class="tool-type" height=32 width=32 src="assets/images/shovel.png">
-          </div>
-          <div>
-            <p class="unavailable-item" data-text="map.item.unable"></p>
-            <p class="primary-description" data-text="${this.primaryDescriptionKey}" data-text-optional="true"></p>
-            <p class="secondary-description" data-text="${this.secondaryDescriptionKey}" data-text-optional="true"></p>
-            <p class="weekly-item" data-text="weekly.desc"></p>
-          </div>
+        <div>
+          <img class="tool-type" height=32 width=32 src="assets/images/shovel.png">
+        </div>
+        <div>
+          <p class="unavailable-item" data-text="map.item.unable"></p>
+          <p class="primary-description" data-text="${this.primaryDescriptionKey}" data-text-optional="true"></p>
+          <p class="secondary-description" data-text="${this.secondaryDescriptionKey}" data-text-optional="true"></p>
+          <p class="weekly-item" data-text="weekly.desc"></p>
+        </div>
       </span>
       <p class='marker-popup-links'>
-        <span><a href="${['zh-Hans'].includes(Settings.language) ? this['video_zh-Hans'] : this.video}" target="_blank" data-text="map.video"></a> |</span>
+        <span><a href="${videoUrl}" target="_blank" data-text="map.video"></a> |</span>
         <span><a href="" data-text="map.view_loot" data-toggle="modal" data-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a> |</span>
         <span><a href="" data-text="${this.item && this.item.isImportant ? 'map.unmark_important' : 'map.mark_important'}"></a> |</span>
         <span><a href="" data-text="map.copy_link"></a></span>
@@ -353,9 +353,9 @@ class Marker {
         Description key: ${this.primaryDescriptionKey}
       </small>
       <div class="marker-popup-buttons">
-          <button class="btn btn-danger">↓</button>
-          <small></small>
-          <button class="btn btn-success">↑</button>
+        <button class="btn btn-danger">↓</button>
+        <small></small>
+        <button class="btn btn-success">↑</button>
       </div>
       <button type="button" class="btn btn-info remove-button" data-item="${this.text}"
         data-text="map.remove_add">
@@ -411,7 +411,7 @@ class Marker {
     }
     if (!Settings.isDebugEnabled) snippet.find('.popupContentDebug').hide();
     if (!this.isRandomizedItem) snippet.find('[data-text="map.view_loot"]').parent().hide();
-    if (['zh-Hans'].includes(Settings.language) ? !this['video_zh-Hans'] : !this.video) snippet.find('[data-text="map.video"]').parent().hide();
+    if (!videoUrl) snippet.find('[data-text="map.video"]').parent().hide();
     const inventoryButtons = snippet.find('.marker-popup-buttons')
     if (InventorySettings.isEnabled && InventorySettings.isPopupsEnabled &&
       this.category !== 'random' && this.item) {
