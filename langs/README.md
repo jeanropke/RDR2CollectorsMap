@@ -104,11 +104,12 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Finnish (64%):
   - **seevimi** (283 words)
 
-### French (94%):
+### French (95%):
   - **AlexandreHemery** (55 words)
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
   - **Ca0dan** (93 words)
+  - **cedricool39** (333 words)
   - **drthomasgeek** (24 words)
   - **EternalEagle** (83 words)
   - **FRANCESCADOLORES** (1,005 words)
