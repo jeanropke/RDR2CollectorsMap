@@ -109,7 +109,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
   - **Ca0dan** (93 words)
-  - **cedricool39** (747 words)
+  - **cedricool39** (783 words)
   - **drthomasgeek** (24 words)
   - **EternalEagle** (83 words)
   - **FRANCESCADOLORES** (1,005 words)
@@ -172,7 +172,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TrollerMaN** (452 words)
 
 ### Hebrew (48%):
-  - **dudiv5674** (3,040 words)
+  - **dudiv5674** (3,078 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
