@@ -1411,6 +1411,7 @@
     "menu.enable_dclick_zoom": "Double-cliquez pour zoomer",
     "menu.show_help": "Afficher l'aide au survol",
     "map.mark_important": "Marquer comme important",
+    "map.unmark_important": "Ne plus marquer comme important",
     "menu.marker_opacity": "Opacité du marqueur",
     "menu.marker_opacity.20": "20 %",
     "menu.marker_opacity.40": "40 %",
