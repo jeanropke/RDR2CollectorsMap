@@ -463,6 +463,7 @@ const MapBase = {
     }
 
     Layers.itemMarkersLayer.clearLayers();
+    Layers.fastTravelLayer.clearLayers();
 
     MapBase.updateLoopAvailable = false;
     MapBase.yieldingLoop(
@@ -571,10 +572,18 @@ const MapBase = {
   },
 
   loadFastTravels: function () {
+    Layers.fastTravelLayer.addTo(MapBase.map);
+
     return Loader.promises['fasttravels'].consumeJson(data => {
       MapBase.fastTravelData = data;
       console.info('%c[Fast travels] Loaded!', 'color: #bada55; background: #242424');
     });
+  },
+
+  onFastTravelToggle: function () {
+    Layers.fastTravelLayer.clearLayers();
+    if (!enabledCategories.includes('fast_travel')) return;
+    MapBase.addFastTravelMarker();
   },
 
   addFastTravelMarker: function () {
@@ -599,7 +608,7 @@ const MapBase = {
 
         marker.bindPopup(`<h1>${Language.get(value.text + '.name')}</h1><p></p>`);
 
-        Layers.itemMarkersLayer.addLayer(marker);
+        Layers.fastTravelLayer.addLayer(marker);
       });
     }
   },

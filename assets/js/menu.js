@@ -26,6 +26,19 @@ class Menu {
     }, 10000);
   }
 
+  /**
+   * Add or remove layer of the given list of markers based on the provided method.
+   * @param {Array} markers - The list of markers to process.
+   * @param {boolean} method - The processing method to apply.
+   */
+  static onCollectionCategoryToggle(markers, method) {
+    markers.forEach(marker => {
+      method
+        ? Layers.itemMarkersLayer.removeLayer(marker.lMarker)
+        : (marker.recreateLMarker(), Layers.itemMarkersLayer.addLayer(marker.lMarker));
+    });
+  }
+
   static reorderMenu(menu) {
     $(menu).children().sort(function (a, b) {
       return a.textContent.toLowerCase().localeCompare(b.textContent.toLowerCase());
@@ -131,16 +144,55 @@ class Menu {
           Treasure.onCategoryToggle();
           Legendary.onCategoryToggle();
           Pins.onCategoryToggle();
-        } else if (category === 'nazar') {
-          MadamNazar.addMadamNazar();
-        } else if (category === 'user_pins') {
-          Pins.onCategoryToggle();
-        } else if (category === 'treasure') {
-          Treasure.onCategoryToggle();
-        } else if (category === 'legendary_animals') {
-          Legendary.onCategoryToggle();
+        } else if (
+          ['nazar', 'fast_travel', 'user_pins', 'treasure', 'legendary_animals'].includes(category)
+        ) {
+          switch (category) {
+            case 'nazar':
+              MadamNazar.addMadamNazar();
+              break;
+            case 'fast_travel':
+              MapBase.onFastTravelToggle();
+              break;
+            case 'user_pins':
+              Pins.onCategoryToggle();
+              break;
+            case 'treasure':
+              Treasure.onCategoryToggle();
+              break;
+            case 'legendary_animals':
+              Legendary.onCategoryToggle();
+              break;
+          }
+        } else if (parentCategories['fossils_random'].includes(category)) {
+            const markers = MapBase.markers.filter(marker => marker.cycleName == Cycles.categories[category] && marker.category === 'fossils_random');
+            const totalEnabled = parentCategories['fossils_random'].reduce((total, type) => total + ($(`.menu-option[data-type="${type}"]`).hasClass('disabled') ? 0 : 1), 0);
+            
+            if (totalEnabled === 0 || (toEnable && totalEnabled === 1)) {
+              Menu.onCollectionCategoryToggle(markers, totalEnabled === 0);
+            }
+        } else if (parentCategories['jewelry_random'].includes(category)) {
+            const totalEnabled = parentCategories['jewelry_random'].reduce((total, type) => total + ($(`.menu-option[data-type="${type}"]`).hasClass('disabled') ? 0 : 1), 0);
+            
+            if (totalEnabled === 0 || (toEnable && totalEnabled === 1)) {
+              const markers = MapBase.markers.filter(marker => marker.cycleName == Cycles.categories[category] && (marker.category === category || marker.category === 'jewelry_random'));
+
+              Menu.onCollectionCategoryToggle(markers, !toEnable || totalEnabled === 0);
+            } else {
+                const markers = MapBase.markers.filter(marker => marker.cycleName == Cycles.categories[category] && (marker.category === category));
+
+                Menu.onCollectionCategoryToggle(markers, !toEnable);
+
+                Item.reinitImpItemsOnCat(category);
+            }
         } else {
-          MapBase.addMarkers();
+            const markers = MapBase.markers.filter(marker => marker.cycleName == Cycles.categories[category] && marker.category === category);
+
+            Menu.onCollectionCategoryToggle(markers, !toEnable);
+            
+            if (['flower', 'cups', 'swords', 'wands', 'pentacles', 'bottle', 'egg', 'heirlooms'].includes(category)) {
+              Item.reinitImpItemsOnCat(category);
+            }
         }
       });
     const help = document.getElementById('help-container');
