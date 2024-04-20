@@ -182,9 +182,9 @@ class Menu {
                 const markers = MapBase.markers.filter(marker => marker.cycleName == Cycles.categories[category] && (marker.category === category));
 
                 Menu.onCollectionCategoryToggle(markers, !toEnable);
-
-                Item.reinitImpItemsOnCat(category);
             }
+
+            Item.reinitImpItemsOnCat(category);
         } else {
             const markers = MapBase.markers.filter(marker => marker.cycleName == Cycles.categories[category] && marker.category === category);
 
