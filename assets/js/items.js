@@ -214,6 +214,12 @@ class Item extends BaseItem {
   static initImportedItems() {
     this.items.forEach(item => item.isImportant = item.isImportant);
   }
+  
+  static reinitImpItemsOnCat(category) {
+    this.items
+      .filter((item) => item.category === category)
+      .forEach((item) => (item.isImportant = item.isImportant));
+  }
 
   set isImportant(state) {
     const textKey = `rdr2collector.important.${this.itemId}`;
