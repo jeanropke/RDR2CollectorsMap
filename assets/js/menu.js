@@ -164,6 +164,8 @@ class Menu {
               Legendary.onCategoryToggle();
               break;
           }
+        } else if (Settings.isDebugEnabled) {
+            MapBase.addMarkers();
         } else if (parentCategories['fossils_random'].includes(category)) {
             const markers = MapBase.markers.filter(marker => marker.cycleName == Cycles.categories[category] && marker.category === 'fossils_random');
             const totalEnabled = parentCategories['fossils_random'].reduce((total, type) => total + ($(`.menu-option[data-type="${type}"]`).hasClass('disabled') ? 0 : 1), 0);
