@@ -33,9 +33,13 @@ class Menu {
    */
   static onCollectionCategoryToggle(markers, method) {
     markers.forEach(marker => {
-      method
-        ? Layers.itemMarkersLayer.removeLayer(marker.lMarker)
-        : (marker.recreateLMarker(), Layers.itemMarkersLayer.addLayer(marker.lMarker));
+      if (method) {
+        Layers.itemMarkersLayer.removeLayer(marker.lMarker);
+      } else {
+        marker.recreateLMarker();
+        Layers.itemMarkersLayer.addLayer(marker.lMarker);
+        MapBase.updateTippy('tooltip');
+      }
     });
   }
 
