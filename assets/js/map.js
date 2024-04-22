@@ -584,6 +584,7 @@ const MapBase = {
     Layers.fastTravelLayer.clearLayers();
     if (!enabledCategories.includes('fast_travel')) return;
     MapBase.addFastTravelMarker();
+    MapBase.updateTippy('tooltip');
   },
 
   addFastTravelMarker: function () {
