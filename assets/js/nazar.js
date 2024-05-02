@@ -79,23 +79,21 @@ const MadamNazar = {
     if (getParameterByName('q'))
       MapBase.map.setView([cl.x, cl.y], 6);
   },
-  popupContent: function () {
+  popupContent() {
     // Prevents date getting stuck when changing lang.
     const locale = new Date(MadamNazar.currentDate).toLocaleString(Settings.language, { timeZone: 'UTC', month: 'long', day: 'numeric' });
 
-    const $popup = $(`
-        <div>
-          <h1><span data-text="menu.madam_nazar"></span> - ${locale || "#" + MadamNazar.currentLocation}</h1>
-          <p style="text-align: center;" data-text="map.madam_nazar.desc"></p>
-          <button class="btn btn-default reload-nazar" data-text="menu.madam_nazar_reload_position"></button>
-        </div>`)
-      .translate()
-      .find('button')
-        .on('click', () => MadamNazar.reloadNazar())
-        .toggle(MadamNazar.currentDate !== new Date(Date.now() - 21600000).toISOUTCDateString())
-      .end();
+    const popup = document.createElement('div');
+    popup.innerHTML = `
+      <h1><span data-text="menu.madam_nazar"></span> - ${locale || "#" + MadamNazar.currentLocation}</h1>
+      <p style="text-align: center;" data-text="map.madam_nazar.desc"></p>
+      <button class="btn btn-default reload-nazar" data-text="menu.madam_nazar_reload_position"></button>
+    `;
+    Language.translateDom(popup);
+    popup.querySelector('.reload-nazar').addEventListener('click', () => MadamNazar.reloadNazar());
+    popup.querySelector('.reload-nazar').style.display = MadamNazar.currentDate !== new Date(Date.now() - 21600000).toISOUTCDateString() ? '' : 'none';
 
-    return $popup[0];
+    return popup;
   },
   reloadNazar: function () {
     Loader.reloadData('nazar');

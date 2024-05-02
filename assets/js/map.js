@@ -97,9 +97,11 @@ const MapBase = {
             that.closePopup();
           }, 100);
 
-          $('.leaflet-popup').on('mouseover', function (e) {
-            clearTimeout(timeout);
-            $('.leaflet-popup').off('mouseover');
+          document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.leaflet-popup').addEventListener('mouseover', function mouseOverHandler(e) {
+              clearTimeout(timeout);
+              document.querySelector('.leaflet-popup').removeEventListener('mouseover', this);
+            });
           });
         });
 
@@ -134,11 +136,11 @@ const MapBase = {
     L.control.layers(mapLayers).addTo(MapBase.map);
 
     // Leaflet leaves the layer names here, with a space in front of them.
-    $('.leaflet-control-layers-list span').each(function (index, node) {
+    document.querySelectorAll('.leaflet-control-layers-list span').forEach(node => {
       // Move the layer name (which is chosen to be our language key) into a
       // new tightly fitted span for use with our localization.
       const langKey = node.textContent.trim();
-      $(node).html([' ', $('<span>').attr('data-text', langKey).text(langKey)]);
+      node.innerHTML = ` <span data-text="${langKey}">${langKey}</span>`;
     });
 
     MapBase.map.on('baselayerchange', function (e) {
@@ -147,9 +149,9 @@ const MapBase = {
       Legendary.onSettingsChanged();
     });
 
-    $('#overlay-opacity').val(Settings.overlayOpacity);
-    $("#overlay-opacity").on("change", function () {
-      Settings.overlayOpacity = Number($("#overlay-opacity").val());
+    document.getElementById('overlay-opacity').value = Settings.overlayOpacity;
+    document.getElementById('overlay-opacity').addEventListener('change', function () {
+      Settings.overlayOpacity = Number(document.getElementById('overlay-opacity').value);
       MapBase.setOverlays();
       Legendary.onSettingsChanged();
     });
@@ -230,7 +232,7 @@ const MapBase = {
 
   setMapBackground: function () {
     'use strict';
-    $('#map').css('background-color', MapBase.isDarkMode() ? ((this.themeOverride || Settings.baseLayer) === 'map.layers.black' ? '#000' : '#3d3d3d') : '#d2b790');
+    document.getElementById('map').style.backgroundColor = MapBase.isDarkMode() ? ((this.themeOverride || Settings.baseLayer) === 'map.layers.black' ? '#000' : '#3d3d3d') : '#d2b790';
     MapBase.setOverlays();
     if (Settings.markerColor.startsWith('auto')) {
       MapBase.markers.forEach(marker => marker.updateColor());
@@ -265,7 +267,9 @@ const MapBase = {
       }));
     };
 
-    $.each(MapBase.overlays, addOverlay);
+  Object.entries(MapBase.overlays).forEach(([key, value]) => {
+    addOverlay(key, value);
+  });
     Layers.overlaysLayer.addTo(MapBase.map);
   },
 
@@ -316,12 +320,12 @@ const MapBase = {
     if (previewParam) {
       MapBase.isPreviewMode = true;
 
-      $('.menu-toggle').remove();
-      $('.top-widget').remove();
-      $('.filter-alert').remove();
-      $('#fme-container').remove();
-      $('.side-menu').removeClass('menu-opened');
-      $('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
+      document.querySelector('.menu-toggle').remove();
+      document.querySelector('.top-widget').remove();
+      document.querySelector('.filter-alert').remove();
+      document.getElementById('fme-container').remove();
+      document.querySelector('.side-menu').classList.remove('menu-opened');
+      document.querySelector('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
 
       const isValidCategory = categories.includes(previewParam);
       if (isValidCategory) {
@@ -333,7 +337,7 @@ const MapBase = {
       } else {
         enabledCategories = [];
         MapBase.addMarkers(false, true);
-        $('#search').val(previewParam);
+        document.getElementById('search').value = previewParam;
         MapBase.onSearch(previewParam);
 
         // Zoom in if there's only one specific item.
@@ -355,7 +359,7 @@ const MapBase = {
     // Do search via URL.
     const searchParam = getParameterByName('search');
     if (searchParam) {
-      $('#search').val(searchParam);
+      document.getElementById('search').value = searchParam;
       MapBase.onSearch(searchParam);
     }
 
@@ -369,7 +373,7 @@ const MapBase = {
       if (!enabledCategories.includes(goTo.category)) {
         enabledCategories.push(goTo.category);
         MapBase.addMarkers();
-        $(`[data-type="${goTo.category}"]`).removeClass('disabled');
+        document.querySelector(`[data-type="${goTo.category}"]`).classList.remove('disabled');
       }
 
       setTimeout(() => goTo.lMarker && goTo.lMarker.openPopup(), 3000);
@@ -418,7 +422,7 @@ const MapBase = {
       ];
 
       if (!searchTerms.length) {
-        if (Settings.filterType !== 'none') $('#filter-type').val(Settings.filterType);
+        if (Settings.filterType !== 'none') document.getElementById('filter-type').value = Settings.filterType;
         filterMapMarkers();
         return;
       }
@@ -510,38 +514,37 @@ const MapBase = {
     if (markers == null) return;
 
     const subdataCategoryIsDisabled =
-      (text == subdata && !$(`[data-type=${subdata}] .collectible-text p`).hasClass('disabled'));
+      (text == subdata && !document.querySelector(`[data-type="${subdata}"] .collectible-text p`).classList.contains('disabled'));
 
-    $.each(markers, function (key, marker) {
-      if (text != subdata && marker.text != text) return;
+      markers.forEach(marker => {
+        if (text != subdata && marker.text != text) return;
 
-      let changeAmount = 0;
+        let changeAmount = 0;
 
-      if (marker.isCurrent) {
-        if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
-          marker.isCollected = true;
-          changeAmount = 1;
-        } else {
-          marker.isCollected = false;
-          changeAmount = -1;
+        if (marker.isCurrent) {
+          if ((marker.subdata == subdata && subdataCategoryIsDisabled) || marker.canCollect) {
+            marker.isCollected = true;
+            changeAmount = 1;
+          } else {
+            marker.isCollected = false;
+            changeAmount = -1;
+          }
         }
-      }
-      marker.item && marker.item.changeAmountWithSideEffects(skipInventory ? 0 : changeAmount);
+        marker.item && marker.item.changeAmountWithSideEffects(skipInventory ? 0 : changeAmount);
 
-      if (!InventorySettings.isEnabled) {
-        if (marker.isCollected && marker.isCurrent) {
-          $(`[data-type=${marker.legacyItemId}] .collectible-text p`).addClass('disabled');
-        } else {
-          $(`[data-type=${marker.legacyItemId}] .collectible-text p`).removeClass('disabled');
+        if (!InventorySettings.isEnabled) {
+          const markerEl = document.querySelector(`[data-type="${marker.legacyItemId}"] .collectible-text p`);
+          if (marker.isCollected && marker.isCurrent) {
+            markerEl?.classList.add('disabled');
+          } else {
+            markerEl?.classList.remove('disabled');
+          }
+          if (marker.isCurrent && ['egg', 'flower'].includes(marker.category)) {
+            markerEl.classList.toggle('disabled', markers.every(m => !m.canCollect));
+          }
         }
-        if (marker.isCurrent && ['egg', 'flower'].includes(marker.category)) {
-          $(`[data-type=${marker.legacyItemId}] .collectible-text p`).toggleClass('disabled',
-            markers.every(m => !m.canCollect));
-        }
-      }
-
-      PathFinder.wasRemovedFromMap(marker);
-    });
+        PathFinder.wasRemovedFromMap(marker);
+      });     
 
     if (RouteSettings.ignoreCollected)
       Routes.generatePath();
@@ -590,7 +593,7 @@ const MapBase = {
   addFastTravelMarker: function () {
     const markerSize = Settings.markerSize;
     if (enabledCategories.includes('fast_travel')) {
-      $.each(MapBase.fastTravelData, function (key, value) {
+      Object.entries(MapBase.fastTravelData).forEach(([key, value]) => {
         const shadow = Settings.isShadowsEnabled ?
           '<img class="shadow" width="' + 35 * markerSize + '" height="' + 16 * markerSize + '" src="./assets/images/markers-shadow.png" alt="Shadow">' : '';
         const marker = L.marker([value.x, value.y], {
@@ -650,21 +653,23 @@ const MapBase = {
   addCoordsOnMap: function (coords) {
     // Show clicked coordinates (like google maps)
     if (Settings.isCoordsOnClickEnabled) {
-      $('.lat-lng-container').css('display', 'block');
+      const container = document.querySelector('.lat-lng-container');
+      container.style.display = 'block';
 
       const lat = parseFloat(coords.latlng.lat.toFixed(4));
       const lng = parseFloat(coords.latlng.lng.toFixed(4));
-      $('.lat-lng-container p').html(
-        `Latitude: ${lat}<br>
+      const content = `
+        Latitude: ${lat}<br>
         Longitude: ${lng}<br>
         <hr>
         <a href="javascript:void(0)"
         onclick="Routes.setCustomRouteStart('${lat}', '${lng}')">${Language.get('routes.set_as_route_start')}</a><br>
         <a href="javascript:void(0)"
-        onclick="Routes.setCustomRouteStart('${lat}', '${lng}', true)">${Language.get('routes.generate_route_now')}</a>`);
+        onclick="Routes.setCustomRouteStart('${lat}', '${lng}', true)">${Language.get('routes.generate_route_now')}</a>`;
 
-      $('#lat-lng-container-close-button').click(function () {
-        $('.lat-lng-container').css('display', 'none');
+      container.querySelector('p').innerHTML = content;
+      document.getElementById('lat-lng-container-close-button').addEventListener('click', function () {
+        container.style.display = 'none';
       });
     }
 

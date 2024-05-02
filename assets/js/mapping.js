@@ -30,17 +30,19 @@ class Mapping {
     //not in use anymore, but I'll keep just in case
     static showModal() {
         if (!Settings.isDebugEnabled) return;
-        const snippet = $('<div></div>');
+        const snippet = document.createElement('div');
 
         this.mapping.forEach(value => {
-            snippet.append($(
-                `<div style="border-bottom: 3px dashed #aaa;">
-                    <img src="../RDR2CollectorsMap/assets/images/icons/game/done/${value.value}.png">
-                    <img src="../RDR2CollectorsMap/assets/images/icons/game/pm_collectors_bag_mp/${value.key}.png">                    
-                </div>`
-            ));
+            const div = document.createElement('div');
+            div.style.borderBottom = '3px dashed #aaa';
+            div.innerHTML = `
+                <img src="../RDR2CollectorsMap/assets/images/icons/game/done/${value.value}.png">
+                <img src="../RDR2CollectorsMap/assets/images/icons/game/pm_collectors_bag_mp/${value.key}.png">                    
+            `;
+            snippet.appendChild(div);
         });
-        $('#mapping-modal .modal-body').append(snippet);
+        const modalBody = document.querySelector('#mapping-modal .modal-body');
+        modalBody.appendChild(snippet);
         $('#mapping-modal').modal('show');
     }
 }
