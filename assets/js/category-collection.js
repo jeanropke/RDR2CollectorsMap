@@ -34,8 +34,9 @@ class Weekly extends BaseCollection {
     this._insertMenuElements();
   }
   _insertMenuElements() {
-    this.$menuEntry = $(`
-    <div id="weekly-container">
+    const menuEntry = document.createElement('div');
+    menuEntry.id = 'weekly-container';
+    menuEntry.innerHTML = `
       <div class="header">
         <span class="header-border"></span>
         <h2 class="header-title weekly-item-title" data-text="weekly.desc.${this.weeklyId}">
@@ -52,40 +53,34 @@ class Weekly extends BaseCollection {
           <span class="collection-sell" data-text="menu.sell" data-help="item_sell">Sell</span>
         </div>
       </div>
-    </div>
-    `)
-      .translate()
-      .insertBefore('.links-container');
-    this.$menuEntry[0].rdoCollection = this;
-    this.$listParent = this.$menuEntry.find('.weekly-item-listings');
-    this.items.forEach(item => item._insertWeeklyMenuElement(this.$listParent));
+    `;
+    Language.translateDom(menuEntry);
+    const insertation = document.querySelector('.links-container');
+    insertation.parentNode.insertBefore(menuEntry, insertation);
+    this.menuEntry = menuEntry;
+    this.menuEntry.rdoCollection = this;
+    this.listParent = this.menuEntry.querySelector('.weekly-item-listings');
+    this.items.forEach(item => item._insertWeeklyMenuElement(this.listParent));
     Loader.mapModelLoaded.then(() => {
-      SettingProxy.addListener(InventorySettings, 'isEnabled', () =>
-        this.$menuEntry
-          .find('.collection-value')
-          .toggle(InventorySettings.isEnabled || this.weeklySetValue !== 0)
-          .end()
-          .find('.collection-sell')
-          .toggle(InventorySettings.isEnabled)
-          .end()
-          .find('.weekly-set-value')
-          .toggle(this.weeklySetValue !== 0)
-          .end()
-      )();
+      SettingProxy.addListener(InventorySettings, 'isEnabled', () =>{
+        this.menuEntry.querySelector('.collection-value').style.display = (InventorySettings.isEnabled || this.weeklySetValue !== 0) ? '' : 'none';
+        this.menuEntry.querySelector('.collection-sell').style.display = InventorySettings.isEnabled ? '' : 'none';
+        this.menuEntry.querySelector('.weekly-set-value').style.display = (this.weeklySetValue !== 0) ? '' : 'none';
+      })();
     });
   }
   static _installSettingsAndEventHandlers() {
     SettingProxy.addSetting(Settings, 'showWeeklySettings', { default: true });
-    const weeklyCheckbox = $("#show-weekly");
+    const weeklyCheckbox = document.getElementById('show-weekly');
     Loader.mapModelLoaded.then(() => {
       SettingProxy.addListener(Settings, 'showWeeklySettings', () => {
-        this.current.$menuEntry.toggleClass('opened', Settings.showWeeklySettings);
-        weeklyCheckbox.prop('checked', Settings.showWeeklySettings);
+        this.current.menuEntry.classList.toggle('opened', Settings.showWeeklySettings);
+        weeklyCheckbox.checked = Settings.showWeeklySettings;
       })();
-      weeklyCheckbox.on("change", () => {
-        Settings.showWeeklySettings = weeklyCheckbox.prop('checked');
+      weeklyCheckbox.addEventListener('change', () => {
+        Settings.showWeeklySettings = weeklyCheckbox.checked;
         MapBase.addMarkers();
-      })
+      });
     });
   }
 }
@@ -107,57 +102,58 @@ class Collection extends BaseCollection {
   }
   static switchCycle(categoriesArray, cycle) {
     categoriesArray.forEach(category => {
-      $(`.input-cycle[name=${category}]`).val(cycle);
+      document.querySelectorAll(`.input-cycle[name="${category}"]`).forEach(input => input.value = cycle);
       Cycles.categories[category] = cycle;
     });
   }
   static _installSettingsAndEventHandlers() {
     SettingProxy.addSetting(Settings, 'sortItemsAlphabetically', { default: false });
     Loader.mapModelLoaded.then(() => {
-      const checkbox = $('#sort-items-alphabetically')
-        .prop("checked", Settings.sortItemsAlphabetically)
-        .on("change", () => Settings.sortItemsAlphabetically = checkbox.prop('checked'));
+      const checkbox = document.getElementById('sort-items-alphabetically');
+      checkbox.checked = Settings.sortItemsAlphabetically;
+      checkbox.addEventListener('change', () => Settings.sortItemsAlphabetically = checkbox.checked);
       SettingProxy.addListener(Settings, 'sortItemsAlphabetically language', () =>
         Collection.collections.forEach(collection =>
           collection.menuSort(Settings.sortItemsAlphabetically)))();
-      $('.side-menu')
-        .on('change', event => {
-          const $input = $(event.target);
-          const collection = $input.propSearchUp('rdoCollection');
-          if (collection && $input.hasClass('input-cycle')) {
+        const sideMenu = document.querySelector('.side-menu');
+        sideMenu.addEventListener('change', event => {
+          const input = event.target;
+          const collection = input.propSearchUp('rdoCollection');
+          if (collection && input.classList.contains('input-cycle')) {
             event.stopImmediatePropagation();
             switch (collection.category) {
               case 'cups':
               case 'swords':
               case 'wands':
               case 'pentacles':
-                this.switchCycle(['cups', 'swords', 'wands', 'pentacles'], +$input.val());
+                this.switchCycle(['cups', 'swords', 'wands', 'pentacles'], +input.value);
                 break;
               case 'bracelet':
               case 'earring':
               case 'necklace':
               case 'ring':
-                this.switchCycle(['bracelet', 'earring', 'necklace', 'ring', 'jewelry_random'], +$input.val());
+                this.switchCycle(['bracelet', 'earring', 'necklace', 'ring', 'jewelry_random'], +input.value);
                 break;
               case 'coastal':
               case 'oceanic':
               case 'megafauna':
-                this.switchCycle(['coastal', 'oceanic', 'megafauna', 'fossils_random'], +$input.val());
+                this.switchCycle(['coastal', 'oceanic', 'megafauna', 'fossils_random'], +input.value);
                 break;
               default:
-                this.switchCycle([collection.category], +$input.val());
+                this.switchCycle([collection.category], +input.value);
                 break;
             }
             MapBase.addMarkers();
             Menu.refreshMenu();
           }
-          // on capture phase to override more generic handler in scripts.js
-        })[0].addEventListener('click', event => {
+        }, true);
+        // on capture phase to override more generic handler in scripts.js
+        sideMenu.addEventListener('click', event => {
           const etcL = event.target.classList;
           if (etcL.contains('input-cycle')) {
             // handled by browser _alone_: avoid own category enabled/disabled handler
           } else if (etcL.contains('collection-sell') || etcL.contains('collection-collect-all')) {
-            const collection = $(event.target).propSearchUp('rdoCollection');
+            const collection = event.target.propSearchUp('rdoCollection');
             const changeAmount = etcL.contains('collection-sell') ? -1 : 1;
             collection.items.forEach(i => i.changeAmountWithSideEffects(changeAmount));
             collection.currentMarkers().forEach(marker => {
@@ -166,28 +162,28 @@ class Collection extends BaseCollection {
               }
             });
           } else if (etcL.contains('collection-reset')) {
-            const collection = $(event.target).propSearchUp('rdoCollection');
+            const collection = event.target.propSearchUp('rdoCollection');
             collection.currentMarkers().filter(marker => !marker.canCollect).forEach(marker => {
               MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
             });
           } else if (etcL.contains('disable-collected-items')) {
-            const collection = $(event.target).propSearchUp('rdoCollection');
+            const collection = event.target.propSearchUp('rdoCollection');
             collection.currentMarkers()
               .filter(marker => marker.canCollect && marker.item.amount > 0)
               .forEach(marker => {
-                $(`[data-type=${marker.legacyItemId}] .collectible-text p`).addClass('disabled');
+                document.querySelector(`[data-type=${marker.legacyItemId}] .collectible-text p`).classList.add('disabled');
                 MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, true);
               });
           } else {
             return; // event not for “us”
           }
           event.stopImmediatePropagation();
-        }, { capture: true });
+        }, true);
     });
   }
   _insertMenuElement() {
-    const $element = $(`
-      <div>
+    const element = document.createElement('div');
+    element.innerHTML = `
         <div class="menu-option clickable" data-type="${this.category}" data-help="item_category">
           <span>
             <img class="icon" src="assets/images/icons/${this.category}.png" alt="${this.category}">
@@ -215,24 +211,26 @@ class Collection extends BaseCollection {
           </div>
         </div>
       </div>
-    `).translate()
-      .find('.input-cycle, .cycle-icon').addClass('hidden').end() // improve visuals during initial loading
-      .insertBefore('#collection-insertion-before-point');
-    $element[0].rdoCollection = this;
-    [this.$menuButton, this.$submenu] = $element.children().toArray().map(e => $(e));
-    this.$menuButton.find('.same-cycle-warning-menu').hide().end();
+    `;
+    Language.translateDom(element);
+    element.querySelector('.input-cycle').classList.add('hidden');
+    element.querySelector('.cycle-icon').classList.add('hidden');
+    // improve visuals during initial loading
+    const insertation = document.getElementById('collection-insertion-before-point');
+    insertation.parentNode.insertBefore(element, insertation);
+    element.rdoCollection = this;
+    this.menuButton = element.children[0];
+    this.submenu = element.children[1];
+    this.menuButton.querySelector('.same-cycle-warning-menu').style.display = 'none';
     Loader.mapModelLoaded.then(() => {
-      SettingProxy.addListener(Settings, 'isCycleInputEnabled', () =>
-        this.$menuButton
-          .find('.input-cycle').toggleClass('hidden', !Settings.isCycleInputEnabled).end()
-          .find('.cycle-icon').toggleClass('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled).end()
-      )();
-      SettingProxy.addListener(InventorySettings, 'isEnabled enableAdvancedInventoryOptions', () =>
-        this.$submenu
-          .find('.collection-sell').toggle(InventorySettings.isEnabled).end()
-          .find('.collection-value-bottom').toggle(InventorySettings.isEnabled &&
-            InventorySettings.enableAdvancedInventoryOptions).end()
-      )();
+      SettingProxy.addListener(Settings, 'isCycleInputEnabled', () => {
+        this.menuButton.querySelector('.input-cycle').classList.toggle('hidden', !Settings.isCycleInputEnabled);
+        this.menuButton.querySelector('.cycle-icon').classList.toggle('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled);
+      })();
+      SettingProxy.addListener(InventorySettings, 'isEnabled enableAdvancedInventoryOptions', () => {
+        this.submenu.querySelector('.collection-sell').style.display = InventorySettings.isEnabled ? '' : 'none';
+        this.submenu.querySelector('.collection-value-bottom').style.display = (InventorySettings.isEnabled && InventorySettings.enableAdvancedInventoryOptions) ? '' : 'none';
+      })();
     });
   }
   updateMenu() {
@@ -240,34 +238,24 @@ class Collection extends BaseCollection {
     const containsBuggedItems = categoryItems.some(item => item.isBugged);
     const containsRandomItems = categoryItems.some(item => item.isRandom);
     const isSameCycle = Cycles.isSameAsYesterday(this.category);
-    this.$menuButton
-      .attr('data-help', () => {
-        if (isSameCycle) {
-          return 'item_category_same_cycle';
-        } else if (containsBuggedItems && containsRandomItems) {
-          return 'item_category_unavailable_items';
-        } else if (containsBuggedItems) {
-          return 'item_category_bugged_items';
-        } else if (containsRandomItems) {
-          return 'item_category_random_items';
-        } else {
-          return 'item_category';
-        }
-      })
-      .toggleClass('random-category', containsRandomItems)
-      .toggleClass('not-found', containsBuggedItems)
-      .find('.same-cycle-warning-menu')
-      .toggle(isSameCycle)
-      .end();
+    this.menuButton.dataset.help = isSameCycle
+      ? 'item_category_same_cycle'
+      : containsBuggedItems && containsRandomItems
+      ? 'item_category_unavailable_items'
+      : containsBuggedItems
+      ? 'item_category_bugged_items'
+      : containsRandomItems
+      ? 'item_category_random_items'
+      : 'item_category';
+    this.menuButton.classList.toggle('random-category', containsRandomItems);
+    this.menuButton.classList.toggle('not-found', containsBuggedItems);
+    this.menuButton.querySelector('.same-cycle-warning-menu').style.display = isSameCycle ? '' : 'none';
     this.updateCounter();
   }
   updateCounter() {
-    this.$submenu
-      .find('.collection-collected')
-      .text(Language.get('menu.collection_counter')
-        .replace('{count}', this.$submenu.find('.disabled').length)
-        .replace('{max}', this.items.length)
-      );
+    this.submenu.querySelector('.collection-collected').textContent = Language.get('menu.collection_counter')
+      .replace('{count}', this.submenu.querySelectorAll('.disabled').length)
+      .replace('{max}', this.items.length);;
   }
   menuSort(alphabetically) {
     if (['cups', 'swords', 'wands', 'pentacles'].includes(this.category)) return;
@@ -275,7 +263,7 @@ class Collection extends BaseCollection {
       const [a, b] = args.map(item => Language.get(item.itemTranslationKey));
       return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
     });
-    this.$submenu.append(items.map(item => item.$menuButton));
+    items.forEach(item => this.submenu.appendChild(item.menuButton));
   }
   averageAmount() {
     return this.items.reduce((sum, item) => sum + item.amount, 0) / this.items.length;

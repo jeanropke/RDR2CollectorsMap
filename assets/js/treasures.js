@@ -8,18 +8,20 @@ class Treasure {
     const pane = MapBase.map.createPane('treasureX');
     pane.style.zIndex = 450; // X-markers on top of circle, but behind “normal” markers/shadows
     pane.style.pointerEvents = 'none';
-    this.context = $('.menu-hidden[data-type=treasure]');
+    this.context = document.querySelector('.menu-hidden[data-type=treasure]');
     this.crossIcon = L.icon({
       iconUrl: './assets/images/icons/cross.png',
       iconSize: [16, 16],
       iconAnchor: [8, 8],
     });
     this.onSettingsChanged();
-    $('.menu-hidden[data-type="treasure"] > *:first-child a').click(e => {
-      e.preventDefault();
-      const showAll = $(e.target).attr('data-text') === 'menu.show_all';
-      Treasure.treasures.forEach(treasure => treasure.onMap = showAll);
-    });
+    document.querySelectorAll('.menu-hidden[data-type="treasure"] > *:first-child a').forEach((a) =>
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const showAll = e.target.getAttribute('data-text') === 'menu.show_all';
+        Treasure.treasures.forEach((treasure) => (treasure.onMap = showAll));
+      })
+    );
     return Loader.promises['treasures'].consumeJson(data => {
       data.forEach(item => this.treasures.push(new Treasure(item)));
       this.onLanguageChanged();
@@ -47,12 +49,14 @@ class Treasure {
   constructor(preliminary) {
     Object.assign(this, preliminary);
     this._shownKey = `rdr2collector.shown.${this.text}`;
-    this.element = $('<div class="collectible-wrapper" data-help="item">')
-      .on('click', () => this.onMap = !this.onMap)
-      .append($('<p class="collectible">').attr('data-text', this.text))
-      .translate();
+    this.element = document.createElement('div');
+    this.element.classList.add('collectible-wrapper');
+    this.element.setAttribute('data-help', 'item');
+    this.element.addEventListener('click', () => this.onMap = !this.onMap);
+    this.element.innerHTML = `<p class="collectible" data-text="${this.text}"></p>`;
+    Language.translateDom(this.element);
     this.reinitMarker();
-    this.element.appendTo(Treasure.context);
+    Treasure.context.appendChild(this.element);
   }
   // auto remove marker? from map, recreate marker, auto add? marker
   // idempotent
@@ -78,23 +82,25 @@ class Treasure {
     this.onMap = this.onMap;
   }
   popupContent() {
-    const snippet = $(`<div class="handover-wrapper-with-no-influence">
+    const snippet = document.createElement('div');
+    snippet.classList.add('handover-wrapper-with-no-influence');
+    snippet.innerHTML = `
         <h1 data-text="${this.text}"></h1>
-        <button type="button" class="btn btn-info remove-button" data-text="map.remove">
-          </button>
-      </div>`).translate();
-    snippet.find('button').on('click', () => this.onMap = false);
-    return snippet[0];
+        <button type="button" class="btn btn-info remove-button" data-text="map.remove"></button>
+    `;
+    Language.translateDom(snippet);
+    snippet.querySelector('button').addEventListener('click', () => this.onMap = false);
+    return snippet;
   }
   set onMap(state) {
     if (state) {
       const method = enabledCategories.includes('treasure') ? 'addLayer' : 'removeLayer';
       Treasure.layer[method](this.marker);
-      this.element.removeClass('disabled');
+      this.element.classList.remove('disabled');
       localStorage.setItem(this._shownKey, 'true');
     } else {
       Treasure.layer.removeLayer(this.marker);
-      this.element.addClass('disabled');
+      this.element.classList.add('disabled');
       localStorage.removeItem(this._shownKey);
     }
   }

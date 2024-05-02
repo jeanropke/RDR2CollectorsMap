@@ -19,20 +19,23 @@ Object.defineProperty(Array.prototype, 'arrayContains', {
   }
 });
 
-jQuery.fn.firstAncestorOrSelf = function (func) {
+HTMLElement.prototype.firstAncestorOrSelf = function (func) {
   'use strict';
-  if (this.length !== 1) throw new TypeError('Not implemented (yet?) for selection length != 1.');
-  let node = this[0];
+  let node = this;
   while (node) {
-    if (func(node)) return this.pushStack([node]);
+    if (func(node)) return node;
     node = node.parentNode;
   }
-}
-jQuery.fn.propSearchUp = function (property) {
+  return null;
+};
+
+HTMLElement.prototype.propSearchUp = function (property) {
   'use strict';
-  const element = this.firstAncestorOrSelf(element => element[property]);
-  return element && element.prop(property);
-}
+  const element = this.firstAncestorOrSelf(function (node) {
+    return node[property] !== undefined;
+  });
+  return element ? element[property] : undefined;
+};
 
 let uniqueSearchMarkers = [];
 
@@ -197,56 +200,56 @@ function init() {
   if (!MapBase.isPreviewMode)
     MadamNazar.loadMadamNazar();
 
-  if (Settings.isMenuOpened) $('.menu-toggle').click();
+  if (Settings.isMenuOpened) document.querySelector('.menu-toggle').click();
 
-  $('.map-alert').toggle(!Settings.alertClosed);
+  document.querySelectorAll('.map-alert').forEach(alert => { alert.style.display = Settings.alertClosed ? 'none' : '' });
 
-  $('#language').val(Settings.language);
-  $('#marker-opacity').val(Settings.markerOpacity);
-  $('#invisible-removed-markers').prop("checked", Settings.isInvisibleRemovedMarkers);
+  document.getElementById('language').value = Settings.language;
+  document.getElementById('marker-opacity').value = Settings.markerOpacity;
+  document.getElementById('invisible-removed-markers').checked = Settings.isInvisibleRemovedMarkers;
 
-  $('#filter-type').val(Settings.filterType);
-  $('#marker-size').val(Settings.markerSize);
-  $('#reset-markers').prop("checked", Settings.resetMarkersDaily);
-  $('#marker-cluster').prop("checked", Settings.isMarkerClusterEnabled);
-  $('#tooltip-map').prop('checked', Settings.showTooltipsMap);
-  $('#enable-marker-popups').prop("checked", Settings.isPopupsEnabled);
-  $('#enable-marker-popups-hover').prop("checked", Settings.isPopupsHoverEnabled);
-  $('#enable-marker-shadows').prop("checked", Settings.isShadowsEnabled);
-  $('#enable-legendary-backgrounds').prop("checked", Settings.isLaBgEnabled);
-  $('#legendary-animal-marker-type').val(Settings.legendarySpawnIconType);
-  $('#legendary-animal-marker-size').val(Settings.legendarySpawnIconSize);
-  $('#enable-dclick-zoom').prop("checked", Settings.isDoubleClickZoomEnabled);
-  $('#pins-place-mode').prop("checked", Settings.isPinsPlacingEnabled);
-  $('#pins-edit-mode').prop("checked", Settings.isPinsEditingEnabled);
-  $('#show-help').prop("checked", Settings.showHelp);
-  $('#show-coordinates').prop("checked", Settings.isCoordsOnClickEnabled);
-  $('#map-boundaries').prop("checked", Settings.isMapBoundariesEnabled);
-  $('#timestamps-24').prop("checked", Settings.isClock24Hour);
-  $('#enable-cycles').prop("checked", Settings.isCyclesVisible);
-  $('#enable-cycle-input').prop("checked", Settings.isCycleInputEnabled);
-  $("#enable-right-click").prop('checked', Settings.isRightClickEnabled);
-  $("#enable-debug").prop('checked', Settings.isDebugEnabled);
-  $("#enable-cycle-changer").prop('checked', Settings.isCycleChangerEnabled);
+  document.getElementById('filter-type').value = Settings.filterType;
+  document.getElementById('marker-size').value = Settings.markerSize;
+  document.getElementById('reset-markers').checked = Settings.resetMarkersDaily;
+  document.getElementById('marker-cluster').checked = Settings.isMarkerClusterEnabled;
+  document.getElementById('tooltip-map').checked = Settings.showTooltipsMap;
+  document.getElementById('enable-marker-popups').checked = Settings.isPopupsEnabled;
+  document.getElementById('enable-marker-popups-hover').checked = Settings.isPopupsHoverEnabled;
+  document.getElementById('enable-marker-shadows').checked = Settings.isShadowsEnabled;
+  document.getElementById('enable-legendary-backgrounds').checked = Settings.isLaBgEnabled;
+  document.getElementById('legendary-animal-marker-type').value = Settings.legendarySpawnIconType;
+  document.getElementById('legendary-animal-marker-size').value = Settings.legendarySpawnIconSize;
+  document.getElementById('enable-dclick-zoom').checked = Settings.isDoubleClickZoomEnabled;
+  document.getElementById('pins-place-mode').checked = Settings.isPinsPlacingEnabled;
+  document.getElementById('pins-edit-mode').checked = Settings.isPinsEditingEnabled;
+  document.getElementById('show-help').checked = Settings.showHelp;
+  document.getElementById('show-coordinates').checked = Settings.isCoordsOnClickEnabled;
+  document.getElementById('map-boundaries').checked = Settings.isMapBoundariesEnabled;
+  document.getElementById('timestamps-24').checked = Settings.isClock24Hour;
+  document.getElementById('enable-cycles').checked = Settings.isCyclesVisible;
+  document.getElementById('enable-cycle-input').checked = Settings.isCycleInputEnabled;
+  document.getElementById('enable-right-click').checked = Settings.isRightClickEnabled;
+  document.getElementById('enable-debug').checked = Settings.isDebugEnabled;
+  document.getElementById('enable-cycle-changer').checked = Settings.isCycleChangerEnabled;
 
-  $("#show-utilities").prop('checked', Settings.showUtilitiesSettings);
-  $("#show-customization").prop('checked', Settings.showCustomizationSettings);
-  $("#show-routes").prop('checked', Settings.showRoutesSettings);
-  $("#show-import-export").prop('checked', Settings.showImportExportSettings);
-  $("#show-debug").prop('checked', Settings.showDebugSettings);
+  document.getElementById('show-utilities').checked = Settings.showUtilitiesSettings;
+  document.getElementById('show-customization').checked = Settings.showCustomizationSettings;
+  document.getElementById('show-routes').checked = Settings.showRoutesSettings;
+  document.getElementById('show-import-export').checked = Settings.showImportExportSettings;
+  document.getElementById('show-debug').checked = Settings.showDebugSettings;
 
-  $("#help-container").toggle(Settings.showHelp);
+  document.getElementById("help-container").style.display = Settings.showHelp ? '' : 'none';
 
-  $('.input-cycle').toggleClass('hidden', !Settings.isCycleInputEnabled);
-  $('.cycle-icon').toggleClass('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled);
-  $('.cycle-display').toggleClass('hidden', !Settings.isCyclesVisible);
-  $('#cycle-changer-container').toggleClass('hidden', !(Settings.isCycleChangerEnabled));
+  document.querySelectorAll('.input-cycle').forEach(el => { el.classList.toggle('hidden', !Settings.isCycleInputEnabled); });
+  document.querySelectorAll('.cycle-icon').forEach(el => { el.classList.toggle('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled); });
+  document.querySelectorAll('.cycle-display').forEach(el => { el.classList.toggle('hidden', !Settings.isCyclesVisible); });
+  document.getElementById('cycle-changer-container').classList.toggle('hidden', !Settings.isCycleChangerEnabled);
 
-  $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
-  $("#customization-container").toggleClass('opened', Settings.showCustomizationSettings);
-  $("#routes-container").toggleClass('opened', Settings.showRoutesSettings);
-  $("#import-export-container").toggleClass('opened', Settings.showImportExportSettings);
-  $("#debug-container").toggleClass('opened', Settings.showDebugSettings);
+  document.getElementById('utilities-container').classList.toggle('opened', Settings.showUtilitiesSettings);
+  document.getElementById('customization-container').classList.toggle('opened', Settings.showCustomizationSettings);
+  document.getElementById('routes-container').classList.toggle('opened', Settings.showRoutesSettings);
+  document.getElementById('import-export-container').classList.toggle('opened', Settings.showImportExportSettings);
+  document.getElementById('debug-container').classList.toggle('opened', Settings.showDebugSettings);
 
   if (!MapBase.isPreviewMode)
     Updates.init();
@@ -265,19 +268,18 @@ function isLocalHost() {
 }
 
 function changeCursor() {
-  if (Settings.isCoordsOnClickEnabled || RouteSettings.customRouteEnabled)
-    $('.leaflet-grab').css('cursor', 'pointer');
-  else {
-    $('.leaflet-grab').css('cursor', 'grab');
-    $('.lat-lng-container').css('display', 'none');
-  }
+  const cursorStyle = (Settings.isCoordsOnClickEnabled || RouteSettings.customRouteEnabled) ? 'pointer' : 'grab';
+  const displayStyle = (cursorStyle === 'pointer') ? '' : 'none';
+  document.querySelectorAll('.leaflet-grab').forEach(el => { el.style.cursor = cursorStyle; });
+  document.querySelectorAll('.lat-lng-container').forEach(ctn => { ctn.style.display = displayStyle; });
 }
 
 function updateTopWidget() {
-  const pElements = $('.top-widget > p');
+  const pEl = document.querySelectorAll('.top-widget > p');
 
-  [].forEach.call(pElements, (element, index) => {
-    $(element).toggleClass('hidden', Settings.topWidgetState !== index);
+  pEl.forEach((el, idx) => {
+      if (Settings.topWidgetState !== idx) el.classList.add('hidden'); 
+      else el.classList.remove('hidden');
   });
 }
 
@@ -326,13 +328,16 @@ function clockTick() {
     hourCycle: Settings.isClock24Hour ? 'h23' : 'h12',
   };
 
-  $('#time-in-game').text(gameTime.toLocaleString(Settings.language, clockFormat));
+  document.getElementById('time-in-game').textContent = gameTime.toLocaleString(Settings.language, clockFormat);
 
   // Preview mode can remove this.
-  if ($('#day-cycle').length) {
-    const file = $('#day-cycle').attr('src').filename();
-    if ((nightTime && file !== "moon") || (!nightTime && file !== "sun"))
-      $('#day-cycle').removeClass('hidden').attr('src', `./assets/images/${nightTime ? 'moon' : 'sun'}.png`);
+  const dayCycleEl = document.getElementById('day-cycle');
+  if (dayCycleEl) {
+    const file = dayCycleEl.getAttribute('src').filename;
+    if ((nightTime && file !== "moon") || (!nightTime && file !== "sun")) {
+      dayCycleEl.classList.remove('hidden');
+      dayCycleEl.setAttribute('src', `./assets/images/${nightTime ? 'moon' : 'sun'}.png`);
+    }
   }
 
   const cycleResetTime = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
@@ -345,28 +350,23 @@ function clockTick() {
     hourCycle: 'h23',
   };
 
-  $('#countdown').text(delta.toLocaleString([], deltaFormat));
+  document.getElementById('countdown').textContent = delta.toLocaleString([], deltaFormat);
 
-  $('[data-marker*="provision_wldflwr_agarita"], [data-marker*="provision_wldflwr_blood_flower"]').css('filter', (function () {
-    if (MapBase.isPreviewMode) return 'none';
-    const isImportant = $(this).hasClass('highlight-items');
+  document.querySelectorAll('[data-marker*="provision_wldflwr_agarita"], [data-marker*="provision_wldflwr_blood_flower"]').forEach(marker => {
+    const isImportant = marker.classList.contains('highlight-items');
     const whiteGlow = 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .3rem #fff)';
-    const redGlow = 'drop-shadow(0 0 .5rem #cc0000) drop-shadow(0 0 .4rem #cc0000';
-    const pinkGlow = 'drop-shadow(0 0 .5rem #ff6fc7) drop-shadow(0 0 .3rem #ff6fc7';
-    if (isImportant && nightTime)
-      return pinkGlow;
-    if (isImportant)
-      return redGlow;
-    return nightTime ? whiteGlow : 'none';
-  }));
+    const redGlow = 'drop-shadow(0 0 .5rem #cc0000) drop-shadow(0 0 .4rem #cc0000)';
+    const pinkGlow = 'drop-shadow(0 0 .5rem #ff6fc7) drop-shadow(0 0 .3rem #ff6fc7)';
+    marker.style.filter = MapBase.isPreviewMode ? 'none' : (isImportant && nightTime ? pinkGlow : (isImportant ? redGlow : (nightTime ? whiteGlow : 'none')));
+  });
 
-  $('.leaflet-marker-icon[data-time]').each(function () {
-    let time = $(this).data('time') + '';
-    if (time === null || time === '') return;
+  document.querySelectorAll('.leaflet-marker-icon[data-time]').forEach(marker => {
+    let time = marker.dataset.time || '';
+    if (time === '') return;
     if (time.split(',').includes(gameHour + '') && !MapBase.isPreviewMode) {
-      $(this).css('filter', 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)');
+        marker.style.filter = 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .25rem #fff)';
     } else {
-      $(this).css('filter', 'none');
+        marker.style.filter = 'none';
     }
   });
 }
@@ -380,87 +380,89 @@ function clockTick() {
   - only hope: user does not do anything until that happens
 - please move them out of here to their respective owners
 */
-$('.side-menu').on('scroll', function () {
+document.querySelector('.side-menu').addEventListener('scroll', function () {
   // These are not equality checks because of mobile weirdness.
-  const atTop = $(this).scrollTop() <= 0;
-  const atBottom = $(this).scrollTop() + $(document).height() >= $(this).prop("scrollHeight");
-  $('.scroller-line-tp').toggle(atTop);
-  $('.scroller-arrow-tp').toggle(!atTop);
-  $('.scroller-line-bt').toggle(atBottom);
-  $('.scroller-arrow-bt').toggle(!atBottom);
+  const atTop = this.scrollTop <= 0;
+  const atBottom = this.scrollTop + this.clientHeight >= this.scrollHeight;
+  document.querySelector('.scroller-line-tp').style.display = atTop ? '' : 'none';
+  document.querySelector('.scroller-arrow-tp').style.display = atTop ? 'none' : '';
+  document.querySelector('.scroller-line-bt').style.display = atBottom ? '' : 'none';
+  document.querySelector('.scroller-arrow-bt').style.display = atBottom ? 'none' : '';
 });
 
-$('.top-widget > p').on('click', function () {
-  const pElements = $('.top-widget > p').length;
-  Settings.topWidgetState = (Settings.topWidgetState + 1) % pElements;
-  updateTopWidget();
+document.querySelectorAll('.top-widget > p').forEach((p) => {
+  p.addEventListener('click', function () {
+    const pEl = document.querySelectorAll('.top-widget > p').length;
+    Settings.topWidgetState = (Settings.topWidgetState + 1) % pEl;
+    updateTopWidget();
+  });
 });
 
-$("#show-all-markers").on("change", function () {
-  MapBase.showAllMarkers = $("#show-all-markers").prop('checked');
+document.getElementById('show-all-markers').addEventListener('change', function () {
+  MapBase.showAllMarkers = this.checked;
   MapBase.addMarkers();
 });
 
-$('#enable-right-click').on("change", function () {
-  Settings.isRightClickEnabled = $("#enable-right-click").prop('checked');
+document.getElementById('enable-right-click').addEventListener('change', function () {
+  Settings.isRightClickEnabled = this.checked;
 });
 
-$("#show-utilities").on("change", function () {
-  Settings.showUtilitiesSettings = $("#show-utilities").prop('checked');
-  $("#utilities-container").toggleClass('opened', Settings.showUtilitiesSettings);
+document.getElementById('show-utilities').addEventListener('change', function () {
+  Settings.showUtilitiesSettings = this.checked;
+  document.getElementById('utilities-container').classList.toggle('opened', Settings.showUtilitiesSettings);
 });
 
-$("#show-customization").on("change", function () {
-  Settings.showCustomizationSettings = $("#show-customization").prop('checked');
-  $("#customization-container").toggleClass('opened', Settings.showCustomizationSettings);
+document.getElementById('show-customization').addEventListener('change', function () {
+  Settings.showCustomizationSettings = this.checked;
+  document.getElementById('customization-container').classList.toggle('opened', Settings.showCustomizationSettings);
 });
 
-$("#show-routes").on("change", function () {
-  Settings.showRoutesSettings = $("#show-routes").prop('checked');
-  $("#routes-container").toggleClass('opened', Settings.showRoutesSettings);
+document.getElementById('show-routes').addEventListener('change', function () {
+  Settings.showRoutesSettings = this.checked;
+  document.getElementById('routes-container').classList.toggle('opened', Settings.showRoutesSettings);
 });
 
-$("#show-import-export").on("change", function () {
-  Settings.showImportExportSettings = $("#show-import-export").prop('checked');
-  $("#import-export-container").toggleClass('opened', Settings.showImportExportSettings);
+document.getElementById('show-import-export').addEventListener('change', function () {
+  Settings.showImportExportSettings = this.checked;
+  document.getElementById('import-export-container').classList.toggle('opened', Settings.showImportExportSettings);
 });
 
-$("#show-debug").on("change", function () {
-  Settings.showDebugSettings = $("#show-debug").prop('checked');
-  $("#debug-container").toggleClass('opened', Settings.showDebugSettings);
+document.getElementById('show-debug').addEventListener('change', function () {
+  Settings.showDebugSettings = this.checked;
+  document.getElementById('debug-container').classList.toggle('opened', Settings.showDebugSettings);
 });
 
-$('#enable-debug').on("change", function () {
-  Settings.isDebugEnabled = $("#enable-debug").prop('checked');
+document.getElementById('enable-debug').addEventListener('change', function () {
+  Settings.isDebugEnabled = this.checked;
 });
 
-$('#enable-cycle-changer').on("change", function () {
-  Settings.isCycleChangerEnabled = $("#enable-cycle-changer").prop('checked');
-  $('#cycle-changer-container').toggleClass('hidden', !Settings.isCycleChangerEnabled);
-  if (!Settings.isCycleChangerEnabled) {
-    Cycles.resetCycle();
-  }
+document.getElementById('enable-cycle-changer').addEventListener('change', function () {
+  Settings.isCycleChangerEnabled = this.checked;
+  document.getElementById('cycle-changer-container').classList.toggle('opened', Settings.isCycleChangerEnabled);
+  if (!Settings.isCycleChangerEnabled) Cycles.resetCycle();
 });
 
-$("#search").on("input", function () {
-  MapBase.onSearch($('#search').val());
-  $("#filter-type").val('none');
+document.getElementById('search').addEventListener('input', function () {
+  MapBase.onSearch(this.value);
+  document.getElementById('filter-type').value = 'none';
 });
 
-$("#copy-search-link").on("click", function () {
-  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${$('#search').val()}`);
+document.getElementById('copy-search-link').addEventListener('click', function () {
+  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${document.getElementById('search').value}`);
 });
 
-$("#clear-search").on("click", function () {
-  $("#search").val('').trigger("input");
+document.getElementById('clear-search').addEventListener('click', function () {
+  const searchInput = document.getElementById('search');
+  searchInput.value = '';
+  searchInput.dispatchEvent(new Event('input'));
 });
 
-$("#reset-markers").on("change", function () {
-  Settings.resetMarkersDaily = $("#reset-markers").prop('checked');
+document.getElementById('reset-markers').addEventListener('change', function () {
+  Settings.resetMarkersDaily = this.checked;
 });
 
-$("#clear-markers").on("click", function () {
-  $.each(MapBase.markers, function (key, marker) {
+document.getElementById('clear-markers').addEventListener('click', function () {
+  Object.values(MapBase.markers).forEach(marker => {
     marker.isCollected = false;
   });
 
@@ -468,7 +470,7 @@ $("#clear-markers").on("click", function () {
   MapBase.addMarkers();
 });
 
-$('#disable-all-collected-items').on('click', function () {
+document.getElementById('disable-all-collected-items').addEventListener('click', function () {
   MapBase.markers.forEach(marker => {
     if (marker.isRandomizedItem || marker.item.amount === 0) return;
     marker.isCollected = true;
@@ -476,49 +478,57 @@ $('#disable-all-collected-items').on('click', function () {
   MapBase.addMarkers();
 });
 
-$("#clear-inventory").on("click", function () {
+document.getElementById('clear-inventory').addEventListener('click', function () {
   Item.items.forEach(item => item.amount = 0);
   Inventory.updateItemHighlights();
   Menu.refreshMenu();
   MapBase.addMarkers();
 });
 
-$("#custom-routes").on("change", function () {
-  RouteSettings.customRouteEnabled = $("#custom-routes").prop('checked');
+document.getElementById('custom-routes').addEventListener('change', function () {
+  RouteSettings.customRouteEnabled = this.checked;
   changeCursor();
   const mapRoute = Routes.customRouteConnections.join(',');
   RouteSettings.customRoute = mapRoute;
 });
 
-$("#clear-custom-routes").on("click", Routes.clearCustomRoutes);
+document.getElementById('clear-custom-routes').addEventListener('click', Routes.clearCustomRoutes);
 
-$('.map-alert').on('click', function () {
-  Settings.alertClosed = true;
-  $('.map-alert').addClass('hidden');
+document.querySelectorAll('.map-alert').forEach(alert => {
+  alert.addEventListener('click', function () {
+    Settings.alertClosed = true;
+    document.querySelectorAll('.map-alert').forEach(alert => {
+      alert.classList.add('hidden');
+    });
+  });
 });
 
-$('.map-cycle-alert').on('click', function () {
-  $('.map-cycle-alert').addClass('hidden');
+document.querySelectorAll('.map-cycle-alert').forEach(alert => {
+  alert.addEventListener('click', function () {
+    document.querySelectorAll('.map-cycle-alert').forEach(alert => {
+      alert.classList.add('hidden');
+    });
+  });
 });
 
-$('#show-coordinates').on('change', function () {
-  Settings.isCoordsOnClickEnabled = $("#show-coordinates").prop('checked');
+document.getElementById('show-coordinates').addEventListener('change', function () {
+  Settings.isCoordsOnClickEnabled = this.checked;
   changeCursor();
 });
 
-$('#map-boundaries').on('change', function () {
-  Settings.isMapBoundariesEnabled = $("#map-boundaries").prop('checked');
+document.getElementById('map-boundaries').addEventListener('change', function () {
+  Settings.isMapBoundariesEnabled = this.checked;
   MapBase.map.setMaxBounds(); //Remove boundaries
   MapBase.updateMapBoundaries();
 });
 
-$('#timestamps-24').on('change', function () {
-  Settings.isClock24Hour = $("#timestamps-24").prop('checked');
+document.getElementById('timestamps-24').addEventListener('change', function () {
+  Settings.isClock24Hour = this.checked;
   clockTick();
 });
 
-$("#language").on("change", function () {
-  Settings.language = $("#language").val();
+document.getElementById('language').addEventListener('change', function () {
+  Settings.language = this.value;
   Language.setMenuLanguage();
   Menu.refreshMenu();
   Cycles.setLocaleDate();
@@ -527,105 +537,107 @@ $("#language").on("change", function () {
   Legendary.onLanguageChanged();
 });
 
-$("#marker-opacity").on("change", function () {
-  Settings.markerOpacity = Number($("#marker-opacity").val());
+document.getElementById('marker-opacity').addEventListener('change', function () {
+  Settings.markerOpacity = Number(this.value);
   MapBase.addMarkers();
 });
 
-$("#invisible-removed-markers").on("change", function () {
-  Settings.isInvisibleRemovedMarkers = $("#invisible-removed-markers").prop("checked");
+document.getElementById('invisible-removed-markers').addEventListener('change', function () {
+  Settings.isInvisibleRemovedMarkers = this.checked;
   MapBase.addMarkers();
 });
 
-$("#marker-size").on("change", function () {
-  Settings.markerSize = Number($("#marker-size").val());
+document.getElementById('marker-size').addEventListener('change', function () {
+  Settings.markerSize = Number(this.value);
   MapBase.addMarkers();
   Treasure.onSettingsChanged();
   Legendary.onSettingsChanged();
 });
 
-$('#filter-type').on('change', function () {
-  Settings.filterType = $(this).val();
+document.getElementById('filter-type').addEventListener('change', function () {
+  Settings.filterType = this.value;
 });
 
-$('#filter-min-amount-items').on("change", function () {
-  InventorySettings.maxAmountLowInventoryItems = Number($(this).val());
+document.getElementById('filter-min-amount-items').addEventListener('change', function () {
+  InventorySettings.maxAmountLowInventoryItems = Number(this.value);
 });
 
-$("#enable-cycles").on("change", function () {
-  Settings.isCyclesVisible = $("#enable-cycles").prop('checked');
-  $('.cycle-icon').toggleClass('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled);
-  $('.cycle-display').toggleClass('hidden', !Settings.isCyclesVisible);
+document.getElementById('enable-cycles').addEventListener('change', function () {
+  Settings.isCyclesVisible = this.checked;
+  document.querySelectorAll('.cycle-icon').forEach(el => { el.classList.toggle('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled); });
+  document.querySelectorAll('.cycle-display').forEach(el => { el.classList.toggle('hidden', !Settings.isCyclesVisible); });
   MapBase.addMarkers();
 });
 
-$("#enable-cycle-input").on("change", function () {
-  Settings.isCycleInputEnabled = $("#enable-cycle-input").prop('checked');
-  $('.input-cycle').toggleClass('hidden', !Settings.isCycleInputEnabled);
-  $('.cycle-icon').toggleClass('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled);
+document.getElementById('enable-cycle-input').addEventListener('change', function () {
+  Settings.isCycleInputEnabled = this.checked;
+  document.querySelectorAll('.input-cycle').forEach(el => { el.classList.toggle('hidden', !Settings.isCycleInputEnabled); });
+  document.querySelectorAll('.cycle-icon').forEach(el => { el.classList.toggle('hidden', !Settings.isCyclesVisible || Settings.isCycleInputEnabled); });
 });
 
 // Remove item from map when using the menu
-$(document).on('click', '.collectible-wrapper[data-type]', function () {
-  const collectible = $(this).data('type');
-  const category = $(this).parent().data('type');
-
-  MapBase.removeItemFromMap(Cycles.categories[category], collectible, collectible, category, !InventorySettings.isMenuUpdateEnabled);
+document.addEventListener('click', function({target}) {
+  if (target.closest('.collectible-wrapper[data-type]')) {
+    const collectible = target.closest('.collectible-wrapper').getAttribute('data-type');
+    const category = target.closest('.collectible-wrapper').parentElement.getAttribute('data-type');
+    
+    MapBase.removeItemFromMap(Cycles.categories[category], collectible, collectible, category, !InventorySettings.isMenuUpdateEnabled);
+  }
 });
 
-$('.menu-toggle').on('click', function () {
-  const menu = $('.side-menu').toggleClass('menu-opened');
-  Settings.isMenuOpened = menu.hasClass('menu-opened');
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+  document.querySelector('.side-menu').classList.toggle('menu-opened');
+  Settings.isMenuOpened = document.querySelector('.side-menu').classList.contains('menu-opened');
 
-  $('.menu-toggle').text(Settings.isMenuOpened ? 'X' : '>');
+  document.querySelector('.menu-toggle').textContent = Settings.isMenuOpened ? 'X' : '>';
 
-  $('.top-widget').toggleClass('top-widget-menu-opened', Settings.isMenuOpened);
-  $('#fme-container').toggleClass('fme-menu-opened', Settings.isMenuOpened);
+  document.querySelector('.top-widget').classList.toggle('top-widget-menu-opened', Settings.isMenuOpened);
+  document.getElementById('fme-container').classList.toggle('fme-menu-opened', Settings.isMenuOpened);
 });
 
-$('#tooltip-map').on('change', function () {
-  Settings.showTooltipsMap = $('#tooltip-map').prop('checked');
+document.getElementById('tooltip-map').addEventListener('change', function () {
+  Settings.showTooltipsMap = this.checked;
   MapBase.updateTippy('tooltip');
 });
 
-$('#marker-cluster').on("change", function () {
-  Settings.isMarkerClusterEnabled = $("#marker-cluster").prop('checked');
+document.getElementById('marker-cluster').addEventListener('change', function () {
+  Settings.isMarkerClusterEnabled = this.checked;
   MapBase.addMarkers();
 });
 
-$('#enable-marker-popups').on("change", function () {
-  Settings.isPopupsEnabled = $("#enable-marker-popups").prop('checked');
+document.getElementById('enable-marker-popups').addEventListener('change', function () {
+  Settings.isPopupsEnabled = this.checked;
   MapBase.addMarkers();
 });
 
-$('#enable-marker-popups-hover').on("change", function () {
-  Settings.isPopupsHoverEnabled = $("#enable-marker-popups-hover").prop('checked');
+document.getElementById('enable-marker-popups-hover').addEventListener('change', function () {
+  Settings.isPopupsHoverEnabled = this.checked;
 });
 
-$('#enable-marker-shadows').on("change", function () {
-  Settings.isShadowsEnabled = $("#enable-marker-shadows").prop('checked');
+document.getElementById('enable-marker-shadows').addEventListener('change', function () {
+  Settings.isShadowsEnabled = this.checked;
   Treasure.onSettingsChanged();
   Legendary.onSettingsChanged();
   MapBase.addMarkers();
 });
 
-$("#enable-legendary-backgrounds").on("change", function () {
-  Settings.isLaBgEnabled = $("#enable-legendary-backgrounds").prop('checked');
+document.getElementById('enable-legendary-backgrounds').addEventListener('change', function () {
+  Settings.isLaBgEnabled = this.checked;
   Legendary.onSettingsChanged();
 });
 
-$("#legendary-animal-marker-type").on("change", function () {
-  Settings.legendarySpawnIconType = $("#legendary-animal-marker-type").val();
+document.getElementById('invisible-removed-markers').addEventListener('change', function () {
+  Settings.legendarySpawnIconType = this.value;
   Legendary.onSettingsChanged();
 });
 
-$("#legendary-animal-marker-size").on("change", function () {
-  Settings.legendarySpawnIconSize = Number($("#legendary-animal-marker-size").val());
+document.getElementById('legendary-animal-marker-size').addEventListener('change', function () {
+  Settings.legendarySpawnIconSize = Number(this.value);
   Legendary.onSettingsChanged();
 });
 
-$('#enable-dclick-zoom').on("change", function () {
-  Settings.isDoubleClickZoomEnabled = $("#enable-dclick-zoom").prop('checked');
+document.getElementById('enable-dclick-zoom').addEventListener('change', function () {
+  Settings.isDoubleClickZoomEnabled = this.checked;
   if (Settings.isDoubleClickZoomEnabled) {
     MapBase.map.doubleClickZoom.enable();
   } else {
@@ -633,55 +645,54 @@ $('#enable-dclick-zoom').on("change", function () {
   }
 });
 
-$('#enable-inventory').on("change", function () {
-  InventorySettings.isEnabled = $("#enable-inventory").prop('checked');
+document.getElementById('enable-inventory').addEventListener('change', function () {
+  InventorySettings.isEnabled = this.checked;
 
   MapBase.addMarkers();
 
-  $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
+  document.getElementById('inventory-container').classList.toggle('opened', InventorySettings.isEnabled);
 });
 
-$('#enable-inventory-popups').on("change", function () {
-  InventorySettings.isPopupsEnabled = $("#enable-inventory-popups").prop('checked');
-
-  MapBase.addMarkers();
-});
-
-$('#reset-inventory-daily').on("change", function () {
-  InventorySettings.resetInventoryDaily = $("#reset-inventory-daily").prop('checked');
-});
-
-$('#enable-additional-inventory-options').on("change", function () {
-  InventorySettings.enableAdvancedInventoryOptions = $("#enable-additional-inventory-options").prop('checked');
-});
-
-$('#highlight_low_amount_items').on("change", function () {
-  InventorySettings.highlightLowAmountItems = $('#highlight_low_amount_items').prop("checked");
+document.getElementById('enable-inventory-popups').addEventListener('change', function () {
+  InventorySettings.isPopupsEnabled = this.checked;
 
   MapBase.addMarkers();
 });
 
-$('#enable-inventory-menu-update').on("change", function () {
-  InventorySettings.isMenuUpdateEnabled = $("#enable-inventory-menu-update").prop('checked');
+document.getElementById('reset-inventory-daily').addEventListener('change', function () {
+  InventorySettings.resetInventoryDaily = this.checked;
 });
 
-$('#auto-enable-sold-items').on("change", function () {
-  InventorySettings.autoEnableSoldItems = $('#auto-enable-sold-items').prop('checked');
+document.getElementById('enable-additional-inventory-options').addEventListener('change', function () {
+  InventorySettings.enableAdvancedInventoryOptions = this.checked;
 });
 
-$('#inventory-stack').on("change", function () {
-  let inputValue = parseInt($('#inventory-stack').val());
+document.getElementById('highlight_low_amount_items').addEventListener('change', function () {
+  InventorySettings.highlightLowAmountItems = this.checked;
+  MapBase.addMarkers();
+});
+
+document.getElementById('enable-inventory-menu-update').addEventListener('change', function () {
+  InventorySettings.isMenuUpdateEnabled = this.checked;
+});
+
+document.getElementById('auto-enable-sold-items').addEventListener('change', function () {
+  InventorySettings.autoEnableSoldItems = this.checked;
+});
+
+document.getElementById('inventory-stack').addEventListener('change', function () {
+  let inputValue = parseInt(this.value);
   inputValue = !isNaN(inputValue) ? inputValue : 10;
   InventorySettings.stackSize = inputValue;
 });
 
-$('#soft-flowers-inventory-stack').on("change", function () {
-  let inputValue = parseInt($('#soft-flowers-inventory-stack').val());
+document.getElementById('soft-flowers-inventory-stack').addEventListener('change', function () {
+  let inputValue = parseInt(this.value);
   inputValue = !isNaN(inputValue) ? inputValue : 10;
   InventorySettings.flowersSoftStackSize = inputValue;
 });
 
-$('#cookie-export').on("click", function () {
+document.getElementById('cookie-export').addEventListener('click', function () {
   try {
     let settings = localStorage;
 
@@ -692,7 +703,7 @@ $('#cookie-export').on("click", function () {
     delete settings.randid;
 
     // Remove irrelevant properties (from COPY of localStorage, only to do not export them):
-    settings = $.extend(true, {}, localStorage);
+    settings = Object.assign({}, localStorage);
 
     //Now we can just export this map settings :)
     Object.keys(settings).forEach(function(key){
@@ -711,7 +722,7 @@ $('#cookie-export').on("click", function () {
 
     downloadAsFile(`collectible-map-settings-(${exportDate}).json`, settingsJson);
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
   }
 });
@@ -725,20 +736,20 @@ function setSettings(settings) {
 
   delete settings.version;
 
-  $.each(settings, function (key, value) {
+  for (const key in settings) {
     //Skip `rdo.` keys.
-    if(!key.startsWith('rdo.'))
-      localStorage.setItem(key, value);
-  });
-
+    if (!key.startsWith('rdo.')) {
+        localStorage.setItem(key, settings[key]);
+    }
+  }
   // Do this for now, maybe look into refreshing the menu completely (from init) later.
   location.reload();
 }
 
-$('#cookie-import').on('click', function () {
+document.getElementById('cookie-import').addEventListener('click', function () {
   try {
     let settings = null;
-    const file = $('#cookie-import-file').prop('files')[0];
+    const file = document.getElementById('cookie-import-file').files[0];
     let fallback = false;
 
     if (!file) {
@@ -780,52 +791,52 @@ $('#cookie-import').on('click', function () {
       reader.readAsText(file);
     }
 
-    $.each(localStorage, function (key, value) {
+    for (const key in localStorage) {
       localStorage.removeItem(key);
-    });
+    }
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
   }
 });
 
-$('#generate-route-generate-on-visit').on("change", function () {
-  RouteSettings.runOnStart = $("#generate-route-generate-on-visit").prop('checked');
+document.getElementById('generate-route-generate-on-visit').addEventListener('change', function () {
+  RouteSettings.runOnStart = this.checked;
 });
 
-$('#generate-route-ignore-collected').on("change", function () {
-  RouteSettings.ignoreCollected = $("#generate-route-ignore-collected").prop('checked');
+document.getElementById('generate-route-ignore-collected').addEventListener('change', function () {
+  RouteSettings.ignoreCollected = this.checked;
   Routes.generatePath();
 });
 
-$('#generate-route-important-only').on("change", function () {
-  RouteSettings.importantOnly = $("#generate-route-important-only").prop('checked');
+document.getElementById('generate-route-important-only').addEventListener('change', function () {
+  RouteSettings.importantOnly = this.checked;
   Routes.generatePath();
 });
 
-$('#generate-route-auto-update').on("change", function () {
-  RouteSettings.autoUpdatePath = $("#generate-route-auto-update").prop('checked');
+document.getElementById('generate-route-auto-update').addEventListener('change', function () {
+  RouteSettings.autoUpdatePath = this.checked;
 });
 
-$('#generate-route-distance').on("change", function () {
-  let inputValue = parseInt($('#generate-route-distance').val());
+document.getElementById('generate-route-distance').addEventListener('change', function () {
+  let inputValue = parseInt(this.value);
   inputValue = !isNaN(inputValue) && inputValue > 0 ? inputValue : 25;
   RouteSettings.maxDistance = inputValue;
   Routes.generatePath();
 });
 
-$('#generate-route-start').on("change", function () {
-  let inputValue = $('#generate-route-start').val();
+document.getElementById('generate-route-start').addEventListener('change', function () {
+  let inputValue = this.value;
   let startLat = null;
   let startLng = null;
 
-  $('#generate-route-start-lat').parent().hide();
-  $('#generate-route-start-lng').parent().hide();
+  document.getElementById('generate-route-start-lat').parentElement.style.display = 'none';
+  document.getElementById('generate-route-start-lng').parentElement.style.display = 'none';
 
   switch (inputValue) {
     case "Custom":
-      $('#generate-route-start-lat').parent().show();
-      $('#generate-route-start-lng').parent().show();
+      document.getElementById('generate-route-start-lat').parentElement.style.display = '';
+      document.getElementById('generate-route-start-lng').parentElement.style.display = '';
       return;
 
     case "N":
@@ -850,8 +861,8 @@ $('#generate-route-start').on("change", function () {
       break;
   }
 
-  $('#generate-route-start-lat').val(startLat);
-  $('#generate-route-start-lng').val(startLng);
+  document.getElementById('generate-route-start-lat').value = startLat;
+  document.getElementById('generate-route-start-lng').value = startLng;
 
   RouteSettings.genPathStart = inputValue;
   RouteSettings.startMarkerLat = startLat;
@@ -860,34 +871,34 @@ $('#generate-route-start').on("change", function () {
   Routes.generatePath();
 });
 
-$('#generate-route-start-lat').on("change", function () {
-  let inputValue = parseFloat($('#generate-route-start-lat').val());
+document.getElementById('generate-route-start-lat').addEventListener('change', function () {
+  let inputValue = parseFloat(this.value);
   inputValue = !isNaN(inputValue) ? inputValue : -119.9063;
   RouteSettings.startMarkerLat = inputValue;
   Routes.generatePath();
 });
 
-$('#generate-route-start-lng').on("change", function () {
-  let inputValue = parseFloat($('#generate-route-start-lng').val());
+document.getElementById('generate-route-start-lng').addEventListener('change', function () {
+  let inputValue = parseFloat(this.value);
   inputValue = !isNaN(inputValue) ? inputValue : 8.0313;
   RouteSettings.startMarkerLng = inputValue;
   Routes.generatePath();
 });
 
-$('#generate-route-use-pathfinder').on("change", function () {
-  RouteSettings.usePathfinder = $("#generate-route-use-pathfinder").prop('checked');
+document.getElementById('generate-route-use-pathfinder').addEventListener('change', function () {
+  RouteSettings.usePathfinder = this.checked;
 
   // Hide incompatible options.
   if (RouteSettings.usePathfinder) {
-    $('#generate-route-distance').parent().hide();
-    $('#generate-route-auto-update').parent().parent().hide();
-    $('#generate-route-fasttravel-weight').parent().show();
-    $('#generate-route-railroad-weight').parent().show();
+    document.getElementById('generate-route-distance').parentElement.style.display = 'none';
+    document.getElementById('generate-route-auto-update').parentElement.parentElement.style.display = 'none';
+    document.getElementById('generate-route-fasttravel-weight').parentElement.style.display = '';
+    document.getElementById('generate-route-railroad-weight').parentElement.style.display = '';
   } else {
-    $('#generate-route-distance').parent().show();
-    $('#generate-route-auto-update').parent().parent().show();
-    $('#generate-route-fasttravel-weight').parent().hide();
-    $('#generate-route-railroad-weight').parent().hide();
+    document.getElementById('generate-route-distance').parentElement.style.display = '';
+    document.getElementById('generate-route-auto-update').parentElement.parentElement.style.display = '';
+    document.getElementById('generate-route-fasttravel-weight').parentElement.style.display = 'none';
+    document.getElementById('generate-route-railroad-weight').parentElement.style.display = 'none';
   }
 
   // Prevent both routes being stuck on screen.
@@ -896,30 +907,30 @@ $('#generate-route-use-pathfinder').on("change", function () {
   Routes.generatePath();
 });
 
-$('#generate-route-fasttravel-weight').on("change", function () {
-  RouteSettings.fasttravelWeight = parseFloat($("#generate-route-fasttravel-weight").val());
+document.getElementById('generate-route-fasttravel-weight').addEventListener('change', function () {
+  RouteSettings.fasttravelWeight = parseFloat(this.value);
   Routes.generatePath();
 });
 
-$('#generate-route-railroad-weight').on("change", function () {
-  RouteSettings.railroadWeight = parseFloat($("#generate-route-railroad-weight").val());
+document.getElementById('generate-route-railroad-weight').addEventListener('change', function () {
+  RouteSettings.railroadWeight = parseFloat(this.value);
   Routes.generatePath();
 });
 
-$('#show-help').on("change", function () {
-  Settings.showHelp = $("#show-help").prop('checked');
-  $("#help-container").toggle(Settings.showHelp);
+document.getElementById('show-help').addEventListener('change', function () {
+  Settings.showHelp = this.checked;
+  document.getElementById('help-container').style.display = Settings.showHelp ? '' : 'none';
 });
 
-$(document).on('contextmenu', function (e) {
+document.addEventListener('contextmenu', function (e) {
   if (!Settings.isRightClickEnabled) e.preventDefault();
 });
 
-$('#delete-all-settings').on('click', function () {
-  $.each(localStorage, function (key) {
+document.getElementById('delete-all-settings').addEventListener('click', function () {
+  for (const key in localStorage) {
     if(key.startsWith('rdr2collector.'))
       localStorage.removeItem(key);
-  });
+  };
 
   location.reload(true);
 });
@@ -929,45 +940,46 @@ Reload convenience shortcut requested by @Adam Norton#6811.
 Map’s tile area is reduced to a smaller area after lock-unlock cycle on iOS
 if opened via iOS homescreen bookmarks. (Which has no reload button.)
 */
-$('#reload-map').on('click', function () {
+document.getElementById('reload-map').addEventListener('click', function () {
   location.reload(true);
 });
 
-$('#open-clear-markers-modal').on('click', function () {
+document.getElementById('open-clear-markers-modal').addEventListener('click', function () {
   $('#clear-markers-modal').modal();
 });
 
-$('#open-clear-important-items-modal').on('click', function () {
+document.getElementById('open-clear-important-items-modal').addEventListener('click', function () {
   $('#clear-important-items-modal').modal();
 });
 
-$('#open-clear-inventory-modal').on('click', function () {
+document.getElementById('open-clear-inventory-modal').addEventListener('click', function () {
   $('#clear-inventory-modal').modal();
 });
 
-$('#open-clear-routes-modal').on('click', function () {
+document.getElementById('open-clear-routes-modal').addEventListener('click', function () {
   $('#clear-routes-modal').modal();
 });
 
-$('#open-delete-all-settings-modal').on('click', function () {
+document.getElementById('open-delete-all-settings-modal').addEventListener('click', function () {
   $('#delete-all-settings-modal').modal();
 });
 
-$('#open-remove-all-pins-modal').on('click', function () {
+document.getElementById('open-remove-all-pins-modal').addEventListener('click', function () {
   $('#remove-all-pins-modal').modal();
 });
 
-$('#open-updates-modal').on('click', function () {
+document.getElementById('open-updates-modal').addEventListener('click', function () {
   Updates.showModal();
 });
 
-$('#open-import-rdo-inventory-modal').on('click', function () {
-  $('#rdo-inventory-textarea').val('');
+document.getElementById('open-import-rdo-inventory-modal').addEventListener('click', function () {
+  const textarea = document.getElementById('rdo-inventory-textarea');
+  if(textarea) textarea.value = '';
   $('#import-rdo-inventory-modal').modal();
 });
 
 function formatLootTableLevel(table, rate = 1, level = 0) {
-  const result = $("<div>");
+  const result = document.createElement('div');
 
   const items = MapBase.lootTables.loot[table];
   const hasItems = !!items;
@@ -976,26 +988,37 @@ function formatLootTableLevel(table, rate = 1, level = 0) {
   const formatted = Number((rate * 100).toPrecision(2));
 
   if (hasItems) {
-    const title = $(`<span class="loot-table-title level-${level + 1}">`);
+    const title = document.createElement('span');
+    title.className = `loot-table-title level-${level + 1}`;
     if (level === 0) {
-      title.append($(`<h4 data-text="menu.${table}">`));
+      const h4 = document.createElement('h4');
+      h4.setAttribute('data-text', `menu.${table}`);
+      title.appendChild(h4);
     } else {
-      title.append($(`<h5 data-text="menu.${table}">`));
-      title.append($(`<h5 class="rate">`).text(formatted + "%"));
+      const h5 = document.createElement('h5');
+      h5.setAttribute('data-text', `menu.${table}`);
+      title.appendChild(h5);
+      const rateEl = document.createElement('h5');
+      rateEl.className = 'rate';
+      rateEl.textContent = `${formatted}%`;
+      title.appendChild(rateEl);
     }
-    result.append(title);
+    result.appendChild(title);
 
-    const wrapper = $(`<div class="loot-table-wrapper level-${level + 1}">`);
+    const wrapper = document.createElement('div');
+    wrapper.className = `loot-table-wrapper level-${level + 1}`;
     Object.keys(items).forEach(key => {
-      wrapper.append(formatLootTableLevel(key, rate * items[key], level + 1));
+      wrapper.appendChild(formatLootTableLevel(key, rate * items[key], level + 1));
     });
-    result.append(wrapper);
+    result.appendChild(wrapper);
   } else {
-    const item = $(`<div class="loot-table-item"><span data-text="${table}.name"></span><span class="rate">~${formatted}%</span></div>`);
-    result.append(item);
+    const item = document.createElement('div');
+    item.className = 'loot-table-item';
+    item.innerHTML = `<span data-text="${table}.name"></span><span class="rate">~${formatted}%</span>`;
+    result.appendChild(item);
   }
 
-  return result.children();
+  return result;
 }
 
 $('#loot-table-modal').on('show.bs.modal', function (event) {
@@ -1016,7 +1039,7 @@ $('#loot-table-modal').on('show.bs.modal', function (event) {
 });
 
 
-$('#open-custom-marker-color-modal').on('click', event => {
+document.getElementById('open-custom-marker-color-modal').addEventListener('click', event => {
   const markerColors = ['aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple', 'darkred', 'gray', 'green', 'lightblue', 'lightgray', 'lightgreen', 'lightorange', 'lightred', 'orange', 'pink', 'purple', 'red', 'white', 'yellow']
     .sort((...args) => {
       const [a, b] = args.map(color => Language.get(`map.user_pins.color.${color}`));
@@ -1038,32 +1061,47 @@ $('#open-custom-marker-color-modal').on('click', event => {
     });
     return a - b;
   });
-  const savedColors = Object.assign(baseColors, JSON.parse(localStorage.getItem('rdr2collector.customMarkersColors') || localStorage.getItem('customMarkersColors')) || {});
-  const wrapper = $('<div id="custom-markers-colors"></div>');
+  const savedColors = Object.assign({}, baseColors, JSON.parse(localStorage.getItem('rdr2collector.customMarkersColors') || localStorage.getItem('customMarkersColors')) || {});
+  const wrapper = document.createElement('div');
+  wrapper.id = 'custom-markers-colors';
 
   categories.forEach(category => {
-    const snippet = $(`
-      <div class="input-container" id="${category}-custom-color" data-help="custom_marker_color">
-        <label for="custom-marker-color" data-text="menu.${category}"></label>
-        <select class="input-text wide-select-menu" id="${category}-custom-marker-color"></select>
-      </div>`);
+    const snippet = document.createElement('div');
+    snippet.classList.add('input-container');
+    snippet.id = `${category}-custom-color`;
+    snippet.setAttribute('data-help', 'custom_marker_color');
+    
+    const label = document.createElement('label');
+    label.setAttribute('for', `${category}-custom-marker-color`);
+    label.setAttribute('data-text', `menu.${category}`);
+    snippet.appendChild(label);
+
+    const select = document.createElement('select');
+    select.classList.add('input-text');
+    select.classList.add('wide-select-menu');
+    select.id = `${category}-custom-marker-color`;
 
     markerColors.forEach(color => {
-      const option = $(`<option value="${color}" data-text="map.user_pins.color.${color}"></option>`)
-        .attr('selected', savedColors[category] === color);
-      $('select', snippet).append(option);
+      const option = document.createElement('option');
+      option.value = color;
+      option.setAttribute('data-text', `map.user_pins.color.${color}`);
+      option.selected = savedColors[category] === color;
+      select.appendChild(option);
     });
-    wrapper.append(snippet);
+
+    snippet.appendChild(select);
+    wrapper.appendChild(snippet);
   });
 
   const translatedContent = Language.translateDom(wrapper);
-  $('#custom-marker-color-modal #custom-colors').html(translatedContent);
+  document.getElementById('custom-marker-color-modal').querySelector('#custom-colors').innerHTML = translatedContent;
   $('#custom-marker-color-modal').modal('show');
-
-  $('.input-container', wrapper).on('change', event => {
-    baseColors[event.target.id.split('-')[0]] = event.target.value;
-    localStorage.setItem('rdr2collector.customMarkersColors', JSON.stringify(baseColors));
-    MapBase.addMarkers();
+  wrapper.querySelectorAll('.input-container').forEach(inputContainer => {
+    inputContainer.addEventListener('change', event => {
+        baseColors[event.target.id.split('-')[0]] = event.target.value;
+        localStorage.setItem('rdr2collector.customMarkersColors', JSON.stringify(baseColors));
+        MapBase.addMarkers();
+    });
   });
 });
 
@@ -1073,8 +1111,8 @@ function filterMapMarkers() {
   let enableMainCategory = true;
 
   if (Settings.filterType === 'none') {
-    if ($('#search').val())
-      MapBase.onSearch($('#search').val());
+    if (document.getElementById('search').value)
+      MapBase.onSearch(document.getElementById('search').value);
     else
       uniqueSearchMarkers = MapBase.markers;
 
@@ -1131,7 +1169,7 @@ function filterMapMarkers() {
       uniqueSearchMarkers.push(marker);
       if (!enabledCategories.includes(marker.category) && enableMainCategory) {
         enabledCategories.push(marker.category);
-        $(`[data-type="${marker.category}"]`).removeClass('disabled');
+        document.querySelectorAll(`[data-type="${marker.category}"]`).forEach(el => { el.classList.remove('disabled'); });
       }
     });
 

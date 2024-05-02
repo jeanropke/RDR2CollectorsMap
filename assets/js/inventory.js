@@ -1,26 +1,26 @@
 const Inventory = {
   init: function () {
-    $('#enable-inventory-menu-update').prop("checked", InventorySettings.isMenuUpdateEnabled);
-    $('#enable-inventory-popups').prop("checked", InventorySettings.isPopupsEnabled);
-    $('#enable-inventory').prop("checked", InventorySettings.isEnabled);
-    $('#highlight_low_amount_items').prop("checked", InventorySettings.highlightLowAmountItems);
-    $('#inventory-container').toggleClass("opened", InventorySettings.isEnabled);
-    $('#inventory-stack').val(InventorySettings.stackSize);
-    $('#soft-flowers-inventory-stack').val(InventorySettings.flowersSoftStackSize);
-    $('#auto-enable-sold-items').prop("checked", InventorySettings.autoEnableSoldItems);
-    $('#reset-inventory-daily').prop("checked", InventorySettings.resetInventoryDaily);
-    $('#enable-additional-inventory-options').prop("checked", InventorySettings.enableAdvancedInventoryOptions);
-    $('#filter-min-amount-items').val(InventorySettings.maxAmountLowInventoryItems);
+    document.getElementById('enable-inventory-menu-update').checked = InventorySettings.isMenuUpdateEnabled;
+    document.getElementById('enable-inventory-popups').checked = InventorySettings.isPopupsEnabled;
+    document.getElementById('enable-inventory').checked = InventorySettings.isEnabled;
+    document.getElementById('highlight_low_amount_items').checked = InventorySettings.highlightLowAmountItems;
+    document.getElementById('inventory-container').classList.toggle("opened", InventorySettings.isEnabled);
+    document.getElementById('inventory-stack').value = InventorySettings.stackSize;
+    document.getElementById('soft-flowers-inventory-stack').value = InventorySettings.flowersSoftStackSize;
+    document.getElementById('auto-enable-sold-items').checked = InventorySettings.autoEnableSoldItems;
+    document.getElementById('reset-inventory-daily').checked = InventorySettings.resetInventoryDaily;
+    document.getElementById('enable-additional-inventory-options').checked = InventorySettings.enableAdvancedInventoryOptions;
+    document.getElementById('filter-min-amount-items').value = InventorySettings.maxAmountLowInventoryItems;
 
     // disable dropdown menu if highlight low amount items is disabled:
-    $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);
-    $('#highlight_low_amount_items').on('change', function () {
-      $('[data-help="highlight_style"]').toggleClass('disabled', !InventorySettings.highlightLowAmountItems);
+    document.querySelector('[data-help="highlight_style"]').classList.toggle('disabled', !InventorySettings.highlightLowAmountItems);
+    document.getElementById('highlight_low_amount_items').addEventListener('change', function() {
+      document.querySelector('[data-help="highlight_style"]').classList.toggle('disabled', !InventorySettings.highlightLowAmountItems);
     });
 
-    $('#import-rdo-inventory').on('click', function () {
+    document.getElementById('import-rdo-inventory').addEventListener('click', function () {
 
-      const file = $('#rdo-inventory-import-file').prop('files')[0];
+      const file = document.getElementById('rdo-inventory-import-file').files[0];
 
       try {
         file.text().then((text) => {
@@ -38,7 +38,7 @@ const Inventory = {
       }
     });
 
-    $('#inventory-script').on('click', function () {
+    document.getElementById('inventory-script').addEventListener('click', function () {
       this.select();
 
       if (navigator && navigator.clipboard)
@@ -85,15 +85,14 @@ const Inventory = {
       return;
     }
 
-    Collection.collections.forEach((collection) => {
+    Collection.collections.forEach(collection => {
       if (['arrowhead', 'coin', 'fossils_random', 'jewelry_random'].includes(collection.category)) return;
-
-      const contourImg = $(`[data-marker*=${collection.category}] img.marker-contour`);
-      contourImg.removeClass(function (index, className) {
-        return (className.match(/highlight-low-amount-items-\S+/gm) || []).join(' ');
+      const contourImgs = document.querySelectorAll(`[data-marker*=${collection.category}] img.marker-contour`);
+      contourImgs.forEach(img => {
+        img.classList.remove(...Array.from(img.classList).filter(className => (className.match(/highlight-low-amount-items-\S+/gm) || []).join(' ')));
+        img.style.setProperty('--animation-target-opacity', '0.0');
+        img.style.opacity = '0.0';
       });
-      contourImg.css('--animation-target-opacity', 0.0);
-      contourImg.css("opacity", 0.0);
 
       if (!enabledCategories.includes(collection.category)) return;
 
@@ -109,14 +108,15 @@ const Inventory = {
           InventorySettings.stackSize));
         const scaledWeight = Math.min(1, weight * 2.4);
 
-        const contourImg = $(`[data-marker=${_m.text}] img.marker-contour`);
+        const contourImg = document.querySelector(`[data-marker=${_m.text}] img.marker-contour`);
+        if (!contourImg) return;
         if (weight < 0.02) {
-          contourImg.css('opacity', 0.0);
+          contourImg.style.opacity = '0.0';
         } else if (weight < 0.3 || InventorySettings.highlightStyle === 'static') {
-          contourImg.css('opacity', scaledWeight);
+          contourImg.style.opacity = scaledWeight;
         } else {
-          contourImg.css('--animation-target-opacity', scaledWeight);
-          contourImg.addClass(`highlight-low-amount-items-animated`);
+          contourImg.style.setProperty('--animation-target-opacity', scaledWeight);
+          contourImg.classList.add('highlight-low-amount-items-animated');
         }
       });
     });
