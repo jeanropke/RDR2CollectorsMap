@@ -79,7 +79,7 @@ const MadamNazar = {
     if (getParameterByName('q'))
       MapBase.map.setView([cl.x, cl.y], 6);
   },
-  popupContent() {
+  popupContent: function () {
     // Prevents date getting stuck when changing lang.
     const locale = new Date(MadamNazar.currentDate).toLocaleString(Settings.language, { timeZone: 'UTC', month: 'long', day: 'numeric' });
 
