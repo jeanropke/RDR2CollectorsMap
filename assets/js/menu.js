@@ -168,7 +168,7 @@ class Menu {
               Legendary.onCategoryToggle();
               break;
           }
-        } else if (Settings.isDebugEnabled) {
+        } else if (Settings.toolType !== 3 || Settings.filterType !== 'none' || $('#search').val() || Settings.isDebugEnabled) {
             MapBase.addMarkers();
         } else if (parentCategories['fossils_random'].includes(category)) {
             const markers = MapBase.markers.filter(marker => marker.cycleName == Cycles.categories[category] && marker.category === 'fossils_random');

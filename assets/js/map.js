@@ -418,8 +418,8 @@ const MapBase = {
       ];
 
       if (!searchTerms.length) {
-        uniqueSearchMarkers = MapBase.markers;
-        MapBase.addMarkers();
+        if (Settings.filterType !== 'none') $('#filter-type').val(Settings.filterType);
+        filterMapMarkers();
         return;
       }
 
