@@ -18,7 +18,7 @@ class Menu {
     filterAlert.style.display = this._warnings.size > 0 ? '' : 'none';
     if (this._warnings.size > 0) {
       filterAlert.setAttribute('data-text', this._warnings.size > 1 ? 'map.has_multi_filter_alert' : this._warnings.values().next().value);
-      Language.translateDom(filterAlert);
+      filterAlert.textContent = Language.get('map.has_multi_filter_alert');
     }
 
     clearTimeout(this.toggleFilterWarning.timeout);
