@@ -43,7 +43,7 @@ class Pin {
         option.textContent = Language.get(`map.user_pins.color.${color}`);
         markerColorSelect.appendChild(option);
 
-        if (color === this.color) option.setAttribute('selected', 'selected');
+        option.selected = color === this.color;
       });
 
       markerIcons.forEach(icon => {
@@ -52,7 +52,8 @@ class Pin {
         option.setAttribute('data-text', `map.user_pins.icon.${icon}`);
         option.textContent = Language.get(`map.user_pins.icon.${icon}`);
         markerIconSelect.appendChild(option);
-        if (icon === this.icon) option.setAttribute('selected', 'selected');
+        
+        option.selected = icon === this.icon;
       });
 
       snippet = document.createElement('div');

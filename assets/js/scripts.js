@@ -1061,7 +1061,7 @@ document.getElementById('open-custom-marker-color-modal').addEventListener('clic
     });
     return a - b;
   });
-  const savedColors = Object.assign({}, baseColors, JSON.parse(localStorage.getItem('rdr2collector.customMarkersColors') || localStorage.getItem('customMarkersColors')) || {});
+  const savedColors = Object.assign(baseColors, JSON.parse(localStorage.getItem('rdr2collector.customMarkersColors') || localStorage.getItem('customMarkersColors')) || {});
   const wrapper = document.createElement('div');
   wrapper.id = 'custom-markers-colors';
 
@@ -1072,7 +1072,7 @@ document.getElementById('open-custom-marker-color-modal').addEventListener('clic
     snippet.setAttribute('data-help', 'custom_marker_color');
     
     const label = document.createElement('label');
-    label.setAttribute('for', `${category}-custom-marker-color`);
+    label.setAttribute('for', 'custom-marker-color');
     label.setAttribute('data-text', `menu.${category}`);
     snippet.appendChild(label);
 
@@ -1094,7 +1094,7 @@ document.getElementById('open-custom-marker-color-modal').addEventListener('clic
   });
 
   const translatedContent = Language.translateDom(wrapper);
-  document.getElementById('custom-marker-color-modal').querySelector('#custom-colors').innerHTML = translatedContent;
+  document.getElementById('custom-marker-color-modal').querySelector('#custom-colors').appendChild(translatedContent);
   $('#custom-marker-color-modal').modal('show');
   wrapper.querySelectorAll('.input-container').forEach(inputContainer => {
     inputContainer.addEventListener('change', event => {
