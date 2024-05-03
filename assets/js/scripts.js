@@ -1023,19 +1023,20 @@ function formatLootTableLevel(table, rate = 1, level = 0) {
 
 $('#loot-table-modal').on('show.bs.modal', function (event) {
   // Get related loot table.
-  const button = $(event.relatedTarget);
-  const table = button.attr('data-loot-table');
-  let wrapper = $('<div class="loot-tables-wrapper">');
+  const button = event.relatedTarget;
+  const table = button.getAttribute('data-loot-table');
+  let wrapper = document.createElement('div');
+  wrapper.classList.add('loot-tables-wrapper');
 
   // Format loot table.
   const tables = MapBase.lootTables.categories[table];
   tables.forEach(table => {
-    wrapper.append(formatLootTableLevel(table));
+    wrapper.appendChild(formatLootTableLevel(table));
   });
 
   // Append loot table to modal.
-  const translatedContent = Language.translateDom(wrapper)[0];
-  $('#loot-table-modal #loot').html(translatedContent);
+  const translatedContent = Language.translateDom(wrapper).outerHTML;
+  document.getElementById('loot-table-modal').querySelector('#loot').innerHTML = translatedContent;
 });
 
 
