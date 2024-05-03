@@ -179,7 +179,6 @@ function init() {
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.mapInit(); // MapBase.map
   Language.init();
-  Language.setMenuLanguage();
   Pins.init();
   changeCursor();
   // MapBase.markers (without .lMarker), Item.items[].markers
@@ -1210,4 +1209,10 @@ function timeRange(from, to) {
     if (times.length >= 24) break;
   }
   return times;
+}
+
+function isEmptyObject(obj) {
+  if (obj == null) return true;
+  if (typeof obj !== 'object') return false;
+  return Object.keys(obj).length === 0;
 }

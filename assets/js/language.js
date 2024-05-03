@@ -1,10 +1,3 @@
-jQuery.fn.translate = function () {
-  return Language.translateDom(this);
-};
-jQuery.fn.findWithSelf = function (...args) {
-  return this.pushStack(this.find(...args).add(this.filter(...args)));
-};
-
 const Language = {
   data: {},
   availableLanguages: ['en', 'af', 'ar', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'es-MX', 'fi', 'fr', 'he', 'hu', 'it', 'ja', 'ko', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sr', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-Hans', 'zh-Hant'],
@@ -18,28 +11,29 @@ const Language = {
       langs.push(Settings.language);
     }
 
-    langs.forEach(language => {
-      $.ajax({
-        url: `./langs/${language.replace('-', '_')}.json?nocache=${nocache}&date=${new Date().toISOUTCDateString()}`,
-        async: false,
-        dataType: 'json',
-        success: function (json) {
-          let result = {};
-
-          for (const propName in json) {
-            if (json[propName] !== "" && ($.isEmptyObject(Language.data.en) || Language.data.en[propName] !== json[propName])) {
-              result[propName] = json[propName];
-            }
-          }
-
-          Language.data[language] = result;
+    const fetchTranslations = langs.map(async language => {
+      const response = await fetch(`./langs/${language.replace('-', '_')}.json?nocache=${nocache}&date=${new Date().toISOUTCDateString()}`);
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText} on ${response.url}. Failed to fetch translation data for ${language}`);
+      }
+      const json = await response.json();
+      let result = {};
+      
+      for (const propName in json) {
+        if (json[propName] !== "" && (isEmptyObject(Language.data.en) || Language.data.en[propName] !== json[propName])) {
+          result[propName] = json[propName];
         }
-      });
+      }
+
+      Language.data[language] = result;
     });
 
-    return Loader.promises['lang_progress'].consumeJson(data => {
-      this.progress = data;
-      this.updateProgress();
+    return Promise.all(fetchTranslations).then(() => {
+      return Loader.promises['lang_progress'].consumeJson(data => {
+        this.progress = data;
+        this.setMenuLanguage();
+        this.updateProgress();
+      });
     });
   },
 
@@ -90,12 +84,11 @@ const Language = {
 
   translateDom: function (context) {
     'use strict';
-    $(context || document).findWithSelf('[data-text]').html(function () {
-      const $this = $(this);
-      const string = Language.get($this.attr('data-text'), $this.data('text-optional'));
+    Array.from((context || document).querySelectorAll('[data-text]')).forEach(element => {
+      const string = Language.get(element.getAttribute('data-text'), element.dataset.textOptional);
 
       // Don't dump raw variables out to the user here, instead make them appear as if they are loading.
-      return string.replace(/\{([\w.]+)\}/g, '---');
+      element.innerHTML = string.replace(/\{([\w.]+)\}/g, '---');
     });
     return context;
   },
@@ -104,22 +97,28 @@ const Language = {
     'use strict';
 
     if (Language.data[Settings.language] === undefined) {
-      $.ajax({
-        url: `./langs/${Settings.language.replace('-', '_')}.json?nocache=${nocache}&date=${new Date().toISOUTCDateString()}`,
-        async: false,
-        dataType: 'json',
-        success: function (json) {
-          let result = {};
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', `./langs/${Settings.language.replace('-', '_')}.json?nocache=${nocache}&date=${new Date().toISOUTCDateString()}`, false);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            const json = JSON.parse(xhr.responseText);
+            let result = {};
 
-          for (const propName in json) {
-            if (json[propName] !== "" && ($.isEmptyObject(Language.data.en) || Language.data.en[propName] !== json[propName])) {
-              result[propName] = json[propName];
+            for (const propName in json) {
+              if (json[propName] !== "" && ($.isEmptyObject(Language.data.en) || Language.data.en[propName] !== json[propName])) {
+                result[propName] = json[propName];
+              }
             }
-          }
 
-          Language.data[Settings.language] = result;
+            Language.data[Settings.language] = result;
+          } else {
+            console.error(`Failed to fetch translation data for ${Settings.language}. Status code: ${xhr.status}`);
+          }
         }
-      });
+      };
+      xhr.send();
     }
 
     const wikiBase = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/';
@@ -130,30 +129,30 @@ const Language = {
       'pt': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',
     };
     const wikiLang = Settings.language in wikiPages ? Settings.language : 'en';
-    $('.wiki-page').attr('href', wikiBase + wikiPages[wikiLang]);
+    document.querySelector('.wiki-page').setAttribute('href', wikiBase + wikiPages[wikiLang]);
 
     this.translateDom();
 
-    $('#search').attr("placeholder", Language.get('menu.search_placeholder'));
+    document.getElementById('search').setAttribute('placeholder', Language.get('menu.search_placeholder'));
 
     FME.update();
     this.updateProgress();
   },
 
   updateProgress: function () {
-    $('#language option').each((key, value) => {
-      const item = $(value).attr('value').replace('-', '_');
+    document.querySelectorAll('#language option').forEach(option => {
+      const item = option.getAttribute('value').replace('-', '_');
       let percent = this.progress[item];
 
       if (item === "en") percent = 100;
       if (!percent) percent = 0;
 
-      $(value).text(`${Language.get('menu.lang_' + item)} (${percent}%)`);
+      option.textContent = `${Language.get('menu.lang_' + item)} (${percent}%)`;
     });
 
     let thisProg = this.progress[Settings.language.replace('-', '_')];
     if (Settings.language === "en") thisProg = 100;
     if (!thisProg) thisProg = 0;
-    $('#translation-progress').text(Language.get('menu.translate_progress').replace('{progress}', thisProg))
+    document.getElementById('translation-progress').textContent = Language.get('menu.translate_progress').replace('{progress}', thisProg);
   }
 };
