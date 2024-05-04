@@ -461,15 +461,23 @@ class Marker {
 
     isShadowsEnabled || snippet.querySelector('.shadow').remove();
     {
-      let detail = this.buggy ? ['cross', 'crossed out']
-        : ['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId) ? ['time', 'timed']
-        : this.height === 1 ? ['high', 'high ground']
-        : this.height === -1 ? ['low', 'underground/low ground']
-        : false;
+      let detail = false;
+      if (this.buggy) {
+        detail = ['cross', 'crossed out'];
+      } else if (['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId)) {
+        detail = ['time', 'timed'];
+      } else if (this.height === 1) {
+        detail = ['high', 'high ground'];
+      } else if (this.height === -1) {
+        detail = ['low', 'underground/low ground'];
+      }
       const extra = snippet.querySelector('.overlay');
-      detail ?
-        (extra.setAttribute('src', `${aii}/overlay_${detail[0]}.png`), extra.setAttribute('alt', detail[1])) : 
+      if (detail) {
+        extra.setAttribute('src', `${aii}/overlay_${detail[0]}.png`);
+        extra.setAttribute('alt', detail[1]);
+      } else {
         extra.remove();
+      }
     }
 
     let itemString = `${Language.get(this.itemTranslationKey)} ${this.itemNumberStr}`;

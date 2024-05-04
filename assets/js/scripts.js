@@ -356,7 +356,15 @@ function clockTick() {
     const whiteGlow = 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .3rem #fff)';
     const redGlow = 'drop-shadow(0 0 .5rem #cc0000) drop-shadow(0 0 .4rem #cc0000)';
     const pinkGlow = 'drop-shadow(0 0 .5rem #ff6fc7) drop-shadow(0 0 .3rem #ff6fc7)';
-    marker.style.filter = MapBase.isPreviewMode ? 'none' : (isImportant && nightTime ? pinkGlow : (isImportant ? redGlow : (nightTime ? whiteGlow : 'none')));
+    if (MapBase.isPreviewMode) {
+      marker.style.filter = 'none';
+    } else if (isImportant && nightTime) {
+      marker.style.filter = pinkGlow;
+    } else if (isImportant) {
+      marker.style.filter = redGlow;
+    } else {
+      marker.style.filter = nightTime ? whiteGlow : 'none';
+    }
   });
 
   document.querySelectorAll('.leaflet-marker-icon[data-time]').forEach(marker => {

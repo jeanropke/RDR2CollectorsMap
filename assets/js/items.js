@@ -135,7 +135,9 @@ class Item extends BaseItem {
     value = value < 0 ? 0 : value;
     value ? localStorage.setItem(this._amountKey, value) : localStorage.removeItem(this._amountKey);
     [this.menuButton.querySelector('.counter-number'), this.weeklyMenuButton && this.weeklyMenuButton.querySelector('.counter-number')].forEach(btn => {
-      btn && (btn.textContent = value, btn.classList.toggle('text-danger', value >= InventorySettings.stackSize));
+      if (!btn) return;  
+      btn.textContent = value;  
+      btn.classList.toggle('text-danger', value >= InventorySettings.stackSize);
     });
     this.markers.forEach(m => m.updateOpacity());
   }

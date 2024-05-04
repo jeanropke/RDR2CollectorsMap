@@ -238,18 +238,22 @@ class Collection extends BaseCollection {
     const containsBuggedItems = categoryItems.some(item => item.isBugged);
     const containsRandomItems = categoryItems.some(item => item.isRandom);
     const isSameCycle = Cycles.isSameAsYesterday(this.category);
-    this.menuButton.dataset.help = isSameCycle
-      ? 'item_category_same_cycle'
-      : containsBuggedItems && containsRandomItems
-      ? 'item_category_unavailable_items'
-      : containsBuggedItems
-      ? 'item_category_bugged_items'
-      : containsRandomItems
-      ? 'item_category_random_items'
-      : 'item_category';
+    this.menuButton.dataset.help = (() => {
+      if (isSameCycle) {
+        return 'item_category_same_cycle';
+      } else if (containsBuggedItems && containsRandomItems) {
+        return 'item_category_unavailable_items';
+      } else if (containsBuggedItems) {
+        return 'item_category_bugged_items';
+      } else if (containsRandomItems) {
+        return 'item_category_random_items';
+      } else {
+        return 'item_category';
+      }
+    })();
     this.menuButton.classList.toggle('random-category', containsRandomItems);
     this.menuButton.classList.toggle('not-found', containsBuggedItems);
-    this.menuButton.querySelector('.same-cycle-warning-menu').style.display = isSameCycle ? '' : 'none';
+    this.menuButton.querySelector('.same-cycle-warning-menu').style.display = isSameCycle !== false ? '' : 'none';
     this.updateCounter();
   }
   updateCounter() {

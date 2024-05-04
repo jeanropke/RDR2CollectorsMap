@@ -222,11 +222,6 @@ class Menu {
         }
         helpParagraph.innerHTML = Language.get(`help.${helpTransId}`);
       });
-      element.addEventListener('mouseout', event => {
-        const target = event.relatedTarget;
-        if (help.contains(target)) return;
-        helpParagraph.innerHTML = '';
-      });
     });
 
     const tools = document.getElementById('tools');
