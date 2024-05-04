@@ -1903,7 +1903,7 @@
     "menu.lang_vi": "Tiếng Việt (越南语)",
     "menu.lang_zh_Hans": "简体中文",
     "menu.lang_zh_Hant": "繁體中文 (繁体中文)",
-    "menu.marker_color.custom": "自定义起始点",
+    "menu.marker_color.custom": "自定义",
     "menu.custom_marker_color": "设置自定义标记颜色",
     "menu.custom_marker_color_title": "自定义标记颜色",
     "menu.custom_marker_color_body": "为每个类别设置自定义颜色：",
