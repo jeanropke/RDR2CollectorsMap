@@ -311,7 +311,7 @@ const Cycles = {
     document.getElementById('cycle-next').classList.remove('disable-cycle-changer-arrow');
 
     if (Cycles.offset <= -Cycles.backwardMaxOffset)
-      $('#cycle-prev').addClass('disable-cycle-changer-arrow');
+      document.getElementById('cycle-prev').classList.add('disable-cycle-changer-arrow');
 
     if (Cycles.offset < -Cycles.backwardMaxOffset) {
       Cycles.offset = -Cycles.backwardMaxOffset;

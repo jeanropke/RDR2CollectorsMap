@@ -107,7 +107,7 @@ const Language = {
             let result = {};
 
             for (const propName in json) {
-              if (json[propName] !== "" && ($.isEmptyObject(Language.data.en) || Language.data.en[propName] !== json[propName])) {
+              if (json[propName] !== "" && (isEmptyObject(Language.data.en) || Language.data.en[propName] !== json[propName])) {
                 result[propName] = json[propName];
               }
             }

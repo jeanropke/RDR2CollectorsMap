@@ -331,10 +331,12 @@ const Routes = {
     lng = parseFloat(lng) ? parseFloat(lng) : 8.0313;
 
     document.getElementById('generate-route-start').value = 'Custom';
-    document.getElementById('generate-route-start-lat').value = lat;
-    $('#generate-route-start-lat').parent().show();
-    document.getElementById('generate-route-start-lng').value = lng;
-    $('#generate-route-start-lng').parent().show();
+    const generateRouteStartLatEl = document.getElementById('generate-route-start-lat');
+    generateRouteStartLatEl.value = lat;
+    generateRouteStartLatEl.parentElement.style.display = 'block';
+    const generateRouteStartLngEl = document.getElementById('generate-route-start-lng');
+    generateRouteStartLngEl.value = lng;
+    generateRouteStartLngEl.parentElement.style.display = 'block';
 
     RouteSettings.genPathStart = 'Custom';
     RouteSettings.startMarkerLat = lat;
