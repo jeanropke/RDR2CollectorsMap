@@ -306,8 +306,9 @@ const FME = {
       this.checked = (Settings.fmeEnabledEvents && FME.flags[id]);
     });
 
+    const fmeModal = new bootstrap.Modal(document.getElementById('fme-enabled-events-modal'));
     openFmeModal.addEventListener('click', function () {
-      $('#fme-enabled-events-modal').modal();
+      fmeModal.show();
     });
 
     return Loader.promises['fme'].consumeJson(eventsData => {

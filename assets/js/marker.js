@@ -346,7 +346,7 @@ class Marker {
       </span>
       <p class='marker-popup-links'>
         <span><a href="${videoUrl}" target="_blank" data-text="map.video"></a> |</span>
-        <span><a href="" data-text="map.view_loot" data-toggle="modal" data-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a> |</span>
+        <span><a href="" data-text="map.view_loot" data-bs-toggle="modal" data-bs-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a> |</span>
         <span><a href="" data-text="${this.item && this.item.isImportant ? 'map.unmark_important' : 'map.mark_important'}"></a> |</span>
         <span><a href="" data-text="map.copy_link"></a></span>
       </p>

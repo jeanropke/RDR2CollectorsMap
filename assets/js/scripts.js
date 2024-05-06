@@ -97,7 +97,7 @@ L.Icon.TimedData = L.Icon.extend({
 - they can depend on their order here
 - unfortunately some async dependencies are not properly taken care of (yet)
 */
-$(function () {
+document.addEventListener('DOMContentLoaded', function() {
   try {
     init();
   } catch (e) {
@@ -951,38 +951,45 @@ document.getElementById('reload-map').addEventListener('click', function () {
   location.reload(true);
 });
 
+const clearMarkersModal = new bootstrap.Modal(document.getElementById('clear-markers-modal'));
 document.getElementById('open-clear-markers-modal').addEventListener('click', function () {
-  $('#clear-markers-modal').modal();
+  clearMarkersModal.show();
 });
 
+const clearImportantItemsModal = new bootstrap.Modal(document.getElementById('clear-important-items-modal'));
 document.getElementById('open-clear-important-items-modal').addEventListener('click', function () {
-  $('#clear-important-items-modal').modal();
+  clearImportantItemsModal.show();
 });
 
+const clearInventoryModal = new bootstrap.Modal(document.getElementById('clear-inventory-modal'));
 document.getElementById('open-clear-inventory-modal').addEventListener('click', function () {
-  $('#clear-inventory-modal').modal();
+  clearInventoryModal.show();
 });
 
+const clearRoutesModal = new bootstrap.Modal(document.getElementById('clear-routes-modal'));
 document.getElementById('open-clear-routes-modal').addEventListener('click', function () {
-  $('#clear-routes-modal').modal();
+  clearRoutesModal.show();
 });
 
+const deleteAllSettingsModal = new bootstrap.Modal(document.getElementById('delete-all-settings-modal'));
 document.getElementById('open-delete-all-settings-modal').addEventListener('click', function () {
-  $('#delete-all-settings-modal').modal();
+  deleteAllSettingsModal.show();
 });
 
+const removeAllPinsModal = new bootstrap.Modal(document.getElementById('remove-all-pins-modal'));
 document.getElementById('open-remove-all-pins-modal').addEventListener('click', function () {
-  $('#remove-all-pins-modal').modal();
+  removeAllPinsModal.show();
 });
 
 document.getElementById('open-updates-modal').addEventListener('click', function () {
   Updates.showModal();
 });
 
+const importRDOInventoryModal = new bootstrap.Modal(document.getElementById('import-rdo-inventory-modal'));
 document.getElementById('open-import-rdo-inventory-modal').addEventListener('click', function () {
   const textarea = document.getElementById('rdo-inventory-textarea');
   if(textarea) textarea.value = '';
-  $('#import-rdo-inventory-modal').modal();
+  importRDOInventoryModal.show();
 });
 
 function formatLootTableLevel(table, rate = 1, level = 0) {
@@ -1028,7 +1035,8 @@ function formatLootTableLevel(table, rate = 1, level = 0) {
   return result;
 }
 
-$('#loot-table-modal').on('show.bs.modal', function (event) {
+const lootTableModalEl = document.getElementById('loot-table-modal');
+lootTableModalEl.addEventListener('show.bs.modal', function (event) {
   // Get related loot table.
   const button = event.relatedTarget;
   const table = button.getAttribute('data-loot-table');
@@ -1043,10 +1051,10 @@ $('#loot-table-modal').on('show.bs.modal', function (event) {
 
   // Append loot table to modal.
   const translatedContent = Language.translateDom(wrapper).outerHTML;
-  document.getElementById('loot-table-modal').querySelector('#loot').innerHTML = translatedContent;
+  lootTableModalEl.querySelector('#loot').innerHTML = translatedContent;
 });
 
-
+const customMarkerColorModal = new bootstrap.Modal(document.getElementById('custom-marker-color-modal'));
 document.getElementById('open-custom-marker-color-modal').addEventListener('click', event => {
   const markerColors = ['aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple', 'darkred', 'gray', 'green', 'lightblue', 'lightgray', 'lightgreen', 'lightorange', 'lightred', 'orange', 'pink', 'purple', 'red', 'white', 'yellow']
     .sort((...args) => {
@@ -1103,7 +1111,7 @@ document.getElementById('open-custom-marker-color-modal').addEventListener('clic
 
   const translatedContent = Language.translateDom(wrapper);
   document.getElementById('custom-marker-color-modal').querySelector('#custom-colors').appendChild(translatedContent);
-  $('#custom-marker-color-modal').modal('show');
+  customMarkerColorModal.show();
   wrapper.querySelectorAll('.input-container').forEach(inputContainer => {
     inputContainer.addEventListener('change', event => {
         baseColors[event.target.id.split('-')[0]] = event.target.value;

@@ -42,6 +42,6 @@ class Mapping {
             snippet.appendChild(div);
         });
         document.querySelector('#mapping-modal .modal-body').appendChild(snippet);
-        $('#mapping-modal').modal('show');
+        new bootstrap.Modal(document.getElementById('mapping-modal')).show();
     }
 }

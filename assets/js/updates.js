@@ -62,6 +62,7 @@ class Updates {
     }
     
     modalBody.appendChild(Language.translateDom(snippet));
-    $('#map-updates-modal').modal('show');
+    const updatesModal = new bootstrap.Modal(document.getElementById('map-updates-modal'));
+    updatesModal.show();
   }
 }

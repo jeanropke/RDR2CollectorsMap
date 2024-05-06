@@ -163,7 +163,7 @@ class Pins {
     });
 
     document.getElementById('open-remove-all-pins-modal').addEventListener('click', function () {
-      $('#remove-all-pins-modal').modal();
+      removeAllPinsModal.show();
     });
 
     document.getElementById('remove-all-pins').addEventListener('click', function () {
