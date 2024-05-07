@@ -155,17 +155,21 @@ class Item extends BaseItem {
     const isCollected = currentMarkers.every(marker => !marker.canCollect);
     const isRandom = currentMarkers.every(marker => marker.isRandomizedItem);
 
-    this.menuButton.dataset.help = isBugged
-      ? 'item_unavailable'
-      : isRandom && parentCategories.jewelry_random.includes(this.category) && MapBase.jewelryTimestamps[this.itemId]
-      ? 'jewelry_random_timestamp'
-      : isRandom
-      ? 'item_random'
-      : ['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId)
-      ? 'item_night_only'
-      : this.isWeekly()
-      ? 'item_weekly'
-      : 'item';
+    this.menuButton.dataset.help = (() => {
+        if (isBugged) {
+          return 'item_unavailable';
+        } else if (isRandom && parentCategories.jewelry_random.includes(this.category) && !!MapBase.jewelryTimestamps[this.itemId]) {
+          return 'jewelry_random_timestamp';
+        } else if (isRandom) {
+          return 'item_random';
+        } else if (['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId)) {
+          return 'item_night_only';
+        } else if (this.isWeekly()) {
+          return 'item_weekly';
+        } else {
+          return 'item';
+        }
+    })();
     this.menuButton.classList.toggle('weekly-item', this.isWeekly());
     const collectibleTextP = this.menuButton.querySelector('.collectible-text p');
     collectibleTextP.classList.toggle('disabled', isCollected);
