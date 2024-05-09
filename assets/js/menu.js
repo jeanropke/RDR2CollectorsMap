@@ -105,7 +105,7 @@ class Menu {
     document.getElementById('cycle-next').addEventListener('click', Cycles.nextCycle);
 
     //toggle one collection category or disable/enable all at once
-    document.querySelectorAll('.menu-option[data-type], .links-container a[data-text^="menu."][data-text$="_all"]').forEach(item => {
+    document.querySelectorAll('.menu-option[data-type], .links-container button[data-text^="menu."][data-text$="_all"]').forEach(item => {
       item.addEventListener('click', function() {
         const category = this.getAttribute('data-type');
         const toEnable = category ? this.classList.contains('disabled') : this.getAttribute('data-text') === 'menu.show_all';

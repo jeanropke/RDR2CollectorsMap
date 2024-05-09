@@ -11,8 +11,8 @@ class Legendary {
     pane.style.pointerEvents = 'none';
 
     this.onSettingsChanged();
-    document.querySelectorAll('.menu-hidden[data-type="legendary_animals"] > *:first-child a').forEach((a) =>
-      a.addEventListener('click', (e) => {
+    document.querySelectorAll('.menu-hidden[data-type="legendary_animals"] > *:first-child button').forEach((btn) =>
+      btn.addEventListener('click', (e) => {
         e.preventDefault();
         const showAll = e.target.getAttribute('data-text') === 'menu.show_all';
         Legendary.animals.forEach(animal => animal.onMap = showAll);

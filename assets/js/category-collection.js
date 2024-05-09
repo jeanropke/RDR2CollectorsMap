@@ -50,7 +50,7 @@ class Weekly extends BaseCollection {
         </p>
         <div class="collection-value">
           <span class="weekly-set-value" data-help="item_value">$${this.weeklySetValue.toFixed(2)}</span>
-          <span class="collection-sell" data-text="menu.sell" data-help="item_sell">Sell</span>
+          <button class="collection-sell btn btn-light" data-text="menu.sell" data-help="item_sell">Sell</button>
         </div>
       </div>
     `;
@@ -179,6 +179,13 @@ class Collection extends BaseCollection {
           }
           event.stopImmediatePropagation();
         }, true);
+
+        sideMenu.addEventListener('touchend', event => {
+          if (event.target.classList.contains('btn-light')) {
+            event.target.style.setProperty('--bs-btn-hover-bg', 'transparent');
+          }
+          event.stopImmediatePropagation();
+        }, true);
     });
   }
   _insertMenuElement() {
@@ -202,12 +209,12 @@ class Collection extends BaseCollection {
           <div class="collection-value">
             <span class="collection-collected" data-help="collection_collected"></span>
             <span data-help="item_value">$${this.price.toFixed(2)}</span>
-            <span class="collection-reset" data-text="menu.reset" data-help="item_reset">Reset</span>
-            <span class="collection-sell" data-text="menu.sell" data-help="item_sell">Sell</span>
+            <button class="collection-reset btn btn-light" data-text="menu.reset" data-help="item_reset">Reset</button>
+            <button class="collection-sell btn btn-light" data-text="menu.sell" data-help="item_sell">Sell</button>
           </div>
           <div class="collection-value-bottom">
-            <span class="disable-collected-items" data-text="menu.disable_collected_items" data-help="disable_collected_items">Disable collected</span>
-            <span class="collection-collect-all" data-text="menu.collection_collect_all" data-help="collection_collect_all">Collect all</span>
+            <button class="disable-collected-items btn btn-light" data-text="menu.disable_collected_items" data-help="disable_collected_items">Disable collected</button>
+            <button class="collection-collect-all btn btn-light" data-text="menu.collection_collect_all" data-help="collection_collect_all">Collect all</button>
           </div>
         </div>
       </div>

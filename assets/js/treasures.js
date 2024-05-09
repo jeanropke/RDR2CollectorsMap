@@ -15,8 +15,8 @@ class Treasure {
       iconAnchor: [8, 8],
     });
     this.onSettingsChanged();
-    document.querySelectorAll('.menu-hidden[data-type="treasure"] > *:first-child a').forEach((a) =>
-      a.addEventListener('click', (e) => {
+    document.querySelectorAll('.menu-hidden[data-type="treasure"] > *:first-child button').forEach((btn) =>
+      btn.addEventListener('click', (e) => {
         e.preventDefault();
         const showAll = e.target.getAttribute('data-text') === 'menu.show_all';
         Treasure.treasures.forEach((treasure) => (treasure.onMap = showAll));
