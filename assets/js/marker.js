@@ -388,7 +388,9 @@ class Marker {
     });
     importanceBtn.parentElement.style.display = !this.isRandomizedItem ? '' : 'none';
     
-    snippet.querySelector('.remove-button').addEventListener('click', () => {
+    snippet.querySelector('.remove-button').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
       MapBase.removeItemFromMap(this.cycleName, this.text, this.subdata || '', this.category);
     });
     if (!Cycles.isSameAsYesterday(this.category) && !unknownCycle) {
@@ -419,8 +421,14 @@ class Marker {
       small.classList.toggle('text-danger', this.item.amount >= InventorySettings.stackSize);
       small.setAttribute('data-item', this.text);
       small.textContent = this.item.amount;
-      inventoryButtons.querySelectorAll('button').forEach(button => {
-        button.addEventListener('click', e => this.item.changeAmountWithSideEffects(e.target.classList.contains('btn-danger') ? -1 : 1));
+      inventoryButtons.querySelectorAll('button').forEach((button) => {
+        button.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          this.item.changeAmountWithSideEffects(
+            e.target.classList.contains('btn-danger') ? -1 : 1
+          );
+        });
       });
     } else {
       inventoryButtons.style.display = 'none';

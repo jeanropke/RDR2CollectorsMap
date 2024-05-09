@@ -136,7 +136,8 @@ const MapBase = {
     L.control.layers(mapLayers).addTo(MapBase.map);
 
     // Leaflet leaves the layer names here, with a space in front of them.
-    document.querySelectorAll('.leaflet-control-layers-list span').forEach(node => {
+    document.querySelectorAll('.leaflet-control-layers-list span span').forEach(node => {
+      // changes: Apply double span selector here using Leaflet 1.8.0+
       // Move the layer name (which is chosen to be our language key) into a
       // new tightly fitted span for use with our localization.
       const langKey = node.textContent.trim();
