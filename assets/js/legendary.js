@@ -47,9 +47,9 @@ class Legendary {
     Language.translateDom(this.element);
     this.species = this.text.replace(/^mp_animal_|_legendary_\d+$/g, '');
     this.animalSpeciesKey = `rdr2collector.Legendaries_category_time_${this.species}`;
-    this.preferred_weather = Language.get(`map.weather.${this.preferred_weather}`);
-    this.trader_materials = this.trader_materials || Language.get('map.cant_be_picked_up');
-    this.trapper_value = this.trapper_value ? `$${this.trapper_value.toFixed(2)}` : Language.get('map.cant_be_picked_up');
+    this.preferred_weather = `map.weather.${this.preferred_weather}`;
+    this.trader_materials = this.trader_materials || 'map.cant_be_picked_up';
+    this.trapper_value = this.trapper_value ? `$${this.trapper_value.toFixed(2)}` : 'map.cant_be_picked_up';
     this.trapper_pelt_value = `$${this.trapper_pelt_value.toFixed(2)}`;
     this.trapper_part_value = `$${this.trapper_part_value.toFixed(2)}`;
     this.sample_value = `$${this.sample_value.toFixed(2)}`;
@@ -132,7 +132,11 @@ class Legendary {
     this.spawn_time_string = this.spawn_time.map(timeRange => timeRange.map(hour => convertToTime(hour)).join(' - ')).join(', ');
 
     snippet.querySelectorAll('span > p').forEach(p => {
-      const propertyText = Language.get(p.getAttribute('data-text')).replace(/{([a-z_]+)}/, (full, key) => this[key]);
+      const propertyText = Language.get(p.getAttribute('data-text'))
+        .replace(
+          /{([a-z_]+)}/,
+          (full, key) => Language.get(String(this[key]))
+        );
       p.textContent = propertyText;
     });
 
