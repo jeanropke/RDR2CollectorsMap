@@ -633,7 +633,7 @@ document.getElementById('enable-legendary-backgrounds').addEventListener('change
   Legendary.onSettingsChanged();
 });
 
-document.getElementById('invisible-removed-markers').addEventListener('change', function () {
+document.getElementById('legendary-animal-marker-type').addEventListener('change', function () {
   Settings.legendarySpawnIconType = this.value;
   Legendary.onSettingsChanged();
 });
