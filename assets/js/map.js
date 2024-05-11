@@ -10,7 +10,6 @@ const MapBase = {
   // (you also have to load overlays_beta.json instead of overlays.json in loader.js)
   interiors: false,
   updateLoopAvailable: true,
-  updateTippyTimer: null,
   tippyInstances: [],
   requestLoopCancel: false,
   showAllMarkers: false,
@@ -691,14 +690,17 @@ const MapBase = {
     let i = 0;
     (function chunk() {
       const end = Math.min(i + chunksize, count);
+      const promises = [];
       for (; i < end; ++i) {
-        callback.call(null, i);
+        promises.push(callback.call(null, i));
       }
-      if (i < count) {
-        setTimeout(chunk, 0);
-      } else {
-        finished.call(null);
-      }
+      Promise.all(promises).then(() => {
+        if (i < count) {
+          setTimeout(chunk, 0);
+        } else {
+          finished.call(null);
+        }
+      });
     })();
   },
 
@@ -707,8 +709,7 @@ const MapBase = {
       console.log('UpdateTippy called from', loc);
 
     // This is here to deal with stacked onMap updates (show all/hide all)
-    clearTimeout(MapBase.updateTippyTimer);
-    MapBase.updateTippyTimer = setTimeout(function () {
+    return new Promise(resolve => setTimeout(resolve, 300)).then(() => {
       if (Settings.isDebugEnabled)
         console.log('Updating MapBase Tippy...');
 
@@ -728,7 +729,7 @@ const MapBase = {
           return ref.getAttribute('data-tippy');
         },
       });
-    }, 300);
+    });
   },
 
   // Rectangle for testing.
