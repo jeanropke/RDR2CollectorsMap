@@ -1412,6 +1412,7 @@
     "menu.enable_dclick_zoom": "Podwójne kliknięcie przybliża mapę",
     "menu.show_help": "Pokaż podpowiedzi w menu",
     "map.mark_important": "Oznacz przedmiot jako ważny",
+    "map.unmark_important": "Usuń oznaczenie jako ważne",
     "menu.marker_opacity": "Przezroczystość znaczników",
     "menu.marker_opacity.20": "20%",
     "menu.marker_opacity.40": "40%",
