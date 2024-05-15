@@ -117,7 +117,7 @@ const MapBase = {
       crs: L.CRS.Simple,
       layers: [mapLayers[this.themeOverride || Settings.baseLayer]],
       zoomSnap: false,
-      zoomDelta: (this.maxZoom - this.minZoom) / ((this.maxZoom - this.minZoom) * 2 - 1),
+      zoomDelta: (this.maxZoom - this.minZoom) / ((this.maxZoom - this.minZoom) * 2),
       wheelPxPerZoomLevel: 70,
       wheelDebounceTime: 150,
     }).setView([this.viewportX, this.viewportY], this.viewportZoom);
