@@ -316,7 +316,9 @@ class Marker {
   popupContent() {
     const videoUrl = this[`video_${Settings.language}`] || this.video;
     const unknownCycle = this.cycleName == Cycles.unknownCycleNumber;
-    const snippet = $(`<div class="handover-wrapper-with-no-influence">
+    const snippet = document.createElement('div');
+    snippet.classList.add('handover-wrapper-with-no-influence');
+    snippet.innerHTML = `
       <h1>
         <span data-text="${this.itemTranslationKey}"></span> ${this.itemNumberStr}
         <span class="cycle-display hidden">
@@ -344,7 +346,7 @@ class Marker {
       </span>
       <p class='marker-popup-links'>
         <span><a href="${videoUrl}" target="_blank" data-text="map.video"></a> |</span>
-        <span><a href="" data-text="map.view_loot" data-toggle="modal" data-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a> |</span>
+        <span><a href="" data-text="map.view_loot" data-bs-toggle="modal" data-bs-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a> |</span>
         <span><a href="" data-text="${this.item && this.item.isImportant ? 'map.unmark_important' : 'map.mark_important'}"></a> |</span>
         <span><a href="" data-text="map.copy_link"></a></span>
       </p>
@@ -360,79 +362,86 @@ class Marker {
       <button type="button" class="btn btn-info remove-button" data-item="${this.text}"
         data-text="map.remove_add">
       </button>
-    </div>`);
+    `;
 
-    snippet.find('.cycle-display')
-      .toggleClass('hidden', !Settings.isCyclesVisible)
-      .end()
-      .find('.marker-popup-links')
-      .find('[data-text="map.copy_link"]')
-      .click((e) => {
-        e.preventDefault();
-        setClipboardText(`https://jeanropke.github.io/RDR2CollectorsMap/?m=${this.text}`);
-        $(e.currentTarget).attr('data-text', 'map.link_copied');
-        $('a[data-text=""]').append(Language.translateDom(snippet[0]));
-        setTimeout(() => {
-          $(e.currentTarget).attr('data-text', 'map.copy_link');
-          $('a[data-text=""]').append(Language.translateDom(snippet[0]));
-        }, 1000);
-      })
-      .end()
-      .find('[data-text="map.mark_important"], [data-text="map.unmark_important"]')
-      .click((e) => {
-        e.preventDefault();
-        this.item.isImportant = !this.item.isImportant;
-        $(e.currentTarget).attr('data-text', this.item.isImportant ? 'map.unmark_important' : 'map.mark_important');
-        $('a[data-text=""]').append(Language.translateDom(snippet[0]));
-      })
-      .parent()
-      .toggle(!this.isRandomizedItem)
-      .end();
-    snippet.find('.remove-button').click(() =>
-      MapBase.removeItemFromMap(this.cycleName, this.text, this.subdata || '', this.category));
+    snippet.querySelector('.cycle-display').classList.toggle('hidden', !Settings.isCyclesVisible);
+
+    snippet.querySelector('.marker-popup-links').querySelector('[data-text="map.copy_link"]').addEventListener('click', (e) => {
+      e.preventDefault();
+      setClipboardText(`https://jeanropke.github.io/RDR2CollectorsMap/?m=${this.text}`);
+      const currTarget = e.currentTarget;
+      currTarget.setAttribute('data-text', 'map.link_copied');
+      currTarget.textContent = Language.get('map.link_copied');
+      setTimeout(() => {
+        currTarget.setAttribute('data-text', 'map.copy_link');
+        currTarget.textContent = Language.get('map.copy_link');
+      }, 1000);
+    });
+
+    const importanceBtn = snippet.querySelector('.marker-popup-links').querySelector('[data-text="map.mark_important"], [data-text="map.unmark_important"]');
+    importanceBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      this.item.isImportant = !this.item.isImportant;
+      const currTarget = e.currentTarget;
+      currTarget.setAttribute('data-text', this.item.isImportant ? 'map.unmark_important' : 'map.mark_important');
+      currTarget.textContent = this.item.isImportant ? Language.get('map.unmark_important') : Language.get('map.mark_important');
+    });
+    importanceBtn.parentElement.style.display = !this.isRandomizedItem ? '' : 'none';
+    
+    snippet.querySelector('.remove-button').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      MapBase.removeItemFromMap(this.cycleName, this.text, this.subdata || '', this.category);
+    });
     if (!Cycles.isSameAsYesterday(this.category) && !unknownCycle) {
-      snippet.find('.marker-warning-wrapper').hide();
+      snippet.querySelector('.marker-warning-wrapper').style.display = 'none';
     } else {
       if (unknownCycle) {
-        snippet.find('[data-text="map.same_cycle_yesterday"]').hide();
+        snippet.querySelector('[data-text="map.same_cycle_yesterday"]').style.display = 'none';
       } else {
-        snippet.find('[data-text="map.unknown_cycle_description"]').hide();
+        snippet.querySelector('[data-text="map.unknown_cycle_description"]').style.display = 'none';
       }
-    }
-    snippet
-      .find('[data-text="weekly.desc"]').toggle(this.item && this.item.isWeekly()).end()
-      .find('[data-text="map.item.unable"]').toggle(this.buggy).end();
-    const toolImg = snippet.find('.tool-type');
+    };
+    snippet.querySelector('[data-text="weekly.desc"]').style.display = this.item && this.item.isWeekly() ? '' : 'none';
+    snippet.querySelector('[data-text="map.item.unable"]').style.display = this.buggy ? '' : 'none';
+    const toolImg = snippet.querySelector('.tool-type');
     if (!this.buggy && this.tool === 0) {
-      toolImg.hide();
+      toolImg.style.display = 'none';
     } else {
       const imgName = this.buggy ? 'cross' : { 1: 'shovel', 2: 'magnet' }[this.tool];
-      toolImg.attr('src', `assets/images/${imgName}.png`);
+      toolImg.src = `assets/images/${imgName}.png`;
     }
-    if (!Settings.isDebugEnabled) snippet.find('.popupContentDebug').hide();
-    if (!this.isRandomizedItem) snippet.find('[data-text="map.view_loot"]').parent().hide();
-    if (!videoUrl) snippet.find('[data-text="map.video"]').parent().hide();
-    const inventoryButtons = snippet.find('.marker-popup-buttons')
+    if (!Settings.isDebugEnabled) snippet.querySelector('.popupContentDebug').style.display = 'none';
+    if (!this.isRandomizedItem) snippet.querySelector('[data-text="map.view_loot"]').parentNode.style.display = 'none';
+    if (!videoUrl) snippet.querySelector('[data-text="map.video"]').parentNode.style.display = 'none';
+    const inventoryButtons = snippet.querySelector('.marker-popup-buttons');
     if (InventorySettings.isEnabled && InventorySettings.isPopupsEnabled &&
       this.category !== 'random' && this.item) {
-      inventoryButtons.find('small')
-        .toggleClass('text-danger', this.item.amount >= InventorySettings.stackSize)
-        .attr('data-item', this.text)
-        .text(this.item.amount);
-      inventoryButtons.find('button').click(e => this.item.changeAmountWithSideEffects($(e.target).hasClass('btn-danger') ? -1 : 1));
+      const small = inventoryButtons.querySelector('small');
+      small.classList.toggle('text-danger', this.item.amount >= InventorySettings.stackSize);
+      small.setAttribute('data-item', this.text);
+      small.textContent = this.item.amount;
+      inventoryButtons.querySelectorAll('button').forEach((button) => {
+        button.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          this.item.changeAmountWithSideEffects(
+            e.target.classList.contains('btn-danger') ? -1 : 1
+          );
+        });
+      });
     } else {
-      inventoryButtons.hide();
+      inventoryButtons.style.display = 'none';
     }
 
-    return Language.translateDom(snippet)[0];
+    return Language.translateDom(snippet);
   }
   updateColor() {
     if (!this.lMarker) return;
     const [bgUrl, contourUrl] = this.colorUrls();
-    $(this.lMarker.getElement())
-      .find('img.marker-contour').attr('src', contourUrl)
-      .end()
-      .find('img.background').attr('src', bgUrl);
+    const lMarkerEl = this.lMarker.getElement();
+    lMarkerEl?.querySelector('img.marker-contour').setAttribute('src', contourUrl);
+    lMarkerEl?.querySelector('img.background').setAttribute('src', bgUrl);
   }
   updateOpacity(opacity = Settings.markerOpacity, isInvisibleRemovedMarkers = Settings.isInvisibleRemovedMarkers) {
     let targetOpacity;
@@ -448,16 +457,17 @@ class Marker {
     const icon = this.category !== 'random' ? this.category : (this.tool === 1 ? 'shovel' : 'magnet');
     const [bgUrl, contourUrl] = this.colorUrls();
     const aii = 'assets/images/icons';
-    const snippet = $(`<div>
+    const snippet = document.createElement('div');
+    snippet.innerHTML = `
       <img class="overlay" src="${aii}/overlay_cross.png" alt="crossed out">
       <img class="marker-contour" src="${contourUrl}" alt="markerContour">
       <img class="icon" src="${aii}/${icon}.png" alt="Icon">
       <img class="background" src="${bgUrl}" alt="Background">
       <img class="shadow" width="${35 * markerSize}"
         height="${16 * markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">
-    </div>`);
+    `;
 
-    isShadowsEnabled || snippet.find('.shadow').remove();
+    isShadowsEnabled || snippet.querySelector('.shadow').remove();
     {
       let detail = false;
       if (this.buggy) {
@@ -469,10 +479,13 @@ class Marker {
       } else if (this.height === -1) {
         detail = ['low', 'underground/low ground'];
       }
-      const extra = snippet.find('.overlay');
-      detail ?
-        extra.attr('src', `${aii}/overlay_${detail[0]}.png`).attr('alt', detail[1]) :
+      const extra = snippet.querySelector('.overlay');
+      if (detail) {
+        extra.setAttribute('src', `${aii}/overlay_${detail[0]}.png`);
+        extra.setAttribute('alt', detail[1]);
+      } else {
         extra.remove();
+      }
     }
 
     let itemString = `${Language.get(this.itemTranslationKey)} ${this.itemNumberStr}`;
@@ -486,7 +499,7 @@ class Marker {
         iconSize: [35 * markerSize, 45 * markerSize],
         iconAnchor: [17 * markerSize, 42 * markerSize],
         popupAnchor: [1 * markerSize, -29 * markerSize],
-        html: snippet[0],
+        html: snippet,
         marker: this.text,
         tippy: `
           <div class="tippy-box hint">
@@ -521,26 +534,31 @@ class Marker {
       [InventorySettings, 'highlightStyle', 'animated', '#highlight_style'],
     ].forEach(([proxy, settingName, settingDefault, domSelector]) => {
       SettingProxy.addSetting(proxy, settingName, { default: settingDefault });
-      $(domSelector)
-        .find(`option[data-text$="${proxy[settingName]}"]`).prop('selected', true).end()
-        .on('change', e => {
-          proxy[settingName] = $(e.target.selectedOptions[0]).attr('data-text').split('.').pop();
+        document.querySelector(domSelector).querySelectorAll(`option[data-text$="${proxy[settingName]}"]`).forEach(option => {
+          if (option.getAttribute('data-text').endsWith(proxy[settingName])) {
+            option.selected = true;
+          }
+        });
+        document.querySelector(domSelector).addEventListener('change', e => {
+          const selectedOption = e.target.selectedOptions[0];
+          proxy[settingName] = selectedOption.getAttribute('data-text').split('.').pop();
           MapBase.addMarkers();
         });
     });
     MapBase.markers = [];
     return Loader.promises['items'].consumeJson(data => {
-      $.each(data, (category, allCycles) => {
-        $.each(allCycles, (cycleName, markers) => {
+      Object.entries(data).forEach(([category, allCycles]) => {
+        Object.entries(allCycles).forEach(([cycleName, markers]) => {
           markers.forEach(preliminaryMarker => {
             const marker = new Marker(preliminaryMarker, cycleName, category);
             MapBase.markers.push(marker);
-
             if (!marker.item) return;
-            if (!marker.category.includes(['fossils_random', 'jewelry_random', 'random'])) marker.item.markers.push(marker);
+            if (!['fossils_random', 'jewelry_random', 'random'].includes(marker.category)) {
+              marker.item.markers.push(marker);
+            }
           });
         });
       });
-    });
+  });
   }
 }

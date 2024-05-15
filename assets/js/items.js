@@ -15,27 +15,29 @@ class BaseItem {
   currentMarkers() {
     return this.markers.filter(marker => marker.isCurrent);
   }
-  _insertWeeklyMenuElement($listParent) {
-    this.$weeklyMenuButton = $(`
-      <div class="weekly-item-listing" ${this.legacyItemId ? `data-type="${this.legacyItemId}"` : ""} data-help="${this.weeklyHelpKey}">
+  _insertWeeklyMenuElement(listParent) {
+    const snippet = document.createElement('div');
+    snippet.classList.add('weekly-item-listing');
+    this.legacyItemId && snippet.setAttribute('data-type', this.legacyItemId);
+    snippet.setAttribute('data-help', this.weeklyHelpKey);
+    snippet.innerHTML = `
         <span>
           <div class="icon-wrapper"><img class="icon"
             src="./assets/images/icons/game/${this.itemId}.png" alt="Weekly item icon"></div>
           <span class="collectible" data-text="${this.itemTranslationKey}"></span>
         </span>
         <small class="counter-number counter-number-weekly">${this.amount}</small>
-      </div>
-    `).translate();
-    this.$weeklyMenuButton[0].rdoItem = this;
-    this.$weeklyMenuButton.appendTo($listParent);
+    `;
+    Language.translateDom(snippet);
+    this.weeklyMenuButton = snippet;
+    this.weeklyMenuButton.rdoItem = this;
+    listParent.appendChild(this.weeklyMenuButton);
     Loader.mapModelLoaded.then(() => {
-      SettingProxy.addListener(InventorySettings, 'isEnabled stackSize', () =>
-        this.$weeklyMenuButton
-          .find('.counter-number')
-          .toggle(InventorySettings.isEnabled)
-          .toggleClass('text-danger', this.amount >= InventorySettings.stackSize)
-          .end()
-      )();
+      SettingProxy.addListener(InventorySettings, 'isEnabled stackSize', () => {
+        const counterNum = this.weeklyMenuButton.querySelector('.counter-number');
+        counterNum.style.display = InventorySettings.isEnabled ? '' : 'none';
+        counterNum.classList.toggle('text-danger', this.amount >= InventorySettings.stackSize);
+      })();
     });
   }
 }
@@ -75,33 +77,35 @@ class Item extends BaseItem {
     });
   }
   static _installEventHandlers() {
-    $('.side-menu')
-      .on('contextmenu', event => {
-        const item = $(event.target).propSearchUp('rdoItem');
-        // clicked inside of the collectible, but outside of its counter part?
-        if (item && !event.target.closest('.counter')) {
-          event.preventDefault();
-          event.stopImmediatePropagation();
-          item.isImportant = !item.isImportant;
-        }
-      })[0].addEventListener('click', event => { // `.on()` can’t register to capture phase
-        if (event.target.classList.contains('counter-button')) {
-          event.stopImmediatePropagation();
-          const $target = $(event.target);
-          $target.closest('.collectible-wrapper')[0].rdoItem.changeAmountWithSideEffects($target.text() === '-' ? -1 : 1);
-        } else if (event.target.classList.contains('open-submenu')) {
-          event.stopPropagation();
-          $(event.target)
-            .toggleClass('rotate')
-            .parent().parent().children('.menu-hidden')
-            .toggleClass('opened');
-        }
-      }, { capture: true });
+    const sideMenu = document.querySelector('.side-menu');
+    sideMenu.addEventListener('contextmenu', event => {
+      const item = event.target.propSearchUp('rdoItem');
+      // clicked inside of the collectible, but outside of its counter part?
+      if (item && !event.target.closest('.counter')) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        item.isImportant = !item.isImportant;
+      }
+    });
+    sideMenu.addEventListener('click', event => {
+      // `.on()` can’t register to capture phase
+      const target = event.target;
+      if (target.classList.contains('counter-button')) {
+        event.stopImmediatePropagation();
+        target.closest('.collectible-wrapper').rdoItem.changeAmountWithSideEffects(target.textContent === '-' ? -1 : 1);
+      } else if (target.classList.contains('open-submenu')) {
+        event.stopPropagation();
+        target.classList.toggle('rotate');
+        target.parentElement.parentElement.querySelector('.menu-hidden').classList.toggle('opened');
+      }
+    }, true);
   }
   _insertMenuElement() {
-    this.$menuButton = $(`
-      <div class="collectible-wrapper" data-type="${this.legacyItemId}"
-        data-help="${['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId) ? 'item_night_only' : 'item'}">
+    const menuBtn = document.createElement('div');
+    menuBtn.classList.add('collectible-wrapper');
+    menuBtn.setAttribute('data-type', this.legacyItemId);
+    menuBtn.setAttribute('data-help', ['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId) ? 'item_night_only' : 'item');
+    menuBtn.innerHTML = `
         <img class="collectible-icon" src="assets/images/icons/game/${this.itemId}.png" alt="Set icon">
         <img class="collectible-icon random-spot" src="assets/images/icons/random_overlay.png" alt="Random set icon">
         <span class="collectible-text">
@@ -112,35 +116,29 @@ class Item extends BaseItem {
             --><div class="counter-button">+</div>
           </span>
         </span>
-      </div>
-    `).translate();
-    this.$menuButton[0].rdoItem = this;
+    `;
+    Language.translateDom(menuBtn);
+    this.menuButton =menuBtn;
+    this.menuButton.rdoItem = this;
     this.amount = this.amount; // trigger counter update
-    this.$menuButton
-      .appendTo(this.collection.$submenu)
+    this.collection.submenu.appendChild(this.menuButton);
     Loader.mapModelLoaded.then(() => {
-      SettingProxy.addListener(InventorySettings, 'isEnabled', () =>
-        this.$menuButton
-          .find('.counter')
-          .toggle(InventorySettings.isEnabled)
-          .end()
-      )();
+      SettingProxy.addListener(InventorySettings, 'isEnabled', () => {
+        this.menuButton.querySelector('.counter').style.display = InventorySettings.isEnabled ? '' : 'none';
+      })();
     });
   }
   get amount() {
     return +localStorage.getItem(this._amountKey);
   }
   set amount(value) {
-    if (value < 0) value = 0;
-    if (value) {
-      localStorage.setItem(this._amountKey, value);
-    } else {
-      localStorage.removeItem(this._amountKey);
-    }
-    this.$menuButton.add(this.$weeklyMenuButton)
-      .find('.counter-number')
-      .text(value)
-      .toggleClass('text-danger', value >= InventorySettings.stackSize);
+    value = value < 0 ? 0 : value;
+    value ? localStorage.setItem(this._amountKey, value) : localStorage.removeItem(this._amountKey);
+    [this.menuButton.querySelector('.counter-number'), this.weeklyMenuButton && this.weeklyMenuButton.querySelector('.counter-number')].forEach(btn => {
+      if (!btn) return;  
+      btn.textContent = value;  
+      btn.classList.toggle('text-danger', value >= InventorySettings.stackSize);
+    });
     this.markers.forEach(m => m.updateOpacity());
   }
   // use the following marker based property only after Marker.init()!
@@ -157,8 +155,7 @@ class Item extends BaseItem {
     const isCollected = currentMarkers.every(marker => !marker.canCollect);
     const isRandom = currentMarkers.every(marker => marker.isRandomizedItem);
 
-    this.$menuButton
-      .attr('data-help', () => {
+    this.menuButton.dataset.help = (() => {
         if (isBugged) {
           return 'item_unavailable';
         } else if (isRandom && parentCategories.jewelry_random.includes(this.category) && !!MapBase.jewelryTimestamps[this.itemId]) {
@@ -169,23 +166,17 @@ class Item extends BaseItem {
           return 'item_night_only';
         } else if (this.isWeekly()) {
           return 'item_weekly';
+        } else {
+          return 'item';
         }
-        return 'item';
-      })
-      .toggleClass('weekly-item', this.isWeekly())
-      .find('.collectible-text p')
-      .toggleClass('disabled', isCollected)
-      .toggleClass('not-found', isBugged)
-      .end()
-      .find('.counter')
-      .toggle(InventorySettings.isEnabled)
-      .end()
-      .find('.collectible-icon.random-spot')
-      .toggle(isRandom)
-      .end()
-      .find('.counter-number')
-      .toggleClass('not-found', isRandom)
-      .end();
+    })();
+    this.menuButton.classList.toggle('weekly-item', this.isWeekly());
+    const collectibleTextP = this.menuButton.querySelector('.collectible-text p');
+    collectibleTextP.classList.toggle('disabled', isCollected);
+    collectibleTextP.classList.toggle('not-found', isBugged);
+    this.menuButton.querySelector('.counter').style.display = InventorySettings.isEnabled ? '' : 'none';
+    this.menuButton.querySelector('.collectible-icon.random-spot').style.display = isRandom ? '' : 'none';
+    this.menuButton.querySelector('.counter-number').classList.toggle('not-found', isRandom);
 
     return {
       isBugged,
@@ -201,8 +192,9 @@ class Item extends BaseItem {
         popup && popup.isOpen() && popup.update();
 
         if (marker.isCurrent) {
-          $(`[data-type=${marker.legacyItemId}] .collectible-text p`).toggleClass('disabled',
-            this.markers.filter(m => m.cycleName === marker.cycleName).every(m => !m.canCollect));
+          document.querySelectorAll(`[data-type="${marker.legacyItemId}"] .collectible-text p`).forEach(collectibleText => {
+            collectibleText.classList.toggle('disabled', this.markers.filter(m => m.cycleName === marker.cycleName).every(m => !m.canCollect));
+          });
         }
       });
     }
@@ -238,8 +230,12 @@ class Item extends BaseItem {
 
   highlightImportantItem() {
     const selector = ['egg', 'flower'].includes(this.category) ? `[data-marker*="${this.itemId}"]` : `[data-marker="${this.itemId}"]`;
-    $(selector).toggleClass('highlight-items', this.isImportant);
-    $(`[data-type="${this.legacyItemId}"]`).toggleClass('highlight-important-items-menu', this.isImportant);
+    document.querySelectorAll(selector).forEach(element => {
+      element.classList.toggle('highlight-items', this.isImportant);
+    });
+    document.querySelectorAll(`[data-type="${this.legacyItemId}"]`).forEach(element => {
+      element.classList.toggle('highlight-important-items-menu', this.isImportant);
+    });
   }
 
   static clearImportantItems() {

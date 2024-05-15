@@ -23,39 +23,41 @@ class Pin {
   }
 
   updateMarkerContent() {
-    let snippet = $(`
-      <div>
-        <h1 id="${this.id}_name">${this.title}</h1>
-        <p id="${this.id}_desc">${this.description}</p>
-      </div>
-    `);
+    let snippet;
 
     if (Settings.isPinsEditingEnabled) {
       const markerIcons = ['pin', 'random', 'shovel', 'magnet', 'flower', 'bottle', 'arrowhead', 'egg', 'cups', 'pentacles', 'swords', 'wands', 'coin', 'heirlooms', 'fast_travel', 'bracelet', 'earring', 'necklace', 'ring', 'nazar', 'treasure', 'camp', 'harrietum'];
       const markerColors = ['aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple', 'darkred', 'gray', 'green', 'lightblue', 'lightgray', 'lightgreen', 'lightorange', 'lightred', 'orange', 'pink', 'purple', 'red', 'white', 'yellow'];
-      const markerIconSelect = $('<select>').attr('id', `${this.id}_icon`).addClass('marker-popup-pin-input-icon');
-      const markerColorSelect = $('<select>').attr('id', `${this.id}_color`).addClass('marker-popup-pin-input-color');
+      const markerIconSelect = document.createElement('select');
+      markerIconSelect.setAttribute('id', `${this.id}_icon`);
+      markerIconSelect.classList.add('marker-popup-pin-input-icon');
+      const markerColorSelect = document.createElement('select');
+      markerColorSelect.setAttribute('id', `${this.id}_color`);
+      markerColorSelect.classList.add('marker-popup-pin-input-color');
 
       markerColors.forEach(color => {
-        const option = $('<option></option>')
-          .addClass(`pin-color ${color}`)
-          .attr('value', color)
-          .attr('data-text', `map.user_pins.color.${color}`)
-          .text(Language.get(`map.user_pins.color.${color}`));
-        markerColorSelect.append(option);
+        const option = document.createElement('option');
+        option.classList.add('pin-color', color);
+        option.setAttribute('value', color);
+        option.setAttribute('data-text', `map.user_pins.color.${color}`);
+        option.textContent = Language.get(`map.user_pins.color.${color}`);
+        markerColorSelect.appendChild(option);
 
-        if (color === this.color) option.attr('selected', 'selected');
+        option.selected = color === this.color;
       });
 
       markerIcons.forEach(icon => {
-        const option = $('<option></option>').attr('value', icon)
-          .attr('data-text', `map.user_pins.icon.${icon}`).text(Language.get(`map.user_pins.icon.${icon}`));
-        markerIconSelect.append(option);
-        if (icon === this.icon) option.attr('selected', 'selected');
+        const option = document.createElement('option');
+        option.setAttribute('value', icon);
+        option.setAttribute('data-text', `map.user_pins.icon.${icon}`);
+        option.textContent = Language.get(`map.user_pins.icon.${icon}`);
+        markerIconSelect.appendChild(option);
+        
+        option.selected = icon === this.icon;
       });
 
-      snippet = $(`
-        <div>
+      snippet = document.createElement('div');
+      snippet.innerHTML = `
           <h1>
             <input id="${this.id}_name" class="marker-popup-pin-input-name" type="text" value="${this.title}"
             placeholder="${Language.get('map.user_pins.placeholder_title')}">
@@ -69,12 +71,12 @@ class Pin {
             <label for="${this.id}_icon" class="marker-popup-pin-label" data-text="map.user_pins.icon">
               ${Language.get('map.user_pins.icon')}
             </label>
-            ${markerIconSelect.prop('outerHTML')}
+            ${markerIconSelect.outerHTML}
 
             <label for="${this.id}_color" class="marker-popup-pin-label" data-text="map.user_pins.color">
               ${Language.get('map.user_pins.color')}
             </label>
-            ${markerColorSelect.prop('outerHTML')}
+            ${markerColorSelect.outerHTML}
           </div>
           <div style="display: grid;">
             <button type="button" class="btn btn-info save-button" data-text="map.user_pins.save">
@@ -87,15 +89,23 @@ class Pin {
               Latitude: ${this.lat} / Longitude: ${this.lng}
             </small>
           </div>
-        </div>
-        `);
-      snippet.find('button.save-button').on('click', () =>
-        this.save($(`#${this.id}_name`).val(), $(`#${this.id}_desc`).val(), $(`#${this.id}_icon`).val(), $(`#${this.id}_color`).val())
-      );
-      snippet.find('button.remove-button').on('click', () => this.remove());
+      `;
+      snippet.querySelector('.save-button').addEventListener('click', () => this.save(
+        document.getElementById(`${this.id}_name`).value,
+        document.getElementById(`${this.id}_desc`).value,
+        document.getElementById(`${this.id}_icon`).value,
+        document.getElementById(`${this.id}_color`).value
+      ));
+      snippet.querySelector('.remove-button').addEventListener('click', () => this.remove());
+    } else {
+      snippet = document.createElement('div');
+      snippet.innerHTML = `
+        <h1 id="${this.id}_name">${this.title}</h1>
+        <p id="${this.id}_desc">${this.description}</p>
+      `;
     }
 
-    return snippet[0];
+    return snippet;
   }
 
   save(title, desc, icon, color) {
@@ -135,32 +145,32 @@ class Pins {
   static init() {
     this.layer = L.layerGroup();
 
-    $('#pins-place-mode').on('change', function () {
-      Settings.isPinsPlacingEnabled = $('#pins-place-mode').prop('checked');
+    document.getElementById('pins-place-mode').addEventListener('change', function () {
+      Settings.isPinsPlacingEnabled = this.checked;
       Pins.onMap = true;
     });
 
-    $('#pins-edit-mode').on('change', function () {
-      Settings.isPinsEditingEnabled = $('#pins-edit-mode').prop('checked');
+    document.getElementById('pins-edit-mode').addEventListener('change', function () {
+      Settings.isPinsEditingEnabled = this.checked;
       Pins.onMap = true;
       Pins.loadPins();
     });
 
-    $('#pins-place-new').on('click', function () {
+    document.getElementById('pins-place-new').addEventListener('click', function () {
       Pins.onMap = true;
       Pins.addPinToCenter();
       Pins.save();
     });
 
-    $('#open-remove-all-pins-modal').on('click', function () {
-      $('#remove-all-pins-modal').modal();
+    document.getElementById('open-remove-all-pins-modal').addEventListener('click', function () {
+      removeAllPinsModal.show();
     });
 
-    $('#remove-all-pins').on('click', function () {
+    document.getElementById('remove-all-pins').addEventListener('click', function () {
       Pins.removeAllPins();
     });
 
-    $('#pins-export').on('click', function () {
+    document.getElementById('pins-export').addEventListener('click', function () {
       try {
         Pins.exportPins();
       } catch (error) {
@@ -169,9 +179,9 @@ class Pins {
       }
     });
 
-    $('#pins-import').on('click', function () {
+    document.getElementById('pins-import').addEventListener('click', function () {
       try {
-        let file = $('#pins-import-file').prop('files')[0];
+        let file = document.getElementById('pins-import-file').files[0];
         let fallback = false;
 
         if (!file) {
@@ -203,13 +213,12 @@ class Pins {
       }
     });
 
-    $('#pins-place-mode').prop('checked', Settings.isPinsPlacingEnabled);
-    $('#pins-edit-mode').prop('checked', Settings.isPinsEditingEnabled);
+    document.getElementById('pins-place-mode').checked = Settings.isPinsPlacingEnabled;
+    document.getElementById('pins-edit-mode').checked = Settings.isPinsEditingEnabled;
 
-    this.context = $('.menu-option[data-type=user_pins]');
-    this.context
-      .toggleClass('disabled', !this.onMap)
-      .translate();
+    this.context = document.querySelector('.menu-option[data-type=user_pins]');
+    this.context.classList.toggle('disabled', !this.onMap);
+    Language.translateDom(this.context);
 
     this.loadPins();
 

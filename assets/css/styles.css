@@ -38,6 +38,12 @@ body {
     margin: 0;
     font-size: 16px;
     font-family: Hapna, serif;
+    line-height: 1.42857143;
+}
+
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
+    font-weight: 700;
+    line-height: 1.42857143;
 }
 
 h1 {
@@ -45,6 +51,7 @@ h1 {
 }
 
 h2 {
+    font-size: 1.5em;
     margin: 0 0 5px;
     text-align: center;
 }
@@ -63,6 +70,11 @@ h4 {
 
 p {
     margin: 0 !important;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
 }
 
 input,
@@ -437,18 +449,13 @@ select {
 }
 
 .links-container {
+    height: 44.45px;
     display: flex;
     justify-content: space-around;
     border-top: 1px solid #B0B0B0;
     border-bottom: 1px solid #B0B0B0;
     padding: 10px 0;
     margin: 5px 0 15px 0;
-}
-
-.links-container a {
-    color: #eee;
-    text-decoration: none;
-    user-select: none;
 }
 
 .settings-container {
@@ -671,6 +678,7 @@ select {
 }
 
 .side-menu .collection-value {
+    height: 34.45px;
     text-align: center;
     border-top: 1px white solid;
     border-bottom: 1px white solid;
@@ -680,6 +688,7 @@ select {
 }
 
 .side-menu .collection-value-bottom {
+    height: 33.65px;
     text-align: center;
     border-bottom: 1px white solid;
     padding: 5px 0;
@@ -691,8 +700,17 @@ select {
     margin-bottom: 6px;
 }
 
-.side-menu .collection-value a {
-    color: #fff;
+.side-menu .btn-light {
+    font-size: 16px;
+    --bs-btn-color: #fff;
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #383838;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #aca9a9;
+    --bs-btn-line-height: 0.4; 
 }
 
 .side-menu .collection-sell,
@@ -988,7 +1006,7 @@ a.wiki-page:visited {
 }
 
 .collection-collected {
-    min-width: 5.5rem;
+    min-width: 3.4375rem;
 }
 
 /* Custom checkbox styling */
@@ -1207,19 +1225,25 @@ a.no-style:visited {
 
 .modal-header {
     padding-bottom: 10px;
+    height: 54px;
 }
 
 .modal-footer {
     padding-top: 10px;
+    height: 63.6px;
 }
 
 .modal-header::after {
+    content: '';
+    top: 44px;
     margin-top: 10px;
     background: url(../../assets/images/modal-title.png) !important;
     background-position: bottom center !important;
 }
 
 .modal-footer::before {
+    content: '';
+    bottom: 53.6px;
     margin-top: -20px;
     background: url(../../assets/images/modal-footer.png) !important;
     background-position: top center !important;
@@ -1243,6 +1267,7 @@ a.no-style:visited {
 }
 
 .modal-body .settings-container {
+    font-size: 13px !important;
     margin-top: 15px;
 }
 
@@ -1254,6 +1279,7 @@ a.no-style:visited {
     .modal {
         text-align: center;
         padding: 0 !important;
+        --bs-modal-width: 600px;
     }
 
     .modal:before {
@@ -1265,6 +1291,7 @@ a.no-style:visited {
     }
 
     .modal-body {
+        font-size: 16px;
         max-height: 650px !important;
     }
 
@@ -1275,7 +1302,7 @@ a.no-style:visited {
     }
 
     .modal-sm {
-        width: 450px;
+        --bs-modal-width: 450px;
     }
 }
 
@@ -1482,6 +1509,31 @@ a.no-style:visited {
 
 /* Override Bootstrap && Leaflet buttons color styling */
 
+.btn {
+    font-size: 14px;
+}
+
+.btn-default {
+    --bs-btn-hover-color: #333;
+    --bs-btn-hover-bg: #e6e6e6;
+}
+
+.btn-primary {
+    --bs-btn-bg: #337ab7;
+    --bs-btn-hover-bg: #286090;
+}
+
+.btn-secondary {
+    --bs-btn-color: #333;
+    --bs-btn-bg: #f0f0f0;
+}
+
+.btn-info {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #222;
+}
+
 .btn.btn-info.remove-button,
 .save-button {
     background-color: #008fbece;
@@ -1516,6 +1568,11 @@ a.no-style:visited {
 .leaflet-popup-content-wrapper {
     background: #222;
     color: #dadada;
+    padding: 10px 1px 1px 1px;
+}
+
+.leaflet-popup-content-wrapper h1 {
+    font-weight: 700;
 }
 
 .leaflet-container a:visited,

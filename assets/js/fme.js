@@ -106,7 +106,7 @@ const FME = {
       }
     });
 
-    $(`#next-${key}-event`).toggle(hasValidNext);
+    document.getElementById(`next-${key}-event`).style.display = hasValidNext ? '' : 'none';
   },
 
   /**
@@ -199,21 +199,31 @@ const FME = {
    * Update the visibility of the FME card
    */
   updateVisiblity: function () {
-    $('#fme-container').toggle(Settings.isFmeDisplayEnabled);
+    document.getElementById('fme-container').style.display = Settings.isFmeDisplayEnabled ? '' : 'none';
   },
 
   markNotSupported: function () {
     Settings.isFmeNotificationEnabled = false;
-    $('#fme-notification').prop('checked', false).prop('disabled', true);
-    $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.no_support');
-    $('#fme-notification-period').parent().hide();
+    const fmeNoti = document.getElementById('fme-notification');
+    const fmeNotiPP = fmeNoti.parentElement.parentElement;
+    fmeNoti.checked = false;
+    fmeNoti.disabled = true;
+    fmeNotiPP.classList.add('disabled');
+    fmeNotiPP.disabled = true;
+    fmeNotiPP.setAttribute('data-help', 'fme_notification.no_support');
+    document.getElementById('fme-notification-period').parentElement.style.display = 'none';
   },
 
   markPermissionDenied: function () {
     Settings.isFmeNotificationEnabled = false;
-    $('#fme-notification').prop('checked', false).prop('disabled', true);
-    $('#fme-notification').parent().parent().addClass('disabled').prop('disabled', true).attr('data-help', 'fme_notification.denied');
-    $('#fme-notification-period').parent().hide();
+    const fmeNoti = document.getElementById('fme-notification');
+    const fmeNotiPP = fmeNoti.parentElement.parentElement;
+    fmeNoti.checked = false;
+    fmeNoti.disabled = true;
+    fmeNotiPP.classList.add('disabled');
+    fmeNotiPP.disabled = true;
+    fmeNotiPP.setAttribute('data-help', 'fme_notification.denied');
+    document.getElementById('fme-notification-period').parentElement.style.display = 'none';
   },
 
   /**
@@ -224,31 +234,39 @@ const FME = {
       default: Object.values(FME.flags).reduce((acc, value) => acc + value, 0),
     });
 
-    $('#fme-display').on("change", function () {
-      Settings.isFmeDisplayEnabled = $("#fme-display").prop('checked');
-      $('#fme-display-general-period, #fme-display-role-period').parent().toggle(Settings.isFmeDisplayEnabled);
-      $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+    const fmeDisplay = document.getElementById('fme-display');
+    const fmeGeneralPeriod = document.getElementById('fme-display-general-period');
+    const fmeRolePeriod = document.getElementById('fme-display-role-period');
+    const fmeNotification = document.getElementById('fme-notification');
+    const fmeNotificationPeriod = document.getElementById('fme-notification-period');
+    const openFmeModal = document.getElementById('open-fme-enabled-events-modal');
+
+    fmeDisplay.addEventListener('change', function () {
+      Settings.isFmeDisplayEnabled = this.checked;
+      fmeGeneralPeriod.parentElement.style.display = Settings.isFmeDisplayEnabled ? '' : 'none';
+      fmeRolePeriod.parentElement.style.display = Settings.isFmeDisplayEnabled ? '' : 'none';
+      openFmeModal.style.display = (Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled) ? '' : 'none';
       FME.update();
     });
 
-    $('#fme-display-general-period').on("change", function () {
-      let inputValue = parseInt($('#fme-display-general-period').val());
+    fmeGeneralPeriod.addEventListener('change', function () {
+      let inputValue = parseInt(this.value);
       inputValue = !isNaN(inputValue) ? inputValue : 30;
       if (inputValue < 10 || inputValue > 45) inputValue = 30;
       Settings.fmeDisplayGeneralPeriod = inputValue;
       FME.update();
     });
 
-    $('#fme-display-role-period').on("change", function () {
-      let inputValue = parseInt($('#fme-display-role-period').val());
+    fmeRolePeriod.addEventListener('change', function () {
+      let inputValue = parseInt(this.value);
       inputValue = !isNaN(inputValue) ? inputValue : 60;
       if (inputValue < 10 || inputValue > 90) inputValue = 60;
       Settings.fmeDisplayRolePeriod = inputValue;
       FME.update();
     });
 
-    $('#fme-notification').on("change", function () {
-      Settings.isFmeNotificationEnabled = $("#fme-notification").prop('checked');
+    fmeNotification.addEventListener('change', function () {
+      Settings.isFmeNotificationEnabled = this.checked;
 
       Notification.requestPermission().then(function (permission) {
         if (permission === "denied") {
@@ -256,12 +274,12 @@ const FME = {
         }
       });
 
-      $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
-      $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+      fmeNotificationPeriod.parentElement.style.display = Settings.isFmeNotificationEnabled ? '' : 'none';
+      openFmeModal.style.display = (Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled) ? '' : 'none';
     });
 
-    $('#fme-notification-period').on("change", function () {
-      let inputValue = parseInt($('#fme-notification-period').val());
+    fmeNotificationPeriod.addEventListener('change', function () {
+      let inputValue = parseInt(this.value);
       inputValue = !isNaN(inputValue) ? inputValue : 10;
       if (inputValue < 1 || inputValue > 30) inputValue = 10;
       Settings.fmeNotificationPeriod = inputValue;
@@ -273,21 +291,24 @@ const FME = {
       this.markPermissionDenied();
     }
 
-    $("#fme-display").prop('checked', Settings.isFmeDisplayEnabled);
-    $("#fme-display-general-period").val(Settings.fmeDisplayGeneralPeriod).parent().toggle(Settings.isFmeDisplayEnabled);
-    $("#fme-display-role-period").val(Settings.fmeDisplayRolePeriod).parent().toggle(Settings.isFmeDisplayEnabled);
-    $("#fme-notification").prop('checked', Settings.isFmeNotificationEnabled);
-    $("#fme-notification-period").val(Settings.fmeNotificationPeriod);
-    $('#fme-notification-period').parent().toggle(Settings.isFmeNotificationEnabled);
-    $('#open-fme-enabled-events-modal').toggle((Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled));
+    fmeDisplay.checked = Settings.isFmeDisplayEnabled;
+    fmeGeneralPeriod.value = Settings.fmeDisplayGeneralPeriod;
+    fmeGeneralPeriod.parentElement.style.display = Settings.isFmeDisplayEnabled ? '' : 'none';
+    fmeRolePeriod.value = Settings.fmeDisplayRolePeriod;
+    fmeRolePeriod.parentElement.style.display = Settings.isFmeDisplayEnabled ? '' : 'none';
+    fmeNotification.checked = Settings.isFmeNotificationEnabled;
+    fmeNotificationPeriod.value = Settings.fmeNotificationPeriod;
+    fmeNotificationPeriod.parentElement.style.display = Settings.isFmeNotificationEnabled ? '' : 'none';
+    openFmeModal.style.display = (Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled) ? '' : 'none';
 
-    $("input[name='fme-enabled-events[]']").each(function (i, v) {
-      const id = $(this).attr('id');
-      $(this).prop('checked', (Settings.fmeEnabledEvents && FME.flags[id]));
+    document.querySelectorAll('input[name="fme-enabled-events[]"]').forEach(function() {
+      const id = this.getAttribute('id');
+      this.checked = (Settings.fmeEnabledEvents && FME.flags[id]);
     });
 
-    $('#open-fme-enabled-events-modal').on('click', function () {
-      $('#fme-enabled-events-modal').modal();
+    const fmeModal = new bootstrap.Modal(document.getElementById('fme-enabled-events-modal'));
+    openFmeModal.addEventListener('click', function () {
+      fmeModal.show();
     });
 
     return Loader.promises['fme'].consumeJson(eventsData => {
@@ -306,39 +327,39 @@ const FME = {
   },
 
   initModal: function () {
+    const fmeModalEl = document.getElementById('fme-enabled-events-modal');
+
     Object.keys(this.flags).forEach(f => {
       if (f === "none") return;
-      const snippet = $(`
-        <div class="input-container">
+      const snippet = document.createElement('div');
+      snippet.className = "input-container";
+      snippet.innerHTML = `
           <label for="${f}" data-text="menu.fme.${f}"></label>
           <div class="input-checkbox-wrapper">
             <input class="input-checkbox" type="checkbox" name="fme-enabled-events[]" value="${this.flags[f]}"
               id="${f}" ${(Settings.fmeEnabledEvents & FME.flags[f]) ? "checked" : ""} />
             <label class="input-checkbox-label" for="${f}"></label>
           </div>
-        </div>
-      `);
+      `;
 
-      snippet.change(function () {
+      snippet.addEventListener('change', function() {
         let total = 0;
-        $("input[name='fme-enabled-events[]']:checked").each(function (i, v) {
-          const value = parseInt($(this).val());
+        document.querySelectorAll('input[name="fme-enabled-events[]"]:checked').forEach(function() {
+          const value = parseInt(this.value);
           total += value;
         });
         Settings.fmeEnabledEvents = total;
         FME.update();
       });
 
-      $('#fme-enabled-events-modal #events').append(Language.translateDom(snippet)[0]);
+      fmeModalEl.querySelector('#events').appendChild(Language.translateDom(snippet));
     });
 
-    const items = $('#fme-enabled-events-modal #events').children('.input-container').get();
-    items.sort(function (a, b) {
-      return $(a).find('label').text().toLowerCase().localeCompare($(b).find('label').text().toLowerCase());
+    const items = Array.from(fmeModalEl.querySelectorAll('#events .input-container'));
+    items.sort(function(a, b) {
+      return a.querySelector('label').textContent.toLowerCase().localeCompare(b.querySelector('label').textContent.toLowerCase());
     });
-    $.each(items, function (i, e) {
-      $('#fme-enabled-events-modal #events').append(e);
-    });
+    items.forEach(item => fmeModalEl.querySelector('#events').appendChild(item));
   },
 
   /**

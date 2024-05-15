@@ -31,14 +31,14 @@ const Cycles = {
     const cycleIndex = Cycles.data.findIndex(element => element.date === selectedDayStr);
     let fallback = null;
 
-    $('div>span.cycle-date').toggleClass('not-found', Cycles.offset !== 0);
+    document.querySelectorAll('div>span.cycle-date').forEach(element => { element.classList.toggle('not-found', Cycles.offset !== 0); });
 
     if (cycleIndex < 1) {
       // either -1 (not found) or 0 (first day) for which there is no yesterday
       console.error('[Cycles] Cycle not found: ' + selectedDayStr);
 
       if (!MapBase.isPreviewMode)
-        $('.map-cycle-alert').removeClass('hidden');
+        document.querySelector('.map-cycle-alert').classList.remove('hidden');
 
       fallback = {
         arrowhead: 1,
@@ -126,8 +126,11 @@ const Cycles = {
   setCycles: function () {
     for (const category in Cycles.categories) {
       const cycle = Cycles.categories[category];
-      $(`input[name=${category}]`).val(cycle);
-      $(`.cycle-icon[data-type=${category}]`).attr("src", `./assets/images/cycle_${cycle}.png`).attr("alt", `Cycle ${cycle}`);
+      document.querySelectorAll(`input[name="${category}"]`).forEach(element => { element.value = cycle; });
+      document.querySelectorAll(`.cycle-icon[data-type="${category}"]`).forEach(element => {
+        element.setAttribute("src", `./assets/images/cycle_${cycle}.png`);
+        element.setAttribute("alt", `Cycle ${cycle}`);
+      });
     }
 
     MapBase.addMarkers(true);
@@ -136,7 +139,7 @@ const Cycles = {
     'use strict';
     if (Cycles.selectedDay === undefined) return;
     const options = { timeZone: 'UTC', month: 'long', day: 'numeric' };
-    $('.cycle-date').text(Cycles.selectedDay.toLocaleString(Settings.language, options));
+    document.querySelectorAll('.cycle-date').forEach(element => { element.textContent = Cycles.selectedDay.toLocaleString(Settings.language, options); });
   },
 
   checkForUpdate: function () {
@@ -149,7 +152,7 @@ const Cycles = {
         Cycles.getTodayCycle();
       } else {
         Cycles.offset = 0;
-        $('div>span.cycle-date').removeClass('not-found');
+        document.querySelectorAll('div>span.cycle-date').forEach(element => { element.classList.remove('not-found'); });
       }
       MapBase.runOnDayChange();
       Cycles.checkForUpdate();
@@ -175,9 +178,9 @@ const Cycles = {
       return;
     }
     if (Cycles.forwardMaxOffset === 0 && Cycles.offset === 0)
-      $('#cycle-next').addClass('disable-cycle-changer-arrow');
+      document.getElementById('cycle-next').classList.add('disable-cycle-changer-arrow');
     else if (Cycles.offset === 0)
-      $('#cycle-next').removeClass('disable-cycle-changer-arrow');
+      document.getElementById('cycle-next').classList.remove('disable-cycle-changer-arrow');
   },
 
   getCyclesMainCategory: function (category) {
@@ -305,10 +308,10 @@ const Cycles = {
   prevCycle: function () {
     Cycles.offset--;
 
-    $('#cycle-next').removeClass('disable-cycle-changer-arrow');
+    document.getElementById('cycle-next').classList.remove('disable-cycle-changer-arrow');
 
     if (Cycles.offset <= -Cycles.backwardMaxOffset)
-      $('#cycle-prev').addClass('disable-cycle-changer-arrow');
+      document.getElementById('cycle-prev').classList.add('disable-cycle-changer-arrow');
 
     if (Cycles.offset < -Cycles.backwardMaxOffset) {
       Cycles.offset = -Cycles.backwardMaxOffset;
@@ -321,10 +324,10 @@ const Cycles = {
   nextCycle: function () {
     Cycles.offset++;
 
-    $('#cycle-prev').removeClass('disable-cycle-changer-arrow');
+    document.getElementById('cycle-prev').classList.remove('disable-cycle-changer-arrow');
 
     if (Cycles.offset >= Cycles.forwardMaxOffset)
-      $('#cycle-next').addClass('disable-cycle-changer-arrow');
+      document.getElementById('cycle-next').classList.add('disable-cycle-changer-arrow');
 
     if (Cycles.offset > Cycles.forwardMaxOffset) {
       Cycles.offset = Cycles.forwardMaxOffset;

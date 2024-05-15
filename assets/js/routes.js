@@ -8,39 +8,39 @@ const Routes = {
   customRouteConnections: [],
 
   init: function () {
-    $('#custom-routes').prop("checked", RouteSettings.customRouteEnabled);
+    document.getElementById('custom-routes').checked = RouteSettings.customRouteEnabled;
 
-    $('#generate-route-use-pathfinder').prop("checked", RouteSettings.usePathfinder);
-    $('#generate-route-generate-on-visit').prop("checked", RouteSettings.generateOnVisit);
-    $('#generate-route-ignore-collected').prop("checked", RouteSettings.ignoreCollected);
-    $("#generate-route-important-only").prop("checked", RouteSettings.importantOnly);
-    $('#generate-route-auto-update').prop("checked", RouteSettings.autoUpdatePath);
-    $('#generate-route-distance').val(RouteSettings.maxDistance);
-    $('#generate-route-start-lat').val(RouteSettings.startMarkerLat);
-    $('#generate-route-start-lng').val(RouteSettings.startMarkerLng);
+    document.getElementById('generate-route-use-pathfinder').checked = RouteSettings.usePathfinder;
+    document.getElementById('generate-route-generate-on-visit').checked = RouteSettings.generateOnVisit;
+    document.getElementById('generate-route-ignore-collected').checked = RouteSettings.ignoreCollected;
+    document.getElementById('generate-route-important-only').checked = RouteSettings.importantOnly;
+    document.getElementById('generate-route-auto-update').checked = RouteSettings.autoUpdatePath;
+    document.getElementById('generate-route-distance').value = RouteSettings.maxDistance;
+    document.getElementById('generate-route-start-lat').value = RouteSettings.startMarkerLat;
+    document.getElementById('generate-route-start-lng').value = RouteSettings.startMarkerLng;
 
-    $('#generate-route-fasttravel-weight').val(RouteSettings.fasttravelWeight);
-    $('#generate-route-railroad-weight').val(RouteSettings.railroadWeight);
+    document.getElementById('generate-route-fasttravel-weight').value = RouteSettings.fasttravelWeight;
+    document.getElementById('generate-route-railroad-weight').value = RouteSettings.railroadWeight;
 
     // Pathfinder / Generator toggle
     if (RouteSettings.usePathfinder) {
-      $('#generate-route-distance').parent().hide();
-      $('#generate-route-auto-update').parent().parent().hide();
-      $('#generate-route-fasttravel-weight').parent().show();
-      $('#generate-route-railroad-weight').parent().show();
+      document.getElementById('generate-route-distance').parentElement.style.display = 'none';
+      document.getElementById('generate-route-auto-update').parentElement.parentElement.style.display = 'none';
+      document.getElementById('generate-route-fasttravel-weight').parentElement.style.display = '';
+      document.getElementById('generate-route-railroad-weight').parentElement.style.display = '';
     } else {
-      $('#generate-route-distance').parent().show();
-      $('#generate-route-auto-update').parent().parent().show();
-      $('#generate-route-fasttravel-weight').parent().hide();
-      $('#generate-route-railroad-weight').parent().hide();
+      document.getElementById('generate-route-distance').parentElement.style.display = '';
+      document.getElementById('generate-route-auto-update').parentElement.parentElement.style.display = '';
+      document.getElementById('generate-route-fasttravel-weight').parentElement.style.display = 'none';
+      document.getElementById('generate-route-railroad-weight').parentElement.style.display = 'none';
     }
 
     // Route starts at
-    $('#generate-route-start').val(RouteSettings.genPathStart);
+    document.getElementById('generate-route-start').value = RouteSettings.genPathStart;
 
-    if (RouteSettings.genPathStart != "Custom") {
-      $('#generate-route-start-lat').parent().hide();
-      $('#generate-route-start-lng').parent().hide();
+    if (RouteSettings.genPathStart !== "Custom") {
+      document.getElementById('generate-route-start-lat').parentElement.style.display = 'none';
+      document.getElementById('generate-route-start-lng').parentElement.style.display = 'none';
     }
   },
 
@@ -66,10 +66,13 @@ const Routes = {
 
       const items = input.replace(/\r?\n|\r/g, '').replace(/\s/g, '').split(',');
 
-      $.each(items, function (key, value) {
-        const _marker = MapBase.markers.find(marker => marker.text == value && marker.isCurrent);
-        if (_marker) connections.push([_marker.lat, _marker.lng]);
-      });
+      for (const key in items) {
+        if (items.hasOwnProperty(key)) {
+          const value = items[key];
+          const _marker = MapBase.markers.find(marker => marker.text == value && marker.isCurrent);
+          if (_marker) connections.push([_marker.lat, _marker.lng]);
+        }
+      }
 
       if (Routes.polylines instanceof L.Polyline) {
         MapBase.map.removeLayer(Routes.polylines);
@@ -101,9 +104,9 @@ const Routes = {
 
       let connections = [];
 
-      $.each(Routes.customRouteConnections, function (key, item) {
+      Routes.customRouteConnections.forEach(function(item) {
         const _marker = MapBase.markers.filter(marker => marker.text == item && marker.day == Cycles.categories[marker.category])[0];
-        if (_marker != undefined)
+        if (_marker !== undefined) 
           connections.push([_marker.lat, _marker.lng]);
       });
 
@@ -327,11 +330,13 @@ const Routes = {
     lat = parseFloat(lat) ? parseFloat(lat) : -119.9063;
     lng = parseFloat(lng) ? parseFloat(lng) : 8.0313;
 
-    $('#generate-route-start').val("Custom");
-    $('#generate-route-start-lat').val(lat);
-    $('#generate-route-start-lat').parent().show();
-    $('#generate-route-start-lng').val(lng);
-    $('#generate-route-start-lng').parent().show();
+    document.getElementById('generate-route-start').value = 'Custom';
+    const generateRouteStartLatEl = document.getElementById('generate-route-start-lat');
+    generateRouteStartLatEl.value = lat;
+    generateRouteStartLatEl.parentElement.style.display = 'block';
+    const generateRouteStartLngEl = document.getElementById('generate-route-start-lng');
+    generateRouteStartLngEl.value = lng;
+    generateRouteStartLngEl.parentElement.style.display = 'block';
 
     RouteSettings.genPathStart = 'Custom';
     RouteSettings.startMarkerLat = lat;
