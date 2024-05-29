@@ -1696,6 +1696,7 @@ a.no-style:visited {
     z-index: 1;
     bottom: -2px;
     left: 9px;
+    box-shadow: none !important;
 }
 
 /* Donate form */
