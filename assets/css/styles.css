@@ -1716,6 +1716,10 @@ a.no-style:visited {
     box-shadow: none !important;
 }
 
+.leaflet-container .leaflet-marker-pane img {
+    width: 100%;
+}
+
 /* Donate form */
 
 .donate-form {
