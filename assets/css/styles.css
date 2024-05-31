@@ -1118,6 +1118,11 @@ a.no-style:visited {
     color: #fff !important;
 }
 
+.leaflet-container .leaflet-control-attribution,
+.leaflet-container .leaflet-control-scale {
+	font-size: 11px;
+}
+
 .text-danger {
     color: #f95050 !important;
 }
@@ -1615,6 +1620,18 @@ a.no-style:visited {
     user-select: none;
 }
 
+.leaflet-control-layers label {
+	font-size: inherit;
+}
+
+.leaflet-control-layers-toggle {
+	background-image: url(../images/layers.png);
+}
+
+.leaflet-retina .leaflet-control-layers-toggle {
+	background-image: url(../images/layers-2x.png);
+}
+
 .leaflet-control-layers-expanded {
     color: #d4d4d4;
     background: #333;
@@ -1670,7 +1687,7 @@ a.no-style:visited {
 
 .leaflet-div-icon .icon {
     z-index: 4;
-    width: 100%;
+    width: 100% !important;
     height: auto;
 }
 
@@ -1696,6 +1713,7 @@ a.no-style:visited {
     z-index: 1;
     bottom: -2px;
     left: 9px;
+    box-shadow: none !important;
 }
 
 /* Donate form */
