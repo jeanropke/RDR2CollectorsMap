@@ -79,7 +79,6 @@ class Item extends BaseItem {
   static _installEventHandlers() {
     const sideMenu = document.querySelector('.side-menu');
     sideMenu.addEventListener('contextmenu', event => {
-      console.log(Date.now(), event.target);
       const item = event.target.propSearchUp('rdoItem');
       // clicked inside of the collectible, but outside of its counter part?
       if (item && !event.target.closest('.counter')) {
