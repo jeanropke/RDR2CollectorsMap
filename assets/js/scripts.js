@@ -1232,3 +1232,7 @@ function isEmptyObject(obj) {
   if (typeof obj !== 'object') return false;
   return Object.keys(obj).length === 0;
 }
+
+document.addEventListener('contextmenu', event => {
+  console.log(Date.now(), event.target);
+}, false);
