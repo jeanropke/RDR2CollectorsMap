@@ -1685,6 +1685,14 @@ a.no-style:visited {
     height: auto;
 }
 
+.leaflet-container .leaflet-marker-pane img {
+    width: auto;
+}
+
+.leaflet-container .leaflet-marker-pane img.overlay {
+    width: 100%;
+}
+
 .leaflet-div-icon .icon {
     z-index: 4;
     width: 100% !important;
@@ -1714,10 +1722,6 @@ a.no-style:visited {
     bottom: -2px;
     left: 9px;
     box-shadow: none !important;
-}
-
-.leaflet-container .leaflet-marker-pane img {
-    width: 100%;
 }
 
 /* Donate form */
