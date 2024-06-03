@@ -178,8 +178,7 @@ function init() {
   const itemsCollectionsWeekly = Promise.all([mapping, jewelryTimestamps]).then(() => Item.init()); // Item.items (without .markers), Collection.collections, Collection.weekly*
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.mapInit(); // MapBase.map
-  Language.init();
-  Pins.init();
+  Language.init().then(()=> Pins.init());
   changeCursor();
   // MapBase.markers (without .lMarker), Item.items[].markers
   const markers = Promise.all([itemsCollectionsWeekly, lootTables]).then(Marker.init);
