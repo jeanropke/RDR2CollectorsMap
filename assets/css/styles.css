@@ -319,12 +319,14 @@ select {
 
 .marker-popup-pin-input-name,
 .marker-popup-pin-input-desc {
+    color: inherit;
     border: none;
     width: 100%;
     background-color: #222;
 }
 
 .marker-popup-pin-input-name {
+    font-weight: inherit;
     text-align: center;
 }
 
@@ -344,6 +346,7 @@ select {
 
 .marker-popup-pin-input-icon,
 .marker-popup-pin-input-color {
+    color: inherit;
     background: #eee;
     border: none;
     padding: 5px 10px;
