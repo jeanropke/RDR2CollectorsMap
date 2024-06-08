@@ -6,7 +6,7 @@
   color: #1a1a1a !important;
   -webkit-filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
   filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
-  font-family: RDRLino, serif;
+  font-family: var(--title-font);
   font-weight: 400;
   max-width: 260px;
   padding: 8px;
@@ -34,7 +34,7 @@
   background-size: 100% 100%;
   border-radius: 0;
   color: #fff !important;
-  font-family: Hapna, serif;
+  font-family: var(--content-font);
   max-width: 260px;
   text-align: center;
   padding: 0;
