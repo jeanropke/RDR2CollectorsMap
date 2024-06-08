@@ -10,7 +10,8 @@
   font-weight: 400;
   max-width: 260px;
   padding: 8px;
-  text-align: center
+  text-align: center;
+  text-rendering: optimizeLegibility;
 }
 
 .tippy-box[data-theme~='menu-theme'] .tippy-arrow {
@@ -38,6 +39,7 @@
   max-width: 260px;
   text-align: center;
   padding: 0;
+  text-rendering: optimizeLegibility;
 }
 
 .tippy-popper[x-placement^=bottom] .menu-theme .tippy-arrow {

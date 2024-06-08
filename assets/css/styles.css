@@ -10,7 +10,6 @@
     src: url(../fonts/hapna.woff2) format("woff2"), url(../fonts/hapna.woff) format("woff"), url(../fonts/hapna.ttf) format("truetype");
     font-style: normal;
     font-weight: 400;
-    text-rendering: optimizeLegibility;
 }
 
 @font-face {
@@ -18,7 +17,6 @@
     src: url(../fonts/RDRLino-Regular.woff2) format("woff2"), url(../fonts/RDRLino-Regular.woff) format("woff"), url(../fonts/RDRLino-Regular.ttf) format("truetype");
     font-style: normal;
     font-weight: 400;
-    text-rendering: optimizeLegibility;
 }
 
 *,
@@ -46,6 +44,7 @@ body {
     font-size: 16px;
     font-family: var(--content-font);
     line-height: 1.42857143;
+    text-rendering: optimizeLegibility;
 }
 
 .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
@@ -134,6 +133,7 @@ select {
 #main-header-center>span {
     font-family: var(--title-font);
     font-weight: normal;
+    text-rendering: optimizeLegibility;
 }
 
 #main-header-left,
@@ -245,6 +245,7 @@ select {
     height: 100%;
     font-family: var(--content-font);
     font-size: 13px;
+    text-rendering: optimizeLegibility;
 }
 
 #map h1 {
@@ -1274,6 +1275,7 @@ a.no-style:visited {
     font-weight: normal;
     font-size: 24px;
     line-height: 1;
+    text-rendering: optimizeLegibility;
 }
 
 .modal-body {
@@ -1518,6 +1520,7 @@ a.no-style:visited {
     left: 0.1em;
     font-family: 'Courier New', Courier, monospace;
     text-transform: uppercase;
+    text-rendering: optimizeLegibility;
 }
 
 /* Dark mode styling */
@@ -1801,6 +1804,7 @@ a.no-style:visited {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-rendering: optimizeLegibility;
 }
 
 #fme-container .fme-card .fme-body .fme-text {
