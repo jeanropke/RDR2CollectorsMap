@@ -6,11 +6,12 @@
   color: #1a1a1a !important;
   -webkit-filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
   filter: drop-shadow(0 0 3px rgba(0,0,0,.5));
-  font-family: RDRLino, serif;
+  font-family: var(--title-font);
   font-weight: 400;
   max-width: 260px;
   padding: 8px;
-  text-align: center
+  text-align: center;
+  text-rendering: optimizeLegibility;
 }
 
 .tippy-box[data-theme~='menu-theme'] .tippy-arrow {
@@ -34,10 +35,11 @@
   background-size: 100% 100%;
   border-radius: 0;
   color: #fff !important;
-  font-family: Hapna, serif;
+  font-family: var(--content-font);
   max-width: 260px;
   text-align: center;
   padding: 0;
+  text-rendering: optimizeLegibility;
 }
 
 .tippy-popper[x-placement^=bottom] .menu-theme .tippy-arrow {

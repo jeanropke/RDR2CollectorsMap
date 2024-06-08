@@ -131,6 +131,9 @@ function init() {
 
   Settings.language = Language.availableLanguages.includes(Settings.language) ? Settings.language : 'en';
 
+  if (['ja', 'ko', 'zh-Hans', 'zh-Hant'].includes(Settings.language))
+    MapBase.setFallbackFonts();
+  
   // Open side-menu on default only on desktop
   SettingProxy.addSetting(Settings, 'isMenuOpened', {
     default: (() => {
@@ -536,6 +539,7 @@ document.getElementById('timestamps-24').addEventListener('change', function () 
 document.getElementById('language').addEventListener('change', function () {
   Settings.language = this.value;
   Language.setMenuLanguage();
+  MapBase.setFallbackFonts();
   Menu.refreshMenu();
   Cycles.setLocaleDate();
   MapBase.addMarkers();
@@ -1230,4 +1234,38 @@ function isEmptyObject(obj) {
   if (obj == null) return true;
   if (typeof obj !== 'object') return false;
   return Object.keys(obj).length === 0;
+}
+
+/**
+ * Loads a specified font and adds it to the document's font set.
+ *
+ * @param {string} name - The name of the font.
+ * @param {Object} urls - An object containing URLs for different font formats.
+ * @param {string} [urls.woff2] - The URL for the WOFF2 font format.
+ * @param {string} [urls.woff] - The URL for the WOFF font format.
+ * @param {string} [urls.ttf] - The URL for the TTF font format.
+ * @returns {Promise<FontFace>} A promise that resolves to the loaded FontFace object.
+ * 
+ * @example
+ * const urls = {
+ *   woff2: '/assets/fonts/font.woff2',
+ *   woff: '/assets/fonts/font.woff',
+ *   ttf: '/assets/fonts/font.ttf'
+ * };
+ */
+function loadFont(name, urls = {}) {
+  const sources = [
+    { url: urls.woff2, format: 'woff2' },
+    { url: urls.woff, format: 'woff' },
+    { url: urls.ttf, format: 'truetype' }
+  ]
+    .filter(({ url }) => url)
+    .map(({ url, format }) => `url(${url}) format('${format}')`)
+    .join(', ');
+
+  const fontFace = new FontFace(name, sources, { style: 'normal', weight: '400' });
+  return fontFace.load().then(() => {
+    document.fonts.add(fontFace);
+    return fontFace;
+  });
 }
