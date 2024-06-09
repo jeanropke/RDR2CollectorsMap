@@ -280,27 +280,27 @@ const MapBase = {
     const fontsData = {
       ja: {
         content: 'MotoyaExGothic',
-        contentUrls: { woff2: '/assets/fonts/fallback/MotoyaExGothic-W4-KP.woff2' },
+        contentUrls: { woff2: '/assets/fonts/MotoyaExGothic-W4-KP.woff2' },
         title: 'MotoyaAporo',
-        titleUrls: { woff2: '/assets/fonts/fallback/MotoyaAporo-Std-W7.woff2' }
+        titleUrls: { woff2: '/assets/fonts/MotoyaAporo-Std-W7.woff2' }
       },
       ko: {
         content: 'YDMyungjo240Pro',
-        contentUrls: { woff2: '/assets/fonts/fallback/YDMyungjo-240-Pro.woff2' },
+        contentUrls: { woff2: '/assets/fonts/YDMyungjo-240-Pro.woff2' },
         title: 'Yoon-GogooryoM',
-        titleUrls: { woff2: '/assets/fonts/fallback/Yoon-GogooryoM.woff2' }
+        titleUrls: { woff2: '/assets/fonts/Yoon-GogooryoM.woff2' }
       },
       'zh-Hans': {
         content: 'LXGWNeoZhiSong',
-        contentUrls: { woff2: '/assets/fonts/fallback/LXGWNeoZhiSong.woff2' },
+        contentUrls: { woff2: '/assets/fonts/LXGWNeoZhiSong.woff2' },
         title: 'MLiPRC',
-        titleUrls: { woff2: '/assets/fonts/fallback/MLiPRC-Bold.woff2' }
+        titleUrls: { woff2: '/assets/fonts/MLiPRC-Bold.woff2' }
       },
       'zh-Hant': {
         content: 'MSungHK',
-        contentUrls: { woff2: '/assets/fonts/fallback/MSungHK-Medium.woff2' },
+        contentUrls: { woff2: '/assets/fonts/MSungHK-Medium.woff2' },
         title: 'YaYuanGuYin',
-        titleUrls: { woff2: '/assets/fonts/fallback/YaYuanGuYin.woff2' }
+        titleUrls: { woff2: '/assets/fonts/YaYuanGuYin.woff2' }
       }
     };
 

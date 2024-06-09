@@ -1284,8 +1284,11 @@ a.no-style:visited {
 }
 
 .modal-body .settings-container {
-    font-size: 13px !important;
     margin-top: 15px;
+}
+
+.modal-body #custom-markers-colors {
+    font-size: 13px;
 }
 
 .modal-actions .btn {
