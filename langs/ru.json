@@ -1412,6 +1412,7 @@
     "menu.enable_dclick_zoom": "Приближение через двойной клик",
     "menu.show_help": "Показать подсказку в меню",
     "map.mark_important": "Отметить важной",
+    "map.unmark_important": "Отметить как неважное",
     "menu.marker_opacity": "Видимость меток",
     "menu.marker_opacity.20": "20%",
     "menu.marker_opacity.40": "40%",
