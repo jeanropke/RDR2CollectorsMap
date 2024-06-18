@@ -106,7 +106,10 @@ const FME = {
       }
     });
 
-    document.getElementById(`next-${key}-event`).style.display = hasValidNext ? '' : 'none';
+    // Preview mode removes this element.
+    const nextEvent = document.getElementById(`next-${key}-event`);
+    if (nextEvent)
+      nextEvent.style.display = hasValidNext ? '' : 'none';
   },
 
   /**
@@ -199,7 +202,10 @@ const FME = {
    * Update the visibility of the FME card
    */
   updateVisiblity: function () {
-    document.getElementById('fme-container').style.display = Settings.isFmeDisplayEnabled ? '' : 'none';
+    // Preview mode removes this element.
+    const fmeContainer = document.getElementById('fme-container');
+    if (!fmeContainer) return;
+    fmeContainer.style.display = Settings.isFmeDisplayEnabled ? '' : 'none';
   },
 
   markNotSupported: function () {

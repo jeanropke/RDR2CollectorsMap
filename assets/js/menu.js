@@ -15,6 +15,8 @@ class Menu {
     const method = active ? 'add' : 'delete';
     this._warnings[method](warning);
     const filterAlert = document.querySelector('.filter-alert');
+    // Preview mode removes this element.
+    if (!filterAlert) return;
     filterAlert.style.display = this._warnings.size > 0 ? '' : 'none';
     if (this._warnings.size > 0) {
       filterAlert.setAttribute('data-text', this._warnings.size > 1 ? 'map.has_multi_filter_alert' : this._warnings.values().next().value);
@@ -79,18 +81,27 @@ class Menu {
     const count = _markers.filter(marker => marker.isCollected).length;
     const max = _markers.length;
 
-    document.querySelector('.collectables-counter').textContent = Language.get('menu.collectables_counter')
-      .replace('{count}', count)
-      .replace('{max}', max);
+    // Preview mode removes these elements.
+    const collectablesCounter = document.querySelector('.collectables-counter');
+    if (collectablesCounter)
+      collectablesCounter.textContent = Language.get('menu.collectables_counter')
+        .replace('{count}', count)
+        .replace('{max}', max);
 
-    document.getElementById('item-counter').textContent = Language.get('menu.collection_counter')
-      .replace('{count}', count)
-      .replace('{max}', max);
+    const itemCounter = document.getElementById('item-counter');
+    if (itemCounter)
+      itemCounter.textContent = Language.get('menu.collection_counter')
+        .replace('{count}', count)
+        .replace('{max}', max);
 
-    document.getElementById('item-counter-percentage').textContent = Language.get('menu.collection_counter_percentage')
-      .replace('{count}', (max ? (count / max * 100) : 0).toFixed(2));
+    const itemCounterPercentage = document.getElementById('item-counter-percentage');
+    if (itemCounterPercentage)
+      itemCounterPercentage.textContent = Language.get('menu.collection_counter_percentage')
+        .replace('{count}', (max ? (count / max * 100) : 0).toFixed(2));
 
-    document.getElementById('items-value').textContent = `$${Collection.totalValue().toFixed(2)}`;
+    const itemsValue = document.getElementById('items-value');
+    if (itemsValue)
+      itemsValue.textContent = `$${Collection.totalValue().toFixed(2)}`;
 
     Collection.collections.forEach(collection => collection.updateCounter());
   }
@@ -251,9 +262,12 @@ class Menu {
       document.querySelector('#filter-type option[value="lowInventoryItems"]').style.display = InventorySettings.isEnabled ? '' : 'none';
     })();
 
-    document.querySelector('.filter-alert').addEventListener('click', function () {
-      this.style.display = 'none';
-    });
+    // Preview mode removes this element.
+    const filterAlert = document.querySelector('.filter-alert');
+    if (filterAlert)
+      filterAlert.addEventListener('click', function () {
+        this.style.display = 'none';
+      });
 
     // “random” category still needs this (other collectibles have handlers in their class)
     document.querySelectorAll('.menu-option.clickable input').forEach(input => {

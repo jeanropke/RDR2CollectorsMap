@@ -329,9 +329,11 @@ function clockTick() {
     hourCycle: Settings.isClock24Hour ? 'h23' : 'h12',
   };
 
-  document.getElementById('time-in-game').textContent = gameTime.toLocaleString(Settings.language, clockFormat);
+  // Preview mode removes these elements.
+  const timeInGame = document.getElementById('time-in-game');
+  if (timeInGame)
+    timeInGame.textContent = gameTime.toLocaleString(Settings.language, clockFormat);
 
-  // Preview mode can remove this.
   const dayCycleEl = document.getElementById('day-cycle');
   if (dayCycleEl) {
     const file = dayCycleEl.getAttribute('src').filename;
@@ -351,7 +353,10 @@ function clockTick() {
     hourCycle: 'h23',
   };
 
-  document.getElementById('countdown').textContent = delta.toLocaleString([], deltaFormat);
+  // Preview mode removes this element.
+  const countdown = document.getElementById('countdown');
+  if (countdown)
+    countdown.textContent = delta.toLocaleString([], deltaFormat);
 
   document.querySelectorAll('[data-marker*="provision_wldflwr_agarita"], [data-marker*="provision_wldflwr_blood_flower"]').forEach(marker => {
     const isImportant = marker.classList.contains('highlight-items');
