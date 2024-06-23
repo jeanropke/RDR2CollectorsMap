@@ -117,8 +117,8 @@ const MapBase = {
       zoomControl: false,
       crs: L.CRS.Simple,
       layers: [mapLayers[this.themeOverride || Settings.baseLayer]],
-      zoomSnap: false,
-      zoomDelta: (this.maxZoom - this.minZoom) / ((this.maxZoom - this.minZoom) * 2),
+      zoomSnap: 0,
+      zoomDelta: 0.5,
       wheelPxPerZoomLevel: 70,
       wheelDebounceTime: 150,
     }).setView([this.viewportX, this.viewportY], this.viewportZoom);
@@ -130,8 +130,9 @@ const MapBase = {
       })
     );
 
-    L.control.zoom({
-      position: 'bottomright'
+    new L.Control.ZoomEx({
+      position: "bottomright",
+      className: "leaflet-zoomex-rightbottom",
     }).addTo(MapBase.map);
 
     L.control.layers(mapLayers).addTo(MapBase.map);
@@ -373,7 +374,8 @@ const MapBase = {
       document.querySelector('.filter-alert').remove();
       document.getElementById('fme-container').remove();
       document.querySelector('.side-menu').classList.remove('menu-opened');
-      document.querySelector('.leaflet-top.leaflet-right, .leaflet-control-zoom').remove();
+      document.querySelector('.leaflet-top.leaflet-right').remove();
+      document.querySelector('.leaflet-zoomex.leaflet-zoomex-rightbottom.leaflet-control').remove();
 
       const isValidCategory = categories.includes(previewParam);
       if (isValidCategory) {
