@@ -97,10 +97,10 @@ const MapBase = {
             that.closePopup();
           }, 100);
 
-          document.addEventListener('DOMContentLoaded', function() {
-            document.querySelector('.leaflet-popup').addEventListener('mouseover', function mouseOverHandler(e) {
+          document.querySelectorAll('.leaflet-popup').forEach(el => {
+            el.addEventListener('mouseover', function mouseOverHandler(e) {
               clearTimeout(timeout);
-              document.querySelector('.leaflet-popup').removeEventListener('mouseover', this);
+              el.removeEventListener('mouseover', mouseOverHandler);
             });
           });
         });
