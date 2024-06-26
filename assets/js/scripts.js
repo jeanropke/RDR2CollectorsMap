@@ -737,7 +737,7 @@ document.getElementById('cookie-export').addEventListener('click', function () {
 
     downloadAsFile(`collectible-map-settings-(${exportDate}).json`, settingsJson);
   } catch (error) {
-    // console.error(error);
+    console.error(error);
     alert(Language.get('alerts.feature_not_supported'));
   }
 });

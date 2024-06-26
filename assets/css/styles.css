@@ -1653,15 +1653,6 @@ a.no-style:visited {
     background: #333;
 }
 
-.leaflet-control-zoom {
-    background-color: #333;
-    color: #d4d4d4;
-}
-
-.leaflet-control-zoom a {
-    background-color: #333;
-}
-
 .leaflet-popup-tip {
     background: #222;
     color: #d4d4d4;
@@ -2025,4 +2016,147 @@ button.reload-nazar {
     justify-content: center;
     display: flex;
     padding: 12px 0 0 0;
+}
+
+/* Leaflet.ZoomEx */
+@-moz-document url-prefix() {
+    .leaflet-zoomex-out .fa,
+    .leaflet-zoomex-out .fab,
+    .leaflet-zoomex-out .far,
+    .leaflet-zoomex-out .fas,
+    .leaflet-zoomex-in .fa,
+    .leaflet-zoomex-in .fab,
+    .leaflet-zoomex-in .far,
+    .leaflet-zoomex-in .fas {
+        margin-top: .05rem;
+        margin-bottom: -.05rem;
+    }
+}
+
+.leaflet-zoomex {
+    display: flex;
+    align-items: center;
+    /* to simplify the rules for adjusting positions with translate */
+    box-sizing: border-box;
+    padding: .375rem .375rem;
+    background-color: rgba(255, 255, 255, .67);
+    border: .125rem solid rgba(255, 255, 255, 1);
+    border-radius: 2.5rem;
+    box-shadow: rgba(0, 0, 0, .33) 0 .125rem .375rem;
+    opacity: .5;
+    transition: opacity .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -khtml-text-size-adjust: none;
+}
+
+.leaflet-zoomex:hover {
+    opacity: 1;
+}
+
+.leaflet-zoomex-slider-container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 .125rem;
+}
+
+.leaflet-zoomex-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: .75rem;
+    padding: 0;
+    margin: 0;
+    border-radius: .75rem;
+    background: rgba(var(--primary-rgb), .5) !important;
+    outline: none;
+    cursor: pointer;
+}
+
+.leaflet-zoomex-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    /* to make webkit and moz consistent */
+    box-sizing: content-box;
+    width: 1.125rem;
+    height: 1.125rem;
+    border: .1875rem solid rgba(255, 255, 255, 1);
+    border-radius: 1.125rem;
+    background: rgba(var(--primary-rgb), 1) !important;
+    cursor: grab;
+}
+
+.leaflet-zoomex-slider:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 .375rem rgba(var(--primary-rgb), .25);
+}
+
+.leaflet-zoomex-slider:focus-visible::-webkit-slider-thumb {
+    border: .1875rem solid rgba(0, 0, 0, 1);
+}
+
+.leaflet-zoomex-slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    /* to make webkit and moz consistent */
+    box-sizing: content-box;
+    width: 1.125rem;
+    height: 1.125rem;
+    border: .1875rem solid rgba(255, 255, 255, 1);
+    border-radius: 1.125rem;
+    background: rgba(var(--primary-rgb), 1) !important;
+    cursor: grab;
+}
+
+.leaflet-zoomex-slider:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 .375rem rgba(var(--primary-rgb), .25);
+}
+
+.leaflet-zoomex-slider:focus-visible::-moz-range-thumb {
+    border: .1875rem solid rgba(0, 0, 0, 1);
+}
+
+.leaflet-zoomex-out,
+.leaflet-zoomex-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 1.5rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    color: rgba(var(--primary-rgb), 1);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.leaflet-zoomex-out svg,
+.leaflet-zoomex-in svg {
+    fill: rgba(var(--primary-rgb), 1);
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.leaflet-zoomex-rightbottom {
+    position: absolute;
+    margin: 0 !important;
+    right: .5rem;
+    bottom: 2.5rem;
+    width: calc(var(--vh, 1vh) * 25);
+    /* elem size: 25vh x 2.5rem  */
+    transform: translateX(calc(50% - 2.5rem / 2)) translateY(calc(50% - var(--vh, 1vh) * 25 / 2)) rotate(-90deg);
+    box-shadow: rgba(0, 0, 0, .33) -.125rem 0 .375rem;
+}
+
+.leaflet-zoomex-rightbottom .leaflet-zoomex-out,
+.leaflet-zoomex-rightbottom .leaflet-zoomex-in {
+    transform: rotate(90deg);
 }

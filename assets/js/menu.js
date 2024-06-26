@@ -47,6 +47,7 @@ class Menu {
   }
 
   static reorderMenu(menu) {
+    if (!menu) return;
     Array.from(menu.children)
       .sort((a, b) => a.textContent.toLowerCase().localeCompare(b.textContent.toLowerCase()))
       .forEach((child) => menu.appendChild(child));
