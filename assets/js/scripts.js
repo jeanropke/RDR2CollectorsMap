@@ -1043,6 +1043,30 @@ function formatLootTableLevel(table, rate = 1, level = 0) {
   return result;
 }
 
+const videoModalEl = document.getElementById('video-modal');
+const videoFrameEl = document.getElementById('video-frame');
+videoModalEl.addEventListener('show.bs.modal', function (event) {
+  const button = event.relatedTarget;
+
+  const parentDiv = button.firstAncestorOrSelf((node) => node.tagName === 'DIV');
+  document.getElementById('video-modal-title').textContent =
+    parentDiv.querySelector('h1').innerText || Language.get('map.video');
+
+  const url = new URL(button.getAttribute('data-video-url'));
+  if (['youtube', 'youtu.be'].some((value) => url.host.includes(value))) {
+    const videoId = url.hostname === 'youtu.be' ? url.pathname.slice(1) : url.searchParams.get('v');
+    const startTime = parseInt(url.searchParams.get('t'), 10) || 0;
+    videoFrameEl.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${startTime}`;
+  } else if (url.host.includes('bilibili')) {
+    const videoId = url.pathname.split('/')[2];
+    const startTime = url.searchParams.get('t') || 0;
+    videoFrameEl.src = `https://player.bilibili.com/player.html?bvid=${videoId}&high_quality=1&t=${startTime}`;
+  }
+});
+videoModalEl.addEventListener('hidden.bs.modal', function () {
+  videoFrameEl.src = '';
+});
+
 const lootTableModalEl = document.getElementById('loot-table-modal');
 lootTableModalEl.addEventListener('show.bs.modal', function (event) {
   // Get related loot table.
