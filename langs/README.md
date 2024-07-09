@@ -195,8 +195,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **reddeadvaqueros** (1,940 words)
   - **SzKrJ** (1,429 words)
   - **tabandi** (287 words)
+  - **tdavid899** (2,674 words)
   - **YaBoiRichard614** (375 words)
-  - **zsnkn_** (2,674 words)
 
 ### Italian (94%):
   - **AlexTucci** (23 words)
