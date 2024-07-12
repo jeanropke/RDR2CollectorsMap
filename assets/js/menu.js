@@ -285,8 +285,16 @@ class Menu {
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.keyCode === 32 && event.ctrlKey) {
+      if (event.ctrlKey && event.key === ' ') {
         document.querySelector('.menu-toggle').click();
+      }
+
+      if ((event.ctrlKey || event.metaKey) && event.key === 'f') {
+        if (overrideSearch.checked) {
+          event.preventDefault();
+          searchInput.focus();
+          searchInput.select();
+        }
       }
     });
   }

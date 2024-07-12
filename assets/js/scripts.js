@@ -203,11 +203,14 @@ function init() {
 
   if (Settings.isMenuOpened) document.querySelector('.menu-toggle').click();
 
+  document.documentElement.style.setProperty('--ctrl-meta-key', detectPlatform() === 'macOS' ? '"⌘"' : '"Ctrl"');
+
   document.querySelectorAll('.map-alert').forEach(alert => { alert.style.display = Settings.alertClosed ? 'none' : '' });
 
   document.getElementById('language').value = Settings.language;
   document.getElementById('marker-opacity').value = Settings.markerOpacity;
   document.getElementById('invisible-removed-markers').checked = Settings.isInvisibleRemovedMarkers;
+  document.getElementById('override-search').checked = Settings.overrideBrowserSearch;
 
   document.getElementById('filter-type').value = Settings.filterType;
   document.getElementById('marker-size').value = Settings.markerSize;
@@ -421,6 +424,11 @@ document.getElementById('enable-right-click').addEventListener('change', functio
   Settings.isRightClickEnabled = this.checked;
 });
 
+const overrideSearch = document.getElementById('override-search');
+overrideSearch.addEventListener('change', function () {
+  Settings.overrideBrowserSearch = this.checked;
+});
+
 document.getElementById('show-utilities').addEventListener('change', function () {
   Settings.showUtilitiesSettings = this.checked;
   document.getElementById('utilities-container').classList.toggle('opened', Settings.showUtilitiesSettings);
@@ -456,9 +464,74 @@ document.getElementById('enable-cycle-changer').addEventListener('change', funct
   if (!Settings.isCycleChangerEnabled) Cycles.resetCycle();
 });
 
-document.getElementById('search').addEventListener('input', function () {
-  MapBase.onSearch(this.value);
+const searchInput = document.getElementById('search');
+const suggestionsContainer = document.getElementById('query-suggestions');
+const inputContainer = document.querySelector('.input-container');
+const searchHotkey = document.getElementById('search-hotkey');
+let hideSuggestionsTimeout;
+
+searchInput.addEventListener('input', function () {
+  searchHotkey.style.opacity = searchInput.value ? '0' : '1';
   document.getElementById('filter-type').value = 'none';
+  MapBase.onSearch(searchInput.value);
+  MapBase.onQuerySuggestions(searchInput.value);
+});
+
+let activeSuggestionIndex = -1;
+searchInput.addEventListener('keydown', function (e) {
+  const suggestions = suggestionsContainer.querySelectorAll('.query-suggestion');
+  switch (e.key) {
+    case 'ArrowDown':
+      e.preventDefault();
+      activeSuggestionIndex = (activeSuggestionIndex + 1) % suggestions.length;
+      suggestionsContainer.classList.add('scroll-visible');
+      break;
+    case 'ArrowUp':
+      e.preventDefault();
+      activeSuggestionIndex = (activeSuggestionIndex - 1 + suggestions.length) % suggestions.length;
+      suggestionsContainer.classList.add('scroll-visible');
+      break;
+    case 'Enter':
+      if (activeSuggestionIndex > -1 && suggestions.length > 0) {
+        e.preventDefault();
+        suggestions[activeSuggestionIndex].click();
+        this.scrollLeft = this.scrollWidth;
+      }
+      break;
+    default:
+      return;
+  }
+  suggestions.forEach((el, index) => {
+    el.classList.toggle('active', index === activeSuggestionIndex);
+    if (index === activeSuggestionIndex) el.scrollIntoView({ block: 'nearest' });
+  });
+});
+
+searchInput.addEventListener('blur', () => {
+  hideSuggestionsTimeout = setTimeout(() => {
+    suggestionsContainer.style.display = 'none';
+    suggestionsContainer.innerHTML = '';
+  }, 300);
+  suggestionsContainer.classList.remove('scroll-visible');
+});
+
+suggestionsContainer.addEventListener('mouseleave', () => {
+  suggestionsContainer.classList.remove('scroll-visible');
+});
+
+suggestionsContainer.addEventListener('mouseenter', () => {
+  suggestionsContainer.classList.add('scroll-visible');
+});
+
+inputContainer.addEventListener('mouseleave', () => {
+  hideSuggestionsTimeout = setTimeout(() => {
+    suggestionsContainer.style.display = 'none';
+    suggestionsContainer.innerHTML = '';
+  }, 300);
+});
+
+inputContainer.addEventListener('mouseenter', () => {
+  clearTimeout(hideSuggestionsTimeout);
 });
 
 document.getElementById('copy-search-link').addEventListener('click', function () {
@@ -1153,6 +1226,16 @@ document.getElementById('open-custom-marker-color-modal').addEventListener('clic
   });
 });
 
+if (isMobile()) {
+  searchHotkey.style.display = 'none';
+
+  Settings.overrideBrowserSearch = false;
+  overrideSearch.check = false;
+  overrideSearch.disabled = true;
+  overrideSearch.parentElement.parentElement.classList.add('disabled');
+  overrideSearch.parentElement.parentElement.disabled = true;
+}
+
 function filterMapMarkers() {
   uniqueSearchMarkers = [];
   let filterType = () => true;
@@ -1297,4 +1380,29 @@ function loadFont(name, urls = {}) {
     document.fonts.add(fontFace);
     return fontFace;
   });
+}
+
+function isMobile() {
+  const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const hasTouchPoints = 'maxTouchPoints' in navigator && navigator.maxTouchPoints > 0;
+  const isMobileUAData = navigator.userAgentData ? navigator.userAgentData.mobile : false;
+  const isMobileUserAgent = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  return isCoarsePointer || hasTouchPoints || isMobileUAData || isMobileUserAgent;
+}
+
+function detectPlatform() {
+  const { userAgentData, userAgent, vendor } = navigator;
+  const platform = userAgentData?.platform || userAgent || vendor || window.opera || '';
+  const platforms = {
+    macOS: /Macintosh|MacIntel|MacPPC|Mac68K|Mac OS X/i,
+    Windows: /Windows|Win32|Win64|WOW64|WinCE/i,
+    Android: /Android/i,
+    Linux: /Linux/i,
+  };
+  for (const [key, regex] of Object.entries(platforms)) {
+    if (regex.test(platform)) return key;
+  }
+
+  return 'other';
 }

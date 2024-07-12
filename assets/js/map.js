@@ -455,7 +455,7 @@ const MapBase = {
     localStorage.setItem('rdr2collector.date', date);
   },
 
-  onSearch: function (searchString) {
+  onSearch: function (searchString, immediate = false) {
     Menu.toggleFilterWarning('map.has_search_filter_alert', !!searchString);
 
     // Wait 500ms before search items to do not search not full term
@@ -504,7 +504,62 @@ const MapBase = {
       });
 
       MapBase.addMarkers();
-    }, !!searchString ? 500 : 0);
+    }, immediate ? 0 : (!!searchString ? 500 : 0));
+  },
+
+  onQuerySuggestions: function (searchString) {
+    const queries = searchString
+      .toLowerCase()
+      .split(';')
+      .map((query) => query.trim())
+      .filter(Boolean);
+    const query = queries[queries.length - 1];
+    
+    if (!query) {
+      suggestionsContainer.style.display = 'none';
+      return;
+    }
+
+    if (searchString.endsWith(';')) {
+      suggestionsContainer.innerHTML = '';
+      return;
+    }
+
+    const dedupMarkerNames = [
+      ...new Set(
+        MapBase.markers.map((marker) => Language.get(marker.itemTranslationKey))
+      )
+    ];
+
+    const matches = dedupMarkerNames
+      .map((name) => name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+      .reduce((result, name, index) => {
+        if (name.includes(query)) result.push(dedupMarkerNames[index]);
+        return result;
+      }, [])
+      .slice(0, 15);
+
+    if (!matches.length) {
+      suggestionsContainer.style.display = 'none';
+      return;
+    }
+
+    suggestionsContainer.innerHTML = matches
+      .map((match) => `<div class="query-suggestion">${match}</div>`)
+      .join('');
+    suggestionsContainer.style.display = '';
+
+    activeSuggestionIndex = -1;
+  
+    suggestionsContainer.querySelectorAll('.query-suggestion').forEach((el) => {
+      el.addEventListener('click', (e) => {
+        const splitStr = searchString.split(';');
+        const baseStr = splitStr.length > 1 ? splitStr.slice(0, -1).join(';') + '; ' : '';
+        searchInput.value = `${baseStr}${e.target.textContent}; `;
+        suggestionsContainer.style.display = 'none';
+        MapBase.onSearch(searchInput.value, true);
+      });
+    });
   },
 
   addMarkers: function (refreshMenu = false) {

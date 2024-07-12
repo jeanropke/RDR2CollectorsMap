@@ -164,6 +164,7 @@ Object.entries({
   isInvisibleRemovedMarkers: { default: false },
   markerSize: { default: 1 },
   overlayOpacity: { default: 0.5 },
+  overrideBrowserSearch: { default: true },
   resetMarkersDaily: { default: true },
   showCustomizationSettings: { default: true },
   showDebugSettings: { default: false },

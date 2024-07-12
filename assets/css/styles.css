@@ -3,6 +3,7 @@
     --default-title-font: RDRLino;
     --content-font: var(--default-content-font), serif;
     --title-font: var(--default-title-font), serif;
+    --ctrl-meta-key: 'Ctrl';
 }
 
 @font-face {
@@ -482,6 +483,90 @@ select {
     font-size: 14px;
     width: 100%;
     border-radius: 3px;
+}
+
+.input-search-hotkeys {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.input-search-hotkey {
+    display: inline-block;
+    color: rgba(123, 102, 175, .8);
+    font-family: var(--title-font);
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 2px;
+    padding: 2px 4px;
+    background-color: rgba(123, 102, 175, .2);
+    border: 2px solid rgba(123, 102, 175, .8);
+    border-radius: 3px;
+}
+
+.input-search-hotkey:first-child:after {
+    content: var(--ctrl-meta-key);
+    letter-spacing: normal;
+}
+
+.input-with-suggestions {
+    position: relative;
+    width: 100%;
+}
+
+.query-suggestions {
+    position: absolute;
+    color: #eee;
+    width: 100%;
+    max-height: calc(10em + 20px);
+    border: 1px solid rgba(56, 56, 56, .8);
+    border-radius: 3px;
+    background-color: rgba(56, 56, 56, .8);
+    box-shadow: 0 2px 5px rgba(0,0,0, .4);
+    overflow-y: auto;
+    overflow: hidden;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    -moz-backdrop-filter: blur(2px);
+}
+
+.query-suggestions:hover,
+.query-suggestions.scroll-visible {
+    overflow: auto;
+}
+
+.query-suggestions::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+.query-suggestions::-webkit-scrollbar-track {
+    background: rgba(56, 56, 56, .6); 
+    border-radius: 3px;
+}
+
+.query-suggestions::-webkit-scrollbar-thumb {
+    background: rgb(172, 169, 169, .4);
+}
+
+.query-suggestions::-webkit-scrollbar-thumb:hover {
+    background: rgba(200, 199, 199, .4);
+}
+
+.query-suggestion {
+    font-size: 14px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.query-suggestion:hover, .query-suggestion.active {
+    color: #fff;
+    background-color: rgba(138, 136, 136, .8);
 }
 
 .input-file {
@@ -1392,6 +1477,10 @@ a.no-style:visited {
         left: 2px;
         right: 2px;
         bottom: 2px;
+    }
+
+    .input-search-hotkeys {
+        display: none;
     }
 
     #video-modal .modal-xl {
