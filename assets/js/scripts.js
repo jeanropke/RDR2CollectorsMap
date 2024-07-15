@@ -181,7 +181,10 @@ function init() {
   const itemsCollectionsWeekly = Promise.all([mapping, jewelryTimestamps]).then(() => Item.init()); // Item.items (without .markers), Collection.collections, Collection.weekly*
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.mapInit(); // MapBase.map
-  Language.init().then(()=> Pins.init());
+  const languages = Language.init().then(() => {
+    Language.setMenuLanguage();
+    Pins.init();
+  });
   changeCursor();
   // MapBase.markers (without .lMarker), Item.items[].markers
   const markers = Promise.all([itemsCollectionsWeekly, lootTables]).then(Marker.init);
@@ -193,7 +196,7 @@ function init() {
 
   const treasures = Treasure.init();
   const legendaries = Legendary.init();
-  Promise.all([cycles, markers]).then(MapBase.afterLoad);
+  Promise.all([languages, markers, cycles]).then(MapBase.afterLoad);
   Routes.init();
   Promise.all([itemsCollectionsWeekly, markers, cycles, treasures, legendaries, filters])
     .then(Loader.resolveMapModelLoaded);
@@ -535,11 +538,10 @@ inputContainer.addEventListener('mouseenter', () => {
 });
 
 document.getElementById('copy-search-link').addEventListener('click', function () {
-  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${document.getElementById('search').value}`);
+  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${searchInput.value}`);
 });
 
 document.getElementById('clear-search').addEventListener('click', function () {
-  const searchInput = document.getElementById('search');
   searchInput.value = '';
   searchInput.dispatchEvent(new Event('input'));
 });
@@ -617,6 +619,7 @@ document.getElementById('timestamps-24').addEventListener('change', function () 
 document.getElementById('language').addEventListener('change', function () {
   Settings.language = this.value;
   Language.setMenuLanguage();
+  MapBase.initFuse();
   MapBase.setFallbackFonts();
   Menu.refreshMenu();
   Cycles.setLocaleDate();
@@ -1242,8 +1245,8 @@ function filterMapMarkers() {
   let enableMainCategory = true;
 
   if (Settings.filterType === 'none') {
-    if (document.getElementById('search').value)
-      MapBase.onSearch(document.getElementById('search').value);
+    if (searchInput.value)
+      MapBase.onSearch(searchInput.value, true);
     else
       uniqueSearchMarkers = MapBase.markers;
 

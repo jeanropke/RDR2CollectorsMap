@@ -3,6 +3,8 @@ const MapBase = {
   maxZoom: 7,
   map: null,
   markers: [],
+  fuseOnSearch: null,
+  fuseOnQuerySuggestions: null,
   overlays: [],
   lootTables: [],
   fastTravelData: [],
@@ -363,6 +365,7 @@ const MapBase = {
   afterLoad: function () {
     'use strict';
     uniqueSearchMarkers = MapBase.markers;
+    MapBase.initFuse();
 
     // Preview mode.
     const previewParam = getParameterByName('q');
@@ -387,8 +390,8 @@ const MapBase = {
       } else {
         enabledCategories = [];
         MapBase.addMarkers(false, true);
-        document.getElementById('search').value = previewParam;
-        MapBase.onSearch(previewParam);
+        searchInput.value = previewParam;
+        MapBase.onSearch(previewParam, true);
 
         // Zoom in if there's only one specific item.
         const visibleItems = MapBase.markers.filter(m => m.isVisible);
@@ -409,8 +412,8 @@ const MapBase = {
     // Do search via URL.
     const searchParam = getParameterByName('search');
     if (searchParam) {
-      document.getElementById('search').value = searchParam;
-      MapBase.onSearch(searchParam);
+      searchInput.value = searchParam;
+      MapBase.onSearch(searchParam, true);
     }
 
     // Navigate to marker via URL.
@@ -454,6 +457,21 @@ const MapBase = {
 
     localStorage.setItem('rdr2collector.date', date);
   },
+  
+  initFuse: function() {
+    const dataForSearch = MapBase.markers.map((marker) => ({
+      itemId: marker.itemId,
+      itemTranslationKey: Language.get(marker.itemTranslationKey).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    }));
+    const dataForQuerySuggestions = [
+      ...new Set(
+        MapBase.markers.map((marker) => Language.get(marker.itemTranslationKey))
+      )
+    ].map((name) => ({ name }));
+
+    this.fuseOnSearch = new Fuse(dataForSearch, { keys: ['itemTranslationKey'], threshold: 0.4 });
+    this.fuseOnQuerySuggestions = new Fuse(dataForQuerySuggestions, { keys: ['name'], threshold: 0.6 });
+  },
 
   onSearch: function (searchString, immediate = false) {
     Menu.toggleFilterWarning('map.has_search_filter_alert', !!searchString);
@@ -466,8 +484,8 @@ const MapBase = {
         ...new Set(searchString
           .replace(/^[;\s]+|[;\s]+$/g, '')
           .split(';')
-          .filter(element => element)
-          .map(term => term.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+          .filter((element) => element)
+          .map((term) => term.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
         )
       ];
 
@@ -478,23 +496,24 @@ const MapBase = {
       }
 
       Layers.itemMarkersLayer.clearLayers();
-      uniqueSearchMarkers = MapBase.markers.filter(marker =>
-        searchTerms.some(term =>
+      uniqueSearchMarkers = MapBase.markers.filter((marker) =>
+        searchTerms.some((term) =>
           marker.itemId === term ||
           marker.itemNumberStr === term ||
           Language.get(marker.itemTranslationKey).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(term)
         )
       );
 
-      if (!uniqueSearchMarkers.length) {
-        const markerNames = MapBase.markers.map(marker =>
-          Language.get(marker.itemTranslationKey).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        )
-        searchTerms.forEach(term => {
-          const bestMatch = stringSimilarity.findBestMatch(term, markerNames);
-          if (bestMatch.bestMatch.rating < 0.6) return;
-          const bestMatchItemId = MapBase.markers[bestMatch.bestMatchIndex].itemId;
-          uniqueSearchMarkers.push(...MapBase.markers.filter(marker => bestMatchItemId === marker.itemId));
+      if (!uniqueSearchMarkers.length && this.fuseOnSearch) {
+        searchTerms.forEach((term) => {
+          const bestMatches = this.fuseOnSearch.search(term);
+          if (bestMatches.length) {
+            uniqueSearchMarkers.push(
+              ...MapBase.markers.filter(
+                (marker) => bestMatches[0].item.itemId === marker.itemId
+              )
+            );
+          }
         });
       }
 
@@ -525,27 +544,15 @@ const MapBase = {
       return;
     }
 
-    const dedupMarkerNames = [
-      ...new Set(
-        MapBase.markers.map((marker) => Language.get(marker.itemTranslationKey))
-      )
-    ];
+    const results = this.fuseOnQuerySuggestions.search(query).slice(0, 15);
 
-    const matches = dedupMarkerNames
-      .map((name) => name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-      .reduce((result, name, index) => {
-        if (name.includes(query)) result.push(dedupMarkerNames[index]);
-        return result;
-      }, [])
-      .slice(0, 15);
-
-    if (!matches.length) {
+    if (!results.length) {
       suggestionsContainer.style.display = 'none';
       return;
     }
 
-    suggestionsContainer.innerHTML = matches
-      .map((match) => `<div class="query-suggestion">${match}</div>`)
+    suggestionsContainer.innerHTML = results
+      .map(({item}) => `<div class="query-suggestion">${item.name}</div>`)
       .join('');
     suggestionsContainer.style.display = '';
 

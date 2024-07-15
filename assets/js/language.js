@@ -31,7 +31,6 @@ const Language = {
     return Promise.all(fetchTranslations).then(() => {
       return Loader.promises['lang_progress'].consumeJson(data => {
         this.progress = data;
-        this.setMenuLanguage();
         this.updateProgress();
       });
     });
@@ -133,8 +132,9 @@ const Language = {
 
     this.translateDom();
 
-    document.getElementById('search').setAttribute('placeholder', Language.get('menu.search_placeholder'));
-
+    searchInput.setAttribute('placeholder', Language.get('menu.search_placeholder'));
+    document.getElementById('clear-search').click();
+    
     FME.update();
     this.updateProgress();
   },
