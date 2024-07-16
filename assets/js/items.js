@@ -204,7 +204,7 @@ class Item extends BaseItem {
   }
 
   static initImportedItems() {
-    this.items.forEach(item => item.isImportant = item.isImportant);
+    if (this.items) this.items.forEach(item => item.isImportant = item.isImportant);
   }
   
   static reinitImpItemsOnCat(category) {
