@@ -452,7 +452,7 @@ document.getElementById('enable-debug').addEventListener('change', function () {
 
 document.getElementById('enable-cycle-changer').addEventListener('change', function () {
   Settings.isCycleChangerEnabled = this.checked;
-  document.getElementById('cycle-changer-container').classList.toggle('opened', Settings.isCycleChangerEnabled);
+  document.getElementById('cycle-changer-container').classList.toggle('hidden', !Settings.isCycleChangerEnabled);
   if (!Settings.isCycleChangerEnabled) Cycles.resetCycle();
 });
 
