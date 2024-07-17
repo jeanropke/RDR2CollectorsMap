@@ -1447,6 +1447,7 @@
     "menu.utils": "Utilities",
     "menu.fast_travel": "Fast Travel",
     "menu.search_placeholder": "Search items. Separated by ;",
+    "menu.query_suggestions_hotkey": "Search in suggestions, Press {↑} {↓} {Enter} for general search.",
     "menu.auto_enable_sold_items": "Automatically enable sold items",
     "map.remove_add": "Remove/Add from map",
     "map.remove": "Remove from map",

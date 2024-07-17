@@ -2,6 +2,7 @@ const Language = {
   data: {},
   availableLanguages: ['en', 'af', 'ar', 'ca', 'cs', 'da', 'de', 'el', 'en-GB', 'es', 'es-MX', 'fi', 'fr', 'he', 'hu', 'it', 'ja', 'ko', 'no', 'pl', 'pt', 'pt-BR', 'ro', 'ru', 'sr', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-Hans', 'zh-Hant'],
   progress: {},
+  allowedPlaceholders : ['↑', '↓', 'Enter'],
 
   init: function () {
     'use strict';
@@ -84,10 +85,14 @@ const Language = {
   translateDom: function (context) {
     'use strict';
     Array.from((context || document).querySelectorAll('[data-text]')).forEach(element => {
-      const string = Language.get(element.getAttribute('data-text'), element.dataset.textOptional);
+      const transKey = element.getAttribute('data-text');
+      let string = Language.get(transKey, element.dataset.textOptional);
 
       // Don't dump raw variables out to the user here, instead make them appear as if they are loading.
-      element.innerHTML = string.replace(/\{([\w.]+)\}/g, '---');
+      string = string.replace(/\{([\w.]+)\}/g, (match, p1) =>
+        this.allowedPlaceholders.includes(p1) ? match : '---'
+      );
+      element.innerHTML = string;
     });
     return context;
   },
@@ -133,6 +138,11 @@ const Language = {
     this.translateDom();
 
     searchInput.setAttribute('placeholder', Language.get('menu.search_placeholder'));
+    placeholdersToHtml(suggestionsHotkeys, {
+      '↑': '<kbd class="hotkey">↑</kbd>',
+      '↓': '<kbd class="hotkey">↓</kbd>',
+      'Enter': '<kbd class="hotkey">Enter</kbd>'
+    });
     document.getElementById('clear-search').click();
     
     FME.update();

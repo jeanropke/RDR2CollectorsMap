@@ -92,10 +92,16 @@
           <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;"
           autocomplete="off" data-help="search">
           <span class="input-search-hotkeys" id="search-hotkey">
-            <kbd class="input-search-hotkey"></kbd>
-            <kbd class="input-search-hotkey">F</kbd>
+            <kbd class="hotkey"></kbd>
+            <kbd class="hotkey">F</kbd>
           </span>
           <div id="query-suggestions" class="query-suggestions" style="display: none;"></div>
+          <span id="query-suggestions-hotkeys" class="query-suggestions-hotkeys" data-text="menu.query_suggestions_hotkey">
+            Search in suggestions, Press 
+              <kbd class="hotkey">↑</kbd> 
+              <kbd class="hotkey">↓</kbd> 
+              <kbd class="hotkey">Enter</kbd> for general search.
+          </span>
         </div>
         <div id="clear-search" class="input-action-clear" data-help="search_clear"></div>
         <div id="copy-search-link" class="input-action-copy" data-help="search_copy_link"></div>

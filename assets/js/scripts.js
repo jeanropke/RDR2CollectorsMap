@@ -469,15 +469,34 @@ document.getElementById('enable-cycle-changer').addEventListener('change', funct
 
 const searchInput = document.getElementById('search');
 const suggestionsContainer = document.getElementById('query-suggestions');
-const inputContainer = document.querySelector('.input-container');
+const searchContainer = document.querySelector('#search').closest('.input-container');
 const searchHotkey = document.getElementById('search-hotkey');
+const suggestionsHotkeys = document.getElementById('query-suggestions-hotkeys');
 let hideSuggestionsTimeout;
 
 searchInput.addEventListener('input', function () {
   searchHotkey.style.opacity = searchInput.value ? '0' : '1';
   document.getElementById('filter-type').value = 'none';
+  if (!isMobile()) {
+    suggestionsHotkeys.style.display = searchInput.value.trim() === '' ? '' : 'none';
+    document.querySelectorAll('#weekly-container .header, #weekly-container p').forEach((el) => el.classList.add('blurred'));
+  }
+  
   MapBase.onSearch(searchInput.value);
   MapBase.onQuerySuggestions(searchInput.value);
+});
+
+searchInput.addEventListener('focus', function () {
+  if (!isMobile()) {
+    suggestionsHotkeys.classList.toggle('focused', searchInput.value.trim() === '');
+    document.querySelectorAll('#weekly-container .header, #weekly-container p').forEach((el) => el.classList.add('blurred'));
+  }
+  this.addEventListener('keydown', function handleEscKey(event) {
+    if (event.key === 'Escape') {
+      this.blur();
+      this.removeEventListener('keydown', handleEscKey);
+    }
+  });
 });
 
 let activeSuggestionIndex = -1;
@@ -512,6 +531,10 @@ searchInput.addEventListener('keydown', function (e) {
 
 searchInput.addEventListener('blur', () => {
   hideSuggestionsTimeout = setTimeout(() => {
+    if (!isMobile()) {
+      suggestionsHotkeys.classList.remove('focused');
+      document.querySelectorAll('#weekly-container .header, #weekly-container p').forEach((el) => el.classList.remove('blurred'));
+    }
     suggestionsContainer.style.display = 'none';
     suggestionsContainer.innerHTML = '';
   }, 300);
@@ -526,14 +549,14 @@ suggestionsContainer.addEventListener('mouseenter', () => {
   suggestionsContainer.classList.add('scroll-visible');
 });
 
-inputContainer.addEventListener('mouseleave', () => {
+searchContainer.addEventListener('mouseleave', () => {
   hideSuggestionsTimeout = setTimeout(() => {
     suggestionsContainer.style.display = 'none';
     suggestionsContainer.innerHTML = '';
   }, 300);
 });
 
-inputContainer.addEventListener('mouseenter', () => {
+searchContainer.addEventListener('mouseenter', () => {
   clearTimeout(hideSuggestionsTimeout);
 });
 
@@ -544,6 +567,7 @@ document.getElementById('copy-search-link').addEventListener('click', function (
 document.getElementById('clear-search').addEventListener('click', function () {
   searchInput.value = '';
   searchInput.dispatchEvent(new Event('input'));
+  document.querySelectorAll('#weekly-container .header, #weekly-container p').forEach((el) => el.classList.remove('blurred'));
 });
 
 document.getElementById('reset-markers').addEventListener('change', function () {
@@ -1234,7 +1258,6 @@ if (isMobile()) {
 
   Settings.overrideBrowserSearch = false;
   overrideSearch.check = false;
-  overrideSearch.disabled = true;
   overrideSearch.parentElement.parentElement.classList.add('disabled');
   overrideSearch.parentElement.parentElement.disabled = true;
 }
@@ -1245,7 +1268,14 @@ function filterMapMarkers() {
   let enableMainCategory = true;
 
   if (Settings.filterType === 'none') {
-    if (searchInput.value)
+    const searchSet = new Set(
+      (searchInput.value || '')
+        .replace(/^[;\s]+|[;\s]+$/g, '')
+        .split(';')
+        .filter(Boolean)
+    );
+
+    if (searchSet.size)
       MapBase.onSearch(searchInput.value, true);
     else
       uniqueSearchMarkers = MapBase.markers;
@@ -1408,4 +1438,34 @@ function detectPlatform() {
   }
 
   return 'other';
+}
+
+/**
+ * Converts placeholders within a translated string into corresponding HTML elements.
+ * This function processes a DOM element's innerHTML and replaces specific placeholder
+ * tokens (e.g., {↑}, {↓}, {Enter}) with the corresponding HTML representations provided
+ * in the placeholders object.
+ * 
+ * @param {HTMLElement} el - The DOM element containing the translated text with placeholders.
+ * @param {Object} placeholders - An object mapping placeholder tokens to their HTML representations.
+ *                                The keys are the placeholders and the values are the HTML strings.
+ * @returns {void}
+ * 
+ * @example
+ * const el = document.getElementById('query-suggestions-hotkeys');
+ * const placeholders = {
+ *   '↑': '<kbd class="hotkey">↑</kbd>',
+ *   '↓': '<kbd class="hotkey">↓</kbd>',
+ *   'Enter': '<kbd class="hotkey">Enter</kbd>'
+ * };
+ * placeholdersToHtml(el, placeholders);
+ * // The innerHTML of the element will be:
+ * // 'Search in suggestions, Press <kbd class="hotkey">↑</kbd> <kbd class="hotkey">↓</kbd> <kbd class="hotkey">Enter</kbd> for general search.'
+ */
+function placeholdersToHtml(el, placeholders) {
+  let html = el.innerHTML;
+  Object.entries(placeholders).forEach(
+    ([key, value]) => (html = html.split(`{${key}}`).join(value))
+  );
+  el.innerHTML = html;
 }

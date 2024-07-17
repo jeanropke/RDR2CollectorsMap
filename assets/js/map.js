@@ -367,6 +367,9 @@ const MapBase = {
     uniqueSearchMarkers = MapBase.markers;
     MapBase.initFuse();
 
+    document.querySelectorAll('#weekly-container .header, #weekly-container p')
+      .forEach((el) => el.classList.remove('blurred'));
+
     // Preview mode.
     const previewParam = getParameterByName('q');
     if (previewParam) {
