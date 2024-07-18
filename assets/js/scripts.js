@@ -181,7 +181,10 @@ function init() {
   const itemsCollectionsWeekly = Promise.all([mapping, jewelryTimestamps]).then(() => Item.init()); // Item.items (without .markers), Collection.collections, Collection.weekly*
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.mapInit(); // MapBase.map
-  Language.init().then(()=> Pins.init());
+  const languages = Language.init().then(() => {
+    Language.setMenuLanguage();
+    Pins.init();
+  });
   changeCursor();
   // MapBase.markers (without .lMarker), Item.items[].markers
   const markers = Promise.all([itemsCollectionsWeekly, lootTables]).then(Marker.init);
@@ -193,7 +196,7 @@ function init() {
 
   const treasures = Treasure.init();
   const legendaries = Legendary.init();
-  Promise.all([cycles, markers]).then(MapBase.afterLoad);
+  Promise.all([languages, markers, cycles]).then(MapBase.afterLoad);
   Routes.init();
   Promise.all([itemsCollectionsWeekly, markers, cycles, treasures, legendaries, filters])
     .then(Loader.resolveMapModelLoaded);
@@ -203,11 +206,14 @@ function init() {
 
   if (Settings.isMenuOpened) document.querySelector('.menu-toggle').click();
 
+  document.documentElement.style.setProperty('--ctrl-meta-key', detectPlatform() === 'macOS' ? '"⌘"' : '"Ctrl"');
+
   document.querySelectorAll('.map-alert').forEach(alert => { alert.style.display = Settings.alertClosed ? 'none' : '' });
 
   document.getElementById('language').value = Settings.language;
   document.getElementById('marker-opacity').value = Settings.markerOpacity;
   document.getElementById('invisible-removed-markers').checked = Settings.isInvisibleRemovedMarkers;
+  document.getElementById('override-search').checked = Settings.overrideBrowserSearch;
 
   document.getElementById('filter-type').value = Settings.filterType;
   document.getElementById('marker-size').value = Settings.markerSize;
@@ -421,6 +427,11 @@ document.getElementById('enable-right-click').addEventListener('change', functio
   Settings.isRightClickEnabled = this.checked;
 });
 
+const overrideSearch = document.getElementById('override-search');
+overrideSearch.addEventListener('change', function () {
+  Settings.overrideBrowserSearch = this.checked;
+});
+
 document.getElementById('show-utilities').addEventListener('change', function () {
   Settings.showUtilitiesSettings = this.checked;
   document.getElementById('utilities-container').classList.toggle('opened', Settings.showUtilitiesSettings);
@@ -456,19 +467,107 @@ document.getElementById('enable-cycle-changer').addEventListener('change', funct
   if (!Settings.isCycleChangerEnabled) Cycles.resetCycle();
 });
 
-document.getElementById('search').addEventListener('input', function () {
-  MapBase.onSearch(this.value);
+const searchInput = document.getElementById('search');
+const suggestionsContainer = document.getElementById('query-suggestions');
+const searchContainer = document.querySelector('#search').closest('.input-container');
+const searchHotkey = document.getElementById('search-hotkey');
+const suggestionsHotkeys = document.getElementById('query-suggestions-hotkeys');
+let hideSuggestionsTimeout;
+
+searchInput.addEventListener('input', function () {
+  searchHotkey.style.opacity = searchInput.value ? '0' : '1';
   document.getElementById('filter-type').value = 'none';
+  if (!isMobile()) {
+    suggestionsHotkeys.style.display = searchInput.value.trim() === '' ? '' : 'none';
+    document.querySelectorAll('#weekly-container .header, #weekly-container p').forEach((el) => el.classList.add('blurred'));
+  }
+  
+  MapBase.onSearch(searchInput.value);
+  MapBase.onQuerySuggestions(searchInput.value);
+});
+
+searchInput.addEventListener('focus', function () {
+  if (!isMobile()) {
+    suggestionsHotkeys.classList.toggle('focused', searchInput.value.trim() === '');
+    document.querySelectorAll('#weekly-container .header, #weekly-container p').forEach((el) => el.classList.add('blurred'));
+  }
+  this.addEventListener('keydown', function handleEscKey(event) {
+    if (event.key === 'Escape') {
+      this.blur();
+      this.removeEventListener('keydown', handleEscKey);
+    }
+  });
+});
+
+let activeSuggestionIndex = -1;
+searchInput.addEventListener('keydown', function (e) {
+  const suggestions = suggestionsContainer.querySelectorAll('.query-suggestion');
+  switch (e.key) {
+    case 'ArrowDown':
+      e.preventDefault();
+      activeSuggestionIndex = (activeSuggestionIndex + 1) % suggestions.length;
+      suggestionsContainer.classList.add('scroll-visible');
+      break;
+    case 'ArrowUp':
+      e.preventDefault();
+      activeSuggestionIndex = (activeSuggestionIndex - 1 + suggestions.length) % suggestions.length;
+      suggestionsContainer.classList.add('scroll-visible');
+      break;
+    case 'Enter':
+      if (activeSuggestionIndex > -1 && suggestions.length > 0) {
+        e.preventDefault();
+        suggestions[activeSuggestionIndex].click();
+        this.scrollLeft = this.scrollWidth;
+      }
+      break;
+    default:
+      return;
+  }
+  suggestions.forEach((el, index) => {
+    el.classList.toggle('active', index === activeSuggestionIndex);
+    if (index === activeSuggestionIndex) el.scrollIntoView({ block: 'nearest' });
+  });
+});
+
+searchInput.addEventListener('blur', () => {
+  hideSuggestionsTimeout = setTimeout(() => {
+    if (!isMobile()) {
+      suggestionsHotkeys.classList.remove('focused');
+      document.querySelectorAll('#weekly-container .header, #weekly-container p').forEach((el) => el.classList.remove('blurred'));
+    }
+    suggestionsContainer.style.display = 'none';
+    suggestionsContainer.innerHTML = '';
+  }, 300);
+  suggestionsContainer.classList.remove('scroll-visible');
+});
+
+suggestionsContainer.addEventListener('mouseleave', () => {
+  suggestionsContainer.classList.remove('scroll-visible');
+});
+
+suggestionsContainer.addEventListener('mouseenter', () => {
+  suggestionsContainer.classList.add('scroll-visible');
+});
+
+searchContainer.addEventListener('mouseleave', () => {
+  hideSuggestionsTimeout = setTimeout(() => {
+    suggestionsContainer.style.display = 'none';
+    suggestionsContainer.innerHTML = '';
+  }, 300);
+});
+
+searchContainer.addEventListener('mouseenter', () => {
+  clearTimeout(hideSuggestionsTimeout);
 });
 
 document.getElementById('copy-search-link').addEventListener('click', function () {
-  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${document.getElementById('search').value}`);
+  setClipboardText(`http://jeanropke.github.io/RDR2CollectorsMap/?search=${searchInput.value}`);
 });
 
 document.getElementById('clear-search').addEventListener('click', function () {
-  const searchInput = document.getElementById('search');
   searchInput.value = '';
   searchInput.dispatchEvent(new Event('input'));
+  document.querySelectorAll('#weekly-container .header, #weekly-container p').forEach((el) => el.classList.remove('blurred'));
 });
 
 document.getElementById('reset-markers').addEventListener('change', function () {
@@ -544,6 +643,7 @@ document.getElementById('timestamps-24').addEventListener('change', function () 
 document.getElementById('language').addEventListener('change', function () {
   Settings.language = this.value;
   Language.setMenuLanguage();
+  MapBase.initFuse();
   MapBase.setFallbackFonts();
   Menu.refreshMenu();
   Cycles.setLocaleDate();
@@ -1153,14 +1253,30 @@ document.getElementById('open-custom-marker-color-modal').addEventListener('clic
   });
 });
 
+if (isMobile()) {
+  searchHotkey.style.display = 'none';
+
+  Settings.overrideBrowserSearch = false;
+  overrideSearch.check = false;
+  overrideSearch.parentElement.parentElement.classList.add('disabled');
+  overrideSearch.parentElement.parentElement.disabled = true;
+}
+
 function filterMapMarkers() {
   uniqueSearchMarkers = [];
   let filterType = () => true;
   let enableMainCategory = true;
 
   if (Settings.filterType === 'none') {
-    if (document.getElementById('search').value)
-      MapBase.onSearch(document.getElementById('search').value);
+    const searchSet = new Set(
+      (searchInput.value || '')
+        .replace(/^[;\s]+|[;\s]+$/g, '')
+        .split(';')
+        .filter(Boolean)
+    );
+
+    if (searchSet.size)
+      MapBase.onSearch(searchInput.value, true);
     else
       uniqueSearchMarkers = MapBase.markers;
 
@@ -1297,4 +1413,59 @@ function loadFont(name, urls = {}) {
     document.fonts.add(fontFace);
     return fontFace;
   });
+}
+
+function isMobile() {
+  const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const hasTouchPoints = 'maxTouchPoints' in navigator && navigator.maxTouchPoints > 0;
+  const isMobileUAData = navigator.userAgentData ? navigator.userAgentData.mobile : false;
+  const isMobileUserAgent = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  return isCoarsePointer || hasTouchPoints || isMobileUAData || isMobileUserAgent;
+}
+
+function detectPlatform() {
+  const { userAgentData, userAgent, vendor } = navigator;
+  const platform = userAgentData?.platform || userAgent || vendor || window.opera || '';
+  const platforms = {
+    macOS: /Macintosh|MacIntel|MacPPC|Mac68K|Mac OS X/i,
+    Windows: /Windows|Win32|Win64|WOW64|WinCE/i,
+    Android: /Android/i,
+    Linux: /Linux/i,
+  };
+  for (const [key, regex] of Object.entries(platforms)) {
+    if (regex.test(platform)) return key;
+  }
+
+  return 'other';
+}
+
+/**
+ * Converts placeholders within a translated string into corresponding HTML elements.
+ * This function processes a DOM element's innerHTML and replaces specific placeholder
+ * tokens (e.g., {↑}, {↓}, {Enter}) with the corresponding HTML representations provided
+ * in the placeholders object.
+ * 
+ * @param {HTMLElement} el - The DOM element containing the translated text with placeholders.
+ * @param {Object} placeholders - An object mapping placeholder tokens to their HTML representations.
+ *                                The keys are the placeholders and the values are the HTML strings.
+ * @returns {void}
+ * 
+ * @example
+ * const el = document.getElementById('query-suggestions-hotkeys');
+ * const placeholders = {
+ *   '↑': '<kbd class="hotkey">↑</kbd>',
+ *   '↓': '<kbd class="hotkey">↓</kbd>',
+ *   'Enter': '<kbd class="hotkey">Enter</kbd>'
+ * };
+ * placeholdersToHtml(el, placeholders);
+ * // The innerHTML of the element will be:
+ * // 'Search in suggestions, Press <kbd class="hotkey">↑</kbd> <kbd class="hotkey">↓</kbd> <kbd class="hotkey">Enter</kbd> for general search.'
+ */
+function placeholdersToHtml(el, placeholders) {
+  let html = el.innerHTML;
+  Object.entries(placeholders).forEach(
+    ([key, value]) => (html = html.split(`{${key}}`).join(value))
+  );
+  el.innerHTML = html;
 }

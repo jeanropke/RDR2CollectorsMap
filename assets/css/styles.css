@@ -3,6 +3,7 @@
     --default-title-font: RDRLino;
     --content-font: var(--default-content-font), serif;
     --title-font: var(--default-title-font), serif;
+    --ctrl-meta-key: 'Ctrl';
 }
 
 @font-face {
@@ -482,6 +483,119 @@ select {
     font-size: 14px;
     width: 100%;
     border-radius: 3px;
+}
+
+.input-search-hotkeys {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.hotkey {
+    display: inline-block;
+    color: rgba(123, 102, 175, .8);
+    font-family: var(--title-font);
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 2px;
+    padding: 2px 4px;
+    background-color: rgba(123, 102, 175, .2);
+    border: 2px solid rgba(123, 102, 175, .8);
+    border-radius: 3px;
+}
+
+.query-suggestions-hotkeys {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    padding: 8px;
+    background-color: rgba(56, 56, 56, .8);
+    border: 1px solid rgba(56, 56, 56, .8);
+    border-radius: 3px;
+    color: #eee;
+    font-size: 13px;
+    text-align: left;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    -moz-backdrop-filter: blur(2px);
+    transition: opacity 0.3s ease;
+}
+
+.query-suggestions-hotkeys .hotkey {
+    font-size: 10px;
+}
+
+.query-suggestions-hotkeys.focused {
+    display: inline-block;
+    opacity: 1;
+}
+
+.input-search-hotkeys .hotkey:first-child:after {
+    content: var(--ctrl-meta-key);
+    letter-spacing: normal;
+}
+
+.input-with-suggestions {
+    position: relative;
+    width: 100%;
+}
+
+.query-suggestions {
+    position: absolute;
+    color: #eee;
+    width: 100%;
+    max-height: calc(10em + 20px);
+    border: 1px solid rgba(56, 56, 56, .8);
+    border-radius: 3px;
+    background-color: rgba(56, 56, 56, .8);
+    box-shadow: 0 2px 5px rgba(0,0,0, .4);
+    overflow-y: auto;
+    overflow: hidden;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    -moz-backdrop-filter: blur(2px);
+}
+
+.query-suggestions:hover,
+.query-suggestions.scroll-visible {
+    overflow: auto;
+}
+
+.query-suggestions::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+.query-suggestions::-webkit-scrollbar-track {
+    background: rgba(56, 56, 56, .6); 
+    border-radius: 3px;
+}
+
+.query-suggestions::-webkit-scrollbar-thumb {
+    background: rgb(172, 169, 169, .4);
+}
+
+.query-suggestions::-webkit-scrollbar-thumb:hover {
+    background: rgba(200, 199, 199, .4);
+}
+
+.query-suggestion {
+    font-size: 14px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.query-suggestion:hover, .query-suggestion.active {
+    color: #fff;
+    background-color: rgba(138, 136, 136, .8);
 }
 
 .input-file {
@@ -1146,6 +1260,14 @@ a.no-style:visited {
     user-select: none;
 }
 
+#weekly-container .blurred {
+    filter: blur(2px);
+}
+
+#weekly-container .header, #weekly-container p {
+    transition: filter 0.3s ease;
+}
+
 .weekly-item-listings p {
     text-align: center;
     font-size: 14px;
@@ -1392,6 +1514,10 @@ a.no-style:visited {
         left: 2px;
         right: 2px;
         bottom: 2px;
+    }
+
+    .input-search-hotkeys {
+        display: none;
     }
 
     #video-modal .modal-xl {
@@ -2061,7 +2187,7 @@ button.reload-nazar {
     padding: .375rem .375rem;
     background-color: rgba(255, 255, 255, .67);
     border: .125rem solid rgba(255, 255, 255, 1);
-    border-radius: 2.5rem;
+    border-radius: .25rem;
     box-shadow: rgba(0, 0, 0, .33) 0 .125rem .375rem;
     opacity: .5;
     transition: opacity .2s;
@@ -2109,7 +2235,7 @@ button.reload-nazar {
     width: 1.125rem;
     height: 1.125rem;
     border: .1875rem solid rgba(255, 255, 255, 1);
-    border-radius: 1.125rem;
+    border-radius: .25rem;
     background: rgba(var(--primary-rgb), 1) !important;
     cursor: grab;
 }
@@ -2130,7 +2256,7 @@ button.reload-nazar {
     width: 1.125rem;
     height: 1.125rem;
     border: .1875rem solid rgba(255, 255, 255, 1);
-    border-radius: 1.125rem;
+    border-radius: .25rem;
     background: rgba(var(--primary-rgb), 1) !important;
     cursor: grab;
 }
