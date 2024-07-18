@@ -2187,7 +2187,7 @@ button.reload-nazar {
     padding: .375rem .375rem;
     background-color: rgba(255, 255, 255, .67);
     border: .125rem solid rgba(255, 255, 255, 1);
-    border-radius: 2.5rem;
+    border-radius: .25rem;
     box-shadow: rgba(0, 0, 0, .33) 0 .125rem .375rem;
     opacity: .5;
     transition: opacity .2s;
@@ -2235,7 +2235,7 @@ button.reload-nazar {
     width: 1.125rem;
     height: 1.125rem;
     border: .1875rem solid rgba(255, 255, 255, 1);
-    border-radius: 1.125rem;
+    border-radius: .25rem;
     background: rgba(var(--primary-rgb), 1) !important;
     cursor: grab;
 }
@@ -2256,7 +2256,7 @@ button.reload-nazar {
     width: 1.125rem;
     height: 1.125rem;
     border: .1875rem solid rgba(255, 255, 255, 1);
-    border-radius: 1.125rem;
+    border-radius: .25rem;
     background: rgba(var(--primary-rgb), 1) !important;
     cursor: grab;
 }
