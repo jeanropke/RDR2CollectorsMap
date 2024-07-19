@@ -642,6 +642,8 @@ document.getElementById('timestamps-24').addEventListener('change', function () 
 
 document.getElementById('language').addEventListener('change', function () {
   Settings.language = this.value;
+  if (searchInput.value.trim()) document.getElementById('clear-search').click();
+
   Language.setMenuLanguage();
   MapBase.initFuse();
   MapBase.setFallbackFonts();
