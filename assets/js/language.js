@@ -143,7 +143,6 @@ const Language = {
       '↓': '<kbd class="hotkey">↓</kbd>',
       'Enter': '<kbd class="hotkey">Enter</kbd>'
     });
-    document.getElementById('clear-search').click();
     
     FME.update();
     this.updateProgress();
