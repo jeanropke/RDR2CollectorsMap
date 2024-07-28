@@ -1449,6 +1449,7 @@
     "menu.search_placeholder": "Search items. Separated by ;",
     "menu.query_suggestions_hotkey": "Search in suggestions, Press {↑} {↓} {Enter} for general search.",
     "menu.auto_enable_sold_items": "Automatically enable sold items",
+    "menu.back_to_top": "Scroll back to top (Draggable)",
     "map.remove_add": "Remove/Add from map",
     "map.remove": "Remove from map",
     "map.copy_link": "Copy link",
