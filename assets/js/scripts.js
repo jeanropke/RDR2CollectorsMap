@@ -1268,17 +1268,18 @@ function filterMapMarkers() {
   uniqueSearchMarkers = [];
   let filterType = () => true;
   let enableMainCategory = true;
+  const searchInputVal = document.getElementById('search').value;
 
   if (Settings.filterType === 'none') {
     const searchSet = new Set(
-      (searchInput.value || '')
+      (searchInputVal || '')
         .replace(/^[;\s]+|[;\s]+$/g, '')
         .split(';')
         .filter(Boolean)
     );
 
     if (searchSet.size)
-      MapBase.onSearch(searchInput.value, true);
+      MapBase.onSearch(searchInputVal, true);
     else
       uniqueSearchMarkers = MapBase.markers;
 
