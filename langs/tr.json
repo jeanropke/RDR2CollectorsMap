@@ -1579,7 +1579,7 @@
     "menu.fme.fme_challenge_horseback_kills": "At Sırtında Öldüme Görevi",
     "menu.fme.fme_challenge_longarm_kills": "Uzun Namlulu Silahla Öldürme Görevi",
     "menu.fme.fme_challenge_sidearm_kills": "Tabanca ile Öldürme Görevi",
-    "notification.fme.body": "Uyarı, {name}, {time} dakika içinde başlayacaktır.",
+    "notification.fme.body": "Uyarı, {name} için başlama süresi {time}.",
     "menu.fme_enabled_events": "Aktif eventleri seç",
     "help.fme_enabled_events": "Haritada hangi eventleri görüntülemek istediğinizi ya da hangi eventler için bildirim gönderilmesini istediğinizi seçmenize yarar.",
     "menu.modal_fme_enabled_events_title": "Free Roam Eventleri Ayarları",
