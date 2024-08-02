@@ -36,7 +36,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (89 words)
   - **younessmouhid** (160 words)
 
-### Bulgarian (30%):
+### Bulgarian (31%):
+  - **MartinTsankov** (63 words)
   - **mr.darakov** (10 words)
 
 ### Catalan (14%):
