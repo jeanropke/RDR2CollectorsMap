@@ -143,6 +143,7 @@ const Language = {
       '↓': '<kbd class="hotkey">↓</kbd>',
       'Enter': '<kbd class="hotkey">Enter</kbd>'
     });
+    backToTop.setAttribute('title', Language.get('menu.back_to_top'));
     
     FME.update();
     this.updateProgress();
