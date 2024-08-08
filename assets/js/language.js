@@ -137,13 +137,13 @@ const Language = {
 
     this.translateDom();
 
-    searchInput.setAttribute('placeholder', Language.get('menu.search_placeholder'));
-    placeholdersToHtml(suggestionsHotkeys, {
+    document.getElementById('search').setAttribute('placeholder', Language.get('menu.search_placeholder'));
+    placeholdersToHtml(document.getElementById('query-suggestions-hotkeys'), {
       '↑': '<kbd class="hotkey">↑</kbd>',
       '↓': '<kbd class="hotkey">↓</kbd>',
       'Enter': '<kbd class="hotkey">Enter</kbd>'
     });
-    backToTop.setAttribute('title', Language.get('menu.back_to_top'));
+    document.getElementById('back-to-top').setAttribute('title', Language.get('menu.back_to_top'));
     
     FME.update();
     this.updateProgress();
