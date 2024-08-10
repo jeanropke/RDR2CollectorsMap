@@ -1248,6 +1248,7 @@
     "menu.search_placeholder": "搜索物品。多个物品需以半角 “;” 分隔",
     "menu.query_suggestions_hotkey": "在建议中搜索，按 {↑} {↓} {Enter} 以进行常规搜索。",
     "menu.auto_enable_sold_items": "自动启用已全部售出的物品",
+    "menu.back_to_top": "滚动至顶部（可拖拽）",
     "map.remove_add": "从地图中移除/添加",
     "map.remove": "从地图中移除",
     "map.copy_link": "复制链接",
