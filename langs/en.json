@@ -1753,6 +1753,7 @@
     "help.item_unavailable": "This item is unavailable due to a game bug or being undiscovered.",
     "help.item_random": "This item is random and does not have static spawn point.",
     "help.jewelry_random_timestamp": "This item is random today, next static spawn is {day}",
+    "help.jewelry_not_random_timestamp": "Toggles whether this item should be visible on the map. Next static spawn is {day}",
     "help.clear_important_items": "Clears the highlight from all markers marked as important.",
     "help.item_category_unavailable_items": "Toggles whether this set should be visible on the map. This set contains one or more items that are randomized, or are unavailable due to a game bug.",
     "help.item_category_bugged_items": "Toggles whether this set should be visible on the map. This set contains one or more items that are unavailable due to a game bug.",

@@ -160,6 +160,8 @@ class Item extends BaseItem {
           return 'item_unavailable';
         } else if (isRandom && parentCategories.jewelry_random.includes(this.category) && !!MapBase.jewelryTimestamps[this.itemId]) {
           return 'jewelry_random_timestamp';
+        } else if (!isRandom && parentCategories.jewelry_random.includes(this.category) && !!MapBase.jewelryTimestamps[this.itemId]) {
+          return 'jewelry_not_random_timestamp';
         } else if (isRandom) {
           return 'item_random';
         } else if (['provision_wldflwr_agarita', 'provision_wldflwr_blood_flower'].includes(this.itemId)) {
