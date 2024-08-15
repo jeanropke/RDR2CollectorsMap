@@ -279,6 +279,16 @@ const MapBase = {
     Layers.overlaysLayer.addTo(MapBase.map);
   },
 
+  setColoris: function () {
+    Coloris({
+      el: '.coloris',
+      themeMode: 'dark',
+      swatchesOnly: true,
+      swatches: Object.keys(colorNameMap),
+      alpha: false,
+    });
+  },
+
   setFallbackFonts: async function () {
     const fontsData = {
       ja: {
@@ -366,6 +376,7 @@ const MapBase = {
     'use strict';
     uniqueSearchMarkers = MapBase.markers;
     MapBase.initFuse();
+    MapBase.setColoris();
 
     // Preview mode.
     const previewParam = getParameterByName('q');

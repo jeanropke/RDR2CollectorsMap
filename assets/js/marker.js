@@ -528,6 +528,77 @@ class Marker {
       MapBase.removeItemFromMap(this.day, this.text, this.subdata || '', this.category);
     });
   }
+
+  static createMarkerColorCustomPanel() {
+    const markerColors = Object.values(colorNameMap).sort((...args) => {
+      const [a, b] = args.map((color) => Language.get(`map.user_pins.color.${color}`));
+      return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
+    });
+
+    const baseColors = { arrowhead: 'purple', bottle: 'brown', coin: 'darkorange', egg: 'white', flower: 'red', fossils_random: 'darkgreen', cups: 'blue', swords: 'blue', wands: 'blue', pentacles: 'blue', jewelry_random: 'yellow', bracelet: 'yellow', necklace: 'yellow', ring: 'yellow', earring: 'yellow', heirlooms: 'pink', random: 'lightgray', random_spot_metal_detector_chest: 'lightgray', random_spot_shovel: 'lightgray', random_spot_metal_detector_shallow: 'gray' };
+
+    const randomCategories = ['random_spot_metal_detector_chest', 'random_spot_metal_detector_shallow', 'random_spot_shovel']; // divide random spots to metal detector chest & shallow & shovel
+    const itemCollections = Collection.collections;
+    const possibleCategories = [...new Set(MapBase.markers.map(({ category }) => category))]
+      // fossils categories => fossils_random, random => random_spot_metal & random_spot_shovel
+      .filter(category => !['coastal', 'oceanic', 'megafauna', 'random'].includes(category));
+      
+    const categories = [...possibleCategories, ...randomCategories].sort(
+      (...args) => {
+        const [a, b] = args.map((element) => {
+          const index = itemCollections.map(({ category }) => category).indexOf(element);
+          return index !== -1 ? index : itemCollections.length;
+        });
+        return a - b;
+      }
+    );
+
+    const savedColors = Object.assign(
+      baseColors,
+      JSON.parse(
+        localStorage.getItem('rdr2collector.customMarkersColors') ||
+          localStorage.getItem('customMarkersColors')
+      ) || {}
+    );
+
+    const wrapper = document.createElement('div');
+    wrapper.id = 'custom-markers-colors';
+
+    categories.forEach((category) => {
+      const snippet = document.createElement('div');
+      snippet.className = 'input-container';
+      snippet.id = `${category}-custom-color`;
+      snippet.dataset.help = 'custom_marker_color';
+    
+      snippet.innerHTML = `
+        <label for="custom-marker-color" data-text="menu.${category}"></label>
+        <input type="text" class="input-text coloris instance-custom-marker-color" id="${category}-custom-marker-color" readonly value="${
+          colorNameToHexMap[savedColors[category] || markerColors[0]] ||
+          savedColors[category] ||
+          markerColors[0]
+        }">
+      `;
+    
+      wrapper.appendChild(snippet);
+    });
+  
+    const translatedContent = Language.translateDom(wrapper);
+    document.getElementById('custom-marker-color-modal').querySelector('#custom-colors').appendChild(translatedContent);
+
+    Coloris.setInstance('.instance-custom-marker-color', {
+      theme: 'large',
+      parent: '#custom-markers-colors'
+    });
+
+    wrapper.querySelectorAll('.instance-custom-marker-color').forEach((input) => {
+      input.addEventListener('input', function () {
+        baseColors[this.id.split('-')[0]] = colorNameMap[this.value];
+        localStorage.setItem('rdr2collector.customMarkersColors', JSON.stringify(baseColors));
+        MapBase.addMarkers();
+      });
+    });
+  }
+
   static init() {
     [
       [Settings, 'markerColor', 'by_category', '#marker-color'],

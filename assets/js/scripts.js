@@ -39,6 +39,18 @@ HTMLElement.prototype.propSearchUp = function (property) {
 
 let uniqueSearchMarkers = [];
 
+const colorNameMap = {
+  '#00ffa2': 'aquagreen', '#ffce70': 'beige', '#292929': 'black', '#31a6c7': 'blue',
+  '#7c411f': 'brown', '#416776': 'cadetblue', '#0066a2': 'darkblue', '#627134': 'darkgreen',
+  '#e27839': 'darkorange', '#593769': 'darkpurple', '#a13235': 'darkred', '#444444': 'gray',
+  '#70ae25': 'green', '#88dbff': 'lightblue', '#5e5e5e': 'lightgray', '#a3c62c': 'lightgreen',
+  '#ff8c7d': 'lightorange', '#da4d6d': 'lightred', '#ee9232': 'orange', '#c05b9f': 'pink',
+  '#6b65a4': 'purple', '#d43d29': 'red', '#ffffff': 'white', '#ffcc5c': 'yellow',
+};
+const colorNameToHexMap = Object.fromEntries(
+  Object.entries(colorNameMap).map(([hex, name]) => [name, hex])
+);
+
 const categories = [
   'arrowhead', 'bottle', 'bracelet', 'coastal', 'coin', 'cups', 'earring', 'egg',
   'fast_travel', 'flower', 'fossils_random', 'heirlooms',
@@ -181,14 +193,15 @@ function init() {
   const itemsCollectionsWeekly = Promise.all([mapping, jewelryTimestamps]).then(() => Item.init()); // Item.items (without .markers), Collection.collections, Collection.weekly*
   itemsCollectionsWeekly.then(MapBase.loadOverlays);
   MapBase.mapInit(); // MapBase.map
-  const languages = Language.init().then(() => {
-    Language.setMenuLanguage();
-    Pins.init();
-  });
+  const languages = Language.init().then(() => Language.setMenuLanguage());
   changeCursor();
+
   // MapBase.markers (without .lMarker), Item.items[].markers
   const markers = Promise.all([itemsCollectionsWeekly, lootTables]).then(Marker.init);
   const cycles = Promise.all([itemsCollectionsWeekly, markers, setMapTime]).then(Cycles.load);
+  markers.then(Marker.createMarkerColorCustomPanel);
+  Promise.all([languages, markers]).then(() => Pins.init());
+  
   Inventory.init();
   MapBase.loadFastTravels();
   const filters = MapBase.loadFilters();
@@ -1208,69 +1221,7 @@ lootTableModalEl.addEventListener('show.bs.modal', function (event) {
 
 const customMarkerColorModal = new bootstrap.Modal(document.getElementById('custom-marker-color-modal'));
 document.getElementById('open-custom-marker-color-modal').addEventListener('click', event => {
-  const markerColors = ['aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple', 'darkred', 'gray', 'green', 'lightblue', 'lightgray', 'lightgreen', 'lightorange', 'lightred', 'orange', 'pink', 'purple', 'red', 'white', 'yellow']
-    .sort((...args) => {
-      const [a, b] = args.map(color => Language.get(`map.user_pins.color.${color}`));
-      return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
-    });
-  const baseColors = { arrowhead: 'purple', bottle: 'brown', coin: 'darkorange', egg: 'white', flower: 'red', fossils_random: 'darkgreen', cups: 'blue', swords: 'blue', wands: 'blue', pentacles: 'blue', jewelry_random: 'yellow', bracelet: 'yellow', necklace: 'yellow', ring: 'yellow', earring: 'yellow', heirlooms: 'pink', random: 'lightgray', random_spot_metal_detector_chest: 'lightgray', random_spot_shovel: 'lightgray', random_spot_metal_detector_shallow: 'gray' };
-  const randomCategories = ['random_spot_metal_detector_chest', 'random_spot_metal_detector_shallow', 'random_spot_shovel']; // divide random spots to metal detector chest & shallow & shovel
-  const itemCollections = Collection.collections;
-  const possibleCategories = [...new Set(MapBase.markers.map(({ category }) => category))]
-    // fossils categories => fossils_random, random => random_spot_metal & random_spot_shovel
-    .filter(category => !['coastal', 'oceanic', 'megafauna', 'random'].includes(category));
-  const categories = [
-    ...possibleCategories,
-    ...randomCategories,
-  ].sort((...args) => {
-    const [a, b] = args.map(element => {
-      const index = itemCollections.map(({ category }) => category).indexOf(element);
-      return index !== -1 ? index : itemCollections.length;
-    });
-    return a - b;
-  });
-  const savedColors = Object.assign(baseColors, JSON.parse(localStorage.getItem('rdr2collector.customMarkersColors') || localStorage.getItem('customMarkersColors')) || {});
-  const wrapper = document.createElement('div');
-  wrapper.id = 'custom-markers-colors';
-
-  categories.forEach(category => {
-    const snippet = document.createElement('div');
-    snippet.classList.add('input-container');
-    snippet.id = `${category}-custom-color`;
-    snippet.setAttribute('data-help', 'custom_marker_color');
-    
-    const label = document.createElement('label');
-    label.setAttribute('for', 'custom-marker-color');
-    label.setAttribute('data-text', `menu.${category}`);
-    snippet.appendChild(label);
-
-    const select = document.createElement('select');
-    select.classList.add('input-text');
-    select.classList.add('wide-select-menu');
-    select.id = `${category}-custom-marker-color`;
-
-    markerColors.forEach(color => {
-      const option = document.createElement('option');
-      option.value = color;
-      option.setAttribute('data-text', `map.user_pins.color.${color}`);
-      option.selected = savedColors[category] === color;
-      select.appendChild(option);
-    });
-
-    snippet.appendChild(select);
-    wrapper.appendChild(snippet);
-  });
-
-  const translatedContent = Language.translateDom(wrapper);
-  document.getElementById('custom-marker-color-modal').querySelector('#custom-colors').appendChild(translatedContent);
   customMarkerColorModal.show();
-  wrapper.querySelectorAll('.input-container').forEach(inputContainer => {
-    inputContainer.addEventListener('change', event => {
-        baseColors[event.target.id.split('-')[0]] = event.target.value;
-        localStorage.setItem('rdr2collector.customMarkersColors', JSON.stringify(baseColors));
-        MapBase.addMarkers();
-    });
-  });
 });
 
 if (isMobile()) {
