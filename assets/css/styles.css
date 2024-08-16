@@ -353,8 +353,7 @@ select {
     margin-bottom: 2px;
 }
 
-.marker-popup-pin-input-icon,
-.marker-popup-pin-input-color {
+.marker-popup-pin-input-icon {
     color: inherit;
     background: #eee;
     border: none;
@@ -362,102 +361,6 @@ select {
     font-size: 14px;
     height: 100%;
     border-radius: 3px;
-}
-
-.pin-color.aquagreen {
-    color: #00ffa2;
-}
-
-.pin-color.beige {
-    color: #ffce70;
-}
-
-.pin-color.black {
-    color: #292929;
-}
-
-.pin-color.blue {
-    color: #31a6c7;
-}
-
-.pin-color.brown {
-    color: #7c411f;
-}
-
-.pin-color.cadetblue {
-    color: #416776;
-}
-
-.pin-color.darkblue {
-    color: #0066a2;
-}
-
-.pin-color.darkgreen {
-    color: #627134;
-}
-
-.pin-color.darkorange {
-    color: #e27839;
-}
-
-.pin-color.darkpurple {
-    color: #593769;
-}
-
-.pin-color.darkred {
-    color: #a13235;
-}
-
-.pin-color.gray {
-    color: #444444;
-}
-
-.pin-color.green {
-    color: #70ae25;
-}
-
-.pin-color.lightblue {
-    color: #88dbff;
-}
-
-.pin-color.lightgray {
-    color: #5e5e5e;
-}
-
-.pin-color.lightgreen {
-    color: #a3c62c;
-}
-
-.pin-color.lightorange {
-    color: #ff8c7d;
-}
-
-.pin-color.lightred {
-    color: #da4d6d;
-}
-
-.pin-color.orange {
-    color: #ee9232;
-}
-
-.pin-color.pink {
-    color: #c05b9f;
-}
-
-.pin-color.purple {
-    color: #6b65a4;
-}
-
-.pin-color.red {
-    color: #d43d29;
-}
-
-.pin-color.white {
-    color: #ffffff;
-}
-
-.pin-color.yellow {
-    color: #ffcc5c;
 }
 
 .links-container {
@@ -616,6 +519,29 @@ select {
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
+}
+
+#custom-markers-colors .clr-field input {
+    width: 5vw;
+    border-radius: 3px;
+}
+
+.leaflet-popup-content .clr-field input {
+    width: 100%;
+    border-radius: 3px;
+}
+
+#custom-markers-colors .clr-field button,
+.leaflet-popup-content .clr-field button {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+#clr-picker #clr-swatches button,
+#custom-markers-colors #clr-picker #clr-swatches button {
+    width: 30px;
+    height: 30px;
 }
 
 .input-container-noflex {
@@ -1522,6 +1448,16 @@ a.no-style:visited {
 
     #video-modal .modal-xl {
         width: calc(100vw - 15px);
+    }
+
+    #custom-markers-colors .clr-field input {
+        width: 10vw;
+    }
+
+    #clr-picker #clr-swatches button,
+    #custom-markers-colors #clr-picker #clr-swatches button {
+        width: 42px;
+        height: 42px;
     }
 }
 

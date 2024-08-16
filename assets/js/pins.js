@@ -27,36 +27,6 @@ class Pin {
 
     if (Settings.isPinsEditingEnabled) {
       const markerIcons = ['pin', 'random', 'shovel', 'magnet', 'flower', 'bottle', 'arrowhead', 'egg', 'cups', 'pentacles', 'swords', 'wands', 'coin', 'heirlooms', 'fast_travel', 'bracelet', 'earring', 'necklace', 'ring', 'nazar', 'treasure', 'camp', 'harrietum'];
-      const markerColors = ['aquagreen', 'beige', 'black', 'blue', 'brown', 'cadetblue', 'darkblue', 'darkgreen', 'darkorange', 'darkpurple', 'darkred', 'gray', 'green', 'lightblue', 'lightgray', 'lightgreen', 'lightorange', 'lightred', 'orange', 'pink', 'purple', 'red', 'white', 'yellow'];
-      const markerIconSelect = document.createElement('select');
-      markerIconSelect.setAttribute('id', `${this.id}_icon`);
-      markerIconSelect.classList.add('marker-popup-pin-input-icon');
-      const markerColorSelect = document.createElement('select');
-      markerColorSelect.setAttribute('id', `${this.id}_color`);
-      markerColorSelect.classList.add('marker-popup-pin-input-color');
-
-      markerColors.forEach(color => {
-        const option = document.createElement('option');
-        option.classList.add('pin-color', color);
-        option.setAttribute('value', color);
-        option.setAttribute('data-text', `map.user_pins.color.${color}`);
-        option.textContent = Language.get(`map.user_pins.color.${color}`);
-        markerColorSelect.appendChild(option);
-
-        if (color === this.color)
-          option.setAttribute('selected', 'selected');
-      });
-
-      markerIcons.forEach(icon => {
-        const option = document.createElement('option');
-        option.setAttribute('value', icon);
-        option.setAttribute('data-text', `map.user_pins.icon.${icon}`);
-        option.textContent = Language.get(`map.user_pins.icon.${icon}`);
-        markerIconSelect.appendChild(option);
-        
-        if (icon === this.icon)
-          option.setAttribute('selected', 'selected');
-      });
 
       snippet = document.createElement('div');
       snippet.innerHTML = `
@@ -73,12 +43,18 @@ class Pin {
             <label for="${this.id}_icon" class="marker-popup-pin-label" data-text="map.user_pins.icon">
               ${Language.get('map.user_pins.icon')}
             </label>
-            ${markerIconSelect.outerHTML}
-
+            <select id="${this.id}_icon" class="marker-popup-pin-input-icon">
+              ${markerIcons.map(icon => `
+                <option value="${icon}" data-text="map.user_pins.icon.${icon}"
+                  ${icon === this.icon ? 'selected' : ''}>
+                  ${Language.get(`map.user_pins.icon.${icon}`)}
+                </option>
+              `).join('')}
+            </select>
             <label for="${this.id}_color" class="marker-popup-pin-label" data-text="map.user_pins.color">
               ${Language.get('map.user_pins.color')}
             </label>
-            ${markerColorSelect.outerHTML}
+            <input type="text" id="${this.id}_color" class="input-text coloris instance-userpin" readonly value="${colorNameToHexMap[this.color]}">
           </div>
           <div style="display: grid;">
             <button type="button" class="btn btn-info save-button" data-text="map.user_pins.save">
@@ -92,12 +68,20 @@ class Pin {
             </small>
           </div>
       `;
+
+      Coloris.wrap(snippet.querySelector('.instance-userpin'));
+
+      Coloris.setInstance('.instance-userpin', {
+        theme: 'large'
+      });
+
       snippet.querySelector('.save-button').addEventListener('click', () => this.save(
         document.getElementById(`${this.id}_name`).value,
         document.getElementById(`${this.id}_desc`).value,
         document.getElementById(`${this.id}_icon`).value,
-        document.getElementById(`${this.id}_color`).value
+        colorNameMap[document.getElementById(`${this.id}_color`).value]
       ));
+      
       snippet.querySelector('.remove-button').addEventListener('click', () => this.remove());
     } else {
       snippet = document.createElement('div');
@@ -203,7 +187,7 @@ class Pins {
           const reader = new FileReader();
 
           reader.addEventListener('loadend', (e) => {
-            const text = e.srcElement.result;
+            const text = e.target.result;
             Pins.importPins(text);
           });
 
