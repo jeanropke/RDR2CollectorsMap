@@ -66,14 +66,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **RichardC.P.** (7,227 words)
   - **Vinnie5412** (804 words)
 
-### Czech (68%):
+### Czech (69%):
   - **avojta** (581 words)
   - **CzechJura** (719 words)
   - **filutav39** (49 words)
   - **Nydrail** (372 words)
   - **Roesaro** (1,093 words)
   - **Srandokan** (24 words)
-  - **wooder0403** (19 words)
+  - **wooder0403** (159 words)
 
 ### Danish (62%):
   - **TheWilliBM** (10 words)
