@@ -113,6 +113,8 @@ class Pin {
     Pins.addPin(JSON.parse(JSON.stringify(this)));
 
     Pins.save();
+
+    MapBase.updateTippy('pins');
   }
 
   remove() {
@@ -193,6 +195,8 @@ class Pins {
 
           reader.readAsText(file);
         }
+
+        MapBase.updateTippy('pins');
       } catch (error) {
         console.error(error);
         alert(Language.get('alerts.feature_not_supported'));
