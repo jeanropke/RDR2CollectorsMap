@@ -359,8 +359,8 @@ class Marker {
         <small></small>
         <button class="btn btn-success">↑</button>
       </div>
-      <button type="button" class="btn btn-info remove-button" data-item="${this.text}"
-        data-text="map.remove_add">
+      <button type="button" class="btn btn-info remove-button ${this.isCollected ? 'active' : ''}" data-bs-toggle="button" data-item="${this.text}"
+        data-text="${this.isCollected ? 'map.add' : 'map.remove'}" aria-pressed="${this.isCollected ? 'true' : ''}">
       </button>
     `;
 
@@ -388,11 +388,22 @@ class Marker {
     });
     importanceBtn.parentElement.style.display = !this.isRandomizedItem ? '' : 'none';
     
-    snippet.querySelector('.remove-button').addEventListener('click', (e) => {
+    const buttonEl = snippet.querySelector('.remove-button');
+    buttonEl.addEventListener('click', (e) => {
       e.stopPropagation();
       e.preventDefault();
       MapBase.removeItemFromMap(this.cycleName, this.text, this.subdata || '', this.category);
+      if (this.isCollected) {
+        buttonEl.classList.add('active');
+        buttonEl.setAttribute('aria-pressed', "true");
+        e.currentTarget.textContent = Language.get('map.add');
+      } else {
+        buttonEl.classList.remove('active');
+        buttonEl.removeAttribute('aria-pressed');
+        e.currentTarget.textContent = Language.get('map.remove');
+      }
     });
+    
     if (!Cycles.isSameAsYesterday(this.category) && !unknownCycle) {
       snippet.querySelector('.marker-warning-wrapper').style.display = 'none';
     } else {
