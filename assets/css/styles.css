@@ -643,8 +643,21 @@ select {
     height: 100%;
     color: #eee;
     z-index: 1000;
-    scrollbar-width: thin;
     user-select: none;
+}
+
+.side-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #aaa;
+    background: url(../../assets/images/bgTextDark.png) repeat;
+}
+
+.side-menu::-webkit-scrollbar-track:hover {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(../../assets/images/bgMain_slice.png) repeat;
 }
 
 .menu-opened {
