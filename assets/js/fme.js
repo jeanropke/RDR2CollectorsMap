@@ -240,6 +240,68 @@ const FME = {
       default: Object.values(FME.flags).reduce((acc, value) => acc + value, 0),
     });
 
+    function createInputContainer({ key, min, max, value, defaultValue }) {
+      const id = key.replace(/_/g, '-');
+      const settingsKey = key
+        .split('_')
+        .map((part, idx) => idx === 0 ? part : part.charAt(0).toUpperCase() + part.slice(1))
+        .join('');
+      const container = document.querySelector(`.input-container[data-help="${key}"]`);
+      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+      const inputType = isDesktop ? 'range' : 'number';
+  
+      container.innerHTML = `
+        <label for="${id}" data-text="menu.${key}"></label>
+        <input id="${id}" class="input-text ${isDesktop ? `${id}-range` : 'narrow-select-menu'}" type="${inputType}" min="${min}" max="${max}" value="${value}" />
+        ${inputType === 'range' ? `<div class="${id}-tooltip"></div>` : ''}
+      `;
+    
+      const input = document.getElementById(id);
+    
+      if (isDesktop) {
+        const tooltip = tippy(input, {
+          theme: 'menu-theme',
+          content: input.value,
+          trigger: 'manual',
+          arrow: false,
+          placement: 'top',
+          offset: [0, 10],
+          hideOnClick: false,
+        });
+  
+        input.addEventListener('input', function () {
+          tooltip.setContent(this.value);
+          tooltip.show();
+        });
+        input.addEventListener('pointerdown', function () {
+          tooltip.setContent(this.value);
+          tooltip.show();
+        });
+        input.addEventListener('pointerup', () => tooltip.hide());
+      }
+
+      input.addEventListener('change', function () {
+        let inputValue = parseInt(this.value);
+        if (isNaN(inputValue) || inputValue < min || inputValue > max) inputValue = defaultValue;
+        this.value = inputValue;
+        Settings[settingsKey] = inputValue;
+        if (settingsKey !== 'fmeNotificationPeriod') FME.update();
+      });
+    }
+    
+    createInputContainer({ 
+      key: 'fme_display_general_period',
+      min: 10, max: 45, value: 90, defaultValue: 30,
+    });
+    createInputContainer({
+      key: 'fme_display_role_period',
+      min: 10, max: 90, value: 90, defaultValue: 60,
+    });
+    createInputContainer({
+      key: 'fme_notification_period',
+      min: 1, max: 30, value: 10, defaultValue: 10,
+    });
+
     const fmeDisplay = document.getElementById('fme-display');
     const fmeGeneralPeriod = document.getElementById('fme-display-general-period');
     const fmeRolePeriod = document.getElementById('fme-display-role-period');
@@ -255,22 +317,6 @@ const FME = {
       FME.update();
     });
 
-    fmeGeneralPeriod.addEventListener('change', function () {
-      let inputValue = parseInt(this.value);
-      inputValue = !isNaN(inputValue) ? inputValue : 30;
-      if (inputValue < 10 || inputValue > 45) inputValue = 30;
-      Settings.fmeDisplayGeneralPeriod = inputValue;
-      FME.update();
-    });
-
-    fmeRolePeriod.addEventListener('change', function () {
-      let inputValue = parseInt(this.value);
-      inputValue = !isNaN(inputValue) ? inputValue : 60;
-      if (inputValue < 10 || inputValue > 90) inputValue = 60;
-      Settings.fmeDisplayRolePeriod = inputValue;
-      FME.update();
-    });
-
     fmeNotification.addEventListener('change', function () {
       Settings.isFmeNotificationEnabled = this.checked;
 
@@ -282,13 +328,6 @@ const FME = {
 
       fmeNotificationPeriod.parentElement.style.display = Settings.isFmeNotificationEnabled ? '' : 'none';
       openFmeModal.style.display = (Settings.isFmeDisplayEnabled || Settings.isFmeNotificationEnabled) ? '' : 'none';
-    });
-
-    fmeNotificationPeriod.addEventListener('change', function () {
-      let inputValue = parseInt(this.value);
-      inputValue = !isNaN(inputValue) ? inputValue : 10;
-      if (inputValue < 1 || inputValue > 30) inputValue = 10;
-      Settings.fmeNotificationPeriod = inputValue;
     });
 
     if (!("Notification" in window)) {
