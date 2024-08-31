@@ -566,6 +566,7 @@ select {
 .input-container .fme-notification-period-range::-moz-range-thumb {
     width: 16px;
     height: 16px;
+    border: none;
     background: url('../../assets//images/sandglass.png') no-repeat center center;
     background-size: contain;
 }
