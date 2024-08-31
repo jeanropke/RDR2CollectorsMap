@@ -1451,6 +1451,7 @@
     "menu.auto_enable_sold_items": "Automatically enable sold items",
     "menu.back_to_top": "Scroll back to top (Draggable)",
     "map.remove_add": "Remove/Add from map",
+    "map.add": "Add to map",
     "map.remove": "Remove from map",
     "map.copy_link": "Copy link",
     "map.link_copied": "Copied!",

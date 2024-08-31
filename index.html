@@ -38,6 +38,7 @@
   <link rel="preload" as="image" href="./assets/images/help_text_bg.png">
   <link rel="preload" as="image" href="./assets/images/menu_donate.png">
   <link rel="preload" as="image" href="./assets/images/modal_bg.png">
+  <link rel="preload" as="image" href="./assets/images/bgTooltip.png">
   <link rel="preload" as="image" href="./assets/images/moon.png">
   <link rel="preload" as="image" href="./assets/images/selection_boxes.png">
   <link rel="preload" as="image" href="./assets/images/sun.png">
@@ -46,11 +47,11 @@
   <link rel="stylesheet" href="assets/css/leaflet.css" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/coloris.min.css"/>
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1591" />
-  <link rel="stylesheet" href="assets/css/tippy.css?nocache=1591" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1592" />
+  <link rel="stylesheet" href="assets/css/tippy.css?nocache=1592" />
 
   <script>
-    const nocache = 1591;
+    const nocache = 1592;
   </script>
 </head>
 
@@ -90,6 +91,7 @@
     <div class="settings-container">
       <div class="input-container">
         <div class="input-with-suggestions">
+          <img class="search-icon" src="./assets/images/magnifying_glass.png" alt="" data-help="search">
           <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;"
           autocomplete="off" data-help="search">
           <span class="input-search-hotkeys" id="search-hotkey">
@@ -305,15 +307,8 @@
         </div>
       </div>
       <div class="input-container" data-help="fme_display_general_period">
-        <label for="fme-display-general-period" data-text="menu.fme_display_general_period">General Event display
-          period</label>
-        <input id="fme-display-general-period" class="input-text narrow-select-menu" type="number" min="10" max="45"
-          value="90">
       </div>
       <div class="input-container" data-help="fme_display_role_period">
-        <label for="fme-display-role-period" data-text="menu.fme_display_role_period">Role Event display period</label>
-        <input id="fme-display-role-period" class="input-text narrow-select-menu" type="number" min="10" max="90"
-          value="90">
       </div>
       <div class="input-container" data-help="fme_notification">
         <label for="fme-notification" data-text="menu.fme_notification">Enable event notifications</label>
@@ -323,9 +318,6 @@
         </div>
       </div>
       <div class="input-container" data-help="fme_notification_period">
-        <label for="fme-notification-period" data-text="menu.fme_notification_period">Event notification period</label>
-        <input id="fme-notification-period" class="input-text narrow-select-menu" type="number" min="1" max="30"
-          value="10">
       </div>
       <div id="open-fme-enabled-events-modal" class="input-container clickable" data-help="fme_enabled_events">
         <label data-text="menu.fme_enabled_events">Select enabled events</label>
@@ -1370,38 +1362,37 @@
   <script src="https://js.sentry-cdn.com/8bb034d026aa4fb38d3428be80b9f776.min.js" crossorigin="anonymous" data-lazy="no"></script>
   <script src="assets/js/lib/fuse.min.js"></script>
   <script src="assets/js/lib/bootstrap.min.js"></script>
-  <script src="assets/js/loader.js?nocache=1591"></script>
+  <script src="assets/js/loader.js?nocache=1592"></script>
   <script src="assets/js/lib/popper.min.js"></script>
-  <script src="assets/js/lib/tippy.min.js"></script>
+  <script src="assets/js/lib/tippy-bundle.umd.min.js"></script>
   <script src="assets/js/lib/leaflet.js"></script>
   <script src="assets/js/lib/leaflet-zoomex.js"></script>
   <script src="assets/js/lib/oms.min.js"></script>
-  <script src="assets/js/lib/rbush.js"></script>
   <script src="assets/js/lib/coloris.min.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>var module = {};</script>
   <script src="assets/js/lib/leaflet.canvas-markers.js"></script>
   <script>module.exports(L);</script>
-  <script src="assets/js/layers.js?nocache=1591"></script>
-  <script src="assets/js/settings.js?nocache=1591"></script>
-  <script src="assets/js/mapping.js?nocache=1591"></script>
-  <script src="assets/js/nazar.js?nocache=1591"></script>
-  <script src="assets/js/fme.js?nocache=1591"></script>
-  <script src="assets/js/cycles.js?nocache=1591"></script>
-  <script src="assets/js/marker.js?nocache=1591"></script>
-  <script src="assets/js/inventory.js?nocache=1591"></script>
-  <script src="assets/js/treasures.js?nocache=1591"></script>
-  <script src="assets/js/legendary.js?nocache=1591"></script>
-  <script src="assets/js/pins.js?nocache=1591"></script>
-  <script src="assets/js/map.js?nocache=1591"></script>
-  <script src="assets/js/language.js?nocache=1591"></script>
-  <script src="assets/js/menu.js?nocache=1591"></script>
-  <script src="assets/js/items.js?nocache=1591"></script>
-  <script src="assets/js/category-collection.js?nocache=1591"></script>
-  <script src="assets/js/routes.js?nocache=1591"></script>
-  <script src="assets/js/pathfinder.main.js?nocache=1591"></script>
-  <script src="assets/js/updates.js?nocache=1591"></script>
-  <script src="assets/js/scripts.js?nocache=1591"></script>
+  <script src="assets/js/layers.js?nocache=1592"></script>
+  <script src="assets/js/settings.js?nocache=1592"></script>
+  <script src="assets/js/mapping.js?nocache=1592"></script>
+  <script src="assets/js/nazar.js?nocache=1592"></script>
+  <script src="assets/js/fme.js?nocache=1592"></script>
+  <script src="assets/js/cycles.js?nocache=1592"></script>
+  <script src="assets/js/marker.js?nocache=1592"></script>
+  <script src="assets/js/inventory.js?nocache=1592"></script>
+  <script src="assets/js/treasures.js?nocache=1592"></script>
+  <script src="assets/js/legendary.js?nocache=1592"></script>
+  <script src="assets/js/pins.js?nocache=1592"></script>
+  <script src="assets/js/map.js?nocache=1592"></script>
+  <script src="assets/js/language.js?nocache=1592"></script>
+  <script src="assets/js/menu.js?nocache=1592"></script>
+  <script src="assets/js/items.js?nocache=1592"></script>
+  <script src="assets/js/category-collection.js?nocache=1592"></script>
+  <script src="assets/js/routes.js?nocache=1592"></script>
+  <script src="assets/js/pathfinder.main.js?nocache=1592"></script>
+  <script src="assets/js/updates.js?nocache=1592"></script>
+  <script src="assets/js/scripts.js?nocache=1592"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>

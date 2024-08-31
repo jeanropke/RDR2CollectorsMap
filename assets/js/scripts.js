@@ -829,14 +829,20 @@ document.getElementById('auto-enable-sold-items').addEventListener('change', fun
 });
 
 document.getElementById('inventory-stack').addEventListener('change', function () {
+  const min = parseInt(this.min);
+  const max = parseInt(this.max);
   let inputValue = parseInt(this.value);
-  inputValue = !isNaN(inputValue) ? inputValue : 10;
+  
+  this.value = (isNaN(inputValue) || inputValue < min || inputValue > max) ? max : inputValue;
   InventorySettings.stackSize = inputValue;
 });
 
 document.getElementById('soft-flowers-inventory-stack').addEventListener('change', function () {
+  const min = parseInt(this.min);
+  const max = parseInt(this.max);
   let inputValue = parseInt(this.value);
-  inputValue = !isNaN(inputValue) ? inputValue : 10;
+
+  this.value = (isNaN(inputValue) || inputValue < min || inputValue > max) ? max : inputValue;
   InventorySettings.flowersSoftStackSize = inputValue;
 });
 

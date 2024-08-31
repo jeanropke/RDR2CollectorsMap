@@ -378,10 +378,20 @@ select {
     margin: 5px 0;
 }
 
+.search-icon {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: default;
+}
+
 .input-search {
     background-color: #383838;
     border: none;
-    padding: 5px;
+    padding: 5px 5px 5px 30px;
     color: #f0f0f0;
     font-size: 14px;
     width: 100%;
@@ -391,7 +401,7 @@ select {
 .input-search-hotkeys {
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 0;
     transform: translateY(-50%);
     display: flex;
     align-items: center;
@@ -484,6 +494,7 @@ select {
 
 .query-suggestions::-webkit-scrollbar-thumb {
     background: rgb(172, 169, 169, .4);
+    border-radius: 3px;
 }
 
 .query-suggestions::-webkit-scrollbar-thumb:hover {
@@ -519,6 +530,79 @@ select {
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
+}
+
+.input-container .fme-display-general-period-range,
+.input-container .fme-display-role-period-range,
+.input-container .fme-notification-period-range {
+    max-width: 150px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border-color: #383838;
+    border-image-repeat: repeat;
+    border-image-slice: 12;
+    border-image-source: url(../../assets/images/border_single.png);
+    border-style: solid;
+    border-width: 6px;
+    height: 12px;
+    margin-top: 6px;
+    padding: 0;
+}
+
+.input-container .fme-display-general-period-range::-webkit-slider-thumb,
+.input-container .fme-display-role-period-range::-webkit-slider-thumb,
+.input-container .fme-notification-period-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: url('../../assets//images/sandglass.png') no-repeat center center;
+    background-size: contain;
+}
+  
+.input-container .fme-display-general-period-range::-moz-range-thumb,
+.input-container .fme-display-role-period-range::-moz-range-thumb,
+.input-container .fme-notification-period-range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: url('../../assets//images/sandglass.png') no-repeat center center;
+    background-size: contain;
+}
+  
+.input-container .fme-display-general-period-range::-ms-thumb,
+.input-container .fme-display-role-period-range::-ms-thumb,
+.input-container .fme-notification-period-range::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    background: url('../../assets//images/sandglass.png') no-repeat center center;
+    background-size: contain;
+}
+
+.input-container .fme-display-general-period-tooltip,
+.input-container .fme-display-role-period-tooltip,
+.input-container .fme-notification-period-tooltip {
+    position: absolute;
+    top: -35px;
+    left: -50px;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    display: none;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.input-container .show-tooltip .fme-display-general-period-tooltip,
+.input-container .show-tooltip .fme-display-role-period-tooltip,
+.input-container .show-tooltip .fme-notification-period-tooltip {
+    display: block;
+    opacity: 1;
 }
 
 #custom-markers-colors .clr-field input {
@@ -632,8 +716,21 @@ select {
     height: 100%;
     color: #eee;
     z-index: 1000;
-    scrollbar-width: thin;
     user-select: none;
+}
+
+.side-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #aaa;
+    background: url(../../assets/images/bgTextDark.png) repeat;
+}
+
+.side-menu::-webkit-scrollbar-track:hover {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(../../assets/images/bgMain_slice.png) repeat;
 }
 
 .menu-opened {
@@ -1131,10 +1228,12 @@ a.wiki-page:visited {
 
 .input-action-copy {
     background-image: url(../images/action_indicator_copy.png);
+    cursor: copy;
 }
 
 .input-action-clear {
     background-image: url(../images/action_indicator_clear.png);
+    cursor: pointer;
 }
 
 .input-selection-arrow {
