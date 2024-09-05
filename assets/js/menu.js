@@ -101,8 +101,10 @@ class Menu {
         .replace('{count}', (max ? (count / max * 100) : 0).toFixed(2));
 
     const itemsValue = document.getElementById('items-value');
-    if (Collection.collections) {
-      if (itemsValue) itemsValue.textContent = `$${Collection.totalValue().toFixed(2)}`;
+    if (itemsValue && Collection.collections) {
+      const startValue = parseFloat(itemsValue.textContent.replace('$', '')) || 0;
+      const endValue = Collection.totalValue();
+      animateValue(itemsValue, startValue, endValue, 1000);
       Collection.collections.forEach(collection => collection.updateCounter());
     }
   }

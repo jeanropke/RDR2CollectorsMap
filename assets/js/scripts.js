@@ -1557,3 +1557,16 @@ function toggleVisibility(el, visible) {
     el.style.visibility = 'hidden';
   }
 }
+
+function animateValue(el, start, end, duration) {
+  const startTime = performance.now();
+  function step(currTime) {
+    const progress = Math.min((currTime - startTime) / duration, 1);
+    const value = start + (end - start) * progress;
+
+    el.textContent = `$${value.toFixed(2)}`;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}

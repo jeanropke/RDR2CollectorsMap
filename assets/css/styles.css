@@ -144,8 +144,19 @@ select {
 }
 
 #sub-header {
-    font-size: 14px;
+    font-family: var(--title-font);
+    font-weight: 400;
+    font-size: 13px;
     color: #cacaca;
+    padding-top: 2px;
+}
+
+#sub-header .cycle-date,
+#sub-header .collectables-counter {
+    background-image: url(../../assets/images/divider_dark_vertical.png);
+    background-position: right 5px center;
+    background-repeat: no-repeat;
+    padding: 2px 18px 0 0;
 }
 
 .header {
