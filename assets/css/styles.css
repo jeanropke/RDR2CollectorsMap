@@ -716,6 +716,32 @@ select {
     cursor: pointer;
 }
 
+.menu-toggle img {
+    width: 16px;
+    height: 16px;
+}
+
+.menu-toggle .icon-collapse {
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    display: none;
+}
+
+.menu-toggle .icon-expand {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+}
+  
+.menu-toggle[data-menu-opened="true"] .icon-expand {
+    display: none;
+}
+  
+.menu-toggle[data-menu-opened="true"] .icon-collapse {
+    display: block;
+}
+
 .side-menu {
     width: 100%;
     background: #000;

@@ -747,13 +747,11 @@ document.addEventListener('click', function({target}) {
 });
 
 document.querySelector('.menu-toggle').addEventListener('click', function () {
-  document.querySelector('.side-menu').classList.toggle('menu-opened');
-  Settings.isMenuOpened = document.querySelector('.side-menu').classList.contains('menu-opened');
-
-  document.querySelector('.menu-toggle').textContent = Settings.isMenuOpened ? 'X' : '>';
-
-  document.querySelector('.top-widget').classList.toggle('top-widget-menu-opened', Settings.isMenuOpened);
-  document.getElementById('fme-container').classList.toggle('fme-menu-opened', Settings.isMenuOpened);
+  const isMenuOpened = sideMenu.classList.toggle('menu-opened');
+  this.setAttribute('data-menu-opened', isMenuOpened);
+  Settings.isMenuOpened = isMenuOpened;
+  document.querySelector('.top-widget').classList.toggle('top-widget-menu-opened', isMenuOpened);
+  document.getElementById('fme-container').classList.toggle('fme-menu-opened', isMenuOpened);
 });
 
 document.getElementById('tooltip-map').addEventListener('change', function () {
