@@ -166,7 +166,7 @@ class Collection extends BaseCollection {
             const changeAmount = etcL.contains('collection-sell') ? -1 : 1;
             collection.items.forEach(i => i.changeAmountWithSideEffects(changeAmount));
             collection.currentMarkers().forEach(marker => {
-              if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected) {
+              if (InventorySettings.autoEnableSoldItems && marker.item.amount === 0 && marker.isCollected && !MapBase.isSameUtcDay(marker.pickupTime)) {
                 MapBase.removeItemFromMap(marker.cycleName, marker.text, marker.subdata, marker.category, false);
               }
             });

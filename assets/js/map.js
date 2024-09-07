@@ -198,6 +198,14 @@ const MapBase = {
     });
   },
 
+  isSameUtcDay: function(timestamp1, timestamp2 = MapBase.mapTime().valueOf()) {
+    if (!timestamp1 || typeof timestamp1 !== 'number' || typeof timestamp2 !== 'number') {
+      return false;
+    }
+    const [date1, date2] = [timestamp1, timestamp2].map((time) => new Date(time).toISOUTCDateString());
+    return date1 === date2;
+  },
+
   updateMapBoundaries: function() {
     if(Settings.isMapBoundariesEnabled) {
       const southWest = L.latLng(-160, -120),
@@ -468,7 +476,7 @@ const MapBase = {
 
     localStorage.setItem('rdr2collector.date', date);
   },
-  
+
   initFuse: function() {
     const dataForSearch = MapBase.markers.map((marker) => ({
       itemId: marker.itemId,
@@ -805,6 +813,12 @@ const MapBase = {
   runOnDayChange: function () {
     // put here all functions that needs to be executed on day change
     MapBase.resetMarkersDaily();
+
+    for (let key in localStorage) {
+      if (key.startsWith('rdr2collector.pickup.')) {
+          localStorage.removeItem(key);
+      }
+    }
   },
 
   yieldingLoop: function (count, chunksize, callback, finished) {

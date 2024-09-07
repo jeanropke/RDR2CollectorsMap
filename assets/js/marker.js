@@ -55,6 +55,7 @@ class Marker {
      * Both should drive how faded the marker is going to be.
      */
     this._collectedKey = `rdr2collector.collected.${this.text}`;
+    this._pickupTimeKey = `rdr2collector.pickup.${this.text}`;
 
     /**
      * Used to display per-item descriptions.
@@ -168,13 +169,16 @@ class Marker {
       return [...new Set(items)];
     })();
   }
-
+  get pickupTime() {
+    return +localStorage.getItem(this._pickupTimeKey);
+  }
   get isCollected() {
     return !!localStorage.getItem(this._collectedKey);
   }
   set isCollected(value) {
     if (value) {
       localStorage.setItem(this._collectedKey, 'true');
+      localStorage.setItem(this._pickupTimeKey, MapBase.mapTime().valueOf());
     } else {
       localStorage.removeItem(this._collectedKey);
     }
