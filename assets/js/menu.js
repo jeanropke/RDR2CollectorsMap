@@ -109,6 +109,36 @@ class Menu {
     }
   }
 
+  static updateFancySelect() {
+    document.querySelectorAll('select:not(.fsb-ignore)').forEach((selectEl) => FancySelect.update(selectEl));
+
+    const tempSpan = document.createElement('span');
+    Object.assign(tempSpan.style, { visibility: 'hidden', position: 'absolute', whiteSpace: 'nowrap' });
+    document.body.appendChild(tempSpan);
+    document.querySelectorAll('.fsb-option').forEach((option) => {
+      tempSpan.textContent = option.textContent;
+      const textWidth = tempSpan.offsetWidth;
+      option.style.fontSize = `${Math.min(Math.max(10, 32 - textWidth / 10), 13)}px`;
+    });
+    document.body.removeChild(tempSpan);
+
+    document.querySelectorAll('.fsb-select').forEach((selectWrapper) => {
+      const fsbBtn = selectWrapper.querySelector('.fsb-button');
+      const text = fsbBtn.querySelector('span').textContent;
+      fsbBtn.setAttribute('title', text);
+      selectWrapper.querySelectorAll('.fsb-option').forEach((option) => {
+        option.addEventListener('click', () => fsbBtn.setAttribute('title', option.textContent));
+      });
+    });
+
+    document.querySelectorAll('.fsb-button').forEach((el) => {
+      el.addEventListener('click', () => {
+        const scrollPos = document.querySelector('aside').scrollTop;
+        setTimeout(() => document.querySelector('aside').scrollTop = scrollPos, 0);
+      });
+    });
+  }
+
   static activateHandlers() {
     document.getElementById('clear_highlights').addEventListener('click', function () {
       Item.clearImportantItems();

@@ -228,6 +228,7 @@ function init() {
   document.getElementById('invisible-removed-markers').checked = Settings.isInvisibleRemovedMarkers;
   document.getElementById('override-search').checked = Settings.overrideBrowserSearch;
 
+  document.getElementById('tools').value = Settings.toolType;
   document.getElementById('filter-type').value = Settings.filterType;
   document.getElementById('marker-size').value = Settings.markerSize;
   document.getElementById('reset-markers').checked = Settings.resetMarkersDaily;

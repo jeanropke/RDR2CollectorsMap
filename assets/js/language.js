@@ -147,6 +147,7 @@ const Language = {
     
     FME.update();
     this.updateProgress();
+    Menu.updateFancySelect();
   },
 
   updateProgress: function () {
