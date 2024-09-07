@@ -1298,6 +1298,7 @@ a.no-style:visited {
 }
 
 .leaflet-control-attribution {
+    border-radius: 2px;
     background: #333 !important;
     color: #fff !important;
 }
@@ -1893,14 +1894,19 @@ a.no-style:visited {
 
 /* Fix being able to select the overlays. */
 
-.leaflet-overlay-pane {
+.leaflet-overlay-pane,
+.leaflet-control-layers {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
     user-select: none;
 }
 
 .leaflet-control-layers {
     box-shadow: 0 1px 5px #111;
     background: #333;
-    user-select: none;
+    background: url(../images/bgTextDark_2.png);
 }
 
 .leaflet-control-layers label {
@@ -1909,15 +1915,18 @@ a.no-style:visited {
 
 .leaflet-control-layers-toggle {
 	background-image: url(../images/layers.png);
+    background-size: 36px 36px;
 }
 
 .leaflet-retina .leaflet-control-layers-toggle {
 	background-image: url(../images/layers-2x.png);
+    background-size: 36px 36px;
 }
 
 .leaflet-control-layers-expanded {
     color: #d4d4d4;
-    background: #333;
+    background: url(../images/bgTextDark_2.png) no-repeat center center;
+    background-size: 100% 100%;
 }
 
 .leaflet-popup-tip {
@@ -1933,6 +1942,74 @@ a.no-style:visited {
 
 .leaflet-control-layers-base label {
     cursor: pointer;
+}
+
+/* Leaflet Layers Control styling */
+
+.leaflet-control-layers-selector {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+  
+.leaflet-control-layers-selector + span {
+    position: relative;
+    line-height: 16px;
+    margin-top: 4px;
+    padding-left: 25px;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+}
+
+.leaflet-control-layers-selector + span::before {
+    opacity: .8;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/pager.png);
+    background-position: 0 0px,50%;
+    background-repeat: no-repeat;
+    background-size: 32px;
+}
+  
+.leaflet-control-layers-selector:checked + span::before {
+    background-image: url(../images/pager.png), url(../images/bullet.png);
+    background-position: center, center;
+    background-position: 0 0, 50%;
+    background-size: 32px, 8px;
+}
+
+.leaflet-control-layers-selector + span:hover::before {
+    opacity: 1;
+}
+
+.leaflet-control-layers-selector + span span:hover {
+    color: #fff;
+}
+
+.leaflet-control-layers-selector + span span:focus-visible {
+    outline: none;
+}
+
+.leaflet-control-layers-selector + span:visited,
+.leaflet-control-layers-selector + span:active,
+.leaflet-control-layers-selector + span span:visited,
+.leaflet-control-layers-selector + span span:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .leaflet-control-layers-selector + span {
+        margin-top: 18px;
+    }
 }
 
 /* Leaflet Marker styling */
