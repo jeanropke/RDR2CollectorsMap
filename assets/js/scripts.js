@@ -228,6 +228,7 @@ function init() {
   document.getElementById('invisible-removed-markers').checked = Settings.isInvisibleRemovedMarkers;
   document.getElementById('override-search').checked = Settings.overrideBrowserSearch;
 
+  document.getElementById('tools').value = Settings.toolType;
   document.getElementById('filter-type').value = Settings.filterType;
   document.getElementById('marker-size').value = Settings.markerSize;
   document.getElementById('reset-markers').checked = Settings.resetMarkersDaily;
@@ -414,18 +415,31 @@ function clockTick() {
 - please move them out of here to their respective owners
 */
 const sideMenu = document.querySelector('.side-menu');
+const scrollerLineTop = document.querySelector('.scroller-line-tp');
+const scrollerArrowTop = document.querySelector('.scroller-arrow-tp');
+const scrollerLineBottom = document.querySelector('.scroller-line-bt');
+const scrollerArrowBottom = document.querySelector('.scroller-arrow-bt');
 const backToTop = document.getElementById('back-to-top');
 const draggableBackToTop = draggify(backToTop, { storageKey: 'rdr2collector.backToTopPosition' });
+let wasAtTop = true;
+let wasAtBottom = false;
 let lastScrollY = sideMenu.scrollTop;
 
 sideMenu.addEventListener('scroll', function () {
   // These are not equality checks because of mobile weirdness.
   const atTop = this.scrollTop <= 0;
-  const atBottom = this.scrollTop + this.clientHeight >= this.scrollHeight;
-  document.querySelector('.scroller-line-tp').style.display = atTop ? '' : 'none';
-  document.querySelector('.scroller-arrow-tp').style.display = atTop ? 'none' : '';
-  document.querySelector('.scroller-line-bt').style.display = atBottom ? '' : 'none';
-  document.querySelector('.scroller-arrow-bt').style.display = atBottom ? 'none' : '';
+  const atBottom = Math.abs(this.scrollHeight - this.scrollTop - this.clientHeight) < 1;
+
+  if (atTop !== wasAtTop) {
+    scrollerLineTop.style.display = atTop ? '' : 'none';
+    scrollerArrowTop.style.display = atTop ? 'none' : '';
+    wasAtTop = atTop;
+  }
+  if (atBottom !== wasAtBottom) {
+    scrollerLineBottom.style.display = atBottom ? '' : 'none';
+    scrollerArrowBottom.style.display = atBottom ? 'none' : '';
+    wasAtBottom = atBottom;
+  }
 
   if (this.scrollTop !== 0 && this.scrollTop < lastScrollY) {
     backToTop.classList.add('is-visible');
@@ -734,13 +748,11 @@ document.addEventListener('click', function({target}) {
 });
 
 document.querySelector('.menu-toggle').addEventListener('click', function () {
-  document.querySelector('.side-menu').classList.toggle('menu-opened');
-  Settings.isMenuOpened = document.querySelector('.side-menu').classList.contains('menu-opened');
-
-  document.querySelector('.menu-toggle').textContent = Settings.isMenuOpened ? 'X' : '>';
-
-  document.querySelector('.top-widget').classList.toggle('top-widget-menu-opened', Settings.isMenuOpened);
-  document.getElementById('fme-container').classList.toggle('fme-menu-opened', Settings.isMenuOpened);
+  const isMenuOpened = sideMenu.classList.toggle('menu-opened');
+  this.setAttribute('data-menu-opened', isMenuOpened);
+  Settings.isMenuOpened = isMenuOpened;
+  document.querySelector('.top-widget').classList.toggle('top-widget-menu-opened', isMenuOpened);
+  document.getElementById('fme-container').classList.toggle('fme-menu-opened', isMenuOpened);
 });
 
 document.getElementById('tooltip-map').addEventListener('change', function () {
@@ -1533,4 +1545,27 @@ function draggify(el, { storageKey }) {
     getDistanceMoved: () =>
       Math.sqrt((currentX - initialX) ** 2 + (currentY - initialY) ** 2)
   };
+}
+
+function toggleVisibility(el, visible) {
+  if (visible) {
+    el.style.visibility = 'visible';
+    el.style.opacity = '1';
+  } else {
+    el.style.opacity = '0';
+    el.style.visibility = 'hidden';
+  }
+}
+
+function animateValue(el, start, end, duration) {
+  const startTime = performance.now();
+  function step(currTime) {
+    const progress = Math.min((currTime - startTime) / duration, 1);
+    const value = start + (end - start) * progress;
+
+    el.textContent = `$${value.toFixed(2)}`;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
 }

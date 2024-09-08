@@ -545,6 +545,8 @@ class Marker {
   }
 
   static createMarkerColorCustomPanel() {
+    FancySelect.update(document.getElementById('marker-color'));
+    
     const markerColors = Object.values(colorNameMap).sort((...args) => {
       const [a, b] = args.map((color) => Language.get(`map.user_pins.color.${color}`));
       return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
