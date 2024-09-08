@@ -1719,6 +1719,7 @@
     "help.generate_route_start_custom": "Allows you to set the custom coordinates where the route will start from.",
     "help.generate_route_use_pathfinder": "Toggles whether or not to use the more accurate route generator. Disable this setting if you are experiencing performance issues.",
     "help.hide_all": "Hides all markers from the map.",
+    "help.import_rdo_inventory": "Opens tools for importing collected items from the game.",
     "help.import_route": "Imports a custom route to the map.",
     "help.inventory_stack": "Allows you to set the maximum size of any item stack. The default is 10 which is the same as in-game.",
     "help.item_category": "Toggles whether this set should be visible on the map.",
