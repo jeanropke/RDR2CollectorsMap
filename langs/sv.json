@@ -404,8 +404,6 @@
     "menu.marker_cluster": "Markörkluster",
     "menu.generate_route_distance": "Maximal linjelängd",
     "menu.generate_route_start": "Rutten startar vid",
-    "menu.generate_route_start.ne": "Nordost (↗)",
-    "menu.generate_route_start.se": "Sydost (↘)",
     "menu.generate_route_start.custom": "Anpassad",
     "menu.generate_route_start_lat": "Ruttstart lat.",
     "menu.generate_route_start_lng": "Ruttstart long.",

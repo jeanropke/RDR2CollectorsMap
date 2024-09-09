@@ -398,8 +398,6 @@
     "menu.inventory": "Biler til utleie",
     "menu.highlight_style.animated": "Animert",
     "menu.marker_cluster": "Markør klynge",
-    "menu.generate_route_start.n": "Nord (↑)",
-    "menu.generate_route_start.se": "Sørøst (↘)",
     "menu.generate_route_start.custom": "Egendefinert",
     "menu.generate_route_weight.Infinity": "Ikke bruk",
     "map.layers.default": "Forvalg",
