@@ -36,7 +36,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **REMOVED_USER** (89 words)
   - **younessmouhid** (160 words)
 
-### Bulgarian (31%):
+### Bulgarian (30%):
   - **MartinTsankov** (63 words)
   - **mr.darakov** (10 words)
 
@@ -56,7 +56,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
   - **SeaBreeze33** (52 words)
-  - **ToxicMagisk** (25,204 words)
+  - **ToxicMagisk** (25,217 words)
   - **User670** (224 words)
 
 ### Chinese Traditional (98%):
@@ -172,7 +172,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **ToX1cRanG3r** (363 words)
   - **TrollerMaN** (452 words)
 
-### Hebrew (49%):
+### Hebrew (48%):
   - **dudiv5674** (3,078 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
