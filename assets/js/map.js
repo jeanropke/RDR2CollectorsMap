@@ -779,24 +779,27 @@ const MapBase = {
 
   addCoordsOnMap: function (coords) {
     // Show clicked coordinates (like google maps)
+    const container = document.querySelector('.lat-lng-container');
+
     if (Settings.isCoordsOnClickEnabled) {
-      const container = document.querySelector('.lat-lng-container');
-      container.style.display = 'block';
-
-      const lat = parseFloat(coords.latlng.lat.toFixed(4));
-      const lng = parseFloat(coords.latlng.lng.toFixed(4));
-      const content = `
-        Latitude: ${lat}<br>
-        Longitude: ${lng}<br>
-        <hr>
-        <a href="javascript:void(0)"
-        onclick="Routes.setCustomRouteStart('${lat}', '${lng}')">${Language.get('routes.set_as_route_start')}</a><br>
-        <a href="javascript:void(0)"
-        onclick="Routes.setCustomRouteStart('${lat}', '${lng}', true)">${Language.get('routes.generate_route_now')}</a>`;
-
-      container.querySelector('p').innerHTML = content;
-      document.getElementById('lat-lng-container-close-button').addEventListener('click', function () {
-        container.style.display = 'none';
+      if (container.style.display = 'none') container.style.display = 'block';
+      container.title ||= Language.get('map.draggable');
+      draggableLatLngCtn ||= new PlainDraggable(container);
+      
+      const lat = coords.latlng.lat.toFixed(4);
+      const lng = coords.latlng.lng.toFixed(4);
+      document.querySelector('.lat-value').textContent = lat;
+      document.querySelector('.lng-value').textContent = lng;
+      ['click', 'touchend'].forEach((event) => {
+        document.getElementById('lat-lng-container-start').addEventListener((event), () => Routes.setCustomRouteStart(lat, lng), { once: true });
+        document.getElementById('lat-lng-container-generate').addEventListener((event), () => Routes.setCustomRouteStart(lat, lng, true), { once: true });
+        document.getElementById('lat-lng-container-close-button').addEventListener((event), () =>{ 
+          container.style.display = 'none';
+          if (draggableLatLngCtn) {
+            draggableLatLngCtn.remove();
+            draggableLatLngCtn = null;
+          }
+        }, { once: true });
       });
     }
 

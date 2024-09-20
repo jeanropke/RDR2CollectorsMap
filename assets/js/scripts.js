@@ -71,6 +71,8 @@ try {
   alert("Error retrieving settings.\n\nPlease make sure storing data is allowed for this site. Some browsers restrict storing data in private browsing modes. This website will not work properly until this is resolved.");
 }
 
+let draggableLatLngCtn = null;
+
 /*
 - Leaflet extentions require Leaflet loaded
 - guaranteed by this script’s position in index.html
@@ -289,10 +291,17 @@ function isLocalHost() {
 }
 
 function changeCursor() {
-  const cursorStyle = (Settings.isCoordsOnClickEnabled || RouteSettings.customRouteEnabled) ? 'pointer' : 'grab';
-  const displayStyle = (cursorStyle === 'pointer') ? '' : 'none';
-  document.querySelectorAll('.leaflet-grab').forEach(el => { el.style.cursor = cursorStyle; });
-  document.querySelectorAll('.lat-lng-container').forEach(ctn => { ctn.style.display = displayStyle; });
+  const isCoordsEnabled = Settings.isCoordsOnClickEnabled || RouteSettings.customRouteEnabled;
+  document.querySelector('.leaflet-grab').style.cursor = isCoordsEnabled ? 'pointer' : 'grab';
+
+  const latLngCtn = document.querySelector('.lat-lng-container');
+  latLngCtn.style.display = isCoordsEnabled ? 'block' : 'none';
+  if (isCoordsEnabled) {
+    draggableLatLngCtn ||= new PlainDraggable(latLngCtn);
+  } else if (draggableLatLngCtn) {
+    draggableLatLngCtn.remove();
+    draggableLatLngCtn = null;
+  }
 }
 
 function updateTopWidget() {

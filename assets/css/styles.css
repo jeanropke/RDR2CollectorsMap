@@ -1140,11 +1140,30 @@ select {
     z-index: 910;
     color: #dadada;
     background-color: #333;
+    background: url(../images/bgTextDark_2.png) no-repeat center center;
+    background-size: cover;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
     padding: 14px 8px;
     border-radius: 3px;
     display: none;
+}
+
+@media (max-width: 768px) {
+    .lat-lng-container {
+        max-width: 40%;
+    }
+}
+
+.lat-lng-container div div {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.lat-lng-container .lat-lng-value {
+    color: #eee;
+    margin-top: 4px;
+    font-family: var(--title-font);
 }
 
 .lat-lng-container hr {
@@ -1153,24 +1172,19 @@ select {
     padding: 0;
 }
 
-.lat-lng-container a {
-    color: #dadada;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;
+.lat-lng-container .btn.btn-default {
+    line-height: 1;
+    width: 100%;
+    margin-top: 5px;
 }
 
 .lat-lng-container #lat-lng-container-close-button {
     position: absolute;
     top: 0;
     right: 4px;
-    font-size: 16px;
     border: none;
-    margin: 0;
+    margin-top: 4px;
     padding: 0;
-    background-color: transparent;
 }
 
 .help-button {
