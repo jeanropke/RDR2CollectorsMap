@@ -1550,16 +1550,6 @@ function draggify(el, { storageKey }) {
   };
 }
 
-function toggleVisibility(el, visible) {
-  if (visible) {
-    el.style.visibility = 'visible';
-    el.style.opacity = '1';
-  } else {
-    el.style.opacity = '0';
-    el.style.visibility = 'hidden';
-  }
-}
-
 function animateValue(el, start, end, duration) {
   const startTime = performance.now();
   function step(currTime) {

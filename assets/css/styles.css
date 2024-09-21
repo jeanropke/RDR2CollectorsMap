@@ -391,6 +391,7 @@ select {
     margin-bottom: 2px;
 }
 
+.marker-popup-pin-input-shape,
 .marker-popup-pin-input-icon {
     color: inherit;
     background: #eee;
@@ -690,29 +691,6 @@ select {
     opacity: 1;
 }
 
-#custom-markers-colors .clr-field input {
-    width: 5vw;
-    border-radius: 3px;
-}
-
-.leaflet-popup-content .clr-field input {
-    width: 100%;
-    border-radius: 3px;
-}
-
-#custom-markers-colors .clr-field button,
-.leaflet-popup-content .clr-field button {
-    width: 100%;
-    height: 100%;
-    border-radius: 3px;
-}
-
-#clr-picker #clr-swatches button,
-#custom-markers-colors #clr-picker #clr-swatches button {
-    width: 30px;
-    height: 30px;
-}
-
 .input-container-noflex {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -863,6 +841,111 @@ select {
     background-color: transparent;
     background: url('../../assets/images/drop_down.png') no-repeat center center;
     background-size: 100% 100%;
+}
+
+#custom-markers-colors .input-container label {
+    margin-top: 2px;
+}
+
+input.input-text.pickr-custom-marker-color {
+    width: 4vw;
+    color: transparent;
+    margin-top: 2.5px;
+}
+
+@media (max-width: 768px) {
+    input.input-text.pickr-custom-marker-color {
+        width: 10vw;
+        margin-top: 7px;
+    }
+}
+
+input.input-text.pickr-userpin {
+    margin-left: 0;
+    color: transparent;
+}
+
+.pcr-app[data-theme=nano] {
+    font-family: var(--content-font);
+    width: 20em;
+    background-color: #383838;
+}
+
+.pcr-app .pcr-swatches {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px; 
+}
+
+.pcr-app .pcr-swatches>button {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background-size: cover;
+}
+
+.pcr-app .pcr-interaction input{
+    font-size: 1em;
+}
+
+.pcr-app .pcr-interaction .pcr-result {
+    font-size: 1em;
+    font-family: var(--title-font);
+}
+
+.pcr-app[data-theme=nano] .pcr-selection .pcr-color-preview .pcr-current-color {
+    width: 3em;
+    height: 3em;
+    border-radius: .2em;
+}
+
+.pcr-app .pcr-interaction .pcr-save,
+.pcr-app .pcr-interaction .pcr-reset {
+    width: 45%;
+    height: 35px;
+}
+
+.pcr-app .pcr-interaction .pcr-save {
+    margin-left: auto;
+    background: #008800ce;
+}
+
+.pcr-app .pcr-interaction .pcr-save:hover {
+    background: #00aa00ce;
+}
+
+.pcr-app .pcr-interaction .pcr-reset {
+    color: #fff;
+    background: #a50000ce;
+}
+
+.pcr-app .pcr-interaction .pcr-reset:hover {
+    background: #bb0000ce;
+}
+
+@media (max-width: 768px) {
+    .input-text.pickr-custom-marker-color {
+        width: 13vw;
+    }
+
+    .pcr-app[data-theme=nano] {
+        width: 100%;
+    }
+
+    .pcr-app .pcr-swatches {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 4px; 
+    }
+}
+
+.leaflet-popup-content-wrapper .pcr-app {
+    left: 0 !important;
+    width: 100%;
+}
+
+.leaflet-popup-content-wrapper .pcr-interaction .pcr-save {
+    width: 100%;
 }
 
 .input-container-noflex .input-text {
@@ -1739,6 +1822,18 @@ a.no-style:visited {
     font-size: 13px;
 }
 
+.modal-body #custom-markers-colors img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .modal-body #custom-markers-colors img {
+        margin-top: 6px;
+    }
+}
+
 .modal-actions .btn {
     margin: 5px;
 }
@@ -1840,16 +1935,6 @@ a.no-style:visited {
 
     #video-modal .modal-xl {
         width: calc(100vw - 15px);
-    }
-
-    #custom-markers-colors .clr-field input {
-        width: 10vw;
-    }
-
-    #clr-picker #clr-swatches button,
-    #custom-markers-colors #clr-picker #clr-swatches button {
-        width: 42px;
-        height: 42px;
     }
 }
 
