@@ -681,6 +681,13 @@ document.querySelectorAll('.map-cycle-alert').forEach(alert => {
 document.getElementById('show-coordinates').addEventListener('change', function () {
   Settings.isCoordsOnClickEnabled = this.checked;
   changeCursor();
+
+  const routeStart = document.getElementById('generate-route-start');
+  if (!this.checked && routeStart.value === 'MapClick') {
+    routeStart.value = prevRouteStartSelect || 'SW';;
+    routeStart.dispatchEvent(new Event('change'));
+    FancySelect.update(routeStart);
+  }
 });
 
 document.getElementById('map-boundaries').addEventListener('change', function () {
@@ -1000,50 +1007,37 @@ document.getElementById('generate-route-distance').addEventListener('change', fu
   Routes.generatePath();
 });
 
+let prevRouteStartSelect = null;
 document.getElementById('generate-route-start').addEventListener('change', function () {
-  let inputValue = this.value;
-  let startLat = null;
-  let startLng = null;
+  const inputValue = this.value;
+  const latInput = document.getElementById('generate-route-start-lat');
+  const lngInput = document.getElementById('generate-route-start-lng');
 
-  document.getElementById('generate-route-start-lat').parentElement.style.display = 'none';
-  document.getElementById('generate-route-start-lng').parentElement.style.display = 'none';
-
-  switch (inputValue) {
-    case "Custom":
-      document.getElementById('generate-route-start-lat').parentElement.style.display = '';
-      document.getElementById('generate-route-start-lng').parentElement.style.display = '';
-      return;
-
-    case "N":
-      startLat = -11.875;
-      startLng = 86.875;
-      break;
-
-    case "NE":
-      startLat = -27.4375;
-      startLng = 161.2813;
-      break;
-
-    case "SE":
-      startLat = -100.75;
-      startLng = 131.125;
-      break;
-
-    case "SW":
-    default:
-      startLat = -119.9063;
-      startLng = 8.0313;
-      break;
-  }
-
-  document.getElementById('generate-route-start-lat').value = startLat;
-  document.getElementById('generate-route-start-lng').value = startLng;
-
+  const coordinates = {
+    N: [-11.875, 86.875],
+    NE: [-27.4375, 161.2813],
+    SE: [-100.75, 131.125],
+    SW: [-119.9063, 8.0313]
+  };
+  const [startLat, startLng] = coordinates[inputValue] || coordinates.SW;
+  latInput.value = startLat;
+  lngInput.value = startLng;
   RouteSettings.genPathStart = inputValue;
   RouteSettings.startMarkerLat = startLat;
   RouteSettings.startMarkerLng = startLng;
-
   Routes.generatePath();
+
+  const showCoords = inputValue === 'Custom';
+  latInput.parentElement.style.display = showCoords ? 'block' : 'none';
+  lngInput.parentElement.style.display = showCoords ? 'block' : 'none';
+  if (showCoords) return;
+
+  const isMapClick = inputValue === 'MapClick';
+  if (!isMapClick) prevRouteStartSelect = inputValue;
+  Settings.isCoordsOnClickEnabled = isMapClick;
+  document.getElementById('show-coordinates').checked = isMapClick;
+  document.querySelector('.lat-lng-container').style.display = isMapClick ? 'block' : 'none';
+  changeCursor();
 });
 
 document.getElementById('generate-route-start-lat').addEventListener('change', function () {
