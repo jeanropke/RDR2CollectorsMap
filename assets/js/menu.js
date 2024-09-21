@@ -2,12 +2,11 @@ class Menu {
   static init() {
     this._warnings = new Set();
 
-    SettingProxy.addSetting(Settings, 'toolType', {
-      default: 3
-    });
-    SettingProxy.addSetting(Settings, 'filterType', {
-      default: 'none'
-    });
+    SettingProxy.addSetting(Settings, 'toolType', { default: 3 });
+    SettingProxy.addSetting(Settings, 'filterType', { default: 'none' });
+
+    this.addMapZoomSettings();
+    this.tippyInstances = [];
     Loader.mapModelLoaded.then(this.activateHandlers.bind(this));
   }
 
@@ -107,6 +106,87 @@ class Menu {
       animateValue(itemsValue, startValue, endValue, 1000);
       Collection.collections.forEach(collection => collection.updateCounter());
     }
+  }
+
+  static addMapZoomSettings() {
+    SettingProxy.addSetting(Settings, 'zoomSnap', { default: 1 });
+    SettingProxy.addSetting(Settings, 'zoomDelta', { default: 1 });
+    SettingProxy.addSetting(Settings, 'wheelDebounceTime', { default: 40 });
+    SettingProxy.addSetting(Settings, 'wheelPxPerZoomLevel', { default: 60 });
+
+    const inputsMap = new Map();
+
+    function createInputContainer({ key, min, max, value, defaultValue, step = 1, isFloat = false }) {
+      const id = key.replace(/_/g, '-');
+      const settingsKey = key
+        .replace(/^map_/, '')
+        .split('_')
+        .map((part, idx) => idx === 0 ? part : part.charAt(0).toUpperCase() + part.slice(1))
+        .join('');
+      const container = document.querySelector(`.input-container[data-help="${key}"]`);
+      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+      const inputType = isDesktop ? 'range' : 'number';
+    
+      container.innerHTML = `
+        <label for="${id}" data-text="menu.${key}"></label>
+        <input id="${id}" class="input-text ${isDesktop ? 'type-range zoom-wheel-type-range' : 'narrow-select-menu'}" type="${inputType}" min="${min}" max="${max}" value="${value}" step="${step}" data-tippy-content-range=""/>
+        ${inputType === 'range' ? `<div class="type-range-tooltip"></div>` : ''}
+      `;
+    
+      const input = document.getElementById(id);
+      inputsMap.set(input, defaultValue);
+
+      input.addEventListener('change', function () {
+        let inputValue = isFloat ? parseFloat(this.value) : parseInt(this.value);
+        if (isNaN(inputValue) || inputValue < min || inputValue > max) inputValue = defaultValue;
+        this.value = isFloat ? inputValue.toFixed(1) : Math.round(inputValue);
+        Settings[settingsKey] = inputValue;
+        MapBase.map.options[settingsKey] = inputValue;
+      });
+    }
+
+    createInputContainer({ 
+      key: 'map_zoom_snap',
+      min: 0, max: 3, value: Settings.zoomSnap, defaultValue: 1,
+      step: 0.1, isFloat: true,
+    });
+    createInputContainer({
+      key: 'map_zoom_delta',
+      min: 0, max: 2, value: Settings.zoomDelta, defaultValue: 1,
+      step: 0.1, isFloat: true,
+    });
+    createInputContainer({
+      key: 'map_wheel_debounce_time',
+      min: 40, max: 200, value: Settings.wheelDebounceTime, defaultValue: 40,
+      step: 10, isFloat: false,
+    });
+    createInputContainer({
+      key: 'map_wheel_px_per_zoom_level',
+      min: 20, max: 150, value: Settings.wheelPxPerZoomLevel, defaultValue: 60,
+      step: 10, isFloat: false,
+    });
+
+    const reset = document.getElementById('reset-map-zoom');
+    reset.addEventListener('click', () => {
+      const zoomSettings = ['map_zoom_snap', 'map_zoom_delta', 'map_wheel_debounce_time', 'map_wheel_px_per_zoom_level'
+      ].map((key) =>
+        key
+          .replace(/^map_/, '')
+          .split('_')
+          .map((part, idx) => idx === 0 ? part : part.charAt(0).toUpperCase() + part.slice(1))
+          .join('')
+      );
+      Object.keys(localStorage)
+        .filter((key) => zoomSettings.some((k) => key.includes(k)))
+        .forEach((key) => localStorage.removeItem(key));
+
+      inputsMap.forEach((defaultValue, input) => {
+        input.value = defaultValue;
+        input.dispatchEvent(new Event('change'));
+      });
+
+      Menu.updateTippy();
+    })
   }
 
   static updateFancySelect() {
@@ -326,6 +406,30 @@ class Menu {
           event.preventDefault();
           searchInput.focus();
           searchInput.select();
+        }
+      }
+    });
+  }
+
+  static updateTippy() {
+    Menu.tippyInstances.forEach((instance) => instance.destroy());
+    Menu.tippyInstances = [];
+
+    Menu.tippyInstances = tippy('[data-tippy-content-range]', {
+      theme: 'menu-theme',
+      hideOnClick: false,
+      arrow: false,
+      placement: 'top',
+      offset: [0, 15],
+      content: (reference) => reference.value,
+      trigger: 'mouseenter input pointerdown pointerup',
+      onTrigger: (instance, event) => {
+        if (event.type === 'input' || event.type === 'pointerdown') {
+          instance.setContent(instance.reference.value);
+          instance.show();
+        }
+        if (event.type === 'pointerup') {
+          setTimeout(() => instance.hide(), 0);
         }
       }
     });

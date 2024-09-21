@@ -252,8 +252,8 @@ const FME = {
   
       container.innerHTML = `
         <label for="${id}" data-text="menu.${key}"></label>
-        <input id="${id}" class="input-text ${isDesktop ? `${id}-range` : 'narrow-select-menu'}" type="${inputType}" min="${min}" max="${max}" value="${value}" />
-        ${inputType === 'range' ? `<div class="${id}-tooltip"></div>` : ''}
+        <input id="${id}" class="input-text ${isDesktop ? 'type-range fme-type-range' : 'narrow-select-menu'}" type="${inputType}" min="${min}" max="${max}" value="${value}" data-tippy-content-range=""/>
+        ${inputType === 'range' ? `<div class="type-range-tooltip"></div>` : ''}
       `;
     
       const input = document.getElementById(id);

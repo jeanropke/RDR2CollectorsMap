@@ -820,6 +820,27 @@
           </div>
         </div>
         <hr class="menu-divider">
+        <div class="input-container" data-help="map_zoom_snap">
+          <label for="map-zoom-snap" data-text="menu.map_zoom_snap">Map zoom snap</label>
+          <input id="map-zoom-snap" class="input-text narrow-select-menu" type="number" min="0" max="3" value="1"/>
+        </div>
+        <div class="input-container" data-help="map_zoom_delta">
+          <label for="map-zoom-delta" data-text="menu.map_zoom_delta">Map zoom delta</label>
+          <input id="map-zoom-delta" class="input-text narrow-select-menu" type="number" min="0" max="2" value="1"/>
+        </div>
+        <div class="input-container" data-help="map_wheel_debounce_time">
+          <label for="map-wheel-debounce-time" data-text="menu.map_wheel_debounce_time">Map wheel debounce time</label>
+          <input id="map-wheel-debounce-time" class="input-text narrow-select-menu" type="number" min="40" max="200" value="40"/>
+        </div>
+        <div class="input-container" data-help="map_wheel_px_per_zoom_level">
+          <label for="map-wheel-pixel-per-zoom-level" data-text="menu.map_wheel_px_per_zoom_level">Map Wheel pixels per zoom level</label>
+          <input id="map-wheel-pixel-per-zoom-level" class="input-text narrow-select-menu" type="number" min="20" max="150" value="60"/>
+        </div>
+        <div id="reset-map-zoom" class="input-container clickable" data-help="map_reset_zoom_wheel_settings">
+          <label data-text="menu.map_reset_zoom_wheel_settings">Reset zoom and wheel settings</label>
+          <div class="input-action"></div>
+        </div>
+        <hr class="menu-divider">
         <div class="input-container" data-help="timestamps_24">
           <label for="timestamps-24" data-text="menu.timestamps_24">Clock in 24-hour format</label>
           <div class="input-checkbox-wrapper">

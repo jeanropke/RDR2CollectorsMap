@@ -118,6 +118,10 @@ const MapBase = {
       maxZoom: this.maxZoom,
       zoomControl: false,
       crs: L.CRS.Simple,
+      zoomSnap: Settings.zoomSnap,
+      zoomDelta: Settings.zoomDelta,
+      wheelPxPerZoomLevel: Settings.wheelPxPerZoomLevel,
+      wheelDebounceTime: Settings.wheelDebounceTime,
       layers: [mapLayers[this.themeOverride || Settings.baseLayer]],
     }).setView([this.viewportX, this.viewportY], this.viewportZoom);
 
@@ -381,6 +385,7 @@ const MapBase = {
     uniqueSearchMarkers = MapBase.markers;
     MapBase.initFuse();
     MapBase.setColoris();
+    Menu.updateTippy();
 
     // Preview mode.
     const previewParam = getParameterByName('q');

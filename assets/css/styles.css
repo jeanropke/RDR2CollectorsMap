@@ -574,9 +574,7 @@ select {
     margin: 5px 0;
 }
 
-.input-container .fme-display-general-period-range,
-.input-container .fme-display-role-period-range,
-.input-container .fme-notification-period-range {
+.input-container .type-range {
     max-width: 150px;
     -webkit-appearance: none;
     appearance: none;
@@ -584,7 +582,7 @@ select {
     border-color: #383838;
     border-image-repeat: repeat;
     border-image-slice: 12;
-    border-image-source: url(../../assets/images/border_single.png);
+    border-image-source: url(../images/border_single.png);
     border-style: solid;
     border-width: 6px;
     height: 12px;
@@ -592,39 +590,85 @@ select {
     padding: 0;
 }
 
-.input-container .fme-display-general-period-range::-webkit-slider-thumb,
-.input-container .fme-display-role-period-range::-webkit-slider-thumb,
-.input-container .fme-notification-period-range::-webkit-slider-thumb {
+.input-container .fme-type-range::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 16px;
     height: 16px;
-    background: url('../../assets//images/sandglass.png') no-repeat center center;
+    background: url(../images/sandglass.png) no-repeat center center;
     background-size: contain;
+    transition: filter 100ms ease;
+}
+
+.input-container .fme-type-range::-webkit-slider-thumb:hover {
+    filter: grayscale(100%) brightness(80%);
 }
   
-.input-container .fme-display-general-period-range::-moz-range-thumb,
-.input-container .fme-display-role-period-range::-moz-range-thumb,
-.input-container .fme-notification-period-range::-moz-range-thumb {
+.input-container .fme-type-range::-moz-range-thumb {
     width: 16px;
     height: 16px;
     border: none;
-    background: url('../../assets//images/sandglass.png') no-repeat center center;
+    background: url(../images/sandglass.png) no-repeat center center;
     background-size: contain;
-}
-  
-.input-container .fme-display-general-period-range::-ms-thumb,
-.input-container .fme-display-role-period-range::-ms-thumb,
-.input-container .fme-notification-period-range::-ms-thumb {
-    width: 16px;
-    height: 16px;
-    background: url('../../assets//images/sandglass.png') no-repeat center center;
-    background-size: contain;
+    transition: filter 100ms ease;
 }
 
-.input-container .fme-display-general-period-tooltip,
-.input-container .fme-display-role-period-tooltip,
-.input-container .fme-notification-period-tooltip {
+.input-container .fme-type-range::-moz-range-thumb:hover {
+    filter: grayscale(100%) brightness(80%);
+}
+  
+.input-container .fme-type-range::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    background: url(../images/sandglass.png) no-repeat center center;
+    background-size: contain;
+    transition: filter 100ms ease;
+}
+
+.input-container .fme-type-range::-ms-thumb:hover {
+    filter: grayscale(100%) brightness(80%);
+}
+
+.input-container .zoom-wheel-type-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: url(../images/switch_bg_checked.png) no-repeat center center;
+    background-size: contain;
+    transition: filter 100ms ease;
+}
+
+.input-container .zoom-wheel-type-range::-webkit-slider-thumb:hover {
+    filter: grayscale(100%) brightness(80%);
+}
+
+.input-container .zoom-wheel-type-range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border: none;
+    background: url(../images/switch_bg_checked.png) no-repeat center center;
+    background-size: contain;
+    transition: filter 100ms ease;
+}
+
+.input-container .zoom-wheel-type-range::-moz-range-thumb:hover {
+    filter: grayscale(100%) brightness(80%);
+}
+
+.input-container .zoom-wheel-type-range::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    background: url(../images/switch_bg_checked.png) no-repeat center center;
+    background-size: contain;
+    transition: filter 100ms ease;
+}
+
+.input-container .zoom-wheel-type-range::-ms-thumb:hover {
+    filter: grayscale(100%) brightness(80%);
+}
+
+.input-container .type-range-tooltip {
     position: absolute;
     top: -35px;
     left: -50px;
@@ -641,9 +685,7 @@ select {
     opacity: 0;
 }
 
-.input-container .show-tooltip .fme-display-general-period-tooltip,
-.input-container .show-tooltip .fme-display-role-period-tooltip,
-.input-container .show-tooltip .fme-notification-period-tooltip {
+.input-container .show-tooltip .type-range-tooltip {
     display: block;
     opacity: 1;
 }
