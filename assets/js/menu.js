@@ -6,7 +6,7 @@ class Menu {
     SettingProxy.addSetting(Settings, 'filterType', { default: 'none' });
 
     this.addMapZoomSettings();
-    this.tippyInstances = [];
+    this.tippyRangeInstances = [];
     Loader.mapModelLoaded.then(this.activateHandlers.bind(this));
   }
 
@@ -185,7 +185,7 @@ class Menu {
         input.dispatchEvent(new Event('change'));
       });
 
-      Menu.updateTippy();
+      Menu.updateRangeTippy();
     })
   }
 
@@ -411,27 +411,30 @@ class Menu {
     });
   }
 
-  static updateTippy() {
-    Menu.tippyInstances.forEach((instance) => instance.destroy());
-    Menu.tippyInstances = [];
-
-    Menu.tippyInstances = tippy('[data-tippy-content-range]', {
-      theme: 'menu-theme',
-      hideOnClick: false,
-      arrow: false,
-      placement: 'top',
-      offset: [0, 15],
-      content: (reference) => reference.value,
-      trigger: 'mouseenter input pointerdown pointerup',
-      onTrigger: (instance, event) => {
-        if (event.type === 'input' || event.type === 'pointerdown') {
-          instance.setContent(instance.reference.value);
-          instance.show();
+  static updateRangeTippy() {
+    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+    if (isDesktop) {
+      Menu.tippyRangeInstances.forEach((instance) => instance.destroy());
+      Menu.tippyRangeInstances = [];
+  
+      Menu.tippyRangeInstances = tippy('[data-tippy-content-range]', {
+        theme: 'menu-theme',
+        hideOnClick: false,
+        arrow: false,
+        placement: 'top',
+        offset: [0, 12],
+        content: (reference) => reference.value,
+        trigger: 'mouseenter input pointerdown pointerup',
+        onTrigger: (instance, event) => {
+          if (event.type === 'input' || event.type === 'pointerdown') {
+            instance.setContent(instance.reference.value);
+            instance.show();
+          }
+          if (event.type === 'pointerup') {
+            setTimeout(() => instance.hide(), 0);
+          }
         }
-        if (event.type === 'pointerup') {
-          setTimeout(() => instance.hide(), 0);
-        }
-      }
-    });
+      });
+    }
   }
 }
