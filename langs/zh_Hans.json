@@ -1854,7 +1854,7 @@
     "help.enable_legendary_backgrounds": "允许您在地图上的黄色圆圈中启用或禁用动物图标背景。",
     "map.sightseeing.hidden": "隐藏点",
     "map.remove.animal_category": "将此物种所有动物移除 72 小时",
-    "map.legendary_animal_cooldown_end_time": "冷却时间：{timer}",
+    "map.legendary_animal_cooldown_end_time": "冷却截至：{timer}",
     "map.reset_animal_timer": "重置此物种所有动物的冷却时间",
     "help.legendary_marker_type": "允许您更改传说动物出现位置的图标。",
     "menu.legendary_animal_marker_type": "传说动物标记样式",
