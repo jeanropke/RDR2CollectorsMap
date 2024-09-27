@@ -6,6 +6,7 @@ class Menu {
     SettingProxy.addSetting(Settings, 'filterType', { default: 'none' });
 
     this.addMapZoomSettings();
+    this.tippyInstances = [];
     this.tippyRangeInstances = [];
     Loader.mapModelLoaded.then(this.activateHandlers.bind(this));
   }
@@ -109,10 +110,10 @@ class Menu {
   }
 
   static addMapZoomSettings() {
-    SettingProxy.addSetting(Settings, 'zoomSnap', { default: 1 });
-    SettingProxy.addSetting(Settings, 'zoomDelta', { default: 1 });
-    SettingProxy.addSetting(Settings, 'wheelDebounceTime', { default: 40 });
-    SettingProxy.addSetting(Settings, 'wheelPxPerZoomLevel', { default: 60 });
+    SettingProxy.addSetting(Settings, 'zoomSnap', { default: 0 });
+    SettingProxy.addSetting(Settings, 'zoomDelta', { default: 0.5 });
+    SettingProxy.addSetting(Settings, 'wheelDebounceTime', { default: 150 });
+    SettingProxy.addSetting(Settings, 'wheelPxPerZoomLevel', { default: 70 });
 
     const inputsMap = new Map();
 
@@ -147,22 +148,22 @@ class Menu {
 
     createInputContainer({ 
       key: 'map_zoom_snap',
-      min: 0, max: 3, value: Settings.zoomSnap, defaultValue: 1,
+      min: 0, max: 3, value: Settings.zoomSnap, defaultValue: 0,
       step: 0.1, isFloat: true,
     });
     createInputContainer({
       key: 'map_zoom_delta',
-      min: 0, max: 2, value: Settings.zoomDelta, defaultValue: 1,
+      min: 0, max: 2, value: Settings.zoomDelta, defaultValue: 0.5,
       step: 0.1, isFloat: true,
     });
     createInputContainer({
       key: 'map_wheel_debounce_time',
-      min: 40, max: 200, value: Settings.wheelDebounceTime, defaultValue: 40,
+      min: 40, max: 200, value: Settings.wheelDebounceTime, defaultValue: 150,
       step: 10, isFloat: false,
     });
     createInputContainer({
       key: 'map_wheel_px_per_zoom_level',
-      min: 20, max: 150, value: Settings.wheelPxPerZoomLevel, defaultValue: 60,
+      min: 20, max: 150, value: Settings.wheelPxPerZoomLevel, defaultValue: 70,
       step: 10, isFloat: false,
     });
 
@@ -409,6 +410,13 @@ class Menu {
         }
       }
     });
+  }
+
+  static updateTippy() {
+    Menu.tippyInstances.forEach(instance => instance.destroy());
+    Menu.tippyInstances = [];
+
+    Menu.tippyInstances = tippy('[data-tippy-content]', { theme: 'menu-theme' });
   }
 
   static updateRangeTippy() {

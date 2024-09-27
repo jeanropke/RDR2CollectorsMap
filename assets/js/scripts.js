@@ -292,7 +292,8 @@ function isLocalHost() {
 
 function changeCursor() {
   const isCoordsEnabled = Settings.isCoordsOnClickEnabled || RouteSettings.customRouteEnabled;
-  document.querySelector('.leaflet-grab').style.cursor = isCoordsEnabled ? 'pointer' : 'grab';
+  const pointer = 'url(assets/images/crosshair_thick.png) 12 12, pointer';
+  document.querySelector('.leaflet-grab').style.cursor = isCoordsEnabled ? pointer : 'grab';
 
   const latLngCtn = document.querySelector('.lat-lng-container');
   latLngCtn.style.display = isCoordsEnabled ? 'block' : 'none';

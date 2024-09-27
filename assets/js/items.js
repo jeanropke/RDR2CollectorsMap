@@ -92,7 +92,7 @@ class Item extends BaseItem {
       const target = event.target;
       if (target.classList.contains('counter-button')) {
         event.stopImmediatePropagation();
-        target.closest('.collectible-wrapper').rdoItem.changeAmountWithSideEffects(target.textContent === '-' ? -1 : 1);
+        target.closest('.collectible-wrapper').rdoItem.changeAmountWithSideEffects(target.classList.contains('minus-circle') ? -1 : 1);
       } else if (target.classList.contains('open-submenu')) {
         event.stopPropagation();
         target.classList.toggle('rotate');
@@ -111,9 +111,9 @@ class Item extends BaseItem {
         <span class="collectible-text">
           <p class="collectible" data-text="${this.itemTranslationKey}"></p>
           <span class="counter">
-            <div class="counter-button">-</div><!--
-            --><div class="counter-number"></div><!--
-            --><div class="counter-button">+</div>
+            <div class="counter-button minus-circle"></div>
+            <div class="counter-number"></div>
+            <div class="counter-button plus-circle"></div>
           </span>
         </span>
     `;

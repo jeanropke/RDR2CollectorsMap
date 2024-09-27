@@ -374,6 +374,7 @@ const MapBase = {
     'use strict';
     uniqueSearchMarkers = MapBase.markers;
     MapBase.initFuse();
+    Menu.updateTippy();
     Menu.updateRangeTippy();
 
     // Preview mode.

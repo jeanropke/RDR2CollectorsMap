@@ -110,9 +110,35 @@ class Legendary {
     snippet.innerHTML = `
         <img class="legendary-animal-popup-image" src="assets/images/icons/game/animals/legendaries/${this.text}.svg" alt="Animal">
         <h1 data-text="${this.text}"></h1>
-        <p class="legendary-cooldown-timer" data-text="map.legendary_animal_cooldown_end_time"></p>
-        <p data-text="${Language.get(this.text + '.desc')}"></p>
-        <br><p data-text="map.legendary_animal.desc"></p>
+        <div class="accordion accordion-flush" id="legendary-accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#legendary-collapse-cooldown" aria-expanded="true" aria-controls="legendary-collapse-cooldown">Cooldown end</button>
+            </h2>
+            <div id="legendary-collapse-cooldown" class="accordion-collapse collapse show" data-bs-parent="#legendary-accordion">
+              <div class="accordion-body">
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-text="map.user_pins.placeholder_desc" data-bs-toggle="collapse" data-bs-target="#legendary-collapse-desc" aria-expanded="true" aria-controls="legendary-collapse-desc">Description</button>
+            </h2>
+            <div id="legendary-collapse-desc" class="accordion-collapse collapse" data-bs-parent="#legendary-accordion">
+              <div class="accordion-body" data-text="${Language.get(this.text + '.desc')}">
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-text="map.tips" data-bs-toggle="collapse" data-bs-target="#legendary-collapse-tips" aria-expanded="false" aria-controls="legendary-collapse-tips">Tips</button>
+            </h2>
+            <div id="legendary-collapse-tips" class="accordion-collapse collapse" data-bs-parent="#legendary-accordion">
+              <div class="accordion-body" data-text="map.legendary_animal.desc">
+              </div>
+            </div>
+          </div>
+        </div>
         <span class="legendary-properties">
           <p class="legendary-spawn-time" data-text="map.legendary.spawn_time_string"></p>
           <p class="legendary-preferred-weather" data-text="map.legendary.preferred_weather"></p>
@@ -124,7 +150,7 @@ class Legendary {
           <p class="legendary-sample-value" data-text="map.legendary.sample_value"></p>
         </span>
         <button type="button" class="btn btn-info remove-button remove-animal-category" data-text="map.remove.animal_category"></button>
-        <button type="button" class="btn btn-info remove-button reset-animal-timer" data-text="map.reset_animal_timer"></button>
+        <button type="button" class="btn btn-info remove-button reset-animal-timer ${this.isGreyedOut ? 'active' : ''}" data-text="map.reset_animal_timer" aria-pressed="${this.isGreyedOut ? 'true' : ''}"></button>
         <button type="button" class="btn btn-info remove-button remove-animal" data-text="map.remove"></button>
     `;
     Language.translateDom(snippet);
@@ -140,18 +166,16 @@ class Legendary {
       p.textContent = propertyText;
     });
 
+    const cooldownBtn = snippet.querySelector('#legendary-collapse-cooldown').closest('.accordion-item').querySelector('button');
     if (this.isGreyedOut) {
-      const cooldownTimer = snippet.querySelector('.legendary-cooldown-timer');
-      cooldownTimer.textContent = Language.get(cooldownTimer.getAttribute('data-text'))
-        .replace('{timer}', () => {
-          const timeMilliseconds = +localStorage.getItem(this.animalSpeciesKey);
-          return new Date(timeMilliseconds)
-            .toLocaleString(Settings.language, {
-              weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit',
-            });
-      });
+      cooldownBtn.textContent = Language.get('map.legendary_animal_cooldown_end_time').split(/[:：]/)[0];
+      snippet.querySelector('#legendary-collapse-cooldown .accordion-body').textContent = new Date(
+        +localStorage.getItem(this.animalSpeciesKey)
+      ).toLocaleString(Settings.language, { weekday: 'long', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' });
     }
-    snippet.querySelector('.legendary-cooldown-timer').style.display = this.isGreyedOut ? '' : 'none';
+
+    snippet.querySelector('#legendary-collapse-desc').classList.toggle('show', !this.isGreyedOut);
+    cooldownBtn.style.display = this.isGreyedOut ? '' : 'none';
     const btnRemoveAnimalCategory = snippet.querySelector('button.remove-animal-category');
     btnRemoveAnimalCategory.style.display = !this.isGreyedOut ? '' : 'none';
     btnRemoveAnimalCategory.addEventListener('click', () => this.isGreyedOut = true);

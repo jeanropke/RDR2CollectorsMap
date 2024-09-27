@@ -100,6 +100,8 @@ const Language = {
   setMenuLanguage: function () {
     'use strict';
 
+    document.documentElement.setAttribute('lang', Settings.language);
+
     if (Language.data[Settings.language] === undefined) {
       const xhr = new XMLHttpRequest();
       xhr.open('GET', `./langs/${Settings.language.replace('-', '_')}.json?nocache=${nocache}&date=${new Date().toISOUTCDateString()}`, false);
@@ -148,6 +150,11 @@ const Language = {
   },
 
   _postTranslation: function () {
+    const diffDays = Math.floor((new Date() - new Date('November 26, 2018')) / (1000 * 60 * 60 * 24));
+    document.querySelector('#sub-header .cycle-date').setAttribute('data-tippy-content', Language.get('menu.span_game_released')
+      .replace('{years}', Math.floor(diffDays / 365))
+      .replace('{days}', diffDays % 365));
+
     const wikiPages = { 'de': '-de-DE', 'fr': '-fr-FR', 'pt-BR': '-pt-BR', 'ru': '-ru-RU' };
     document.querySelector('.wiki-page').setAttribute('href',
       `https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide${wikiPages[Settings.language] ?? ''}`

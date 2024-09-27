@@ -69,7 +69,9 @@ class Pin {
             <label for="${this.id}_color" class="marker-popup-pin-label" data-text="map.user_pins.color">
               ${Language.get('map.user_pins.color')}
             </label>
-            <input type="text" id="${this.id}_color" class="input-text pickr-userpin" readonly value="${inputVal}" style="background-color: ${inputVal}">
+            <div class="input-pickr-wrapper">
+              <input type="text" id="${this.id}_color" class="input-text pickr-userpin" readonly value="${inputVal}" style="background-color: ${inputVal}">
+            </div>
           </div>
           <div style="display: grid;">
             <button type="button" class="btn btn-info save-button" data-text="map.user_pins.save">

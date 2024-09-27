@@ -348,20 +348,28 @@ class Marker {
           <p class="weekly-item" data-text="weekly.desc"></p>
         </div>
       </span>
-      <p class='marker-popup-links'>
-        <span><a href="" data-text="map.video" data-bs-toggle="modal" data-bs-target="#video-modal" data-video-url="${videoUrl}"></a> |</span>
-        <span><a href="" data-text="map.view_loot" data-bs-toggle="modal" data-bs-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a> |</span>
-        <span><a href="" data-text="${this.item && this.item.isImportant ? 'map.unmark_important' : 'map.mark_important'}"></a> |</span>
-        <span><a href="" data-text="map.copy_link"></a></span>
+      <p class="marker-popup-links">
+        <span class="popup-link-container">
+          <a href="" data-text="map.video" data-bs-toggle="modal" data-bs-target="#video-modal" data-video-url="${videoUrl}"></a>
+        </span>
+        <span class="popup-link-container">
+          <a href="" data-text="map.view_loot" data-bs-toggle="modal" data-bs-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a>
+        </span>
+        <span class="popup-link-container">
+          <a href="" data-text="${this.item && this.item.isImportant ? 'map.unmark_important' : 'map.mark_important'}"></a>
+        </span>
+        <span class="popup-link-container">
+          <a href="" data-text="map.copy_link"></a>
+        </span>
       </p>
       <small class="popupContentDebug">
         Latitude: ${this.lat} / Longitude: ${this.lng}<br>
         Description key: ${this.primaryDescriptionKey}
       </small>
       <div class="marker-popup-buttons">
-        <button class="btn btn-danger">↓</button>
+        <button class="btn btn-danger count-down"></button>
         <small></small>
-        <button class="btn btn-success">↑</button>
+        <button class="btn btn-success count-up"></button>
       </div>
       <button type="button" class="btn btn-info remove-button ${this.isCollected ? 'active' : ''}" data-bs-toggle="button" data-item="${this.text}"
         data-text="${this.isCollected ? 'map.add' : 'map.remove'}" aria-pressed="${this.isCollected ? 'true' : ''}">
@@ -604,7 +612,9 @@ class Marker {
       snippet.innerHTML = `
         <img class="icon" src="assets/images/icons/${category.startsWith('random_spot') ? 'random' : category}.png" alt="${category}">
         <label for="custom-marker-color" data-text="menu.${category}"></label>
-        <input type="text" class="input-text pickr-custom-marker-color" id="${category}-custom-marker-color" readonly value="${inputVal}" style="background-color: ${inputVal}">
+        <div class="input-pickr-wrapper">
+          <input type="text" class="input-text pickr-custom-marker-color" id="${category}-custom-marker-color" readonly value="${inputVal}" style="background-color: ${inputVal}">
+        </div>
       `;
     
       wrapper.appendChild(snippet);
