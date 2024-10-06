@@ -348,20 +348,28 @@ class Marker {
           <p class="weekly-item" data-text="weekly.desc"></p>
         </div>
       </span>
-      <p class='marker-popup-links'>
-        <span><a href="" data-text="map.video" data-bs-toggle="modal" data-bs-target="#video-modal" data-video-url="${videoUrl}"></a> |</span>
-        <span><a href="" data-text="map.view_loot" data-bs-toggle="modal" data-bs-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a> |</span>
-        <span><a href="" data-text="${this.item && this.item.isImportant ? 'map.unmark_important' : 'map.mark_important'}"></a> |</span>
-        <span><a href="" data-text="map.copy_link"></a></span>
+      <p class="marker-popup-links">
+        <span class="popup-link-container">
+          <a href="" data-text="map.video" data-bs-toggle="modal" data-bs-target="#video-modal" data-video-url="${videoUrl}"></a>
+        </span>
+        <span class="popup-link-container">
+          <a href="" data-text="map.view_loot" data-bs-toggle="modal" data-bs-target="#loot-table-modal" data-loot-table="${this.lootTable}"></a>
+        </span>
+        <span class="popup-link-container">
+          <a href="" data-text="${this.item && this.item.isImportant ? 'map.unmark_important' : 'map.mark_important'}"></a>
+        </span>
+        <span class="popup-link-container">
+          <a href="" data-text="map.copy_link"></a>
+        </span>
       </p>
       <small class="popupContentDebug">
         Latitude: ${this.lat} / Longitude: ${this.lng}<br>
         Description key: ${this.primaryDescriptionKey}
       </small>
       <div class="marker-popup-buttons">
-        <button class="btn btn-danger">↓</button>
+        <button class="btn btn-danger count-down"></button>
         <small></small>
-        <button class="btn btn-success">↑</button>
+        <button class="btn btn-success count-up"></button>
       </div>
       <button type="button" class="btn btn-info remove-button ${this.isCollected ? 'active' : ''}" data-bs-toggle="button" data-item="${this.text}"
         data-text="${this.isCollected ? 'map.add' : 'map.remove'}" aria-pressed="${this.isCollected ? 'true' : ''}">
@@ -451,13 +459,15 @@ class Marker {
 
     return Language.translateDom(snippet);
   }
+
   updateColor() {
     if (!this.lMarker) return;
     const [bgUrl, contourUrl] = this.colorUrls();
     const lMarkerEl = this.lMarker.getElement();
     lMarkerEl?.querySelector('img.marker-contour').setAttribute('src', contourUrl);
-    lMarkerEl?.querySelector('img.background').setAttribute('src', bgUrl);
+    lMarkerEl?.querySelector('img.background')?.setAttribute('src', bgUrl);
   }
+
   updateOpacity(opacity = Settings.markerOpacity, isInvisibleRemovedMarkers = Settings.isInvisibleRemovedMarkers) {
     let targetOpacity;
     if (this.canCollect) {
@@ -468,16 +478,26 @@ class Marker {
 
     this.lMarker && this.lMarker.setOpacity(targetOpacity);
   }
+
   recreateLMarker(isShadowsEnabled = Settings.isShadowsEnabled, markerSize = Settings.markerSize) {
     const icon = this.category !== 'random' ? this.category : (this.tool === 1 ? 'shovel' : 'magnet');
     const [bgUrl, contourUrl] = this.colorUrls();
     const aii = 'assets/images/icons';
+    const match = bgUrl.match(/marker_#(?<hex>[0-9a-fA-F]{6})(?<alpha>[0-9a-fA-F]{2})?\.png$/);
+    const hexColor = match ? `#${match.groups.hex}${match.groups.alpha || ''}` : null;
+    const background = match ? `
+      <div class="background">
+        <svg width="45px" height="45px" viewBox="1.1 -0.9 16.80 16.80" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="${hexColor}" stroke="${hexColor}" stroke-width="0.00015"><path d="M7.5,0C5.0676,0,2.2297,1.4865,2.2297,5.2703
+        C2.2297,7.8378,6.2838,13.5135,7.5,15c1.0811-1.4865,5.2703-7.027,5.2703-9.7297C12.7703,1.4865,9.9324,0,7.5,0z"></path> </g></svg>
+      </div>
+    ` : `<img class="background" src="${bgUrl}" alt="Background">`
+
     const snippet = document.createElement('div');
     snippet.innerHTML = `
       <img class="overlay" src="${aii}/overlay_cross.png" alt="crossed out">
       <img class="marker-contour" src="${contourUrl}" alt="markerContour">
       <img class="icon" src="${aii}/${icon}.png" alt="Icon">
-      <img class="background" src="${bgUrl}" alt="Background">
+      ${background}
       <img class="shadow" width="${35 * markerSize}"
         height="${16 * markerSize}" src="./assets/images/markers-shadow.png" alt="Shadow">
     `;
@@ -552,7 +572,8 @@ class Marker {
       return a.localeCompare(b, Settings.language, { sensitivity: 'base' });
     });
 
-    const baseColors = { arrowhead: 'purple', bottle: 'brown', coin: 'darkorange', egg: 'white', flower: 'red', fossils_random: 'darkgreen', cups: 'blue', swords: 'blue', wands: 'blue', pentacles: 'blue', jewelry_random: 'yellow', bracelet: 'yellow', necklace: 'yellow', ring: 'yellow', earring: 'yellow', heirlooms: 'pink', random: 'lightgray', random_spot_metal_detector_chest: 'lightgray', random_spot_shovel: 'lightgray', random_spot_metal_detector_shallow: 'gray' };
+    const defaultColors = { arrowhead: 'purple', bottle: 'brown', coin: 'darkorange', egg: 'white', flower: 'red', fossils_random: 'darkgreen', cups: 'blue', swords: 'blue', wands: 'blue', pentacles: 'blue', jewelry_random: 'yellow', bracelet: 'yellow', necklace: 'yellow', ring: 'yellow', earring: 'yellow', heirlooms: 'pink', random: 'lightgray', random_spot_metal_detector_chest: 'lightgray', random_spot_shovel: 'lightgray', random_spot_metal_detector_shallow: 'gray' };
+    const baseColors = structuredClone(defaultColors);
 
     const randomCategories = ['random_spot_metal_detector_chest', 'random_spot_metal_detector_shallow', 'random_spot_shovel']; // divide random spots to metal detector chest & shallow & shovel
     const itemCollections = Collection.collections;
@@ -587,13 +608,13 @@ class Marker {
       snippet.id = `${category}-custom-color`;
       snippet.dataset.help = 'custom_marker_color';
     
+      const inputVal = colorNameToHexMap[savedColors[category] || markerColors[0]] || savedColors[category] || markerColors[0];
       snippet.innerHTML = `
+        <img class="icon" src="assets/images/icons/${category.startsWith('random_spot') ? 'random' : category}.png" alt="${category}">
         <label for="custom-marker-color" data-text="menu.${category}"></label>
-        <input type="text" class="input-text coloris instance-custom-marker-color" id="${category}-custom-marker-color" readonly value="${
-          colorNameToHexMap[savedColors[category] || markerColors[0]] ||
-          savedColors[category] ||
-          markerColors[0]
-        }">
+        <div class="input-pickr-wrapper">
+          <input type="text" class="input-text pickr-custom-marker-color" id="${category}-custom-marker-color" readonly value="${inputVal}" style="background-color: ${inputVal}">
+        </div>
       `;
     
       wrapper.appendChild(snippet);
@@ -602,17 +623,46 @@ class Marker {
     const translatedContent = Language.translateDom(wrapper);
     document.getElementById('custom-marker-color-modal').querySelector('#custom-colors').appendChild(translatedContent);
 
-    Coloris.setInstance('.instance-custom-marker-color', {
-      theme: 'large',
-      parent: '#custom-markers-colors'
-    });
+    wrapper.querySelectorAll('.pickr-custom-marker-color').forEach((inputEl) => {
+      const cat = inputEl.id.split('-')[0];
 
-    wrapper.querySelectorAll('.instance-custom-marker-color').forEach((input) => {
-      input.addEventListener('input', function () {
-        baseColors[this.id.split('-')[0]] = colorNameMap[this.value];
+      const pickr = Pickr.create({
+        theme: 'nano',
+        useAsButton: true,
+        el: inputEl,
+        container: `#${cat}-custom-color`,
+        default: inputEl.value,
+        swatches: Object.keys(colorNameMap),
+        components: {
+          preview: true,
+          hue: true,
+          opacity: true,
+          interaction: {
+            hex: true,
+            rgba: true,
+            input: true,
+            save: true,
+          }
+        },
+      }).on('save', (color) => {
+        const colorStr = color.toHEXA().toString().toLowerCase();
+        inputEl.style.backgroundColor = colorStr;
+        inputEl.value = colorStr;
+        baseColors[cat] = colorNameMap[colorStr] || colorStr;
         localStorage.setItem('rdr2collector.customMarkersColors', JSON.stringify(baseColors));
         MapBase.addMarkers();
-      });
+        pickr.hide();
+      }); 
+
+      const btnSave = document.getElementById(`${cat}-custom-color`).querySelector('.pcr-save');
+      const btnReset = document.createElement('input');
+      btnReset.className = 'pcr-reset';
+      btnReset.value = 'Reset';
+      btnReset.type = 'button';
+      btnReset.setAttribute('aria-label', 'reset to default');
+      btnSave.insertAdjacentElement('beforebegin', btnReset);
+
+      btnReset.addEventListener('click', () => pickr.setColor(colorNameToHexMap[defaultColors[cat]]));
     });
   }
 

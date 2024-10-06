@@ -190,8 +190,13 @@ class Collection extends BaseCollection {
         }, true);
 
         sideMenu.addEventListener('touchend', event => {
-          if (event.target.classList.contains('btn-light')) {
-            event.target.style.setProperty('--bs-btn-hover-bg', 'transparent');
+          const target = event.target;
+          const btnClasses = ['btn-light', 'btn-default'];
+          if (target.classList.contains('btn-light')) {
+            target.style.setProperty('border', '3px solid transparent');
+          }
+          if (btnClasses.some(cls => target.classList.contains(cls))) {
+            target.style.setProperty('filter', 'brightness(1)');
           }
           event.stopImmediatePropagation();
         }, true);

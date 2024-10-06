@@ -71,6 +71,8 @@ try {
   alert("Error retrieving settings.\n\nPlease make sure storing data is allowed for this site. Some browsers restrict storing data in private browsing modes. This website will not work properly until this is resolved.");
 }
 
+let draggableLatLngCtn = null;
+
 /*
 - Leaflet extentions require Leaflet loaded
 - guaranteed by this script’s position in index.html
@@ -289,10 +291,18 @@ function isLocalHost() {
 }
 
 function changeCursor() {
-  const cursorStyle = (Settings.isCoordsOnClickEnabled || RouteSettings.customRouteEnabled) ? 'pointer' : 'grab';
-  const displayStyle = (cursorStyle === 'pointer') ? '' : 'none';
-  document.querySelectorAll('.leaflet-grab').forEach(el => { el.style.cursor = cursorStyle; });
-  document.querySelectorAll('.lat-lng-container').forEach(ctn => { ctn.style.display = displayStyle; });
+  const isCoordsEnabled = Settings.isCoordsOnClickEnabled || RouteSettings.customRouteEnabled;
+  const pointer = 'url(assets/images/crosshair_thick.png) 12 12, pointer';
+  document.querySelector('.leaflet-grab').style.cursor = isCoordsEnabled ? pointer : 'grab';
+
+  const latLngCtn = document.querySelector('.lat-lng-container');
+  latLngCtn.style.display = isCoordsEnabled ? 'block' : 'none';
+  if (isCoordsEnabled) {
+    draggableLatLngCtn ||= new PlainDraggable(latLngCtn);
+  } else if (draggableLatLngCtn) {
+    draggableLatLngCtn.remove();
+    draggableLatLngCtn = null;
+  }
 }
 
 function updateTopWidget() {
@@ -672,6 +682,13 @@ document.querySelectorAll('.map-cycle-alert').forEach(alert => {
 document.getElementById('show-coordinates').addEventListener('change', function () {
   Settings.isCoordsOnClickEnabled = this.checked;
   changeCursor();
+
+  const routeStart = document.getElementById('generate-route-start');
+  if (!this.checked && routeStart.value === 'MapClick') {
+    routeStart.value = prevRouteStartSelect || 'SW';;
+    routeStart.dispatchEvent(new Event('change'));
+    FancySelect.update(routeStart);
+  }
 });
 
 document.getElementById('map-boundaries').addEventListener('change', function () {
@@ -991,50 +1008,37 @@ document.getElementById('generate-route-distance').addEventListener('change', fu
   Routes.generatePath();
 });
 
+let prevRouteStartSelect = null;
 document.getElementById('generate-route-start').addEventListener('change', function () {
-  let inputValue = this.value;
-  let startLat = null;
-  let startLng = null;
+  const inputValue = this.value;
+  const latInput = document.getElementById('generate-route-start-lat');
+  const lngInput = document.getElementById('generate-route-start-lng');
 
-  document.getElementById('generate-route-start-lat').parentElement.style.display = 'none';
-  document.getElementById('generate-route-start-lng').parentElement.style.display = 'none';
-
-  switch (inputValue) {
-    case "Custom":
-      document.getElementById('generate-route-start-lat').parentElement.style.display = '';
-      document.getElementById('generate-route-start-lng').parentElement.style.display = '';
-      return;
-
-    case "N":
-      startLat = -11.875;
-      startLng = 86.875;
-      break;
-
-    case "NE":
-      startLat = -27.4375;
-      startLng = 161.2813;
-      break;
-
-    case "SE":
-      startLat = -100.75;
-      startLng = 131.125;
-      break;
-
-    case "SW":
-    default:
-      startLat = -119.9063;
-      startLng = 8.0313;
-      break;
-  }
-
-  document.getElementById('generate-route-start-lat').value = startLat;
-  document.getElementById('generate-route-start-lng').value = startLng;
-
+  const coordinates = {
+    N: [-11.875, 86.875],
+    NE: [-27.4375, 161.2813],
+    SE: [-100.75, 131.125],
+    SW: [-119.9063, 8.0313]
+  };
+  const [startLat, startLng] = coordinates[inputValue] || coordinates.SW;
+  latInput.value = startLat;
+  lngInput.value = startLng;
   RouteSettings.genPathStart = inputValue;
   RouteSettings.startMarkerLat = startLat;
   RouteSettings.startMarkerLng = startLng;
-
   Routes.generatePath();
+
+  const showCoords = inputValue === 'Custom';
+  latInput.parentElement.style.display = showCoords ? 'block' : 'none';
+  lngInput.parentElement.style.display = showCoords ? 'block' : 'none';
+  if (showCoords) return;
+
+  const isMapClick = inputValue === 'MapClick';
+  if (!isMapClick) prevRouteStartSelect = inputValue;
+  Settings.isCoordsOnClickEnabled = isMapClick;
+  document.getElementById('show-coordinates').checked = isMapClick;
+  document.querySelector('.lat-lng-container').style.display = isMapClick ? 'block' : 'none';
+  changeCursor();
 });
 
 document.getElementById('generate-route-start-lat').addEventListener('change', function () {
@@ -1545,16 +1549,6 @@ function draggify(el, { storageKey }) {
     getDistanceMoved: () =>
       Math.sqrt((currentX - initialX) ** 2 + (currentY - initialY) ** 2)
   };
-}
-
-function toggleVisibility(el, visible) {
-  if (visible) {
-    el.style.visibility = 'visible';
-    el.style.opacity = '1';
-  } else {
-    el.style.opacity = '0';
-    el.style.visibility = 'hidden';
-  }
 }
 
 function animateValue(el, start, end, duration) {

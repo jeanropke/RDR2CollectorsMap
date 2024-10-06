@@ -100,6 +100,8 @@ const Language = {
   setMenuLanguage: function () {
     'use strict';
 
+    document.documentElement.setAttribute('lang', Settings.language);
+
     if (Language.data[Settings.language] === undefined) {
       const xhr = new XMLHttpRequest();
       xhr.open('GET', `./langs/${Settings.language.replace('-', '_')}.json?nocache=${nocache}&date=${new Date().toISOUTCDateString()}`, false);
@@ -125,29 +127,9 @@ const Language = {
       xhr.send();
     }
 
-    const wikiBase = 'https://github.com/jeanropke/RDR2CollectorsMap/wiki/';
-    const wikiPages = {
-      'en': 'RDO-Collectors-Map-User-Guide-(English)',
-      'de': 'RDO-Sammler-Landkarte-Benutzerhandbuch-(German)',
-      'fr': 'RDO-Collectors-Map-Guide-d\'Utilisateur-(French)',
-      'pt': 'Guia-do-Usu%C3%A1rio---Mapa-de-Colecionador-(Portuguese)',
-    };
-    const wikiLang = Settings.language in wikiPages ? Settings.language : 'en';
-    document.querySelector('.wiki-page').setAttribute('href', wikiBase + wikiPages[wikiLang]);
-
     this.translateDom();
 
-    document.getElementById('search').setAttribute('placeholder', Language.get('menu.search_placeholder'));
-    placeholdersToHtml(document.getElementById('query-suggestions-hotkeys'), {
-      '↑': '<kbd class="hotkey">↑</kbd>',
-      '↓': '<kbd class="hotkey">↓</kbd>',
-      'Enter': '<kbd class="hotkey">Enter</kbd>'
-    });
-    document.getElementById('back-to-top').setAttribute('title', Language.get('menu.back_to_top'));
-    
-    FME.update();
-    this.updateProgress();
-    Menu.updateFancySelect();
+    this._postTranslation();
   },
 
   updateProgress: function () {
@@ -165,5 +147,32 @@ const Language = {
     if (Settings.language === "en") thisProg = 100;
     if (!thisProg) thisProg = 0;
     document.getElementById('translation-progress').textContent = Language.get('menu.translate_progress').replace('{progress}', thisProg);
+  },
+
+  _postTranslation: function () {
+    const diffDays = Math.floor((new Date() - new Date('November 26, 2018')) / (1000 * 60 * 60 * 24));
+    document.querySelector('#sub-header .cycle-date').setAttribute('data-tippy-content', Language.get('menu.span_game_released')
+      .replace('{years}', Math.floor(diffDays / 365))
+      .replace('{days}', diffDays % 365));
+
+    const wikiPages = { 'de': '-de-DE', 'fr': '-fr-FR', 'pt-BR': '-pt-BR', 'ru': '-ru-RU' };
+    document.querySelector('.wiki-page').setAttribute('href',
+      `https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide${wikiPages[Settings.language] ?? ''}`
+    );
+
+    document.getElementById('search').setAttribute('placeholder', Language.get('menu.search_placeholder'));
+    placeholdersToHtml(document.getElementById('query-suggestions-hotkeys'), {
+      '↑': '<kbd class="hotkey">↑</kbd>',
+      '↓': '<kbd class="hotkey">↓</kbd>',
+      'Enter': '<kbd class="hotkey">Enter</kbd>'
+    });
+    document.getElementById('back-to-top').setAttribute('title', Language.get('menu.back_to_top'));
+    
+    document.querySelectorAll('.pcr-reset').forEach(btn => btn.value = Language.get('map.color_picker.reset'));
+    document.querySelectorAll('.pcr-save').forEach(btn => btn.value = Language.get('map.color_picker.save'));
+
+    FME.update();
+    this.updateProgress();
+    Menu.updateFancySelect();
   }
 };

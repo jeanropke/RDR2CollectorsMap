@@ -41,6 +41,8 @@ const MadamNazar = {
   addMadamNazar: function () {
     Layers.nazarLayer.clearLayers();
 
+    document.querySelector('.nazar-error').classList.toggle('hidden', MadamNazar.currentLocation !== -1);
+
     if (MadamNazar.currentLocation == null || !enabledCategories.includes('nazar'))
       return;
 
@@ -87,9 +89,10 @@ const MadamNazar = {
     popup.innerHTML = `
           <h1><span data-text="menu.madam_nazar"></span> - ${locale || "#" + MadamNazar.currentLocation}</h1>
           <p style="text-align: center;" data-text="map.madam_nazar.desc"></p>
-          <button class="btn btn-default reload-nazar" data-text="menu.madam_nazar_reload_position"></button>
+          <button class="btn btn-success reload-nazar" data-text="menu.madam_nazar_reload_position"></button>
     `;
     Language.translateDom(popup);
+    
     const btnReloadNazar = popup.querySelector('.reload-nazar');
     btnReloadNazar.addEventListener('click', () => MadamNazar.reloadNazar());
     btnReloadNazar.style.display = MadamNazar.currentDate !== new Date(Date.now() - 21600000).toISOUTCDateString() ? '' : 'none';

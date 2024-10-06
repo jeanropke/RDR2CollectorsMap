@@ -86,9 +86,10 @@ class Treasure {
     snippet.classList.add('handover-wrapper-with-no-influence');
     snippet.innerHTML = `
         <h1 data-text="${this.text}"></h1>
-        <button type="button" class="btn btn-info remove-button" data-text="map.remove"></button>
+        <button type="button" class="btn btn-info remove-button treasure-button" data-text="map.remove"></button>
     `;
     Language.translateDom(snippet);
+    
     snippet.querySelector('button').addEventListener('click', () => this.onMap = false);
     return snippet;
   }
