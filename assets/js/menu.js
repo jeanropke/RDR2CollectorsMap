@@ -153,7 +153,7 @@ class Menu {
     });
     createInputContainer({
       key: 'map_zoom_delta',
-      min: 0, max: 2, value: Settings.zoomDelta, defaultValue: 0.5,
+      min: 0.1, max: 2, value: Settings.zoomDelta, defaultValue: 0.5,
       step: 0.1, isFloat: true,
     });
     createInputContainer({
@@ -169,8 +169,7 @@ class Menu {
 
     const reset = document.getElementById('reset-map-zoom');
     reset.addEventListener('click', () => {
-      const zoomSettings = ['map_zoom_snap', 'map_zoom_delta', 'map_wheel_debounce_time', 'map_wheel_px_per_zoom_level'
-      ].map((key) =>
+      const zoomSettings = ['map_zoom_snap', 'map_zoom_delta', 'map_wheel_debounce_time', 'map_wheel_px_per_zoom_level'].map((key) =>
         key
           .replace(/^map_/, '')
           .split('_')
