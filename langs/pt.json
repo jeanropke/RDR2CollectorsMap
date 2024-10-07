@@ -391,6 +391,7 @@
     "menu.user_pins_import": "Importar",
     "menu.user_pins_export": "Exportar",
     "map.user_pins.icon": "Ícone",
+    "map.user_pins.shape.default": "Padrão",
     "map.user_pins.icon.pin": "Pin",
     "map.user_pins.icon.random": "Aleatório",
     "map.user_pins.icon.magnet": "Detetor de Metais",
