@@ -14,7 +14,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **HeadShot557** (2,365 words)
   - **R36za** (101 words)
 
-### Arabic (64%):
+### Arabic (67%):
   - **a.youssry78** (109 words)
   - **Aiman95** (606 words)
   - **Alalwi** (1,552 words)
@@ -34,6 +34,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **razzer.tube** (47 words)
   - **REMOVED_USER** (348 words)
   - **REMOVED_USER** (89 words)
+  - **RustyDiamond** (1,026 words)
   - **younessmouhid** (160 words)
 
 ### Bulgarian (30%):
