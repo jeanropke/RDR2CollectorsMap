@@ -111,7 +111,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
   - **Ca0dan** (93 words)
-  - **cedricool39** (791 words)
+  - **cedricool39** (797 words)
   - **drthomasgeek** (24 words)
   - **EternalEagle** (83 words)
   - **FRANCESCADOLORES** (1,005 words)
