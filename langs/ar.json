@@ -1673,6 +1673,8 @@
     "menu.legendary_animal_marker_type": "حيوان اسطوري نوع العلامة",
     "menu.legendary_icon_type.paw_prints": "علامة أثر",
     "menu.legendary_icon_type.head": "رؤوس",
+    "menu.map_zoom_snap": "تغيير التكبير (الفأرة)",
+    "menu.map_zoom_delta": "تغيير التكبير (الفأرة)",
     "menu.lang_en": "English (الإنجليزية)",
     "menu.lang_af": "Afrikaans (الأفريقانية)",
     "menu.lang_ar": "العربية",
