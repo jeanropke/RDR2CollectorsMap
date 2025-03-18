@@ -172,7 +172,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Arsenis** (277 words)
   - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
-  - **savanahthediva** (22 words)
+  - **savanahthediva** (243 words)
   - **ToX1cRanG3r** (363 words)
   - **TrollerMaN** (452 words)
 
