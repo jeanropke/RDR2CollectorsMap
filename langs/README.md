@@ -426,10 +426,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **UluMulu** (217 words)
   - **warkoun** (290 words)
 
-### Vietnamese (32%):
+### Vietnamese (33%):
   - **gautruc2002_2003** (72 words)
   - **khahdihdz** (110 words)
   - **khoadang1211** (260 words)
   - **minhnhat.2206** (13 words)
-  - **rheascarlete** (387 words)
+  - **rheascarlete** (727 words)
 
