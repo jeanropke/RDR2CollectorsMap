@@ -134,8 +134,8 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Oldboy77** (494 words)
   - **P_McNewHold** (204 words)
   - **pamplemousse.web** (351 words)
-  - **radragon** (917 words)
   - **RedShard-B** (36 words)
+  - **REMOVED_USER** (917 words)
   - **skonky** (113 words)
   - **thecrazystranger** (1,830 words)
   - **thegamer1604** (125 words)
@@ -177,7 +177,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TrollerMaN** (452 words)
 
 ### Hebrew (48%):
-  - **dudiv5674** (3,078 words)
+  - **dudiv5674** (3,104 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
