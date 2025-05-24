@@ -102,16 +102,13 @@ class Collection extends BaseCollection {
   }
   static switchCycle(categoriesArray, cycle) {
     categoriesArray.forEach(category => {
+      let validCycle = parseInt(cycle);
+      if (isNaN(validCycle) || validCycle < 1 || validCycle > 6) {
+        validCycle = Math.min(Math.max(validCycle, 1), 6);
+      }
+      Cycles.categories[category] = validCycle;
       document.querySelectorAll(`.input-cycle[name="${category}"]`).forEach(input => {
-        const min = parseInt(input.min);
-        const max = parseInt(input.max);
-        let validCycle = parseInt(cycle);
-  
-        if (isNaN(validCycle) || validCycle < min || validCycle > max)
-          validCycle = Math.min(Math.max(validCycle, min), max);
-  
         input.value = validCycle;
-        Cycles.categories[category] = validCycle;
       });
     });
   }

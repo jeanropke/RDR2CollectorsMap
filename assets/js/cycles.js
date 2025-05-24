@@ -1,5 +1,5 @@
 const Cycles = {
-  categories: [],
+  categories: {},
   data: [],
   offset: 0,
   unknownCycleNumber: 0,
