@@ -388,6 +388,11 @@ function clockTick() {
   if (countdown)
     countdown.textContent = delta.toLocaleString([], deltaFormat);
 
+  const msCountdown = document.getElementById('moonshine-buyers-reset');
+  if (msCountdown) {
+    msCountdown.textContent = new Intl.DateTimeFormat([], deltaFormat).format(new Date(5760000 - (Date.now() % 5760000)));
+  }
+
   document.querySelectorAll('[data-marker*="provision_wldflwr_agarita"], [data-marker*="provision_wldflwr_blood_flower"]').forEach(marker => {
     const isImportant = marker.classList.contains('highlight-items');
     const whiteGlow = 'drop-shadow(0 0 .5rem #fff) drop-shadow(0 0 .3rem #fff)';

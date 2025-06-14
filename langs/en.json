@@ -1803,6 +1803,7 @@
     "help.collectables_counter": "Displays the amount of items you've currently collected out of all of the currently enabled sets.",
     "help.items_value": "Displays how much RDO$ the items you've collected are worth in total. This also includes bonuses for complete sets.",
     "help.cycle_change_countdown": "Displays how much time left to the end of this cycle day.",
+    "help.moonshine_buyers_reset": "Displays how much time is left until moonshine buyers reset.",
     "help.clock_in_game": "Displays current time in game.",
     "help.sun_moon_indicator": "Simple indicator that shows if in game is day or night time.",
     "help.map_coordinates_container": "Shows you coordinates of last clicked position on the map. Also allows you to set custom start point for route generator.",
