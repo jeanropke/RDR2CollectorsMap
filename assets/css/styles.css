@@ -1973,6 +1973,8 @@ a.no-style:visited {
 }
 
 .modal h4 {
+    max-width: fit-content;
+    margin-inline: auto;
     font-family: var(--title-font);
     font-weight: normal;
     font-size: 24px;
