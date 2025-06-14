@@ -487,7 +487,7 @@ class Marker {
     const hexColor = match ? `#${match.groups.hex}${match.groups.alpha || ''}` : null;
     const background = match ? `
       <div class="background">
-        <svg width="45px" height="45px" viewBox="1.1 -0.9 16.80 16.80" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="${hexColor}" stroke="${hexColor}" stroke-width="0.00015"><path d="M7.5,0C5.0676,0,2.2297,1.4865,2.2297,5.2703
+        <svg width="${45 * markerSize}px" height="${45 * markerSize}px" viewBox="1.1 -0.9 16.80 16.80" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="${hexColor}" stroke="${hexColor}" stroke-width="0.00015"><path d="M7.5,0C5.0676,0,2.2297,1.4865,2.2297,5.2703
         C2.2297,7.8378,6.2838,13.5135,7.5,15c1.0811-1.4865,5.2703-7.027,5.2703-9.7297C12.7703,1.4865,9.9324,0,7.5,0z"></path> </g></svg>
       </div>
     ` : `<img class="background" src="${bgUrl}" alt="Background">`

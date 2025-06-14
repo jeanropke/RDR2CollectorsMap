@@ -728,6 +728,7 @@ document.getElementById('invisible-removed-markers').addEventListener('change', 
 
 document.getElementById('marker-size').addEventListener('change', function () {
   Settings.markerSize = Number(this.value);
+  Pins.loadPins();
   MapBase.addMarkers();
   Treasure.onSettingsChanged();
   Legendary.onSettingsChanged();
