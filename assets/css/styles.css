@@ -191,6 +191,12 @@ select {
     background-size: cover;
 }
 
+#items-value {
+  display: inline-block;
+  width: 6.5ch;
+  text-align: left;
+}
+
 .header {
     display: -webkit-box;
     display: flex;
