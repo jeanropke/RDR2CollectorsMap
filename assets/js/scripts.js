@@ -1204,6 +1204,8 @@ function formatLootTableLevel(table, rate = 1, level = 0) {
   return result;
 }
 
+const markerTRBLModal = new bootstrap.Modal(document.getElementById('marker-troubleshooting-modal'));
+
 const videoModalEl = document.getElementById('video-modal');
 const videoFrameEl = document.getElementById('video-frame');
 videoModalEl.addEventListener('show.bs.modal', function (event) {
@@ -1569,3 +1571,138 @@ function animateValue(el, start, end, duration) {
 
   requestAnimationFrame(step);
 }
+
+/* Web components */
+class CodeBoxElement extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    const codeText = this.getAttribute('data-code') || this.textContent.trim();
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+            display: block;
+            position: relative;
+            margin: 1rem 0;
+        }
+        .code-box-wrapper {
+            position: relative;
+            margin: 1rem 0;
+            font-size: .875em;
+            color: var(--bs-code-color);
+            padding: 0.6rem 2rem 0.6rem 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 5px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            font-family: monospace;
+            user-select: text;
+        }
+        .code-box-wrapper::-webkit-scrollbar {
+            height: 5px;
+        }
+        .code-box-wrapper::-webkit-scrollbar-track {
+            background: rgba(56, 56, 56, .6); 
+            border-radius: 3px;
+        }
+        .code-box-wrapper::-webkit-scrollbar-thumb {
+            background: rgb(172, 169, 169, .4);
+            border-radius: 3px;
+        }
+        .code-box-wrapper::-webkit-scrollbar-thumb:hover {
+            background: rgba(200, 199, 199, .4);
+        }
+        .copy-btn {
+            position: absolute;
+            top: 50%;
+            right: 0.5rem;
+            width: 20px;
+            height: 20px;
+            transform: translateY(-50%);
+            background: url(/assets/images/action_indicator_copy.png) no-repeat center center;
+            background-size: contain;
+            border: none;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+            z-index: 10;
+            pointer-events: auto;
+            display: none;
+        }
+        .copy-btn:hover {
+            opacity: 1;
+        }
+        .copy-btn:active {
+            opacity: 0.8;
+        }
+        .copied-toast {
+            position: absolute;
+            top: -1.8rem;
+            right: 0;
+            background: #323232;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        .copied-toast.show {
+            opacity: 1;
+        }
+        :host(:hover) .copy-btn {
+            display: inline;
+        }
+        @media (hover: none) {
+            .copy-btn {
+                display: inline;
+            }
+        }
+      </style>
+
+      <div class="copied-toast" data-text="map.link_copied">Copied!</div>
+      <div class="code-box-wrapper">${codeText}</div>
+      <button class="copy-btn" title="Copy"></button>
+    `;
+
+    const copyBtn = this.shadowRoot.querySelector('.copy-btn');
+    const copiedToast = this.shadowRoot.querySelector('.copied-toast');
+
+    copyBtn.addEventListener('click', () => {
+      this.copyText(codeText).then(() => {
+        copiedToast.classList.add('show');
+        setTimeout(() => copiedToast.classList.remove('show'), 1000);
+      });
+    });
+  }
+
+  async copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    } else {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.top = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Fallback copy failed:', err);
+      }
+      document.body.removeChild(textarea);
+      return Promise.resolve();
+    }
+  }
+}
+
+customElements.define('code-box', CodeBoxElement);

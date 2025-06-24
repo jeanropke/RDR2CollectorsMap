@@ -99,6 +99,14 @@ a {
     text-decoration: none;
 }
 
+li {
+    text-align: left;
+}
+
+li::marker {
+    content: url(../images/counter.svg) " ";
+}
+
 input,
 textarea,
 select,
@@ -1659,6 +1667,34 @@ a.wiki-page:visited {
     margin-bottom: 4px !important;
 }
 
+.marker-troubleshooting {
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    width: 14px;
+    height: 14px;
+    background: url(../images/blip_job.png) no-repeat center center;
+    background-size: 100% 100%;
+    border: none;
+    padding: 0;
+    filter: brightness(0.75);
+}
+
+.marker-troubleshooting:hover {
+    filter: brightness(1.25);
+}
+
+.marker-troubleshooting:active {
+    filter: brightness(1);
+}
+
+@media (max-width: 768px) {
+    .marker-troubleshooting {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 .marker-content-wrapper .primary-description {
     color: #fff;
 }
@@ -2054,6 +2090,40 @@ a.no-style:visited {
     .modal-sm {
         --bs-modal-width: 450px;
     }
+}
+
+.modal-note {
+    position: relative;
+    padding: 1rem;
+    padding-left: 2rem;
+    margin: 1.5rem 0;
+    margin-left: 1rem;
+    font-size: 1rem;
+    text-align: left;
+    text-wrap: pretty;
+}
+  
+.modal-note::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 100%;
+    background: url(../images/title_divider.png) no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#marker-troubleshooting-modal h5 {
+    text-align: left;
+}
+
+.marker-trbl-modal-card {
+    background: rgba(255, 255, 255, .1);
+    padding: 10px 5px 5px 15px;
+    border-radius: 5px;
 }
 
 #video-modal .modal-xl {

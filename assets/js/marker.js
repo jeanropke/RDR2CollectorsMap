@@ -323,6 +323,7 @@ class Marker {
     const snippet = document.createElement('div');
     snippet.classList.add('handover-wrapper-with-no-influence');
     snippet.innerHTML = `
+      <button type="button" class="btn marker-troubleshooting" title="${Language.get('map.marker_troubleshooting')}"></button>
       <h1>
         <span data-text="${this.itemTranslationKey}"></span> ${this.itemNumberStr}
         <span class="cycle-display hidden">
@@ -377,6 +378,8 @@ class Marker {
     `;
 
     snippet.querySelector('.cycle-display').classList.toggle('hidden', !Settings.isCyclesVisible);
+
+    snippet.querySelector('.marker-troubleshooting').addEventListener('click', () => markerTRBLModal.show());
 
     snippet.querySelector('.marker-popup-links').querySelector('[data-text="map.copy_link"]').addEventListener('click', (e) => {
       e.preventDefault();
