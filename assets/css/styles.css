@@ -2068,6 +2068,10 @@ a.no-style:visited {
         --bs-modal-width: 600px;
     }
 
+    :lang(pl) .modal {
+        --bs-modal-width: 700px;
+    }
+
     .modal:before {
         content: '';
         display: inline-block;

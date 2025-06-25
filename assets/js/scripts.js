@@ -1572,6 +1572,27 @@ function animateValue(el, start, end, duration) {
   requestAnimationFrame(step);
 }
 
+/**
+ * Automatically observes a set of elements and adds a `title` attribute
+ * when their text content overflows (i.e. is visually truncated with ellipsis).
+ *
+ * @param {string} [selector='.side-menu label[data-text]'] - CSS selector for the elements to observe.
+ */
+function observeOverflowTitles(selector = '.side-menu label[data-text]') {
+  const observer = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      const el = entry.target;
+      if (el.scrollWidth > el.clientWidth) {
+        el.setAttribute('title', el.textContent.trim());
+      } else {
+        el.removeAttribute('title');
+      }
+    }
+  });
+
+  document.querySelectorAll(selector).forEach((el) => observer.observe(el));
+}
+
 /* Web components */
 class CodeBoxElement extends HTMLElement {
   constructor() {
