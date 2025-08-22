@@ -61,6 +61,7 @@ body {
     font-family: var(--content-font);
     line-height: 1.42857143;
     text-rendering: optimizeLegibility;
+    padding: 0 !important;
 }
 
 .h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6 {
@@ -3199,4 +3200,14 @@ button.reload-nazar {
 .leaflet-zoomex-rightbottom .leaflet-zoomex-out,
 .leaflet-zoomex-rightbottom .leaflet-zoomex-in {
     transform: rotate(90deg);
+}
+
+.menu-ad {
+    display: none;
+}
+
+@media (min-width: 768px) {
+  .menu-ad {
+    display: block;
+  }
 }
