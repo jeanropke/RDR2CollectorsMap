@@ -63,7 +63,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **qicoka** (65 words)
   - **qiexiacn** (715 words)
   - **SeaBreeze33** (52 words)
-  - **ToxicMagisk** (25,376 words)
+  - **ToxicMagisk** (25,399 words)
   - **User670** (224 words)
 
 ### Chinese Traditional (97%):
@@ -324,13 +324,14 @@ These are the people that helped translate the project using Crowdin. Please not
   - **petrasoares7** (340 words)
   - **RodasQ** (560 words)
 
-### Portuguese, Brazilian (96%):
+### Portuguese, Brazilian (100%):
   - **agpariz** (50 words)
   - **Ahnaocara** (1,002 words)
   - **AmauriJunior** (469 words)
   - **ArthurZussman** (222 words)
   - **borba72** (23 words)
   - **bortoluzzibernardo** (16 words)
+  - **Dezena14** (1,211 words)
   - **DrCrimsonCrow** (253 words)
   - **FilipFelipe** (146 words)
   - **jeanropke** (7,940 words)
@@ -425,6 +426,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **marcoruizg** (573 words)
   - **Megitsune** (5,543 words)
   - **noodneek** (3,403 words)
+  - **supercyberedgar** (43 words)
 
 ### Swedish (49%):
   - **...---...** (431 words)
