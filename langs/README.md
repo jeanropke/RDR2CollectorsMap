@@ -353,7 +353,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **anckaa55** (1,642 words)
   - **catmc8565** (163 words)
   - **noodneek** (3,403 words)
-  - **proximacentaurib** (24,201 words)
+  - **proximacentaurib** (24,222 words)
   - **tudoradrianburlacu** (35 words)
 
 ### Russian (97%):
