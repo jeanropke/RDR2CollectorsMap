@@ -276,7 +276,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Megitsune** (5,543 words)
   - **nikelhard** (4,892 words)
   - **noodneek** (3,403 words)
-  - **Seogi** (2,217 words)
+  - **Seogi** (2,232 words)
   - **sksk2943** (1,376 words)
   - **spagheeetti** (1,358 words)
   - **wlfogb** (11 words)
