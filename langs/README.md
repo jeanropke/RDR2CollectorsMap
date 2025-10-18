@@ -183,7 +183,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TheBango** (12 words)
   - **Tolpelbold** (39 words)
   - **viliri** (1,470 words)
-  - **vntyx** (1,825 words)
+  - **vntyx** (1,831 words)
   - **werhel** (443 words)
 
 ### Greek (43%):
