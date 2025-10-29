@@ -175,7 +175,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Niiccii** (194 words)
   - **noodneek** (3,403 words)
   - **paulschlachter88** (149 words)
-  - **s.pantermueller** (412 words)
+  - **s.pantermueller** (416 words)
   - **Scotmanhands** (22 words)
   - **siemer** (12 words)
   - **SSR_Joni** (359 words)
