@@ -108,7 +108,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **VDM0598** (176 words)
   - **xvilo** (426 words)
 
-### English, United Kingdom (10%):
+### English, United Kingdom (12%):
   - **AdamNortonUK** (12 words)
   - **ChrisR2602** (894 words)
   - **JRSC01** (2,869 words)
@@ -116,6 +116,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **MrSmithr** (290 words)
   - **noodneek** (3,403 words)
   - **R36za** (101 words)
+  - **ryevxns** (591 words)
   - **XRuthlessShadow** (29 words)
 
 ### Finnish (64%):
