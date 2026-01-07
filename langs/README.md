@@ -116,7 +116,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **MrSmithr** (290 words)
   - **noodneek** (3,403 words)
   - **R36za** (101 words)
-  - **ryevxns** (591 words)
+  - **ryevxns** (657 words)
   - **XRuthlessShadow** (29 words)
 
 ### Finnish (64%):
