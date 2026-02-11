@@ -1150,6 +1150,11 @@ document.getElementById('open-remove-all-pins-modal').addEventListener('click', 
   removeAllPinsModal.show();
 });
 
+const keyboardShortcutsModal = new bootstrap.Modal(document.getElementById('keyboard-shortcuts-modal'));
+document.getElementById('open-keyboard-shortcuts-modal').addEventListener('click', function () {
+  keyboardShortcutsModal.show();
+});
+
 document.getElementById('open-updates-modal').addEventListener('click', function () {
   Updates.showModal();
 });

@@ -96,7 +96,7 @@
           <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;"
           autocomplete="off" data-help="search">
           <span class="input-search-hotkeys" id="search-hotkey">
-            <kbd class="hotkey"></kbd>
+            <kbd class="hotkey ctrlkey"></kbd>
             <kbd class="hotkey">F</kbd>
           </span>
           <div id="query-suggestions" class="query-suggestions" style="display: none;"></div>
@@ -864,6 +864,10 @@
             <label class="input-checkbox-label" for="timestamps-24"></label>
           </div>
         </div>
+        <div id="open-keyboard-shortcuts-modal" class="input-container clickable" data-help="keyboard_shortcuts">
+          <label data-text="menu.keyboard_shortcuts">View keyboard shortcuts</label>
+          <div class="input-action"></div>
+        </div>
       </div>
     </div>
     <div id="routes-container">
@@ -1432,6 +1436,9 @@
           <br>
           <br>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-text="menu.close">Close</button>
+        </div>
       </div>
     </div>
   </div>
@@ -1654,6 +1661,29 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-text="menu.close">Close</button>
           <button id="import-rdo-inventory" type="button" class="btn btn-primary" data-text="menu.import_button">Import</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="keyboard-shortcuts-modal" tabindex="-1" aria-labelledby="keyboard-shortcuts-title">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="keyboard-shortcuts-title" data-text="menu.modal_keyboard_shortcuts_title">
+            Keyboard Shortcuts
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div class="shortcuts">
+            <div class="shortcut-row">
+              <div class="desc" data-text="menu.modal_shortcuts_toggle_sidemenu">Collapse / Expand Sidebar Menu</div>
+              <div><kbd class="hotkey ctrlkey"></kbd><kbd class="hotkey">Space</kbd></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-text="menu.close">Close</button>
         </div>
       </div>
     </div>
