@@ -475,7 +475,13 @@ const MapBase = {
     }));
     const dataForQuerySuggestions = [
       ...new Set(
-        MapBase.markers.map((marker) => Language.get(marker.itemTranslationKey))
+        MapBase.markers
+          .filter(
+            (marker) =>
+              !parentCategories.jewelry_random.includes(marker.category) ||
+              marker.cycleName == Cycles.categories.jewelry_random
+          )
+          .map((marker) => Language.get(marker.itemTranslationKey))
       )
     ].map((name) => ({ name }));
 

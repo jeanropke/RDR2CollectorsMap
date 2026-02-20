@@ -37,13 +37,6 @@ const Inventory = {
         return;
       }
     });
-
-    document.getElementById('inventory-script').addEventListener('click', function () {
-      this.select();
-
-      if (navigator && navigator.clipboard)
-        navigator.clipboard.writeText(this.value);
-    });
   },
 
   import: function (json) {
