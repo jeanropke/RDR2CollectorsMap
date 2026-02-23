@@ -100,6 +100,14 @@ a {
     text-decoration: none;
 }
 
+li {
+    text-align: left;
+}
+
+li::marker {
+    content: url(../images/counter.svg) " ";
+}
+
 input,
 textarea,
 select,
@@ -190,6 +198,12 @@ select {
     background-image: url(../images/wanted_location_divider.png);
     background-repeat: repeat-x;
     background-size: cover;
+}
+
+#items-value {
+  display: inline-block;
+  width: 6.5ch;
+  text-align: left;
 }
 
 .header {
@@ -546,7 +560,7 @@ select {
     opacity: 1;
 }
 
-.input-search-hotkeys .hotkey:first-child:after {
+.hotkey.ctrlkey:after {
     content: var(--ctrl-meta-key);
     letter-spacing: normal;
 }
@@ -1654,6 +1668,34 @@ a.wiki-page:visited {
     margin-bottom: 4px !important;
 }
 
+.marker-troubleshooting {
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    width: 14px;
+    height: 14px;
+    background: url(../images/blip_job.png) no-repeat center center;
+    background-size: 100% 100%;
+    border: none;
+    padding: 0;
+    filter: brightness(0.75);
+}
+
+.marker-troubleshooting:hover {
+    filter: brightness(1.25);
+}
+
+.marker-troubleshooting:active {
+    filter: brightness(1);
+}
+
+@media (max-width: 768px) {
+    .marker-troubleshooting {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 .marker-content-wrapper .primary-description {
     color: #fff;
 }
@@ -1974,6 +2016,8 @@ a.no-style:visited {
 }
 
 .modal h4 {
+    max-width: fit-content;
+    margin-inline: auto;
     font-family: var(--title-font);
     font-weight: normal;
     font-size: 24px;
@@ -2025,6 +2069,10 @@ a.no-style:visited {
         --bs-modal-width: 600px;
     }
 
+    :lang(pl) .modal {
+        --bs-modal-width: 700px;
+    }
+
     .modal:before {
         content: '';
         display: inline-block;
@@ -2049,12 +2097,70 @@ a.no-style:visited {
     }
 }
 
+.modal-note {
+    position: relative;
+    padding: 1rem;
+    padding-left: 2rem;
+    margin: 1.5rem 0;
+    margin-left: 1rem;
+    font-size: 1rem;
+    text-align: left;
+    text-wrap: pretty;
+}
+  
+.modal-note::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 100%;
+    background: url(../images/title_divider.png) no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#marker-troubleshooting-modal h5 {
+    text-align: left;
+}
+
+.marker-trbl-modal-card {
+    background: rgba(255, 255, 255, .1);
+    padding: 10px 5px 5px 15px;
+    border-radius: 5px;
+}
+
 #video-modal .modal-xl {
     width: 66.667%;
 }
 
 #video-modal .modal-body {
     padding: 20px 5px 10px 5px;
+}
+
+#keyboard-shortcuts-modal .modal-dialog {
+    width: 500px;
+}
+
+#keyboard-shortcuts-modal .shortcuts {
+    display: grid;
+    gap: 10px;
+    background: rgba(255, 255, 255, .1);
+    padding: 10px 5px 5px 15px;
+    border-radius: 5px;
+}
+
+#keyboard-shortcuts-modal .shortcut-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 6px 0;
+}
+
+#keyboard-shortcuts-modal .desc {
+  font-size: 15px;
+  text-align: left;
 }
 
 /* Fix buttons showing on top of sidebar on mobile menu */

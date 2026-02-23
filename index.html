@@ -97,7 +97,7 @@
           <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;"
           autocomplete="off" data-help="search">
           <span class="input-search-hotkeys" id="search-hotkey">
-            <kbd class="hotkey"></kbd>
+            <kbd class="hotkey ctrlkey"></kbd>
             <kbd class="hotkey">F</kbd>
           </span>
           <div id="query-suggestions" class="query-suggestions" style="display: none;"></div>
@@ -876,6 +876,10 @@
             <label class="input-checkbox-label" for="timestamps-24"></label>
           </div>
         </div>
+        <div id="open-keyboard-shortcuts-modal" class="input-container clickable" data-help="keyboard_shortcuts">
+          <label data-text="menu.keyboard_shortcuts">View keyboard shortcuts</label>
+          <div class="input-action"></div>
+        </div>
       </div>
     </div>
     <div id="routes-container">
@@ -1340,6 +1344,116 @@
     </div>
   </div>
 
+    <div class="modal fade" id="marker-troubleshooting-modal" tabindex="-1" aria-labelledby="marker-troubleshooting-modal-title">
+    <div class="modal-dialog modal-lg modal-marker-troubleshooting" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="marker-troubleshooting-modal-title" data-text="menu.modal_marker_trbl.title">Troubleshooting Guide</h4>
+        </div>
+        <div class="modal-body">
+          <div class="header">
+            <span class="header-border"></span>
+            <h3 class="header-title" data-text="menu.modal_marker_trbl.metal_detector_header_title">Metal Detector Not Working</h3>
+            <span class="header-border"></span>
+          </div>
+          <div class="marker-trbl-modal-card">
+            <h5 data-text="menu.modal_marker_trbl.for_pc">For PC:</h5>
+            <ul>
+              <li data-text="menu.modal_marker_trbl.metal_detector_pc_step_1">First, ensure that your Metal Detector is actually not functioning. Switch sessions 1–2 times and test the same location to confirm the issue.</li>
+              <li data-text="menu.modal_marker_trbl.metal_detector_pc_step_2">Completely close game and the Rockstar Games Launcher.</li>
+              <li>
+                <p data-text="menu.modal_marker_trbl.go_path">Open File Explorer and go to:</p>
+                <code-box data-code="%UserProfile%\Documents\Rockstar Games\Red Dead Redemption 2\Profiles\"></code-box>
+                <p data-text="menu.modal_marker_trbl.metal_detector_pc_step_3_1">In this folder, you will see one or more subfolders named with your profile ID(s). Open the relevant profile folder.</p>
+              </li>
+              <li data-text="menu.modal_marker_trbl.metal_detector_pc_step_4">Inside the selected profile folder, delete the file named <code>Player</code>.</li>
+              <li data-text="menu.modal_marker_trbl.metal_detector_pc_step_5">Relaunch the game and check if the issue is resolved.</li>
+            </ul>
+            <br>
+            <p data-text="menu.modal_marker_trbl.metal_detector_pc_detailed">For a detailed guide with screenshots, please refer to:</p>
+            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2930336648" target="_blank">Steam Community Fix Guide</a>
+          </div>
+
+          <br>
+          <div class="marker-trbl-modal-card">
+            <h5 data-text="menu.modal_marker_trbl.for_console">For Console:</h5>
+            <ul>
+              <li data-text="menu.modal_marker_trbl.metal_detector_console_step_1">Fully power off your console. For best results, unplug the power cable and wait at least 30 seconds before plugging it back in.</li>
+              <li data-text="menu.modal_marker_trbl.metal_detector_console_step_2">Power the console back on.</li>
+              <li data-text="menu.modal_marker_trbl.metal_detector_console_step_3">On the console home screen, launch game. As soon as the screen goes black, hold (PlayStation: <code>L1</code> + <code>R1</code>) / (Xbox: <code>RB</code> + <code>LB</code>).</li>
+              <li data-text="menu.modal_marker_trbl.metal_detector_console_step_4">Continue holding the buttons until the main menu fully loads, then release them.</li>
+              <li data-text="menu.modal_marker_trbl.metal_detector_console_step_5">You will need to reconfigure your game settings afterward.</li>
+            </ul>
+          </div>
+          <br>
+          <br>
+          <div class="header">
+            <span class="header-border"></span>
+            <h3 class="header-title" data-text="menu.modal_marker_trbl.missing_items_header_title">Missing Items</h3>
+            <span class="header-border"></span>
+          </div>
+          <p data-text="menu.modal_marker_trbl.missing_items_p_1">If you've come across an item that doesn’t appear on today’s map, it's likely a leftover spawn from a previous cycle. These items are only visible to you and cannot be found by other players. You can collect them by switching the map view to the previous day’s cycle — a known but harmless glitch occasionally triggered in sessions (a buggy bonus from Rockstar).</p>
+          <div class="modal-note">
+            <p data-text="menu.modal_marker_trbl.missing_items_note">These leftover items do not affect the current cycle. That means you can collect the same item <em>twice</em> in one cycle. Be aware: Changing sessions or using fast travel will despawn them.</p>
+          </div>
+          <p data-text="menu.modal_marker_trbl.missing_items_p_2">If you're missing an item or suspect the map cycle is incorrect, please follow the steps below. (If the issue is resolved after the first two steps, you may disregard the remaining ones.)</p>
+          <br>
+          <div class="marker-trbl-modal-card">
+            <h5 data-text="menu.modal_marker_trbl.for_pc">For PC:</h5>
+            <ul>
+              <li>
+                <p data-text="menu.modal_marker_trbl.missing_items_step_1">Change Session</p>
+                <ul>
+                  <li data-text="menu.modal_marker_trbl.missing_items_step_1_1">Switch sessions 1–2 times via the in-game menu. Ensure you are not placed back into the same session.</li>
+                </ul>
+              </li>
+              <li data-text="menu.modal_marker_trbl.missing_items_step_2">Restart the Game.</li>
+              <li>
+                <p data-text="menu.modal_marker_trbl.missing_items_step_3_pc">Clear Game Cache</p>
+                <ul>
+                  <li data-text="menu.modal_marker_trbl.missing_items_step_3_pc_1">Exit both the game and the Rockstar Games Launcher.</li>
+                  <li>
+                    <p data-text="menu.modal_marker_trbl.go_path">Open File Explorer and go to:</p>
+                    <code-box data-code="%localAppData%\Temp"></code-box>
+                  </li>
+                  <li data-text="menu.modal_marker_trbl.missing_items_step_3_pc_3">Delete all files with the <code>.dat</code> extension.</li>
+                  <li data-text="menu.modal_marker_trbl.missing_items_step_3_pc_4">Relaunch the game.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <br>
+          <div class="marker-trbl-modal-card">
+            <h5 data-text="menu.modal_marker_trbl.for_console">For Console:</h5>
+            <ul>
+              <li>
+                <p data-text="menu.modal_marker_trbl.missing_items_step_1">Change Session</p>
+                <ul>
+                  <li data-text="menu.modal_marker_trbl.missing_items_step_1_1">Switch sessions 1–2 times via the in-game menu. Ensure you are not placed back into the same session.</li>
+                </ul>
+              </li>
+              <li data-text="menu.modal_marker_trbl.missing_items_step_2">Restart the Game.
+              </li>
+              <li>
+                <p data-text="menu.modal_marker_trbl.missing_items_step_3_console">Power Cycle Your Console</p>
+                <ul>
+                  <li data-text="menu.modal_marker_trbl.missing_items_step_3_console_1">Exit the game completely and turn off your console.</li>
+                  <li data-text="menu.modal_marker_trbl.missing_items_step_3_console_2">Unplug the power cable for at least 30 seconds.</li>
+                  <li data-text="menu.modal_marker_trbl.missing_items_step_3_console_3">Reconnect and launch the game again.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <br>
+          <br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-text="menu.close">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="video-modal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="video-modal-title">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
@@ -1546,7 +1660,7 @@
 
           <p data-text="menu.modal_import_rdo_inventory_step_1">1. <a href="https://socialclub.rockstargames.com/games/rdo/overview" target="_blank">Log in</a> your Social Club account.</p>
           <p data-text="menu.modal_import_rdo_inventory_step_2">2. Click box bellow to copy its content.</p>
-          <textarea id="inventory-script" class="input-text" style="max-width: 100%;min-width: 100%;max-height:45px;min-height:45px;margin:10px 0" readonly>fetch('https://jeanropke.github.io/RDR2CollectorsMap/assets/js/rdo-inventory.js').then(data => data.text()).then(eval);</textarea>
+          <code-box data-code="fetch('https://jeanropke.github.io/RDR2CollectorsMap/assets/js/rdo-inventory.js').then(data => data.text()).then(eval);"></code-box>
           <p data-text="menu.modal_import_rdo_inventory_step_3">3. Open your browser console on Social Club website and paste the script from step 2 and press enter.</p>
           <br>
           <p data-text="menu.modal_import_rdo_inventory_final">If everything is right, a new file will be downloaded with your inventory data. Just import it using the button bellow.</p>
@@ -1558,6 +1672,29 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-text="menu.close">Close</button>
           <button id="import-rdo-inventory" type="button" class="btn btn-primary" data-text="menu.import_button">Import</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="keyboard-shortcuts-modal" tabindex="-1" aria-labelledby="keyboard-shortcuts-title">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="keyboard-shortcuts-title" data-text="menu.modal_keyboard_shortcuts_title">
+            Keyboard Shortcuts
+          </h4>
+        </div>
+        <div class="modal-body">
+          <div class="shortcuts">
+            <div class="shortcut-row">
+              <div class="desc" data-text="menu.modal_shortcuts_toggle_sidemenu">Collapse / Expand Sidebar Menu</div>
+              <div><kbd class="hotkey ctrlkey"></kbd><kbd class="hotkey">Space</kbd></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-text="menu.close">Close</button>
         </div>
       </div>
     </div>

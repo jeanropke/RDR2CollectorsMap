@@ -167,6 +167,8 @@ const Language = {
       'Enter': '<kbd class="hotkey">Enter</kbd>'
     });
     document.getElementById('back-to-top').setAttribute('title', Language.get('menu.back_to_top'));
+
+    document.querySelectorAll('code-box').forEach(box => box.shadowRoot.querySelector('.copied-toast').textContent = Language.get('map.link_copied'));
     
     document.querySelectorAll('.pcr-reset').forEach(btn => btn.value = Language.get('map.color_picker.reset'));
     document.querySelectorAll('.pcr-save').forEach(btn => btn.value = Language.get('map.color_picker.save'));
@@ -174,5 +176,6 @@ const Language = {
     FME.update();
     this.updateProgress();
     Menu.updateFancySelect();
+    observeOverflowTitles();
   }
 };
