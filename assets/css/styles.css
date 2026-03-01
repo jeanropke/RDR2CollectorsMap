@@ -3159,10 +3159,45 @@ button.reload-nazar {
     margin-top: 14px;
     width: 100%;
 }
+
+.extension-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 .chrome-store-button {
+    display: inline-block;
     justify-content: center;
     display: flex;
     padding: 12px 0 0 0;
+}
+
+.greasyfork-button {
+    display: inline-block;
+    padding: 6px 0 0 0;
+}
+
+.chrome-store-button a {
+    position: relative;
+    display: inline-block;
+}
+
+.greasyfork-button img {
+    height: 70px;
+}
+
+.chrome-store-button .disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.chrome-store-button img.overlay {
+    position: absolute;
+    top: 0;
+    left: 35%;
 }
 
 /* Leaflet.ZoomEx */
