@@ -1247,6 +1247,7 @@
     "menu.fast_travel": "Viaggio rapido",
     "menu.search_placeholder": "Cerca gli oggetti. Separali con ;",
     "menu.auto_enable_sold_items": "Abilitare automaticamente la vendita degli articoli",
+    "map.tips": "Suggerimenti",
     "map.remove_add": "Rimuovi/Aggiungi sulla mappa",
     "map.remove": "Rimuovi dalla mappa",
     "map.copy_link": "Copia link segnalino",
