@@ -128,7 +128,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Azhellarke** (635 words)
   - **bloodymanfr** (72 words)
   - **Ca0dan** (93 words)
-  - **cedricool39** (857 words)
+  - **cedricool39** (869 words)
   - **drthomasgeek** (24 words)
   - **EternalEagle** (83 words)
   - **FRANCESCADOLORES** (1,005 words)
@@ -187,8 +187,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **vntyx** (1,837 words)
   - **werhel** (443 words)
 
-### Greek (42%):
+### Greek (44%):
   - **Arsenis** (277 words)
+  - **dvagos7** (492 words)
   - **noodneek** (3,403 words)
   - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
@@ -232,9 +233,10 @@ These are the people that helped translate the project using Crowdin. Please not
   - **muhamdaily** (2,266 words)
   - **noodneek** (3,403 words)
 
-### Italian (92%):
+### Italian (98%):
   - **AlexTucci** (23 words)
   - **Cicciotp** (51 words)
+  - **danilopaglia** (2,374 words)
   - **daveo979** (3,281 words)
   - **Enrik014** (864 words)
   - **Fuzman** (59 words)
@@ -348,6 +350,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **rafaelsadriano** (16 words)
   - **Raphael_** (39 words)
   - **Sephivader** (3,538 words)
+  - **sheime** (11 words)
   - **victorpxavier** (593 words)
   - **vierim** (33 words)
 
