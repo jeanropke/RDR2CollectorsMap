@@ -187,9 +187,9 @@ These are the people that helped translate the project using Crowdin. Please not
   - **vntyx** (1,837 words)
   - **werhel** (443 words)
 
-### Greek (44%):
+### Greek (45%):
   - **Arsenis** (277 words)
-  - **dvagos7** (492 words)
+  - **dvagos7** (988 words)
   - **noodneek** (3,403 words)
   - **reapstep** (406 words)
   - **REMOVED_USER** (632 words)
