@@ -101,7 +101,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **nielsb2004** (50 words)
   - **noodneek** (3,403 words)
   - **pangurjan** (1,021 words)
-  - **Polovinci** (2,058 words)
+  - **Polovinci** (2,146 words)
   - **rp.lameris** (196 words)
   - **SeanDiaz** (282 words)
   - **tiebemaerten** (153 words)
