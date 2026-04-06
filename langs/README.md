@@ -170,6 +170,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **DiePaedagogik** (119 words)
   - **djenerg** (12 words)
   - **FreeAsABird** (330 words)
+  - **heppi.ms** (650 words)
   - **Mangrove11** (122 words)
   - **Megitsune** (5,543 words)
   - **MS03** (18 words)
