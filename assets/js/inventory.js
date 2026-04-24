@@ -56,6 +56,12 @@ const Inventory = {
       });
 
       InventorySettings.isEnabled = true;
+      
+      const enableInventoryEl = document.getElementById('enable-inventory');
+      if (!enableInventoryEl.checked) {
+        enableInventoryEl.checked = InventorySettings.isEnabled;
+        document.getElementById('inventory-container').classList.add('opened');
+      } 
 
       importRDOInventoryModal.hide();
     } catch (error) {
