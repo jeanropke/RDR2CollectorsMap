@@ -272,7 +272,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **uraomote** (2,348 words)
 
 ### Korean (95%):
-  - **AFScorp** (5,659 words)
+  - **AFScorp** (5,887 words)
   - **ciizel** (697 words)
   - **CoolBreeze-13s** (1,031 words)
   - **Garudia** (111 words)
