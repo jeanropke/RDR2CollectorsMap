@@ -199,7 +199,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **TrollerMaN** (711 words)
 
 ### Hebrew (48%):
-  - **dudiv5674** (3,104 words)
+  - **dudiv5674** (3,136 words)
   - **edimezraoui** (29 words)
   - **KingStaf** (145 words)
   - **klain123** (2,363 words)
