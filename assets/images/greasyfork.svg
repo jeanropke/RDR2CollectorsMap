@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 96 96">
+<!-- Written from scratch, based on https://greasyfork.org/assets/blacklogo96-941a633c971b25c0c9e982ed499b5d8c.png -->
+<circle fill="#000" r="48" cy="48" cx="48"/>
+<clipPath id="GreasyForkCircleClip" clipPathUnits="userSpaceOnUse">
+	<circle fill="#000" r="47" cy="48" cx="48"/>
+</clipPath>
+<text fill="#fff" clip-path="url(#GreasyForkCircleClip)" text-anchor="middle" font-size="18" font-family="'DejaVu Sans', Verdana, Arial, 'Liberation Sans', sans-serif" letter-spacing="-0.75" pointer-events="none" style="-moz-user-select: none; -ms-user-select: none; -webkit-user-select: none; user-select: none;">
+	<tspan x="51" y="13" textLength="57">= null;</tspan>
+	<tspan x="56" y="35" textLength="98">function init</tspan>
+	<tspan x="49" y="57" textLength="113">for (var i = 0;</tspan>
+	<tspan x="50" y="79" textLength="105">XmlHttpReq</tspan>
+	<tspan x="48" y="101" textLength="80">appendCh</tspan>
+</text>
+<path fill="#000" stroke="#000" stroke-width="4"
+	d="M 44,29
+	a6.36396,6.36396 0,0,1 0,9
+	l36,36
+	a3.25,3.25 0,0,1 -6.5,6.5
+	l-36,-36
+	a6.36396,6.36396 0,0,1 -9,0
+	l-19,-19
+	a1.76777,1.76777 0,0,1 0,-2.5
+	l13.0,-13
+	a1.76777,1.76777 0,0,1 2.5,0
+	z"/>
+<path fill="#fff"
+	d="M 44,29
+	a6.36396,6.36396 0,0,1 0,9
+	l36,36
+	a3.25,3.25 0,0,1 -6.5,6.5
+	l-36,-36
+	a6.36396,6.36396 0,0,1 -9,0
+	l-19,-19
+	a1.76777,1.76777 0,0,1 2.5,-2.5
+	l14,14 4,-4 -14,-14
+	a1.76777,1.76777 0,0,1 2.5,-2.5
+	l14,14 4,-4 -14,-14
+	a1.76777,1.76777 0,0,1 2.5,-2.5
+	z"/>
+</svg>
