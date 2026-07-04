@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "30 * * * *"
   workflow_dispatch:
+    inputs:
+      force:
+        description: Request a rebuild even if the last build succeeded (token test)
+        type: boolean
+        default: false
 
 permissions:
   pages: write
@@ -12,16 +17,23 @@ permissions:
 jobs:
   retry:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Rebuild Pages if last build errored
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          FORCE: ${{ inputs.force }}
         run: |
-          latest=$(gh api "repos/$GH_REPO/pages/builds/latest")
+          if ! latest=$(gh api "repos/$GH_REPO/pages/builds/latest" 2>&1); then
+            echo "Could not fetch latest Pages build; skipping this run: $latest"
+            exit 0
+          fi
           status=$(jq -r .status <<<"$latest")
           echo "Latest Pages build status: $status"
-          [ "$status" = "errored" ] || exit 0
+          if [ "$status" != "errored" ] && [ "$FORCE" != "true" ]; then
+            exit 0
+          fi
 
           jq -r '.error.message // empty' <<<"$latest"
           sha=$(jq -r .commit <<<"$latest")
@@ -33,5 +45,5 @@ jobs:
             exit 0
           fi
 
-          echo "Requesting Pages rebuild (attempt $((attempts + 1)) for $sha)"
+          echo "Requesting Pages rebuild for $sha (errored builds so far: $attempts)"
           gh api -X POST "repos/$GH_REPO/pages/builds"
