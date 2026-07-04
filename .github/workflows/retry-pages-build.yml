@@ -1,0 +1,37 @@
+name: Retry failed Pages build
+
+on:
+  schedule:
+    - cron: "30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  contents: read
+
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Rebuild Pages if last build errored
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          latest=$(gh api "repos/$GH_REPO/pages/builds/latest")
+          status=$(jq -r .status <<<"$latest")
+          echo "Latest Pages build status: $status"
+          [ "$status" = "errored" ] || exit 0
+
+          jq -r '.error.message // empty' <<<"$latest"
+          sha=$(jq -r .commit <<<"$latest")
+
+          attempts=$(gh api "repos/$GH_REPO/pages/builds?per_page=30" \
+            --jq "[.[] | select(.commit==\"$sha\" and .status==\"errored\")] | length")
+          if [ "$attempts" -ge 3 ]; then
+            echo "Commit $sha already failed $attempts times; skipping retry until a new commit."
+            exit 0
+          fi
+
+          echo "Requesting Pages rebuild (attempt $((attempts + 1)) for $sha)"
+          gh api -X POST "repos/$GH_REPO/pages/builds"
