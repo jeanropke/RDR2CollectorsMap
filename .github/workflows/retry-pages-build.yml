@@ -26,6 +26,10 @@ jobs:
           FORCE: ${{ inputs.force }}
         run: |
           if ! latest=$(gh api "repos/$GH_REPO/pages/builds/latest" 2>&1); then
+            if grep -q "HTTP 404" <<<"$latest"; then
+              echo "Pages build API returned 404"
+              exit 1
+            fi
             echo "Could not fetch latest Pages build; skipping this run: $latest"
             exit 0
           fi
@@ -49,9 +53,9 @@ jobs:
 
           attempts=$(gh api "repos/$GH_REPO/pages/builds?per_page=30" \
             --jq "[.[] | select(.commit==\"$sha\" and .status!=\"built\")] | length")
-          if [ "$attempts" -ge 3 ]; then
-            echo "Commit $sha already failed $attempts times; skipping retry until a new commit."
-            exit 0
+          if [ "$FORCE" != "true" ] && [ "$attempts" -ge 3 ]; then
+            echo "Commit $sha already failed $attempts times; giving up until a new commit or a forced run."
+            exit 1
           fi
 
           echo "Requesting Pages rebuild for $sha (failed builds so far: $attempts)"
