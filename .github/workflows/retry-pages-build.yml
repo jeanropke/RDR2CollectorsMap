@@ -2,7 +2,7 @@ name: Retry failed Pages build
 
 on:
   schedule:
-    - cron: "30 * * * *"
+    - cron: "26 * * * *" # Scheduled runs are not guaranteed to run at the exact time, so use a random minute to minimize collisions with other scheduled workflows.
   workflow_dispatch:
     inputs:
       force:
@@ -31,19 +31,28 @@ jobs:
           fi
           status=$(jq -r .status <<<"$latest")
           echo "Latest Pages build status: $status"
-          if [ "$status" != "errored" ] && [ "$FORCE" != "true" ]; then
+          if [ "$FORCE" = "true" ]; then
+            echo "Force requested; rebuilding regardless of status."
+          elif [ "$status" = "errored" ]; then
+            jq -r '.error.message // empty' <<<"$latest"
+          elif [ "$status" = "building" ] || [ "$status" = "queued" ]; then
+            age=$(( $(date +%s) - $(date -d "$(jq -r .created_at <<<"$latest")" +%s) ))
+            if [ "$age" -lt 900 ]; then
+              exit 0
+            fi
+            echo "Build stuck in '$status' for $((age / 60)) minutes; treating as failed."
+          else
             exit 0
           fi
 
-          jq -r '.error.message // empty' <<<"$latest"
           sha=$(jq -r .commit <<<"$latest")
 
           attempts=$(gh api "repos/$GH_REPO/pages/builds?per_page=30" \
-            --jq "[.[] | select(.commit==\"$sha\" and .status==\"errored\")] | length")
+            --jq "[.[] | select(.commit==\"$sha\" and .status!=\"built\")] | length")
           if [ "$attempts" -ge 3 ]; then
             echo "Commit $sha already failed $attempts times; skipping retry until a new commit."
             exit 0
           fi
 
-          echo "Requesting Pages rebuild for $sha (errored builds so far: $attempts)"
+          echo "Requesting Pages rebuild for $sha (failed builds so far: $attempts)"
           gh api -X POST "repos/$GH_REPO/pages/builds"
