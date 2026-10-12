@@ -309,8 +309,8 @@ function updateTopWidget() {
   const pEl = document.querySelectorAll('.top-widget > p');
 
   pEl.forEach((el, idx) => {
-      if (Settings.topWidgetState !== idx) el.classList.add('hidden'); 
-      else el.classList.remove('hidden');
+    if (Settings.topWidgetState !== idx) el.classList.add('hidden');
+    else el.classList.remove('hidden');
   });
 }
 
