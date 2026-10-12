@@ -34,7 +34,7 @@ const MadamNazar = {
         .then((results) => {
           const betterResult = results
             .map((result) => result.value)
-            .find((data) => data.date && data.date === MadamNazar.get6amStringDate() && data.nazar);
+            .find((data) => data.date && data.date === MadamNazar.getFreshDate() && data.nazar);
           MadamNazar.currentLocation = MadamNazar.possibleLocations.findIndex(({ key }) => key === betterResult.nazar);
           MadamNazar.currentDate = betterResult.date;
           MadamNazar.addMadamNazar();
@@ -100,11 +100,11 @@ const MadamNazar = {
     Language.translateDom(popup);
     const btnReloadNazar = popup.querySelector('.reload-nazar');
     btnReloadNazar.addEventListener('click', () => MadamNazar.reloadNazar());
-    btnReloadNazar.style.display = MadamNazar.currentDate !== MadamNazar.get6amStringDate ? '' : 'none';
+    btnReloadNazar.style.display = MadamNazar.currentDate !== MadamNazar.getFreshDate() ? '' : 'none';
 
     return popup;
   },
-  get6amStringDate: function () {
+  getFreshDate: function () {
     return new Date(Date.now() - 21600000).toISOUTCDateString();
   },
   reloadNazar: function () {
