@@ -2191,5 +2191,16 @@
     "menu.modal_import_rdo_inventory_step_3": "3. Open your browser console (F12) on Social Club website and paste the script from step 2 and press enter.",
     "menu.modal_import_rdo_inventory_final": "If everything is right, a new file will be downloaded with your inventory data. Just import it using the button below.",
     "menu.modal_import_rdo_inventory_manual": "Manual",
-    "menu.modal_import_rdo_inventory_extension": "You can sync your inventory using this extension. Just install it and press one button. Compatible with Chromium based browsers like Brave, Google Chrome, Microsoft Edge, Opera."
+    "menu.modal_import_rdo_inventory_extension": "You can sync your inventory using this extension. Just install it and press one button. Compatible with Chromium based browsers like Brave, Google Chrome, Microsoft Edge, Opera.",
+    "extension.inventory_sync_title": "Inventory Sync (Draggable)",
+    "extension.inventory_sync_button": "Sync",
+    "extension.inventory_sync_status": "Press sync button",
+    "extension.inventory_sync_syncing": "Syncing data...",
+    "extension.inventory_sync_window_closed": "Window closed",
+    "extension.inventory_sync_failed": "Unable to load inventory",
+    "extension.inventory_sync_success": "Inventory loaded",
+    "notification.extension.inventory_sync_title": "Inventory Sync",
+    "notification.extension.inventory_sync_window_closed": "Window closed",
+    "notification.extension.inventory_sync_failed": "Inventory sync failed",
+    "notification.extension.inventory_sync_success": "Inventory sync successful"
 }
