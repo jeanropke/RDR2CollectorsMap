@@ -1351,7 +1351,6 @@
     "menu.generate_route_auto_update": "Rotayı otomatik olarak güncelle",
     "menu.enable_inventory_popups": "Açılır menülerde envanteri etkinleştir",
     "menu.random_encounters": "Rastgele Karşılaşmalar",
-    "map.madam_nazar.desc": "Konum yanlış mı? Takip edin {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Ad",
     "map.user_pins.default_title": "Kullanıcı pimi",
     "map.user_pins.placeholder_desc": "Tanım",

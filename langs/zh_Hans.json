@@ -1446,7 +1446,6 @@
     "menu.generate_route_auto_update": "自动更新路线",
     "menu.enable_inventory_popups": "在弹出窗口中启用背包",
     "menu.random_encounters": "随机事件",
-    "map.madam_nazar.desc": "位置有误？访问 {int.nazar.link}。纳扎尔夫人位置的刷新时间为北京时间 14 点。",
     "map.user_pins.placeholder_title": "名称",
     "map.user_pins.default_title": "用户图钉",
     "map.user_pins.placeholder_desc": "描述",

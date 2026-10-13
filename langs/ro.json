@@ -1402,7 +1402,6 @@
     "menu.generate_route_auto_update": "Actualizare automată rută",
     "menu.enable_inventory_popups": "Activează inventarul în pop-up-uri",
     "menu.random_encounters": "Întâlniri aleatorii",
-    "map.madam_nazar.desc": "Locație greșită? Urmăriți {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Nume",
     "map.user_pins.default_title": "Pin creat de utilizator",
     "map.user_pins.placeholder_desc": "Descriere",

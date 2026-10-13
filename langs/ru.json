@@ -1410,7 +1410,6 @@
     "menu.generate_route_auto_update": "Автомат. обновление маршрута",
     "menu.enable_inventory_popups": "Показать инвентарь в инфо меток",
     "menu.random_encounters": "Случайные встречи",
-    "map.madam_nazar.desc": "Неверное местоположение? Проверьте тут: {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Имя",
     "map.user_pins.default_title": "Ваша метка",
     "map.user_pins.placeholder_desc": "Описание",

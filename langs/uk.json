@@ -1394,7 +1394,6 @@
     "menu.generate_route_auto_update": "Автоматичне оновлення маршруту",
     "menu.enable_inventory_popups": "Функції інвентарю на мітках",
     "menu.random_encounters": "Випадкові зустрічі",
-    "map.madam_nazar.desc": "Невірне розташування? Слідкуйте за {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Назва",
     "map.user_pins.default_title": "Ваша відмітка",
     "map.user_pins.placeholder_desc": "Опис",

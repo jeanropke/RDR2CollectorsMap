@@ -1446,7 +1446,6 @@
     "menu.generate_route_auto_update": "경로 자동 업데이트",
     "menu.enable_inventory_popups": "인벤토리 팝업창 사용",
     "menu.random_encounters": "랜덤 인카운터",
-    "map.madam_nazar.desc": "위치가 잘못됐나요? {int.nazar.link}를 팔로우하세요.",
     "map.user_pins.placeholder_title": "이름",
     "map.user_pins.default_title": "사용자 핀",
     "map.user_pins.placeholder_desc": "설명",

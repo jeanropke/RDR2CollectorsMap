@@ -908,7 +908,6 @@
     "menu.generate_route_auto_update": "Route automatisch bijwerken",
     "menu.enable_inventory_popups": "Inventaris in popups inschakelen",
     "menu.random_encounters": "Toevallige ontmoetingen",
-    "map.madam_nazar.desc": "Wrong location? Follow {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Naam",
     "map.user_pins.default_title": "User pin",
     "map.user_pins.placeholder_desc": "Omschrijving",

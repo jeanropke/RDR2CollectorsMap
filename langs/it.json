@@ -1446,7 +1446,6 @@
     "menu.generate_route_auto_update": "Aggiorna automaticamente il percorso",
     "menu.enable_inventory_popups": "Abilita l'inventario nei pop-up",
     "menu.random_encounters": "Incontri casuali",
-    "map.madam_nazar.desc": "Posizione errata? Segui {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Nome",
     "map.user_pins.default_title": "Segnalino utente",
     "map.user_pins.placeholder_desc": "Descrizione",

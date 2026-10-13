@@ -1262,7 +1262,6 @@
     "menu.generate_route_auto_update": "Automaattinen päivitysreitti",
     "menu.enable_inventory_popups": "Ota käyttöön inventaarioluettelo",
     "menu.random_encounters": "Satunnaiset Kohtaamiset",
-    "map.madam_nazar.desc": "Väärä sijainti? Seuraa {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Nimi",
     "map.user_pins.default_title": "Käyttäjän neula",
     "map.user_pins.placeholder_desc": "Kuvaus",

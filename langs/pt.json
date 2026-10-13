@@ -408,7 +408,6 @@
     "menu.read_wiki": "Lê a Wiki deste mapa",
     "menu.settings_import_export_title": "Configurações",
     "menu.random_encounters": "Encontros Aleatórios",
-    "map.madam_nazar.desc": "Localização incorreta? Ver {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Nome",
     "map.user_pins.default_title": "Pin do Usuário",
     "menu.user_pins_place_new": "Criar pin agora",

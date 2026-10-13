@@ -485,7 +485,6 @@
     "menu.read_wiki": "Läs den här kartans wiki",
     "menu.settings_import_export_title": "Inställningar",
     "menu.random_encounters": "Slumpmässiga möten",
-    "map.madam_nazar.desc": "Felaktig plats? Följ {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Namn",
     "map.user_pins.default_title": "Användarens markeringar",
     "map.user_pins.placeholder_desc": "Beskrivning",

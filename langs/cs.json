@@ -1362,7 +1362,6 @@
     "menu.generate_route_auto_update": "Automaticky aktualizovat trasu",
     "menu.enable_inventory_popups": "Povolit soupis v rozevíracích nabídkách",
     "menu.random_encounters": "Náhodná setkání",
-    "map.madam_nazar.desc": "Špatné umístění? Viz {int.nazar.link}.",
     "map.user_pins.placeholder_title": "Název",
     "map.user_pins.default_title": "PIN uživatele",
     "map.user_pins.placeholder_desc": "Popis",

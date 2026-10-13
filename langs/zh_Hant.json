@@ -1394,7 +1394,6 @@
     "menu.generate_route_auto_update": "自動更新路線",
     "menu.enable_inventory_popups": "在彈出窗口中啟用物品庫存計量",
     "menu.random_encounters": "隨機遭遇",
-    "map.madam_nazar.desc": "位置錯誤？打開 {int.nazar.link}。",
     "map.user_pins.placeholder_title": "名稱",
     "map.user_pins.default_title": "用戶標點",
     "map.user_pins.placeholder_desc": "描述",
