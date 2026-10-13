@@ -2,23 +2,25 @@ class Category { }
 // currently only shared by Weekly and Collection
 class BaseCollection extends Category {
   currentMarkers() {
-    return [].concat(...this.items.map(item => item.currentMarkers()));
+    return this.items.flatMap(item => item.currentMarkers());
   }
   // “Sell” event handler shared by Weekly and Collection to be found in Collection.
   // And this comment is shorter than the overhead for splitting that handler.
 }
 class Weekly extends BaseCollection {
   static init() {
-    return Promise.all([
-      Loader.promises['weekly_sets'].consumeJson(({ sets }) => sets),
+    return Promise.allSettled([
       Loader.promises['weekly'].consumeJson(({ set }) => set.replace('AWARD_ROLE_COLLECTOR_', '').toLowerCase()),
+      Loader.promises['weekly_set'].consumeJson(({ set }) => set.replace('AWARD_ROLE_COLLECTOR_', '').toLowerCase()),
+      Loader.promises['weekly_sets'].consumeJson(({ sets }) => sets),
     ])
-      .then(([sets, current]) => {
-        this.current = new Weekly({ sets, current });
+      .then(([set, setBackup, sets]) => {
+        const current = (set.status === 'fulfilled' && set.value) ? set.value : setBackup.value;
+        this.current = new Weekly({ sets: sets.value, current });
         this._installSettingsAndEventHandlers();
         console.info('%c[Weekly Set] Loaded!', 'color: #bada55; background: #242424');
       })
-      .catch(() => {
+      .catch((err) => {
         console.info('%c[Weekly Set] Unable to load!', 'color: #FF6969; background: #242424');
       });
   }

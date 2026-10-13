@@ -71,6 +71,7 @@ const urls = [
     'https://pepegapi.jeanropke.net/v2/rdo/weekly',
     'https://rdo-dailies.com/api/RDO/collector/jewelry_timestamps',
     'https://rdo-dailies.com/api/RDO/collector/nazar_location',
+    'https://rdo-dailies.com/api/RDO/collector/weekly_set',
 ];
 
 Loader.init(urls);
