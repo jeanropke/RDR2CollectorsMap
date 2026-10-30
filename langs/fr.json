@@ -1268,7 +1268,7 @@
     "routes.invalid": "Route invalide. Vérifiez la console pour plus d'informations (F12)",
     "routes.set_as_route_start": "Définir comme début d'itinéraire",
     "routes.generate_route_now": "Définir le point de départ et générer un itinéraire",
-    "menu.random_spots": "Lieux Aléatoires",
+    "menu.random_spots": "Objets aléatoires",
     "menu.collectables_counter": "{count} sur {max} Collecté(s)",
     "menu.collection_counter": "{count} sur {max}",
     "menu.collection_counter_percentage": "{count}%",
