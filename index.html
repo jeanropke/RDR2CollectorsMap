@@ -50,9 +50,9 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/nano.min.css"/>
   <link rel="stylesheet" href="assets/css/fancyselect.min.css"/>
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=1595" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=1596" />
   <link rel="stylesheet" href="assets/css/tippy.css?nocache=1595" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8337816533364971" data-overlays="bottom" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8337816533364971" crossorigin="anonymous"></script>
 
   <script>
     const nocache = 1595;
@@ -111,17 +111,6 @@
         <div id="clear-search" class="input-action-clear" data-help="search_clear"></div>
         <div id="copy-search-link" class="input-action-copy" data-help="search_copy_link"></div>
       </div>
-    </div>
-    <div class="menu-ad">
-      <ins class="adsbygoogle"
-        style="display:inline-block;width:380px;height:280px"
-        data-ad-client="ca-pub-8337816533364971"
-        data-ad-slot="3475533274"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
     </div>
     <div id="cycle-changer-container" class="cycle-changer hidden">
       <div id="cycle-prev" class="input-selection-arrow"><img src="assets/images/selection_left.png" alt="arrow"></div>
@@ -1244,6 +1233,19 @@
           <p data-text="help.default">Hover over any setting to get an explanation about it.</p>
         </div>
       </div>
+      <section id="menu-ad" class="menu-ad" aria-label="Advertisement">
+        <button id="menu-ad-close" class="menu-ad-close" type="button" aria-label="Close advertisement">&#215;</button>
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-8337816533364971"
+          data-ad-slot="3475533274"></ins>
+        <script>
+          document.getElementById('menu-ad-close').addEventListener('click', () => {
+            document.getElementById('menu-ad').hidden = true;
+          });
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
     </div>
     
     <button id="back-to-top" title="Scroll back to top (Draggable)">

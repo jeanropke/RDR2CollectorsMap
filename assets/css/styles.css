@@ -3309,11 +3309,57 @@ button.reload-nazar {
 }
 
 .menu-ad {
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    background: rgba(20, 20, 20, .98);
+}
+
+.menu-ad,
+.menu-ad .adsbygoogle {
+    height: 280px !important;
+    min-height: 280px !important;
+    max-height: 280px !important;
+}
+
+.menu-ad .adsbygoogle {
+    width: 100%;
+}
+
+.menu-ad[hidden] {
     display: none;
 }
 
-@media (min-width: 768px) {
-  .menu-ad {
-    display: block;
-  }
+.menu-ad-close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    color: #fff;
+    background: rgba(20, 20, 20, .88);
+    border: 1px solid rgba(255, 255, 255, .28);
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.menu-ad-close:hover,
+.menu-ad-close:focus-visible {
+    border-color: #fff;
+    outline: 1px solid #fff;
+}
+
+@media (max-width: 768px) {
+    .menu-ad,
+    .menu-ad .adsbygoogle {
+        height: 100px !important;
+        min-height: 100px !important;
+        max-height: 100px !important;
+    }
 }
