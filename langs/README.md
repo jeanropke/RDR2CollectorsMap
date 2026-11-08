@@ -77,7 +77,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Croatian (30%):
   - **noodneek** (3,403 words)
 
-### Czech (68%):
+### Czech (67%):
   - **avojta** (581 words)
   - **CzechJura** (719 words)
   - **filutav39** (49 words)
@@ -87,7 +87,7 @@ These are the people that helped translate the project using Crowdin. Please not
   - **Srandokan** (24 words)
   - **wooder0403** (159 words)
 
-### Danish (61%):
+### Danish (60%):
   - **noodneek** (3,403 words)
   - **TheWilliBM** (10 words)
   - **Wilize** (76 words)
@@ -394,7 +394,7 @@ These are the people that helped translate the project using Crowdin. Please not
 ### Slovenian (30%):
   - **noodneek** (3,403 words)
 
-### Spanish (93%):
+### Spanish (92%):
   - **23.jonathantadeoleiva** (13 words)
   - **Arisgo** (1,009 words)
   - **avillamizar71** (5,456 words)
